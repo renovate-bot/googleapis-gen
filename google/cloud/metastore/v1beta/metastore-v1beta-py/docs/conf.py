@@ -16,7 +16,7 @@
 #
 
 #
-# google-cloud-metastore documentation build configuration file
+# google-cloud-dataproc-metastore documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-metastore"
+project = u"google-cloud-dataproc-metastore"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-metastore-doc"
+htmlhelp_basename = "google-cloud-dataproc-metastore-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-metastore.tex",
-        u"google-cloud-metastore Documentation",
+        "google-cloud-dataproc-metastore.tex",
+        u"google-cloud-dataproc-metastore Documentation",
         author,
         "manual",
     )
@@ -310,7 +310,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-metastore",
+        "google-cloud-dataproc-metastore",
         u"Google Cloud Metastore Documentation",
         [author],
         1,
@@ -329,10 +329,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-metastore",
-        u"google-cloud-metastore Documentation",
+        "google-cloud-dataproc-metastore",
+        u"google-cloud-dataproc-metastore Documentation",
         author,
-        "google-cloud-metastore",
+        "google-cloud-dataproc-metastore",
         "GAPIC library for Google Cloud Metastore API",
         "APIs",
     )
