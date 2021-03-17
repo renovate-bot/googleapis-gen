@@ -960,6 +960,7 @@ class Document(proto.Message):
             REPLACE = 3
             EVAL_REQUESTED = 4
             EVAL_APPROVED = 5
+            EVAL_SKIPPED = 6
 
         class Parent(proto.Message):
             r"""Structure for referencing parent provenances.  When an

@@ -39177,13 +39177,21 @@ private static final long serialVersionUID = 0L;
       EVAL_REQUESTED(4),
       /**
        * <pre>
-       * Element is review and approved at human review, confidence will be set
-       * to 1.0
+       * Element is reviewed and approved at human review, confidence will be
+       * set to 1.0.
        * </pre>
        *
        * <code>EVAL_APPROVED = 5;</code>
        */
       EVAL_APPROVED(5),
+      /**
+       * <pre>
+       * Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6;</code>
+       */
+      EVAL_SKIPPED(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -39229,13 +39237,21 @@ private static final long serialVersionUID = 0L;
       public static final int EVAL_REQUESTED_VALUE = 4;
       /**
        * <pre>
-       * Element is review and approved at human review, confidence will be set
-       * to 1.0
+       * Element is reviewed and approved at human review, confidence will be
+       * set to 1.0.
        * </pre>
        *
        * <code>EVAL_APPROVED = 5;</code>
        */
       public static final int EVAL_APPROVED_VALUE = 5;
+      /**
+       * <pre>
+       * Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6;</code>
+       */
+      public static final int EVAL_SKIPPED_VALUE = 6;
 
 
       public final int getNumber() {
@@ -39268,6 +39284,7 @@ private static final long serialVersionUID = 0L;
           case 3: return REPLACE;
           case 4: return EVAL_REQUESTED;
           case 5: return EVAL_APPROVED;
+          case 6: return EVAL_SKIPPED;
           default: return null;
         }
       }

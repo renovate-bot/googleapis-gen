@@ -713,9 +713,12 @@ module Google
               # Element is requested for human review.
               EVAL_REQUESTED = 4
 
-              # Element is review and approved at human review, confidence will be set
-              # to 1.0
+              # Element is reviewed and approved at human review, confidence will be
+              # set to 1.0.
               EVAL_APPROVED = 5
+
+              # Element is skipped in the validation process.
+              EVAL_SKIPPED = 6
             end
           end
 

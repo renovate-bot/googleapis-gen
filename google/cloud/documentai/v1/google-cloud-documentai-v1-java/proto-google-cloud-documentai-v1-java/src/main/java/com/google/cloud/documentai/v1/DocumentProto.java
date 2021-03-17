@@ -192,7 +192,7 @@ public final class DocumentProto {
       "ype/date.proto\032\032google/type/datetime.pro" +
       "to\032\027google/type/money.proto\032 google/type" +
       "/postal_address.proto\032\034google/api/annota" +
-      "tions.proto\"\3727\n\010Document\022\022\n\003uri\030\001 \001(\tB\003\340" +
+      "tions.proto\"\2158\n\010Document\022\022\n\003uri\030\001 \001(\tB\003\340" +
       "A\001H\000\022\026\n\007content\030\002 \001(\014B\003\340A\001H\000\022\021\n\tmime_typ" +
       "e\030\003 \001(\t\022\021\n\004text\030\004 \001(\tB\003\340A\001\022?\n\013text_style" +
       "s\030\005 \003(\0132*.google.cloud.documentai.v1.Doc" +
@@ -351,32 +351,33 @@ public final class DocumentProto {
       "\n\027LAYOUT_TYPE_UNSPECIFIED\020\000\022\t\n\005BLOCK\020\001\022\r" +
       "\n\tPARAGRAPH\020\002\022\010\n\004LINE\020\003\022\t\n\005TOKEN\020\004\022\022\n\016VI" +
       "SUAL_ELEMENT\020\005\022\t\n\005TABLE\020\006\022\016\n\nFORM_FIELD\020" +
-      "\007\032\342\002\n\nProvenance\022\020\n\010revision\030\001 \001(\005\022\n\n\002id" +
+      "\007\032\365\002\n\nProvenance\022\020\n\010revision\030\001 \001(\005\022\n\n\002id" +
       "\030\002 \001(\005\022G\n\007parents\030\003 \003(\01326.google.cloud.d" +
       "ocumentai.v1.Document.Provenance.Parent\022" +
       "K\n\004type\030\004 \001(\0162=.google.cloud.documentai." +
       "v1.Document.Provenance.OperationType\032&\n\006" +
-      "Parent\022\020\n\010revision\030\001 \001(\005\022\n\n\002id\030\002 \001(\005\"x\n\r" +
-      "OperationType\022\036\n\032OPERATION_TYPE_UNSPECIF" +
-      "IED\020\000\022\007\n\003ADD\020\001\022\n\n\006REMOVE\020\002\022\013\n\007REPLACE\020\003\022" +
-      "\022\n\016EVAL_REQUESTED\020\004\022\021\n\rEVAL_APPROVED\020\005\032\215" +
-      "\002\n\010Revision\022\017\n\005agent\030\004 \001(\tH\000\022\023\n\tprocesso" +
-      "r\030\005 \001(\tH\000\022\n\n\002id\030\001 \001(\t\022\016\n\006parent\030\002 \003(\005\022/\n" +
-      "\013create_time\030\003 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\022O\n\014human_review\030\006 \001(\01329.google.cl" +
-      "oud.documentai.v1.Document.Revision.Huma" +
-      "nReview\0323\n\013HumanReview\022\r\n\005state\030\001 \001(\t\022\025\n" +
-      "\rstate_message\030\002 \001(\tB\010\n\006source\032\255\001\n\nTextC" +
-      "hange\022D\n\013text_anchor\030\001 \001(\0132/.google.clou" +
-      "d.documentai.v1.Document.TextAnchor\022\024\n\014c" +
-      "hanged_text\030\002 \001(\t\022C\n\nprovenance\030\003 \003(\0132/." +
-      "google.cloud.documentai.v1.Document.Prov" +
-      "enanceB\010\n\006sourceB\321\001\n\036com.google.cloud.do" +
-      "cumentai.v1B\rDocumentProtoP\001ZDgoogle.gol" +
-      "ang.org/genproto/googleapis/cloud/docume" +
-      "ntai/v1;documentai\252\002\032Google.Cloud.Docume" +
-      "ntAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035G" +
-      "oogle::Cloud::DocumentAI::V1b\006proto3"
+      "Parent\022\020\n\010revision\030\001 \001(\005\022\n\n\002id\030\002 \001(\005\"\212\001\n" +
+      "\rOperationType\022\036\n\032OPERATION_TYPE_UNSPECI" +
+      "FIED\020\000\022\007\n\003ADD\020\001\022\n\n\006REMOVE\020\002\022\013\n\007REPLACE\020\003" +
+      "\022\022\n\016EVAL_REQUESTED\020\004\022\021\n\rEVAL_APPROVED\020\005\022" +
+      "\020\n\014EVAL_SKIPPED\020\006\032\215\002\n\010Revision\022\017\n\005agent\030" +
+      "\004 \001(\tH\000\022\023\n\tprocessor\030\005 \001(\tH\000\022\n\n\002id\030\001 \001(\t" +
+      "\022\016\n\006parent\030\002 \003(\005\022/\n\013create_time\030\003 \001(\0132\032." +
+      "google.protobuf.Timestamp\022O\n\014human_revie" +
+      "w\030\006 \001(\01329.google.cloud.documentai.v1.Doc" +
+      "ument.Revision.HumanReview\0323\n\013HumanRevie" +
+      "w\022\r\n\005state\030\001 \001(\t\022\025\n\rstate_message\030\002 \001(\tB" +
+      "\010\n\006source\032\255\001\n\nTextChange\022D\n\013text_anchor\030" +
+      "\001 \001(\0132/.google.cloud.documentai.v1.Docum" +
+      "ent.TextAnchor\022\024\n\014changed_text\030\002 \001(\t\022C\n\n" +
+      "provenance\030\003 \003(\0132/.google.cloud.document" +
+      "ai.v1.Document.ProvenanceB\010\n\006sourceB\321\001\n\036" +
+      "com.google.cloud.documentai.v1B\rDocument" +
+      "ProtoP\001ZDgoogle.golang.org/genproto/goog" +
+      "leapis/cloud/documentai/v1;documentai\252\002\032" +
+      "Google.Cloud.DocumentAI.V1\312\002\032Google\\Clou" +
+      "d\\DocumentAI\\V1\352\002\035Google::Cloud::Documen" +
+      "tAI::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
