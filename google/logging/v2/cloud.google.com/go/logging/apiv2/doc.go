@@ -20,7 +20,8 @@
 // Writes log entries and manages your Cloud Logging configuration. The table
 // entries below are presented in alphabetical order, not in order of common
 // use. For explanations of the concepts found in the table entries, read the
-// documentation at https://cloud.google.com/logging/docs.
+// documentation at https://cloud.google.com/logging/docs (at
+// https://cloud.google.com/logging/docs).
 //
 // Use of Context
 //
@@ -31,7 +32,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package logging // import "cloud.google.com/go/logging/apiv2"
 
 import (

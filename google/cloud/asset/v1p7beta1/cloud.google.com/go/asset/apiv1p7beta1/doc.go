@@ -28,7 +28,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package asset // import "cloud.google.com/go/asset/apiv1p7beta1"
 
 import (

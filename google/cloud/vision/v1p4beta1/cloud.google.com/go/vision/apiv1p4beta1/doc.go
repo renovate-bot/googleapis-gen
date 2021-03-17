@@ -30,7 +30,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package vision // import "cloud.google.com/go/vision/apiv1p4beta1"
 
 import (

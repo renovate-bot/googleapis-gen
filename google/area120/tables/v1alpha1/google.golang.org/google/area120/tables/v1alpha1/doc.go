@@ -26,7 +26,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package tables // import "google.golang.org/google/area120/tables/v1alpha1"
 
 import (

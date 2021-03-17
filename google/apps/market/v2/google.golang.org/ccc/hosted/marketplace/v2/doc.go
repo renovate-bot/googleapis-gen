@@ -18,7 +18,7 @@
 // Google Workspace Marketplace API.
 //
 // Lets your Google Workspace Marketplace applications integrate with
-// Google's licensing and billing services.
+// Google’s licensing and billing services.
 //
 // Use of Context
 //
@@ -29,7 +29,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package marketplace // import "google.golang.org/ccc/hosted/marketplace/v2"
 
 import (

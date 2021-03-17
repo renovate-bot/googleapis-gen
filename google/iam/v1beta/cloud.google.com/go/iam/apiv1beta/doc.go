@@ -17,15 +17,6 @@
 // Package iam is an auto-generated package for the
 // Identity and Access Management (IAM) API.
 //
-// <p>Manages identity and access control for Google Cloud Platform
-// resources, including the creation of service accounts, which you can use
-// to authenticate to Google and make API calls.</p> <aside
-// class="note"><b>Note:</b> This API is tied to the <a
-// href="/iam/docs/reference/credentials/rest">IAM service account
-// credentials API</a> (<code>iamcredentials.googleapis.com</code>). Enabling
-// or disabling this API will also enable or disable the IAM service account
-// credentials API.</aside>
-//
 // Use of Context
 //
 // The ctx passed to NewClient is used for authentication requests and
@@ -35,7 +26,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package iam // import "cloud.google.com/go/iam/apiv1beta"
 
 import (

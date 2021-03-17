@@ -26,7 +26,7 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit pkg.go.dev/cloud.google.com/go.
+// please visit https://pkg.go.dev/cloud.google.com/go.
 package aistreams // import "cloud.google.com/go/partner/aistreams/apiv1alpha1"
 
 import (
