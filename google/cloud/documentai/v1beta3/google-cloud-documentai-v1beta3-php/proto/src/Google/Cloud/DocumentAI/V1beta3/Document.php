@@ -28,9 +28,9 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     protected $mime_type = '';
     /**
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      *
-     * Generated from protobuf field <code>string text = 4;</code>
+     * Generated from protobuf field <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $text = '';
     /**
@@ -94,13 +94,13 @@ class Document extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $uri
-     *           Currently supports Google Cloud Storage URI of the form
+     *           Optional. Currently supports Google Cloud Storage URI of the form
      *              `gs://bucket_name/object_name`. Object versioning is not supported.
      *              See [Google Cloud Storage Request
      *              URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *              info.
      *     @type string $content
-     *           Inline document content, represented as a stream of bytes.
+     *           Optional. Inline document content, represented as a stream of bytes.
      *           Note: As with all `bytes` fields, protobuffers use a pure binary
      *           representation, whereas JSON representations use base64.
      *     @type string $mime_type
@@ -108,7 +108,7 @@ class Document extends \Google\Protobuf\Internal\Message
      *           information, see
      *           https://www.iana.org/assignments/media-types/media-types.xhtml.
      *     @type string $text
-     *           UTF-8 encoded text in reading order from the document.
+     *           Optional. UTF-8 encoded text in reading order from the document.
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document\Style[]|\Google\Protobuf\Internal\RepeatedField $text_styles
      *           Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document\Page[]|\Google\Protobuf\Internal\RepeatedField $pages
@@ -137,13 +137,13 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      *
-     * Generated from protobuf field <code>string uri = 1;</code>
+     * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getUri()
@@ -157,13 +157,13 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      *
-     * Generated from protobuf field <code>string uri = 1;</code>
+     * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -176,11 +176,11 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      *
-     * Generated from protobuf field <code>bytes content = 2;</code>
+     * Generated from protobuf field <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getContent()
@@ -194,11 +194,11 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      *
-     * Generated from protobuf field <code>bytes content = 2;</code>
+     * Generated from protobuf field <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -241,9 +241,9 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      *
-     * Generated from protobuf field <code>string text = 4;</code>
+     * Generated from protobuf field <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getText()
@@ -252,9 +252,9 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      *
-     * Generated from protobuf field <code>string text = 4;</code>
+     * Generated from protobuf field <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */

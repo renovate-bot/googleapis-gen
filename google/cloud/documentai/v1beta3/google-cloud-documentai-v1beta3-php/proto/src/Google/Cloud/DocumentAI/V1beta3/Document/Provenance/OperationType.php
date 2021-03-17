@@ -44,12 +44,18 @@ class OperationType
      */
     const EVAL_REQUESTED = 4;
     /**
-     * Element is review and approved at human review, confidence will be set
-     * to 1.0
+     * Element is reviewed and approved at human review, confidence will be
+     * set to 1.0.
      *
      * Generated from protobuf enum <code>EVAL_APPROVED = 5;</code>
      */
     const EVAL_APPROVED = 5;
+    /**
+     * Element is skipped in the validation process.
+     *
+     * Generated from protobuf enum <code>EVAL_SKIPPED = 6;</code>
+     */
+    const EVAL_SKIPPED = 6;
 
     private static $valueToName = [
         self::OPERATION_TYPE_UNSPECIFIED => 'OPERATION_TYPE_UNSPECIFIED',
@@ -58,6 +64,7 @@ class OperationType
         self::REPLACE => 'REPLACE',
         self::EVAL_REQUESTED => 'EVAL_REQUESTED',
         self::EVAL_APPROVED => 'EVAL_APPROVED',
+        self::EVAL_SKIPPED => 'EVAL_SKIPPED',
     ];
 
     public static function name($value)

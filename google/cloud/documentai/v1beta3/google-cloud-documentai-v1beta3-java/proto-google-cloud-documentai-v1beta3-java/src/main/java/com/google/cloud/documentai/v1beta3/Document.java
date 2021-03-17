@@ -28866,31 +28866,31 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the textAnchor field is set.
      */
     boolean hasTextAnchor();
     /**
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The textAnchor.
      */
     com.google.cloud.documentai.v1beta3.Document.TextAnchor getTextAnchor();
     /**
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder getTextAnchorOrBuilder();
 
@@ -28916,19 +28916,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The mentionText.
      */
     java.lang.String getMentionText();
     /**
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for mentionText.
      */
     com.google.protobuf.ByteString
@@ -28936,19 +28936,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The mentionId.
      */
     java.lang.String getMentionId();
     /**
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for mentionId.
      */
     com.google.protobuf.ByteString
@@ -29331,8 +29331,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -29342,8 +29341,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -29353,8 +29351,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -29364,8 +29361,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -29375,8 +29371,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -29386,8 +29381,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -29397,8 +29391,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -29408,8 +29401,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -29419,8 +29411,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -29430,8 +29421,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -29441,8 +29431,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -29452,8 +29441,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -29713,8 +29701,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -29727,8 +29714,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -29744,8 +29730,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -29762,8 +29747,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -29776,8 +29760,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -29793,8 +29776,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -29811,8 +29793,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -29825,8 +29806,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -29842,8 +29822,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -29860,8 +29839,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -29874,8 +29852,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -29891,8 +29868,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -30464,8 +30440,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30478,8 +30453,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30502,8 +30476,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30524,8 +30497,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30544,8 +30516,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30572,8 +30543,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30597,8 +30567,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30609,8 +30578,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30629,8 +30597,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -30659,8 +30626,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30673,8 +30639,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30697,8 +30662,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30719,8 +30683,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30739,8 +30702,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30767,8 +30729,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30792,8 +30753,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30804,8 +30764,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30824,8 +30783,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -30854,8 +30812,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30868,8 +30825,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30892,8 +30848,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30914,8 +30869,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30934,8 +30888,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30962,8 +30915,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30987,8 +30939,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -30999,8 +30950,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -31019,8 +30969,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -31049,8 +30998,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31063,8 +31011,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31087,8 +31034,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31109,8 +31055,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31129,8 +31074,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31157,8 +31101,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31182,8 +31125,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31194,8 +31136,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31214,8 +31155,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -31477,11 +31417,11 @@ private static final long serialVersionUID = 0L;
     private com.google.cloud.documentai.v1beta3.Document.TextAnchor textAnchor_;
     /**
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the textAnchor field is set.
      */
     @java.lang.Override
@@ -31490,11 +31430,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The textAnchor.
      */
     @java.lang.Override
@@ -31503,11 +31443,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder getTextAnchorOrBuilder() {
@@ -31564,10 +31504,10 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object mentionText_;
     /**
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The mentionText.
      */
     @java.lang.Override
@@ -31585,10 +31525,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for mentionText.
      */
     @java.lang.Override
@@ -31610,10 +31550,10 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object mentionId_;
     /**
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The mentionId.
      */
     @java.lang.Override
@@ -31631,10 +31571,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for mentionId.
      */
     @java.lang.Override
@@ -32498,11 +32438,11 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.documentai.v1beta3.Document.TextAnchor, com.google.cloud.documentai.v1beta3.Document.TextAnchor.Builder, com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder> textAnchorBuilder_;
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the textAnchor field is set.
        */
       public boolean hasTextAnchor() {
@@ -32510,11 +32450,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The textAnchor.
        */
       public com.google.cloud.documentai.v1beta3.Document.TextAnchor getTextAnchor() {
@@ -32526,11 +32466,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setTextAnchor(com.google.cloud.documentai.v1beta3.Document.TextAnchor value) {
         if (textAnchorBuilder_ == null) {
@@ -32547,11 +32487,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setTextAnchor(
           com.google.cloud.documentai.v1beta3.Document.TextAnchor.Builder builderForValue) {
@@ -32566,11 +32506,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder mergeTextAnchor(com.google.cloud.documentai.v1beta3.Document.TextAnchor value) {
         if (textAnchorBuilder_ == null) {
@@ -32589,11 +32529,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearTextAnchor() {
         if (textAnchorBuilder_ == null) {
@@ -32608,11 +32548,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.cloud.documentai.v1beta3.Document.TextAnchor.Builder getTextAnchorBuilder() {
         
@@ -32621,11 +32561,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder getTextAnchorOrBuilder() {
         if (textAnchorBuilder_ != null) {
@@ -32637,11 +32577,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.cloud.documentai.v1beta3.Document.TextAnchor, com.google.cloud.documentai.v1beta3.Document.TextAnchor.Builder, com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder> 
@@ -32756,10 +32696,10 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object mentionText_ = "";
       /**
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The mentionText.
        */
       public java.lang.String getMentionText() {
@@ -32776,10 +32716,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for mentionText.
        */
       public com.google.protobuf.ByteString
@@ -32797,10 +32737,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The mentionText to set.
        * @return This builder for chaining.
        */
@@ -32816,10 +32756,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearMentionText() {
@@ -32830,10 +32770,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for mentionText to set.
        * @return This builder for chaining.
        */
@@ -32852,10 +32792,10 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object mentionId_ = "";
       /**
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The mentionId.
        */
       public java.lang.String getMentionId() {
@@ -32872,10 +32812,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for mentionId.
        */
       public com.google.protobuf.ByteString
@@ -32893,10 +32833,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The mentionId to set.
        * @return This builder for chaining.
        */
@@ -32912,10 +32852,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearMentionId() {
@@ -32926,10 +32866,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for mentionId to set.
        * @return This builder for chaining.
        */
@@ -39237,13 +39177,21 @@ private static final long serialVersionUID = 0L;
       EVAL_REQUESTED(4),
       /**
        * <pre>
-       * Element is review and approved at human review, confidence will be set
-       * to 1.0
+       * Element is reviewed and approved at human review, confidence will be
+       * set to 1.0.
        * </pre>
        *
        * <code>EVAL_APPROVED = 5;</code>
        */
       EVAL_APPROVED(5),
+      /**
+       * <pre>
+       * Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6;</code>
+       */
+      EVAL_SKIPPED(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -39289,13 +39237,21 @@ private static final long serialVersionUID = 0L;
       public static final int EVAL_REQUESTED_VALUE = 4;
       /**
        * <pre>
-       * Element is review and approved at human review, confidence will be set
-       * to 1.0
+       * Element is reviewed and approved at human review, confidence will be
+       * set to 1.0.
        * </pre>
        *
        * <code>EVAL_APPROVED = 5;</code>
        */
       public static final int EVAL_APPROVED_VALUE = 5;
+      /**
+       * <pre>
+       * Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6;</code>
+       */
+      public static final int EVAL_SKIPPED_VALUE = 6;
 
 
       public final int getNumber() {
@@ -39328,6 +39284,7 @@ private static final long serialVersionUID = 0L;
           case 3: return REPLACE;
           case 4: return EVAL_REQUESTED;
           case 5: return EVAL_APPROVED;
+          case 6: return EVAL_SKIPPED;
           default: return null;
         }
       }
@@ -45307,14 +45264,14 @@ private static final long serialVersionUID = 0L;
   public static final int URI_FIELD_NUMBER = 1;
   /**
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uri field is set.
    */
   public boolean hasUri() {
@@ -45322,14 +45279,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uri.
    */
   public java.lang.String getUri() {
@@ -45351,14 +45308,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString
@@ -45383,12 +45340,12 @@ private static final long serialVersionUID = 0L;
   public static final int CONTENT_FIELD_NUMBER = 2;
   /**
    * <pre>
-   * Inline document content, represented as a stream of bytes.
+   * Optional. Inline document content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
    * </pre>
    *
-   * <code>bytes content = 2;</code>
+   * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the content field is set.
    */
   @java.lang.Override
@@ -45397,12 +45354,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Inline document content, represented as a stream of bytes.
+   * Optional. Inline document content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
    * </pre>
    *
-   * <code>bytes content = 2;</code>
+   * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The content.
    */
   @java.lang.Override
@@ -45467,10 +45424,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object text_;
   /**
    * <pre>
-   * UTF-8 encoded text in reading order from the document.
+   * Optional. UTF-8 encoded text in reading order from the document.
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The text.
    */
   @java.lang.Override
@@ -45488,10 +45445,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * UTF-8 encoded text in reading order from the document.
+   * Optional. UTF-8 encoded text in reading order from the document.
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for text.
    */
   @java.lang.Override
@@ -46763,14 +46720,14 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the uri field is set.
      */
     @java.lang.Override
@@ -46779,14 +46736,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The uri.
      */
     @java.lang.Override
@@ -46809,14 +46766,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for uri.
      */
     @java.lang.Override
@@ -46840,14 +46797,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The uri to set.
      * @return This builder for chaining.
      */
@@ -46863,14 +46820,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearUri() {
@@ -46883,14 +46840,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for uri to set.
      * @return This builder for chaining.
      */
@@ -46908,12 +46865,12 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the content field is set.
      */
     public boolean hasContent() {
@@ -46921,12 +46878,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The content.
      */
     public com.google.protobuf.ByteString getContent() {
@@ -46937,12 +46894,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The content to set.
      * @return This builder for chaining.
      */
@@ -46957,12 +46914,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearContent() {
@@ -47083,10 +47040,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object text_ = "";
     /**
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The text.
      */
     public java.lang.String getText() {
@@ -47103,10 +47060,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for text.
      */
     public com.google.protobuf.ByteString
@@ -47124,10 +47081,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The text to set.
      * @return This builder for chaining.
      */
@@ -47143,10 +47100,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearText() {
@@ -47157,10 +47114,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for text to set.
      * @return This builder for chaining.
      */

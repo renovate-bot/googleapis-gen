@@ -45,24 +45,24 @@ class Document(proto.Message):
 
     Attributes:
         uri (str):
-            Currently supports Google Cloud Storage URI of the form
-            ``gs://bucket_name/object_name``. Object versioning is not
-            supported. See `Google Cloud Storage Request
+            Optional. Currently supports Google Cloud Storage URI of the
+            form ``gs://bucket_name/object_name``. Object versioning is
+            not supported. See `Google Cloud Storage Request
             URIs <https://cloud.google.com/storage/docs/reference-uris>`__
             for more info.
         content (bytes):
-            Inline document content, represented as a stream of bytes.
-            Note: As with all ``bytes`` fields, protobuffers use a pure
-            binary representation, whereas JSON representations use
-            base64.
+            Optional. Inline document content, represented as a stream
+            of bytes. Note: As with all ``bytes`` fields, protobuffers
+            use a pure binary representation, whereas JSON
+            representations use base64.
         mime_type (str):
             An IANA published MIME type (also referred to
             as media type). For more information, see
             https://www.iana.org/assignments/media-
             types/media-types.xhtml.
         text (str):
-            UTF-8 encoded text in reading order from the
-            document.
+            Optional. UTF-8 encoded text in reading order
+            from the document.
         text_styles (Sequence[google.cloud.documentai_v1beta3.types.Document.Style]):
             Styles for the
             [Document.text][google.cloud.documentai.v1beta3.Document.text].
@@ -696,14 +696,16 @@ class Document(proto.Message):
 
         Attributes:
             text_anchor (google.cloud.documentai_v1beta3.types.Document.TextAnchor):
-                Provenance of the entity. Text anchor indexing into the
+                Optional. Provenance of the entity. Text anchor indexing
+                into the
                 [Document.text][google.cloud.documentai.v1beta3.Document.text].
             type_ (str):
                 Entity type from a schema e.g. ``Address``.
             mention_text (str):
-                Text value in the document e.g. ``1600 Amphitheatre Pkwy``.
+                Optional. Text value in the document e.g.
+                ``1600 Amphitheatre Pkwy``.
             mention_id (str):
-                Deprecated. Use ``id`` field instead.
+                Optional. Deprecated. Use ``id`` field instead.
             confidence (float):
                 Optional. Confidence of detected Schema entity. Range [0,
                 1].
@@ -736,23 +738,18 @@ class Document(proto.Message):
             Attributes:
                 money_value (google.type.money_pb2.Money):
                     Money value. See also:
-                    https:
-                    github.com/googleapis/googleapis/blob/master/google/type/money.proto
+                    https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
                 date_value (google.type.date_pb2.Date):
                     Date value. Includes year, month, day. See
                     also:
-                    https:
-                    github.com/googleapis/googleapis/blob/master/google/type/date.proto
+                    https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
                 datetime_value (google.type.datetime_pb2.DateTime):
                     DateTime value. Includes date, time, and
                     timezone. See also:
-                    https:
-                    github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+                    https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
                 address_value (google.type.postal_address_pb2.PostalAddress):
                     Postal address. See also:
-
-                    https:
-                    github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+                    https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
                 boolean_value (bool):
                     Boolean value. Can be used for entities with
                     binary values, or for checkboxes.
@@ -967,6 +964,7 @@ class Document(proto.Message):
             REPLACE = 3
             EVAL_REQUESTED = 4
             EVAL_APPROVED = 5
+            EVAL_SKIPPED = 6
 
         class Parent(proto.Message):
             r"""Structure for referencing parent provenances.  When an

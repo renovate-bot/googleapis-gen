@@ -36,20 +36,16 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Type\Money $money_value
      *           Money value. See also:
-     *           https:
-     *           github.com/googleapis/googleapis/blob/master/google/type/money.proto
+     *           https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
      *     @type \Google\Type\Date $date_value
      *           Date value. Includes year, month, day. See also:
-     *           https:
-     *           github.com/googleapis/googleapis/blob/master/google/type/date.proto
+     *           https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
      *     @type \Google\Type\DateTime $datetime_value
      *           DateTime value. Includes date, time, and timezone. See also:
-     *           https:
-     *           github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+     *           https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
      *     @type \Google\Type\PostalAddress $address_value
      *           Postal address. See also:
-     *           https:
-     *           github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+     *           https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
      *     @type bool $boolean_value
      *           Boolean value. Can be used for entities with binary values, or for
      *           checkboxes.
@@ -69,8 +65,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Money value. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
      *
      * Generated from protobuf field <code>.google.type.Money money_value = 2;</code>
      * @return \Google\Type\Money|null
@@ -87,8 +82,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Money value. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
      *
      * Generated from protobuf field <code>.google.type.Money money_value = 2;</code>
      * @param \Google\Type\Money $var
@@ -104,8 +98,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Date value. Includes year, month, day. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
      *
      * Generated from protobuf field <code>.google.type.Date date_value = 3;</code>
      * @return \Google\Type\Date|null
@@ -122,8 +115,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Date value. Includes year, month, day. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
      *
      * Generated from protobuf field <code>.google.type.Date date_value = 3;</code>
      * @param \Google\Type\Date $var
@@ -139,8 +131,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * DateTime value. Includes date, time, and timezone. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
      *
      * Generated from protobuf field <code>.google.type.DateTime datetime_value = 4;</code>
      * @return \Google\Type\DateTime|null
@@ -157,8 +148,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * DateTime value. Includes date, time, and timezone. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
      *
      * Generated from protobuf field <code>.google.type.DateTime datetime_value = 4;</code>
      * @param \Google\Type\DateTime $var
@@ -174,8 +164,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Postal address. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
      *
      * Generated from protobuf field <code>.google.type.PostalAddress address_value = 5;</code>
      * @return \Google\Type\PostalAddress|null
@@ -192,8 +181,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Postal address. See also:
-     * https:
-     * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+     * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
      *
      * Generated from protobuf field <code>.google.type.PostalAddress address_value = 5;</code>
      * @param \Google\Type\PostalAddress $var
