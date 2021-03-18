@@ -259,6 +259,8 @@ class Workload(proto.Message):
         FEDRAMP_HIGH = 3
         FEDRAMP_MODERATE = 4
         US_REGIONAL_ACCESS = 5
+        HIPAA = 6
+        HITRUST = 7
 
     class ResourceInfo(proto.Message):
         r"""Represent the resources that are children of this Workload.
