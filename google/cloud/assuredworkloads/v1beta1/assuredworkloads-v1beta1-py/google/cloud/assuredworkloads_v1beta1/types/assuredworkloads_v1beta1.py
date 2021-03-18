@@ -244,6 +244,12 @@ class Workload(proto.Message):
             crypto key. When set a project with a KMS CMEK
             key is provisioned. This field is mandatory for
             a subset of Compliance Regimes.
+        resource_settings (Sequence[google.cloud.assuredworkloads_v1beta1.types.Workload.ResourceSettings]):
+            Input only. Resource properties that are used
+            to customize workload resources. These
+            properties (such as custom project id) will be
+            used to create workload resources if possible.
+            This field is optional.
     """
     class ComplianceRegime(proto.Enum):
         r"""Supported Compliance Regimes."""
@@ -352,6 +358,27 @@ class Workload(proto.Message):
             message='Workload.KMSSettings',
         )
 
+    class ResourceSettings(proto.Message):
+        r"""Represent the custom settings for the resources to be
+        created.
+
+        Attributes:
+            resource_id (str):
+                Resource identifier. For a project this represents
+                project_id. If the project is already taken, the workload
+                creation will fail.
+            resource_type (google.cloud.assuredworkloads_v1beta1.types.Workload.ResourceInfo.ResourceType):
+                Indicates the type of resource. This field should be
+                specified to correspond the id to the right project type
+                (CONSUMER_PROJECT or ENCRYPTION_KEYS_PROJECT)
+        """
+
+        resource_id = proto.Field(proto.STRING, number=1)
+
+        resource_type = proto.Field(proto.ENUM, number=2,
+            enum='Workload.ResourceInfo.ResourceType',
+        )
+
     name = proto.Field(proto.STRING, number=1)
 
     display_name = proto.Field(proto.STRING, number=2)
@@ -394,6 +421,10 @@ class Workload(proto.Message):
 
     kms_settings = proto.Field(proto.MESSAGE, number=14,
         message=KMSSettings,
+    )
+
+    resource_settings = proto.RepeatedField(proto.MESSAGE, number=15,
+        message=ResourceSettings,
     )
 
 
