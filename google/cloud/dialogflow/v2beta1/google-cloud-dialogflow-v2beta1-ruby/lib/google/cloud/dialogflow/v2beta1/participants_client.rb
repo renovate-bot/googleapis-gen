@@ -271,11 +271,6 @@ module Google
                 {'participant' => request.participant}
               end
             )
-            @streaming_analyze_content = Google::Gax.create_api_call(
-              @participants_stub.method(:streaming_analyze_content),
-              defaults["streaming_analyze_content"],
-              exception_transformer: exception_transformer
-            )
             @suggest_articles = Google::Gax.create_api_call(
               @participants_stub.method(:suggest_articles),
               defaults["suggest_articles"],
@@ -509,21 +504,9 @@ module Google
           #   Required. The name of the participant this text comes from.
           #   Format: `projects/<Project ID>/locations/<Location
           #   ID>/conversations/<Conversation ID>/participants/<Participant ID>`.
-          # @param text [Google::Cloud::Dialogflow::V2beta1::InputText | Hash]
-          #   The natural language text to be processed.
-          #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::InputText`
-          #   can also be provided.
-          # @param audio [Google::Cloud::Dialogflow::V2beta1::InputAudio | Hash]
-          #   The natural language speech audio to be processed.
-          #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::InputAudio`
-          #   can also be provided.
           # @param text_input [Google::Cloud::Dialogflow::V2beta1::TextInput | Hash]
           #   The natural language text to be processed.
           #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::TextInput`
-          #   can also be provided.
-          # @param audio_input [Google::Cloud::Dialogflow::V2beta1::AudioInput | Hash]
-          #   The natural language speech audio to be processed.
-          #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::AudioInput`
           #   can also be provided.
           # @param event_input [Google::Cloud::Dialogflow::V2beta1::EventInput | Hash]
           #   An input event to send to Dialogflow.
@@ -581,10 +564,7 @@ module Google
 
           def analyze_content \
               participant,
-              text: nil,
-              audio: nil,
               text_input: nil,
-              audio_input: nil,
               event_input: nil,
               reply_audio_config: nil,
               query_params: nil,
@@ -594,10 +574,7 @@ module Google
               &block
             req = {
               participant: participant,
-              text: text,
-              audio: audio,
               text_input: text_input,
-              audio_input: audio_input,
               event_input: event_input,
               reply_audio_config: reply_audio_config,
               query_params: query_params,
@@ -606,57 +583,6 @@ module Google
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::V2beta1::AnalyzeContentRequest)
             @analyze_content.call(req, options, &block)
-          end
-
-          # Adds a text (e.g., chat) or audio (e.g., phone recording) message from a
-          # participant into the conversation.
-          # Note: This method is only available through the gRPC API (not REST).
-          #
-          # The top-level message sent to the client by the server is
-          # `StreamingAnalyzeContentResponse`. Multiple response messages can be
-          # returned in order. The first one or more messages contain the
-          # `recognition_result` field. Each result represents a more complete
-          # transcript of what the user said. The next message contains the
-          # `reply_text` field, and potentially the `reply_audio` and/or the
-          # `automated_agent_reply` fields.
-          #
-          # Note: Always use agent versions for production traffic
-          # sent to virtual agents. See [Versions and
-          # environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-          #
-          # @param reqs [Enumerable<Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentRequest>]
-          #   The input requests.
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @return [Enumerable<Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentResponse>]
-          #   An enumerable of Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentResponse instances.
-          #
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          #
-          # @note
-          #   EXPERIMENTAL:
-          #     Streaming requests are still undergoing review.
-          #     This method interface might change in the future.
-          #
-          # @example
-          #   require "google/cloud/dialogflow"
-          #
-          #   participants_client = Google::Cloud::Dialogflow::Participants.new(version: :v2beta1)
-          #
-          #   # TODO: Initialize `participant`:
-          #   participant = ''
-          #   request = { participant: participant }
-          #   requests = [request]
-          #   participants_client.streaming_analyze_content(requests).each do |element|
-          #     # Process element.
-          #   end
-
-          def streaming_analyze_content reqs, options: nil
-            request_protos = reqs.lazy.map do |req|
-              Google::Gax::to_proto(req, Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentRequest)
-            end
-            @streaming_analyze_content.call(request_protos, options)
           end
 
           # Gets suggested articles for a participant based on specific historical

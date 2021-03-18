@@ -559,7 +559,8 @@ module Google
 
       module Conversations
         ##
-        # Service for managing {Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
+        # Service for managing
+        # {Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
         #
         # @param version [Symbol, String]
         #   The major version of the service to be used. By default :v2beta1

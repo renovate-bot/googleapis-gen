@@ -28,7 +28,6 @@ import grpc  # type: ignore
 
 from google.cloud.dialogflow_v2.types import conversation
 from google.cloud.dialogflow_v2.types import conversation as gcd_conversation
-from google.protobuf import empty_pb2 as empty  # type: ignore
 
 from .base import ConversationsTransport, DEFAULT_CLIENT_INFO
 
@@ -364,87 +363,6 @@ class ConversationsGrpcTransport(ConversationsTransport):
                 response_deserializer=conversation.Conversation.deserialize,
             )
         return self._stubs['complete_conversation']
-
-    @property
-    def create_call_matcher(self) -> Callable[
-            [conversation.CreateCallMatcherRequest],
-            conversation.CallMatcher]:
-        r"""Return a callable for the create call matcher method over gRPC.
-
-        Creates a call matcher that links incoming SIP calls
-        to the specified conversation if they fulfill specified
-        criteria.
-
-        Returns:
-            Callable[[~.CreateCallMatcherRequest],
-                    ~.CallMatcher]:
-                A function that, when called, will call the underlying RPC
-                on the server.
-        """
-        # Generate a "stub function" on-the-fly which will actually make
-        # the request.
-        # gRPC handles serialization and deserialization, so we just need
-        # to pass in the functions for each.
-        if 'create_call_matcher' not in self._stubs:
-            self._stubs['create_call_matcher'] = self.grpc_channel.unary_unary(
-                '/google.cloud.dialogflow.v2.Conversations/CreateCallMatcher',
-                request_serializer=conversation.CreateCallMatcherRequest.serialize,
-                response_deserializer=conversation.CallMatcher.deserialize,
-            )
-        return self._stubs['create_call_matcher']
-
-    @property
-    def list_call_matchers(self) -> Callable[
-            [conversation.ListCallMatchersRequest],
-            conversation.ListCallMatchersResponse]:
-        r"""Return a callable for the list call matchers method over gRPC.
-
-        Returns the list of all call matchers in the
-        specified conversation.
-
-        Returns:
-            Callable[[~.ListCallMatchersRequest],
-                    ~.ListCallMatchersResponse]:
-                A function that, when called, will call the underlying RPC
-                on the server.
-        """
-        # Generate a "stub function" on-the-fly which will actually make
-        # the request.
-        # gRPC handles serialization and deserialization, so we just need
-        # to pass in the functions for each.
-        if 'list_call_matchers' not in self._stubs:
-            self._stubs['list_call_matchers'] = self.grpc_channel.unary_unary(
-                '/google.cloud.dialogflow.v2.Conversations/ListCallMatchers',
-                request_serializer=conversation.ListCallMatchersRequest.serialize,
-                response_deserializer=conversation.ListCallMatchersResponse.deserialize,
-            )
-        return self._stubs['list_call_matchers']
-
-    @property
-    def delete_call_matcher(self) -> Callable[
-            [conversation.DeleteCallMatcherRequest],
-            empty.Empty]:
-        r"""Return a callable for the delete call matcher method over gRPC.
-
-        Requests deletion of a call matcher.
-
-        Returns:
-            Callable[[~.DeleteCallMatcherRequest],
-                    ~.Empty]:
-                A function that, when called, will call the underlying RPC
-                on the server.
-        """
-        # Generate a "stub function" on-the-fly which will actually make
-        # the request.
-        # gRPC handles serialization and deserialization, so we just need
-        # to pass in the functions for each.
-        if 'delete_call_matcher' not in self._stubs:
-            self._stubs['delete_call_matcher'] = self.grpc_channel.unary_unary(
-                '/google.cloud.dialogflow.v2.Conversations/DeleteCallMatcher',
-                request_serializer=conversation.DeleteCallMatcherRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
-            )
-        return self._stubs['delete_call_matcher']
 
     @property
     def list_messages(self) -> Callable[

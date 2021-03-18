@@ -28,7 +28,6 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -97,12 +96,6 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
   /** Returns the object with the settings used for calls to analyzeContent. */
   public UnaryCallSettings<AnalyzeContentRequest, AnalyzeContentResponse> analyzeContentSettings() {
     return ((ParticipantsStubSettings) getStubSettings()).analyzeContentSettings();
-  }
-
-  /** Returns the object with the settings used for calls to streamingAnalyzeContent. */
-  public StreamingCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentSettings() {
-    return ((ParticipantsStubSettings) getStubSettings()).streamingAnalyzeContentSettings();
   }
 
   /** Returns the object with the settings used for calls to suggestArticles. */
@@ -262,13 +255,6 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     public UnaryCallSettings.Builder<AnalyzeContentRequest, AnalyzeContentResponse>
         analyzeContentSettings() {
       return getStubSettingsBuilder().analyzeContentSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to streamingAnalyzeContent. */
-    public StreamingCallSettings.Builder<
-            StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-        streamingAnalyzeContentSettings() {
-      return getStubSettingsBuilder().streamingAnalyzeContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to suggestArticles. */

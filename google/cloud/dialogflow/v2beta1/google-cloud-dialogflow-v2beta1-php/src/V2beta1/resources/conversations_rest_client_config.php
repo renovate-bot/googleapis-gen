@@ -75,59 +75,6 @@ return [
                     ],
                 ],
             ],
-            'CreateCallMatcher' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*}/callMatchers',
-                'body' => 'call_matcher',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*/conversations/*}/callMatchers',
-                        'body' => 'call_matcher',
-                    ],
-                ],
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'ListCallMatchers' => [
-                'method' => 'get',
-                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*}/callMatchers',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*/conversations/*}/callMatchers',
-                    ],
-                ],
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteCallMatcher' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v2beta1/{name=projects/*/conversations/*/callMatchers/*}',
-                'additionalBindings' => [
-                    [
-                        'method' => 'delete',
-                        'uriTemplate' => '/v2beta1/{name=projects/*/locations/*/conversations/*/callMatchers/*}',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'BatchCreateMessages' => [
                 'method' => 'post',
                 'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*}/messages:batchCreate',

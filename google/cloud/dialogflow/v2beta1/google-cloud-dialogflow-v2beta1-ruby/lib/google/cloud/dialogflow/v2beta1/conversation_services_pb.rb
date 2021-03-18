@@ -24,7 +24,8 @@ module Google
     module Dialogflow
       module V2beta1
         module Conversations
-          # Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+          # Service for managing
+          # [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
           class Service
 
             include GRPC::GenericService
@@ -46,11 +47,14 @@ module Google
             # For Assist Stage, there's no dialogflow agent responding to user queries.
             # But we will provide suggestions which are generated from conversation.
             #
-            # If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-            # agent, conversation will start from `Automated Agent Stage`, otherwise, it
-            # will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-            # [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-            # will transfer to Assist Stage.
+            # If
+            # [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+            # is configured for a dialogflow agent, conversation will start from
+            # `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+            # during `Automated Agent Stage`, once an
+            # [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+            # [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+            # is triggered, conversation will transfer to Assist Stage.
             rpc :CreateConversation, ::Google::Cloud::Dialogflow::V2beta1::CreateConversationRequest, ::Google::Cloud::Dialogflow::V2beta1::Conversation
             # Returns the list of all conversations in the specified project.
             rpc :ListConversations, ::Google::Cloud::Dialogflow::V2beta1::ListConversationsRequest, ::Google::Cloud::Dialogflow::V2beta1::ListConversationsResponse
@@ -59,13 +63,6 @@ module Google
             # Completes the specified conversation. Finished conversations are purged
             # from the database after 30 days.
             rpc :CompleteConversation, ::Google::Cloud::Dialogflow::V2beta1::CompleteConversationRequest, ::Google::Cloud::Dialogflow::V2beta1::Conversation
-            # Creates a call matcher that links incoming SIP calls to the specified
-            # conversation if they fulfill specified criteria.
-            rpc :CreateCallMatcher, ::Google::Cloud::Dialogflow::V2beta1::CreateCallMatcherRequest, ::Google::Cloud::Dialogflow::V2beta1::CallMatcher
-            # Returns the list of all call matchers in the specified conversation.
-            rpc :ListCallMatchers, ::Google::Cloud::Dialogflow::V2beta1::ListCallMatchersRequest, ::Google::Cloud::Dialogflow::V2beta1::ListCallMatchersResponse
-            # Requests deletion of a call matcher.
-            rpc :DeleteCallMatcher, ::Google::Cloud::Dialogflow::V2beta1::DeleteCallMatcherRequest, ::Google::Protobuf::Empty
             # Batch ingests messages to conversation. Customers can use this RPC to
             # ingest historical messages to conversation.
             rpc :BatchCreateMessages, ::Google::Cloud::Dialogflow::V2beta1::BatchCreateMessagesRequest, ::Google::Cloud::Dialogflow::V2beta1::BatchCreateMessagesResponse

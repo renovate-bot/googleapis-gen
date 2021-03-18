@@ -70,8 +70,6 @@ from google.cloud.dialogflow_v2.types.audio_config import SpeechToTextConfig
 from google.cloud.dialogflow_v2.types.audio_config import SpeechWordInfo
 from google.cloud.dialogflow_v2.types.audio_config import SsmlVoiceGender
 from google.cloud.dialogflow_v2.types.audio_config import SynthesizeSpeechConfig
-from google.cloud.dialogflow_v2.types.audio_config import TelephonyDtmf
-from google.cloud.dialogflow_v2.types.audio_config import TelephonyDtmfEvents
 from google.cloud.dialogflow_v2.types.audio_config import VoiceSelectionParams
 from google.cloud.dialogflow_v2.types.context import Context
 from google.cloud.dialogflow_v2.types.context import CreateContextRequest
@@ -81,16 +79,11 @@ from google.cloud.dialogflow_v2.types.context import GetContextRequest
 from google.cloud.dialogflow_v2.types.context import ListContextsRequest
 from google.cloud.dialogflow_v2.types.context import ListContextsResponse
 from google.cloud.dialogflow_v2.types.context import UpdateContextRequest
-from google.cloud.dialogflow_v2.types.conversation import CallMatcher
 from google.cloud.dialogflow_v2.types.conversation import CompleteConversationRequest
 from google.cloud.dialogflow_v2.types.conversation import Conversation
 from google.cloud.dialogflow_v2.types.conversation import ConversationPhoneNumber
-from google.cloud.dialogflow_v2.types.conversation import CreateCallMatcherRequest
 from google.cloud.dialogflow_v2.types.conversation import CreateConversationRequest
-from google.cloud.dialogflow_v2.types.conversation import DeleteCallMatcherRequest
 from google.cloud.dialogflow_v2.types.conversation import GetConversationRequest
-from google.cloud.dialogflow_v2.types.conversation import ListCallMatchersRequest
-from google.cloud.dialogflow_v2.types.conversation import ListCallMatchersResponse
 from google.cloud.dialogflow_v2.types.conversation import ListConversationsRequest
 from google.cloud.dialogflow_v2.types.conversation import ListConversationsResponse
 from google.cloud.dialogflow_v2.types.conversation import ListMessagesRequest
@@ -159,21 +152,17 @@ from google.cloud.dialogflow_v2.types.participant import AnalyzeContentRequest
 from google.cloud.dialogflow_v2.types.participant import AnalyzeContentResponse
 from google.cloud.dialogflow_v2.types.participant import AnnotatedMessagePart
 from google.cloud.dialogflow_v2.types.participant import ArticleAnswer
-from google.cloud.dialogflow_v2.types.participant import AudioInput
 from google.cloud.dialogflow_v2.types.participant import AutomatedAgentReply
 from google.cloud.dialogflow_v2.types.participant import CreateParticipantRequest
 from google.cloud.dialogflow_v2.types.participant import DtmfParameters
 from google.cloud.dialogflow_v2.types.participant import FaqAnswer
 from google.cloud.dialogflow_v2.types.participant import GetParticipantRequest
-from google.cloud.dialogflow_v2.types.participant import InputTextConfig
 from google.cloud.dialogflow_v2.types.participant import ListParticipantsRequest
 from google.cloud.dialogflow_v2.types.participant import ListParticipantsResponse
 from google.cloud.dialogflow_v2.types.participant import Message
 from google.cloud.dialogflow_v2.types.participant import MessageAnnotation
 from google.cloud.dialogflow_v2.types.participant import OutputAudio
 from google.cloud.dialogflow_v2.types.participant import Participant
-from google.cloud.dialogflow_v2.types.participant import StreamingAnalyzeContentRequest
-from google.cloud.dialogflow_v2.types.participant import StreamingAnalyzeContentResponse
 from google.cloud.dialogflow_v2.types.participant import SuggestArticlesRequest
 from google.cloud.dialogflow_v2.types.participant import SuggestArticlesResponse
 from google.cloud.dialogflow_v2.types.participant import SuggestFaqAnswersRequest
@@ -221,7 +210,6 @@ __all__ = (
     'AnswerRecordsClient',
     'ArticleAnswer',
     'AudioEncoding',
-    'AudioInput',
     'AutomatedAgentConfig',
     'AutomatedAgentReply',
     'BatchCreateEntitiesRequest',
@@ -233,7 +221,6 @@ __all__ = (
     'BatchUpdateEntityTypesResponse',
     'BatchUpdateIntentsRequest',
     'BatchUpdateIntentsResponse',
-    'CallMatcher',
     'CompleteConversationRequest',
     'Context',
     'ContextsAsyncClient',
@@ -246,7 +233,6 @@ __all__ = (
     'ConversationProfilesClient',
     'ConversationsAsyncClient',
     'ConversationsClient',
-    'CreateCallMatcherRequest',
     'CreateContextRequest',
     'CreateConversationProfileRequest',
     'CreateConversationRequest',
@@ -258,7 +244,6 @@ __all__ = (
     'CreateSessionEntityTypeRequest',
     'DeleteAgentRequest',
     'DeleteAllContextsRequest',
-    'DeleteCallMatcherRequest',
     'DeleteContextRequest',
     'DeleteConversationProfileRequest',
     'DeleteDocumentRequest',
@@ -299,7 +284,6 @@ __all__ = (
     'HumanAgentHandoffConfig',
     'ImportAgentRequest',
     'InputAudioConfig',
-    'InputTextConfig',
     'Intent',
     'IntentBatch',
     'IntentView',
@@ -311,8 +295,6 @@ __all__ = (
     'KnowledgeOperationMetadata',
     'ListAnswerRecordsRequest',
     'ListAnswerRecordsResponse',
-    'ListCallMatchersRequest',
-    'ListCallMatchersResponse',
     'ListContextsRequest',
     'ListContextsResponse',
     'ListConversationProfilesRequest',
@@ -367,8 +349,6 @@ __all__ = (
     'SpeechToTextConfig',
     'SpeechWordInfo',
     'SsmlVoiceGender',
-    'StreamingAnalyzeContentRequest',
-    'StreamingAnalyzeContentResponse',
     'StreamingDetectIntentRequest',
     'StreamingDetectIntentResponse',
     'StreamingRecognitionResult',
@@ -379,8 +359,6 @@ __all__ = (
     'SuggestionFeature',
     'SuggestionResult',
     'SynthesizeSpeechConfig',
-    'TelephonyDtmf',
-    'TelephonyDtmfEvents',
     'TextInput',
     'TrainAgentRequest',
     'UpdateAnswerRecordRequest',

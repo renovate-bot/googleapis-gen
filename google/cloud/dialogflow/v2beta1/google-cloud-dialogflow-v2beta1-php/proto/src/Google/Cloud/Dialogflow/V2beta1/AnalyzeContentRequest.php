@@ -76,14 +76,8 @@ class AnalyzeContentRequest extends \Google\Protobuf\Internal\Message
      *           Required. The name of the participant this text comes from.
      *           Format: `projects/<Project ID>/locations/<Location
      *           ID>/conversations/<Conversation ID>/participants/<Participant ID>`.
-     *     @type \Google\Cloud\Dialogflow\V2beta1\InputText $text
-     *           The natural language text to be processed.
-     *     @type \Google\Cloud\Dialogflow\V2beta1\InputAudio $audio
-     *           The natural language speech audio to be processed.
      *     @type \Google\Cloud\Dialogflow\V2beta1\TextInput $text_input
      *           The natural language text to be processed.
-     *     @type \Google\Cloud\Dialogflow\V2beta1\AudioInput $audio_input
-     *           The natural language speech audio to be processed.
      *     @type \Google\Cloud\Dialogflow\V2beta1\EventInput $event_input
      *           An input event to send to Dialogflow.
      *     @type \Google\Cloud\Dialogflow\V2beta1\OutputAudioConfig $reply_audio_config
@@ -151,78 +145,6 @@ class AnalyzeContentRequest extends \Google\Protobuf\Internal\Message
     /**
      * The natural language text to be processed.
      *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\InputText|null
-     * @deprecated
-     */
-    public function getText()
-    {
-        @trigger_error('text is deprecated.', E_USER_DEPRECATED);
-        return $this->readOneof(3);
-    }
-
-    public function hasText()
-    {
-        @trigger_error('text is deprecated.', E_USER_DEPRECATED);
-        return $this->hasOneof(3);
-    }
-
-    /**
-     * The natural language text to be processed.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     * @param \Google\Cloud\Dialogflow\V2beta1\InputText $var
-     * @return $this
-     * @deprecated
-     */
-    public function setText($var)
-    {
-        @trigger_error('text is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\InputText::class);
-        $this->writeOneof(3, $var);
-
-        return $this;
-    }
-
-    /**
-     * The natural language speech audio to be processed.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\InputAudio|null
-     * @deprecated
-     */
-    public function getAudio()
-    {
-        @trigger_error('audio is deprecated.', E_USER_DEPRECATED);
-        return $this->readOneof(4);
-    }
-
-    public function hasAudio()
-    {
-        @trigger_error('audio is deprecated.', E_USER_DEPRECATED);
-        return $this->hasOneof(4);
-    }
-
-    /**
-     * The natural language speech audio to be processed.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     * @param \Google\Cloud\Dialogflow\V2beta1\InputAudio $var
-     * @return $this
-     * @deprecated
-     */
-    public function setAudio($var)
-    {
-        @trigger_error('audio is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\InputAudio::class);
-        $this->writeOneof(4, $var);
-
-        return $this;
-    }
-
-    /**
-     * The natural language text to be processed.
-     *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.TextInput text_input = 6;</code>
      * @return \Google\Cloud\Dialogflow\V2beta1\TextInput|null
      */
@@ -247,37 +169,6 @@ class AnalyzeContentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\TextInput::class);
         $this->writeOneof(6, $var);
-
-        return $this;
-    }
-
-    /**
-     * The natural language speech audio to be processed.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\AudioInput|null
-     */
-    public function getAudioInput()
-    {
-        return $this->readOneof(7);
-    }
-
-    public function hasAudioInput()
-    {
-        return $this->hasOneof(7);
-    }
-
-    /**
-     * The natural language speech audio to be processed.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     * @param \Google\Cloud\Dialogflow\V2beta1\AudioInput $var
-     * @return $this
-     */
-    public function setAudioInput($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\AudioInput::class);
-        $this->writeOneof(7, $var);
 
         return $this;
     }

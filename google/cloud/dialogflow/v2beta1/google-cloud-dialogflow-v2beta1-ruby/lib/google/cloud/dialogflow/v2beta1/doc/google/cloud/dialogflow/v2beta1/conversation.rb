@@ -45,13 +45,16 @@ module Google
         #
         #     If the conversation is created with the conversation profile that has
         #     Dialogflow config set, defaults to
-        #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::VIRTUAL_AGENT_STAGE ConversationStage::VIRTUAL_AGENT_STAGE}; Otherwise, defaults to
+        #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::VIRTUAL_AGENT_STAGE ConversationStage::VIRTUAL_AGENT_STAGE};
+        #     Otherwise, defaults to
         #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::HUMAN_ASSIST_STAGE ConversationStage::HUMAN_ASSIST_STAGE}.
         #
         #     If the conversation is created with the conversation profile that has
         #     Dialogflow config set but explicitly sets conversation_stage to
-        #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::HUMAN_ASSIST_STAGE ConversationStage::HUMAN_ASSIST_STAGE}, it skips
-        #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::VIRTUAL_AGENT_STAGE ConversationStage::VIRTUAL_AGENT_STAGE} stage and directly goes to
+        #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::HUMAN_ASSIST_STAGE ConversationStage::HUMAN_ASSIST_STAGE},
+        #     it skips
+        #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::VIRTUAL_AGENT_STAGE ConversationStage::VIRTUAL_AGENT_STAGE}
+        #     stage and directly goes to
         #     {Google::Cloud::Dialogflow::V2beta1::Conversation::ConversationStage::HUMAN_ASSIST_STAGE ConversationStage::HUMAN_ASSIST_STAGE}.
         # @!attribute [rw] start_time
         #   @return [Google::Protobuf::Timestamp]
@@ -97,67 +100,8 @@ module Google
         #     Output only. The phone number to connect to this conversation.
         class ConversationPhoneNumber; end
 
-        # Represents a call matcher that describes criteria for matching incoming SIP
-        # calls to a conversation. When Dialogflow get a SIP call from a third-party
-        # carrier, Dialogflow matches the call to an existing conversation by either:
-        #
-        # * Extracting the conversation id from the
-        #   [Call-Info header](https://tools.ietf.org/html/rfc3261#section-20.9), e.g.
-        #   `Call-Info:
-        #   <http://dialogflow.googleapis.com/v2beta1/projects/111/conversations/222>
-        #   ;purpose=Goog-ContactCenter-Conversation`.
-        # * Or, if that doesn't work, matching incoming [SIP
-        #   headers](https://tools.ietf.org/html/rfc3261#section-7.3)
-        #   against any {Google::Cloud::Dialogflow::V2beta1::CallMatcher CallMatcher} for the conversation.
-        #
-        # If an incoming SIP call without valid `Call-Info` header matches to zero or
-        # multiple conversations with `CallMatcher`, we reject it.
-        #
-        # A call matcher contains equality conditions for SIP headers that all have
-        # to be fulfilled in order for a SIP call to match.
-        #
-        # The matched SIP headers consist of well-known headers (`To`, `From`,
-        # `Call-ID`) and custom headers. A {Google::Cloud::Dialogflow::V2beta1::CallMatcher CallMatcher} is only valid if it
-        # specifies:
-        #
-        # * At least 1 custom header,
-        # * or at least 2 well-known headers.
-        # @!attribute [rw] name
-        #   @return [String]
-        #     Output only. The unique identifier of this call matcher.
-        #     Format: `projects/<Project ID>/locations/<Location
-        #     ID>/conversations/<Conversation ID>/callMatchers/<Call Matcher ID>`.
-        # @!attribute [rw] to_header
-        #   @return [String]
-        #     Value of the [`To`
-        #     header](https://tools.ietf.org/html/rfc3261#section-8.1.1.2) to match. If
-        #     empty or unspecified, we don't match to the
-        #     [`To` header](https://tools.ietf.org/html/rfc3261#section-8.1.1.2).
-        # @!attribute [rw] from_header
-        #   @return [String]
-        #     Value of the [`From`
-        #     header](https://tools.ietf.org/html/rfc3261#section-8.1.1.3) to match. If
-        #     empty or unspecified, we don't match to the
-        #     [`From` header](https://tools.ietf.org/html/rfc3261#section-8.1.1.3).
-        # @!attribute [rw] call_id_header
-        #   @return [String]
-        #     Value of the [`Call-ID`
-        #     header](https://tools.ietf.org/html/rfc3261#section-8.1.1.4) to match. If
-        #     empty or unspecified, we don't match to the
-        #     [`Call-ID` header](https://tools.ietf.org/html/rfc3261#section-8.1.1.4).
-        # @!attribute [rw] custom_headers
-        #   @return [Google::Cloud::Dialogflow::V2beta1::CallMatcher::CustomHeaders]
-        #     Custom SIP headers that must match.
-        class CallMatcher
-          # Custom SIP headers. See the [description of headers in
-          # the RFC](https://tools.ietf.org/html/rfc3261#section-7.3).
-          # @!attribute [rw] cisco_guid
-          #   @return [String]
-          #     Cisco's proprietary `Cisco-Guid` header.
-          class CustomHeaders; end
-        end
-
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::CreateConversation Conversations::CreateConversation}.
+        # The request message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::CreateConversation Conversations::CreateConversation}.
         # @!attribute [rw] parent
         #   @return [String]
         #     Required. Resource identifier of the project creating the conversation.
@@ -167,8 +111,8 @@ module Google
         #     Required. The conversation to create.
         # @!attribute [rw] conversation_id
         #   @return [String]
-        #     Optional. Identifier of the conversation. Generally it's auto generated by Google.
-        #     Only set it if you cannot wait for the response to return a
+        #     Optional. Identifier of the conversation. Generally it's auto generated by
+        #     Google. Only set it if you cannot wait for the response to return a
         #     auto-generated one to you.
         #
         #     The conversation ID must be compliant with the regression fomula
@@ -179,7 +123,8 @@ module Google
         #     better ensure uniqueness.
         class CreateConversationRequest; end
 
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::ListConversations Conversations::ListConversations}.
+        # The request message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::ListConversations Conversations::ListConversations}.
         # @!attribute [rw] parent
         #   @return [String]
         #     Required. The project from which to list all conversation.
@@ -212,7 +157,8 @@ module Google
         #     [API Filtering](https://aip.dev/160).
         class ListConversationsRequest; end
 
-        # The response message for {Google::Cloud::Dialogflow::V2beta1::Conversations::ListConversations Conversations::ListConversations}.
+        # The response message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::ListConversations Conversations::ListConversations}.
         # @!attribute [rw] conversations
         #   @return [Array<Google::Cloud::Dialogflow::V2beta1::Conversation>]
         #     The list of conversations. There will be a maximum number of items
@@ -223,7 +169,8 @@ module Google
         #     more results in the list.
         class ListConversationsResponse; end
 
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::GetConversation Conversations::GetConversation}.
+        # The request message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::GetConversation Conversations::GetConversation}.
         # @!attribute [rw] name
         #   @return [String]
         #     Required. The name of the conversation. Format:
@@ -231,58 +178,14 @@ module Google
         #     ID>`.
         class GetConversationRequest; end
 
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::CompleteConversation Conversations::CompleteConversation}.
+        # The request message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::CompleteConversation Conversations::CompleteConversation}.
         # @!attribute [rw] name
         #   @return [String]
         #     Required. Resource identifier of the conversation to close.
         #     Format: `projects/<Project ID>/locations/<Location
         #     ID>/conversations/<Conversation ID>`.
         class CompleteConversationRequest; end
-
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::CreateCallMatcher Conversations::CreateCallMatcher}.
-        # @!attribute [rw] parent
-        #   @return [String]
-        #     Required. Resource identifier of the conversation adding the call matcher.
-        #     Format: `projects/<Project ID>/locations/<Location
-        #     ID>/conversations/<Conversation ID>`.
-        # @!attribute [rw] call_matcher
-        #   @return [Google::Cloud::Dialogflow::V2beta1::CallMatcher]
-        #     Required. The call matcher to create.
-        class CreateCallMatcherRequest; end
-
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::ListCallMatchers Conversations::ListCallMatchers}.
-        # @!attribute [rw] parent
-        #   @return [String]
-        #     Required. The conversation to list all call matchers from.
-        #     Format: `projects/<Project ID>/locations/<Location
-        #     ID>/conversations/<Conversation ID>`.
-        # @!attribute [rw] page_size
-        #   @return [Integer]
-        #     Optional. The maximum number of items to return in a single page. By
-        #     default 100 and at most 1000.
-        # @!attribute [rw] page_token
-        #   @return [String]
-        #     Optional. The next_page_token value returned from a previous list request.
-        class ListCallMatchersRequest; end
-
-        # The response message for {Google::Cloud::Dialogflow::V2beta1::Conversations::ListCallMatchers Conversations::ListCallMatchers}.
-        # @!attribute [rw] call_matchers
-        #   @return [Array<Google::Cloud::Dialogflow::V2beta1::CallMatcher>]
-        #     The list of call matchers. There is a maximum number of items
-        #     returned based on the page_size field in the request.
-        # @!attribute [rw] next_page_token
-        #   @return [String]
-        #     Token to retrieve the next page of results or empty if there are no
-        #     more results in the list.
-        class ListCallMatchersResponse; end
-
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::DeleteCallMatcher Conversations::DeleteCallMatcher}.
-        # @!attribute [rw] name
-        #   @return [String]
-        #     Required. The unique identifier of the {Google::Cloud::Dialogflow::V2beta1::CallMatcher CallMatcher} to delete.
-        #     Format: `projects/<Project ID>/locations/<Location
-        #     ID>/conversations/<Conversation ID>/callMatchers/<CallMatcher ID>`.
-        class DeleteCallMatcherRequest; end
 
         # The request message to create one Message. Currently it is only used in
         # BatchCreateMessagesRequest.
@@ -294,7 +197,8 @@ module Google
         # @!attribute [rw] message
         #   @return [Google::Cloud::Dialogflow::V2beta1::Message]
         #     Required. The message to create.
-        #     {Google::Cloud::Dialogflow::V2beta1::Message#participant Message#participant} is required.
+        #     {Google::Cloud::Dialogflow::V2beta1::Message#participant Message#participant}
+        #     is required.
         class CreateMessageRequest; end
 
         # The request message for {Conversations::BatchCreateMessagesRequest}.
@@ -307,7 +211,8 @@ module Google
         #   @return [Array<Google::Cloud::Dialogflow::V2beta1::CreateMessageRequest>]
         #     Required. A maximum of 1000 Messages can be created in a batch.
         #     {CreateMessageRequest#message#send_time} is required. All created
-        #     messages will have identical {Google::Cloud::Dialogflow::V2beta1::Message#create_time Message#create_time}.
+        #     messages will have identical
+        #     {Google::Cloud::Dialogflow::V2beta1::Message#create_time Message#create_time}.
         class BatchCreateMessagesRequest; end
 
         # The request message for {Conversations::BatchCreateMessagesResponse}.
@@ -316,7 +221,8 @@ module Google
         #     Messages created.
         class BatchCreateMessagesResponse; end
 
-        # The request message for {Google::Cloud::Dialogflow::V2beta1::Conversations::ListMessages Conversations::ListMessages}.
+        # The request message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::ListMessages Conversations::ListMessages}.
         # @!attribute [rw] parent
         #   @return [String]
         #     Required. The name of the conversation to list messages for.
@@ -341,7 +247,8 @@ module Google
         #     Optional. The next_page_token value returned from a previous list request.
         class ListMessagesRequest; end
 
-        # The response message for {Google::Cloud::Dialogflow::V2beta1::Conversations::ListMessages Conversations::ListMessages}.
+        # The response message for
+        # {Google::Cloud::Dialogflow::V2beta1::Conversations::ListMessages Conversations::ListMessages}.
         # @!attribute [rw] messages
         #   @return [Array<Google::Cloud::Dialogflow::V2beta1::Message>]
         #     Required. The list of messages. There will be a maximum number of items

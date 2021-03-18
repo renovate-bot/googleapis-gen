@@ -60,34 +60,6 @@ private static final long serialVersionUID = 0L;
             participant_ = s;
             break;
           }
-          case 26: {
-            com.google.cloud.dialogflow.v2beta1.InputText.Builder subBuilder = null;
-            if (inputCase_ == 3) {
-              subBuilder = ((com.google.cloud.dialogflow.v2beta1.InputText) input_).toBuilder();
-            }
-            input_ =
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.InputText.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.InputText) input_);
-              input_ = subBuilder.buildPartial();
-            }
-            inputCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.cloud.dialogflow.v2beta1.InputAudio.Builder subBuilder = null;
-            if (inputCase_ == 4) {
-              subBuilder = ((com.google.cloud.dialogflow.v2beta1.InputAudio) input_).toBuilder();
-            }
-            input_ =
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.InputAudio.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.InputAudio) input_);
-              input_ = subBuilder.buildPartial();
-            }
-            inputCase_ = 4;
-            break;
-          }
           case 42: {
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder subBuilder = null;
             if (replyAudioConfig_ != null) {
@@ -113,20 +85,6 @@ private static final long serialVersionUID = 0L;
               input_ = subBuilder.buildPartial();
             }
             inputCase_ = 6;
-            break;
-          }
-          case 58: {
-            com.google.cloud.dialogflow.v2beta1.AudioInput.Builder subBuilder = null;
-            if (inputCase_ == 7) {
-              subBuilder = ((com.google.cloud.dialogflow.v2beta1.AudioInput) input_).toBuilder();
-            }
-            input_ =
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.AudioInput.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.AudioInput) input_);
-              input_ = subBuilder.buildPartial();
-            }
-            inputCase_ = 7;
             break;
           }
           case 66: {
@@ -212,10 +170,7 @@ private static final long serialVersionUID = 0L;
   public enum InputCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    @java.lang.Deprecated TEXT(3),
-    @java.lang.Deprecated AUDIO(4),
     TEXT_INPUT(6),
-    AUDIO_INPUT(7),
     EVENT_INPUT(8),
     INPUT_NOT_SET(0);
     private final int value;
@@ -234,10 +189,7 @@ private static final long serialVersionUID = 0L;
 
     public static InputCase forNumber(int value) {
       switch (value) {
-        case 3: return TEXT;
-        case 4: return AUDIO;
         case 6: return TEXT_INPUT;
-        case 7: return AUDIO_INPUT;
         case 8: return EVENT_INPUT;
         case 0: return INPUT_NOT_SET;
         default: return null;
@@ -304,92 +256,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TEXT_FIELD_NUMBER = 3;
-  /**
-   * <pre>
-   * The natural language text to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-   * @return Whether the text field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasText() {
-    return inputCase_ == 3;
-  }
-  /**
-   * <pre>
-   * The natural language text to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-   * @return The text.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputText getText() {
-    if (inputCase_ == 3) {
-       return (com.google.cloud.dialogflow.v2beta1.InputText) input_;
-    }
-    return com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * The natural language text to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputTextOrBuilder getTextOrBuilder() {
-    if (inputCase_ == 3) {
-       return (com.google.cloud.dialogflow.v2beta1.InputText) input_;
-    }
-    return com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance();
-  }
-
-  public static final int AUDIO_FIELD_NUMBER = 4;
-  /**
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-   * @return Whether the audio field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasAudio() {
-    return inputCase_ == 4;
-  }
-  /**
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-   * @return The audio.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputAudio getAudio() {
-    if (inputCase_ == 4) {
-       return (com.google.cloud.dialogflow.v2beta1.InputAudio) input_;
-    }
-    return com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputAudioOrBuilder getAudioOrBuilder() {
-    if (inputCase_ == 4) {
-       return (com.google.cloud.dialogflow.v2beta1.InputAudio) input_;
-    }
-    return com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance();
-  }
-
   public static final int TEXT_INPUT_FIELD_NUMBER = 6;
   /**
    * <pre>
@@ -431,49 +297,6 @@ private static final long serialVersionUID = 0L;
        return (com.google.cloud.dialogflow.v2beta1.TextInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
-  }
-
-  public static final int AUDIO_INPUT_FIELD_NUMBER = 7;
-  /**
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-   * @return Whether the audioInput field is set.
-   */
-  @java.lang.Override
-  public boolean hasAudioInput() {
-    return inputCase_ == 7;
-  }
-  /**
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-   * @return The audioInput.
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.v2beta1.AudioInput getAudioInput() {
-    if (inputCase_ == 7) {
-       return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
-    }
-    return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder getAudioInputOrBuilder() {
-    if (inputCase_ == 7) {
-       return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
-    }
-    return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
   }
 
   public static final int EVENT_INPUT_FIELD_NUMBER = 8;
@@ -745,20 +568,11 @@ private static final long serialVersionUID = 0L;
     if (!getParticipantBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, participant_);
     }
-    if (inputCase_ == 3) {
-      output.writeMessage(3, (com.google.cloud.dialogflow.v2beta1.InputText) input_);
-    }
-    if (inputCase_ == 4) {
-      output.writeMessage(4, (com.google.cloud.dialogflow.v2beta1.InputAudio) input_);
-    }
     if (replyAudioConfig_ != null) {
       output.writeMessage(5, getReplyAudioConfig());
     }
     if (inputCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.dialogflow.v2beta1.TextInput) input_);
-    }
-    if (inputCase_ == 7) {
-      output.writeMessage(7, (com.google.cloud.dialogflow.v2beta1.AudioInput) input_);
     }
     if (inputCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.dialogflow.v2beta1.EventInput) input_);
@@ -784,14 +598,6 @@ private static final long serialVersionUID = 0L;
     if (!getParticipantBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, participant_);
     }
-    if (inputCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.dialogflow.v2beta1.InputText) input_);
-    }
-    if (inputCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.cloud.dialogflow.v2beta1.InputAudio) input_);
-    }
     if (replyAudioConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getReplyAudioConfig());
@@ -799,10 +605,6 @@ private static final long serialVersionUID = 0L;
     if (inputCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.google.cloud.dialogflow.v2beta1.TextInput) input_);
-    }
-    if (inputCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.google.cloud.dialogflow.v2beta1.AudioInput) input_);
     }
     if (inputCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
@@ -855,21 +657,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRequestId())) return false;
     if (!getInputCase().equals(other.getInputCase())) return false;
     switch (inputCase_) {
-      case 3:
-        if (!getText()
-            .equals(other.getText())) return false;
-        break;
-      case 4:
-        if (!getAudio()
-            .equals(other.getAudio())) return false;
-        break;
       case 6:
         if (!getTextInput()
             .equals(other.getTextInput())) return false;
-        break;
-      case 7:
-        if (!getAudioInput()
-            .equals(other.getAudioInput())) return false;
         break;
       case 8:
         if (!getEventInput()
@@ -906,21 +696,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
     switch (inputCase_) {
-      case 3:
-        hash = (37 * hash) + TEXT_FIELD_NUMBER;
-        hash = (53 * hash) + getText().hashCode();
-        break;
-      case 4:
-        hash = (37 * hash) + AUDIO_FIELD_NUMBER;
-        hash = (53 * hash) + getAudio().hashCode();
-        break;
       case 6:
         hash = (37 * hash) + TEXT_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getTextInput().hashCode();
-        break;
-      case 7:
-        hash = (37 * hash) + AUDIO_INPUT_FIELD_NUMBER;
-        hash = (53 * hash) + getAudioInput().hashCode();
         break;
       case 8:
         hash = (37 * hash) + EVENT_INPUT_FIELD_NUMBER;
@@ -1117,32 +895,11 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest result = new com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest(this);
       result.participant_ = participant_;
-      if (inputCase_ == 3) {
-        if (textBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = textBuilder_.build();
-        }
-      }
-      if (inputCase_ == 4) {
-        if (audioBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = audioBuilder_.build();
-        }
-      }
       if (inputCase_ == 6) {
         if (textInputBuilder_ == null) {
           result.input_ = input_;
         } else {
           result.input_ = textInputBuilder_.build();
-        }
-      }
-      if (inputCase_ == 7) {
-        if (audioInputBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = audioInputBuilder_.build();
         }
       }
       if (inputCase_ == 8) {
@@ -1235,20 +992,8 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getInputCase()) {
-        case TEXT: {
-          mergeText(other.getText());
-          break;
-        }
-        case AUDIO: {
-          mergeAudio(other.getAudio());
-          break;
-        }
         case TEXT_INPUT: {
           mergeTextInput(other.getTextInput());
-          break;
-        }
-        case AUDIO_INPUT: {
-          mergeAudioInput(other.getAudioInput());
           break;
         }
         case EVENT_INPUT: {
@@ -1407,360 +1152,6 @@ private static final long serialVersionUID = 0L;
       participant_ = value;
       onChanged();
       return this;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.InputText, com.google.cloud.dialogflow.v2beta1.InputText.Builder, com.google.cloud.dialogflow.v2beta1.InputTextOrBuilder> textBuilder_;
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     * @return Whether the text field is set.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public boolean hasText() {
-      return inputCase_ == 3;
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     * @return The text.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputText getText() {
-      if (textBuilder_ == null) {
-        if (inputCase_ == 3) {
-          return (com.google.cloud.dialogflow.v2beta1.InputText) input_;
-        }
-        return com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance();
-      } else {
-        if (inputCase_ == 3) {
-          return textBuilder_.getMessage();
-        }
-        return com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setText(com.google.cloud.dialogflow.v2beta1.InputText value) {
-      if (textBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        input_ = value;
-        onChanged();
-      } else {
-        textBuilder_.setMessage(value);
-      }
-      inputCase_ = 3;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setText(
-        com.google.cloud.dialogflow.v2beta1.InputText.Builder builderForValue) {
-      if (textBuilder_ == null) {
-        input_ = builderForValue.build();
-        onChanged();
-      } else {
-        textBuilder_.setMessage(builderForValue.build());
-      }
-      inputCase_ = 3;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeText(com.google.cloud.dialogflow.v2beta1.InputText value) {
-      if (textBuilder_ == null) {
-        if (inputCase_ == 3 &&
-            input_ != com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance()) {
-          input_ = com.google.cloud.dialogflow.v2beta1.InputText.newBuilder((com.google.cloud.dialogflow.v2beta1.InputText) input_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          input_ = value;
-        }
-        onChanged();
-      } else {
-        if (inputCase_ == 3) {
-          textBuilder_.mergeFrom(value);
-        }
-        textBuilder_.setMessage(value);
-      }
-      inputCase_ = 3;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearText() {
-      if (textBuilder_ == null) {
-        if (inputCase_ == 3) {
-          inputCase_ = 0;
-          input_ = null;
-          onChanged();
-        }
-      } else {
-        if (inputCase_ == 3) {
-          inputCase_ = 0;
-          input_ = null;
-        }
-        textBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputText.Builder getTextBuilder() {
-      return getTextFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputTextOrBuilder getTextOrBuilder() {
-      if ((inputCase_ == 3) && (textBuilder_ != null)) {
-        return textBuilder_.getMessageOrBuilder();
-      } else {
-        if (inputCase_ == 3) {
-          return (com.google.cloud.dialogflow.v2beta1.InputText) input_;
-        }
-        return com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * The natural language text to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.InputText, com.google.cloud.dialogflow.v2beta1.InputText.Builder, com.google.cloud.dialogflow.v2beta1.InputTextOrBuilder> 
-        getTextFieldBuilder() {
-      if (textBuilder_ == null) {
-        if (!(inputCase_ == 3)) {
-          input_ = com.google.cloud.dialogflow.v2beta1.InputText.getDefaultInstance();
-        }
-        textBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.InputText, com.google.cloud.dialogflow.v2beta1.InputText.Builder, com.google.cloud.dialogflow.v2beta1.InputTextOrBuilder>(
-                (com.google.cloud.dialogflow.v2beta1.InputText) input_,
-                getParentForChildren(),
-                isClean());
-        input_ = null;
-      }
-      inputCase_ = 3;
-      onChanged();;
-      return textBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.InputAudio, com.google.cloud.dialogflow.v2beta1.InputAudio.Builder, com.google.cloud.dialogflow.v2beta1.InputAudioOrBuilder> audioBuilder_;
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     * @return Whether the audio field is set.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public boolean hasAudio() {
-      return inputCase_ == 4;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     * @return The audio.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputAudio getAudio() {
-      if (audioBuilder_ == null) {
-        if (inputCase_ == 4) {
-          return (com.google.cloud.dialogflow.v2beta1.InputAudio) input_;
-        }
-        return com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance();
-      } else {
-        if (inputCase_ == 4) {
-          return audioBuilder_.getMessage();
-        }
-        return com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setAudio(com.google.cloud.dialogflow.v2beta1.InputAudio value) {
-      if (audioBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        input_ = value;
-        onChanged();
-      } else {
-        audioBuilder_.setMessage(value);
-      }
-      inputCase_ = 4;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setAudio(
-        com.google.cloud.dialogflow.v2beta1.InputAudio.Builder builderForValue) {
-      if (audioBuilder_ == null) {
-        input_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioBuilder_.setMessage(builderForValue.build());
-      }
-      inputCase_ = 4;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeAudio(com.google.cloud.dialogflow.v2beta1.InputAudio value) {
-      if (audioBuilder_ == null) {
-        if (inputCase_ == 4 &&
-            input_ != com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance()) {
-          input_ = com.google.cloud.dialogflow.v2beta1.InputAudio.newBuilder((com.google.cloud.dialogflow.v2beta1.InputAudio) input_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          input_ = value;
-        }
-        onChanged();
-      } else {
-        if (inputCase_ == 4) {
-          audioBuilder_.mergeFrom(value);
-        }
-        audioBuilder_.setMessage(value);
-      }
-      inputCase_ = 4;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearAudio() {
-      if (audioBuilder_ == null) {
-        if (inputCase_ == 4) {
-          inputCase_ = 0;
-          input_ = null;
-          onChanged();
-        }
-      } else {
-        if (inputCase_ == 4) {
-          inputCase_ = 0;
-          input_ = null;
-        }
-        audioBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputAudio.Builder getAudioBuilder() {
-      return getAudioFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.cloud.dialogflow.v2beta1.InputAudioOrBuilder getAudioOrBuilder() {
-      if ((inputCase_ == 4) && (audioBuilder_ != null)) {
-        return audioBuilder_.getMessageOrBuilder();
-      } else {
-        if (inputCase_ == 4) {
-          return (com.google.cloud.dialogflow.v2beta1.InputAudio) input_;
-        }
-        return com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.InputAudio, com.google.cloud.dialogflow.v2beta1.InputAudio.Builder, com.google.cloud.dialogflow.v2beta1.InputAudioOrBuilder> 
-        getAudioFieldBuilder() {
-      if (audioBuilder_ == null) {
-        if (!(inputCase_ == 4)) {
-          input_ = com.google.cloud.dialogflow.v2beta1.InputAudio.getDefaultInstance();
-        }
-        audioBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.InputAudio, com.google.cloud.dialogflow.v2beta1.InputAudio.Builder, com.google.cloud.dialogflow.v2beta1.InputAudioOrBuilder>(
-                (com.google.cloud.dialogflow.v2beta1.InputAudio) input_,
-                getParentForChildren(),
-                isClean());
-        input_ = null;
-      }
-      inputCase_ = 4;
-      onChanged();;
-      return audioBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1938,183 +1329,6 @@ private static final long serialVersionUID = 0L;
       inputCase_ = 6;
       onChanged();;
       return textInputBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.AudioInput, com.google.cloud.dialogflow.v2beta1.AudioInput.Builder, com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder> audioInputBuilder_;
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     * @return Whether the audioInput field is set.
-     */
-    @java.lang.Override
-    public boolean hasAudioInput() {
-      return inputCase_ == 7;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     * @return The audioInput.
-     */
-    @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.AudioInput getAudioInput() {
-      if (audioInputBuilder_ == null) {
-        if (inputCase_ == 7) {
-          return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
-        }
-        return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
-      } else {
-        if (inputCase_ == 7) {
-          return audioInputBuilder_.getMessage();
-        }
-        return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    public Builder setAudioInput(com.google.cloud.dialogflow.v2beta1.AudioInput value) {
-      if (audioInputBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        input_ = value;
-        onChanged();
-      } else {
-        audioInputBuilder_.setMessage(value);
-      }
-      inputCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    public Builder setAudioInput(
-        com.google.cloud.dialogflow.v2beta1.AudioInput.Builder builderForValue) {
-      if (audioInputBuilder_ == null) {
-        input_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioInputBuilder_.setMessage(builderForValue.build());
-      }
-      inputCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    public Builder mergeAudioInput(com.google.cloud.dialogflow.v2beta1.AudioInput value) {
-      if (audioInputBuilder_ == null) {
-        if (inputCase_ == 7 &&
-            input_ != com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance()) {
-          input_ = com.google.cloud.dialogflow.v2beta1.AudioInput.newBuilder((com.google.cloud.dialogflow.v2beta1.AudioInput) input_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          input_ = value;
-        }
-        onChanged();
-      } else {
-        if (inputCase_ == 7) {
-          audioInputBuilder_.mergeFrom(value);
-        }
-        audioInputBuilder_.setMessage(value);
-      }
-      inputCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    public Builder clearAudioInput() {
-      if (audioInputBuilder_ == null) {
-        if (inputCase_ == 7) {
-          inputCase_ = 0;
-          input_ = null;
-          onChanged();
-        }
-      } else {
-        if (inputCase_ == 7) {
-          inputCase_ = 0;
-          input_ = null;
-        }
-        audioInputBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    public com.google.cloud.dialogflow.v2beta1.AudioInput.Builder getAudioInputBuilder() {
-      return getAudioInputFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder getAudioInputOrBuilder() {
-      if ((inputCase_ == 7) && (audioInputBuilder_ != null)) {
-        return audioInputBuilder_.getMessageOrBuilder();
-      } else {
-        if (inputCase_ == 7) {
-          return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
-        }
-        return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.AudioInput, com.google.cloud.dialogflow.v2beta1.AudioInput.Builder, com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder> 
-        getAudioInputFieldBuilder() {
-      if (audioInputBuilder_ == null) {
-        if (!(inputCase_ == 7)) {
-          input_ = com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
-        }
-        audioInputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.AudioInput, com.google.cloud.dialogflow.v2beta1.AudioInput.Builder, com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder>(
-                (com.google.cloud.dialogflow.v2beta1.AudioInput) input_,
-                getParentForChildren(),
-                isClean());
-        input_ = null;
-      }
-      inputCase_ = 7;
-      onChanged();;
-      return audioInputBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

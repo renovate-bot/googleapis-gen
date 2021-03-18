@@ -606,7 +606,8 @@ module Google
 
         module Conversations
           ##
-          # Service for managing {Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
+          # Service for managing
+          # {Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
           #
           # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
           #   Provides the means for authenticating requests made by the client. This parameter can

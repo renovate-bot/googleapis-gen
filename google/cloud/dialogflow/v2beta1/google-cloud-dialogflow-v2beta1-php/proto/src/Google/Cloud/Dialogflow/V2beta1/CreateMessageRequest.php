@@ -26,7 +26,8 @@ class CreateMessageRequest extends \Google\Protobuf\Internal\Message
     protected $parent = '';
     /**
      * Required. The message to create.
-     * [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant] is required.
+     * [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant]
+     * is required.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Message message = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -44,7 +45,8 @@ class CreateMessageRequest extends \Google\Protobuf\Internal\Message
      *           ID>/conversations/<Conversation ID>`.
      *     @type \Google\Cloud\Dialogflow\V2beta1\Message $message
      *           Required. The message to create.
-     *           [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant] is required.
+     *           [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant]
+     *           is required.
      * }
      */
     public function __construct($data = NULL) {
@@ -84,7 +86,8 @@ class CreateMessageRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The message to create.
-     * [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant] is required.
+     * [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant]
+     * is required.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Message message = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Dialogflow\V2beta1\Message|null
@@ -106,7 +109,8 @@ class CreateMessageRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The message to create.
-     * [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant] is required.
+     * [Message.participant][google.cloud.dialogflow.v2beta1.Message.participant]
+     * is required.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Message message = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Dialogflow\V2beta1\Message $var

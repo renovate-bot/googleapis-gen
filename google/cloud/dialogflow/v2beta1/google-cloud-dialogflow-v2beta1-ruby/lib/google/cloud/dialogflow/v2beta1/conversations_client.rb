@@ -31,7 +31,8 @@ module Google
   module Cloud
     module Dialogflow
       module V2beta1
-        # Service for managing {Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
+        # Service for managing
+        # {Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
         #
         # @!attribute [r] conversations_stub
         #   @return [Google::Cloud::Dialogflow::V2beta1::Conversations::Stub]
@@ -54,10 +55,6 @@ module Google
               "page_token",
               "next_page_token",
               "conversations"),
-            "list_call_matchers" => Google::Gax::PageDescriptor.new(
-              "page_token",
-              "next_page_token",
-              "call_matchers"),
             "list_messages" => Google::Gax::PageDescriptor.new(
               "page_token",
               "next_page_token",
@@ -73,12 +70,6 @@ module Google
             "https://www.googleapis.com/auth/dialogflow"
           ].freeze
 
-
-          CALL_MATCHER_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "projects/{project}/conversations/{conversation}/callMatchers/{call_matcher}"
-          )
-
-          private_constant :CALL_MATCHER_PATH_TEMPLATE
 
           CONVERSATION_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "projects/{project}/conversations/{conversation}"
@@ -103,19 +94,6 @@ module Google
           )
 
           private_constant :PROJECT_PATH_TEMPLATE
-
-          # Returns a fully-qualified call_matcher resource name string.
-          # @param project [String]
-          # @param conversation [String]
-          # @param call_matcher [String]
-          # @return [String]
-          def self.call_matcher_path project, conversation, call_matcher
-            CALL_MATCHER_PATH_TEMPLATE.render(
-              :"project" => project,
-              :"conversation" => conversation,
-              :"call_matcher" => call_matcher
-            )
-          end
 
           # Returns a fully-qualified conversation resource name string.
           # @param project [String]
@@ -297,30 +275,6 @@ module Google
                 {'name' => request.name}
               end
             )
-            @create_call_matcher = Google::Gax.create_api_call(
-              @conversations_stub.method(:create_call_matcher),
-              defaults["create_call_matcher"],
-              exception_transformer: exception_transformer,
-              params_extractor: proc do |request|
-                {'parent' => request.parent}
-              end
-            )
-            @list_call_matchers = Google::Gax.create_api_call(
-              @conversations_stub.method(:list_call_matchers),
-              defaults["list_call_matchers"],
-              exception_transformer: exception_transformer,
-              params_extractor: proc do |request|
-                {'parent' => request.parent}
-              end
-            )
-            @delete_call_matcher = Google::Gax.create_api_call(
-              @conversations_stub.method(:delete_call_matcher),
-              defaults["delete_call_matcher"],
-              exception_transformer: exception_transformer,
-              params_extractor: proc do |request|
-                {'name' => request.name}
-              end
-            )
             @batch_create_messages = Google::Gax.create_api_call(
               @conversations_stub.method(:batch_create_messages),
               defaults["batch_create_messages"],
@@ -354,11 +308,14 @@ module Google
           # For Assist Stage, there's no dialogflow agent responding to user queries.
           # But we will provide suggestions which are generated from conversation.
           #
-          # If {Google::Cloud::Dialogflow::V2beta1::Conversation#conversation_profile Conversation#conversation_profile} is configured for a dialogflow
-          # agent, conversation will start from `Automated Agent Stage`, otherwise, it
-          # will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-          # {Google::Cloud::Dialogflow::V2beta1::Intent Intent} with {Google::Cloud::Dialogflow::V2beta1::Intent#live_agent_handoff Intent#live_agent_handoff} is triggered, conversation
-          # will transfer to Assist Stage.
+          # If
+          # {Google::Cloud::Dialogflow::V2beta1::Conversation#conversation_profile Conversation#conversation_profile}
+          # is configured for a dialogflow agent, conversation will start from
+          # `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+          # during `Automated Agent Stage`, once an
+          # {Google::Cloud::Dialogflow::V2beta1::Intent Intent} with
+          # {Google::Cloud::Dialogflow::V2beta1::Intent#live_agent_handoff Intent#live_agent_handoff}
+          # is triggered, conversation will transfer to Assist Stage.
           #
           # @param parent [String]
           #   Required. Resource identifier of the project creating the conversation.
@@ -368,8 +325,8 @@ module Google
           #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::Conversation`
           #   can also be provided.
           # @param conversation_id [String]
-          #   Optional. Identifier of the conversation. Generally it's auto generated by Google.
-          #   Only set it if you cannot wait for the response to return a
+          #   Optional. Identifier of the conversation. Generally it's auto generated by
+          #   Google. Only set it if you cannot wait for the response to return a
           #   auto-generated one to you.
           #
           #   The conversation ID must be compliant with the regression fomula
@@ -555,139 +512,6 @@ module Google
             @complete_conversation.call(req, options, &block)
           end
 
-          # Creates a call matcher that links incoming SIP calls to the specified
-          # conversation if they fulfill specified criteria.
-          #
-          # @param parent [String]
-          #   Required. Resource identifier of the conversation adding the call matcher.
-          #   Format: `projects/<Project ID>/locations/<Location
-          #   ID>/conversations/<Conversation ID>`.
-          # @param call_matcher [Google::Cloud::Dialogflow::V2beta1::CallMatcher | Hash]
-          #   Required. The call matcher to create.
-          #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::CallMatcher`
-          #   can also be provided.
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @yield [result, operation] Access the result along with the RPC operation
-          # @yieldparam result [Google::Cloud::Dialogflow::V2beta1::CallMatcher]
-          # @yieldparam operation [GRPC::ActiveCall::Operation]
-          # @return [Google::Cloud::Dialogflow::V2beta1::CallMatcher]
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/dialogflow"
-          #
-          #   conversations_client = Google::Cloud::Dialogflow::Conversations.new(version: :v2beta1)
-          #
-          #   # TODO: Initialize `parent`:
-          #   parent = ''
-          #   response = conversations_client.create_call_matcher(parent)
-
-          def create_call_matcher \
-              parent,
-              call_matcher: nil,
-              options: nil,
-              &block
-            req = {
-              parent: parent,
-              call_matcher: call_matcher
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::V2beta1::CreateCallMatcherRequest)
-            @create_call_matcher.call(req, options, &block)
-          end
-
-          # Returns the list of all call matchers in the specified conversation.
-          #
-          # @param parent [String]
-          #   Required. The conversation to list all call matchers from.
-          #   Format: `projects/<Project ID>/locations/<Location
-          #   ID>/conversations/<Conversation ID>`.
-          # @param page_size [Integer]
-          #   The maximum number of resources contained in the underlying API
-          #   response. If page streaming is performed per-resource, this
-          #   parameter does not affect the return value. If page streaming is
-          #   performed per-page, this determines the maximum number of
-          #   resources in a page.
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @yield [result, operation] Access the result along with the RPC operation
-          # @yieldparam result [Google::Gax::PagedEnumerable<Google::Cloud::Dialogflow::V2beta1::CallMatcher>]
-          # @yieldparam operation [GRPC::ActiveCall::Operation]
-          # @return [Google::Gax::PagedEnumerable<Google::Cloud::Dialogflow::V2beta1::CallMatcher>]
-          #   An enumerable of Google::Cloud::Dialogflow::V2beta1::CallMatcher instances.
-          #   See Google::Gax::PagedEnumerable documentation for other
-          #   operations such as per-page iteration or access to the response
-          #   object.
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/dialogflow"
-          #
-          #   conversations_client = Google::Cloud::Dialogflow::Conversations.new(version: :v2beta1)
-          #
-          #   # TODO: Initialize `parent`:
-          #   parent = ''
-          #
-          #   # Iterate over all results.
-          #   conversations_client.list_call_matchers(parent).each do |element|
-          #     # Process element.
-          #   end
-          #
-          #   # Or iterate over results one page at a time.
-          #   conversations_client.list_call_matchers(parent).each_page do |page|
-          #     # Process each page at a time.
-          #     page.each do |element|
-          #       # Process element.
-          #     end
-          #   end
-
-          def list_call_matchers \
-              parent,
-              page_size: nil,
-              options: nil,
-              &block
-            req = {
-              parent: parent,
-              page_size: page_size
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::V2beta1::ListCallMatchersRequest)
-            @list_call_matchers.call(req, options, &block)
-          end
-
-          # Requests deletion of a call matcher.
-          #
-          # @param name [String]
-          #   Required. The unique identifier of the {Google::Cloud::Dialogflow::V2beta1::CallMatcher CallMatcher} to delete.
-          #   Format: `projects/<Project ID>/locations/<Location
-          #   ID>/conversations/<Conversation ID>/callMatchers/<CallMatcher ID>`.
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @yield [result, operation] Access the result along with the RPC operation
-          # @yieldparam result []
-          # @yieldparam operation [GRPC::ActiveCall::Operation]
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/dialogflow"
-          #
-          #   conversations_client = Google::Cloud::Dialogflow::Conversations.new(version: :v2beta1)
-          #
-          #   # TODO: Initialize `name`:
-          #   name = ''
-          #   conversations_client.delete_call_matcher(name)
-
-          def delete_call_matcher \
-              name,
-              options: nil,
-              &block
-            req = {
-              name: name
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::V2beta1::DeleteCallMatcherRequest)
-            @delete_call_matcher.call(req, options, &block)
-            nil
-          end
-
           # Batch ingests messages to conversation. Customers can use this RPC to
           # ingest historical messages to conversation.
           #
@@ -698,7 +522,8 @@ module Google
           # @param requests [Array<Google::Cloud::Dialogflow::V2beta1::CreateMessageRequest | Hash>]
           #   Required. A maximum of 1000 Messages can be created in a batch.
           #   {CreateMessageRequest#message#send_time} is required. All created
-          #   messages will have identical {Google::Cloud::Dialogflow::V2beta1::Message#create_time Message#create_time}.
+          #   messages will have identical
+          #   {Google::Cloud::Dialogflow::V2beta1::Message#create_time Message#create_time}.
           #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::CreateMessageRequest`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]

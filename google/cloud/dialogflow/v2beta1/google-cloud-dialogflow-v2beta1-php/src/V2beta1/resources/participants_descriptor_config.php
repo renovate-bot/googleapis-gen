@@ -23,11 +23,6 @@ return [
                     'resourcesGetMethod' => 'getSuggestions',
                 ],
             ],
-            'StreamingAnalyzeContent' => [
-                'grpcStreaming' => [
-                    'grpcStreamingType' => 'BidiStreaming',
-                ],
-            ],
         ],
     ],
 ];

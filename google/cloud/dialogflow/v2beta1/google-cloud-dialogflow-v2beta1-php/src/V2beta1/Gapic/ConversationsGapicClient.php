@@ -37,24 +37,19 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\V2beta1\BatchCreateMessagesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchCreateMessagesResponse;
-use Google\Cloud\Dialogflow\V2beta1\CallMatcher;
 use Google\Cloud\Dialogflow\V2beta1\CompleteConversationRequest;
 use Google\Cloud\Dialogflow\V2beta1\Conversation;
-use Google\Cloud\Dialogflow\V2beta1\CreateCallMatcherRequest;
 use Google\Cloud\Dialogflow\V2beta1\CreateConversationRequest;
 use Google\Cloud\Dialogflow\V2beta1\CreateMessageRequest;
-use Google\Cloud\Dialogflow\V2beta1\DeleteCallMatcherRequest;
 use Google\Cloud\Dialogflow\V2beta1\GetConversationRequest;
-use Google\Cloud\Dialogflow\V2beta1\ListCallMatchersRequest;
-use Google\Cloud\Dialogflow\V2beta1\ListCallMatchersResponse;
 use Google\Cloud\Dialogflow\V2beta1\ListConversationsRequest;
 use Google\Cloud\Dialogflow\V2beta1\ListConversationsResponse;
 use Google\Cloud\Dialogflow\V2beta1\ListMessagesRequest;
 use Google\Cloud\Dialogflow\V2beta1\ListMessagesResponse;
-use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+ * Service Description: Service for managing
+ * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -108,16 +103,13 @@ class ConversationsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/dialogflow',
     ];
-    private static $callMatcherNameTemplate;
     private static $conversationNameTemplate;
     private static $conversationProfileNameTemplate;
     private static $locationNameTemplate;
     private static $projectNameTemplate;
     private static $projectConversationNameTemplate;
-    private static $projectConversationCallMatcherNameTemplate;
     private static $projectConversationProfileNameTemplate;
     private static $projectLocationConversationNameTemplate;
-    private static $projectLocationConversationCallMatcherNameTemplate;
     private static $projectLocationConversationProfileNameTemplate;
     private static $pathTemplateMap;
 
@@ -138,15 +130,6 @@ class ConversationsGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function getCallMatcherNameTemplate()
-    {
-        if (null == self::$callMatcherNameTemplate) {
-            self::$callMatcherNameTemplate = new PathTemplate('projects/{project}/conversations/{conversation}/callMatchers/{call_matcher}');
-        }
-
-        return self::$callMatcherNameTemplate;
     }
 
     private static function getConversationNameTemplate()
@@ -194,15 +177,6 @@ class ConversationsGapicClient
         return self::$projectConversationNameTemplate;
     }
 
-    private static function getProjectConversationCallMatcherNameTemplate()
-    {
-        if (null == self::$projectConversationCallMatcherNameTemplate) {
-            self::$projectConversationCallMatcherNameTemplate = new PathTemplate('projects/{project}/conversations/{conversation}/callMatchers/{call_matcher}');
-        }
-
-        return self::$projectConversationCallMatcherNameTemplate;
-    }
-
     private static function getProjectConversationProfileNameTemplate()
     {
         if (null == self::$projectConversationProfileNameTemplate) {
@@ -221,15 +195,6 @@ class ConversationsGapicClient
         return self::$projectLocationConversationNameTemplate;
     }
 
-    private static function getProjectLocationConversationCallMatcherNameTemplate()
-    {
-        if (null == self::$projectLocationConversationCallMatcherNameTemplate) {
-            self::$projectLocationConversationCallMatcherNameTemplate = new PathTemplate('projects/{project}/locations/{location}/conversations/{conversation}/callMatchers/{call_matcher}');
-        }
-
-        return self::$projectLocationConversationCallMatcherNameTemplate;
-    }
-
     private static function getProjectLocationConversationProfileNameTemplate()
     {
         if (null == self::$projectLocationConversationProfileNameTemplate) {
@@ -243,41 +208,18 @@ class ConversationsGapicClient
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'callMatcher' => self::getCallMatcherNameTemplate(),
                 'conversation' => self::getConversationNameTemplate(),
                 'conversationProfile' => self::getConversationProfileNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
                 'projectConversation' => self::getProjectConversationNameTemplate(),
-                'projectConversationCallMatcher' => self::getProjectConversationCallMatcherNameTemplate(),
                 'projectConversationProfile' => self::getProjectConversationProfileNameTemplate(),
                 'projectLocationConversation' => self::getProjectLocationConversationNameTemplate(),
-                'projectLocationConversationCallMatcher' => self::getProjectLocationConversationCallMatcherNameTemplate(),
                 'projectLocationConversationProfile' => self::getProjectLocationConversationProfileNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a call_matcher resource.
-     *
-     * @param string $project
-     * @param string $conversation
-     * @param string $callMatcher
-     *
-     * @return string The formatted call_matcher resource.
-     * @experimental
-     */
-    public static function callMatcherName($project, $conversation, $callMatcher)
-    {
-        return self::getCallMatcherNameTemplate()->render([
-            'project' => $project,
-            'conversation' => $conversation,
-            'call_matcher' => $callMatcher,
-        ]);
     }
 
     /**
@@ -370,26 +312,6 @@ class ConversationsGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a project_conversation_call_matcher resource.
-     *
-     * @param string $project
-     * @param string $conversation
-     * @param string $callMatcher
-     *
-     * @return string The formatted project_conversation_call_matcher resource.
-     * @experimental
-     */
-    public static function projectConversationCallMatcherName($project, $conversation, $callMatcher)
-    {
-        return self::getProjectConversationCallMatcherNameTemplate()->render([
-            'project' => $project,
-            'conversation' => $conversation,
-            'call_matcher' => $callMatcher,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
      * a project_conversation_profile resource.
      *
      * @param string $project
@@ -428,28 +350,6 @@ class ConversationsGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a project_location_conversation_call_matcher resource.
-     *
-     * @param string $project
-     * @param string $location
-     * @param string $conversation
-     * @param string $callMatcher
-     *
-     * @return string The formatted project_location_conversation_call_matcher resource.
-     * @experimental
-     */
-    public static function projectLocationConversationCallMatcherName($project, $location, $conversation, $callMatcher)
-    {
-        return self::getProjectLocationConversationCallMatcherNameTemplate()->render([
-            'project' => $project,
-            'location' => $location,
-            'conversation' => $conversation,
-            'call_matcher' => $callMatcher,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
      * a project_location_conversation_profile resource.
      *
      * @param string $project
@@ -472,16 +372,13 @@ class ConversationsGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - callMatcher: projects/{project}/conversations/{conversation}/callMatchers/{call_matcher}
      * - conversation: projects/{project}/conversations/{conversation}
      * - conversationProfile: projects/{project}/conversationProfiles/{conversation_profile}
      * - location: projects/{project}/locations/{location}
      * - project: projects/{project}
      * - projectConversation: projects/{project}/conversations/{conversation}
-     * - projectConversationCallMatcher: projects/{project}/conversations/{conversation}/callMatchers/{call_matcher}
      * - projectConversationProfile: projects/{project}/conversationProfiles/{conversation_profile}
      * - projectLocationConversation: projects/{project}/locations/{location}/conversations/{conversation}
-     * - projectLocationConversationCallMatcher: projects/{project}/locations/{location}/conversations/{conversation}/callMatchers/{call_matcher}
      * - projectLocationConversationProfile: projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
@@ -591,11 +488,14 @@ class ConversationsGapicClient
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
      *
-     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
-     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-     * will transfer to Assist Stage.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
      *
      * Sample code:
      * ```
@@ -616,8 +516,8 @@ class ConversationsGapicClient
      *                                   Optional.
      *
      *     @type string $conversationId
-     *          Optional. Identifier of the conversation. Generally it's auto generated by Google.
-     *          Only set it if you cannot wait for the response to return a
+     *          Optional. Identifier of the conversation. Generally it's auto generated by
+     *          Google. Only set it if you cannot wait for the response to return a
      *          auto-generated one to you.
      *
      *          The conversation ID must be compliant with the regression fomula
@@ -870,196 +770,6 @@ class ConversationsGapicClient
     }
 
     /**
-     * Creates a call matcher that links incoming SIP calls to the specified
-     * conversation if they fulfill specified criteria.
-     *
-     * Sample code:
-     * ```
-     * $conversationsClient = new ConversationsClient();
-     * try {
-     *     $parent = '';
-     *     $response = $conversationsClient->createCallMatcher($parent);
-     * } finally {
-     *     $conversationsClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. Resource identifier of the conversation adding the call matcher.
-     *                             Format: `projects/<Project ID>/locations/<Location
-     *                             ID>/conversations/<Conversation ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type CallMatcher $callMatcher
-     *          Required. The call matcher to create.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\V2beta1\CallMatcher
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function createCallMatcher($parent, array $optionalArgs = [])
-    {
-        $request = new CreateCallMatcherRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['callMatcher'])) {
-            $request->setCallMatcher($optionalArgs['callMatcher']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateCallMatcher',
-            CallMatcher::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Returns the list of all call matchers in the specified conversation.
-     *
-     * Sample code:
-     * ```
-     * $conversationsClient = new ConversationsClient();
-     * try {
-     *     $parent = '';
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $conversationsClient->listCallMatchers($parent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $conversationsClient->listCallMatchers($parent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $conversationsClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The conversation to list all call matchers from.
-     *                             Format: `projects/<Project ID>/locations/<Location
-     *                             ID>/conversations/<Conversation ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listCallMatchers($parent, array $optionalArgs = [])
-    {
-        $request = new ListCallMatchersRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListCallMatchers',
-            $optionalArgs,
-            ListCallMatchersResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Requests deletion of a call matcher.
-     *
-     * Sample code:
-     * ```
-     * $conversationsClient = new ConversationsClient();
-     * try {
-     *     $name = '';
-     *     $conversationsClient->deleteCallMatcher($name);
-     * } finally {
-     *     $conversationsClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The unique identifier of the [CallMatcher][google.cloud.dialogflow.v2beta1.CallMatcher] to delete.
-     *                             Format: `projects/<Project ID>/locations/<Location
-     *                             ID>/conversations/<Conversation ID>/callMatchers/<CallMatcher ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deleteCallMatcher($name, array $optionalArgs = [])
-    {
-        $request = new DeleteCallMatcherRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteCallMatcher',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      *
@@ -1080,7 +790,8 @@ class ConversationsGapicClient
      *                                             ID>/conversations/<Conversation ID>`.
      * @param CreateMessageRequest[] $requests     Required. A maximum of 1000 Messages can be created in a batch.
      *                                             [CreateMessageRequest.message.send_time][] is required. All created
-     *                                             messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     *                                             messages will have identical
+     *                                             [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * @param array                  $optionalArgs {
      *                                             Optional.
      *

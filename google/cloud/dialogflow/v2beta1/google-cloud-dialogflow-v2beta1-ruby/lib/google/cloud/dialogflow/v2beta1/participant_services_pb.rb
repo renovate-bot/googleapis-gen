@@ -48,22 +48,6 @@ module Google
             # sent to virtual agents. See [Versions and
             # environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
             rpc :AnalyzeContent, ::Google::Cloud::Dialogflow::V2beta1::AnalyzeContentRequest, ::Google::Cloud::Dialogflow::V2beta1::AnalyzeContentResponse
-            # Adds a text (e.g., chat) or audio (e.g., phone recording) message from a
-            # participant into the conversation.
-            # Note: This method is only available through the gRPC API (not REST).
-            #
-            # The top-level message sent to the client by the server is
-            # `StreamingAnalyzeContentResponse`. Multiple response messages can be
-            # returned in order. The first one or more messages contain the
-            # `recognition_result` field. Each result represents a more complete
-            # transcript of what the user said. The next message contains the
-            # `reply_text` field, and potentially the `reply_audio` and/or the
-            # `automated_agent_reply` fields.
-            #
-            # Note: Always use agent versions for production traffic
-            # sent to virtual agents. See [Versions and
-            # environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-            rpc :StreamingAnalyzeContent, stream(::Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentRequest), stream(::Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentResponse)
             # Gets suggested articles for a participant based on specific historical
             # messages.
             #

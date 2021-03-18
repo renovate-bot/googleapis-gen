@@ -27,7 +27,6 @@ from google.auth import credentials  # type: ignore
 
 from google.cloud.dialogflow_v2.types import conversation
 from google.cloud.dialogflow_v2.types import conversation as gcd_conversation
-from google.protobuf import empty_pb2 as empty  # type: ignore
 
 
 try:
@@ -127,21 +126,6 @@ class ConversationsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
-            self.create_call_matcher: gapic_v1.method.wrap_method(
-                self.create_call_matcher,
-                default_timeout=None,
-                client_info=client_info,
-            ),
-            self.list_call_matchers: gapic_v1.method.wrap_method(
-                self.list_call_matchers,
-                default_timeout=None,
-                client_info=client_info,
-            ),
-            self.delete_call_matcher: gapic_v1.method.wrap_method(
-                self.delete_call_matcher,
-                default_timeout=None,
-                client_info=client_info,
-            ),
             self.list_messages: gapic_v1.method.wrap_method(
                 self.list_messages,
                 default_timeout=None,
@@ -183,33 +167,6 @@ class ConversationsTransport(abc.ABC):
             typing.Union[
                 conversation.Conversation,
                 typing.Awaitable[conversation.Conversation]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def create_call_matcher(self) -> typing.Callable[
-            [conversation.CreateCallMatcherRequest],
-            typing.Union[
-                conversation.CallMatcher,
-                typing.Awaitable[conversation.CallMatcher]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def list_call_matchers(self) -> typing.Callable[
-            [conversation.ListCallMatchersRequest],
-            typing.Union[
-                conversation.ListCallMatchersResponse,
-                typing.Awaitable[conversation.ListCallMatchersResponse]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def delete_call_matcher(self) -> typing.Callable[
-            [conversation.DeleteCallMatcherRequest],
-            typing.Union[
-                empty.Empty,
-                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 

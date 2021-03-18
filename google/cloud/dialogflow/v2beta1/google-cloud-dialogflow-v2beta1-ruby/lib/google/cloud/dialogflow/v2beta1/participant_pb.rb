@@ -67,10 +67,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :config, :message, 1, "google.cloud.dialogflow.v2beta1.InputAudioConfig"
       optional :audio, :bytes, 2
     end
-    add_message "google.cloud.dialogflow.v2beta1.AudioInput" do
-      optional :config, :message, 1, "google.cloud.dialogflow.v2beta1.InputAudioConfig"
-      optional :audio, :bytes, 2
-    end
     add_message "google.cloud.dialogflow.v2beta1.OutputAudio" do
       optional :config, :message, 1, "google.cloud.dialogflow.v2beta1.OutputAudioConfig"
       optional :audio, :bytes, 2
@@ -102,10 +98,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :message_send_time, :message, 10, "google.protobuf.Timestamp"
       optional :request_id, :string, 11
       oneof :input do
-        optional :text, :message, 3, "google.cloud.dialogflow.v2beta1.InputText"
-        optional :audio, :message, 4, "google.cloud.dialogflow.v2beta1.InputAudio"
         optional :text_input, :message, 6, "google.cloud.dialogflow.v2beta1.TextInput"
-        optional :audio_input, :message, 7, "google.cloud.dialogflow.v2beta1.AudioInput"
         optional :event_input, :message, 8, "google.cloud.dialogflow.v2beta1.EventInput"
       end
     end
@@ -120,34 +113,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :human_agent_suggestion_results, :message, 6, "google.cloud.dialogflow.v2beta1.SuggestionResult"
       repeated :end_user_suggestion_results, :message, 7, "google.cloud.dialogflow.v2beta1.SuggestionResult"
       optional :dtmf_parameters, :message, 9, "google.cloud.dialogflow.v2beta1.DtmfParameters"
-    end
-    add_message "google.cloud.dialogflow.v2beta1.InputTextConfig" do
-      optional :language_code, :string, 1
-    end
-    add_message "google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest" do
-      optional :participant, :string, 1
-      optional :reply_audio_config, :message, 4, "google.cloud.dialogflow.v2beta1.OutputAudioConfig"
-      optional :query_params, :message, 7, "google.cloud.dialogflow.v2beta1.QueryParameters"
-      optional :enable_extended_streaming, :bool, 11
-      oneof :config do
-        optional :audio_config, :message, 2, "google.cloud.dialogflow.v2beta1.InputAudioConfig"
-        optional :text_config, :message, 3, "google.cloud.dialogflow.v2beta1.InputTextConfig"
-      end
-      oneof :input do
-        optional :input_audio, :bytes, 5
-        optional :input_text, :string, 6
-        optional :input_dtmf, :message, 9, "google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents"
-      end
-    end
-    add_message "google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse" do
-      optional :recognition_result, :message, 1, "google.cloud.dialogflow.v2beta1.StreamingRecognitionResult"
-      optional :reply_text, :string, 2
-      optional :reply_audio, :message, 3, "google.cloud.dialogflow.v2beta1.OutputAudio"
-      optional :automated_agent_reply, :message, 4, "google.cloud.dialogflow.v2beta1.AutomatedAgentReply"
-      optional :message, :message, 6, "google.cloud.dialogflow.v2beta1.Message"
-      repeated :human_agent_suggestion_results, :message, 7, "google.cloud.dialogflow.v2beta1.SuggestionResult"
-      repeated :end_user_suggestion_results, :message, 8, "google.cloud.dialogflow.v2beta1.SuggestionResult"
-      optional :dtmf_parameters, :message, 10, "google.cloud.dialogflow.v2beta1.DtmfParameters"
     end
     add_message "google.cloud.dialogflow.v2beta1.AnnotatedMessagePart" do
       optional :text, :string, 1
@@ -292,7 +257,6 @@ module Google
         UpdateParticipantRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.UpdateParticipantRequest").msgclass
         InputText = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.InputText").msgclass
         InputAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.InputAudio").msgclass
-        AudioInput = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AudioInput").msgclass
         OutputAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.OutputAudio").msgclass
         AutomatedAgentReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AutomatedAgentReply").msgclass
         SuggestionFeature = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SuggestionFeature").msgclass
@@ -300,9 +264,6 @@ module Google
         AnalyzeContentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AnalyzeContentRequest").msgclass
         DtmfParameters = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.DtmfParameters").msgclass
         AnalyzeContentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AnalyzeContentResponse").msgclass
-        InputTextConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.InputTextConfig").msgclass
-        StreamingAnalyzeContentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest").msgclass
-        StreamingAnalyzeContentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse").msgclass
         AnnotatedMessagePart = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AnnotatedMessagePart").msgclass
         MessageAnnotation = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.MessageAnnotation").msgclass
         ArticleAnswer = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ArticleAnswer").msgclass

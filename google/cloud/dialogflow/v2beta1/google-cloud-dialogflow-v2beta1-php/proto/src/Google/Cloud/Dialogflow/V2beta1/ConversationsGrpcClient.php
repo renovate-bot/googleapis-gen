@@ -19,7 +19,8 @@
 namespace Google\Cloud\Dialogflow\V2beta1;
 
 /**
- * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+ * Service for managing
+ * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
  */
 class ConversationsGrpcClient extends \Grpc\BaseStub {
 
@@ -46,11 +47,14 @@ class ConversationsGrpcClient extends \Grpc\BaseStub {
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
      *
-     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
-     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-     * will transfer to Assist Stage.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
      * @param \Google\Cloud\Dialogflow\V2beta1\CreateConversationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -107,52 +111,6 @@ class ConversationsGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.cloud.dialogflow.v2beta1.Conversations/CompleteConversation',
         $argument,
         ['\Google\Cloud\Dialogflow\V2beta1\Conversation', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Creates a call matcher that links incoming SIP calls to the specified
-     * conversation if they fulfill specified criteria.
-     * @param \Google\Cloud\Dialogflow\V2beta1\CreateCallMatcherRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function CreateCallMatcher(\Google\Cloud\Dialogflow\V2beta1\CreateCallMatcherRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.cloud.dialogflow.v2beta1.Conversations/CreateCallMatcher',
-        $argument,
-        ['\Google\Cloud\Dialogflow\V2beta1\CallMatcher', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Returns the list of all call matchers in the specified conversation.
-     * @param \Google\Cloud\Dialogflow\V2beta1\ListCallMatchersRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListCallMatchers(\Google\Cloud\Dialogflow\V2beta1\ListCallMatchersRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.cloud.dialogflow.v2beta1.Conversations/ListCallMatchers',
-        $argument,
-        ['\Google\Cloud\Dialogflow\V2beta1\ListCallMatchersResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Requests deletion of a call matcher.
-     * @param \Google\Cloud\Dialogflow\V2beta1\DeleteCallMatcherRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteCallMatcher(\Google\Cloud\Dialogflow\V2beta1\DeleteCallMatcherRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.cloud.dialogflow.v2beta1.Conversations/DeleteCallMatcher',
-        $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 

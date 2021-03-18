@@ -171,29 +171,14 @@
                 "CompleteConversation"
               ]
             },
-            "CreateCallMatcher": {
-              "methods": [
-                "CreateCallMatcher"
-              ]
-            },
             "CreateConversation": {
               "methods": [
                 "CreateConversation"
               ]
             },
-            "DeleteCallMatcher": {
-              "methods": [
-                "DeleteCallMatcher"
-              ]
-            },
             "GetConversation": {
               "methods": [
                 "GetConversation"
-              ]
-            },
-            "ListCallMatchers": {
-              "methods": [
-                "ListCallMatchers"
               ]
             },
             "ListConversations": {
@@ -438,11 +423,6 @@
             "ListSuggestions": {
               "methods": [
                 "ListSuggestions"
-              ]
-            },
-            "StreamingAnalyzeContent": {
-              "methods": [
-                "StreamingAnalyzeContent"
               ]
             },
             "SuggestArticles": {
