@@ -54,7 +54,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     protected $update_time = null;
     /**
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      *
      * Generated from protobuf field <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78,7 +78,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * and are immutable. Following system labels exist for each Annotation:
      * * "aiplatform.googleapis.com/annotation_set_name":
      *   optional, name of the UI's annotation set this Annotation belongs to.
-     *   If not set the Annotation is not visible in the UI.
+     *   If not set, the Annotation is not visible in the UI.
      * * "aiplatform.googleapis.com/payload_schema":
      *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
      *   title.
@@ -111,7 +111,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Timestamp when this Annotation was last updated.
      *     @type string $etag
-     *           Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     *           Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      *           "overwrite" update happens.
      *     @type \Google\Cloud\Aiplatform\V1beta1\UserActionReference $annotation_source
      *           Output only. The source of the Annotation.
@@ -127,7 +127,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *           and are immutable. Following system labels exist for each Annotation:
      *           * "aiplatform.googleapis.com/annotation_set_name":
      *             optional, name of the UI's annotation set this Annotation belongs to.
-     *             If not set the Annotation is not visible in the UI.
+     *             If not set, the Annotation is not visible in the UI.
      *           * "aiplatform.googleapis.com/payload_schema":
      *             output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
      *             title.
@@ -313,7 +313,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      *
      * Generated from protobuf field <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -325,7 +325,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      *
      * Generated from protobuf field <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -388,7 +388,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * and are immutable. Following system labels exist for each Annotation:
      * * "aiplatform.googleapis.com/annotation_set_name":
      *   optional, name of the UI's annotation set this Annotation belongs to.
-     *   If not set the Annotation is not visible in the UI.
+     *   If not set, the Annotation is not visible in the UI.
      * * "aiplatform.googleapis.com/payload_schema":
      *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
      *   title.
@@ -413,7 +413,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * and are immutable. Following system labels exist for each Annotation:
      * * "aiplatform.googleapis.com/annotation_set_name":
      *   optional, name of the UI's annotation set this Annotation belongs to.
-     *   If not set the Annotation is not visible in the UI.
+     *   If not set, the Annotation is not visible in the UI.
      * * "aiplatform.googleapis.com/payload_schema":
      *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
      *   title.

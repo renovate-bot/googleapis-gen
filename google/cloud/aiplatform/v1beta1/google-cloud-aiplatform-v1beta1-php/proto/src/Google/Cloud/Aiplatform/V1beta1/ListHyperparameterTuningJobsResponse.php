@@ -23,7 +23,7 @@ class ListHyperparameterTuningJobsResponse extends \Google\Protobuf\Internal\Mes
      */
     private $hyperparameter_tuning_jobs;
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      *
@@ -41,7 +41,7 @@ class ListHyperparameterTuningJobsResponse extends \Google\Protobuf\Internal\Mes
      *           List of HyperparameterTuningJobs in the requested page.
      *           [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials] of the jobs will be not be returned.
      *     @type string $next_page_token
-     *           A token to retrieve next page of results.
+     *           A token to retrieve the next page of results.
      *           Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      *           page.
      * }
@@ -80,7 +80,7 @@ class ListHyperparameterTuningJobsResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      *
@@ -93,7 +93,7 @@ class ListHyperparameterTuningJobsResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      *

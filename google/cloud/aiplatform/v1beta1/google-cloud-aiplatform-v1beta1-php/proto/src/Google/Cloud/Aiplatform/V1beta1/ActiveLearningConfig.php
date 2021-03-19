@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Parameters that configure active learning pipeline. Active learning will
+ * Parameters that configure the active learning pipeline. Active learning will
  *  label the data incrementally by several iterations. For every iteration, it
  *  will select a batch of data based on the sampling strategy.
  *

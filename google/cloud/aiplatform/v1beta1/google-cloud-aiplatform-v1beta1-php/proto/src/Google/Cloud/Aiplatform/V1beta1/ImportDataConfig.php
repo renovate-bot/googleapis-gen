@@ -27,7 +27,7 @@ class ImportDataConfig extends \Google\Protobuf\Internal\Message
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      *
      * Generated from protobuf field <code>map<string, string> data_item_labels = 2;</code>
      */
@@ -61,7 +61,7 @@ class ImportDataConfig extends \Google\Protobuf\Internal\Message
      *           considered identical if their content bytes are identical (e.g. image bytes
      *           or pdf bytes).
      *           These labels will be overridden by Annotation labels specified inside index
-     *           file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     *           file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      *     @type string $import_schema_uri
      *           Required. Points to a YAML file stored on Google Cloud Storage describing the import
      *           format. Validation will be done against the schema. The schema is defined
@@ -115,7 +115,7 @@ class ImportDataConfig extends \Google\Protobuf\Internal\Message
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      *
      * Generated from protobuf field <code>map<string, string> data_item_labels = 2;</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -136,7 +136,7 @@ class ImportDataConfig extends \Google\Protobuf\Internal\Message
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      *
      * Generated from protobuf field <code>map<string, string> data_item_labels = 2;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var

@@ -796,7 +796,6 @@ module Google
           # @param name [String]
           #   Required. The name of the DataLabelingJob.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -919,7 +918,6 @@ module Google
           # @param name [String]
           #   Required. The name of the DataLabelingJob to be deleted.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -982,7 +980,6 @@ module Google
           # @param name [String]
           #   Required. The name of the DataLabelingJob.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1055,7 +1052,6 @@ module Google
           # @param name [String]
           #   Required. The name of the HyperparameterTuningJob resource.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1169,7 +1165,6 @@ module Google
           # @param name [String]
           #   Required. The name of the HyperparameterTuningJob resource to be deleted.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1241,7 +1236,6 @@ module Google
           # @param name [String]
           #   Required. The name of the HyperparameterTuningJob to cancel.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1315,7 +1309,6 @@ module Google
           # @param name [String]
           #   Required. The name of the BatchPredictionJob resource.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1356,6 +1349,8 @@ module Google
           #   * `display_name` supports = and !=.
           #
           #     * `state` supports = and !=.
+          #
+          #     * `model_display_name` supports = and !=
           #
           #     Some examples of using the filter are:
           #
@@ -1430,7 +1425,6 @@ module Google
           # @param name [String]
           #   Required. The name of the BatchPredictionJob resource to be deleted.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1502,7 +1496,6 @@ module Google
           # @param name [String]
           #   Required. The name of the BatchPredictionJob to cancel.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,

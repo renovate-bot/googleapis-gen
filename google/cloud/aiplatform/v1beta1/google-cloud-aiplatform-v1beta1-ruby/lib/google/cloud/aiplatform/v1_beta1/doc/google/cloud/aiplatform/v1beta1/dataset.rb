@@ -84,7 +84,7 @@ module Google
         #     considered identical if their content bytes are identical (e.g. image bytes
         #     or pdf bytes).
         #     These labels will be overridden by Annotation labels specified inside index
-        #     file refenced by {Google::Cloud::Aiplatform::V1beta1::ImportDataConfig#import_schema_uri import_schema_uri}, e.g. jsonl file.
+        #     file referenced by {Google::Cloud::Aiplatform::V1beta1::ImportDataConfig#import_schema_uri import_schema_uri}, e.g. jsonl file.
         # @!attribute [rw] import_schema_uri
         #   @return [String]
         #     Required. Points to a YAML file stored on Google Cloud Storage describing the import

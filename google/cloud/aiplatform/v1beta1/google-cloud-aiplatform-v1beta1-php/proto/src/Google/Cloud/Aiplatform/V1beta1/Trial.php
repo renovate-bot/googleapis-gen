@@ -18,6 +18,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class Trial extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Output only. Resource name of the Trial assigned by the service.
+     *
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $name = '';
+    /**
      * Output only. The identifier of the Trial assigned by the service.
      *
      * Generated from protobuf field <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -67,6 +73,8 @@ class Trial extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *           Output only. Resource name of the Trial assigned by the service.
      *     @type string $id
      *           Output only. The identifier of the Trial assigned by the service.
      *     @type int $state
@@ -87,6 +95,32 @@ class Trial extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Study::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Output only. Resource name of the Trial assigned by the service.
+     *
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Output only. Resource name of the Trial assigned by the service.
+     *
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
     }
 
     /**

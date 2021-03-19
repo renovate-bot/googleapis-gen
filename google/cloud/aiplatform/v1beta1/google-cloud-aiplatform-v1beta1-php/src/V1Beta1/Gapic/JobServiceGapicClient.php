@@ -931,12 +931,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the DataLabelingJob.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the DataLabelingJob.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1127,12 +1126,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the DataLabelingJob to be deleted.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the DataLabelingJob to be deleted.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1180,12 +1178,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the DataLabelingJob.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the DataLabelingJob.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1285,12 +1282,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the HyperparameterTuningJob resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the HyperparameterTuningJob resource.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1471,12 +1467,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the HyperparameterTuningJob resource to be deleted.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the HyperparameterTuningJob resource to be deleted.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1533,12 +1528,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the HyperparameterTuningJob to cancel.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the HyperparameterTuningJob to cancel.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1639,12 +1633,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the BatchPredictionJob resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the BatchPredictionJob resource.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1720,6 +1713,8 @@ class JobServiceGapicClient
      *            * `display_name` supports = and !=.
      *
      *            * `state` supports = and !=.
+     *
+     *            * `model_display_name` supports = and !=
      *
      *          Some examples of using the filter are:
      *
@@ -1826,12 +1821,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the BatchPredictionJob resource to be deleted.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the BatchPredictionJob resource to be deleted.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1888,12 +1882,11 @@ class JobServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the BatchPredictionJob to cancel.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the BatchPredictionJob to cancel.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

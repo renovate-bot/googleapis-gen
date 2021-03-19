@@ -145,16 +145,13 @@ module Google
         #
         #     * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
         #     * AIP_TRAINING_DATA_URI =
-        #
-        #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/training-*.${AIP_DATA_FORMAT}"
+        #       "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/training-*.${AIP_DATA_FORMAT}"
         #
         #     * AIP_VALIDATION_DATA_URI =
-        #
-        #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/validation-*.${AIP_DATA_FORMAT}"
+        #       "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/validation-*.${AIP_DATA_FORMAT}"
         #
         #     * AIP_TEST_DATA_URI =
-        #
-        #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.${AIP_DATA_FORMAT}"
+        #       "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.${AIP_DATA_FORMAT}"
         # @!attribute [rw] bigquery_destination
         #   @return [Google::Cloud::Aiplatform::V1beta1::BigQueryDestination]
         #     Only applicable to custom training with tabular Dataset with BigQuery
@@ -169,12 +166,10 @@ module Google
         #
         #     * AIP_DATA_FORMAT = "bigquery".
         #     * AIP_TRAINING_DATA_URI  =
-        #
-        #     "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.training"
+        #       "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.training"
         #
         #     * AIP_VALIDATION_DATA_URI =
-        #
-        #     "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.validation"
+        #       "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.validation"
         #
         #     * AIP_TEST_DATA_URI =
         #       "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.test"

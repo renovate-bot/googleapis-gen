@@ -33,7 +33,7 @@ module Google
         #     Output only. Timestamp when AnnotationSpec was last updated.
         # @!attribute [rw] etag
         #   @return [String]
-        #     Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+        #     Optional. Used to perform consistent read-modify-write updates. If not set, a blind
         #     "overwrite" update happens.
         class AnnotationSpec; end
       end

@@ -175,7 +175,6 @@ module Google
         #   @return [String]
         #     Required. The name of the ModelEvaluation resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
         class GetModelEvaluationRequest; end
 
@@ -216,7 +215,6 @@ module Google
         #   @return [String]
         #     Required. The name of the ModelEvaluationSlice resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
         class GetModelEvaluationSliceRequest; end
 
@@ -225,7 +223,6 @@ module Google
         #   @return [String]
         #     Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
         #     from. Format:
-        #
         #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
         # @!attribute [rw] filter
         #   @return [String]

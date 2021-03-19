@@ -19,16 +19,17 @@ class MachineResources
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ù
+ñ	
 7google/cloud/aiplatform/v1beta1/machine_resources.protogoogle.cloud.aiplatform.v1beta16google/cloud/aiplatform/v1beta1/accelerator_type.protogoogle/api/annotations.proto"î
 MachineSpec
 machine_type (	B‡AO
 accelerator_type (20.google.cloud.aiplatform.v1beta1.AcceleratorTypeB‡A
-accelerator_count ("£
+accelerator_count ("Ç
 DedicatedResourcesJ
 machine_spec (2,.google.cloud.aiplatform.v1beta1.MachineSpecB‡A‡A!
 min_replica_count (B‡A‡A
-max_replica_count (B‡A"T
+max_replica_count (B‡A]
+autoscaling_metric_specs (26.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpecB‡A"T
 AutomaticResources
 min_replica_count (B‡A
 max_replica_count (B‡A"™
@@ -40,7 +41,10 @@ class MachineResources
 replica_hours (B‡A"=
 DiskSpec
 boot_disk_type (	
-boot_disk_size_gb (Bâ
+boot_disk_size_gb ("A
+AutoscalingMetricSpec
+metric_name (	B‡A
+target (Bâ
 #com.google.cloud.aiplatform.v1beta1BMachineResourcesProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
         , true);
 

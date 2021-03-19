@@ -82,8 +82,8 @@ module Google
         #       conforms to the {Google::Cloud::Aiplatform::V1beta1::Explanation Explanation} object.
         #     * `csv`: Generating explanations for CSV format is not supported.
         #
-        #     If this field is set to true, the {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} must be
-        #     populated.
+        #     If this field is set to true, either the {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} or
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} must be populated.
         # @!attribute [rw] explanation_spec
         #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationSpec]
         #     Explanation configuration for this BatchPredictionJob. Can be
@@ -219,7 +219,6 @@ module Google
           #   @return [String]
           #     Required. The format in which AI Platform gives the predictions, must be one of the
           #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#model Model's}
-          #
           #     {Google::Cloud::Aiplatform::V1beta1::Model#supported_output_storage_formats supported_output_storage_formats}.
           class OutputConfig; end
 

@@ -57,7 +57,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
      */
     protected $payload = null;
     /**
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      *
      * Generated from protobuf field <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,7 +91,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
      *           snippet). The schema of the payload is stored in the parent Dataset's
      *           [metadata schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] dataItemSchemaUri field.
      *     @type string $etag
-     *           Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     *           Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      *           "overwrite" update happens.
      * }
      */
@@ -281,7 +281,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      *
      * Generated from protobuf field <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -293,7 +293,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      *
      * Generated from protobuf field <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

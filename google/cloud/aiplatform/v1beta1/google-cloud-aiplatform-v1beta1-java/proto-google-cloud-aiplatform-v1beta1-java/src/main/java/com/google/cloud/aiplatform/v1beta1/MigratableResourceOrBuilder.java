@@ -117,8 +117,9 @@ public interface MigratableResourceOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-   * Will not be set if there's no migrate attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -127,8 +128,9 @@ public interface MigratableResourceOrBuilder extends
   boolean hasLastMigrateTime();
   /**
    * <pre>
-   * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-   * Will not be set if there's no migrate attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -137,8 +139,9 @@ public interface MigratableResourceOrBuilder extends
   com.google.protobuf.Timestamp getLastMigrateTime();
   /**
    * <pre>
-   * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-   * Will not be set if there's no migrate attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

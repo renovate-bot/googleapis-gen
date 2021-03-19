@@ -1159,9 +1159,9 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig activeLearningConfig_;
   /**
    * <pre>
-   * Parameters that configure active learning pipeline. Active learning will
-   * label the data incrementally via several iterations. For every iteration,
-   * it will select a batch of data based on the sampling strategy.
+   * Parameters that configure the active learning pipeline. Active learning
+   * will label the data incrementally via several iterations. For every
+   * iteration, it will select a batch of data based on the sampling strategy.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -1173,9 +1173,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Parameters that configure active learning pipeline. Active learning will
-   * label the data incrementally via several iterations. For every iteration,
-   * it will select a batch of data based on the sampling strategy.
+   * Parameters that configure the active learning pipeline. Active learning
+   * will label the data incrementally via several iterations. For every
+   * iteration, it will select a batch of data based on the sampling strategy.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -1187,9 +1187,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Parameters that configure active learning pipeline. Active learning will
-   * label the data incrementally via several iterations. For every iteration,
-   * it will select a batch of data based on the sampling strategy.
+   * Parameters that configure the active learning pipeline. Active learning
+   * will label the data incrementally via several iterations. For every
+   * iteration, it will select a batch of data based on the sampling strategy.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4268,9 +4268,9 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig, com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig.Builder, com.google.cloud.aiplatform.v1beta1.ActiveLearningConfigOrBuilder> activeLearningConfigBuilder_;
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4281,9 +4281,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4298,9 +4298,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4320,9 +4320,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4340,9 +4340,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4364,9 +4364,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4384,9 +4384,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4398,9 +4398,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -4415,9 +4415,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Parameters that configure active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>

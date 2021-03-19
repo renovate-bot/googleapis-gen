@@ -252,7 +252,7 @@ private static final long serialVersionUID = 0L;
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -284,7 +284,7 @@ private static final long serialVersionUID = 0L;
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1032,7 +1032,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1064,7 +1064,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1113,7 +1113,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1148,7 +1148,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1181,7 +1181,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1207,7 +1207,7 @@ private static final long serialVersionUID = 0L;
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file refenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>

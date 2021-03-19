@@ -41,7 +41,7 @@ module Google
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
         #     AutoML Models always have this field populated by AI Platform, if no
-        #     additional metadata is needed this field is set to an empty string.
+        #     additional metadata is needed, this field is set to an empty string.
         #     Note: The URI given on output will be immutable and probably different,
         #     including the URI scheme, than the one given on input. The output URI will
         #     point to a location where the user only has a read access.
@@ -172,13 +172,22 @@ module Google
         #
         #     The Model can be used for [requesting
         #     explanation][PredictionService.Explain] after being
-        #     {Google::Cloud::Aiplatform::V1beta1::EndpointService::DeployModel deployed} iff it is populated.
+        #     {Google::Cloud::Aiplatform::V1beta1::EndpointService::DeployModel deployed} if it is populated.
         #     The Model can be used for [batch
-        #     explanation][BatchPredictionJob.generate_explanation] iff it is populated.
+        #     explanation][BatchPredictionJob.generate_explanation] if it is populated.
         #
         #     All fields of the explanation_spec can be overridden by
         #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} of
         #     {Google::Cloud::Aiplatform::V1beta1::DeployModelRequest#deployed_model DeployModelRequest#deployed_model}, or
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} of
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob}.
+        #
+        #     If the default explanation specification is not set for this Model, this
+        #     Model can still be used for [requesting
+        #     explanation][PredictionService.Explain] by setting
+        #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} of
+        #     {Google::Cloud::Aiplatform::V1beta1::DeployModelRequest#deployed_model DeployModelRequest#deployed_model} and for [batch
+        #     explanation][BatchPredictionJob.generate_explanation] by setting
         #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} of
         #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob}.
         # @!attribute [rw] etag
@@ -199,7 +208,7 @@ module Google
         #     Customer-managed encryption key spec for a Model. If set, this
         #     Model and all sub-resources of this Model will be secured by this key.
         class Model
-          # Represents a supported by the Model export format.
+          # Represents export format supported by the Model.
           # All formats export to Google Cloud Storage.
           # @!attribute [rw] id
           #   @return [String]
@@ -284,7 +293,7 @@ module Google
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
         #     AutoML Models always have this field populated by AI Platform, if no
-        #     parameters are supported it is set to an empty string.
+        #     parameters are supported, then it is set to an empty string.
         #     Note: The URI given on output will be immutable and probably different,
         #     including the URI scheme, than the one given on input. The output URI will
         #     point to a location where the user only has a read access.
@@ -319,6 +328,10 @@ module Google
         #
         #     To learn about the requirements for the Docker image itself, see
         #     [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+        #
+        #     You can use the URI to one of AI Platform's [pre-built container images for
+        #     prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+        #     in this field.
         # @!attribute [rw] command
         #   @return [Array<String>]
         #     Immutable. Specifies the command that runs when the container starts. This overrides
@@ -474,7 +487,7 @@ module Google
         #       variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
         # @!attribute [rw] health_route
         #   @return [String]
-        #     Immutable. HTTP path on the container to send health checkss to. AI Platform
+        #     Immutable. HTTP path on the container to send health checks to. AI Platform
         #     intermittently sends GET requests to this path on the container's IP
         #     address and port to check that the container is healthy. Read more about
         #     [health

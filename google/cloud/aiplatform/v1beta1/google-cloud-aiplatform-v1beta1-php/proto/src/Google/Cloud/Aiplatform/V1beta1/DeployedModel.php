@@ -22,7 +22,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Required. The name of the Model this is the deployment of. Note that the Model
+     * Required. The name of the Model that this is the deployment of. Note that the Model
      * may be in a different location than the DeployedModel's Endpoint.
      *
      * Generated from protobuf field <code>string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -47,9 +47,9 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-     * this Model is not allowed.
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
      */
@@ -100,7 +100,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Output only. The ID of the DeployedModel.
      *     @type string $model
-     *           Required. The name of the Model this is the deployment of. Note that the Model
+     *           Required. The name of the Model that this is the deployment of. Note that the Model
      *           may be in a different location than the DeployedModel's Endpoint.
      *     @type string $display_name
      *           The display name of the DeployedModel. If not provided upon creation,
@@ -113,9 +113,9 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *           overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
      *           [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
      *           [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     *           [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-     *           [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-     *           this Model is not allowed.
+     *           [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+     *           [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+     *           [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
      *     @type string $service_account
      *           The service account that the DeployedModel's container runs as. Specify the
      *           email address of the service account. If this service account is not
@@ -233,7 +233,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the Model this is the deployment of. Note that the Model
+     * Required. The name of the Model that this is the deployment of. Note that the Model
      * may be in a different location than the DeployedModel's Endpoint.
      *
      * Generated from protobuf field <code>string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -245,7 +245,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the Model this is the deployment of. Note that the Model
+     * Required. The name of the Model that this is the deployment of. Note that the Model
      * may be in a different location than the DeployedModel's Endpoint.
      *
      * Generated from protobuf field <code>string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -330,9 +330,9 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-     * this Model is not allowed.
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec|null
@@ -358,9 +358,9 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-     * this Model is not allowed.
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec $var

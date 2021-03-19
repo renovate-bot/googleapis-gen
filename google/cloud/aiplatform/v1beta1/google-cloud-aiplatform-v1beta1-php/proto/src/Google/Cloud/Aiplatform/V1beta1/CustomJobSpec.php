@@ -17,6 +17,8 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -80,6 +82,8 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Aiplatform\V1beta1\WorkerPoolSpec[]|\Google\Protobuf\Internal\RepeatedField $worker_pool_specs
      *           Required. The spec of the worker pools including machine type and Docker image.
+     *           All worker pools except the first one are optional and can be skipped by
+     *           providing an empty value.
      *     @type \Google\Cloud\Aiplatform\V1beta1\Scheduling $scheduling
      *           Scheduling options for a CustomJob.
      *     @type string $service_account
@@ -123,6 +127,8 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -134,6 +140,8 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\WorkerPoolSpec[]|\Google\Protobuf\Internal\RepeatedField $var

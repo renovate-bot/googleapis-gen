@@ -36,7 +36,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -45,7 +45,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder extends
       getPartialResultsList();
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -53,7 +53,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult getPartialResults(int index);
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -61,7 +61,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder extends
   int getPartialResultsCount();
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -70,7 +70,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder extends
       getPartialResultsOrBuilderList();
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>

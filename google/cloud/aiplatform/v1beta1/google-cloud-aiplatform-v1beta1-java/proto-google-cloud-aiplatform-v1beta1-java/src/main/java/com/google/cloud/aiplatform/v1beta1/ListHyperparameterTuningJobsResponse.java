@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object nextPageToken_;
   /**
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
    * page.
    * </pre>
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
    * page.
    * </pre>
@@ -916,7 +916,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object nextPageToken_ = "";
     /**
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      * </pre>
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      * </pre>
@@ -961,7 +961,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      * </pre>
@@ -982,7 +982,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      * </pre>
@@ -998,7 +998,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
      * page.
      * </pre>

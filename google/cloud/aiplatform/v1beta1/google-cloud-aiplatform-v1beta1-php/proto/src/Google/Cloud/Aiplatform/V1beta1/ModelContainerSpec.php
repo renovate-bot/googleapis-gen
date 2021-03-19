@@ -28,6 +28,9 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      *
      * Generated from protobuf field <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -184,7 +187,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      */
     protected $predict_route = '';
     /**
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
@@ -229,6 +232,9 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           internally, and this original path is afterwards not used.
      *           To learn about the requirements for the Docker image itself, see
      *           [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     *           You can use the URI to one of AI Platform's [pre-built container images for
+     *           prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     *           in this field.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $command
      *           Immutable. Specifies the command that runs when the container starts. This overrides
      *           the container's
@@ -361,7 +367,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *             as the [`AIP_DEPLOYED_MODEL_ID` environment
      *             variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
      *     @type string $health_route
-     *           Immutable. HTTP path on the container to send health checkss to. AI Platform
+     *           Immutable. HTTP path on the container to send health checks to. AI Platform
      *           intermittently sends GET requests to this path on the container's IP
      *           address and port to check that the container is healthy. Read more about
      *           [health
@@ -402,6 +408,9 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      *
      * Generated from protobuf field <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -422,6 +431,9 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      *
      * Generated from protobuf field <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -808,7 +820,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
@@ -841,7 +853,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health

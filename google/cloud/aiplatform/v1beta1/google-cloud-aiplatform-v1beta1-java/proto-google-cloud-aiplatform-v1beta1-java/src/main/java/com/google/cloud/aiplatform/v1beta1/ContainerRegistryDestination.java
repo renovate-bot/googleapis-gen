@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * The Container Regsitry location for the container image.
+ * The Container Registry location for the container image.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ContainerRegistryDestination}
@@ -307,7 +307,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Container Regsitry location for the container image.
+   * The Container Registry location for the container image.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ContainerRegistryDestination}

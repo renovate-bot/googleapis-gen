@@ -250,7 +250,7 @@ module Google
           #     * `data_labeling_dataset:*`.
           #   * Migrated or not: Filter migrated resource or not by last_migrate_time.
           #     * `last_migrate_time:*` will filter migrated resources.
-          #     * `NOT last_migrate_time:*` will filter not yet migrated resource.
+          #     * `NOT last_migrate_time:*` will filter not yet migrated resources.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.

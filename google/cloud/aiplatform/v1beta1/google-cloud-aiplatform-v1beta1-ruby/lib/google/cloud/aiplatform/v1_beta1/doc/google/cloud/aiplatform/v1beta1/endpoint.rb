@@ -84,7 +84,7 @@ module Google
         #     Output only. The ID of the DeployedModel.
         # @!attribute [rw] model
         #   @return [String]
-        #     Required. The name of the Model this is the deployment of. Note that the Model
+        #     Required. The name of the Model that this is the deployment of. Note that the Model
         #     may be in a different location than the DeployedModel's Endpoint.
         # @!attribute [rw] display_name
         #   @return [String]
@@ -101,9 +101,9 @@ module Google
         #     overrides the value of {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec}. All fields of
         #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} are optional in the request. If a field of
         #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} is not populated, the value of the same field of
-        #     {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} is inherited. The corresponding
-        #     {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} must be populated, otherwise explanation for
-        #     this Model is not allowed.
+        #     {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} is inherited. If the corresponding
+        #     {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} is not populated, all fields of the
+        #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} will be used for the explanation configuration.
         # @!attribute [rw] service_account
         #   @return [String]
         #     The service account that the DeployedModel's container runs as. Specify the

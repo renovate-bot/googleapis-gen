@@ -89,7 +89,7 @@ public interface DeployedModelOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the Model this is the deployment of. Note that the Model
+   * Required. The name of the Model that this is the deployment of. Note that the Model
    * may be in a different location than the DeployedModel's Endpoint.
    * </pre>
    *
@@ -99,7 +99,7 @@ public interface DeployedModelOrBuilder extends
   java.lang.String getModel();
   /**
    * <pre>
-   * Required. The name of the Model this is the deployment of. Note that the Model
+   * Required. The name of the Model that this is the deployment of. Note that the Model
    * may be in a different location than the DeployedModel's Endpoint.
    * </pre>
    *
@@ -165,9 +165,9 @@ public interface DeployedModelOrBuilder extends
    * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-   * this Model is not allowed.
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -181,9 +181,9 @@ public interface DeployedModelOrBuilder extends
    * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-   * this Model is not allowed.
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -197,9 +197,9 @@ public interface DeployedModelOrBuilder extends
    * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-   * this Model is not allowed.
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>

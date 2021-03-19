@@ -38,7 +38,7 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
      *           non-deterministic, e.g. the Model produces top-k classes or sort the
      *           outputs by their values.
      *           The shape of the value must be an n-dimensional array of strings. The
-     *           number of dimentions must match that of the outputs to be explained.
+     *           number of dimensions must match that of the outputs to be explained.
      *           The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      *           mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      *     @type string $display_name_mapping_key
@@ -65,7 +65,7 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      *
@@ -90,7 +90,7 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      *

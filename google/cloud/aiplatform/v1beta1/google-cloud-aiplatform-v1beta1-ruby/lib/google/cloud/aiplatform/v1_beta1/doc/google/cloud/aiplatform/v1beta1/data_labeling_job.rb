@@ -108,12 +108,12 @@ module Google
         #     the EncryptionSpec of the Dataset they are exported to.
         # @!attribute [rw] active_learning_config
         #   @return [Google::Cloud::Aiplatform::V1beta1::ActiveLearningConfig]
-        #     Parameters that configure active learning pipeline. Active learning will
-        #     label the data incrementally via several iterations. For every iteration,
-        #     it will select a batch of data based on the sampling strategy.
+        #     Parameters that configure the active learning pipeline. Active learning
+        #     will label the data incrementally via several iterations. For every
+        #     iteration, it will select a batch of data based on the sampling strategy.
         class DataLabelingJob; end
 
-        # Parameters that configure active learning pipeline. Active learning will
+        # Parameters that configure the active learning pipeline. Active learning will
         #  label the data incrementally by several iterations. For every iteration, it
         #  will select a batch of data based on the sampling strategy.
         # @!attribute [rw] max_data_item_count
@@ -144,7 +144,7 @@ module Google
         #     (except the first batch).
         # @!attribute [rw] sample_strategy
         #   @return [Google::Cloud::Aiplatform::V1beta1::SampleConfig::SampleStrategy]
-        #     Field to chose sampling strategy. Sampling strategy will decide which data
+        #     Field to choose sampling strategy. Sampling strategy will decide which data
         #     should be selected for human labeling in every batch.
         class SampleConfig
           # Sample strategy decides which subset of DataItems should be selected for

@@ -53,7 +53,7 @@ public interface ListCustomJobsResponseOrBuilder extends
 
   /**
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListCustomJobsRequest.page_token] to obtain that page.
    * </pre>
    *
@@ -63,7 +63,7 @@ public interface ListCustomJobsResponseOrBuilder extends
   java.lang.String getNextPageToken();
   /**
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListCustomJobsRequest.page_token] to obtain that page.
    * </pre>
    *

@@ -16,9 +16,51 @@ module Google
   module Cloud
     module Aiplatform
       module V1beta1
+        # A message representing a Study.
+        # @!attribute [rw] name
+        #   @return [String]
+        #     Output only. The name of a study. The study's globally unique identifier.
+        #     Format: `projects/{project}/locations/{location}/studies/{study}`
+        # @!attribute [rw] display_name
+        #   @return [String]
+        #     Required. Describes the Study, default value is empty string.
+        # @!attribute [rw] study_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec]
+        #     Required. Configuration of the Study.
+        # @!attribute [rw] state
+        #   @return [Google::Cloud::Aiplatform::V1beta1::Study::State]
+        #     Output only. The detailed state of a Study.
+        # @!attribute [rw] create_time
+        #   @return [Google::Protobuf::Timestamp]
+        #     Output only. Time at which the study was created.
+        # @!attribute [rw] inactive_reason
+        #   @return [String]
+        #     Output only. A human readable reason why the Study is inactive.
+        #     This should be empty if a study is ACTIVE or COMPLETED.
+        class Study
+          # Describes the Study state.
+          module State
+            # The study state is unspecified.
+            STATE_UNSPECIFIED = 0
+
+            # The study is active.
+            ACTIVE = 1
+
+            # The study is stopped due to an internal error.
+            INACTIVE = 2
+
+            # The study is done when the service exhausts the parameter search space
+            # or max_trial_count is reached.
+            COMPLETED = 3
+          end
+        end
+
         # A message representing a Trial. A Trial contains a unique set of Parameters
         # that has been or will be evaluated, along with the objective metrics got by
         # running the Trial.
+        # @!attribute [rw] name
+        #   @return [String]
+        #     Output only. Resource name of the Trial assigned by the service.
         # @!attribute [rw] id
         #   @return [String]
         #     Output only. The identifier of the Trial assigned by the service.
@@ -82,6 +124,15 @@ module Google
         end
 
         # Represents specification of a Study.
+        # @!attribute [rw] decay_curve_stopping_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec::DecayCurveAutomatedStoppingSpec]
+        #     The automated early stopping spec using decay curve rule.
+        # @!attribute [rw] median_automated_stopping_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec::MedianAutomatedStoppingSpec]
+        #     The automated early stopping spec using median rule.
+        # @!attribute [rw] convex_stop_config
+        #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec::ConvexStopConfig]
+        #     The automated early stopping using convex stopping rule.
         # @!attribute [rw] metrics
         #   @return [Array<Google::Cloud::Aiplatform::V1beta1::StudySpec::MetricSpec>]
         #     Required. Metric specs for the Study.
@@ -245,6 +296,68 @@ module Google
               UNIT_REVERSE_LOG_SCALE = 3
             end
           end
+
+          # The decay curve automated stopping rule builds a Gaussian Process
+          # Regressor to predict the final objective value of a Trial based on the
+          # already completed Trials and the intermediate measurements of the current
+          # Trial. Early stopping is requested for the current Trial if there is very
+          # low probability to exceed the optimal value found so far.
+          # @!attribute [rw] use_elapsed_duration
+          #   @return [true, false]
+          #     True if {Google::Cloud::Aiplatform::V1beta1::Measurement#elapsed_duration Measurement#elapsed_duration} is used as the x-axis of each
+          #     Trials Decay Curve. Otherwise, {Google::Cloud::Aiplatform::V1beta1::Measurement#step_count Measurement#step_count} will be used
+          #     as the x-axis.
+          class DecayCurveAutomatedStoppingSpec; end
+
+          # The median automated stopping rule stops a pending Trial if the Trial's
+          # best objective_value is strictly below the median 'performance' of all
+          # completed Trials reported up to the Trial's last measurement.
+          # Currently, 'performance' refers to the running average of the objective
+          # values reported by the Trial in each measurement.
+          # @!attribute [rw] use_elapsed_duration
+          #   @return [true, false]
+          #     True if median automated stopping rule applies on
+          #     {Google::Cloud::Aiplatform::V1beta1::Measurement#elapsed_duration Measurement#elapsed_duration}. It means that elapsed_duration
+          #     field of latest measurement of current Trial is used to compute median
+          #     objective value for each completed Trials.
+          class MedianAutomatedStoppingSpec; end
+
+          # Configuration for ConvexStopPolicy.
+          # @!attribute [rw] max_num_steps
+          #   @return [Integer]
+          #     Steps used in predicting the final objective for early stopped trials. In
+          #     general, it's set to be the same as the defined steps in training /
+          #     tuning. When use_steps is false, this field is set to the maximum elapsed
+          #     seconds.
+          # @!attribute [rw] min_num_steps
+          #   @return [Integer]
+          #     Minimum number of steps for a trial to complete. Trials which do not have
+          #     a measurement with num_steps > min_num_steps won't be considered for
+          #     early stopping. It's ok to set it to 0, and a trial can be early stopped
+          #     at any stage. By default, min_num_steps is set to be one-tenth of the
+          #     max_num_steps.
+          #     When use_steps is false, this field is set to the minimum elapsed
+          #     seconds.
+          # @!attribute [rw] autoregressive_order
+          #   @return [Integer]
+          #     The number of Trial measurements used in autoregressive model for
+          #     value prediction. A trial won't be considered early stopping if has fewer
+          #     measurement points.
+          # @!attribute [rw] learning_rate_parameter_name
+          #   @return [String]
+          #     The hyper-parameter name used in the tuning job that stands for learning
+          #     rate. Leave it blank if learning rate is not in a parameter in tuning.
+          #     The learning_rate is used to estimate the objective value of the ongoing
+          #     trial.
+          # @!attribute [rw] use_seconds
+          #   @return [true, false]
+          #     This bool determines whether or not the rule is applied based on
+          #     elapsed_secs or steps. If use_seconds==false, the early stopping decision
+          #     is made according to the predicted objective values according to the
+          #     target steps. If use_seconds==true, elapsed_secs is used instead of
+          #     steps. Also, in this case, the parameters max_num_steps and min_num_steps
+          #     are overloaded to contain max_elapsed_seconds and min_elapsed_seconds.
+          class ConvexStopConfig; end
 
           # The available search algorithms for the Study.
           module Algorithm

@@ -22,7 +22,7 @@ class ListBatchPredictionJobsResponse extends \Google\Protobuf\Internal\Message
      */
     private $batch_prediction_jobs;
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
      * page.
      *
@@ -39,7 +39,7 @@ class ListBatchPredictionJobsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob[]|\Google\Protobuf\Internal\RepeatedField $batch_prediction_jobs
      *           List of BatchPredictionJobs in the requested page.
      *     @type string $next_page_token
-     *           A token to retrieve next page of results.
+     *           A token to retrieve the next page of results.
      *           Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
      *           page.
      * }
@@ -76,7 +76,7 @@ class ListBatchPredictionJobsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
      * page.
      *
@@ -89,7 +89,7 @@ class ListBatchPredictionJobsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
      * page.
      *

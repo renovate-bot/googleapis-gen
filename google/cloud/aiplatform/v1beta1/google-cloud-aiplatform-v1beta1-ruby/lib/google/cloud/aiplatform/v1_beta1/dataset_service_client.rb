@@ -878,7 +878,6 @@ module Google
           # @param name [String]
           #   Required. The name of the AnnotationSpec resource.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
           # @param read_mask [Google::Protobuf::FieldMask | Hash]
           #   Mask specifying which fields to read.
@@ -917,7 +916,6 @@ module Google
           # @param parent [String]
           #   Required. The resource name of the DataItem to list Annotations from.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
           # @param filter [String]
           #   The standard list filter.

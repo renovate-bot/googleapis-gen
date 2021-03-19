@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents a partial result in batch migration opreation for one
+ * Represents a partial result in batch migration operation for one
  * [MigrateResourceRequest][google.cloud.aiplatform.v1beta1.MigrateResourceRequest].
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult</code>

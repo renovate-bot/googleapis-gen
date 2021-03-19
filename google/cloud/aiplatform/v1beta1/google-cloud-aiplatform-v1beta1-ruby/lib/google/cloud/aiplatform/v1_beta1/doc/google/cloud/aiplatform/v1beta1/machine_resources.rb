@@ -53,13 +53,35 @@ module Google
         # @!attribute [rw] max_replica_count
         #   @return [Integer]
         #     Immutable. The maximum number of replicas this DeployedModel may be deployed on when
-        #     the traffic against it increases. If requested value is too large,
+        #     the traffic against it increases. If the requested value is too large,
         #     the deployment will error, but if deployment succeeds then the ability
         #     to scale the model to that many replicas is guaranteed (barring service
         #     outages). If traffic against the DeployedModel increases beyond what its
         #     replicas at maximum may handle, a portion of the traffic will be dropped.
         #     If this value is not provided, will use {Google::Cloud::Aiplatform::V1beta1::DedicatedResources#min_replica_count min_replica_count} as the
         #     default value.
+        # @!attribute [rw] autoscaling_metric_specs
+        #   @return [Array<Google::Cloud::Aiplatform::V1beta1::AutoscalingMetricSpec>]
+        #     Immutable. The metric specifications that overrides a resource
+        #     utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+        #     target value (default to 60 if not set). At most one entry is allowed per
+        #     metric.
+        #
+        #     If {Google::Cloud::Aiplatform::V1beta1::MachineSpec#accelerator_count machine_spec::accelerator_count} is
+        #     above 0, the autoscaling will be based on both CPU utilization and
+        #     accelerator's duty cycle metrics and scale up when either metrics exceeds
+        #     its target value while scale down if both metrics are under their target
+        #     value. The default target value is 60 for both metrics.
+        #
+        #     If {Google::Cloud::Aiplatform::V1beta1::MachineSpec#accelerator_count machine_spec::accelerator_count} is
+        #     0, the autoscaling will be based on CPU utilization metric only with
+        #     default target value 60 if not explicitly set.
+        #
+        #     For example, in the case of Online Prediction, if you want to override
+        #     target CPU utilization to 80, you should set
+        #     {Google::Cloud::Aiplatform::V1beta1::AutoscalingMetricSpec#metric_name autoscaling_metric_specs::metric_name}
+        #     to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+        #     {Google::Cloud::Aiplatform::V1beta1::AutoscalingMetricSpec#target autoscaling_metric_specs::target} to `80`.
         class DedicatedResources; end
 
         # A description of resources that to large degree are decided by AI Platform,
@@ -71,11 +93,11 @@ module Google
         #     on. If traffic against it increases, it may dynamically be deployed onto
         #     more replicas up to {Google::Cloud::Aiplatform::V1beta1::AutomaticResources#max_replica_count max_replica_count}, and as traffic decreases, some
         #     of these extra replicas may be freed.
-        #     If requested value is too large, the deployment will error.
+        #     If the requested value is too large, the deployment will error.
         # @!attribute [rw] max_replica_count
         #   @return [Integer]
         #     Immutable. The maximum number of replicas this DeployedModel may be deployed on when
-        #     the traffic against it increases. If requested value is too large,
+        #     the traffic against it increases. If the requested value is too large,
         #     the deployment will error, but if deployment succeeds then the ability
         #     to scale the model to that many replicas is guaranteed (barring service
         #     outages). If traffic against the DeployedModel increases beyond what its
@@ -119,6 +141,25 @@ module Google
         #   @return [Integer]
         #     Size in GB of the boot disk (default is 100GB).
         class DiskSpec; end
+
+        # The metric specification that defines the target resource utilization
+        # (CPU utilization, accelerator's duty cycle, and so on) for calculating the
+        # desired replica count.
+        # @!attribute [rw] metric_name
+        #   @return [String]
+        #     Required. The resource metric name.
+        #     Supported metrics:
+        #
+        #     * For Online Prediction:
+        #     * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
+        #     * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
+        # @!attribute [rw] target
+        #   @return [Integer]
+        #     The target resource utilization in percentage (1% - 100%) for the given
+        #     metric; once the real usage deviates from the target by a certain
+        #     percentage, the machine replicas change. The default value is 60
+        #     (representing 60%) if not provided.
+        class AutoscalingMetricSpec; end
       end
     end
   end

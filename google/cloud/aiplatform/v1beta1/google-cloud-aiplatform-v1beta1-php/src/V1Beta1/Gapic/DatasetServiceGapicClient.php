@@ -1103,12 +1103,11 @@ class DatasetServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the AnnotationSpec resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the AnnotationSpec resource.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type FieldMask $readMask
      *          Mask specifying which fields to read.
@@ -1176,12 +1175,11 @@ class DatasetServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent Required. The resource name of the DataItem to list Annotations from.
-     *                       Format:
-     *
-     * `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $parent       Required. The resource name of the DataItem to list Annotations from.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type string $filter
      *          The standard list filter.

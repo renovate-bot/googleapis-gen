@@ -174,6 +174,9 @@ private static final long serialVersionUID = 0L;
    * internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
    * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+   * You can use the URI to one of AI Platform's [pre-built container images for
+   * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+   * in this field.
    * </pre>
    *
    * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -204,6 +207,9 @@ private static final long serialVersionUID = 0L;
    * internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
    * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+   * You can use the URI to one of AI Platform's [pre-built container images for
+   * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+   * in this field.
    * </pre>
    *
    * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -971,7 +977,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object healthRoute_;
   /**
    * <pre>
-   * Immutable. HTTP path on the container to send health checkss to. AI Platform
+   * Immutable. HTTP path on the container to send health checks to. AI Platform
    * intermittently sends GET requests to this path on the container's IP
    * address and port to check that the container is healthy. Read more about
    * [health
@@ -1014,7 +1020,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Immutable. HTTP path on the container to send health checkss to. AI Platform
+   * Immutable. HTTP path on the container to send health checks to. AI Platform
    * intermittently sends GET requests to this path on the container's IP
    * address and port to check that the container is healthy. Read more about
    * [health
@@ -1592,6 +1598,9 @@ private static final long serialVersionUID = 0L;
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1621,6 +1630,9 @@ private static final long serialVersionUID = 0L;
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1651,6 +1663,9 @@ private static final long serialVersionUID = 0L;
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1679,6 +1694,9 @@ private static final long serialVersionUID = 0L;
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1702,6 +1720,9 @@ private static final long serialVersionUID = 0L;
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+     * You can use the URI to one of AI Platform's [pre-built container images for
+     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * in this field.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4065,7 +4086,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object healthRoute_ = "";
     /**
      * <pre>
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
@@ -4107,7 +4128,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
@@ -4150,7 +4171,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
@@ -4191,7 +4212,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
@@ -4227,7 +4248,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. HTTP path on the container to send health checkss to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. AI Platform
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health

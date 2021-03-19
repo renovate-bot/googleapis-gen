@@ -3,6 +3,7 @@
     "google.cloud.aiplatform.v1beta1.MigrationService": {
       "retry_codes": {
         "no_retry_2_codes": [],
+        "no_retry_8_codes": [],
         "no_retry_4_codes": [],
         "no_retry_6_codes": [],
         "no_retry_codes": [],
@@ -67,6 +68,15 @@
           "total_timeout_millis": 5000
         },
         "no_retry_6_params": {
+          "initial_retry_delay_millis": 0,
+          "retry_delay_multiplier": 0.0,
+          "max_retry_delay_millis": 0,
+          "initial_rpc_timeout_millis": 5000,
+          "rpc_timeout_multiplier": 1.0,
+          "max_rpc_timeout_millis": 5000,
+          "total_timeout_millis": 5000
+        },
+        "no_retry_8_params": {
           "initial_retry_delay_millis": 0,
           "retry_delay_multiplier": 0.0,
           "max_retry_delay_millis": 0,

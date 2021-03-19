@@ -143,6 +143,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -154,6 +156,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,6 +170,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -177,6 +183,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -188,6 +196,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -888,6 +898,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -902,6 +914,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -916,6 +930,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -930,6 +946,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -951,6 +969,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -969,6 +989,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -989,6 +1011,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1010,6 +1034,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1028,6 +1054,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1046,6 +1074,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1065,6 +1095,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1082,6 +1114,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1099,6 +1133,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1110,6 +1146,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1124,6 +1162,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1139,6 +1179,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1150,6 +1192,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1162,6 +1206,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>

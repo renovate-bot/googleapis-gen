@@ -47,7 +47,7 @@ module Google
         #     {Google::Cloud::Aiplatform::V1beta1::Dataset#metadata_schema_uri metadata schema's} dataItemSchemaUri field.
         # @!attribute [rw] etag
         #   @return [String]
-        #     Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+        #     Optional. Used to perform consistent read-modify-write updates. If not set, a blind
         #     "overwrite" update happens.
         class DataItem; end
       end

@@ -940,12 +940,11 @@ class ModelServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the ModelEvaluation resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the ModelEvaluation resource.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1084,12 +1083,11 @@ class ModelServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the ModelEvaluationSlice resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the ModelEvaluationSlice resource.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1152,12 +1150,11 @@ class ModelServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-     *                       from. Format:
-     *
-     * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $parent       Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
+     *                             from. Format:
+     *                             `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type string $filter
      *          The standard list filter.

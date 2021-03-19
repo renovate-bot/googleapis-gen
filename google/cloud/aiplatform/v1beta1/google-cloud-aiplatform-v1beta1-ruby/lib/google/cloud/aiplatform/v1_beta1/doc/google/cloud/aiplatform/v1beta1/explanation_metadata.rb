@@ -37,8 +37,8 @@ module Google
         #   @return [Hash{String => Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::OutputMetadata}]
         #     Required. Map from output names to output metadata.
         #
-        #     For AI Platform provided Tensorflow images, keys can be any string user
-        #     defines.
+        #     For AI Platform provided Tensorflow images, keys can be any user defined
+        #     string that consists of any UTF-8 characters.
         #
         #     For custom images, keys are the name of the output field in the prediction
         #     to be explained.
@@ -362,7 +362,7 @@ module Google
           #     outputs by their values.
           #
           #     The shape of the value must be an n-dimensional array of strings. The
-          #     number of dimentions must match that of the outputs to be explained.
+          #     number of dimensions must match that of the outputs to be explained.
           #     The {Google::Cloud::Aiplatform::V1beta1::Attribution#output_display_name Attribution#output_display_name} is populated by locating in the
           #     mapping with {Google::Cloud::Aiplatform::V1beta1::Attribution#output_index Attribution#output_index}.
           # @!attribute [rw] display_name_mapping_key

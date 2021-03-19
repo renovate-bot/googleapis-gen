@@ -469,7 +469,6 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
             name (str):
                 Required. The name of the TrainingPipeline resource.
                 Format:
-
                 ``projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}``
 
                 This corresponds to the ``name`` field
@@ -644,7 +643,6 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
             name (str):
                 Required. The name of the TrainingPipeline resource to
                 be deleted. Format:
-
                 ``projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}``
 
                 This corresponds to the ``name`` field
@@ -757,7 +755,6 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
             name (str):
                 Required. The name of the TrainingPipeline to cancel.
                 Format:
-
                 ``projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}``
 
                 This corresponds to the ``name`` field

@@ -199,7 +199,6 @@ module Google
         #   @return [String]
         #     Required. The name of the AnnotationSpec resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
         # @!attribute [rw] read_mask
         #   @return [Google::Protobuf::FieldMask]
@@ -211,7 +210,6 @@ module Google
         #   @return [String]
         #     Required. The resource name of the DataItem to list Annotations from.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
         # @!attribute [rw] filter
         #   @return [String]

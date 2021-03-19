@@ -33,8 +33,8 @@ class ExplanationMetadata extends \Google\Protobuf\Internal\Message
     private $inputs;
     /**
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -76,8 +76,8 @@ class ExplanationMetadata extends \Google\Protobuf\Internal\Message
      *           [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
      *     @type array|\Google\Protobuf\Internal\MapField $outputs
      *           Required. Map from output names to output metadata.
-     *           For AI Platform provided Tensorflow images, keys can be any string user
-     *           defines.
+     *           For AI Platform provided Tensorflow images, keys can be any user defined
+     *           string that consists of any UTF-8 characters.
      *           For custom images, keys are the name of the output field in the prediction
      *           to be explained.
      *           Currently only one key is allowed.
@@ -145,8 +145,8 @@ class ExplanationMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -161,8 +161,8 @@ class ExplanationMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.

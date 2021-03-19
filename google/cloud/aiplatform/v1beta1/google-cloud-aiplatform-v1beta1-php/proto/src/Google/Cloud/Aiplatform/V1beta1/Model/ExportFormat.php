@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents a supported by the Model export format.
+ * Represents export format supported by the Model.
  * All formats export to Google Cloud Storage.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.Model.ExportFormat</code>

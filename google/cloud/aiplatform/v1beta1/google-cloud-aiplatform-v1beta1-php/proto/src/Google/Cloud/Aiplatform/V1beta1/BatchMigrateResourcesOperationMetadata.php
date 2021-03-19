@@ -22,7 +22,7 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
      */
     protected $generic_metadata = null;
     /**
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
      */
@@ -37,7 +37,7 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
      *     @type \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata $generic_metadata
      *           The common part of the operation metadata.
      *     @type \Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesOperationMetadata\PartialResult[]|\Google\Protobuf\Internal\RepeatedField $partial_results
-     *           Partial results that reflects the latest migration operation progress.
+     *           Partial results that reflect the latest migration operation progress.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -93,7 +93,7 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesOperationMetadata\PartialResult[]|\Google\Protobuf\Internal\RepeatedField $var

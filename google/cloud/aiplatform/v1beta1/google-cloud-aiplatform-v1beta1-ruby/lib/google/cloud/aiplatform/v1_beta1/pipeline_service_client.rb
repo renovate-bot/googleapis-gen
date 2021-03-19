@@ -313,7 +313,6 @@ module Google
           # @param name [String]
           #   Required. The name of the TrainingPipeline resource.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -426,7 +425,6 @@ module Google
           # @param name [String]
           #   Required. The name of the TrainingPipeline resource to be deleted.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -498,7 +496,6 @@ module Google
           # @param name [String]
           #   Required. The name of the TrainingPipeline to cancel.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,

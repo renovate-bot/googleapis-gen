@@ -41,7 +41,7 @@ module Google
         #       * `data_labeling_dataset:*`.
         #     * Migrated or not: Filter migrated resource or not by last_migrate_time.
         #       * `last_migrate_time:*` will filter migrated resources.
-        #       * `NOT last_migrate_time:*` will filter not yet migrated resource.
+        #       * `NOT last_migrate_time:*` will filter not yet migrated resources.
         class SearchMigratableResourcesRequest; end
 
         # Response message for {Google::Cloud::Aiplatform::V1beta1::MigrationService::SearchMigratableResources MigrationService::SearchMigratableResources}.
@@ -158,7 +158,6 @@ module Google
             #   @return [String]
             #     Required. Full resource name of data labeling AnnotatedDataset.
             #     Format:
-            #
             #     `projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}`.
             class MigrateDataLabelingAnnotatedDatasetConfig; end
           end
@@ -189,9 +188,9 @@ module Google
         #     The common part of the operation metadata.
         # @!attribute [rw] partial_results
         #   @return [Array<Google::Cloud::Aiplatform::V1beta1::BatchMigrateResourcesOperationMetadata::PartialResult>]
-        #     Partial results that reflects the latest migration operation progress.
+        #     Partial results that reflect the latest migration operation progress.
         class BatchMigrateResourcesOperationMetadata
-          # Represents a partial result in batch migration opreation for one
+          # Represents a partial result in batch migration operation for one
           # {Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest MigrateResourceRequest}.
           # @!attribute [rw] error
           #   @return [Google::Rpc::Status]

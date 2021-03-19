@@ -32,8 +32,9 @@ module Google
         #     Output only. Represents one Dataset in datalabeling.googleapis.com.
         # @!attribute [rw] last_migrate_time
         #   @return [Google::Protobuf::Timestamp]
-        #     Output only. Timestamp when last migrate attempt on this MigratableResource started.
-        #     Will not be set if there's no migrate attempt on this MigratableResource.
+        #     Output only. Timestamp when the last migration attempt on this MigratableResource
+        #     started. Will not be set if there's no migration attempt on this
+        #     MigratableResource.
         # @!attribute [rw] last_update_time
         #   @return [Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this MigratableResource was last updated.
@@ -96,7 +97,6 @@ module Google
             #   @return [String]
             #     Full resource name of data labeling AnnotatedDataset.
             #     Format:
-            #
             #     `projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}`.
             # @!attribute [rw] annotated_dataset_display_name
             #   @return [String]

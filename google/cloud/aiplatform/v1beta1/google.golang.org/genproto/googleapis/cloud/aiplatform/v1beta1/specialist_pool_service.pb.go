@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -163,7 +163,6 @@ type GetSpecialistPoolRequest struct {
 
 	// Required. The name of the SpecialistPool resource.
 	// The form is
-	//
 	// `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -473,7 +472,6 @@ type UpdateSpecialistPoolOperationMetadata struct {
 
 	// Output only. The name of the SpecialistPool to which the specialists are being added.
 	// Format:
-	//
 	// `projects/{project_id}/locations/{location_id}/specialistPools/{specialist_pool}`
 	SpecialistPool string `protobuf:"bytes,1,opt,name=specialist_pool,json=specialistPool,proto3" json:"specialist_pool,omitempty"`
 	// The operation generic information.

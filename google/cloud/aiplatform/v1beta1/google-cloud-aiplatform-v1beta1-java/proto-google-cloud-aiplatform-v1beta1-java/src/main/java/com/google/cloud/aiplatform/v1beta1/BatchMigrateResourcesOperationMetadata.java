@@ -234,7 +234,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Represents a partial result in batch migration opreation for one
+   * Represents a partial result in batch migration operation for one
    * [MigrateResourceRequest][google.cloud.aiplatform.v1beta1.MigrateResourceRequest].
    * </pre>
    *
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Represents a partial result in batch migration opreation for one
+     * Represents a partial result in batch migration operation for one
      * [MigrateResourceRequest][google.cloud.aiplatform.v1beta1.MigrateResourceRequest].
      * </pre>
      *
@@ -1709,7 +1709,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult> partialResults_;
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -1720,7 +1720,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -1732,7 +1732,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -1743,7 +1743,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -1754,7 +1754,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2310,7 +2310,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2324,7 +2324,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2338,7 +2338,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2352,7 +2352,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2373,7 +2373,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2391,7 +2391,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2411,7 +2411,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2432,7 +2432,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2450,7 +2450,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2468,7 +2468,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2487,7 +2487,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2504,7 +2504,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2521,7 +2521,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2532,7 +2532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2546,7 +2546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2561,7 +2561,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2572,7 +2572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
@@ -2584,7 +2584,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>

@@ -53,7 +53,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder extends
 
   /**
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
    * page.
    * </pre>
@@ -64,7 +64,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder extends
   java.lang.String getNextPageToken();
   /**
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
    * page.
    * </pre>

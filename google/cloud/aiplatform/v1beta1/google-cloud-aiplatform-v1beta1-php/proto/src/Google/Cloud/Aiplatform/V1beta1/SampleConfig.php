@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class SampleConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy sample_strategy = 5;</code>
@@ -38,7 +38,7 @@ class SampleConfig extends \Google\Protobuf\Internal\Message
      *           The percentage of data needed to be labeled in each following batch
      *           (except the first batch).
      *     @type int $sample_strategy
-     *           Field to chose sampling strategy. Sampling strategy will decide which data
+     *           Field to choose sampling strategy. Sampling strategy will decide which data
      *           should be selected for human labeling in every batch.
      * }
      */
@@ -112,7 +112,7 @@ class SampleConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy sample_strategy = 5;</code>
@@ -124,7 +124,7 @@ class SampleConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy sample_strategy = 5;</code>

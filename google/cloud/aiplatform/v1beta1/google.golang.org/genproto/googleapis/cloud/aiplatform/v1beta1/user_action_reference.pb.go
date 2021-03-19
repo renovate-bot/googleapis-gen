@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -132,7 +132,6 @@ type UserActionReference_DataLabelingJob struct {
 	// For API calls that start a LabelingJob.
 	// Resource name of the LabelingJob.
 	// Format:
-	//
 	// 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
 	DataLabelingJob string `protobuf:"bytes,2,opt,name=data_labeling_job,json=dataLabelingJob,proto3,oneof"`
 }

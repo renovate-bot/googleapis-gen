@@ -4968,8 +4968,8 @@ private static final long serialVersionUID = 0L;
    *    keyed `explanation`. The value of the entry is a JSON object that
    *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
    *  * `csv`: Generating explanations for CSV format is not supported.
-   * If this field is set to true, the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be
-   * populated.
+   * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] must be populated.
    * </pre>
    *
    * <code>bool generate_explanation = 23;</code>
@@ -7821,8 +7821,8 @@ private static final long serialVersionUID = 0L;
      *    keyed `explanation`. The value of the entry is a JSON object that
      *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
      *  * `csv`: Generating explanations for CSV format is not supported.
-     * If this field is set to true, the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be
-     * populated.
+     * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] must be populated.
      * </pre>
      *
      * <code>bool generate_explanation = 23;</code>
@@ -7844,8 +7844,8 @@ private static final long serialVersionUID = 0L;
      *    keyed `explanation`. The value of the entry is a JSON object that
      *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
      *  * `csv`: Generating explanations for CSV format is not supported.
-     * If this field is set to true, the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be
-     * populated.
+     * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] must be populated.
      * </pre>
      *
      * <code>bool generate_explanation = 23;</code>
@@ -7870,8 +7870,8 @@ private static final long serialVersionUID = 0L;
      *    keyed `explanation`. The value of the entry is a JSON object that
      *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
      *  * `csv`: Generating explanations for CSV format is not supported.
-     * If this field is set to true, the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be
-     * populated.
+     * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] must be populated.
      * </pre>
      *
      * <code>bool generate_explanation = 23;</code>

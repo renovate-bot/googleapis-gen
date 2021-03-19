@@ -47,7 +47,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      *
      * Generated from protobuf field <code>string filter = 4;</code>
      */
@@ -79,7 +79,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *             * `data_labeling_dataset:*`.
      *           * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *             * `last_migrate_time:*` will filter migrated resources.
-     *             * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *             * `NOT last_migrate_time:*` will filter not yet migrated resources.
      * }
      */
     public function __construct($data = NULL) {
@@ -184,7 +184,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      *
      * Generated from protobuf field <code>string filter = 4;</code>
      * @return string
@@ -203,7 +203,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      *
      * Generated from protobuf field <code>string filter = 4;</code>
      * @param string $var

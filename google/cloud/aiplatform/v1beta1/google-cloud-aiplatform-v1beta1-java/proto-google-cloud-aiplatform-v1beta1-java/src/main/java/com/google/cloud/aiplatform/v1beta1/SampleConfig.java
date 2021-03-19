@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
   private int sampleStrategy_;
   /**
    * <pre>
-   * Field to chose sampling strategy. Sampling strategy will decide which data
+   * Field to choose sampling strategy. Sampling strategy will decide which data
    * should be selected for human labeling in every batch.
    * </pre>
    *
@@ -385,7 +385,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Field to chose sampling strategy. Sampling strategy will decide which data
+   * Field to choose sampling strategy. Sampling strategy will decide which data
    * should be selected for human labeling in every batch.
    * </pre>
    *
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
     private int sampleStrategy_ = 0;
     /**
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -949,7 +949,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -965,7 +965,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -980,7 +980,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *

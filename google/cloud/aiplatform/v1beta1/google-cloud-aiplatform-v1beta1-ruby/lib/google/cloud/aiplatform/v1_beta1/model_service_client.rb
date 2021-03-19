@@ -743,7 +743,6 @@ module Google
           # @param name [String]
           #   Required. The name of the ModelEvaluation resource.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -841,7 +840,6 @@ module Google
           # @param name [String]
           #   Required. The name of the ModelEvaluationSlice resource.
           #   Format:
-          #
           #   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -874,7 +872,6 @@ module Google
           # @param parent [String]
           #   Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
           #   from. Format:
-          #
           #   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
           # @param filter [String]
           #   The standard list filter.

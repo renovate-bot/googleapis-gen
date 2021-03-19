@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The Container Regsitry location for the container image.
+ * The Container Registry location for the container image.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.ContainerRegistryDestination</code>
  */

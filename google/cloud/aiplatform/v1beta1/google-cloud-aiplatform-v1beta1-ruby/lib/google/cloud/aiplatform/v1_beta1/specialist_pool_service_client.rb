@@ -347,7 +347,6 @@ module Google
           # @param name [String]
           #   Required. The name of the SpecialistPool resource.
           #   The form is
-          #
           #   `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,

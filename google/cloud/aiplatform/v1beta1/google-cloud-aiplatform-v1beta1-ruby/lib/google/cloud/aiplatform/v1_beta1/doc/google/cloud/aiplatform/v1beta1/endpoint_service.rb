@@ -82,7 +82,7 @@ module Google
         #     List of Endpoints in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [String]
-        #     A token to retrieve next page of results.
+        #     A token to retrieve the next page of results.
         #     Pass to {Google::Cloud::Aiplatform::V1beta1::ListEndpointsRequest#page_token ListEndpointsRequest#page_token} to obtain that page.
         class ListEndpointsResponse; end
 

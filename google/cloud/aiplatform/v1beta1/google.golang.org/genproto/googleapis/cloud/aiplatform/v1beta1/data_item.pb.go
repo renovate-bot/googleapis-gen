@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ type DataItem struct {
 	// snippet). The schema of the payload is stored in the parent Dataset's
 	// [metadata schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] dataItemSchemaUri field.
 	Payload *structpb.Value `protobuf:"bytes,4,opt,name=payload,proto3" json:"payload,omitempty"`
-	// Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind
 	// "overwrite" update happens.
 	Etag string `protobuf:"bytes,7,opt,name=etag,proto3" json:"etag,omitempty"`
 }

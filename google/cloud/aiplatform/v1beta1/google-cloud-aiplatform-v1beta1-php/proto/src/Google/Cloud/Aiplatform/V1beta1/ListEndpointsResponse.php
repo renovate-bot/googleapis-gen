@@ -22,7 +22,7 @@ class ListEndpointsResponse extends \Google\Protobuf\Internal\Message
      */
     private $endpoints;
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
@@ -38,7 +38,7 @@ class ListEndpointsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Aiplatform\V1beta1\Endpoint[]|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           List of Endpoints in the requested page.
      *     @type string $next_page_token
-     *           A token to retrieve next page of results.
+     *           A token to retrieve the next page of results.
      *           Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
      * }
      */
@@ -74,7 +74,7 @@ class ListEndpointsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
@@ -86,7 +86,7 @@ class ListEndpointsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>

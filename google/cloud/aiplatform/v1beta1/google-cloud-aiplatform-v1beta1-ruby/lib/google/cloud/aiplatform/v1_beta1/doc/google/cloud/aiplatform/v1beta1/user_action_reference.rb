@@ -29,7 +29,6 @@ module Google
         #     For API calls that start a LabelingJob.
         #     Resource name of the LabelingJob.
         #     Format:
-        #
         #     'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
         # @!attribute [rw] method
         #   @return [String]

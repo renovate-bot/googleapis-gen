@@ -78,7 +78,7 @@ module Google
         #     List of CustomJobs in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [String]
-        #     A token to retrieve next page of results.
+        #     A token to retrieve the next page of results.
         #     Pass to {Google::Cloud::Aiplatform::V1beta1::ListCustomJobsRequest#page_token ListCustomJobsRequest#page_token} to obtain that page.
         class ListCustomJobsResponse; end
 
@@ -113,7 +113,6 @@ module Google
         #   @return [String]
         #     Required. The name of the DataLabelingJob.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
         class GetDataLabelingJobRequest; end
 
@@ -175,7 +174,6 @@ module Google
         #   @return [String]
         #     Required. The name of the DataLabelingJob to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
         class DeleteDataLabelingJobRequest; end
 
@@ -184,7 +182,6 @@ module Google
         #   @return [String]
         #     Required. The name of the DataLabelingJob.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
         class CancelDataLabelingJobRequest; end
 
@@ -203,7 +200,6 @@ module Google
         #   @return [String]
         #     Required. The name of the HyperparameterTuningJob resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
         class GetHyperparameterTuningJobRequest; end
 
@@ -252,7 +248,7 @@ module Google
         #     {Google::Cloud::Aiplatform::V1beta1::HyperparameterTuningJob#trials HyperparameterTuningJob#trials} of the jobs will be not be returned.
         # @!attribute [rw] next_page_token
         #   @return [String]
-        #     A token to retrieve next page of results.
+        #     A token to retrieve the next page of results.
         #     Pass to {Google::Cloud::Aiplatform::V1beta1::ListHyperparameterTuningJobsRequest#page_token ListHyperparameterTuningJobsRequest#page_token} to obtain that
         #     page.
         class ListHyperparameterTuningJobsResponse; end
@@ -262,7 +258,6 @@ module Google
         #   @return [String]
         #     Required. The name of the HyperparameterTuningJob resource to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
         class DeleteHyperparameterTuningJobRequest; end
 
@@ -271,7 +266,6 @@ module Google
         #   @return [String]
         #     Required. The name of the HyperparameterTuningJob to cancel.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
         class CancelHyperparameterTuningJobRequest; end
 
@@ -290,7 +284,6 @@ module Google
         #   @return [String]
         #     Required. The name of the BatchPredictionJob resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
         class GetBatchPredictionJobRequest; end
 
@@ -308,6 +301,8 @@ module Google
         #     * `display_name` supports = and !=.
         #
         #       * `state` supports = and !=.
+        #
+        #       * `model_display_name` supports = and !=
         #
         #       Some examples of using the filter are:
         #
@@ -338,7 +333,7 @@ module Google
         #     List of BatchPredictionJobs in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [String]
-        #     A token to retrieve next page of results.
+        #     A token to retrieve the next page of results.
         #     Pass to {Google::Cloud::Aiplatform::V1beta1::ListBatchPredictionJobsRequest#page_token ListBatchPredictionJobsRequest#page_token} to obtain that
         #     page.
         class ListBatchPredictionJobsResponse; end
@@ -348,7 +343,6 @@ module Google
         #   @return [String]
         #     Required. The name of the BatchPredictionJob resource to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
         class DeleteBatchPredictionJobRequest; end
 
@@ -357,7 +351,6 @@ module Google
         #   @return [String]
         #     Required. The name of the BatchPredictionJob to cancel.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
         class CancelBatchPredictionJobRequest; end
       end

@@ -459,12 +459,11 @@ class SpecialistPoolServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the SpecialistPool resource.
-     *                     The form is
-     *
-     * `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $name         Required. The name of the SpecialistPool resource.
+     *                             The form is
+     *                             `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

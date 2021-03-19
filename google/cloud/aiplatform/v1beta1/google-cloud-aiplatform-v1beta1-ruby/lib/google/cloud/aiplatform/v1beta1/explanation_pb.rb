@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
 require 'google/cloud/aiplatform/v1beta1/explanation_metadata_pb'
+require 'google/cloud/aiplatform/v1beta1/io_pb'
 require 'google/protobuf/struct_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do

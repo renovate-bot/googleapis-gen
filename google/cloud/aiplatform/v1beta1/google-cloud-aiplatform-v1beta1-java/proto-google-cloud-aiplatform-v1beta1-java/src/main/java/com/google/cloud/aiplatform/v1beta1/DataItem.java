@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object etag_;
   /**
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -485,7 +485,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -1766,7 +1766,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object etag_ = "";
     /**
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1787,7 +1787,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1809,7 +1809,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1829,7 +1829,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1844,7 +1844,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *

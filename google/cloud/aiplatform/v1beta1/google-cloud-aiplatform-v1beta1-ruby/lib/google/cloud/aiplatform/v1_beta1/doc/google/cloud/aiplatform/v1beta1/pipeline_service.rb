@@ -31,7 +31,6 @@ module Google
         #   @return [String]
         #     Required. The name of the TrainingPipeline resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
         class GetTrainingPipelineRequest; end
 
@@ -78,7 +77,7 @@ module Google
         #     List of TrainingPipelines in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [String]
-        #     A token to retrieve next page of results.
+        #     A token to retrieve the next page of results.
         #     Pass to {Google::Cloud::Aiplatform::V1beta1::ListTrainingPipelinesRequest#page_token ListTrainingPipelinesRequest#page_token} to obtain that page.
         class ListTrainingPipelinesResponse; end
 
@@ -87,7 +86,6 @@ module Google
         #   @return [String]
         #     Required. The name of the TrainingPipeline resource to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
         class DeleteTrainingPipelineRequest; end
 
@@ -96,7 +94,6 @@ module Google
         #   @return [String]
         #     Required. The name of the TrainingPipeline to cancel.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
         class CancelTrainingPipelineRequest; end
       end

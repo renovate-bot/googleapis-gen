@@ -38,7 +38,6 @@ module Google
         #   @return [String]
         #     Required. The name of the SpecialistPool resource.
         #     The form is
-        #
         #     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
         class GetSpecialistPoolRequest; end
 
@@ -97,7 +96,6 @@ module Google
         #   @return [String]
         #     Output only. The name of the SpecialistPool to which the specialists are being added.
         #     Format:
-        #
         #     `projects/{project_id}/locations/{location_id}/specialistPools/{specialist_pool}`
         # @!attribute [rw] generic_metadata
         #   @return [Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
