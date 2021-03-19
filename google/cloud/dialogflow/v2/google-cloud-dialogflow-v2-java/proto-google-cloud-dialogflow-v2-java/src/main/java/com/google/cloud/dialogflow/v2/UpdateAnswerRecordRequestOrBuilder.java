@@ -12,7 +12,7 @@ public interface UpdateAnswerRecordRequestOrBuilder extends
    * Required. Answer record to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the answerRecord field is set.
    */
   boolean hasAnswerRecord();
@@ -21,7 +21,7 @@ public interface UpdateAnswerRecordRequestOrBuilder extends
    * Required. Answer record to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The answerRecord.
    */
   com.google.cloud.dialogflow.v2.AnswerRecord getAnswerRecord();
@@ -30,7 +30,7 @@ public interface UpdateAnswerRecordRequestOrBuilder extends
    * Required. Answer record to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.dialogflow.v2.AnswerRecordOrBuilder getAnswerRecordOrBuilder();
 

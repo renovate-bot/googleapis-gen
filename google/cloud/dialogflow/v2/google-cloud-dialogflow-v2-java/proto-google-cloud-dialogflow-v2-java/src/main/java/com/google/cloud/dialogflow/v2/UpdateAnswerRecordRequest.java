@@ -5,7 +5,8 @@ package com.google.cloud.dialogflow.v2;
 
 /**
  * <pre>
- * Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
+ * Request message for
+ * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateAnswerRecordRequest}
@@ -117,7 +118,7 @@ private static final long serialVersionUID = 0L;
    * Required. Answer record to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the answerRecord field is set.
    */
   @java.lang.Override
@@ -129,7 +130,7 @@ private static final long serialVersionUID = 0L;
    * Required. Answer record to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The answerRecord.
    */
   @java.lang.Override
@@ -141,7 +142,7 @@ private static final long serialVersionUID = 0L;
    * Required. Answer record to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AnswerRecordOrBuilder getAnswerRecordOrBuilder() {
@@ -364,7 +365,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
+   * Request message for
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateAnswerRecordRequest}
@@ -543,7 +545,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the answerRecord field is set.
      */
     public boolean hasAnswerRecord() {
@@ -554,7 +556,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The answerRecord.
      */
     public com.google.cloud.dialogflow.v2.AnswerRecord getAnswerRecord() {
@@ -569,7 +571,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAnswerRecord(com.google.cloud.dialogflow.v2.AnswerRecord value) {
       if (answerRecordBuilder_ == null) {
@@ -589,7 +591,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAnswerRecord(
         com.google.cloud.dialogflow.v2.AnswerRecord.Builder builderForValue) {
@@ -607,7 +609,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeAnswerRecord(com.google.cloud.dialogflow.v2.AnswerRecord value) {
       if (answerRecordBuilder_ == null) {
@@ -629,7 +631,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearAnswerRecord() {
       if (answerRecordBuilder_ == null) {
@@ -647,7 +649,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dialogflow.v2.AnswerRecord.Builder getAnswerRecordBuilder() {
       
@@ -659,7 +661,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dialogflow.v2.AnswerRecordOrBuilder getAnswerRecordOrBuilder() {
       if (answerRecordBuilder_ != null) {
@@ -674,7 +676,7 @@ private static final long serialVersionUID = 0L;
      * Required. Answer record to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dialogflow.v2.AnswerRecord, com.google.cloud.dialogflow.v2.AnswerRecord.Builder, com.google.cloud.dialogflow.v2.AnswerRecordOrBuilder> 

@@ -43,7 +43,8 @@ use Google\Cloud\Dialogflow\V2beta1\UpdateAnswerRecordRequest;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: Service for managing [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
+ * Service Description: Service for managing
+ * [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

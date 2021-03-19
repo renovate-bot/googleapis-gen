@@ -550,7 +550,8 @@ module Google
 
         module AnswerRecords
           ##
-          # Service for managing {Google::Cloud::Dialogflow::V2beta1::AnswerRecord AnswerRecords}.
+          # Service for managing
+          # {Google::Cloud::Dialogflow::V2beta1::AnswerRecord AnswerRecords}.
           #
           # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
           #   Provides the means for authenticating requests made by the client. This parameter can

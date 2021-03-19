@@ -37,22 +37,26 @@ module Google
         # A typical workflow for customers provide feedback to an answer is:
         #
         # 1. For human agent assistant, customers get suggestion via ListSuggestions
-        #    API. Together with the answers, {Google::Cloud::Dialogflow::V2beta1::AnswerRecord#name AnswerRecord#name} are returned to the
-        #    customers.
-        # 2. The customer uses the {Google::Cloud::Dialogflow::V2beta1::AnswerRecord#name AnswerRecord#name} to call the
+        #    API. Together with the answers,
+        #    {Google::Cloud::Dialogflow::V2beta1::AnswerRecord#name AnswerRecord#name} are
+        #    returned to the customers.
+        # 2. The customer uses the
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecord#name AnswerRecord#name} to
+        # call the
         #    {UpdateAnswerRecord} method to send feedback about a specific answer
         #    that they believe is wrong.
         # @!attribute [rw] name
         #   @return [String]
         #     The unique identifier of this answer record.
-        #     Required for {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::UpdateAnswerRecord AnswerRecords::UpdateAnswerRecord} method.
-        #     Format: `projects/<Project ID>/locations/<Location
+        #     Required for
+        #     {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::UpdateAnswerRecord AnswerRecords::UpdateAnswerRecord}
+        #     method. Format: `projects/<Project ID>/locations/<Location
         #     ID>/answerRecords/<Answer Record ID>`.
         # @!attribute [rw] answer_feedback
         #   @return [Google::Cloud::Dialogflow::V2beta1::AnswerFeedback]
         #     Optional. The AnswerFeedback for this record. You can set this with
-        #     {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::UpdateAnswerRecord AnswerRecords::UpdateAnswerRecord} in order to give us feedback about
-        #     this answer.
+        #     {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::UpdateAnswerRecord AnswerRecords::UpdateAnswerRecord}
+        #     in order to give us feedback about this answer.
         # @!attribute [rw] agent_assistant_record
         #   @return [Google::Cloud::Dialogflow::V2beta1::AgentAssistantRecord]
         #     Output only. The record for human agent assistant.
@@ -132,7 +136,9 @@ module Google
         #   @return [Google::Cloud::Dialogflow::V2beta1::AgentAssistantFeedback::DocumentEfficiency]
         #     Optional. Whether or not the suggested document is efficient. For example,
         #     if the document is poorly written, hard to understand, hard to use or
-        #     too long to find useful information, {Google::Cloud::Dialogflow::V2beta1::AgentAssistantFeedback#document_efficiency document_efficiency} is
+        #     too long to find useful information,
+        #     {Google::Cloud::Dialogflow::V2beta1::AgentAssistantFeedback#document_efficiency document_efficiency}
+        #     is
         #     {Google::Cloud::Dialogflow::V2beta1::AgentAssistantFeedback::DocumentEfficiency::INEFFICIENT DocumentEfficiency::INEFFICIENT}.
         # @!attribute [rw] summarization_feedback
         #   @return [Google::Cloud::Dialogflow::V2beta1::AgentAssistantFeedback::SummarizationFeedback]
@@ -187,7 +193,8 @@ module Google
           end
         end
 
-        # Request message for {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::GetAnswerRecord AnswerRecords::GetAnswerRecord}.
+        # Request message for
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::GetAnswerRecord AnswerRecords::GetAnswerRecord}.
         # @!attribute [rw] name
         #   @return [String]
         #     Required. The name of the answer record to retrieve.
@@ -195,7 +202,8 @@ module Google
         #     ID>/answerRecords/<Answer Record Id>`.
         class GetAnswerRecordRequest; end
 
-        # Request message for {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::ListAnswerRecords AnswerRecords::ListAnswerRecords}.
+        # Request message for
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::ListAnswerRecords AnswerRecords::ListAnswerRecords}.
         # @!attribute [rw] parent
         #   @return [String]
         #     Required. The project to list all answer records for in reverse
@@ -214,7 +222,8 @@ module Google
         #     the next page.
         class ListAnswerRecordsRequest; end
 
-        # Response message for {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::ListAnswerRecords AnswerRecords::ListAnswerRecords}.
+        # Response message for
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::ListAnswerRecords AnswerRecords::ListAnswerRecords}.
         # @!attribute [rw] answer_records
         #   @return [Array<Google::Cloud::Dialogflow::V2beta1::AnswerRecord>]
         #     The list of answer records.
@@ -228,7 +237,8 @@ module Google
         #     next page of results.
         class ListAnswerRecordsResponse; end
 
-        # Request message for {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::UpdateAnswerRecord AnswerRecords::UpdateAnswerRecord}.
+        # Request message for
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecords::UpdateAnswerRecord AnswerRecords::UpdateAnswerRecord}.
         # @!attribute [rw] answer_record
         #   @return [Google::Cloud::Dialogflow::V2beta1::AnswerRecord]
         #     Required. Answer record to update.

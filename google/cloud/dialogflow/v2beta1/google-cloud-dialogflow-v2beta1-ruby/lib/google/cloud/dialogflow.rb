@@ -507,7 +507,8 @@ module Google
 
       module AnswerRecords
         ##
-        # Service for managing {Google::Cloud::Dialogflow::V2beta1::AnswerRecord AnswerRecords}.
+        # Service for managing
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecord AnswerRecords}.
         #
         # @param version [Symbol, String]
         #   The major version of the service to be used. By default :v2beta1

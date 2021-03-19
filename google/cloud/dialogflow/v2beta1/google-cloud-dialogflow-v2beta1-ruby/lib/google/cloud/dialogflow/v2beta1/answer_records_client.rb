@@ -31,7 +31,8 @@ module Google
   module Cloud
     module Dialogflow
       module V2beta1
-        # Service for managing {Google::Cloud::Dialogflow::V2beta1::AnswerRecord AnswerRecords}.
+        # Service for managing
+        # {Google::Cloud::Dialogflow::V2beta1::AnswerRecord AnswerRecords}.
         #
         # @!attribute [r] answer_records_stub
         #   @return [Google::Cloud::Dialogflow::V2beta1::AnswerRecords::Stub]

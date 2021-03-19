@@ -1773,7 +1773,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. Whether or not the suggested document is efficient. For example,
    * if the document is poorly written, hard to understand, hard to use or
-   * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+   * too long to find useful information,
+   * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+   * is
    * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
    * </pre>
    *
@@ -1787,7 +1789,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. Whether or not the suggested document is efficient. For example,
    * if the document is poorly written, hard to understand, hard to use or
-   * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+   * too long to find useful information,
+   * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+   * is
    * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
    * </pre>
    *
@@ -2413,7 +2417,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -2427,7 +2433,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -2445,7 +2453,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -2462,7 +2472,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -2483,7 +2495,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *

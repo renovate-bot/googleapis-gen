@@ -23,9 +23,12 @@ use Google\Protobuf\Internal\GPBUtil;
  * agent assistant suggestion generated.
  * A typical workflow for customers provide feedback to an answer is:
  * 1. For human agent assistant, customers get suggestion via ListSuggestions
- *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are returned to the
- *    customers.
- * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to call the
+ *    API. Together with the answers,
+ *    [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are
+ *    returned to the customers.
+ * 2. The customer uses the
+ * [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to
+ * call the
  *    [UpdateAnswerRecord][] method to send feedback about a specific answer
  *    that they believe is wrong.
  *
@@ -35,8 +38,9 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
 {
     /**
      * The unique identifier of this answer record.
-     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
-     * Format: `projects/<Project ID>/locations/<Location
+     * Required for
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     * method. Format: `projects/<Project ID>/locations/<Location
      * ID>/answerRecords/<Answer Record ID>`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
@@ -44,8 +48,8 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
     protected $name = '';
     /**
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
      */
@@ -60,13 +64,14 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The unique identifier of this answer record.
-     *           Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
-     *           Format: `projects/<Project ID>/locations/<Location
+     *           Required for
+     *           [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     *           method. Format: `projects/<Project ID>/locations/<Location
      *           ID>/answerRecords/<Answer Record ID>`.
      *     @type \Google\Cloud\Dialogflow\V2beta1\AnswerFeedback $answer_feedback
      *           Optional. The AnswerFeedback for this record. You can set this with
-     *           [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     *           this answer.
+     *           [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     *           in order to give us feedback about this answer.
      *     @type \Google\Cloud\Dialogflow\V2beta1\AgentAssistantRecord $agent_assistant_record
      *           Output only. The record for human agent assistant.
      * }
@@ -78,8 +83,9 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * The unique identifier of this answer record.
-     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
-     * Format: `projects/<Project ID>/locations/<Location
+     * Required for
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     * method. Format: `projects/<Project ID>/locations/<Location
      * ID>/answerRecords/<Answer Record ID>`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
@@ -92,8 +98,9 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * The unique identifier of this answer record.
-     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
-     * Format: `projects/<Project ID>/locations/<Location
+     * Required for
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     * method. Format: `projects/<Project ID>/locations/<Location
      * ID>/answerRecords/<Answer Record ID>`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
@@ -110,8 +117,8 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
      * @return \Google\Cloud\Dialogflow\V2beta1\AnswerFeedback|null
@@ -133,8 +140,8 @@ class AnswerRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
      * @param \Google\Cloud\Dialogflow\V2beta1\AnswerFeedback $var
