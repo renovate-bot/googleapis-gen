@@ -171,6 +171,7 @@ class DriveItem(proto.Message):
         """
         class Type(proto.Enum):
             r"""This item is deprecated; please see ``DriveFolder.Type`` instead."""
+            _pb_options = {'deprecated': True}
             TYPE_UNSPECIFIED = 0
             MY_DRIVE_ROOT = 1
             TEAM_DRIVE_ROOT = 2

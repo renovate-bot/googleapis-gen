@@ -232,6 +232,7 @@ class AgentEndpointServiceAsyncClient:
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=3600.0,
             ),
             default_timeout=3600.0,
             client_info=DEFAULT_CLIENT_INFO,

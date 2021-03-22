@@ -275,6 +275,7 @@ class BigQueryReadAsyncClient:
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -377,6 +378,7 @@ class BigQueryReadAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=86400.0,
             ),
             default_timeout=86400.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -453,6 +455,7 @@ class BigQueryReadAsyncClient:
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,

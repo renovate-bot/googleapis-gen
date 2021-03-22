@@ -29,7 +29,7 @@ setuptools.setup(
         'google-api-core >= 1.22.2, < 2.0.0dev',
         'googleapis-common-protos >= 1.5.8',
         'grpcio >= 1.10.0',
-        'proto-plus >= 1.4.0',
+        'proto-plus >= 1.15.0',
     ),
     python_requires='>=3.7',
     setup_requires=[

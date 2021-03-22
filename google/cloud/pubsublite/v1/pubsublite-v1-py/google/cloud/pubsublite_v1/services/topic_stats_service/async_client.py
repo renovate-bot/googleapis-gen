@@ -202,6 +202,7 @@ class TopicStatsServiceAsyncClient:
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,

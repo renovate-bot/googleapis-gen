@@ -589,6 +589,7 @@ class ParticipantsAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=220.0,
             ),
             default_timeout=220.0,
             client_info=DEFAULT_CLIENT_INFO,

@@ -228,6 +228,7 @@ class JobControllerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -326,6 +327,7 @@ class JobControllerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -431,6 +433,7 @@ class JobControllerAsyncClient:
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -547,6 +550,7 @@ class JobControllerAsyncClient:
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -610,6 +614,7 @@ class JobControllerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -709,6 +714,7 @@ class JobControllerAsyncClient:
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -799,6 +805,7 @@ class JobControllerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=900.0,
             ),
             default_timeout=900.0,
             client_info=DEFAULT_CLIENT_INFO,

@@ -298,6 +298,7 @@ class TraceServiceAsyncClient:
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=120.0,
             ),
             default_timeout=120.0,
             client_info=DEFAULT_CLIENT_INFO,

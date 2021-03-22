@@ -2884,6 +2884,7 @@ class ServiceConstants(proto.Message):
         r"""A collection of constant values meaningful to the Storage
         API.
         """
+        _pb_options = {'allow_alias': True}
         VALUES_UNSPECIFIED = 0
         MAX_READ_CHUNK_BYTES = 2097152
         MAX_WRITE_CHUNK_BYTES = 2097152

@@ -232,6 +232,7 @@ class BigtableAsyncClient:
                 multiplier=2,
                 predicate=retries.if_exception_type(
                 ),
+                deadline=43200.0,
             ),
             default_timeout=43200.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -333,6 +334,7 @@ class BigtableAsyncClient:
                 multiplier=2,
                 predicate=retries.if_exception_type(
                 ),
+                deadline=60.0,
             ),
             default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -458,6 +460,7 @@ class BigtableAsyncClient:
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=60.0,
             ),
             default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -575,6 +578,7 @@ class BigtableAsyncClient:
                 multiplier=2,
                 predicate=retries.if_exception_type(
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -727,6 +731,7 @@ class BigtableAsyncClient:
                 multiplier=2,
                 predicate=retries.if_exception_type(
                 ),
+                deadline=20.0,
             ),
             default_timeout=20.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -857,6 +862,7 @@ class BigtableAsyncClient:
                 multiplier=2,
                 predicate=retries.if_exception_type(
                 ),
+                deadline=20.0,
             ),
             default_timeout=20.0,
             client_info=DEFAULT_CLIENT_INFO,

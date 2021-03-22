@@ -242,6 +242,7 @@ class WorkflowTemplateServiceAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -342,6 +343,7 @@ class WorkflowTemplateServiceAsyncClient:
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -486,6 +488,7 @@ class WorkflowTemplateServiceAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -639,6 +642,7 @@ class WorkflowTemplateServiceAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -736,6 +740,7 @@ class WorkflowTemplateServiceAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -837,6 +842,7 @@ class WorkflowTemplateServiceAsyncClient:
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -939,6 +945,7 @@ class WorkflowTemplateServiceAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,

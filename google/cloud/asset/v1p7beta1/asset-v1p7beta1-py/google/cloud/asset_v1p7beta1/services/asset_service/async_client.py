@@ -211,6 +211,7 @@ class AssetServiceAsyncClient:
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
+                deadline=60.0,
             ),
             default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,

@@ -47,6 +47,7 @@ class ScanConfigError(proto.Message):
         Defines an error reason code.
         Next id: 44
         """
+        _pb_options = {'allow_alias': True}
         CODE_UNSPECIFIED = 0
         OK = 0
         INTERNAL_ERROR = 1

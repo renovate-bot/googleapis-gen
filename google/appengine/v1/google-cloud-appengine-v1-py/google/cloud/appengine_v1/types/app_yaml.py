@@ -58,6 +58,7 @@ class LoginRequirement(proto.Enum):
 
 class SecurityLevel(proto.Enum):
     r"""Methods to enforce security (HTTPS) on a URL."""
+    _pb_options = {'allow_alias': True}
     SECURE_UNSPECIFIED = 0
     SECURE_DEFAULT = 0
     SECURE_NEVER = 1
@@ -117,6 +118,7 @@ class ErrorHandler(proto.Message):
     """
     class ErrorCode(proto.Enum):
         r"""Error codes."""
+        _pb_options = {'allow_alias': True}
         ERROR_CODE_UNSPECIFIED = 0
         ERROR_CODE_DEFAULT = 0
         ERROR_CODE_OVER_QUOTA = 1
