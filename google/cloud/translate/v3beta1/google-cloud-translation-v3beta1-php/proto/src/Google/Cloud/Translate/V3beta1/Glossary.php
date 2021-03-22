@@ -17,7 +17,7 @@ class Glossary extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -57,7 +57,7 @@ class Glossary extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Required. The resource name of the glossary. Glossary names have the form
-     *           `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     *           `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      *     @type \Google\Cloud\Translate\V3beta1\Glossary\LanguageCodePair $language_pair
      *           Used with unidirectional glossaries.
      *     @type \Google\Cloud\Translate\V3beta1\Glossary\LanguageCodesSet $language_codes_set
@@ -80,7 +80,7 @@ class Glossary extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -92,7 +92,7 @@ class Glossary extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

@@ -67,7 +67,8 @@ public interface BatchTranslateResponseOrBuilder extends
   /**
    * <pre>
    * The time when the operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -77,7 +78,8 @@ public interface BatchTranslateResponseOrBuilder extends
   /**
    * <pre>
    * The time when the operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -87,7 +89,8 @@ public interface BatchTranslateResponseOrBuilder extends
   /**
    * <pre>
    * The time when the operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>

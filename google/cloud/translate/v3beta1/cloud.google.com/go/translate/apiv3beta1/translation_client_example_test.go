@@ -94,6 +94,26 @@ func ExampleTranslationClient_GetSupportedLanguages() {
 	_ = resp
 }
 
+func ExampleTranslationClient_TranslateDocument() {
+	// import translatepb "google.golang.org/genproto/googleapis/cloud/translate/v3beta1"
+
+	ctx := context.Background()
+	c, err := translate.NewTranslationClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &translatepb.TranslateDocumentRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.TranslateDocument(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleTranslationClient_BatchTranslateText() {
 	// import translatepb "google.golang.org/genproto/googleapis/cloud/translate/v3beta1"
 
@@ -107,6 +127,31 @@ func ExampleTranslationClient_BatchTranslateText() {
 		// TODO: Fill request struct fields.
 	}
 	op, err := c.BatchTranslateText(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleTranslationClient_BatchTranslateDocument() {
+	// import translatepb "google.golang.org/genproto/googleapis/cloud/translate/v3beta1"
+
+	ctx := context.Background()
+	c, err := translate.NewTranslationClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &translatepb.BatchTranslateDocumentRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.BatchTranslateDocument(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}

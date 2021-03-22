@@ -10,7 +10,8 @@ public interface TranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -22,7 +23,8 @@ public interface TranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -33,7 +35,8 @@ public interface TranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -45,7 +48,8 @@ public interface TranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -132,10 +136,10 @@ public interface TranslateTextRequestOrBuilder extends
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
-   * Format: `projects/{project-id}` or
-   * `projects/{project-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-id}/locations/global` or
-   * `projects/{project-id}`.
+   * Format: `projects/{project-number-or-id}` or
+   * `projects/{project-number-or-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-number-or-id}/locations/global` or
+   * `projects/{project-number-or-id}`.
    * Non-global location is required for requests using AutoML models or
    * custom glossaries.
    * Models and glossaries must be within the same region (have same
@@ -150,10 +154,10 @@ public interface TranslateTextRequestOrBuilder extends
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
-   * Format: `projects/{project-id}` or
-   * `projects/{project-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-id}/locations/global` or
-   * `projects/{project-id}`.
+   * Format: `projects/{project-number-or-id}` or
+   * `projects/{project-number-or-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-number-or-id}/locations/global` or
+   * `projects/{project-number-or-id}`.
    * Non-global location is required for requests using AutoML models or
    * custom glossaries.
    * Models and glossaries must be within the same region (have same
@@ -171,13 +175,13 @@ public interface TranslateTextRequestOrBuilder extends
    * Optional. The `model` type requested for this translation.
    * The format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
-   * `projects/{project-id}/locations/global/models/general/nmt`.
+   * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
    * If missing, the system decides which google base model to use.
    * </pre>
    *
@@ -190,13 +194,13 @@ public interface TranslateTextRequestOrBuilder extends
    * Optional. The `model` type requested for this translation.
    * The format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
-   * `projects/{project-id}/locations/global/models/general/nmt`.
+   * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
    * If missing, the system decides which google base model to use.
    * </pre>
    *

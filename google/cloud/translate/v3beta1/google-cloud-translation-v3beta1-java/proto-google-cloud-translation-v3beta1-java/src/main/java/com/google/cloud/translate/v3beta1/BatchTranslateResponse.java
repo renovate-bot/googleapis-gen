@@ -5,8 +5,10 @@ package com.google.cloud.translate.v3beta1;
 
 /**
  * <pre>
- * Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
- * BatchTranslateText if at least one sentence is translated successfully.
+ * Stored in the
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field returned by BatchTranslateText if at least one sentence is translated
+ * successfully.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.BatchTranslateResponse}
@@ -214,7 +216,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -227,7 +230,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -240,7 +244,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -464,8 +469,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
-   * BatchTranslateText if at least one sentence is translated successfully.
+   * Stored in the
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field returned by BatchTranslateText if at least one sentence is translated
+   * successfully.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.BatchTranslateResponse}
@@ -944,7 +951,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -956,7 +964,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -972,7 +981,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -993,7 +1003,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -1012,7 +1023,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -1035,7 +1047,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -1054,7 +1067,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -1067,7 +1081,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
@@ -1083,7 +1098,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>

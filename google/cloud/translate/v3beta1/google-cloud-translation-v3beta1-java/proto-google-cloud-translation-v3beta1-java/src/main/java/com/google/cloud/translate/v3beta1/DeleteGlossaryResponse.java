@@ -5,8 +5,9 @@ package com.google.cloud.translate.v3beta1;
 
 /**
  * <pre>
- * Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
- * DeleteGlossary.
+ * Stored in the
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field returned by DeleteGlossary.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.DeleteGlossaryResponse}
@@ -207,7 +208,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the glossary deletion is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -220,7 +222,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the glossary deletion is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -233,7 +236,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the glossary deletion is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -431,8 +435,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
-   * DeleteGlossary.
+   * Stored in the
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field returned by DeleteGlossary.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.DeleteGlossaryResponse}
@@ -867,7 +872,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -879,7 +885,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -895,7 +902,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -916,7 +924,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -935,7 +944,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -958,7 +968,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -977,7 +988,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -990,7 +1002,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1006,7 +1019,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>

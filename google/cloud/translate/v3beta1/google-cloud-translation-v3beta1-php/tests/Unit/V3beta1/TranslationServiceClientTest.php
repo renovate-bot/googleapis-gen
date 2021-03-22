@@ -28,13 +28,17 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Translate\V3beta1\BatchDocumentOutputConfig;
+use Google\Cloud\Translate\V3beta1\BatchTranslateDocumentResponse;
 use Google\Cloud\Translate\V3beta1\BatchTranslateResponse;
 use Google\Cloud\Translate\V3beta1\DeleteGlossaryResponse;
 use Google\Cloud\Translate\V3beta1\DetectLanguageResponse;
+use Google\Cloud\Translate\V3beta1\DocumentInputConfig;
 use Google\Cloud\Translate\V3beta1\Glossary;
 use Google\Cloud\Translate\V3beta1\ListGlossariesResponse;
 use Google\Cloud\Translate\V3beta1\OutputConfig;
 use Google\Cloud\Translate\V3beta1\SupportedLanguages;
+use Google\Cloud\Translate\V3beta1\TranslateDocumentResponse;
 use Google\Cloud\Translate\V3beta1\TranslateTextResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
@@ -304,6 +308,89 @@ class TranslationServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function translateDocumentTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $model = 'model104069929';
+        $expectedResponse = new TranslateDocumentResponse();
+        $expectedResponse->setModel($model);
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $parent = 'parent-995424086';
+        $targetLanguageCode = 'targetLanguageCode1323228230';
+        $documentInputConfig = new DocumentInputConfig();
+
+        $response = $client->translateDocument($parent, $targetLanguageCode, $documentInputConfig);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.translation.v3beta1.TranslationService/TranslateDocument', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getParent();
+
+        $this->assertProtobufEquals($parent, $actualValue);
+        $actualValue = $actualRequestObject->getTargetLanguageCode();
+
+        $this->assertProtobufEquals($targetLanguageCode, $actualValue);
+        $actualValue = $actualRequestObject->getDocumentInputConfig();
+
+        $this->assertProtobufEquals($documentInputConfig, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function translateDocumentExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $parent = 'parent-995424086';
+        $targetLanguageCode = 'targetLanguageCode1323228230';
+        $documentInputConfig = new DocumentInputConfig();
+
+        try {
+            $client->translateDocument($parent, $targetLanguageCode, $documentInputConfig);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function batchTranslateTextTest()
     {
         $operationsTransport = $this->createTransport();
@@ -448,6 +535,182 @@ class TranslationServiceClientTest extends GeneratedTest
 
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/batchTranslateTextTest');
+
+        try {
+            $response->pollUntilComplete([
+                'initialPollDelayMillis' => 1,
+            ]);
+            // If the pollUntilComplete() method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stubs are exhausted
+        $transport->popReceivedCalls();
+        $operationsTransport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchTranslateDocumentTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/batchTranslateDocumentTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $totalPages = 396186871;
+        $translatedPages = 1652747493;
+        $failedPages = 2002254526;
+        $totalBillablePages = 1292117569;
+        $totalCharacters = 1368640955;
+        $translatedCharacters = 1337326221;
+        $failedCharacters = 1723028396;
+        $totalBillableCharacters = 1242495501;
+        $expectedResponse = new BatchTranslateDocumentResponse();
+        $expectedResponse->setTotalPages($totalPages);
+        $expectedResponse->setTranslatedPages($translatedPages);
+        $expectedResponse->setFailedPages($failedPages);
+        $expectedResponse->setTotalBillablePages($totalBillablePages);
+        $expectedResponse->setTotalCharacters($totalCharacters);
+        $expectedResponse->setTranslatedCharacters($translatedCharacters);
+        $expectedResponse->setFailedCharacters($failedCharacters);
+        $expectedResponse->setTotalBillableCharacters($totalBillableCharacters);
+        $anyResponse = new Any();
+        $anyResponse->setValue($expectedResponse->serializeToString());
+        $completeOperation = new Operation();
+        $completeOperation->setName('operations/batchTranslateDocumentTest');
+        $completeOperation->setDone(true);
+        $completeOperation->setResponse($anyResponse);
+        $operationsTransport->addResponse($completeOperation);
+
+        // Mock request
+        $parent = 'parent-995424086';
+        $sourceLanguageCode = 'sourceLanguageCode1687263568';
+        $targetLanguageCodes = [];
+        $inputConfigs = [];
+        $outputConfig = new BatchDocumentOutputConfig();
+
+        $response = $client->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $apiRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($apiRequests));
+        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
+        $this->assertSame(0, count($operationsRequestsEmpty));
+
+        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
+        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.translation.v3beta1.TranslationService/BatchTranslateDocument', $actualApiFuncCall);
+        $actualValue = $actualApiRequestObject->getParent();
+
+        $this->assertProtobufEquals($parent, $actualValue);
+        $actualValue = $actualApiRequestObject->getSourceLanguageCode();
+
+        $this->assertProtobufEquals($sourceLanguageCode, $actualValue);
+        $actualValue = $actualApiRequestObject->getTargetLanguageCodes();
+
+        $this->assertProtobufEquals($targetLanguageCodes, $actualValue);
+        $actualValue = $actualApiRequestObject->getInputConfigs();
+
+        $this->assertProtobufEquals($inputConfigs, $actualValue);
+        $actualValue = $actualApiRequestObject->getOutputConfig();
+
+        $this->assertProtobufEquals($outputConfig, $actualValue);
+
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/batchTranslateDocumentTest');
+
+        $response->pollUntilComplete([
+            'initialPollDelayMillis' => 1,
+        ]);
+        $this->assertTrue($response->isDone());
+        $this->assertEquals($expectedResponse, $response->getResult());
+        $apiRequestsEmpty = $transport->popReceivedCalls();
+        $this->assertSame(0, count($apiRequestsEmpty));
+        $operationsRequests = $operationsTransport->popReceivedCalls();
+        $this->assertSame(1, count($operationsRequests));
+
+        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
+        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
+        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
+        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
+
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchTranslateDocumentExceptionTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/batchTranslateDocumentTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $operationsTransport->addResponse(null, $status);
+
+        // Mock request
+        $parent = 'parent-995424086';
+        $sourceLanguageCode = 'sourceLanguageCode1687263568';
+        $targetLanguageCodes = [];
+        $inputConfigs = [];
+        $outputConfig = new BatchDocumentOutputConfig();
+
+        $response = $client->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/batchTranslateDocumentTest');
 
         try {
             $response->pollUntilComplete([

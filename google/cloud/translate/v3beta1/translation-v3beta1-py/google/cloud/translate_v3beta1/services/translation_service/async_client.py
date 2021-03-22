@@ -231,15 +231,15 @@ class TranslationServiceAsyncClient:
                 to a caller's project.
 
                 Format:
-                ``projects/{project-id}/locations/{location-id}`` or
-                ``projects/{project-id}``.
+                ``projects/{project-number-or-id}/locations/{location-id}``
+                or ``projects/{project-number-or-id}``.
 
                 For global calls, use
-                ``projects/{project-id}/locations/global`` or
-                ``projects/{project-id}``.
+                ``projects/{project-number-or-id}/locations/global`` or
+                ``projects/{project-number-or-id}``.
 
-                Only models within the same region (has same
-                location-id) can be used. Otherwise an INVALID_ARGUMENT
+                Only models within the same region, which have the same
+                location-id, can be used. Otherwise an INVALID_ARGUMENT
                 (400) error is returned.
 
                 This corresponds to the ``parent`` field
@@ -249,11 +249,11 @@ class TranslationServiceAsyncClient:
                 Optional. The language detection model to be used.
 
                 Format:
-                ``projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}``
+                ``projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}``
 
                 Only one language detection model is currently
                 supported:
-                ``projects/{project-id}/locations/{location-id}/models/language-detection/default``.
+                ``projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default``.
 
                 If not specified, the default model is used.
 
@@ -350,12 +350,12 @@ class TranslationServiceAsyncClient:
                 Required. Project or location to make a call. Must refer
                 to a caller's project.
 
-                Format: ``projects/{project-id}`` or
-                ``projects/{project-id}/locations/{location-id}``.
+                Format: ``projects/{project-number-or-id}`` or
+                ``projects/{project-number-or-id}/locations/{location-id}``.
 
                 For global calls, use
-                ``projects/{project-id}/locations/global`` or
-                ``projects/{project-id}``.
+                ``projects/{project-number-or-id}/locations/global`` or
+                ``projects/{project-number-or-id}``.
 
                 Non-global location is required for AutoML models.
 
@@ -382,11 +382,11 @@ class TranslationServiceAsyncClient:
                 The format depends on model type:
 
                 -  AutoML Translation models:
-                   ``projects/{project-id}/locations/{location-id}/models/{model-id}``
+                   ``projects/{project-number-or-id}/locations/{location-id}/models/{model-id}``
 
                 -  General (built-in) models:
-                   ``projects/{project-id}/locations/{location-id}/models/general/nmt``,
-                   ``projects/{project-id}/locations/{location-id}/models/general/base``
+                   ``projects/{project-number-or-id}/locations/{location-id}/models/general/nmt``,
+                   ``projects/{project-number-or-id}/locations/{location-id}/models/general/base``
 
                 Returns languages supported by the specified model. If
                 missing, we get supported languages of Google general
@@ -464,6 +464,62 @@ class TranslationServiceAsyncClient:
         # Done; return the response.
         return response
 
+    async def translate_document(self,
+            request: translation_service.TranslateDocumentRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> translation_service.TranslateDocumentResponse:
+        r"""Translates documents in synchronous mode.
+
+        Args:
+            request (:class:`google.cloud.translate_v3beta1.types.TranslateDocumentRequest`):
+                The request object. A document translation request.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.cloud.translate_v3beta1.types.TranslateDocumentResponse:
+                A translated document response
+                message.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        request = translation_service.TranslateDocumentRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.translate_document,
+            default_timeout=600.0,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     async def batch_translate_text(self,
             request: translation_service.BatchTranslateTextRequest = None,
             *,
@@ -495,9 +551,10 @@ class TranslationServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.cloud.translate_v3beta1.types.BatchTranslateResponse` Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
-                   BatchTranslateText if at least one sentence is
-                   translated successfully.
+                The result type for the operation will be :class:`google.cloud.translate_v3beta1.types.BatchTranslateResponse` Stored in the
+                   [google.longrunning.Operation.response][google.longrunning.Operation.response]
+                   field returned by BatchTranslateText if at least one
+                   sentence is translated successfully.
 
         """
         # Create or coerce a protobuf request object.
@@ -534,6 +591,82 @@ class TranslationServiceAsyncClient:
             self._client._transport.operations_client,
             translation_service.BatchTranslateResponse,
             metadata_type=translation_service.BatchTranslateMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    async def batch_translate_document(self,
+            request: translation_service.BatchTranslateDocumentRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Translates a large volume of documents in
+        asynchronous batch mode. This function provides real-
+        time output as the inputs are being processed. If caller
+        cancels a request, the partial results (for an input
+        file, it's all or nothing) may still be available on the
+        specified output location.
+        This call returns immediately and you can use
+        google.longrunning.Operation.name to poll the status of
+        the call.
+
+        Args:
+            request (:class:`google.cloud.translate_v3beta1.types.BatchTranslateDocumentRequest`):
+                The request object. The BatchTranslateDocument request.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be :class:`google.cloud.translate_v3beta1.types.BatchTranslateDocumentResponse` Stored in the
+                   [google.longrunning.Operation.response][google.longrunning.Operation.response]
+                   field returned by BatchTranslateDocument if at least
+                   one document is translated successfully.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        request = translation_service.BatchTranslateDocumentRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.batch_translate_document,
+            default_timeout=600.0,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            translation_service.BatchTranslateDocumentResponse,
+            metadata_type=translation_service.BatchTranslateDocumentMetadata,
         )
 
         # Done; return the response.
@@ -658,10 +791,34 @@ class TranslationServiceAsyncClient:
                 should not be set.
             filter (:class:`str`):
                 Optional. Filter specifying
-                constraints of a list operation.
-                Filtering is not supported yet, and the
-                parameter currently has no effect. If
-                missing, no filtering is performed.
+                constraints of a list operation. Specify
+                the constraint by the format of
+                "key=value", where key must be "src" or
+                "tgt", and the value must be a valid
+                language code. For multiple
+                restrictions, concatenate them by "AND"
+                (uppercase only), such as: "src=en-US
+                AND tgt=zh-CN". Notice that the exact
+                match is used here, which means using
+                'en-US' and 'en' can lead to different
+                results, which depends on the language
+                code you used when you create the
+                glossary. For the unidirectional
+                glossaries, the "src" and "tgt" add
+                restrictions on the source and target
+                language code separately. For the
+                equivalent term set glossaries, the
+                "src" and/or "tgt" add restrictions on
+                the term set.
+                For example: "src=en-US AND tgt=zh-CN"
+                will only pick the unidirectional
+                glossaries which exactly match the
+                source language code as "en-US" and the
+                target language code "zh-CN", but all
+                equivalent term set glossaries which
+                contain "en-US" and "zh-CN" in their
+                language set will be picked. If missing,
+                no filtering is performed.
 
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -863,8 +1020,9 @@ class TranslationServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.cloud.translate_v3beta1.types.DeleteGlossaryResponse` Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
-                   DeleteGlossary.
+                The result type for the operation will be :class:`google.cloud.translate_v3beta1.types.DeleteGlossaryResponse` Stored in the
+                   [google.longrunning.Operation.response][google.longrunning.Operation.response]
+                   field returned by DeleteGlossary.
 
         """
         # Create or coerce a protobuf request object.

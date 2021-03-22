@@ -9,8 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Stored in the [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata] field returned by
- * CreateGlossary.
+ * Stored in the
+ * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+ * field returned by CreateGlossary.
  *
  * Generated from protobuf message <code>google.cloud.translation.v3beta1.CreateGlossaryMetadata</code>
  */

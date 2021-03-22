@@ -37,11 +37,16 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\Translate\V3beta1\BatchDocumentInputConfig;
+use Google\Cloud\Translate\V3beta1\BatchDocumentOutputConfig;
+use Google\Cloud\Translate\V3beta1\BatchTranslateDocumentRequest;
 use Google\Cloud\Translate\V3beta1\BatchTranslateTextRequest;
 use Google\Cloud\Translate\V3beta1\CreateGlossaryRequest;
 use Google\Cloud\Translate\V3beta1\DeleteGlossaryRequest;
 use Google\Cloud\Translate\V3beta1\DetectLanguageRequest;
 use Google\Cloud\Translate\V3beta1\DetectLanguageResponse;
+use Google\Cloud\Translate\V3beta1\DocumentInputConfig;
+use Google\Cloud\Translate\V3beta1\DocumentOutputConfig;
 use Google\Cloud\Translate\V3beta1\GetGlossaryRequest;
 use Google\Cloud\Translate\V3beta1\GetSupportedLanguagesRequest;
 use Google\Cloud\Translate\V3beta1\Glossary;
@@ -50,6 +55,8 @@ use Google\Cloud\Translate\V3beta1\ListGlossariesRequest;
 use Google\Cloud\Translate\V3beta1\ListGlossariesResponse;
 use Google\Cloud\Translate\V3beta1\OutputConfig;
 use Google\Cloud\Translate\V3beta1\SupportedLanguages;
+use Google\Cloud\Translate\V3beta1\TranslateDocumentRequest;
+use Google\Cloud\Translate\V3beta1\TranslateDocumentResponse;
 use Google\Cloud\Translate\V3beta1\TranslateTextGlossaryConfig;
 use Google\Cloud\Translate\V3beta1\TranslateTextRequest;
 use Google\Cloud\Translate\V3beta1\TranslateTextResponse;
@@ -357,18 +364,19 @@ class TranslationServiceGapicClient
      * ```
      *
      * @param string[] $contents           Required. The content of the input in string format.
-     *                                     We recommend the total content be less than 30k codepoints.
+     *                                     We recommend the total content be less than 30k codepoints. The max length
+     *                                     of this field is 1024.
      *                                     Use BatchTranslateText for larger text.
      * @param string   $targetLanguageCode Required. The BCP-47 language code to use for translation of the input
      *                                     text, set to one of the language codes listed in Language Support.
      * @param string   $parent             Required. Project or location to make a call. Must refer to a caller's
      *                                     project.
      *
-     * Format: `projects/{project-id}` or
-     * `projects/{project-id}/locations/{location-id}`.
+     * Format: `projects/{project-number-or-id}` or
+     * `projects/{project-number-or-id}/locations/{location-id}`.
      *
-     * For global calls, use `projects/{project-id}/locations/global` or
-     * `projects/{project-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
      *
      * Non-global location is required for requests using AutoML models or
      * custom glossaries.
@@ -393,11 +401,11 @@ class TranslationServiceGapicClient
      *          The format depends on model type:
      *
      *          - AutoML Translation models:
-     *            `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      *
      *          - General (built-in) models:
-     *            `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *            `projects/{project-id}/locations/{location-id}/models/general/base`
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *     @type TranslateTextGlossaryConfig $glossaryConfig
      *          Optional. Glossary to be applied. The glossary must be
      *          within the same region (have the same location-id) as the model, otherwise
@@ -477,13 +485,13 @@ class TranslationServiceGapicClient
      * @param string $parent Required. Project or location to make a call. Must refer to a caller's
      *                       project.
      *
-     * Format: `projects/{project-id}/locations/{location-id}` or
-     * `projects/{project-id}`.
+     * Format: `projects/{project-number-or-id}/locations/{location-id}` or
+     * `projects/{project-number-or-id}`.
      *
-     * For global calls, use `projects/{project-id}/locations/global` or
-     * `projects/{project-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
      *
-     * Only models within the same region (has same location-id) can be used.
+     * Only models within the same region, which have the same location-id, can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * @param array $optionalArgs {
      *                            Optional.
@@ -492,10 +500,10 @@ class TranslationServiceGapicClient
      *          Optional. The language detection model to be used.
      *
      *          Format:
-     *          `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+     *          `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
      *
      *          Only one language detection model is currently supported:
-     *          `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+     *          `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
      *
      *          If not specified, the default model is used.
      *     @type string $content
@@ -573,11 +581,11 @@ class TranslationServiceGapicClient
      * @param string $parent Required. Project or location to make a call. Must refer to a caller's
      *                       project.
      *
-     * Format: `projects/{project-id}` or
-     * `projects/{project-id}/locations/{location-id}`.
+     * Format: `projects/{project-number-or-id}` or
+     * `projects/{project-number-or-id}/locations/{location-id}`.
      *
-     * For global calls, use `projects/{project-id}/locations/global` or
-     * `projects/{project-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
      *
      * Non-global location is required for AutoML models.
      *
@@ -596,11 +604,11 @@ class TranslationServiceGapicClient
      *          The format depends on model type:
      *
      *          - AutoML Translation models:
-     *            `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      *
      *          - General (built-in) models:
-     *            `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *            `projects/{project-id}/locations/{location-id}/models/general/base`
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -634,6 +642,127 @@ class TranslationServiceGapicClient
         return $this->startCall(
             'GetSupportedLanguages',
             SupportedLanguages::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Translates documents in synchronous mode.
+     *
+     * Sample code:
+     * ```
+     * $translationServiceClient = new TranslationServiceClient();
+     * try {
+     *     $parent = '';
+     *     $targetLanguageCode = '';
+     *     $documentInputConfig = new DocumentInputConfig();
+     *     $response = $translationServiceClient->translateDocument($parent, $targetLanguageCode, $documentInputConfig);
+     * } finally {
+     *     $translationServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent Required. Location to make a regional call.
+     *
+     * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
+     *
+     * Non-global location is required for requests using AutoML models or custom
+     * glossaries.
+     *
+     * Models and glossaries must be within the same region (have the same
+     * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
+     * @param string              $targetLanguageCode  Required. The BCP-47 language code to use for translation of the input
+     *                                                 document, set to one of the language codes listed in Language Support.
+     * @param DocumentInputConfig $documentInputConfig Required. Input configurations.
+     * @param array               $optionalArgs        {
+     *                                                 Optional.
+     *
+     *     @type string $sourceLanguageCode
+     *          Optional. The BCP-47 language code of the input document if known, for
+     *          example, "en-US" or "sr-Latn". Supported language codes are listed in
+     *          Language Support. If the source language isn't specified, the API attempts
+     *          to identify the source language automatically and returns the source
+     *          language within the response. Source language must be specified if the
+     *          request contains a glossary or a custom model.
+     *     @type DocumentOutputConfig $documentOutputConfig
+     *          Optional. Output configurations.
+     *          Defines if the output file should be stored within Cloud Storage as well
+     *          as the desired output format. If not provided the translated file will
+     *          only be returned through a byte-stream and its output mime type will be
+     *          the same as the input file's mime type.
+     *     @type string $model
+     *          Optional. The `model` type requested for this translation.
+     *
+     *          The format depends on model type:
+     *
+     *          - AutoML Translation models:
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
+     *          - General (built-in) models:
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
+     *     @type TranslateTextGlossaryConfig $glossaryConfig
+     *          Optional. Glossary to be applied. The glossary must be within the same
+     *          region (have the same location-id) as the model, otherwise an
+     *          INVALID_ARGUMENT (400) error is returned.
+     *     @type array $labels
+     *          Optional. The labels with user-defined metadata for the request.
+     *
+     *          Label keys and values can be no longer than 63 characters (Unicode
+     *          codepoints), can only contain lowercase letters, numeric characters,
+     *          underscores and dashes. International characters are allowed. Label values
+     *          are optional. Label keys must start with a letter.
+     *
+     *          See https://cloud.google.com/translate/docs/advanced/labels for more
+     *          information.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Translate\V3beta1\TranslateDocumentResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function translateDocument($parent, $targetLanguageCode, $documentInputConfig, array $optionalArgs = [])
+    {
+        $request = new TranslateDocumentRequest();
+        $request->setParent($parent);
+        $request->setTargetLanguageCode($targetLanguageCode);
+        $request->setDocumentInputConfig($documentInputConfig);
+        if (isset($optionalArgs['sourceLanguageCode'])) {
+            $request->setSourceLanguageCode($optionalArgs['sourceLanguageCode']);
+        }
+        if (isset($optionalArgs['documentOutputConfig'])) {
+            $request->setDocumentOutputConfig($optionalArgs['documentOutputConfig']);
+        }
+        if (isset($optionalArgs['model'])) {
+            $request->setModel($optionalArgs['model']);
+        }
+        if (isset($optionalArgs['glossaryConfig'])) {
+            $request->setGlossaryConfig($optionalArgs['glossaryConfig']);
+        }
+        if (isset($optionalArgs['labels'])) {
+            $request->setLabels($optionalArgs['labels']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'TranslateDocument',
+            TranslateDocumentResponse::class,
             $optionalArgs,
             $request
         )->wait();
@@ -693,7 +822,7 @@ class TranslationServiceGapicClient
      *
      * @param string $parent Required. Location to make a call. Must refer to a caller's project.
      *
-     * Format: `projects/{project-id}/locations/{location-id}`.
+     * Format: `projects/{project-number-or-id}/locations/{location-id}`.
      *
      * The `global` location is not supported for batch translation.
      *
@@ -703,7 +832,7 @@ class TranslationServiceGapicClient
      * @param string        $sourceLanguageCode  Required. Source language code.
      * @param string[]      $targetLanguageCodes Required. Specify up to 10 language codes here.
      * @param InputConfig[] $inputConfigs        Required. Input configurations.
-     *                                           The total number of files matched should be <= 1000.
+     *                                           The total number of files matched should be <= 100.
      *                                           The total content size should be <= 100M Unicode codepoints.
      *                                           The files must use UTF-8 encoding.
      * @param OutputConfig  $outputConfig        Required. Output configuration.
@@ -714,17 +843,17 @@ class TranslationServiceGapicClient
      *
      *     @type array $models
      *          Optional. The models to use for translation. Map's key is target language
-     *          code. Map's value is model name. Value can be a built-in general model,
+     *          code. Map's value is the model name. Value can be a built-in general model,
      *          or an AutoML Translation model.
      *
      *          The value format depends on model type:
      *
      *          - AutoML Translation models:
-     *            `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      *
      *          - General (built-in) models:
-     *            `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *            `projects/{project-id}/locations/{location-id}/models/general/base`
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *     @type array $glossaries
      *          Optional. Glossaries to be applied for translation.
      *          It's keyed by target language code.
@@ -776,6 +905,139 @@ class TranslationServiceGapicClient
 
         return $this->startOperationsCall(
             'BatchTranslateText',
+            $optionalArgs,
+            $request,
+            $this->getOperationsClient()
+        )->wait();
+    }
+
+    /**
+     * Translates a large volume of documents in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     *
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     *
+     * Sample code:
+     * ```
+     * $translationServiceClient = new TranslationServiceClient();
+     * try {
+     *     $parent = '';
+     *     $sourceLanguageCode = '';
+     *     $targetLanguageCodes = [];
+     *     $inputConfigs = [];
+     *     $outputConfig = new BatchDocumentOutputConfig();
+     *     $operationResponse = $translationServiceClient->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *         // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $translationServiceClient->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $translationServiceClient->resumeOperation($operationName, 'batchTranslateDocument');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *       $result = $newOperationResponse->getResult();
+     *       // doSomethingWith($result)
+     *     } else {
+     *       $error = $newOperationResponse->getError();
+     *       // handleError($error)
+     *     }
+     * } finally {
+     *     $translationServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent Required. Location to make a regional call.
+     *
+     * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
+     * The `global` location is not supported for batch translation.
+     *
+     * Only AutoML Translation models or glossaries within the same region (have
+     * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+     * error is returned.
+     * @param string                     $sourceLanguageCode  Required. The BCP-47 language code of the input document if known, for
+     *                                                        example, "en-US" or "sr-Latn". Supported language codes are listed in
+     *                                                        Language Support (https://cloud.google.com/translate/docs/languages).
+     * @param string[]                   $targetLanguageCodes Required. The BCP-47 language code to use for translation of the input
+     *                                                        document. Specify up to 10 language codes here.
+     * @param BatchDocumentInputConfig[] $inputConfigs        Required. Input configurations.
+     *                                                        The total number of files matched should be <= 100.
+     *                                                        The total content size to translate should be <= 100M Unicode codepoints.
+     *                                                        The files must use UTF-8 encoding.
+     * @param BatchDocumentOutputConfig  $outputConfig        Required. Output configuration.
+     *                                                        If 2 input configs match to the same file (that is, same input path),
+     *                                                        we don't generate output for duplicate inputs.
+     * @param array                      $optionalArgs        {
+     *                                                        Optional.
+     *
+     *     @type array $models
+     *          Optional. The models to use for translation. Map's key is target language
+     *          code. Map's value is the model name. Value can be a built-in general model,
+     *          or an AutoML Translation model.
+     *
+     *          The value format depends on model type:
+     *
+     *          - AutoML Translation models:
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
+     *          - General (built-in) models:
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
+     *     @type array $glossaries
+     *          Optional. Glossaries to be applied. It's keyed by target language code.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig, array $optionalArgs = [])
+    {
+        $request = new BatchTranslateDocumentRequest();
+        $request->setParent($parent);
+        $request->setSourceLanguageCode($sourceLanguageCode);
+        $request->setTargetLanguageCodes($targetLanguageCodes);
+        $request->setInputConfigs($inputConfigs);
+        $request->setOutputConfig($outputConfig);
+        if (isset($optionalArgs['models'])) {
+            $request->setModels($optionalArgs['models']);
+        }
+        if (isset($optionalArgs['glossaries'])) {
+            $request->setGlossaries($optionalArgs['glossaries']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startOperationsCall(
+            'BatchTranslateDocument',
             $optionalArgs,
             $request,
             $this->getOperationsClient()
@@ -909,7 +1171,20 @@ class TranslationServiceGapicClient
      *          been generated by a previous call to the API.
      *     @type string $filter
      *          Optional. Filter specifying constraints of a list operation.
-     *          Filtering is not supported yet, and the parameter currently has no effect.
+     *          Specify the constraint by the format of "key=value", where key must be
+     *          "src" or "tgt", and the value must be a valid language code.
+     *          For multiple restrictions, concatenate them by "AND" (uppercase only),
+     *          such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used
+     *          here, which means using 'en-US' and 'en' can lead to different results,
+     *          which depends on the language code you used when you create the glossary.
+     *          For the unidirectional glossaries, the "src" and "tgt" add restrictions
+     *          on the source and target language code separately.
+     *          For the equivalent term set glossaries, the "src" and/or "tgt" add
+     *          restrictions on the term set.
+     *          For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional
+     *          glossaries which exactly match the source language code as "en-US" and the
+     *          target language code "zh-CN", but all equivalent term set glossaries which
+     *          contain "en-US" and "zh-CN" in their language set will be picked.
      *          If missing, no filtering is performed.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

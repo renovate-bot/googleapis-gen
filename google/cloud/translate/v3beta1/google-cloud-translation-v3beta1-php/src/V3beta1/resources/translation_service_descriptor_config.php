@@ -13,6 +13,16 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'BatchTranslateDocument' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateDocumentResponse',
+                    'metadataReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateDocumentMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'CreateGlossary' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Translate\V3beta1\Glossary',

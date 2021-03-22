@@ -24,8 +24,8 @@ class TranslateTextResponse extends \Google\Protobuf\Internal\Message
     /**
      * Text translation responses if a glossary is provided in the request.
      * This can be the same as
-     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-     * This field has the same length as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+     * if no terms apply. This field has the same length as
      * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      *
      * Generated from protobuf field <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -45,8 +45,8 @@ class TranslateTextResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Translate\V3beta1\Translation[]|\Google\Protobuf\Internal\RepeatedField $glossary_translations
      *           Text translation responses if a glossary is provided in the request.
      *           This can be the same as
-     *           [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-     *           This field has the same length as
+     *           [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+     *           if no terms apply. This field has the same length as
      *           [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * }
      */
@@ -88,8 +88,8 @@ class TranslateTextResponse extends \Google\Protobuf\Internal\Message
     /**
      * Text translation responses if a glossary is provided in the request.
      * This can be the same as
-     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-     * This field has the same length as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+     * if no terms apply. This field has the same length as
      * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      *
      * Generated from protobuf field <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -103,8 +103,8 @@ class TranslateTextResponse extends \Google\Protobuf\Internal\Message
     /**
      * Text translation responses if a glossary is provided in the request.
      * This can be the same as
-     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-     * This field has the same length as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+     * if no terms apply. This field has the same length as
      * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      *
      * Generated from protobuf field <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>

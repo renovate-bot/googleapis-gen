@@ -16,6 +16,11 @@
 #
 
 from .translation_service import (
+    BatchDocumentInputConfig,
+    BatchDocumentOutputConfig,
+    BatchTranslateDocumentMetadata,
+    BatchTranslateDocumentRequest,
+    BatchTranslateDocumentResponse,
     BatchTranslateMetadata,
     BatchTranslateResponse,
     BatchTranslateTextRequest,
@@ -27,6 +32,9 @@ from .translation_service import (
     DetectedLanguage,
     DetectLanguageRequest,
     DetectLanguageResponse,
+    DocumentInputConfig,
+    DocumentOutputConfig,
+    DocumentTranslation,
     GcsDestination,
     GcsSource,
     GetGlossaryRequest,
@@ -39,6 +47,8 @@ from .translation_service import (
     OutputConfig,
     SupportedLanguage,
     SupportedLanguages,
+    TranslateDocumentRequest,
+    TranslateDocumentResponse,
     TranslateTextGlossaryConfig,
     TranslateTextRequest,
     TranslateTextResponse,
@@ -46,6 +56,11 @@ from .translation_service import (
 )
 
 __all__ = (
+    'BatchDocumentInputConfig',
+    'BatchDocumentOutputConfig',
+    'BatchTranslateDocumentMetadata',
+    'BatchTranslateDocumentRequest',
+    'BatchTranslateDocumentResponse',
     'BatchTranslateMetadata',
     'BatchTranslateResponse',
     'BatchTranslateTextRequest',
@@ -57,6 +72,9 @@ __all__ = (
     'DetectedLanguage',
     'DetectLanguageRequest',
     'DetectLanguageResponse',
+    'DocumentInputConfig',
+    'DocumentOutputConfig',
+    'DocumentTranslation',
     'GcsDestination',
     'GcsSource',
     'GetGlossaryRequest',
@@ -69,6 +87,8 @@ __all__ = (
     'OutputConfig',
     'SupportedLanguage',
     'SupportedLanguages',
+    'TranslateDocumentRequest',
+    'TranslateDocumentResponse',
     'TranslateTextGlossaryConfig',
     'TranslateTextRequest',
     'TranslateTextResponse',

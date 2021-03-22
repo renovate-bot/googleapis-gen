@@ -23,7 +23,12 @@ class Translation extends \Google\Protobuf\Internal\Message
     protected $translated_text = '';
     /**
      * Only present when `model` is present in the request.
-     * This is same as `model` provided in the request.
+     * `model` here is normalized to have project number.
+     * For example:
+     * If the `model` requested in TranslationTextRequest is
+     * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
+     * `model` here would be normalized to
+     * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
      *
      * Generated from protobuf field <code>string model = 2;</code>
      */
@@ -54,7 +59,12 @@ class Translation extends \Google\Protobuf\Internal\Message
      *           Text translated into the target language.
      *     @type string $model
      *           Only present when `model` is present in the request.
-     *           This is same as `model` provided in the request.
+     *           `model` here is normalized to have project number.
+     *           For example:
+     *           If the `model` requested in TranslationTextRequest is
+     *           `projects/{project-id}/locations/{location-id}/models/general/nmt` then
+     *           `model` here would be normalized to
+     *           `projects/{project-number}/locations/{location-id}/models/general/nmt`.
      *     @type string $detected_language_code
      *           The BCP-47 language code of source text in the initial request, detected
      *           automatically, if no source language was passed within the initial
@@ -97,7 +107,12 @@ class Translation extends \Google\Protobuf\Internal\Message
 
     /**
      * Only present when `model` is present in the request.
-     * This is same as `model` provided in the request.
+     * `model` here is normalized to have project number.
+     * For example:
+     * If the `model` requested in TranslationTextRequest is
+     * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
+     * `model` here would be normalized to
+     * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
      *
      * Generated from protobuf field <code>string model = 2;</code>
      * @return string
@@ -109,7 +124,12 @@ class Translation extends \Google\Protobuf\Internal\Message
 
     /**
      * Only present when `model` is present in the request.
-     * This is same as `model` provided in the request.
+     * `model` here is normalized to have project number.
+     * For example:
+     * If the `model` requested in TranslationTextRequest is
+     * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
+     * `model` here would be normalized to
+     * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
      *
      * Generated from protobuf field <code>string model = 2;</code>
      * @param string $var

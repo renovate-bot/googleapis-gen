@@ -110,6 +110,37 @@ public final class TranslationServiceGrpc {
     return getGetSupportedLanguagesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.TranslateDocumentRequest,
+      com.google.cloud.translate.v3beta1.TranslateDocumentResponse> getTranslateDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TranslateDocument",
+      requestType = com.google.cloud.translate.v3beta1.TranslateDocumentRequest.class,
+      responseType = com.google.cloud.translate.v3beta1.TranslateDocumentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.TranslateDocumentRequest,
+      com.google.cloud.translate.v3beta1.TranslateDocumentResponse> getTranslateDocumentMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.TranslateDocumentRequest, com.google.cloud.translate.v3beta1.TranslateDocumentResponse> getTranslateDocumentMethod;
+    if ((getTranslateDocumentMethod = TranslationServiceGrpc.getTranslateDocumentMethod) == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getTranslateDocumentMethod = TranslationServiceGrpc.getTranslateDocumentMethod) == null) {
+          TranslationServiceGrpc.getTranslateDocumentMethod = getTranslateDocumentMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.translate.v3beta1.TranslateDocumentRequest, com.google.cloud.translate.v3beta1.TranslateDocumentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TranslateDocument"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.translate.v3beta1.TranslateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.translate.v3beta1.TranslateDocumentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TranslationServiceMethodDescriptorSupplier("TranslateDocument"))
+              .build();
+        }
+      }
+    }
+    return getTranslateDocumentMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.BatchTranslateTextRequest,
       com.google.longrunning.Operation> getBatchTranslateTextMethod;
 
@@ -139,6 +170,37 @@ public final class TranslationServiceGrpc {
       }
     }
     return getBatchTranslateTextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest,
+      com.google.longrunning.Operation> getBatchTranslateDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchTranslateDocument",
+      requestType = com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest,
+      com.google.longrunning.Operation> getBatchTranslateDocumentMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest, com.google.longrunning.Operation> getBatchTranslateDocumentMethod;
+    if ((getBatchTranslateDocumentMethod = TranslationServiceGrpc.getBatchTranslateDocumentMethod) == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getBatchTranslateDocumentMethod = TranslationServiceGrpc.getBatchTranslateDocumentMethod) == null) {
+          TranslationServiceGrpc.getBatchTranslateDocumentMethod = getBatchTranslateDocumentMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchTranslateDocument"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new TranslationServiceMethodDescriptorSupplier("BatchTranslateDocument"))
+              .build();
+        }
+      }
+    }
+    return getBatchTranslateDocumentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.translate.v3beta1.CreateGlossaryRequest,
@@ -348,6 +410,16 @@ public final class TranslationServiceGrpc {
 
     /**
      * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public void translateDocument(com.google.cloud.translate.v3beta1.TranslateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.TranslateDocumentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTranslateDocumentMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Translates a large volume of text in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
@@ -359,6 +431,21 @@ public final class TranslationServiceGrpc {
     public void batchTranslateText(com.google.cloud.translate.v3beta1.BatchTranslateTextRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchTranslateTextMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Translates a large volume of documents in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public void batchTranslateDocument(com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchTranslateDocumentMethod(), responseObserver);
     }
 
     /**
@@ -430,12 +517,26 @@ public final class TranslationServiceGrpc {
                 com.google.cloud.translate.v3beta1.SupportedLanguages>(
                   this, METHODID_GET_SUPPORTED_LANGUAGES)))
           .addMethod(
+            getTranslateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.translate.v3beta1.TranslateDocumentRequest,
+                com.google.cloud.translate.v3beta1.TranslateDocumentResponse>(
+                  this, METHODID_TRANSLATE_DOCUMENT)))
+          .addMethod(
             getBatchTranslateTextMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.translate.v3beta1.BatchTranslateTextRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_BATCH_TRANSLATE_TEXT)))
+          .addMethod(
+            getBatchTranslateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_BATCH_TRANSLATE_DOCUMENT)))
           .addMethod(
             getCreateGlossaryMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -520,6 +621,17 @@ public final class TranslationServiceGrpc {
 
     /**
      * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public void translateDocument(com.google.cloud.translate.v3beta1.TranslateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.TranslateDocumentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTranslateDocumentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Translates a large volume of text in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
@@ -532,6 +644,22 @@ public final class TranslationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchTranslateTextMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Translates a large volume of documents in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public void batchTranslateDocument(com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchTranslateDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -633,6 +761,16 @@ public final class TranslationServiceGrpc {
 
     /**
      * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.TranslateDocumentResponse translateDocument(com.google.cloud.translate.v3beta1.TranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Translates a large volume of text in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
@@ -644,6 +782,21 @@ public final class TranslationServiceGrpc {
     public com.google.longrunning.Operation batchTranslateText(com.google.cloud.translate.v3beta1.BatchTranslateTextRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Translates a large volume of documents in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateDocument(com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchTranslateDocumentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -744,6 +897,17 @@ public final class TranslationServiceGrpc {
 
     /**
      * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.translate.v3beta1.TranslateDocumentResponse> translateDocument(
+        com.google.cloud.translate.v3beta1.TranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTranslateDocumentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Translates a large volume of text in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
@@ -756,6 +920,22 @@ public final class TranslationServiceGrpc {
         com.google.cloud.translate.v3beta1.BatchTranslateTextRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchTranslateTextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Translates a large volume of documents in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchTranslateDocument(
+        com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchTranslateDocumentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -811,11 +991,13 @@ public final class TranslationServiceGrpc {
   private static final int METHODID_TRANSLATE_TEXT = 0;
   private static final int METHODID_DETECT_LANGUAGE = 1;
   private static final int METHODID_GET_SUPPORTED_LANGUAGES = 2;
-  private static final int METHODID_BATCH_TRANSLATE_TEXT = 3;
-  private static final int METHODID_CREATE_GLOSSARY = 4;
-  private static final int METHODID_LIST_GLOSSARIES = 5;
-  private static final int METHODID_GET_GLOSSARY = 6;
-  private static final int METHODID_DELETE_GLOSSARY = 7;
+  private static final int METHODID_TRANSLATE_DOCUMENT = 3;
+  private static final int METHODID_BATCH_TRANSLATE_TEXT = 4;
+  private static final int METHODID_BATCH_TRANSLATE_DOCUMENT = 5;
+  private static final int METHODID_CREATE_GLOSSARY = 6;
+  private static final int METHODID_LIST_GLOSSARIES = 7;
+  private static final int METHODID_GET_GLOSSARY = 8;
+  private static final int METHODID_DELETE_GLOSSARY = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -846,8 +1028,16 @@ public final class TranslationServiceGrpc {
           serviceImpl.getSupportedLanguages((com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.SupportedLanguages>) responseObserver);
           break;
+        case METHODID_TRANSLATE_DOCUMENT:
+          serviceImpl.translateDocument((com.google.cloud.translate.v3beta1.TranslateDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.translate.v3beta1.TranslateDocumentResponse>) responseObserver);
+          break;
         case METHODID_BATCH_TRANSLATE_TEXT:
           serviceImpl.batchTranslateText((com.google.cloud.translate.v3beta1.BatchTranslateTextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BATCH_TRANSLATE_DOCUMENT:
+          serviceImpl.batchTranslateDocument((com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_GLOSSARY:
@@ -930,7 +1120,9 @@ public final class TranslationServiceGrpc {
               .addMethod(getTranslateTextMethod())
               .addMethod(getDetectLanguageMethod())
               .addMethod(getGetSupportedLanguagesMethod())
+              .addMethod(getTranslateDocumentMethod())
               .addMethod(getBatchTranslateTextMethod())
+              .addMethod(getBatchTranslateDocumentMethod())
               .addMethod(getCreateGlossaryMethod())
               .addMethod(getListGlossariesMethod())
               .addMethod(getGetGlossaryMethod())

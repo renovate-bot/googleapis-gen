@@ -17,7 +17,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Location to make a call. Must refer to a caller's project.
-     * Format: `projects/{project-id}/locations/{location-id}`.
+     * Format: `projects/{project-number-or-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
@@ -40,14 +40,14 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
     private $target_language_codes;
     /**
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is model name. Value can be a built-in general model,
+     * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
-     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
-     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      *
@@ -56,7 +56,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
     private $models;
     /**
      * Required. Input configurations.
-     * The total number of files matched should be <= 1000.
+     * The total number of files matched should be <= 100.
      * The total content size should be <= 100M Unicode codepoints.
      * The files must use UTF-8 encoding.
      *
@@ -98,7 +98,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. Location to make a call. Must refer to a caller's project.
-     *           Format: `projects/{project-id}/locations/{location-id}`.
+     *           Format: `projects/{project-number-or-id}/locations/{location-id}`.
      *           The `global` location is not supported for batch translation.
      *           Only AutoML Translation models or glossaries within the same region (have
      *           the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
@@ -109,19 +109,19 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
      *           Required. Specify up to 10 language codes here.
      *     @type array|\Google\Protobuf\Internal\MapField $models
      *           Optional. The models to use for translation. Map's key is target language
-     *           code. Map's value is model name. Value can be a built-in general model,
+     *           code. Map's value is the model name. Value can be a built-in general model,
      *           or an AutoML Translation model.
      *           The value format depends on model type:
      *           - AutoML Translation models:
-     *             `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *             `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      *           - General (built-in) models:
-     *             `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *             `projects/{project-id}/locations/{location-id}/models/general/base`
+     *             `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *             `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *           If the map is empty or a specific model is
      *           not requested for a language pair, then default google model (nmt) is used.
      *     @type \Google\Cloud\Translate\V3beta1\InputConfig[]|\Google\Protobuf\Internal\RepeatedField $input_configs
      *           Required. Input configurations.
-     *           The total number of files matched should be <= 1000.
+     *           The total number of files matched should be <= 100.
      *           The total content size should be <= 100M Unicode codepoints.
      *           The files must use UTF-8 encoding.
      *     @type \Google\Cloud\Translate\V3beta1\OutputConfig $output_config
@@ -147,7 +147,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Location to make a call. Must refer to a caller's project.
-     * Format: `projects/{project-id}/locations/{location-id}`.
+     * Format: `projects/{project-number-or-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
@@ -163,7 +163,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Location to make a call. Must refer to a caller's project.
-     * Format: `projects/{project-id}/locations/{location-id}`.
+     * Format: `projects/{project-number-or-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
@@ -235,14 +235,14 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is model name. Value can be a built-in general model,
+     * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
-     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
-     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      *
@@ -256,14 +256,14 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is model name. Value can be a built-in general model,
+     * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
-     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
-     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      *
@@ -281,7 +281,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Input configurations.
-     * The total number of files matched should be <= 1000.
+     * The total number of files matched should be <= 100.
      * The total content size should be <= 100M Unicode codepoints.
      * The files must use UTF-8 encoding.
      *
@@ -295,7 +295,7 @@ class BatchTranslateTextRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Input configurations.
-     * The total number of files matched should be <= 1000.
+     * The total number of files matched should be <= 100.
      * The total content size should be <= 100M Unicode codepoints.
      * The files must use UTF-8 encoding.
      *

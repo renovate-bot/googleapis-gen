@@ -5,8 +5,9 @@ package com.google.cloud.translate.v3beta1;
 
 /**
  * <pre>
- * Stored in the [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata] field returned by
- * CreateGlossary.
+ * Stored in the
+ * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+ * field returned by CreateGlossary.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.CreateGlossaryMetadata}
@@ -603,8 +604,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Stored in the [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata] field returned by
-   * CreateGlossary.
+   * Stored in the
+   * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+   * field returned by CreateGlossary.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.CreateGlossaryMetadata}

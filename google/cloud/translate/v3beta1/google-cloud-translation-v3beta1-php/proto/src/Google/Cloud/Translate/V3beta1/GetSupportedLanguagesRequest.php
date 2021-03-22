@@ -18,10 +18,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
-     * Format: `projects/{project-id}` or
-     * `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global` or
-     * `projects/{project-id}`.
+     * Format: `projects/{project-number-or-id}` or
+     * `projects/{project-number-or-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
      * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
@@ -41,10 +41,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
      * Optional. Get supported languages of this model.
      * The format depends on model type:
      * - AutoML Translation models:
-     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
-     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
      * If missing, we get supported languages of Google general base (PBMT) model.
      *
@@ -61,10 +61,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Project or location to make a call. Must refer to a caller's
      *           project.
-     *           Format: `projects/{project-id}` or
-     *           `projects/{project-id}/locations/{location-id}`.
-     *           For global calls, use `projects/{project-id}/locations/global` or
-     *           `projects/{project-id}`.
+     *           Format: `projects/{project-number-or-id}` or
+     *           `projects/{project-number-or-id}/locations/{location-id}`.
+     *           For global calls, use `projects/{project-number-or-id}/locations/global` or
+     *           `projects/{project-number-or-id}`.
      *           Non-global location is required for AutoML models.
      *           Only models within the same region (have same location-id) can be used,
      *           otherwise an INVALID_ARGUMENT (400) error is returned.
@@ -76,10 +76,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
      *           Optional. Get supported languages of this model.
      *           The format depends on model type:
      *           - AutoML Translation models:
-     *             `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *             `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      *           - General (built-in) models:
-     *             `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *             `projects/{project-id}/locations/{location-id}/models/general/base`
+     *             `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *             `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *           Returns languages supported by the specified model.
      *           If missing, we get supported languages of Google general base (PBMT) model.
      * }
@@ -92,10 +92,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
-     * Format: `projects/{project-id}` or
-     * `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global` or
-     * `projects/{project-id}`.
+     * Format: `projects/{project-number-or-id}` or
+     * `projects/{project-number-or-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
      * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
@@ -111,10 +111,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
-     * Format: `projects/{project-id}` or
-     * `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global` or
-     * `projects/{project-id}`.
+     * Format: `projects/{project-number-or-id}` or
+     * `projects/{project-number-or-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global` or
+     * `projects/{project-number-or-id}`.
      * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
@@ -165,10 +165,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
      * Optional. Get supported languages of this model.
      * The format depends on model type:
      * - AutoML Translation models:
-     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
-     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
      * If missing, we get supported languages of Google general base (PBMT) model.
      *
@@ -184,10 +184,10 @@ class GetSupportedLanguagesRequest extends \Google\Protobuf\Internal\Message
      * Optional. Get supported languages of this model.
      * The format depends on model type:
      * - AutoML Translation models:
-     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
-     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
      * If missing, we get supported languages of Google general base (PBMT) model.
      *

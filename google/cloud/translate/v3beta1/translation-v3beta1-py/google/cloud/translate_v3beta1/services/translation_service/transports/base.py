@@ -131,8 +131,18 @@ class TranslationServiceTransport(abc.ABC):
                 default_timeout=600.0,
                 client_info=client_info,
             ),
+            self.translate_document: gapic_v1.method.wrap_method(
+                self.translate_document,
+                default_timeout=600.0,
+                client_info=client_info,
+            ),
             self.batch_translate_text: gapic_v1.method.wrap_method(
                 self.batch_translate_text,
+                default_timeout=600.0,
+                client_info=client_info,
+            ),
+            self.batch_translate_document: gapic_v1.method.wrap_method(
+                self.batch_translate_document,
                 default_timeout=600.0,
                 client_info=client_info,
             ),
@@ -219,8 +229,26 @@ class TranslationServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def translate_document(self) -> typing.Callable[
+            [translation_service.TranslateDocumentRequest],
+            typing.Union[
+                translation_service.TranslateDocumentResponse,
+                typing.Awaitable[translation_service.TranslateDocumentResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def batch_translate_text(self) -> typing.Callable[
             [translation_service.BatchTranslateTextRequest],
+            typing.Union[
+                operations.Operation,
+                typing.Awaitable[operations.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def batch_translate_document(self) -> typing.Callable[
+            [translation_service.BatchTranslateDocumentRequest],
             typing.Union[
                 operations.Operation,
                 typing.Awaitable[operations.Operation]

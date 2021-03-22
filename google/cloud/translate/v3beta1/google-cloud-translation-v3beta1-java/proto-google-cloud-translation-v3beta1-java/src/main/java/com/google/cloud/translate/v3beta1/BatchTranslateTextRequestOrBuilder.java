@@ -10,7 +10,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Location to make a call. Must refer to a caller's project.
-   * Format: `projects/{project-id}/locations/{location-id}`.
+   * Format: `projects/{project-number-or-id}/locations/{location-id}`.
    * The `global` location is not supported for batch translation.
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
@@ -24,7 +24,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Location to make a call. Must refer to a caller's project.
-   * Format: `projects/{project-id}/locations/{location-id}`.
+   * Format: `projects/{project-number-or-id}/locations/{location-id}`.
    * The `global` location is not supported for batch translation.
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
@@ -101,14 +101,14 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is model name. Value can be a built-in general model,
+   * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -119,14 +119,14 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is model name. Value can be a built-in general model,
+   * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -144,14 +144,14 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is model name. Value can be a built-in general model,
+   * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -163,14 +163,14 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is model name. Value can be a built-in general model,
+   * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -184,14 +184,14 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is model name. Value can be a built-in general model,
+   * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
-   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
-   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -205,7 +205,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -217,7 +217,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -228,7 +228,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -239,7 +239,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -251,7 +251,7 @@ public interface BatchTranslateTextRequestOrBuilder extends
   /**
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
