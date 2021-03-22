@@ -352,8 +352,8 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
         example) message from a participant into the conversation.
 
         Note: Always use agent versions for production traffic sent to
-        virtual agents. See [Versions and
-        environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+        virtual agents. See `Versions and
+        environments <https://cloud.google.com/dialogflow/es/docs/agents-versions>`__.
 
         Returns:
             Callable[[~.AnalyzeContentRequest],

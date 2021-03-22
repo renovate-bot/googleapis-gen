@@ -331,7 +331,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public void analyzeContent(com.google.cloud.dialogflow.v2.AnalyzeContentRequest request,
@@ -483,7 +483,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public void analyzeContent(com.google.cloud.dialogflow.v2.AnalyzeContentRequest request,
@@ -580,7 +580,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.AnalyzeContentResponse analyzeContent(com.google.cloud.dialogflow.v2.AnalyzeContentRequest request) {
@@ -678,7 +678,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.AnalyzeContentResponse> analyzeContent(
