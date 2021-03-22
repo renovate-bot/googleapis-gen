@@ -70,6 +70,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.monitoring.v3.AlertPolicy.parser(), extensionRegistry));
             break;
           }
+          case 32: {
+
+            totalSize_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -215,6 +220,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
+  private int totalSize_;
+  /**
+   * <pre>
+   * The total number of alert policies in all pages. This number is only an
+   * estimate, and may change in subsequent pages. https://aip.dev/158
+   * </pre>
+   *
+   * <code>int32 total_size = 4;</code>
+   * @return The totalSize.
+   */
+  @java.lang.Override
+  public int getTotalSize() {
+    return totalSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -235,6 +256,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < alertPolicies_.size(); i++) {
       output.writeMessage(3, alertPolicies_.get(i));
     }
+    if (totalSize_ != 0) {
+      output.writeInt32(4, totalSize_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -250,6 +274,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < alertPolicies_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, alertPolicies_.get(i));
+    }
+    if (totalSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, totalSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +298,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAlertPoliciesList())) return false;
     if (!getNextPageToken()
         .equals(other.getNextPageToken())) return false;
+    if (getTotalSize()
+        != other.getTotalSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -287,6 +317,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +465,8 @@ private static final long serialVersionUID = 0L;
       }
       nextPageToken_ = "";
 
+      totalSize_ = 0;
+
       return this;
     }
 
@@ -470,6 +504,7 @@ private static final long serialVersionUID = 0L;
         result.alertPolicies_ = alertPoliciesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      result.totalSize_ = totalSize_;
       onBuilt();
       return result;
     }
@@ -547,6 +582,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
         onChanged();
+      }
+      if (other.getTotalSize() != 0) {
+        setTotalSize(other.getTotalSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -992,6 +1030,52 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int totalSize_ ;
+    /**
+     * <pre>
+     * The total number of alert policies in all pages. This number is only an
+     * estimate, and may change in subsequent pages. https://aip.dev/158
+     * </pre>
+     *
+     * <code>int32 total_size = 4;</code>
+     * @return The totalSize.
+     */
+    @java.lang.Override
+    public int getTotalSize() {
+      return totalSize_;
+    }
+    /**
+     * <pre>
+     * The total number of alert policies in all pages. This number is only an
+     * estimate, and may change in subsequent pages. https://aip.dev/158
+     * </pre>
+     *
+     * <code>int32 total_size = 4;</code>
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalSize(int value) {
+      
+      totalSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The total number of alert policies in all pages. This number is only an
+     * estimate, and may change in subsequent pages. https://aip.dev/158
+     * </pre>
+     *
+     * <code>int32 total_size = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalSize() {
+      
+      totalSize_ = 0;
       onChanged();
       return this;
     }

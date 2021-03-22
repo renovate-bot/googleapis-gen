@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     timeSeries_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
     executionErrors_ = java.util.Collections.emptyList();
+    unit_ = "";
   }
 
   @java.lang.Override
@@ -78,6 +79,12 @@ private static final long serialVersionUID = 0L;
             }
             executionErrors_.add(
                 input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            unit_ = s;
             break;
           }
           default: {
@@ -293,6 +300,62 @@ private static final long serialVersionUID = 0L;
     return executionErrors_.get(index);
   }
 
+  public static final int UNIT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object unit_;
+  /**
+   * <pre>
+   * The unit in which all `time_series` point values are reported. `unit`
+   * follows the UCUM format for units as seen in
+   * https://unitsofmeasure.org/ucum.html.
+   * If different `time_series` have different units (for example, because they
+   * come from different metric types, or a unit is absent), then `unit` will be
+   * "{not_a_unit}".
+   * </pre>
+   *
+   * <code>string unit = 5;</code>
+   * @return The unit.
+   */
+  @java.lang.Override
+  public java.lang.String getUnit() {
+    java.lang.Object ref = unit_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      unit_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The unit in which all `time_series` point values are reported. `unit`
+   * follows the UCUM format for units as seen in
+   * https://unitsofmeasure.org/ucum.html.
+   * If different `time_series` have different units (for example, because they
+   * come from different metric types, or a unit is absent), then `unit` will be
+   * "{not_a_unit}".
+   * </pre>
+   *
+   * <code>string unit = 5;</code>
+   * @return The bytes for unit.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUnitBytes() {
+    java.lang.Object ref = unit_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      unit_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -316,6 +379,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < executionErrors_.size(); i++) {
       output.writeMessage(3, executionErrors_.get(i));
     }
+    if (!getUnitBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -335,6 +401,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < executionErrors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, executionErrors_.get(i));
+    }
+    if (!getUnitBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -357,6 +426,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNextPageToken())) return false;
     if (!getExecutionErrorsList()
         .equals(other.getExecutionErrorsList())) return false;
+    if (!getUnit()
+        .equals(other.getUnit())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -378,6 +449,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXECUTION_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getExecutionErrorsList().hashCode();
     }
+    hash = (37 * hash) + UNIT_FIELD_NUMBER;
+    hash = (53 * hash) + getUnit().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -531,6 +604,8 @@ private static final long serialVersionUID = 0L;
       } else {
         executionErrorsBuilder_.clear();
       }
+      unit_ = "";
+
       return this;
     }
 
@@ -577,6 +652,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.executionErrors_ = executionErrorsBuilder_.build();
       }
+      result.unit_ = unit_;
       onBuilt();
       return result;
     }
@@ -680,6 +756,10 @@ private static final long serialVersionUID = 0L;
             executionErrorsBuilder_.addAllMessages(other.executionErrors_);
           }
         }
+      }
+      if (!other.getUnit().isEmpty()) {
+        unit_ = other.unit_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1457,6 +1537,127 @@ private static final long serialVersionUID = 0L;
         executionErrors_ = null;
       }
       return executionErrorsBuilder_;
+    }
+
+    private java.lang.Object unit_ = "";
+    /**
+     * <pre>
+     * The unit in which all `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * If different `time_series` have different units (for example, because they
+     * come from different metric types, or a unit is absent), then `unit` will be
+     * "{not_a_unit}".
+     * </pre>
+     *
+     * <code>string unit = 5;</code>
+     * @return The unit.
+     */
+    public java.lang.String getUnit() {
+      java.lang.Object ref = unit_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unit_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The unit in which all `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * If different `time_series` have different units (for example, because they
+     * come from different metric types, or a unit is absent), then `unit` will be
+     * "{not_a_unit}".
+     * </pre>
+     *
+     * <code>string unit = 5;</code>
+     * @return The bytes for unit.
+     */
+    public com.google.protobuf.ByteString
+        getUnitBytes() {
+      java.lang.Object ref = unit_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The unit in which all `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * If different `time_series` have different units (for example, because they
+     * come from different metric types, or a unit is absent), then `unit` will be
+     * "{not_a_unit}".
+     * </pre>
+     *
+     * <code>string unit = 5;</code>
+     * @param value The unit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnit(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      unit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The unit in which all `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * If different `time_series` have different units (for example, because they
+     * come from different metric types, or a unit is absent), then `unit` will be
+     * "{not_a_unit}".
+     * </pre>
+     *
+     * <code>string unit = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUnit() {
+      
+      unit_ = getDefaultInstance().getUnit();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The unit in which all `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * If different `time_series` have different units (for example, because they
+     * come from different metric types, or a unit is absent), then `unit` will be
+     * "{not_a_unit}".
+     * </pre>
+     *
+     * <code>string unit = 5;</code>
+     * @param value The bytes for unit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      unit_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

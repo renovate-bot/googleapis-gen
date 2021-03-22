@@ -376,6 +376,8 @@ def test_list_alert_policies(transport: str = 'grpc', request_type=alert_service
         call.return_value = alert_service.ListAlertPoliciesResponse(
             next_page_token='next_page_token_value',
 
+            total_size=1086,
+
         )
 
         response = client.list_alert_policies(request)
@@ -391,6 +393,8 @@ def test_list_alert_policies(transport: str = 'grpc', request_type=alert_service
     assert isinstance(response, pagers.ListAlertPoliciesPager)
 
     assert response.next_page_token == 'next_page_token_value'
+
+    assert response.total_size == 1086
 
 
 def test_list_alert_policies_from_dict():
@@ -433,6 +437,7 @@ async def test_list_alert_policies_async(transport: str = 'grpc_asyncio', reques
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(alert_service.ListAlertPoliciesResponse(
             next_page_token='next_page_token_value',
+            total_size=1086,
         ))
 
         response = await client.list_alert_policies(request)
@@ -447,6 +452,8 @@ async def test_list_alert_policies_async(transport: str = 'grpc_asyncio', reques
     assert isinstance(response, pagers.ListAlertPoliciesAsyncPager)
 
     assert response.next_page_token == 'next_page_token_value'
+
+    assert response.total_size == 1086
 
 
 @pytest.mark.asyncio

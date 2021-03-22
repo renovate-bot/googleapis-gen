@@ -162,8 +162,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object query_;
   /**
    * <pre>
-   * Required. The query in the monitoring query language format. The default
-   * time zone is in UTC.
+   * Required. The query in the [Monitoring Query
+   * Language](https://cloud.google.com/monitoring/mql/reference) format.
+   * The default time zone is in UTC.
    * </pre>
    *
    * <code>string query = 7;</code>
@@ -184,8 +185,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The query in the monitoring query language format. The default
-   * time zone is in UTC.
+   * Required. The query in the [Monitoring Query
+   * Language](https://cloud.google.com/monitoring/mql/reference) format.
+   * The default time zone is in UTC.
    * </pre>
    *
    * <code>string query = 7;</code>
@@ -732,8 +734,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object query_ = "";
     /**
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -753,8 +756,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -775,8 +779,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -795,8 +800,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -810,8 +816,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>

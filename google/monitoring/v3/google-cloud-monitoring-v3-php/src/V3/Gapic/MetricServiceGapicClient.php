@@ -126,10 +126,12 @@ class MetricServiceGapicClient
         'https://www.googleapis.com/auth/monitoring.read',
         'https://www.googleapis.com/auth/monitoring.write',
     ];
+    private static $folderNameTemplate;
     private static $folderMetricDescriptorNameTemplate;
     private static $folderMonitoredResourceDescriptorNameTemplate;
     private static $metricDescriptorNameTemplate;
     private static $monitoredResourceDescriptorNameTemplate;
+    private static $organizationNameTemplate;
     private static $organizationMetricDescriptorNameTemplate;
     private static $organizationMonitoredResourceDescriptorNameTemplate;
     private static $projectNameTemplate;
@@ -154,6 +156,15 @@ class MetricServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getFolderNameTemplate()
+    {
+        if (null == self::$folderNameTemplate) {
+            self::$folderNameTemplate = new PathTemplate('folders/{folder}');
+        }
+
+        return self::$folderNameTemplate;
     }
 
     private static function getFolderMetricDescriptorNameTemplate()
@@ -190,6 +201,15 @@ class MetricServiceGapicClient
         }
 
         return self::$monitoredResourceDescriptorNameTemplate;
+    }
+
+    private static function getOrganizationNameTemplate()
+    {
+        if (null == self::$organizationNameTemplate) {
+            self::$organizationNameTemplate = new PathTemplate('organizations/{organization}');
+        }
+
+        return self::$organizationNameTemplate;
     }
 
     private static function getOrganizationMetricDescriptorNameTemplate()
@@ -241,10 +261,12 @@ class MetricServiceGapicClient
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
+                'folder' => self::getFolderNameTemplate(),
                 'folderMetricDescriptor' => self::getFolderMetricDescriptorNameTemplate(),
                 'folderMonitoredResourceDescriptor' => self::getFolderMonitoredResourceDescriptorNameTemplate(),
                 'metricDescriptor' => self::getMetricDescriptorNameTemplate(),
                 'monitoredResourceDescriptor' => self::getMonitoredResourceDescriptorNameTemplate(),
+                'organization' => self::getOrganizationNameTemplate(),
                 'organizationMetricDescriptor' => self::getOrganizationMetricDescriptorNameTemplate(),
                 'organizationMonitoredResourceDescriptor' => self::getOrganizationMonitoredResourceDescriptorNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
@@ -254,6 +276,22 @@ class MetricServiceGapicClient
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a folder resource.
+     *
+     * @param string $folder
+     *
+     * @return string The formatted folder resource.
+     * @experimental
+     */
+    public static function folderName($folder)
+    {
+        return self::getFolderNameTemplate()->render([
+            'folder' => $folder,
+        ]);
     }
 
     /**
@@ -325,6 +363,22 @@ class MetricServiceGapicClient
         return self::getMonitoredResourceDescriptorNameTemplate()->render([
             'project' => $project,
             'monitored_resource_descriptor' => $monitoredResourceDescriptor,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a organization resource.
+     *
+     * @param string $organization
+     *
+     * @return string The formatted organization resource.
+     * @experimental
+     */
+    public static function organizationName($organization)
+    {
+        return self::getOrganizationNameTemplate()->render([
+            'organization' => $organization,
         ]);
     }
 
@@ -420,10 +474,12 @@ class MetricServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - folder: folders/{folder}
      * - folderMetricDescriptor: folders/{folder}/metricDescriptors/{metric_descriptor=**}
      * - folderMonitoredResourceDescriptor: folders/{folder}/monitoredResourceDescriptors/{monitored_resource_descriptor}
      * - metricDescriptor: projects/{project}/metricDescriptors/{metric_descriptor=**}
      * - monitoredResourceDescriptor: projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}
+     * - organization: organizations/{organization}
      * - organizationMetricDescriptor: organizations/{organization}/metricDescriptors/{metric_descriptor=**}
      * - organizationMonitoredResourceDescriptor: organizations/{organization}/monitoredResourceDescriptors/{monitored_resource_descriptor}
      * - project: projects/{project}
@@ -964,9 +1020,12 @@ class MetricServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The project on which to execute the request. The format is:
+     * @param string $name Required. The project, organization or folder on which to execute the request. The
+     *                     format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *     organizations/[ORGANIZATION_ID]
+     *     folders/[FOLDER_ID]
      * @param string $filter Required. A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
      *                       that specifies which time series should be returned.  The filter must
      *                       specify a single metric type, and can additionally specify metric labels
@@ -988,6 +1047,9 @@ class MetricServiceGapicClient
      *
      *          By default (if no `aggregation` is explicitly specified), the raw time
      *          series data is returned.
+     *     @type Aggregation $secondaryAggregation
+     *          Apply a second aggregation after `aggregation` is applied. May only be
+     *          specified if `aggregation` is specified.
      *     @type string $orderBy
      *          Unsupported: must be left blank. The points in each time series are
      *          currently returned in reverse time order (most recent to oldest).
@@ -1021,6 +1083,9 @@ class MetricServiceGapicClient
         $request->setView($view);
         if (isset($optionalArgs['aggregation'])) {
             $request->setAggregation($optionalArgs['aggregation']);
+        }
+        if (isset($optionalArgs['secondaryAggregation'])) {
+            $request->setSecondaryAggregation($optionalArgs['secondaryAggregation']);
         }
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);

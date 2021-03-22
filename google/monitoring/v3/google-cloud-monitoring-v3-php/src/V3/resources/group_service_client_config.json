@@ -170,7 +170,7 @@
           "retry_params_name": "no_retry_2_params"
         },
         "UpdateGroup": {
-          "timeout_millis": 30000,
+          "timeout_millis": 180000,
           "retry_codes_name": "retry_policy_1_codes",
           "retry_params_name": "retry_policy_1_params"
         },

@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     metricKind_ = 0;
     valueType_ = 0;
     points_ = java.util.Collections.emptyList();
+    unit_ = "";
   }
 
   @java.lang.Override
@@ -117,6 +118,12 @@ private static final long serialVersionUID = 0L;
               metadata_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            unit_ = s;
             break;
           }
           default: {
@@ -241,8 +248,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
-   * a timeseries, this field will include metadata labels that are explicitly
-   * named in the reduction. When creating a timeseries, this field is ignored.
+   * time series, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a time series, this field is ignored.
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -255,8 +262,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
-   * a timeseries, this field will include metadata labels that are explicitly
-   * named in the reduction. When creating a timeseries, this field is ignored.
+   * time series, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a time series, this field is ignored.
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -269,8 +276,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
-   * a timeseries, this field will include metadata labels that are explicitly
-   * named in the reduction. When creating a timeseries, this field is ignored.
+   * time series, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a time series, this field is ignored.
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -446,6 +453,56 @@ private static final long serialVersionUID = 0L;
     return points_.get(index);
   }
 
+  public static final int UNIT_FIELD_NUMBER = 8;
+  private volatile java.lang.Object unit_;
+  /**
+   * <pre>
+   * The units in which the metric value is reported. It is only applicable
+   * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+   * defines the representation of the stored metric values.
+   * </pre>
+   *
+   * <code>string unit = 8;</code>
+   * @return The unit.
+   */
+  @java.lang.Override
+  public java.lang.String getUnit() {
+    java.lang.Object ref = unit_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      unit_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The units in which the metric value is reported. It is only applicable
+   * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+   * defines the representation of the stored metric values.
+   * </pre>
+   *
+   * <code>string unit = 8;</code>
+   * @return The bytes for unit.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUnitBytes() {
+    java.lang.Object ref = unit_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      unit_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -477,6 +534,9 @@ private static final long serialVersionUID = 0L;
     }
     if (metadata_ != null) {
       output.writeMessage(7, getMetadata());
+    }
+    if (!getUnitBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unit_);
     }
     unknownFields.writeTo(output);
   }
@@ -510,6 +570,9 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getMetadata());
+    }
+    if (!getUnitBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, unit_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -545,6 +608,8 @@ private static final long serialVersionUID = 0L;
     if (valueType_ != other.valueType_) return false;
     if (!getPointsList()
         .equals(other.getPointsList())) return false;
+    if (!getUnit()
+        .equals(other.getUnit())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -576,6 +641,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + POINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPointsList().hashCode();
     }
+    hash = (37 * hash) + UNIT_FIELD_NUMBER;
+    hash = (53 * hash) + getUnit().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -745,6 +812,8 @@ private static final long serialVersionUID = 0L;
       } else {
         pointsBuilder_.clear();
       }
+      unit_ = "";
+
       return this;
     }
 
@@ -798,6 +867,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.points_ = pointsBuilder_.build();
       }
+      result.unit_ = unit_;
       onBuilt();
       return result;
     }
@@ -886,6 +956,10 @@ private static final long serialVersionUID = 0L;
             pointsBuilder_.addAllMessages(other.points_);
           }
         }
+      }
+      if (!other.getUnit().isEmpty()) {
+        unit_ = other.unit_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1251,8 +1325,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1264,8 +1338,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1281,8 +1355,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1303,8 +1377,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1323,8 +1397,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1347,8 +1421,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1367,8 +1441,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1381,8 +1455,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -1398,8 +1472,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The associated monitored resource metadata. When reading a
-     * a timeseries, this field will include metadata labels that are explicitly
-     * named in the reduction. When creating a timeseries, this field is ignored.
+     * time series, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a time series, this field is ignored.
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -2039,6 +2113,112 @@ private static final long serialVersionUID = 0L;
         points_ = null;
       }
       return pointsBuilder_;
+    }
+
+    private java.lang.Object unit_ = "";
+    /**
+     * <pre>
+     * The units in which the metric value is reported. It is only applicable
+     * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+     * defines the representation of the stored metric values.
+     * </pre>
+     *
+     * <code>string unit = 8;</code>
+     * @return The unit.
+     */
+    public java.lang.String getUnit() {
+      java.lang.Object ref = unit_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unit_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The units in which the metric value is reported. It is only applicable
+     * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+     * defines the representation of the stored metric values.
+     * </pre>
+     *
+     * <code>string unit = 8;</code>
+     * @return The bytes for unit.
+     */
+    public com.google.protobuf.ByteString
+        getUnitBytes() {
+      java.lang.Object ref = unit_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The units in which the metric value is reported. It is only applicable
+     * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+     * defines the representation of the stored metric values.
+     * </pre>
+     *
+     * <code>string unit = 8;</code>
+     * @param value The unit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnit(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      unit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The units in which the metric value is reported. It is only applicable
+     * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+     * defines the representation of the stored metric values.
+     * </pre>
+     *
+     * <code>string unit = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUnit() {
+      
+      unit_ = getDefaultInstance().getUnit();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The units in which the metric value is reported. It is only applicable
+     * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+     * defines the representation of the stored metric values.
+     * </pre>
+     *
+     * <code>string unit = 8;</code>
+     * @param value The bytes for unit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      unit_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

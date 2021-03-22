@@ -9,8 +9,11 @@ public interface ListTimeSeriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The project, organization or folder on which to execute the request. The
+   * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *     organizations/[ORGANIZATION_ID]
+   *     folders/[FOLDER_ID]
    * </pre>
    *
    * <code>string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +22,11 @@ public interface ListTimeSeriesRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The project, organization or folder on which to execute the request. The
+   * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *     organizations/[ORGANIZATION_ID]
+   *     folders/[FOLDER_ID]
    * </pre>
    *
    * <code>string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -127,6 +133,36 @@ public interface ListTimeSeriesRequestOrBuilder extends
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
    */
   com.google.monitoring.v3.AggregationOrBuilder getAggregationOrBuilder();
+
+  /**
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied. May only be
+   * specified if `aggregation` is specified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+   * @return Whether the secondaryAggregation field is set.
+   */
+  boolean hasSecondaryAggregation();
+  /**
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied. May only be
+   * specified if `aggregation` is specified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+   * @return The secondaryAggregation.
+   */
+  com.google.monitoring.v3.Aggregation getSecondaryAggregation();
+  /**
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied. May only be
+   * specified if `aggregation` is specified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+   */
+  com.google.monitoring.v3.AggregationOrBuilder getSecondaryAggregationOrBuilder();
 
   /**
    * <pre>

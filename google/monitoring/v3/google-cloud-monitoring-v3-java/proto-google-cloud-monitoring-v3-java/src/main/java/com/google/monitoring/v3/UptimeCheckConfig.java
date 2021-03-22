@@ -1021,7 +1021,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The HTTP request method to use for the check.
+     * The HTTP request method to use for the check. If set to
+     * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -1030,7 +1031,8 @@ private static final long serialVersionUID = 0L;
     int getRequestMethodValue();
     /**
      * <pre>
-     * The HTTP request method to use for the check.
+     * The HTTP request method to use for the check. If set to
+     * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -1121,7 +1123,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Boolean specifiying whether to encrypt the header information.
+     * Boolean specifying whether to encrypt the header information.
      * Encryption should be specified for any headers related to authentication
      * that you do not wish to be seen when retrieving the configuration. The
      * server will be responsible for encrypting the headers.
@@ -1225,7 +1227,14 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The content type to use for the check.
+     * The content type header to use for the check. The following
+     * configurations result in errors:
+     * 1. Content type is specified in both the `headers` field and the
+     * `content_type` field.
+     * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+     * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+     * 4. Request method is `POST` and a "Content-Type" header is provided via
+     * `headers` field. The `content_type` field should be used instead.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -1234,7 +1243,14 @@ private static final long serialVersionUID = 0L;
     int getContentTypeValue();
     /**
      * <pre>
-     * The content type to use for the check.
+     * The content type header to use for the check. The following
+     * configurations result in errors:
+     * 1. Content type is specified in both the `headers` field and the
+     * `content_type` field.
+     * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+     * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+     * 4. Request method is `POST` and a "Content-Type" header is provided via
+     * `headers` field. The `content_type` field should be used instead.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -1257,11 +1273,14 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The request body associated with the HTTP request. If `content_type` is
-     * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
-     * a `Content-Length` header via the `headers` field or the API will do
-     * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
-     * JSON representations are base64 encoded.
+     * The request body associated with the HTTP POST request. If `content_type`
+     * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
+     * provide a `Content-Length` header via the `headers` field or the API will
+     * do so. If the `request_method` is `GET` and `body` is not empty, the API
+     * will return an error. The maximum byte size is 1 megabyte. Note: As with
+     * all `bytes` fields, JSON representations are base64 encoded. e.g.:
+     * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
+     * "Zm9vJTI1M0RiYXI=".
      * </pre>
      *
      * <code>bytes body = 10;</code>
@@ -1583,9 +1602,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Header options corresponding to the Content-Type of the body in HTTP
-     * requests. Note that a `Content-Type` header cannot be present in the
-     * `headers` field if this field is specified.
+     * Header options corresponding to the content type of a HTTP request body.
      * </pre>
      *
      * Protobuf enum {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType}
@@ -1594,8 +1611,7 @@ private static final long serialVersionUID = 0L;
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * No content type specified. If the request method is POST, an
-       * unspecified content type results in a check creation rejection.
+       * No content type specified.
        * </pre>
        *
        * <code>TYPE_UNSPECIFIED = 0;</code>
@@ -1615,8 +1631,7 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * No content type specified. If the request method is POST, an
-       * unspecified content type results in a check creation rejection.
+       * No content type specified.
        * </pre>
        *
        * <code>TYPE_UNSPECIFIED = 0;</code>
@@ -2523,7 +2538,8 @@ private static final long serialVersionUID = 0L;
     private int requestMethod_;
     /**
      * <pre>
-     * The HTTP request method to use for the check.
+     * The HTTP request method to use for the check. If set to
+     * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -2534,7 +2550,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The HTTP request method to use for the check.
+     * The HTTP request method to use for the check. If set to
+     * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -2678,7 +2695,7 @@ private static final long serialVersionUID = 0L;
     private boolean maskHeaders_;
     /**
      * <pre>
-     * Boolean specifiying whether to encrypt the header information.
+     * Boolean specifying whether to encrypt the header information.
      * Encryption should be specified for any headers related to authentication
      * that you do not wish to be seen when retrieving the configuration. The
      * server will be responsible for encrypting the headers.
@@ -2823,7 +2840,14 @@ private static final long serialVersionUID = 0L;
     private int contentType_;
     /**
      * <pre>
-     * The content type to use for the check.
+     * The content type header to use for the check. The following
+     * configurations result in errors:
+     * 1. Content type is specified in both the `headers` field and the
+     * `content_type` field.
+     * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+     * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+     * 4. Request method is `POST` and a "Content-Type" header is provided via
+     * `headers` field. The `content_type` field should be used instead.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -2834,7 +2858,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The content type to use for the check.
+     * The content type header to use for the check. The following
+     * configurations result in errors:
+     * 1. Content type is specified in both the `headers` field and the
+     * `content_type` field.
+     * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+     * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+     * 4. Request method is `POST` and a "Content-Type" header is provided via
+     * `headers` field. The `content_type` field should be used instead.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -2868,11 +2899,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString body_;
     /**
      * <pre>
-     * The request body associated with the HTTP request. If `content_type` is
-     * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
-     * a `Content-Length` header via the `headers` field or the API will do
-     * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
-     * JSON representations are base64 encoded.
+     * The request body associated with the HTTP POST request. If `content_type`
+     * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
+     * provide a `Content-Length` header via the `headers` field or the API will
+     * do so. If the `request_method` is `GET` and `body` is not empty, the API
+     * will return an error. The maximum byte size is 1 megabyte. Note: As with
+     * all `bytes` fields, JSON representations are base64 encoded. e.g.:
+     * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
+     * "Zm9vJTI1M0RiYXI=".
      * </pre>
      *
      * <code>bytes body = 10;</code>
@@ -3393,7 +3427,8 @@ private static final long serialVersionUID = 0L;
       private int requestMethod_ = 0;
       /**
        * <pre>
-       * The HTTP request method to use for the check.
+       * The HTTP request method to use for the check. If set to
+       * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -3404,7 +3439,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The HTTP request method to use for the check.
+       * The HTTP request method to use for the check. If set to
+       * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -3419,7 +3455,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The HTTP request method to use for the check.
+       * The HTTP request method to use for the check. If set to
+       * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -3433,7 +3470,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The HTTP request method to use for the check.
+       * The HTTP request method to use for the check. If set to
+       * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -3451,7 +3489,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The HTTP request method to use for the check.
+       * The HTTP request method to use for the check. If set to
+       * `METHOD_UNSPECIFIED` then `request_method` defaults to `GET`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;</code>
@@ -3842,7 +3881,7 @@ private static final long serialVersionUID = 0L;
       private boolean maskHeaders_ ;
       /**
        * <pre>
-       * Boolean specifiying whether to encrypt the header information.
+       * Boolean specifying whether to encrypt the header information.
        * Encryption should be specified for any headers related to authentication
        * that you do not wish to be seen when retrieving the configuration. The
        * server will be responsible for encrypting the headers.
@@ -3859,7 +3898,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Boolean specifiying whether to encrypt the header information.
+       * Boolean specifying whether to encrypt the header information.
        * Encryption should be specified for any headers related to authentication
        * that you do not wish to be seen when retrieving the configuration. The
        * server will be responsible for encrypting the headers.
@@ -3879,7 +3918,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Boolean specifiying whether to encrypt the header information.
+       * Boolean specifying whether to encrypt the header information.
        * Encryption should be specified for any headers related to authentication
        * that you do not wish to be seen when retrieving the configuration. The
        * server will be responsible for encrypting the headers.
@@ -4105,7 +4144,14 @@ private static final long serialVersionUID = 0L;
       private int contentType_ = 0;
       /**
        * <pre>
-       * The content type to use for the check.
+       * The content type header to use for the check. The following
+       * configurations result in errors:
+       * 1. Content type is specified in both the `headers` field and the
+       * `content_type` field.
+       * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+       * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+       * 4. Request method is `POST` and a "Content-Type" header is provided via
+       * `headers` field. The `content_type` field should be used instead.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -4116,7 +4162,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The content type to use for the check.
+       * The content type header to use for the check. The following
+       * configurations result in errors:
+       * 1. Content type is specified in both the `headers` field and the
+       * `content_type` field.
+       * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+       * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+       * 4. Request method is `POST` and a "Content-Type" header is provided via
+       * `headers` field. The `content_type` field should be used instead.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -4131,7 +4184,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The content type to use for the check.
+       * The content type header to use for the check. The following
+       * configurations result in errors:
+       * 1. Content type is specified in both the `headers` field and the
+       * `content_type` field.
+       * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+       * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+       * 4. Request method is `POST` and a "Content-Type" header is provided via
+       * `headers` field. The `content_type` field should be used instead.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -4145,7 +4205,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The content type to use for the check.
+       * The content type header to use for the check. The following
+       * configurations result in errors:
+       * 1. Content type is specified in both the `headers` field and the
+       * `content_type` field.
+       * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+       * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+       * 4. Request method is `POST` and a "Content-Type" header is provided via
+       * `headers` field. The `content_type` field should be used instead.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -4163,7 +4230,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The content type to use for the check.
+       * The content type header to use for the check. The following
+       * configurations result in errors:
+       * 1. Content type is specified in both the `headers` field and the
+       * `content_type` field.
+       * 2. Request method is `GET` and `content_type` is not `TYPE_UNSPECIFIED`
+       * 3. Request method is `POST` and `content_type` is `TYPE_UNSPECIFIED`.
+       * 4. Request method is `POST` and a "Content-Type" header is provided via
+       * `headers` field. The `content_type` field should be used instead.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
@@ -4231,11 +4305,14 @@ private static final long serialVersionUID = 0L;
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * The request body associated with the HTTP request. If `content_type` is
-       * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
-       * a `Content-Length` header via the `headers` field or the API will do
-       * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
-       * JSON representations are base64 encoded.
+       * The request body associated with the HTTP POST request. If `content_type`
+       * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
+       * provide a `Content-Length` header via the `headers` field or the API will
+       * do so. If the `request_method` is `GET` and `body` is not empty, the API
+       * will return an error. The maximum byte size is 1 megabyte. Note: As with
+       * all `bytes` fields, JSON representations are base64 encoded. e.g.:
+       * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
+       * "Zm9vJTI1M0RiYXI=".
        * </pre>
        *
        * <code>bytes body = 10;</code>
@@ -4247,11 +4324,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The request body associated with the HTTP request. If `content_type` is
-       * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
-       * a `Content-Length` header via the `headers` field or the API will do
-       * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
-       * JSON representations are base64 encoded.
+       * The request body associated with the HTTP POST request. If `content_type`
+       * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
+       * provide a `Content-Length` header via the `headers` field or the API will
+       * do so. If the `request_method` is `GET` and `body` is not empty, the API
+       * will return an error. The maximum byte size is 1 megabyte. Note: As with
+       * all `bytes` fields, JSON representations are base64 encoded. e.g.:
+       * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
+       * "Zm9vJTI1M0RiYXI=".
        * </pre>
        *
        * <code>bytes body = 10;</code>
@@ -4269,11 +4349,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The request body associated with the HTTP request. If `content_type` is
-       * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
-       * a `Content-Length` header via the `headers` field or the API will do
-       * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
-       * JSON representations are base64 encoded.
+       * The request body associated with the HTTP POST request. If `content_type`
+       * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
+       * provide a `Content-Length` header via the `headers` field or the API will
+       * do so. If the `request_method` is `GET` and `body` is not empty, the API
+       * will return an error. The maximum byte size is 1 megabyte. Note: As with
+       * all `bytes` fields, JSON representations are base64 encoded. e.g.:
+       * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
+       * "Zm9vJTI1M0RiYXI=".
        * </pre>
        *
        * <code>bytes body = 10;</code>
@@ -5930,6 +6013,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+   * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+   * Uptime check.
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -5955,6 +6040,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+   * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+   * Uptime check.
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -7312,6 +7399,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+     * Uptime check.
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7336,6 +7425,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+     * Uptime check.
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7361,6 +7452,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+     * Uptime check.
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7384,6 +7477,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+     * Uptime check.
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7402,6 +7497,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
+     * Uptime check.
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.

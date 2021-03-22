@@ -23,6 +23,8 @@ from google.cloud.monitoring_v3.services.metric_service.async_client import Metr
 from google.cloud.monitoring_v3.services.metric_service.client import MetricServiceClient
 from google.cloud.monitoring_v3.services.notification_channel_service.async_client import NotificationChannelServiceAsyncClient
 from google.cloud.monitoring_v3.services.notification_channel_service.client import NotificationChannelServiceClient
+from google.cloud.monitoring_v3.services.query_service.async_client import QueryServiceAsyncClient
+from google.cloud.monitoring_v3.services.query_service.client import QueryServiceClient
 from google.cloud.monitoring_v3.services.service_monitoring_service.async_client import ServiceMonitoringServiceAsyncClient
 from google.cloud.monitoring_v3.services.service_monitoring_service.client import ServiceMonitoringServiceClient
 from google.cloud.monitoring_v3.services.uptime_check_service.async_client import UptimeCheckServiceAsyncClient
@@ -201,6 +203,8 @@ __all__ = (
     'Point',
     'QueryError',
     'QueryErrorList',
+    'QueryServiceAsyncClient',
+    'QueryServiceClient',
     'QueryTimeSeriesRequest',
     'QueryTimeSeriesResponse',
     'Range',

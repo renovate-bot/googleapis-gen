@@ -111,10 +111,11 @@ private static final long serialVersionUID = 0L;
    * Required. The project in which to create the alerting policy. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
-   * policy will be written, not the name of the created policy. The alerting
-   * policy that is returned will have a name that contains a normalized
-   * representation of this name as a prefix but adds a suffix of the form
-   * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   * policy will be written, not the name of the created policy. |name| must be
+   * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+   * return. The alerting policy that is returned will have a name that contains
+   * a normalized representation of this name as a prefix but adds a suffix of
+   * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
    * container.
    * </pre>
    *
@@ -139,10 +140,11 @@ private static final long serialVersionUID = 0L;
    * Required. The project in which to create the alerting policy. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
-   * policy will be written, not the name of the created policy. The alerting
-   * policy that is returned will have a name that contains a normalized
-   * representation of this name as a prefix but adds a suffix of the form
-   * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   * policy will be written, not the name of the created policy. |name| must be
+   * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+   * return. The alerting policy that is returned will have a name that contains
+   * a normalized representation of this name as a prefix but adds a suffix of
+   * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
    * container.
    * </pre>
    *
@@ -550,10 +552,11 @@ private static final long serialVersionUID = 0L;
      * Required. The project in which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
-     * policy will be written, not the name of the created policy. The alerting
-     * policy that is returned will have a name that contains a normalized
-     * representation of this name as a prefix but adds a suffix of the form
-     * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+     * policy will be written, not the name of the created policy. |name| must be
+     * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+     * return. The alerting policy that is returned will have a name that contains
+     * a normalized representation of this name as a prefix but adds a suffix of
+     * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
      * container.
      * </pre>
      *
@@ -577,10 +580,11 @@ private static final long serialVersionUID = 0L;
      * Required. The project in which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
-     * policy will be written, not the name of the created policy. The alerting
-     * policy that is returned will have a name that contains a normalized
-     * representation of this name as a prefix but adds a suffix of the form
-     * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+     * policy will be written, not the name of the created policy. |name| must be
+     * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+     * return. The alerting policy that is returned will have a name that contains
+     * a normalized representation of this name as a prefix but adds a suffix of
+     * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
      * container.
      * </pre>
      *
@@ -605,10 +609,11 @@ private static final long serialVersionUID = 0L;
      * Required. The project in which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
-     * policy will be written, not the name of the created policy. The alerting
-     * policy that is returned will have a name that contains a normalized
-     * representation of this name as a prefix but adds a suffix of the form
-     * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+     * policy will be written, not the name of the created policy. |name| must be
+     * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+     * return. The alerting policy that is returned will have a name that contains
+     * a normalized representation of this name as a prefix but adds a suffix of
+     * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
      * container.
      * </pre>
      *
@@ -631,10 +636,11 @@ private static final long serialVersionUID = 0L;
      * Required. The project in which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
-     * policy will be written, not the name of the created policy. The alerting
-     * policy that is returned will have a name that contains a normalized
-     * representation of this name as a prefix but adds a suffix of the form
-     * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+     * policy will be written, not the name of the created policy. |name| must be
+     * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+     * return. The alerting policy that is returned will have a name that contains
+     * a normalized representation of this name as a prefix but adds a suffix of
+     * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
      * container.
      * </pre>
      *
@@ -652,10 +658,11 @@ private static final long serialVersionUID = 0L;
      * Required. The project in which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
-     * policy will be written, not the name of the created policy. The alerting
-     * policy that is returned will have a name that contains a normalized
-     * representation of this name as a prefix but adds a suffix of the form
-     * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+     * policy will be written, not the name of the created policy. |name| must be
+     * a host project of a workspace, otherwise INVALID_ARGUMENT error will
+     * return. The alerting policy that is returned will have a name that contains
+     * a normalized representation of this name as a prefix but adds a suffix of
+     * the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
      * container.
      * </pre>
      *

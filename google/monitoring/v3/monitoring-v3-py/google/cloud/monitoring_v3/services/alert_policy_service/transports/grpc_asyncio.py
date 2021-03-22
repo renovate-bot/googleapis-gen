@@ -237,7 +237,8 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
             Awaitable[alert_service.ListAlertPoliciesResponse]]:
         r"""Return a callable for the list alert policies method over gRPC.
 
-        Lists the existing alerting policies for the project.
+        Lists the existing alerting policies for the
+        workspace.
 
         Returns:
             Callable[[~.ListAlertPoliciesRequest],

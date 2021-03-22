@@ -19,6 +19,7 @@ from .services.alert_policy_service import AlertPolicyServiceClient
 from .services.group_service import GroupServiceClient
 from .services.metric_service import MetricServiceClient
 from .services.notification_channel_service import NotificationChannelServiceClient
+from .services.query_service import QueryServiceClient
 from .services.service_monitoring_service import ServiceMonitoringServiceClient
 from .services.uptime_check_service import UptimeCheckServiceClient
 from .types.alert import AlertPolicy
@@ -192,6 +193,7 @@ __all__ = (
     'Point',
     'QueryError',
     'QueryErrorList',
+    'QueryServiceClient',
     'QueryTimeSeriesRequest',
     'QueryTimeSeriesResponse',
     'Range',

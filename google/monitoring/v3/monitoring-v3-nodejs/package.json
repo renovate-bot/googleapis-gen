@@ -25,6 +25,7 @@
     "group service",
     "metric service",
     "notification channel service",
+    "query service",
     "service monitoring service",
     "uptime check service"
   ],

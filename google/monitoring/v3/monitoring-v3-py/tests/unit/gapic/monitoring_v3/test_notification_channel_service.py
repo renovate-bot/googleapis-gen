@@ -39,6 +39,7 @@ from google.cloud.monitoring_v3.services.notification_channel_service import Not
 from google.cloud.monitoring_v3.services.notification_channel_service import pagers
 from google.cloud.monitoring_v3.services.notification_channel_service import transports
 from google.cloud.monitoring_v3.types import common
+from google.cloud.monitoring_v3.types import mutation_record
 from google.cloud.monitoring_v3.types import notification
 from google.cloud.monitoring_v3.types import notification_service
 from google.oauth2 import service_account
@@ -1080,6 +1081,8 @@ def test_list_notification_channels(transport: str = 'grpc', request_type=notifi
         call.return_value = notification_service.ListNotificationChannelsResponse(
             next_page_token='next_page_token_value',
 
+            total_size=1086,
+
         )
 
         response = client.list_notification_channels(request)
@@ -1095,6 +1098,8 @@ def test_list_notification_channels(transport: str = 'grpc', request_type=notifi
     assert isinstance(response, pagers.ListNotificationChannelsPager)
 
     assert response.next_page_token == 'next_page_token_value'
+
+    assert response.total_size == 1086
 
 
 def test_list_notification_channels_from_dict():
@@ -1137,6 +1142,7 @@ async def test_list_notification_channels_async(transport: str = 'grpc_asyncio',
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(notification_service.ListNotificationChannelsResponse(
             next_page_token='next_page_token_value',
+            total_size=1086,
         ))
 
         response = await client.list_notification_channels(request)
@@ -1151,6 +1157,8 @@ async def test_list_notification_channels_async(transport: str = 'grpc_asyncio',
     assert isinstance(response, pagers.ListNotificationChannelsAsyncPager)
 
     assert response.next_page_token == 'next_page_token_value'
+
+    assert response.total_size == 1086
 
 
 @pytest.mark.asyncio

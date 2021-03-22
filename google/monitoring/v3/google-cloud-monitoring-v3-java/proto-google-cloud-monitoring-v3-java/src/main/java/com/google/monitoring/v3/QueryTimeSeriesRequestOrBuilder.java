@@ -31,8 +31,9 @@ public interface QueryTimeSeriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The query in the monitoring query language format. The default
-   * time zone is in UTC.
+   * Required. The query in the [Monitoring Query
+   * Language](https://cloud.google.com/monitoring/mql/reference) format.
+   * The default time zone is in UTC.
    * </pre>
    *
    * <code>string query = 7;</code>
@@ -41,8 +42,9 @@ public interface QueryTimeSeriesRequestOrBuilder extends
   java.lang.String getQuery();
   /**
    * <pre>
-   * Required. The query in the monitoring query language format. The default
-   * time zone is in UTC.
+   * Required. The query in the [Monitoring Query
+   * Language](https://cloud.google.com/monitoring/mql/reference) format.
+   * The default time zone is in UTC.
    * </pre>
    *
    * <code>string query = 7;</code>

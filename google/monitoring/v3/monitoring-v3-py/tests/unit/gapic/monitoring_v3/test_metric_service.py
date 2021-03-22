@@ -2342,6 +2342,8 @@ def test_list_time_series(transport: str = 'grpc', request_type=metric_service.L
         call.return_value = metric_service.ListTimeSeriesResponse(
             next_page_token='next_page_token_value',
 
+            unit='unit_value',
+
         )
 
         response = client.list_time_series(request)
@@ -2357,6 +2359,8 @@ def test_list_time_series(transport: str = 'grpc', request_type=metric_service.L
     assert isinstance(response, pagers.ListTimeSeriesPager)
 
     assert response.next_page_token == 'next_page_token_value'
+
+    assert response.unit == 'unit_value'
 
 
 def test_list_time_series_from_dict():
@@ -2399,6 +2403,7 @@ async def test_list_time_series_async(transport: str = 'grpc_asyncio', request_t
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(metric_service.ListTimeSeriesResponse(
             next_page_token='next_page_token_value',
+            unit='unit_value',
         ))
 
         response = await client.list_time_series(request)
@@ -2413,6 +2418,8 @@ async def test_list_time_series_async(transport: str = 'grpc_asyncio', request_t
     assert isinstance(response, pagers.ListTimeSeriesAsyncPager)
 
     assert response.next_page_token == 'next_page_token_value'
+
+    assert response.unit == 'unit_value'
 
 
 @pytest.mark.asyncio
@@ -3410,8 +3417,29 @@ def test_parse_monitored_resource_descriptor_path():
     actual = MetricServiceClient.parse_monitored_resource_descriptor_path(path)
     assert expected == actual
 
+def test_time_series_path():
+    project = "cuttlefish"
+    time_series = "mussel"
+
+    expected = "projects/{project}/timeSeries/{time_series}".format(project=project, time_series=time_series, )
+    actual = MetricServiceClient.time_series_path(project, time_series)
+    assert expected == actual
+
+
+def test_parse_time_series_path():
+    expected = {
+    "project": "winkle",
+    "time_series": "nautilus",
+
+    }
+    path = MetricServiceClient.time_series_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = MetricServiceClient.parse_time_series_path(path)
+    assert expected == actual
+
 def test_common_billing_account_path():
-    billing_account = "cuttlefish"
+    billing_account = "scallop"
 
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = MetricServiceClient.common_billing_account_path(billing_account)
@@ -3420,7 +3448,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
+    "billing_account": "abalone",
 
     }
     path = MetricServiceClient.common_billing_account_path(**expected)
@@ -3430,7 +3458,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "winkle"
+    folder = "squid"
 
     expected = "folders/{folder}".format(folder=folder, )
     actual = MetricServiceClient.common_folder_path(folder)
@@ -3439,7 +3467,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
+    "folder": "clam",
 
     }
     path = MetricServiceClient.common_folder_path(**expected)
@@ -3449,7 +3477,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "scallop"
+    organization = "whelk"
 
     expected = "organizations/{organization}".format(organization=organization, )
     actual = MetricServiceClient.common_organization_path(organization)
@@ -3458,7 +3486,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
+    "organization": "octopus",
 
     }
     path = MetricServiceClient.common_organization_path(**expected)
@@ -3468,7 +3496,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "squid"
+    project = "oyster"
 
     expected = "projects/{project}".format(project=project, )
     actual = MetricServiceClient.common_project_path(project)
@@ -3477,7 +3505,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
+    "project": "nudibranch",
 
     }
     path = MetricServiceClient.common_project_path(**expected)
@@ -3487,8 +3515,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "whelk"
-    location = "octopus"
+    project = "cuttlefish"
+    location = "mussel"
 
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = MetricServiceClient.common_location_path(project, location)
@@ -3497,8 +3525,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
+    "project": "winkle",
+    "location": "nautilus",
 
     }
     path = MetricServiceClient.common_location_path(**expected)
