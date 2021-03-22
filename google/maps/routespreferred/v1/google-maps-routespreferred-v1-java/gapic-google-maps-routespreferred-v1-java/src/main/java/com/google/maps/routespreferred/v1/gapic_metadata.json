@@ -14,7 +14,7 @@
               "methods": ["computeRouteMatrixCallable"]
             },
             "ComputeRoutes": {
-              "methods": ["computeRoutes", "computeRoutes", "computeRoutesCallable"]
+              "methods": ["computeRoutes", "computeRoutesCallable"]
             }
           }
         }

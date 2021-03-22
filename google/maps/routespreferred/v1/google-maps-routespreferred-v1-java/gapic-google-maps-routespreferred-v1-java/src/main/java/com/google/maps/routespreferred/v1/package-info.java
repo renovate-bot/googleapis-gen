@@ -25,9 +25,22 @@
  *
  * <pre>{@code
  * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
- *   Waypoint origin = Waypoint.newBuilder().build();
- *   Waypoint destination = Waypoint.newBuilder().build();
- *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(origin, destination);
+ *   ComputeRoutesRequest request =
+ *       ComputeRoutesRequest.newBuilder()
+ *           .setOrigin(Waypoint.newBuilder().build())
+ *           .setDestination(Waypoint.newBuilder().build())
+ *           .addAllIntermediates(new ArrayList<Waypoint>())
+ *           .setTravelMode(RouteTravelMode.forNumber(0))
+ *           .setRoutingPreference(RoutingPreference.forNumber(0))
+ *           .setPolylineQuality(PolylineQuality.forNumber(0))
+ *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
+ *           .setDepartureTime(Timestamp.newBuilder().build())
+ *           .setComputeAlternativeRoutes(true)
+ *           .setRouteModifiers(RouteModifiers.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .setUnits(Units.forNumber(0))
+ *           .build();
+ *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(request);
  * }
  * }</pre>
  */

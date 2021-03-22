@@ -35,11 +35,14 @@ public final class PolylineProto {
       "2\027.google.protobuf.StructH\000B\017\n\rpolyline_" +
       "type*S\n\017PolylineQuality\022 \n\034POLYLINE_QUAL" +
       "ITY_UNSPECIFIED\020\000\022\020\n\014HIGH_QUALITY\020\001\022\014\n\010O" +
-      "VERVIEW\020\002B\243\001\n\031com.google.maps.routes.v1B" +
-      "\rPolylineProtoP\001Z;google.golang.org/genp" +
-      "roto/googleapis/maps/routes/v1;routes\370\001\001" +
-      "\242\002\004GMRS\252\002\025Google.Maps.Routes.V1\312\002\025Google" +
-      "\\Maps\\Routes\\V1b\006proto3"
+      "VERVIEW\020\002*d\n\020PolylineEncoding\022!\n\035POLYLIN" +
+      "E_ENCODING_UNSPECIFIED\020\000\022\024\n\020ENCODED_POLY" +
+      "LINE\020\001\022\027\n\023GEO_JSON_LINESTRING\020\002B\243\001\n\031com." +
+      "google.maps.routes.v1B\rPolylineProtoP\001Z;" +
+      "google.golang.org/genproto/googleapis/ma" +
+      "ps/routes/v1;routes\370\001\001\242\002\004GMRS\252\002\025Google.M" +
+      "aps.Routes.V1\312\002\025Google\\Maps\\Routes\\V1b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

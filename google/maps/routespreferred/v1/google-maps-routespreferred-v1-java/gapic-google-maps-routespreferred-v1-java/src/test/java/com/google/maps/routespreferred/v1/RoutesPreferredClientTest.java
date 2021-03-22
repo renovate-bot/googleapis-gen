@@ -30,14 +30,18 @@ import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
 import com.google.maps.routes.v1.FallbackInfo;
+import com.google.maps.routes.v1.PolylineEncoding;
+import com.google.maps.routes.v1.PolylineQuality;
 import com.google.maps.routes.v1.Route;
 import com.google.maps.routes.v1.RouteMatrixDestination;
 import com.google.maps.routes.v1.RouteMatrixElement;
 import com.google.maps.routes.v1.RouteMatrixElementCondition;
 import com.google.maps.routes.v1.RouteMatrixOrigin;
+import com.google.maps.routes.v1.RouteModifiers;
 import com.google.maps.routes.v1.RouteTravelAdvisory;
 import com.google.maps.routes.v1.RouteTravelMode;
 import com.google.maps.routes.v1.RoutingPreference;
+import com.google.maps.routes.v1.Units;
 import com.google.maps.routes.v1.Waypoint;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
@@ -105,18 +109,42 @@ public class RoutesPreferredClientTest {
             .build();
     mockRoutesPreferred.addResponse(expectedResponse);
 
-    Waypoint origin = Waypoint.newBuilder().build();
-    Waypoint destination = Waypoint.newBuilder().build();
+    ComputeRoutesRequest request =
+        ComputeRoutesRequest.newBuilder()
+            .setOrigin(Waypoint.newBuilder().build())
+            .setDestination(Waypoint.newBuilder().build())
+            .addAllIntermediates(new ArrayList<Waypoint>())
+            .setTravelMode(RouteTravelMode.forNumber(0))
+            .setRoutingPreference(RoutingPreference.forNumber(0))
+            .setPolylineQuality(PolylineQuality.forNumber(0))
+            .setPolylineEncoding(PolylineEncoding.forNumber(0))
+            .setDepartureTime(Timestamp.newBuilder().build())
+            .setComputeAlternativeRoutes(true)
+            .setRouteModifiers(RouteModifiers.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setUnits(Units.forNumber(0))
+            .build();
 
-    ComputeRoutesResponse actualResponse = client.computeRoutes(origin, destination);
+    ComputeRoutesResponse actualResponse = client.computeRoutes(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRoutesPreferred.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ComputeRoutesRequest actualRequest = ((ComputeRoutesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(origin, actualRequest.getOrigin());
-    Assert.assertEquals(destination, actualRequest.getDestination());
+    Assert.assertEquals(request.getOrigin(), actualRequest.getOrigin());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertEquals(request.getIntermediatesList(), actualRequest.getIntermediatesList());
+    Assert.assertEquals(request.getTravelMode(), actualRequest.getTravelMode());
+    Assert.assertEquals(request.getRoutingPreference(), actualRequest.getRoutingPreference());
+    Assert.assertEquals(request.getPolylineQuality(), actualRequest.getPolylineQuality());
+    Assert.assertEquals(request.getPolylineEncoding(), actualRequest.getPolylineEncoding());
+    Assert.assertEquals(request.getDepartureTime(), actualRequest.getDepartureTime());
+    Assert.assertEquals(
+        request.getComputeAlternativeRoutes(), actualRequest.getComputeAlternativeRoutes());
+    Assert.assertEquals(request.getRouteModifiers(), actualRequest.getRouteModifiers());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertEquals(request.getUnits(), actualRequest.getUnits());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -129,9 +157,22 @@ public class RoutesPreferredClientTest {
     mockRoutesPreferred.addException(exception);
 
     try {
-      Waypoint origin = Waypoint.newBuilder().build();
-      Waypoint destination = Waypoint.newBuilder().build();
-      client.computeRoutes(origin, destination);
+      ComputeRoutesRequest request =
+          ComputeRoutesRequest.newBuilder()
+              .setOrigin(Waypoint.newBuilder().build())
+              .setDestination(Waypoint.newBuilder().build())
+              .addAllIntermediates(new ArrayList<Waypoint>())
+              .setTravelMode(RouteTravelMode.forNumber(0))
+              .setRoutingPreference(RoutingPreference.forNumber(0))
+              .setPolylineQuality(PolylineQuality.forNumber(0))
+              .setPolylineEncoding(PolylineEncoding.forNumber(0))
+              .setDepartureTime(Timestamp.newBuilder().build())
+              .setComputeAlternativeRoutes(true)
+              .setRouteModifiers(RouteModifiers.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setUnits(Units.forNumber(0))
+              .build();
+      client.computeRoutes(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

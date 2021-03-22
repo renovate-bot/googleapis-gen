@@ -53,6 +53,15 @@ public enum RouteTravelMode
    * <code>TWO_WHEELER = 4;</code>
    */
   TWO_WHEELER(4),
+  /**
+   * <pre>
+   * Travel by licensed taxi, which may allow the vehicle to travel on
+   * designated taxi lanes in some areas.
+   * </pre>
+   *
+   * <code>TAXI = 5;</code>
+   */
+  TAXI(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -97,6 +106,15 @@ public enum RouteTravelMode
    * <code>TWO_WHEELER = 4;</code>
    */
   public static final int TWO_WHEELER_VALUE = 4;
+  /**
+   * <pre>
+   * Travel by licensed taxi, which may allow the vehicle to travel on
+   * designated taxi lanes in some areas.
+   * </pre>
+   *
+   * <code>TAXI = 5;</code>
+   */
+  public static final int TAXI_VALUE = 5;
 
 
   public final int getNumber() {
@@ -128,6 +146,7 @@ public enum RouteTravelMode
       case 2: return BICYCLE;
       case 3: return WALK;
       case 4: return TWO_WHEELER;
+      case 5: return TAXI;
       default: return null;
     }
   }

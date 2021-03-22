@@ -24,7 +24,6 @@ import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
 import com.google.maps.routes.v1.RouteMatrixElement;
-import com.google.maps.routes.v1.Waypoint;
 import com.google.maps.routespreferred.v1.stub.RoutesPreferredStub;
 import com.google.maps.routespreferred.v1.stub.RoutesPreferredStubSettings;
 import java.io.IOException;
@@ -40,9 +39,22 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
- *   Waypoint origin = Waypoint.newBuilder().build();
- *   Waypoint destination = Waypoint.newBuilder().build();
- *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(origin, destination);
+ *   ComputeRoutesRequest request =
+ *       ComputeRoutesRequest.newBuilder()
+ *           .setOrigin(Waypoint.newBuilder().build())
+ *           .setDestination(Waypoint.newBuilder().build())
+ *           .addAllIntermediates(new ArrayList<Waypoint>())
+ *           .setTravelMode(RouteTravelMode.forNumber(0))
+ *           .setRoutingPreference(RoutingPreference.forNumber(0))
+ *           .setPolylineQuality(PolylineQuality.forNumber(0))
+ *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
+ *           .setDepartureTime(Timestamp.newBuilder().build())
+ *           .setComputeAlternativeRoutes(true)
+ *           .setRouteModifiers(RouteModifiers.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .setUnits(Units.forNumber(0))
+ *           .build();
+ *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(request);
  * }
  * }</pre>
  *
@@ -187,61 +199,6 @@ public class RoutesPreferredClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
-   *   Waypoint origin = Waypoint.newBuilder().build();
-   *   Waypoint destination = Waypoint.newBuilder().build();
-   *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(origin, destination);
-   * }
-   * }</pre>
-   *
-   * @param origin Required. Origin waypoint.
-   * @param destination Required. Destination waypoint.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ComputeRoutesResponse computeRoutes(Waypoint origin, Waypoint destination) {
-    ComputeRoutesRequest request =
-        ComputeRoutesRequest.newBuilder().setOrigin(origin).setDestination(destination).build();
-    return computeRoutes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the primary route along with optional alternate routes, given a set of terminal and
-   * intermediate waypoints.
-   *
-   * <p>&#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the
-   * input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or
-   * by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and
-   * headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated
-   * list of field paths. See detailed documentation about [how to construct the field
-   * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
-   *
-   * <p>For example, in this method:
-   *
-   * <ul>
-   *   <li>Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
-   *   <li>Field mask of Route-level duration, distance, and polyline (an example production setup):
-   *       `X-Goog-FieldMask: routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline`
-   * </ul>
-   *
-   * <p>Google discourage the use of the wildcard (`&#42;`) response field mask, or specifying the
-   * field mask at the top level (`routes`), because:
-   *
-   * <ul>
-   *   <li>Selecting only the fields that you need helps our server save computation cycles,
-   *       allowing us to return the result to you with a lower latency.
-   *   <li>Selecting only the fields that you need in your production job ensures stable latency
-   *       performance. We might add more response fields in the future, and those new fields might
-   *       require extra computation time. If you select all fields, or if you select all fields at
-   *       the top level, then you might experience performance degradation because any new field we
-   *       add will be automatically included in the response.
-   *   <li>Selecting only the fields that you need results in a smaller response size, and thus
-   *       higher network throughput.
-   * </ul>
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
    *   ComputeRoutesRequest request =
    *       ComputeRoutesRequest.newBuilder()
    *           .setOrigin(Waypoint.newBuilder().build())
@@ -250,6 +207,7 @@ public class RoutesPreferredClient implements BackgroundResource {
    *           .setTravelMode(RouteTravelMode.forNumber(0))
    *           .setRoutingPreference(RoutingPreference.forNumber(0))
    *           .setPolylineQuality(PolylineQuality.forNumber(0))
+   *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
@@ -314,6 +272,7 @@ public class RoutesPreferredClient implements BackgroundResource {
    *           .setTravelMode(RouteTravelMode.forNumber(0))
    *           .setRoutingPreference(RoutingPreference.forNumber(0))
    *           .setPolylineQuality(PolylineQuality.forNumber(0))
+   *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())

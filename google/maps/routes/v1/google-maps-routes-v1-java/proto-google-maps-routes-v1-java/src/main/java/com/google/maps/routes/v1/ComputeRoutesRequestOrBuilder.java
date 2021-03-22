@@ -186,6 +186,25 @@ public interface ComputeRoutesRequestOrBuilder extends
 
   /**
    * <pre>
+   * Optional. Specifies the preferred encoding for the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+   * @return The enum numeric value on the wire for polylineEncoding.
+   */
+  int getPolylineEncodingValue();
+  /**
+   * <pre>
+   * Optional. Specifies the preferred encoding for the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+   * @return The polylineEncoding.
+   */
+  com.google.maps.routes.v1.PolylineEncoding getPolylineEncoding();
+
+  /**
+   * <pre>
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request. If you set this value to a
    * time that has already occurred, then the request fails.

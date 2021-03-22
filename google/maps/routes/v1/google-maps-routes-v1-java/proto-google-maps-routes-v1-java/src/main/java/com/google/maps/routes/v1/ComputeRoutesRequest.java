@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     travelMode_ = 0;
     routingPreference_ = 0;
     polylineQuality_ = 0;
+    polylineEncoding_ = 0;
     languageCode_ = "";
     units_ = 0;
   }
@@ -153,6 +154,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             units_ = rawValue;
+            break;
+          }
+          case 96: {
+            int rawValue = input.readEnum();
+
+            polylineEncoding_ = rawValue;
             break;
           }
           default: {
@@ -429,6 +436,33 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.maps.routes.v1.PolylineQuality.UNRECOGNIZED : result;
   }
 
+  public static final int POLYLINE_ENCODING_FIELD_NUMBER = 12;
+  private int polylineEncoding_;
+  /**
+   * <pre>
+   * Optional. Specifies the preferred encoding for the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+   * @return The enum numeric value on the wire for polylineEncoding.
+   */
+  @java.lang.Override public int getPolylineEncodingValue() {
+    return polylineEncoding_;
+  }
+  /**
+   * <pre>
+   * Optional. Specifies the preferred encoding for the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+   * @return The polylineEncoding.
+   */
+  @java.lang.Override public com.google.maps.routes.v1.PolylineEncoding getPolylineEncoding() {
+    @SuppressWarnings("deprecation")
+    com.google.maps.routes.v1.PolylineEncoding result = com.google.maps.routes.v1.PolylineEncoding.valueOf(polylineEncoding_);
+    return result == null ? com.google.maps.routes.v1.PolylineEncoding.UNRECOGNIZED : result;
+  }
+
   public static final int DEPARTURE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp departureTime_;
   /**
@@ -667,6 +701,9 @@ private static final long serialVersionUID = 0L;
     if (units_ != com.google.maps.routes.v1.Units.UNITS_UNSPECIFIED.getNumber()) {
       output.writeEnum(11, units_);
     }
+    if (polylineEncoding_ != com.google.maps.routes.v1.PolylineEncoding.POLYLINE_ENCODING_UNSPECIFIED.getNumber()) {
+      output.writeEnum(12, polylineEncoding_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -719,6 +756,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(11, units_);
     }
+    if (polylineEncoding_ != com.google.maps.routes.v1.PolylineEncoding.POLYLINE_ENCODING_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(12, polylineEncoding_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -749,6 +790,7 @@ private static final long serialVersionUID = 0L;
     if (travelMode_ != other.travelMode_) return false;
     if (routingPreference_ != other.routingPreference_) return false;
     if (polylineQuality_ != other.polylineQuality_) return false;
+    if (polylineEncoding_ != other.polylineEncoding_) return false;
     if (hasDepartureTime() != other.hasDepartureTime()) return false;
     if (hasDepartureTime()) {
       if (!getDepartureTime()
@@ -793,6 +835,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + routingPreference_;
     hash = (37 * hash) + POLYLINE_QUALITY_FIELD_NUMBER;
     hash = (53 * hash) + polylineQuality_;
+    hash = (37 * hash) + POLYLINE_ENCODING_FIELD_NUMBER;
+    hash = (53 * hash) + polylineEncoding_;
     if (hasDepartureTime()) {
       hash = (37 * hash) + DEPARTURE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDepartureTime().hashCode();
@@ -970,6 +1014,8 @@ private static final long serialVersionUID = 0L;
 
       polylineQuality_ = 0;
 
+      polylineEncoding_ = 0;
+
       if (departureTimeBuilder_ == null) {
         departureTime_ = null;
       } else {
@@ -1037,6 +1083,7 @@ private static final long serialVersionUID = 0L;
       result.travelMode_ = travelMode_;
       result.routingPreference_ = routingPreference_;
       result.polylineQuality_ = polylineQuality_;
+      result.polylineEncoding_ = polylineEncoding_;
       if (departureTimeBuilder_ == null) {
         result.departureTime_ = departureTime_;
       } else {
@@ -1138,6 +1185,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.polylineQuality_ != 0) {
         setPolylineQualityValue(other.getPolylineQualityValue());
+      }
+      if (other.polylineEncoding_ != 0) {
+        setPolylineEncodingValue(other.getPolylineEncodingValue());
       }
       if (other.hasDepartureTime()) {
         mergeDepartureTime(other.getDepartureTime());
@@ -2091,6 +2141,80 @@ private static final long serialVersionUID = 0L;
     public Builder clearPolylineQuality() {
       
       polylineQuality_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int polylineEncoding_ = 0;
+    /**
+     * <pre>
+     * Optional. Specifies the preferred encoding for the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+     * @return The enum numeric value on the wire for polylineEncoding.
+     */
+    @java.lang.Override public int getPolylineEncodingValue() {
+      return polylineEncoding_;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies the preferred encoding for the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+     * @param value The enum numeric value on the wire for polylineEncoding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolylineEncodingValue(int value) {
+      
+      polylineEncoding_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies the preferred encoding for the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+     * @return The polylineEncoding.
+     */
+    @java.lang.Override
+    public com.google.maps.routes.v1.PolylineEncoding getPolylineEncoding() {
+      @SuppressWarnings("deprecation")
+      com.google.maps.routes.v1.PolylineEncoding result = com.google.maps.routes.v1.PolylineEncoding.valueOf(polylineEncoding_);
+      return result == null ? com.google.maps.routes.v1.PolylineEncoding.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies the preferred encoding for the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+     * @param value The polylineEncoding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolylineEncoding(com.google.maps.routes.v1.PolylineEncoding value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      polylineEncoding_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies the preferred encoding for the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routes.v1.PolylineEncoding polyline_encoding = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPolylineEncoding() {
+      
+      polylineEncoding_ = 0;
       onChanged();
       return this;
     }

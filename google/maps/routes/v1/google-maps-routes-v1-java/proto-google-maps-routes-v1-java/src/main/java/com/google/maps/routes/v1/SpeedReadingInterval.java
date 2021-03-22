@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The starting index of this interval in the polyline.
-   * In JSON, when the index is 0, the field will appear to be unpopulated.
+   * In JSON, when the index is 0, the field appears to be unpopulated.
    * </pre>
    *
    * <code>int32 start_polyline_point_index = 1;</code>
@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The ending index of this interval in the polyline.
-   * In JSON, when the index is 0, the field will appear to be unpopulated.
+   * In JSON, when the index is 0, the field appears to be unpopulated.
    * </pre>
    *
    * <code>int32 end_polyline_point_index = 2;</code>
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The starting index of this interval in the polyline.
-     * In JSON, when the index is 0, the field will appear to be unpopulated.
+     * In JSON, when the index is 0, the field appears to be unpopulated.
      * </pre>
      *
      * <code>int32 start_polyline_point_index = 1;</code>
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The starting index of this interval in the polyline.
-     * In JSON, when the index is 0, the field will appear to be unpopulated.
+     * In JSON, when the index is 0, the field appears to be unpopulated.
      * </pre>
      *
      * <code>int32 start_polyline_point_index = 1;</code>
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The starting index of this interval in the polyline.
-     * In JSON, when the index is 0, the field will appear to be unpopulated.
+     * In JSON, when the index is 0, the field appears to be unpopulated.
      * </pre>
      *
      * <code>int32 start_polyline_point_index = 1;</code>
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The ending index of this interval in the polyline.
-     * In JSON, when the index is 0, the field will appear to be unpopulated.
+     * In JSON, when the index is 0, the field appears to be unpopulated.
      * </pre>
      *
      * <code>int32 end_polyline_point_index = 2;</code>
@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The ending index of this interval in the polyline.
-     * In JSON, when the index is 0, the field will appear to be unpopulated.
+     * In JSON, when the index is 0, the field appears to be unpopulated.
      * </pre>
      *
      * <code>int32 end_polyline_point_index = 2;</code>
@@ -746,7 +746,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The ending index of this interval in the polyline.
-     * In JSON, when the index is 0, the field will appear to be unpopulated.
+     * In JSON, when the index is 0, the field appears to be unpopulated.
      * </pre>
      *
      * <code>int32 end_polyline_point_index = 2;</code>

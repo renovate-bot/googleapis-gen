@@ -168,9 +168,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlaps,
-   * i.e. the start point of a given interval coincides with the end point of
-   * the preceding interval.
+   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The start point of a specified interval is the same as the end point of the
+   * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -186,9 +186,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlaps,
-   * i.e. the start point of a given interval coincides with the end point of
-   * the preceding interval.
+   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The start point of a specified interval is the same as the end point of the
+   * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -205,9 +205,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlaps,
-   * i.e. the start point of a given interval coincides with the end point of
-   * the preceding interval.
+   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The start point of a specified interval is the same as the end point of the
+   * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -223,9 +223,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlaps,
-   * i.e. the start point of a given interval coincides with the end point of
-   * the preceding interval.
+   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The start point of a specified interval is the same as the end point of the
+   * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -241,9 +241,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlaps,
-   * i.e. the start point of a given interval coincides with the end point of
-   * the preceding interval.
+   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The start point of a specified interval is the same as the end point of the
+   * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -841,9 +841,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -862,9 +862,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -883,9 +883,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -904,9 +904,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -932,9 +932,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -957,9 +957,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -984,9 +984,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1012,9 +1012,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1037,9 +1037,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1062,9 +1062,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1088,9 +1088,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1112,9 +1112,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1136,9 +1136,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1154,9 +1154,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1175,9 +1175,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1197,9 +1197,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1215,9 +1215,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
@@ -1234,9 +1234,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Speed reading intervals detailing traffic density. Applicable in case of
      * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-     * The intervals cover the entire polyline of the RouteLg without overlaps,
-     * i.e. the start point of a given interval coincides with the end point of
-     * the preceding interval.
+     * The intervals cover the entire polyline of the RouteLg without overlap.
+     * The start point of a specified interval is the same as the end point of the
+     * preceding interval.
      * Example:
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).

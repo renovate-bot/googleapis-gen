@@ -385,7 +385,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a leg step.
+   * about, such as possible traffic zone restriction on a leg step.
    * </pre>
    *
    * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -398,7 +398,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a leg step.
+   * about, such as possible traffic zone restriction on a leg step.
    * </pre>
    *
    * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -411,7 +411,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a leg step.
+   * about, such as possible traffic zone restriction on a leg step.
    * </pre>
    *
    * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1753,7 +1753,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1765,7 +1765,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1781,7 +1781,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1802,7 +1802,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1821,7 +1821,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1844,7 +1844,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1863,7 +1863,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1876,7 +1876,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1892,7 +1892,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a leg step.
+     * about, such as possible traffic zone restriction on a leg step.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteLegStepTravelAdvisory travel_advisory = 7;</code>

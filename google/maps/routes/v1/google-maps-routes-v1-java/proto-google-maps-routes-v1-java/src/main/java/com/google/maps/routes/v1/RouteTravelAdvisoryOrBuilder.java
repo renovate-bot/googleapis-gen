@@ -83,8 +83,8 @@ public interface RouteTravelAdvisoryOrBuilder extends
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the route without overlaps, i.e.
-   * the start point of a given interval coincides with the end point of the
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
@@ -99,8 +99,8 @@ public interface RouteTravelAdvisoryOrBuilder extends
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the route without overlaps, i.e.
-   * the start point of a given interval coincides with the end point of the
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
@@ -114,8 +114,8 @@ public interface RouteTravelAdvisoryOrBuilder extends
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the route without overlaps, i.e.
-   * the start point of a given interval coincides with the end point of the
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
@@ -129,8 +129,8 @@ public interface RouteTravelAdvisoryOrBuilder extends
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the route without overlaps, i.e.
-   * the start point of a given interval coincides with the end point of the
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
@@ -145,8 +145,8 @@ public interface RouteTravelAdvisoryOrBuilder extends
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the route without overlaps, i.e.
-   * the start point of a given interval coincides with the end point of the
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    * Example:
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
