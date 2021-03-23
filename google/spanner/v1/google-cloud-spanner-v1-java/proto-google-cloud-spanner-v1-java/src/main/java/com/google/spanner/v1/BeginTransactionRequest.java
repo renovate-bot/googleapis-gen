@@ -72,6 +72,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            com.google.spanner.v1.RequestOptions.Builder subBuilder = null;
+            if (requestOptions_ != null) {
+              subBuilder = requestOptions_.toBuilder();
+            }
+            requestOptions_ = input.readMessage(com.google.spanner.v1.RequestOptions.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(requestOptions_);
+              requestOptions_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -188,6 +201,56 @@ private static final long serialVersionUID = 0L;
     return getOptions();
   }
 
+  public static final int REQUEST_OPTIONS_FIELD_NUMBER = 3;
+  private com.google.spanner.v1.RequestOptions requestOptions_;
+  /**
+   * <pre>
+   * Common options for this request.
+   * Priority is ignored for this request. Setting the priority in this
+   * request_options struct will not do anything. To set the priority for a
+   * transaction, set it on the reads and writes that are part of this
+   * transaction instead.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+   * @return Whether the requestOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestOptions() {
+    return requestOptions_ != null;
+  }
+  /**
+   * <pre>
+   * Common options for this request.
+   * Priority is ignored for this request. Setting the priority in this
+   * request_options struct will not do anything. To set the priority for a
+   * transaction, set it on the reads and writes that are part of this
+   * transaction instead.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+   * @return The requestOptions.
+   */
+  @java.lang.Override
+  public com.google.spanner.v1.RequestOptions getRequestOptions() {
+    return requestOptions_ == null ? com.google.spanner.v1.RequestOptions.getDefaultInstance() : requestOptions_;
+  }
+  /**
+   * <pre>
+   * Common options for this request.
+   * Priority is ignored for this request. Setting the priority in this
+   * request_options struct will not do anything. To set the priority for a
+   * transaction, set it on the reads and writes that are part of this
+   * transaction instead.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.spanner.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+    return getRequestOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -208,6 +271,9 @@ private static final long serialVersionUID = 0L;
     if (options_ != null) {
       output.writeMessage(2, getOptions());
     }
+    if (requestOptions_ != null) {
+      output.writeMessage(3, getRequestOptions());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -223,6 +289,10 @@ private static final long serialVersionUID = 0L;
     if (options_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getOptions());
+    }
+    if (requestOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getRequestOptions());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -246,6 +316,11 @@ private static final long serialVersionUID = 0L;
       if (!getOptions()
           .equals(other.getOptions())) return false;
     }
+    if (hasRequestOptions() != other.hasRequestOptions()) return false;
+    if (hasRequestOptions()) {
+      if (!getRequestOptions()
+          .equals(other.getRequestOptions())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -262,6 +337,10 @@ private static final long serialVersionUID = 0L;
     if (hasOptions()) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOptions().hashCode();
+    }
+    if (hasRequestOptions()) {
+      hash = (37 * hash) + REQUEST_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestOptions().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -408,6 +487,12 @@ private static final long serialVersionUID = 0L;
         options_ = null;
         optionsBuilder_ = null;
       }
+      if (requestOptionsBuilder_ == null) {
+        requestOptions_ = null;
+      } else {
+        requestOptions_ = null;
+        requestOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -439,6 +524,11 @@ private static final long serialVersionUID = 0L;
         result.options_ = options_;
       } else {
         result.options_ = optionsBuilder_.build();
+      }
+      if (requestOptionsBuilder_ == null) {
+        result.requestOptions_ = requestOptions_;
+      } else {
+        result.requestOptions_ = requestOptionsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -494,6 +584,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOptions()) {
         mergeOptions(other.getOptions());
+      }
+      if (other.hasRequestOptions()) {
+        mergeRequestOptions(other.getRequestOptions());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -773,6 +866,197 @@ private static final long serialVersionUID = 0L;
         options_ = null;
       }
       return optionsBuilder_;
+    }
+
+    private com.google.spanner.v1.RequestOptions requestOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.spanner.v1.RequestOptions, com.google.spanner.v1.RequestOptions.Builder, com.google.spanner.v1.RequestOptionsOrBuilder> requestOptionsBuilder_;
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     * @return Whether the requestOptions field is set.
+     */
+    public boolean hasRequestOptions() {
+      return requestOptionsBuilder_ != null || requestOptions_ != null;
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     * @return The requestOptions.
+     */
+    public com.google.spanner.v1.RequestOptions getRequestOptions() {
+      if (requestOptionsBuilder_ == null) {
+        return requestOptions_ == null ? com.google.spanner.v1.RequestOptions.getDefaultInstance() : requestOptions_;
+      } else {
+        return requestOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    public Builder setRequestOptions(com.google.spanner.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestOptions_ = value;
+        onChanged();
+      } else {
+        requestOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    public Builder setRequestOptions(
+        com.google.spanner.v1.RequestOptions.Builder builderForValue) {
+      if (requestOptionsBuilder_ == null) {
+        requestOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        requestOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    public Builder mergeRequestOptions(com.google.spanner.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (requestOptions_ != null) {
+          requestOptions_ =
+            com.google.spanner.v1.RequestOptions.newBuilder(requestOptions_).mergeFrom(value).buildPartial();
+        } else {
+          requestOptions_ = value;
+        }
+        onChanged();
+      } else {
+        requestOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    public Builder clearRequestOptions() {
+      if (requestOptionsBuilder_ == null) {
+        requestOptions_ = null;
+        onChanged();
+      } else {
+        requestOptions_ = null;
+        requestOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    public com.google.spanner.v1.RequestOptions.Builder getRequestOptionsBuilder() {
+      
+      onChanged();
+      return getRequestOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    public com.google.spanner.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+      if (requestOptionsBuilder_ != null) {
+        return requestOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return requestOptions_ == null ?
+            com.google.spanner.v1.RequestOptions.getDefaultInstance() : requestOptions_;
+      }
+    }
+    /**
+     * <pre>
+     * Common options for this request.
+     * Priority is ignored for this request. Setting the priority in this
+     * request_options struct will not do anything. To set the priority for a
+     * transaction, set it on the reads and writes that are part of this
+     * transaction instead.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.RequestOptions request_options = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.spanner.v1.RequestOptions, com.google.spanner.v1.RequestOptions.Builder, com.google.spanner.v1.RequestOptionsOrBuilder> 
+        getRequestOptionsFieldBuilder() {
+      if (requestOptionsBuilder_ == null) {
+        requestOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.spanner.v1.RequestOptions, com.google.spanner.v1.RequestOptions.Builder, com.google.spanner.v1.RequestOptionsOrBuilder>(
+                getRequestOptions(),
+                getParentForChildren(),
+                isClean());
+        requestOptions_ = null;
+      }
+      return requestOptionsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

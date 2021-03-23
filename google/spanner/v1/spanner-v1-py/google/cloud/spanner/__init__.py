@@ -45,6 +45,7 @@ from google.cloud.spanner_v1.types.spanner import PartitionQueryRequest
 from google.cloud.spanner_v1.types.spanner import PartitionReadRequest
 from google.cloud.spanner_v1.types.spanner import PartitionResponse
 from google.cloud.spanner_v1.types.spanner import ReadRequest
+from google.cloud.spanner_v1.types.spanner import RequestOptions
 from google.cloud.spanner_v1.types.spanner import RollbackRequest
 from google.cloud.spanner_v1.types.spanner import Session
 from google.cloud.spanner_v1.types.transaction import Transaction
@@ -80,6 +81,7 @@ __all__ = (
     'PlanNode',
     'QueryPlan',
     'ReadRequest',
+    'RequestOptions',
     'ResultSet',
     'ResultSetMetadata',
     'ResultSetStats',

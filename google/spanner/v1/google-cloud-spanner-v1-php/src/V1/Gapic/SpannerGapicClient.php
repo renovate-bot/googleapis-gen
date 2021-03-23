@@ -60,6 +60,7 @@ use Google\Cloud\Spanner\V1\PartitionQueryRequest;
 use Google\Cloud\Spanner\V1\PartitionReadRequest;
 use Google\Cloud\Spanner\V1\PartitionResponse;
 use Google\Cloud\Spanner\V1\ReadRequest;
+use Google\Cloud\Spanner\V1\RequestOptions;
 use Google\Cloud\Spanner\V1\ResultSet;
 use Google\Cloud\Spanner\V1\RollbackRequest;
 use Google\Cloud\Spanner\V1\Session;
@@ -749,6 +750,8 @@ class SpannerGapicClient
      *          Required for DML statements. Ignored for queries.
      *     @type QueryOptions $queryOptions
      *          Query optimizer configuration to use for the given query.
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -789,6 +792,9 @@ class SpannerGapicClient
         }
         if (isset($optionalArgs['queryOptions'])) {
             $request->setQueryOptions($optionalArgs['queryOptions']);
+        }
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -898,6 +904,8 @@ class SpannerGapicClient
      *          Required for DML statements. Ignored for queries.
      *     @type QueryOptions $queryOptions
      *          Query optimizer configuration to use for the given query.
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
      *     @type int $timeoutMillis
      *          Timeout to use for this call.
      * }
@@ -935,6 +943,9 @@ class SpannerGapicClient
         }
         if (isset($optionalArgs['queryOptions'])) {
             $request->setQueryOptions($optionalArgs['queryOptions']);
+        }
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1003,6 +1014,8 @@ class SpannerGapicClient
      * @param array $optionalArgs {
      *                            Optional.
      *
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1022,6 +1035,9 @@ class SpannerGapicClient
         $request->setTransaction($transaction);
         $request->setStatements($statements);
         $request->setSeqno($seqno);
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'session' => $request->getSession(),
@@ -1109,6 +1125,8 @@ class SpannerGapicClient
      *          previously created using PartitionRead().    There must be an exact
      *          match for the values of fields common to this message and the
      *          PartitionReadRequest message used to create this partition_token.
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1142,6 +1160,9 @@ class SpannerGapicClient
         }
         if (isset($optionalArgs['partitionToken'])) {
             $request->setPartitionToken($optionalArgs['partitionToken']);
+        }
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1226,6 +1247,8 @@ class SpannerGapicClient
      *          previously created using PartitionRead().    There must be an exact
      *          match for the values of fields common to this message and the
      *          PartitionReadRequest message used to create this partition_token.
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
      *     @type int $timeoutMillis
      *          Timeout to use for this call.
      * }
@@ -1256,6 +1279,9 @@ class SpannerGapicClient
         }
         if (isset($optionalArgs['partitionToken'])) {
             $request->setPartitionToken($optionalArgs['partitionToken']);
+        }
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1297,6 +1323,12 @@ class SpannerGapicClient
      * @param array              $optionalArgs {
      *                                         Optional.
      *
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
+     *          Priority is ignored for this request. Setting the priority in this
+     *          request_options struct will not do anything. To set the priority for a
+     *          transaction, set it on the reads and writes that are part of this
+     *          transaction instead.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1314,6 +1346,9 @@ class SpannerGapicClient
         $request = new BeginTransactionRequest();
         $request->setSession($session);
         $request->setOptions($options);
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'session' => $request->getSession(),
@@ -1381,6 +1416,8 @@ class SpannerGapicClient
      *          If `true`, then statistics related to the transaction will be included in
      *          the [CommitResponse][google.spanner.v1.CommitResponse.commit_stats]. Default value is
      *          `false`.
+     *     @type RequestOptions $requestOptions
+     *          Common options for this request.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1408,6 +1445,9 @@ class SpannerGapicClient
         }
         if (isset($optionalArgs['returnCommitStats'])) {
             $request->setReturnCommitStats($optionalArgs['returnCommitStats']);
+        }
+        if (isset($optionalArgs['requestOptions'])) {
+            $request->setRequestOptions($optionalArgs['requestOptions']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([

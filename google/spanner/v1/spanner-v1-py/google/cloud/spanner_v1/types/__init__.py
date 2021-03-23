@@ -52,6 +52,7 @@ from .spanner import (
     PartitionReadRequest,
     PartitionResponse,
     ReadRequest,
+    RequestOptions,
     RollbackRequest,
     Session,
 )
@@ -95,6 +96,7 @@ __all__ = (
     'PartitionReadRequest',
     'PartitionResponse',
     'ReadRequest',
+    'RequestOptions',
     'RollbackRequest',
     'Session',
     'Transaction',
