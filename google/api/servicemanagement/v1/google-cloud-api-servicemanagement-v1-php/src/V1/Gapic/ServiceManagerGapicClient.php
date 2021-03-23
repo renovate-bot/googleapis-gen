@@ -975,10 +975,10 @@ class ServiceManagerGapicClient
      * @param string $filter       Required. Use `filter` to return subset of rollouts.
      *                             The following filters are supported:
      *                             -- To limit the results to only those in
-     *                             [status](https://cloud.google.comgoogle.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+     *                             status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
      *                             use filter='status=SUCCESS'
      *                             -- To limit the results to those in
-     *                             [status](https://cloud.google.comgoogle.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+     *                             status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
      *                             or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
      * @param array  $optionalArgs {
      *                             Optional.

@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object serviceName_;
   /**
    * <pre>
-   * The name of the service. See the [overview](/service-management/overview)
+   * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.
    * </pre>
    *
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the service. See the [overview](/service-management/overview)
+   * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.
    * </pre>
    *
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object serviceName_ = "";
     /**
      * <pre>
-     * The name of the service. See the [overview](/service-management/overview)
+     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the service. See the [overview](/service-management/overview)
+     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the service. See the [overview](/service-management/overview)
+     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -583,7 +583,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the service. See the [overview](/service-management/overview)
+     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the service. See the [overview](/service-management/overview)
+     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.
      * </pre>
      *

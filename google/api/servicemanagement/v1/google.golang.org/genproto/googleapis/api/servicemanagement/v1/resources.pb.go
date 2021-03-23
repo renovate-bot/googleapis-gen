@@ -316,7 +316,7 @@ type ManagedService struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The name of the service. See the [overview](/service-management/overview)
+	// The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.
 	ServiceName string `protobuf:"bytes,2,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// ID of the project that produces and owns this service.

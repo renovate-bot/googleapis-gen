@@ -19,7 +19,7 @@
 namespace Google\Cloud\ServiceControl\V1;
 
 /**
- * [Google Quota Control API](/service-control/overview)
+ * [Google Quota Control API](https://cloud.google.com/service-control/overview)
  *
  * Allows clients to allocate and release quota against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).

@@ -9,7 +9,7 @@ public interface ManagedServiceOrBuilder extends
 
   /**
    * <pre>
-   * The name of the service. See the [overview](/service-management/overview)
+   * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface ManagedServiceOrBuilder extends
   java.lang.String getServiceName();
   /**
    * <pre>
-   * The name of the service. See the [overview](/service-management/overview)
+   * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.
    * </pre>
    *
