@@ -3,6 +3,16 @@
 return [
     'interfaces' => [
         'google.ads.admob.v1.AdMobApi' => [
+            'GenerateMediationReport' => [
+                'grpcStreaming' => [
+                    'grpcStreamingType' => 'ServerStreaming',
+                ],
+            ],
+            'GenerateNetworkReport' => [
+                'grpcStreaming' => [
+                    'grpcStreamingType' => 'ServerStreaming',
+                ],
+            ],
             'ListPublisherAccounts' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
@@ -11,16 +21,6 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getAccount',
-                ],
-            ],
-            'GenerateNetworkReport' => [
-                'grpcStreaming' => [
-                    'grpcStreamingType' => 'ServerStreaming',
-                ],
-            ],
-            'GenerateMediationReport' => [
-                'grpcStreaming' => [
-                    'grpcStreamingType' => 'ServerStreaming',
                 ],
             ],
         ],
