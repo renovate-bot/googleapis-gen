@@ -29,10 +29,12 @@ use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Iam\V1\Policy;
 use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
+use Google\Iam\Admin\V1\LintPolicyResponse;
 use Google\Iam\Admin\V1\ListRolesResponse;
 use Google\Iam\Admin\V1\ListServiceAccountKeysResponse;
 use Google\Iam\Admin\V1\ListServiceAccountsResponse;
 use Google\Iam\Admin\V1\Permission;
+use Google\Iam\Admin\V1\QueryAuditableServicesResponse;
 use Google\Iam\Admin\V1\QueryGrantableRolesResponse;
 use Google\Iam\Admin\V1\QueryTestablePermissionsResponse;
 use Google\Iam\Admin\V1\Role;
@@ -40,6 +42,7 @@ use Google\Iam\Admin\V1\ServiceAccount;
 use Google\Iam\Admin\V1\ServiceAccountKey;
 use Google\Iam\Admin\V1\SignBlobResponse;
 use Google\Iam\Admin\V1\SignJwtResponse;
+use Google\Iam\Admin\V1\UndeleteServiceAccountResponse;
 use Google\Protobuf\Any;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
@@ -177,7 +180,9 @@ class IamClientTest extends GeneratedTest
         $email = 'email96619420';
         $displayName = 'displayName1615086568';
         $etag = '21';
+        $description = 'description-1724546052';
         $oauth2ClientId = 'oauth2ClientId-1833466037';
+        $disabled = true;
         $expectedResponse = new ServiceAccount();
         $expectedResponse->setName($name2);
         $expectedResponse->setProjectId($projectId);
@@ -185,7 +190,9 @@ class IamClientTest extends GeneratedTest
         $expectedResponse->setEmail($email);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setDescription($description);
         $expectedResponse->setOauth2ClientId($oauth2ClientId);
+        $expectedResponse->setDisabled($disabled);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -262,7 +269,9 @@ class IamClientTest extends GeneratedTest
         $email = 'email96619420';
         $displayName = 'displayName1615086568';
         $etag = '21';
+        $description = 'description-1724546052';
         $oauth2ClientId = 'oauth2ClientId-1833466037';
+        $disabled = true;
         $expectedResponse = new ServiceAccount();
         $expectedResponse->setName($name2);
         $expectedResponse->setProjectId($projectId);
@@ -270,7 +279,9 @@ class IamClientTest extends GeneratedTest
         $expectedResponse->setEmail($email);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setDescription($description);
         $expectedResponse->setOauth2ClientId($oauth2ClientId);
+        $expectedResponse->setDisabled($disabled);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -352,7 +363,9 @@ class IamClientTest extends GeneratedTest
         $email = 'email96619420';
         $displayName = 'displayName1615086568';
         $etag = '21';
+        $description = 'description-1724546052';
         $oauth2ClientId = 'oauth2ClientId-1833466037';
+        $disabled = true;
         $expectedResponse = new ServiceAccount();
         $expectedResponse->setName($name);
         $expectedResponse->setProjectId($projectId);
@@ -360,7 +373,9 @@ class IamClientTest extends GeneratedTest
         $expectedResponse->setEmail($email);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setDescription($description);
         $expectedResponse->setOauth2ClientId($oauth2ClientId);
+        $expectedResponse->setDisabled($disabled);
         $transport->addResponse($expectedResponse);
 
         $response = $client->updateServiceAccount();
@@ -398,6 +413,85 @@ class IamClientTest extends GeneratedTest
 
         try {
             $client->updateServiceAccount();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function patchServiceAccountTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $name = 'name3373707';
+        $projectId = 'projectId-1969970175';
+        $uniqueId = 'uniqueId-538310583';
+        $email = 'email96619420';
+        $displayName = 'displayName1615086568';
+        $etag = '21';
+        $description = 'description-1724546052';
+        $oauth2ClientId = 'oauth2ClientId-1833466037';
+        $disabled = true;
+        $expectedResponse = new ServiceAccount();
+        $expectedResponse->setName($name);
+        $expectedResponse->setProjectId($projectId);
+        $expectedResponse->setUniqueId($uniqueId);
+        $expectedResponse->setEmail($email);
+        $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setEtag($etag);
+        $expectedResponse->setDescription($description);
+        $expectedResponse->setOauth2ClientId($oauth2ClientId);
+        $expectedResponse->setDisabled($disabled);
+        $transport->addResponse($expectedResponse);
+
+        $response = $client->patchServiceAccount();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/PatchServiceAccount', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function patchServiceAccountExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->patchServiceAccount();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -468,6 +562,187 @@ class IamClientTest extends GeneratedTest
 
         try {
             $client->deleteServiceAccount($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function undeleteServiceAccountTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new UndeleteServiceAccountResponse();
+        $transport->addResponse($expectedResponse);
+
+        $response = $client->undeleteServiceAccount();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/UndeleteServiceAccount', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function undeleteServiceAccountExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->undeleteServiceAccount();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function enableServiceAccountTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new GPBEmpty();
+        $transport->addResponse($expectedResponse);
+
+        $client->enableServiceAccount();
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/EnableServiceAccount', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function enableServiceAccountExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->enableServiceAccount();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function disableServiceAccountTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new GPBEmpty();
+        $transport->addResponse($expectedResponse);
+
+        $client->disableServiceAccount();
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/DisableServiceAccount', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function disableServiceAccountExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->disableServiceAccount();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -693,6 +968,73 @@ class IamClientTest extends GeneratedTest
 
         try {
             $client->createServiceAccountKey($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function uploadServiceAccountKeyTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $name = 'name3373707';
+        $privateKeyData = '-58';
+        $publicKeyData = '-96';
+        $expectedResponse = new ServiceAccountKey();
+        $expectedResponse->setName($name);
+        $expectedResponse->setPrivateKeyData($privateKeyData);
+        $expectedResponse->setPublicKeyData($publicKeyData);
+        $transport->addResponse($expectedResponse);
+
+        $response = $client->uploadServiceAccountKey();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/UploadServiceAccountKey', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function uploadServiceAccountKeyExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->uploadServiceAccountKey();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1728,6 +2070,128 @@ class IamClientTest extends GeneratedTest
 
         try {
             $client->queryTestablePermissions();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function queryAuditableServicesTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new QueryAuditableServicesResponse();
+        $transport->addResponse($expectedResponse);
+
+        $response = $client->queryAuditableServices();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/QueryAuditableServices', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function queryAuditableServicesExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->queryAuditableServices();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function lintPolicyTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new LintPolicyResponse();
+        $transport->addResponse($expectedResponse);
+
+        $response = $client->lintPolicy();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.iam.admin.v1.IAM/LintPolicy', $actualFuncCall);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function lintPolicyExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->lintPolicy();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

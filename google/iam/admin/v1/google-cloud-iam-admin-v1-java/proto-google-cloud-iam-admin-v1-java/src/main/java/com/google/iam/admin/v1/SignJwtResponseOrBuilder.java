@@ -9,41 +9,49 @@ public interface SignJwtResponseOrBuilder extends
 
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the JWT.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The keyId.
    */
-  java.lang.String getKeyId();
+  @java.lang.Deprecated java.lang.String getKeyId();
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the JWT.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The bytes for keyId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getKeyIdBytes();
 
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The signed JWT.
    * </pre>
    *
-   * <code>string signed_jwt = 2;</code>
+   * <code>string signed_jwt = 2 [deprecated = true];</code>
    * @return The signedJwt.
    */
-  java.lang.String getSignedJwt();
+  @java.lang.Deprecated java.lang.String getSignedJwt();
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The signed JWT.
    * </pre>
    *
-   * <code>string signed_jwt = 2;</code>
+   * <code>string signed_jwt = 2 [deprecated = true];</code>
    * @return The bytes for signedJwt.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getSignedJwtBytes();
 }

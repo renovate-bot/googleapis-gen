@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign JWT request.
  *
  * Generated from protobuf message <code>google.iam.admin.v1.SignJwtRequest</code>
@@ -16,19 +18,32 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignJwtRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * @deprecated
      */
     protected $name = '';
     /**
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      *
-     * Generated from protobuf field <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $payload = '';
 
@@ -39,13 +54,24 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The resource name of the service account in the following format:
+     *           Required. Deprecated. [Migrate to Service Account Credentials
+     *           API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *           The resource name of the service account in the following format:
      *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      *           Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      *           the account. The `ACCOUNT` value can be the `email` address or the
      *           `unique_id` of the service account.
      *     @type string $payload
-     *           Required. The JWT payload to sign, a JSON JWT Claim set.
+     *           Required. Deprecated. [Migrate to Service Account Credentials
+     *           API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *           The JWT payload to sign. Must be a serialized JSON object that contains a
+     *           JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     *           If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     *           an integer timestamp that is not in the past and no more than 1 hour in the
+     *           future.
+     *           If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     *           this claim is added automatically, with a timestamp that is 1 hour in the
+     *           future.
      * }
      */
     public function __construct($data = NULL) {
@@ -54,33 +80,41 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
+     * @deprecated
      */
     public function getName()
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         return $this->name;
     }
 
     /**
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setName($var)
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->name = $var;
 
@@ -88,25 +122,47 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      *
-     * Generated from protobuf field <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getPayload()
     {
+        @trigger_error('payload is deprecated.', E_USER_DEPRECATED);
         return $this->payload;
     }
 
     /**
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      *
-     * Generated from protobuf field <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPayload($var)
     {
+        @trigger_error('payload is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->payload = $var;
 

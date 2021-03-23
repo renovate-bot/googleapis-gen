@@ -47,6 +47,7 @@ public interface QueryGrantableRolesRequestOrBuilder extends
   /**
    * <pre>
    * Optional limit on the number of roles to include in the response.
+   * The default is 300, and the maximum is 1,000.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>

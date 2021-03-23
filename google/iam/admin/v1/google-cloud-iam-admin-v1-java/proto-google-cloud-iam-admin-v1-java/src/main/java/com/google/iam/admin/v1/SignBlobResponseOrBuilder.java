@@ -9,31 +9,37 @@ public interface SignBlobResponseOrBuilder extends
 
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the blob.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The keyId.
    */
-  java.lang.String getKeyId();
+  @java.lang.Deprecated java.lang.String getKeyId();
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the blob.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The bytes for keyId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getKeyIdBytes();
 
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The signed blob.
    * </pre>
    *
-   * <code>bytes signature = 2;</code>
+   * <code>bytes signature = 2 [deprecated = true];</code>
    * @return The signature.
    */
-  com.google.protobuf.ByteString getSignature();
+  @java.lang.Deprecated com.google.protobuf.ByteString getSignature();
 }

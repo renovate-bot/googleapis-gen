@@ -15,8 +15,13 @@ package com.google.iam.admin.v1;
  * System-managed keys are automatically rotated by Google, and are used for
  * signing for a maximum of two weeks. The rotation process is probabilistic,
  * and usage of the new key will gradually ramp up and down over the key's
- * lifetime. We recommend caching the public key set for a service account for
- * no more than 24 hours to ensure you have access to the latest keys.
+ * lifetime.
+ * If you cache the public key set for a service account, we recommend that you
+ * update the cache every 15 minutes. User-managed keys can be added and removed
+ * at any time, so it is important to update the cache frequently. For
+ * Google-managed keys, Google will publish a key at least 6 hours before it is
+ * first used for signing and will keep publishing it for at least 6 hours after
+ * it was last used for signing.
  * Public keys for all service accounts are also published at the OAuth2
  * Service Account API.
  * </pre>
@@ -38,6 +43,8 @@ private static final long serialVersionUID = 0L;
     keyAlgorithm_ = 0;
     privateKeyData_ = com.google.protobuf.ByteString.EMPTY;
     publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
+    keyOrigin_ = 0;
+    keyType_ = 0;
   }
 
   @java.lang.Override
@@ -122,6 +129,18 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             keyAlgorithm_ = rawValue;
+            break;
+          }
+          case 72: {
+            int rawValue = input.readEnum();
+
+            keyOrigin_ = rawValue;
+            break;
+          }
+          case 80: {
+            int rawValue = input.readEnum();
+
+            keyType_ = rawValue;
             break;
           }
           default: {
@@ -387,6 +406,60 @@ private static final long serialVersionUID = 0L;
     return getValidBeforeTime();
   }
 
+  public static final int KEY_ORIGIN_FIELD_NUMBER = 9;
+  private int keyOrigin_;
+  /**
+   * <pre>
+   * The key origin.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+   * @return The enum numeric value on the wire for keyOrigin.
+   */
+  @java.lang.Override public int getKeyOriginValue() {
+    return keyOrigin_;
+  }
+  /**
+   * <pre>
+   * The key origin.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+   * @return The keyOrigin.
+   */
+  @java.lang.Override public com.google.iam.admin.v1.ServiceAccountKeyOrigin getKeyOrigin() {
+    @SuppressWarnings("deprecation")
+    com.google.iam.admin.v1.ServiceAccountKeyOrigin result = com.google.iam.admin.v1.ServiceAccountKeyOrigin.valueOf(keyOrigin_);
+    return result == null ? com.google.iam.admin.v1.ServiceAccountKeyOrigin.UNRECOGNIZED : result;
+  }
+
+  public static final int KEY_TYPE_FIELD_NUMBER = 10;
+  private int keyType_;
+  /**
+   * <pre>
+   * The key type.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+   * @return The enum numeric value on the wire for keyType.
+   */
+  @java.lang.Override public int getKeyTypeValue() {
+    return keyType_;
+  }
+  /**
+   * <pre>
+   * The key type.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+   * @return The keyType.
+   */
+  @java.lang.Override public com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyType() {
+    @SuppressWarnings("deprecation")
+    com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType result = com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.valueOf(keyType_);
+    return result == null ? com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -421,6 +494,12 @@ private static final long serialVersionUID = 0L;
     }
     if (keyAlgorithm_ != com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.KEY_ALG_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, keyAlgorithm_);
+    }
+    if (keyOrigin_ != com.google.iam.admin.v1.ServiceAccountKeyOrigin.ORIGIN_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, keyOrigin_);
+    }
+    if (keyType_ != com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, keyType_);
     }
     unknownFields.writeTo(output);
   }
@@ -458,6 +537,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, keyAlgorithm_);
     }
+    if (keyOrigin_ != com.google.iam.admin.v1.ServiceAccountKeyOrigin.ORIGIN_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(9, keyOrigin_);
+    }
+    if (keyType_ != com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, keyType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -491,6 +578,8 @@ private static final long serialVersionUID = 0L;
       if (!getValidBeforeTime()
           .equals(other.getValidBeforeTime())) return false;
     }
+    if (keyOrigin_ != other.keyOrigin_) return false;
+    if (keyType_ != other.keyType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -520,6 +609,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VALID_BEFORE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getValidBeforeTime().hashCode();
     }
+    hash = (37 * hash) + KEY_ORIGIN_FIELD_NUMBER;
+    hash = (53 * hash) + keyOrigin_;
+    hash = (37 * hash) + KEY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + keyType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -627,8 +720,13 @@ private static final long serialVersionUID = 0L;
    * System-managed keys are automatically rotated by Google, and are used for
    * signing for a maximum of two weeks. The rotation process is probabilistic,
    * and usage of the new key will gradually ramp up and down over the key's
-   * lifetime. We recommend caching the public key set for a service account for
-   * no more than 24 hours to ensure you have access to the latest keys.
+   * lifetime.
+   * If you cache the public key set for a service account, we recommend that you
+   * update the cache every 15 minutes. User-managed keys can be added and removed
+   * at any time, so it is important to update the cache frequently. For
+   * Google-managed keys, Google will publish a key at least 6 hours before it is
+   * first used for signing and will keep publishing it for at least 6 hours after
+   * it was last used for signing.
    * Public keys for all service accounts are also published at the OAuth2
    * Service Account API.
    * </pre>
@@ -692,6 +790,10 @@ private static final long serialVersionUID = 0L;
         validBeforeTime_ = null;
         validBeforeTimeBuilder_ = null;
       }
+      keyOrigin_ = 0;
+
+      keyType_ = 0;
+
       return this;
     }
 
@@ -733,6 +835,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.validBeforeTime_ = validBeforeTimeBuilder_.build();
       }
+      result.keyOrigin_ = keyOrigin_;
+      result.keyType_ = keyType_;
       onBuilt();
       return result;
     }
@@ -802,6 +906,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasValidBeforeTime()) {
         mergeValidBeforeTime(other.getValidBeforeTime());
+      }
+      if (other.keyOrigin_ != 0) {
+        setKeyOriginValue(other.getKeyOriginValue());
+      }
+      if (other.keyType_ != 0) {
+        setKeyTypeValue(other.getKeyTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1546,6 +1656,154 @@ private static final long serialVersionUID = 0L;
         validBeforeTime_ = null;
       }
       return validBeforeTimeBuilder_;
+    }
+
+    private int keyOrigin_ = 0;
+    /**
+     * <pre>
+     * The key origin.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @return The enum numeric value on the wire for keyOrigin.
+     */
+    @java.lang.Override public int getKeyOriginValue() {
+      return keyOrigin_;
+    }
+    /**
+     * <pre>
+     * The key origin.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @param value The enum numeric value on the wire for keyOrigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyOriginValue(int value) {
+      
+      keyOrigin_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The key origin.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @return The keyOrigin.
+     */
+    @java.lang.Override
+    public com.google.iam.admin.v1.ServiceAccountKeyOrigin getKeyOrigin() {
+      @SuppressWarnings("deprecation")
+      com.google.iam.admin.v1.ServiceAccountKeyOrigin result = com.google.iam.admin.v1.ServiceAccountKeyOrigin.valueOf(keyOrigin_);
+      return result == null ? com.google.iam.admin.v1.ServiceAccountKeyOrigin.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The key origin.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @param value The keyOrigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyOrigin(com.google.iam.admin.v1.ServiceAccountKeyOrigin value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      keyOrigin_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The key origin.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyOrigin() {
+      
+      keyOrigin_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int keyType_ = 0;
+    /**
+     * <pre>
+     * The key type.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @return The enum numeric value on the wire for keyType.
+     */
+    @java.lang.Override public int getKeyTypeValue() {
+      return keyType_;
+    }
+    /**
+     * <pre>
+     * The key type.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @param value The enum numeric value on the wire for keyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyTypeValue(int value) {
+      
+      keyType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The key type.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @return The keyType.
+     */
+    @java.lang.Override
+    public com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyType() {
+      @SuppressWarnings("deprecation")
+      com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType result = com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.valueOf(keyType_);
+      return result == null ? com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The key type.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @param value The keyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyType(com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      keyType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The key type.
+     * </pre>
+     *
+     * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyType() {
+      
+      keyType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

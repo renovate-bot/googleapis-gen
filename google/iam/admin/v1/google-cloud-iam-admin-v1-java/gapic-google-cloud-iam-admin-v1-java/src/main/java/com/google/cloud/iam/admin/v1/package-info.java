@@ -19,19 +19,28 @@
  *
  * <p>======================= IAMClient =======================
  *
- * <p>Service Description: Creates and manages service account objects.
+ * <p>Service Description: Creates and manages Identity and Access Management (IAM) resources.
  *
- * <p>Service account is an account that belongs to your project instead of to an individual end
- * user. It is used to authenticate calls to a Google API.
+ * <p>You can use this service to work with all of the following resources:
  *
- * <p>To create a service account, specify the `project_id` and `account_id` for the account. The
- * `account_id` is unique within the project, and used to generate the service account email address
- * and a stable `unique_id`.
+ * <ul>
+ *   <li>&#42;&#42;Service accounts&#42;&#42;, which identify an application or a virtual machine
+ *       (VM) instance rather than a person
+ *   <li>&#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
+ *       Google APIs
+ *   <li>&#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
+ *       member has for the service account
+ *   <li>&#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
+ *       you grant to members
+ * </ul>
  *
- * <p>All other methods can identify accounts using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID`
- * will infer the project from the account. The `ACCOUNT` value can be the `email` address or the
- * `unique_id` of the service account.
+ * <p>In addition, you can use this service to complete the following tasks, among others:
+ *
+ * <ul>
+ *   <li>Test whether a service account can use specific permissions
+ *   <li>Check which roles you can grant for a specific resource
+ *   <li>Lint, or validate, condition expressions in an IAM policy
+ * </ul>
  *
  * <p>Sample for IAMClient:
  *

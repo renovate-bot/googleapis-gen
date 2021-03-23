@@ -34,22 +34,25 @@ import * as gapicConfig from './i_a_m_client_config.json';
 const version = require('../../../package.json').version;
 
 /**
- *  Creates and manages service account objects.
+ *  Creates and manages Identity and Access Management (IAM) resources.
  *
- *  Service account is an account that belongs to your project instead
- *  of to an individual end user. It is used to authenticate calls
- *  to a Google API.
+ *  You can use this service to work with all of the following resources:
  *
- *  To create a service account, specify the `project_id` and `account_id`
- *  for the account.  The `account_id` is unique within the project, and used
- *  to generate the service account email address and a stable
- *  `unique_id`.
+ *  * **Service accounts**, which identify an application or a virtual machine
+ *    (VM) instance rather than a person
+ *  * **Service account keys**, which service accounts use to authenticate with
+ *    Google APIs
+ *  * **IAM policies for service accounts**, which specify the roles that a
+ *    member has for the service account
+ *  * **IAM custom roles**, which help you limit the number of permissions that
+ *    you grant to members
  *
- *  All other methods can identify accounts using the format
- *  `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
- *  Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
- *  the account. The `ACCOUNT` value can be the `email` address or the
- *  `unique_id` of the service account.
+ *  In addition, you can use this service to complete the following tasks, among
+ *  others:
+ *
+ *  * Test whether a service account can use specific permissions
+ *  * Check which roles you can grant for a specific resource
+ *  * Lint, or validate, condition expressions in an IAM policy
  * @class
  * @memberof v1
  */
@@ -233,7 +236,7 @@ export class IAMClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const iAMStubMethods =
-        ['listServiceAccounts', 'getServiceAccount', 'createServiceAccount', 'updateServiceAccount', 'deleteServiceAccount', 'listServiceAccountKeys', 'getServiceAccountKey', 'createServiceAccountKey', 'deleteServiceAccountKey', 'signBlob', 'signJwt', 'getIamPolicy', 'setIamPolicy', 'testIamPermissions', 'queryGrantableRoles', 'listRoles', 'getRole', 'createRole', 'updateRole', 'deleteRole', 'undeleteRole', 'queryTestablePermissions'];
+        ['listServiceAccounts', 'getServiceAccount', 'createServiceAccount', 'updateServiceAccount', 'patchServiceAccount', 'deleteServiceAccount', 'undeleteServiceAccount', 'enableServiceAccount', 'disableServiceAccount', 'listServiceAccountKeys', 'getServiceAccountKey', 'createServiceAccountKey', 'uploadServiceAccountKey', 'deleteServiceAccountKey', 'signBlob', 'signJwt', 'getIamPolicy', 'setIamPolicy', 'testIamPermissions', 'queryGrantableRoles', 'listRoles', 'getRole', 'createRole', 'updateRole', 'deleteRole', 'undeleteRole', 'queryTestablePermissions', 'queryAuditableServices', 'lintPolicy'];
     for (const methodName of iAMStubMethods) {
       const callPromise = this.iAMStub.then(
         stub => (...args: Array<{}>) => {
@@ -412,8 +415,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.ICreateServiceAccountRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Creates a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}
- * and returns it.
+ * Creates a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -494,39 +496,58 @@ export class IAMClient {
           protos.google.iam.admin.v1.IServiceAccount|null|undefined,
           {}|null|undefined>): void;
 /**
+ * **Note:** We are in the process of deprecating this method. Use
+ * {@link google.iam.admin.v1.IAM.PatchServiceAccount|PatchServiceAccount} instead.
+ *
  * Updates a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
- * Currently, only the following fields are updatable:
- * `display_name` and `description`.
+ * You can update only the `display_name` and `description` fields.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   The resource name of the service account in the following format:
- *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ *   The resource name of the service account.
  *
- *   Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
- *   project from the `account` and the `ACCOUNT` value can be the `email`
- *   address or the `unique_id` of the service account.
+ *   Use one of the following formats:
  *
- *   In responses the resource name will always be in the format
- *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ *   * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+ *   * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+ *
+ *   As an alternative, you can use the `-` wildcard character instead of the
+ *   project ID:
+ *
+ *   * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+ *   * `projects/-/serviceAccounts/{UNIQUE_ID}`
+ *
+ *   When possible, avoid using the `-` wildcard character, because it can cause
+ *   response messages to contain misleading error codes. For example, if you
+ *   try to get the service account
+ *   `projects/-/serviceAccounts/fake@example.com`, which does not exist, the
+ *   response contains an HTTP `403 Forbidden` error instead of a `404 Not
+ *   Found` error.
  * @param {string} request.projectId
- *   @OutputOnly The id of the project that owns the service account.
+ *   Output only. The ID of the project that owns the service account.
  * @param {string} request.uniqueId
- *   @OutputOnly The unique and stable id of the service account.
+ *   Output only. The unique, stable numeric ID for the service account.
+ *
+ *   Each service account retains its unique ID even if you delete the service
+ *   account. For example, if you delete a service account, then create a new
+ *   service account with the same name, the new service account has a different
+ *   unique ID than the deleted service account.
  * @param {string} request.email
- *   @OutputOnly The email address of the service account.
- * @param {string} request.displayName
- *   Optional. A user-specified name for the service account.
- *   Must be less than or equal to 100 UTF-8 bytes.
+ *   Output only. The email address of the service account.
+ * @param {string} [request.displayName]
+ *   Optional. A user-specified, human-readable name for the service account. The maximum
+ *   length is 100 UTF-8 bytes.
  * @param {Buffer} request.etag
- *   Optional. Note: `etag` is an inoperable legacy field that is only returned
- *   for backwards compatibility.
+ *   Deprecated. Do not use.
+ * @param {string} [request.description]
+ *   Optional. A user-specified, human-readable description of the service account. The
+ *   maximum length is 256 UTF-8 bytes.
  * @param {string} request.oauth2ClientId
- *   @OutputOnly. The OAuth2 client id for the service account.
- *   This is used in conjunction with the OAuth2 clientconfig API to make
- *   three legged OAuth2 (3LO) flows to access the data of Google users.
+ *   Output only. The OAuth 2.0 client ID for the service account.
+ * @param {boolean} request.disabled
+ *   Output only. Whether the service account is disabled.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -571,6 +592,77 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.updateServiceAccount(request, options, callback);
   }
+  patchServiceAccount(
+      request: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccount,
+        protos.google.iam.admin.v1.IPatchServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  patchServiceAccount(
+      request: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.IPatchServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchServiceAccount(
+      request: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.IPatchServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Patches a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.iam.admin.v1.ServiceAccount} request.serviceAccount
+ * @param {google.protobuf.FieldMask} request.updateMask
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServiceAccount]{@link google.iam.admin.v1.ServiceAccount}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.patchServiceAccount(request);
+ */
+  patchServiceAccount(
+      request: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.IPatchServiceAccountRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.IPatchServiceAccountRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccount,
+        protos.google.iam.admin.v1.IPatchServiceAccountRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'service_account.name': request.serviceAccount!.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.patchServiceAccount(request, options, callback);
+  }
   deleteServiceAccount(
       request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
       options?: CallOptions):
@@ -593,6 +685,20 @@ export class IAMClient {
           {}|null|undefined>): void;
 /**
  * Deletes a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ *
+ * **Warning:** After you delete a service account, you might not be able to
+ * undelete it. If you know that you need to re-enable the service account in
+ * the future, use {@link google.iam.admin.v1.IAM.DisableServiceAccount|DisableServiceAccount} instead.
+ *
+ * If you delete a service account, IAM permanently removes the service
+ * account 30 days later. Google Cloud cannot recover the service account
+ * after it is permanently removed, even if you file a support request.
+ *
+ * To help avoid unplanned outages, we recommend that you disable the service
+ * account before you delete it. Use {@link google.iam.admin.v1.IAM.DisableServiceAccount|DisableServiceAccount} to disable the
+ * service account, then wait at least 24 hours and watch for unintended
+ * consequences. If there are no unintended consequences, you can delete the
+ * service account.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -646,6 +752,259 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.deleteServiceAccount(request, options, callback);
   }
+  undeleteServiceAccount(
+      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+        protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  undeleteServiceAccount(
+      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  undeleteServiceAccount(
+      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Restores a deleted {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ *
+ * **Important:** It is not always possible to restore a deleted service
+ * account. Use this method only as a last resort.
+ *
+ * After you delete a service account, IAM permanently removes the service
+ * account 30 days later. There is no way to restore a deleted service account
+ * that has been permanently removed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name of the service account in the following format:
+ *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}`.
+ *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+ *   the account.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [UndeleteServiceAccountResponse]{@link google.iam.admin.v1.UndeleteServiceAccountResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.undeleteServiceAccount(request);
+ */
+  undeleteServiceAccount(
+      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+        protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.undeleteServiceAccount(request, options, callback);
+  }
+  enableServiceAccount(
+      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IEnableServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  enableServiceAccount(
+      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  enableServiceAccount(
+      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Enables a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount} that was disabled by
+ * {@link google.iam.admin.v1.IAM.DisableServiceAccount|DisableServiceAccount}.
+ *
+ * If the service account is already enabled, then this method has no effect.
+ *
+ * If the service account was disabled by other means—for example, if Google
+ * disabled the service account because it was compromised—you cannot use this
+ * method to enable the service account.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name of the service account in the following format:
+ *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+ *   the account. The `ACCOUNT` value can be the `email` address or the
+ *   `unique_id` of the service account.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.enableServiceAccount(request);
+ */
+  enableServiceAccount(
+      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IEnableServiceAccountRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.enableServiceAccount(request, options, callback);
+  }
+  disableServiceAccount(
+      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IDisableServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  disableServiceAccount(
+      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  disableServiceAccount(
+      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Disables a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount} immediately.
+ *
+ * If an application uses the service account to authenticate, that
+ * application can no longer call Google APIs or access Google Cloud
+ * resources. Existing access tokens for the service account are rejected, and
+ * requests for new access tokens will fail.
+ *
+ * To re-enable the service account, use {@link google.iam.admin.v1.IAM.EnableServiceAccount|EnableServiceAccount}. After you
+ * re-enable the service account, its existing access tokens will be accepted,
+ * and you can request new access tokens.
+ *
+ * To help avoid unplanned outages, we recommend that you disable the service
+ * account before you delete it. Use this method to disable the service
+ * account, then wait at least 24 hours and watch for unintended consequences.
+ * If there are no unintended consequences, you can delete the service account
+ * with {@link google.iam.admin.v1.IAM.DeleteServiceAccount|DeleteServiceAccount}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name of the service account in the following format:
+ *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+ *   the account. The `ACCOUNT` value can be the `email` address or the
+ *   `unique_id` of the service account.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.disableServiceAccount(request);
+ */
+  disableServiceAccount(
+      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IDisableServiceAccountRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.disableServiceAccount(request, options, callback);
+  }
   listServiceAccountKeys(
       request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
       options?: CallOptions):
@@ -667,7 +1026,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.IListServiceAccountKeysRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Lists {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKeys}.
+ * Lists every {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey} for a service account.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -747,8 +1106,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Gets the {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}
- * by key id.
+ * Gets a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -827,8 +1185,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Creates a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}
- * and returns it.
+ * Creates a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -890,6 +1247,86 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.createServiceAccountKey(request, options, callback);
   }
+  uploadServiceAccountKey(
+      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccountKey,
+        protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|undefined, {}|undefined
+      ]>;
+  uploadServiceAccountKey(
+      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  uploadServiceAccountKey(
+      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Creates a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}, using a public key that you provide.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name of the service account in the following format:
+ *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+ *   the account. The `ACCOUNT` value can be the `email` address or the
+ *   `unique_id` of the service account.
+ * @param {Buffer} request.publicKeyData
+ *   A field that allows clients to upload their own public key. If set,
+ *   use this public key data to create a service account key for given
+ *   service account.
+ *   Please note, the expected format for this field is X509_PEM.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServiceAccountKey]{@link google.iam.admin.v1.ServiceAccountKey}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.uploadServiceAccountKey(request);
+ */
+  uploadServiceAccountKey(
+      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccountKey,
+        protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.uploadServiceAccountKey(request, options, callback);
+  }
   deleteServiceAccountKey(
       request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
       options?: CallOptions):
@@ -911,7 +1348,9 @@ export class IAMClient {
           protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Deletes a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}.
+ * Deletes a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}. Deleting a service account key does not
+ * revoke short-lived credentials that have been issued based on the service
+ * account key.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -986,18 +1425,31 @@ export class IAMClient {
           protos.google.iam.admin.v1.ISignBlobRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Signs a blob using a service account's system-managed private key.
+ * **Note:** This method is deprecated. Use the
+ * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+ * method in the IAM Service Account Credentials API instead. If you currently
+ * use this method, see the [migration
+ * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+ * instructions.
+ *
+ * Signs a blob using the system-managed private key for a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name of the service account in the following format:
+ *   Required. Deprecated. [Migrate to Service Account Credentials
+ *   API](https://cloud.google.com/iam/help/credentials/migrate-api).
+ *
+ *   The resource name of the service account in the following format:
  *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
  *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
  *   the account. The `ACCOUNT` value can be the `email` address or the
  *   `unique_id` of the service account.
  * @param {Buffer} request.bytesToSign
- *   Required. The bytes to sign.
+ *   Required. Deprecated. [Migrate to Service Account Credentials
+ *   API](https://cloud.google.com/iam/help/credentials/migrate-api).
+ *
+ *   The bytes to sign.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1063,22 +1515,41 @@ export class IAMClient {
           protos.google.iam.admin.v1.ISignJwtRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Signs a JWT using a service account's system-managed private key.
+ * **Note:** This method is deprecated. Use the
+ * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+ * method in the IAM Service Account Credentials API instead. If you currently
+ * use this method, see the [migration
+ * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+ * instructions.
  *
- * If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
- * an expiry time of one hour by default. If you request an expiry time of
- * more than one hour, the request will fail.
+ * Signs a JSON Web Token (JWT) using the system-managed private key for a
+ * {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name of the service account in the following format:
+ *   Required. Deprecated. [Migrate to Service Account Credentials
+ *   API](https://cloud.google.com/iam/help/credentials/migrate-api).
+ *
+ *   The resource name of the service account in the following format:
  *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
  *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
  *   the account. The `ACCOUNT` value can be the `email` address or the
  *   `unique_id` of the service account.
  * @param {string} request.payload
- *   Required. The JWT payload to sign, a JSON JWT Claim set.
+ *   Required. Deprecated. [Migrate to Service Account Credentials
+ *   API](https://cloud.google.com/iam/help/credentials/migrate-api).
+ *
+ *   The JWT payload to sign. Must be a serialized JSON object that contains a
+ *   JWT Claims Set. For example: `{"sub": "user@example.com", "iat": 313435}`
+ *
+ *   If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+ *   an integer timestamp that is not in the past and no more than 1 hour in the
+ *   future.
+ *
+ *   If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+ *   this claim is added automatically, with a timestamp that is 1 hour in the
+ *   future.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1144,20 +1615,15 @@ export class IAMClient {
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns the Cloud IAM access control policy for a
- * {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ * Gets the IAM policy that is attached to a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}. This IAM
+ * policy specifies which members have access to the service account.
  *
- * Note: Service accounts are both
- * [resources and
- * identities](/iam/docs/service-accounts#service_account_permissions). This
- * method treats the service account as a resource. It returns the Cloud IAM
- * policy that reflects what members have access to the service account.
- *
- * This method does not return what resources the service account has access
- * to. To see if a service account has access to a resource, call the
- * `getIamPolicy` method on the target resource. For example, to view grants
- * for a project, call the
- * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy)
+ * This method does not tell you whether the service account has been granted
+ * any roles on other resources. To check whether a service account has role
+ * grants on a resource, use the `getIamPolicy` method for that resource. For
+ * example, to view the role grants for a project, call the Resource Manager
+ * API's
+ * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
  * method.
  *
  * @param {Object} request
@@ -1233,22 +1699,23 @@ export class IAMClient {
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Sets the Cloud IAM access control policy for a
- * {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ * Sets the IAM policy that is attached to a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
- * Note: Service accounts are both
- * [resources and
- * identities](/iam/docs/service-accounts#service_account_permissions). This
- * method treats the service account as a resource. Use it to grant members
- * access to the service account, such as when they need to impersonate it.
+ * Use this method to grant or revoke access to the service account. For
+ * example, you could grant a member the ability to impersonate the service
+ * account.
  *
- * This method does not grant the service account access to other resources,
- * such as projects. To grant a service account access to resources, include
- * the service account in the Cloud IAM policy for the desired resource, then
- * call the appropriate `setIamPolicy` method on the target resource. For
- * example, to grant a service account access to a project, call the
- * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy)
- * method.
+ * This method does not enable the service account to access other resources.
+ * To grant roles to a service account on a resource, follow these steps:
+ *
+ * 1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+ * 2. Edit the policy so that it binds the service account to an IAM role for
+ * the resource.
+ * 3. Call the resource's `setIamPolicy` method to update its IAM policy.
+ *
+ * For detailed instructions, see
+ * [Granting roles to a service account for specific
+ * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1325,8 +1792,8 @@ export class IAMClient {
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Tests the specified permissions against the IAM access control policy
- * for a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ * Tests whether the caller has the specified permissions on a
+ * {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1403,7 +1870,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.IGetRoleRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Gets a Role definition.
+ * Gets the definition of a {@link google.iam.admin.v1.Role|Role}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1500,7 +1967,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.ICreateRoleRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Creates a new Role.
+ * Creates a new custom {@link google.iam.admin.v1.Role|Role}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1527,6 +1994,10 @@ export class IAMClient {
  *   ID or organization ID.
  * @param {string} request.roleId
  *   The role ID to use for this role.
+ *
+ *   A role ID may contain alphanumeric characters, underscores (`_`), and
+ *   periods (`.`). It must contain a minimum of 3 characters and a maximum of
+ *   64 characters.
  * @param {google.iam.admin.v1.Role} request.role
  *   The Role resource to create.
  * @param {object} [options]
@@ -1594,7 +2065,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.IUpdateRoleRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Updates a Role definition.
+ * Updates the definition of a custom {@link google.iam.admin.v1.Role|Role}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1688,13 +2159,23 @@ export class IAMClient {
           protos.google.iam.admin.v1.IDeleteRoleRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Soft deletes a role. The role is suspended and cannot be used to create new
- * IAM Policy Bindings.
- * The Role will not be included in `ListRoles()` unless `show_deleted` is set
- * in the `ListRolesRequest`. The Role contains the deleted boolean set.
- * Existing Bindings remains, but are inactive. The Role can be undeleted
- * within 7 days. After 7 days the Role is deleted and all Bindings associated
- * with the role are removed.
+ * Deletes a custom {@link google.iam.admin.v1.Role|Role}.
+ *
+ * When you delete a custom role, the following changes occur immediately:
+ *
+ * * You cannot bind a member to the custom role in an IAM
+ * {@link google.iam.v1.Policy|Policy}.
+ * * Existing bindings to the custom role are not changed, but they have no
+ * effect.
+ * * By default, the response from {@link google.iam.admin.v1.IAM.ListRoles|ListRoles} does not include the custom
+ * role.
+ *
+ * You have 7 days to undelete the custom role. After 7 days, the following
+ * changes occur:
+ *
+ * * The custom role is permanently deleted and cannot be recovered.
+ * * If an IAM policy contains a binding to the custom role, the binding is
+ * permanently removed.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1786,7 +2267,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.IUndeleteRoleRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Undelete a Role, bringing it back in its previous state.
+ * Undeletes a custom {@link google.iam.admin.v1.Role|Role}.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1857,6 +2338,158 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.undeleteRole(request, options, callback);
   }
+  queryAuditableServices(
+      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+        protos.google.iam.admin.v1.IQueryAuditableServicesRequest|undefined, {}|undefined
+      ]>;
+  queryAuditableServices(
+      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  queryAuditableServices(
+      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Returns a list of services that allow you to opt into audit logs that are
+ * not generated by default.
+ *
+ * To learn more about audit logs, see the [Logging
+ * documentation](https://cloud.google.com/logging/docs/audit).
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.fullResourceName
+ *   Required. The full resource name to query from the list of auditable
+ *   services.
+ *
+ *   The name follows the Google Cloud Platform resource format.
+ *   For example, a Cloud Platform project with id `my-project` will be named
+ *   `//cloudresourcemanager.googleapis.com/projects/my-project`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [QueryAuditableServicesResponse]{@link google.iam.admin.v1.QueryAuditableServicesResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.queryAuditableServices(request);
+ */
+  queryAuditableServices(
+      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+        protos.google.iam.admin.v1.IQueryAuditableServicesRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    this.initialize();
+    return this.innerApiCalls.queryAuditableServices(request, options, callback);
+  }
+  lintPolicy(
+      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.ILintPolicyResponse,
+        protos.google.iam.admin.v1.ILintPolicyRequest|undefined, {}|undefined
+      ]>;
+  lintPolicy(
+      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.ILintPolicyResponse,
+          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  lintPolicy(
+      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.ILintPolicyResponse,
+          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Lints, or validates, an IAM policy. Currently checks the
+ * {@link google.iam.v1.Binding.condition|google.iam.v1.Binding.condition} field, which contains a condition
+ * expression for a role binding.
+ *
+ * Successful calls to this method always return an HTTP `200 OK` status code,
+ * even if the linter detects an issue in the IAM policy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.fullResourceName
+ *   The full resource name of the policy this lint request is about.
+ *
+ *   The name follows the Google Cloud Platform (GCP) resource format.
+ *   For example, a GCP project with ID `my-project` will be named
+ *   `//cloudresourcemanager.googleapis.com/projects/my-project`.
+ *
+ *   The resource name is not used to read the policy instance from the Cloud
+ *   IAM database. The candidate policy for lint has to be provided in the same
+ *   request object.
+ * @param {google.type.Expr} request.condition
+ *   [google.iam.v1.Binding.condition] [google.iam.v1.Binding.condition] object to be linted.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [LintPolicyResponse]{@link google.iam.admin.v1.LintPolicyResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.lintPolicy(request);
+ */
+  lintPolicy(
+      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.iam.admin.v1.ILintPolicyResponse,
+          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.iam.admin.v1.ILintPolicyResponse,
+          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.iam.admin.v1.ILintPolicyResponse,
+        protos.google.iam.admin.v1.ILintPolicyRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    this.initialize();
+    return this.innerApiCalls.lintPolicy(request, options, callback);
+  }
 
   listServiceAccounts(
       request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
@@ -1880,7 +2513,7 @@ export class IAMClient {
           protos.google.iam.admin.v1.IListServiceAccountsResponse|null|undefined,
           protos.google.iam.admin.v1.IServiceAccount>): void;
 /**
- * Lists {@link google.iam.admin.v1.ServiceAccount|ServiceAccounts} for a project.
+ * Lists every {@link google.iam.admin.v1.ServiceAccount|ServiceAccount} that belongs to a specific project.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1892,6 +2525,8 @@ export class IAMClient {
  *   response. Further accounts can subsequently be obtained by including the
  *   {@link google.iam.admin.v1.ListServiceAccountsResponse.next_page_token|ListServiceAccountsResponse.next_page_token}
  *   in a subsequent request.
+ *
+ *   The default is 20, and the maximum is 100.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   {@link google.iam.admin.v1.ListServiceAccountsResponse.next_page_token|ListServiceAccountsResponse.next_page_token}.
@@ -1956,6 +2591,8 @@ export class IAMClient {
  *   response. Further accounts can subsequently be obtained by including the
  *   {@link google.iam.admin.v1.ListServiceAccountsResponse.next_page_token|ListServiceAccountsResponse.next_page_token}
  *   in a subsequent request.
+ *
+ *   The default is 20, and the maximum is 100.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   {@link google.iam.admin.v1.ListServiceAccountsResponse.next_page_token|ListServiceAccountsResponse.next_page_token}.
@@ -2007,6 +2644,8 @@ export class IAMClient {
  *   response. Further accounts can subsequently be obtained by including the
  *   {@link google.iam.admin.v1.ListServiceAccountsResponse.next_page_token|ListServiceAccountsResponse.next_page_token}
  *   in a subsequent request.
+ *
+ *   The default is 20, and the maximum is 100.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   {@link google.iam.admin.v1.ListServiceAccountsResponse.next_page_token|ListServiceAccountsResponse.next_page_token}.
@@ -2070,9 +2709,9 @@ export class IAMClient {
           protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
           protos.google.iam.admin.v1.IRole>): void;
 /**
- * Queries roles that can be granted on a particular resource.
- * A role is grantable if it can be used as the role in a binding for a policy
- * for that resource.
+ * Lists roles that can be granted on a Google Cloud resource. A role is
+ * grantable if the IAM policy for the resource can contain bindings to the
+ * role.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -2085,6 +2724,8 @@ export class IAMClient {
  * @param {google.iam.admin.v1.RoleView} request.view
  * @param {number} request.pageSize
  *   Optional limit on the number of roles to include in the response.
+ *
+ *   The default is 300, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   QueryGrantableRolesResponse.
@@ -2143,6 +2784,8 @@ export class IAMClient {
  * @param {google.iam.admin.v1.RoleView} request.view
  * @param {number} request.pageSize
  *   Optional limit on the number of roles to include in the response.
+ *
+ *   The default is 300, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   QueryGrantableRolesResponse.
@@ -2188,6 +2831,8 @@ export class IAMClient {
  * @param {google.iam.admin.v1.RoleView} request.view
  * @param {number} request.pageSize
  *   Optional limit on the number of roles to include in the response.
+ *
+ *   The default is 300, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   QueryGrantableRolesResponse.
@@ -2244,7 +2889,8 @@ export class IAMClient {
           protos.google.iam.admin.v1.IListRolesResponse|null|undefined,
           protos.google.iam.admin.v1.IRole>): void;
 /**
- * Lists the Roles defined on a resource.
+ * Lists every predefined {@link google.iam.admin.v1.Role|Role} that IAM supports, or every custom role
+ * that is defined for an organization or project.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -2278,6 +2924,8 @@ export class IAMClient {
  *   ID or organization ID.
  * @param {number} request.pageSize
  *   Optional limit on the number of roles to include in the response.
+ *
+ *   The default is 300, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier ListRolesResponse.
  * @param {google.iam.admin.v1.RoleView} request.view
@@ -2370,6 +3018,8 @@ export class IAMClient {
  *   ID or organization ID.
  * @param {number} request.pageSize
  *   Optional limit on the number of roles to include in the response.
+ *
+ *   The default is 300, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier ListRolesResponse.
  * @param {google.iam.admin.v1.RoleView} request.view
@@ -2449,6 +3099,8 @@ export class IAMClient {
  *   ID or organization ID.
  * @param {number} request.pageSize
  *   Optional limit on the number of roles to include in the response.
+ *
+ *   The default is 300, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier ListRolesResponse.
  * @param {google.iam.admin.v1.RoleView} request.view
@@ -2518,8 +3170,9 @@ export class IAMClient {
           protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,
           protos.google.iam.admin.v1.IPermission>): void;
 /**
- * Lists the permissions testable on a resource.
- * A permission is testable if it can be tested for an identity on a resource.
+ * Lists every permission that you can test on a resource. A permission is
+ * testable if you can check whether a member has that permission on the
+ * resource.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -2532,6 +3185,8 @@ export class IAMClient {
  *   `//cloudresourcemanager.googleapis.com/projects/my-project`.
  * @param {number} request.pageSize
  *   Optional limit on the number of permissions to include in the response.
+ *
+ *   The default is 100, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   QueryTestablePermissionsRequest.
@@ -2590,6 +3245,8 @@ export class IAMClient {
  *   `//cloudresourcemanager.googleapis.com/projects/my-project`.
  * @param {number} request.pageSize
  *   Optional limit on the number of permissions to include in the response.
+ *
+ *   The default is 100, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   QueryTestablePermissionsRequest.
@@ -2635,6 +3292,8 @@ export class IAMClient {
  *   `//cloudresourcemanager.googleapis.com/projects/my-project`.
  * @param {number} request.pageSize
  *   Optional limit on the number of permissions to include in the response.
+ *
+ *   The default is 100, and the maximum is 1,000.
  * @param {string} request.pageToken
  *   Optional pagination token returned in an earlier
  *   QueryTestablePermissionsRequest.

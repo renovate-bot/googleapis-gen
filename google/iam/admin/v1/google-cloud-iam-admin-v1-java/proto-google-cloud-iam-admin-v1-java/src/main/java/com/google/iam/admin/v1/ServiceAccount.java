@@ -5,19 +5,15 @@ package com.google.iam.admin.v1;
 
 /**
  * <pre>
- * A service account in the Identity and Access Management API.
- * To create a service account, specify the `project_id` and the `account_id`
- * for the account.  The `account_id` is unique within the project, and is used
- * to generate the service account email address and a stable
- * `unique_id`.
- * If the account already exists, the account's resource name is returned
- * in the format of projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The caller
- * can use the name in other methods to access the account.
- * All other methods can identify the service account using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
- * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
- * the account. The `ACCOUNT` value can be the `email` address or the
- * `unique_id` of the service account.
+ * An IAM service account.
+ * A service account is an account for an application or a virtual machine (VM)
+ * instance, not a person. You can use a service account to call Google APIs. To
+ * learn more, read the [overview of service
+ * accounts](https://cloud.google.com/iam/help/service-accounts/overview).
+ * When you create a service account, you specify the project ID that owns the
+ * service account, as well as a name that must be unique within the project.
+ * IAM uses these values to create an email address that identifies the service
+ * account.
  * </pre>
  *
  * Protobuf type {@code google.iam.admin.v1.ServiceAccount}
@@ -38,6 +34,7 @@ private static final long serialVersionUID = 0L;
     email_ = "";
     displayName_ = "";
     etag_ = com.google.protobuf.ByteString.EMPTY;
+    description_ = "";
     oauth2ClientId_ = "";
   }
 
@@ -106,10 +103,21 @@ private static final long serialVersionUID = 0L;
             etag_ = input.readBytes();
             break;
           }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
             oauth2ClientId_ = s;
+            break;
+          }
+          case 88: {
+
+            disabled_ = input.readBool();
             break;
           }
           default: {
@@ -148,13 +156,20 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the service account in the following format:
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-   * project from the `account` and the `ACCOUNT` value can be the `email`
-   * address or the `unique_id` of the service account.
-   * In responses the resource name will always be in the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+   * The resource name of the service account.
+   * Use one of the following formats:
+   * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+   * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+   * As an alternative, you can use the `-` wildcard character instead of the
+   * project ID:
+   * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+   * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+   * When possible, avoid using the `-` wildcard character, because it can cause
+   * response messages to contain misleading error codes. For example, if you
+   * try to get the service account
+   * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+   * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+   * Found` error.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -175,13 +190,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the service account in the following format:
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-   * project from the `account` and the `ACCOUNT` value can be the `email`
-   * address or the `unique_id` of the service account.
-   * In responses the resource name will always be in the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+   * The resource name of the service account.
+   * Use one of the following formats:
+   * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+   * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+   * As an alternative, you can use the `-` wildcard character instead of the
+   * project ID:
+   * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+   * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+   * When possible, avoid using the `-` wildcard character, because it can cause
+   * response messages to contain misleading error codes. For example, if you
+   * try to get the service account
+   * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+   * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+   * Found` error.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -206,10 +228,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object projectId_;
   /**
    * <pre>
-   * &#64;OutputOnly The id of the project that owns the service account.
+   * Output only. The ID of the project that owns the service account.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The projectId.
    */
   @java.lang.Override
@@ -227,10 +249,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * &#64;OutputOnly The id of the project that owns the service account.
+   * Output only. The ID of the project that owns the service account.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -252,10 +274,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object uniqueId_;
   /**
    * <pre>
-   * &#64;OutputOnly The unique and stable id of the service account.
+   * Output only. The unique, stable numeric ID for the service account.
+   * Each service account retains its unique ID even if you delete the service
+   * account. For example, if you delete a service account, then create a new
+   * service account with the same name, the new service account has a different
+   * unique ID than the deleted service account.
    * </pre>
    *
-   * <code>string unique_id = 4;</code>
+   * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The uniqueId.
    */
   @java.lang.Override
@@ -273,10 +299,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * &#64;OutputOnly The unique and stable id of the service account.
+   * Output only. The unique, stable numeric ID for the service account.
+   * Each service account retains its unique ID even if you delete the service
+   * account. For example, if you delete a service account, then create a new
+   * service account with the same name, the new service account has a different
+   * unique ID than the deleted service account.
    * </pre>
    *
-   * <code>string unique_id = 4;</code>
+   * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for uniqueId.
    */
   @java.lang.Override
@@ -298,10 +328,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object email_;
   /**
    * <pre>
-   * &#64;OutputOnly The email address of the service account.
+   * Output only. The email address of the service account.
    * </pre>
    *
-   * <code>string email = 5;</code>
+   * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The email.
    */
   @java.lang.Override
@@ -319,10 +349,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * &#64;OutputOnly The email address of the service account.
+   * Output only. The email address of the service account.
    * </pre>
    *
-   * <code>string email = 5;</code>
+   * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -344,11 +374,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Optional. A user-specified name for the service account.
-   * Must be less than or equal to 100 UTF-8 bytes.
+   * Optional. A user-specified, human-readable name for the service account. The maximum
+   * length is 100 UTF-8 bytes.
    * </pre>
    *
-   * <code>string display_name = 6;</code>
+   * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The displayName.
    */
   @java.lang.Override
@@ -366,11 +396,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A user-specified name for the service account.
-   * Must be less than or equal to 100 UTF-8 bytes.
+   * Optional. A user-specified, human-readable name for the service account. The maximum
+   * length is 100 UTF-8 bytes.
    * </pre>
    *
-   * <code>string display_name = 6;</code>
+   * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -392,28 +422,73 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString etag_;
   /**
    * <pre>
-   * Optional. Note: `etag` is an inoperable legacy field that is only returned
-   * for backwards compatibility.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>bytes etag = 7;</code>
+   * <code>bytes etag = 7 [deprecated = true];</code>
    * @return The etag.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getEtag() {
+  @java.lang.Deprecated public com.google.protobuf.ByteString getEtag() {
     return etag_;
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * Optional. A user-specified, human-readable description of the service account. The
+   * maximum length is 256 UTF-8 bytes.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. A user-specified, human-readable description of the service account. The
+   * maximum length is 256 UTF-8 bytes.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int OAUTH2_CLIENT_ID_FIELD_NUMBER = 9;
   private volatile java.lang.Object oauth2ClientId_;
   /**
    * <pre>
-   * &#64;OutputOnly. The OAuth2 client id for the service account.
-   * This is used in conjunction with the OAuth2 clientconfig API to make
-   * three legged OAuth2 (3LO) flows to access the data of Google users.
+   * Output only. The OAuth 2.0 client ID for the service account.
    * </pre>
    *
-   * <code>string oauth2_client_id = 9;</code>
+   * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The oauth2ClientId.
    */
   @java.lang.Override
@@ -431,12 +506,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * &#64;OutputOnly. The OAuth2 client id for the service account.
-   * This is used in conjunction with the OAuth2 clientconfig API to make
-   * three legged OAuth2 (3LO) flows to access the data of Google users.
+   * Output only. The OAuth 2.0 client ID for the service account.
    * </pre>
    *
-   * <code>string oauth2_client_id = 9;</code>
+   * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for oauth2ClientId.
    */
   @java.lang.Override
@@ -452,6 +525,21 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DISABLED_FIELD_NUMBER = 11;
+  private boolean disabled_;
+  /**
+   * <pre>
+   * Output only. Whether the service account is disabled.
+   * </pre>
+   *
+   * <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The disabled.
+   */
+  @java.lang.Override
+  public boolean getDisabled() {
+    return disabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -486,8 +574,14 @@ private static final long serialVersionUID = 0L;
     if (!etag_.isEmpty()) {
       output.writeBytes(7, etag_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
+    }
     if (!getOauth2ClientIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, oauth2ClientId_);
+    }
+    if (disabled_ != false) {
+      output.writeBool(11, disabled_);
     }
     unknownFields.writeTo(output);
   }
@@ -517,8 +611,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(7, etag_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
+    }
     if (!getOauth2ClientIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, oauth2ClientId_);
+    }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, disabled_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -547,8 +648,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getEtag()
         .equals(other.getEtag())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
     if (!getOauth2ClientId()
         .equals(other.getOauth2ClientId())) return false;
+    if (getDisabled()
+        != other.getDisabled()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -572,8 +677,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + OAUTH2_CLIENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOauth2ClientId().hashCode();
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDisabled());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -671,19 +781,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A service account in the Identity and Access Management API.
-   * To create a service account, specify the `project_id` and the `account_id`
-   * for the account.  The `account_id` is unique within the project, and is used
-   * to generate the service account email address and a stable
-   * `unique_id`.
-   * If the account already exists, the account's resource name is returned
-   * in the format of projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The caller
-   * can use the name in other methods to access the account.
-   * All other methods can identify the service account using the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   * the account. The `ACCOUNT` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * An IAM service account.
+   * A service account is an account for an application or a virtual machine (VM)
+   * instance, not a person. You can use a service account to call Google APIs. To
+   * learn more, read the [overview of service
+   * accounts](https://cloud.google.com/iam/help/service-accounts/overview).
+   * When you create a service account, you specify the project ID that owns the
+   * service account, as well as a name that must be unique within the project.
+   * IAM uses these values to create an email address that identifies the service
+   * account.
    * </pre>
    *
    * Protobuf type {@code google.iam.admin.v1.ServiceAccount}
@@ -735,7 +841,11 @@ private static final long serialVersionUID = 0L;
 
       etag_ = com.google.protobuf.ByteString.EMPTY;
 
+      description_ = "";
+
       oauth2ClientId_ = "";
+
+      disabled_ = false;
 
       return this;
     }
@@ -769,7 +879,9 @@ private static final long serialVersionUID = 0L;
       result.email_ = email_;
       result.displayName_ = displayName_;
       result.etag_ = etag_;
+      result.description_ = description_;
       result.oauth2ClientId_ = oauth2ClientId_;
+      result.disabled_ = disabled_;
       onBuilt();
       return result;
     }
@@ -841,9 +953,16 @@ private static final long serialVersionUID = 0L;
       if (other.getEtag() != com.google.protobuf.ByteString.EMPTY) {
         setEtag(other.getEtag());
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
       if (!other.getOauth2ClientId().isEmpty()) {
         oauth2ClientId_ = other.oauth2ClientId_;
         onChanged();
+      }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -877,13 +996,20 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -903,13 +1029,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -930,13 +1063,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -955,13 +1095,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -975,13 +1122,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1003,10 +1157,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object projectId_ = "";
     /**
      * <pre>
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The projectId.
      */
     public java.lang.String getProjectId() {
@@ -1023,10 +1177,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
@@ -1044,10 +1198,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -1063,10 +1217,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
@@ -1077,10 +1231,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1099,10 +1253,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object uniqueId_ = "";
     /**
      * <pre>
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      * </pre>
      *
-     * <code>string unique_id = 4;</code>
+     * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The uniqueId.
      */
     public java.lang.String getUniqueId() {
@@ -1119,10 +1277,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      * </pre>
      *
-     * <code>string unique_id = 4;</code>
+     * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for uniqueId.
      */
     public com.google.protobuf.ByteString
@@ -1140,10 +1302,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      * </pre>
      *
-     * <code>string unique_id = 4;</code>
+     * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The uniqueId to set.
      * @return This builder for chaining.
      */
@@ -1159,10 +1325,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      * </pre>
      *
-     * <code>string unique_id = 4;</code>
+     * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearUniqueId() {
@@ -1173,10 +1343,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      * </pre>
      *
-     * <code>string unique_id = 4;</code>
+     * <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for uniqueId to set.
      * @return This builder for chaining.
      */
@@ -1195,10 +1369,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object email_ = "";
     /**
      * <pre>
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      * </pre>
      *
-     * <code>string email = 5;</code>
+     * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The email.
      */
     public java.lang.String getEmail() {
@@ -1215,10 +1389,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      * </pre>
      *
-     * <code>string email = 5;</code>
+     * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
@@ -1236,10 +1410,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      * </pre>
      *
-     * <code>string email = 5;</code>
+     * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -1255,10 +1429,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      * </pre>
      *
-     * <code>string email = 5;</code>
+     * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
@@ -1269,10 +1443,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      * </pre>
      *
-     * <code>string email = 5;</code>
+     * <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -1291,11 +1465,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      * </pre>
      *
-     * <code>string display_name = 6;</code>
+     * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The displayName.
      */
     public java.lang.String getDisplayName() {
@@ -1312,11 +1486,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      * </pre>
      *
-     * <code>string display_name = 6;</code>
+     * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
@@ -1334,11 +1508,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      * </pre>
      *
-     * <code>string display_name = 6;</code>
+     * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -1354,11 +1528,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      * </pre>
      *
-     * <code>string display_name = 6;</code>
+     * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
@@ -1369,11 +1543,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      * </pre>
      *
-     * <code>string display_name = 6;</code>
+     * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -1392,28 +1566,26 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * Optional. Note: `etag` is an inoperable legacy field that is only returned
-     * for backwards compatibility.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>bytes etag = 7;</code>
+     * <code>bytes etag = 7 [deprecated = true];</code>
      * @return The etag.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getEtag() {
+    @java.lang.Deprecated public com.google.protobuf.ByteString getEtag() {
       return etag_;
     }
     /**
      * <pre>
-     * Optional. Note: `etag` is an inoperable legacy field that is only returned
-     * for backwards compatibility.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>bytes etag = 7;</code>
+     * <code>bytes etag = 7 [deprecated = true];</code>
      * @param value The etag to set.
      * @return This builder for chaining.
      */
-    public Builder setEtag(com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated public Builder setEtag(com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1424,16 +1596,116 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Note: `etag` is an inoperable legacy field that is only returned
-     * for backwards compatibility.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>bytes etag = 7;</code>
+     * <code>bytes etag = 7 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearEtag() {
+    @java.lang.Deprecated public Builder clearEtag() {
       
       etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
       onChanged();
       return this;
     }
@@ -1441,12 +1713,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object oauth2ClientId_ = "";
     /**
      * <pre>
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Output only. The OAuth 2.0 client ID for the service account.
      * </pre>
      *
-     * <code>string oauth2_client_id = 9;</code>
+     * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The oauth2ClientId.
      */
     public java.lang.String getOauth2ClientId() {
@@ -1463,12 +1733,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Output only. The OAuth 2.0 client ID for the service account.
      * </pre>
      *
-     * <code>string oauth2_client_id = 9;</code>
+     * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for oauth2ClientId.
      */
     public com.google.protobuf.ByteString
@@ -1486,12 +1754,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Output only. The OAuth 2.0 client ID for the service account.
      * </pre>
      *
-     * <code>string oauth2_client_id = 9;</code>
+     * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The oauth2ClientId to set.
      * @return This builder for chaining.
      */
@@ -1507,12 +1773,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Output only. The OAuth 2.0 client ID for the service account.
      * </pre>
      *
-     * <code>string oauth2_client_id = 9;</code>
+     * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOauth2ClientId() {
@@ -1523,12 +1787,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Output only. The OAuth 2.0 client ID for the service account.
      * </pre>
      *
-     * <code>string oauth2_client_id = 9;</code>
+     * <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for oauth2ClientId to set.
      * @return This builder for chaining.
      */
@@ -1540,6 +1802,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       oauth2ClientId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean disabled_ ;
+    /**
+     * <pre>
+     * Output only. Whether the service account is disabled.
+     * </pre>
+     *
+     * <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+    /**
+     * <pre>
+     * Output only. Whether the service account is disabled.
+     * </pre>
+     *
+     * <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+      
+      disabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Whether the service account is disabled.
+     * </pre>
+     *
+     * <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+      
+      disabled_ = false;
       onChanged();
       return this;
     }

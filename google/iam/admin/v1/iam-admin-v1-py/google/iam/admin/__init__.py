@@ -24,16 +24,24 @@ from google.iam.admin_v1.types.iam import CreateServiceAccountRequest
 from google.iam.admin_v1.types.iam import DeleteRoleRequest
 from google.iam.admin_v1.types.iam import DeleteServiceAccountKeyRequest
 from google.iam.admin_v1.types.iam import DeleteServiceAccountRequest
+from google.iam.admin_v1.types.iam import DisableServiceAccountRequest
+from google.iam.admin_v1.types.iam import EnableServiceAccountRequest
 from google.iam.admin_v1.types.iam import GetRoleRequest
 from google.iam.admin_v1.types.iam import GetServiceAccountKeyRequest
 from google.iam.admin_v1.types.iam import GetServiceAccountRequest
+from google.iam.admin_v1.types.iam import LintPolicyRequest
+from google.iam.admin_v1.types.iam import LintPolicyResponse
+from google.iam.admin_v1.types.iam import LintResult
 from google.iam.admin_v1.types.iam import ListRolesRequest
 from google.iam.admin_v1.types.iam import ListRolesResponse
 from google.iam.admin_v1.types.iam import ListServiceAccountKeysRequest
 from google.iam.admin_v1.types.iam import ListServiceAccountKeysResponse
 from google.iam.admin_v1.types.iam import ListServiceAccountsRequest
 from google.iam.admin_v1.types.iam import ListServiceAccountsResponse
+from google.iam.admin_v1.types.iam import PatchServiceAccountRequest
 from google.iam.admin_v1.types.iam import Permission
+from google.iam.admin_v1.types.iam import QueryAuditableServicesRequest
+from google.iam.admin_v1.types.iam import QueryAuditableServicesResponse
 from google.iam.admin_v1.types.iam import QueryGrantableRolesRequest
 from google.iam.admin_v1.types.iam import QueryGrantableRolesResponse
 from google.iam.admin_v1.types.iam import QueryTestablePermissionsRequest
@@ -43,6 +51,7 @@ from google.iam.admin_v1.types.iam import RoleView
 from google.iam.admin_v1.types.iam import ServiceAccount
 from google.iam.admin_v1.types.iam import ServiceAccountKey
 from google.iam.admin_v1.types.iam import ServiceAccountKeyAlgorithm
+from google.iam.admin_v1.types.iam import ServiceAccountKeyOrigin
 from google.iam.admin_v1.types.iam import ServiceAccountPrivateKeyType
 from google.iam.admin_v1.types.iam import ServiceAccountPublicKeyType
 from google.iam.admin_v1.types.iam import SignBlobRequest
@@ -50,7 +59,10 @@ from google.iam.admin_v1.types.iam import SignBlobResponse
 from google.iam.admin_v1.types.iam import SignJwtRequest
 from google.iam.admin_v1.types.iam import SignJwtResponse
 from google.iam.admin_v1.types.iam import UndeleteRoleRequest
+from google.iam.admin_v1.types.iam import UndeleteServiceAccountRequest
+from google.iam.admin_v1.types.iam import UndeleteServiceAccountResponse
 from google.iam.admin_v1.types.iam import UpdateRoleRequest
+from google.iam.admin_v1.types.iam import UploadServiceAccountKeyRequest
 
 __all__ = (
     'AuditData',
@@ -60,18 +72,26 @@ __all__ = (
     'DeleteRoleRequest',
     'DeleteServiceAccountKeyRequest',
     'DeleteServiceAccountRequest',
+    'DisableServiceAccountRequest',
+    'EnableServiceAccountRequest',
     'GetRoleRequest',
     'GetServiceAccountKeyRequest',
     'GetServiceAccountRequest',
     'IAMAsyncClient',
     'IAMClient',
+    'LintPolicyRequest',
+    'LintPolicyResponse',
+    'LintResult',
     'ListRolesRequest',
     'ListRolesResponse',
     'ListServiceAccountKeysRequest',
     'ListServiceAccountKeysResponse',
     'ListServiceAccountsRequest',
     'ListServiceAccountsResponse',
+    'PatchServiceAccountRequest',
     'Permission',
+    'QueryAuditableServicesRequest',
+    'QueryAuditableServicesResponse',
     'QueryGrantableRolesRequest',
     'QueryGrantableRolesResponse',
     'QueryTestablePermissionsRequest',
@@ -81,6 +101,7 @@ __all__ = (
     'ServiceAccount',
     'ServiceAccountKey',
     'ServiceAccountKeyAlgorithm',
+    'ServiceAccountKeyOrigin',
     'ServiceAccountPrivateKeyType',
     'ServiceAccountPublicKeyType',
     'SignBlobRequest',
@@ -88,5 +109,8 @@ __all__ = (
     'SignJwtRequest',
     'SignJwtResponse',
     'UndeleteRoleRequest',
+    'UndeleteServiceAccountRequest',
+    'UndeleteServiceAccountResponse',
     'UpdateRoleRequest',
+    'UploadServiceAccountKeyRequest',
 )

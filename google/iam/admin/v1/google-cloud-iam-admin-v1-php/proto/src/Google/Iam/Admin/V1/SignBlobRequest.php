@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign blob request.
  *
  * Generated from protobuf message <code>google.iam.admin.v1.SignBlobRequest</code>
@@ -16,19 +18,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignBlobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * @deprecated
      */
     protected $name = '';
     /**
-     * Required. The bytes to sign.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The bytes to sign.
      *
-     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $bytes_to_sign = '';
 
@@ -39,13 +47,17 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The resource name of the service account in the following format:
+     *           Required. Deprecated. [Migrate to Service Account Credentials
+     *           API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *           The resource name of the service account in the following format:
      *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      *           Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      *           the account. The `ACCOUNT` value can be the `email` address or the
      *           `unique_id` of the service account.
      *     @type string $bytes_to_sign
-     *           Required. The bytes to sign.
+     *           Required. Deprecated. [Migrate to Service Account Credentials
+     *           API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *           The bytes to sign.
      * }
      */
     public function __construct($data = NULL) {
@@ -54,33 +66,41 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
+     * @deprecated
      */
     public function getName()
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         return $this->name;
     }
 
     /**
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setName($var)
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->name = $var;
 
@@ -88,25 +108,33 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The bytes to sign.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The bytes to sign.
      *
-     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getBytesToSign()
     {
+        @trigger_error('bytes_to_sign is deprecated.', E_USER_DEPRECATED);
         return $this->bytes_to_sign;
     }
 
     /**
-     * Required. The bytes to sign.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The bytes to sign.
      *
-     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBytesToSign($var)
     {
+        @trigger_error('bytes_to_sign is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, False);
         $this->bytes_to_sign = $var;
 

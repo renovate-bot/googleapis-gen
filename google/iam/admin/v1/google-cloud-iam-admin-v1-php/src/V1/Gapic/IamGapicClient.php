@@ -47,15 +47,22 @@ use Google\Iam\Admin\V1\CreateServiceAccountRequest;
 use Google\Iam\Admin\V1\DeleteRoleRequest;
 use Google\Iam\Admin\V1\DeleteServiceAccountKeyRequest;
 use Google\Iam\Admin\V1\DeleteServiceAccountRequest;
+use Google\Iam\Admin\V1\DisableServiceAccountRequest;
+use Google\Iam\Admin\V1\EnableServiceAccountRequest;
 use Google\Iam\Admin\V1\GetRoleRequest;
 use Google\Iam\Admin\V1\GetServiceAccountKeyRequest;
 use Google\Iam\Admin\V1\GetServiceAccountRequest;
+use Google\Iam\Admin\V1\LintPolicyRequest;
+use Google\Iam\Admin\V1\LintPolicyResponse;
 use Google\Iam\Admin\V1\ListRolesRequest;
 use Google\Iam\Admin\V1\ListRolesResponse;
 use Google\Iam\Admin\V1\ListServiceAccountKeysRequest;
 use Google\Iam\Admin\V1\ListServiceAccountKeysResponse;
 use Google\Iam\Admin\V1\ListServiceAccountsRequest;
 use Google\Iam\Admin\V1\ListServiceAccountsResponse;
+use Google\Iam\Admin\V1\PatchServiceAccountRequest;
+use Google\Iam\Admin\V1\QueryAuditableServicesRequest;
+use Google\Iam\Admin\V1\QueryAuditableServicesResponse;
 use Google\Iam\Admin\V1\QueryGrantableRolesRequest;
 use Google\Iam\Admin\V1\QueryGrantableRolesResponse;
 use Google\Iam\Admin\V1\QueryTestablePermissionsRequest;
@@ -68,27 +75,34 @@ use Google\Iam\Admin\V1\SignBlobResponse;
 use Google\Iam\Admin\V1\SignJwtRequest;
 use Google\Iam\Admin\V1\SignJwtResponse;
 use Google\Iam\Admin\V1\UndeleteRoleRequest;
+use Google\Iam\Admin\V1\UndeleteServiceAccountRequest;
+use Google\Iam\Admin\V1\UndeleteServiceAccountResponse;
 use Google\Iam\Admin\V1\UpdateRoleRequest;
+use Google\Iam\Admin\V1\UploadServiceAccountKeyRequest;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
+use Google\Type\Expr;
 
 /**
- * Service Description: Creates and manages service account objects.
+ * Service Description: Creates and manages Identity and Access Management (IAM) resources.
  *
- * Service account is an account that belongs to your project instead
- * of to an individual end user. It is used to authenticate calls
- * to a Google API.
+ * You can use this service to work with all of the following resources:
  *
- * To create a service account, specify the `project_id` and `account_id`
- * for the account.  The `account_id` is unique within the project, and used
- * to generate the service account email address and a stable
- * `unique_id`.
+ * * **Service accounts**, which identify an application or a virtual machine
+ *   (VM) instance rather than a person
+ * * **Service account keys**, which service accounts use to authenticate with
+ *   Google APIs
+ * * **IAM policies for service accounts**, which specify the roles that a
+ *   member has for the service account
+ * * **IAM custom roles**, which help you limit the number of permissions that
+ *   you grant to members
  *
- * All other methods can identify accounts using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
- * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
- * the account. The `ACCOUNT` value can be the `email` address or the
- * `unique_id` of the service account.
+ * In addition, you can use this service to complete the following tasks, among
+ * others:
+ *
+ * * Test whether a service account can use specific permissions
+ * * Check which roles you can grant for a specific resource
+ * * Lint, or validate, condition expressions in an IAM policy
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -375,7 +389,7 @@ class IamGapicClient
     }
 
     /**
-     * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+     * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.
      *
      * Sample code:
      * ```
@@ -510,8 +524,7 @@ class IamGapicClient
     }
 
     /**
-     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-     * and returns it.
+     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      *
      * Sample code:
      * ```
@@ -575,10 +588,12 @@ class IamGapicClient
     }
 
     /**
+     * **Note:** We are in the process of deprecating this method. Use
+     * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
+     *
      * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      *
-     * Currently, only the following fields are updatable:
-     * `display_name` and `description`.
+     * You can update only the `display_name` and `description` fields.
      *
      * Sample code:
      * ```
@@ -594,31 +609,48 @@ class IamGapicClient
      *                            Optional.
      *
      *     @type string $name
-     *          The resource name of the service account in the following format:
-     *          `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *          The resource name of the service account.
      *
-     *          Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     *          project from the `account` and the `ACCOUNT` value can be the `email`
-     *          address or the `unique_id` of the service account.
+     *          Use one of the following formats:
      *
-     *          In responses the resource name will always be in the format
-     *          `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *          * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     *          * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     *
+     *          As an alternative, you can use the `-` wildcard character instead of the
+     *          project ID:
+     *
+     *          * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     *          * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     *
+     *          When possible, avoid using the `-` wildcard character, because it can cause
+     *          response messages to contain misleading error codes. For example, if you
+     *          try to get the service account
+     *          `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     *          response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     *          Found` error.
      *     @type string $projectId
-     *          &#64;OutputOnly The id of the project that owns the service account.
+     *          Output only. The ID of the project that owns the service account.
      *     @type string $uniqueId
-     *          &#64;OutputOnly The unique and stable id of the service account.
+     *          Output only. The unique, stable numeric ID for the service account.
+     *
+     *          Each service account retains its unique ID even if you delete the service
+     *          account. For example, if you delete a service account, then create a new
+     *          service account with the same name, the new service account has a different
+     *          unique ID than the deleted service account.
      *     @type string $email
-     *          &#64;OutputOnly The email address of the service account.
+     *          Output only. The email address of the service account.
      *     @type string $displayName
-     *          Optional. A user-specified name for the service account.
-     *          Must be less than or equal to 100 UTF-8 bytes.
+     *          Optional. A user-specified, human-readable name for the service account. The maximum
+     *          length is 100 UTF-8 bytes.
      *     @type string $etag
-     *          Optional. Note: `etag` is an inoperable legacy field that is only returned
-     *          for backwards compatibility.
+     *          Deprecated. Do not use.
+     *     @type string $description
+     *          Optional. A user-specified, human-readable description of the service account. The
+     *          maximum length is 256 UTF-8 bytes.
      *     @type string $oauth2ClientId
-     *          &#64;OutputOnly. The OAuth2 client id for the service account.
-     *          This is used in conjunction with the OAuth2 clientconfig API to make
-     *          three legged OAuth2 (3LO) flows to access the data of Google users.
+     *          Output only. The OAuth 2.0 client ID for the service account.
+     *     @type bool $disabled
+     *          Output only. Whether the service account is disabled.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -652,8 +684,14 @@ class IamGapicClient
         if (isset($optionalArgs['etag'])) {
             $request->setEtag($optionalArgs['etag']);
         }
+        if (isset($optionalArgs['description'])) {
+            $request->setDescription($optionalArgs['description']);
+        }
         if (isset($optionalArgs['oauth2ClientId'])) {
             $request->setOauth2ClientId($optionalArgs['oauth2ClientId']);
+        }
+        if (isset($optionalArgs['disabled'])) {
+            $request->setDisabled($optionalArgs['disabled']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -672,7 +710,76 @@ class IamGapicClient
     }
 
     /**
+     * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $response = $iamClient->patchServiceAccount();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type ServiceAccount $serviceAccount
+     *     @type FieldMask $updateMask
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Iam\Admin\V1\ServiceAccount
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function patchServiceAccount(array $optionalArgs = [])
+    {
+        $request = new PatchServiceAccountRequest();
+        if (isset($optionalArgs['serviceAccount'])) {
+            $request->setServiceAccount($optionalArgs['serviceAccount']);
+        }
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'service_account.name' => $request->getServiceAccount()->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'PatchServiceAccount',
+            ServiceAccount::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
      * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     *
+     * **Warning:** After you delete a service account, you might not be able to
+     * undelete it. If you know that you need to re-enable the service account in
+     * the future, use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+     *
+     * If you delete a service account, IAM permanently removes the service
+     * account 30 days later. Google Cloud cannot recover the service account
+     * after it is permanently removed, even if you file a support request.
+     *
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to disable the
+     * service account, then wait at least 24 hours and watch for unintended
+     * consequences. If there are no unintended consequences, you can delete the
+     * service account.
      *
      * Sample code:
      * ```
@@ -724,7 +831,199 @@ class IamGapicClient
     }
 
     /**
-     * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+     * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     *
+     * **Important:** It is not always possible to restore a deleted service
+     * account. Use this method only as a last resort.
+     *
+     * After you delete a service account, IAM permanently removes the service
+     * account 30 days later. There is no way to restore a deleted service account
+     * that has been permanently removed.
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $response = $iamClient->undeleteServiceAccount();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The resource name of the service account in the following format:
+     *          `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}`.
+     *          Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     *          the account.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Iam\Admin\V1\UndeleteServiceAccountResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function undeleteServiceAccount(array $optionalArgs = [])
+    {
+        $request = new UndeleteServiceAccountRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'UndeleteServiceAccount',
+            UndeleteServiceAccountResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+     * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+     *
+     * If the service account is already enabled, then this method has no effect.
+     *
+     * If the service account was disabled by other means—for example, if Google
+     * disabled the service account because it was compromised—you cannot use this
+     * method to enable the service account.
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $iamClient->enableServiceAccount();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The resource name of the service account in the following format:
+     *          `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *          Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     *          the account. The `ACCOUNT` value can be the `email` address or the
+     *          `unique_id` of the service account.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function enableServiceAccount(array $optionalArgs = [])
+    {
+        $request = new EnableServiceAccountRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'EnableServiceAccount',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+     *
+     * If an application uses the service account to authenticate, that
+     * application can no longer call Google APIs or access Google Cloud
+     * resources. Existing access tokens for the service account are rejected, and
+     * requests for new access tokens will fail.
+     *
+     * To re-enable the service account, use [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you
+     * re-enable the service account, its existing access tokens will be accepted,
+     * and you can request new access tokens.
+     *
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use this method to disable the service
+     * account, then wait at least 24 hours and watch for unintended consequences.
+     * If there are no unintended consequences, you can delete the service account
+     * with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $iamClient->disableServiceAccount();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The resource name of the service account in the following format:
+     *          `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *          Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     *          the account. The `ACCOUNT` value can be the `email` address or the
+     *          `unique_id` of the service account.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function disableServiceAccount(array $optionalArgs = [])
+    {
+        $request = new DisableServiceAccountRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'DisableServiceAccount',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
      *
      * Sample code:
      * ```
@@ -787,8 +1086,7 @@ class IamGapicClient
     }
 
     /**
-     * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * by key id.
+     * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      *
      * Sample code:
      * ```
@@ -850,8 +1148,7 @@ class IamGapicClient
     }
 
     /**
-     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * and returns it.
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      *
      * Sample code:
      * ```
@@ -921,7 +1218,73 @@ class IamGapicClient
     }
 
     /**
-     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that you provide.
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $response = $iamClient->uploadServiceAccountKey();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The resource name of the service account in the following format:
+     *          `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *          Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     *          the account. The `ACCOUNT` value can be the `email` address or the
+     *          `unique_id` of the service account.
+     *     @type string $publicKeyData
+     *          A field that allows clients to upload their own public key. If set,
+     *          use this public key data to create a service account key for given
+     *          service account.
+     *          Please note, the expected format for this field is X509_PEM.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Iam\Admin\V1\ServiceAccountKey
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function uploadServiceAccountKey(array $optionalArgs = [])
+    {
+        $request = new UploadServiceAccountKeyRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+        if (isset($optionalArgs['publicKeyData'])) {
+            $request->setPublicKeyData($optionalArgs['publicKeyData']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'UploadServiceAccountKey',
+            ServiceAccountKey::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service account key does not
+     * revoke short-lived credentials that have been issued based on the service
+     * account key.
      *
      * Sample code:
      * ```
@@ -973,7 +1336,14 @@ class IamGapicClient
     }
 
     /**
-     * Signs a blob using a service account's system-managed private key.
+     * **Note:** This method is deprecated. Use the
+     * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     *
+     * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      *
      * Sample code:
      * ```
@@ -987,14 +1357,20 @@ class IamGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The resource name of the service account in the following format:
-     *                             `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     *                             Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-     *                             the account. The `ACCOUNT` value can be the `email` address or the
-     *                             `unique_id` of the service account.
-     * @param string $bytesToSign  Required. The bytes to sign.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $name Required. Deprecated. [Migrate to Service Account Credentials
+     *                     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
+     * The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
+     * `unique_id` of the service account.
+     * @param string $bytesToSign Required. Deprecated. [Migrate to Service Account Credentials
+     *                            API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
+     * The bytes to sign.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1030,11 +1406,15 @@ class IamGapicClient
     }
 
     /**
-     * Signs a JWT using a service account's system-managed private key.
+     * **Note:** This method is deprecated. Use the
+     * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
      *
-     * If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
-     * an expiry time of one hour by default. If you request an expiry time of
-     * more than one hour, the request will fail.
+     * Signs a JSON Web Token (JWT) using the system-managed private key for a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      *
      * Sample code:
      * ```
@@ -1048,14 +1428,29 @@ class IamGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The resource name of the service account in the following format:
-     *                             `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     *                             Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-     *                             the account. The `ACCOUNT` value can be the `email` address or the
-     *                             `unique_id` of the service account.
-     * @param string $payload      Required. The JWT payload to sign, a JSON JWT Claim set.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $name Required. Deprecated. [Migrate to Service Account Credentials
+     *                     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
+     * The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
+     * `unique_id` of the service account.
+     * @param string $payload Required. Deprecated. [Migrate to Service Account Credentials
+     *                        API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     *
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     *
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -1091,20 +1486,15 @@ class IamGapicClient
     }
 
     /**
-     * Returns the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+     * policy specifies which members have access to the service account.
      *
-     * Note: Service accounts are both
-     * [resources and
-     * identities](https://cloud.google.com/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. It returns the Cloud IAM
-     * policy that reflects what members have access to the service account.
-     *
-     * This method does not return what resources the service account has access
-     * to. To see if a service account has access to a resource, call the
-     * `getIamPolicy` method on the target resource. For example, to view grants
-     * for a project, call the
-     * [projects.getIamPolicy](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
+     * This method does not tell you whether the service account has been granted
+     * any roles on other resources. To check whether a service account has role
+     * grants on a resource, use the `getIamPolicy` method for that resource. For
+     * example, to view the role grants for a project, call the Resource Manager
+     * API's
+     * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
      * method.
      *
      * Sample code:
@@ -1162,22 +1552,23 @@ class IamGapicClient
     }
 
     /**
-     * Sets the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      *
-     * Note: Service accounts are both
-     * [resources and
-     * identities](https://cloud.google.com/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. Use it to grant members
-     * access to the service account, such as when they need to impersonate it.
+     * Use this method to grant or revoke access to the service account. For
+     * example, you could grant a member the ability to impersonate the service
+     * account.
      *
-     * This method does not grant the service account access to other resources,
-     * such as projects. To grant a service account access to resources, include
-     * the service account in the Cloud IAM policy for the desired resource, then
-     * call the appropriate `setIamPolicy` method on the target resource. For
-     * example, to grant a service account access to a project, call the
-     * [projects.setIamPolicy](https://cloud.google.com/resource-manager/reference/rest/v1/projects/setIamPolicy)
-     * method.
+     * This method does not enable the service account to access other resources.
+     * To grant roles to a service account on a resource, follow these steps:
+     *
+     * 1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+     * 2. Edit the policy so that it binds the service account to an IAM role for
+     * the resource.
+     * 3. Call the resource's `setIamPolicy` method to update its IAM policy.
+     *
+     * For detailed instructions, see
+     * [Granting roles to a service account for specific
+     * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
      *
      * Sample code:
      * ```
@@ -1234,8 +1625,8 @@ class IamGapicClient
     }
 
     /**
-     * Tests the specified permissions against the IAM access control policy
-     * for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Tests whether the caller has the specified permissions on a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      *
      * Sample code:
      * ```
@@ -1292,9 +1683,9 @@ class IamGapicClient
     }
 
     /**
-     * Queries roles that can be granted on a particular resource.
-     * A role is grantable if it can be used as the role in a binding for a policy
-     * for that resource.
+     * Lists roles that can be granted on a Google Cloud resource. A role is
+     * grantable if the IAM policy for the resource can contain bindings to the
+     * role.
      *
      * Sample code:
      * ```
@@ -1376,7 +1767,8 @@ class IamGapicClient
     }
 
     /**
-     * Lists the Roles defined on a resource.
+     * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+     * that is defined for an organization or project.
      *
      * Sample code:
      * ```
@@ -1498,7 +1890,7 @@ class IamGapicClient
     }
 
     /**
-     * Gets a Role definition.
+     * Gets the definition of a [Role][google.iam.admin.v1.Role].
      *
      * Sample code:
      * ```
@@ -1576,7 +1968,7 @@ class IamGapicClient
     }
 
     /**
-     * Creates a new Role.
+     * Creates a new custom [Role][google.iam.admin.v1.Role].
      *
      * Sample code:
      * ```
@@ -1614,6 +2006,10 @@ class IamGapicClient
      *          ID or organization ID.
      *     @type string $roleId
      *          The role ID to use for this role.
+     *
+     *          A role ID may contain alphanumeric characters, underscores (`_`), and
+     *          periods (`.`). It must contain a minimum of 3 characters and a maximum of
+     *          64 characters.
      *     @type Role $role
      *          The Role resource to create.
      *     @type RetrySettings|array $retrySettings
@@ -1657,7 +2053,7 @@ class IamGapicClient
     }
 
     /**
-     * Updates a Role definition.
+     * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
      *
      * Sample code:
      * ```
@@ -1738,13 +2134,23 @@ class IamGapicClient
     }
 
     /**
-     * Soft deletes a role. The role is suspended and cannot be used to create new
-     * IAM Policy Bindings.
-     * The Role will not be included in `ListRoles()` unless `show_deleted` is set
-     * in the `ListRolesRequest`. The Role contains the deleted boolean set.
-     * Existing Bindings remains, but are inactive. The Role can be undeleted
-     * within 7 days. After 7 days the Role is deleted and all Bindings associated
-     * with the role are removed.
+     * Deletes a custom [Role][google.iam.admin.v1.Role].
+     *
+     * When you delete a custom role, the following changes occur immediately:
+     *
+     * * You cannot bind a member to the custom role in an IAM
+     * [Policy][google.iam.v1.Policy].
+     * * Existing bindings to the custom role are not changed, but they have no
+     * effect.
+     * * By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not include the custom
+     * role.
+     *
+     * You have 7 days to undelete the custom role. After 7 days, the following
+     * changes occur:
+     *
+     * * The custom role is permanently deleted and cannot be recovered.
+     * * If an IAM policy contains a binding to the custom role, the binding is
+     * permanently removed.
      *
      * Sample code:
      * ```
@@ -1820,7 +2226,7 @@ class IamGapicClient
     }
 
     /**
-     * Undelete a Role, bringing it back in its previous state.
+     * Undeletes a custom [Role][google.iam.admin.v1.Role].
      *
      * Sample code:
      * ```
@@ -1896,8 +2302,9 @@ class IamGapicClient
     }
 
     /**
-     * Lists the permissions testable on a resource.
-     * A permission is testable if it can be tested for an identity on a resource.
+     * Lists every permission that you can test on a resource. A permission is
+     * testable if you can check whether a member has that permission on the
+     * resource.
      *
      * Sample code:
      * ```
@@ -1974,5 +2381,122 @@ class IamGapicClient
             QueryTestablePermissionsResponse::class,
             $request
         );
+    }
+
+    /**
+     * Returns a list of services that allow you to opt into audit logs that are
+     * not generated by default.
+     *
+     * To learn more about audit logs, see the [Logging
+     * documentation](https://cloud.google.com/logging/docs/audit).
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $response = $iamClient->queryAuditableServices();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $fullResourceName
+     *          Required. The full resource name to query from the list of auditable
+     *          services.
+     *
+     *          The name follows the Google Cloud Platform resource format.
+     *          For example, a Cloud Platform project with id `my-project` will be named
+     *          `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Iam\Admin\V1\QueryAuditableServicesResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function queryAuditableServices(array $optionalArgs = [])
+    {
+        $request = new QueryAuditableServicesRequest();
+        if (isset($optionalArgs['fullResourceName'])) {
+            $request->setFullResourceName($optionalArgs['fullResourceName']);
+        }
+
+        return $this->startCall(
+            'QueryAuditableServices',
+            QueryAuditableServicesResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lints, or validates, an IAM policy. Currently checks the
+     * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a condition
+     * expression for a role binding.
+     *
+     * Successful calls to this method always return an HTTP `200 OK` status code,
+     * even if the linter detects an issue in the IAM policy.
+     *
+     * Sample code:
+     * ```
+     * $iamClient = new IamClient();
+     * try {
+     *     $response = $iamClient->lintPolicy();
+     * } finally {
+     *     $iamClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $fullResourceName
+     *          The full resource name of the policy this lint request is about.
+     *
+     *          The name follows the Google Cloud Platform (GCP) resource format.
+     *          For example, a GCP project with ID `my-project` will be named
+     *          `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *
+     *          The resource name is not used to read the policy instance from the Cloud
+     *          IAM database. The candidate policy for lint has to be provided in the same
+     *          request object.
+     *     @type Expr $condition
+     *          [google.iam.v1.Binding.condition] [google.iam.v1.Binding.condition] object to be linted.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Iam\Admin\V1\LintPolicyResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function lintPolicy(array $optionalArgs = [])
+    {
+        $request = new LintPolicyRequest();
+        if (isset($optionalArgs['fullResourceName'])) {
+            $request->setFullResourceName($optionalArgs['fullResourceName']);
+        }
+        if (isset($optionalArgs['condition'])) {
+            $request->setCondition($optionalArgs['condition']);
+        }
+
+        return $this->startCall(
+            'LintPolicy',
+            LintPolicyResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
     }
 }

@@ -23,16 +23,24 @@ from .types.iam import CreateServiceAccountRequest
 from .types.iam import DeleteRoleRequest
 from .types.iam import DeleteServiceAccountKeyRequest
 from .types.iam import DeleteServiceAccountRequest
+from .types.iam import DisableServiceAccountRequest
+from .types.iam import EnableServiceAccountRequest
 from .types.iam import GetRoleRequest
 from .types.iam import GetServiceAccountKeyRequest
 from .types.iam import GetServiceAccountRequest
+from .types.iam import LintPolicyRequest
+from .types.iam import LintPolicyResponse
+from .types.iam import LintResult
 from .types.iam import ListRolesRequest
 from .types.iam import ListRolesResponse
 from .types.iam import ListServiceAccountKeysRequest
 from .types.iam import ListServiceAccountKeysResponse
 from .types.iam import ListServiceAccountsRequest
 from .types.iam import ListServiceAccountsResponse
+from .types.iam import PatchServiceAccountRequest
 from .types.iam import Permission
+from .types.iam import QueryAuditableServicesRequest
+from .types.iam import QueryAuditableServicesResponse
 from .types.iam import QueryGrantableRolesRequest
 from .types.iam import QueryGrantableRolesResponse
 from .types.iam import QueryTestablePermissionsRequest
@@ -42,6 +50,7 @@ from .types.iam import RoleView
 from .types.iam import ServiceAccount
 from .types.iam import ServiceAccountKey
 from .types.iam import ServiceAccountKeyAlgorithm
+from .types.iam import ServiceAccountKeyOrigin
 from .types.iam import ServiceAccountPrivateKeyType
 from .types.iam import ServiceAccountPublicKeyType
 from .types.iam import SignBlobRequest
@@ -49,7 +58,10 @@ from .types.iam import SignBlobResponse
 from .types.iam import SignJwtRequest
 from .types.iam import SignJwtResponse
 from .types.iam import UndeleteRoleRequest
+from .types.iam import UndeleteServiceAccountRequest
+from .types.iam import UndeleteServiceAccountResponse
 from .types.iam import UpdateRoleRequest
+from .types.iam import UploadServiceAccountKeyRequest
 
 
 __all__ = (
@@ -60,16 +72,24 @@ __all__ = (
     'DeleteRoleRequest',
     'DeleteServiceAccountKeyRequest',
     'DeleteServiceAccountRequest',
+    'DisableServiceAccountRequest',
+    'EnableServiceAccountRequest',
     'GetRoleRequest',
     'GetServiceAccountKeyRequest',
     'GetServiceAccountRequest',
+    'LintPolicyRequest',
+    'LintPolicyResponse',
+    'LintResult',
     'ListRolesRequest',
     'ListRolesResponse',
     'ListServiceAccountKeysRequest',
     'ListServiceAccountKeysResponse',
     'ListServiceAccountsRequest',
     'ListServiceAccountsResponse',
+    'PatchServiceAccountRequest',
     'Permission',
+    'QueryAuditableServicesRequest',
+    'QueryAuditableServicesResponse',
     'QueryGrantableRolesRequest',
     'QueryGrantableRolesResponse',
     'QueryTestablePermissionsRequest',
@@ -79,6 +99,7 @@ __all__ = (
     'ServiceAccount',
     'ServiceAccountKey',
     'ServiceAccountKeyAlgorithm',
+    'ServiceAccountKeyOrigin',
     'ServiceAccountPrivateKeyType',
     'ServiceAccountPublicKeyType',
     'SignBlobRequest',
@@ -86,6 +107,9 @@ __all__ = (
     'SignJwtRequest',
     'SignJwtResponse',
     'UndeleteRoleRequest',
+    'UndeleteServiceAccountRequest',
+    'UndeleteServiceAccountResponse',
     'UpdateRoleRequest',
+    'UploadServiceAccountKeyRequest',
 'IAMClient',
 )

@@ -45,6 +45,7 @@ class ListRolesRequest extends \Google\Protobuf\Internal\Message
     protected $parent = '';
     /**
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
@@ -103,6 +104,7 @@ class ListRolesRequest extends \Google\Protobuf\Internal\Message
      *           ID or organization ID.
      *     @type int $page_size
      *           Optional limit on the number of roles to include in the response.
+     *           The default is 300, and the maximum is 1,000.
      *     @type string $page_token
      *           Optional pagination token returned in an earlier ListRolesResponse.
      *     @type int $view
@@ -191,6 +193,7 @@ class ListRolesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @return int
@@ -202,6 +205,7 @@ class ListRolesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @param int $var

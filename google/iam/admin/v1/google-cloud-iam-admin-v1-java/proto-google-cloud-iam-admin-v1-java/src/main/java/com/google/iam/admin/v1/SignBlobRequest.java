@@ -5,6 +5,8 @@ package com.google.iam.admin.v1;
 
 /**
  * <pre>
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign blob request.
  * </pre>
  *
@@ -101,18 +103,20 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The resource name of the service account in the following format:
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getName() {
+  @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -126,18 +130,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the service account in the following format:
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -155,14 +161,16 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString bytesToSign_;
   /**
    * <pre>
-   * Required. The bytes to sign.
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The bytes to sign.
    * </pre>
    *
-   * <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytesToSign.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getBytesToSign() {
+  @java.lang.Deprecated public com.google.protobuf.ByteString getBytesToSign() {
     return bytesToSign_;
   }
 
@@ -333,6 +341,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The service account sign blob request.
    * </pre>
    *
@@ -492,17 +502,19 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
-    public java.lang.String getName() {
+    @java.lang.Deprecated public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -516,17 +528,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
@@ -541,18 +555,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    @java.lang.Deprecated public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -564,17 +580,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    @java.lang.Deprecated public Builder clearName() {
       
       name_ = getDefaultInstance().getName();
       onChanged();
@@ -582,18 +600,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    @java.lang.Deprecated public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -608,26 +628,30 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString bytesToSign_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * Required. The bytes to sign.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The bytes to sign.
      * </pre>
      *
-     * <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytesToSign.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getBytesToSign() {
+    @java.lang.Deprecated public com.google.protobuf.ByteString getBytesToSign() {
       return bytesToSign_;
     }
     /**
      * <pre>
-     * Required. The bytes to sign.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The bytes to sign.
      * </pre>
      *
-     * <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytesToSign to set.
      * @return This builder for chaining.
      */
-    public Builder setBytesToSign(com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated public Builder setBytesToSign(com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -638,13 +662,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The bytes to sign.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The bytes to sign.
      * </pre>
      *
-     * <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bytes bytes_to_sign = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
-    public Builder clearBytesToSign() {
+    @java.lang.Deprecated public Builder clearBytesToSign() {
       
       bytesToSign_ = getDefaultInstance().getBytesToSign();
       onChanged();

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign JWT response.
  *
  * Generated from protobuf message <code>google.iam.admin.v1.SignJwtResponse</code>
@@ -16,15 +18,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignJwtResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      *
-     * Generated from protobuf field <code>string key_id = 1;</code>
+     * Generated from protobuf field <code>string key_id = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $key_id = '';
     /**
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      *
-     * Generated from protobuf field <code>string signed_jwt = 2;</code>
+     * Generated from protobuf field <code>string signed_jwt = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $signed_jwt = '';
 
@@ -35,8 +43,12 @@ class SignJwtResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $key_id
+     *           Deprecated. [Migrate to Service Account Credentials
+     *           API](https://cloud.google.com/iam/help/credentials/migrate-api).
      *           The id of the key used to sign the JWT.
      *     @type string $signed_jwt
+     *           Deprecated. [Migrate to Service Account Credentials
+     *           API](https://cloud.google.com/iam/help/credentials/migrate-api).
      *           The signed JWT.
      * }
      */
@@ -46,25 +58,33 @@ class SignJwtResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      *
-     * Generated from protobuf field <code>string key_id = 1;</code>
+     * Generated from protobuf field <code>string key_id = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getKeyId()
     {
+        @trigger_error('key_id is deprecated.', E_USER_DEPRECATED);
         return $this->key_id;
     }
 
     /**
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      *
-     * Generated from protobuf field <code>string key_id = 1;</code>
+     * Generated from protobuf field <code>string key_id = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setKeyId($var)
     {
+        @trigger_error('key_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->key_id = $var;
 
@@ -72,25 +92,33 @@ class SignJwtResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      *
-     * Generated from protobuf field <code>string signed_jwt = 2;</code>
+     * Generated from protobuf field <code>string signed_jwt = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getSignedJwt()
     {
+        @trigger_error('signed_jwt is deprecated.', E_USER_DEPRECATED);
         return $this->signed_jwt;
     }
 
     /**
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      *
-     * Generated from protobuf field <code>string signed_jwt = 2;</code>
+     * Generated from protobuf field <code>string signed_jwt = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setSignedJwt($var)
     {
+        @trigger_error('signed_jwt is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->signed_jwt = $var;
 

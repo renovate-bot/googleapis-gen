@@ -36,18 +36,25 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
 import com.google.iam.admin.v1.GetServiceAccountRequest;
 import com.google.iam.admin.v1.KeyName;
+import com.google.iam.admin.v1.LintPolicyRequest;
+import com.google.iam.admin.v1.LintPolicyResponse;
 import com.google.iam.admin.v1.ListRolesRequest;
 import com.google.iam.admin.v1.ListRolesResponse;
 import com.google.iam.admin.v1.ListServiceAccountKeysRequest;
 import com.google.iam.admin.v1.ListServiceAccountKeysResponse;
 import com.google.iam.admin.v1.ListServiceAccountsRequest;
 import com.google.iam.admin.v1.ListServiceAccountsResponse;
+import com.google.iam.admin.v1.PatchServiceAccountRequest;
 import com.google.iam.admin.v1.Permission;
 import com.google.iam.admin.v1.ProjectName;
+import com.google.iam.admin.v1.QueryAuditableServicesRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesResponse;
 import com.google.iam.admin.v1.QueryGrantableRolesRequest;
 import com.google.iam.admin.v1.QueryGrantableRolesResponse;
 import com.google.iam.admin.v1.QueryTestablePermissionsRequest;
@@ -64,7 +71,10 @@ import com.google.iam.admin.v1.SignBlobResponse;
 import com.google.iam.admin.v1.SignJwtRequest;
 import com.google.iam.admin.v1.SignJwtResponse;
 import com.google.iam.admin.v1.UndeleteRoleRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountResponse;
 import com.google.iam.admin.v1.UpdateRoleRequest;
+import com.google.iam.admin.v1.UploadServiceAccountKeyRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -79,19 +89,28 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Creates and manages service account objects.
+ * Service Description: Creates and manages Identity and Access Management (IAM) resources.
  *
- * <p>Service account is an account that belongs to your project instead of to an individual end
- * user. It is used to authenticate calls to a Google API.
+ * <p>You can use this service to work with all of the following resources:
  *
- * <p>To create a service account, specify the `project_id` and `account_id` for the account. The
- * `account_id` is unique within the project, and used to generate the service account email address
- * and a stable `unique_id`.
+ * <ul>
+ *   <li>&#42;&#42;Service accounts&#42;&#42;, which identify an application or a virtual machine
+ *       (VM) instance rather than a person
+ *   <li>&#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
+ *       Google APIs
+ *   <li>&#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
+ *       member has for the service account
+ *   <li>&#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
+ *       you grant to members
+ * </ul>
  *
- * <p>All other methods can identify accounts using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID`
- * will infer the project from the account. The `ACCOUNT` value can be the `email` address or the
- * `unique_id` of the service account.
+ * <p>In addition, you can use this service to complete the following tasks, among others:
+ *
+ * <ul>
+ *   <li>Test whether a service account can use specific permissions
+ *   <li>Check which roles you can grant for a specific resource
+ *   <li>Lint, or validate, condition expressions in an IAM policy
+ * </ul>
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -201,7 +220,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+   * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific
+   * project.
    *
    * <p>Sample code:
    *
@@ -228,7 +248,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+   * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific
+   * project.
    *
    * <p>Sample code:
    *
@@ -253,7 +274,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+   * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific
+   * project.
    *
    * <p>Sample code:
    *
@@ -281,7 +303,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+   * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific
+   * project.
    *
    * <p>Sample code:
    *
@@ -309,7 +332,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+   * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific
+   * project.
    *
    * <p>Sample code:
    *
@@ -440,7 +464,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
+   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -477,7 +501,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
+   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -514,7 +538,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
+   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -539,7 +563,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
+   * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -565,9 +589,12 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * &#42;&#42;Note:&#42;&#42; We are in the process of deprecating this method. Use
+   * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
    *
-   * <p>Currently, only the following fields are updatable: `display_name` and `description`.
+   * <p>Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>You can update only the `display_name` and `description` fields.
    *
    * <p>Sample code:
    *
@@ -581,7 +608,9 @@ public class IAMClient implements BackgroundResource {
    *           .setEmail("email96619420")
    *           .setDisplayName("displayName1714148973")
    *           .setEtag(ByteString.EMPTY)
+   *           .setDescription("description-1724546052")
    *           .setOauth2ClientId("oauth2ClientId-1210797087")
+   *           .setDisabled(true)
    *           .build();
    *   ServiceAccount response = iAMClient.updateServiceAccount(request);
    * }
@@ -596,9 +625,12 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * &#42;&#42;Note:&#42;&#42; We are in the process of deprecating this method. Use
+   * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
    *
-   * <p>Currently, only the following fields are updatable: `display_name` and `description`.
+   * <p>Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>You can update only the `display_name` and `description` fields.
    *
    * <p>Sample code:
    *
@@ -612,7 +644,9 @@ public class IAMClient implements BackgroundResource {
    *           .setEmail("email96619420")
    *           .setDisplayName("displayName1714148973")
    *           .setEtag(ByteString.EMPTY)
+   *           .setDescription("description-1724546052")
    *           .setOauth2ClientId("oauth2ClientId-1210797087")
+   *           .setDisabled(true)
    *           .build();
    *   ApiFuture<ServiceAccount> future =
    *       iAMClient.updateServiceAccountCallable().futureCall(request);
@@ -627,7 +661,69 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   PatchServiceAccountRequest request =
+   *       PatchServiceAccountRequest.newBuilder()
+   *           .setServiceAccount(ServiceAccount.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ServiceAccount response = iAMClient.patchServiceAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServiceAccount patchServiceAccount(PatchServiceAccountRequest request) {
+    return patchServiceAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   PatchServiceAccountRequest request =
+   *       PatchServiceAccountRequest.newBuilder()
+   *           .setServiceAccount(ServiceAccount.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ServiceAccount> future =
+   *       iAMClient.patchServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccount response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchServiceAccountRequest, ServiceAccount>
+      patchServiceAccountCallable() {
+    return stub.patchServiceAccountCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>&#42;&#42;Warning:&#42;&#42; After you delete a service account, you might not be able to
+   * undelete it. If you know that you need to re-enable the service account in the future, use
+   * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+   *
+   * <p>If you delete a service account, IAM permanently removes the service account 30 days later.
+   * Google Cloud cannot recover the service account after it is permanently removed, even if you
+   * file a support request.
+   *
+   * <p>To help avoid unplanned outages, we recommend that you disable the service account before
+   * you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to
+   * disable the service account, then wait at least 24 hours and watch for unintended consequences.
+   * If there are no unintended consequences, you can delete the service account.
    *
    * <p>Sample code:
    *
@@ -656,6 +752,19 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>&#42;&#42;Warning:&#42;&#42; After you delete a service account, you might not be able to
+   * undelete it. If you know that you need to re-enable the service account in the future, use
+   * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+   *
+   * <p>If you delete a service account, IAM permanently removes the service account 30 days later.
+   * Google Cloud cannot recover the service account after it is permanently removed, even if you
+   * file a support request.
+   *
+   * <p>To help avoid unplanned outages, we recommend that you disable the service account before
+   * you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to
+   * disable the service account, then wait at least 24 hours and watch for unintended consequences.
+   * If there are no unintended consequences, you can delete the service account.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -681,6 +790,19 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>&#42;&#42;Warning:&#42;&#42; After you delete a service account, you might not be able to
+   * undelete it. If you know that you need to re-enable the service account in the future, use
+   * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+   *
+   * <p>If you delete a service account, IAM permanently removes the service account 30 days later.
+   * Google Cloud cannot recover the service account after it is permanently removed, even if you
+   * file a support request.
+   *
+   * <p>To help avoid unplanned outages, we recommend that you disable the service account before
+   * you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to
+   * disable the service account, then wait at least 24 hours and watch for unintended consequences.
+   * If there are no unintended consequences, you can delete the service account.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -704,6 +826,19 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>&#42;&#42;Warning:&#42;&#42; After you delete a service account, you might not be able to
+   * undelete it. If you know that you need to re-enable the service account in the future, use
+   * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+   *
+   * <p>If you delete a service account, IAM permanently removes the service account 30 days later.
+   * Google Cloud cannot recover the service account after it is permanently removed, even if you
+   * file a support request.
+   *
+   * <p>To help avoid unplanned outages, we recommend that you disable the service account before
+   * you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to
+   * disable the service account, then wait at least 24 hours and watch for unintended consequences.
+   * If there are no unintended consequences, you can delete the service account.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -724,7 +859,187 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+   * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; It is not always possible to restore a deleted service
+   * account. Use this method only as a last resort.
+   *
+   * <p>After you delete a service account, IAM permanently removes the service account 30 days
+   * later. There is no way to restore a deleted service account that has been permanently removed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UndeleteServiceAccountRequest request =
+   *       UndeleteServiceAccountRequest.newBuilder().setName("name3373707").build();
+   *   UndeleteServiceAccountResponse response = iAMClient.undeleteServiceAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UndeleteServiceAccountResponse undeleteServiceAccount(
+      UndeleteServiceAccountRequest request) {
+    return undeleteServiceAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; It is not always possible to restore a deleted service
+   * account. Use this method only as a last resort.
+   *
+   * <p>After you delete a service account, IAM permanently removes the service account 30 days
+   * later. There is no way to restore a deleted service account that has been permanently removed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UndeleteServiceAccountRequest request =
+   *       UndeleteServiceAccountRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<UndeleteServiceAccountResponse> future =
+   *       iAMClient.undeleteServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   UndeleteServiceAccountResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountCallable() {
+    return stub.undeleteServiceAccountCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+   * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+   *
+   * <p>If the service account is already enabled, then this method has no effect.
+   *
+   * <p>If the service account was disabled by other means?for example, if Google disabled the
+   * service account because it was compromised?you cannot use this method to enable the service
+   * account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   EnableServiceAccountRequest request =
+   *       EnableServiceAccountRequest.newBuilder().setName("name3373707").build();
+   *   iAMClient.enableServiceAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void enableServiceAccount(EnableServiceAccountRequest request) {
+    enableServiceAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+   * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+   *
+   * <p>If the service account is already enabled, then this method has no effect.
+   *
+   * <p>If the service account was disabled by other means?for example, if Google disabled the
+   * service account because it was compromised?you cannot use this method to enable the service
+   * account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   EnableServiceAccountRequest request =
+   *       EnableServiceAccountRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = iAMClient.enableServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EnableServiceAccountRequest, Empty> enableServiceAccountCallable() {
+    return stub.enableServiceAccountCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+   *
+   * <p>If an application uses the service account to authenticate, that application can no longer
+   * call Google APIs or access Google Cloud resources. Existing access tokens for the service
+   * account are rejected, and requests for new access tokens will fail.
+   *
+   * <p>To re-enable the service account, use
+   * [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you re-enable the
+   * service account, its existing access tokens will be accepted, and you can request new access
+   * tokens.
+   *
+   * <p>To help avoid unplanned outages, we recommend that you disable the service account before
+   * you delete it. Use this method to disable the service account, then wait at least 24 hours and
+   * watch for unintended consequences. If there are no unintended consequences, you can delete the
+   * service account with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DisableServiceAccountRequest request =
+   *       DisableServiceAccountRequest.newBuilder().setName("name3373707").build();
+   *   iAMClient.disableServiceAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void disableServiceAccount(DisableServiceAccountRequest request) {
+    disableServiceAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+   *
+   * <p>If an application uses the service account to authenticate, that application can no longer
+   * call Google APIs or access Google Cloud resources. Existing access tokens for the service
+   * account are rejected, and requests for new access tokens will fail.
+   *
+   * <p>To re-enable the service account, use
+   * [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you re-enable the
+   * service account, its existing access tokens will be accepted, and you can request new access
+   * tokens.
+   *
+   * <p>To help avoid unplanned outages, we recommend that you disable the service account before
+   * you delete it. Use this method to disable the service account, then wait at least 24 hours and
+   * watch for unintended consequences. If there are no unintended consequences, you can delete the
+   * service account with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DisableServiceAccountRequest request =
+   *       DisableServiceAccountRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = iAMClient.disableServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DisableServiceAccountRequest, Empty> disableServiceAccountCallable() {
+    return stub.disableServiceAccountCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
    *
    * <p>Sample code:
    *
@@ -756,7 +1071,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+   * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
    *
    * <p>Sample code:
    *
@@ -785,7 +1100,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+   * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
    *
    * <p>Sample code:
    *
@@ -810,7 +1125,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+   * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
    *
    * <p>Sample code:
    *
@@ -835,7 +1150,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
+   * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -867,7 +1182,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
+   * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -899,7 +1214,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
+   * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -923,7 +1238,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
+   * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -948,7 +1263,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
+   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -987,7 +1302,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
+   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -1026,7 +1341,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
+   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -1051,7 +1366,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
+   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
    *
@@ -1077,7 +1392,60 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that
+   * you provide.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UploadServiceAccountKeyRequest request =
+   *       UploadServiceAccountKeyRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setPublicKeyData(ByteString.EMPTY)
+   *           .build();
+   *   ServiceAccountKey response = iAMClient.uploadServiceAccountKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServiceAccountKey uploadServiceAccountKey(UploadServiceAccountKeyRequest request) {
+    return uploadServiceAccountKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that
+   * you provide.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UploadServiceAccountKeyRequest request =
+   *       UploadServiceAccountKeyRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setPublicKeyData(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<ServiceAccountKey> future =
+   *       iAMClient.uploadServiceAccountKeyCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccountKey response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeyCallable() {
+    return stub.uploadServiceAccountKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service
+   * account key does not revoke short-lived credentials that have been issued based on the service
+   * account key.
    *
    * <p>Sample code:
    *
@@ -1104,7 +1472,9 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service
+   * account key does not revoke short-lived credentials that have been issued based on the service
+   * account key.
    *
    * <p>Sample code:
    *
@@ -1129,7 +1499,9 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service
+   * account key does not revoke short-lived credentials that have been issued based on the service
+   * account key.
    *
    * <p>Sample code:
    *
@@ -1152,7 +1524,9 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+   * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service
+   * account key does not revoke short-lived credentials that have been issued based on the service
+   * account key.
    *
    * <p>Sample code:
    *
@@ -1175,7 +1549,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a blob using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
+   *
+   * <p>Signs a blob using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1187,11 +1568,15 @@ public class IAMClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the service account in the following format:
+   * @param name Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
    *     `email` address or the `unique_id` of the service account.
-   * @param bytesToSign Required. The bytes to sign.
+   * @param bytesToSign Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The bytes to sign.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(ServiceAccountName name, ByteString bytesToSign) {
@@ -1205,7 +1590,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a blob using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
+   *
+   * <p>Signs a blob using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1217,11 +1609,15 @@ public class IAMClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the service account in the following format:
+   * @param name Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
    *     `email` address or the `unique_id` of the service account.
-   * @param bytesToSign Required. The bytes to sign.
+   * @param bytesToSign Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The bytes to sign.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(String name, ByteString bytesToSign) {
@@ -1232,7 +1628,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a blob using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
+   *
+   * <p>Signs a blob using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1256,7 +1659,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a blob using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
+   *
+   * <p>Signs a blob using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1279,11 +1689,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a JWT using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
    *
-   * <p>If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an an expiry time of
-   * one hour by default. If you request an expiry time of more than one hour, the request will
-   * fail.
+   * <p>Signs a JSON Web Token (JWT) using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1295,11 +1708,20 @@ public class IAMClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the service account in the following format:
+   * @param name Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
    *     `email` address or the `unique_id` of the service account.
-   * @param payload Required. The JWT payload to sign, a JSON JWT Claim set.
+   * @param payload Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The JWT payload to sign. Must be a serialized JSON object that contains a JWT Claims
+   *     Set. For example: `{"sub": "user{@literal @}example.com", "iat": 313435}`
+   *     <p>If the JWT Claims Set contains an expiration time (`exp`) claim, it must be an integer
+   *     timestamp that is not in the past and no more than 1 hour in the future.
+   *     <p>If the JWT Claims Set does not contain an expiration time (`exp`) claim, this claim is
+   *     added automatically, with a timestamp that is 1 hour in the future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(ServiceAccountName name, String payload) {
@@ -1313,11 +1735,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a JWT using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
    *
-   * <p>If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an an expiry time of
-   * one hour by default. If you request an expiry time of more than one hour, the request will
-   * fail.
+   * <p>Signs a JSON Web Token (JWT) using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1329,11 +1754,20 @@ public class IAMClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the service account in the following format:
+   * @param name Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
    *     `email` address or the `unique_id` of the service account.
-   * @param payload Required. The JWT payload to sign, a JSON JWT Claim set.
+   * @param payload Required. Deprecated. [Migrate to Service Account Credentials
+   *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *     <p>The JWT payload to sign. Must be a serialized JSON object that contains a JWT Claims
+   *     Set. For example: `{"sub": "user{@literal @}example.com", "iat": 313435}`
+   *     <p>If the JWT Claims Set contains an expiration time (`exp`) claim, it must be an integer
+   *     timestamp that is not in the past and no more than 1 hour in the future.
+   *     <p>If the JWT Claims Set does not contain an expiration time (`exp`) claim, this claim is
+   *     added automatically, with a timestamp that is 1 hour in the future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(String name, String payload) {
@@ -1343,11 +1777,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a JWT using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
    *
-   * <p>If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an an expiry time of
-   * one hour by default. If you request an expiry time of more than one hour, the request will
-   * fail.
+   * <p>Signs a JSON Web Token (JWT) using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1371,11 +1808,14 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Signs a JWT using a service account's system-managed private key.
+   * &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the
+   * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+   * method in the IAM Service Account Credentials API instead. If you currently use this method,
+   * see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+   * instructions.
    *
-   * <p>If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an an expiry time of
-   * one hour by default. If you request an expiry time of more than one hour, the request will
-   * fail.
+   * <p>Signs a JSON Web Token (JWT) using the system-managed private key for a
+   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
    *
@@ -1398,18 +1838,15 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * This IAM policy specifies which members have access to the service account.
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. It returns the Cloud IAM policy that reflects what members have
-   * access to the service account.
-   *
-   * <p>This method does not return what resources the service account has access to. To see if a
-   * service account has access to a resource, call the `getIamPolicy` method on the target
-   * resource. For example, to view grants for a project, call the
-   * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
+   * <p>This method does not tell you whether the service account has been granted any roles on
+   * other resources. To check whether a service account has role grants on a resource, use the
+   * `getIamPolicy` method for that resource. For example, to view the role grants for a project,
+   * call the Resource Manager API's
+   * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
+   * method.
    *
    * <p>Sample code:
    *
@@ -1434,18 +1871,15 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * This IAM policy specifies which members have access to the service account.
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. It returns the Cloud IAM policy that reflects what members have
-   * access to the service account.
-   *
-   * <p>This method does not return what resources the service account has access to. To see if a
-   * service account has access to a resource, call the `getIamPolicy` method on the target
-   * resource. For example, to view grants for a project, call the
-   * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
+   * <p>This method does not tell you whether the service account has been granted any roles on
+   * other resources. To check whether a service account has role grants on a resource, use the
+   * `getIamPolicy` method for that resource. For example, to view the role grants for a project,
+   * call the Resource Manager API's
+   * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
+   * method.
    *
    * <p>Sample code:
    *
@@ -1467,18 +1901,15 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * This IAM policy specifies which members have access to the service account.
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. It returns the Cloud IAM policy that reflects what members have
-   * access to the service account.
-   *
-   * <p>This method does not return what resources the service account has access to. To see if a
-   * service account has access to a resource, call the `getIamPolicy` method on the target
-   * resource. For example, to view grants for a project, call the
-   * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
+   * <p>This method does not tell you whether the service account has been granted any roles on
+   * other resources. To check whether a service account has role grants on a resource, use the
+   * `getIamPolicy` method for that resource. For example, to view the role grants for a project,
+   * call the Resource Manager API's
+   * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
+   * method.
    *
    * <p>Sample code:
    *
@@ -1502,18 +1933,15 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * This IAM policy specifies which members have access to the service account.
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. It returns the Cloud IAM policy that reflects what members have
-   * access to the service account.
-   *
-   * <p>This method does not return what resources the service account has access to. To see if a
-   * service account has access to a resource, call the `getIamPolicy` method on the target
-   * resource. For example, to view grants for a project, call the
-   * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
+   * <p>This method does not tell you whether the service account has been granted any roles on
+   * other resources. To check whether a service account has role grants on a resource, use the
+   * `getIamPolicy` method for that resource. For example, to view the role grants for a project,
+   * call the Resource Manager API's
+   * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
+   * method.
    *
    * <p>Sample code:
    *
@@ -1536,19 +1964,20 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. Use it to grant members access to the service account, such as
-   * when they need to impersonate it.
+   * <p>Use this method to grant or revoke access to the service account. For example, you could
+   * grant a member the ability to impersonate the service account.
    *
-   * <p>This method does not grant the service account access to other resources, such as projects.
-   * To grant a service account access to resources, include the service account in the Cloud IAM
-   * policy for the desired resource, then call the appropriate `setIamPolicy` method on the target
-   * resource. For example, to grant a service account access to a project, call the
-   * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
+   * <p>This method does not enable the service account to access other resources. To grant roles to
+   * a service account on a resource, follow these steps:
+   *
+   * <p>1. Call the resource's `getIamPolicy` method to get its current IAM policy. 2. Edit the
+   * policy so that it binds the service account to an IAM role for the resource. 3. Call the
+   * resource's `setIamPolicy` method to update its IAM policy.
+   *
+   * <p>For detailed instructions, see [Granting roles to a service account for specific
+   * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
    *
    * <p>Sample code:
    *
@@ -1578,19 +2007,20 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. Use it to grant members access to the service account, such as
-   * when they need to impersonate it.
+   * <p>Use this method to grant or revoke access to the service account. For example, you could
+   * grant a member the ability to impersonate the service account.
    *
-   * <p>This method does not grant the service account access to other resources, such as projects.
-   * To grant a service account access to resources, include the service account in the Cloud IAM
-   * policy for the desired resource, then call the appropriate `setIamPolicy` method on the target
-   * resource. For example, to grant a service account access to a project, call the
-   * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
+   * <p>This method does not enable the service account to access other resources. To grant roles to
+   * a service account on a resource, follow these steps:
+   *
+   * <p>1. Call the resource's `getIamPolicy` method to get its current IAM policy. 2. Edit the
+   * policy so that it binds the service account to an IAM role for the resource. 3. Call the
+   * resource's `setIamPolicy` method to update its IAM policy.
+   *
+   * <p>For detailed instructions, see [Granting roles to a service account for specific
+   * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
    *
    * <p>Sample code:
    *
@@ -1617,19 +2047,20 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. Use it to grant members access to the service account, such as
-   * when they need to impersonate it.
+   * <p>Use this method to grant or revoke access to the service account. For example, you could
+   * grant a member the ability to impersonate the service account.
    *
-   * <p>This method does not grant the service account access to other resources, such as projects.
-   * To grant a service account access to resources, include the service account in the Cloud IAM
-   * policy for the desired resource, then call the appropriate `setIamPolicy` method on the target
-   * resource. For example, to grant a service account access to a project, call the
-   * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
+   * <p>This method does not enable the service account to access other resources. To grant roles to
+   * a service account on a resource, follow these steps:
+   *
+   * <p>1. Call the resource's `getIamPolicy` method to get its current IAM policy. 2. Edit the
+   * policy so that it binds the service account to an IAM role for the resource. 3. Call the
+   * resource's `setIamPolicy` method to update its IAM policy.
+   *
+   * <p>For detailed instructions, see [Granting roles to a service account for specific
+   * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
    *
    * <p>Sample code:
    *
@@ -1653,19 +2084,20 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the Cloud IAM access control policy for a
-   * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
-   * <p>Note: Service accounts are both [resources and
-   * identities](/iam/docs/service-accounts#service_account_permissions). This method treats the
-   * service account as a resource. Use it to grant members access to the service account, such as
-   * when they need to impersonate it.
+   * <p>Use this method to grant or revoke access to the service account. For example, you could
+   * grant a member the ability to impersonate the service account.
    *
-   * <p>This method does not grant the service account access to other resources, such as projects.
-   * To grant a service account access to resources, include the service account in the Cloud IAM
-   * policy for the desired resource, then call the appropriate `setIamPolicy` method on the target
-   * resource. For example, to grant a service account access to a project, call the
-   * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
+   * <p>This method does not enable the service account to access other resources. To grant roles to
+   * a service account on a resource, follow these steps:
+   *
+   * <p>1. Call the resource's `getIamPolicy` method to get its current IAM policy. 2. Edit the
+   * policy so that it binds the service account to an IAM role for the resource. 3. Call the
+   * resource's `setIamPolicy` method to update its IAM policy.
+   *
+   * <p>For detailed instructions, see [Granting roles to a service account for specific
+   * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
    *
    * <p>Sample code:
    *
@@ -1688,7 +2120,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tests the specified permissions against the IAM access control policy for a
+   * Tests whether the caller has the specified permissions on a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
@@ -1720,7 +2152,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tests the specified permissions against the IAM access control policy for a
+   * Tests whether the caller has the specified permissions on a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
@@ -1752,7 +2184,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tests the specified permissions against the IAM access control policy for a
+   * Tests whether the caller has the specified permissions on a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
@@ -1777,7 +2209,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tests the specified permissions against the IAM access control policy for a
+   * Tests whether the caller has the specified permissions on a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
@@ -1803,8 +2235,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries roles that can be granted on a particular resource. A role is grantable if it can be
-   * used as the role in a binding for a policy for that resource.
+   * Lists roles that can be granted on a Google Cloud resource. A role is grantable if the IAM
+   * policy for the resource can contain bindings to the role.
    *
    * <p>Sample code:
    *
@@ -1832,8 +2264,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries roles that can be granted on a particular resource. A role is grantable if it can be
-   * used as the role in a binding for a policy for that resource.
+   * Lists roles that can be granted on a Google Cloud resource. A role is grantable if the IAM
+   * policy for the resource can contain bindings to the role.
    *
    * <p>Sample code:
    *
@@ -1862,8 +2294,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries roles that can be granted on a particular resource. A role is grantable if it can be
-   * used as the role in a binding for a policy for that resource.
+   * Lists roles that can be granted on a Google Cloud resource. A role is grantable if the IAM
+   * policy for the resource can contain bindings to the role.
    *
    * <p>Sample code:
    *
@@ -1891,8 +2323,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries roles that can be granted on a particular resource. A role is grantable if it can be
-   * used as the role in a binding for a policy for that resource.
+   * Lists roles that can be granted on a Google Cloud resource. A role is grantable if the IAM
+   * policy for the resource can contain bindings to the role.
    *
    * <p>Sample code:
    *
@@ -1928,7 +2360,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the Roles defined on a resource.
+   * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+   * that is defined for an organization or project.
    *
    * <p>Sample code:
    *
@@ -1957,7 +2390,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the Roles defined on a resource.
+   * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+   * that is defined for an organization or project.
    *
    * <p>Sample code:
    *
@@ -1985,7 +2419,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the Roles defined on a resource.
+   * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+   * that is defined for an organization or project.
    *
    * <p>Sample code:
    *
@@ -2020,7 +2455,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a Role definition.
+   * Gets the definition of a [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2041,7 +2476,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a Role definition.
+   * Gets the definition of a [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2061,7 +2496,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Role.
+   * Creates a new custom [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2086,7 +2521,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Role.
+   * Creates a new custom [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2110,7 +2545,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a Role definition.
+   * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2135,7 +2570,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a Role definition.
+   * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2159,11 +2594,24 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Soft deletes a role. The role is suspended and cannot be used to create new IAM Policy
-   * Bindings. The Role will not be included in `ListRoles()` unless `show_deleted` is set in the
-   * `ListRolesRequest`. The Role contains the deleted boolean set. Existing Bindings remains, but
-   * are inactive. The Role can be undeleted within 7 days. After 7 days the Role is deleted and all
-   * Bindings associated with the role are removed.
+   * Deletes a custom [Role][google.iam.admin.v1.Role].
+   *
+   * <p>When you delete a custom role, the following changes occur immediately:
+   *
+   * <ul>
+   *   <li>You cannot bind a member to the custom role in an IAM [Policy][google.iam.v1.Policy].
+   *   <li>Existing bindings to the custom role are not changed, but they have no effect.
+   *   <li>By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
+   *       include the custom role.
+   * </ul>
+   *
+   * <p>You have 7 days to undelete the custom role. After 7 days, the following changes occur:
+   *
+   * <ul>
+   *   <li>The custom role is permanently deleted and cannot be recovered.
+   *   <li>If an IAM policy contains a binding to the custom role, the binding is permanently
+   *       removed.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -2187,11 +2635,24 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Soft deletes a role. The role is suspended and cannot be used to create new IAM Policy
-   * Bindings. The Role will not be included in `ListRoles()` unless `show_deleted` is set in the
-   * `ListRolesRequest`. The Role contains the deleted boolean set. Existing Bindings remains, but
-   * are inactive. The Role can be undeleted within 7 days. After 7 days the Role is deleted and all
-   * Bindings associated with the role are removed.
+   * Deletes a custom [Role][google.iam.admin.v1.Role].
+   *
+   * <p>When you delete a custom role, the following changes occur immediately:
+   *
+   * <ul>
+   *   <li>You cannot bind a member to the custom role in an IAM [Policy][google.iam.v1.Policy].
+   *   <li>Existing bindings to the custom role are not changed, but they have no effect.
+   *   <li>By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
+   *       include the custom role.
+   * </ul>
+   *
+   * <p>You have 7 days to undelete the custom role. After 7 days, the following changes occur:
+   *
+   * <ul>
+   *   <li>The custom role is permanently deleted and cannot be recovered.
+   *   <li>If an IAM policy contains a binding to the custom role, the binding is permanently
+   *       removed.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -2214,7 +2675,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Undelete a Role, bringing it back in its previous state.
+   * Undeletes a custom [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2238,7 +2699,7 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Undelete a Role, bringing it back in its previous state.
+   * Undeletes a custom [Role][google.iam.admin.v1.Role].
    *
    * <p>Sample code:
    *
@@ -2261,8 +2722,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the permissions testable on a resource. A permission is testable if it can be tested for
-   * an identity on a resource.
+   * Lists every permission that you can test on a resource. A permission is testable if you can
+   * check whether a member has that permission on the resource.
    *
    * <p>Sample code:
    *
@@ -2290,8 +2751,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the permissions testable on a resource. A permission is testable if it can be tested for
-   * an identity on a resource.
+   * Lists every permission that you can test on a resource. A permission is testable if you can
+   * check whether a member has that permission on the resource.
    *
    * <p>Sample code:
    *
@@ -2319,8 +2780,8 @@ public class IAMClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the permissions testable on a resource. A permission is testable if it can be tested for
-   * an identity on a resource.
+   * Lists every permission that you can test on a resource. A permission is testable if you can
+   * check whether a member has that permission on the resource.
    *
    * <p>Sample code:
    *
@@ -2351,6 +2812,113 @@ public class IAMClient implements BackgroundResource {
   public final UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
       queryTestablePermissionsCallable() {
     return stub.queryTestablePermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of services that allow you to opt into audit logs that are not generated by
+   * default.
+   *
+   * <p>To learn more about audit logs, see the [Logging
+   * documentation](https://cloud.google.com/logging/docs/audit).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryAuditableServicesRequest request =
+   *       QueryAuditableServicesRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .build();
+   *   QueryAuditableServicesResponse response = iAMClient.queryAuditableServices(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryAuditableServicesResponse queryAuditableServices(
+      QueryAuditableServicesRequest request) {
+    return queryAuditableServicesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of services that allow you to opt into audit logs that are not generated by
+   * default.
+   *
+   * <p>To learn more about audit logs, see the [Logging
+   * documentation](https://cloud.google.com/logging/docs/audit).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryAuditableServicesRequest request =
+   *       QueryAuditableServicesRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .build();
+   *   ApiFuture<QueryAuditableServicesResponse> future =
+   *       iAMClient.queryAuditableServicesCallable().futureCall(request);
+   *   // Do something.
+   *   QueryAuditableServicesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesCallable() {
+    return stub.queryAuditableServicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lints, or validates, an IAM policy. Currently checks the
+   * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a
+   * condition expression for a role binding.
+   *
+   * <p>Successful calls to this method always return an HTTP `200 OK` status code, even if the
+   * linter detects an issue in the IAM policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   LintPolicyRequest request =
+   *       LintPolicyRequest.newBuilder().setFullResourceName("fullResourceName-853732376").build();
+   *   LintPolicyResponse response = iAMClient.lintPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LintPolicyResponse lintPolicy(LintPolicyRequest request) {
+    return lintPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lints, or validates, an IAM policy. Currently checks the
+   * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a
+   * condition expression for a role binding.
+   *
+   * <p>Successful calls to this method always return an HTTP `200 OK` status code, even if the
+   * linter detects an issue in the IAM policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   LintPolicyRequest request =
+   *       LintPolicyRequest.newBuilder().setFullResourceName("fullResourceName-853732376").build();
+   *   ApiFuture<LintPolicyResponse> future = iAMClient.lintPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   LintPolicyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LintPolicyRequest, LintPolicyResponse> lintPolicyCallable() {
+    return stub.lintPolicyCallable();
   }
 
   @Override

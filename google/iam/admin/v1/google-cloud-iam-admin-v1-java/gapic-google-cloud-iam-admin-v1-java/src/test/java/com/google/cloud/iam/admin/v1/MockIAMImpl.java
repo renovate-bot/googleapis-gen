@@ -23,16 +23,23 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
 import com.google.iam.admin.v1.GetServiceAccountRequest;
 import com.google.iam.admin.v1.IAMGrpc.IAMImplBase;
+import com.google.iam.admin.v1.LintPolicyRequest;
+import com.google.iam.admin.v1.LintPolicyResponse;
 import com.google.iam.admin.v1.ListRolesRequest;
 import com.google.iam.admin.v1.ListRolesResponse;
 import com.google.iam.admin.v1.ListServiceAccountKeysRequest;
 import com.google.iam.admin.v1.ListServiceAccountKeysResponse;
 import com.google.iam.admin.v1.ListServiceAccountsRequest;
 import com.google.iam.admin.v1.ListServiceAccountsResponse;
+import com.google.iam.admin.v1.PatchServiceAccountRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesResponse;
 import com.google.iam.admin.v1.QueryGrantableRolesRequest;
 import com.google.iam.admin.v1.QueryGrantableRolesResponse;
 import com.google.iam.admin.v1.QueryTestablePermissionsRequest;
@@ -45,7 +52,10 @@ import com.google.iam.admin.v1.SignBlobResponse;
 import com.google.iam.admin.v1.SignJwtRequest;
 import com.google.iam.admin.v1.SignJwtResponse;
 import com.google.iam.admin.v1.UndeleteRoleRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountResponse;
 import com.google.iam.admin.v1.UpdateRoleRequest;
+import com.google.iam.admin.v1.UploadServiceAccountKeyRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -178,6 +188,27 @@ public class MockIAMImpl extends IAMImplBase {
   }
 
   @Override
+  public void patchServiceAccount(
+      PatchServiceAccountRequest request, StreamObserver<ServiceAccount> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ServiceAccount) {
+      requests.add(request);
+      responseObserver.onNext(((ServiceAccount) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchServiceAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ServiceAccount.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteServiceAccount(
       DeleteServiceAccountRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
@@ -192,6 +223,70 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteServiceAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void undeleteServiceAccount(
+      UndeleteServiceAccountRequest request,
+      StreamObserver<UndeleteServiceAccountResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UndeleteServiceAccountResponse) {
+      requests.add(request);
+      responseObserver.onNext(((UndeleteServiceAccountResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeleteServiceAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UndeleteServiceAccountResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void enableServiceAccount(
+      EnableServiceAccountRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableServiceAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void disableServiceAccount(
+      DisableServiceAccountRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -256,6 +351,27 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateServiceAccountKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ServiceAccountKey.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void uploadServiceAccountKey(
+      UploadServiceAccountKeyRequest request, StreamObserver<ServiceAccountKey> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ServiceAccountKey) {
+      requests.add(request);
+      responseObserver.onNext(((ServiceAccountKey) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UploadServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceAccountKey.class.getName(),
                   Exception.class.getName())));
@@ -546,6 +662,49 @@ public class MockIAMImpl extends IAMImplBase {
                   "Unrecognized response type %s for method QueryTestablePermissions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryTestablePermissionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryAuditableServices(
+      QueryAuditableServicesRequest request,
+      StreamObserver<QueryAuditableServicesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryAuditableServicesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryAuditableServicesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryAuditableServices, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryAuditableServicesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void lintPolicy(
+      LintPolicyRequest request, StreamObserver<LintPolicyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LintPolicyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((LintPolicyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LintPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LintPolicyResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

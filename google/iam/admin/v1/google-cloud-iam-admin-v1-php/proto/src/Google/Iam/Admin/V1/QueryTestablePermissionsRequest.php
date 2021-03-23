@@ -27,6 +27,7 @@ class QueryTestablePermissionsRequest extends \Google\Protobuf\Internal\Message
     protected $full_resource_name = '';
     /**
      * Optional limit on the number of permissions to include in the response.
+     * The default is 100, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
@@ -53,6 +54,7 @@ class QueryTestablePermissionsRequest extends \Google\Protobuf\Internal\Message
      *           `//cloudresourcemanager.googleapis.com/projects/my-project`.
      *     @type int $page_size
      *           Optional limit on the number of permissions to include in the response.
+     *           The default is 100, and the maximum is 1,000.
      *     @type string $page_token
      *           Optional pagination token returned in an earlier
      *           QueryTestablePermissionsRequest.
@@ -99,6 +101,7 @@ class QueryTestablePermissionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional limit on the number of permissions to include in the response.
+     * The default is 100, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @return int
@@ -110,6 +113,7 @@ class QueryTestablePermissionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional limit on the number of permissions to include in the response.
+     * The default is 100, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @param int $var

@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const admin = require('admin');
+const admin = require('@google-cloud/admin');
 
 function main() {
   const iAMClient = new admin.IAMClient();

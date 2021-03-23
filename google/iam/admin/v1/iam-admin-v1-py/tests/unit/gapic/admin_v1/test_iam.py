@@ -812,7 +812,11 @@ def test_get_service_account(transport: str = 'grpc', request_type=iam.GetServic
 
             etag=b'etag_blob',
 
+            description='description_value',
+
             oauth2_client_id='oauth2_client_id_value',
+
+            disabled=True,
 
         )
 
@@ -840,7 +844,11 @@ def test_get_service_account(transport: str = 'grpc', request_type=iam.GetServic
 
     assert response.etag == b'etag_blob'
 
+    assert response.description == 'description_value'
+
     assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
 
 
 def test_get_service_account_from_dict():
@@ -888,7 +896,9 @@ async def test_get_service_account_async(transport: str = 'grpc_asyncio', reques
             email='email_value',
             display_name='display_name_value',
             etag=b'etag_blob',
+            description='description_value',
             oauth2_client_id='oauth2_client_id_value',
+            disabled=True,
         ))
 
         response = await client.get_service_account(request)
@@ -914,7 +924,11 @@ async def test_get_service_account_async(transport: str = 'grpc_asyncio', reques
 
     assert response.etag == b'etag_blob'
 
+    assert response.description == 'description_value'
+
     assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
 
 
 @pytest.mark.asyncio
@@ -1096,7 +1110,11 @@ def test_create_service_account(transport: str = 'grpc', request_type=iam.Create
 
             etag=b'etag_blob',
 
+            description='description_value',
+
             oauth2_client_id='oauth2_client_id_value',
+
+            disabled=True,
 
         )
 
@@ -1124,7 +1142,11 @@ def test_create_service_account(transport: str = 'grpc', request_type=iam.Create
 
     assert response.etag == b'etag_blob'
 
+    assert response.description == 'description_value'
+
     assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
 
 
 def test_create_service_account_from_dict():
@@ -1172,7 +1194,9 @@ async def test_create_service_account_async(transport: str = 'grpc_asyncio', req
             email='email_value',
             display_name='display_name_value',
             etag=b'etag_blob',
+            description='description_value',
             oauth2_client_id='oauth2_client_id_value',
+            disabled=True,
         ))
 
         response = await client.create_service_account(request)
@@ -1198,7 +1222,11 @@ async def test_create_service_account_async(transport: str = 'grpc_asyncio', req
 
     assert response.etag == b'etag_blob'
 
+    assert response.description == 'description_value'
+
     assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
 
 
 @pytest.mark.asyncio
@@ -1396,7 +1424,11 @@ def test_update_service_account(transport: str = 'grpc', request_type=iam.Servic
 
             etag=b'etag_blob',
 
+            description='description_value',
+
             oauth2_client_id='oauth2_client_id_value',
+
+            disabled=True,
 
         )
 
@@ -1424,7 +1456,11 @@ def test_update_service_account(transport: str = 'grpc', request_type=iam.Servic
 
     assert response.etag == b'etag_blob'
 
+    assert response.description == 'description_value'
+
     assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
 
 
 def test_update_service_account_from_dict():
@@ -1472,7 +1508,9 @@ async def test_update_service_account_async(transport: str = 'grpc_asyncio', req
             email='email_value',
             display_name='display_name_value',
             etag=b'etag_blob',
+            description='description_value',
             oauth2_client_id='oauth2_client_id_value',
+            disabled=True,
         ))
 
         response = await client.update_service_account(request)
@@ -1498,7 +1536,11 @@ async def test_update_service_account_async(transport: str = 'grpc_asyncio', req
 
     assert response.etag == b'etag_blob'
 
+    assert response.description == 'description_value'
+
     assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
 
 
 @pytest.mark.asyncio
@@ -1566,6 +1608,221 @@ async def test_update_service_account_field_headers_async():
     assert (
         'x-goog-request-params',
         'name=name/value',
+    ) in kw['metadata']
+
+
+def test_patch_service_account(transport: str = 'grpc', request_type=iam.PatchServiceAccountRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = iam.ServiceAccount(
+            name='name_value',
+
+            project_id='project_id_value',
+
+            unique_id='unique_id_value',
+
+            email='email_value',
+
+            display_name='display_name_value',
+
+            etag=b'etag_blob',
+
+            description='description_value',
+
+            oauth2_client_id='oauth2_client_id_value',
+
+            disabled=True,
+
+        )
+
+        response = client.patch_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.PatchServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, iam.ServiceAccount)
+
+    assert response.name == 'name_value'
+
+    assert response.project_id == 'project_id_value'
+
+    assert response.unique_id == 'unique_id_value'
+
+    assert response.email == 'email_value'
+
+    assert response.display_name == 'display_name_value'
+
+    assert response.etag == b'etag_blob'
+
+    assert response.description == 'description_value'
+
+    assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
+
+
+def test_patch_service_account_from_dict():
+    test_patch_service_account(request_type=dict)
+
+
+def test_patch_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_service_account),
+            '__call__') as call:
+        client.patch_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.PatchServiceAccountRequest()
+
+@pytest.mark.asyncio
+async def test_patch_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.PatchServiceAccountRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.ServiceAccount(
+            name='name_value',
+            project_id='project_id_value',
+            unique_id='unique_id_value',
+            email='email_value',
+            display_name='display_name_value',
+            etag=b'etag_blob',
+            description='description_value',
+            oauth2_client_id='oauth2_client_id_value',
+            disabled=True,
+        ))
+
+        response = await client.patch_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.PatchServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, iam.ServiceAccount)
+
+    assert response.name == 'name_value'
+
+    assert response.project_id == 'project_id_value'
+
+    assert response.unique_id == 'unique_id_value'
+
+    assert response.email == 'email_value'
+
+    assert response.display_name == 'display_name_value'
+
+    assert response.etag == b'etag_blob'
+
+    assert response.description == 'description_value'
+
+    assert response.oauth2_client_id == 'oauth2_client_id_value'
+
+    assert response.disabled is True
+
+
+@pytest.mark.asyncio
+async def test_patch_service_account_async_from_dict():
+    await test_patch_service_account_async(request_type=dict)
+
+
+def test_patch_service_account_field_headers():
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.PatchServiceAccountRequest()
+    request.service_account.name = 'service_account.name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_service_account),
+            '__call__') as call:
+        call.return_value = iam.ServiceAccount()
+
+        client.patch_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'service_account.name=service_account.name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_patch_service_account_field_headers_async():
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.PatchServiceAccountRequest()
+    request.service_account.name = 'service_account.name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_service_account),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.ServiceAccount())
+
+        await client.patch_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'service_account.name=service_account.name/value',
     ) in kw['metadata']
 
 
@@ -1799,6 +2056,456 @@ async def test_delete_service_account_flattened_error_async():
             iam.DeleteServiceAccountRequest(),
             name='name_value',
         )
+
+
+def test_undelete_service_account(transport: str = 'grpc', request_type=iam.UndeleteServiceAccountRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = iam.UndeleteServiceAccountResponse(
+        )
+
+        response = client.undelete_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UndeleteServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, iam.UndeleteServiceAccountResponse)
+
+
+def test_undelete_service_account_from_dict():
+    test_undelete_service_account(request_type=dict)
+
+
+def test_undelete_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_service_account),
+            '__call__') as call:
+        client.undelete_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UndeleteServiceAccountRequest()
+
+@pytest.mark.asyncio
+async def test_undelete_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.UndeleteServiceAccountRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.UndeleteServiceAccountResponse(
+        ))
+
+        response = await client.undelete_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UndeleteServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, iam.UndeleteServiceAccountResponse)
+
+
+@pytest.mark.asyncio
+async def test_undelete_service_account_async_from_dict():
+    await test_undelete_service_account_async(request_type=dict)
+
+
+def test_undelete_service_account_field_headers():
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.UndeleteServiceAccountRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_service_account),
+            '__call__') as call:
+        call.return_value = iam.UndeleteServiceAccountResponse()
+
+        client.undelete_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_undelete_service_account_field_headers_async():
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.UndeleteServiceAccountRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_service_account),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.UndeleteServiceAccountResponse())
+
+        await client.undelete_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+def test_enable_service_account(transport: str = 'grpc', request_type=iam.EnableServiceAccountRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = None
+
+        response = client.enable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.EnableServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+def test_enable_service_account_from_dict():
+    test_enable_service_account(request_type=dict)
+
+
+def test_enable_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_service_account),
+            '__call__') as call:
+        client.enable_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.EnableServiceAccountRequest()
+
+@pytest.mark.asyncio
+async def test_enable_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.EnableServiceAccountRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
+        response = await client.enable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.EnableServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+@pytest.mark.asyncio
+async def test_enable_service_account_async_from_dict():
+    await test_enable_service_account_async(request_type=dict)
+
+
+def test_enable_service_account_field_headers():
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.EnableServiceAccountRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_service_account),
+            '__call__') as call:
+        call.return_value = None
+
+        client.enable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_enable_service_account_field_headers_async():
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.EnableServiceAccountRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_service_account),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
+        await client.enable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+def test_disable_service_account(transport: str = 'grpc', request_type=iam.DisableServiceAccountRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = None
+
+        response = client.disable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.DisableServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+def test_disable_service_account_from_dict():
+    test_disable_service_account(request_type=dict)
+
+
+def test_disable_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_service_account),
+            '__call__') as call:
+        client.disable_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.DisableServiceAccountRequest()
+
+@pytest.mark.asyncio
+async def test_disable_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.DisableServiceAccountRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_service_account),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
+        response = await client.disable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.DisableServiceAccountRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+@pytest.mark.asyncio
+async def test_disable_service_account_async_from_dict():
+    await test_disable_service_account_async(request_type=dict)
+
+
+def test_disable_service_account_field_headers():
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.DisableServiceAccountRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_service_account),
+            '__call__') as call:
+        call.return_value = None
+
+        client.disable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_disable_service_account_field_headers_async():
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.DisableServiceAccountRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_service_account),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
+        await client.disable_service_account(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
 
 
 def test_list_service_account_keys(transport: str = 'grpc', request_type=iam.ListServiceAccountKeysRequest):
@@ -2070,6 +2777,10 @@ def test_get_service_account_key(transport: str = 'grpc', request_type=iam.GetSe
 
             public_key_data=b'public_key_data_blob',
 
+            key_origin=iam.ServiceAccountKeyOrigin.USER_PROVIDED,
+
+            key_type=iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED,
+
         )
 
         response = client.get_service_account_key(request)
@@ -2093,6 +2804,10 @@ def test_get_service_account_key(transport: str = 'grpc', request_type=iam.GetSe
     assert response.private_key_data == b'private_key_data_blob'
 
     assert response.public_key_data == b'public_key_data_blob'
+
+    assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
+
+    assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
 
 
 def test_get_service_account_key_from_dict():
@@ -2139,6 +2854,8 @@ async def test_get_service_account_key_async(transport: str = 'grpc_asyncio', re
             key_algorithm=iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024,
             private_key_data=b'private_key_data_blob',
             public_key_data=b'public_key_data_blob',
+            key_origin=iam.ServiceAccountKeyOrigin.USER_PROVIDED,
+            key_type=iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED,
         ))
 
         response = await client.get_service_account_key(request)
@@ -2161,6 +2878,10 @@ async def test_get_service_account_key_async(transport: str = 'grpc_asyncio', re
     assert response.private_key_data == b'private_key_data_blob'
 
     assert response.public_key_data == b'public_key_data_blob'
+
+    assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
+
+    assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
 
 
 @pytest.mark.asyncio
@@ -2348,6 +3069,10 @@ def test_create_service_account_key(transport: str = 'grpc', request_type=iam.Cr
 
             public_key_data=b'public_key_data_blob',
 
+            key_origin=iam.ServiceAccountKeyOrigin.USER_PROVIDED,
+
+            key_type=iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED,
+
         )
 
         response = client.create_service_account_key(request)
@@ -2371,6 +3096,10 @@ def test_create_service_account_key(transport: str = 'grpc', request_type=iam.Cr
     assert response.private_key_data == b'private_key_data_blob'
 
     assert response.public_key_data == b'public_key_data_blob'
+
+    assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
+
+    assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
 
 
 def test_create_service_account_key_from_dict():
@@ -2417,6 +3146,8 @@ async def test_create_service_account_key_async(transport: str = 'grpc_asyncio',
             key_algorithm=iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024,
             private_key_data=b'private_key_data_blob',
             public_key_data=b'public_key_data_blob',
+            key_origin=iam.ServiceAccountKeyOrigin.USER_PROVIDED,
+            key_type=iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED,
         ))
 
         response = await client.create_service_account_key(request)
@@ -2439,6 +3170,10 @@ async def test_create_service_account_key_async(transport: str = 'grpc_asyncio',
     assert response.private_key_data == b'private_key_data_blob'
 
     assert response.public_key_data == b'public_key_data_blob'
+
+    assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
+
+    assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
 
 
 @pytest.mark.asyncio
@@ -2606,6 +3341,207 @@ async def test_create_service_account_key_flattened_error_async():
             private_key_type=iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE,
             key_algorithm=iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024,
         )
+
+
+def test_upload_service_account_key(transport: str = 'grpc', request_type=iam.UploadServiceAccountKeyRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.upload_service_account_key),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = iam.ServiceAccountKey(
+            name='name_value',
+
+            private_key_type=iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE,
+
+            key_algorithm=iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024,
+
+            private_key_data=b'private_key_data_blob',
+
+            public_key_data=b'public_key_data_blob',
+
+            key_origin=iam.ServiceAccountKeyOrigin.USER_PROVIDED,
+
+            key_type=iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED,
+
+        )
+
+        response = client.upload_service_account_key(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UploadServiceAccountKeyRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, iam.ServiceAccountKey)
+
+    assert response.name == 'name_value'
+
+    assert response.private_key_type == iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE
+
+    assert response.key_algorithm == iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024
+
+    assert response.private_key_data == b'private_key_data_blob'
+
+    assert response.public_key_data == b'public_key_data_blob'
+
+    assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
+
+    assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
+
+
+def test_upload_service_account_key_from_dict():
+    test_upload_service_account_key(request_type=dict)
+
+
+def test_upload_service_account_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.upload_service_account_key),
+            '__call__') as call:
+        client.upload_service_account_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UploadServiceAccountKeyRequest()
+
+@pytest.mark.asyncio
+async def test_upload_service_account_key_async(transport: str = 'grpc_asyncio', request_type=iam.UploadServiceAccountKeyRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.upload_service_account_key),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.ServiceAccountKey(
+            name='name_value',
+            private_key_type=iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE,
+            key_algorithm=iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024,
+            private_key_data=b'private_key_data_blob',
+            public_key_data=b'public_key_data_blob',
+            key_origin=iam.ServiceAccountKeyOrigin.USER_PROVIDED,
+            key_type=iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED,
+        ))
+
+        response = await client.upload_service_account_key(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UploadServiceAccountKeyRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, iam.ServiceAccountKey)
+
+    assert response.name == 'name_value'
+
+    assert response.private_key_type == iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE
+
+    assert response.key_algorithm == iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024
+
+    assert response.private_key_data == b'private_key_data_blob'
+
+    assert response.public_key_data == b'public_key_data_blob'
+
+    assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
+
+    assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
+
+
+@pytest.mark.asyncio
+async def test_upload_service_account_key_async_from_dict():
+    await test_upload_service_account_key_async(request_type=dict)
+
+
+def test_upload_service_account_key_field_headers():
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.UploadServiceAccountKeyRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.upload_service_account_key),
+            '__call__') as call:
+        call.return_value = iam.ServiceAccountKey()
+
+        client.upload_service_account_key(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_upload_service_account_key_field_headers_async():
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = iam.UploadServiceAccountKeyRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.upload_service_account_key),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.ServiceAccountKey())
+
+        await client.upload_service_account_key(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
 
 
 def test_delete_service_account_key(transport: str = 'grpc', request_type=iam.DeleteServiceAccountKeyRequest):
@@ -6081,6 +7017,184 @@ async def test_query_testable_permissions_async_pages():
             assert page_.raw_page.next_page_token == token
 
 
+def test_query_auditable_services(transport: str = 'grpc', request_type=iam.QueryAuditableServicesRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query_auditable_services),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = iam.QueryAuditableServicesResponse(
+        )
+
+        response = client.query_auditable_services(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.QueryAuditableServicesRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, iam.QueryAuditableServicesResponse)
+
+
+def test_query_auditable_services_from_dict():
+    test_query_auditable_services(request_type=dict)
+
+
+def test_query_auditable_services_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query_auditable_services),
+            '__call__') as call:
+        client.query_auditable_services()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.QueryAuditableServicesRequest()
+
+@pytest.mark.asyncio
+async def test_query_auditable_services_async(transport: str = 'grpc_asyncio', request_type=iam.QueryAuditableServicesRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query_auditable_services),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.QueryAuditableServicesResponse(
+        ))
+
+        response = await client.query_auditable_services(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.QueryAuditableServicesRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, iam.QueryAuditableServicesResponse)
+
+
+@pytest.mark.asyncio
+async def test_query_auditable_services_async_from_dict():
+    await test_query_auditable_services_async(request_type=dict)
+
+
+def test_lint_policy(transport: str = 'grpc', request_type=iam.LintPolicyRequest):
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.lint_policy),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = iam.LintPolicyResponse(
+        )
+
+        response = client.lint_policy(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.LintPolicyRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, iam.LintPolicyResponse)
+
+
+def test_lint_policy_from_dict():
+    test_lint_policy(request_type=dict)
+
+
+def test_lint_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.lint_policy),
+            '__call__') as call:
+        client.lint_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.LintPolicyRequest()
+
+@pytest.mark.asyncio
+async def test_lint_policy_async(transport: str = 'grpc_asyncio', request_type=iam.LintPolicyRequest):
+    client = IAMAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.lint_policy),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam.LintPolicyResponse(
+        ))
+
+        response = await client.lint_policy(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.LintPolicyRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, iam.LintPolicyResponse)
+
+
+@pytest.mark.asyncio
+async def test_lint_policy_async_from_dict():
+    await test_lint_policy_async(request_type=dict)
+
+
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.IAMGrpcTransport(
@@ -6184,10 +7298,15 @@ def test_iam_base_transport():
         'get_service_account',
         'create_service_account',
         'update_service_account',
+        'patch_service_account',
         'delete_service_account',
+        'undelete_service_account',
+        'enable_service_account',
+        'disable_service_account',
         'list_service_account_keys',
         'get_service_account_key',
         'create_service_account_key',
+        'upload_service_account_key',
         'delete_service_account_key',
         'sign_blob',
         'sign_jwt',
@@ -6202,6 +7321,8 @@ def test_iam_base_transport():
         'delete_role',
         'undelete_role',
         'query_testable_permissions',
+        'query_auditable_services',
+        'lint_policy',
         )
     for method in methods:
         with pytest.raises(NotImplementedError):

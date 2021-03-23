@@ -30,6 +30,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
     protected $view = 0;
     /**
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
@@ -56,6 +57,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
      *     @type int $view
      *     @type int $page_size
      *           Optional limit on the number of roles to include in the response.
+     *           The default is 300, and the maximum is 1,000.
      *     @type string $page_token
      *           Optional pagination token returned in an earlier
      *           QueryGrantableRolesResponse.
@@ -122,6 +124,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      * @return int
@@ -133,6 +136,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      * @param int $var

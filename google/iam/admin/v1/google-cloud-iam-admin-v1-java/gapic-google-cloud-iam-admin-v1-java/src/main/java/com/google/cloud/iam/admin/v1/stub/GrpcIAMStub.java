@@ -35,15 +35,22 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
 import com.google.iam.admin.v1.GetServiceAccountRequest;
+import com.google.iam.admin.v1.LintPolicyRequest;
+import com.google.iam.admin.v1.LintPolicyResponse;
 import com.google.iam.admin.v1.ListRolesRequest;
 import com.google.iam.admin.v1.ListRolesResponse;
 import com.google.iam.admin.v1.ListServiceAccountKeysRequest;
 import com.google.iam.admin.v1.ListServiceAccountKeysResponse;
 import com.google.iam.admin.v1.ListServiceAccountsRequest;
 import com.google.iam.admin.v1.ListServiceAccountsResponse;
+import com.google.iam.admin.v1.PatchServiceAccountRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesResponse;
 import com.google.iam.admin.v1.QueryGrantableRolesRequest;
 import com.google.iam.admin.v1.QueryGrantableRolesResponse;
 import com.google.iam.admin.v1.QueryTestablePermissionsRequest;
@@ -56,7 +63,10 @@ import com.google.iam.admin.v1.SignBlobResponse;
 import com.google.iam.admin.v1.SignJwtRequest;
 import com.google.iam.admin.v1.SignJwtResponse;
 import com.google.iam.admin.v1.UndeleteRoleRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountResponse;
 import com.google.iam.admin.v1.UpdateRoleRequest;
+import com.google.iam.admin.v1.UploadServiceAccountKeyRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -119,6 +129,16 @@ public class GrpcIAMStub extends IAMStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<PatchServiceAccountRequest, ServiceAccount>
+      patchServiceAccountMethodDescriptor =
+          MethodDescriptor.<PatchServiceAccountRequest, ServiceAccount>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/PatchServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PatchServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteServiceAccountRequest, Empty>
       deleteServiceAccountMethodDescriptor =
           MethodDescriptor.<DeleteServiceAccountRequest, Empty>newBuilder()
@@ -126,6 +146,39 @@ public class GrpcIAMStub extends IAMStub {
               .setFullMethodName("google.iam.admin.v1.IAM/DeleteServiceAccount")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountMethodDescriptor =
+          MethodDescriptor
+              .<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/UndeleteServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UndeleteServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UndeleteServiceAccountResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<EnableServiceAccountRequest, Empty>
+      enableServiceAccountMethodDescriptor =
+          MethodDescriptor.<EnableServiceAccountRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/EnableServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DisableServiceAccountRequest, Empty>
+      disableServiceAccountMethodDescriptor =
+          MethodDescriptor.<DisableServiceAccountRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/DisableServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DisableServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
@@ -159,6 +212,16 @@ public class GrpcIAMStub extends IAMStub {
               .setFullMethodName("google.iam.admin.v1.IAM/CreateServiceAccountKey")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceAccountKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccountKey.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeyMethodDescriptor =
+          MethodDescriptor.<UploadServiceAccountKeyRequest, ServiceAccountKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/UploadServiceAccountKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UploadServiceAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccountKey.getDefaultInstance()))
               .build();
 
@@ -289,6 +352,28 @@ public class GrpcIAMStub extends IAMStub {
                   ProtoUtils.marshaller(QueryTestablePermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesMethodDescriptor =
+          MethodDescriptor
+              .<QueryAuditableServicesRequest, QueryAuditableServicesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/QueryAuditableServices")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryAuditableServicesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryAuditableServicesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<LintPolicyRequest, LintPolicyResponse>
+      lintPolicyMethodDescriptor =
+          MethodDescriptor.<LintPolicyRequest, LintPolicyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/LintPolicy")
+              .setRequestMarshaller(ProtoUtils.marshaller(LintPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LintPolicyResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsResponse>
       listServiceAccountsCallable;
   private final UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsPagedResponse>
@@ -297,13 +382,21 @@ public class GrpcIAMStub extends IAMStub {
   private final UnaryCallable<CreateServiceAccountRequest, ServiceAccount>
       createServiceAccountCallable;
   private final UnaryCallable<ServiceAccount, ServiceAccount> updateServiceAccountCallable;
+  private final UnaryCallable<PatchServiceAccountRequest, ServiceAccount>
+      patchServiceAccountCallable;
   private final UnaryCallable<DeleteServiceAccountRequest, Empty> deleteServiceAccountCallable;
+  private final UnaryCallable<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountCallable;
+  private final UnaryCallable<EnableServiceAccountRequest, Empty> enableServiceAccountCallable;
+  private final UnaryCallable<DisableServiceAccountRequest, Empty> disableServiceAccountCallable;
   private final UnaryCallable<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
       listServiceAccountKeysCallable;
   private final UnaryCallable<GetServiceAccountKeyRequest, ServiceAccountKey>
       getServiceAccountKeyCallable;
   private final UnaryCallable<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeyCallable;
+  private final UnaryCallable<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeyCallable;
   private final UnaryCallable<DeleteServiceAccountKeyRequest, Empty>
       deleteServiceAccountKeyCallable;
   private final UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable;
@@ -328,6 +421,9 @@ public class GrpcIAMStub extends IAMStub {
   private final UnaryCallable<
           QueryTestablePermissionsRequest, QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsPagedCallable;
+  private final UnaryCallable<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesCallable;
+  private final UnaryCallable<LintPolicyRequest, LintPolicyResponse> lintPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -420,6 +516,22 @@ public class GrpcIAMStub extends IAMStub {
                   }
                 })
             .build();
+    GrpcCallSettings<PatchServiceAccountRequest, ServiceAccount>
+        patchServiceAccountTransportSettings =
+            GrpcCallSettings.<PatchServiceAccountRequest, ServiceAccount>newBuilder()
+                .setMethodDescriptor(patchServiceAccountMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchServiceAccountRequest>() {
+                      @Override
+                      public Map<String, String> extract(PatchServiceAccountRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "service_account.name",
+                            String.valueOf(request.getServiceAccount().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<DeleteServiceAccountRequest, Empty> deleteServiceAccountTransportSettings =
         GrpcCallSettings.<DeleteServiceAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteServiceAccountMethodDescriptor)
@@ -427,6 +539,47 @@ public class GrpcIAMStub extends IAMStub {
                 new RequestParamsExtractor<DeleteServiceAccountRequest>() {
                   @Override
                   public Map<String, String> extract(DeleteServiceAccountRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+        undeleteServiceAccountTransportSettings =
+            GrpcCallSettings
+                .<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>newBuilder()
+                .setMethodDescriptor(undeleteServiceAccountMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UndeleteServiceAccountRequest>() {
+                      @Override
+                      public Map<String, String> extract(UndeleteServiceAccountRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<EnableServiceAccountRequest, Empty> enableServiceAccountTransportSettings =
+        GrpcCallSettings.<EnableServiceAccountRequest, Empty>newBuilder()
+            .setMethodDescriptor(enableServiceAccountMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<EnableServiceAccountRequest>() {
+                  @Override
+                  public Map<String, String> extract(EnableServiceAccountRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DisableServiceAccountRequest, Empty> disableServiceAccountTransportSettings =
+        GrpcCallSettings.<DisableServiceAccountRequest, Empty>newBuilder()
+            .setMethodDescriptor(disableServiceAccountMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DisableServiceAccountRequest>() {
+                  @Override
+                  public Map<String, String> extract(DisableServiceAccountRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -470,6 +623,20 @@ public class GrpcIAMStub extends IAMStub {
                     new RequestParamsExtractor<CreateServiceAccountKeyRequest>() {
                       @Override
                       public Map<String, String> extract(CreateServiceAccountKeyRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UploadServiceAccountKeyRequest, ServiceAccountKey>
+        uploadServiceAccountKeyTransportSettings =
+            GrpcCallSettings.<UploadServiceAccountKeyRequest, ServiceAccountKey>newBuilder()
+                .setMethodDescriptor(uploadServiceAccountKeyMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UploadServiceAccountKeyRequest>() {
+                      @Override
+                      public Map<String, String> extract(UploadServiceAccountKeyRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("name", String.valueOf(request.getName()));
                         return params.build();
@@ -636,6 +803,16 @@ public class GrpcIAMStub extends IAMStub {
                 .<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>newBuilder()
                 .setMethodDescriptor(queryTestablePermissionsMethodDescriptor)
                 .build();
+    GrpcCallSettings<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+        queryAuditableServicesTransportSettings =
+            GrpcCallSettings
+                .<QueryAuditableServicesRequest, QueryAuditableServicesResponse>newBuilder()
+                .setMethodDescriptor(queryAuditableServicesMethodDescriptor)
+                .build();
+    GrpcCallSettings<LintPolicyRequest, LintPolicyResponse> lintPolicyTransportSettings =
+        GrpcCallSettings.<LintPolicyRequest, LintPolicyResponse>newBuilder()
+            .setMethodDescriptor(lintPolicyMethodDescriptor)
+            .build();
 
     this.listServiceAccountsCallable =
         callableFactory.createUnaryCallable(
@@ -662,10 +839,30 @@ public class GrpcIAMStub extends IAMStub {
             updateServiceAccountTransportSettings,
             settings.updateServiceAccountSettings(),
             clientContext);
+    this.patchServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            patchServiceAccountTransportSettings,
+            settings.patchServiceAccountSettings(),
+            clientContext);
     this.deleteServiceAccountCallable =
         callableFactory.createUnaryCallable(
             deleteServiceAccountTransportSettings,
             settings.deleteServiceAccountSettings(),
+            clientContext);
+    this.undeleteServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            undeleteServiceAccountTransportSettings,
+            settings.undeleteServiceAccountSettings(),
+            clientContext);
+    this.enableServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            enableServiceAccountTransportSettings,
+            settings.enableServiceAccountSettings(),
+            clientContext);
+    this.disableServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            disableServiceAccountTransportSettings,
+            settings.disableServiceAccountSettings(),
             clientContext);
     this.listServiceAccountKeysCallable =
         callableFactory.createUnaryCallable(
@@ -681,6 +878,11 @@ public class GrpcIAMStub extends IAMStub {
         callableFactory.createUnaryCallable(
             createServiceAccountKeyTransportSettings,
             settings.createServiceAccountKeySettings(),
+            clientContext);
+    this.uploadServiceAccountKeyCallable =
+        callableFactory.createUnaryCallable(
+            uploadServiceAccountKeyTransportSettings,
+            settings.uploadServiceAccountKeySettings(),
             clientContext);
     this.deleteServiceAccountKeyCallable =
         callableFactory.createUnaryCallable(
@@ -745,6 +947,14 @@ public class GrpcIAMStub extends IAMStub {
             queryTestablePermissionsTransportSettings,
             settings.queryTestablePermissionsSettings(),
             clientContext);
+    this.queryAuditableServicesCallable =
+        callableFactory.createUnaryCallable(
+            queryAuditableServicesTransportSettings,
+            settings.queryAuditableServicesSettings(),
+            clientContext);
+    this.lintPolicyCallable =
+        callableFactory.createUnaryCallable(
+            lintPolicyTransportSettings, settings.lintPolicySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -782,8 +992,29 @@ public class GrpcIAMStub extends IAMStub {
   }
 
   @Override
+  public UnaryCallable<PatchServiceAccountRequest, ServiceAccount> patchServiceAccountCallable() {
+    return patchServiceAccountCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteServiceAccountRequest, Empty> deleteServiceAccountCallable() {
     return deleteServiceAccountCallable;
+  }
+
+  @Override
+  public UnaryCallable<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountCallable() {
+    return undeleteServiceAccountCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableServiceAccountRequest, Empty> enableServiceAccountCallable() {
+    return enableServiceAccountCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableServiceAccountRequest, Empty> disableServiceAccountCallable() {
+    return disableServiceAccountCallable;
   }
 
   @Override
@@ -802,6 +1033,12 @@ public class GrpcIAMStub extends IAMStub {
   public UnaryCallable<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeyCallable() {
     return createServiceAccountKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeyCallable() {
+    return uploadServiceAccountKeyCallable;
   }
 
   @Override
@@ -892,6 +1129,17 @@ public class GrpcIAMStub extends IAMStub {
   public UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsPagedCallable() {
     return queryTestablePermissionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesCallable() {
+    return queryAuditableServicesCallable;
+  }
+
+  @Override
+  public UnaryCallable<LintPolicyRequest, LintPolicyResponse> lintPolicyCallable() {
+    return lintPolicyCallable;
   }
 
   @Override

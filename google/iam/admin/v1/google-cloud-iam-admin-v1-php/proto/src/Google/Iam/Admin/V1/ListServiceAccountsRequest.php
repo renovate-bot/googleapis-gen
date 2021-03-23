@@ -27,6 +27,7 @@ class ListServiceAccountsRequest extends \Google\Protobuf\Internal\Message
      * response. Further accounts can subsequently be obtained by including the
      * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      * in a subsequent request.
+     * The default is 20, and the maximum is 100.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
@@ -53,6 +54,7 @@ class ListServiceAccountsRequest extends \Google\Protobuf\Internal\Message
      *           response. Further accounts can subsequently be obtained by including the
      *           [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      *           in a subsequent request.
+     *           The default is 20, and the maximum is 100.
      *     @type string $page_token
      *           Optional pagination token returned in an earlier
      *           [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token].
@@ -96,6 +98,7 @@ class ListServiceAccountsRequest extends \Google\Protobuf\Internal\Message
      * response. Further accounts can subsequently be obtained by including the
      * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      * in a subsequent request.
+     * The default is 20, and the maximum is 100.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @return int
@@ -110,6 +113,7 @@ class ListServiceAccountsRequest extends \Google\Protobuf\Internal\Message
      * response. Further accounts can subsequently be obtained by including the
      * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      * in a subsequent request.
+     * The default is 20, and the maximum is 100.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @param int $var

@@ -20,6 +20,7 @@ import proto  # type: ignore
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.type import expr_pb2 as expr  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -28,6 +29,7 @@ __protobuf__ = proto.module(
         'ServiceAccountKeyAlgorithm',
         'ServiceAccountPrivateKeyType',
         'ServiceAccountPublicKeyType',
+        'ServiceAccountKeyOrigin',
         'RoleView',
         'ServiceAccount',
         'CreateServiceAccountRequest',
@@ -35,11 +37,17 @@ __protobuf__ = proto.module(
         'ListServiceAccountsResponse',
         'GetServiceAccountRequest',
         'DeleteServiceAccountRequest',
+        'PatchServiceAccountRequest',
+        'UndeleteServiceAccountRequest',
+        'UndeleteServiceAccountResponse',
+        'EnableServiceAccountRequest',
+        'DisableServiceAccountRequest',
         'ListServiceAccountKeysRequest',
         'ListServiceAccountKeysResponse',
         'GetServiceAccountKeyRequest',
         'ServiceAccountKey',
         'CreateServiceAccountKeyRequest',
+        'UploadServiceAccountKeyRequest',
         'DeleteServiceAccountKeyRequest',
         'SignBlobRequest',
         'SignBlobResponse',
@@ -58,6 +66,11 @@ __protobuf__ = proto.module(
         'Permission',
         'QueryTestablePermissionsRequest',
         'QueryTestablePermissionsResponse',
+        'QueryAuditableServicesRequest',
+        'QueryAuditableServicesResponse',
+        'LintPolicyRequest',
+        'LintResult',
+        'LintPolicyResponse',
     },
 )
 
@@ -83,6 +96,13 @@ class ServiceAccountPublicKeyType(proto.Enum):
     TYPE_RAW_PUBLIC_KEY = 2
 
 
+class ServiceAccountKeyOrigin(proto.Enum):
+    r"""Service Account Key Origin."""
+    ORIGIN_UNSPECIFIED = 0
+    USER_PROVIDED = 1
+    GOOGLE_PROVIDED = 2
+
+
 class RoleView(proto.Enum):
     r"""A view for Role objects."""
     BASIC = 0
@@ -90,58 +110,71 @@ class RoleView(proto.Enum):
 
 
 class ServiceAccount(proto.Message):
-    r"""A service account in the Identity and Access Management API.
+    r"""An IAM service account.
 
-    To create a service account, specify the ``project_id`` and the
-    ``account_id`` for the account. The ``account_id`` is unique within
-    the project, and is used to generate the service account email
-    address and a stable ``unique_id``.
+    A service account is an account for an application or a virtual
+    machine (VM) instance, not a person. You can use a service account
+    to call Google APIs. To learn more, read the `overview of service
+    accounts <https://cloud.google.com/iam/help/service-accounts/overview>`__.
 
-    If the account already exists, the account's resource name is
-    returned in the format of
-    projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The caller can use
-    the name in other methods to access the account.
-
-    All other methods can identify the service account using the format
-    ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``. Using ``-`` as
-    a wildcard for the ``PROJECT_ID`` will infer the project from the
-    account. The ``ACCOUNT`` value can be the ``email`` address or the
-    ``unique_id`` of the service account.
+    When you create a service account, you specify the project ID that
+    owns the service account, as well as a name that must be unique
+    within the project. IAM uses these values to create an email address
+    that identifies the service account.
 
     Attributes:
         name (str):
-            The resource name of the service account in the following
-            format: ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            The resource name of the service account.
 
-            Requests using ``-`` as a wildcard for the ``PROJECT_ID``
-            will infer the project from the ``account`` and the
-            ``ACCOUNT`` value can be the ``email`` address or the
-            ``unique_id`` of the service account.
+            Use one of the following formats:
 
-            In responses the resource name will always be in the format
-            ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            -  ``projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}``
+            -  ``projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}``
+
+            As an alternative, you can use the ``-`` wildcard character
+            instead of the project ID:
+
+            -  ``projects/-/serviceAccounts/{EMAIL_ADDRESS}``
+            -  ``projects/-/serviceAccounts/{UNIQUE_ID}``
+
+            When possible, avoid using the ``-`` wildcard character,
+            because it can cause response messages to contain misleading
+            error codes. For example, if you try to get the service
+            account ``projects/-/serviceAccounts/fake@example.com``,
+            which does not exist, the response contains an HTTP
+            ``403 Forbidden`` error instead of a ``404 Not Found``
+            error.
         project_id (str):
-            @OutputOnly The id of the project that owns
+            Output only. The ID of the project that owns
             the service account.
         unique_id (str):
-            @OutputOnly The unique and stable id of the
-            service account.
+            Output only. The unique, stable numeric ID
+            for the service account.
+            Each service account retains its unique ID even
+            if you delete the service account. For example,
+            if you delete a service account, then create a
+            new service account with the same name, the new
+            service account has a different unique ID than
+            the deleted service account.
         email (str):
-            @OutputOnly The email address of the service
+            Output only. The email address of the service
             account.
         display_name (str):
-            Optional. A user-specified name for the
-            service account. Must be less than or equal to
-            100 UTF-8 bytes.
+            Optional. A user-specified, human-readable
+            name for the service account. The maximum length
+            is 100 UTF-8 bytes.
         etag (bytes):
-            Optional. Note: ``etag`` is an inoperable legacy field that
-            is only returned for backwards compatibility.
+            Deprecated. Do not use.
+        description (str):
+            Optional. A user-specified, human-readable
+            description of the service account. The maximum
+            length is 256 UTF-8 bytes.
         oauth2_client_id (str):
-            @OutputOnly. The OAuth2 client id for the
-            service account. This is used in conjunction
-            with the OAuth2 clientconfig API to make three
-            legged OAuth2 (3LO) flows to access the data of
-            Google users.
+            Output only. The OAuth 2.0 client ID for the
+            service account.
+        disabled (bool):
+            Output only. Whether the service account is
+            disabled.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -156,7 +189,11 @@ class ServiceAccount(proto.Message):
 
     etag = proto.Field(proto.BYTES, number=7)
 
+    description = proto.Field(proto.STRING, number=8)
+
     oauth2_client_id = proto.Field(proto.STRING, number=9)
+
+    disabled = proto.Field(proto.BOOL, number=11)
 
 
 class CreateServiceAccountRequest(proto.Message):
@@ -200,6 +237,8 @@ class ListServiceAccountsRequest(proto.Message):
             obtained by including the
             [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
             in a subsequent request.
+
+            The default is 20, and the maximum is 100.
         page_token (str):
             Optional pagination token returned in an earlier
             [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token].
@@ -263,6 +302,93 @@ class DeleteServiceAccountRequest(proto.Message):
             ``-`` as a wildcard for the ``PROJECT_ID`` will infer the
             project from the account. The ``ACCOUNT`` value can be the
             ``email`` address or the ``unique_id`` of the service
+            account.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+
+class PatchServiceAccountRequest(proto.Message):
+    r"""The request for
+    [PatchServiceAccount][google.iam.admin.v1.PatchServiceAccount].
+
+    You can patch only the ``display_name`` and ``description`` fields.
+    You must use the ``update_mask`` field to specify which of these
+    fields you want to patch.
+
+    Only the fields specified in the request are guaranteed to be
+    returned in the response. Other fields may be empty in the response.
+
+    Attributes:
+        service_account (google.iam.admin_v1.types.ServiceAccount):
+
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+
+    """
+
+    service_account = proto.Field(proto.MESSAGE, number=1,
+        message='ServiceAccount',
+    )
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
+        message=field_mask.FieldMask,
+    )
+
+
+class UndeleteServiceAccountRequest(proto.Message):
+    r"""The service account undelete request.
+
+    Attributes:
+        name (str):
+            The resource name of the service account in the following
+            format:
+            ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}``.
+            Using ``-`` as a wildcard for the ``PROJECT_ID`` will infer
+            the project from the account.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+
+class UndeleteServiceAccountResponse(proto.Message):
+    r"""
+
+    Attributes:
+        restored_account (google.iam.admin_v1.types.ServiceAccount):
+            Metadata for the restored service account.
+    """
+
+    restored_account = proto.Field(proto.MESSAGE, number=1,
+        message='ServiceAccount',
+    )
+
+
+class EnableServiceAccountRequest(proto.Message):
+    r"""The service account enable request.
+
+    Attributes:
+        name (str):
+            The resource name of the service account in the following
+            format: ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            Using ``-`` as a wildcard for the ``PROJECT_ID`` will infer
+            the project from the account. The ``ACCOUNT`` value can be
+            the ``email`` address or the ``unique_id`` of the service
+            account.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+
+class DisableServiceAccountRequest(proto.Message):
+    r"""The service account disable request.
+
+    Attributes:
+        name (str):
+            The resource name of the service account in the following
+            format: ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            Using ``-`` as a wildcard for the ``PROJECT_ID`` will infer
+            the project from the account. The ``ACCOUNT`` value can be
+            the ``email`` address or the ``unique_id`` of the service
             account.
     """
 
@@ -355,9 +481,16 @@ class ServiceAccountKey(proto.Message):
     System-managed keys are automatically rotated by Google, and are
     used for signing for a maximum of two weeks. The rotation
     process is probabilistic, and usage of the new key will
-    gradually ramp up and down over the key's lifetime. We recommend
-    caching the public key set for a service account for no more
-    than 24 hours to ensure you have access to the latest keys.
+    gradually ramp up and down over the key's lifetime.
+
+    If you cache the public key set for a service account, we
+    recommend that you update the cache every 15 minutes. User-
+    managed keys can be added and removed at any time, so it is
+    important to update the cache frequently. For Google-managed
+    keys, Google will publish a key at least 6 hours before it is
+    first used for signing and will keep publishing it for at least
+    6 hours after it was last used for signing.
+
     Public keys for all service accounts are also published at the
     OAuth2 Service Account API.
 
@@ -397,6 +530,10 @@ class ServiceAccountKey(proto.Message):
             operation. The public key could still be used
             for verification for a few hours after this
             time.
+        key_origin (google.iam.admin_v1.types.ServiceAccountKeyOrigin):
+            The key origin.
+        key_type (google.iam.admin_v1.types.ListServiceAccountKeysRequest.KeyType):
+            The key type.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -419,6 +556,14 @@ class ServiceAccountKey(proto.Message):
 
     valid_before_time = proto.Field(proto.MESSAGE, number=5,
         message=timestamp.Timestamp,
+    )
+
+    key_origin = proto.Field(proto.ENUM, number=9,
+        enum='ServiceAccountKeyOrigin',
+    )
+
+    key_type = proto.Field(proto.ENUM, number=10,
+        enum='ListServiceAccountKeysRequest.KeyType',
     )
 
 
@@ -455,6 +600,29 @@ class CreateServiceAccountKeyRequest(proto.Message):
     )
 
 
+class UploadServiceAccountKeyRequest(proto.Message):
+    r"""The service account key upload request.
+
+    Attributes:
+        name (str):
+            The resource name of the service account in the following
+            format: ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            Using ``-`` as a wildcard for the ``PROJECT_ID`` will infer
+            the project from the account. The ``ACCOUNT`` value can be
+            the ``email`` address or the ``unique_id`` of the service
+            account.
+        public_key_data (bytes):
+            A field that allows clients to upload their own public key.
+            If set, use this public key data to create a service account
+            key for given service account. Please note, the expected
+            format for this field is X509_PEM.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+    public_key_data = proto.Field(proto.BYTES, number=2)
+
+
 class DeleteServiceAccountKeyRequest(proto.Message):
     r"""The service account key delete request.
 
@@ -473,19 +641,29 @@ class DeleteServiceAccountKeyRequest(proto.Message):
 
 
 class SignBlobRequest(proto.Message):
-    r"""The service account sign blob request.
+    r"""Deprecated. `Migrate to Service Account Credentials
+    API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+    The service account sign blob request.
 
     Attributes:
         name (str):
-            Required. The resource name of the service account in the
-            following format:
-            ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``. Using
-            ``-`` as a wildcard for the ``PROJECT_ID`` will infer the
-            project from the account. The ``ACCOUNT`` value can be the
-            ``email`` address or the ``unique_id`` of the service
+            Required. Deprecated. `Migrate to Service Account
+            Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+            The resource name of the service account in the following
+            format: ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            Using ``-`` as a wildcard for the ``PROJECT_ID`` will infer
+            the project from the account. The ``ACCOUNT`` value can be
+            the ``email`` address or the ``unique_id`` of the service
             account.
         bytes_to_sign (bytes):
-            Required. The bytes to sign.
+            Required. Deprecated. `Migrate to Service Account
+            Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+            The bytes to sign.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -494,12 +672,21 @@ class SignBlobRequest(proto.Message):
 
 
 class SignBlobResponse(proto.Message):
-    r"""The service account sign blob response.
+    r"""Deprecated. `Migrate to Service Account Credentials
+    API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+    The service account sign blob response.
 
     Attributes:
         key_id (str):
+            Deprecated. `Migrate to Service Account Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
             The id of the key used to sign the blob.
         signature (bytes):
+            Deprecated. `Migrate to Service Account Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
             The signed blob.
     """
 
@@ -509,20 +696,39 @@ class SignBlobResponse(proto.Message):
 
 
 class SignJwtRequest(proto.Message):
-    r"""The service account sign JWT request.
+    r"""Deprecated. `Migrate to Service Account Credentials
+    API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+    The service account sign JWT request.
 
     Attributes:
         name (str):
-            Required. The resource name of the service account in the
-            following format:
-            ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``. Using
-            ``-`` as a wildcard for the ``PROJECT_ID`` will infer the
-            project from the account. The ``ACCOUNT`` value can be the
-            ``email`` address or the ``unique_id`` of the service
+            Required. Deprecated. `Migrate to Service Account
+            Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+            The resource name of the service account in the following
+            format: ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
+            Using ``-`` as a wildcard for the ``PROJECT_ID`` will infer
+            the project from the account. The ``ACCOUNT`` value can be
+            the ``email`` address or the ``unique_id`` of the service
             account.
         payload (str):
-            Required. The JWT payload to sign, a JSON JWT
-            Claim set.
+            Required. Deprecated. `Migrate to Service Account
+            Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+            The JWT payload to sign. Must be a serialized JSON object
+            that contains a JWT Claims Set. For example:
+            ``{"sub": "user@example.com", "iat": 313435}``
+
+            If the JWT Claims Set contains an expiration time (``exp``)
+            claim, it must be an integer timestamp that is not in the
+            past and no more than 1 hour in the future.
+
+            If the JWT Claims Set does not contain an expiration time
+            (``exp``) claim, this claim is added automatically, with a
+            timestamp that is 1 hour in the future.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -531,12 +737,21 @@ class SignJwtRequest(proto.Message):
 
 
 class SignJwtResponse(proto.Message):
-    r"""The service account sign JWT response.
+    r"""Deprecated. `Migrate to Service Account Credentials
+    API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+    The service account sign JWT response.
 
     Attributes:
         key_id (str):
+            Deprecated. `Migrate to Service Account Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
             The id of the key used to sign the JWT.
         signed_jwt (str):
+            Deprecated. `Migrate to Service Account Credentials
+            API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
             The signed JWT.
     """
 
@@ -626,6 +841,7 @@ class QueryGrantableRolesRequest(proto.Message):
         page_size (int):
             Optional limit on the number of roles to
             include in the response.
+            The default is 300, and the maximum is 1,000.
         page_token (str):
             Optional pagination token returned in an
             earlier QueryGrantableRolesResponse.
@@ -703,6 +919,7 @@ class ListRolesRequest(proto.Message):
         page_size (int):
             Optional limit on the number of roles to
             include in the response.
+            The default is 300, and the maximum is 1,000.
         page_token (str):
             Optional pagination token returned in an
             earlier ListRolesResponse.
@@ -823,6 +1040,10 @@ class CreateRoleRequest(proto.Message):
             complete project ID or organization ID.
         role_id (str):
             The role ID to use for this role.
+
+            A role ID may contain alphanumeric characters, underscores
+            (``_``), and periods (``.``). It must contain a minimum of 3
+            characters and a maximum of 64 characters.
         role (google.iam.admin_v1.types.Role):
             The Role resource to create.
     """
@@ -974,12 +1195,18 @@ class Permission(proto.Message):
             is used for. This permission can ONLY be used in
             predefined roles.
         only_in_predefined_roles (bool):
-            This permission can ONLY be used in
-            predefined roles.
+
         stage (google.iam.admin_v1.types.Permission.PermissionLaunchStage):
             The current launch stage of the permission.
         custom_roles_support_level (google.iam.admin_v1.types.Permission.CustomRolesSupportLevel):
             The current custom role support level.
+        api_disabled (bool):
+            The service API associated with the
+            permission is not enabled.
+        primary_permission (str):
+            The preferred name for this permission. If present, then
+            this permission is an alias of, and equivalent to, the
+            listed primary_permission.
     """
     class PermissionLaunchStage(proto.Enum):
         r"""A stage representing a permission's lifecycle phase."""
@@ -1010,6 +1237,10 @@ class Permission(proto.Message):
         enum=CustomRolesSupportLevel,
     )
 
+    api_disabled = proto.Field(proto.BOOL, number=7)
+
+    primary_permission = proto.Field(proto.STRING, number=8)
+
 
 class QueryTestablePermissionsRequest(proto.Message):
     r"""A request to get permissions which can be tested on a
@@ -1027,6 +1258,7 @@ class QueryTestablePermissionsRequest(proto.Message):
         page_size (int):
             Optional limit on the number of permissions
             to include in the response.
+            The default is 100, and the maximum is 1,000.
         page_token (str):
             Optional pagination token returned in an
             earlier QueryTestablePermissionsRequest.
@@ -1061,6 +1293,154 @@ class QueryTestablePermissionsResponse(proto.Message):
     )
 
     next_page_token = proto.Field(proto.STRING, number=2)
+
+
+class QueryAuditableServicesRequest(proto.Message):
+    r"""A request to get the list of auditable services for a
+    resource.
+
+    Attributes:
+        full_resource_name (str):
+            Required. The full resource name to query from the list of
+            auditable services.
+
+            The name follows the Google Cloud Platform resource format.
+            For example, a Cloud Platform project with id ``my-project``
+            will be named
+            ``//cloudresourcemanager.googleapis.com/projects/my-project``.
+    """
+
+    full_resource_name = proto.Field(proto.STRING, number=1)
+
+
+class QueryAuditableServicesResponse(proto.Message):
+    r"""A response containing a list of auditable services for a
+    resource.
+
+    Attributes:
+        services (Sequence[google.iam.admin_v1.types.QueryAuditableServicesResponse.AuditableService]):
+            The auditable services for a resource.
+    """
+    class AuditableService(proto.Message):
+        r"""Contains information about an auditable service.
+
+        Attributes:
+            name (str):
+                Public name of the service.
+                For example, the service name for Cloud IAM is
+                'iam.googleapis.com'.
+        """
+
+        name = proto.Field(proto.STRING, number=1)
+
+    services = proto.RepeatedField(proto.MESSAGE, number=1,
+        message=AuditableService,
+    )
+
+
+class LintPolicyRequest(proto.Message):
+    r"""The request to lint a Cloud IAM policy object.
+
+    Attributes:
+        full_resource_name (str):
+            The full resource name of the policy this lint request is
+            about.
+
+            The name follows the Google Cloud Platform (GCP) resource
+            format. For example, a GCP project with ID ``my-project``
+            will be named
+            ``//cloudresourcemanager.googleapis.com/projects/my-project``.
+
+            The resource name is not used to read the policy instance
+            from the Cloud IAM database. The candidate policy for lint
+            has to be provided in the same request object.
+        condition (google.type.expr_pb2.Expr):
+            [google.iam.v1.Binding.condition]
+            [google.iam.v1.Binding.condition] object to be linted.
+    """
+
+    full_resource_name = proto.Field(proto.STRING, number=1)
+
+    condition = proto.Field(proto.MESSAGE, number=5, oneof='lint_object',
+        message=expr.Expr,
+    )
+
+
+class LintResult(proto.Message):
+    r"""Structured response of a single validation unit.
+
+    Attributes:
+        level (google.iam.admin_v1.types.LintResult.Level):
+            The validation unit level.
+        validation_unit_name (str):
+            The validation unit name, for instance
+            "lintValidationUnits/ConditionComplexityCheck".
+        severity (google.iam.admin_v1.types.LintResult.Severity):
+            The validation unit severity.
+        field_name (str):
+            The name of the field for which this lint result is about.
+
+            For nested messages ``field_name`` consists of names of the
+            embedded fields separated by period character. The top-level
+            qualifier is the input object to lint in the request. For
+            example, the ``field_name`` value ``condition.expression``
+            identifies a lint result for the ``expression`` field of the
+            provided condition.
+        location_offset (int):
+            0-based character position of problematic construct within
+            the object identified by ``field_name``. Currently, this is
+            populated only for condition expression.
+        debug_message (str):
+            Human readable debug message associated with
+            the issue.
+    """
+    class Level(proto.Enum):
+        r"""Possible Level values of a validation unit corresponding to
+        its domain of discourse.
+        """
+        LEVEL_UNSPECIFIED = 0
+        CONDITION = 3
+
+    class Severity(proto.Enum):
+        r"""Possible Severity values of an issued result."""
+        SEVERITY_UNSPECIFIED = 0
+        ERROR = 1
+        WARNING = 2
+        NOTICE = 3
+        INFO = 4
+        DEPRECATED = 5
+
+    level = proto.Field(proto.ENUM, number=1,
+        enum=Level,
+    )
+
+    validation_unit_name = proto.Field(proto.STRING, number=2)
+
+    severity = proto.Field(proto.ENUM, number=3,
+        enum=Severity,
+    )
+
+    field_name = proto.Field(proto.STRING, number=5)
+
+    location_offset = proto.Field(proto.INT32, number=6)
+
+    debug_message = proto.Field(proto.STRING, number=7)
+
+
+class LintPolicyResponse(proto.Message):
+    r"""The response of a lint operation. An empty response indicates
+    the operation was able to fully execute and no lint issue was
+    found.
+
+    Attributes:
+        lint_results (Sequence[google.iam.admin_v1.types.LintResult]):
+            List of lint results sorted by ``severity`` in descending
+            order.
+    """
+
+    lint_results = proto.RepeatedField(proto.MESSAGE, number=1,
+        message='LintResult',
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

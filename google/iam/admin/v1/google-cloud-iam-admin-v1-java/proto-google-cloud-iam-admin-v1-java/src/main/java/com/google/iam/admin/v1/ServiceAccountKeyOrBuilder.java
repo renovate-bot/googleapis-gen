@@ -163,4 +163,42 @@ public interface ServiceAccountKeyOrBuilder extends
    * <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getValidBeforeTimeOrBuilder();
+
+  /**
+   * <pre>
+   * The key origin.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+   * @return The enum numeric value on the wire for keyOrigin.
+   */
+  int getKeyOriginValue();
+  /**
+   * <pre>
+   * The key origin.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+   * @return The keyOrigin.
+   */
+  com.google.iam.admin.v1.ServiceAccountKeyOrigin getKeyOrigin();
+
+  /**
+   * <pre>
+   * The key type.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+   * @return The enum numeric value on the wire for keyType.
+   */
+  int getKeyTypeValue();
+  /**
+   * <pre>
+   * The key type.
+   * </pre>
+   *
+   * <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+   * @return The keyType.
+   */
+  com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyType();
 }

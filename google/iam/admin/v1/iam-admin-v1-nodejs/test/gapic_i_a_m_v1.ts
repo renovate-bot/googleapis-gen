@@ -417,6 +417,93 @@ describe('v1.IAMClient', () => {
         });
     });
 
+    describe('patchServiceAccount', () => {
+        it('invokes patchServiceAccount without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.PatchServiceAccountRequest());
+            request.serviceAccount = {};
+            request.serviceAccount.name = '';
+            const expectedHeaderRequestParams = "service_account.name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.ServiceAccount());
+            client.innerApiCalls.patchServiceAccount = stubSimpleCall(expectedResponse);
+            const [response] = await client.patchServiceAccount(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.patchServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes patchServiceAccount without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.PatchServiceAccountRequest());
+            request.serviceAccount = {};
+            request.serviceAccount.name = '';
+            const expectedHeaderRequestParams = "service_account.name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.ServiceAccount());
+            client.innerApiCalls.patchServiceAccount = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.patchServiceAccount(
+                    request,
+                    (err?: Error|null, result?: protos.google.iam.admin.v1.IServiceAccount|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.patchServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes patchServiceAccount with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.PatchServiceAccountRequest());
+            request.serviceAccount = {};
+            request.serviceAccount.name = '';
+            const expectedHeaderRequestParams = "service_account.name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.patchServiceAccount = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.patchServiceAccount(request), expectedError);
+            assert((client.innerApiCalls.patchServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
     describe('deleteServiceAccount', () => {
         it('invokes deleteServiceAccount without error', async () => {
             const client = new iamModule.v1.IAMClient({
@@ -497,6 +584,258 @@ describe('v1.IAMClient', () => {
             client.innerApiCalls.deleteServiceAccount = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteServiceAccount(request), expectedError);
             assert((client.innerApiCalls.deleteServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('undeleteServiceAccount', () => {
+        it('invokes undeleteServiceAccount without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.UndeleteServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.UndeleteServiceAccountResponse());
+            client.innerApiCalls.undeleteServiceAccount = stubSimpleCall(expectedResponse);
+            const [response] = await client.undeleteServiceAccount(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.undeleteServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes undeleteServiceAccount without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.UndeleteServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.UndeleteServiceAccountResponse());
+            client.innerApiCalls.undeleteServiceAccount = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.undeleteServiceAccount(
+                    request,
+                    (err?: Error|null, result?: protos.google.iam.admin.v1.IUndeleteServiceAccountResponse|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.undeleteServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes undeleteServiceAccount with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.UndeleteServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.undeleteServiceAccount = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.undeleteServiceAccount(request), expectedError);
+            assert((client.innerApiCalls.undeleteServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('enableServiceAccount', () => {
+        it('invokes enableServiceAccount without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.EnableServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.enableServiceAccount = stubSimpleCall(expectedResponse);
+            const [response] = await client.enableServiceAccount(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.enableServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes enableServiceAccount without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.EnableServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.enableServiceAccount = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.enableServiceAccount(
+                    request,
+                    (err?: Error|null, result?: protos.google.protobuf.IEmpty|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.enableServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes enableServiceAccount with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.EnableServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.enableServiceAccount = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.enableServiceAccount(request), expectedError);
+            assert((client.innerApiCalls.enableServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('disableServiceAccount', () => {
+        it('invokes disableServiceAccount without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.DisableServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.disableServiceAccount = stubSimpleCall(expectedResponse);
+            const [response] = await client.disableServiceAccount(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.disableServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes disableServiceAccount without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.DisableServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.disableServiceAccount = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.disableServiceAccount(
+                    request,
+                    (err?: Error|null, result?: protos.google.protobuf.IEmpty|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.disableServiceAccount as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes disableServiceAccount with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.DisableServiceAccountRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.disableServiceAccount = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.disableServiceAccount(request), expectedError);
+            assert((client.innerApiCalls.disableServiceAccount as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
     });
@@ -749,6 +1088,90 @@ describe('v1.IAMClient', () => {
             client.innerApiCalls.createServiceAccountKey = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createServiceAccountKey(request), expectedError);
             assert((client.innerApiCalls.createServiceAccountKey as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('uploadServiceAccountKey', () => {
+        it('invokes uploadServiceAccountKey without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.UploadServiceAccountKeyRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.ServiceAccountKey());
+            client.innerApiCalls.uploadServiceAccountKey = stubSimpleCall(expectedResponse);
+            const [response] = await client.uploadServiceAccountKey(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.uploadServiceAccountKey as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes uploadServiceAccountKey without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.UploadServiceAccountKeyRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.ServiceAccountKey());
+            client.innerApiCalls.uploadServiceAccountKey = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.uploadServiceAccountKey(
+                    request,
+                    (err?: Error|null, result?: protos.google.iam.admin.v1.IServiceAccountKey|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.uploadServiceAccountKey as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes uploadServiceAccountKey with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.UploadServiceAccountKeyRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.uploadServiceAccountKey = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.uploadServiceAccountKey(request), expectedError);
+            assert((client.innerApiCalls.uploadServiceAccountKey as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
     });
@@ -1673,6 +2096,126 @@ describe('v1.IAMClient', () => {
             client.innerApiCalls.undeleteRole = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.undeleteRole(request), expectedError);
             assert((client.innerApiCalls.undeleteRole as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('queryAuditableServices', () => {
+        it('invokes queryAuditableServices without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesRequest());
+            const expectedOptions = {};
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesResponse());
+            client.innerApiCalls.queryAuditableServices = stubSimpleCall(expectedResponse);
+            const [response] = await client.queryAuditableServices(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.queryAuditableServices as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes queryAuditableServices without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesRequest());
+            const expectedOptions = {};
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesResponse());
+            client.innerApiCalls.queryAuditableServices = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.queryAuditableServices(
+                    request,
+                    (err?: Error|null, result?: protos.google.iam.admin.v1.IQueryAuditableServicesResponse|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.queryAuditableServices as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes queryAuditableServices with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesRequest());
+            const expectedOptions = {};
+            const expectedError = new Error('expected');
+            client.innerApiCalls.queryAuditableServices = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.queryAuditableServices(request), expectedError);
+            assert((client.innerApiCalls.queryAuditableServices as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('lintPolicy', () => {
+        it('invokes lintPolicy without error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyRequest());
+            const expectedOptions = {};
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyResponse());
+            client.innerApiCalls.lintPolicy = stubSimpleCall(expectedResponse);
+            const [response] = await client.lintPolicy(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.lintPolicy as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes lintPolicy without error using callback', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyRequest());
+            const expectedOptions = {};
+            const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyResponse());
+            client.innerApiCalls.lintPolicy = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.lintPolicy(
+                    request,
+                    (err?: Error|null, result?: protos.google.iam.admin.v1.ILintPolicyResponse|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.lintPolicy as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes lintPolicy with error', async () => {
+            const client = new iamModule.v1.IAMClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyRequest());
+            const expectedOptions = {};
+            const expectedError = new Error('expected');
+            client.innerApiCalls.lintPolicy = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.lintPolicy(request), expectedError);
+            assert((client.innerApiCalls.lintPolicy as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
     });

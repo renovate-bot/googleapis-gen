@@ -5,6 +5,8 @@ package com.google.iam.admin.v1;
 
 /**
  * <pre>
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign JWT request.
  * </pre>
  *
@@ -102,18 +104,20 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The resource name of the service account in the following format:
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getName() {
+  @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -127,18 +131,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the service account in the following format:
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -156,14 +162,23 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object payload_;
   /**
    * <pre>
-   * Required. The JWT payload to sign, a JSON JWT Claim set.
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The JWT payload to sign. Must be a serialized JSON object that contains a
+   * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+   * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+   * an integer timestamp that is not in the past and no more than 1 hour in the
+   * future.
+   * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+   * this claim is added automatically, with a timestamp that is 1 hour in the
+   * future.
    * </pre>
    *
-   * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    * @return The payload.
    */
   @java.lang.Override
-  public java.lang.String getPayload() {
+  @java.lang.Deprecated public java.lang.String getPayload() {
     java.lang.Object ref = payload_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -177,14 +192,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The JWT payload to sign, a JSON JWT Claim set.
+   * Required. Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   * The JWT payload to sign. Must be a serialized JSON object that contains a
+   * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+   * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+   * an integer timestamp that is not in the past and no more than 1 hour in the
+   * future.
+   * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+   * this claim is added automatically, with a timestamp that is 1 hour in the
+   * future.
    * </pre>
    *
-   * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for payload.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getPayloadBytes() {
     java.lang.Object ref = payload_;
     if (ref instanceof java.lang.String) {
@@ -364,6 +388,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The service account sign JWT request.
    * </pre>
    *
@@ -524,17 +550,19 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
-    public java.lang.String getName() {
+    @java.lang.Deprecated public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -548,17 +576,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
@@ -573,18 +603,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    @java.lang.Deprecated public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -596,17 +628,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    @java.lang.Deprecated public Builder clearName() {
       
       name_ = getDefaultInstance().getName();
       onChanged();
@@ -614,18 +648,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the service account in the following format:
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The resource name of the service account in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    @java.lang.Deprecated public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -640,13 +676,22 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object payload_ = "";
     /**
      * <pre>
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      * </pre>
      *
-     * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return The payload.
      */
-    public java.lang.String getPayload() {
+    @java.lang.Deprecated public java.lang.String getPayload() {
       java.lang.Object ref = payload_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -660,13 +705,22 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      * </pre>
      *
-     * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for payload.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getPayloadBytes() {
       java.lang.Object ref = payload_;
       if (ref instanceof String) {
@@ -681,14 +735,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      * </pre>
      *
-     * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param value The payload to set.
      * @return This builder for chaining.
      */
-    public Builder setPayload(
+    @java.lang.Deprecated public Builder setPayload(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -700,13 +763,22 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      * </pre>
      *
-     * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
-    public Builder clearPayload() {
+    @java.lang.Deprecated public Builder clearPayload() {
       
       payload_ = getDefaultInstance().getPayload();
       onChanged();
@@ -714,14 +786,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The JWT payload to sign, a JSON JWT Claim set.
+     * Required. Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     * The JWT payload to sign. Must be a serialized JSON object that contains a
+     * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+     * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
+     * an integer timestamp that is not in the past and no more than 1 hour in the
+     * future.
+     * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
+     * this claim is added automatically, with a timestamp that is 1 hour in the
+     * future.
      * </pre>
      *
-     * <code>string payload = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for payload to set.
      * @return This builder for chaining.
      */
-    public Builder setPayloadBytes(
+    @java.lang.Deprecated public Builder setPayloadBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

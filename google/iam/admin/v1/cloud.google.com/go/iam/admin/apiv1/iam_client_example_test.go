@@ -122,6 +122,26 @@ func ExampleIamClient_UpdateServiceAccount() {
 	_ = resp
 }
 
+func ExampleIamClient_PatchServiceAccount() {
+	// import adminpb "google.golang.org/genproto/googleapis/iam/admin/v1"
+
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.PatchServiceAccountRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.PatchServiceAccount(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleIamClient_DeleteServiceAccount() {
 	ctx := context.Background()
 	c, err := admin.NewIamClient(ctx)
@@ -133,6 +153,58 @@ func ExampleIamClient_DeleteServiceAccount() {
 		// TODO: Fill request struct fields.
 	}
 	err = c.DeleteServiceAccount(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleIamClient_UndeleteServiceAccount() {
+	// import adminpb "google.golang.org/genproto/googleapis/iam/admin/v1"
+
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.UndeleteServiceAccountRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UndeleteServiceAccount(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleIamClient_EnableServiceAccount() {
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.EnableServiceAccountRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.EnableServiceAccount(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleIamClient_DisableServiceAccount() {
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.DisableServiceAccountRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DisableServiceAccount(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}
@@ -191,6 +263,26 @@ func ExampleIamClient_CreateServiceAccountKey() {
 		// TODO: Fill request struct fields.
 	}
 	resp, err := c.CreateServiceAccountKey(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleIamClient_UploadServiceAccountKey() {
+	// import adminpb "google.golang.org/genproto/googleapis/iam/admin/v1"
+
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.UploadServiceAccountKeyRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UploadServiceAccountKey(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}
@@ -493,4 +585,44 @@ func ExampleIamClient_QueryTestablePermissions() {
 		// TODO: Use resp.
 		_ = resp
 	}
+}
+
+func ExampleIamClient_QueryAuditableServices() {
+	// import adminpb "google.golang.org/genproto/googleapis/iam/admin/v1"
+
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.QueryAuditableServicesRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.QueryAuditableServices(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleIamClient_LintPolicy() {
+	// import adminpb "google.golang.org/genproto/googleapis/iam/admin/v1"
+
+	ctx := context.Background()
+	c, err := admin.NewIamClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &adminpb.LintPolicyRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.LintPolicy(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
 }

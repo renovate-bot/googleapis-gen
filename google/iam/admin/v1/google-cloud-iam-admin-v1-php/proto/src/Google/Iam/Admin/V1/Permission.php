@@ -35,9 +35,8 @@ class Permission extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * This permission can ONLY be used in predefined roles.
-     *
-     * Generated from protobuf field <code>bool only_in_predefined_roles = 4;</code>
+     * Generated from protobuf field <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $only_in_predefined_roles = false;
     /**
@@ -52,6 +51,19 @@ class Permission extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.iam.admin.v1.Permission.CustomRolesSupportLevel custom_roles_support_level = 6;</code>
      */
     protected $custom_roles_support_level = 0;
+    /**
+     * The service API associated with the permission is not enabled.
+     *
+     * Generated from protobuf field <code>bool api_disabled = 7;</code>
+     */
+    protected $api_disabled = false;
+    /**
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     *
+     * Generated from protobuf field <code>string primary_permission = 8;</code>
+     */
+    protected $primary_permission = '';
 
     /**
      * Constructor.
@@ -67,11 +79,15 @@ class Permission extends \Google\Protobuf\Internal\Message
      *           A brief description of what this Permission is used for.
      *           This permission can ONLY be used in predefined roles.
      *     @type bool $only_in_predefined_roles
-     *           This permission can ONLY be used in predefined roles.
      *     @type int $stage
      *           The current launch stage of the permission.
      *     @type int $custom_roles_support_level
      *           The current custom role support level.
+     *     @type bool $api_disabled
+     *           The service API associated with the permission is not enabled.
+     *     @type string $primary_permission
+     *           The preferred name for this permission. If present, then this permission is
+     *           an alias of, and equivalent to, the listed primary_permission.
      * }
      */
     public function __construct($data = NULL) {
@@ -160,25 +176,25 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This permission can ONLY be used in predefined roles.
-     *
-     * Generated from protobuf field <code>bool only_in_predefined_roles = 4;</code>
+     * Generated from protobuf field <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getOnlyInPredefinedRoles()
     {
+        @trigger_error('only_in_predefined_roles is deprecated.', E_USER_DEPRECATED);
         return $this->only_in_predefined_roles;
     }
 
     /**
-     * This permission can ONLY be used in predefined roles.
-     *
-     * Generated from protobuf field <code>bool only_in_predefined_roles = 4;</code>
+     * Generated from protobuf field <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setOnlyInPredefinedRoles($var)
     {
+        @trigger_error('only_in_predefined_roles is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->only_in_predefined_roles = $var;
 
@@ -233,6 +249,60 @@ class Permission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Iam\Admin\V1\Permission\CustomRolesSupportLevel::class);
         $this->custom_roles_support_level = $var;
+
+        return $this;
+    }
+
+    /**
+     * The service API associated with the permission is not enabled.
+     *
+     * Generated from protobuf field <code>bool api_disabled = 7;</code>
+     * @return bool
+     */
+    public function getApiDisabled()
+    {
+        return $this->api_disabled;
+    }
+
+    /**
+     * The service API associated with the permission is not enabled.
+     *
+     * Generated from protobuf field <code>bool api_disabled = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setApiDisabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->api_disabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     *
+     * Generated from protobuf field <code>string primary_permission = 8;</code>
+     * @return string
+     */
+    public function getPrimaryPermission()
+    {
+        return $this->primary_permission;
+    }
+
+    /**
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     *
+     * Generated from protobuf field <code>string primary_permission = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrimaryPermission($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->primary_permission = $var;
 
         return $this;
     }

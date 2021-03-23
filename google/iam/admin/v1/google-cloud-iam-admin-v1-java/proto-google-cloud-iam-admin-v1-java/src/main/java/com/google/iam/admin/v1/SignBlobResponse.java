@@ -5,6 +5,8 @@ package com.google.iam.admin.v1;
 
 /**
  * <pre>
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign blob response.
  * </pre>
  *
@@ -101,14 +103,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object keyId_;
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the blob.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The keyId.
    */
   @java.lang.Override
-  public java.lang.String getKeyId() {
+  @java.lang.Deprecated public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -122,14 +126,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the blob.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The bytes for keyId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getKeyIdBytes() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -147,14 +153,16 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString signature_;
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The signed blob.
    * </pre>
    *
-   * <code>bytes signature = 2;</code>
+   * <code>bytes signature = 2 [deprecated = true];</code>
    * @return The signature.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getSignature() {
+  @java.lang.Deprecated public com.google.protobuf.ByteString getSignature() {
     return signature_;
   }
 
@@ -325,6 +333,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The service account sign blob response.
    * </pre>
    *
@@ -484,13 +494,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object keyId_ = "";
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the blob.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @return The keyId.
      */
-    public java.lang.String getKeyId() {
+    @java.lang.Deprecated public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -504,13 +516,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the blob.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @return The bytes for keyId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getKeyIdBytes() {
       java.lang.Object ref = keyId_;
       if (ref instanceof String) {
@@ -525,14 +539,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the blob.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @param value The keyId to set.
      * @return This builder for chaining.
      */
-    public Builder setKeyId(
+    @java.lang.Deprecated public Builder setKeyId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -544,13 +560,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the blob.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearKeyId() {
+    @java.lang.Deprecated public Builder clearKeyId() {
       
       keyId_ = getDefaultInstance().getKeyId();
       onChanged();
@@ -558,14 +576,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the blob.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @param value The bytes for keyId to set.
      * @return This builder for chaining.
      */
-    public Builder setKeyIdBytes(
+    @java.lang.Deprecated public Builder setKeyIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -580,26 +600,30 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed blob.
      * </pre>
      *
-     * <code>bytes signature = 2;</code>
+     * <code>bytes signature = 2 [deprecated = true];</code>
      * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getSignature() {
+    @java.lang.Deprecated public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed blob.
      * </pre>
      *
-     * <code>bytes signature = 2;</code>
+     * <code>bytes signature = 2 [deprecated = true];</code>
      * @param value The signature to set.
      * @return This builder for chaining.
      */
-    public Builder setSignature(com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -610,13 +634,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed blob.
      * </pre>
      *
-     * <code>bytes signature = 2;</code>
+     * <code>bytes signature = 2 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearSignature() {
+    @java.lang.Deprecated public Builder clearSignature() {
       
       signature_ = getDefaultInstance().getSignature();
       onChanged();

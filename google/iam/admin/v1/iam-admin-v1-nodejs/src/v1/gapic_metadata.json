@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
   "protoPackage": "google.iam.admin.v1",
-  "libraryPackage": "admin",
+  "libraryPackage": "@google-cloud/admin",
   "services": {
     "IAM": {
       "clients": {
@@ -25,9 +25,29 @@
                 "updateServiceAccount"
               ]
             },
+            "PatchServiceAccount": {
+              "methods": [
+                "patchServiceAccount"
+              ]
+            },
             "DeleteServiceAccount": {
               "methods": [
                 "deleteServiceAccount"
+              ]
+            },
+            "UndeleteServiceAccount": {
+              "methods": [
+                "undeleteServiceAccount"
+              ]
+            },
+            "EnableServiceAccount": {
+              "methods": [
+                "enableServiceAccount"
+              ]
+            },
+            "DisableServiceAccount": {
+              "methods": [
+                "disableServiceAccount"
               ]
             },
             "ListServiceAccountKeys": {
@@ -43,6 +63,11 @@
             "CreateServiceAccountKey": {
               "methods": [
                 "createServiceAccountKey"
+              ]
+            },
+            "UploadServiceAccountKey": {
+              "methods": [
+                "uploadServiceAccountKey"
               ]
             },
             "DeleteServiceAccountKey": {
@@ -98,6 +123,16 @@
             "UndeleteRole": {
               "methods": [
                 "undeleteRole"
+              ]
+            },
+            "QueryAuditableServices": {
+              "methods": [
+                "queryAuditableServices"
+              ]
+            },
+            "LintPolicy": {
+              "methods": [
+                "lintPolicy"
               ]
             },
             "ListServiceAccounts": {
@@ -148,9 +183,29 @@
                 "updateServiceAccount"
               ]
             },
+            "PatchServiceAccount": {
+              "methods": [
+                "patchServiceAccount"
+              ]
+            },
             "DeleteServiceAccount": {
               "methods": [
                 "deleteServiceAccount"
+              ]
+            },
+            "UndeleteServiceAccount": {
+              "methods": [
+                "undeleteServiceAccount"
+              ]
+            },
+            "EnableServiceAccount": {
+              "methods": [
+                "enableServiceAccount"
+              ]
+            },
+            "DisableServiceAccount": {
+              "methods": [
+                "disableServiceAccount"
               ]
             },
             "ListServiceAccountKeys": {
@@ -166,6 +221,11 @@
             "CreateServiceAccountKey": {
               "methods": [
                 "createServiceAccountKey"
+              ]
+            },
+            "UploadServiceAccountKey": {
+              "methods": [
+                "uploadServiceAccountKey"
               ]
             },
             "DeleteServiceAccountKey": {
@@ -221,6 +281,16 @@
             "UndeleteRole": {
               "methods": [
                 "undeleteRole"
+              ]
+            },
+            "QueryAuditableServices": {
+              "methods": [
+                "queryAuditableServices"
+              ]
+            },
+            "LintPolicy": {
+              "methods": [
+                "lintPolicy"
               ]
             },
             "ListServiceAccounts": {

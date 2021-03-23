@@ -70,14 +70,10 @@ public interface PermissionOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <pre>
-   * This permission can ONLY be used in predefined roles.
-   * </pre>
-   *
-   * <code>bool only_in_predefined_roles = 4;</code>
+   * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
    * @return The onlyInPredefinedRoles.
    */
-  boolean getOnlyInPredefinedRoles();
+  @java.lang.Deprecated boolean getOnlyInPredefinedRoles();
 
   /**
    * <pre>
@@ -116,4 +112,36 @@ public interface PermissionOrBuilder extends
    * @return The customRolesSupportLevel.
    */
   com.google.iam.admin.v1.Permission.CustomRolesSupportLevel getCustomRolesSupportLevel();
+
+  /**
+   * <pre>
+   * The service API associated with the permission is not enabled.
+   * </pre>
+   *
+   * <code>bool api_disabled = 7;</code>
+   * @return The apiDisabled.
+   */
+  boolean getApiDisabled();
+
+  /**
+   * <pre>
+   * The preferred name for this permission. If present, then this permission is
+   * an alias of, and equivalent to, the listed primary_permission.
+   * </pre>
+   *
+   * <code>string primary_permission = 8;</code>
+   * @return The primaryPermission.
+   */
+  java.lang.String getPrimaryPermission();
+  /**
+   * <pre>
+   * The preferred name for this permission. If present, then this permission is
+   * an alias of, and equivalent to, the listed primary_permission.
+   * </pre>
+   *
+   * <code>string primary_permission = 8;</code>
+   * @return The bytes for primaryPermission.
+   */
+  com.google.protobuf.ByteString
+      getPrimaryPermissionBytes();
 }

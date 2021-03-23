@@ -159,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * response. Further accounts can subsequently be obtained by including the
    * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
    * in a subsequent request.
+   * The default is 20, and the maximum is 100.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -665,6 +666,7 @@ private static final long serialVersionUID = 0L;
      * response. Further accounts can subsequently be obtained by including the
      * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      * in a subsequent request.
+     * The default is 20, and the maximum is 100.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -680,6 +682,7 @@ private static final long serialVersionUID = 0L;
      * response. Further accounts can subsequently be obtained by including the
      * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      * in a subsequent request.
+     * The default is 20, and the maximum is 100.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -698,6 +701,7 @@ private static final long serialVersionUID = 0L;
      * response. Further accounts can subsequently be obtained by including the
      * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
      * in a subsequent request.
+     * The default is 20, and the maximum is 100.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

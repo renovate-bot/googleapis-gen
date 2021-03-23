@@ -157,6 +157,11 @@ class IAMTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.patch_service_account: gapic_v1.method.wrap_method(
+                self.patch_service_account,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.delete_service_account: gapic_v1.method.wrap_method(
                 self.delete_service_account,
                 default_retry=retries.Retry(
@@ -170,6 +175,21 @@ class IAMTransport(abc.ABC):
                     deadline=60.0,
                 ),
                 default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.undelete_service_account: gapic_v1.method.wrap_method(
+                self.undelete_service_account,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.enable_service_account: gapic_v1.method.wrap_method(
+                self.enable_service_account,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.disable_service_account: gapic_v1.method.wrap_method(
+                self.disable_service_account,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.list_service_account_keys: gapic_v1.method.wrap_method(
@@ -205,6 +225,11 @@ class IAMTransport(abc.ABC):
             self.create_service_account_key: gapic_v1.method.wrap_method(
                 self.create_service_account_key,
                 default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.upload_service_account_key: gapic_v1.method.wrap_method(
+                self.upload_service_account_key,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.delete_service_account_key: gapic_v1.method.wrap_method(
@@ -287,6 +312,16 @@ class IAMTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.query_auditable_services: gapic_v1.method.wrap_method(
+                self.query_auditable_services,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.lint_policy: gapic_v1.method.wrap_method(
+                self.lint_policy,
+                default_timeout=None,
+                client_info=client_info,
+            ),
 
         }
 
@@ -327,8 +362,44 @@ class IAMTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def patch_service_account(self) -> typing.Callable[
+            [iam.PatchServiceAccountRequest],
+            typing.Union[
+                iam.ServiceAccount,
+                typing.Awaitable[iam.ServiceAccount]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def delete_service_account(self) -> typing.Callable[
             [iam.DeleteServiceAccountRequest],
+            typing.Union[
+                empty.Empty,
+                typing.Awaitable[empty.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def undelete_service_account(self) -> typing.Callable[
+            [iam.UndeleteServiceAccountRequest],
+            typing.Union[
+                iam.UndeleteServiceAccountResponse,
+                typing.Awaitable[iam.UndeleteServiceAccountResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def enable_service_account(self) -> typing.Callable[
+            [iam.EnableServiceAccountRequest],
+            typing.Union[
+                empty.Empty,
+                typing.Awaitable[empty.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def disable_service_account(self) -> typing.Callable[
+            [iam.DisableServiceAccountRequest],
             typing.Union[
                 empty.Empty,
                 typing.Awaitable[empty.Empty]
@@ -356,6 +427,15 @@ class IAMTransport(abc.ABC):
     @property
     def create_service_account_key(self) -> typing.Callable[
             [iam.CreateServiceAccountKeyRequest],
+            typing.Union[
+                iam.ServiceAccountKey,
+                typing.Awaitable[iam.ServiceAccountKey]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def upload_service_account_key(self) -> typing.Callable[
+            [iam.UploadServiceAccountKeyRequest],
             typing.Union[
                 iam.ServiceAccountKey,
                 typing.Awaitable[iam.ServiceAccountKey]
@@ -485,6 +565,24 @@ class IAMTransport(abc.ABC):
             typing.Union[
                 iam.QueryTestablePermissionsResponse,
                 typing.Awaitable[iam.QueryTestablePermissionsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def query_auditable_services(self) -> typing.Callable[
+            [iam.QueryAuditableServicesRequest],
+            typing.Union[
+                iam.QueryAuditableServicesResponse,
+                typing.Awaitable[iam.QueryAuditableServicesResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def lint_policy(self) -> typing.Callable[
+            [iam.LintPolicyRequest],
+            typing.Union[
+                iam.LintPolicyResponse,
+                typing.Awaitable[iam.LintPolicyResponse]
             ]]:
         raise NotImplementedError()
 

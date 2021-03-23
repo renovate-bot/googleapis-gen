@@ -19,8 +19,13 @@ use Google\Protobuf\Internal\GPBUtil;
  * System-managed keys are automatically rotated by Google, and are used for
  * signing for a maximum of two weeks. The rotation process is probabilistic,
  * and usage of the new key will gradually ramp up and down over the key's
- * lifetime. We recommend caching the public key set for a service account for
- * no more than 24 hours to ensure you have access to the latest keys.
+ * lifetime.
+ * If you cache the public key set for a service account, we recommend that you
+ * update the cache every 15 minutes. User-managed keys can be added and removed
+ * at any time, so it is important to update the cache frequently. For
+ * Google-managed keys, Google will publish a key at least 6 hours before it is
+ * first used for signing and will keep publishing it for at least 6 hours after
+ * it was last used for signing.
  * Public keys for all service accounts are also published at the OAuth2
  * Service Account API.
  *
@@ -84,6 +89,18 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
      */
     protected $valid_before_time = null;
+    /**
+     * The key origin.
+     *
+     * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     */
+    protected $key_origin = 0;
+    /**
+     * The key type.
+     *
+     * Generated from protobuf field <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     */
+    protected $key_type = 0;
 
     /**
      * Constructor.
@@ -119,6 +136,10 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      *           For system-managed key pairs, this timestamp is the end time for the
      *           private key signing operation. The public key could still be used
      *           for verification for a few hours after this time.
+     *     @type int $key_origin
+     *           The key origin.
+     *     @type int $key_type
+     *           The key type.
      * }
      */
     public function __construct($data = NULL) {
@@ -352,6 +373,58 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->valid_before_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The key origin.
+     *
+     * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @return int
+     */
+    public function getKeyOrigin()
+    {
+        return $this->key_origin;
+    }
+
+    /**
+     * The key origin.
+     *
+     * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccountKeyOrigin key_origin = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeyOrigin($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Iam\Admin\V1\ServiceAccountKeyOrigin::class);
+        $this->key_origin = $var;
+
+        return $this;
+    }
+
+    /**
+     * The key type.
+     *
+     * Generated from protobuf field <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @return int
+     */
+    public function getKeyType()
+    {
+        return $this->key_type;
+    }
+
+    /**
+     * The key type.
+     *
+     * Generated from protobuf field <code>.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_type = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeyType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Iam\Admin\V1\ListServiceAccountKeysRequest\KeyType::class);
+        $this->key_type = $var;
 
         return $this;
     }

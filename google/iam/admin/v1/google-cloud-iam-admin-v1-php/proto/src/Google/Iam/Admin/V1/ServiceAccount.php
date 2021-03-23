@@ -9,76 +9,94 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A service account in the Identity and Access Management API.
- * To create a service account, specify the `project_id` and the `account_id`
- * for the account.  The `account_id` is unique within the project, and is used
- * to generate the service account email address and a stable
- * `unique_id`.
- * If the account already exists, the account's resource name is returned
- * in the format of projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The caller
- * can use the name in other methods to access the account.
- * All other methods can identify the service account using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
- * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
- * the account. The `ACCOUNT` value can be the `email` address or the
- * `unique_id` of the service account.
+ * An IAM service account.
+ * A service account is an account for an application or a virtual machine (VM)
+ * instance, not a person. You can use a service account to call Google APIs. To
+ * learn more, read the [overview of service
+ * accounts](https://cloud.google.com/iam/help/service-accounts/overview).
+ * When you create a service account, you specify the project ID that owns the
+ * service account, as well as a name that must be unique within the project.
+ * IAM uses these values to create an email address that identifies the service
+ * account.
  *
  * Generated from protobuf message <code>google.iam.admin.v1.ServiceAccount</code>
  */
 class ServiceAccount extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
     /**
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      *
-     * Generated from protobuf field <code>string project_id = 2;</code>
+     * Generated from protobuf field <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $project_id = '';
     /**
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      *
-     * Generated from protobuf field <code>string unique_id = 4;</code>
+     * Generated from protobuf field <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $unique_id = '';
     /**
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      *
-     * Generated from protobuf field <code>string email = 5;</code>
+     * Generated from protobuf field <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $email = '';
     /**
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      *
-     * Generated from protobuf field <code>string display_name = 6;</code>
+     * Generated from protobuf field <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $display_name = '';
     /**
-     * Optional. Note: `etag` is an inoperable legacy field that is only returned
-     * for backwards compatibility.
+     * Deprecated. Do not use.
      *
-     * Generated from protobuf field <code>bytes etag = 7;</code>
+     * Generated from protobuf field <code>bytes etag = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $etag = '';
     /**
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
      *
-     * Generated from protobuf field <code>string oauth2_client_id = 9;</code>
+     * Generated from protobuf field <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $description = '';
+    /**
+     * Output only. The OAuth 2.0 client ID for the service account.
+     *
+     * Generated from protobuf field <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $oauth2_client_id = '';
+    /**
+     * Output only. Whether the service account is disabled.
+     *
+     * Generated from protobuf field <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $disabled = false;
 
     /**
      * Constructor.
@@ -87,29 +105,42 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the service account in the following format:
-     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     *           Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     *           project from the `account` and the `ACCOUNT` value can be the `email`
-     *           address or the `unique_id` of the service account.
-     *           In responses the resource name will always be in the format
-     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *           The resource name of the service account.
+     *           Use one of the following formats:
+     *           * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     *           * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     *           As an alternative, you can use the `-` wildcard character instead of the
+     *           project ID:
+     *           * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     *           * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     *           When possible, avoid using the `-` wildcard character, because it can cause
+     *           response messages to contain misleading error codes. For example, if you
+     *           try to get the service account
+     *           `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     *           response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     *           Found` error.
      *     @type string $project_id
-     *           &#64;OutputOnly The id of the project that owns the service account.
+     *           Output only. The ID of the project that owns the service account.
      *     @type string $unique_id
-     *           &#64;OutputOnly The unique and stable id of the service account.
+     *           Output only. The unique, stable numeric ID for the service account.
+     *           Each service account retains its unique ID even if you delete the service
+     *           account. For example, if you delete a service account, then create a new
+     *           service account with the same name, the new service account has a different
+     *           unique ID than the deleted service account.
      *     @type string $email
-     *           &#64;OutputOnly The email address of the service account.
+     *           Output only. The email address of the service account.
      *     @type string $display_name
-     *           Optional. A user-specified name for the service account.
-     *           Must be less than or equal to 100 UTF-8 bytes.
+     *           Optional. A user-specified, human-readable name for the service account. The maximum
+     *           length is 100 UTF-8 bytes.
      *     @type string $etag
-     *           Optional. Note: `etag` is an inoperable legacy field that is only returned
-     *           for backwards compatibility.
+     *           Deprecated. Do not use.
+     *     @type string $description
+     *           Optional. A user-specified, human-readable description of the service account. The
+     *           maximum length is 256 UTF-8 bytes.
      *     @type string $oauth2_client_id
-     *           &#64;OutputOnly. The OAuth2 client id for the service account.
-     *           This is used in conjunction with the OAuth2 clientconfig API to make
-     *           three legged OAuth2 (3LO) flows to access the data of Google users.
+     *           Output only. The OAuth 2.0 client ID for the service account.
+     *     @type bool $disabled
+     *           Output only. Whether the service account is disabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -118,13 +149,20 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -135,13 +173,20 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-     * project from the `account` and the `ACCOUNT` value can be the `email`
-     * address or the `unique_id` of the service account.
-     * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * The resource name of the service account.
+     * Use one of the following formats:
+     * * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+     * As an alternative, you can use the `-` wildcard character instead of the
+     * project ID:
+     * * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+     * * `projects/-/serviceAccounts/{UNIQUE_ID}`
+     * When possible, avoid using the `-` wildcard character, because it can cause
+     * response messages to contain misleading error codes. For example, if you
+     * try to get the service account
+     * `projects/-/serviceAccounts/fake&#64;example.com`, which does not exist, the
+     * response contains an HTTP `403 Forbidden` error instead of a `404 Not
+     * Found` error.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -156,9 +201,9 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      *
-     * Generated from protobuf field <code>string project_id = 2;</code>
+     * Generated from protobuf field <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getProjectId()
@@ -167,9 +212,9 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly The id of the project that owns the service account.
+     * Output only. The ID of the project that owns the service account.
      *
-     * Generated from protobuf field <code>string project_id = 2;</code>
+     * Generated from protobuf field <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -182,9 +227,13 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      *
-     * Generated from protobuf field <code>string unique_id = 4;</code>
+     * Generated from protobuf field <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getUniqueId()
@@ -193,9 +242,13 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly The unique and stable id of the service account.
+     * Output only. The unique, stable numeric ID for the service account.
+     * Each service account retains its unique ID even if you delete the service
+     * account. For example, if you delete a service account, then create a new
+     * service account with the same name, the new service account has a different
+     * unique ID than the deleted service account.
      *
-     * Generated from protobuf field <code>string unique_id = 4;</code>
+     * Generated from protobuf field <code>string unique_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -208,9 +261,9 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      *
-     * Generated from protobuf field <code>string email = 5;</code>
+     * Generated from protobuf field <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEmail()
@@ -219,9 +272,9 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly The email address of the service account.
+     * Output only. The email address of the service account.
      *
-     * Generated from protobuf field <code>string email = 5;</code>
+     * Generated from protobuf field <code>string email = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -234,10 +287,10 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      *
-     * Generated from protobuf field <code>string display_name = 6;</code>
+     * Generated from protobuf field <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getDisplayName()
@@ -246,10 +299,10 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A user-specified name for the service account.
-     * Must be less than or equal to 100 UTF-8 bytes.
+     * Optional. A user-specified, human-readable name for the service account. The maximum
+     * length is 100 UTF-8 bytes.
      *
-     * Generated from protobuf field <code>string display_name = 6;</code>
+     * Generated from protobuf field <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -262,27 +315,29 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Note: `etag` is an inoperable legacy field that is only returned
-     * for backwards compatibility.
+     * Deprecated. Do not use.
      *
-     * Generated from protobuf field <code>bytes etag = 7;</code>
+     * Generated from protobuf field <code>bytes etag = 7 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getEtag()
     {
+        @trigger_error('etag is deprecated.', E_USER_DEPRECATED);
         return $this->etag;
     }
 
     /**
-     * Optional. Note: `etag` is an inoperable legacy field that is only returned
-     * for backwards compatibility.
+     * Deprecated. Do not use.
      *
-     * Generated from protobuf field <code>bytes etag = 7;</code>
+     * Generated from protobuf field <code>bytes etag = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setEtag($var)
     {
+        @trigger_error('etag is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, False);
         $this->etag = $var;
 
@@ -290,11 +345,37 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
      *
-     * Generated from protobuf field <code>string oauth2_client_id = 9;</code>
+     * Generated from protobuf field <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Optional. A user-specified, human-readable description of the service account. The
+     * maximum length is 256 UTF-8 bytes.
+     *
+     * Generated from protobuf field <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The OAuth 2.0 client ID for the service account.
+     *
+     * Generated from protobuf field <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getOauth2ClientId()
@@ -303,11 +384,9 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;OutputOnly. The OAuth2 client id for the service account.
-     * This is used in conjunction with the OAuth2 clientconfig API to make
-     * three legged OAuth2 (3LO) flows to access the data of Google users.
+     * Output only. The OAuth 2.0 client ID for the service account.
      *
-     * Generated from protobuf field <code>string oauth2_client_id = 9;</code>
+     * Generated from protobuf field <code>string oauth2_client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -315,6 +394,32 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->oauth2_client_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Whether the service account is disabled.
+     *
+     * Generated from protobuf field <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getDisabled()
+    {
+        return $this->disabled;
+    }
+
+    /**
+     * Output only. Whether the service account is disabled.
+     *
+     * Generated from protobuf field <code>bool disabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disabled = $var;
 
         return $this;
     }

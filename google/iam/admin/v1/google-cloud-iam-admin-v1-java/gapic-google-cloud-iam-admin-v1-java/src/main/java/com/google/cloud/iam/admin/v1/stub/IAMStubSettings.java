@@ -53,16 +53,23 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
 import com.google.iam.admin.v1.GetServiceAccountRequest;
+import com.google.iam.admin.v1.LintPolicyRequest;
+import com.google.iam.admin.v1.LintPolicyResponse;
 import com.google.iam.admin.v1.ListRolesRequest;
 import com.google.iam.admin.v1.ListRolesResponse;
 import com.google.iam.admin.v1.ListServiceAccountKeysRequest;
 import com.google.iam.admin.v1.ListServiceAccountKeysResponse;
 import com.google.iam.admin.v1.ListServiceAccountsRequest;
 import com.google.iam.admin.v1.ListServiceAccountsResponse;
+import com.google.iam.admin.v1.PatchServiceAccountRequest;
 import com.google.iam.admin.v1.Permission;
+import com.google.iam.admin.v1.QueryAuditableServicesRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesResponse;
 import com.google.iam.admin.v1.QueryGrantableRolesRequest;
 import com.google.iam.admin.v1.QueryGrantableRolesResponse;
 import com.google.iam.admin.v1.QueryTestablePermissionsRequest;
@@ -75,7 +82,10 @@ import com.google.iam.admin.v1.SignBlobResponse;
 import com.google.iam.admin.v1.SignJwtRequest;
 import com.google.iam.admin.v1.SignJwtResponse;
 import com.google.iam.admin.v1.UndeleteRoleRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountResponse;
 import com.google.iam.admin.v1.UpdateRoleRequest;
+import com.google.iam.admin.v1.UploadServiceAccountKeyRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -132,13 +142,22 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
   private final UnaryCallSettings<CreateServiceAccountRequest, ServiceAccount>
       createServiceAccountSettings;
   private final UnaryCallSettings<ServiceAccount, ServiceAccount> updateServiceAccountSettings;
+  private final UnaryCallSettings<PatchServiceAccountRequest, ServiceAccount>
+      patchServiceAccountSettings;
   private final UnaryCallSettings<DeleteServiceAccountRequest, Empty> deleteServiceAccountSettings;
+  private final UnaryCallSettings<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountSettings;
+  private final UnaryCallSettings<EnableServiceAccountRequest, Empty> enableServiceAccountSettings;
+  private final UnaryCallSettings<DisableServiceAccountRequest, Empty>
+      disableServiceAccountSettings;
   private final UnaryCallSettings<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
       listServiceAccountKeysSettings;
   private final UnaryCallSettings<GetServiceAccountKeyRequest, ServiceAccountKey>
       getServiceAccountKeySettings;
   private final UnaryCallSettings<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeySettings;
+  private final UnaryCallSettings<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeySettings;
   private final UnaryCallSettings<DeleteServiceAccountKeyRequest, Empty>
       deleteServiceAccountKeySettings;
   private final UnaryCallSettings<SignBlobRequest, SignBlobResponse> signBlobSettings;
@@ -162,6 +181,9 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           QueryTestablePermissionsResponse,
           QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsSettings;
+  private final UnaryCallSettings<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesSettings;
+  private final UnaryCallSettings<LintPolicyRequest, LintPolicyResponse> lintPolicySettings;
 
   private static final PagedListDescriptor<
           ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
@@ -429,9 +451,31 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     return updateServiceAccountSettings;
   }
 
+  /** Returns the object with the settings used for calls to patchServiceAccount. */
+  public UnaryCallSettings<PatchServiceAccountRequest, ServiceAccount>
+      patchServiceAccountSettings() {
+    return patchServiceAccountSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteServiceAccount. */
   public UnaryCallSettings<DeleteServiceAccountRequest, Empty> deleteServiceAccountSettings() {
     return deleteServiceAccountSettings;
+  }
+
+  /** Returns the object with the settings used for calls to undeleteServiceAccount. */
+  public UnaryCallSettings<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountSettings() {
+    return undeleteServiceAccountSettings;
+  }
+
+  /** Returns the object with the settings used for calls to enableServiceAccount. */
+  public UnaryCallSettings<EnableServiceAccountRequest, Empty> enableServiceAccountSettings() {
+    return enableServiceAccountSettings;
+  }
+
+  /** Returns the object with the settings used for calls to disableServiceAccount. */
+  public UnaryCallSettings<DisableServiceAccountRequest, Empty> disableServiceAccountSettings() {
+    return disableServiceAccountSettings;
   }
 
   /** Returns the object with the settings used for calls to listServiceAccountKeys. */
@@ -450,6 +494,12 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
   public UnaryCallSettings<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeySettings() {
     return createServiceAccountKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to uploadServiceAccountKey. */
+  public UnaryCallSettings<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeySettings() {
+    return uploadServiceAccountKeySettings;
   }
 
   /** Returns the object with the settings used for calls to deleteServiceAccountKey. */
@@ -531,6 +581,17 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     return queryTestablePermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to queryAuditableServices. */
+  public UnaryCallSettings<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesSettings() {
+    return queryAuditableServicesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to lintPolicy. */
+  public UnaryCallSettings<LintPolicyRequest, LintPolicyResponse> lintPolicySettings() {
+    return lintPolicySettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IAMStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -603,10 +664,15 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     getServiceAccountSettings = settingsBuilder.getServiceAccountSettings().build();
     createServiceAccountSettings = settingsBuilder.createServiceAccountSettings().build();
     updateServiceAccountSettings = settingsBuilder.updateServiceAccountSettings().build();
+    patchServiceAccountSettings = settingsBuilder.patchServiceAccountSettings().build();
     deleteServiceAccountSettings = settingsBuilder.deleteServiceAccountSettings().build();
+    undeleteServiceAccountSettings = settingsBuilder.undeleteServiceAccountSettings().build();
+    enableServiceAccountSettings = settingsBuilder.enableServiceAccountSettings().build();
+    disableServiceAccountSettings = settingsBuilder.disableServiceAccountSettings().build();
     listServiceAccountKeysSettings = settingsBuilder.listServiceAccountKeysSettings().build();
     getServiceAccountKeySettings = settingsBuilder.getServiceAccountKeySettings().build();
     createServiceAccountKeySettings = settingsBuilder.createServiceAccountKeySettings().build();
+    uploadServiceAccountKeySettings = settingsBuilder.uploadServiceAccountKeySettings().build();
     deleteServiceAccountKeySettings = settingsBuilder.deleteServiceAccountKeySettings().build();
     signBlobSettings = settingsBuilder.signBlobSettings().build();
     signJwtSettings = settingsBuilder.signJwtSettings().build();
@@ -621,6 +687,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     deleteRoleSettings = settingsBuilder.deleteRoleSettings().build();
     undeleteRoleSettings = settingsBuilder.undeleteRoleSettings().build();
     queryTestablePermissionsSettings = settingsBuilder.queryTestablePermissionsSettings().build();
+    queryAuditableServicesSettings = settingsBuilder.queryAuditableServicesSettings().build();
+    lintPolicySettings = settingsBuilder.lintPolicySettings().build();
   }
 
   /** Builder for IAMStubSettings. */
@@ -637,8 +705,17 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
         createServiceAccountSettings;
     private final UnaryCallSettings.Builder<ServiceAccount, ServiceAccount>
         updateServiceAccountSettings;
+    private final UnaryCallSettings.Builder<PatchServiceAccountRequest, ServiceAccount>
+        patchServiceAccountSettings;
     private final UnaryCallSettings.Builder<DeleteServiceAccountRequest, Empty>
         deleteServiceAccountSettings;
+    private final UnaryCallSettings.Builder<
+            UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+        undeleteServiceAccountSettings;
+    private final UnaryCallSettings.Builder<EnableServiceAccountRequest, Empty>
+        enableServiceAccountSettings;
+    private final UnaryCallSettings.Builder<DisableServiceAccountRequest, Empty>
+        disableServiceAccountSettings;
     private final UnaryCallSettings.Builder<
             ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
         listServiceAccountKeysSettings;
@@ -646,6 +723,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
         getServiceAccountKeySettings;
     private final UnaryCallSettings.Builder<CreateServiceAccountKeyRequest, ServiceAccountKey>
         createServiceAccountKeySettings;
+    private final UnaryCallSettings.Builder<UploadServiceAccountKeyRequest, ServiceAccountKey>
+        uploadServiceAccountKeySettings;
     private final UnaryCallSettings.Builder<DeleteServiceAccountKeyRequest, Empty>
         deleteServiceAccountKeySettings;
     private final UnaryCallSettings.Builder<SignBlobRequest, SignBlobResponse> signBlobSettings;
@@ -672,6 +751,11 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
             QueryTestablePermissionsResponse,
             QueryTestablePermissionsPagedResponse>
         queryTestablePermissionsSettings;
+    private final UnaryCallSettings.Builder<
+            QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+        queryAuditableServicesSettings;
+    private final UnaryCallSettings.Builder<LintPolicyRequest, LintPolicyResponse>
+        lintPolicySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -730,10 +814,15 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       getServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      undeleteServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listServiceAccountKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      uploadServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       signBlobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       signJwtSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -750,6 +839,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       undeleteRoleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryTestablePermissionsSettings =
           PagedCallSettings.newBuilder(QUERY_TESTABLE_PERMISSIONS_PAGE_STR_FACT);
+      queryAuditableServicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      lintPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -757,10 +848,15 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
               getServiceAccountSettings,
               createServiceAccountSettings,
               updateServiceAccountSettings,
+              patchServiceAccountSettings,
               deleteServiceAccountSettings,
+              undeleteServiceAccountSettings,
+              enableServiceAccountSettings,
+              disableServiceAccountSettings,
               listServiceAccountKeysSettings,
               getServiceAccountKeySettings,
               createServiceAccountKeySettings,
+              uploadServiceAccountKeySettings,
               deleteServiceAccountKeySettings,
               signBlobSettings,
               signJwtSettings,
@@ -774,7 +870,9 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
               updateRoleSettings,
               deleteRoleSettings,
               undeleteRoleSettings,
-              queryTestablePermissionsSettings);
+              queryTestablePermissionsSettings,
+              queryAuditableServicesSettings,
+              lintPolicySettings);
       initDefaults(this);
     }
 
@@ -785,10 +883,15 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       getServiceAccountSettings = settings.getServiceAccountSettings.toBuilder();
       createServiceAccountSettings = settings.createServiceAccountSettings.toBuilder();
       updateServiceAccountSettings = settings.updateServiceAccountSettings.toBuilder();
+      patchServiceAccountSettings = settings.patchServiceAccountSettings.toBuilder();
       deleteServiceAccountSettings = settings.deleteServiceAccountSettings.toBuilder();
+      undeleteServiceAccountSettings = settings.undeleteServiceAccountSettings.toBuilder();
+      enableServiceAccountSettings = settings.enableServiceAccountSettings.toBuilder();
+      disableServiceAccountSettings = settings.disableServiceAccountSettings.toBuilder();
       listServiceAccountKeysSettings = settings.listServiceAccountKeysSettings.toBuilder();
       getServiceAccountKeySettings = settings.getServiceAccountKeySettings.toBuilder();
       createServiceAccountKeySettings = settings.createServiceAccountKeySettings.toBuilder();
+      uploadServiceAccountKeySettings = settings.uploadServiceAccountKeySettings.toBuilder();
       deleteServiceAccountKeySettings = settings.deleteServiceAccountKeySettings.toBuilder();
       signBlobSettings = settings.signBlobSettings.toBuilder();
       signJwtSettings = settings.signJwtSettings.toBuilder();
@@ -803,6 +906,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       deleteRoleSettings = settings.deleteRoleSettings.toBuilder();
       undeleteRoleSettings = settings.undeleteRoleSettings.toBuilder();
       queryTestablePermissionsSettings = settings.queryTestablePermissionsSettings.toBuilder();
+      queryAuditableServicesSettings = settings.queryAuditableServicesSettings.toBuilder();
+      lintPolicySettings = settings.lintPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -810,10 +915,15 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
               getServiceAccountSettings,
               createServiceAccountSettings,
               updateServiceAccountSettings,
+              patchServiceAccountSettings,
               deleteServiceAccountSettings,
+              undeleteServiceAccountSettings,
+              enableServiceAccountSettings,
+              disableServiceAccountSettings,
               listServiceAccountKeysSettings,
               getServiceAccountKeySettings,
               createServiceAccountKeySettings,
+              uploadServiceAccountKeySettings,
               deleteServiceAccountKeySettings,
               signBlobSettings,
               signJwtSettings,
@@ -827,7 +937,9 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
               updateRoleSettings,
               deleteRoleSettings,
               undeleteRoleSettings,
-              queryTestablePermissionsSettings);
+              queryTestablePermissionsSettings,
+              queryAuditableServicesSettings,
+              lintPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -863,9 +975,29 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .patchServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteServiceAccountSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .undeleteServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .enableServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .disableServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listServiceAccountKeysSettings()
@@ -881,6 +1013,11 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           .createServiceAccountKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .uploadServiceAccountKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteServiceAccountKeySettings()
@@ -952,6 +1089,16 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .queryAuditableServicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .lintPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -998,10 +1145,34 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       return updateServiceAccountSettings;
     }
 
+    /** Returns the builder for the settings used for calls to patchServiceAccount. */
+    public UnaryCallSettings.Builder<PatchServiceAccountRequest, ServiceAccount>
+        patchServiceAccountSettings() {
+      return patchServiceAccountSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteServiceAccount. */
     public UnaryCallSettings.Builder<DeleteServiceAccountRequest, Empty>
         deleteServiceAccountSettings() {
       return deleteServiceAccountSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to undeleteServiceAccount. */
+    public UnaryCallSettings.Builder<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+        undeleteServiceAccountSettings() {
+      return undeleteServiceAccountSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to enableServiceAccount. */
+    public UnaryCallSettings.Builder<EnableServiceAccountRequest, Empty>
+        enableServiceAccountSettings() {
+      return enableServiceAccountSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to disableServiceAccount. */
+    public UnaryCallSettings.Builder<DisableServiceAccountRequest, Empty>
+        disableServiceAccountSettings() {
+      return disableServiceAccountSettings;
     }
 
     /** Returns the builder for the settings used for calls to listServiceAccountKeys. */
@@ -1020,6 +1191,12 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     public UnaryCallSettings.Builder<CreateServiceAccountKeyRequest, ServiceAccountKey>
         createServiceAccountKeySettings() {
       return createServiceAccountKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to uploadServiceAccountKey. */
+    public UnaryCallSettings.Builder<UploadServiceAccountKeyRequest, ServiceAccountKey>
+        uploadServiceAccountKeySettings() {
+      return uploadServiceAccountKeySettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteServiceAccountKey. */
@@ -1101,6 +1278,17 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
             QueryTestablePermissionsPagedResponse>
         queryTestablePermissionsSettings() {
       return queryTestablePermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryAuditableServices. */
+    public UnaryCallSettings.Builder<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+        queryAuditableServicesSettings() {
+      return queryAuditableServicesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to lintPolicy. */
+    public UnaryCallSettings.Builder<LintPolicyRequest, LintPolicyResponse> lintPolicySettings() {
+      return lintPolicySettings;
     }
 
     @Override

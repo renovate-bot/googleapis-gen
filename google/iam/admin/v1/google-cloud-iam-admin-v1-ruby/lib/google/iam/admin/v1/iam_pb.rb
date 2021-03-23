@@ -3,15 +3,18 @@
 
 require 'google/protobuf'
 
-require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/iam/v1/iam_policy_pb'
+require 'google/iam/v1/options_pb'
 require 'google/iam/v1/policy_pb'
+require 'google/protobuf/any_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
+require 'google/type/expr_pb'
+require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/iam/admin/v1/iam.proto", :syntax => :proto3) do
     add_message "google.iam.admin.v1.ServiceAccount" do
@@ -21,7 +24,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :email, :string, 5
       optional :display_name, :string, 6
       optional :etag, :bytes, 7
+      optional :description, :string, 8
       optional :oauth2_client_id, :string, 9
+      optional :disabled, :bool, 11
     end
     add_message "google.iam.admin.v1.CreateServiceAccountRequest" do
       optional :name, :string, 1
@@ -41,6 +46,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
     end
     add_message "google.iam.admin.v1.DeleteServiceAccountRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.iam.admin.v1.PatchServiceAccountRequest" do
+      optional :service_account, :message, 1, "google.iam.admin.v1.ServiceAccount"
+      optional :update_mask, :message, 2, "google.protobuf.FieldMask"
+    end
+    add_message "google.iam.admin.v1.UndeleteServiceAccountRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.iam.admin.v1.UndeleteServiceAccountResponse" do
+      optional :restored_account, :message, 1, "google.iam.admin.v1.ServiceAccount"
+    end
+    add_message "google.iam.admin.v1.EnableServiceAccountRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.iam.admin.v1.DisableServiceAccountRequest" do
       optional :name, :string, 1
     end
     add_message "google.iam.admin.v1.ListServiceAccountKeysRequest" do
@@ -67,11 +88,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :public_key_data, :bytes, 7
       optional :valid_after_time, :message, 4, "google.protobuf.Timestamp"
       optional :valid_before_time, :message, 5, "google.protobuf.Timestamp"
+      optional :key_origin, :enum, 9, "google.iam.admin.v1.ServiceAccountKeyOrigin"
+      optional :key_type, :enum, 10, "google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType"
     end
     add_message "google.iam.admin.v1.CreateServiceAccountKeyRequest" do
       optional :name, :string, 1
       optional :private_key_type, :enum, 2, "google.iam.admin.v1.ServiceAccountPrivateKeyType"
       optional :key_algorithm, :enum, 3, "google.iam.admin.v1.ServiceAccountKeyAlgorithm"
+    end
+    add_message "google.iam.admin.v1.UploadServiceAccountKeyRequest" do
+      optional :name, :string, 1
+      optional :public_key_data, :bytes, 2
     end
     add_message "google.iam.admin.v1.DeleteServiceAccountKeyRequest" do
       optional :name, :string, 1
@@ -158,6 +185,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :only_in_predefined_roles, :bool, 4
       optional :stage, :enum, 5, "google.iam.admin.v1.Permission.PermissionLaunchStage"
       optional :custom_roles_support_level, :enum, 6, "google.iam.admin.v1.Permission.CustomRolesSupportLevel"
+      optional :api_disabled, :bool, 7
+      optional :primary_permission, :string, 8
     end
     add_enum "google.iam.admin.v1.Permission.PermissionLaunchStage" do
       value :ALPHA, 0
@@ -179,6 +208,44 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :permissions, :message, 1, "google.iam.admin.v1.Permission"
       optional :next_page_token, :string, 2
     end
+    add_message "google.iam.admin.v1.QueryAuditableServicesRequest" do
+      optional :full_resource_name, :string, 1
+    end
+    add_message "google.iam.admin.v1.QueryAuditableServicesResponse" do
+      repeated :services, :message, 1, "google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService"
+    end
+    add_message "google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService" do
+      optional :name, :string, 1
+    end
+    add_message "google.iam.admin.v1.LintPolicyRequest" do
+      optional :full_resource_name, :string, 1
+      oneof :lint_object do
+        optional :condition, :message, 5, "google.type.Expr"
+      end
+    end
+    add_message "google.iam.admin.v1.LintResult" do
+      optional :level, :enum, 1, "google.iam.admin.v1.LintResult.Level"
+      optional :validation_unit_name, :string, 2
+      optional :severity, :enum, 3, "google.iam.admin.v1.LintResult.Severity"
+      optional :field_name, :string, 5
+      optional :location_offset, :int32, 6
+      optional :debug_message, :string, 7
+    end
+    add_enum "google.iam.admin.v1.LintResult.Level" do
+      value :LEVEL_UNSPECIFIED, 0
+      value :CONDITION, 3
+    end
+    add_enum "google.iam.admin.v1.LintResult.Severity" do
+      value :SEVERITY_UNSPECIFIED, 0
+      value :ERROR, 1
+      value :WARNING, 2
+      value :NOTICE, 3
+      value :INFO, 4
+      value :DEPRECATED, 5
+    end
+    add_message "google.iam.admin.v1.LintPolicyResponse" do
+      repeated :lint_results, :message, 1, "google.iam.admin.v1.LintResult"
+    end
     add_enum "google.iam.admin.v1.ServiceAccountKeyAlgorithm" do
       value :KEY_ALG_UNSPECIFIED, 0
       value :KEY_ALG_RSA_1024, 1
@@ -193,6 +260,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :TYPE_NONE, 0
       value :TYPE_X509_PEM_FILE, 1
       value :TYPE_RAW_PUBLIC_KEY, 2
+    end
+    add_enum "google.iam.admin.v1.ServiceAccountKeyOrigin" do
+      value :ORIGIN_UNSPECIFIED, 0
+      value :USER_PROVIDED, 1
+      value :GOOGLE_PROVIDED, 2
     end
     add_enum "google.iam.admin.v1.RoleView" do
       value :BASIC, 0
@@ -211,12 +283,18 @@ module Google
         ListServiceAccountsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ListServiceAccountsResponse").msgclass
         GetServiceAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.GetServiceAccountRequest").msgclass
         DeleteServiceAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.DeleteServiceAccountRequest").msgclass
+        PatchServiceAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.PatchServiceAccountRequest").msgclass
+        UndeleteServiceAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.UndeleteServiceAccountRequest").msgclass
+        UndeleteServiceAccountResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.UndeleteServiceAccountResponse").msgclass
+        EnableServiceAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.EnableServiceAccountRequest").msgclass
+        DisableServiceAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.DisableServiceAccountRequest").msgclass
         ListServiceAccountKeysRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ListServiceAccountKeysRequest").msgclass
         ListServiceAccountKeysRequest::KeyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType").enummodule
         ListServiceAccountKeysResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ListServiceAccountKeysResponse").msgclass
         GetServiceAccountKeyRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.GetServiceAccountKeyRequest").msgclass
         ServiceAccountKey = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ServiceAccountKey").msgclass
         CreateServiceAccountKeyRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.CreateServiceAccountKeyRequest").msgclass
+        UploadServiceAccountKeyRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.UploadServiceAccountKeyRequest").msgclass
         DeleteServiceAccountKeyRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.DeleteServiceAccountKeyRequest").msgclass
         SignBlobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.SignBlobRequest").msgclass
         SignBlobResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.SignBlobResponse").msgclass
@@ -238,9 +316,18 @@ module Google
         Permission::CustomRolesSupportLevel = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.Permission.CustomRolesSupportLevel").enummodule
         QueryTestablePermissionsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.QueryTestablePermissionsRequest").msgclass
         QueryTestablePermissionsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.QueryTestablePermissionsResponse").msgclass
+        QueryAuditableServicesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.QueryAuditableServicesRequest").msgclass
+        QueryAuditableServicesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.QueryAuditableServicesResponse").msgclass
+        QueryAuditableServicesResponse::AuditableService = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService").msgclass
+        LintPolicyRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.LintPolicyRequest").msgclass
+        LintResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.LintResult").msgclass
+        LintResult::Level = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.LintResult.Level").enummodule
+        LintResult::Severity = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.LintResult.Severity").enummodule
+        LintPolicyResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.LintPolicyResponse").msgclass
         ServiceAccountKeyAlgorithm = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ServiceAccountKeyAlgorithm").enummodule
         ServiceAccountPrivateKeyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ServiceAccountPrivateKeyType").enummodule
         ServiceAccountPublicKeyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ServiceAccountPublicKeyType").enummodule
+        ServiceAccountKeyOrigin = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.ServiceAccountKeyOrigin").enummodule
         RoleView = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.iam.admin.v1.RoleView").enummodule
       end
     end

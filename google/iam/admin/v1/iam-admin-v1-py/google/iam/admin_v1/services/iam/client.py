@@ -76,22 +76,26 @@ class IAMClientMeta(type):
 
 
 class IAMClient(metaclass=IAMClientMeta):
-    """Creates and manages service account objects.
+    """Creates and manages Identity and Access Management (IAM) resources.
 
-    Service account is an account that belongs to your project instead
-    of to an individual end user. It is used to authenticate calls to a
-    Google API.
+    You can use this service to work with all of the following
+    resources:
 
-    To create a service account, specify the ``project_id`` and
-    ``account_id`` for the account. The ``account_id`` is unique within
-    the project, and used to generate the service account email address
-    and a stable ``unique_id``.
+    -  **Service accounts**, which identify an application or a virtual
+       machine (VM) instance rather than a person
+    -  **Service account keys**, which service accounts use to
+       authenticate with Google APIs
+    -  **IAM policies for service accounts**, which specify the roles
+       that a member has for the service account
+    -  **IAM custom roles**, which help you limit the number of
+       permissions that you grant to members
 
-    All other methods can identify accounts using the format
-    ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``. Using ``-`` as
-    a wildcard for the ``PROJECT_ID`` will infer the project from the
-    account. The ``ACCOUNT`` value can be the ``email`` address or the
-    ``unique_id`` of the service account.
+    In addition, you can use this service to complete the following
+    tasks, among others:
+
+    -  Test whether a service account can use specific permissions
+    -  Check which roles you can grant for a specific resource
+    -  Lint, or validate, condition expressions in an IAM policy
     """
 
     @staticmethod
@@ -362,8 +366,8 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServiceAccountsPager:
-        r"""Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for
-        a project.
+        r"""Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount]
+        that belongs to a specific project.
 
         Args:
             request (google.iam.admin_v1.types.ListServiceAccountsRequest):
@@ -478,28 +482,19 @@ class IAMClient(metaclass=IAMClientMeta):
 
         Returns:
             google.iam.admin_v1.types.ServiceAccount:
-                A service account in the Identity and Access Management
-                API.
+                An IAM service account.
 
-                   To create a service account, specify the project_id
-                   and the account_id for the account. The account_id is
-                   unique within the project, and is used to generate
-                   the service account email address and a stable
-                   unique_id.
+                   A service account is an account for an application or
+                   a virtual machine (VM) instance, not a person. You
+                   can use a service account to call Google APIs. To
+                   learn more, read the [overview of service
+                   accounts](\ https://cloud.google.com/iam/help/service-accounts/overview).
 
-                   If the account already exists, the account's resource
-                   name is returned in the format of
-                   projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The
-                   caller can use the name in other methods to access
-                   the account.
-
-                   All other methods can identify the service account
-                   using the format
-                   projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}.
-                   Using - as a wildcard for the PROJECT_ID will infer
-                   the project from the account. The ACCOUNT value can
-                   be the email address or the unique_id of the service
-                   account.
+                   When you create a service account, you specify the
+                   project ID that owns the service account, as well as
+                   a name that must be unique within the project. IAM
+                   uses these values to create an email address that
+                   identifies the service account.
 
         """
         # Create or coerce a protobuf request object.
@@ -556,8 +551,7 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccount:
-        r"""Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-        and returns it.
+        r"""Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
             request (google.iam.admin_v1.types.CreateServiceAccountRequest):
@@ -598,28 +592,19 @@ class IAMClient(metaclass=IAMClientMeta):
 
         Returns:
             google.iam.admin_v1.types.ServiceAccount:
-                A service account in the Identity and Access Management
-                API.
+                An IAM service account.
 
-                   To create a service account, specify the project_id
-                   and the account_id for the account. The account_id is
-                   unique within the project, and is used to generate
-                   the service account email address and a stable
-                   unique_id.
+                   A service account is an account for an application or
+                   a virtual machine (VM) instance, not a person. You
+                   can use a service account to call Google APIs. To
+                   learn more, read the [overview of service
+                   accounts](\ https://cloud.google.com/iam/help/service-accounts/overview).
 
-                   If the account already exists, the account's resource
-                   name is returned in the format of
-                   projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The
-                   caller can use the name in other methods to access
-                   the account.
-
-                   All other methods can identify the service account
-                   using the format
-                   projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}.
-                   Using - as a wildcard for the PROJECT_ID will infer
-                   the project from the account. The ACCOUNT value can
-                   be the email address or the unique_id of the service
-                   account.
+                   When you create a service account, you specify the
+                   project ID that owns the service account, as well as
+                   a name that must be unique within the project. IAM
+                   uses these values to create an email address that
+                   identifies the service account.
 
         """
         # Create or coerce a protobuf request object.
@@ -677,33 +662,29 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccount:
-        r"""Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+        r"""**Note:** We are in the process of deprecating this method. Use
+        [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount]
+        instead.
 
-        Currently, only the following fields are updatable:
-        ``display_name`` and ``description``.
+        Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        You can update only the ``display_name`` and ``description``
+        fields.
 
         Args:
             request (google.iam.admin_v1.types.ServiceAccount):
-                The request object. A service account in the Identity
-                and Access Management API.
-                To create a service account, specify the `project_id`
-                and the `account_id` for the account.  The `account_id`
-                is unique within the project, and is used to generate
-                the service account email address and a stable
-                `unique_id`.
-
-                If the account already exists, the account's resource
-                name is returned in the format of
-                projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The
-                caller can use the name in other methods to access the
-                account.
-                All other methods can identify the service account using
-                the format
-                `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-                Using `-` as a wildcard for the `PROJECT_ID` will infer
-                the project from the account. The `ACCOUNT` value can be
-                the `email` address or the `unique_id` of the service
-                account.
+                The request object. An IAM service account.
+                A service account is an account for an application or a
+                virtual machine (VM) instance, not a person. You can use
+                a service account to call Google APIs. To learn more,
+                read the [overview of service
+                accounts](https://cloud.google.com/iam/help/service-
+                accounts/overview).
+                When you create a service account, you specify the
+                project ID that owns the service account, as well as a
+                name that must be unique within the project. IAM uses
+                these values to create an email address that identifies
+                the service account.
 
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -713,28 +694,19 @@ class IAMClient(metaclass=IAMClientMeta):
 
         Returns:
             google.iam.admin_v1.types.ServiceAccount:
-                A service account in the Identity and Access Management
-                API.
+                An IAM service account.
 
-                   To create a service account, specify the project_id
-                   and the account_id for the account. The account_id is
-                   unique within the project, and is used to generate
-                   the service account email address and a stable
-                   unique_id.
+                   A service account is an account for an application or
+                   a virtual machine (VM) instance, not a person. You
+                   can use a service account to call Google APIs. To
+                   learn more, read the [overview of service
+                   accounts](\ https://cloud.google.com/iam/help/service-accounts/overview).
 
-                   If the account already exists, the account's resource
-                   name is returned in the format of
-                   projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The
-                   caller can use the name in other methods to access
-                   the account.
-
-                   All other methods can identify the service account
-                   using the format
-                   projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}.
-                   Using - as a wildcard for the PROJECT_ID will infer
-                   the project from the account. The ACCOUNT value can
-                   be the email address or the unique_id of the service
-                   account.
+                   When you create a service account, you specify the
+                   project ID that owns the service account, as well as
+                   a name that must be unique within the project. IAM
+                   uses these values to create an email address that
+                   identifies the service account.
 
         """
         # Create or coerce a protobuf request object.
@@ -769,6 +741,81 @@ class IAMClient(metaclass=IAMClientMeta):
         # Done; return the response.
         return response
 
+    def patch_service_account(self,
+            request: iam.PatchServiceAccountRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> iam.ServiceAccount:
+        r"""Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        Args:
+            request (google.iam.admin_v1.types.PatchServiceAccountRequest):
+                The request object. The request for
+                [PatchServiceAccount][google.iam.admin.v1.PatchServiceAccount].
+                You can patch only the `display_name` and `description`
+                fields. You must use the `update_mask` field to specify
+                which of these fields you want to patch.
+                Only the fields specified in the request are guaranteed
+                to be returned in the response. Other fields may be
+                empty in the response.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.iam.admin_v1.types.ServiceAccount:
+                An IAM service account.
+
+                   A service account is an account for an application or
+                   a virtual machine (VM) instance, not a person. You
+                   can use a service account to call Google APIs. To
+                   learn more, read the [overview of service
+                   accounts](\ https://cloud.google.com/iam/help/service-accounts/overview).
+
+                   When you create a service account, you specify the
+                   project ID that owns the service account, as well as
+                   a name that must be unique within the project. IAM
+                   uses these values to create an email address that
+                   identifies the service account.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.PatchServiceAccountRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.PatchServiceAccountRequest):
+            request = iam.PatchServiceAccountRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.patch_service_account]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('service_account.name', request.service_account.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     def delete_service_account(self,
             request: iam.DeleteServiceAccountRequest = None,
             *,
@@ -778,6 +825,24 @@ class IAMClient(metaclass=IAMClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        **Warning:** After you delete a service account, you might not
+        be able to undelete it. If you know that you need to re-enable
+        the service account in the future, use
+        [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount]
+        instead.
+
+        If you delete a service account, IAM permanently removes the
+        service account 30 days later. Google Cloud cannot recover the
+        service account after it is permanently removed, even if you
+        file a support request.
+
+        To help avoid unplanned outages, we recommend that you disable
+        the service account before you delete it. Use
+        [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount]
+        to disable the service account, then wait at least 24 hours and
+        watch for unintended consequences. If there are no unintended
+        consequences, you can delete the service account.
 
         Args:
             request (google.iam.admin_v1.types.DeleteServiceAccountRequest):
@@ -842,6 +907,194 @@ class IAMClient(metaclass=IAMClientMeta):
             metadata=metadata,
         )
 
+    def undelete_service_account(self,
+            request: iam.UndeleteServiceAccountRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> iam.UndeleteServiceAccountResponse:
+        r"""Restores a deleted
+        [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        **Important:** It is not always possible to restore a deleted
+        service account. Use this method only as a last resort.
+
+        After you delete a service account, IAM permanently removes the
+        service account 30 days later. There is no way to restore a
+        deleted service account that has been permanently removed.
+
+        Args:
+            request (google.iam.admin_v1.types.UndeleteServiceAccountRequest):
+                The request object. The service account undelete
+                request.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.iam.admin_v1.types.UndeleteServiceAccountResponse:
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.UndeleteServiceAccountRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.UndeleteServiceAccountRequest):
+            request = iam.UndeleteServiceAccountRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.undelete_service_account]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('name', request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def enable_service_account(self,
+            request: iam.EnableServiceAccountRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> None:
+        r"""Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
+        that was disabled by
+        [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+
+        If the service account is already enabled, then this method has
+        no effect.
+
+        If the service account was disabled by other means—for example,
+        if Google disabled the service account because it was
+        compromised—you cannot use this method to enable the service
+        account.
+
+        Args:
+            request (google.iam.admin_v1.types.EnableServiceAccountRequest):
+                The request object. The service account enable request.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.EnableServiceAccountRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.EnableServiceAccountRequest):
+            request = iam.EnableServiceAccountRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.enable_service_account]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('name', request.name),
+            )),
+        )
+
+        # Send the request.
+        rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+    def disable_service_account(self,
+            request: iam.DisableServiceAccountRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> None:
+        r"""Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
+        immediately.
+
+        If an application uses the service account to authenticate, that
+        application can no longer call Google APIs or access Google
+        Cloud resources. Existing access tokens for the service account
+        are rejected, and requests for new access tokens will fail.
+
+        To re-enable the service account, use
+        [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount].
+        After you re-enable the service account, its existing access
+        tokens will be accepted, and you can request new access tokens.
+
+        To help avoid unplanned outages, we recommend that you disable
+        the service account before you delete it. Use this method to
+        disable the service account, then wait at least 24 hours and
+        watch for unintended consequences. If there are no unintended
+        consequences, you can delete the service account with
+        [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+
+        Args:
+            request (google.iam.admin_v1.types.DisableServiceAccountRequest):
+                The request object. The service account disable request.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.DisableServiceAccountRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.DisableServiceAccountRequest):
+            request = iam.DisableServiceAccountRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.disable_service_account]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('name', request.name),
+            )),
+        )
+
+        # Send the request.
+        rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
     def list_service_account_keys(self,
             request: iam.ListServiceAccountKeysRequest = None,
             *,
@@ -851,8 +1104,9 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ListServiceAccountKeysResponse:
-        r"""Lists
-        [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+        r"""Lists every
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a
+        service account.
 
         Args:
             request (google.iam.admin_v1.types.ListServiceAccountKeysRequest):
@@ -949,9 +1203,8 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccountKey:
-        r"""Gets the
-        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by
-        key id.
+        r"""Gets a
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
 
         Args:
             request (google.iam.admin_v1.types.GetServiceAccountKeyRequest):
@@ -1003,11 +1256,20 @@ class IAMClient(metaclass=IAMClientMeta):
                 signing for a maximum of two weeks. The
                 rotation process is probabilistic, and
                 usage of the new key will gradually ramp
-                up and down over the key's lifetime. We
-                recommend caching the public key set for
-                a service account for no more than 24
-                hours to ensure you have access to the
-                latest keys.
+                up and down over the key's lifetime.
+
+                If you cache the public key set for a
+                service account, we recommend that you
+                update the cache every 15 minutes. User-
+                managed keys can be added and removed at
+                any time, so it is important to update
+                the cache frequently. For Google-managed
+                keys, Google will publish a key at least
+                6 hours before it is first used for
+                signing and will keep publishing it for
+                at least 6 hours after it was last used
+                for signing.
+
                 Public keys for all service accounts are
                 also published at the OAuth2 Service
                 Account API.
@@ -1070,8 +1332,7 @@ class IAMClient(metaclass=IAMClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccountKey:
         r"""Creates a
-        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and
-        returns it.
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
 
         Args:
             request (google.iam.admin_v1.types.CreateServiceAccountKeyRequest):
@@ -1132,11 +1393,20 @@ class IAMClient(metaclass=IAMClientMeta):
                 signing for a maximum of two weeks. The
                 rotation process is probabilistic, and
                 usage of the new key will gradually ramp
-                up and down over the key's lifetime. We
-                recommend caching the public key set for
-                a service account for no more than 24
-                hours to ensure you have access to the
-                latest keys.
+                up and down over the key's lifetime.
+
+                If you cache the public key set for a
+                service account, we recommend that you
+                update the cache every 15 minutes. User-
+                managed keys can be added and removed at
+                any time, so it is important to update
+                the cache frequently. For Google-managed
+                keys, Google will publish a key at least
+                6 hours before it is first used for
+                signing and will keep publishing it for
+                at least 6 hours after it was last used
+                for signing.
+
                 Public keys for all service accounts are
                 also published at the OAuth2 Service
                 Account API.
@@ -1190,6 +1460,98 @@ class IAMClient(metaclass=IAMClientMeta):
         # Done; return the response.
         return response
 
+    def upload_service_account_key(self,
+            request: iam.UploadServiceAccountKeyRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> iam.ServiceAccountKey:
+        r"""Creates a
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey],
+        using a public key that you provide.
+
+        Args:
+            request (google.iam.admin_v1.types.UploadServiceAccountKeyRequest):
+                The request object. The service account key upload
+                request.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.iam.admin_v1.types.ServiceAccountKey:
+                Represents a service account key.
+                A service account has two sets of key-
+                pairs: user-managed, and system-managed.
+
+                User-managed key-pairs can be created
+                and deleted by users.  Users are
+                responsible for rotating these keys
+                periodically to ensure security of their
+                service accounts.  Users retain the
+                private key of these key-pairs, and
+                Google retains ONLY the public key.
+
+                System-managed keys are automatically
+                rotated by Google, and are used for
+                signing for a maximum of two weeks. The
+                rotation process is probabilistic, and
+                usage of the new key will gradually ramp
+                up and down over the key's lifetime.
+
+                If you cache the public key set for a
+                service account, we recommend that you
+                update the cache every 15 minutes. User-
+                managed keys can be added and removed at
+                any time, so it is important to update
+                the cache frequently. For Google-managed
+                keys, Google will publish a key at least
+                6 hours before it is first used for
+                signing and will keep publishing it for
+                at least 6 hours after it was last used
+                for signing.
+
+                Public keys for all service accounts are
+                also published at the OAuth2 Service
+                Account API.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.UploadServiceAccountKeyRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.UploadServiceAccountKeyRequest):
+            request = iam.UploadServiceAccountKeyRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.upload_service_account_key]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('name', request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     def delete_service_account_key(self,
             request: iam.DeleteServiceAccountKeyRequest = None,
             *,
@@ -1200,6 +1562,9 @@ class IAMClient(metaclass=IAMClientMeta):
             ) -> None:
         r"""Deletes a
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+        Deleting a service account key does not revoke short-lived
+        credentials that have been issued based on the service account
+        key.
 
         Args:
             request (google.iam.admin_v1.types.DeleteServiceAccountKeyRequest):
@@ -1274,16 +1639,30 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.SignBlobResponse:
-        r"""Signs a blob using a service account's system-managed
-        private key.
+        r"""**Note:** This method is deprecated. Use the
+        ```signBlob`` <https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob>`__
+        method in the IAM Service Account Credentials API instead. If
+        you currently use this method, see the `migration
+        guide <https://cloud.google.com/iam/help/credentials/migrate-api>`__
+        for instructions.
+
+        Signs a blob using the system-managed private key for a
+        [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
             request (google.iam.admin_v1.types.SignBlobRequest):
-                The request object. The service account sign blob
-                request.
+                The request object. Deprecated. [Migrate to Service
+                Account Credentials
+                API](https://cloud.google.com/iam/help/credentials/migrate-
+                api).
+                The service account sign blob request.
             name (str):
-                Required. The resource name of the service account in
-                the following format:
+                Required. Deprecated. `Migrate to Service Account
+                Credentials
+                API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+                The resource name of the service account in the
+                following format:
                 ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
                 Using ``-`` as a wildcard for the ``PROJECT_ID`` will
                 infer the project from the account. The ``ACCOUNT``
@@ -1294,7 +1673,12 @@ class IAMClient(metaclass=IAMClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             bytes_to_sign (bytes):
-                Required. The bytes to sign.
+                Required. Deprecated. `Migrate to Service Account
+                Credentials
+                API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+                The bytes to sign.
+
                 This corresponds to the ``bytes_to_sign`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1307,8 +1691,10 @@ class IAMClient(metaclass=IAMClientMeta):
 
         Returns:
             google.iam.admin_v1.types.SignBlobResponse:
-                The service account sign blob
-                response.
+                Deprecated. [Migrate to Service Account Credentials
+                   API](\ https://cloud.google.com/iam/help/credentials/migrate-api).
+
+                   The service account sign blob response.
 
         """
         # Create or coerce a protobuf request object.
@@ -1366,21 +1752,30 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.SignJwtResponse:
-        r"""Signs a JWT using a service account's system-managed private
-        key.
+        r"""**Note:** This method is deprecated. Use the
+        ```signJwt`` <https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt>`__
+        method in the IAM Service Account Credentials API instead. If
+        you currently use this method, see the `migration
+        guide <https://cloud.google.com/iam/help/credentials/migrate-api>`__
+        for instructions.
 
-        If no expiry time (``exp``) is provided in the
-        ``SignJwtRequest``, IAM sets an an expiry time of one hour by
-        default. If you request an expiry time of more than one hour,
-        the request will fail.
+        Signs a JSON Web Token (JWT) using the system-managed private
+        key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
             request (google.iam.admin_v1.types.SignJwtRequest):
-                The request object. The service account sign JWT
-                request.
+                The request object. Deprecated. [Migrate to Service
+                Account Credentials
+                API](https://cloud.google.com/iam/help/credentials/migrate-
+                api).
+                The service account sign JWT request.
             name (str):
-                Required. The resource name of the service account in
-                the following format:
+                Required. Deprecated. `Migrate to Service Account
+                Credentials
+                API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+                The resource name of the service account in the
+                following format:
                 ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``.
                 Using ``-`` as a wildcard for the ``PROJECT_ID`` will
                 infer the project from the account. The ``ACCOUNT``
@@ -1391,8 +1786,21 @@ class IAMClient(metaclass=IAMClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             payload (str):
-                Required. The JWT payload to sign, a
-                JSON JWT Claim set.
+                Required. Deprecated. `Migrate to Service Account
+                Credentials
+                API <https://cloud.google.com/iam/help/credentials/migrate-api>`__.
+
+                The JWT payload to sign. Must be a serialized JSON
+                object that contains a JWT Claims Set. For example:
+                ``{"sub": "user@example.com", "iat": 313435}``
+
+                If the JWT Claims Set contains an expiration time
+                (``exp``) claim, it must be an integer timestamp that is
+                not in the past and no more than 1 hour in the future.
+
+                If the JWT Claims Set does not contain an expiration
+                time (``exp``) claim, this claim is added automatically,
+                with a timestamp that is 1 hour in the future.
 
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1406,8 +1814,10 @@ class IAMClient(metaclass=IAMClientMeta):
 
         Returns:
             google.iam.admin_v1.types.SignJwtResponse:
-                The service account sign JWT
-                response.
+                Deprecated. [Migrate to Service Account Credentials
+                   API](\ https://cloud.google.com/iam/help/credentials/migrate-api).
+
+                   The service account sign JWT response.
 
         """
         # Create or coerce a protobuf request object.
@@ -1464,20 +1874,17 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy.Policy:
-        r"""Returns the Cloud IAM access control policy for a
-        [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+        r"""Gets the IAM policy that is attached to a
+        [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+        policy specifies which members have access to the service
+        account.
 
-        Note: Service accounts are both `resources and
-        identities </iam/docs/service-accounts#service_account_permissions>`__.
-        This method treats the service account as a resource. It returns
-        the Cloud IAM policy that reflects what members have access to
-        the service account.
-
-        This method does not return what resources the service account
-        has access to. To see if a service account has access to a
-        resource, call the ``getIamPolicy`` method on the target
-        resource. For example, to view grants for a project, call the
-        `projects.getIamPolicy </resource-manager/reference/rest/v1/projects/getIamPolicy>`__
+        This method does not tell you whether the service account has
+        been granted any roles on other resources. To check whether a
+        service account has role grants on a resource, use the
+        ``getIamPolicy`` method for that resource. For example, to view
+        the role grants for a project, call the Resource Manager API's
+        ```projects.getIamPolicy`` <https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy>`__
         method.
 
         Args:
@@ -1609,23 +2016,27 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy.Policy:
-        r"""Sets the Cloud IAM access control policy for a
+        r"""Sets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
-        Note: Service accounts are both `resources and
-        identities </iam/docs/service-accounts#service_account_permissions>`__.
-        This method treats the service account as a resource. Use it to
-        grant members access to the service account, such as when they
-        need to impersonate it.
+        Use this method to grant or revoke access to the service
+        account. For example, you could grant a member the ability to
+        impersonate the service account.
 
-        This method does not grant the service account access to other
-        resources, such as projects. To grant a service account access
-        to resources, include the service account in the Cloud IAM
-        policy for the desired resource, then call the appropriate
-        ``setIamPolicy`` method on the target resource. For example, to
-        grant a service account access to a project, call the
-        `projects.setIamPolicy </resource-manager/reference/rest/v1/projects/setIamPolicy>`__
-        method.
+        This method does not enable the service account to access other
+        resources. To grant roles to a service account on a resource,
+        follow these steps:
+
+        1. Call the resource's ``getIamPolicy`` method to get its
+           current IAM policy.
+        2. Edit the policy so that it binds the service account to an
+           IAM role for the resource.
+        3. Call the resource's ``setIamPolicy`` method to update its IAM
+           policy.
+
+        For detailed instructions, see `Granting roles to a service
+        account for specific
+        resources <https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts>`__.
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
@@ -1757,8 +2168,7 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy.TestIamPermissionsResponse:
-        r"""Tests the specified permissions against the IAM access control
-        policy for a
+        r"""Tests whether the caller has the specified permissions on a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
@@ -1847,9 +2257,9 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.QueryGrantableRolesPager:
-        r"""Queries roles that can be granted on a particular
-        resource. A role is grantable if it can be used as the
-        role in a binding for a policy for that resource.
+        r"""Lists roles that can be granted on a Google Cloud
+        resource. A role is grantable if the IAM policy for the
+        resource can contain bindings to the role.
 
         Args:
             request (google.iam.admin_v1.types.QueryGrantableRolesRequest):
@@ -1933,7 +2343,9 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRolesPager:
-        r"""Lists the Roles defined on a resource.
+        r"""Lists every predefined [Role][google.iam.admin.v1.Role] that IAM
+        supports, or every custom role that is defined for an
+        organization or project.
 
         Args:
             request (google.iam.admin_v1.types.ListRolesRequest):
@@ -1995,7 +2407,7 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
-        r"""Gets a Role definition.
+        r"""Gets the definition of a [Role][google.iam.admin.v1.Role].
 
         Args:
             request (google.iam.admin_v1.types.GetRoleRequest):
@@ -2053,7 +2465,7 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
-        r"""Creates a new Role.
+        r"""Creates a new custom [Role][google.iam.admin.v1.Role].
 
         Args:
             request (google.iam.admin_v1.types.CreateRoleRequest):
@@ -2110,7 +2522,8 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
-        r"""Updates a Role definition.
+        r"""Updates the definition of a custom
+        [Role][google.iam.admin.v1.Role].
 
         Args:
             request (google.iam.admin_v1.types.UpdateRoleRequest):
@@ -2167,13 +2580,26 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
-        r"""Soft deletes a role. The role is suspended and cannot be used to
-        create new IAM Policy Bindings. The Role will not be included in
-        ``ListRoles()`` unless ``show_deleted`` is set in the
-        ``ListRolesRequest``. The Role contains the deleted boolean set.
-        Existing Bindings remains, but are inactive. The Role can be
-        undeleted within 7 days. After 7 days the Role is deleted and
-        all Bindings associated with the role are removed.
+        r"""Deletes a custom [Role][google.iam.admin.v1.Role].
+
+        When you delete a custom role, the following changes occur
+        immediately:
+
+        -  You cannot bind a member to the custom role in an IAM
+           [Policy][google.iam.v1.Policy].
+        -  Existing bindings to the custom role are not changed, but
+           they have no effect.
+        -  By default, the response from
+           [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
+           include the custom role.
+
+        You have 7 days to undelete the custom role. After 7 days, the
+        following changes occur:
+
+        -  The custom role is permanently deleted and cannot be
+           recovered.
+        -  If an IAM policy contains a binding to the custom role, the
+           binding is permanently removed.
 
         Args:
             request (google.iam.admin_v1.types.DeleteRoleRequest):
@@ -2231,8 +2657,7 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
-        r"""Undelete a Role, bringing it back in its previous
-        state.
+        r"""Undeletes a custom [Role][google.iam.admin.v1.Role].
 
         Args:
             request (google.iam.admin_v1.types.UndeleteRoleRequest):
@@ -2290,9 +2715,9 @@ class IAMClient(metaclass=IAMClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.QueryTestablePermissionsPager:
-        r"""Lists the permissions testable on a resource.
-        A permission is testable if it can be tested for an
-        identity on a resource.
+        r"""Lists every permission that you can test on a
+        resource. A permission is testable if you can check
+        whether a member has that permission on the resource.
 
         Args:
             request (google.iam.admin_v1.types.QueryTestablePermissionsRequest):
@@ -2341,6 +2766,118 @@ class IAMClient(metaclass=IAMClientMeta):
             method=rpc,
             request=request,
             response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def query_auditable_services(self,
+            request: iam.QueryAuditableServicesRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> iam.QueryAuditableServicesResponse:
+        r"""Returns a list of services that allow you to opt into audit logs
+        that are not generated by default.
+
+        To learn more about audit logs, see the `Logging
+        documentation <https://cloud.google.com/logging/docs/audit>`__.
+
+        Args:
+            request (google.iam.admin_v1.types.QueryAuditableServicesRequest):
+                The request object. A request to get the list of
+                auditable services for a resource.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.iam.admin_v1.types.QueryAuditableServicesResponse:
+                A response containing a list of
+                auditable services for a resource.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.QueryAuditableServicesRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.QueryAuditableServicesRequest):
+            request = iam.QueryAuditableServicesRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.query_auditable_services]
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def lint_policy(self,
+            request: iam.LintPolicyRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> iam.LintPolicyResponse:
+        r"""Lints, or validates, an IAM policy. Currently checks the
+        [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition]
+        field, which contains a condition expression for a role binding.
+
+        Successful calls to this method always return an HTTP ``200 OK``
+        status code, even if the linter detects an issue in the IAM
+        policy.
+
+        Args:
+            request (google.iam.admin_v1.types.LintPolicyRequest):
+                The request object. The request to lint a Cloud IAM
+                policy object.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.iam.admin_v1.types.LintPolicyResponse:
+                The response of a lint operation. An
+                empty response indicates the operation
+                was able to fully execute and no lint
+                issue was found.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a iam.LintPolicyRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, iam.LintPolicyRequest):
+            request = iam.LintPolicyRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.lint_policy]
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
             metadata=metadata,
         )
 

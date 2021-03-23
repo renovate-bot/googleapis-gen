@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     stage_ = 0;
     customRolesSupportLevel_ = 0;
+    primaryPermission_ = "";
   }
 
   @java.lang.Override
@@ -90,6 +91,17 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             customRolesSupportLevel_ = rawValue;
+            break;
+          }
+          case 56: {
+
+            apiDisabled_ = input.readBool();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            primaryPermission_ = s;
             break;
           }
           default: {
@@ -574,15 +586,11 @@ private static final long serialVersionUID = 0L;
   public static final int ONLY_IN_PREDEFINED_ROLES_FIELD_NUMBER = 4;
   private boolean onlyInPredefinedRoles_;
   /**
-   * <pre>
-   * This permission can ONLY be used in predefined roles.
-   * </pre>
-   *
-   * <code>bool only_in_predefined_roles = 4;</code>
+   * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
    * @return The onlyInPredefinedRoles.
    */
   @java.lang.Override
-  public boolean getOnlyInPredefinedRoles() {
+  @java.lang.Deprecated public boolean getOnlyInPredefinedRoles() {
     return onlyInPredefinedRoles_;
   }
 
@@ -640,6 +648,69 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.iam.admin.v1.Permission.CustomRolesSupportLevel.UNRECOGNIZED : result;
   }
 
+  public static final int API_DISABLED_FIELD_NUMBER = 7;
+  private boolean apiDisabled_;
+  /**
+   * <pre>
+   * The service API associated with the permission is not enabled.
+   * </pre>
+   *
+   * <code>bool api_disabled = 7;</code>
+   * @return The apiDisabled.
+   */
+  @java.lang.Override
+  public boolean getApiDisabled() {
+    return apiDisabled_;
+  }
+
+  public static final int PRIMARY_PERMISSION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object primaryPermission_;
+  /**
+   * <pre>
+   * The preferred name for this permission. If present, then this permission is
+   * an alias of, and equivalent to, the listed primary_permission.
+   * </pre>
+   *
+   * <code>string primary_permission = 8;</code>
+   * @return The primaryPermission.
+   */
+  @java.lang.Override
+  public java.lang.String getPrimaryPermission() {
+    java.lang.Object ref = primaryPermission_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      primaryPermission_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The preferred name for this permission. If present, then this permission is
+   * an alias of, and equivalent to, the listed primary_permission.
+   * </pre>
+   *
+   * <code>string primary_permission = 8;</code>
+   * @return The bytes for primaryPermission.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrimaryPermissionBytes() {
+    java.lang.Object ref = primaryPermission_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      primaryPermission_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -672,6 +743,12 @@ private static final long serialVersionUID = 0L;
     if (customRolesSupportLevel_ != com.google.iam.admin.v1.Permission.CustomRolesSupportLevel.SUPPORTED.getNumber()) {
       output.writeEnum(6, customRolesSupportLevel_);
     }
+    if (apiDisabled_ != false) {
+      output.writeBool(7, apiDisabled_);
+    }
+    if (!getPrimaryPermissionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, primaryPermission_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -702,6 +779,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, customRolesSupportLevel_);
     }
+    if (apiDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, apiDisabled_);
+    }
+    if (!getPrimaryPermissionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, primaryPermission_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -727,6 +811,10 @@ private static final long serialVersionUID = 0L;
         != other.getOnlyInPredefinedRoles()) return false;
     if (stage_ != other.stage_) return false;
     if (customRolesSupportLevel_ != other.customRolesSupportLevel_) return false;
+    if (getApiDisabled()
+        != other.getApiDisabled()) return false;
+    if (!getPrimaryPermission()
+        .equals(other.getPrimaryPermission())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -751,6 +839,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + stage_;
     hash = (37 * hash) + CUSTOM_ROLES_SUPPORT_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + customRolesSupportLevel_;
+    hash = (37 * hash) + API_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getApiDisabled());
+    hash = (37 * hash) + PRIMARY_PERMISSION_FIELD_NUMBER;
+    hash = (53 * hash) + getPrimaryPermission().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -900,6 +993,10 @@ private static final long serialVersionUID = 0L;
 
       customRolesSupportLevel_ = 0;
 
+      apiDisabled_ = false;
+
+      primaryPermission_ = "";
+
       return this;
     }
 
@@ -932,6 +1029,8 @@ private static final long serialVersionUID = 0L;
       result.onlyInPredefinedRoles_ = onlyInPredefinedRoles_;
       result.stage_ = stage_;
       result.customRolesSupportLevel_ = customRolesSupportLevel_;
+      result.apiDisabled_ = apiDisabled_;
+      result.primaryPermission_ = primaryPermission_;
       onBuilt();
       return result;
     }
@@ -1000,6 +1099,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.customRolesSupportLevel_ != 0) {
         setCustomRolesSupportLevelValue(other.getCustomRolesSupportLevelValue());
+      }
+      if (other.getApiDisabled() != false) {
+        setApiDisabled(other.getApiDisabled());
+      }
+      if (!other.getPrimaryPermission().isEmpty()) {
+        primaryPermission_ = other.primaryPermission_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1325,41 +1431,29 @@ private static final long serialVersionUID = 0L;
 
     private boolean onlyInPredefinedRoles_ ;
     /**
-     * <pre>
-     * This permission can ONLY be used in predefined roles.
-     * </pre>
-     *
-     * <code>bool only_in_predefined_roles = 4;</code>
+     * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      * @return The onlyInPredefinedRoles.
      */
     @java.lang.Override
-    public boolean getOnlyInPredefinedRoles() {
+    @java.lang.Deprecated public boolean getOnlyInPredefinedRoles() {
       return onlyInPredefinedRoles_;
     }
     /**
-     * <pre>
-     * This permission can ONLY be used in predefined roles.
-     * </pre>
-     *
-     * <code>bool only_in_predefined_roles = 4;</code>
+     * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      * @param value The onlyInPredefinedRoles to set.
      * @return This builder for chaining.
      */
-    public Builder setOnlyInPredefinedRoles(boolean value) {
+    @java.lang.Deprecated public Builder setOnlyInPredefinedRoles(boolean value) {
       
       onlyInPredefinedRoles_ = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * This permission can ONLY be used in predefined roles.
-     * </pre>
-     *
-     * <code>bool only_in_predefined_roles = 4;</code>
+     * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearOnlyInPredefinedRoles() {
+    @java.lang.Deprecated public Builder clearOnlyInPredefinedRoles() {
       
       onlyInPredefinedRoles_ = false;
       onChanged();
@@ -1510,6 +1604,150 @@ private static final long serialVersionUID = 0L;
     public Builder clearCustomRolesSupportLevel() {
       
       customRolesSupportLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean apiDisabled_ ;
+    /**
+     * <pre>
+     * The service API associated with the permission is not enabled.
+     * </pre>
+     *
+     * <code>bool api_disabled = 7;</code>
+     * @return The apiDisabled.
+     */
+    @java.lang.Override
+    public boolean getApiDisabled() {
+      return apiDisabled_;
+    }
+    /**
+     * <pre>
+     * The service API associated with the permission is not enabled.
+     * </pre>
+     *
+     * <code>bool api_disabled = 7;</code>
+     * @param value The apiDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApiDisabled(boolean value) {
+      
+      apiDisabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The service API associated with the permission is not enabled.
+     * </pre>
+     *
+     * <code>bool api_disabled = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApiDisabled() {
+      
+      apiDisabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object primaryPermission_ = "";
+    /**
+     * <pre>
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     * </pre>
+     *
+     * <code>string primary_permission = 8;</code>
+     * @return The primaryPermission.
+     */
+    public java.lang.String getPrimaryPermission() {
+      java.lang.Object ref = primaryPermission_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        primaryPermission_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     * </pre>
+     *
+     * <code>string primary_permission = 8;</code>
+     * @return The bytes for primaryPermission.
+     */
+    public com.google.protobuf.ByteString
+        getPrimaryPermissionBytes() {
+      java.lang.Object ref = primaryPermission_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        primaryPermission_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     * </pre>
+     *
+     * <code>string primary_permission = 8;</code>
+     * @param value The primaryPermission to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryPermission(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      primaryPermission_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     * </pre>
+     *
+     * <code>string primary_permission = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrimaryPermission() {
+      
+      primaryPermission_ = getDefaultInstance().getPrimaryPermission();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The preferred name for this permission. If present, then this permission is
+     * an alias of, and equivalent to, the listed primary_permission.
+     * </pre>
+     *
+     * <code>string primary_permission = 8;</code>
+     * @param value The bytes for primaryPermission to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryPermissionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      primaryPermission_ = value;
       onChanged();
       return this;
     }

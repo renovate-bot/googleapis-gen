@@ -37,22 +37,26 @@ from .base import IAMTransport, DEFAULT_CLIENT_INFO
 class IAMGrpcTransport(IAMTransport):
     """gRPC backend transport for IAM.
 
-    Creates and manages service account objects.
+    Creates and manages Identity and Access Management (IAM) resources.
 
-    Service account is an account that belongs to your project instead
-    of to an individual end user. It is used to authenticate calls to a
-    Google API.
+    You can use this service to work with all of the following
+    resources:
 
-    To create a service account, specify the ``project_id`` and
-    ``account_id`` for the account. The ``account_id`` is unique within
-    the project, and used to generate the service account email address
-    and a stable ``unique_id``.
+    -  **Service accounts**, which identify an application or a virtual
+       machine (VM) instance rather than a person
+    -  **Service account keys**, which service accounts use to
+       authenticate with Google APIs
+    -  **IAM policies for service accounts**, which specify the roles
+       that a member has for the service account
+    -  **IAM custom roles**, which help you limit the number of
+       permissions that you grant to members
 
-    All other methods can identify accounts using the format
-    ``projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}``. Using ``-`` as
-    a wildcard for the ``PROJECT_ID`` will infer the project from the
-    account. The ``ACCOUNT`` value can be the ``email`` address or the
-    ``unique_id`` of the service account.
+    In addition, you can use this service to complete the following
+    tasks, among others:
+
+    -  Test whether a service account can use specific permissions
+    -  Check which roles you can grant for a specific resource
+    -  Lint, or validate, condition expressions in an IAM policy
 
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation
@@ -240,8 +244,8 @@ class IAMGrpcTransport(IAMTransport):
             iam.ListServiceAccountsResponse]:
         r"""Return a callable for the list service accounts method over gRPC.
 
-        Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for
-        a project.
+        Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount]
+        that belongs to a specific project.
 
         Returns:
             Callable[[~.ListServiceAccountsRequest],
@@ -293,8 +297,7 @@ class IAMGrpcTransport(IAMTransport):
             iam.ServiceAccount]:
         r"""Return a callable for the create service account method over gRPC.
 
-        Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-        and returns it.
+        Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Returns:
             Callable[[~.CreateServiceAccountRequest],
@@ -320,10 +323,14 @@ class IAMGrpcTransport(IAMTransport):
             iam.ServiceAccount]:
         r"""Return a callable for the update service account method over gRPC.
 
+        **Note:** We are in the process of deprecating this method. Use
+        [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount]
+        instead.
+
         Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
-        Currently, only the following fields are updatable:
-        ``display_name`` and ``description``.
+        You can update only the ``display_name`` and ``description``
+        fields.
 
         Returns:
             Callable[[~.ServiceAccount],
@@ -344,12 +351,56 @@ class IAMGrpcTransport(IAMTransport):
         return self._stubs['update_service_account']
 
     @property
+    def patch_service_account(self) -> Callable[
+            [iam.PatchServiceAccountRequest],
+            iam.ServiceAccount]:
+        r"""Return a callable for the patch service account method over gRPC.
+
+        Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        Returns:
+            Callable[[~.PatchServiceAccountRequest],
+                    ~.ServiceAccount]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'patch_service_account' not in self._stubs:
+            self._stubs['patch_service_account'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/PatchServiceAccount',
+                request_serializer=iam.PatchServiceAccountRequest.serialize,
+                response_deserializer=iam.ServiceAccount.deserialize,
+            )
+        return self._stubs['patch_service_account']
+
+    @property
     def delete_service_account(self) -> Callable[
             [iam.DeleteServiceAccountRequest],
             empty.Empty]:
         r"""Return a callable for the delete service account method over gRPC.
 
         Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        **Warning:** After you delete a service account, you might not
+        be able to undelete it. If you know that you need to re-enable
+        the service account in the future, use
+        [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount]
+        instead.
+
+        If you delete a service account, IAM permanently removes the
+        service account 30 days later. Google Cloud cannot recover the
+        service account after it is permanently removed, even if you
+        file a support request.
+
+        To help avoid unplanned outages, we recommend that you disable
+        the service account before you delete it. Use
+        [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount]
+        to disable the service account, then wait at least 24 hours and
+        watch for unintended consequences. If there are no unintended
+        consequences, you can delete the service account.
 
         Returns:
             Callable[[~.DeleteServiceAccountRequest],
@@ -370,13 +421,128 @@ class IAMGrpcTransport(IAMTransport):
         return self._stubs['delete_service_account']
 
     @property
+    def undelete_service_account(self) -> Callable[
+            [iam.UndeleteServiceAccountRequest],
+            iam.UndeleteServiceAccountResponse]:
+        r"""Return a callable for the undelete service account method over gRPC.
+
+        Restores a deleted
+        [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+
+        **Important:** It is not always possible to restore a deleted
+        service account. Use this method only as a last resort.
+
+        After you delete a service account, IAM permanently removes the
+        service account 30 days later. There is no way to restore a
+        deleted service account that has been permanently removed.
+
+        Returns:
+            Callable[[~.UndeleteServiceAccountRequest],
+                    ~.UndeleteServiceAccountResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'undelete_service_account' not in self._stubs:
+            self._stubs['undelete_service_account'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/UndeleteServiceAccount',
+                request_serializer=iam.UndeleteServiceAccountRequest.serialize,
+                response_deserializer=iam.UndeleteServiceAccountResponse.deserialize,
+            )
+        return self._stubs['undelete_service_account']
+
+    @property
+    def enable_service_account(self) -> Callable[
+            [iam.EnableServiceAccountRequest],
+            empty.Empty]:
+        r"""Return a callable for the enable service account method over gRPC.
+
+        Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
+        that was disabled by
+        [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+
+        If the service account is already enabled, then this method has
+        no effect.
+
+        If the service account was disabled by other means—for example,
+        if Google disabled the service account because it was
+        compromised—you cannot use this method to enable the service
+        account.
+
+        Returns:
+            Callable[[~.EnableServiceAccountRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'enable_service_account' not in self._stubs:
+            self._stubs['enable_service_account'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/EnableServiceAccount',
+                request_serializer=iam.EnableServiceAccountRequest.serialize,
+                response_deserializer=empty.Empty.FromString,
+            )
+        return self._stubs['enable_service_account']
+
+    @property
+    def disable_service_account(self) -> Callable[
+            [iam.DisableServiceAccountRequest],
+            empty.Empty]:
+        r"""Return a callable for the disable service account method over gRPC.
+
+        Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
+        immediately.
+
+        If an application uses the service account to authenticate, that
+        application can no longer call Google APIs or access Google
+        Cloud resources. Existing access tokens for the service account
+        are rejected, and requests for new access tokens will fail.
+
+        To re-enable the service account, use
+        [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount].
+        After you re-enable the service account, its existing access
+        tokens will be accepted, and you can request new access tokens.
+
+        To help avoid unplanned outages, we recommend that you disable
+        the service account before you delete it. Use this method to
+        disable the service account, then wait at least 24 hours and
+        watch for unintended consequences. If there are no unintended
+        consequences, you can delete the service account with
+        [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+
+        Returns:
+            Callable[[~.DisableServiceAccountRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'disable_service_account' not in self._stubs:
+            self._stubs['disable_service_account'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/DisableServiceAccount',
+                request_serializer=iam.DisableServiceAccountRequest.serialize,
+                response_deserializer=empty.Empty.FromString,
+            )
+        return self._stubs['disable_service_account']
+
+    @property
     def list_service_account_keys(self) -> Callable[
             [iam.ListServiceAccountKeysRequest],
             iam.ListServiceAccountKeysResponse]:
         r"""Return a callable for the list service account keys method over gRPC.
 
-        Lists
-        [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+        Lists every
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a
+        service account.
 
         Returns:
             Callable[[~.ListServiceAccountKeysRequest],
@@ -402,9 +568,8 @@ class IAMGrpcTransport(IAMTransport):
             iam.ServiceAccountKey]:
         r"""Return a callable for the get service account key method over gRPC.
 
-        Gets the
-        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by
-        key id.
+        Gets a
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
 
         Returns:
             Callable[[~.GetServiceAccountKeyRequest],
@@ -431,8 +596,7 @@ class IAMGrpcTransport(IAMTransport):
         r"""Return a callable for the create service account key method over gRPC.
 
         Creates a
-        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and
-        returns it.
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
 
         Returns:
             Callable[[~.CreateServiceAccountKeyRequest],
@@ -453,6 +617,34 @@ class IAMGrpcTransport(IAMTransport):
         return self._stubs['create_service_account_key']
 
     @property
+    def upload_service_account_key(self) -> Callable[
+            [iam.UploadServiceAccountKeyRequest],
+            iam.ServiceAccountKey]:
+        r"""Return a callable for the upload service account key method over gRPC.
+
+        Creates a
+        [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey],
+        using a public key that you provide.
+
+        Returns:
+            Callable[[~.UploadServiceAccountKeyRequest],
+                    ~.ServiceAccountKey]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'upload_service_account_key' not in self._stubs:
+            self._stubs['upload_service_account_key'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/UploadServiceAccountKey',
+                request_serializer=iam.UploadServiceAccountKeyRequest.serialize,
+                response_deserializer=iam.ServiceAccountKey.deserialize,
+            )
+        return self._stubs['upload_service_account_key']
+
+    @property
     def delete_service_account_key(self) -> Callable[
             [iam.DeleteServiceAccountKeyRequest],
             empty.Empty]:
@@ -460,6 +652,9 @@ class IAMGrpcTransport(IAMTransport):
 
         Deletes a
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+        Deleting a service account key does not revoke short-lived
+        credentials that have been issued based on the service account
+        key.
 
         Returns:
             Callable[[~.DeleteServiceAccountKeyRequest],
@@ -485,8 +680,15 @@ class IAMGrpcTransport(IAMTransport):
             iam.SignBlobResponse]:
         r"""Return a callable for the sign blob method over gRPC.
 
-        Signs a blob using a service account's system-managed
-        private key.
+        **Note:** This method is deprecated. Use the
+        ```signBlob`` <https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob>`__
+        method in the IAM Service Account Credentials API instead. If
+        you currently use this method, see the `migration
+        guide <https://cloud.google.com/iam/help/credentials/migrate-api>`__
+        for instructions.
+
+        Signs a blob using the system-managed private key for a
+        [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Returns:
             Callable[[~.SignBlobRequest],
@@ -512,13 +714,15 @@ class IAMGrpcTransport(IAMTransport):
             iam.SignJwtResponse]:
         r"""Return a callable for the sign jwt method over gRPC.
 
-        Signs a JWT using a service account's system-managed private
-        key.
+        **Note:** This method is deprecated. Use the
+        ```signJwt`` <https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt>`__
+        method in the IAM Service Account Credentials API instead. If
+        you currently use this method, see the `migration
+        guide <https://cloud.google.com/iam/help/credentials/migrate-api>`__
+        for instructions.
 
-        If no expiry time (``exp``) is provided in the
-        ``SignJwtRequest``, IAM sets an an expiry time of one hour by
-        default. If you request an expiry time of more than one hour,
-        the request will fail.
+        Signs a JSON Web Token (JWT) using the system-managed private
+        key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Returns:
             Callable[[~.SignJwtRequest],
@@ -544,20 +748,17 @@ class IAMGrpcTransport(IAMTransport):
             policy.Policy]:
         r"""Return a callable for the get iam policy method over gRPC.
 
-        Returns the Cloud IAM access control policy for a
-        [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+        Gets the IAM policy that is attached to a
+        [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+        policy specifies which members have access to the service
+        account.
 
-        Note: Service accounts are both `resources and
-        identities </iam/docs/service-accounts#service_account_permissions>`__.
-        This method treats the service account as a resource. It returns
-        the Cloud IAM policy that reflects what members have access to
-        the service account.
-
-        This method does not return what resources the service account
-        has access to. To see if a service account has access to a
-        resource, call the ``getIamPolicy`` method on the target
-        resource. For example, to view grants for a project, call the
-        `projects.getIamPolicy </resource-manager/reference/rest/v1/projects/getIamPolicy>`__
+        This method does not tell you whether the service account has
+        been granted any roles on other resources. To check whether a
+        service account has role grants on a resource, use the
+        ``getIamPolicy`` method for that resource. For example, to view
+        the role grants for a project, call the Resource Manager API's
+        ```projects.getIamPolicy`` <https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy>`__
         method.
 
         Returns:
@@ -584,23 +785,27 @@ class IAMGrpcTransport(IAMTransport):
             policy.Policy]:
         r"""Return a callable for the set iam policy method over gRPC.
 
-        Sets the Cloud IAM access control policy for a
+        Sets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
-        Note: Service accounts are both `resources and
-        identities </iam/docs/service-accounts#service_account_permissions>`__.
-        This method treats the service account as a resource. Use it to
-        grant members access to the service account, such as when they
-        need to impersonate it.
+        Use this method to grant or revoke access to the service
+        account. For example, you could grant a member the ability to
+        impersonate the service account.
 
-        This method does not grant the service account access to other
-        resources, such as projects. To grant a service account access
-        to resources, include the service account in the Cloud IAM
-        policy for the desired resource, then call the appropriate
-        ``setIamPolicy`` method on the target resource. For example, to
-        grant a service account access to a project, call the
-        `projects.setIamPolicy </resource-manager/reference/rest/v1/projects/setIamPolicy>`__
-        method.
+        This method does not enable the service account to access other
+        resources. To grant roles to a service account on a resource,
+        follow these steps:
+
+        1. Call the resource's ``getIamPolicy`` method to get its
+           current IAM policy.
+        2. Edit the policy so that it binds the service account to an
+           IAM role for the resource.
+        3. Call the resource's ``setIamPolicy`` method to update its IAM
+           policy.
+
+        For detailed instructions, see `Granting roles to a service
+        account for specific
+        resources <https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts>`__.
 
         Returns:
             Callable[[~.SetIamPolicyRequest],
@@ -626,8 +831,7 @@ class IAMGrpcTransport(IAMTransport):
             iam_policy.TestIamPermissionsResponse]:
         r"""Return a callable for the test iam permissions method over gRPC.
 
-        Tests the specified permissions against the IAM access control
-        policy for a
+        Tests whether the caller has the specified permissions on a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Returns:
@@ -654,9 +858,9 @@ class IAMGrpcTransport(IAMTransport):
             iam.QueryGrantableRolesResponse]:
         r"""Return a callable for the query grantable roles method over gRPC.
 
-        Queries roles that can be granted on a particular
-        resource. A role is grantable if it can be used as the
-        role in a binding for a policy for that resource.
+        Lists roles that can be granted on a Google Cloud
+        resource. A role is grantable if the IAM policy for the
+        resource can contain bindings to the role.
 
         Returns:
             Callable[[~.QueryGrantableRolesRequest],
@@ -682,7 +886,9 @@ class IAMGrpcTransport(IAMTransport):
             iam.ListRolesResponse]:
         r"""Return a callable for the list roles method over gRPC.
 
-        Lists the Roles defined on a resource.
+        Lists every predefined [Role][google.iam.admin.v1.Role] that IAM
+        supports, or every custom role that is defined for an
+        organization or project.
 
         Returns:
             Callable[[~.ListRolesRequest],
@@ -708,7 +914,7 @@ class IAMGrpcTransport(IAMTransport):
             iam.Role]:
         r"""Return a callable for the get role method over gRPC.
 
-        Gets a Role definition.
+        Gets the definition of a [Role][google.iam.admin.v1.Role].
 
         Returns:
             Callable[[~.GetRoleRequest],
@@ -734,7 +940,7 @@ class IAMGrpcTransport(IAMTransport):
             iam.Role]:
         r"""Return a callable for the create role method over gRPC.
 
-        Creates a new Role.
+        Creates a new custom [Role][google.iam.admin.v1.Role].
 
         Returns:
             Callable[[~.CreateRoleRequest],
@@ -760,7 +966,8 @@ class IAMGrpcTransport(IAMTransport):
             iam.Role]:
         r"""Return a callable for the update role method over gRPC.
 
-        Updates a Role definition.
+        Updates the definition of a custom
+        [Role][google.iam.admin.v1.Role].
 
         Returns:
             Callable[[~.UpdateRoleRequest],
@@ -786,13 +993,26 @@ class IAMGrpcTransport(IAMTransport):
             iam.Role]:
         r"""Return a callable for the delete role method over gRPC.
 
-        Soft deletes a role. The role is suspended and cannot be used to
-        create new IAM Policy Bindings. The Role will not be included in
-        ``ListRoles()`` unless ``show_deleted`` is set in the
-        ``ListRolesRequest``. The Role contains the deleted boolean set.
-        Existing Bindings remains, but are inactive. The Role can be
-        undeleted within 7 days. After 7 days the Role is deleted and
-        all Bindings associated with the role are removed.
+        Deletes a custom [Role][google.iam.admin.v1.Role].
+
+        When you delete a custom role, the following changes occur
+        immediately:
+
+        -  You cannot bind a member to the custom role in an IAM
+           [Policy][google.iam.v1.Policy].
+        -  Existing bindings to the custom role are not changed, but
+           they have no effect.
+        -  By default, the response from
+           [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
+           include the custom role.
+
+        You have 7 days to undelete the custom role. After 7 days, the
+        following changes occur:
+
+        -  The custom role is permanently deleted and cannot be
+           recovered.
+        -  If an IAM policy contains a binding to the custom role, the
+           binding is permanently removed.
 
         Returns:
             Callable[[~.DeleteRoleRequest],
@@ -818,8 +1038,7 @@ class IAMGrpcTransport(IAMTransport):
             iam.Role]:
         r"""Return a callable for the undelete role method over gRPC.
 
-        Undelete a Role, bringing it back in its previous
-        state.
+        Undeletes a custom [Role][google.iam.admin.v1.Role].
 
         Returns:
             Callable[[~.UndeleteRoleRequest],
@@ -845,9 +1064,9 @@ class IAMGrpcTransport(IAMTransport):
             iam.QueryTestablePermissionsResponse]:
         r"""Return a callable for the query testable permissions method over gRPC.
 
-        Lists the permissions testable on a resource.
-        A permission is testable if it can be tested for an
-        identity on a resource.
+        Lists every permission that you can test on a
+        resource. A permission is testable if you can check
+        whether a member has that permission on the resource.
 
         Returns:
             Callable[[~.QueryTestablePermissionsRequest],
@@ -866,6 +1085,68 @@ class IAMGrpcTransport(IAMTransport):
                 response_deserializer=iam.QueryTestablePermissionsResponse.deserialize,
             )
         return self._stubs['query_testable_permissions']
+
+    @property
+    def query_auditable_services(self) -> Callable[
+            [iam.QueryAuditableServicesRequest],
+            iam.QueryAuditableServicesResponse]:
+        r"""Return a callable for the query auditable services method over gRPC.
+
+        Returns a list of services that allow you to opt into audit logs
+        that are not generated by default.
+
+        To learn more about audit logs, see the `Logging
+        documentation <https://cloud.google.com/logging/docs/audit>`__.
+
+        Returns:
+            Callable[[~.QueryAuditableServicesRequest],
+                    ~.QueryAuditableServicesResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'query_auditable_services' not in self._stubs:
+            self._stubs['query_auditable_services'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/QueryAuditableServices',
+                request_serializer=iam.QueryAuditableServicesRequest.serialize,
+                response_deserializer=iam.QueryAuditableServicesResponse.deserialize,
+            )
+        return self._stubs['query_auditable_services']
+
+    @property
+    def lint_policy(self) -> Callable[
+            [iam.LintPolicyRequest],
+            iam.LintPolicyResponse]:
+        r"""Return a callable for the lint policy method over gRPC.
+
+        Lints, or validates, an IAM policy. Currently checks the
+        [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition]
+        field, which contains a condition expression for a role binding.
+
+        Successful calls to this method always return an HTTP ``200 OK``
+        status code, even if the linter detects an issue in the IAM
+        policy.
+
+        Returns:
+            Callable[[~.LintPolicyRequest],
+                    ~.LintPolicyResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'lint_policy' not in self._stubs:
+            self._stubs['lint_policy'] = self.grpc_channel.unary_unary(
+                '/google.iam.admin.v1.IAM/LintPolicy',
+                request_serializer=iam.LintPolicyRequest.serialize,
+                response_deserializer=iam.LintPolicyResponse.deserialize,
+            )
+        return self._stubs['lint_policy']
 
 
 __all__ = (

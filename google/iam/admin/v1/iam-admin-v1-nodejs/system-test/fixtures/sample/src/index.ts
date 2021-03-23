@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {IAMClient} from 'admin';
+import {IAMClient} from '@google-cloud/admin';
 
 // check that the client class type name can be used
 function doStuffWithIAMClient(client: IAMClient) {

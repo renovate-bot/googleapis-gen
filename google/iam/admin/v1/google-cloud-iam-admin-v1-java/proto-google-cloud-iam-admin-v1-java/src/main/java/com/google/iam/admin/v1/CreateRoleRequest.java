@@ -194,6 +194,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The role ID to use for this role.
+   * A role ID may contain alphanumeric characters, underscores (`_`), and
+   * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+   * 64 characters.
    * </pre>
    *
    * <code>string role_id = 2;</code>
@@ -215,6 +218,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The role ID to use for this role.
+   * A role ID may contain alphanumeric characters, underscores (`_`), and
+   * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+   * 64 characters.
    * </pre>
    *
    * <code>string role_id = 2;</code>
@@ -806,6 +812,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The role ID to use for this role.
+     * A role ID may contain alphanumeric characters, underscores (`_`), and
+     * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+     * 64 characters.
      * </pre>
      *
      * <code>string role_id = 2;</code>
@@ -826,6 +835,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The role ID to use for this role.
+     * A role ID may contain alphanumeric characters, underscores (`_`), and
+     * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+     * 64 characters.
      * </pre>
      *
      * <code>string role_id = 2;</code>
@@ -847,6 +859,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The role ID to use for this role.
+     * A role ID may contain alphanumeric characters, underscores (`_`), and
+     * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+     * 64 characters.
      * </pre>
      *
      * <code>string role_id = 2;</code>
@@ -866,6 +881,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The role ID to use for this role.
+     * A role ID may contain alphanumeric characters, underscores (`_`), and
+     * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+     * 64 characters.
      * </pre>
      *
      * <code>string role_id = 2;</code>
@@ -880,6 +898,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The role ID to use for this role.
+     * A role ID may contain alphanumeric characters, underscores (`_`), and
+     * periods (`.`). It must contain a minimum of 3 characters and a maximum of
+     * 64 characters.
      * </pre>
      *
      * <code>string role_id = 2;</code>

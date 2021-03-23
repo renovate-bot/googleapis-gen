@@ -49,9 +49,58 @@ return [
                     ],
                 ],
             ],
+            'PatchServiceAccount' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{service_account.name=projects/*/serviceAccounts/*}',
+                'body' => '*',
+                'placeholders' => [
+                    'service_account.name' => [
+                        'getters' => [
+                            'getServiceAccount',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'DeleteServiceAccount' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1/{name=projects/*/serviceAccounts/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UndeleteServiceAccount' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/serviceAccounts/*}:undelete',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'EnableServiceAccount' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/serviceAccounts/*}:enable',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DisableServiceAccount' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/serviceAccounts/*}:disable',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -85,6 +134,18 @@ return [
             'CreateServiceAccountKey' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{name=projects/*/serviceAccounts/*}/keys',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UploadServiceAccountKey' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/serviceAccounts/*}/keys:upload',
                 'body' => '*',
                 'placeholders' => [
                     'name' => [
@@ -289,6 +350,43 @@ return [
                 'method' => 'post',
                 'uriTemplate' => '/v1/permissions:queryTestablePermissions',
                 'body' => '*',
+            ],
+            'QueryAuditableServices' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/iamPolicies:queryAuditableServices',
+                'body' => '*',
+            ],
+            'LintPolicy' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/iamPolicies:lintPolicy',
+                'body' => '*',
+            ],
+        ],
+        'google.longrunning.Operations' => [
+            'GetOperation' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*/operations/*}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*/providers/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{name=projects/*/locations/*/workloadIdentityPools/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{name=projects/*/locations/*/workloadIdentityPools/*/providers/*/operations/*}',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
             ],
         ],
     ],

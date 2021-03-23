@@ -210,6 +210,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional limit on the number of roles to include in the response.
+   * The default is 300, and the maximum is 1,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -898,6 +899,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -910,6 +912,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -925,6 +928,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional limit on the number of roles to include in the response.
+     * The default is 300, and the maximum is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

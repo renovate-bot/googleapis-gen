@@ -5,6 +5,8 @@ package com.google.iam.admin.v1;
 
 /**
  * <pre>
+ * Deprecated. [Migrate to Service Account Credentials
+ * API](https://cloud.google.com/iam/help/credentials/migrate-api).
  * The service account sign JWT response.
  * </pre>
  *
@@ -102,14 +104,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object keyId_;
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the JWT.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The keyId.
    */
   @java.lang.Override
-  public java.lang.String getKeyId() {
+  @java.lang.Deprecated public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -123,14 +127,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The id of the key used to sign the JWT.
    * </pre>
    *
-   * <code>string key_id = 1;</code>
+   * <code>string key_id = 1 [deprecated = true];</code>
    * @return The bytes for keyId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getKeyIdBytes() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -148,14 +154,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object signedJwt_;
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The signed JWT.
    * </pre>
    *
-   * <code>string signed_jwt = 2;</code>
+   * <code>string signed_jwt = 2 [deprecated = true];</code>
    * @return The signedJwt.
    */
   @java.lang.Override
-  public java.lang.String getSignedJwt() {
+  @java.lang.Deprecated public java.lang.String getSignedJwt() {
     java.lang.Object ref = signedJwt_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -169,14 +177,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The signed JWT.
    * </pre>
    *
-   * <code>string signed_jwt = 2;</code>
+   * <code>string signed_jwt = 2 [deprecated = true];</code>
    * @return The bytes for signedJwt.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getSignedJwtBytes() {
     java.lang.Object ref = signedJwt_;
     if (ref instanceof java.lang.String) {
@@ -356,6 +366,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. [Migrate to Service Account Credentials
+   * API](https://cloud.google.com/iam/help/credentials/migrate-api).
    * The service account sign JWT response.
    * </pre>
    *
@@ -516,13 +528,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object keyId_ = "";
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @return The keyId.
      */
-    public java.lang.String getKeyId() {
+    @java.lang.Deprecated public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -536,13 +550,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @return The bytes for keyId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getKeyIdBytes() {
       java.lang.Object ref = keyId_;
       if (ref instanceof String) {
@@ -557,14 +573,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @param value The keyId to set.
      * @return This builder for chaining.
      */
-    public Builder setKeyId(
+    @java.lang.Deprecated public Builder setKeyId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -576,13 +594,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearKeyId() {
+    @java.lang.Deprecated public Builder clearKeyId() {
       
       keyId_ = getDefaultInstance().getKeyId();
       onChanged();
@@ -590,14 +610,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The id of the key used to sign the JWT.
      * </pre>
      *
-     * <code>string key_id = 1;</code>
+     * <code>string key_id = 1 [deprecated = true];</code>
      * @param value The bytes for keyId to set.
      * @return This builder for chaining.
      */
-    public Builder setKeyIdBytes(
+    @java.lang.Deprecated public Builder setKeyIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -612,13 +634,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object signedJwt_ = "";
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      * </pre>
      *
-     * <code>string signed_jwt = 2;</code>
+     * <code>string signed_jwt = 2 [deprecated = true];</code>
      * @return The signedJwt.
      */
-    public java.lang.String getSignedJwt() {
+    @java.lang.Deprecated public java.lang.String getSignedJwt() {
       java.lang.Object ref = signedJwt_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -632,13 +656,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      * </pre>
      *
-     * <code>string signed_jwt = 2;</code>
+     * <code>string signed_jwt = 2 [deprecated = true];</code>
      * @return The bytes for signedJwt.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getSignedJwtBytes() {
       java.lang.Object ref = signedJwt_;
       if (ref instanceof String) {
@@ -653,14 +679,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      * </pre>
      *
-     * <code>string signed_jwt = 2;</code>
+     * <code>string signed_jwt = 2 [deprecated = true];</code>
      * @param value The signedJwt to set.
      * @return This builder for chaining.
      */
-    public Builder setSignedJwt(
+    @java.lang.Deprecated public Builder setSignedJwt(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -672,13 +700,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      * </pre>
      *
-     * <code>string signed_jwt = 2;</code>
+     * <code>string signed_jwt = 2 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearSignedJwt() {
+    @java.lang.Deprecated public Builder clearSignedJwt() {
       
       signedJwt_ = getDefaultInstance().getSignedJwt();
       onChanged();
@@ -686,14 +716,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. [Migrate to Service Account Credentials
+     * API](https://cloud.google.com/iam/help/credentials/migrate-api).
      * The signed JWT.
      * </pre>
      *
-     * <code>string signed_jwt = 2;</code>
+     * <code>string signed_jwt = 2 [deprecated = true];</code>
      * @param value The bytes for signedJwt to set.
      * @return This builder for chaining.
      */
-    public Builder setSignedJwtBytes(
+    @java.lang.Deprecated public Builder setSignedJwtBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

@@ -4,19 +4,21 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Creates and manages service account objects.
- * Service account is an account that belongs to your project instead
- * of to an individual end user. It is used to authenticate calls
- * to a Google API.
- * To create a service account, specify the `project_id` and `account_id`
- * for the account.  The `account_id` is unique within the project, and used
- * to generate the service account email address and a stable
- * `unique_id`.
- * All other methods can identify accounts using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
- * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
- * the account. The `ACCOUNT` value can be the `email` address or the
- * `unique_id` of the service account.
+ * Creates and manages Identity and Access Management (IAM) resources.
+ * You can use this service to work with all of the following resources:
+ * * **Service accounts**, which identify an application or a virtual machine
+ *   (VM) instance rather than a person
+ * * **Service account keys**, which service accounts use to authenticate with
+ *   Google APIs
+ * * **IAM policies for service accounts**, which specify the roles that a
+ *   member has for the service account
+ * * **IAM custom roles**, which help you limit the number of permissions that
+ *   you grant to members
+ * In addition, you can use this service to complete the following tasks, among
+ * others:
+ * * Test whether a service account can use specific permissions
+ * * Check which roles you can grant for a specific resource
+ * * Lint, or validate, condition expressions in an IAM policy
  * </pre>
  */
 @javax.annotation.Generated(
@@ -153,6 +155,37 @@ public final class IAMGrpc {
     return getUpdateServiceAccountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.PatchServiceAccountRequest,
+      com.google.iam.admin.v1.ServiceAccount> getPatchServiceAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchServiceAccount",
+      requestType = com.google.iam.admin.v1.PatchServiceAccountRequest.class,
+      responseType = com.google.iam.admin.v1.ServiceAccount.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.PatchServiceAccountRequest,
+      com.google.iam.admin.v1.ServiceAccount> getPatchServiceAccountMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.PatchServiceAccountRequest, com.google.iam.admin.v1.ServiceAccount> getPatchServiceAccountMethod;
+    if ((getPatchServiceAccountMethod = IAMGrpc.getPatchServiceAccountMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getPatchServiceAccountMethod = IAMGrpc.getPatchServiceAccountMethod) == null) {
+          IAMGrpc.getPatchServiceAccountMethod = getPatchServiceAccountMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.PatchServiceAccountRequest, com.google.iam.admin.v1.ServiceAccount>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchServiceAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.PatchServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("PatchServiceAccount"))
+              .build();
+        }
+      }
+    }
+    return getPatchServiceAccountMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.DeleteServiceAccountRequest,
       com.google.protobuf.Empty> getDeleteServiceAccountMethod;
 
@@ -182,6 +215,99 @@ public final class IAMGrpc {
       }
     }
     return getDeleteServiceAccountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.UndeleteServiceAccountRequest,
+      com.google.iam.admin.v1.UndeleteServiceAccountResponse> getUndeleteServiceAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UndeleteServiceAccount",
+      requestType = com.google.iam.admin.v1.UndeleteServiceAccountRequest.class,
+      responseType = com.google.iam.admin.v1.UndeleteServiceAccountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.UndeleteServiceAccountRequest,
+      com.google.iam.admin.v1.UndeleteServiceAccountResponse> getUndeleteServiceAccountMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.UndeleteServiceAccountRequest, com.google.iam.admin.v1.UndeleteServiceAccountResponse> getUndeleteServiceAccountMethod;
+    if ((getUndeleteServiceAccountMethod = IAMGrpc.getUndeleteServiceAccountMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getUndeleteServiceAccountMethod = IAMGrpc.getUndeleteServiceAccountMethod) == null) {
+          IAMGrpc.getUndeleteServiceAccountMethod = getUndeleteServiceAccountMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.UndeleteServiceAccountRequest, com.google.iam.admin.v1.UndeleteServiceAccountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UndeleteServiceAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.UndeleteServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.UndeleteServiceAccountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("UndeleteServiceAccount"))
+              .build();
+        }
+      }
+    }
+    return getUndeleteServiceAccountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.EnableServiceAccountRequest,
+      com.google.protobuf.Empty> getEnableServiceAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableServiceAccount",
+      requestType = com.google.iam.admin.v1.EnableServiceAccountRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.EnableServiceAccountRequest,
+      com.google.protobuf.Empty> getEnableServiceAccountMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.EnableServiceAccountRequest, com.google.protobuf.Empty> getEnableServiceAccountMethod;
+    if ((getEnableServiceAccountMethod = IAMGrpc.getEnableServiceAccountMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getEnableServiceAccountMethod = IAMGrpc.getEnableServiceAccountMethod) == null) {
+          IAMGrpc.getEnableServiceAccountMethod = getEnableServiceAccountMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.EnableServiceAccountRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableServiceAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.EnableServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("EnableServiceAccount"))
+              .build();
+        }
+      }
+    }
+    return getEnableServiceAccountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.DisableServiceAccountRequest,
+      com.google.protobuf.Empty> getDisableServiceAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableServiceAccount",
+      requestType = com.google.iam.admin.v1.DisableServiceAccountRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.DisableServiceAccountRequest,
+      com.google.protobuf.Empty> getDisableServiceAccountMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.DisableServiceAccountRequest, com.google.protobuf.Empty> getDisableServiceAccountMethod;
+    if ((getDisableServiceAccountMethod = IAMGrpc.getDisableServiceAccountMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getDisableServiceAccountMethod = IAMGrpc.getDisableServiceAccountMethod) == null) {
+          IAMGrpc.getDisableServiceAccountMethod = getDisableServiceAccountMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.DisableServiceAccountRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableServiceAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.DisableServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("DisableServiceAccount"))
+              .build();
+        }
+      }
+    }
+    return getDisableServiceAccountMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.ListServiceAccountKeysRequest,
@@ -275,6 +401,37 @@ public final class IAMGrpc {
       }
     }
     return getCreateServiceAccountKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.UploadServiceAccountKeyRequest,
+      com.google.iam.admin.v1.ServiceAccountKey> getUploadServiceAccountKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadServiceAccountKey",
+      requestType = com.google.iam.admin.v1.UploadServiceAccountKeyRequest.class,
+      responseType = com.google.iam.admin.v1.ServiceAccountKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.UploadServiceAccountKeyRequest,
+      com.google.iam.admin.v1.ServiceAccountKey> getUploadServiceAccountKeyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.UploadServiceAccountKeyRequest, com.google.iam.admin.v1.ServiceAccountKey> getUploadServiceAccountKeyMethod;
+    if ((getUploadServiceAccountKeyMethod = IAMGrpc.getUploadServiceAccountKeyMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getUploadServiceAccountKeyMethod = IAMGrpc.getUploadServiceAccountKeyMethod) == null) {
+          IAMGrpc.getUploadServiceAccountKeyMethod = getUploadServiceAccountKeyMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.UploadServiceAccountKeyRequest, com.google.iam.admin.v1.ServiceAccountKey>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadServiceAccountKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.UploadServiceAccountKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.ServiceAccountKey.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("UploadServiceAccountKey"))
+              .build();
+        }
+      }
+    }
+    return getUploadServiceAccountKeyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.DeleteServiceAccountKeyRequest,
@@ -711,6 +868,68 @@ public final class IAMGrpc {
     return getQueryTestablePermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.QueryAuditableServicesRequest,
+      com.google.iam.admin.v1.QueryAuditableServicesResponse> getQueryAuditableServicesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryAuditableServices",
+      requestType = com.google.iam.admin.v1.QueryAuditableServicesRequest.class,
+      responseType = com.google.iam.admin.v1.QueryAuditableServicesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.QueryAuditableServicesRequest,
+      com.google.iam.admin.v1.QueryAuditableServicesResponse> getQueryAuditableServicesMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.QueryAuditableServicesRequest, com.google.iam.admin.v1.QueryAuditableServicesResponse> getQueryAuditableServicesMethod;
+    if ((getQueryAuditableServicesMethod = IAMGrpc.getQueryAuditableServicesMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getQueryAuditableServicesMethod = IAMGrpc.getQueryAuditableServicesMethod) == null) {
+          IAMGrpc.getQueryAuditableServicesMethod = getQueryAuditableServicesMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.QueryAuditableServicesRequest, com.google.iam.admin.v1.QueryAuditableServicesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryAuditableServices"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.QueryAuditableServicesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.QueryAuditableServicesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("QueryAuditableServices"))
+              .build();
+        }
+      }
+    }
+    return getQueryAuditableServicesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.iam.admin.v1.LintPolicyRequest,
+      com.google.iam.admin.v1.LintPolicyResponse> getLintPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LintPolicy",
+      requestType = com.google.iam.admin.v1.LintPolicyRequest.class,
+      responseType = com.google.iam.admin.v1.LintPolicyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.iam.admin.v1.LintPolicyRequest,
+      com.google.iam.admin.v1.LintPolicyResponse> getLintPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.admin.v1.LintPolicyRequest, com.google.iam.admin.v1.LintPolicyResponse> getLintPolicyMethod;
+    if ((getLintPolicyMethod = IAMGrpc.getLintPolicyMethod) == null) {
+      synchronized (IAMGrpc.class) {
+        if ((getLintPolicyMethod = IAMGrpc.getLintPolicyMethod) == null) {
+          IAMGrpc.getLintPolicyMethod = getLintPolicyMethod =
+              io.grpc.MethodDescriptor.<com.google.iam.admin.v1.LintPolicyRequest, com.google.iam.admin.v1.LintPolicyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LintPolicy"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.LintPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.iam.admin.v1.LintPolicyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IAMMethodDescriptorSupplier("LintPolicy"))
+              .build();
+        }
+      }
+    }
+    return getLintPolicyMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -757,26 +976,28 @@ public final class IAMGrpc {
 
   /**
    * <pre>
-   * Creates and manages service account objects.
-   * Service account is an account that belongs to your project instead
-   * of to an individual end user. It is used to authenticate calls
-   * to a Google API.
-   * To create a service account, specify the `project_id` and `account_id`
-   * for the account.  The `account_id` is unique within the project, and used
-   * to generate the service account email address and a stable
-   * `unique_id`.
-   * All other methods can identify accounts using the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   * the account. The `ACCOUNT` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * Creates and manages Identity and Access Management (IAM) resources.
+   * You can use this service to work with all of the following resources:
+   * * **Service accounts**, which identify an application or a virtual machine
+   *   (VM) instance rather than a person
+   * * **Service account keys**, which service accounts use to authenticate with
+   *   Google APIs
+   * * **IAM policies for service accounts**, which specify the roles that a
+   *   member has for the service account
+   * * **IAM custom roles**, which help you limit the number of permissions that
+   *   you grant to members
+   * In addition, you can use this service to complete the following tasks, among
+   * others:
+   * * Test whether a service account can use specific permissions
+   * * Check which roles you can grant for a specific resource
+   * * Lint, or validate, condition expressions in an IAM policy
    * </pre>
    */
   public static abstract class IAMImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+     * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.
      * </pre>
      */
     public void listServiceAccounts(com.google.iam.admin.v1.ListServiceAccountsRequest request,
@@ -796,8 +1017,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-     * and returns it.
+     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void createServiceAccount(com.google.iam.admin.v1.CreateServiceAccountRequest request,
@@ -807,9 +1027,10 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * **Note:** We are in the process of deprecating this method. Use
+     * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
      * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Currently, only the following fields are updatable:
-     * `display_name` and `description`.
+     * You can update only the `display_name` and `description` fields.
      * </pre>
      */
     public void updateServiceAccount(com.google.iam.admin.v1.ServiceAccount request,
@@ -819,7 +1040,28 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * </pre>
+     */
+    public void patchServiceAccount(com.google.iam.admin.v1.PatchServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchServiceAccountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Warning:** After you delete a service account, you might not be able to
+     * undelete it. If you know that you need to re-enable the service account in
+     * the future, use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+     * If you delete a service account, IAM permanently removes the service
+     * account 30 days later. Google Cloud cannot recover the service account
+     * after it is permanently removed, even if you file a support request.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to disable the
+     * service account, then wait at least 24 hours and watch for unintended
+     * consequences. If there are no unintended consequences, you can delete the
+     * service account.
      * </pre>
      */
     public void deleteServiceAccount(com.google.iam.admin.v1.DeleteServiceAccountRequest request,
@@ -829,7 +1071,59 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+     * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Important:** It is not always possible to restore a deleted service
+     * account. Use this method only as a last resort.
+     * After you delete a service account, IAM permanently removes the service
+     * account 30 days later. There is no way to restore a deleted service account
+     * that has been permanently removed.
+     * </pre>
+     */
+    public void undeleteServiceAccount(com.google.iam.admin.v1.UndeleteServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.UndeleteServiceAccountResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUndeleteServiceAccountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+     * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+     * If the service account is already enabled, then this method has no effect.
+     * If the service account was disabled by other means—for example, if Google
+     * disabled the service account because it was compromised—you cannot use this
+     * method to enable the service account.
+     * </pre>
+     */
+    public void enableServiceAccount(com.google.iam.admin.v1.EnableServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableServiceAccountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+     * If an application uses the service account to authenticate, that
+     * application can no longer call Google APIs or access Google Cloud
+     * resources. Existing access tokens for the service account are rejected, and
+     * requests for new access tokens will fail.
+     * To re-enable the service account, use [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you
+     * re-enable the service account, its existing access tokens will be accepted,
+     * and you can request new access tokens.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use this method to disable the service
+     * account, then wait at least 24 hours and watch for unintended consequences.
+     * If there are no unintended consequences, you can delete the service account
+     * with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+     * </pre>
+     */
+    public void disableServiceAccount(com.google.iam.admin.v1.DisableServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableServiceAccountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
      * </pre>
      */
     public void listServiceAccountKeys(com.google.iam.admin.v1.ListServiceAccountKeysRequest request,
@@ -839,8 +1133,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * by key id.
+     * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public void getServiceAccountKey(com.google.iam.admin.v1.GetServiceAccountKeyRequest request,
@@ -850,8 +1143,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * and returns it.
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public void createServiceAccountKey(com.google.iam.admin.v1.CreateServiceAccountKeyRequest request,
@@ -861,7 +1153,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that you provide.
+     * </pre>
+     */
+    public void uploadServiceAccountKey(com.google.iam.admin.v1.UploadServiceAccountKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadServiceAccountKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service account key does not
+     * revoke short-lived credentials that have been issued based on the service
+     * account key.
      * </pre>
      */
     public void deleteServiceAccountKey(com.google.iam.admin.v1.DeleteServiceAccountKeyRequest request,
@@ -871,7 +1175,13 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a blob using a service account's system-managed private key.
+     * **Note:** This method is deprecated. Use the
+     * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void signBlob(com.google.iam.admin.v1.SignBlobRequest request,
@@ -881,10 +1191,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a JWT using a service account's system-managed private key.
-     * If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
-     * an expiry time of one hour by default. If you request an expiry time of
-     * more than one hour, the request will fail.
+     * **Note:** This method is deprecated. Use the
+     * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a JSON Web Token (JWT) using the system-managed private key for a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void signJwt(com.google.iam.admin.v1.SignJwtRequest request,
@@ -894,18 +1208,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Returns the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. It returns the Cloud IAM
-     * policy that reflects what members have access to the service account.
-     * This method does not return what resources the service account has access
-     * to. To see if a service account has access to a resource, call the
-     * `getIamPolicy` method on the target resource. For example, to view grants
-     * for a project, call the
-     * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy)
+     * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+     * policy specifies which members have access to the service account.
+     * This method does not tell you whether the service account has been granted
+     * any roles on other resources. To check whether a service account has role
+     * grants on a resource, use the `getIamPolicy` method for that resource. For
+     * example, to view the role grants for a project, call the Resource Manager
+     * API's
+     * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
      * method.
      * </pre>
      */
@@ -916,20 +1226,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Sets the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. Use it to grant members
-     * access to the service account, such as when they need to impersonate it.
-     * This method does not grant the service account access to other resources,
-     * such as projects. To grant a service account access to resources, include
-     * the service account in the Cloud IAM policy for the desired resource, then
-     * call the appropriate `setIamPolicy` method on the target resource. For
-     * example, to grant a service account access to a project, call the
-     * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy)
-     * method.
+     * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Use this method to grant or revoke access to the service account. For
+     * example, you could grant a member the ability to impersonate the service
+     * account.
+     * This method does not enable the service account to access other resources.
+     * To grant roles to a service account on a resource, follow these steps:
+     * 1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+     * 2. Edit the policy so that it binds the service account to an IAM role for
+     * the resource.
+     * 3. Call the resource's `setIamPolicy` method to update its IAM policy.
+     * For detailed instructions, see
+     * [Granting roles to a service account for specific
+     * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
      * </pre>
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
@@ -939,8 +1248,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Tests the specified permissions against the IAM access control policy
-     * for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Tests whether the caller has the specified permissions on a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
@@ -950,9 +1259,9 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Queries roles that can be granted on a particular resource.
-     * A role is grantable if it can be used as the role in a binding for a policy
-     * for that resource.
+     * Lists roles that can be granted on a Google Cloud resource. A role is
+     * grantable if the IAM policy for the resource can contain bindings to the
+     * role.
      * </pre>
      */
     public void queryGrantableRoles(com.google.iam.admin.v1.QueryGrantableRolesRequest request,
@@ -962,7 +1271,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the Roles defined on a resource.
+     * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+     * that is defined for an organization or project.
      * </pre>
      */
     public void listRoles(com.google.iam.admin.v1.ListRolesRequest request,
@@ -972,7 +1282,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets a Role definition.
+     * Gets the definition of a [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void getRole(com.google.iam.admin.v1.GetRoleRequest request,
@@ -982,7 +1292,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a new Role.
+     * Creates a new custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void createRole(com.google.iam.admin.v1.CreateRoleRequest request,
@@ -992,7 +1302,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Updates a Role definition.
+     * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void updateRole(com.google.iam.admin.v1.UpdateRoleRequest request,
@@ -1002,13 +1312,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Soft deletes a role. The role is suspended and cannot be used to create new
-     * IAM Policy Bindings.
-     * The Role will not be included in `ListRoles()` unless `show_deleted` is set
-     * in the `ListRolesRequest`. The Role contains the deleted boolean set.
-     * Existing Bindings remains, but are inactive. The Role can be undeleted
-     * within 7 days. After 7 days the Role is deleted and all Bindings associated
-     * with the role are removed.
+     * Deletes a custom [Role][google.iam.admin.v1.Role].
+     * When you delete a custom role, the following changes occur immediately:
+     * * You cannot bind a member to the custom role in an IAM
+     * [Policy][google.iam.v1.Policy].
+     * * Existing bindings to the custom role are not changed, but they have no
+     * effect.
+     * * By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not include the custom
+     * role.
+     * You have 7 days to undelete the custom role. After 7 days, the following
+     * changes occur:
+     * * The custom role is permanently deleted and cannot be recovered.
+     * * If an IAM policy contains a binding to the custom role, the binding is
+     * permanently removed.
      * </pre>
      */
     public void deleteRole(com.google.iam.admin.v1.DeleteRoleRequest request,
@@ -1018,7 +1334,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Undelete a Role, bringing it back in its previous state.
+     * Undeletes a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void undeleteRole(com.google.iam.admin.v1.UndeleteRoleRequest request,
@@ -1028,13 +1344,41 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the permissions testable on a resource.
-     * A permission is testable if it can be tested for an identity on a resource.
+     * Lists every permission that you can test on a resource. A permission is
+     * testable if you can check whether a member has that permission on the
+     * resource.
      * </pre>
      */
     public void queryTestablePermissions(com.google.iam.admin.v1.QueryTestablePermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryTestablePermissionsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryTestablePermissionsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Returns a list of services that allow you to opt into audit logs that are
+     * not generated by default.
+     * To learn more about audit logs, see the [Logging
+     * documentation](https://cloud.google.com/logging/docs/audit).
+     * </pre>
+     */
+    public void queryAuditableServices(com.google.iam.admin.v1.QueryAuditableServicesRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryAuditableServicesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryAuditableServicesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lints, or validates, an IAM policy. Currently checks the
+     * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a condition
+     * expression for a role binding.
+     * Successful calls to this method always return an HTTP `200 OK` status code,
+     * even if the linter detects an issue in the IAM policy.
+     * </pre>
+     */
+    public void lintPolicy(com.google.iam.admin.v1.LintPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.LintPolicyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLintPolicyMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -1068,12 +1412,40 @@ public final class IAMGrpc {
                 com.google.iam.admin.v1.ServiceAccount>(
                   this, METHODID_UPDATE_SERVICE_ACCOUNT)))
           .addMethod(
+            getPatchServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.PatchServiceAccountRequest,
+                com.google.iam.admin.v1.ServiceAccount>(
+                  this, METHODID_PATCH_SERVICE_ACCOUNT)))
+          .addMethod(
             getDeleteServiceAccountMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.admin.v1.DeleteServiceAccountRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SERVICE_ACCOUNT)))
+          .addMethod(
+            getUndeleteServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.UndeleteServiceAccountRequest,
+                com.google.iam.admin.v1.UndeleteServiceAccountResponse>(
+                  this, METHODID_UNDELETE_SERVICE_ACCOUNT)))
+          .addMethod(
+            getEnableServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.EnableServiceAccountRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_ENABLE_SERVICE_ACCOUNT)))
+          .addMethod(
+            getDisableServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.DisableServiceAccountRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_DISABLE_SERVICE_ACCOUNT)))
           .addMethod(
             getListServiceAccountKeysMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1095,6 +1467,13 @@ public final class IAMGrpc {
                 com.google.iam.admin.v1.CreateServiceAccountKeyRequest,
                 com.google.iam.admin.v1.ServiceAccountKey>(
                   this, METHODID_CREATE_SERVICE_ACCOUNT_KEY)))
+          .addMethod(
+            getUploadServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.UploadServiceAccountKeyRequest,
+                com.google.iam.admin.v1.ServiceAccountKey>(
+                  this, METHODID_UPLOAD_SERVICE_ACCOUNT_KEY)))
           .addMethod(
             getDeleteServiceAccountKeyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1193,25 +1572,41 @@ public final class IAMGrpc {
                 com.google.iam.admin.v1.QueryTestablePermissionsRequest,
                 com.google.iam.admin.v1.QueryTestablePermissionsResponse>(
                   this, METHODID_QUERY_TESTABLE_PERMISSIONS)))
+          .addMethod(
+            getQueryAuditableServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.QueryAuditableServicesRequest,
+                com.google.iam.admin.v1.QueryAuditableServicesResponse>(
+                  this, METHODID_QUERY_AUDITABLE_SERVICES)))
+          .addMethod(
+            getLintPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.iam.admin.v1.LintPolicyRequest,
+                com.google.iam.admin.v1.LintPolicyResponse>(
+                  this, METHODID_LINT_POLICY)))
           .build();
     }
   }
 
   /**
    * <pre>
-   * Creates and manages service account objects.
-   * Service account is an account that belongs to your project instead
-   * of to an individual end user. It is used to authenticate calls
-   * to a Google API.
-   * To create a service account, specify the `project_id` and `account_id`
-   * for the account.  The `account_id` is unique within the project, and used
-   * to generate the service account email address and a stable
-   * `unique_id`.
-   * All other methods can identify accounts using the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   * the account. The `ACCOUNT` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * Creates and manages Identity and Access Management (IAM) resources.
+   * You can use this service to work with all of the following resources:
+   * * **Service accounts**, which identify an application or a virtual machine
+   *   (VM) instance rather than a person
+   * * **Service account keys**, which service accounts use to authenticate with
+   *   Google APIs
+   * * **IAM policies for service accounts**, which specify the roles that a
+   *   member has for the service account
+   * * **IAM custom roles**, which help you limit the number of permissions that
+   *   you grant to members
+   * In addition, you can use this service to complete the following tasks, among
+   * others:
+   * * Test whether a service account can use specific permissions
+   * * Check which roles you can grant for a specific resource
+   * * Lint, or validate, condition expressions in an IAM policy
    * </pre>
    */
   public static final class IAMStub extends io.grpc.stub.AbstractAsyncStub<IAMStub> {
@@ -1228,7 +1623,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+     * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.
      * </pre>
      */
     public void listServiceAccounts(com.google.iam.admin.v1.ListServiceAccountsRequest request,
@@ -1250,8 +1645,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-     * and returns it.
+     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void createServiceAccount(com.google.iam.admin.v1.CreateServiceAccountRequest request,
@@ -1262,9 +1656,10 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * **Note:** We are in the process of deprecating this method. Use
+     * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
      * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Currently, only the following fields are updatable:
-     * `display_name` and `description`.
+     * You can update only the `display_name` and `description` fields.
      * </pre>
      */
     public void updateServiceAccount(com.google.iam.admin.v1.ServiceAccount request,
@@ -1275,7 +1670,29 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * </pre>
+     */
+    public void patchServiceAccount(com.google.iam.admin.v1.PatchServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchServiceAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Warning:** After you delete a service account, you might not be able to
+     * undelete it. If you know that you need to re-enable the service account in
+     * the future, use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+     * If you delete a service account, IAM permanently removes the service
+     * account 30 days later. Google Cloud cannot recover the service account
+     * after it is permanently removed, even if you file a support request.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to disable the
+     * service account, then wait at least 24 hours and watch for unintended
+     * consequences. If there are no unintended consequences, you can delete the
+     * service account.
      * </pre>
      */
     public void deleteServiceAccount(com.google.iam.admin.v1.DeleteServiceAccountRequest request,
@@ -1286,7 +1703,62 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+     * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Important:** It is not always possible to restore a deleted service
+     * account. Use this method only as a last resort.
+     * After you delete a service account, IAM permanently removes the service
+     * account 30 days later. There is no way to restore a deleted service account
+     * that has been permanently removed.
+     * </pre>
+     */
+    public void undeleteServiceAccount(com.google.iam.admin.v1.UndeleteServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.UndeleteServiceAccountResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUndeleteServiceAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+     * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+     * If the service account is already enabled, then this method has no effect.
+     * If the service account was disabled by other means—for example, if Google
+     * disabled the service account because it was compromised—you cannot use this
+     * method to enable the service account.
+     * </pre>
+     */
+    public void enableServiceAccount(com.google.iam.admin.v1.EnableServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableServiceAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+     * If an application uses the service account to authenticate, that
+     * application can no longer call Google APIs or access Google Cloud
+     * resources. Existing access tokens for the service account are rejected, and
+     * requests for new access tokens will fail.
+     * To re-enable the service account, use [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you
+     * re-enable the service account, its existing access tokens will be accepted,
+     * and you can request new access tokens.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use this method to disable the service
+     * account, then wait at least 24 hours and watch for unintended consequences.
+     * If there are no unintended consequences, you can delete the service account
+     * with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+     * </pre>
+     */
+    public void disableServiceAccount(com.google.iam.admin.v1.DisableServiceAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableServiceAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
      * </pre>
      */
     public void listServiceAccountKeys(com.google.iam.admin.v1.ListServiceAccountKeysRequest request,
@@ -1297,8 +1769,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * by key id.
+     * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public void getServiceAccountKey(com.google.iam.admin.v1.GetServiceAccountKeyRequest request,
@@ -1309,8 +1780,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * and returns it.
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public void createServiceAccountKey(com.google.iam.admin.v1.CreateServiceAccountKeyRequest request,
@@ -1321,7 +1791,20 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that you provide.
+     * </pre>
+     */
+    public void uploadServiceAccountKey(com.google.iam.admin.v1.UploadServiceAccountKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadServiceAccountKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service account key does not
+     * revoke short-lived credentials that have been issued based on the service
+     * account key.
      * </pre>
      */
     public void deleteServiceAccountKey(com.google.iam.admin.v1.DeleteServiceAccountKeyRequest request,
@@ -1332,7 +1815,13 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a blob using a service account's system-managed private key.
+     * **Note:** This method is deprecated. Use the
+     * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void signBlob(com.google.iam.admin.v1.SignBlobRequest request,
@@ -1343,10 +1832,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a JWT using a service account's system-managed private key.
-     * If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
-     * an expiry time of one hour by default. If you request an expiry time of
-     * more than one hour, the request will fail.
+     * **Note:** This method is deprecated. Use the
+     * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a JSON Web Token (JWT) using the system-managed private key for a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void signJwt(com.google.iam.admin.v1.SignJwtRequest request,
@@ -1357,18 +1850,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Returns the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. It returns the Cloud IAM
-     * policy that reflects what members have access to the service account.
-     * This method does not return what resources the service account has access
-     * to. To see if a service account has access to a resource, call the
-     * `getIamPolicy` method on the target resource. For example, to view grants
-     * for a project, call the
-     * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy)
+     * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+     * policy specifies which members have access to the service account.
+     * This method does not tell you whether the service account has been granted
+     * any roles on other resources. To check whether a service account has role
+     * grants on a resource, use the `getIamPolicy` method for that resource. For
+     * example, to view the role grants for a project, call the Resource Manager
+     * API's
+     * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
      * method.
      * </pre>
      */
@@ -1380,20 +1869,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Sets the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. Use it to grant members
-     * access to the service account, such as when they need to impersonate it.
-     * This method does not grant the service account access to other resources,
-     * such as projects. To grant a service account access to resources, include
-     * the service account in the Cloud IAM policy for the desired resource, then
-     * call the appropriate `setIamPolicy` method on the target resource. For
-     * example, to grant a service account access to a project, call the
-     * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy)
-     * method.
+     * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Use this method to grant or revoke access to the service account. For
+     * example, you could grant a member the ability to impersonate the service
+     * account.
+     * This method does not enable the service account to access other resources.
+     * To grant roles to a service account on a resource, follow these steps:
+     * 1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+     * 2. Edit the policy so that it binds the service account to an IAM role for
+     * the resource.
+     * 3. Call the resource's `setIamPolicy` method to update its IAM policy.
+     * For detailed instructions, see
+     * [Granting roles to a service account for specific
+     * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
      * </pre>
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
@@ -1404,8 +1892,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Tests the specified permissions against the IAM access control policy
-     * for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Tests whether the caller has the specified permissions on a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
@@ -1416,9 +1904,9 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Queries roles that can be granted on a particular resource.
-     * A role is grantable if it can be used as the role in a binding for a policy
-     * for that resource.
+     * Lists roles that can be granted on a Google Cloud resource. A role is
+     * grantable if the IAM policy for the resource can contain bindings to the
+     * role.
      * </pre>
      */
     public void queryGrantableRoles(com.google.iam.admin.v1.QueryGrantableRolesRequest request,
@@ -1429,7 +1917,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the Roles defined on a resource.
+     * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+     * that is defined for an organization or project.
      * </pre>
      */
     public void listRoles(com.google.iam.admin.v1.ListRolesRequest request,
@@ -1440,7 +1929,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets a Role definition.
+     * Gets the definition of a [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void getRole(com.google.iam.admin.v1.GetRoleRequest request,
@@ -1451,7 +1940,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a new Role.
+     * Creates a new custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void createRole(com.google.iam.admin.v1.CreateRoleRequest request,
@@ -1462,7 +1951,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Updates a Role definition.
+     * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void updateRole(com.google.iam.admin.v1.UpdateRoleRequest request,
@@ -1473,13 +1962,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Soft deletes a role. The role is suspended and cannot be used to create new
-     * IAM Policy Bindings.
-     * The Role will not be included in `ListRoles()` unless `show_deleted` is set
-     * in the `ListRolesRequest`. The Role contains the deleted boolean set.
-     * Existing Bindings remains, but are inactive. The Role can be undeleted
-     * within 7 days. After 7 days the Role is deleted and all Bindings associated
-     * with the role are removed.
+     * Deletes a custom [Role][google.iam.admin.v1.Role].
+     * When you delete a custom role, the following changes occur immediately:
+     * * You cannot bind a member to the custom role in an IAM
+     * [Policy][google.iam.v1.Policy].
+     * * Existing bindings to the custom role are not changed, but they have no
+     * effect.
+     * * By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not include the custom
+     * role.
+     * You have 7 days to undelete the custom role. After 7 days, the following
+     * changes occur:
+     * * The custom role is permanently deleted and cannot be recovered.
+     * * If an IAM policy contains a binding to the custom role, the binding is
+     * permanently removed.
      * </pre>
      */
     public void deleteRole(com.google.iam.admin.v1.DeleteRoleRequest request,
@@ -1490,7 +1985,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Undelete a Role, bringing it back in its previous state.
+     * Undeletes a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public void undeleteRole(com.google.iam.admin.v1.UndeleteRoleRequest request,
@@ -1501,8 +1996,9 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the permissions testable on a resource.
-     * A permission is testable if it can be tested for an identity on a resource.
+     * Lists every permission that you can test on a resource. A permission is
+     * testable if you can check whether a member has that permission on the
+     * resource.
      * </pre>
      */
     public void queryTestablePermissions(com.google.iam.admin.v1.QueryTestablePermissionsRequest request,
@@ -1510,23 +2006,54 @@ public final class IAMGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getQueryTestablePermissionsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Returns a list of services that allow you to opt into audit logs that are
+     * not generated by default.
+     * To learn more about audit logs, see the [Logging
+     * documentation](https://cloud.google.com/logging/docs/audit).
+     * </pre>
+     */
+    public void queryAuditableServices(com.google.iam.admin.v1.QueryAuditableServicesRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryAuditableServicesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryAuditableServicesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lints, or validates, an IAM policy. Currently checks the
+     * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a condition
+     * expression for a role binding.
+     * Successful calls to this method always return an HTTP `200 OK` status code,
+     * even if the linter detects an issue in the IAM policy.
+     * </pre>
+     */
+    public void lintPolicy(com.google.iam.admin.v1.LintPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.admin.v1.LintPolicyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLintPolicyMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
-   * Creates and manages service account objects.
-   * Service account is an account that belongs to your project instead
-   * of to an individual end user. It is used to authenticate calls
-   * to a Google API.
-   * To create a service account, specify the `project_id` and `account_id`
-   * for the account.  The `account_id` is unique within the project, and used
-   * to generate the service account email address and a stable
-   * `unique_id`.
-   * All other methods can identify accounts using the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   * the account. The `ACCOUNT` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * Creates and manages Identity and Access Management (IAM) resources.
+   * You can use this service to work with all of the following resources:
+   * * **Service accounts**, which identify an application or a virtual machine
+   *   (VM) instance rather than a person
+   * * **Service account keys**, which service accounts use to authenticate with
+   *   Google APIs
+   * * **IAM policies for service accounts**, which specify the roles that a
+   *   member has for the service account
+   * * **IAM custom roles**, which help you limit the number of permissions that
+   *   you grant to members
+   * In addition, you can use this service to complete the following tasks, among
+   * others:
+   * * Test whether a service account can use specific permissions
+   * * Check which roles you can grant for a specific resource
+   * * Lint, or validate, condition expressions in an IAM policy
    * </pre>
    */
   public static final class IAMBlockingStub extends io.grpc.stub.AbstractBlockingStub<IAMBlockingStub> {
@@ -1543,7 +2070,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+     * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.
      * </pre>
      */
     public com.google.iam.admin.v1.ListServiceAccountsResponse listServiceAccounts(com.google.iam.admin.v1.ListServiceAccountsRequest request) {
@@ -1563,8 +2090,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-     * and returns it.
+     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.iam.admin.v1.ServiceAccount createServiceAccount(com.google.iam.admin.v1.CreateServiceAccountRequest request) {
@@ -1574,9 +2100,10 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * **Note:** We are in the process of deprecating this method. Use
+     * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
      * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Currently, only the following fields are updatable:
-     * `display_name` and `description`.
+     * You can update only the `display_name` and `description` fields.
      * </pre>
      */
     public com.google.iam.admin.v1.ServiceAccount updateServiceAccount(com.google.iam.admin.v1.ServiceAccount request) {
@@ -1586,7 +2113,28 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * </pre>
+     */
+    public com.google.iam.admin.v1.ServiceAccount patchServiceAccount(com.google.iam.admin.v1.PatchServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchServiceAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Warning:** After you delete a service account, you might not be able to
+     * undelete it. If you know that you need to re-enable the service account in
+     * the future, use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+     * If you delete a service account, IAM permanently removes the service
+     * account 30 days later. Google Cloud cannot recover the service account
+     * after it is permanently removed, even if you file a support request.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to disable the
+     * service account, then wait at least 24 hours and watch for unintended
+     * consequences. If there are no unintended consequences, you can delete the
+     * service account.
      * </pre>
      */
     public com.google.protobuf.Empty deleteServiceAccount(com.google.iam.admin.v1.DeleteServiceAccountRequest request) {
@@ -1596,7 +2144,59 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+     * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Important:** It is not always possible to restore a deleted service
+     * account. Use this method only as a last resort.
+     * After you delete a service account, IAM permanently removes the service
+     * account 30 days later. There is no way to restore a deleted service account
+     * that has been permanently removed.
+     * </pre>
+     */
+    public com.google.iam.admin.v1.UndeleteServiceAccountResponse undeleteServiceAccount(com.google.iam.admin.v1.UndeleteServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteServiceAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+     * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+     * If the service account is already enabled, then this method has no effect.
+     * If the service account was disabled by other means—for example, if Google
+     * disabled the service account because it was compromised—you cannot use this
+     * method to enable the service account.
+     * </pre>
+     */
+    public com.google.protobuf.Empty enableServiceAccount(com.google.iam.admin.v1.EnableServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableServiceAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+     * If an application uses the service account to authenticate, that
+     * application can no longer call Google APIs or access Google Cloud
+     * resources. Existing access tokens for the service account are rejected, and
+     * requests for new access tokens will fail.
+     * To re-enable the service account, use [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you
+     * re-enable the service account, its existing access tokens will be accepted,
+     * and you can request new access tokens.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use this method to disable the service
+     * account, then wait at least 24 hours and watch for unintended consequences.
+     * If there are no unintended consequences, you can delete the service account
+     * with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+     * </pre>
+     */
+    public com.google.protobuf.Empty disableServiceAccount(com.google.iam.admin.v1.DisableServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableServiceAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
      * </pre>
      */
     public com.google.iam.admin.v1.ListServiceAccountKeysResponse listServiceAccountKeys(com.google.iam.admin.v1.ListServiceAccountKeysRequest request) {
@@ -1606,8 +2206,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * by key id.
+     * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public com.google.iam.admin.v1.ServiceAccountKey getServiceAccountKey(com.google.iam.admin.v1.GetServiceAccountKeyRequest request) {
@@ -1617,8 +2216,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * and returns it.
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public com.google.iam.admin.v1.ServiceAccountKey createServiceAccountKey(com.google.iam.admin.v1.CreateServiceAccountKeyRequest request) {
@@ -1628,7 +2226,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that you provide.
+     * </pre>
+     */
+    public com.google.iam.admin.v1.ServiceAccountKey uploadServiceAccountKey(com.google.iam.admin.v1.UploadServiceAccountKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadServiceAccountKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service account key does not
+     * revoke short-lived credentials that have been issued based on the service
+     * account key.
      * </pre>
      */
     public com.google.protobuf.Empty deleteServiceAccountKey(com.google.iam.admin.v1.DeleteServiceAccountKeyRequest request) {
@@ -1638,7 +2248,13 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a blob using a service account's system-managed private key.
+     * **Note:** This method is deprecated. Use the
+     * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.iam.admin.v1.SignBlobResponse signBlob(com.google.iam.admin.v1.SignBlobRequest request) {
@@ -1648,10 +2264,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a JWT using a service account's system-managed private key.
-     * If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
-     * an expiry time of one hour by default. If you request an expiry time of
-     * more than one hour, the request will fail.
+     * **Note:** This method is deprecated. Use the
+     * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a JSON Web Token (JWT) using the system-managed private key for a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.iam.admin.v1.SignJwtResponse signJwt(com.google.iam.admin.v1.SignJwtRequest request) {
@@ -1661,18 +2281,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Returns the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. It returns the Cloud IAM
-     * policy that reflects what members have access to the service account.
-     * This method does not return what resources the service account has access
-     * to. To see if a service account has access to a resource, call the
-     * `getIamPolicy` method on the target resource. For example, to view grants
-     * for a project, call the
-     * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy)
+     * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+     * policy specifies which members have access to the service account.
+     * This method does not tell you whether the service account has been granted
+     * any roles on other resources. To check whether a service account has role
+     * grants on a resource, use the `getIamPolicy` method for that resource. For
+     * example, to view the role grants for a project, call the Resource Manager
+     * API's
+     * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
      * method.
      * </pre>
      */
@@ -1683,20 +2299,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Sets the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. Use it to grant members
-     * access to the service account, such as when they need to impersonate it.
-     * This method does not grant the service account access to other resources,
-     * such as projects. To grant a service account access to resources, include
-     * the service account in the Cloud IAM policy for the desired resource, then
-     * call the appropriate `setIamPolicy` method on the target resource. For
-     * example, to grant a service account access to a project, call the
-     * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy)
-     * method.
+     * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Use this method to grant or revoke access to the service account. For
+     * example, you could grant a member the ability to impersonate the service
+     * account.
+     * This method does not enable the service account to access other resources.
+     * To grant roles to a service account on a resource, follow these steps:
+     * 1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+     * 2. Edit the policy so that it binds the service account to an IAM role for
+     * the resource.
+     * 3. Call the resource's `setIamPolicy` method to update its IAM policy.
+     * For detailed instructions, see
+     * [Granting roles to a service account for specific
+     * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -1706,8 +2321,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Tests the specified permissions against the IAM access control policy
-     * for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Tests whether the caller has the specified permissions on a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
@@ -1717,9 +2332,9 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Queries roles that can be granted on a particular resource.
-     * A role is grantable if it can be used as the role in a binding for a policy
-     * for that resource.
+     * Lists roles that can be granted on a Google Cloud resource. A role is
+     * grantable if the IAM policy for the resource can contain bindings to the
+     * role.
      * </pre>
      */
     public com.google.iam.admin.v1.QueryGrantableRolesResponse queryGrantableRoles(com.google.iam.admin.v1.QueryGrantableRolesRequest request) {
@@ -1729,7 +2344,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the Roles defined on a resource.
+     * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+     * that is defined for an organization or project.
      * </pre>
      */
     public com.google.iam.admin.v1.ListRolesResponse listRoles(com.google.iam.admin.v1.ListRolesRequest request) {
@@ -1739,7 +2355,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets a Role definition.
+     * Gets the definition of a [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.iam.admin.v1.Role getRole(com.google.iam.admin.v1.GetRoleRequest request) {
@@ -1749,7 +2365,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a new Role.
+     * Creates a new custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.iam.admin.v1.Role createRole(com.google.iam.admin.v1.CreateRoleRequest request) {
@@ -1759,7 +2375,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Updates a Role definition.
+     * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.iam.admin.v1.Role updateRole(com.google.iam.admin.v1.UpdateRoleRequest request) {
@@ -1769,13 +2385,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Soft deletes a role. The role is suspended and cannot be used to create new
-     * IAM Policy Bindings.
-     * The Role will not be included in `ListRoles()` unless `show_deleted` is set
-     * in the `ListRolesRequest`. The Role contains the deleted boolean set.
-     * Existing Bindings remains, but are inactive. The Role can be undeleted
-     * within 7 days. After 7 days the Role is deleted and all Bindings associated
-     * with the role are removed.
+     * Deletes a custom [Role][google.iam.admin.v1.Role].
+     * When you delete a custom role, the following changes occur immediately:
+     * * You cannot bind a member to the custom role in an IAM
+     * [Policy][google.iam.v1.Policy].
+     * * Existing bindings to the custom role are not changed, but they have no
+     * effect.
+     * * By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not include the custom
+     * role.
+     * You have 7 days to undelete the custom role. After 7 days, the following
+     * changes occur:
+     * * The custom role is permanently deleted and cannot be recovered.
+     * * If an IAM policy contains a binding to the custom role, the binding is
+     * permanently removed.
      * </pre>
      */
     public com.google.iam.admin.v1.Role deleteRole(com.google.iam.admin.v1.DeleteRoleRequest request) {
@@ -1785,7 +2407,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Undelete a Role, bringing it back in its previous state.
+     * Undeletes a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.iam.admin.v1.Role undeleteRole(com.google.iam.admin.v1.UndeleteRoleRequest request) {
@@ -1795,31 +2417,61 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the permissions testable on a resource.
-     * A permission is testable if it can be tested for an identity on a resource.
+     * Lists every permission that you can test on a resource. A permission is
+     * testable if you can check whether a member has that permission on the
+     * resource.
      * </pre>
      */
     public com.google.iam.admin.v1.QueryTestablePermissionsResponse queryTestablePermissions(com.google.iam.admin.v1.QueryTestablePermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryTestablePermissionsMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Returns a list of services that allow you to opt into audit logs that are
+     * not generated by default.
+     * To learn more about audit logs, see the [Logging
+     * documentation](https://cloud.google.com/logging/docs/audit).
+     * </pre>
+     */
+    public com.google.iam.admin.v1.QueryAuditableServicesResponse queryAuditableServices(com.google.iam.admin.v1.QueryAuditableServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryAuditableServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lints, or validates, an IAM policy. Currently checks the
+     * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a condition
+     * expression for a role binding.
+     * Successful calls to this method always return an HTTP `200 OK` status code,
+     * even if the linter detects an issue in the IAM policy.
+     * </pre>
+     */
+    public com.google.iam.admin.v1.LintPolicyResponse lintPolicy(com.google.iam.admin.v1.LintPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLintPolicyMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * <pre>
-   * Creates and manages service account objects.
-   * Service account is an account that belongs to your project instead
-   * of to an individual end user. It is used to authenticate calls
-   * to a Google API.
-   * To create a service account, specify the `project_id` and `account_id`
-   * for the account.  The `account_id` is unique within the project, and used
-   * to generate the service account email address and a stable
-   * `unique_id`.
-   * All other methods can identify accounts using the format
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   * the account. The `ACCOUNT` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * Creates and manages Identity and Access Management (IAM) resources.
+   * You can use this service to work with all of the following resources:
+   * * **Service accounts**, which identify an application or a virtual machine
+   *   (VM) instance rather than a person
+   * * **Service account keys**, which service accounts use to authenticate with
+   *   Google APIs
+   * * **IAM policies for service accounts**, which specify the roles that a
+   *   member has for the service account
+   * * **IAM custom roles**, which help you limit the number of permissions that
+   *   you grant to members
+   * In addition, you can use this service to complete the following tasks, among
+   * others:
+   * * Test whether a service account can use specific permissions
+   * * Check which roles you can grant for a specific resource
+   * * Lint, or validate, condition expressions in an IAM policy
    * </pre>
    */
   public static final class IAMFutureStub extends io.grpc.stub.AbstractFutureStub<IAMFutureStub> {
@@ -1836,7 +2488,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
+     * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ListServiceAccountsResponse> listServiceAccounts(
@@ -1858,8 +2510,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
-     * and returns it.
+     * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ServiceAccount> createServiceAccount(
@@ -1870,9 +2521,10 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * **Note:** We are in the process of deprecating this method. Use
+     * [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
      * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Currently, only the following fields are updatable:
-     * `display_name` and `description`.
+     * You can update only the `display_name` and `description` fields.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ServiceAccount> updateServiceAccount(
@@ -1883,7 +2535,29 @@ public final class IAMGrpc {
 
     /**
      * <pre>
+     * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ServiceAccount> patchServiceAccount(
+        com.google.iam.admin.v1.PatchServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchServiceAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Warning:** After you delete a service account, you might not be able to
+     * undelete it. If you know that you need to re-enable the service account in
+     * the future, use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
+     * If you delete a service account, IAM permanently removes the service
+     * account 30 days later. Google Cloud cannot recover the service account
+     * after it is permanently removed, even if you file a support request.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] to disable the
+     * service account, then wait at least 24 hours and watch for unintended
+     * consequences. If there are no unintended consequences, you can delete the
+     * service account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteServiceAccount(
@@ -1894,7 +2568,62 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+     * Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * **Important:** It is not always possible to restore a deleted service
+     * account. Use this method only as a last resort.
+     * After you delete a service account, IAM permanently removes the service
+     * account 30 days later. There is no way to restore a deleted service account
+     * that has been permanently removed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.UndeleteServiceAccountResponse> undeleteServiceAccount(
+        com.google.iam.admin.v1.UndeleteServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUndeleteServiceAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by
+     * [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
+     * If the service account is already enabled, then this method has no effect.
+     * If the service account was disabled by other means—for example, if Google
+     * disabled the service account because it was compromised—you cannot use this
+     * method to enable the service account.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> enableServiceAccount(
+        com.google.iam.admin.v1.EnableServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableServiceAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
+     * If an application uses the service account to authenticate, that
+     * application can no longer call Google APIs or access Google Cloud
+     * resources. Existing access tokens for the service account are rejected, and
+     * requests for new access tokens will fail.
+     * To re-enable the service account, use [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you
+     * re-enable the service account, its existing access tokens will be accepted,
+     * and you can request new access tokens.
+     * To help avoid unplanned outages, we recommend that you disable the service
+     * account before you delete it. Use this method to disable the service
+     * account, then wait at least 24 hours and watch for unintended consequences.
+     * If there are no unintended consequences, you can delete the service account
+     * with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> disableServiceAccount(
+        com.google.iam.admin.v1.DisableServiceAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableServiceAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ListServiceAccountKeysResponse> listServiceAccountKeys(
@@ -1905,8 +2634,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * by key id.
+     * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ServiceAccountKey> getServiceAccountKey(
@@ -1917,8 +2645,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]
-     * and returns it.
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ServiceAccountKey> createServiceAccountKey(
@@ -1929,7 +2656,20 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+     * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey], using a public key that you provide.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ServiceAccountKey> uploadServiceAccountKey(
+        com.google.iam.admin.v1.UploadServiceAccountKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadServiceAccountKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service account key does not
+     * revoke short-lived credentials that have been issued based on the service
+     * account key.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteServiceAccountKey(
@@ -1940,7 +2680,13 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a blob using a service account's system-managed private key.
+     * **Note:** This method is deprecated. Use the
+     * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.SignBlobResponse> signBlob(
@@ -1951,10 +2697,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Signs a JWT using a service account's system-managed private key.
-     * If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
-     * an expiry time of one hour by default. If you request an expiry time of
-     * more than one hour, the request will fail.
+     * **Note:** This method is deprecated. Use the
+     * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+     * method in the IAM Service Account Credentials API instead. If you currently
+     * use this method, see the [migration
+     * guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
+     * instructions.
+     * Signs a JSON Web Token (JWT) using the system-managed private key for a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.SignJwtResponse> signJwt(
@@ -1965,18 +2715,14 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Returns the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. It returns the Cloud IAM
-     * policy that reflects what members have access to the service account.
-     * This method does not return what resources the service account has access
-     * to. To see if a service account has access to a resource, call the
-     * `getIamPolicy` method on the target resource. For example, to view grants
-     * for a project, call the
-     * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy)
+     * Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
+     * policy specifies which members have access to the service account.
+     * This method does not tell you whether the service account has been granted
+     * any roles on other resources. To check whether a service account has role
+     * grants on a resource, use the `getIamPolicy` method for that resource. For
+     * example, to view the role grants for a project, call the Resource Manager
+     * API's
+     * [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
      * method.
      * </pre>
      */
@@ -1988,20 +2734,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Sets the Cloud IAM access control policy for a
-     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
-     * Note: Service accounts are both
-     * [resources and
-     * identities](/iam/docs/service-accounts#service_account_permissions). This
-     * method treats the service account as a resource. Use it to grant members
-     * access to the service account, such as when they need to impersonate it.
-     * This method does not grant the service account access to other resources,
-     * such as projects. To grant a service account access to resources, include
-     * the service account in the Cloud IAM policy for the desired resource, then
-     * call the appropriate `setIamPolicy` method on the target resource. For
-     * example, to grant a service account access to a project, call the
-     * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy)
-     * method.
+     * Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Use this method to grant or revoke access to the service account. For
+     * example, you could grant a member the ability to impersonate the service
+     * account.
+     * This method does not enable the service account to access other resources.
+     * To grant roles to a service account on a resource, follow these steps:
+     * 1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+     * 2. Edit the policy so that it binds the service account to an IAM role for
+     * the resource.
+     * 3. Call the resource's `setIamPolicy` method to update its IAM policy.
+     * For detailed instructions, see
+     * [Granting roles to a service account for specific
+     * resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setIamPolicy(
@@ -2012,8 +2757,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Tests the specified permissions against the IAM access control policy
-     * for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+     * Tests whether the caller has the specified permissions on a
+     * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testIamPermissions(
@@ -2024,9 +2769,9 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Queries roles that can be granted on a particular resource.
-     * A role is grantable if it can be used as the role in a binding for a policy
-     * for that resource.
+     * Lists roles that can be granted on a Google Cloud resource. A role is
+     * grantable if the IAM policy for the resource can contain bindings to the
+     * role.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.QueryGrantableRolesResponse> queryGrantableRoles(
@@ -2037,7 +2782,8 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the Roles defined on a resource.
+     * Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role
+     * that is defined for an organization or project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.ListRolesResponse> listRoles(
@@ -2048,7 +2794,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Gets a Role definition.
+     * Gets the definition of a [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.Role> getRole(
@@ -2059,7 +2805,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Creates a new Role.
+     * Creates a new custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.Role> createRole(
@@ -2070,7 +2816,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Updates a Role definition.
+     * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.Role> updateRole(
@@ -2081,13 +2827,19 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Soft deletes a role. The role is suspended and cannot be used to create new
-     * IAM Policy Bindings.
-     * The Role will not be included in `ListRoles()` unless `show_deleted` is set
-     * in the `ListRolesRequest`. The Role contains the deleted boolean set.
-     * Existing Bindings remains, but are inactive. The Role can be undeleted
-     * within 7 days. After 7 days the Role is deleted and all Bindings associated
-     * with the role are removed.
+     * Deletes a custom [Role][google.iam.admin.v1.Role].
+     * When you delete a custom role, the following changes occur immediately:
+     * * You cannot bind a member to the custom role in an IAM
+     * [Policy][google.iam.v1.Policy].
+     * * Existing bindings to the custom role are not changed, but they have no
+     * effect.
+     * * By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not include the custom
+     * role.
+     * You have 7 days to undelete the custom role. After 7 days, the following
+     * changes occur:
+     * * The custom role is permanently deleted and cannot be recovered.
+     * * If an IAM policy contains a binding to the custom role, the binding is
+     * permanently removed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.Role> deleteRole(
@@ -2098,7 +2850,7 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Undelete a Role, bringing it back in its previous state.
+     * Undeletes a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.Role> undeleteRole(
@@ -2109,8 +2861,9 @@ public final class IAMGrpc {
 
     /**
      * <pre>
-     * Lists the permissions testable on a resource.
-     * A permission is testable if it can be tested for an identity on a resource.
+     * Lists every permission that you can test on a resource. A permission is
+     * testable if you can check whether a member has that permission on the
+     * resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.QueryTestablePermissionsResponse> queryTestablePermissions(
@@ -2118,30 +2871,66 @@ public final class IAMGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryTestablePermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Returns a list of services that allow you to opt into audit logs that are
+     * not generated by default.
+     * To learn more about audit logs, see the [Logging
+     * documentation](https://cloud.google.com/logging/docs/audit).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.QueryAuditableServicesResponse> queryAuditableServices(
+        com.google.iam.admin.v1.QueryAuditableServicesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryAuditableServicesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lints, or validates, an IAM policy. Currently checks the
+     * [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a condition
+     * expression for a role binding.
+     * Successful calls to this method always return an HTTP `200 OK` status code,
+     * even if the linter detects an issue in the IAM policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.LintPolicyResponse> lintPolicy(
+        com.google.iam.admin.v1.LintPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLintPolicyMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SERVICE_ACCOUNTS = 0;
   private static final int METHODID_GET_SERVICE_ACCOUNT = 1;
   private static final int METHODID_CREATE_SERVICE_ACCOUNT = 2;
   private static final int METHODID_UPDATE_SERVICE_ACCOUNT = 3;
-  private static final int METHODID_DELETE_SERVICE_ACCOUNT = 4;
-  private static final int METHODID_LIST_SERVICE_ACCOUNT_KEYS = 5;
-  private static final int METHODID_GET_SERVICE_ACCOUNT_KEY = 6;
-  private static final int METHODID_CREATE_SERVICE_ACCOUNT_KEY = 7;
-  private static final int METHODID_DELETE_SERVICE_ACCOUNT_KEY = 8;
-  private static final int METHODID_SIGN_BLOB = 9;
-  private static final int METHODID_SIGN_JWT = 10;
-  private static final int METHODID_GET_IAM_POLICY = 11;
-  private static final int METHODID_SET_IAM_POLICY = 12;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 13;
-  private static final int METHODID_QUERY_GRANTABLE_ROLES = 14;
-  private static final int METHODID_LIST_ROLES = 15;
-  private static final int METHODID_GET_ROLE = 16;
-  private static final int METHODID_CREATE_ROLE = 17;
-  private static final int METHODID_UPDATE_ROLE = 18;
-  private static final int METHODID_DELETE_ROLE = 19;
-  private static final int METHODID_UNDELETE_ROLE = 20;
-  private static final int METHODID_QUERY_TESTABLE_PERMISSIONS = 21;
+  private static final int METHODID_PATCH_SERVICE_ACCOUNT = 4;
+  private static final int METHODID_DELETE_SERVICE_ACCOUNT = 5;
+  private static final int METHODID_UNDELETE_SERVICE_ACCOUNT = 6;
+  private static final int METHODID_ENABLE_SERVICE_ACCOUNT = 7;
+  private static final int METHODID_DISABLE_SERVICE_ACCOUNT = 8;
+  private static final int METHODID_LIST_SERVICE_ACCOUNT_KEYS = 9;
+  private static final int METHODID_GET_SERVICE_ACCOUNT_KEY = 10;
+  private static final int METHODID_CREATE_SERVICE_ACCOUNT_KEY = 11;
+  private static final int METHODID_UPLOAD_SERVICE_ACCOUNT_KEY = 12;
+  private static final int METHODID_DELETE_SERVICE_ACCOUNT_KEY = 13;
+  private static final int METHODID_SIGN_BLOB = 14;
+  private static final int METHODID_SIGN_JWT = 15;
+  private static final int METHODID_GET_IAM_POLICY = 16;
+  private static final int METHODID_SET_IAM_POLICY = 17;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 18;
+  private static final int METHODID_QUERY_GRANTABLE_ROLES = 19;
+  private static final int METHODID_LIST_ROLES = 20;
+  private static final int METHODID_GET_ROLE = 21;
+  private static final int METHODID_CREATE_ROLE = 22;
+  private static final int METHODID_UPDATE_ROLE = 23;
+  private static final int METHODID_DELETE_ROLE = 24;
+  private static final int METHODID_UNDELETE_ROLE = 25;
+  private static final int METHODID_QUERY_TESTABLE_PERMISSIONS = 26;
+  private static final int METHODID_QUERY_AUDITABLE_SERVICES = 27;
+  private static final int METHODID_LINT_POLICY = 28;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2176,8 +2965,24 @@ public final class IAMGrpc {
           serviceImpl.updateServiceAccount((com.google.iam.admin.v1.ServiceAccount) request,
               (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount>) responseObserver);
           break;
+        case METHODID_PATCH_SERVICE_ACCOUNT:
+          serviceImpl.patchServiceAccount((com.google.iam.admin.v1.PatchServiceAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount>) responseObserver);
+          break;
         case METHODID_DELETE_SERVICE_ACCOUNT:
           serviceImpl.deleteServiceAccount((com.google.iam.admin.v1.DeleteServiceAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UNDELETE_SERVICE_ACCOUNT:
+          serviceImpl.undeleteServiceAccount((com.google.iam.admin.v1.UndeleteServiceAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.UndeleteServiceAccountResponse>) responseObserver);
+          break;
+        case METHODID_ENABLE_SERVICE_ACCOUNT:
+          serviceImpl.enableServiceAccount((com.google.iam.admin.v1.EnableServiceAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DISABLE_SERVICE_ACCOUNT:
+          serviceImpl.disableServiceAccount((com.google.iam.admin.v1.DisableServiceAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_SERVICE_ACCOUNT_KEYS:
@@ -2190,6 +2995,10 @@ public final class IAMGrpc {
           break;
         case METHODID_CREATE_SERVICE_ACCOUNT_KEY:
           serviceImpl.createServiceAccountKey((com.google.iam.admin.v1.CreateServiceAccountKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey>) responseObserver);
+          break;
+        case METHODID_UPLOAD_SERVICE_ACCOUNT_KEY:
+          serviceImpl.uploadServiceAccountKey((com.google.iam.admin.v1.UploadServiceAccountKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey>) responseObserver);
           break;
         case METHODID_DELETE_SERVICE_ACCOUNT_KEY:
@@ -2247,6 +3056,14 @@ public final class IAMGrpc {
         case METHODID_QUERY_TESTABLE_PERMISSIONS:
           serviceImpl.queryTestablePermissions((com.google.iam.admin.v1.QueryTestablePermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryTestablePermissionsResponse>) responseObserver);
+          break;
+        case METHODID_QUERY_AUDITABLE_SERVICES:
+          serviceImpl.queryAuditableServices((com.google.iam.admin.v1.QueryAuditableServicesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryAuditableServicesResponse>) responseObserver);
+          break;
+        case METHODID_LINT_POLICY:
+          serviceImpl.lintPolicy((com.google.iam.admin.v1.LintPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.admin.v1.LintPolicyResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2313,10 +3130,15 @@ public final class IAMGrpc {
               .addMethod(getGetServiceAccountMethod())
               .addMethod(getCreateServiceAccountMethod())
               .addMethod(getUpdateServiceAccountMethod())
+              .addMethod(getPatchServiceAccountMethod())
               .addMethod(getDeleteServiceAccountMethod())
+              .addMethod(getUndeleteServiceAccountMethod())
+              .addMethod(getEnableServiceAccountMethod())
+              .addMethod(getDisableServiceAccountMethod())
               .addMethod(getListServiceAccountKeysMethod())
               .addMethod(getGetServiceAccountKeyMethod())
               .addMethod(getCreateServiceAccountKeyMethod())
+              .addMethod(getUploadServiceAccountKeyMethod())
               .addMethod(getDeleteServiceAccountKeyMethod())
               .addMethod(getSignBlobMethod())
               .addMethod(getSignJwtMethod())
@@ -2331,6 +3153,8 @@ public final class IAMGrpc {
               .addMethod(getDeleteRoleMethod())
               .addMethod(getUndeleteRoleMethod())
               .addMethod(getQueryTestablePermissionsMethod())
+              .addMethod(getQueryAuditableServicesMethod())
+              .addMethod(getLintPolicyMethod())
               .build();
         }
       }

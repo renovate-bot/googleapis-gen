@@ -28,6 +28,12 @@
             "DeleteServiceAccountKey": {
               "methods": ["deleteServiceAccountKey", "deleteServiceAccountKey", "deleteServiceAccountKey", "deleteServiceAccountKeyCallable"]
             },
+            "DisableServiceAccount": {
+              "methods": ["disableServiceAccount", "disableServiceAccountCallable"]
+            },
+            "EnableServiceAccount": {
+              "methods": ["enableServiceAccount", "enableServiceAccountCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
@@ -40,6 +46,9 @@
             "GetServiceAccountKey": {
               "methods": ["getServiceAccountKey", "getServiceAccountKey", "getServiceAccountKey", "getServiceAccountKeyCallable"]
             },
+            "LintPolicy": {
+              "methods": ["lintPolicy", "lintPolicyCallable"]
+            },
             "ListRoles": {
               "methods": ["listRoles", "listRolesPagedCallable", "listRolesCallable"]
             },
@@ -48,6 +57,12 @@
             },
             "ListServiceAccounts": {
               "methods": ["listServiceAccounts", "listServiceAccounts", "listServiceAccounts", "listServiceAccountsPagedCallable", "listServiceAccountsCallable"]
+            },
+            "PatchServiceAccount": {
+              "methods": ["patchServiceAccount", "patchServiceAccountCallable"]
+            },
+            "QueryAuditableServices": {
+              "methods": ["queryAuditableServices", "queryAuditableServicesCallable"]
             },
             "QueryGrantableRoles": {
               "methods": ["queryGrantableRoles", "queryGrantableRoles", "queryGrantableRolesPagedCallable", "queryGrantableRolesCallable"]
@@ -70,11 +85,17 @@
             "UndeleteRole": {
               "methods": ["undeleteRole", "undeleteRoleCallable"]
             },
+            "UndeleteServiceAccount": {
+              "methods": ["undeleteServiceAccount", "undeleteServiceAccountCallable"]
+            },
             "UpdateRole": {
               "methods": ["updateRole", "updateRoleCallable"]
             },
             "UpdateServiceAccount": {
               "methods": ["updateServiceAccount", "updateServiceAccountCallable"]
+            },
+            "UploadServiceAccountKey": {
+              "methods": ["uploadServiceAccountKey", "uploadServiceAccountKeyCallable"]
             }
           }
         }

@@ -40,9 +40,25 @@
           "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
+        "PatchServiceAccount": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
         "DeleteServiceAccount": {
           "timeout_millis": 60000,
           "retry_codes_name": "idempotent",
+          "retry_params_name": "default"
+        },
+        "UndeleteServiceAccount": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "EnableServiceAccount": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "DisableServiceAccount": {
+          "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         },
         "ListServiceAccountKeys": {
@@ -57,6 +73,10 @@
         },
         "CreateServiceAccountKey": {
           "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "UploadServiceAccountKey": {
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         },
@@ -120,6 +140,14 @@
           "retry_params_name": "default"
         },
         "QueryTestablePermissions": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "QueryAuditableServices": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "LintPolicy": {
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         }

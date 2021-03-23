@@ -29,15 +29,22 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
 import com.google.iam.admin.v1.GetServiceAccountRequest;
+import com.google.iam.admin.v1.LintPolicyRequest;
+import com.google.iam.admin.v1.LintPolicyResponse;
 import com.google.iam.admin.v1.ListRolesRequest;
 import com.google.iam.admin.v1.ListRolesResponse;
 import com.google.iam.admin.v1.ListServiceAccountKeysRequest;
 import com.google.iam.admin.v1.ListServiceAccountKeysResponse;
 import com.google.iam.admin.v1.ListServiceAccountsRequest;
 import com.google.iam.admin.v1.ListServiceAccountsResponse;
+import com.google.iam.admin.v1.PatchServiceAccountRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesRequest;
+import com.google.iam.admin.v1.QueryAuditableServicesResponse;
 import com.google.iam.admin.v1.QueryGrantableRolesRequest;
 import com.google.iam.admin.v1.QueryGrantableRolesResponse;
 import com.google.iam.admin.v1.QueryTestablePermissionsRequest;
@@ -50,7 +57,10 @@ import com.google.iam.admin.v1.SignBlobResponse;
 import com.google.iam.admin.v1.SignJwtRequest;
 import com.google.iam.admin.v1.SignJwtResponse;
 import com.google.iam.admin.v1.UndeleteRoleRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountRequest;
+import com.google.iam.admin.v1.UndeleteServiceAccountResponse;
 import com.google.iam.admin.v1.UpdateRoleRequest;
+import com.google.iam.admin.v1.UploadServiceAccountKeyRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -90,8 +100,25 @@ public abstract class IAMStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateServiceAccountCallable()");
   }
 
+  public UnaryCallable<PatchServiceAccountRequest, ServiceAccount> patchServiceAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchServiceAccountCallable()");
+  }
+
   public UnaryCallable<DeleteServiceAccountRequest, Empty> deleteServiceAccountCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteServiceAccountCallable()");
+  }
+
+  public UnaryCallable<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
+      undeleteServiceAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: undeleteServiceAccountCallable()");
+  }
+
+  public UnaryCallable<EnableServiceAccountRequest, Empty> enableServiceAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableServiceAccountCallable()");
+  }
+
+  public UnaryCallable<DisableServiceAccountRequest, Empty> disableServiceAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableServiceAccountCallable()");
   }
 
   public UnaryCallable<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
@@ -107,6 +134,11 @@ public abstract class IAMStub implements BackgroundResource {
   public UnaryCallable<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: createServiceAccountKeyCallable()");
+  }
+
+  public UnaryCallable<UploadServiceAccountKeyRequest, ServiceAccountKey>
+      uploadServiceAccountKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: uploadServiceAccountKeyCallable()");
   }
 
   public UnaryCallable<DeleteServiceAccountKeyRequest, Empty> deleteServiceAccountKeyCallable() {
@@ -181,6 +213,15 @@ public abstract class IAMStub implements BackgroundResource {
   public UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
       queryTestablePermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: queryTestablePermissionsCallable()");
+  }
+
+  public UnaryCallable<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
+      queryAuditableServicesCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryAuditableServicesCallable()");
+  }
+
+  public UnaryCallable<LintPolicyRequest, LintPolicyResponse> lintPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: lintPolicyCallable()");
   }
 
   @Override
