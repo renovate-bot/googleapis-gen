@@ -233,6 +233,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :test_case_results, :message, 1, "google.cloud.dialogflow.cx.v3.TestCaseResult"
       optional :next_page_token, :string, 2
     end
+    add_message "google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest" do
+      optional :name, :string, 1
+    end
     add_enum "google.cloud.dialogflow.cx.v3.TestResult" do
       value :TEST_RESULT_UNSPECIFIED, 0
       value :PASSED, 1
@@ -289,6 +292,7 @@ module Google
           ExportTestCasesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata").msgclass
           ListTestCaseResultsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest").msgclass
           ListTestCaseResultsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse").msgclass
+          GetTestCaseResultRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest").msgclass
           TestResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TestResult").enummodule
         end
       end

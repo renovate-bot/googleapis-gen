@@ -39,9 +39,6 @@ module Google
               # Retrieves the specified session entity type.
               rpc :GetSessionEntityType, ::Google::Cloud::Dialogflow::Cx::V3::GetSessionEntityTypeRequest, ::Google::Cloud::Dialogflow::Cx::V3::SessionEntityType
               # Creates a session entity type.
-              #
-              # If the specified session entity type already exists, overrides the
-              # session entity type.
               rpc :CreateSessionEntityType, ::Google::Cloud::Dialogflow::Cx::V3::CreateSessionEntityTypeRequest, ::Google::Cloud::Dialogflow::Cx::V3::SessionEntityType
               # Updates the specified session entity type.
               rpc :UpdateSessionEntityType, ::Google::Cloud::Dialogflow::Cx::V3::UpdateSessionEntityTypeRequest, ::Google::Cloud::Dialogflow::Cx::V3::SessionEntityType

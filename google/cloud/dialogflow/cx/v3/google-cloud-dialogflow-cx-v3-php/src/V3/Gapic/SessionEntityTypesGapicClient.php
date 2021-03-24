@@ -601,9 +601,6 @@ class SessionEntityTypesGapicClient
     /**
      * Creates a session entity type.
      *
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
-     *
      * Sample code:
      * ```
      * $sessionEntityTypesClient = new SessionEntityTypesClient();

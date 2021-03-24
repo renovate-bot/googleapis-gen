@@ -603,6 +603,14 @@ module Google
           #     results in the list.
           class ListTestCaseResultsResponse; end
 
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3::TestCases::GetTestCaseResult TestCases::GetTestCaseResult}.
+          # @!attribute [rw] name
+          #   @return [String]
+          #     Required. The name of the testcase.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/testCases/<TestCase ID>/results/<TestCaseResult ID>`.
+          class GetTestCaseResultRequest; end
+
           # The test result for a test case and an agent environment.
           module TestResult
             # Not specified. Should never be used.

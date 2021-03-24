@@ -132,6 +132,17 @@ return [
                     ],
                 ],
             ],
+            'GetTestCaseResult' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/testCases/*/results/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'google.longrunning.Operations' => [
             'CancelOperation' => [

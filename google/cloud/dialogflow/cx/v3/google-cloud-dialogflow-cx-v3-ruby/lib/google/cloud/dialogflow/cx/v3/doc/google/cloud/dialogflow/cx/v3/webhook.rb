@@ -132,11 +132,30 @@ module Google
           #       will be removed).
           class DeleteWebhookRequest; end
 
-          # The request message for a webhook call.
+          # The request message for a webhook call. The request is sent as a JSON object
+          # and the field names will be presented in camel cases.
           # @!attribute [rw] detect_intent_response_id
           #   @return [String]
           #     Always present. The unique identifier of the {Google::Cloud::Dialogflow::Cx::V3::DetectIntentResponse DetectIntentResponse} that
           #     will be returned to the API caller.
+          # @!attribute [rw] text
+          #   @return [String]
+          #     If {Google::Cloud::Dialogflow::Cx::V3::TextInput natural language text} was provided as input, this field
+          #     will contain a copy of the text.
+          # @!attribute [rw] trigger_intent
+          #   @return [String]
+          #     If an {Google::Cloud::Dialogflow::Cx::V3::IntentInput intent} was provided as input, this field will
+          #     contain a copy of the intent identifier.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/intents/<Intent ID>`.
+          # @!attribute [rw] transcript
+          #   @return [String]
+          #     If {Google::Cloud::Dialogflow::Cx::V3::AudioInput natural language speech audio} was provided as input,
+          #     this field will contain the transcript for the audio.
+          # @!attribute [rw] trigger_event
+          #   @return [String]
+          #     If an {Google::Cloud::Dialogflow::Cx::V3::EventInput event} was provided as input, this field will contain
+          #     the name of the event.
           # @!attribute [rw] fulfillment_info
           #   @return [Google::Cloud::Dialogflow::Cx::V3::WebhookRequest::FulfillmentInfo]
           #     Always present. Information about the fulfillment that triggered this
@@ -174,8 +193,9 @@ module Google
             # @!attribute [rw] last_matched_intent
             #   @return [String]
             #     Always present. The unique identifier of the last matched
-            #     {Google::Cloud::Dialogflow::Cx::V3::Intent intent}. Format: `projects/<Project ID>/locations/<Location
-            #     ID>/agents/<Agent ID>/intents/<Intent ID>`.
+            #     {Google::Cloud::Dialogflow::Cx::V3::Intent intent}.
+            #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+            #     ID>/intents/<Intent ID>`.
             # @!attribute [rw] display_name
             #   @return [String]
             #     Always present. The display name of the last matched {Google::Cloud::Dialogflow::Cx::V3::Intent intent}.

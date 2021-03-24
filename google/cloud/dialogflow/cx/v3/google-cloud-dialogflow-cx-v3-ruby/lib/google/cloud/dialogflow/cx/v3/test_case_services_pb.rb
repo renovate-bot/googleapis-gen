@@ -60,6 +60,8 @@ module Google
               rpc :ExportTestCases, ::Google::Cloud::Dialogflow::Cx::V3::ExportTestCasesRequest, ::Google::Longrunning::Operation
               # Fetches a list of results for a given test case.
               rpc :ListTestCaseResults, ::Google::Cloud::Dialogflow::Cx::V3::ListTestCaseResultsRequest, ::Google::Cloud::Dialogflow::Cx::V3::ListTestCaseResultsResponse
+              # Gets a test case result.
+              rpc :GetTestCaseResult, ::Google::Cloud::Dialogflow::Cx::V3::GetTestCaseResultRequest, ::Google::Cloud::Dialogflow::Cx::V3::TestCaseResult
             end
 
             Stub = Service.rpc_stub_class

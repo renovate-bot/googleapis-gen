@@ -96,6 +96,12 @@ module Google
 
             private_constant :TEST_CASE_PATH_TEMPLATE
 
+            TEST_CASE_RESULT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+              "projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}/results/{result}"
+            )
+
+            private_constant :TEST_CASE_RESULT_PATH_TEMPLATE
+
             # Returns a fully-qualified agent resource name string.
             # @param project [String]
             # @param location [String]
@@ -136,6 +142,23 @@ module Google
                 :"location" => location,
                 :"agent" => agent,
                 :"test_case" => test_case
+              )
+            end
+
+            # Returns a fully-qualified test_case_result resource name string.
+            # @param project [String]
+            # @param location [String]
+            # @param agent [String]
+            # @param test_case [String]
+            # @param result [String]
+            # @return [String]
+            def self.test_case_result_path project, location, agent, test_case, result
+              TEST_CASE_RESULT_PATH_TEMPLATE.render(
+                :"project" => project,
+                :"location" => location,
+                :"agent" => agent,
+                :"test_case" => test_case,
+                :"result" => result
               )
             end
 
@@ -341,6 +364,14 @@ module Google
                 exception_transformer: exception_transformer,
                 params_extractor: proc do |request|
                   {'parent' => request.parent}
+                end
+              )
+              @get_test_case_result = Google::Gax.create_api_call(
+                @test_cases_stub.method(:get_test_case_result),
+                defaults["get_test_case_result"],
+                exception_transformer: exception_transformer,
+                params_extractor: proc do |request|
+                  {'name' => request.name}
                 end
               )
             end
@@ -984,6 +1015,38 @@ module Google
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::Cx::V3::ListTestCaseResultsRequest)
               @list_test_case_results.call(req, options, &block)
+            end
+
+            # Gets a test case result.
+            #
+            # @param name [String]
+            #   Required. The name of the testcase.
+            #   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+            #   ID>/testCases/<TestCase ID>/results/<TestCaseResult ID>`.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Dialogflow::Cx::V3::TestCaseResult]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Dialogflow::Cx::V3::TestCaseResult]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/dialogflow/cx"
+            #
+            #   test_cases_client = Google::Cloud::Dialogflow::Cx::TestCases.new(version: :v3)
+            #   formatted_name = Google::Cloud::Dialogflow::Cx::V3::TestCasesClient.test_case_result_path("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+            #   response = test_cases_client.get_test_case_result(formatted_name)
+
+            def get_test_case_result \
+                name,
+                options: nil,
+                &block
+              req = {
+                name: name
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::Cx::V3::GetTestCaseResultRequest)
+              @get_test_case_result.call(req, options, &block)
             end
           end
         end

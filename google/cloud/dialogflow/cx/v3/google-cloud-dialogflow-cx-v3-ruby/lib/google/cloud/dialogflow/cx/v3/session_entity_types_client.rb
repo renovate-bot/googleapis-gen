@@ -362,9 +362,6 @@ module Google
 
             # Creates a session entity type.
             #
-            # If the specified session entity type already exists, overrides the
-            # session entity type.
-            #
             # @param parent [String]
             #   Required. The session to create a session entity type for.
             #   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent

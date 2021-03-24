@@ -62,6 +62,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :messages, :message, 7, "google.cloud.dialogflow.cx.v3.ResponseMessage"
       optional :payload, :message, 8, "google.protobuf.Struct"
       optional :sentiment_analysis_result, :message, 9, "google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult"
+      oneof :query do
+        optional :text, :string, 10
+        optional :trigger_intent, :string, 11
+        optional :transcript, :string, 12
+        optional :trigger_event, :string, 14
+      end
     end
     add_message "google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo" do
       optional :tag, :string, 1

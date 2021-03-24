@@ -252,9 +252,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
    * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string trigger_intent = 2;</code>
+   * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return Whether the triggerIntent field is set.
    */
   public boolean hasTriggerIntent() {
@@ -264,9 +266,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
    * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string trigger_intent = 2;</code>
+   * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The triggerIntent.
    */
   public java.lang.String getTriggerIntent() {
@@ -290,9 +294,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
    * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string trigger_intent = 2;</code>
+   * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for triggerIntent.
    */
   public com.google.protobuf.ByteString
@@ -318,7 +324,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-   * this field will contain the trascript for the audio.
+   * this field will contain the transcript for the audio.
    * </pre>
    *
    * <code>string transcript = 3;</code>
@@ -330,7 +336,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-   * this field will contain the trascript for the audio.
+   * this field will contain the transcript for the audio.
    * </pre>
    *
    * <code>string transcript = 3;</code>
@@ -356,7 +362,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-   * this field will contain the trascript for the audio.
+   * this field will contain the transcript for the audio.
    * </pre>
    *
    * <code>string transcript = 3;</code>
@@ -1185,9 +1191,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 2;</code>
+     * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return Whether the triggerIntent field is set.
      */
     @java.lang.Override
@@ -1198,9 +1206,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 2;</code>
+     * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The triggerIntent.
      */
     @java.lang.Override
@@ -1225,9 +1235,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 2;</code>
+     * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for triggerIntent.
      */
     @java.lang.Override
@@ -1253,9 +1265,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 2;</code>
+     * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param value The triggerIntent to set.
      * @return This builder for chaining.
      */
@@ -1273,9 +1287,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 2;</code>
+     * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTriggerIntent() {
@@ -1290,9 +1306,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 2;</code>
+     * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for triggerIntent to set.
      * @return This builder for chaining.
      */
@@ -1311,7 +1329,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 3;</code>
@@ -1324,7 +1342,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 3;</code>
@@ -1351,7 +1369,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 3;</code>
@@ -1379,7 +1397,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 3;</code>
@@ -1399,7 +1417,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 3;</code>
@@ -1416,7 +1434,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 3;</code>
