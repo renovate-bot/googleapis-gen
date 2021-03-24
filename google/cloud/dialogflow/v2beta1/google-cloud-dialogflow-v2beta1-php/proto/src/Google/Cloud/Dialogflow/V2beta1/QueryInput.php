@@ -33,6 +33,8 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      *           The natural language text to be processed.
      *     @type \Google\Cloud\Dialogflow\V2beta1\EventInput $event
      *           The event to be processed.
+     *     @type \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents $dtmf
+     *           The DTMF digits used to invoke intent and fill in parameter value.
      * }
      */
     public function __construct($data = NULL) {
@@ -129,6 +131,37 @@ class QueryInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\EventInput::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     * @return \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents|null
+     */
+    public function getDtmf()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasDtmf()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     * @param \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents $var
+     * @return $this
+     */
+    public function setDtmf($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents::class);
+        $this->writeOneof(4, $var);
 
         return $this;
     }

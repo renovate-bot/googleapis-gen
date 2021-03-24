@@ -190,6 +190,9 @@ module Google
         # @!attribute [rw] event
         #   @return [Google::Cloud::Dialogflow::V2beta1::EventInput]
         #     The event to be processed.
+        # @!attribute [rw] dtmf
+        #   @return [Google::Cloud::Dialogflow::V2beta1::TelephonyDtmfEvents]
+        #     The DTMF digits used to invoke intent and fill in parameter value.
         class QueryInput; end
 
         # Represents the result of conversational query or event processing.

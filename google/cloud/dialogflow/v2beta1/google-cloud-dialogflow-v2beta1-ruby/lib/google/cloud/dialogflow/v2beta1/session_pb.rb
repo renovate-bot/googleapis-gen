@@ -53,6 +53,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :audio_config, :message, 1, "google.cloud.dialogflow.v2beta1.InputAudioConfig"
         optional :text, :message, 2, "google.cloud.dialogflow.v2beta1.TextInput"
         optional :event, :message, 3, "google.cloud.dialogflow.v2beta1.EventInput"
+        optional :dtmf, :message, 4, "google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents"
       end
     end
     add_message "google.cloud.dialogflow.v2beta1.QueryResult" do

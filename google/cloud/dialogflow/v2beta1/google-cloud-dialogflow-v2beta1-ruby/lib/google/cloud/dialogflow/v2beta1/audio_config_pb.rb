@@ -80,7 +80,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :OUTPUT_AUDIO_ENCODING_UNSPECIFIED, 0
       value :OUTPUT_AUDIO_ENCODING_LINEAR_16, 1
       value :OUTPUT_AUDIO_ENCODING_MP3, 2
+      value :OUTPUT_AUDIO_ENCODING_MP3_64_KBPS, 4
       value :OUTPUT_AUDIO_ENCODING_OGG_OPUS, 3
+      value :OUTPUT_AUDIO_ENCODING_MULAW, 5
     end
     add_enum "google.cloud.dialogflow.v2beta1.TelephonyDtmf" do
       value :TELEPHONY_DTMF_UNSPECIFIED, 0
