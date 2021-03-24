@@ -76,7 +76,7 @@ module Google
                 parent_config = while namespace.any?
                                   parent_name = namespace.join "::"
                                   parent_const = const_get parent_name
-                                  break parent_const.configure if parent_const&.respond_to? :configure
+                                  break parent_const.configure if parent_const.respond_to? :configure
                                   namespace.pop
                                 end
                 default_config = Client::Configuration.new parent_config
@@ -84,9 +84,9 @@ module Google
                 default_config.timeout = 60.0
                 default_config.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     10.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14]
+                max_delay: 10.0,
+                multiplier: 1.3,
+                retry_codes: [14]
                 }
 
                 default_config.rpcs.create_service.timeout = 60.0
@@ -173,7 +173,7 @@ module Google
               enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                        @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
-              credentials ||= Credentials.default scope:                  @config.scope,
+              credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
               if credentials.is_a?(String) || credentials.is_a?(Hash)
                 credentials = Credentials.new credentials, scope: @config.scope
@@ -1575,7 +1575,7 @@ module Google
               config_attr :scope,         nil, ::String, ::Array, nil
               config_attr :lib_name,      nil, ::String, nil
               config_attr :lib_version,   nil, ::String, nil
-              config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+              config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
               config_attr :interceptors,  nil, ::Array, nil
               config_attr :timeout,       nil, ::Numeric, nil
               config_attr :metadata,      nil, ::Hash, nil
@@ -1596,7 +1596,7 @@ module Google
               def rpcs
                 @rpcs ||= begin
                   parent_rpcs = nil
-                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                   Rpcs.new parent_rpcs
                 end
               end
@@ -1697,35 +1697,35 @@ module Google
 
                 # @private
                 def initialize parent_rpcs = nil
-                  list_services_config = parent_rpcs&.list_services if parent_rpcs&.respond_to? :list_services
+                  list_services_config = parent_rpcs.list_services if parent_rpcs.respond_to? :list_services
                   @list_services = ::Gapic::Config::Method.new list_services_config
-                  get_service_config = parent_rpcs&.get_service if parent_rpcs&.respond_to? :get_service
+                  get_service_config = parent_rpcs.get_service if parent_rpcs.respond_to? :get_service
                   @get_service = ::Gapic::Config::Method.new get_service_config
-                  create_service_config = parent_rpcs&.create_service if parent_rpcs&.respond_to? :create_service
+                  create_service_config = parent_rpcs.create_service if parent_rpcs.respond_to? :create_service
                   @create_service = ::Gapic::Config::Method.new create_service_config
-                  update_service_config = parent_rpcs&.update_service if parent_rpcs&.respond_to? :update_service
+                  update_service_config = parent_rpcs.update_service if parent_rpcs.respond_to? :update_service
                   @update_service = ::Gapic::Config::Method.new update_service_config
-                  delete_service_config = parent_rpcs&.delete_service if parent_rpcs&.respond_to? :delete_service
+                  delete_service_config = parent_rpcs.delete_service if parent_rpcs.respond_to? :delete_service
                   @delete_service = ::Gapic::Config::Method.new delete_service_config
-                  list_metadata_imports_config = parent_rpcs&.list_metadata_imports if parent_rpcs&.respond_to? :list_metadata_imports
+                  list_metadata_imports_config = parent_rpcs.list_metadata_imports if parent_rpcs.respond_to? :list_metadata_imports
                   @list_metadata_imports = ::Gapic::Config::Method.new list_metadata_imports_config
-                  get_metadata_import_config = parent_rpcs&.get_metadata_import if parent_rpcs&.respond_to? :get_metadata_import
+                  get_metadata_import_config = parent_rpcs.get_metadata_import if parent_rpcs.respond_to? :get_metadata_import
                   @get_metadata_import = ::Gapic::Config::Method.new get_metadata_import_config
-                  create_metadata_import_config = parent_rpcs&.create_metadata_import if parent_rpcs&.respond_to? :create_metadata_import
+                  create_metadata_import_config = parent_rpcs.create_metadata_import if parent_rpcs.respond_to? :create_metadata_import
                   @create_metadata_import = ::Gapic::Config::Method.new create_metadata_import_config
-                  update_metadata_import_config = parent_rpcs&.update_metadata_import if parent_rpcs&.respond_to? :update_metadata_import
+                  update_metadata_import_config = parent_rpcs.update_metadata_import if parent_rpcs.respond_to? :update_metadata_import
                   @update_metadata_import = ::Gapic::Config::Method.new update_metadata_import_config
-                  export_metadata_config = parent_rpcs&.export_metadata if parent_rpcs&.respond_to? :export_metadata
+                  export_metadata_config = parent_rpcs.export_metadata if parent_rpcs.respond_to? :export_metadata
                   @export_metadata = ::Gapic::Config::Method.new export_metadata_config
-                  restore_service_config = parent_rpcs&.restore_service if parent_rpcs&.respond_to? :restore_service
+                  restore_service_config = parent_rpcs.restore_service if parent_rpcs.respond_to? :restore_service
                   @restore_service = ::Gapic::Config::Method.new restore_service_config
-                  list_backups_config = parent_rpcs&.list_backups if parent_rpcs&.respond_to? :list_backups
+                  list_backups_config = parent_rpcs.list_backups if parent_rpcs.respond_to? :list_backups
                   @list_backups = ::Gapic::Config::Method.new list_backups_config
-                  get_backup_config = parent_rpcs&.get_backup if parent_rpcs&.respond_to? :get_backup
+                  get_backup_config = parent_rpcs.get_backup if parent_rpcs.respond_to? :get_backup
                   @get_backup = ::Gapic::Config::Method.new get_backup_config
-                  create_backup_config = parent_rpcs&.create_backup if parent_rpcs&.respond_to? :create_backup
+                  create_backup_config = parent_rpcs.create_backup if parent_rpcs.respond_to? :create_backup
                   @create_backup = ::Gapic::Config::Method.new create_backup_config
-                  delete_backup_config = parent_rpcs&.delete_backup if parent_rpcs&.respond_to? :delete_backup
+                  delete_backup_config = parent_rpcs.delete_backup if parent_rpcs.respond_to? :delete_backup
                   @delete_backup = ::Gapic::Config::Method.new delete_backup_config
 
                   yield self if block_given?

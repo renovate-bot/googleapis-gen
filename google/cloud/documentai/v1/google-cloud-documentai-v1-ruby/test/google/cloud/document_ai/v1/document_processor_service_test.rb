@@ -100,7 +100,7 @@ class ::Google::Cloud::DocumentAI::V1::DocumentProcessorService::ClientTest < Mi
       end
 
       # Use protobuf object with options
-      client.process_document ::Google::Cloud::DocumentAI::V1::ProcessRequest.new(inline_document: inline_document, name: name, skip_human_review: skip_human_review), grpc_options do |response, operation|
+      client.process_document(::Google::Cloud::DocumentAI::V1::ProcessRequest.new(inline_document: inline_document, name: name, skip_human_review: skip_human_review), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -168,7 +168,7 @@ class ::Google::Cloud::DocumentAI::V1::DocumentProcessorService::ClientTest < Mi
       end
 
       # Use protobuf object with options
-      client.batch_process_documents ::Google::Cloud::DocumentAI::V1::BatchProcessRequest.new(name: name, input_documents: input_documents, document_output_config: document_output_config, skip_human_review: skip_human_review), grpc_options do |response, operation|
+      client.batch_process_documents(::Google::Cloud::DocumentAI::V1::BatchProcessRequest.new(name: name, input_documents: input_documents, document_output_config: document_output_config, skip_human_review: skip_human_review), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -234,7 +234,7 @@ class ::Google::Cloud::DocumentAI::V1::DocumentProcessorService::ClientTest < Mi
       end
 
       # Use protobuf object with options
-      client.review_document ::Google::Cloud::DocumentAI::V1::ReviewDocumentRequest.new(inline_document: inline_document, human_review_config: human_review_config), grpc_options do |response, operation|
+      client.review_document(::Google::Cloud::DocumentAI::V1::ReviewDocumentRequest.new(inline_document: inline_document, human_review_config: human_review_config), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

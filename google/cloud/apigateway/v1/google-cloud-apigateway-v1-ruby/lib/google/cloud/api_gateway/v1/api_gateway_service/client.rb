@@ -60,7 +60,7 @@ module Google
                 parent_config = while namespace.any?
                                   parent_name = namespace.join "::"
                                   parent_const = const_get parent_name
-                                  break parent_const.configure if parent_const&.respond_to? :configure
+                                  break parent_const.configure if parent_const.respond_to? :configure
                                   namespace.pop
                                 end
                 default_config = Client::Configuration.new parent_config
@@ -68,73 +68,73 @@ module Google
                 default_config.rpcs.create_gateway.timeout = 60.0
                 default_config.rpcs.create_gateway.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.update_gateway.timeout = 60.0
                 default_config.rpcs.update_gateway.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.delete_gateway.timeout = 60.0
                 default_config.rpcs.delete_gateway.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.create_api.timeout = 60.0
                 default_config.rpcs.create_api.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.update_api.timeout = 60.0
                 default_config.rpcs.update_api.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.delete_api.timeout = 60.0
                 default_config.rpcs.delete_api.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.create_api_config.timeout = 60.0
                 default_config.rpcs.create_api_config.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.update_api_config.timeout = 60.0
                 default_config.rpcs.update_api_config.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config.rpcs.delete_api_config.timeout = 60.0
                 default_config.rpcs.delete_api_config.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     60.0,
-                  multiplier:    2,
-                  retry_codes:   [2, 14]
+              max_delay: 60.0,
+              multiplier: 2,
+              retry_codes: [2, 14]
                 }
 
                 default_config
@@ -203,7 +203,7 @@ module Google
               enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                        @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
-              credentials ||= Credentials.default scope:                  @config.scope,
+              credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
               if credentials.is_a?(String) || credentials.is_a?(Hash)
                 credentials = Credentials.new credentials, scope: @config.scope
@@ -1400,7 +1400,7 @@ module Google
               config_attr :scope,         nil, ::String, ::Array, nil
               config_attr :lib_name,      nil, ::String, nil
               config_attr :lib_version,   nil, ::String, nil
-              config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+              config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
               config_attr :interceptors,  nil, ::Array, nil
               config_attr :timeout,       nil, ::Numeric, nil
               config_attr :metadata,      nil, ::Hash, nil
@@ -1421,7 +1421,7 @@ module Google
               def rpcs
                 @rpcs ||= begin
                   parent_rpcs = nil
-                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                   Rpcs.new parent_rpcs
                 end
               end
@@ -1522,35 +1522,35 @@ module Google
 
                 # @private
                 def initialize parent_rpcs = nil
-                  list_gateways_config = parent_rpcs&.list_gateways if parent_rpcs&.respond_to? :list_gateways
+                  list_gateways_config = parent_rpcs.list_gateways if parent_rpcs.respond_to? :list_gateways
                   @list_gateways = ::Gapic::Config::Method.new list_gateways_config
-                  get_gateway_config = parent_rpcs&.get_gateway if parent_rpcs&.respond_to? :get_gateway
+                  get_gateway_config = parent_rpcs.get_gateway if parent_rpcs.respond_to? :get_gateway
                   @get_gateway = ::Gapic::Config::Method.new get_gateway_config
-                  create_gateway_config = parent_rpcs&.create_gateway if parent_rpcs&.respond_to? :create_gateway
+                  create_gateway_config = parent_rpcs.create_gateway if parent_rpcs.respond_to? :create_gateway
                   @create_gateway = ::Gapic::Config::Method.new create_gateway_config
-                  update_gateway_config = parent_rpcs&.update_gateway if parent_rpcs&.respond_to? :update_gateway
+                  update_gateway_config = parent_rpcs.update_gateway if parent_rpcs.respond_to? :update_gateway
                   @update_gateway = ::Gapic::Config::Method.new update_gateway_config
-                  delete_gateway_config = parent_rpcs&.delete_gateway if parent_rpcs&.respond_to? :delete_gateway
+                  delete_gateway_config = parent_rpcs.delete_gateway if parent_rpcs.respond_to? :delete_gateway
                   @delete_gateway = ::Gapic::Config::Method.new delete_gateway_config
-                  list_apis_config = parent_rpcs&.list_apis if parent_rpcs&.respond_to? :list_apis
+                  list_apis_config = parent_rpcs.list_apis if parent_rpcs.respond_to? :list_apis
                   @list_apis = ::Gapic::Config::Method.new list_apis_config
-                  get_api_config = parent_rpcs&.get_api if parent_rpcs&.respond_to? :get_api
+                  get_api_config = parent_rpcs.get_api if parent_rpcs.respond_to? :get_api
                   @get_api = ::Gapic::Config::Method.new get_api_config
-                  create_api_config = parent_rpcs&.create_api if parent_rpcs&.respond_to? :create_api
+                  create_api_config = parent_rpcs.create_api if parent_rpcs.respond_to? :create_api
                   @create_api = ::Gapic::Config::Method.new create_api_config
-                  update_api_config = parent_rpcs&.update_api if parent_rpcs&.respond_to? :update_api
+                  update_api_config = parent_rpcs.update_api if parent_rpcs.respond_to? :update_api
                   @update_api = ::Gapic::Config::Method.new update_api_config
-                  delete_api_config = parent_rpcs&.delete_api if parent_rpcs&.respond_to? :delete_api
+                  delete_api_config = parent_rpcs.delete_api if parent_rpcs.respond_to? :delete_api
                   @delete_api = ::Gapic::Config::Method.new delete_api_config
-                  list_api_configs_config = parent_rpcs&.list_api_configs if parent_rpcs&.respond_to? :list_api_configs
+                  list_api_configs_config = parent_rpcs.list_api_configs if parent_rpcs.respond_to? :list_api_configs
                   @list_api_configs = ::Gapic::Config::Method.new list_api_configs_config
-                  get_api_config_config = parent_rpcs&.get_api_config if parent_rpcs&.respond_to? :get_api_config
+                  get_api_config_config = parent_rpcs.get_api_config if parent_rpcs.respond_to? :get_api_config
                   @get_api_config = ::Gapic::Config::Method.new get_api_config_config
-                  create_api_config_config = parent_rpcs&.create_api_config if parent_rpcs&.respond_to? :create_api_config
+                  create_api_config_config = parent_rpcs.create_api_config if parent_rpcs.respond_to? :create_api_config
                   @create_api_config = ::Gapic::Config::Method.new create_api_config_config
-                  update_api_config_config = parent_rpcs&.update_api_config if parent_rpcs&.respond_to? :update_api_config
+                  update_api_config_config = parent_rpcs.update_api_config if parent_rpcs.respond_to? :update_api_config
                   @update_api_config = ::Gapic::Config::Method.new update_api_config_config
-                  delete_api_config_config = parent_rpcs&.delete_api_config if parent_rpcs&.respond_to? :delete_api_config
+                  delete_api_config_config = parent_rpcs.delete_api_config if parent_rpcs.respond_to? :delete_api_config
                   @delete_api_config = ::Gapic::Config::Method.new delete_api_config_config
 
                   yield self if block_given?

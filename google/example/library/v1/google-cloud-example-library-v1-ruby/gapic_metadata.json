@@ -1,0 +1,73 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.example.library.v1",
+  "libraryPackage": "::Google::Example::Library::V1",
+  "services": {
+    "LibraryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Example::Library::V1::LibraryService::Client",
+          "rpcs": {
+            "CreateShelf": {
+              "methods": [
+                "create_shelf"
+              ]
+            },
+            "GetShelf": {
+              "methods": [
+                "get_shelf"
+              ]
+            },
+            "ListShelves": {
+              "methods": [
+                "list_shelves"
+              ]
+            },
+            "DeleteShelf": {
+              "methods": [
+                "delete_shelf"
+              ]
+            },
+            "MergeShelves": {
+              "methods": [
+                "merge_shelves"
+              ]
+            },
+            "CreateBook": {
+              "methods": [
+                "create_book"
+              ]
+            },
+            "GetBook": {
+              "methods": [
+                "get_book"
+              ]
+            },
+            "ListBooks": {
+              "methods": [
+                "list_books"
+              ]
+            },
+            "DeleteBook": {
+              "methods": [
+                "delete_book"
+              ]
+            },
+            "UpdateBook": {
+              "methods": [
+                "update_book"
+              ]
+            },
+            "MoveBook": {
+              "methods": [
+                "move_book"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

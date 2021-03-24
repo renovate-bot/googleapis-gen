@@ -47,7 +47,7 @@ module Google
             # @return [::String]
             def conversation_path **args
               resources = {
-                "conversation:project"          => (proc do |project:, conversation:|
+                "conversation:project" => (proc do |project:, conversation:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
 
                   "projects/#{project}/conversations/#{conversation}"
@@ -88,7 +88,7 @@ module Google
             # @return [::String]
             def conversation_profile_path **args
               resources = {
-                "conversation_profile:project"          => (proc do |project:, conversation_profile:|
+                "conversation_profile:project" => (proc do |project:, conversation_profile:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
 
                   "projects/#{project}/conversationProfiles/#{conversation_profile}"

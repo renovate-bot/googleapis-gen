@@ -62,9 +62,9 @@ module Google
                   default_config.timeout = 3600.0
                   default_config.retry_policy = {
                     initial_delay: 5.0,
-                    max_delay:     60.0,
-                    multiplier:    1.3,
-                    retry_codes:   [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                   }
 
                   default_config
@@ -133,7 +133,7 @@ module Google
                 enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                          @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
-                credentials ||= Credentials.default scope:                  @config.scope,
+                credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
                 if credentials.is_a?(String) || credentials.is_a?(Hash)
                   credentials = Credentials.new credentials, scope: @config.scope
@@ -196,7 +196,8 @@ module Google
               def get_campaign_draft request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V4::Services::GetCampaignDraftRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V4::Services::GetCampaignDraftRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -222,7 +223,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_draft_service_stub.call_rpc :get_campaign_draft, request, options: options do |response, operation|
+                @campaign_draft_service_stub.call_rpc :get_campaign_draft, request,
+                                                      options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -273,7 +275,8 @@ module Google
               def mutate_campaign_drafts request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V4::Services::MutateCampaignDraftsRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V4::Services::MutateCampaignDraftsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -299,7 +302,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_draft_service_stub.call_rpc :mutate_campaign_drafts, request, options: options do |response, operation|
+                @campaign_draft_service_stub.call_rpc :mutate_campaign_drafts, request,
+                                                      options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -347,7 +351,8 @@ module Google
               def promote_campaign_draft request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V4::Services::PromoteCampaignDraftRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V4::Services::PromoteCampaignDraftRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -373,7 +378,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_draft_service_stub.call_rpc :promote_campaign_draft, request, options: options do |response, operation|
+                @campaign_draft_service_stub.call_rpc :promote_campaign_draft, request,
+                                                      options: options do |response, operation|
                   response = ::Gapic::Operation.new response, @operations_client, options: options
                   yield response, operation if block_given?
                   return response
@@ -425,7 +431,8 @@ module Google
               def list_campaign_draft_async_errors request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V4::Services::ListCampaignDraftAsyncErrorsRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V4::Services::ListCampaignDraftAsyncErrorsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -451,8 +458,10 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_draft_service_stub.call_rpc :list_campaign_draft_async_errors, request, options: options do |response, operation|
-                  response = ::Gapic::PagedEnumerable.new @campaign_draft_service_stub, :list_campaign_draft_async_errors, request, response, operation, options
+                @campaign_draft_service_stub.call_rpc :list_campaign_draft_async_errors, request,
+                                                      options: options do |response, operation|
+                  response = ::Gapic::PagedEnumerable.new @campaign_draft_service_stub,
+                                                          :list_campaign_draft_async_errors, request, response, operation, options
                   yield response, operation if block_given?
                   return response
                 end
@@ -545,14 +554,15 @@ module Google
 
                 config_attr :endpoint,      "googleads.googleapis.com", ::String
                 config_attr :credentials,   nil do |value|
-                  allowed = [::String, ::Hash, ::Proc, ::Symbol, ::Google::Auth::Credentials, ::Signet::OAuth2::Client, nil]
+                  allowed = [::String, ::Hash, ::Proc, ::Symbol, ::Google::Auth::Credentials,
+                             ::Signet::OAuth2::Client, nil]
                   allowed += [::GRPC::Core::Channel, ::GRPC::Core::ChannelCredentials] if defined? ::GRPC
                   allowed.any? { |klass| klass === value }
                 end
                 config_attr :scope,         nil, ::String, ::Array, nil
                 config_attr :lib_name,      nil, ::String, nil
                 config_attr :lib_version,   nil, ::String, nil
-                config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+                config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
                 config_attr :interceptors,  nil, ::Array, nil
                 config_attr :timeout,       nil, ::Numeric, nil
                 config_attr :metadata,      nil, ::Hash, nil
@@ -573,7 +583,7 @@ module Google
                 def rpcs
                   @rpcs ||= begin
                     parent_rpcs = nil
-                    parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                    parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                     Rpcs.new parent_rpcs
                   end
                 end
@@ -619,13 +629,13 @@ module Google
 
                   # @private
                   def initialize parent_rpcs = nil
-                    get_campaign_draft_config = parent_rpcs&.get_campaign_draft if parent_rpcs&.respond_to? :get_campaign_draft
+                    get_campaign_draft_config = parent_rpcs.get_campaign_draft if parent_rpcs.respond_to? :get_campaign_draft
                     @get_campaign_draft = ::Gapic::Config::Method.new get_campaign_draft_config
-                    mutate_campaign_drafts_config = parent_rpcs&.mutate_campaign_drafts if parent_rpcs&.respond_to? :mutate_campaign_drafts
+                    mutate_campaign_drafts_config = parent_rpcs.mutate_campaign_drafts if parent_rpcs.respond_to? :mutate_campaign_drafts
                     @mutate_campaign_drafts = ::Gapic::Config::Method.new mutate_campaign_drafts_config
-                    promote_campaign_draft_config = parent_rpcs&.promote_campaign_draft if parent_rpcs&.respond_to? :promote_campaign_draft
+                    promote_campaign_draft_config = parent_rpcs.promote_campaign_draft if parent_rpcs.respond_to? :promote_campaign_draft
                     @promote_campaign_draft = ::Gapic::Config::Method.new promote_campaign_draft_config
-                    list_campaign_draft_async_errors_config = parent_rpcs&.list_campaign_draft_async_errors if parent_rpcs&.respond_to? :list_campaign_draft_async_errors
+                    list_campaign_draft_async_errors_config = parent_rpcs.list_campaign_draft_async_errors if parent_rpcs.respond_to? :list_campaign_draft_async_errors
                     @list_campaign_draft_async_errors = ::Gapic::Config::Method.new list_campaign_draft_async_errors_config
 
                     yield self if block_given?

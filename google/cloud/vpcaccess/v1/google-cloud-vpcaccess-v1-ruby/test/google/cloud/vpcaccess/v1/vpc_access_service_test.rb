@@ -103,7 +103,7 @@ class ::Google::Cloud::Vpcaccess::V1::VpcAccessService::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.create_connector ::Google::Cloud::Vpcaccess::V1::CreateConnectorRequest.new(parent: parent, connector_id: connector_id, connector: connector), grpc_options do |response, operation|
+      client.create_connector(::Google::Cloud::Vpcaccess::V1::CreateConnectorRequest.new(parent: parent, connector_id: connector_id, connector: connector), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -162,7 +162,7 @@ class ::Google::Cloud::Vpcaccess::V1::VpcAccessService::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.get_connector ::Google::Cloud::Vpcaccess::V1::GetConnectorRequest.new(name: name), grpc_options do |response, operation|
+      client.get_connector(::Google::Cloud::Vpcaccess::V1::GetConnectorRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -228,7 +228,7 @@ class ::Google::Cloud::Vpcaccess::V1::VpcAccessService::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.list_connectors ::Google::Cloud::Vpcaccess::V1::ListConnectorsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_connectors(::Google::Cloud::Vpcaccess::V1::ListConnectorsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -291,7 +291,7 @@ class ::Google::Cloud::Vpcaccess::V1::VpcAccessService::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.delete_connector ::Google::Cloud::Vpcaccess::V1::DeleteConnectorRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_connector(::Google::Cloud::Vpcaccess::V1::DeleteConnectorRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

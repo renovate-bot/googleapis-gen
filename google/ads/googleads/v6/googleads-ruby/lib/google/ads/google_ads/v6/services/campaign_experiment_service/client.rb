@@ -71,9 +71,9 @@ module Google
                   default_config.timeout = 3600.0
                   default_config.retry_policy = {
                     initial_delay: 5.0,
-                    max_delay:     60.0,
-                    multiplier:    1.3,
-                    retry_codes:   [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                   }
 
                   default_config
@@ -142,7 +142,7 @@ module Google
                 enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                          @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
-                credentials ||= Credentials.default scope:                  @config.scope,
+                credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
                 if credentials.is_a?(String) || credentials.is_a?(Hash)
                   credentials = Credentials.new credentials, scope: @config.scope
@@ -205,7 +205,8 @@ module Google
               def get_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::GetCampaignExperimentRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::GetCampaignExperimentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -231,7 +232,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :get_campaign_experiment, request, options: options do |response, operation|
+                @campaign_experiment_service_stub.call_rpc :get_campaign_experiment, request,
+                                                           options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -285,7 +287,8 @@ module Google
               def create_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::CreateCampaignExperimentRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::CreateCampaignExperimentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -311,7 +314,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :create_campaign_experiment, request, options: options do |response, operation|
+                @campaign_experiment_service_stub.call_rpc :create_campaign_experiment, request,
+                                                           options: options do |response, operation|
                   response = ::Gapic::Operation.new response, @operations_client, options: options
                   yield response, operation if block_given?
                   return response
@@ -365,7 +369,8 @@ module Google
               def mutate_campaign_experiments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::MutateCampaignExperimentsRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::MutateCampaignExperimentsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -391,7 +396,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :mutate_campaign_experiments, request, options: options do |response, operation|
+                @campaign_experiment_service_stub.call_rpc :mutate_campaign_experiments, request,
+                                                           options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -435,7 +441,8 @@ module Google
               def graduate_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::GraduateCampaignExperimentRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::GraduateCampaignExperimentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -461,7 +468,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :graduate_campaign_experiment, request, options: options do |response, operation|
+                @campaign_experiment_service_stub.call_rpc :graduate_campaign_experiment, request,
+                                                           options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -506,7 +514,8 @@ module Google
               def promote_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::PromoteCampaignExperimentRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::PromoteCampaignExperimentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -532,7 +541,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :promote_campaign_experiment, request, options: options do |response, operation|
+                @campaign_experiment_service_stub.call_rpc :promote_campaign_experiment, request,
+                                                           options: options do |response, operation|
                   response = ::Gapic::Operation.new response, @operations_client, options: options
                   yield response, operation if block_given?
                   return response
@@ -575,7 +585,8 @@ module Google
               def end_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::EndCampaignExperimentRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::EndCampaignExperimentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -601,7 +612,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :end_campaign_experiment, request, options: options do |response, operation|
+                @campaign_experiment_service_stub.call_rpc :end_campaign_experiment, request,
+                                                           options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -653,7 +665,8 @@ module Google
               def list_campaign_experiment_async_errors request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::ListCampaignExperimentAsyncErrorsRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::ListCampaignExperimentAsyncErrorsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -679,8 +692,10 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @campaign_experiment_service_stub.call_rpc :list_campaign_experiment_async_errors, request, options: options do |response, operation|
-                  response = ::Gapic::PagedEnumerable.new @campaign_experiment_service_stub, :list_campaign_experiment_async_errors, request, response, operation, options
+                @campaign_experiment_service_stub.call_rpc :list_campaign_experiment_async_errors, request,
+                                                           options: options do |response, operation|
+                  response = ::Gapic::PagedEnumerable.new @campaign_experiment_service_stub,
+                                                          :list_campaign_experiment_async_errors, request, response, operation, options
                   yield response, operation if block_given?
                   return response
                 end
@@ -773,14 +788,15 @@ module Google
 
                 config_attr :endpoint,      "googleads.googleapis.com", ::String
                 config_attr :credentials,   nil do |value|
-                  allowed = [::String, ::Hash, ::Proc, ::Symbol, ::Google::Auth::Credentials, ::Signet::OAuth2::Client, nil]
+                  allowed = [::String, ::Hash, ::Proc, ::Symbol, ::Google::Auth::Credentials,
+                             ::Signet::OAuth2::Client, nil]
                   allowed += [::GRPC::Core::Channel, ::GRPC::Core::ChannelCredentials] if defined? ::GRPC
                   allowed.any? { |klass| klass === value }
                 end
                 config_attr :scope,         nil, ::String, ::Array, nil
                 config_attr :lib_name,      nil, ::String, nil
                 config_attr :lib_version,   nil, ::String, nil
-                config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+                config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
                 config_attr :interceptors,  nil, ::Array, nil
                 config_attr :timeout,       nil, ::Numeric, nil
                 config_attr :metadata,      nil, ::Hash, nil
@@ -801,7 +817,7 @@ module Google
                 def rpcs
                   @rpcs ||= begin
                     parent_rpcs = nil
-                    parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                    parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                     Rpcs.new parent_rpcs
                   end
                 end
@@ -862,19 +878,19 @@ module Google
 
                   # @private
                   def initialize parent_rpcs = nil
-                    get_campaign_experiment_config = parent_rpcs&.get_campaign_experiment if parent_rpcs&.respond_to? :get_campaign_experiment
+                    get_campaign_experiment_config = parent_rpcs.get_campaign_experiment if parent_rpcs.respond_to? :get_campaign_experiment
                     @get_campaign_experiment = ::Gapic::Config::Method.new get_campaign_experiment_config
-                    create_campaign_experiment_config = parent_rpcs&.create_campaign_experiment if parent_rpcs&.respond_to? :create_campaign_experiment
+                    create_campaign_experiment_config = parent_rpcs.create_campaign_experiment if parent_rpcs.respond_to? :create_campaign_experiment
                     @create_campaign_experiment = ::Gapic::Config::Method.new create_campaign_experiment_config
-                    mutate_campaign_experiments_config = parent_rpcs&.mutate_campaign_experiments if parent_rpcs&.respond_to? :mutate_campaign_experiments
+                    mutate_campaign_experiments_config = parent_rpcs.mutate_campaign_experiments if parent_rpcs.respond_to? :mutate_campaign_experiments
                     @mutate_campaign_experiments = ::Gapic::Config::Method.new mutate_campaign_experiments_config
-                    graduate_campaign_experiment_config = parent_rpcs&.graduate_campaign_experiment if parent_rpcs&.respond_to? :graduate_campaign_experiment
+                    graduate_campaign_experiment_config = parent_rpcs.graduate_campaign_experiment if parent_rpcs.respond_to? :graduate_campaign_experiment
                     @graduate_campaign_experiment = ::Gapic::Config::Method.new graduate_campaign_experiment_config
-                    promote_campaign_experiment_config = parent_rpcs&.promote_campaign_experiment if parent_rpcs&.respond_to? :promote_campaign_experiment
+                    promote_campaign_experiment_config = parent_rpcs.promote_campaign_experiment if parent_rpcs.respond_to? :promote_campaign_experiment
                     @promote_campaign_experiment = ::Gapic::Config::Method.new promote_campaign_experiment_config
-                    end_campaign_experiment_config = parent_rpcs&.end_campaign_experiment if parent_rpcs&.respond_to? :end_campaign_experiment
+                    end_campaign_experiment_config = parent_rpcs.end_campaign_experiment if parent_rpcs.respond_to? :end_campaign_experiment
                     @end_campaign_experiment = ::Gapic::Config::Method.new end_campaign_experiment_config
-                    list_campaign_experiment_async_errors_config = parent_rpcs&.list_campaign_experiment_async_errors if parent_rpcs&.respond_to? :list_campaign_experiment_async_errors
+                    list_campaign_experiment_async_errors_config = parent_rpcs.list_campaign_experiment_async_errors if parent_rpcs.respond_to? :list_campaign_experiment_async_errors
                     @list_campaign_experiment_async_errors = ::Gapic::Config::Method.new list_campaign_experiment_async_errors_config
 
                     yield self if block_given?

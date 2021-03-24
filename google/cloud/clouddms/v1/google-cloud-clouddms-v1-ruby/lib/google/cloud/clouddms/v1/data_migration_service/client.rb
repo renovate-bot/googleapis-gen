@@ -60,7 +60,7 @@ module Google
                 parent_config = while namespace.any?
                                   parent_name = namespace.join "::"
                                   parent_const = const_get parent_name
-                                  break parent_const.configure if parent_const&.respond_to? :configure
+                                  break parent_const.configure if parent_const.respond_to? :configure
                                   namespace.pop
                                 end
                 default_config = Client::Configuration.new parent_config
@@ -68,9 +68,9 @@ module Google
                 default_config.timeout = 60.0
                 default_config.retry_policy = {
                   initial_delay: 1.0,
-                  max_delay:     10.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14]
+                max_delay: 10.0,
+                multiplier: 1.3,
+                retry_codes: [14]
                 }
 
                 default_config.rpcs.list_migration_jobs.timeout = 60.0
@@ -173,7 +173,7 @@ module Google
               enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                        @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
-              credentials ||= Credentials.default scope:                  @config.scope,
+              credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
               if credentials.is_a?(String) || credentials.is_a?(Hash)
                 credentials = Credentials.new credentials, scope: @config.scope
@@ -1566,7 +1566,7 @@ module Google
               config_attr :scope,         nil, ::String, ::Array, nil
               config_attr :lib_name,      nil, ::String, nil
               config_attr :lib_version,   nil, ::String, nil
-              config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+              config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
               config_attr :interceptors,  nil, ::Array, nil
               config_attr :timeout,       nil, ::Numeric, nil
               config_attr :metadata,      nil, ::Hash, nil
@@ -1587,7 +1587,7 @@ module Google
               def rpcs
                 @rpcs ||= begin
                   parent_rpcs = nil
-                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                   Rpcs.new parent_rpcs
                 end
               end
@@ -1698,39 +1698,39 @@ module Google
 
                 # @private
                 def initialize parent_rpcs = nil
-                  list_migration_jobs_config = parent_rpcs&.list_migration_jobs if parent_rpcs&.respond_to? :list_migration_jobs
+                  list_migration_jobs_config = parent_rpcs.list_migration_jobs if parent_rpcs.respond_to? :list_migration_jobs
                   @list_migration_jobs = ::Gapic::Config::Method.new list_migration_jobs_config
-                  get_migration_job_config = parent_rpcs&.get_migration_job if parent_rpcs&.respond_to? :get_migration_job
+                  get_migration_job_config = parent_rpcs.get_migration_job if parent_rpcs.respond_to? :get_migration_job
                   @get_migration_job = ::Gapic::Config::Method.new get_migration_job_config
-                  create_migration_job_config = parent_rpcs&.create_migration_job if parent_rpcs&.respond_to? :create_migration_job
+                  create_migration_job_config = parent_rpcs.create_migration_job if parent_rpcs.respond_to? :create_migration_job
                   @create_migration_job = ::Gapic::Config::Method.new create_migration_job_config
-                  update_migration_job_config = parent_rpcs&.update_migration_job if parent_rpcs&.respond_to? :update_migration_job
+                  update_migration_job_config = parent_rpcs.update_migration_job if parent_rpcs.respond_to? :update_migration_job
                   @update_migration_job = ::Gapic::Config::Method.new update_migration_job_config
-                  delete_migration_job_config = parent_rpcs&.delete_migration_job if parent_rpcs&.respond_to? :delete_migration_job
+                  delete_migration_job_config = parent_rpcs.delete_migration_job if parent_rpcs.respond_to? :delete_migration_job
                   @delete_migration_job = ::Gapic::Config::Method.new delete_migration_job_config
-                  start_migration_job_config = parent_rpcs&.start_migration_job if parent_rpcs&.respond_to? :start_migration_job
+                  start_migration_job_config = parent_rpcs.start_migration_job if parent_rpcs.respond_to? :start_migration_job
                   @start_migration_job = ::Gapic::Config::Method.new start_migration_job_config
-                  stop_migration_job_config = parent_rpcs&.stop_migration_job if parent_rpcs&.respond_to? :stop_migration_job
+                  stop_migration_job_config = parent_rpcs.stop_migration_job if parent_rpcs.respond_to? :stop_migration_job
                   @stop_migration_job = ::Gapic::Config::Method.new stop_migration_job_config
-                  resume_migration_job_config = parent_rpcs&.resume_migration_job if parent_rpcs&.respond_to? :resume_migration_job
+                  resume_migration_job_config = parent_rpcs.resume_migration_job if parent_rpcs.respond_to? :resume_migration_job
                   @resume_migration_job = ::Gapic::Config::Method.new resume_migration_job_config
-                  promote_migration_job_config = parent_rpcs&.promote_migration_job if parent_rpcs&.respond_to? :promote_migration_job
+                  promote_migration_job_config = parent_rpcs.promote_migration_job if parent_rpcs.respond_to? :promote_migration_job
                   @promote_migration_job = ::Gapic::Config::Method.new promote_migration_job_config
-                  verify_migration_job_config = parent_rpcs&.verify_migration_job if parent_rpcs&.respond_to? :verify_migration_job
+                  verify_migration_job_config = parent_rpcs.verify_migration_job if parent_rpcs.respond_to? :verify_migration_job
                   @verify_migration_job = ::Gapic::Config::Method.new verify_migration_job_config
-                  restart_migration_job_config = parent_rpcs&.restart_migration_job if parent_rpcs&.respond_to? :restart_migration_job
+                  restart_migration_job_config = parent_rpcs.restart_migration_job if parent_rpcs.respond_to? :restart_migration_job
                   @restart_migration_job = ::Gapic::Config::Method.new restart_migration_job_config
-                  generate_ssh_script_config = parent_rpcs&.generate_ssh_script if parent_rpcs&.respond_to? :generate_ssh_script
+                  generate_ssh_script_config = parent_rpcs.generate_ssh_script if parent_rpcs.respond_to? :generate_ssh_script
                   @generate_ssh_script = ::Gapic::Config::Method.new generate_ssh_script_config
-                  list_connection_profiles_config = parent_rpcs&.list_connection_profiles if parent_rpcs&.respond_to? :list_connection_profiles
+                  list_connection_profiles_config = parent_rpcs.list_connection_profiles if parent_rpcs.respond_to? :list_connection_profiles
                   @list_connection_profiles = ::Gapic::Config::Method.new list_connection_profiles_config
-                  get_connection_profile_config = parent_rpcs&.get_connection_profile if parent_rpcs&.respond_to? :get_connection_profile
+                  get_connection_profile_config = parent_rpcs.get_connection_profile if parent_rpcs.respond_to? :get_connection_profile
                   @get_connection_profile = ::Gapic::Config::Method.new get_connection_profile_config
-                  create_connection_profile_config = parent_rpcs&.create_connection_profile if parent_rpcs&.respond_to? :create_connection_profile
+                  create_connection_profile_config = parent_rpcs.create_connection_profile if parent_rpcs.respond_to? :create_connection_profile
                   @create_connection_profile = ::Gapic::Config::Method.new create_connection_profile_config
-                  update_connection_profile_config = parent_rpcs&.update_connection_profile if parent_rpcs&.respond_to? :update_connection_profile
+                  update_connection_profile_config = parent_rpcs.update_connection_profile if parent_rpcs.respond_to? :update_connection_profile
                   @update_connection_profile = ::Gapic::Config::Method.new update_connection_profile_config
-                  delete_connection_profile_config = parent_rpcs&.delete_connection_profile if parent_rpcs&.respond_to? :delete_connection_profile
+                  delete_connection_profile_config = parent_rpcs.delete_connection_profile if parent_rpcs.respond_to? :delete_connection_profile
                   @delete_connection_profile = ::Gapic::Config::Method.new delete_connection_profile_config
 
                   yield self if block_given?

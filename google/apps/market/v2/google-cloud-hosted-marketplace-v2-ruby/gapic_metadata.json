@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "ccc.hosted.marketplace.v2",
+  "libraryPackage": "::Ccc::Hosted::Marketplace::V2",
+  "services": {
+    "CustomerLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LicenseNotificationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Ccc::Hosted::Marketplace::V2::LicenseNotificationService::Client",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Ccc::Hosted::Marketplace::V2::UserLicenseService::Client",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

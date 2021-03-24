@@ -107,7 +107,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.list_gateways ::Google::Cloud::APIGateway::V1::ListGatewaysRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_gateways(::Google::Cloud::APIGateway::V1::ListGatewaysRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -166,7 +166,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.get_gateway ::Google::Cloud::APIGateway::V1::GetGatewayRequest.new(name: name), grpc_options do |response, operation|
+      client.get_gateway(::Google::Cloud::APIGateway::V1::GetGatewayRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -232,7 +232,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.create_gateway ::Google::Cloud::APIGateway::V1::CreateGatewayRequest.new(parent: parent, gateway_id: gateway_id, gateway: gateway), grpc_options do |response, operation|
+      client.create_gateway(::Google::Cloud::APIGateway::V1::CreateGatewayRequest.new(parent: parent, gateway_id: gateway_id, gateway: gateway), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -297,7 +297,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.update_gateway ::Google::Cloud::APIGateway::V1::UpdateGatewayRequest.new(update_mask: update_mask, gateway: gateway), grpc_options do |response, operation|
+      client.update_gateway(::Google::Cloud::APIGateway::V1::UpdateGatewayRequest.new(update_mask: update_mask, gateway: gateway), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -360,7 +360,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.delete_gateway ::Google::Cloud::APIGateway::V1::DeleteGatewayRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_gateway(::Google::Cloud::APIGateway::V1::DeleteGatewayRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -431,7 +431,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.list_apis ::Google::Cloud::APIGateway::V1::ListApisRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_apis(::Google::Cloud::APIGateway::V1::ListApisRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -490,7 +490,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.get_api ::Google::Cloud::APIGateway::V1::GetApiRequest.new(name: name), grpc_options do |response, operation|
+      client.get_api(::Google::Cloud::APIGateway::V1::GetApiRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -556,7 +556,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.create_api ::Google::Cloud::APIGateway::V1::CreateApiRequest.new(parent: parent, api_id: api_id, api: api), grpc_options do |response, operation|
+      client.create_api(::Google::Cloud::APIGateway::V1::CreateApiRequest.new(parent: parent, api_id: api_id, api: api), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -621,7 +621,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.update_api ::Google::Cloud::APIGateway::V1::UpdateApiRequest.new(update_mask: update_mask, api: api), grpc_options do |response, operation|
+      client.update_api(::Google::Cloud::APIGateway::V1::UpdateApiRequest.new(update_mask: update_mask, api: api), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -684,7 +684,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.delete_api ::Google::Cloud::APIGateway::V1::DeleteApiRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_api(::Google::Cloud::APIGateway::V1::DeleteApiRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -755,7 +755,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.list_api_configs ::Google::Cloud::APIGateway::V1::ListApiConfigsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_api_configs(::Google::Cloud::APIGateway::V1::ListApiConfigsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -816,7 +816,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.get_api_config ::Google::Cloud::APIGateway::V1::GetApiConfigRequest.new(name: name, view: view), grpc_options do |response, operation|
+      client.get_api_config(::Google::Cloud::APIGateway::V1::GetApiConfigRequest.new(name: name, view: view), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -882,7 +882,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.create_api_config ::Google::Cloud::APIGateway::V1::CreateApiConfigRequest.new(parent: parent, api_config_id: api_config_id, api_config: api_config), grpc_options do |response, operation|
+      client.create_api_config(::Google::Cloud::APIGateway::V1::CreateApiConfigRequest.new(parent: parent, api_config_id: api_config_id, api_config: api_config), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -947,7 +947,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.update_api_config ::Google::Cloud::APIGateway::V1::UpdateApiConfigRequest.new(update_mask: update_mask, api_config: api_config), grpc_options do |response, operation|
+      client.update_api_config(::Google::Cloud::APIGateway::V1::UpdateApiConfigRequest.new(update_mask: update_mask, api_config: api_config), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -1010,7 +1010,7 @@ class ::Google::Cloud::APIGateway::V1::ApiGatewayService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.delete_api_config ::Google::Cloud::APIGateway::V1::DeleteApiConfigRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_api_config(::Google::Cloud::APIGateway::V1::DeleteApiConfigRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

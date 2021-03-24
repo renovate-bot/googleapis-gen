@@ -1175,9 +1175,11 @@ module Google
               def dynamic_search_ads_search_term_view_path customer_id:, ad_group_id:, search_term_fingerprint:, headline_fingerprint:, landing_page_fingerprint:, page_url_fingerprint:
                 raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
                 raise ::ArgumentError, "ad_group_id cannot contain /" if ad_group_id.to_s.include? "/"
-                raise ::ArgumentError, "search_term_fingerprint cannot contain /" if search_term_fingerprint.to_s.include? "/"
+                raise ::ArgumentError,
+                      "search_term_fingerprint cannot contain /" if search_term_fingerprint.to_s.include? "/"
                 raise ::ArgumentError, "headline_fingerprint cannot contain /" if headline_fingerprint.to_s.include? "/"
-                raise ::ArgumentError, "landing_page_fingerprint cannot contain /" if landing_page_fingerprint.to_s.include? "/"
+                raise ::ArgumentError,
+                      "landing_page_fingerprint cannot contain /" if landing_page_fingerprint.to_s.include? "/"
 
                 "customers/#{customer_id}/dynamicSearchAdsSearchTermViews/#{ad_group_id}~#{search_term_fingerprint}~#{headline_fingerprint}~#{landing_page_fingerprint}~#{page_url_fingerprint}"
               end
@@ -1310,7 +1312,8 @@ module Google
                 raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
                 raise ::ArgumentError, "feed_id cannot contain /" if feed_id.to_s.include? "/"
                 raise ::ArgumentError, "feed_item_id cannot contain /" if feed_item_id.to_s.include? "/"
-                raise ::ArgumentError, "feed_item_target_type cannot contain /" if feed_item_target_type.to_s.include? "/"
+                raise ::ArgumentError,
+                      "feed_item_target_type cannot contain /" if feed_item_target_type.to_s.include? "/"
 
                 "customers/#{customer_id}/feedItemTargets/#{feed_id}~#{feed_item_id}~#{feed_item_target_type}~#{feed_item_target_id}"
               end

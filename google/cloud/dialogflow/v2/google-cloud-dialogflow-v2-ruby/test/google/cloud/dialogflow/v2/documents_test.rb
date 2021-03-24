@@ -103,7 +103,7 @@ class ::Google::Cloud::Dialogflow::V2::Documents::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_documents ::Google::Cloud::Dialogflow::V2::ListDocumentsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_documents(::Google::Cloud::Dialogflow::V2::ListDocumentsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -162,7 +162,7 @@ class ::Google::Cloud::Dialogflow::V2::Documents::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_document ::Google::Cloud::Dialogflow::V2::GetDocumentRequest.new(name: name), grpc_options do |response, operation|
+      client.get_document(::Google::Cloud::Dialogflow::V2::GetDocumentRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -226,7 +226,7 @@ class ::Google::Cloud::Dialogflow::V2::Documents::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_document ::Google::Cloud::Dialogflow::V2::CreateDocumentRequest.new(parent: parent, document: document), grpc_options do |response, operation|
+      client.create_document(::Google::Cloud::Dialogflow::V2::CreateDocumentRequest.new(parent: parent, document: document), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -289,7 +289,7 @@ class ::Google::Cloud::Dialogflow::V2::Documents::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_document ::Google::Cloud::Dialogflow::V2::DeleteDocumentRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_document(::Google::Cloud::Dialogflow::V2::DeleteDocumentRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -354,7 +354,7 @@ class ::Google::Cloud::Dialogflow::V2::Documents::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.update_document ::Google::Cloud::Dialogflow::V2::UpdateDocumentRequest.new(document: document, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_document(::Google::Cloud::Dialogflow::V2::UpdateDocumentRequest.new(document: document, update_mask: update_mask), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -420,7 +420,7 @@ class ::Google::Cloud::Dialogflow::V2::Documents::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.reload_document ::Google::Cloud::Dialogflow::V2::ReloadDocumentRequest.new(name: name, content_uri: content_uri), grpc_options do |response, operation|
+      client.reload_document(::Google::Cloud::Dialogflow::V2::ReloadDocumentRequest.new(name: name, content_uri: content_uri), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

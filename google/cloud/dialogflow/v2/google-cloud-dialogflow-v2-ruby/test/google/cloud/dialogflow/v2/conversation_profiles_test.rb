@@ -103,7 +103,7 @@ class ::Google::Cloud::Dialogflow::V2::ConversationProfiles::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.list_conversation_profiles ::Google::Cloud::Dialogflow::V2::ListConversationProfilesRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_conversation_profiles(::Google::Cloud::Dialogflow::V2::ListConversationProfilesRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -162,7 +162,7 @@ class ::Google::Cloud::Dialogflow::V2::ConversationProfiles::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.get_conversation_profile ::Google::Cloud::Dialogflow::V2::GetConversationProfileRequest.new(name: name), grpc_options do |response, operation|
+      client.get_conversation_profile(::Google::Cloud::Dialogflow::V2::GetConversationProfileRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -222,7 +222,7 @@ class ::Google::Cloud::Dialogflow::V2::ConversationProfiles::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.create_conversation_profile ::Google::Cloud::Dialogflow::V2::CreateConversationProfileRequest.new(parent: parent, conversation_profile: conversation_profile), grpc_options do |response, operation|
+      client.create_conversation_profile(::Google::Cloud::Dialogflow::V2::CreateConversationProfileRequest.new(parent: parent, conversation_profile: conversation_profile), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -282,7 +282,7 @@ class ::Google::Cloud::Dialogflow::V2::ConversationProfiles::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.update_conversation_profile ::Google::Cloud::Dialogflow::V2::UpdateConversationProfileRequest.new(conversation_profile: conversation_profile, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_conversation_profile(::Google::Cloud::Dialogflow::V2::UpdateConversationProfileRequest.new(conversation_profile: conversation_profile, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -340,7 +340,7 @@ class ::Google::Cloud::Dialogflow::V2::ConversationProfiles::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.delete_conversation_profile ::Google::Cloud::Dialogflow::V2::DeleteConversationProfileRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_conversation_profile(::Google::Cloud::Dialogflow::V2::DeleteConversationProfileRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

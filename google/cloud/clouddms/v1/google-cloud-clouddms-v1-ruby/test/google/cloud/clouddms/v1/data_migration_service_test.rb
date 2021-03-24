@@ -107,7 +107,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.list_migration_jobs ::Google::Cloud::Clouddms::V1::ListMigrationJobsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_migration_jobs(::Google::Cloud::Clouddms::V1::ListMigrationJobsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -166,7 +166,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.get_migration_job ::Google::Cloud::Clouddms::V1::GetMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.get_migration_job(::Google::Cloud::Clouddms::V1::GetMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -234,7 +234,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.create_migration_job ::Google::Cloud::Clouddms::V1::CreateMigrationJobRequest.new(parent: parent, migration_job_id: migration_job_id, migration_job: migration_job, request_id: request_id), grpc_options do |response, operation|
+      client.create_migration_job(::Google::Cloud::Clouddms::V1::CreateMigrationJobRequest.new(parent: parent, migration_job_id: migration_job_id, migration_job: migration_job, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -301,7 +301,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.update_migration_job ::Google::Cloud::Clouddms::V1::UpdateMigrationJobRequest.new(update_mask: update_mask, migration_job: migration_job, request_id: request_id), grpc_options do |response, operation|
+      client.update_migration_job(::Google::Cloud::Clouddms::V1::UpdateMigrationJobRequest.new(update_mask: update_mask, migration_job: migration_job, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -368,7 +368,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.delete_migration_job ::Google::Cloud::Clouddms::V1::DeleteMigrationJobRequest.new(name: name, request_id: request_id, force: force), grpc_options do |response, operation|
+      client.delete_migration_job(::Google::Cloud::Clouddms::V1::DeleteMigrationJobRequest.new(name: name, request_id: request_id, force: force), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -431,7 +431,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.start_migration_job ::Google::Cloud::Clouddms::V1::StartMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.start_migration_job(::Google::Cloud::Clouddms::V1::StartMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -494,7 +494,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.stop_migration_job ::Google::Cloud::Clouddms::V1::StopMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.stop_migration_job(::Google::Cloud::Clouddms::V1::StopMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -557,7 +557,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.resume_migration_job ::Google::Cloud::Clouddms::V1::ResumeMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.resume_migration_job(::Google::Cloud::Clouddms::V1::ResumeMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -620,7 +620,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.promote_migration_job ::Google::Cloud::Clouddms::V1::PromoteMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.promote_migration_job(::Google::Cloud::Clouddms::V1::PromoteMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -683,7 +683,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.verify_migration_job ::Google::Cloud::Clouddms::V1::VerifyMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.verify_migration_job(::Google::Cloud::Clouddms::V1::VerifyMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -746,7 +746,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.restart_migration_job ::Google::Cloud::Clouddms::V1::RestartMigrationJobRequest.new(name: name), grpc_options do |response, operation|
+      client.restart_migration_job(::Google::Cloud::Clouddms::V1::RestartMigrationJobRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -812,7 +812,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.generate_ssh_script ::Google::Cloud::Clouddms::V1::GenerateSshScriptRequest.new(migration_job: migration_job, vm: vm, vm_creation_config: vm_creation_config, vm_port: vm_port), grpc_options do |response, operation|
+      client.generate_ssh_script(::Google::Cloud::Clouddms::V1::GenerateSshScriptRequest.new(migration_job: migration_job, vm: vm, vm_creation_config: vm_creation_config, vm_port: vm_port), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -882,7 +882,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.list_connection_profiles ::Google::Cloud::Clouddms::V1::ListConnectionProfilesRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_connection_profiles(::Google::Cloud::Clouddms::V1::ListConnectionProfilesRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -941,7 +941,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.get_connection_profile ::Google::Cloud::Clouddms::V1::GetConnectionProfileRequest.new(name: name), grpc_options do |response, operation|
+      client.get_connection_profile(::Google::Cloud::Clouddms::V1::GetConnectionProfileRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1009,7 +1009,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.create_connection_profile ::Google::Cloud::Clouddms::V1::CreateConnectionProfileRequest.new(parent: parent, connection_profile_id: connection_profile_id, connection_profile: connection_profile, request_id: request_id), grpc_options do |response, operation|
+      client.create_connection_profile(::Google::Cloud::Clouddms::V1::CreateConnectionProfileRequest.new(parent: parent, connection_profile_id: connection_profile_id, connection_profile: connection_profile, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -1076,7 +1076,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.update_connection_profile ::Google::Cloud::Clouddms::V1::UpdateConnectionProfileRequest.new(update_mask: update_mask, connection_profile: connection_profile, request_id: request_id), grpc_options do |response, operation|
+      client.update_connection_profile(::Google::Cloud::Clouddms::V1::UpdateConnectionProfileRequest.new(update_mask: update_mask, connection_profile: connection_profile, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -1143,7 +1143,7 @@ class ::Google::Cloud::Clouddms::V1::DataMigrationService::ClientTest < Minitest
       end
 
       # Use protobuf object with options
-      client.delete_connection_profile ::Google::Cloud::Clouddms::V1::DeleteConnectionProfileRequest.new(name: name, request_id: request_id, force: force), grpc_options do |response, operation|
+      client.delete_connection_profile(::Google::Cloud::Clouddms::V1::DeleteConnectionProfileRequest.new(name: name, request_id: request_id, force: force), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

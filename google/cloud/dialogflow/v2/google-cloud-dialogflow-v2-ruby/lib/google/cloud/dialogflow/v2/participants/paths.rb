@@ -50,7 +50,7 @@ module Google
             # @return [::String]
             def context_path **args
               resources = {
-                "context:project:session"                  => (proc do |project:, session:, context:|
+                "context:project:session" => (proc do |project:, session:, context:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
                   raise ::ArgumentError, "session cannot contain /" if session.to_s.include? "/"
 
@@ -94,7 +94,7 @@ module Google
             # @return [::String]
             def conversation_path **args
               resources = {
-                "conversation:project"          => (proc do |project:, conversation:|
+                "conversation:project" => (proc do |project:, conversation:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
 
                   "projects/#{project}/conversations/#{conversation}"
@@ -137,7 +137,7 @@ module Google
             # @return [::String]
             def message_path **args
               resources = {
-                "conversation:message:project"          => (proc do |project:, conversation:, message:|
+                "conversation:message:project" => (proc do |project:, conversation:, message:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
                   raise ::ArgumentError, "conversation cannot contain /" if conversation.to_s.include? "/"
 
@@ -182,7 +182,7 @@ module Google
             # @return [::String]
             def participant_path **args
               resources = {
-                "conversation:participant:project"          => (proc do |project:, conversation:, participant:|
+                "conversation:participant:project" => (proc do |project:, conversation:, participant:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
                   raise ::ArgumentError, "conversation cannot contain /" if conversation.to_s.include? "/"
 
@@ -228,7 +228,7 @@ module Google
             # @return [::String]
             def session_entity_type_path **args
               resources = {
-                "entity_type:project:session"                  => (proc do |project:, session:, entity_type:|
+                "entity_type:project:session" => (proc do |project:, session:, entity_type:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
                   raise ::ArgumentError, "session cannot contain /" if session.to_s.include? "/"
 

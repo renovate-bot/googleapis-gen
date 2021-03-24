@@ -105,7 +105,7 @@ class ::Google::Cloud::Dialogflow::V2::AnswerRecords::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.list_answer_records ::Google::Cloud::Dialogflow::V2::ListAnswerRecordsRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_answer_records(::Google::Cloud::Dialogflow::V2::ListAnswerRecordsRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -166,7 +166,7 @@ class ::Google::Cloud::Dialogflow::V2::AnswerRecords::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.update_answer_record ::Google::Cloud::Dialogflow::V2::UpdateAnswerRecordRequest.new(answer_record: answer_record, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_answer_record(::Google::Cloud::Dialogflow::V2::UpdateAnswerRecordRequest.new(answer_record: answer_record, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

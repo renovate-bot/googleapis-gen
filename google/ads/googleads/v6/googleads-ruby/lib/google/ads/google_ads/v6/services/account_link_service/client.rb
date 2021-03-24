@@ -63,9 +63,9 @@ module Google
                   default_config.timeout = 3600.0
                   default_config.retry_policy = {
                     initial_delay: 5.0,
-                    max_delay:     60.0,
-                    multiplier:    1.3,
-                    retry_codes:   [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                   }
 
                   default_config
@@ -134,7 +134,7 @@ module Google
                 enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                          @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
-                credentials ||= Credentials.default scope:                  @config.scope,
+                credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
                 if credentials.is_a?(String) || credentials.is_a?(Hash)
                   credentials = Credentials.new credentials, scope: @config.scope
@@ -185,7 +185,8 @@ module Google
               def get_account_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::GetAccountLinkRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::GetAccountLinkRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -211,7 +212,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @account_link_service_stub.call_rpc :get_account_link, request, options: options do |response, operation|
+                @account_link_service_stub.call_rpc :get_account_link, request,
+                                                    options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -253,7 +255,8 @@ module Google
               def create_account_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::CreateAccountLinkRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::CreateAccountLinkRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -279,7 +282,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @account_link_service_stub.call_rpc :create_account_link, request, options: options do |response, operation|
+                @account_link_service_stub.call_rpc :create_account_link, request,
+                                                    options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -332,7 +336,8 @@ module Google
               def mutate_account_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Ads::GoogleAds::V6::Services::MutateAccountLinkRequest
+                request = ::Gapic::Protobuf.coerce request,
+                                                   to: ::Google::Ads::GoogleAds::V6::Services::MutateAccountLinkRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -358,7 +363,8 @@ module Google
                 options.apply_defaults metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
-                @account_link_service_stub.call_rpc :mutate_account_link, request, options: options do |response, operation|
+                @account_link_service_stub.call_rpc :mutate_account_link, request,
+                                                    options: options do |response, operation|
                   yield response, operation if block_given?
                   return response
                 end
@@ -451,14 +457,15 @@ module Google
 
                 config_attr :endpoint,      "googleads.googleapis.com", ::String
                 config_attr :credentials,   nil do |value|
-                  allowed = [::String, ::Hash, ::Proc, ::Symbol, ::Google::Auth::Credentials, ::Signet::OAuth2::Client, nil]
+                  allowed = [::String, ::Hash, ::Proc, ::Symbol, ::Google::Auth::Credentials,
+                             ::Signet::OAuth2::Client, nil]
                   allowed += [::GRPC::Core::Channel, ::GRPC::Core::ChannelCredentials] if defined? ::GRPC
                   allowed.any? { |klass| klass === value }
                 end
                 config_attr :scope,         nil, ::String, ::Array, nil
                 config_attr :lib_name,      nil, ::String, nil
                 config_attr :lib_version,   nil, ::String, nil
-                config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+                config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
                 config_attr :interceptors,  nil, ::Array, nil
                 config_attr :timeout,       nil, ::Numeric, nil
                 config_attr :metadata,      nil, ::Hash, nil
@@ -479,7 +486,7 @@ module Google
                 def rpcs
                   @rpcs ||= begin
                     parent_rpcs = nil
-                    parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                    parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                     Rpcs.new parent_rpcs
                   end
                 end
@@ -520,11 +527,11 @@ module Google
 
                   # @private
                   def initialize parent_rpcs = nil
-                    get_account_link_config = parent_rpcs&.get_account_link if parent_rpcs&.respond_to? :get_account_link
+                    get_account_link_config = parent_rpcs.get_account_link if parent_rpcs.respond_to? :get_account_link
                     @get_account_link = ::Gapic::Config::Method.new get_account_link_config
-                    create_account_link_config = parent_rpcs&.create_account_link if parent_rpcs&.respond_to? :create_account_link
+                    create_account_link_config = parent_rpcs.create_account_link if parent_rpcs.respond_to? :create_account_link
                     @create_account_link = ::Gapic::Config::Method.new create_account_link_config
-                    mutate_account_link_config = parent_rpcs&.mutate_account_link if parent_rpcs&.respond_to? :mutate_account_link
+                    mutate_account_link_config = parent_rpcs.mutate_account_link if parent_rpcs.respond_to? :mutate_account_link
                     @mutate_account_link = ::Gapic::Config::Method.new mutate_account_link_config
 
                     yield self if block_given?

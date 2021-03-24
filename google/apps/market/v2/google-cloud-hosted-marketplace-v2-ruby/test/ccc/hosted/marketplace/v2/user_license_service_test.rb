@@ -97,7 +97,7 @@ class ::Ccc::Hosted::Marketplace::V2::UserLicenseService::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.get ::Ccc::Hosted::Marketplace::V2::UserLicenseGetRequest.new(application_id: application_id, user_id: user_id), grpc_options do |response, operation|
+      client.get(::Ccc::Hosted::Marketplace::V2::UserLicenseGetRequest.new(application_id: application_id, user_id: user_id), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

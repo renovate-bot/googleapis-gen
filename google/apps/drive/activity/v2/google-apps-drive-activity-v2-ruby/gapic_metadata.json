@@ -1,0 +1,23 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.apps.drive.activity.v2",
+  "libraryPackage": "::Google::Apps::Drive::Activity::V2",
+  "services": {
+    "DriveActivityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Apps::Drive::Activity::V2::DriveActivityService::Client",
+          "rpcs": {
+            "QueryDriveActivity": {
+              "methods": [
+                "query_drive_activity"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

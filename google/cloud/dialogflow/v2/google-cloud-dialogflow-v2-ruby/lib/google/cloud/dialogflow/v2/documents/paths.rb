@@ -49,7 +49,7 @@ module Google
             # @return [::String]
             def document_path **args
               resources = {
-                "document:knowledge_base:project"          => (proc do |project:, knowledge_base:, document:|
+                "document:knowledge_base:project" => (proc do |project:, knowledge_base:, document:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
                   raise ::ArgumentError, "knowledge_base cannot contain /" if knowledge_base.to_s.include? "/"
 
@@ -92,7 +92,7 @@ module Google
             # @return [::String]
             def knowledge_base_path **args
               resources = {
-                "knowledge_base:project"          => (proc do |project:, knowledge_base:|
+                "knowledge_base:project" => (proc do |project:, knowledge_base:|
                   raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
 
                   "projects/#{project}/knowledgeBases/#{knowledge_base}"

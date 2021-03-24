@@ -1,0 +1,163 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.iam.admin.v1",
+  "libraryPackage": "::Google::Iam::Admin::V1",
+  "services": {
+    "IAM": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Iam::Admin::V1::IAM::Client",
+          "rpcs": {
+            "ListServiceAccounts": {
+              "methods": [
+                "list_service_accounts"
+              ]
+            },
+            "GetServiceAccount": {
+              "methods": [
+                "get_service_account"
+              ]
+            },
+            "CreateServiceAccount": {
+              "methods": [
+                "create_service_account"
+              ]
+            },
+            "UpdateServiceAccount": {
+              "methods": [
+                "update_service_account"
+              ]
+            },
+            "PatchServiceAccount": {
+              "methods": [
+                "patch_service_account"
+              ]
+            },
+            "DeleteServiceAccount": {
+              "methods": [
+                "delete_service_account"
+              ]
+            },
+            "UndeleteServiceAccount": {
+              "methods": [
+                "undelete_service_account"
+              ]
+            },
+            "EnableServiceAccount": {
+              "methods": [
+                "enable_service_account"
+              ]
+            },
+            "DisableServiceAccount": {
+              "methods": [
+                "disable_service_account"
+              ]
+            },
+            "ListServiceAccountKeys": {
+              "methods": [
+                "list_service_account_keys"
+              ]
+            },
+            "GetServiceAccountKey": {
+              "methods": [
+                "get_service_account_key"
+              ]
+            },
+            "CreateServiceAccountKey": {
+              "methods": [
+                "create_service_account_key"
+              ]
+            },
+            "UploadServiceAccountKey": {
+              "methods": [
+                "upload_service_account_key"
+              ]
+            },
+            "DeleteServiceAccountKey": {
+              "methods": [
+                "delete_service_account_key"
+              ]
+            },
+            "SignBlob": {
+              "methods": [
+                "sign_blob"
+              ]
+            },
+            "SignJwt": {
+              "methods": [
+                "sign_jwt"
+              ]
+            },
+            "GetIamPolicy": {
+              "methods": [
+                "get_iam_policy"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "set_iam_policy"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "test_iam_permissions"
+              ]
+            },
+            "QueryGrantableRoles": {
+              "methods": [
+                "query_grantable_roles"
+              ]
+            },
+            "ListRoles": {
+              "methods": [
+                "list_roles"
+              ]
+            },
+            "GetRole": {
+              "methods": [
+                "get_role"
+              ]
+            },
+            "CreateRole": {
+              "methods": [
+                "create_role"
+              ]
+            },
+            "UpdateRole": {
+              "methods": [
+                "update_role"
+              ]
+            },
+            "DeleteRole": {
+              "methods": [
+                "delete_role"
+              ]
+            },
+            "UndeleteRole": {
+              "methods": [
+                "undelete_role"
+              ]
+            },
+            "QueryTestablePermissions": {
+              "methods": [
+                "query_testable_permissions"
+              ]
+            },
+            "QueryAuditableServices": {
+              "methods": [
+                "query_auditable_services"
+              ]
+            },
+            "LintPolicy": {
+              "methods": [
+                "lint_policy"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

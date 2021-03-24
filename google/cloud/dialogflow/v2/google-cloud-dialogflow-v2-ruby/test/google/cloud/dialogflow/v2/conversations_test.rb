@@ -99,7 +99,7 @@ class ::Google::Cloud::Dialogflow::V2::Conversations::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.create_conversation ::Google::Cloud::Dialogflow::V2::CreateConversationRequest.new(parent: parent, conversation: conversation, conversation_id: conversation_id), grpc_options do |response, operation|
+      client.create_conversation(::Google::Cloud::Dialogflow::V2::CreateConversationRequest.new(parent: parent, conversation: conversation, conversation_id: conversation_id), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -167,7 +167,7 @@ class ::Google::Cloud::Dialogflow::V2::Conversations::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.list_conversations ::Google::Cloud::Dialogflow::V2::ListConversationsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter), grpc_options do |response, operation|
+      client.list_conversations(::Google::Cloud::Dialogflow::V2::ListConversationsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -226,7 +226,7 @@ class ::Google::Cloud::Dialogflow::V2::Conversations::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.get_conversation ::Google::Cloud::Dialogflow::V2::GetConversationRequest.new(name: name), grpc_options do |response, operation|
+      client.get_conversation(::Google::Cloud::Dialogflow::V2::GetConversationRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -284,7 +284,7 @@ class ::Google::Cloud::Dialogflow::V2::Conversations::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.complete_conversation ::Google::Cloud::Dialogflow::V2::CompleteConversationRequest.new(name: name), grpc_options do |response, operation|
+      client.complete_conversation(::Google::Cloud::Dialogflow::V2::CompleteConversationRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -352,7 +352,7 @@ class ::Google::Cloud::Dialogflow::V2::Conversations::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.list_messages ::Google::Cloud::Dialogflow::V2::ListMessagesRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_messages(::Google::Cloud::Dialogflow::V2::ListMessagesRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation

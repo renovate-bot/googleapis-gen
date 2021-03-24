@@ -108,7 +108,7 @@ class ::Google::Apps::Drive::Activity::V2::DriveActivityService::ClientTest < Mi
       end
 
       # Use protobuf object with options
-      client.query_drive_activity ::Google::Apps::Drive::Activity::V2::QueryDriveActivityRequest.new(item_name: item_name, consolidation_strategy: consolidation_strategy, page_size: page_size, page_token: page_token, filter: filter), grpc_options do |response, operation|
+      client.query_drive_activity(::Google::Apps::Drive::Activity::V2::QueryDriveActivityRequest.new(item_name: item_name, consolidation_strategy: consolidation_strategy, page_size: page_size, page_token: page_token, filter: filter), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation

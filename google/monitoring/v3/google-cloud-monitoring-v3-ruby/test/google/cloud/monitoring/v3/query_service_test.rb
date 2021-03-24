@@ -105,7 +105,7 @@ class ::Google::Cloud::Monitoring::V3::QueryService::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.query_time_series ::Google::Cloud::Monitoring::V3::QueryTimeSeriesRequest.new(name: name, query: query, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.query_time_series(::Google::Cloud::Monitoring::V3::QueryTimeSeriesRequest.new(name: name, query: query, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation

@@ -107,7 +107,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.list_services ::Google::Cloud::Metastore::V1alpha::ListServicesRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_services(::Google::Cloud::Metastore::V1alpha::ListServicesRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -166,7 +166,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.get_service ::Google::Cloud::Metastore::V1alpha::GetServiceRequest.new(name: name), grpc_options do |response, operation|
+      client.get_service(::Google::Cloud::Metastore::V1alpha::GetServiceRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -234,7 +234,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.create_service ::Google::Cloud::Metastore::V1alpha::CreateServiceRequest.new(parent: parent, service_id: service_id, service: service, request_id: request_id), grpc_options do |response, operation|
+      client.create_service(::Google::Cloud::Metastore::V1alpha::CreateServiceRequest.new(parent: parent, service_id: service_id, service: service, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -301,7 +301,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.update_service ::Google::Cloud::Metastore::V1alpha::UpdateServiceRequest.new(update_mask: update_mask, service: service, request_id: request_id), grpc_options do |response, operation|
+      client.update_service(::Google::Cloud::Metastore::V1alpha::UpdateServiceRequest.new(update_mask: update_mask, service: service, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -366,7 +366,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.delete_service ::Google::Cloud::Metastore::V1alpha::DeleteServiceRequest.new(name: name, request_id: request_id), grpc_options do |response, operation|
+      client.delete_service(::Google::Cloud::Metastore::V1alpha::DeleteServiceRequest.new(name: name, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -437,7 +437,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.list_metadata_imports ::Google::Cloud::Metastore::V1alpha::ListMetadataImportsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_metadata_imports(::Google::Cloud::Metastore::V1alpha::ListMetadataImportsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -496,7 +496,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.get_metadata_import ::Google::Cloud::Metastore::V1alpha::GetMetadataImportRequest.new(name: name), grpc_options do |response, operation|
+      client.get_metadata_import(::Google::Cloud::Metastore::V1alpha::GetMetadataImportRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -564,7 +564,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.create_metadata_import ::Google::Cloud::Metastore::V1alpha::CreateMetadataImportRequest.new(parent: parent, metadata_import_id: metadata_import_id, metadata_import: metadata_import, request_id: request_id), grpc_options do |response, operation|
+      client.create_metadata_import(::Google::Cloud::Metastore::V1alpha::CreateMetadataImportRequest.new(parent: parent, metadata_import_id: metadata_import_id, metadata_import: metadata_import, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -631,7 +631,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.update_metadata_import ::Google::Cloud::Metastore::V1alpha::UpdateMetadataImportRequest.new(update_mask: update_mask, metadata_import: metadata_import, request_id: request_id), grpc_options do |response, operation|
+      client.update_metadata_import(::Google::Cloud::Metastore::V1alpha::UpdateMetadataImportRequest.new(update_mask: update_mask, metadata_import: metadata_import, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -701,7 +701,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.export_metadata ::Google::Cloud::Metastore::V1alpha::ExportMetadataRequest.new(destination_gcs_folder: destination_gcs_folder, service: service, request_id: request_id, database_dump_type: database_dump_type), grpc_options do |response, operation|
+      client.export_metadata(::Google::Cloud::Metastore::V1alpha::ExportMetadataRequest.new(destination_gcs_folder: destination_gcs_folder, service: service, request_id: request_id, database_dump_type: database_dump_type), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -770,7 +770,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.restore_service ::Google::Cloud::Metastore::V1alpha::RestoreServiceRequest.new(service: service, backup: backup, restore_type: restore_type, request_id: request_id), grpc_options do |response, operation|
+      client.restore_service(::Google::Cloud::Metastore::V1alpha::RestoreServiceRequest.new(service: service, backup: backup, restore_type: restore_type, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -841,7 +841,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.list_backups ::Google::Cloud::Metastore::V1alpha::ListBackupsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options do |response, operation|
+      client.list_backups(::Google::Cloud::Metastore::V1alpha::ListBackupsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -900,7 +900,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.get_backup ::Google::Cloud::Metastore::V1alpha::GetBackupRequest.new(name: name), grpc_options do |response, operation|
+      client.get_backup(::Google::Cloud::Metastore::V1alpha::GetBackupRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -968,7 +968,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.create_backup ::Google::Cloud::Metastore::V1alpha::CreateBackupRequest.new(parent: parent, backup_id: backup_id, backup: backup, request_id: request_id), grpc_options do |response, operation|
+      client.create_backup(::Google::Cloud::Metastore::V1alpha::CreateBackupRequest.new(parent: parent, backup_id: backup_id, backup: backup, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -1033,7 +1033,7 @@ class ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::ClientTest < Minit
       end
 
       # Use protobuf object with options
-      client.delete_backup ::Google::Cloud::Metastore::V1alpha::DeleteBackupRequest.new(name: name, request_id: request_id), grpc_options do |response, operation|
+      client.delete_backup(::Google::Cloud::Metastore::V1alpha::DeleteBackupRequest.new(name: name, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

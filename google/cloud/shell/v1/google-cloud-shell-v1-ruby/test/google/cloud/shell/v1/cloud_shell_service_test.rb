@@ -95,7 +95,7 @@ class ::Google::Cloud::Shell::V1::CloudShellService::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_environment ::Google::Cloud::Shell::V1::GetEnvironmentRequest.new(name: name), grpc_options do |response, operation|
+      client.get_environment(::Google::Cloud::Shell::V1::GetEnvironmentRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -161,7 +161,7 @@ class ::Google::Cloud::Shell::V1::CloudShellService::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.start_environment ::Google::Cloud::Shell::V1::StartEnvironmentRequest.new(name: name, access_token: access_token, public_keys: public_keys), grpc_options do |response, operation|
+      client.start_environment(::Google::Cloud::Shell::V1::StartEnvironmentRequest.new(name: name, access_token: access_token, public_keys: public_keys), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -230,7 +230,7 @@ class ::Google::Cloud::Shell::V1::CloudShellService::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.authorize_environment ::Google::Cloud::Shell::V1::AuthorizeEnvironmentRequest.new(name: name, access_token: access_token, id_token: id_token, expire_time: expire_time), grpc_options do |response, operation|
+      client.authorize_environment(::Google::Cloud::Shell::V1::AuthorizeEnvironmentRequest.new(name: name, access_token: access_token, id_token: id_token, expire_time: expire_time), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -295,7 +295,7 @@ class ::Google::Cloud::Shell::V1::CloudShellService::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.add_public_key ::Google::Cloud::Shell::V1::AddPublicKeyRequest.new(environment: environment, key: key), grpc_options do |response, operation|
+      client.add_public_key(::Google::Cloud::Shell::V1::AddPublicKeyRequest.new(environment: environment, key: key), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -360,7 +360,7 @@ class ::Google::Cloud::Shell::V1::CloudShellService::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.remove_public_key ::Google::Cloud::Shell::V1::RemovePublicKeyRequest.new(environment: environment, key: key), grpc_options do |response, operation|
+      client.remove_public_key(::Google::Cloud::Shell::V1::RemovePublicKeyRequest.new(environment: environment, key: key), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

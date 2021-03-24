@@ -103,7 +103,7 @@ class ::Google::Cloud::Dialogflow::V2::KnowledgeBases::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.list_knowledge_bases ::Google::Cloud::Dialogflow::V2::ListKnowledgeBasesRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_knowledge_bases(::Google::Cloud::Dialogflow::V2::ListKnowledgeBasesRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -162,7 +162,7 @@ class ::Google::Cloud::Dialogflow::V2::KnowledgeBases::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.get_knowledge_base ::Google::Cloud::Dialogflow::V2::GetKnowledgeBaseRequest.new(name: name), grpc_options do |response, operation|
+      client.get_knowledge_base(::Google::Cloud::Dialogflow::V2::GetKnowledgeBaseRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -222,7 +222,7 @@ class ::Google::Cloud::Dialogflow::V2::KnowledgeBases::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.create_knowledge_base ::Google::Cloud::Dialogflow::V2::CreateKnowledgeBaseRequest.new(parent: parent, knowledge_base: knowledge_base), grpc_options do |response, operation|
+      client.create_knowledge_base(::Google::Cloud::Dialogflow::V2::CreateKnowledgeBaseRequest.new(parent: parent, knowledge_base: knowledge_base), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -282,7 +282,7 @@ class ::Google::Cloud::Dialogflow::V2::KnowledgeBases::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.delete_knowledge_base ::Google::Cloud::Dialogflow::V2::DeleteKnowledgeBaseRequest.new(name: name, force: force), grpc_options do |response, operation|
+      client.delete_knowledge_base(::Google::Cloud::Dialogflow::V2::DeleteKnowledgeBaseRequest.new(name: name, force: force), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -342,7 +342,7 @@ class ::Google::Cloud::Dialogflow::V2::KnowledgeBases::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.update_knowledge_base ::Google::Cloud::Dialogflow::V2::UpdateKnowledgeBaseRequest.new(knowledge_base: knowledge_base, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_knowledge_base(::Google::Cloud::Dialogflow::V2::UpdateKnowledgeBaseRequest.new(knowledge_base: knowledge_base, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

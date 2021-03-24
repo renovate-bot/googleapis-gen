@@ -95,7 +95,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.create_shelf ::Google::Example::Library::V1::CreateShelfRequest.new(shelf: shelf), grpc_options do |response, operation|
+      client.create_shelf(::Google::Example::Library::V1::CreateShelfRequest.new(shelf: shelf), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -153,7 +153,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.get_shelf ::Google::Example::Library::V1::GetShelfRequest.new(name: name), grpc_options do |response, operation|
+      client.get_shelf(::Google::Example::Library::V1::GetShelfRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -217,7 +217,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.list_shelves ::Google::Example::Library::V1::ListShelvesRequest.new(page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_shelves(::Google::Example::Library::V1::ListShelvesRequest.new(page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -276,7 +276,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.delete_shelf ::Google::Example::Library::V1::DeleteShelfRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_shelf(::Google::Example::Library::V1::DeleteShelfRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -336,7 +336,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.merge_shelves ::Google::Example::Library::V1::MergeShelvesRequest.new(name: name, other_shelf: other_shelf), grpc_options do |response, operation|
+      client.merge_shelves(::Google::Example::Library::V1::MergeShelvesRequest.new(name: name, other_shelf: other_shelf), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -396,7 +396,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.create_book ::Google::Example::Library::V1::CreateBookRequest.new(parent: parent, book: book), grpc_options do |response, operation|
+      client.create_book(::Google::Example::Library::V1::CreateBookRequest.new(parent: parent, book: book), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -454,7 +454,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.get_book ::Google::Example::Library::V1::GetBookRequest.new(name: name), grpc_options do |response, operation|
+      client.get_book(::Google::Example::Library::V1::GetBookRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -520,7 +520,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.list_books ::Google::Example::Library::V1::ListBooksRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_books(::Google::Example::Library::V1::ListBooksRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -579,7 +579,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.delete_book ::Google::Example::Library::V1::DeleteBookRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_book(::Google::Example::Library::V1::DeleteBookRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -639,7 +639,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.update_book ::Google::Example::Library::V1::UpdateBookRequest.new(book: book, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_book(::Google::Example::Library::V1::UpdateBookRequest.new(book: book, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -699,7 +699,7 @@ class ::Google::Example::Library::V1::LibraryService::ClientTest < Minitest::Tes
       end
 
       # Use protobuf object with options
-      client.move_book ::Google::Example::Library::V1::MoveBookRequest.new(name: name, other_shelf_name: other_shelf_name), grpc_options do |response, operation|
+      client.move_book(::Google::Example::Library::V1::MoveBookRequest.new(name: name, other_shelf_name: other_shelf_name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

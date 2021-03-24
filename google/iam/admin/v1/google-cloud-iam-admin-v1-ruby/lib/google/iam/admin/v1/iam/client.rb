@@ -78,7 +78,7 @@ module Google
                 parent_config = while namespace.any?
                                   parent_name = namespace.join "::"
                                   parent_const = const_get parent_name
-                                  break parent_const.configure if parent_const&.respond_to? :configure
+                                  break parent_const.configure if parent_const.respond_to? :configure
                                   namespace.pop
                                 end
                 default_config = Client::Configuration.new parent_config
@@ -86,17 +86,17 @@ module Google
                 default_config.rpcs.list_service_accounts.timeout = 60.0
                 default_config.rpcs.list_service_accounts.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.get_service_account.timeout = 60.0
                 default_config.rpcs.get_service_account.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.create_service_account.timeout = 60.0
@@ -104,33 +104,33 @@ module Google
                 default_config.rpcs.update_service_account.timeout = 60.0
                 default_config.rpcs.update_service_account.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.delete_service_account.timeout = 60.0
                 default_config.rpcs.delete_service_account.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.list_service_account_keys.timeout = 60.0
                 default_config.rpcs.list_service_account_keys.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.get_service_account_key.timeout = 60.0
                 default_config.rpcs.get_service_account_key.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.create_service_account_key.timeout = 60.0
@@ -138,9 +138,9 @@ module Google
                 default_config.rpcs.delete_service_account_key.timeout = 60.0
                 default_config.rpcs.delete_service_account_key.retry_policy = {
                   initial_delay: 0.1,
-                  max_delay:     60.0,
-                  multiplier:    1.3,
-                  retry_codes:   [14, 4]
+              max_delay: 60.0,
+              multiplier: 1.3,
+              retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.sign_blob.timeout = 60.0
@@ -221,7 +221,7 @@ module Google
               enable_self_signed_jwt = @config.scope == Client.configure.scope &&
                                        @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
-              credentials ||= Credentials.default scope:                  @config.scope,
+              credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
               if credentials.is_a?(String) || credentials.is_a?(Hash)
                 credentials = Credentials.new credentials, scope: @config.scope
@@ -2694,7 +2694,7 @@ module Google
               config_attr :scope,         nil, ::String, ::Array, nil
               config_attr :lib_name,      nil, ::String, nil
               config_attr :lib_version,   nil, ::String, nil
-              config_attr(:channel_args,  { "grpc.service_config_disable_resolution"=>1 }, ::Hash, nil)
+              config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
               config_attr :interceptors,  nil, ::Array, nil
               config_attr :timeout,       nil, ::Numeric, nil
               config_attr :metadata,      nil, ::Hash, nil
@@ -2715,7 +2715,7 @@ module Google
               def rpcs
                 @rpcs ||= begin
                   parent_rpcs = nil
-                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config&.respond_to?(:rpcs)
+                  parent_rpcs = @parent_config.rpcs if defined?(@parent_config) && @parent_config.respond_to?(:rpcs)
                   Rpcs.new parent_rpcs
                 end
               end
@@ -2886,63 +2886,63 @@ module Google
 
                 # @private
                 def initialize parent_rpcs = nil
-                  list_service_accounts_config = parent_rpcs&.list_service_accounts if parent_rpcs&.respond_to? :list_service_accounts
+                  list_service_accounts_config = parent_rpcs.list_service_accounts if parent_rpcs.respond_to? :list_service_accounts
                   @list_service_accounts = ::Gapic::Config::Method.new list_service_accounts_config
-                  get_service_account_config = parent_rpcs&.get_service_account if parent_rpcs&.respond_to? :get_service_account
+                  get_service_account_config = parent_rpcs.get_service_account if parent_rpcs.respond_to? :get_service_account
                   @get_service_account = ::Gapic::Config::Method.new get_service_account_config
-                  create_service_account_config = parent_rpcs&.create_service_account if parent_rpcs&.respond_to? :create_service_account
+                  create_service_account_config = parent_rpcs.create_service_account if parent_rpcs.respond_to? :create_service_account
                   @create_service_account = ::Gapic::Config::Method.new create_service_account_config
-                  update_service_account_config = parent_rpcs&.update_service_account if parent_rpcs&.respond_to? :update_service_account
+                  update_service_account_config = parent_rpcs.update_service_account if parent_rpcs.respond_to? :update_service_account
                   @update_service_account = ::Gapic::Config::Method.new update_service_account_config
-                  patch_service_account_config = parent_rpcs&.patch_service_account if parent_rpcs&.respond_to? :patch_service_account
+                  patch_service_account_config = parent_rpcs.patch_service_account if parent_rpcs.respond_to? :patch_service_account
                   @patch_service_account = ::Gapic::Config::Method.new patch_service_account_config
-                  delete_service_account_config = parent_rpcs&.delete_service_account if parent_rpcs&.respond_to? :delete_service_account
+                  delete_service_account_config = parent_rpcs.delete_service_account if parent_rpcs.respond_to? :delete_service_account
                   @delete_service_account = ::Gapic::Config::Method.new delete_service_account_config
-                  undelete_service_account_config = parent_rpcs&.undelete_service_account if parent_rpcs&.respond_to? :undelete_service_account
+                  undelete_service_account_config = parent_rpcs.undelete_service_account if parent_rpcs.respond_to? :undelete_service_account
                   @undelete_service_account = ::Gapic::Config::Method.new undelete_service_account_config
-                  enable_service_account_config = parent_rpcs&.enable_service_account if parent_rpcs&.respond_to? :enable_service_account
+                  enable_service_account_config = parent_rpcs.enable_service_account if parent_rpcs.respond_to? :enable_service_account
                   @enable_service_account = ::Gapic::Config::Method.new enable_service_account_config
-                  disable_service_account_config = parent_rpcs&.disable_service_account if parent_rpcs&.respond_to? :disable_service_account
+                  disable_service_account_config = parent_rpcs.disable_service_account if parent_rpcs.respond_to? :disable_service_account
                   @disable_service_account = ::Gapic::Config::Method.new disable_service_account_config
-                  list_service_account_keys_config = parent_rpcs&.list_service_account_keys if parent_rpcs&.respond_to? :list_service_account_keys
+                  list_service_account_keys_config = parent_rpcs.list_service_account_keys if parent_rpcs.respond_to? :list_service_account_keys
                   @list_service_account_keys = ::Gapic::Config::Method.new list_service_account_keys_config
-                  get_service_account_key_config = parent_rpcs&.get_service_account_key if parent_rpcs&.respond_to? :get_service_account_key
+                  get_service_account_key_config = parent_rpcs.get_service_account_key if parent_rpcs.respond_to? :get_service_account_key
                   @get_service_account_key = ::Gapic::Config::Method.new get_service_account_key_config
-                  create_service_account_key_config = parent_rpcs&.create_service_account_key if parent_rpcs&.respond_to? :create_service_account_key
+                  create_service_account_key_config = parent_rpcs.create_service_account_key if parent_rpcs.respond_to? :create_service_account_key
                   @create_service_account_key = ::Gapic::Config::Method.new create_service_account_key_config
-                  upload_service_account_key_config = parent_rpcs&.upload_service_account_key if parent_rpcs&.respond_to? :upload_service_account_key
+                  upload_service_account_key_config = parent_rpcs.upload_service_account_key if parent_rpcs.respond_to? :upload_service_account_key
                   @upload_service_account_key = ::Gapic::Config::Method.new upload_service_account_key_config
-                  delete_service_account_key_config = parent_rpcs&.delete_service_account_key if parent_rpcs&.respond_to? :delete_service_account_key
+                  delete_service_account_key_config = parent_rpcs.delete_service_account_key if parent_rpcs.respond_to? :delete_service_account_key
                   @delete_service_account_key = ::Gapic::Config::Method.new delete_service_account_key_config
-                  sign_blob_config = parent_rpcs&.sign_blob if parent_rpcs&.respond_to? :sign_blob
+                  sign_blob_config = parent_rpcs.sign_blob if parent_rpcs.respond_to? :sign_blob
                   @sign_blob = ::Gapic::Config::Method.new sign_blob_config
-                  sign_jwt_config = parent_rpcs&.sign_jwt if parent_rpcs&.respond_to? :sign_jwt
+                  sign_jwt_config = parent_rpcs.sign_jwt if parent_rpcs.respond_to? :sign_jwt
                   @sign_jwt = ::Gapic::Config::Method.new sign_jwt_config
-                  get_iam_policy_config = parent_rpcs&.get_iam_policy if parent_rpcs&.respond_to? :get_iam_policy
+                  get_iam_policy_config = parent_rpcs.get_iam_policy if parent_rpcs.respond_to? :get_iam_policy
                   @get_iam_policy = ::Gapic::Config::Method.new get_iam_policy_config
-                  set_iam_policy_config = parent_rpcs&.set_iam_policy if parent_rpcs&.respond_to? :set_iam_policy
+                  set_iam_policy_config = parent_rpcs.set_iam_policy if parent_rpcs.respond_to? :set_iam_policy
                   @set_iam_policy = ::Gapic::Config::Method.new set_iam_policy_config
-                  test_iam_permissions_config = parent_rpcs&.test_iam_permissions if parent_rpcs&.respond_to? :test_iam_permissions
+                  test_iam_permissions_config = parent_rpcs.test_iam_permissions if parent_rpcs.respond_to? :test_iam_permissions
                   @test_iam_permissions = ::Gapic::Config::Method.new test_iam_permissions_config
-                  query_grantable_roles_config = parent_rpcs&.query_grantable_roles if parent_rpcs&.respond_to? :query_grantable_roles
+                  query_grantable_roles_config = parent_rpcs.query_grantable_roles if parent_rpcs.respond_to? :query_grantable_roles
                   @query_grantable_roles = ::Gapic::Config::Method.new query_grantable_roles_config
-                  list_roles_config = parent_rpcs&.list_roles if parent_rpcs&.respond_to? :list_roles
+                  list_roles_config = parent_rpcs.list_roles if parent_rpcs.respond_to? :list_roles
                   @list_roles = ::Gapic::Config::Method.new list_roles_config
-                  get_role_config = parent_rpcs&.get_role if parent_rpcs&.respond_to? :get_role
+                  get_role_config = parent_rpcs.get_role if parent_rpcs.respond_to? :get_role
                   @get_role = ::Gapic::Config::Method.new get_role_config
-                  create_role_config = parent_rpcs&.create_role if parent_rpcs&.respond_to? :create_role
+                  create_role_config = parent_rpcs.create_role if parent_rpcs.respond_to? :create_role
                   @create_role = ::Gapic::Config::Method.new create_role_config
-                  update_role_config = parent_rpcs&.update_role if parent_rpcs&.respond_to? :update_role
+                  update_role_config = parent_rpcs.update_role if parent_rpcs.respond_to? :update_role
                   @update_role = ::Gapic::Config::Method.new update_role_config
-                  delete_role_config = parent_rpcs&.delete_role if parent_rpcs&.respond_to? :delete_role
+                  delete_role_config = parent_rpcs.delete_role if parent_rpcs.respond_to? :delete_role
                   @delete_role = ::Gapic::Config::Method.new delete_role_config
-                  undelete_role_config = parent_rpcs&.undelete_role if parent_rpcs&.respond_to? :undelete_role
+                  undelete_role_config = parent_rpcs.undelete_role if parent_rpcs.respond_to? :undelete_role
                   @undelete_role = ::Gapic::Config::Method.new undelete_role_config
-                  query_testable_permissions_config = parent_rpcs&.query_testable_permissions if parent_rpcs&.respond_to? :query_testable_permissions
+                  query_testable_permissions_config = parent_rpcs.query_testable_permissions if parent_rpcs.respond_to? :query_testable_permissions
                   @query_testable_permissions = ::Gapic::Config::Method.new query_testable_permissions_config
-                  query_auditable_services_config = parent_rpcs&.query_auditable_services if parent_rpcs&.respond_to? :query_auditable_services
+                  query_auditable_services_config = parent_rpcs.query_auditable_services if parent_rpcs.respond_to? :query_auditable_services
                   @query_auditable_services = ::Gapic::Config::Method.new query_auditable_services_config
-                  lint_policy_config = parent_rpcs&.lint_policy if parent_rpcs&.respond_to? :lint_policy
+                  lint_policy_config = parent_rpcs.lint_policy if parent_rpcs.respond_to? :lint_policy
                   @lint_policy = ::Gapic::Config::Method.new lint_policy_config
 
                   yield self if block_given?

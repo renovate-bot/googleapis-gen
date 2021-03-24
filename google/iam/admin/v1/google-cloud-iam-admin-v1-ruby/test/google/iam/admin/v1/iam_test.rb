@@ -103,7 +103,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_service_accounts ::Google::Iam::Admin::V1::ListServiceAccountsRequest.new(name: name, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_service_accounts(::Google::Iam::Admin::V1::ListServiceAccountsRequest.new(name: name, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -162,7 +162,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_service_account ::Google::Iam::Admin::V1::GetServiceAccountRequest.new(name: name), grpc_options do |response, operation|
+      client.get_service_account(::Google::Iam::Admin::V1::GetServiceAccountRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -224,7 +224,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_service_account ::Google::Iam::Admin::V1::CreateServiceAccountRequest.new(name: name, account_id: account_id, service_account: service_account), grpc_options do |response, operation|
+      client.create_service_account(::Google::Iam::Admin::V1::CreateServiceAccountRequest.new(name: name, account_id: account_id, service_account: service_account), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -298,7 +298,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.update_service_account ::Google::Iam::Admin::V1::ServiceAccount.new(name: name, project_id: project_id, unique_id: unique_id, email: email, display_name: display_name, etag: etag, description: description, oauth2_client_id: oauth2_client_id, disabled: disabled), grpc_options do |response, operation|
+      client.update_service_account(::Google::Iam::Admin::V1::ServiceAccount.new(name: name, project_id: project_id, unique_id: unique_id, email: email, display_name: display_name, etag: etag, description: description, oauth2_client_id: oauth2_client_id, disabled: disabled), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -358,7 +358,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.patch_service_account ::Google::Iam::Admin::V1::PatchServiceAccountRequest.new(service_account: service_account, update_mask: update_mask), grpc_options do |response, operation|
+      client.patch_service_account(::Google::Iam::Admin::V1::PatchServiceAccountRequest.new(service_account: service_account, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -416,7 +416,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_service_account ::Google::Iam::Admin::V1::DeleteServiceAccountRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_service_account(::Google::Iam::Admin::V1::DeleteServiceAccountRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -474,7 +474,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.undelete_service_account ::Google::Iam::Admin::V1::UndeleteServiceAccountRequest.new(name: name), grpc_options do |response, operation|
+      client.undelete_service_account(::Google::Iam::Admin::V1::UndeleteServiceAccountRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -532,7 +532,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.enable_service_account ::Google::Iam::Admin::V1::EnableServiceAccountRequest.new(name: name), grpc_options do |response, operation|
+      client.enable_service_account(::Google::Iam::Admin::V1::EnableServiceAccountRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -590,7 +590,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.disable_service_account ::Google::Iam::Admin::V1::DisableServiceAccountRequest.new(name: name), grpc_options do |response, operation|
+      client.disable_service_account(::Google::Iam::Admin::V1::DisableServiceAccountRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -650,7 +650,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_service_account_keys ::Google::Iam::Admin::V1::ListServiceAccountKeysRequest.new(name: name, key_types: key_types), grpc_options do |response, operation|
+      client.list_service_account_keys(::Google::Iam::Admin::V1::ListServiceAccountKeysRequest.new(name: name, key_types: key_types), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -710,7 +710,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_service_account_key ::Google::Iam::Admin::V1::GetServiceAccountKeyRequest.new(name: name, public_key_type: public_key_type), grpc_options do |response, operation|
+      client.get_service_account_key(::Google::Iam::Admin::V1::GetServiceAccountKeyRequest.new(name: name, public_key_type: public_key_type), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -772,7 +772,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_service_account_key ::Google::Iam::Admin::V1::CreateServiceAccountKeyRequest.new(name: name, private_key_type: private_key_type, key_algorithm: key_algorithm), grpc_options do |response, operation|
+      client.create_service_account_key(::Google::Iam::Admin::V1::CreateServiceAccountKeyRequest.new(name: name, private_key_type: private_key_type, key_algorithm: key_algorithm), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -832,7 +832,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.upload_service_account_key ::Google::Iam::Admin::V1::UploadServiceAccountKeyRequest.new(name: name, public_key_data: public_key_data), grpc_options do |response, operation|
+      client.upload_service_account_key(::Google::Iam::Admin::V1::UploadServiceAccountKeyRequest.new(name: name, public_key_data: public_key_data), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -890,7 +890,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_service_account_key ::Google::Iam::Admin::V1::DeleteServiceAccountKeyRequest.new(name: name), grpc_options do |response, operation|
+      client.delete_service_account_key(::Google::Iam::Admin::V1::DeleteServiceAccountKeyRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -950,7 +950,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.sign_blob ::Google::Iam::Admin::V1::SignBlobRequest.new(name: name, bytes_to_sign: bytes_to_sign), grpc_options do |response, operation|
+      client.sign_blob(::Google::Iam::Admin::V1::SignBlobRequest.new(name: name, bytes_to_sign: bytes_to_sign), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1010,7 +1010,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.sign_jwt ::Google::Iam::Admin::V1::SignJwtRequest.new(name: name, payload: payload), grpc_options do |response, operation|
+      client.sign_jwt(::Google::Iam::Admin::V1::SignJwtRequest.new(name: name, payload: payload), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1070,7 +1070,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_iam_policy ::Google::Iam::V1::GetIamPolicyRequest.new(resource: resource, options: options), grpc_options do |response, operation|
+      client.get_iam_policy(::Google::Iam::V1::GetIamPolicyRequest.new(resource: resource, options: options), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1130,7 +1130,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.set_iam_policy ::Google::Iam::V1::SetIamPolicyRequest.new(resource: resource, policy: policy), grpc_options do |response, operation|
+      client.set_iam_policy(::Google::Iam::V1::SetIamPolicyRequest.new(resource: resource, policy: policy), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1190,7 +1190,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.test_iam_permissions ::Google::Iam::V1::TestIamPermissionsRequest.new(resource: resource, permissions: permissions), grpc_options do |response, operation|
+      client.test_iam_permissions(::Google::Iam::V1::TestIamPermissionsRequest.new(resource: resource, permissions: permissions), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1258,7 +1258,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.query_grantable_roles ::Google::Iam::Admin::V1::QueryGrantableRolesRequest.new(full_resource_name: full_resource_name, view: view, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.query_grantable_roles(::Google::Iam::Admin::V1::QueryGrantableRolesRequest.new(full_resource_name: full_resource_name, view: view, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -1329,7 +1329,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_roles ::Google::Iam::Admin::V1::ListRolesRequest.new(parent: parent, page_size: page_size, page_token: page_token, view: view, show_deleted: show_deleted), grpc_options do |response, operation|
+      client.list_roles(::Google::Iam::Admin::V1::ListRolesRequest.new(parent: parent, page_size: page_size, page_token: page_token, view: view, show_deleted: show_deleted), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -1388,7 +1388,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_role ::Google::Iam::Admin::V1::GetRoleRequest.new(name: name), grpc_options do |response, operation|
+      client.get_role(::Google::Iam::Admin::V1::GetRoleRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1450,7 +1450,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_role ::Google::Iam::Admin::V1::CreateRoleRequest.new(parent: parent, role_id: role_id, role: role), grpc_options do |response, operation|
+      client.create_role(::Google::Iam::Admin::V1::CreateRoleRequest.new(parent: parent, role_id: role_id, role: role), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1512,7 +1512,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.update_role ::Google::Iam::Admin::V1::UpdateRoleRequest.new(name: name, role: role, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_role(::Google::Iam::Admin::V1::UpdateRoleRequest.new(name: name, role: role, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1572,7 +1572,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_role ::Google::Iam::Admin::V1::DeleteRoleRequest.new(name: name, etag: etag), grpc_options do |response, operation|
+      client.delete_role(::Google::Iam::Admin::V1::DeleteRoleRequest.new(name: name, etag: etag), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1632,7 +1632,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.undelete_role ::Google::Iam::Admin::V1::UndeleteRoleRequest.new(name: name, etag: etag), grpc_options do |response, operation|
+      client.undelete_role(::Google::Iam::Admin::V1::UndeleteRoleRequest.new(name: name, etag: etag), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1698,7 +1698,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.query_testable_permissions ::Google::Iam::Admin::V1::QueryTestablePermissionsRequest.new(full_resource_name: full_resource_name, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.query_testable_permissions(::Google::Iam::Admin::V1::QueryTestablePermissionsRequest.new(full_resource_name: full_resource_name, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -1757,7 +1757,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.query_auditable_services ::Google::Iam::Admin::V1::QueryAuditableServicesRequest.new(full_resource_name: full_resource_name), grpc_options do |response, operation|
+      client.query_auditable_services(::Google::Iam::Admin::V1::QueryAuditableServicesRequest.new(full_resource_name: full_resource_name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1818,7 +1818,7 @@ class ::Google::Iam::Admin::V1::IAM::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.lint_policy ::Google::Iam::Admin::V1::LintPolicyRequest.new(full_resource_name: full_resource_name, condition: condition), grpc_options do |response, operation|
+      client.lint_policy(::Google::Iam::Admin::V1::LintPolicyRequest.new(full_resource_name: full_resource_name, condition: condition), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

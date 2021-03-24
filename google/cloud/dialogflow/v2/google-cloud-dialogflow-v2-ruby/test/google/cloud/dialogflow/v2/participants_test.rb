@@ -97,7 +97,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_participant ::Google::Cloud::Dialogflow::V2::CreateParticipantRequest.new(parent: parent, participant: participant), grpc_options do |response, operation|
+      client.create_participant(::Google::Cloud::Dialogflow::V2::CreateParticipantRequest.new(parent: parent, participant: participant), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -155,7 +155,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_participant ::Google::Cloud::Dialogflow::V2::GetParticipantRequest.new(name: name), grpc_options do |response, operation|
+      client.get_participant(::Google::Cloud::Dialogflow::V2::GetParticipantRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -221,7 +221,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_participants ::Google::Cloud::Dialogflow::V2::ListParticipantsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options do |response, operation|
+      client.list_participants(::Google::Cloud::Dialogflow::V2::ListParticipantsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -282,7 +282,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.update_participant ::Google::Cloud::Dialogflow::V2::UpdateParticipantRequest.new(participant: participant, update_mask: update_mask), grpc_options do |response, operation|
+      client.update_participant(::Google::Cloud::Dialogflow::V2::UpdateParticipantRequest.new(participant: participant, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -349,7 +349,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.analyze_content ::Google::Cloud::Dialogflow::V2::AnalyzeContentRequest.new(participant: participant, text_input: text_input, reply_audio_config: reply_audio_config, query_params: query_params, request_id: request_id), grpc_options do |response, operation|
+      client.analyze_content(::Google::Cloud::Dialogflow::V2::AnalyzeContentRequest.new(participant: participant, text_input: text_input, reply_audio_config: reply_audio_config, query_params: query_params, request_id: request_id), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -411,7 +411,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.suggest_articles ::Google::Cloud::Dialogflow::V2::SuggestArticlesRequest.new(parent: parent, latest_message: latest_message, context_size: context_size), grpc_options do |response, operation|
+      client.suggest_articles(::Google::Cloud::Dialogflow::V2::SuggestArticlesRequest.new(parent: parent, latest_message: latest_message, context_size: context_size), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -473,7 +473,7 @@ class ::Google::Cloud::Dialogflow::V2::Participants::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.suggest_faq_answers ::Google::Cloud::Dialogflow::V2::SuggestFaqAnswersRequest.new(parent: parent, latest_message: latest_message, context_size: context_size), grpc_options do |response, operation|
+      client.suggest_faq_answers(::Google::Cloud::Dialogflow::V2::SuggestFaqAnswersRequest.new(parent: parent, latest_message: latest_message, context_size: context_size), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

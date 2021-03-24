@@ -101,7 +101,7 @@ class ::Ccc::Hosted::Marketplace::V2::LicenseNotificationService::ClientTest < M
       end
 
       # Use protobuf object with options
-      client.list ::Ccc::Hosted::Marketplace::V2::LicenseNotificationListRequest.new(application_id: application_id, max_results: max_results, start_token: start_token, timestamp: timestamp), grpc_options do |response, operation|
+      client.list(::Ccc::Hosted::Marketplace::V2::LicenseNotificationListRequest.new(application_id: application_id, max_results: max_results, start_token: start_token, timestamp: timestamp), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
