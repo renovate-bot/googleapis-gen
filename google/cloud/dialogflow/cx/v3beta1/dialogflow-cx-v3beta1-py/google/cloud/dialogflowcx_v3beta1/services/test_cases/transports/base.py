@@ -164,6 +164,11 @@ class TestCasesTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.get_test_case_result: gapic_v1.method.wrap_method(
+                self.get_test_case_result,
+                default_timeout=None,
+                client_info=client_info,
+            ),
 
         }
 
@@ -268,6 +273,15 @@ class TestCasesTransport(abc.ABC):
             typing.Union[
                 test_case.ListTestCaseResultsResponse,
                 typing.Awaitable[test_case.ListTestCaseResultsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_test_case_result(self) -> typing.Callable[
+            [test_case.GetTestCaseResultRequest],
+            typing.Union[
+                test_case.TestCaseResult,
+                typing.Awaitable[test_case.TestCaseResult]
             ]]:
         raise NotImplementedError()
 

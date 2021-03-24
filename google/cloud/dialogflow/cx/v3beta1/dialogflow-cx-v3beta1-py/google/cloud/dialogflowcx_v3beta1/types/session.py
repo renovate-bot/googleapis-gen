@@ -515,12 +515,13 @@ class QueryResult(proto.Message):
             If an
             [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
             provided as input, this field will contain a copy of the
-            intent identifier.
+            intent identifier. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>``.
         transcript (str):
             If [natural language speech
             audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was
-            provided as input, this field will contain the trascript for
-            the audio.
+            provided as input, this field will contain the transcript
+            for the audio.
         trigger_event (str):
             If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput]
             was provided as input, this field will contain the name of
@@ -863,12 +864,13 @@ class MatchIntentResponse(proto.Message):
             If an
             [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
             provided as input, this field will contain a copy of the
-            intent identifier.
+            intent identifier. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>``.
         transcript (str):
             If [natural language speech
             audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was
-            provided as input, this field will contain the trascript for
-            the audio.
+            provided as input, this field will contain the transcript
+            for the audio.
         trigger_event (str):
             If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput]
             was provided as input, this field will contain a copy of the

@@ -201,4 +201,19 @@ class TestCasesGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Gets a test case result.
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\GetTestCaseResultRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetTestCaseResult(\Google\Cloud\Dialogflow\Cx\V3beta1\GetTestCaseResultRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3beta1.TestCases/GetTestCaseResult',
+        $argument,
+        ['\Google\Cloud\Dialogflow\Cx\V3beta1\TestCaseResult', 'decode'],
+        $metadata, $options);
+    }
+
 }

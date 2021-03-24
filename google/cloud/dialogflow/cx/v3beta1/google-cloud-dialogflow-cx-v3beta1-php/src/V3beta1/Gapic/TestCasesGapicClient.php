@@ -46,6 +46,7 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\CreateTestCaseRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ExportTestCasesRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ExportTestCasesRequest\DataFormat;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetTestCaseRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\GetTestCaseResultRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ImportTestCasesRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCaseResultsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCaseResultsResponse;
@@ -53,6 +54,7 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCasesRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCasesResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\RunTestCaseRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\TestCase;
+use Google\Cloud\Dialogflow\Cx\V3beta1\TestCaseResult;
 use Google\Cloud\Dialogflow\Cx\V3beta1\UpdateTestCaseRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
@@ -131,6 +133,7 @@ class TestCasesGapicClient
     private static $agentNameTemplate;
     private static $environmentNameTemplate;
     private static $testCaseNameTemplate;
+    private static $testCaseResultNameTemplate;
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -181,6 +184,15 @@ class TestCasesGapicClient
         return self::$testCaseNameTemplate;
     }
 
+    private static function getTestCaseResultNameTemplate()
+    {
+        if (null == self::$testCaseResultNameTemplate) {
+            self::$testCaseResultNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}/results/{result}');
+        }
+
+        return self::$testCaseResultNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
@@ -188,6 +200,7 @@ class TestCasesGapicClient
                 'agent' => self::getAgentNameTemplate(),
                 'environment' => self::getEnvironmentNameTemplate(),
                 'testCase' => self::getTestCaseNameTemplate(),
+                'testCaseResult' => self::getTestCaseResultNameTemplate(),
             ];
         }
 
@@ -259,12 +272,37 @@ class TestCasesGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent
+     * a test_case_result resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $agent
+     * @param string $testCase
+     * @param string $result
+     *
+     * @return string The formatted test_case_result resource.
+     * @experimental
+     */
+    public static function testCaseResultName($project, $location, $agent, $testCase, $result)
+    {
+        return self::getTestCaseResultNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'agent' => $agent,
+            'test_case' => $testCase,
+            'result' => $result,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - agent: projects/{project}/locations/{location}/agents/{agent}
      * - environment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}
-     * - testCase: projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}.
+     * - testCase: projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}
+     * - testCaseResult: projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}/results/{result}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -1238,5 +1276,57 @@ class TestCasesGapicClient
             ListTestCaseResultsResponse::class,
             $request
         );
+    }
+
+    /**
+     * Gets a test case result.
+     *
+     * Sample code:
+     * ```
+     * $testCasesClient = new TestCasesClient();
+     * try {
+     *     $formattedName = $testCasesClient->testCaseResultName('[PROJECT]', '[LOCATION]', '[AGENT]', '[TEST_CASE]', '[RESULT]');
+     *     $response = $testCasesClient->getTestCaseResult($formattedName);
+     * } finally {
+     *     $testCasesClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the testcase.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/testCases/<TestCase ID>/results/<TestCaseResult ID>`.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCaseResult
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getTestCaseResult($name, array $optionalArgs = [])
+    {
+        $request = new GetTestCaseResultRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetTestCaseResult',
+            TestCaseResult::class,
+            $optionalArgs,
+            $request
+        )->wait();
     }
 }

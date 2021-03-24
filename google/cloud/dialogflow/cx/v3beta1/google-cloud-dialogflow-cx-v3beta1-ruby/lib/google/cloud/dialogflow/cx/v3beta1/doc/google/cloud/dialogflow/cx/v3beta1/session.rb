@@ -344,10 +344,12 @@ module Google
           #   @return [String]
           #     If an {Google::Cloud::Dialogflow::Cx::V3beta1::IntentInput intent} was provided as input, this field will
           #     contain a copy of the intent identifier.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/intents/<Intent ID>`.
           # @!attribute [rw] transcript
           #   @return [String]
           #     If {Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput natural language speech audio} was provided as input,
-          #     this field will contain the trascript for the audio.
+          #     this field will contain the transcript for the audio.
           # @!attribute [rw] trigger_event
           #   @return [String]
           #     If an {Google::Cloud::Dialogflow::Cx::V3beta1::EventInput event} was provided as input, this field will contain
@@ -573,10 +575,12 @@ module Google
           #   @return [String]
           #     If an {Google::Cloud::Dialogflow::Cx::V3beta1::IntentInput intent} was provided as input, this field will
           #     contain a copy of the intent identifier.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/intents/<Intent ID>`.
           # @!attribute [rw] transcript
           #   @return [String]
           #     If {Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput natural language speech audio} was provided as input,
-          #     this field will contain the trascript for the audio.
+          #     this field will contain the transcript for the audio.
           # @!attribute [rw] trigger_event
           #   @return [String]
           #     If an {Google::Cloud::Dialogflow::Cx::V3beta1::EventInput event} was provided as input, this field will

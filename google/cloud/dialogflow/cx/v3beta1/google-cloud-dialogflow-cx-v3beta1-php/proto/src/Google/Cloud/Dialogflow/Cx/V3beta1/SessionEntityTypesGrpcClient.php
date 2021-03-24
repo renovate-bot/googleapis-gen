@@ -64,9 +64,6 @@ class SessionEntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates a session entity type.
-     *
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\CreateSessionEntityTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

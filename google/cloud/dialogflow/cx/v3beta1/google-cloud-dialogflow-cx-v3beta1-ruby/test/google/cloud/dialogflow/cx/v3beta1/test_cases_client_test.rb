@@ -1065,4 +1065,79 @@ describe Google::Cloud::Dialogflow::Cx::V3beta1::TestCasesClient do
       end
     end
   end
+
+  describe 'get_test_case_result' do
+    custom_error = CustomTestError_v3beta1.new "Custom test error for Google::Cloud::Dialogflow::Cx::V3beta1::TestCasesClient#get_test_case_result."
+
+    it 'invokes get_test_case_result without error' do
+      # Create request parameters
+      formatted_name = Google::Cloud::Dialogflow::Cx::V3beta1::TestCasesClient.test_case_result_path("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+
+      # Create expected grpc response
+      name_2 = "name2-1052831874"
+      environment = "environment-85904877"
+      expected_response = { name: name_2, environment: environment }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseResultRequest, request)
+        assert_equal(formatted_name, request.name)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v3beta1.new(:get_test_case_result, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTestCasesCredentials_v3beta1.new("get_test_case_result")
+
+      Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Dialogflow::Cx::V3beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Dialogflow::Cx::TestCases.new(version: :v3beta1)
+
+          # Call method
+          response = client.get_test_case_result(formatted_name)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.get_test_case_result(formatted_name) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes get_test_case_result with error' do
+      # Create request parameters
+      formatted_name = Google::Cloud::Dialogflow::Cx::V3beta1::TestCasesClient.test_case_result_path("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseResultRequest, request)
+        assert_equal(formatted_name, request.name)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v3beta1.new(:get_test_case_result, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTestCasesCredentials_v3beta1.new("get_test_case_result")
+
+      Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Dialogflow::Cx::V3beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Dialogflow::Cx::TestCases.new(version: :v3beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v3beta1 do
+            client.get_test_case_result(formatted_name)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
 end

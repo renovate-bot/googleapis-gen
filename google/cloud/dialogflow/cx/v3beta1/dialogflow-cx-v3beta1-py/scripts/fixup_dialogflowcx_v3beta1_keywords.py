@@ -85,6 +85,7 @@ class dialogflowcxCallTransformer(cst.CSTTransformer):
     'get_security_settings': ('name', ),
     'get_session_entity_type': ('name', ),
     'get_test_case': ('name', ),
+    'get_test_case_result': ('name', ),
     'get_transition_route_group': ('name', 'language_code', ),
     'get_version': ('name', ),
     'get_webhook': ('name', ),

@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for a webhook call.
+ * The request message for a webhook call. The request is sent as a JSON object
+ * and the field names will be presented in camel cases.
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3beta1.WebhookRequest</code>
  */
@@ -68,6 +69,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;</code>
      */
     protected $sentiment_analysis_result = null;
+    protected $query;
 
     /**
      * Constructor.
@@ -78,6 +80,20 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      *     @type string $detect_intent_response_id
      *           Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse] that
      *           will be returned to the API caller.
+     *     @type string $text
+     *           If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     *           will contain a copy of the text.
+     *     @type string $trigger_intent
+     *           If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     *           contain a copy of the intent identifier.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/intents/<Intent ID>`.
+     *     @type string $transcript
+     *           If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     *           this field will contain the transcript for the audio.
+     *     @type string $trigger_event
+     *           If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     *           the name of the event.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\WebhookRequest\FulfillmentInfo $fulfillment_info
      *           Always present. Information about the fulfillment that triggered this
      *           webhook call.
@@ -127,6 +143,142 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->detect_intent_response_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     *
+     * Generated from protobuf field <code>string text = 10;</code>
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasText()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     *
+     * Generated from protobuf field <code>string text = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setText($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/intents/<Intent ID>`.
+     *
+     * Generated from protobuf field <code>string trigger_intent = 11 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getTriggerIntent()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasTriggerIntent()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/intents/<Intent ID>`.
+     *
+     * Generated from protobuf field <code>string trigger_intent = 11 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTriggerIntent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     *
+     * Generated from protobuf field <code>string transcript = 12;</code>
+     * @return string
+     */
+    public function getTranscript()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasTranscript()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     *
+     * Generated from protobuf field <code>string transcript = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTranscript($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     *
+     * Generated from protobuf field <code>string trigger_event = 14;</code>
+     * @return string
+     */
+    public function getTriggerEvent()
+    {
+        return $this->readOneof(14);
+    }
+
+    public function hasTriggerEvent()
+    {
+        return $this->hasOneof(14);
+    }
+
+    /**
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     *
+     * Generated from protobuf field <code>string trigger_event = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTriggerEvent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(14, $var);
 
         return $this;
     }
@@ -379,6 +531,14 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
         $this->sentiment_analysis_result = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->whichOneof("query");
     }
 
 }

@@ -170,6 +170,7 @@ from google.cloud.dialogflowcx_v3beta1.types.test_case import ExportTestCasesMet
 from google.cloud.dialogflowcx_v3beta1.types.test_case import ExportTestCasesRequest
 from google.cloud.dialogflowcx_v3beta1.types.test_case import ExportTestCasesResponse
 from google.cloud.dialogflowcx_v3beta1.types.test_case import GetTestCaseRequest
+from google.cloud.dialogflowcx_v3beta1.types.test_case import GetTestCaseResultRequest
 from google.cloud.dialogflowcx_v3beta1.types.test_case import ImportTestCasesMetadata
 from google.cloud.dialogflowcx_v3beta1.types.test_case import ImportTestCasesRequest
 from google.cloud.dialogflowcx_v3beta1.types.test_case import ImportTestCasesResponse
@@ -300,6 +301,7 @@ __all__ = (
     'GetSecuritySettingsRequest',
     'GetSessionEntityTypeRequest',
     'GetTestCaseRequest',
+    'GetTestCaseResultRequest',
     'GetTransitionRouteGroupRequest',
     'GetVersionRequest',
     'GetWebhookRequest',

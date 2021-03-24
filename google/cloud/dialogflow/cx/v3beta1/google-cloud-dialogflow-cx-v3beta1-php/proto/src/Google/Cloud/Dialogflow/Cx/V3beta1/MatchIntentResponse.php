@@ -43,9 +43,11 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      *     @type string $trigger_intent
      *           If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      *           contain a copy of the intent identifier.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/intents/<Intent ID>`.
      *     @type string $transcript
      *           If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     *           this field will contain the trascript for the audio.
+     *           this field will contain the transcript for the audio.
      *     @type string $trigger_event
      *           If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will
      *           contain a copy of the event name.
@@ -98,8 +100,10 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     /**
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/intents/<Intent ID>`.
      *
-     * Generated from protobuf field <code>string trigger_intent = 2;</code>
+     * Generated from protobuf field <code>string trigger_intent = 2 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getTriggerIntent()
@@ -115,8 +119,10 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     /**
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/intents/<Intent ID>`.
      *
-     * Generated from protobuf field <code>string trigger_intent = 2;</code>
+     * Generated from protobuf field <code>string trigger_intent = 2 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -130,7 +136,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 3;</code>
      * @return string
@@ -147,7 +153,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 3;</code>
      * @param string $var
