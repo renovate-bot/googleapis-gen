@@ -16,17 +16,21 @@
 #
 
 from collections import OrderedDict
-import functools
+from distutils import util
+import os
 import re
-from typing import Dict, Sequence, Tuple, Type, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
-from google.api_core import gapic_v1                   # type: ignore
-from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
-from google.oauth2 import service_account              # type: ignore
+from google.api_core import client_options as client_options_lib  # type: ignore
+from google.api_core import exceptions                            # type: ignore
+from google.api_core import gapic_v1                              # type: ignore
+from google.api_core import retry as retries                      # type: ignore
+from google.auth import credentials                               # type: ignore
+from google.auth.transport import mtls                            # type: ignore
+from google.auth.transport.grpc import SslCredentials             # type: ignore
+from google.auth.exceptions import MutualTLSChannelError          # type: ignore
+from google.oauth2 import service_account                         # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -37,47 +41,80 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
 from .transports.base import ApiGatewayServiceTransport, DEFAULT_CLIENT_INFO
+from .transports.grpc import ApiGatewayServiceGrpcTransport
 from .transports.grpc_asyncio import ApiGatewayServiceGrpcAsyncIOTransport
-from .client import ApiGatewayServiceClient
 
 
-class ApiGatewayServiceAsyncClient:
+class ApiGatewayServiceClientMeta(type):
+    """Metaclass for the ApiGatewayService client.
+
+    This provides class-level methods for building and retrieving
+    support objects (e.g. transport) without polluting the client instance
+    objects.
+    """
+    _transport_registry = OrderedDict()  # type: Dict[str, Type[ApiGatewayServiceTransport]]
+    _transport_registry['grpc'] = ApiGatewayServiceGrpcTransport
+    _transport_registry['grpc_asyncio'] = ApiGatewayServiceGrpcAsyncIOTransport
+
+    def get_transport_class(cls,
+            label: str = None,
+        ) -> Type[ApiGatewayServiceTransport]:
+        """Return an appropriate transport class.
+
+        Args:
+            label: The name of the desired transport. If none is
+                provided, then the first transport in the registry is used.
+
+        Returns:
+            The transport class to use.
+        """
+        # If a specific transport is requested, return that one.
+        if label:
+            return cls._transport_registry[label]
+
+        # No transport is requested; return the default (that is, the first one
+        # in the dictionary).
+        return next(iter(cls._transport_registry.values()))
+
+
+class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
     """The API Gateway Service is the interface for managing API
     Gateways.
     """
 
-    _client: ApiGatewayServiceClient
+    @staticmethod
+    def _get_default_mtls_endpoint(api_endpoint):
+        """Convert api endpoint to mTLS endpoint.
+        Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
+        "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
+        Args:
+            api_endpoint (Optional[str]): the api endpoint to convert.
+        Returns:
+            str: converted mTLS api endpoint.
+        """
+        if not api_endpoint:
+            return api_endpoint
 
-    DEFAULT_ENDPOINT = ApiGatewayServiceClient.DEFAULT_ENDPOINT
-    DEFAULT_MTLS_ENDPOINT = ApiGatewayServiceClient.DEFAULT_MTLS_ENDPOINT
+        mtls_endpoint_re = re.compile(
+            r"(?P<name>[^.]+)(?P<mtls>\.mtls)?(?P<sandbox>\.sandbox)?(?P<googledomain>\.googleapis\.com)?"
+        )
 
-    api_path = staticmethod(ApiGatewayServiceClient.api_path)
-    parse_api_path = staticmethod(ApiGatewayServiceClient.parse_api_path)
-    api_config_path = staticmethod(ApiGatewayServiceClient.api_config_path)
-    parse_api_config_path = staticmethod(ApiGatewayServiceClient.parse_api_config_path)
-    gateway_path = staticmethod(ApiGatewayServiceClient.gateway_path)
-    parse_gateway_path = staticmethod(ApiGatewayServiceClient.parse_gateway_path)
-    managed_service_path = staticmethod(ApiGatewayServiceClient.managed_service_path)
-    parse_managed_service_path = staticmethod(ApiGatewayServiceClient.parse_managed_service_path)
-    service_path = staticmethod(ApiGatewayServiceClient.service_path)
-    parse_service_path = staticmethod(ApiGatewayServiceClient.parse_service_path)
-    service_account_path = staticmethod(ApiGatewayServiceClient.service_account_path)
-    parse_service_account_path = staticmethod(ApiGatewayServiceClient.parse_service_account_path)
+        m = mtls_endpoint_re.match(api_endpoint)
+        name, mtls, sandbox, googledomain = m.groups()
+        if mtls or not googledomain:
+            return api_endpoint
 
-    common_billing_account_path = staticmethod(ApiGatewayServiceClient.common_billing_account_path)
-    parse_common_billing_account_path = staticmethod(ApiGatewayServiceClient.parse_common_billing_account_path)
+        if sandbox:
+            return api_endpoint.replace(
+                "sandbox.googleapis.com", "mtls.sandbox.googleapis.com"
+            )
 
-    common_folder_path = staticmethod(ApiGatewayServiceClient.common_folder_path)
-    parse_common_folder_path = staticmethod(ApiGatewayServiceClient.parse_common_folder_path)
+        return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    common_organization_path = staticmethod(ApiGatewayServiceClient.common_organization_path)
-    parse_common_organization_path = staticmethod(ApiGatewayServiceClient.parse_common_organization_path)
-
-    common_project_path = staticmethod(ApiGatewayServiceClient.common_project_path)
-    parse_common_project_path = staticmethod(ApiGatewayServiceClient.parse_common_project_path)
-
-    common_location_path = staticmethod(ApiGatewayServiceClient.common_location_path)
-    parse_common_location_path = staticmethod(ApiGatewayServiceClient.parse_common_location_path)
+    DEFAULT_ENDPOINT = 'apigateway.googleapis.com'
+    DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
+        DEFAULT_ENDPOINT
+    )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
@@ -89,9 +126,11 @@ class ApiGatewayServiceAsyncClient:
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            ApiGatewayServiceAsyncClient: The constructed client.
+            ApiGatewayServiceClient: The constructed client.
         """
-        return ApiGatewayServiceClient.from_service_account_info.__func__(ApiGatewayServiceAsyncClient, info, *args, **kwargs)  # type: ignore
+        credentials = service_account.Credentials.from_service_account_info(info)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
 
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
@@ -105,9 +144,12 @@ class ApiGatewayServiceAsyncClient:
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            ApiGatewayServiceAsyncClient: The constructed client.
+            ApiGatewayServiceClient: The constructed client.
         """
-        return ApiGatewayServiceClient.from_service_account_file.__func__(ApiGatewayServiceAsyncClient, filename, *args, **kwargs)  # type: ignore
+        credentials = service_account.Credentials.from_service_account_file(
+            filename)
+        kwargs['credentials'] = credentials
+        return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
@@ -118,14 +160,133 @@ class ApiGatewayServiceAsyncClient:
         Returns:
             ApiGatewayServiceTransport: The transport used by the client instance.
         """
-        return self._client.transport
+        return self._transport
 
-    get_transport_class = functools.partial(type(ApiGatewayServiceClient).get_transport_class, type(ApiGatewayServiceClient))
+    @staticmethod
+    def api_path(project: str,api: str,) -> str:
+        """Return a fully-qualified api string."""
+        return "projects/{project}/locations/global/apis/{api}".format(project=project, api=api, )
+
+    @staticmethod
+    def parse_api_path(path: str) -> Dict[str,str]:
+        """Parse a api path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/global/apis/(?P<api>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def api_config_path(project: str,api: str,api_config: str,) -> str:
+        """Return a fully-qualified api_config string."""
+        return "projects/{project}/locations/global/apis/{api}/configs/{api_config}".format(project=project, api=api, api_config=api_config, )
+
+    @staticmethod
+    def parse_api_config_path(path: str) -> Dict[str,str]:
+        """Parse a api_config path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/global/apis/(?P<api>.+?)/configs/(?P<api_config>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def gateway_path(project: str,location: str,gateway: str,) -> str:
+        """Return a fully-qualified gateway string."""
+        return "projects/{project}/locations/{location}/gateways/{gateway}".format(project=project, location=location, gateway=gateway, )
+
+    @staticmethod
+    def parse_gateway_path(path: str) -> Dict[str,str]:
+        """Parse a gateway path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/gateways/(?P<gateway>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def managed_service_path(service: str,) -> str:
+        """Return a fully-qualified managed_service string."""
+        return "services/{service}".format(service=service, )
+
+    @staticmethod
+    def parse_managed_service_path(path: str) -> Dict[str,str]:
+        """Parse a managed_service path into its component segments."""
+        m = re.match(r"^services/(?P<service>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def service_path(service: str,config: str,) -> str:
+        """Return a fully-qualified service string."""
+        return "services/{service}/configs/{config}".format(service=service, config=config, )
+
+    @staticmethod
+    def parse_service_path(path: str) -> Dict[str,str]:
+        """Parse a service path into its component segments."""
+        m = re.match(r"^services/(?P<service>.+?)/configs/(?P<config>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def service_account_path(project: str,service_account: str,) -> str:
+        """Return a fully-qualified service_account string."""
+        return "projects/{project}/serviceAccounts/{service_account}".format(project=project, service_account=service_account, )
+
+    @staticmethod
+    def parse_service_account_path(path: str) -> Dict[str,str]:
+        """Parse a service_account path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/serviceAccounts/(?P<service_account>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_billing_account_path(billing_account: str, ) -> str:
+        """Return a fully-qualified billing_account string."""
+        return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
+
+    @staticmethod
+    def parse_common_billing_account_path(path: str) -> Dict[str,str]:
+        """Parse a billing_account path into its component segments."""
+        m = re.match(r"^billingAccounts/(?P<billing_account>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_folder_path(folder: str, ) -> str:
+        """Return a fully-qualified folder string."""
+        return "folders/{folder}".format(folder=folder, )
+
+    @staticmethod
+    def parse_common_folder_path(path: str) -> Dict[str,str]:
+        """Parse a folder path into its component segments."""
+        m = re.match(r"^folders/(?P<folder>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_organization_path(organization: str, ) -> str:
+        """Return a fully-qualified organization string."""
+        return "organizations/{organization}".format(organization=organization, )
+
+    @staticmethod
+    def parse_common_organization_path(path: str) -> Dict[str,str]:
+        """Parse a organization path into its component segments."""
+        m = re.match(r"^organizations/(?P<organization>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_project_path(project: str, ) -> str:
+        """Return a fully-qualified project string."""
+        return "projects/{project}".format(project=project, )
+
+    @staticmethod
+    def parse_common_project_path(path: str) -> Dict[str,str]:
+        """Parse a project path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_location_path(project: str, location: str, ) -> str:
+        """Return a fully-qualified location string."""
+        return "projects/{project}/locations/{location}".format(project=project, location=location, )
+
+    @staticmethod
+    def parse_common_location_path(path: str) -> Dict[str,str]:
+        """Parse a location path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)$", path)
+        return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
-            transport: Union[str, ApiGatewayServiceTransport] = 'grpc_asyncio',
-            client_options: ClientOptions = None,
+            credentials: Optional[credentials.Credentials] = None,
+            transport: Union[str, ApiGatewayServiceTransport, None] = None,
+            client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiate the api gateway service client.
@@ -136,11 +297,11 @@ class ApiGatewayServiceAsyncClient:
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.ApiGatewayServiceTransport]): The
+            transport (Union[str, ApiGatewayServiceTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (ClientOptions): Custom options for the client. It
-                won't take effect if a ``transport`` instance is provided.
+            client_options (google.api_core.client_options.ClientOptions): Custom options for the
+                client. It won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
                 environment variable can also be used to override the endpoint:
@@ -155,35 +316,91 @@ class ApiGatewayServiceAsyncClient:
                 not provided, the default SSL client certificate will be used if
                 present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
                 set, no client certificate will be used.
+            client_info (google.api_core.gapic_v1.client_info.ClientInfo):
+                The client info used to send a user-agent string along with
+                API requests. If ``None``, then default info will be used.
+                Generally, you only need to set this if you're developing
+                your own client library.
 
         Raises:
-            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
+            google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+        if isinstance(client_options, dict):
+            client_options = client_options_lib.from_dict(client_options)
+        if client_options is None:
+            client_options = client_options_lib.ClientOptions()
 
-        self._client = ApiGatewayServiceClient(
-            credentials=credentials,
-            transport=transport,
-            client_options=client_options,
-            client_info=client_info,
+        # Create SSL credentials for mutual TLS if needed.
+        use_client_cert = bool(util.strtobool(os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false")))
 
-        )
+        client_cert_source_func = None
+        is_mtls = False
+        if use_client_cert:
+            if client_options.client_cert_source:
+                is_mtls = True
+                client_cert_source_func = client_options.client_cert_source
+            else:
+                is_mtls = mtls.has_default_client_cert_source()
+                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
 
-    async def list_gateways(self,
+        # Figure out which api endpoint to use.
+        if client_options.api_endpoint is not None:
+            api_endpoint = client_options.api_endpoint
+        else:
+            use_mtls_env = os.getenv("GOOGLE_API_USE_MTLS_ENDPOINT", "auto")
+            if use_mtls_env == "never":
+                api_endpoint = self.DEFAULT_ENDPOINT
+            elif use_mtls_env == "always":
+                api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+            elif use_mtls_env == "auto":
+                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+            else:
+                raise MutualTLSChannelError(
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                )
+
+        # Save or instantiate the transport.
+        # Ordinarily, we provide the transport, but allowing a custom transport
+        # instance provides an extensibility point for unusual situations.
+        if isinstance(transport, ApiGatewayServiceTransport):
+            # transport is a ApiGatewayServiceTransport instance.
+            if credentials or client_options.credentials_file:
+                raise ValueError('When providing a transport instance, '
+                                 'provide its credentials directly.')
+            if client_options.scopes:
+                raise ValueError(
+                    "When providing a transport instance, "
+                    "provide its scopes directly."
+                )
+            self._transport = transport
+        else:
+            Transport = type(self).get_transport_class(transport)
+            self._transport = Transport(
+                credentials=credentials,
+                credentials_file=client_options.credentials_file,
+                host=api_endpoint,
+                scopes=client_options.scopes,
+                client_cert_source_for_mtls=client_cert_source_func,
+                quota_project_id=client_options.quota_project_id,
+                client_info=client_info,
+            )
+
+    def list_gateways(self,
             request: apigateway.ListGatewaysRequest = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> pagers.ListGatewaysAsyncPager:
+            ) -> pagers.ListGatewaysPager:
         r"""Lists Gateways in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.ListGatewaysRequest`):
+            request (google.cloud.apigateway_v1.types.ListGatewaysRequest):
                 The request object. Request message for
                 ApiGatewayService.ListGateways
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent resource of the Gateway, of the form:
                 ``projects/*/locations/*``
 
@@ -198,7 +415,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.apigateway_v1.services.api_gateway_service.pagers.ListGatewaysAsyncPager:
+            google.cloud.apigateway_v1.services.api_gateway_service.pagers.ListGatewaysPager:
                 Response message for
                 ApiGatewayService.ListGateways
                 Iterating over this object will yield
@@ -214,21 +431,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.ListGatewaysRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.ListGatewaysRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.ListGatewaysRequest):
+            request = apigateway.ListGatewaysRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if parent is not None:
-            request.parent = parent
+            if parent is not None:
+                request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.list_gateways,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.list_gateways]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -239,7 +457,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -247,8 +465,8 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # This method is paged; wrap the response in a pager, which provides
-        # an `__aiter__` convenience method.
-        response = pagers.ListGatewaysAsyncPager(
+        # an `__iter__` convenience method.
+        response = pagers.ListGatewaysPager(
             method=rpc,
             request=request,
             response=response,
@@ -258,7 +476,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def get_gateway(self,
+    def get_gateway(self,
             request: apigateway.GetGatewayRequest = None,
             *,
             name: str = None,
@@ -269,10 +487,10 @@ class ApiGatewayServiceAsyncClient:
         r"""Gets details of a single Gateway.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.GetGatewayRequest`):
+            request (google.cloud.apigateway_v1.types.GetGatewayRequest):
                 The request object. Request message for
                 ApiGatewayService.GetGateway
-            name (:class:`str`):
+            name (str):
                 Required. Resource name of the form:
                 ``projects/*/locations/*/gateways/*``
 
@@ -304,21 +522,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.GetGatewayRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.GetGatewayRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.GetGatewayRequest):
+            request = apigateway.GetGatewayRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if name is not None:
-            request.name = name
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.get_gateway,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.get_gateway]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -329,7 +548,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -339,7 +558,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def create_gateway(self,
+    def create_gateway(self,
             request: apigateway.CreateGatewayRequest = None,
             *,
             parent: str = None,
@@ -348,27 +567,27 @@ class ApiGatewayServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Creates a new Gateway in a given project and
         location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.CreateGatewayRequest`):
+            request (google.cloud.apigateway_v1.types.CreateGatewayRequest):
                 The request object. Request message for
                 ApiGatewayService.CreateGateway
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent resource of the Gateway, of the form:
                 ``projects/*/locations/*``
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            gateway (:class:`google.cloud.apigateway_v1.types.Gateway`):
+            gateway (google.cloud.apigateway_v1.types.Gateway):
                 Required. Gateway resource.
                 This corresponds to the ``gateway`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            gateway_id (:class:`str`):
+            gateway_id (str):
                 Required. Identifier to assign to the
                 Gateway. Must be unique within scope of
                 the parent resource.
@@ -384,7 +603,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.apigateway_v1.types.Gateway` A Gateway is an API-aware HTTP proxy. It performs API-Method and/or
@@ -401,35 +620,26 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.CreateGatewayRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.CreateGatewayRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.CreateGatewayRequest):
+            request = apigateway.CreateGatewayRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if parent is not None:
-            request.parent = parent
-        if gateway is not None:
-            request.gateway = gateway
-        if gateway_id is not None:
-            request.gateway_id = gateway_id
+            if parent is not None:
+                request.parent = parent
+            if gateway is not None:
+                request.gateway = gateway
+            if gateway_id is not None:
+                request.gateway_id = gateway_id
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.create_gateway,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.create_gateway]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -440,7 +650,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -448,9 +658,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             apigateway.Gateway,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -458,7 +668,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def update_gateway(self,
+    def update_gateway(self,
             request: apigateway.UpdateGatewayRequest = None,
             *,
             gateway: apigateway.Gateway = None,
@@ -466,19 +676,19 @@ class ApiGatewayServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Updates the parameters of a single Gateway.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.UpdateGatewayRequest`):
+            request (google.cloud.apigateway_v1.types.UpdateGatewayRequest):
                 The request object. Request message for
                 ApiGatewayService.UpdateGateway
-            gateway (:class:`google.cloud.apigateway_v1.types.Gateway`):
+            gateway (google.cloud.apigateway_v1.types.Gateway):
                 Required. Gateway resource.
                 This corresponds to the ``gateway`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Field mask is used to specify the fields to be
                 overwritten in the Gateway resource by the update. The
                 fields specified in the update_mask are relative to the
@@ -497,7 +707,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.apigateway_v1.types.Gateway` A Gateway is an API-aware HTTP proxy. It performs API-Method and/or
@@ -514,33 +724,24 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.UpdateGatewayRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.UpdateGatewayRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.UpdateGatewayRequest):
+            request = apigateway.UpdateGatewayRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if gateway is not None:
-            request.gateway = gateway
-        if update_mask is not None:
-            request.update_mask = update_mask
+            if gateway is not None:
+                request.gateway = gateway
+            if update_mask is not None:
+                request.update_mask = update_mask
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.update_gateway,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.update_gateway]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -551,7 +752,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -559,9 +760,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             apigateway.Gateway,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -569,21 +770,21 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def delete_gateway(self,
+    def delete_gateway(self,
             request: apigateway.DeleteGatewayRequest = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Deletes a single Gateway.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.DeleteGatewayRequest`):
+            request (google.cloud.apigateway_v1.types.DeleteGatewayRequest):
                 The request object. Request message for
                 ApiGatewayService.DeleteGateway
-            name (:class:`str`):
+            name (str):
                 Required. Resource name of the form:
                 ``projects/*/locations/*/gateways/*``
 
@@ -598,7 +799,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.protobuf.empty_pb2.Empty` A generic empty message that you can re-use to avoid defining duplicated
@@ -624,31 +825,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.DeleteGatewayRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.DeleteGatewayRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.DeleteGatewayRequest):
+            request = apigateway.DeleteGatewayRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if name is not None:
-            request.name = name
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.delete_gateway,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.delete_gateway]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -659,7 +851,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -667,9 +859,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             empty.Empty,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -677,21 +869,21 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def list_apis(self,
+    def list_apis(self,
             request: apigateway.ListApisRequest = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> pagers.ListApisAsyncPager:
+            ) -> pagers.ListApisPager:
         r"""Lists Apis in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.ListApisRequest`):
+            request (google.cloud.apigateway_v1.types.ListApisRequest):
                 The request object. Request message for
                 ApiGatewayService.ListApis
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent resource of the API, of the form:
                 ``projects/*/locations/global``
 
@@ -706,7 +898,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.apigateway_v1.services.api_gateway_service.pagers.ListApisAsyncPager:
+            google.cloud.apigateway_v1.services.api_gateway_service.pagers.ListApisPager:
                 Response message for
                 ApiGatewayService.ListApis
                 Iterating over this object will yield
@@ -722,21 +914,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.ListApisRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.ListApisRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.ListApisRequest):
+            request = apigateway.ListApisRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if parent is not None:
-            request.parent = parent
+            if parent is not None:
+                request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.list_apis,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.list_apis]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -747,7 +940,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -755,8 +948,8 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # This method is paged; wrap the response in a pager, which provides
-        # an `__aiter__` convenience method.
-        response = pagers.ListApisAsyncPager(
+        # an `__iter__` convenience method.
+        response = pagers.ListApisPager(
             method=rpc,
             request=request,
             response=response,
@@ -766,7 +959,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def get_api(self,
+    def get_api(self,
             request: apigateway.GetApiRequest = None,
             *,
             name: str = None,
@@ -777,10 +970,10 @@ class ApiGatewayServiceAsyncClient:
         r"""Gets details of a single Api.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.GetApiRequest`):
+            request (google.cloud.apigateway_v1.types.GetApiRequest):
                 The request object. Request message for
                 ApiGatewayService.GetApi
-            name (:class:`str`):
+            name (str):
                 Required. Resource name of the form:
                 ``projects/*/locations/global/apis/*``
 
@@ -808,21 +1001,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.GetApiRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.GetApiRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.GetApiRequest):
+            request = apigateway.GetApiRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if name is not None:
-            request.name = name
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.get_api,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.get_api]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -833,7 +1027,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -843,7 +1037,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def create_api(self,
+    def create_api(self,
             request: apigateway.CreateApiRequest = None,
             *,
             parent: str = None,
@@ -852,26 +1046,26 @@ class ApiGatewayServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Creates a new Api in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.CreateApiRequest`):
+            request (google.cloud.apigateway_v1.types.CreateApiRequest):
                 The request object. Request message for
                 ApiGatewayService.CreateApi
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent resource of the API, of the form:
                 ``projects/*/locations/global``
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            api (:class:`google.cloud.apigateway_v1.types.Api`):
+            api (google.cloud.apigateway_v1.types.Api):
                 Required. API resource.
                 This corresponds to the ``api`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            api_id (:class:`str`):
+            api_id (str):
                 Required. Identifier to assign to the
                 API. Must be unique within scope of the
                 parent resource.
@@ -887,7 +1081,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
@@ -903,35 +1097,26 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.CreateApiRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.CreateApiRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.CreateApiRequest):
+            request = apigateway.CreateApiRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if parent is not None:
-            request.parent = parent
-        if api is not None:
-            request.api = api
-        if api_id is not None:
-            request.api_id = api_id
+            if parent is not None:
+                request.parent = parent
+            if api is not None:
+                request.api = api
+            if api_id is not None:
+                request.api_id = api_id
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.create_api,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.create_api]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -942,7 +1127,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -950,9 +1135,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             apigateway.Api,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -960,7 +1145,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def update_api(self,
+    def update_api(self,
             request: apigateway.UpdateApiRequest = None,
             *,
             api: apigateway.Api = None,
@@ -968,19 +1153,19 @@ class ApiGatewayServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Updates the parameters of a single Api.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.UpdateApiRequest`):
+            request (google.cloud.apigateway_v1.types.UpdateApiRequest):
                 The request object. Request message for
                 ApiGatewayService.UpdateApi
-            api (:class:`google.cloud.apigateway_v1.types.Api`):
+            api (google.cloud.apigateway_v1.types.Api):
                 Required. API resource.
                 This corresponds to the ``api`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Field mask is used to specify the fields to be
                 overwritten in the Api resource by the update. The
                 fields specified in the update_mask are relative to the
@@ -999,7 +1184,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
@@ -1015,33 +1200,24 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.UpdateApiRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.UpdateApiRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.UpdateApiRequest):
+            request = apigateway.UpdateApiRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if api is not None:
-            request.api = api
-        if update_mask is not None:
-            request.update_mask = update_mask
+            if api is not None:
+                request.api = api
+            if update_mask is not None:
+                request.update_mask = update_mask
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.update_api,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.update_api]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1052,7 +1228,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1060,9 +1236,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             apigateway.Api,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -1070,21 +1246,21 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def delete_api(self,
+    def delete_api(self,
             request: apigateway.DeleteApiRequest = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Deletes a single Api.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.DeleteApiRequest`):
+            request (google.cloud.apigateway_v1.types.DeleteApiRequest):
                 The request object. Request message for
                 ApiGatewayService.DeleteApi
-            name (:class:`str`):
+            name (str):
                 Required. Resource name of the form:
                 ``projects/*/locations/global/apis/*``
 
@@ -1099,7 +1275,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.protobuf.empty_pb2.Empty` A generic empty message that you can re-use to avoid defining duplicated
@@ -1125,31 +1301,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.DeleteApiRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.DeleteApiRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.DeleteApiRequest):
+            request = apigateway.DeleteApiRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if name is not None:
-            request.name = name
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.delete_api,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.delete_api]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1160,7 +1327,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1168,9 +1335,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             empty.Empty,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -1178,21 +1345,21 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def list_api_configs(self,
+    def list_api_configs(self,
             request: apigateway.ListApiConfigsRequest = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> pagers.ListApiConfigsAsyncPager:
+            ) -> pagers.ListApiConfigsPager:
         r"""Lists ApiConfigs in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.ListApiConfigsRequest`):
+            request (google.cloud.apigateway_v1.types.ListApiConfigsRequest):
                 The request object. Request message for
                 ApiGatewayService.ListApiConfigs
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent resource of the API Config, of the
                 form: ``projects/*/locations/global/apis/*``
 
@@ -1207,7 +1374,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.apigateway_v1.services.api_gateway_service.pagers.ListApiConfigsAsyncPager:
+            google.cloud.apigateway_v1.services.api_gateway_service.pagers.ListApiConfigsPager:
                 Response message for
                 ApiGatewayService.ListApiConfigs
                 Iterating over this object will yield
@@ -1223,21 +1390,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.ListApiConfigsRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.ListApiConfigsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.ListApiConfigsRequest):
+            request = apigateway.ListApiConfigsRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if parent is not None:
-            request.parent = parent
+            if parent is not None:
+                request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.list_api_configs,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.list_api_configs]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1248,7 +1416,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1256,8 +1424,8 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # This method is paged; wrap the response in a pager, which provides
-        # an `__aiter__` convenience method.
-        response = pagers.ListApiConfigsAsyncPager(
+        # an `__iter__` convenience method.
+        response = pagers.ListApiConfigsPager(
             method=rpc,
             request=request,
             response=response,
@@ -1267,7 +1435,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def get_api_config(self,
+    def get_api_config(self,
             request: apigateway.GetApiConfigRequest = None,
             *,
             name: str = None,
@@ -1278,10 +1446,10 @@ class ApiGatewayServiceAsyncClient:
         r"""Gets details of a single ApiConfig.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.GetApiConfigRequest`):
+            request (google.cloud.apigateway_v1.types.GetApiConfigRequest):
                 The request object. Request message for
                 ApiGatewayService.GetApiConfig
-            name (:class:`str`):
+            name (str):
                 Required. Resource name of the form:
                 ``projects/*/locations/global/apis/*/configs/*``
 
@@ -1310,21 +1478,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.GetApiConfigRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.GetApiConfigRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.GetApiConfigRequest):
+            request = apigateway.GetApiConfigRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if name is not None:
-            request.name = name
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.get_api_config,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.get_api_config]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1335,7 +1504,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1345,7 +1514,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def create_api_config(self,
+    def create_api_config(self,
             request: apigateway.CreateApiConfigRequest = None,
             *,
             parent: str = None,
@@ -1354,27 +1523,27 @@ class ApiGatewayServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Creates a new ApiConfig in a given project and
         location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.CreateApiConfigRequest`):
+            request (google.cloud.apigateway_v1.types.CreateApiConfigRequest):
                 The request object. Request message for
                 ApiGatewayService.CreateApiConfig
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent resource of the API Config, of the
                 form: ``projects/*/locations/global/apis/*``
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            api_config (:class:`google.cloud.apigateway_v1.types.ApiConfig`):
+            api_config (google.cloud.apigateway_v1.types.ApiConfig):
                 Required. API resource.
                 This corresponds to the ``api_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            api_config_id (:class:`str`):
+            api_config_id (str):
                 Required. Identifier to assign to the
                 API Config. Must be unique within scope
                 of the parent resource.
@@ -1390,7 +1559,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.apigateway_v1.types.ApiConfig` An API Configuration is a combination of settings for both the Managed
@@ -1405,35 +1574,26 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.CreateApiConfigRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.CreateApiConfigRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.CreateApiConfigRequest):
+            request = apigateway.CreateApiConfigRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if parent is not None:
-            request.parent = parent
-        if api_config is not None:
-            request.api_config = api_config
-        if api_config_id is not None:
-            request.api_config_id = api_config_id
+            if parent is not None:
+                request.parent = parent
+            if api_config is not None:
+                request.api_config = api_config
+            if api_config_id is not None:
+                request.api_config_id = api_config_id
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.create_api_config,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.create_api_config]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1444,7 +1604,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1452,9 +1612,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             apigateway.ApiConfig,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -1462,7 +1622,7 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def update_api_config(self,
+    def update_api_config(self,
             request: apigateway.UpdateApiConfigRequest = None,
             *,
             api_config: apigateway.ApiConfig = None,
@@ -1470,19 +1630,19 @@ class ApiGatewayServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Updates the parameters of a single ApiConfig.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.UpdateApiConfigRequest`):
+            request (google.cloud.apigateway_v1.types.UpdateApiConfigRequest):
                 The request object. Request message for
                 ApiGatewayService.UpdateApiConfig
-            api_config (:class:`google.cloud.apigateway_v1.types.ApiConfig`):
+            api_config (google.cloud.apigateway_v1.types.ApiConfig):
                 Required. API Config resource.
                 This corresponds to the ``api_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Field mask is used to specify the fields to be
                 overwritten in the ApiConfig resource by the update. The
                 fields specified in the update_mask are relative to the
@@ -1501,7 +1661,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.apigateway_v1.types.ApiConfig` An API Configuration is a combination of settings for both the Managed
@@ -1516,33 +1676,24 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.UpdateApiConfigRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.UpdateApiConfigRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.UpdateApiConfigRequest):
+            request = apigateway.UpdateApiConfigRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if api_config is not None:
-            request.api_config = api_config
-        if update_mask is not None:
-            request.update_mask = update_mask
+            if api_config is not None:
+                request.api_config = api_config
+            if update_mask is not None:
+                request.update_mask = update_mask
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.update_api_config,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.update_api_config]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1553,7 +1704,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1561,9 +1712,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             apigateway.ApiConfig,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -1571,21 +1722,21 @@ class ApiGatewayServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def delete_api_config(self,
+    def delete_api_config(self,
             request: apigateway.DeleteApiConfigRequest = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Deletes a single ApiConfig.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.DeleteApiConfigRequest`):
+            request (google.cloud.apigateway_v1.types.DeleteApiConfigRequest):
                 The request object. Request message for
                 ApiGatewayService.DeleteApiConfig
-            name (:class:`str`):
+            name (str):
                 Required. Resource name of the form:
                 ``projects/*/locations/global/apis/*/configs/*``
 
@@ -1600,7 +1751,7 @@ class ApiGatewayServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.protobuf.empty_pb2.Empty` A generic empty message that you can re-use to avoid defining duplicated
@@ -1626,31 +1777,22 @@ class ApiGatewayServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        request = apigateway.DeleteApiConfigRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a apigateway.DeleteApiConfigRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, apigateway.DeleteApiConfigRequest):
+            request = apigateway.DeleteApiConfigRequest(request)
 
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
 
-        if name is not None:
-            request.name = name
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.delete_api_config,
-            default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.delete_api_config]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -1661,7 +1803,7 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -1669,9 +1811,9 @@ class ApiGatewayServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             empty.Empty,
             metadata_type=apigateway.OperationMetadata,
         )
@@ -1688,7 +1830,7 @@ class ApiGatewayServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-apigateway',
+            'google-cloud-api-gateway',
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1696,5 +1838,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ApiGatewayServiceAsyncClient',
+    'ApiGatewayServiceClient',
 )

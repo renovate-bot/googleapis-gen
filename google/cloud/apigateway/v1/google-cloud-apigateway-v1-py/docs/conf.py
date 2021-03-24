@@ -16,7 +16,7 @@
 #
 
 #
-# google-cloud-apigateway documentation build configuration file
+# google-cloud-api-gateway documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-apigateway"
+project = u"google-cloud-api-gateway"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-apigateway-doc"
+htmlhelp_basename = "google-cloud-api-gateway-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-apigateway.tex",
-        u"google-cloud-apigateway Documentation",
+        "google-cloud-api-gateway.tex",
+        u"google-cloud-api-gateway Documentation",
         author,
         "manual",
     )
@@ -310,7 +310,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-apigateway",
+        "google-cloud-api-gateway",
         u"Google Cloud Apigateway Documentation",
         [author],
         1,
@@ -329,10 +329,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-apigateway",
-        u"google-cloud-apigateway Documentation",
+        "google-cloud-api-gateway",
+        u"google-cloud-api-gateway Documentation",
         author,
-        "google-cloud-apigateway",
+        "google-cloud-api-gateway",
         "GAPIC library for Google Cloud Apigateway API",
         "APIs",
     )
