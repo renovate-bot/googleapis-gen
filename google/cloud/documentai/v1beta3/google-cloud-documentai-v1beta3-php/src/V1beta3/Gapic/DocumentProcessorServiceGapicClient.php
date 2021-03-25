@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,14 @@
  * @experimental
  */
 
-namespace Google\Cloud\DocumentAi\V1beta3\Gapic;
+namespace Google\Cloud\DocumentAI\V1beta3\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
+
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -62,18 +64,41 @@ use Google\LongRunning\Operation;
  * $documentProcessorServiceClient = new DocumentProcessorServiceClient();
  * try {
  *     $formattedName = $documentProcessorServiceClient->processorName('[PROJECT]', '[LOCATION]', '[PROCESSOR]');
- *     $response = $documentProcessorServiceClient->processDocument($formattedName);
+ *     $operationResponse = $documentProcessorServiceClient->batchProcessDocuments($formattedName);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         $result = $operationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $documentProcessorServiceClient->batchProcessDocuments($formattedName);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $documentProcessorServiceClient->resumeOperation($operationName, 'batchProcessDocuments');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         $result = $newOperationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $documentProcessorServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class DocumentProcessorServiceGapicClient
 {
@@ -105,8 +130,11 @@ class DocumentProcessorServiceGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
+
     private static $humanReviewConfigNameTemplate;
+
     private static $processorNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -115,16 +143,16 @@ class DocumentProcessorServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/document_processor_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/document_processor_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/document_processor_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/document_processor_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/document_processor_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/document_processor_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/document_processor_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/document_processor_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -132,7 +160,7 @@ class DocumentProcessorServiceGapicClient
 
     private static function getHumanReviewConfigNameTemplate()
     {
-        if (null == self::$humanReviewConfigNameTemplate) {
+        if (self::$humanReviewConfigNameTemplate == null) {
             self::$humanReviewConfigNameTemplate = new PathTemplate('projects/{project}/locations/{location}/processors/{processor}/humanReviewConfig');
         }
 
@@ -141,7 +169,7 @@ class DocumentProcessorServiceGapicClient
 
     private static function getProcessorNameTemplate()
     {
-        if (null == self::$processorNameTemplate) {
+        if (self::$processorNameTemplate == null) {
             self::$processorNameTemplate = new PathTemplate('projects/{project}/locations/{location}/processors/{processor}');
         }
 
@@ -150,7 +178,7 @@ class DocumentProcessorServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'humanReviewConfig' => self::getHumanReviewConfigNameTemplate(),
                 'processor' => self::getProcessorNameTemplate(),
@@ -161,15 +189,14 @@ class DocumentProcessorServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a human_review_config resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * human_review_config resource.
      *
      * @param string $project
      * @param string $location
      * @param string $processor
      *
      * @return string The formatted human_review_config resource.
-     * @experimental
      */
     public static function humanReviewConfigName($project, $location, $processor)
     {
@@ -181,15 +208,14 @@ class DocumentProcessorServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a processor resource.
+     * Formats a string containing the fully-qualified path to represent a processor
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $processor
      *
      * @return string The formatted processor resource.
-     * @experimental
      */
     public static function processorName($project, $location, $processor)
     {
@@ -205,12 +231,13 @@ class DocumentProcessorServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - humanReviewConfig: projects/{project}/locations/{location}/processors/{processor}/humanReviewConfig
-     * - processor: projects/{project}/locations/{location}/processors/{processor}.
+     * - processor: projects/{project}/locations/{location}/processors/{processor}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -218,12 +245,10 @@ class DocumentProcessorServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -239,6 +264,7 @@ class DocumentProcessorServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -246,7 +272,6 @@ class DocumentProcessorServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
-     * @experimental
      */
     public function getOperationsClient()
     {
@@ -254,26 +279,21 @@ class DocumentProcessorServiceGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
-     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -281,7 +301,7 @@ class DocumentProcessorServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -295,31 +315,31 @@ class DocumentProcessorServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -327,13 +347,109 @@ class DocumentProcessorServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
+    }
+
+    /**
+     * LRO endpoint to batch process many documents. The output is written
+     * to Cloud Storage as JSON in the [Document] format.
+     *
+     * Sample code:
+     * ```
+     * $documentProcessorServiceClient = new DocumentProcessorServiceClient();
+     * try {
+     *     $formattedName = $documentProcessorServiceClient->processorName('[PROJECT]', '[LOCATION]', '[PROCESSOR]');
+     *     $operationResponse = $documentProcessorServiceClient->batchProcessDocuments($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $documentProcessorServiceClient->batchProcessDocuments($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $documentProcessorServiceClient->resumeOperation($operationName, 'batchProcessDocuments');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $documentProcessorServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The processor resource name.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type BatchInputConfig[] $inputConfigs
+     *           The input config for each single document in the batch process.
+     *     @type BatchOutputConfig $outputConfig
+     *           The overall output config for batch process.
+     *     @type BatchDocumentsInputConfig $inputDocuments
+     *           The input documents for batch process.
+     *     @type DocumentOutputConfig $documentOutputConfig
+     *           The overall output config for batch process.
+     *     @type bool $skipHumanReview
+     *           Whether Human Review feature should be skipped for this request. Default to
+     *           false.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function batchProcessDocuments($name, array $optionalArgs = [])
+    {
+        $request = new BatchProcessRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['inputConfigs'])) {
+            $request->setInputConfigs($optionalArgs['inputConfigs']);
+        }
+
+        if (isset($optionalArgs['outputConfig'])) {
+            $request->setOutputConfig($optionalArgs['outputConfig']);
+        }
+
+        if (isset($optionalArgs['inputDocuments'])) {
+            $request->setInputDocuments($optionalArgs['inputDocuments']);
+        }
+
+        if (isset($optionalArgs['documentOutputConfig'])) {
+            $request->setDocumentOutputConfig($optionalArgs['documentOutputConfig']);
+        }
+
+        if (isset($optionalArgs['skipHumanReview'])) {
+            $request->setSkipHumanReview($optionalArgs['skipHumanReview']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('BatchProcessDocuments', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -352,164 +468,53 @@ class DocumentProcessorServiceGapicClient
      *
      * @param string $name         Required. The processor resource name.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type Document $inlineDocument
-     *          An inline document proto.
+     *           An inline document proto.
      *     @type RawDocument $rawDocument
-     *          A raw document content (bytes).
+     *           A raw document content (bytes).
      *     @type Document $document
-     *          The document payload, the [content] and [mime_type] fields must be set.
+     *           The document payload, the [content] and [mime_type] fields must be set.
      *     @type bool $skipHumanReview
-     *          Whether Human Review feature should be skipped for this request. Default to
-     *          false.
+     *           Whether Human Review feature should be skipped for this request. Default to
+     *           false.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\DocumentAI\V1beta3\ProcessResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function processDocument($name, array $optionalArgs = [])
     {
         $request = new ProcessRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['inlineDocument'])) {
             $request->setInlineDocument($optionalArgs['inlineDocument']);
         }
+
         if (isset($optionalArgs['rawDocument'])) {
             $request->setRawDocument($optionalArgs['rawDocument']);
         }
+
         if (isset($optionalArgs['document'])) {
             $request->setDocument($optionalArgs['document']);
         }
+
         if (isset($optionalArgs['skipHumanReview'])) {
             $request->setSkipHumanReview($optionalArgs['skipHumanReview']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ProcessDocument',
-            ProcessResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * LRO endpoint to batch process many documents. The output is written
-     * to Cloud Storage as JSON in the [Document] format.
-     *
-     * Sample code:
-     * ```
-     * $documentProcessorServiceClient = new DocumentProcessorServiceClient();
-     * try {
-     *     $formattedName = $documentProcessorServiceClient->processorName('[PROJECT]', '[LOCATION]', '[PROCESSOR]');
-     *     $operationResponse = $documentProcessorServiceClient->batchProcessDocuments($formattedName);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $documentProcessorServiceClient->batchProcessDocuments($formattedName);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $documentProcessorServiceClient->resumeOperation($operationName, 'batchProcessDocuments');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $documentProcessorServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The processor resource name.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type BatchInputConfig[] $inputConfigs
-     *          The input config for each single document in the batch process.
-     *     @type BatchOutputConfig $outputConfig
-     *          The overall output config for batch process.
-     *     @type BatchDocumentsInputConfig $inputDocuments
-     *          The input documents for batch process.
-     *     @type DocumentOutputConfig $documentOutputConfig
-     *          The overall output config for batch process.
-     *     @type bool $skipHumanReview
-     *          Whether Human Review feature should be skipped for this request. Default to
-     *          false.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function batchProcessDocuments($name, array $optionalArgs = [])
-    {
-        $request = new BatchProcessRequest();
-        $request->setName($name);
-        if (isset($optionalArgs['inputConfigs'])) {
-            $request->setInputConfigs($optionalArgs['inputConfigs']);
-        }
-        if (isset($optionalArgs['outputConfig'])) {
-            $request->setOutputConfig($optionalArgs['outputConfig']);
-        }
-        if (isset($optionalArgs['inputDocuments'])) {
-            $request->setInputDocuments($optionalArgs['inputDocuments']);
-        }
-        if (isset($optionalArgs['documentOutputConfig'])) {
-            $request->setDocumentOutputConfig($optionalArgs['documentOutputConfig']);
-        }
-        if (isset($optionalArgs['skipHumanReview'])) {
-            $request->setSkipHumanReview($optionalArgs['skipHumanReview']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'BatchProcessDocuments',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ProcessDocument', ProcessResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -525,15 +530,12 @@ class DocumentProcessorServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $documentProcessorServiceClient->reviewDocument($formattedHumanReviewConfig);
      *     $operationName = $operationResponse->getName();
@@ -544,11 +546,11 @@ class DocumentProcessorServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $documentProcessorServiceClient->close();
@@ -558,47 +560,39 @@ class DocumentProcessorServiceGapicClient
      * @param string $humanReviewConfig Required. The resource name of the HumanReviewConfig that the document will be
      *                                  reviewed with.
      * @param array  $optionalArgs      {
-     *                                  Optional.
+     *     Optional.
      *
      *     @type Document $inlineDocument
-     *          An inline document proto.
+     *           An inline document proto.
      *     @type Document $document
-     *          The document that needs human review.
+     *           The document that needs human review.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function reviewDocument($humanReviewConfig, array $optionalArgs = [])
     {
         $request = new ReviewDocumentRequest();
+        $requestParamHeaders = [];
         $request->setHumanReviewConfig($humanReviewConfig);
+        $requestParamHeaders['human_review_config'] = $humanReviewConfig;
         if (isset($optionalArgs['inlineDocument'])) {
             $request->setInlineDocument($optionalArgs['inlineDocument']);
         }
+
         if (isset($optionalArgs['document'])) {
             $request->setDocument($optionalArgs['document']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'human_review_config' => $request->getHumanReviewConfig(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'ReviewDocument',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('ReviewDocument', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 }

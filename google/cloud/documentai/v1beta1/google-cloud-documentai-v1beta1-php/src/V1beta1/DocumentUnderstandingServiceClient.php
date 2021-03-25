@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\DocumentAi\V1beta1;
+namespace Google\Cloud\DocumentAI\V1beta1;
 
-use Google\Cloud\DocumentAi\V1beta1\Gapic\DocumentUnderstandingServiceGapicClient;
+use Google\Cloud\DocumentAI\V1beta1\Gapic\DocumentUnderstandingServiceGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class DocumentUnderstandingServiceClient extends DocumentUnderstandingServiceGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see DocumentUnderstandingServiceGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see DocumentUnderstandingServiceGapicClient} class.
 }

@@ -3,9 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.documentai.v1.DocumentProcessorService' => [
-            'ProcessDocument' => [
+            'BatchProcessDocuments' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/processors/*}:process',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/processors/*}:batchProcess',
                 'body' => '*',
                 'placeholders' => [
                     'name' => [
@@ -15,9 +15,9 @@ return [
                     ],
                 ],
             ],
-            'BatchProcessDocuments' => [
+            'ProcessDocument' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/processors/*}:batchProcess',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/processors/*}:process',
                 'body' => '*',
                 'placeholders' => [
                     'name' => [

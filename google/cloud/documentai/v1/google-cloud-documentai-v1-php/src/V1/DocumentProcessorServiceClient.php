@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\DocumentAi\V1;
+namespace Google\Cloud\DocumentAI\V1;
 
-use Google\Cloud\DocumentAi\V1\Gapic\DocumentProcessorServiceGapicClient;
+use Google\Cloud\DocumentAI\V1\Gapic\DocumentProcessorServiceGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class DocumentProcessorServiceClient extends DocumentProcessorServiceGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see DocumentProcessorServiceGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see DocumentProcessorServiceGapicClient} class.
 }
