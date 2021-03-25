@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.cloud.policytroubleshooter.v1.IamChecker' => [
-        ],
+        'google.cloud.policytroubleshooter.v1.IamChecker' => [],
     ],
 ];

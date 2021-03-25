@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,10 @@
  * @experimental
  */
 
-namespace Google\Cloud\Policytroubleshooter\V1\Gapic;
+namespace Google\Cloud\PolicyTroubleshooter\V1\Gapic;
 
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\RetrySettings;
@@ -53,8 +54,6 @@ use Google\Cloud\PolicyTroubleshooter\V1\TroubleshootIamPolicyResponse;
  *     $iamCheckerClient->close();
  * }
  * ```
- *
- * @experimental
  */
 class IamCheckerGapicClient
 {
@@ -91,16 +90,16 @@ class IamCheckerGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/iam_checker_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/iam_checker_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/iam_checker_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/iam_checker_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/iam_checker_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/iam_checker_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/iam_checker_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/iam_checker_rest_client_config.php',
                 ],
             ],
         ];
@@ -110,7 +109,7 @@ class IamCheckerGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -124,31 +123,31 @@ class IamCheckerGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -156,7 +155,6 @@ class IamCheckerGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -179,22 +177,21 @@ class IamCheckerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type AccessTuple $accessTuple
-     *          The information to use for checking whether a member has a permission for a
-     *          resource.
+     *           The information to use for checking whether a member has a permission for a
+     *           resource.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\PolicyTroubleshooter\V1\TroubleshootIamPolicyResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function troubleshootIamPolicy(array $optionalArgs = [])
     {
@@ -203,11 +200,6 @@ class IamCheckerGapicClient
             $request->setAccessTuple($optionalArgs['accessTuple']);
         }
 
-        return $this->startCall(
-            'TroubleshootIamPolicy',
-            TroubleshootIamPolicyResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        return $this->startCall('TroubleshootIamPolicy', TroubleshootIamPolicyResponse::class, $optionalArgs, $request)->wait();
     }
 }

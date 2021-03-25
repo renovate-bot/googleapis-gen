@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,20 +20,21 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Policytroubleshooter\Tests\Unit\V1;
+namespace Google\Cloud\PolicyTroubleshooter\Tests\Unit\V1;
 
-use Google\Cloud\Policytroubleshooter\V1\IamCheckerClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\PolicyTroubleshooter\V1\IamCheckerClient;
 use Google\Cloud\PolicyTroubleshooter\V1\TroubleshootIamPolicyResponse;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group policytroubleshooter
+ *
  * @group gapic
  */
 class IamCheckerClientTest extends GeneratedTest
@@ -51,9 +52,7 @@ class IamCheckerClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -64,7 +63,6 @@ class IamCheckerClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new IamCheckerClient($options);
     }
 
@@ -74,14 +72,13 @@ class IamCheckerClientTest extends GeneratedTest
     public function troubleshootIamPolicyTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new TroubleshootIamPolicyResponse();
         $transport->addResponse($expectedResponse);
-
         $response = $client->troubleshootIamPolicy();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -89,7 +86,6 @@ class IamCheckerClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.policytroubleshooter.v1.IamChecker/TroubleshootIamPolicy', $actualFuncCall);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -99,22 +95,20 @@ class IamCheckerClientTest extends GeneratedTest
     public function troubleshootIamPolicyExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         try {
             $client->troubleshootIamPolicy();
             // If the $client method call did not throw, fail the test
@@ -123,7 +117,6 @@ class IamCheckerClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
