@@ -15,24 +15,14 @@ return [
                     ],
                 ],
             ],
-            'ListJobs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/jobs',
+            'CreateJobTemplate' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/jobTemplates',
+                'body' => 'job_template',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetJob' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/jobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
@@ -48,25 +38,24 @@ return [
                     ],
                 ],
             ],
-            'CreateJobTemplate' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/jobTemplates',
-                'body' => 'job_template',
+            'DeleteJobTemplate' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/jobTemplates/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
             ],
-            'ListJobTemplates' => [
+            'GetJob' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/jobTemplates',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/jobs/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
@@ -82,13 +71,24 @@ return [
                     ],
                 ],
             ],
-            'DeleteJobTemplate' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/jobTemplates/*}',
+            'ListJobTemplates' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/jobTemplates',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/jobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],

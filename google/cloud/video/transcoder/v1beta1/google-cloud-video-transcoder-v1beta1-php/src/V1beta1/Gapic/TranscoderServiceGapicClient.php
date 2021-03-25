@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ namespace Google\Cloud\Video\Transcoder\V1beta1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -43,10 +44,10 @@ use Google\Cloud\Video\Transcoder\V1beta1\GetJobRequest;
 use Google\Cloud\Video\Transcoder\V1beta1\GetJobTemplateRequest;
 use Google\Cloud\Video\Transcoder\V1beta1\Job;
 use Google\Cloud\Video\Transcoder\V1beta1\JobTemplate;
-use Google\Cloud\Video\Transcoder\V1beta1\ListJobTemplatesRequest;
-use Google\Cloud\Video\Transcoder\V1beta1\ListJobTemplatesResponse;
 use Google\Cloud\Video\Transcoder\V1beta1\ListJobsRequest;
 use Google\Cloud\Video\Transcoder\V1beta1\ListJobsResponse;
+use Google\Cloud\Video\Transcoder\V1beta1\ListJobTemplatesRequest;
+use Google\Cloud\Video\Transcoder\V1beta1\ListJobTemplatesResponse;
 use Google\Protobuf\GPBEmpty;
 
 /**
@@ -71,12 +72,10 @@ use Google\Protobuf\GPBEmpty;
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class TranscoderServiceGapicClient
 {
@@ -108,25 +107,29 @@ class TranscoderServiceGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
+
     private static $jobNameTemplate;
+
     private static $jobTemplateNameTemplate;
+
     private static $locationNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/transcoder_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/transcoder_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/transcoder_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/transcoder_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/transcoder_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/transcoder_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/transcoder_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/transcoder_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -134,7 +137,7 @@ class TranscoderServiceGapicClient
 
     private static function getJobNameTemplate()
     {
-        if (null == self::$jobNameTemplate) {
+        if (self::$jobNameTemplate == null) {
             self::$jobNameTemplate = new PathTemplate('projects/{project}/locations/{location}/jobs/{job}');
         }
 
@@ -143,7 +146,7 @@ class TranscoderServiceGapicClient
 
     private static function getJobTemplateNameTemplate()
     {
-        if (null == self::$jobTemplateNameTemplate) {
+        if (self::$jobTemplateNameTemplate == null) {
             self::$jobTemplateNameTemplate = new PathTemplate('projects/{project}/locations/{location}/jobTemplates/{job_template}');
         }
 
@@ -152,7 +155,7 @@ class TranscoderServiceGapicClient
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -161,7 +164,7 @@ class TranscoderServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'job' => self::getJobNameTemplate(),
                 'jobTemplate' => self::getJobTemplateNameTemplate(),
@@ -173,15 +176,14 @@ class TranscoderServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a job resource.
+     * Formats a string containing the fully-qualified path to represent a job
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $job
      *
      * @return string The formatted job resource.
-     * @experimental
      */
     public static function jobName($project, $location, $job)
     {
@@ -193,15 +195,14 @@ class TranscoderServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a job_template resource.
+     * Formats a string containing the fully-qualified path to represent a job_template
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $jobTemplate
      *
      * @return string The formatted job_template resource.
-     * @experimental
      */
     public static function jobTemplateName($project, $location, $jobTemplate)
     {
@@ -213,14 +214,13 @@ class TranscoderServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location resource.
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
      *
      * @param string $project
      * @param string $location
      *
      * @return string The formatted location resource.
-     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -236,12 +236,13 @@ class TranscoderServiceGapicClient
      * Template: Pattern
      * - job: projects/{project}/locations/{location}/jobs/{job}
      * - jobTemplate: projects/{project}/locations/{location}/jobTemplates/{job_template}
-     * - location: projects/{project}/locations/{location}.
+     * - location: projects/{project}/locations/{location}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -249,12 +250,10 @@ class TranscoderServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -270,6 +269,7 @@ class TranscoderServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -277,7 +277,7 @@ class TranscoderServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -291,31 +291,31 @@ class TranscoderServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -323,7 +323,6 @@ class TranscoderServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -350,170 +349,80 @@ class TranscoderServiceGapicClient
      *                             Format: `projects/{project}/locations/{location}`
      * @param Job    $job          Required. Parameters for creating transcoding job.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Video\Transcoder\V1beta1\Job
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createJob($parent, $job, array $optionalArgs = [])
     {
         $request = new CreateJobRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setJob($job);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateJob',
-            Job::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateJob', Job::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Lists jobs in the specified region.
+     * Creates a job template in the specified region.
      *
      * Sample code:
      * ```
      * $transcoderServiceClient = new TranscoderServiceClient();
      * try {
      *     $formattedParent = $transcoderServiceClient->locationName('[PROJECT]', '[LOCATION]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $transcoderServiceClient->listJobs($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $transcoderServiceClient->listJobs($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     *     $jobTemplate = new JobTemplate();
+     *     $jobTemplateId = 'job_template_id';
+     *     $response = $transcoderServiceClient->createJobTemplate($formattedParent, $jobTemplate, $jobTemplateId);
      * } finally {
      *     $transcoderServiceClient->close();
      * }
      * ```
      *
-     * @param string $parent       Required. Format: `projects/{project}/locations/{location}`
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string      $parent        Required. The parent location to create this job template.
+     *                                   Format: `projects/{project}/locations/{location}`
+     * @param JobTemplate $jobTemplate   Required. Parameters for creating job template.
+     * @param string      $jobTemplateId Required. The ID to use for the job template, which will become the final component
+     *                                   of the job template's resource name.
      *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *                                   This value should be 4-63 characters, and valid characters must match the
+     *                                   regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
+     * @param array       $optionalArgs  {
+     *     Optional.
+     *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\JobTemplate
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function listJobs($parent, array $optionalArgs = [])
+    public function createJobTemplate($parent, $jobTemplate, $jobTemplateId, array $optionalArgs = [])
     {
-        $request = new ListJobsRequest();
+        $request = new CreateJobTemplateRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListJobs',
-            $optionalArgs,
-            ListJobsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Returns the job data.
-     *
-     * Sample code:
-     * ```
-     * $transcoderServiceClient = new TranscoderServiceClient();
-     * try {
-     *     $formattedName = $transcoderServiceClient->jobName('[PROJECT]', '[LOCATION]', '[JOB]');
-     *     $response = $transcoderServiceClient->getJob($formattedName);
-     * } finally {
-     *     $transcoderServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the job to retrieve.
-     *                             Format: `projects/{project}/locations/{location}/jobs/{job}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Job
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getJob($name, array $optionalArgs = [])
-    {
-        $request = new GetJobRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetJob',
-            Job::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $request->setJobTemplate($jobTemplate);
+        $request->setJobTemplateId($jobTemplateId);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateJobTemplate', JobTemplate::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -533,178 +442,106 @@ class TranscoderServiceGapicClient
      * @param string $name         Required. The name of the job to delete.
      *                             Format: `projects/{project}/locations/{location}/jobs/{job}`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteJob($name, array $optionalArgs = [])
     {
         $request = new DeleteJobRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteJob',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteJob', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Creates a job template in the specified region.
+     * Deletes a job template.
      *
      * Sample code:
      * ```
      * $transcoderServiceClient = new TranscoderServiceClient();
      * try {
-     *     $formattedParent = $transcoderServiceClient->locationName('[PROJECT]', '[LOCATION]');
-     *     $jobTemplate = new JobTemplate();
-     *     $jobTemplateId = '';
-     *     $response = $transcoderServiceClient->createJobTemplate($formattedParent, $jobTemplate, $jobTemplateId);
+     *     $formattedName = $transcoderServiceClient->jobTemplateName('[PROJECT]', '[LOCATION]', '[JOB_TEMPLATE]');
+     *     $transcoderServiceClient->deleteJobTemplate($formattedName);
      * } finally {
      *     $transcoderServiceClient->close();
      * }
      * ```
      *
-     * @param string      $parent        Required. The parent location to create this job template.
-     *                                   Format: `projects/{project}/locations/{location}`
-     * @param JobTemplate $jobTemplate   Required. Parameters for creating job template.
-     * @param string      $jobTemplateId Required. The ID to use for the job template, which will become the final component
-     *                                   of the job template's resource name.
-     *
-     * This value should be 4-63 characters, and valid characters must match the
-     * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\JobTemplate
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function createJobTemplate($parent, $jobTemplate, $jobTemplateId, array $optionalArgs = [])
-    {
-        $request = new CreateJobTemplateRequest();
-        $request->setParent($parent);
-        $request->setJobTemplate($jobTemplate);
-        $request->setJobTemplateId($jobTemplateId);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateJobTemplate',
-            JobTemplate::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists job templates in the specified region.
-     *
-     * Sample code:
-     * ```
-     * $transcoderServiceClient = new TranscoderServiceClient();
-     * try {
-     *     $formattedParent = $transcoderServiceClient->locationName('[PROJECT]', '[LOCATION]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $transcoderServiceClient->listJobTemplates($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $transcoderServiceClient->listJobTemplates($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $transcoderServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The parent location from which to retrieve the collection of job templates.
-     *                             Format: `projects/{project}/locations/{location}`
+     * @param string $name         Required. The name of the job template to delete.
+     *                             `projects/{project}/locations/{location}/jobTemplates/{job_template}`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @throws ApiException if the remote call fails
+     */
+    public function deleteJobTemplate($name, array $optionalArgs = [])
+    {
+        $request = new DeleteJobTemplateRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteJobTemplate', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Returns the job data.
+     *
+     * Sample code:
+     * ```
+     * $transcoderServiceClient = new TranscoderServiceClient();
+     * try {
+     *     $formattedName = $transcoderServiceClient->jobName('[PROJECT]', '[LOCATION]', '[JOB]');
+     *     $response = $transcoderServiceClient->getJob($formattedName);
+     * } finally {
+     *     $transcoderServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the job to retrieve.
+     *                             Format: `projects/{project}/locations/{location}/jobs/{job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Job
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function listJobTemplates($parent, array $optionalArgs = [])
+    public function getJob($name, array $optionalArgs = [])
     {
-        $request = new ListJobTemplatesRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListJobTemplates',
-            $optionalArgs,
-            ListJobTemplatesResponse::class,
-            $request
-        );
+        $request = new GetJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetJob', Job::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -725,86 +562,166 @@ class TranscoderServiceGapicClient
      *                             Format:
      *                             `projects/{project}/locations/{location}/jobTemplates/{job_template}`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Video\Transcoder\V1beta1\JobTemplate
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getJobTemplate($name, array $optionalArgs = [])
     {
         $request = new GetJobTemplateRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetJobTemplate',
-            JobTemplate::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetJobTemplate', JobTemplate::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Deletes a job template.
+     * Lists job templates in the specified region.
      *
      * Sample code:
      * ```
      * $transcoderServiceClient = new TranscoderServiceClient();
      * try {
-     *     $formattedName = $transcoderServiceClient->jobTemplateName('[PROJECT]', '[LOCATION]', '[JOB_TEMPLATE]');
-     *     $transcoderServiceClient->deleteJobTemplate($formattedName);
+     *     $formattedParent = $transcoderServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $transcoderServiceClient->listJobTemplates($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $transcoderServiceClient->listJobTemplates($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
      * } finally {
      *     $transcoderServiceClient->close();
      * }
      * ```
      *
-     * @param string $name         Required. The name of the job template to delete.
-     *                             `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+     * @param string $parent       Required. The parent location from which to retrieve the collection of job templates.
+     *                             Format: `projects/{project}/locations/{location}`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
+     * @return \Google\ApiCore\PagedListResponse
+     *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function deleteJobTemplate($name, array $optionalArgs = [])
+    public function listJobTemplates($parent, array $optionalArgs = [])
     {
-        $request = new DeleteJobTemplateRequest();
-        $request->setName($name);
+        $request = new ListJobTemplatesRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
 
-        return $this->startCall(
-            'DeleteJobTemplate',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListJobTemplates', $optionalArgs, ListJobTemplatesResponse::class, $request);
+    }
+
+    /**
+     * Lists jobs in the specified region.
+     *
+     * Sample code:
+     * ```
+     * $transcoderServiceClient = new TranscoderServiceClient();
+     * try {
+     *     $formattedParent = $transcoderServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $transcoderServiceClient->listJobs($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $transcoderServiceClient->listJobs($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $transcoderServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. Format: `projects/{project}/locations/{location}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listJobs($parent, array $optionalArgs = [])
+    {
+        $request = new ListJobsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListJobs', $optionalArgs, ListJobsResponse::class, $request);
     }
 }
