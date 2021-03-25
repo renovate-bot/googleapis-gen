@@ -377,7 +377,7 @@ class IamCheckerClient(metaclass=IamCheckerClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-policytroubleshooter',
+            'google-cloud-policy-troubleshooter',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

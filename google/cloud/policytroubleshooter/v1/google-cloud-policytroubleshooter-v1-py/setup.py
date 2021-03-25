@@ -28,7 +28,7 @@ with io.open(readme_filename, encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
 setuptools.setup(
-    name='google-cloud-policytroubleshooter',
+    name='google-cloud-policy-troubleshooter',
     version=version,
     long_description=readme,
     packages=setuptools.PEP420PackageFinder.find(),
