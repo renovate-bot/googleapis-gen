@@ -132,7 +132,7 @@ class OrgPolicyGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
-        'https://www.googleapis.com/auth/cloud-platforma',
+        'https://www.googleapis.com/auth/cloud-platform',
     ];
     private static $folderNameTemplate;
     private static $folderPolicyNameTemplate;
