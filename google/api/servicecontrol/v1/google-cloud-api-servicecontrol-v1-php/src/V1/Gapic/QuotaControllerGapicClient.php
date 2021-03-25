@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,11 @@
  * @experimental
  */
 
-namespace Google\Cloud\Api\Servicecontrol\V1\Gapic;
+namespace Google\Cloud\ServiceControl\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
+
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -39,7 +40,7 @@ use Google\Cloud\ServiceControl\V1\AllocateQuotaResponse;
 use Google\Cloud\ServiceControl\V1\QuotaOperation;
 
 /**
- * Service Description: [Google Quota Control API](https://cloud.google.com/service-control/overview).
+ * Service Description: [Google Quota Control API](https://cloud.google.com/service-control/overview)
  *
  * Allows clients to allocate and release quota against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
@@ -55,36 +56,24 @@ use Google\Cloud\ServiceControl\V1\QuotaOperation;
  *     $quotaControllerClient->close();
  * }
  * ```
- *
- * @experimental
  */
 class QuotaControllerGapicClient
 {
     use GapicClientTrait;
 
-    /**
-     * The name of the service.
-     */
+    /** The name of the service. */
     const SERVICE_NAME = 'google.api.servicecontrol.v1.QuotaController';
 
-    /**
-     * The default address of the service.
-     */
+    /** The default address of the service. */
     const SERVICE_ADDRESS = 'servicecontrol.googleapis.com';
 
-    /**
-     * The default port of the service.
-     */
+    /** The default port of the service. */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /**
-     * The name of the code generator, to be included in the agent header.
-     */
+    /** The name of the code generator, to be included in the agent header. */
     const CODEGEN_NAME = 'gapic';
 
-    /**
-     * The default scopes required by the service.
-     */
+    /** The default scopes required by the service. */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/servicecontrol',
@@ -94,16 +83,16 @@ class QuotaControllerGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/quota_controller_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/quota_controller_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/quota_controller_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/quota_controller_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/quota_controller_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/quota_controller_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/quota_controller_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/quota_controller_rest_client_config.php',
                 ],
             ],
         ];
@@ -113,7 +102,7 @@ class QuotaControllerGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -127,31 +116,31 @@ class QuotaControllerGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -159,7 +148,6 @@ class QuotaControllerGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -191,30 +179,29 @@ class QuotaControllerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $serviceName
-     *          Name of the service as specified in the service configuration. For example,
-     *          `"pubsub.googleapis.com"`.
+     *           Name of the service as specified in the service configuration. For example,
+     *           `"pubsub.googleapis.com"`.
      *
-     *          See [google.api.Service][google.api.Service] for the definition of a service name.
+     *           See [google.api.Service][google.api.Service] for the definition of a service name.
      *     @type QuotaOperation $allocateOperation
-     *          Operation that describes the quota allocation.
+     *           Operation that describes the quota allocation.
      *     @type string $serviceConfigId
-     *          Specifies which version of service configuration should be used to process
-     *          the request. If unspecified or no matching version can be found, the latest
-     *          one will be used.
+     *           Specifies which version of service configuration should be used to process
+     *           the request. If unspecified or no matching version can be found, the latest
+     *           one will be used.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\ServiceControl\V1\AllocateQuotaResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function allocateQuota(array $optionalArgs = [])
     {
@@ -222,25 +209,19 @@ class QuotaControllerGapicClient
         if (isset($optionalArgs['serviceName'])) {
             $request->setServiceName($optionalArgs['serviceName']);
         }
+
         if (isset($optionalArgs['allocateOperation'])) {
             $request->setAllocateOperation($optionalArgs['allocateOperation']);
         }
+
         if (isset($optionalArgs['serviceConfigId'])) {
             $request->setServiceConfigId($optionalArgs['serviceConfigId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'service_name' => $request->getServiceName(),
+            'service_name' => $request->getServiceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'AllocateQuota',
-            AllocateQuotaResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('AllocateQuota', AllocateQuotaResponse::class, $optionalArgs, $request)->wait();
     }
 }

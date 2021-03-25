@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\Api\Servicecontrol\V1;
+namespace Google\Cloud\ServiceControl\V1;
 
-use Google\Cloud\Api\Servicecontrol\V1\Gapic\ServiceControllerGapicClient;
+use Google\Cloud\ServiceControl\V1\Gapic\ServiceControllerGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class ServiceControllerClient extends ServiceControllerGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see ServiceControllerGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see ServiceControllerGapicClient} class.
 }

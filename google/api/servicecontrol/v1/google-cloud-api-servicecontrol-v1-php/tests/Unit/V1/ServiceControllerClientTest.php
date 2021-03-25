@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,65 +20,55 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Api\Servicecontrol\Tests\Unit\V1;
+namespace Google\Cloud\ServiceControl\Tests\Unit\V1;
 
-use Google\Cloud\Api\Servicecontrol\V1\ServiceControllerClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\ServiceControl\V1\CheckResponse;
 use Google\Cloud\ServiceControl\V1\ReportResponse;
-use Google\Protobuf\Any;
+use Google\Cloud\ServiceControl\V1\ServiceControllerClient;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group servicecontrol
+ *
  * @group gapic
  */
 class ServiceControllerClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return ServiceControllerClient
-     */
+    /** @return ServiceControllerClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new ServiceControllerClient($options);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function checkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $operationId = 'operationId-274116877';
         $serviceConfigId = 'serviceConfigId1573171758';
@@ -88,7 +78,6 @@ class ServiceControllerClientTest extends GeneratedTest
         $expectedResponse->setServiceConfigId($serviceConfigId);
         $expectedResponse->setServiceRolloutId($serviceRolloutId);
         $transport->addResponse($expectedResponse);
-
         $response = $client->check();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -96,32 +85,27 @@ class ServiceControllerClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.api.servicecontrol.v1.ServiceController/Check', $actualFuncCall);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function checkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         try {
             $client->check();
             // If the $client method call did not throw, fail the test
@@ -130,22 +114,19 @@ class ServiceControllerClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function reportTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $serviceConfigId = 'serviceConfigId1573171758';
         $serviceRolloutId = 'serviceRolloutId600703539';
@@ -153,7 +134,6 @@ class ServiceControllerClientTest extends GeneratedTest
         $expectedResponse->setServiceConfigId($serviceConfigId);
         $expectedResponse->setServiceRolloutId($serviceRolloutId);
         $transport->addResponse($expectedResponse);
-
         $response = $client->report();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -161,32 +141,27 @@ class ServiceControllerClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.api.servicecontrol.v1.ServiceController/Report', $actualFuncCall);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function reportExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         try {
             $client->report();
             // If the $client method call did not throw, fail the test
@@ -195,7 +170,6 @@ class ServiceControllerClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.api.servicecontrol.v1.ServiceController' => [
-        ],
+        'google.api.servicecontrol.v1.ServiceController' => [],
     ],
 ];
