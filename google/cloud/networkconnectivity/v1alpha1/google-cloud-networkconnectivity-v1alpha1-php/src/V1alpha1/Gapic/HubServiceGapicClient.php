@@ -111,19 +111,29 @@ class HubServiceGapicClient
 {
     use GapicClientTrait;
 
-    /** The name of the service. */
+    /**
+     * The name of the service.
+     */
     const SERVICE_NAME = 'google.cloud.networkconnectivity.v1alpha1.HubService';
 
-    /** The default address of the service. */
+    /**
+     * The default address of the service.
+     */
     const SERVICE_ADDRESS = 'networkconnectivity.googleapis.com';
 
-    /** The default port of the service. */
+    /**
+     * The default port of the service.
+     */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /** The name of the code generator, to be included in the agent header. */
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
     const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
@@ -519,8 +529,10 @@ class HubServiceGapicClient
     public function createHub($parent, $hub, array $optionalArgs = [])
     {
         $request = new CreateHubRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setHub($hub);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['hubId'])) {
             $request->setHubId($optionalArgs['hubId']);
         }
@@ -529,9 +541,7 @@ class HubServiceGapicClient
             $request->setRequestId($optionalArgs['requestId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('CreateHub', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
@@ -611,8 +621,10 @@ class HubServiceGapicClient
     public function createSpoke($parent, $spoke, array $optionalArgs = [])
     {
         $request = new CreateSpokeRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setSpoke($spoke);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['spokeId'])) {
             $request->setSpokeId($optionalArgs['spokeId']);
         }
@@ -621,9 +633,7 @@ class HubServiceGapicClient
             $request->setRequestId($optionalArgs['requestId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('CreateSpoke', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
@@ -697,14 +707,14 @@ class HubServiceGapicClient
     public function deleteHub($name, array $optionalArgs = [])
     {
         $request = new DeleteHubRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('DeleteHub', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
@@ -778,14 +788,14 @@ class HubServiceGapicClient
     public function deleteSpoke($name, array $optionalArgs = [])
     {
         $request = new DeleteSpokeRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('DeleteSpoke', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
@@ -822,10 +832,10 @@ class HubServiceGapicClient
     public function getHub($name, array $optionalArgs = [])
     {
         $request = new GetHubRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetHub', Hub::class, $optionalArgs, $request)->wait();
     }
@@ -862,10 +872,10 @@ class HubServiceGapicClient
     public function getSpoke($name, array $optionalArgs = [])
     {
         $request = new GetSpokeRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetSpoke', Spoke::class, $optionalArgs, $request)->wait();
     }
@@ -927,7 +937,9 @@ class HubServiceGapicClient
     public function listHubs($parent, array $optionalArgs = [])
     {
         $request = new ListHubsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
@@ -944,9 +956,7 @@ class HubServiceGapicClient
             $request->setOrderBy($optionalArgs['orderBy']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListHubs', $optionalArgs, ListHubsResponse::class, $request);
     }
@@ -1008,7 +1018,9 @@ class HubServiceGapicClient
     public function listSpokes($parent, array $optionalArgs = [])
     {
         $request = new ListSpokesRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
@@ -1025,9 +1037,7 @@ class HubServiceGapicClient
             $request->setOrderBy($optionalArgs['orderBy']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListSpokes', $optionalArgs, ListSpokesResponse::class, $request);
     }
@@ -1109,7 +1119,9 @@ class HubServiceGapicClient
     public function updateHub($hub, array $optionalArgs = [])
     {
         $request = new UpdateHubRequest();
+        $requestParamHeaders = [];
         $request->setHub($hub);
+        $requestParamHeaders['hub.name'] = $hub->getName();
         if (isset($optionalArgs['updateMask'])) {
             $request->setUpdateMask($optionalArgs['updateMask']);
         }
@@ -1118,9 +1130,7 @@ class HubServiceGapicClient
             $request->setRequestId($optionalArgs['requestId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'hub.name' => $request->getHub()->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('UpdateHub', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
@@ -1202,7 +1212,9 @@ class HubServiceGapicClient
     public function updateSpoke($spoke, array $optionalArgs = [])
     {
         $request = new UpdateSpokeRequest();
+        $requestParamHeaders = [];
         $request->setSpoke($spoke);
+        $requestParamHeaders['spoke.name'] = $spoke->getName();
         if (isset($optionalArgs['updateMask'])) {
             $request->setUpdateMask($optionalArgs['updateMask']);
         }
@@ -1211,9 +1223,7 @@ class HubServiceGapicClient
             $request->setRequestId($optionalArgs['requestId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'spoke.name' => $request->getSpoke()->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('UpdateSpoke', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }

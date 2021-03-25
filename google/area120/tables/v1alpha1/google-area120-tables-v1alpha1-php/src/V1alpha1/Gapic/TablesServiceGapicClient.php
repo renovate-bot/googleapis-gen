@@ -97,19 +97,29 @@ class TablesServiceGapicClient
 {
     use GapicClientTrait;
 
-    /** The name of the service. */
+    /**
+     * The name of the service.
+     */
     const SERVICE_NAME = 'google.area120.tables.v1alpha1.TablesService';
 
-    /** The default address of the service. */
+    /**
+     * The default address of the service.
+     */
     const SERVICE_ADDRESS = 'area120tables.googleapis.com';
 
-    /** The default port of the service. */
+    /**
+     * The default port of the service.
+     */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /** The name of the code generator, to be included in the agent header. */
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
     const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/drive',
         'https://www.googleapis.com/auth/drive.file',
@@ -370,11 +380,11 @@ class TablesServiceGapicClient
     public function batchCreateRows($parent, $requests, array $optionalArgs = [])
     {
         $request = new BatchCreateRowsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setRequests($requests);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('BatchCreateRows', BatchCreateRowsResponse::class, $optionalArgs, $request)->wait();
     }
@@ -415,11 +425,11 @@ class TablesServiceGapicClient
     public function batchDeleteRows($parent, $names, array $optionalArgs = [])
     {
         $request = new BatchDeleteRowsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setNames($names);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('BatchDeleteRows', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
@@ -461,11 +471,11 @@ class TablesServiceGapicClient
     public function batchUpdateRows($parent, $requests, array $optionalArgs = [])
     {
         $request = new BatchUpdateRowsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setRequests($requests);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('BatchUpdateRows', BatchUpdateRowsResponse::class, $optionalArgs, $request)->wait();
     }
@@ -509,15 +519,15 @@ class TablesServiceGapicClient
     public function createRow($parent, $row, array $optionalArgs = [])
     {
         $request = new CreateRowRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setRow($row);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['view'])) {
             $request->setView($optionalArgs['view']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CreateRow', Row::class, $optionalArgs, $request)->wait();
     }
@@ -553,10 +563,10 @@ class TablesServiceGapicClient
     public function deleteRow($name, array $optionalArgs = [])
     {
         $request = new DeleteRowRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('DeleteRow', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
@@ -598,14 +608,14 @@ class TablesServiceGapicClient
     public function getRow($name, array $optionalArgs = [])
     {
         $request = new GetRowRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['view'])) {
             $request->setView($optionalArgs['view']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetRow', Row::class, $optionalArgs, $request)->wait();
     }
@@ -643,10 +653,10 @@ class TablesServiceGapicClient
     public function getTable($name, array $optionalArgs = [])
     {
         $request = new GetTableRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetTable', Table::class, $optionalArgs, $request)->wait();
     }
@@ -684,10 +694,10 @@ class TablesServiceGapicClient
     public function getWorkspace($name, array $optionalArgs = [])
     {
         $request = new GetWorkspaceRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetWorkspace', Workspace::class, $optionalArgs, $request)->wait();
     }
@@ -754,7 +764,9 @@ class TablesServiceGapicClient
     public function listRows($parent, array $optionalArgs = [])
     {
         $request = new ListRowsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
@@ -771,9 +783,7 @@ class TablesServiceGapicClient
             $request->setFilter($optionalArgs['filter']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListRows', $optionalArgs, ListRowsResponse::class, $request);
     }
@@ -940,7 +950,9 @@ class TablesServiceGapicClient
     public function updateRow($row, array $optionalArgs = [])
     {
         $request = new UpdateRowRequest();
+        $requestParamHeaders = [];
         $request->setRow($row);
+        $requestParamHeaders['row.name'] = $row->getName();
         if (isset($optionalArgs['updateMask'])) {
             $request->setUpdateMask($optionalArgs['updateMask']);
         }
@@ -949,9 +961,7 @@ class TablesServiceGapicClient
             $request->setView($optionalArgs['view']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'row.name' => $request->getRow()->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('UpdateRow', Row::class, $optionalArgs, $request)->wait();
     }

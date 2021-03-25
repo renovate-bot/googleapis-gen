@@ -61,19 +61,29 @@ class QuotaControllerGapicClient
 {
     use GapicClientTrait;
 
-    /** The name of the service. */
+    /**
+     * The name of the service.
+     */
     const SERVICE_NAME = 'google.api.servicecontrol.v1.QuotaController';
 
-    /** The default address of the service. */
+    /**
+     * The default address of the service.
+     */
     const SERVICE_ADDRESS = 'servicecontrol.googleapis.com';
 
-    /** The default port of the service. */
+    /**
+     * The default port of the service.
+     */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /** The name of the code generator, to be included in the agent header. */
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
     const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/servicecontrol',
@@ -206,8 +216,10 @@ class QuotaControllerGapicClient
     public function allocateQuota(array $optionalArgs = [])
     {
         $request = new AllocateQuotaRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['serviceName'])) {
             $request->setServiceName($optionalArgs['serviceName']);
+            $requestParamHeaders['service_name'] = $optionalArgs['serviceName'];
         }
 
         if (isset($optionalArgs['allocateOperation'])) {
@@ -218,9 +230,7 @@ class QuotaControllerGapicClient
             $request->setServiceConfigId($optionalArgs['serviceConfigId']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'service_name' => $request->getServiceName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('AllocateQuota', AllocateQuotaResponse::class, $optionalArgs, $request)->wait();
     }

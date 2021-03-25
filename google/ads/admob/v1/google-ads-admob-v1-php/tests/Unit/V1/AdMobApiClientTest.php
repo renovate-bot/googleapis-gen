@@ -44,19 +44,25 @@ use stdClass;
  */
 class AdMobApiClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return AdMobApiClient */
+    /**
+     * @return AdMobApiClient
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -65,7 +71,9 @@ class AdMobApiClientTest extends GeneratedTest
         return new AdMobApiClient($options);
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function generateMediationReportTest()
     {
         $transport = $this->createTransport();
@@ -97,7 +105,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function generateMediationReportExceptionTest()
     {
         $transport = $this->createTransport();
@@ -131,7 +141,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function generateNetworkReportTest()
     {
         $transport = $this->createTransport();
@@ -163,7 +175,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function generateNetworkReportExceptionTest()
     {
         $transport = $this->createTransport();
@@ -197,7 +211,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getPublisherAccountTest()
     {
         $transport = $this->createTransport();
@@ -226,7 +242,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getPublisherAccountExceptionTest()
     {
         $transport = $this->createTransport();
@@ -257,7 +275,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listPublisherAccountsTest()
     {
         $transport = $this->createTransport();
@@ -288,7 +308,9 @@ class AdMobApiClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listPublisherAccountsExceptionTest()
     {
         $transport = $this->createTransport();

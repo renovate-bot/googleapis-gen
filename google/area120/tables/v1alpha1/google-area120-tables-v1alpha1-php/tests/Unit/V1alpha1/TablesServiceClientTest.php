@@ -48,19 +48,25 @@ use stdClass;
  */
 class TablesServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return TablesServiceClient */
+    /**
+     * @return TablesServiceClient
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -69,7 +75,9 @@ class TablesServiceClientTest extends GeneratedTest
         return new TablesServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function batchCreateRowsTest()
     {
         $transport = $this->createTransport();
@@ -97,7 +105,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function batchCreateRowsExceptionTest()
     {
         $transport = $this->createTransport();
@@ -131,7 +141,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function batchDeleteRowsTest()
     {
         $transport = $this->createTransport();
@@ -158,7 +170,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function batchDeleteRowsExceptionTest()
     {
         $transport = $this->createTransport();
@@ -192,7 +206,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function batchUpdateRowsTest()
     {
         $transport = $this->createTransport();
@@ -220,7 +236,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function batchUpdateRowsExceptionTest()
     {
         $transport = $this->createTransport();
@@ -254,7 +272,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function createRowTest()
     {
         $transport = $this->createTransport();
@@ -284,7 +304,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function createRowExceptionTest()
     {
         $transport = $this->createTransport();
@@ -318,7 +340,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function deleteRowTest()
     {
         $transport = $this->createTransport();
@@ -342,7 +366,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function deleteRowExceptionTest()
     {
         $transport = $this->createTransport();
@@ -375,7 +401,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getRowTest()
     {
         $transport = $this->createTransport();
@@ -402,7 +430,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getRowExceptionTest()
     {
         $transport = $this->createTransport();
@@ -435,7 +465,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getTableTest()
     {
         $transport = $this->createTransport();
@@ -464,7 +496,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getTableExceptionTest()
     {
         $transport = $this->createTransport();
@@ -497,7 +531,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getWorkspaceTest()
     {
         $transport = $this->createTransport();
@@ -526,7 +562,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function getWorkspaceExceptionTest()
     {
         $transport = $this->createTransport();
@@ -559,7 +597,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listRowsTest()
     {
         $transport = $this->createTransport();
@@ -594,7 +634,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listRowsExceptionTest()
     {
         $transport = $this->createTransport();
@@ -627,7 +669,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listTablesTest()
     {
         $transport = $this->createTransport();
@@ -658,7 +702,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listTablesExceptionTest()
     {
         $transport = $this->createTransport();
@@ -689,7 +735,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listWorkspacesTest()
     {
         $transport = $this->createTransport();
@@ -720,7 +768,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function listWorkspacesExceptionTest()
     {
         $transport = $this->createTransport();
@@ -751,7 +801,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function updateRowTest()
     {
         $transport = $this->createTransport();
@@ -778,7 +830,9 @@ class TablesServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function updateRowExceptionTest()
     {
         $transport = $this->createTransport();

@@ -71,19 +71,29 @@ class AdMobApiGapicClient
 {
     use GapicClientTrait;
 
-    /** The name of the service. */
+    /**
+     * The name of the service.
+     */
     const SERVICE_NAME = 'google.ads.admob.v1.AdMobApi';
 
-    /** The default address of the service. */
+    /**
+     * The default address of the service.
+     */
     const SERVICE_ADDRESS = 'admob.googleapis.com';
 
-    /** The default port of the service. */
+    /**
+     * The default port of the service.
+     */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /** The name of the code generator, to be included in the agent header. */
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
     const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/admob.report',
     ];
@@ -201,17 +211,17 @@ class AdMobApiGapicClient
     public function generateMediationReport(array $optionalArgs = [])
     {
         $request = new GenerateMediationReportRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
         if (isset($optionalArgs['reportSpec'])) {
             $request->setReportSpec($optionalArgs['reportSpec']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GenerateMediationReport', GenerateMediationReportResponse::class, $optionalArgs, $request, Call::SERVER_STREAMING_CALL);
     }
@@ -253,17 +263,17 @@ class AdMobApiGapicClient
     public function generateNetworkReport(array $optionalArgs = [])
     {
         $request = new GenerateNetworkReportRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
         if (isset($optionalArgs['reportSpec'])) {
             $request->setReportSpec($optionalArgs['reportSpec']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'parent' => $request->getParent(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GenerateNetworkReport', GenerateNetworkReportResponse::class, $optionalArgs, $request, Call::SERVER_STREAMING_CALL);
     }
@@ -301,13 +311,13 @@ class AdMobApiGapicClient
     public function getPublisherAccount(array $optionalArgs = [])
     {
         $request = new GetPublisherAccountRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-            'name' => $request->getName(),
-        ]);
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetPublisherAccount', PublisherAccount::class, $optionalArgs, $request)->wait();
     }
