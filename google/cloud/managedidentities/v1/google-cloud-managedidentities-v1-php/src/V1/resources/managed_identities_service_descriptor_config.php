@@ -3,7 +3,7 @@
 return [
     'interfaces' => [
         'google.cloud.managedidentities.v1.ManagedIdentitiesService' => [
-            'CreateMicrosoftAdDomain' => [
+            'AttachTrust' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1\OpMetadata',
@@ -13,7 +13,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateDomain' => [
+            'CreateMicrosoftAdDomain' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1\OpMetadata',
@@ -33,7 +33,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'AttachTrust' => [
+            'DetachTrust' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1\OpMetadata',
@@ -53,7 +53,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DetachTrust' => [
+            'UpdateDomain' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1\OpMetadata',

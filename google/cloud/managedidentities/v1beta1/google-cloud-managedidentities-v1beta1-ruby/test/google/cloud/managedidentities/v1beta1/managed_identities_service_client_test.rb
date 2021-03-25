@@ -68,103 +68,6 @@ end
 
 describe Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClient do
 
-  describe 'delete_domain' do
-    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClient#delete_domain."
-
-    it 'invokes delete_domain without error' do
-      # Create expected grpc response
-      expected_response = {}
-      expected_response = Google::Gax::to_proto(expected_response, Google::Protobuf::Empty)
-      result = Google::Protobuf::Any.new
-      result.pack(expected_response)
-      operation = Google::Longrunning::Operation.new(
-        name: 'operations/delete_domain_test',
-        done: true,
-        response: result
-      )
-
-      # Mock Grpc layer
-      mock_method = proc do
-        OpenStruct.new(execute: operation)
-      end
-      mock_stub = MockGrpcClientStub_v1beta1.new(:delete_domain, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockManagedIdentitiesServiceCredentials_v1beta1.new("delete_domain")
-
-      Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Managedidentities::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Managedidentities.new(version: :v1beta1)
-
-          # Call method
-          response = client.delete_domain
-
-          # Verify the response
-          assert_equal(expected_response, response.response)
-        end
-      end
-    end
-
-    it 'invokes delete_domain and returns an operation error.' do
-      # Create expected grpc response
-      operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClient#delete_domain.'
-      )
-      operation = Google::Longrunning::Operation.new(
-        name: 'operations/delete_domain_test',
-        done: true,
-        error: operation_error
-      )
-
-      # Mock Grpc layer
-      mock_method = proc do
-        OpenStruct.new(execute: operation)
-      end
-      mock_stub = MockGrpcClientStub_v1beta1.new(:delete_domain, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockManagedIdentitiesServiceCredentials_v1beta1.new("delete_domain")
-
-      Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Managedidentities::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Managedidentities.new(version: :v1beta1)
-
-          # Call method
-          response = client.delete_domain
-
-          # Verify the response
-          assert(response.error?)
-          assert_equal(operation_error, response.error)
-        end
-      end
-    end
-
-    it 'invokes delete_domain with error' do
-      # Mock Grpc layer
-      mock_method = proc do
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1beta1.new(:delete_domain, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockManagedIdentitiesServiceCredentials_v1beta1.new("delete_domain")
-
-      Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Managedidentities::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Managedidentities.new(version: :v1beta1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
-            client.delete_domain
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
   describe 'create_microsoft_ad_domain' do
     custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClient#create_microsoft_ad_domain."
 
@@ -572,6 +475,103 @@ describe Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClie
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
             client.update_domain
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'delete_domain' do
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClient#delete_domain."
+
+    it 'invokes delete_domain without error' do
+      # Create expected grpc response
+      expected_response = {}
+      expected_response = Google::Gax::to_proto(expected_response, Google::Protobuf::Empty)
+      result = Google::Protobuf::Any.new
+      result.pack(expected_response)
+      operation = Google::Longrunning::Operation.new(
+        name: 'operations/delete_domain_test',
+        done: true,
+        response: result
+      )
+
+      # Mock Grpc layer
+      mock_method = proc do
+        OpenStruct.new(execute: operation)
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:delete_domain, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockManagedIdentitiesServiceCredentials_v1beta1.new("delete_domain")
+
+      Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Managedidentities::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Managedidentities.new(version: :v1beta1)
+
+          # Call method
+          response = client.delete_domain
+
+          # Verify the response
+          assert_equal(expected_response, response.response)
+        end
+      end
+    end
+
+    it 'invokes delete_domain and returns an operation error.' do
+      # Create expected grpc response
+      operation_error = Google::Rpc::Status.new(
+        message: 'Operation error for Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesServiceClient#delete_domain.'
+      )
+      operation = Google::Longrunning::Operation.new(
+        name: 'operations/delete_domain_test',
+        done: true,
+        error: operation_error
+      )
+
+      # Mock Grpc layer
+      mock_method = proc do
+        OpenStruct.new(execute: operation)
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:delete_domain, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockManagedIdentitiesServiceCredentials_v1beta1.new("delete_domain")
+
+      Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Managedidentities::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Managedidentities.new(version: :v1beta1)
+
+          # Call method
+          response = client.delete_domain
+
+          # Verify the response
+          assert(response.error?)
+          assert_equal(operation_error, response.error)
+        end
+      end
+    end
+
+    it 'invokes delete_domain with error' do
+      # Mock Grpc layer
+      mock_method = proc do
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:delete_domain, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockManagedIdentitiesServiceCredentials_v1beta1.new("delete_domain")
+
+      Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Managedidentities::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Managedidentities.new(version: :v1beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
+            client.delete_domain
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

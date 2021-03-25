@@ -3,9 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.managedidentities.v1beta1.ManagedIdentitiesService' => [
-            'DeleteDomain' => [
+            'AttachTrust' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\OpMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -23,9 +23,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateDomain' => [
+            'DeleteDomain' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\Domain',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\OpMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -33,7 +33,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'AttachTrust' => [
+            'DetachTrust' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\OpMetadata',
@@ -53,7 +53,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DetachTrust' => [
+            'UpdateDomain' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\Domain',
                     'metadataReturnType' => '\Google\Cloud\ManagedIdentities\V1beta1\OpMetadata',

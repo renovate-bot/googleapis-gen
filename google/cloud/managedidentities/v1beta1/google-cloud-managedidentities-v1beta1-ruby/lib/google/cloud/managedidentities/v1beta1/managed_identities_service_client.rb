@@ -185,14 +185,6 @@ module Google
               &Google::Cloud::Managedidentities::V1beta1::ManagedIdentitiesService::Stub.method(:new)
             )
 
-            @delete_domain = Google::Gax.create_api_call(
-              @managed_identities_service_stub.method(:delete_domain),
-              defaults["delete_domain"],
-              exception_transformer: exception_transformer,
-              params_extractor: proc do |request|
-                {'name' => request.name}
-              end
-            )
             @create_microsoft_ad_domain = Google::Gax.create_api_call(
               @managed_identities_service_stub.method(:create_microsoft_ad_domain),
               defaults["create_microsoft_ad_domain"],
@@ -233,6 +225,14 @@ module Google
                 {'domain.name' => request.domain.name}
               end
             )
+            @delete_domain = Google::Gax.create_api_call(
+              @managed_identities_service_stub.method(:delete_domain),
+              defaults["delete_domain"],
+              exception_transformer: exception_transformer,
+              params_extractor: proc do |request|
+                {'name' => request.name}
+              end
+            )
             @attach_trust = Google::Gax.create_api_call(
               @managed_identities_service_stub.method(:attach_trust),
               defaults["attach_trust"],
@@ -268,66 +268,6 @@ module Google
           end
 
           # Service calls
-
-          # Deletes a domain.
-          #
-          # @param name [String]
-          #   The domain resource name using the form:
-          #   `projects/{project_id}/locations/global/domains/{domain_name}`
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @return [Google::Gax::Operation]
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/managedidentities"
-          #
-          #   managed_identities_client = Google::Cloud::Managedidentities.new(version: :v1beta1)
-          #
-          #   # Register a callback during the method call.
-          #   operation = managed_identities_client.delete_domain do |op|
-          #     raise op.results.message if op.error?
-          #     op_results = op.results
-          #     # Process the results.
-          #
-          #     metadata = op.metadata
-          #     # Process the metadata.
-          #   end
-          #
-          #   # Or use the return value to register a callback.
-          #   operation.on_done do |op|
-          #     raise op.results.message if op.error?
-          #     op_results = op.results
-          #     # Process the results.
-          #
-          #     metadata = op.metadata
-          #     # Process the metadata.
-          #   end
-          #
-          #   # Manually reload the operation.
-          #   operation.reload!
-          #
-          #   # Or block until the operation completes, triggering callbacks on
-          #   # completion.
-          #   operation.wait_until_done!
-
-          def delete_domain \
-              name: nil,
-              options: nil
-            req = {
-              name: name
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Cloud::Managedidentities::V1beta1::DeleteDomainRequest)
-            operation = Google::Gax::Operation.new(
-              @delete_domain.call(req, options),
-              @operations_client,
-              Google::Protobuf::Empty,
-              Google::Cloud::Managedidentities::V1beta1::OpMetadata,
-              call_options: options
-            )
-            operation.on_done { |operation| yield(operation) } if block_given?
-            operation
-          end
 
           # Creates a Microsoft AD domain.
           #
@@ -600,6 +540,66 @@ module Google
               @update_domain.call(req, options),
               @operations_client,
               Google::Cloud::Managedidentities::V1beta1::Domain,
+              Google::Cloud::Managedidentities::V1beta1::OpMetadata,
+              call_options: options
+            )
+            operation.on_done { |operation| yield(operation) } if block_given?
+            operation
+          end
+
+          # Deletes a domain.
+          #
+          # @param name [String]
+          #   The domain resource name using the form:
+          #   `projects/{project_id}/locations/global/domains/{domain_name}`
+          # @param options [Google::Gax::CallOptions]
+          #   Overrides the default settings for this call, e.g, timeout,
+          #   retries, etc.
+          # @return [Google::Gax::Operation]
+          # @raise [Google::Gax::GaxError] if the RPC is aborted.
+          # @example
+          #   require "google/cloud/managedidentities"
+          #
+          #   managed_identities_client = Google::Cloud::Managedidentities.new(version: :v1beta1)
+          #
+          #   # Register a callback during the method call.
+          #   operation = managed_identities_client.delete_domain do |op|
+          #     raise op.results.message if op.error?
+          #     op_results = op.results
+          #     # Process the results.
+          #
+          #     metadata = op.metadata
+          #     # Process the metadata.
+          #   end
+          #
+          #   # Or use the return value to register a callback.
+          #   operation.on_done do |op|
+          #     raise op.results.message if op.error?
+          #     op_results = op.results
+          #     # Process the results.
+          #
+          #     metadata = op.metadata
+          #     # Process the metadata.
+          #   end
+          #
+          #   # Manually reload the operation.
+          #   operation.reload!
+          #
+          #   # Or block until the operation completes, triggering callbacks on
+          #   # completion.
+          #   operation.wait_until_done!
+
+          def delete_domain \
+              name: nil,
+              options: nil
+            req = {
+              name: name
+            }.delete_if { |_, v| v.nil? }
+            req = Google::Gax::to_proto(req, Google::Cloud::Managedidentities::V1beta1::DeleteDomainRequest)
+            operation = Google::Gax::Operation.new(
+              @delete_domain.call(req, options),
+              @operations_client,
+              Google::Protobuf::Empty,
               Google::Cloud::Managedidentities::V1beta1::OpMetadata,
               call_options: options
             )

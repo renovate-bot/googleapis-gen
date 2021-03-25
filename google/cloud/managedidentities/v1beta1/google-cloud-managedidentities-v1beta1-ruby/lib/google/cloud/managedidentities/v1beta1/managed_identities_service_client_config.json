@@ -20,11 +20,6 @@
         }
       },
       "methods": {
-        "DeleteDomain": {
-          "timeout_millis": 60000,
-          "retry_codes_name": "idempotent",
-          "retry_params_name": "default"
-        },
         "CreateMicrosoftAdDomain": {
           "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
@@ -46,6 +41,11 @@
           "retry_params_name": "default"
         },
         "UpdateDomain": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "DeleteDomain": {
           "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
