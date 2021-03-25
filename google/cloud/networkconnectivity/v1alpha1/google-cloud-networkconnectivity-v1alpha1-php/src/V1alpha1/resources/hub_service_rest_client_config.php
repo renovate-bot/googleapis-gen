@@ -27,13 +27,48 @@ return [
             ],
         ],
         'google.cloud.networkconnectivity.v1alpha1.HubService' => [
-            'ListHubs' => [
-                'method' => 'get',
+            'CreateHub' => [
+                'method' => 'post',
                 'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/global}/hubs',
+                'body' => 'hub',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateSpoke' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*}/spokes',
+                'body' => 'spoke',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteHub' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/global/hubs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteSpoke' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/spokes/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -49,10 +84,31 @@ return [
                     ],
                 ],
             ],
-            'CreateHub' => [
-                'method' => 'post',
+            'GetSpoke' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/spokes/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListHubs' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/global}/hubs',
-                'body' => 'hub',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListSpokes' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*}/spokes',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -74,51 +130,6 @@ return [
                     ],
                 ],
             ],
-            'DeleteHub' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/global/hubs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListSpokes' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*}/spokes',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetSpoke' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/spokes/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateSpoke' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*}/spokes',
-                'body' => 'spoke',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateSpoke' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1alpha1/{spoke.name=projects/*/locations/*/spokes/*}',
@@ -127,17 +138,6 @@ return [
                     'spoke.name' => [
                         'getters' => [
                             'getSpoke',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteSpoke' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/spokes/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

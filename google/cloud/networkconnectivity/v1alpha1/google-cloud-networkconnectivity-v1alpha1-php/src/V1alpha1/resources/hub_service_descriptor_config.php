@@ -13,9 +13,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateHub' => [
+            'CreateSpoke' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\Hub',
+                    'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\Spoke',
                     'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -33,9 +33,19 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'CreateSpoke' => [
+            'DeleteSpoke' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\Spoke',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'UpdateHub' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\Hub',
                     'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -46,16 +56,6 @@ return [
             'UpdateSpoke' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\Spoke',
-                    'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'DeleteSpoke' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
