@@ -3,50 +3,34 @@
 return [
     'interfaces' => [
         'google.area120.tables.v1alpha1.TablesService' => [
-            'GetTable' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{name=tables/*}',
+            'BatchCreateRows' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchCreate',
+                'body' => '*',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
             ],
-            'ListTables' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/tables',
-            ],
-            'GetWorkspace' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{name=workspaces/*}',
+            'BatchDeleteRows' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchDelete',
+                'body' => '*',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
             ],
-            'ListWorkspaces' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/workspaces',
-            ],
-            'GetRow' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{name=tables/*/rows/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListRows' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows',
+            'BatchUpdateRows' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchUpdate',
+                'body' => '*',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -67,43 +51,6 @@ return [
                     ],
                 ],
             ],
-            'BatchCreateRows' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchCreate',
-                'body' => '*',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateRow' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1alpha1/{row.name=tables/*/rows/*}',
-                'body' => 'row',
-                'placeholders' => [
-                    'row.name' => [
-                        'getters' => [
-                            'getRow',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'BatchUpdateRows' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchUpdate',
-                'body' => '*',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'DeleteRow' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1alpha1/{name=tables/*/rows/*}',
@@ -115,14 +62,67 @@ return [
                     ],
                 ],
             ],
-            'BatchDeleteRows' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchDelete',
-                'body' => '*',
+            'GetRow' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{name=tables/*/rows/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetTable' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{name=tables/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetWorkspace' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{name=workspaces/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListRows' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListTables' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/tables',
+            ],
+            'ListWorkspaces' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/workspaces',
+            ],
+            'UpdateRow' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1alpha1/{row.name=tables/*/rows/*}',
+                'body' => 'row',
+                'placeholders' => [
+                    'row.name' => [
+                        'getters' => [
+                            'getRow',
+                            'getName',
                         ],
                     ],
                 ],

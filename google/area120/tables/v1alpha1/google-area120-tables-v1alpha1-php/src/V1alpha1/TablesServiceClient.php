@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\Area120\Tables\V1alpha1;
+namespace Google\Area120\Tables\V1alpha1;
 
-use Google\Cloud\Area120\Tables\V1alpha1\Gapic\TablesServiceGapicClient;
+use Google\Area120\Tables\V1alpha1\Gapic\TablesServiceGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class TablesServiceClient extends TablesServiceGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see TablesServiceGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see TablesServiceGapicClient} class.
 }

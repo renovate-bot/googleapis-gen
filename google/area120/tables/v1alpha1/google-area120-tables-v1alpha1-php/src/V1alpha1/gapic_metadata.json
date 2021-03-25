@@ -1,0 +1,78 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.area120.tables.v1alpha1",
+    "libraryPackage": "Google\\Area120\\Tables\\V1alpha1",
+    "services": {
+        "TablesService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "TablesServiceGapicClient",
+                    "rpcs": {
+                        "BatchCreateRows": {
+                            "methods": [
+                                "batchCreateRows"
+                            ]
+                        },
+                        "BatchDeleteRows": {
+                            "methods": [
+                                "batchDeleteRows"
+                            ]
+                        },
+                        "BatchUpdateRows": {
+                            "methods": [
+                                "batchUpdateRows"
+                            ]
+                        },
+                        "CreateRow": {
+                            "methods": [
+                                "createRow"
+                            ]
+                        },
+                        "DeleteRow": {
+                            "methods": [
+                                "deleteRow"
+                            ]
+                        },
+                        "GetRow": {
+                            "methods": [
+                                "getRow"
+                            ]
+                        },
+                        "GetTable": {
+                            "methods": [
+                                "getTable"
+                            ]
+                        },
+                        "GetWorkspace": {
+                            "methods": [
+                                "getWorkspace"
+                            ]
+                        },
+                        "ListRows": {
+                            "methods": [
+                                "listRows"
+                            ]
+                        },
+                        "ListTables": {
+                            "methods": [
+                                "listTables"
+                            ]
+                        },
+                        "ListWorkspaces": {
+                            "methods": [
+                                "listWorkspaces"
+                            ]
+                        },
+                        "UpdateRow": {
+                            "methods": [
+                                "updateRow"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
