@@ -16,7 +16,7 @@
 #
 
 #
-# google-cloud-managedidentities documentation build configuration file
+# google-cloud-managed-identities documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-managedidentities"
+project = u"google-cloud-managed-identities"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-managedidentities-doc"
+htmlhelp_basename = "google-cloud-managed-identities-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-managedidentities.tex",
-        u"google-cloud-managedidentities Documentation",
+        "google-cloud-managed-identities.tex",
+        u"google-cloud-managed-identities Documentation",
         author,
         "manual",
     )
@@ -310,7 +310,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-managedidentities",
+        "google-cloud-managed-identities",
         u"Google Cloud Managedidentities Documentation",
         [author],
         1,
@@ -329,10 +329,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-managedidentities",
-        u"google-cloud-managedidentities Documentation",
+        "google-cloud-managed-identities",
+        u"google-cloud-managed-identities Documentation",
         author,
-        "google-cloud-managedidentities",
+        "google-cloud-managed-identities",
         "GAPIC library for Google Cloud Managedidentities API",
         "APIs",
     )
