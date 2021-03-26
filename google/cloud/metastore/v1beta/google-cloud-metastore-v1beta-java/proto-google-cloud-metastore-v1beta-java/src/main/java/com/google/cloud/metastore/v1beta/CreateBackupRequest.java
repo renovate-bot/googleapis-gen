@@ -5,7 +5,8 @@ package com.google.cloud.metastore.v1beta;
 
 /**
  * <pre>
- * Request message for [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
+ * Request message for
+ * [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.CreateBackupRequest}
@@ -122,8 +123,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The relative resource name of the service in which to create a backup
-   * of the following form:
+   * Required. The relative resource name of the service in which to create a
+   * backup of the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
@@ -145,8 +146,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The relative resource name of the service in which to create a backup
-   * of the following form:
+   * Required. The relative resource name of the service in which to create a
+   * backup of the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
@@ -226,8 +227,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.metastore.v1beta.Backup backup_;
   /**
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -239,8 +240,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -252,8 +253,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -267,10 +268,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object requestId_;
   /**
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -297,10 +298,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -519,7 +520,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
+   * Request message for
+   * [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.CreateBackupRequest}
@@ -700,8 +702,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -722,8 +724,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -745,8 +747,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -766,8 +768,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -782,8 +784,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -924,8 +926,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.metastore.v1beta.Backup, com.google.cloud.metastore.v1beta.Backup.Builder, com.google.cloud.metastore.v1beta.BackupOrBuilder> backupBuilder_;
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -936,8 +938,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -952,8 +954,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -973,8 +975,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -992,8 +994,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1015,8 +1017,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1034,8 +1036,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1047,8 +1049,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1063,8 +1065,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1086,10 +1088,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object requestId_ = "";
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1115,10 +1117,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1145,10 +1147,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1173,10 +1175,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1196,10 +1198,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.

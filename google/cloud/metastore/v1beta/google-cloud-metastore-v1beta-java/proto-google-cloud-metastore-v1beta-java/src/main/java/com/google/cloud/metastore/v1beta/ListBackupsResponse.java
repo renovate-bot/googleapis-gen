@@ -5,7 +5,8 @@ package com.google.cloud.metastore.v1beta;
 
 /**
  * <pre>
- * Response message for [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
+ * Response message for
+ * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.ListBackupsResponse}
@@ -463,7 +464,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Response message for [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
+   * Response message for
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.ListBackupsResponse}

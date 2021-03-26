@@ -351,8 +351,9 @@ private static final long serialVersionUID = 0L;
   public static final int DESTINATION_GCS_URI_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-   * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+   * Output only. A Cloud Storage URI of a folder that metadata are exported
+   * to, in the form of
+   * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
    * `&lt;export_folder&gt;` is automatically generated.
    * </pre>
    *
@@ -364,8 +365,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-   * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+   * Output only. A Cloud Storage URI of a folder that metadata are exported
+   * to, in the form of
+   * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
    * `&lt;export_folder&gt;` is automatically generated.
    * </pre>
    *
@@ -391,8 +393,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-   * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+   * Output only. A Cloud Storage URI of a folder that metadata are exported
+   * to, in the form of
+   * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
    * `&lt;export_folder&gt;` is automatically generated.
    * </pre>
    *
@@ -986,8 +989,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-     * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+     * Output only. A Cloud Storage URI of a folder that metadata are exported
+     * to, in the form of
+     * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
      * `&lt;export_folder&gt;` is automatically generated.
      * </pre>
      *
@@ -1000,8 +1004,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-     * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+     * Output only. A Cloud Storage URI of a folder that metadata are exported
+     * to, in the form of
+     * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
      * `&lt;export_folder&gt;` is automatically generated.
      * </pre>
      *
@@ -1028,8 +1033,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-     * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+     * Output only. A Cloud Storage URI of a folder that metadata are exported
+     * to, in the form of
+     * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
      * `&lt;export_folder&gt;` is automatically generated.
      * </pre>
      *
@@ -1057,8 +1063,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-     * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+     * Output only. A Cloud Storage URI of a folder that metadata are exported
+     * to, in the form of
+     * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
      * `&lt;export_folder&gt;` is automatically generated.
      * </pre>
      *
@@ -1078,8 +1085,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-     * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+     * Output only. A Cloud Storage URI of a folder that metadata are exported
+     * to, in the form of
+     * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
      * `&lt;export_folder&gt;` is automatically generated.
      * </pre>
      *
@@ -1096,8 +1104,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-     * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+     * Output only. A Cloud Storage URI of a folder that metadata are exported
+     * to, in the form of
+     * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
      * `&lt;export_folder&gt;` is automatically generated.
      * </pre>
      *

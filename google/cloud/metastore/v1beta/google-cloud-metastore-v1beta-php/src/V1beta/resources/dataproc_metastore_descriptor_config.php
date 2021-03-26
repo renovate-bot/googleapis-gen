@@ -3,29 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.metastore.v1beta.DataprocMetastore' => [
-            'CreateService' => [
+            'CreateBackup' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\Service',
-                    'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'UpdateService' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\Service',
-                    'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'DeleteService' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\Backup',
                     'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -43,9 +23,29 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateMetadataImport' => [
+            'CreateService' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\MetadataImport',
+                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\Service',
+                    'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'DeleteBackup' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'DeleteService' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -73,9 +73,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'CreateBackup' => [
+            'UpdateMetadataImport' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\Backup',
+                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\MetadataImport',
                     'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -83,9 +83,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteBackup' => [
+            'UpdateService' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'operationReturnType' => '\Google\Cloud\Metastore\V1beta\Service',
                     'metadataReturnType' => '\Google\Cloud\Metastore\V1beta\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -93,14 +93,14 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ListServices' => [
+            'ListBackups' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getServices',
+                    'resourcesGetMethod' => 'getBackups',
                 ],
             ],
             'ListMetadataImports' => [
@@ -113,14 +113,14 @@ return [
                     'resourcesGetMethod' => 'getMetadataImports',
                 ],
             ],
-            'ListBackups' => [
+            'ListServices' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getBackups',
+                    'resourcesGetMethod' => 'getServices',
                 ],
             ],
         ],

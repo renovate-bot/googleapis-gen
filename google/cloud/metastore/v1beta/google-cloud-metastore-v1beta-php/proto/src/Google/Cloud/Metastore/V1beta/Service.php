@@ -16,7 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Service extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, of the
+     * form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -41,8 +42,8 @@ class Service extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      *
      * Generated from protobuf field <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
@@ -67,15 +68,15 @@ class Service extends \Google\Protobuf\Internal\Message
      */
     protected $state = 0;
     /**
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      *
      * Generated from protobuf field <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $state_message = '';
     /**
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      *
      * Generated from protobuf field <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -101,7 +102,8 @@ class Service extends \Google\Protobuf\Internal\Message
      */
     protected $maintenance_window = null;
     /**
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      *
      * Generated from protobuf field <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -131,7 +133,8 @@ class Service extends \Google\Protobuf\Internal\Message
      *           Configuration information specific to running Hive metastore
      *           software as the metastore service.
      *     @type string $name
-     *           Immutable. The relative resource name of the metastore service, of the form:
+     *           Immutable. The relative resource name of the metastore service, of the
+     *           form:
      *           `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Output only. The time when the metastore service was created.
@@ -140,8 +143,8 @@ class Service extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           User-defined labels for the metastore service.
      *     @type string $network
-     *           Immutable. The relative resource name of the VPC network on which the instance can be
-     *           accessed. It is specified in the following form:
+     *           Immutable. The relative resource name of the VPC network on which the
+     *           instance can be accessed. It is specified in the following form:
      *           `projects/{project_number}/global/networks/{network_id}`.
      *     @type string $endpoint_uri
      *           Output only. The URI of the endpoint used to access the metastore service.
@@ -150,11 +153,11 @@ class Service extends \Google\Protobuf\Internal\Message
      *     @type int $state
      *           Output only. The current state of the metastore service.
      *     @type string $state_message
-     *           Output only. Additional information about the current state of the metastore service, if
-     *           available.
+     *           Output only. Additional information about the current state of the
+     *           metastore service, if available.
      *     @type string $artifact_gcs_uri
-     *           Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     *           related to the metastore service are stored.
+     *           Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     *           where artifacts related to the metastore service are stored.
      *     @type int $tier
      *           The tier of the service.
      *     @type \Google\Cloud\Metastore\V1beta\MetadataIntegration $metadata_integration
@@ -164,7 +167,8 @@ class Service extends \Google\Protobuf\Internal\Message
      *           The one hour maintenance window of the metastore service. This specifies
      *           when the service can be restarted for maintenance purposes in UTC time.
      *     @type string $uid
-     *           Output only. The globally unique resource identifier of the metastore service.
+     *           Output only. The globally unique resource identifier of the metastore
+     *           service.
      *     @type \Google\Cloud\Metastore\V1beta\MetadataManagementActivity $metadata_management_activity
      *           Output only. The metadata management activities of the metastore service.
      *     @type int $release_channel
@@ -211,7 +215,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, of the
+     * form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -223,7 +228,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, of the
+     * form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -337,8 +343,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      *
      * Generated from protobuf field <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
@@ -350,8 +356,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      *
      * Generated from protobuf field <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
@@ -445,8 +451,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      *
      * Generated from protobuf field <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -457,8 +463,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      *
      * Generated from protobuf field <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -473,8 +479,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      *
      * Generated from protobuf field <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -485,8 +491,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      *
      * Generated from protobuf field <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -603,7 +609,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      *
      * Generated from protobuf field <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -614,7 +621,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      *
      * Generated from protobuf field <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

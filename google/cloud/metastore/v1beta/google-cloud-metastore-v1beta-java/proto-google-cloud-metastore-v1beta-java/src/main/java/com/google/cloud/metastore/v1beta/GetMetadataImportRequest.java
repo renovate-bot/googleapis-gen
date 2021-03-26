@@ -5,7 +5,8 @@ package com.google.cloud.metastore.v1beta;
 
 /**
  * <pre>
- * Request message for [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1beta.DataprocMetastore.GetMetadataImport].
+ * Request message for
+ * [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1beta.DataprocMetastore.GetMetadataImport].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.GetMetadataImportRequest}
@@ -95,8 +96,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The relative resource name of the metadata import to retrieve, in the
-   * following form:
+   * Required. The relative resource name of the metadata import to retrieve, in
+   * the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
    * </pre>
    *
@@ -118,8 +119,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The relative resource name of the metadata import to retrieve, in the
-   * following form:
+   * Required. The relative resource name of the metadata import to retrieve, in
+   * the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
    * </pre>
    *
@@ -297,7 +298,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1beta.DataprocMetastore.GetMetadataImport].
+   * Request message for
+   * [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1beta.DataprocMetastore.GetMetadataImport].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.GetMetadataImportRequest}
@@ -450,8 +452,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The relative resource name of the metadata import to retrieve, in the
-     * following form:
+     * Required. The relative resource name of the metadata import to retrieve, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -472,8 +474,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metadata import to retrieve, in the
-     * following form:
+     * Required. The relative resource name of the metadata import to retrieve, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -495,8 +497,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metadata import to retrieve, in the
-     * following form:
+     * Required. The relative resource name of the metadata import to retrieve, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -516,8 +518,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metadata import to retrieve, in the
-     * following form:
+     * Required. The relative resource name of the metadata import to retrieve, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -532,8 +534,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metadata import to retrieve, in the
-     * following form:
+     * Required. The relative resource name of the metadata import to retrieve, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *

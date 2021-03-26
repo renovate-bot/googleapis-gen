@@ -569,8 +569,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object backup_;
   /**
    * <pre>
-   * Output only. The relative resource name of the metastore service backup to restore
-   * from, in the following form:
+   * Output only. The relative resource name of the metastore service backup to
+   * restore from, in the following form:
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -592,8 +592,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The relative resource name of the metastore service backup to restore
-   * from, in the following form:
+   * Output only. The relative resource name of the metastore service backup to
+   * restore from, in the following form:
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -646,8 +646,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object details_;
   /**
    * <pre>
-   * Output only. The restore details containing the revision of the service to be restored
-   * to, in format of JSON.
+   * Output only. The restore details containing the revision of the service to
+   * be restored to, in format of JSON.
    * </pre>
    *
    * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -668,8 +668,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The restore details containing the revision of the service to be restored
-   * to, in format of JSON.
+   * Output only. The restore details containing the revision of the service to
+   * be restored to, in format of JSON.
    * </pre>
    *
    * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1492,8 +1492,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object backup_ = "";
     /**
      * <pre>
-     * Output only. The relative resource name of the metastore service backup to restore
-     * from, in the following form:
+     * Output only. The relative resource name of the metastore service backup to
+     * restore from, in the following form:
      * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1514,8 +1514,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The relative resource name of the metastore service backup to restore
-     * from, in the following form:
+     * Output only. The relative resource name of the metastore service backup to
+     * restore from, in the following form:
      * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1537,8 +1537,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The relative resource name of the metastore service backup to restore
-     * from, in the following form:
+     * Output only. The relative resource name of the metastore service backup to
+     * restore from, in the following form:
      * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1558,8 +1558,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The relative resource name of the metastore service backup to restore
-     * from, in the following form:
+     * Output only. The relative resource name of the metastore service backup to
+     * restore from, in the following form:
      * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1574,8 +1574,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The relative resource name of the metastore service backup to restore
-     * from, in the following form:
+     * Output only. The relative resource name of the metastore service backup to
+     * restore from, in the following form:
      * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1672,8 +1672,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object details_ = "";
     /**
      * <pre>
-     * Output only. The restore details containing the revision of the service to be restored
-     * to, in format of JSON.
+     * Output only. The restore details containing the revision of the service to
+     * be restored to, in format of JSON.
      * </pre>
      *
      * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1693,8 +1693,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The restore details containing the revision of the service to be restored
-     * to, in format of JSON.
+     * Output only. The restore details containing the revision of the service to
+     * be restored to, in format of JSON.
      * </pre>
      *
      * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1715,8 +1715,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The restore details containing the revision of the service to be restored
-     * to, in format of JSON.
+     * Output only. The restore details containing the revision of the service to
+     * be restored to, in format of JSON.
      * </pre>
      *
      * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1735,8 +1735,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The restore details containing the revision of the service to be restored
-     * to, in format of JSON.
+     * Output only. The restore details containing the revision of the service to
+     * be restored to, in format of JSON.
      * </pre>
      *
      * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1750,8 +1750,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The restore details containing the revision of the service to be restored
-     * to, in format of JSON.
+     * Output only. The restore details containing the revision of the service to
+     * be restored to, in format of JSON.
      * </pre>
      *
      * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

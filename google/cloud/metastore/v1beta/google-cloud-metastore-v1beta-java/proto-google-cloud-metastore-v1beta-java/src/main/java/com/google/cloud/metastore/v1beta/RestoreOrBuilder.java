@@ -82,8 +82,8 @@ public interface RestoreOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The relative resource name of the metastore service backup to restore
-   * from, in the following form:
+   * Output only. The relative resource name of the metastore service backup to
+   * restore from, in the following form:
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -93,8 +93,8 @@ public interface RestoreOrBuilder extends
   java.lang.String getBackup();
   /**
    * <pre>
-   * Output only. The relative resource name of the metastore service backup to restore
-   * from, in the following form:
+   * Output only. The relative resource name of the metastore service backup to
+   * restore from, in the following form:
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -125,8 +125,8 @@ public interface RestoreOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The restore details containing the revision of the service to be restored
-   * to, in format of JSON.
+   * Output only. The restore details containing the revision of the service to
+   * be restored to, in format of JSON.
    * </pre>
    *
    * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -135,8 +135,8 @@ public interface RestoreOrBuilder extends
   java.lang.String getDetails();
   /**
    * <pre>
-   * Output only. The restore details containing the revision of the service to be restored
-   * to, in format of JSON.
+   * Output only. The restore details containing the revision of the service to
+   * be restored to, in format of JSON.
    * </pre>
    *
    * <code>string details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

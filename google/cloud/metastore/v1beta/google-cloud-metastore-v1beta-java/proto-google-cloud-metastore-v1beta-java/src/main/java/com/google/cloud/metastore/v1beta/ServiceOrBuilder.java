@@ -39,7 +39,8 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
-   * Immutable. The relative resource name of the metastore service, of the form:
+   * Immutable. The relative resource name of the metastore service, of the
+   * form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -49,7 +50,8 @@ public interface ServiceOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Immutable. The relative resource name of the metastore service, of the form:
+   * Immutable. The relative resource name of the metastore service, of the
+   * form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -169,8 +171,8 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
-   * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. It is specified in the following form:
+   * Immutable. The relative resource name of the VPC network on which the
+   * instance can be accessed. It is specified in the following form:
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -180,8 +182,8 @@ public interface ServiceOrBuilder extends
   java.lang.String getNetwork();
   /**
    * <pre>
-   * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. It is specified in the following form:
+   * Immutable. The relative resource name of the VPC network on which the
+   * instance can be accessed. It is specified in the following form:
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -242,8 +244,8 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Additional information about the current state of the metastore service, if
-   * available.
+   * Output only. Additional information about the current state of the
+   * metastore service, if available.
    * </pre>
    *
    * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -252,8 +254,8 @@ public interface ServiceOrBuilder extends
   java.lang.String getStateMessage();
   /**
    * <pre>
-   * Output only. Additional information about the current state of the metastore service, if
-   * available.
+   * Output only. Additional information about the current state of the
+   * metastore service, if available.
    * </pre>
    *
    * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -264,8 +266,8 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
-   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-   * related to the metastore service are stored.
+   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+   * where artifacts related to the metastore service are stored.
    * </pre>
    *
    * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -274,8 +276,8 @@ public interface ServiceOrBuilder extends
   java.lang.String getArtifactGcsUri();
   /**
    * <pre>
-   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-   * related to the metastore service are stored.
+   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+   * where artifacts related to the metastore service are stored.
    * </pre>
    *
    * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -365,7 +367,8 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The globally unique resource identifier of the metastore service.
+   * Output only. The globally unique resource identifier of the metastore
+   * service.
    * </pre>
    *
    * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -374,7 +377,8 @@ public interface ServiceOrBuilder extends
   java.lang.String getUid();
   /**
    * <pre>
-   * Output only. The globally unique resource identifier of the metastore service.
+   * Output only. The globally unique resource identifier of the metastore
+   * service.
    * </pre>
    *
    * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

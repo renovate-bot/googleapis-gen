@@ -9,8 +9,8 @@ public interface ListServicesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The relative resource name of the location of metastore services to
-   * list, in the following form:
+   * Required. The relative resource name of the location of metastore services
+   * to list, in the following form:
    * `projects/{project_number}/locations/{location_id}`.
    * </pre>
    *
@@ -20,8 +20,8 @@ public interface ListServicesRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The relative resource name of the location of metastore services to
-   * list, in the following form:
+   * Required. The relative resource name of the location of metastore services
+   * to list, in the following form:
    * `projects/{project_number}/locations/{location_id}`.
    * </pre>
    *
@@ -33,9 +33,10 @@ public interface ListServicesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The maximum number of services to return. The response may contain less
-   * than the maximum number. If unspecified, no more than 500 services are
-   * returned. The maximum value is 1000; values above 1000 are changed to 1000.
+   * Optional. The maximum number of services to return. The response may
+   * contain less than the maximum number. If unspecified, no more than 500
+   * services are returned. The maximum value is 1000; values above 1000 are
+   * changed to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45,12 +46,13 @@ public interface ListServicesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A page token, received from a previous [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices]
+   * Optional. A page token, received from a previous
+   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices]
    * call. Provide this token to retrieve the subsequent page.
    * To retrieve the first page, supply an empty page token.
    * When paginating, other parameters provided to
-   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices] must match the call that provided the
-   * page token.
+   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -59,12 +61,13 @@ public interface ListServicesRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * Optional. A page token, received from a previous [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices]
+   * Optional. A page token, received from a previous
+   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices]
    * call. Provide this token to retrieve the subsequent page.
    * To retrieve the first page, supply an empty page token.
    * When paginating, other parameters provided to
-   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices] must match the call that provided the
-   * page token.
+   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

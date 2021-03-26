@@ -9,8 +9,8 @@ public interface CreateBackupRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The relative resource name of the service in which to create a backup
-   * of the following form:
+   * Required. The relative resource name of the service in which to create a
+   * backup of the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
@@ -20,8 +20,8 @@ public interface CreateBackupRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The relative resource name of the service in which to create a backup
-   * of the following form:
+   * Required. The relative resource name of the service in which to create a
+   * backup of the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
@@ -61,8 +61,8 @@ public interface CreateBackupRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,8 +71,8 @@ public interface CreateBackupRequestOrBuilder extends
   boolean hasBackup();
   /**
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -81,8 +81,8 @@ public interface CreateBackupRequestOrBuilder extends
   com.google.cloud.metastore.v1beta.Backup getBackup();
   /**
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1beta.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,10 +91,10 @@ public interface CreateBackupRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -109,10 +109,10 @@ public interface CreateBackupRequestOrBuilder extends
   java.lang.String getRequestId();
   /**
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.

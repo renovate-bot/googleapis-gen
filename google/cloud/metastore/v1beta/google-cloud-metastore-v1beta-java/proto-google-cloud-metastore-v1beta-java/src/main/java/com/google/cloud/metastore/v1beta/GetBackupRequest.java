@@ -5,7 +5,8 @@ package com.google.cloud.metastore.v1beta;
 
 /**
  * <pre>
- * Request message for [DataprocMetastore.GetBackup][google.cloud.metastore.v1beta.DataprocMetastore.GetBackup].
+ * Request message for
+ * [DataprocMetastore.GetBackup][google.cloud.metastore.v1beta.DataprocMetastore.GetBackup].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.GetBackupRequest}
@@ -297,7 +298,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataprocMetastore.GetBackup][google.cloud.metastore.v1beta.DataprocMetastore.GetBackup].
+   * Request message for
+   * [DataprocMetastore.GetBackup][google.cloud.metastore.v1beta.DataprocMetastore.GetBackup].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.GetBackupRequest}

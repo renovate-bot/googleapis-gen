@@ -393,7 +393,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -402,7 +403,8 @@ private static final long serialVersionUID = 0L;
     int getTypeValue();
     /**
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -773,7 +775,8 @@ private static final long serialVersionUID = 0L;
     private int type_;
     /**
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -784,7 +787,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1426,7 +1430,8 @@ private static final long serialVersionUID = 0L;
       private int type_ = 0;
       /**
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1437,7 +1442,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1452,7 +1458,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1466,7 +1473,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1484,7 +1492,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>.google.cloud.metastore.v1beta.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

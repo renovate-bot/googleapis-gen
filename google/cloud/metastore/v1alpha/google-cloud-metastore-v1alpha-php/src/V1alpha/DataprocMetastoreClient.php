@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\Metastore\V1Alpha;
+namespace Google\Cloud\Metastore\V1alpha;
 
-use Google\Cloud\Metastore\V1Alpha\Gapic\DataprocMetastoreGapicClient;
+use Google\Cloud\Metastore\V1alpha\Gapic\DataprocMetastoreGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class DataprocMetastoreClient extends DataprocMetastoreGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see DataprocMetastoreGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see DataprocMetastoreGapicClient} class.
 }

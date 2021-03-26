@@ -5,7 +5,8 @@ package com.google.cloud.metastore.v1beta;
 
 /**
  * <pre>
- * Request message for [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
+ * Request message for
+ * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.ListBackupsRequest}
@@ -171,8 +172,8 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * Optional. The maximum number of backups to return. The response may contain less
-   * than the maximum number. If unspecified, no more than 500 backups are
+   * Optional. The maximum number of backups to return. The response may contain
+   * less than the maximum number. If unspecified, no more than 500 backups are
    * returned. The maximum value is 1000; values above 1000 are changed to 1000.
    * </pre>
    *
@@ -188,12 +189,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+   * Optional. A page token, received from a previous
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
    * call. Provide this token to retrieve the subsequent page.
    * To retrieve the first page, supply an empty page token.
    * When paginating, other parameters provided to
-   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-   * page token.
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -214,12 +216,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+   * Optional. A page token, received from a previous
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
    * call. Provide this token to retrieve the subsequent page.
    * To retrieve the first page, supply an empty page token.
    * When paginating, other parameters provided to
-   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-   * page token.
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -533,7 +536,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
+   * Request message for
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.ListBackupsRequest}
@@ -819,8 +823,8 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * Optional. The maximum number of backups to return. The response may contain less
-     * than the maximum number. If unspecified, no more than 500 backups are
+     * Optional. The maximum number of backups to return. The response may contain
+     * less than the maximum number. If unspecified, no more than 500 backups are
      * returned. The maximum value is 1000; values above 1000 are changed to 1000.
      * </pre>
      *
@@ -833,8 +837,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The maximum number of backups to return. The response may contain less
-     * than the maximum number. If unspecified, no more than 500 backups are
+     * Optional. The maximum number of backups to return. The response may contain
+     * less than the maximum number. If unspecified, no more than 500 backups are
      * returned. The maximum value is 1000; values above 1000 are changed to 1000.
      * </pre>
      *
@@ -850,8 +854,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The maximum number of backups to return. The response may contain less
-     * than the maximum number. If unspecified, no more than 500 backups are
+     * Optional. The maximum number of backups to return. The response may contain
+     * less than the maximum number. If unspecified, no more than 500 backups are
      * returned. The maximum value is 1000; values above 1000 are changed to 1000.
      * </pre>
      *
@@ -868,12 +872,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * Optional. A page token, received from a previous
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
      * To retrieve the first page, supply an empty page token.
      * When paginating, other parameters provided to
-     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-     * page token.
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,12 +898,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * Optional. A page token, received from a previous
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
      * To retrieve the first page, supply an empty page token.
      * When paginating, other parameters provided to
-     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-     * page token.
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -919,12 +925,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * Optional. A page token, received from a previous
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
      * To retrieve the first page, supply an empty page token.
      * When paginating, other parameters provided to
-     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-     * page token.
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -943,12 +950,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * Optional. A page token, received from a previous
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
      * To retrieve the first page, supply an empty page token.
      * When paginating, other parameters provided to
-     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-     * page token.
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -962,12 +970,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A page token, received from a previous [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * Optional. A page token, received from a previous
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
      * To retrieve the first page, supply an empty page token.
      * When paginating, other parameters provided to
-     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups] must match the call that provided the
-     * page token.
+     * [DataprocMetastore.ListBackups][google.cloud.metastore.v1beta.DataprocMetastore.ListBackups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

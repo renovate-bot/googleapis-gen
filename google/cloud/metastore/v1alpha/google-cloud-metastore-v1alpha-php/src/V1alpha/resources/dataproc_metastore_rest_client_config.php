@@ -27,82 +27,14 @@ return [
             ],
         ],
         'google.cloud.metastore.v1alpha.DataprocMetastore' => [
-            'ListServices' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*}/services',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetService' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateService' => [
+            'CreateBackup' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*}/services',
-                'body' => 'service',
+                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*/services/*}/backups',
+                'body' => 'backup',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateService' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1alpha/{service.name=projects/*/locations/*/services/*}',
-                'body' => 'service',
-                'placeholders' => [
-                    'service.name' => [
-                        'getters' => [
-                            'getService',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteService' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListMetadataImports' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*/services/*}/metadataImports',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetMetadataImport' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*/metadataImports/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
@@ -119,14 +51,35 @@ return [
                     ],
                 ],
             ],
-            'UpdateMetadataImport' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1alpha/{metadata_import.name=projects/*/locations/*/services/*/metadataImports/*}',
-                'body' => 'metadata_import',
+            'CreateService' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*}/services',
+                'body' => 'service',
                 'placeholders' => [
-                    'metadata_import.name' => [
+                    'parent' => [
                         'getters' => [
-                            'getMetadataImport',
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteBackup' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*/backups/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteService' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
                             'getName',
                         ],
                     ],
@@ -144,14 +97,35 @@ return [
                     ],
                 ],
             ],
-            'RestoreService' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha/{service=projects/*/locations/*/services/*}:restore',
-                'body' => '*',
+            'GetBackup' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*/backups/*}',
                 'placeholders' => [
-                    'service' => [
+                    'name' => [
                         'getters' => [
-                            'getService',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetMetadataImport' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*/metadataImports/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetService' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -167,21 +141,9 @@ return [
                     ],
                 ],
             ],
-            'GetBackup' => [
+            'ListMetadataImports' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*/backups/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateBackup' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*/services/*}/backups',
-                'body' => 'backup',
+                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*/services/*}/metadataImports',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -190,12 +152,50 @@ return [
                     ],
                 ],
             ],
-            'DeleteBackup' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/services/*/backups/*}',
+            'ListServices' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*}/services',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'RestoreService' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha/{service=projects/*/locations/*/services/*}:restore',
+                'body' => '*',
+                'placeholders' => [
+                    'service' => [
+                        'getters' => [
+                            'getService',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateMetadataImport' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1alpha/{metadata_import.name=projects/*/locations/*/services/*/metadataImports/*}',
+                'body' => 'metadata_import',
+                'placeholders' => [
+                    'metadata_import.name' => [
+                        'getters' => [
+                            'getMetadataImport',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateService' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1alpha/{service.name=projects/*/locations/*/services/*}',
+                'body' => 'service',
+                'placeholders' => [
+                    'service.name' => [
+                        'getters' => [
+                            'getService',
                             'getName',
                         ],
                     ],

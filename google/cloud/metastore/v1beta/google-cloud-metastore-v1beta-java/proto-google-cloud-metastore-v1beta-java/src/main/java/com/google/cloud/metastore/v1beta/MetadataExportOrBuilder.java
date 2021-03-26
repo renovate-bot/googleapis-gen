@@ -9,8 +9,9 @@ public interface MetadataExportOrBuilder extends
 
   /**
    * <pre>
-   * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-   * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+   * Output only. A Cloud Storage URI of a folder that metadata are exported
+   * to, in the form of
+   * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
    * `&lt;export_folder&gt;` is automatically generated.
    * </pre>
    *
@@ -20,8 +21,9 @@ public interface MetadataExportOrBuilder extends
   boolean hasDestinationGcsUri();
   /**
    * <pre>
-   * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-   * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+   * Output only. A Cloud Storage URI of a folder that metadata are exported
+   * to, in the form of
+   * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
    * `&lt;export_folder&gt;` is automatically generated.
    * </pre>
    *
@@ -31,8 +33,9 @@ public interface MetadataExportOrBuilder extends
   java.lang.String getDestinationGcsUri();
   /**
    * <pre>
-   * Output only. A Cloud Storage URI of a folder that metadata are exported to, in the
-   * form of `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
+   * Output only. A Cloud Storage URI of a folder that metadata are exported
+   * to, in the form of
+   * `gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;/&lt;export_folder&gt;`, where
    * `&lt;export_folder&gt;` is automatically generated.
    * </pre>
    *

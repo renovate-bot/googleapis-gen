@@ -5,7 +5,8 @@ package com.google.cloud.metastore.v1beta;
 
 /**
  * <pre>
- * Request message for [DataprocMetastore.DeleteService][google.cloud.metastore.v1beta.DataprocMetastore.DeleteService].
+ * Request message for
+ * [DataprocMetastore.DeleteService][google.cloud.metastore.v1beta.DataprocMetastore.DeleteService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.DeleteServiceRequest}
@@ -102,8 +103,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The relative resource name of the metastore service to delete, in the
-   * following form:
+   * Required. The relative resource name of the metastore service to delete, in
+   * the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -125,8 +126,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The relative resource name of the metastore service to delete, in the
-   * following form:
+   * Required. The relative resource name of the metastore service to delete, in
+   * the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -152,10 +153,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object requestId_;
   /**
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -182,10 +183,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -378,7 +379,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataprocMetastore.DeleteService][google.cloud.metastore.v1beta.DataprocMetastore.DeleteService].
+   * Request message for
+   * [DataprocMetastore.DeleteService][google.cloud.metastore.v1beta.DataprocMetastore.DeleteService].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.DeleteServiceRequest}
@@ -538,8 +540,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The relative resource name of the metastore service to delete, in the
-     * following form:
+     * Required. The relative resource name of the metastore service to delete, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -560,8 +562,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metastore service to delete, in the
-     * following form:
+     * Required. The relative resource name of the metastore service to delete, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -583,8 +585,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metastore service to delete, in the
-     * following form:
+     * Required. The relative resource name of the metastore service to delete, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -604,8 +606,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metastore service to delete, in the
-     * following form:
+     * Required. The relative resource name of the metastore service to delete, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -620,8 +622,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative resource name of the metastore service to delete, in the
-     * following form:
+     * Required. The relative resource name of the metastore service to delete, in
+     * the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -644,10 +646,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object requestId_ = "";
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -673,10 +675,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -703,10 +705,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -731,10 +733,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -754,10 +756,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
