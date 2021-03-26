@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ namespace Google\Cloud\DataQnA\V1alpha\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -67,19 +68,18 @@ use Google\Protobuf\FieldMask;
  * ```
  * $questionServiceClient = new QuestionServiceClient();
  * try {
- *     $formattedName = $questionServiceClient->questionName('[PROJECT]', '[LOCATION]', '[QUESTION]');
- *     $response = $questionServiceClient->getQuestion($formattedName);
+ *     $formattedParent = $questionServiceClient->locationName('[PROJECT]', '[LOCATION]');
+ *     $question = new Question();
+ *     $response = $questionServiceClient->createQuestion($formattedParent, $question);
  * } finally {
  *     $questionServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class QuestionServiceGapicClient
 {
@@ -111,25 +111,29 @@ class QuestionServiceGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
+
     private static $locationNameTemplate;
+
     private static $questionNameTemplate;
+
     private static $userFeedbackNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/question_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/question_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/question_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/question_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/question_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/question_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/question_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/question_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -137,7 +141,7 @@ class QuestionServiceGapicClient
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -146,7 +150,7 @@ class QuestionServiceGapicClient
 
     private static function getQuestionNameTemplate()
     {
-        if (null == self::$questionNameTemplate) {
+        if (self::$questionNameTemplate == null) {
             self::$questionNameTemplate = new PathTemplate('projects/{project}/locations/{location}/questions/{question}');
         }
 
@@ -155,7 +159,7 @@ class QuestionServiceGapicClient
 
     private static function getUserFeedbackNameTemplate()
     {
-        if (null == self::$userFeedbackNameTemplate) {
+        if (self::$userFeedbackNameTemplate == null) {
             self::$userFeedbackNameTemplate = new PathTemplate('projects/{project}/locations/{location}/questions/{question}/userFeedback');
         }
 
@@ -164,7 +168,7 @@ class QuestionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
                 'question' => self::getQuestionNameTemplate(),
@@ -176,14 +180,13 @@ class QuestionServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location resource.
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
      *
      * @param string $project
      * @param string $location
      *
      * @return string The formatted location resource.
-     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -194,15 +197,14 @@ class QuestionServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a question resource.
+     * Formats a string containing the fully-qualified path to represent a question
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $question
      *
      * @return string The formatted question resource.
-     * @experimental
      */
     public static function questionName($project, $location, $question)
     {
@@ -214,15 +216,14 @@ class QuestionServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a user_feedback resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * user_feedback resource.
      *
      * @param string $project
      * @param string $location
      * @param string $question
      *
      * @return string The formatted user_feedback resource.
-     * @experimental
      */
     public static function userFeedbackName($project, $location, $question)
     {
@@ -239,12 +240,13 @@ class QuestionServiceGapicClient
      * Template: Pattern
      * - location: projects/{project}/locations/{location}
      * - question: projects/{project}/locations/{location}/questions/{question}
-     * - userFeedback: projects/{project}/locations/{location}/questions/{question}/userFeedback.
+     * - userFeedback: projects/{project}/locations/{location}/questions/{question}/userFeedback
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -252,12 +254,10 @@ class QuestionServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -273,6 +273,7 @@ class QuestionServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -280,7 +281,7 @@ class QuestionServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -294,31 +295,31 @@ class QuestionServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -326,68 +327,11 @@ class QuestionServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
-    }
-
-    /**
-     * Gets a previously created question.
-     *
-     * Sample code:
-     * ```
-     * $questionServiceClient = new QuestionServiceClient();
-     * try {
-     *     $formattedName = $questionServiceClient->questionName('[PROJECT]', '[LOCATION]', '[QUESTION]');
-     *     $response = $questionServiceClient->getQuestion($formattedName);
-     * } finally {
-     *     $questionServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The unique identifier for the question.
-     *                             Example: `projects/foo/locations/bar/questions/1234`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type FieldMask $readMask
-     *          The list of fields to be retrieved.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\DataQnA\V1alpha\Question
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getQuestion($name, array $optionalArgs = [])
-    {
-        $request = new GetQuestionRequest();
-        $request->setName($name);
-        if (isset($optionalArgs['readMask'])) {
-            $request->setReadMask($optionalArgs['readMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetQuestion',
-            Question::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -409,39 +353,29 @@ class QuestionServiceGapicClient
      *                               Example: `projects/foo/locations/bar`
      * @param Question $question     Required. The question to create.
      * @param array    $optionalArgs {
-     *                               Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\DataQnA\V1alpha\Question
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createQuestion($parent, $question, array $optionalArgs = [])
     {
         $request = new CreateQuestionRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setQuestion($question);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateQuestion',
-            Question::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateQuestion', Question::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -451,7 +385,7 @@ class QuestionServiceGapicClient
      * ```
      * $questionServiceClient = new QuestionServiceClient();
      * try {
-     *     $name = '';
+     *     $name = 'name';
      *     $interpretationIndex = 0;
      *     $response = $questionServiceClient->executeQuestion($name, $interpretationIndex);
      * } finally {
@@ -463,39 +397,76 @@ class QuestionServiceGapicClient
      *                                    Example: `projects/foo/locations/bar/questions/1234`
      * @param int    $interpretationIndex Required. Index of the interpretation to execute.
      * @param array  $optionalArgs        {
-     *                                    Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\DataQnA\V1alpha\Question
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function executeQuestion($name, $interpretationIndex, array $optionalArgs = [])
     {
         $request = new ExecuteQuestionRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
         $request->setInterpretationIndex($interpretationIndex);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ExecuteQuestion', Question::class, $optionalArgs, $request)->wait();
+    }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+    /**
+     * Gets a previously created question.
+     *
+     * Sample code:
+     * ```
+     * $questionServiceClient = new QuestionServiceClient();
+     * try {
+     *     $formattedName = $questionServiceClient->questionName('[PROJECT]', '[LOCATION]', '[QUESTION]');
+     *     $response = $questionServiceClient->getQuestion($formattedName);
+     * } finally {
+     *     $questionServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The unique identifier for the question.
+     *                             Example: `projects/foo/locations/bar/questions/1234`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $readMask
+     *           The list of fields to be retrieved.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\DataQnA\V1alpha\Question
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getQuestion($name, array $optionalArgs = [])
+    {
+        $request = new GetQuestionRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
+        }
 
-        return $this->startCall(
-            'ExecuteQuestion',
-            Question::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetQuestion', Question::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -516,38 +487,28 @@ class QuestionServiceGapicClient
      *                             User feedback is a singleton resource on a Question.
      *                             Example: `projects/foo/locations/bar/questions/1234/userFeedback`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\DataQnA\V1alpha\UserFeedback
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getUserFeedback($name, array $optionalArgs = [])
     {
         $request = new GetUserFeedbackRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetUserFeedback',
-            UserFeedback::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetUserFeedback', UserFeedback::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -570,42 +531,33 @@ class QuestionServiceGapicClient
      *                                   The feedback's name field is used to identify the user feedback (and the
      *                                   corresponding question) to update.
      * @param array        $optionalArgs {
-     *                                   Optional.
+     *     Optional.
      *
      *     @type FieldMask $updateMask
-     *          The list of fields to be updated.
+     *           The list of fields to be updated.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\DataQnA\V1alpha\UserFeedback
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function updateUserFeedback($userFeedback, array $optionalArgs = [])
     {
         $request = new UpdateUserFeedbackRequest();
+        $requestParamHeaders = [];
         $request->setUserFeedback($userFeedback);
+        $requestParamHeaders['user_feedback.name'] = $userFeedback->getName();
         if (isset($optionalArgs['updateMask'])) {
             $request->setUpdateMask($optionalArgs['updateMask']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'user_feedback.name' => $request->getUserFeedback()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateUserFeedback',
-            UserFeedback::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateUserFeedback', UserFeedback::class, $optionalArgs, $request)->wait();
     }
 }

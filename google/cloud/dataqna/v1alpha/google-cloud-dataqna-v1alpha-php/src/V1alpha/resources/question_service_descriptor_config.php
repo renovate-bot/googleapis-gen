@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.cloud.dataqna.v1alpha.QuestionService' => [
-        ],
+        'google.cloud.dataqna.v1alpha.QuestionService' => [],
     ],
 ];

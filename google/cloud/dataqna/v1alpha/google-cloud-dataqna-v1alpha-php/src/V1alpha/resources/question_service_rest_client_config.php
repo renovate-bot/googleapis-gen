@@ -3,17 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.dataqna.v1alpha.QuestionService' => [
-            'GetQuestion' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/questions/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateQuestion' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1alpha/{parent=projects/*/locations/*}/questions',
@@ -30,6 +19,17 @@ return [
                 'method' => 'post',
                 'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/questions/*}:execute',
                 'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetQuestion' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{name=projects/*/locations/*/questions/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [

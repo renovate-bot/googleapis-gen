@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ namespace Google\Cloud\DataQnA\V1alpha\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\PathTemplate;
+
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -52,10 +54,10 @@ use Google\Cloud\DataQnA\V1alpha\SuggestQueriesResponse;
  * Example Request:
  * ```
  * GetSuggestions({
- *   parent: "locations/us/projects/my-project"
- *   scopes:
- *   "//bigquery.googleapis.com/projects/my-project/datasets/my-dataset/tables/my-table"
- *   query: "top it"
+ * parent: "locations/us/projects/my-project"
+ * scopes:
+ * "//bigquery.googleapis.com/projects/my-project/datasets/my-dataset/tables/my-table"
+ * query: "top it"
  * })
  * ```
  *
@@ -64,45 +66,45 @@ use Google\Cloud\DataQnA\V1alpha\SuggestQueriesResponse;
  * dimension for the provided scope).
  * ```
  * suggestions {
- *   suggestion_info {
- *     annotated_suggestion {
- *       text_formatted: "top item by sum of usd_revenue_net"
- *       markups {
- *         type: DIMENSION
- *         start_char_index: 4
- *         length: 4
- *       }
- *       markups {
- *         type: METRIC
- *         start_char_index: 19
- *         length: 15
- *       }
- *     }
- *     query_matches {
- *       start_char_index: 0
- *       length: 6
- *     }
- *   }
- *   suggestion_type: TEMPLATE
- *   ranking_score: 0.9
+ * suggestion_info {
+ * annotated_suggestion {
+ * text_formatted: "top item by sum of usd_revenue_net"
+ * markups {
+ * type: DIMENSION
+ * start_char_index: 4
+ * length: 4
+ * }
+ * markups {
+ * type: METRIC
+ * start_char_index: 19
+ * length: 15
+ * }
+ * }
+ * query_matches {
+ * start_char_index: 0
+ * length: 6
+ * }
+ * }
+ * suggestion_type: TEMPLATE
+ * ranking_score: 0.9
  * }
  * suggestions {
- *   suggestion_info {
- *     annotated_suggestion {
- *       text_formatted: "item"
- *       markups {
- *         type: DIMENSION
- *         start_char_index: 4
- *         length: 2
- *       }
- *     }
- *     query_matches {
- *       start_char_index: 0
- *       length: 6
- *     }
- *   }
- *   suggestion_type: ENTITY
- *   ranking_score: 0.8
+ * suggestion_info {
+ * annotated_suggestion {
+ * text_formatted: "item"
+ * markups {
+ * type: DIMENSION
+ * start_char_index: 4
+ * length: 2
+ * }
+ * }
+ * query_matches {
+ * start_char_index: 0
+ * length: 6
+ * }
+ * }
+ * suggestion_type: ENTITY
+ * ranking_score: 0.8
  * }
  * ```
  *
@@ -119,12 +121,10 @@ use Google\Cloud\DataQnA\V1alpha\SuggestQueriesResponse;
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class AutoSuggestionServiceGapicClient
 {
@@ -156,23 +156,25 @@ class AutoSuggestionServiceGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
+
     private static $locationNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/auto_suggestion_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/auto_suggestion_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/auto_suggestion_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/auto_suggestion_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/auto_suggestion_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/auto_suggestion_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/auto_suggestion_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/auto_suggestion_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -180,7 +182,7 @@ class AutoSuggestionServiceGapicClient
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -189,7 +191,7 @@ class AutoSuggestionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
             ];
@@ -199,14 +201,13 @@ class AutoSuggestionServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location resource.
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
      *
      * @param string $project
      * @param string $location
      *
      * @return string The formatted location resource.
-     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -220,12 +221,13 @@ class AutoSuggestionServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - location: projects/{project}/locations/{location}.
+     * - location: projects/{project}/locations/{location}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -233,12 +235,10 @@ class AutoSuggestionServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -254,6 +254,7 @@ class AutoSuggestionServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -261,7 +262,7 @@ class AutoSuggestionServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -275,31 +276,31 @@ class AutoSuggestionServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -307,7 +308,6 @@ class AutoSuggestionServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -333,62 +333,55 @@ class AutoSuggestionServiceGapicClient
      * @param string $parent       Required. The parent of the suggestion query is the resource denoting the project and
      *                             location.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string[] $scopes
-     *          The scopes to which this search is restricted. The only supported scope
-     *          pattern is
-     *          `//bigquery.googleapis.com/projects/{GCP-PROJECT-ID}/datasets/{DATASET-ID}/tables/{TABLE-ID}`.
+     *           The scopes to which this search is restricted. The only supported scope
+     *           pattern is
+     *           `//bigquery.googleapis.com/projects/{GCP-PROJECT-ID}/datasets/{DATASET-ID}/tables/{TABLE-ID}`.
      *     @type string $query
-     *          User query for which to generate suggestions. If the query is empty, zero
-     *          state suggestions are returned. This allows UIs to display suggestions
-     *          right away, helping the user to get a sense of what a query might look
-     *          like.
+     *           User query for which to generate suggestions. If the query is empty, zero
+     *           state suggestions are returned. This allows UIs to display suggestions
+     *           right away, helping the user to get a sense of what a query might look
+     *           like.
      *     @type int[] $suggestionTypes
-     *          The requested suggestion type. Multiple suggestion types can be
-     *          requested, but there is no guarantee that the service will return
-     *          suggestions for each type. Suggestions for a requested type might rank
-     *          lower than suggestions for other types and the service may decide to cut
-     *          these suggestions off.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\DataQnA\V1alpha\SuggestionType}
+     *           The requested suggestion type. Multiple suggestion types can be
+     *           requested, but there is no guarantee that the service will return
+     *           suggestions for each type. Suggestions for a requested type might rank
+     *           lower than suggestions for other types and the service may decide to cut
+     *           these suggestions off.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\DataQnA\V1alpha\SuggestionType}
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\DataQnA\V1alpha\SuggestQueriesResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function suggestQueries($parent, array $optionalArgs = [])
     {
         $request = new SuggestQueriesRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['scopes'])) {
             $request->setScopes($optionalArgs['scopes']);
         }
+
         if (isset($optionalArgs['query'])) {
             $request->setQuery($optionalArgs['query']);
         }
+
         if (isset($optionalArgs['suggestionTypes'])) {
             $request->setSuggestionTypes($optionalArgs['suggestionTypes']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SuggestQueries',
-            SuggestQueriesResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SuggestQueries', SuggestQueriesResponse::class, $optionalArgs, $request)->wait();
     }
 }

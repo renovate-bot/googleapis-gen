@@ -1,0 +1,57 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.dataqna.v1alpha",
+    "libraryPackage": "Google\\Cloud\\DataQnA\\V1alpha",
+    "services": {
+        "AutoSuggestionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AutoSuggestionServiceGapicClient",
+                    "rpcs": {
+                        "SuggestQueries": {
+                            "methods": [
+                                "suggestQueries"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "QuestionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "QuestionServiceGapicClient",
+                    "rpcs": {
+                        "CreateQuestion": {
+                            "methods": [
+                                "createQuestion"
+                            ]
+                        },
+                        "ExecuteQuestion": {
+                            "methods": [
+                                "executeQuestion"
+                            ]
+                        },
+                        "GetQuestion": {
+                            "methods": [
+                                "getQuestion"
+                            ]
+                        },
+                        "GetUserFeedback": {
+                            "methods": [
+                                "getUserFeedback"
+                            ]
+                        },
+                        "UpdateUserFeedback": {
+                            "methods": [
+                                "updateUserFeedback"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
