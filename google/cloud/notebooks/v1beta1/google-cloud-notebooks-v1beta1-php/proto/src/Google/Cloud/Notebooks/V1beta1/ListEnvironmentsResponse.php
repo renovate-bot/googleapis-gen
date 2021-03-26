@@ -41,7 +41,7 @@ class ListEnvironmentsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Cloud\Notebooks\V1Beta1\Environment[]|\Google\Protobuf\Internal\RepeatedField $environments
+     *     @type \Google\Cloud\Notebooks\V1beta1\Environment[]|\Google\Protobuf\Internal\RepeatedField $environments
      *           A list of returned environments.
      *     @type string $next_page_token
      *           A page token that can be used to continue listing from the last result
@@ -70,12 +70,12 @@ class ListEnvironmentsResponse extends \Google\Protobuf\Internal\Message
      * A list of returned environments.
      *
      * Generated from protobuf field <code>repeated .google.cloud.notebooks.v1beta1.Environment environments = 1;</code>
-     * @param \Google\Cloud\Notebooks\V1Beta1\Environment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Cloud\Notebooks\V1beta1\Environment[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEnvironments($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Notebooks\V1Beta1\Environment::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Notebooks\V1beta1\Environment::class);
         $this->environments = $arr;
 
         return $this;

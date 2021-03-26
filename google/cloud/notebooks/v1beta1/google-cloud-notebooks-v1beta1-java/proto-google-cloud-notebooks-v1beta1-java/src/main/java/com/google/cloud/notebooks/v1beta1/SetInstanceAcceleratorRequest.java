@@ -182,10 +182,10 @@ private static final long serialVersionUID = 0L;
   private long coreCount_;
   /**
    * <pre>
-   * Required. Count of cores of this accelerator. Note that not all combinations
-   * of `type` and `core_count` are valid. Check [GPUs on
-   * Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to
-   * find a valid combination. TPUs are not supported.
+   * Required. Count of cores of this accelerator. Note that not all
+   * combinations of `type` and `core_count` are valid. Check [GPUs on Compute
+   * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+   * valid combination. TPUs are not supported.
    * </pre>
    *
    * <code>int64 core_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -714,10 +714,10 @@ private static final long serialVersionUID = 0L;
     private long coreCount_ ;
     /**
      * <pre>
-     * Required. Count of cores of this accelerator. Note that not all combinations
-     * of `type` and `core_count` are valid. Check [GPUs on
-     * Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to
-     * find a valid combination. TPUs are not supported.
+     * Required. Count of cores of this accelerator. Note that not all
+     * combinations of `type` and `core_count` are valid. Check [GPUs on Compute
+     * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+     * valid combination. TPUs are not supported.
      * </pre>
      *
      * <code>int64 core_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -729,10 +729,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Count of cores of this accelerator. Note that not all combinations
-     * of `type` and `core_count` are valid. Check [GPUs on
-     * Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to
-     * find a valid combination. TPUs are not supported.
+     * Required. Count of cores of this accelerator. Note that not all
+     * combinations of `type` and `core_count` are valid. Check [GPUs on Compute
+     * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+     * valid combination. TPUs are not supported.
      * </pre>
      *
      * <code>int64 core_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -747,10 +747,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Count of cores of this accelerator. Note that not all combinations
-     * of `type` and `core_count` are valid. Check [GPUs on
-     * Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to
-     * find a valid combination. TPUs are not supported.
+     * Required. Count of cores of this accelerator. Note that not all
+     * combinations of `type` and `core_count` are valid. Check [GPUs on Compute
+     * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+     * valid combination. TPUs are not supported.
      * </pre>
      *
      * <code>int64 core_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>

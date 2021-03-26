@@ -31,13 +31,15 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     protected $post_startup_script = '';
     /**
-     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter
+     * notebook.
      *
      * Generated from protobuf field <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $proxy_uri = '';
     /**
-     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format:
+     * `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -58,7 +60,8 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     protected $service_account = '';
     /**
-     * Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      *
      * Generated from protobuf field <code>string machine_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -96,54 +99,56 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     protected $custom_gpu_driver_path = '';
     /**
-     * Input only. The type of the boot disk attached to this instance, defaults to
-     * standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults
+     * to standard persistent disk (`PD_STANDARD`).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskType boot_disk_type = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $boot_disk_type = 0;
     /**
-     * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value is
-     * 100&nbsp;GB. If not specified, this defaults to 100.
+     * Input only. The size of the boot disk in GB attached to this instance, up
+     * to a maximum of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value
+     * is 100&nbsp;GB. If not specified, this defaults to 100.
      *
      * Generated from protobuf field <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $boot_disk_size_gb = 0;
     /**
-     * Input only. The type of the data disk attached to this instance, defaults to
-     * standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults
+     * to standard persistent disk (`PD_STANDARD`).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskType data_disk_type = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $data_disk_type = 0;
     /**
-     * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * Input only. The size of the data disk in GB attached to this instance, up
+     * to a maximum of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the
+     * data disk based on how big your notebooks and data are. If not specified,
+     * this defaults to 100.
      *
      * Generated from protobuf field <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $data_disk_size_gb = 0;
     /**
-     * Input only. If true, the data disk will not be auto deleted when deleting the instance.
+     * Input only. If true, the data disk will not be auto deleted when deleting
+     * the instance.
      *
      * Generated from protobuf field <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $no_remove_data_disk = false;
     /**
-     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks,
+     * defaults to GMEK.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskEncryption disk_encryption = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $disk_encryption = 0;
     /**
-     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
-     * is CMEK.
-     * Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if
+     * disk_encryption is CMEK. Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys]( https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](
+     * https://cloud.google.com/kms/docs/quickstart).
      *
      * Generated from protobuf field <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
@@ -212,18 +217,20 @@ class Instance extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Output only. The name of this notebook instance. Format:
      *           `projects/{project_id}/locations/{location}/instances/{instance_id}`
-     *     @type \Google\Cloud\Notebooks\V1Beta1\VmImage $vm_image
+     *     @type \Google\Cloud\Notebooks\V1beta1\VmImage $vm_image
      *           Use a Compute Engine VM image to start the notebook instance.
-     *     @type \Google\Cloud\Notebooks\V1Beta1\ContainerImage $container_image
+     *     @type \Google\Cloud\Notebooks\V1beta1\ContainerImage $container_image
      *           Use a container image to start the notebook instance.
      *     @type string $post_startup_script
      *           Path to a Bash script that automatically runs after a notebook instance
      *           fully boots up. The path must be a URL or
      *           Cloud Storage path (`gs://path-to-file/file-name`).
      *     @type string $proxy_uri
-     *           Output only. The proxy endpoint that is used to access the Jupyter notebook.
+     *           Output only. The proxy endpoint that is used to access the Jupyter
+     *           notebook.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $instance_owners
-     *           Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *           Input only. The owner of this instance after creation. Format:
+     *           `alias&#64;example.com`
      *           Currently supports one owner only. If not specified, all of the service
      *           account users of your VM instance's service account can use
      *           the instance.
@@ -236,7 +243,8 @@ class Instance extends \Google\Protobuf\Internal\Message
      *           account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      *           is used.
      *     @type string $machine_type
-     *           Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this
+     *           Required. The [Compute Engine machine
+     *           type](https://cloud.google.com/compute/docs/machine-types) of this
      *           instance.
      *     @type \Google\Cloud\Notebooks\V1beta1\Instance\AcceleratorConfig $accelerator_config
      *           The hardware accelerator used on this instance. If you use
@@ -254,30 +262,32 @@ class Instance extends \Google\Protobuf\Internal\Message
      *           Specify a custom Cloud Storage path where the GPU driver is stored.
      *           If not specified, we'll automatically choose from official GPU drivers.
      *     @type int $boot_disk_type
-     *           Input only. The type of the boot disk attached to this instance, defaults to
-     *           standard persistent disk (`PD_STANDARD`).
+     *           Input only. The type of the boot disk attached to this instance, defaults
+     *           to standard persistent disk (`PD_STANDARD`).
      *     @type int|string $boot_disk_size_gb
-     *           Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     *           of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value is
-     *           100&nbsp;GB. If not specified, this defaults to 100.
+     *           Input only. The size of the boot disk in GB attached to this instance, up
+     *           to a maximum of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value
+     *           is 100&nbsp;GB. If not specified, this defaults to 100.
      *     @type int $data_disk_type
-     *           Input only. The type of the data disk attached to this instance, defaults to
-     *           standard persistent disk (`PD_STANDARD`).
+     *           Input only. The type of the data disk attached to this instance, defaults
+     *           to standard persistent disk (`PD_STANDARD`).
      *     @type int|string $data_disk_size_gb
-     *           Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     *           of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the data disk
-     *           based on how big your notebooks and data are. If not specified, this
-     *           defaults to 100.
+     *           Input only. The size of the data disk in GB attached to this instance, up
+     *           to a maximum of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the
+     *           data disk based on how big your notebooks and data are. If not specified,
+     *           this defaults to 100.
      *     @type bool $no_remove_data_disk
-     *           Input only. If true, the data disk will not be auto deleted when deleting the instance.
+     *           Input only. If true, the data disk will not be auto deleted when deleting
+     *           the instance.
      *     @type int $disk_encryption
-     *           Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+     *           Input only. Disk encryption method used on the boot and data disks,
+     *           defaults to GMEK.
      *     @type string $kms_key
-     *           Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
-     *           is CMEK.
-     *           Format:
+     *           Input only. The KMS key used to encrypt the disks, only applicable if
+     *           disk_encryption is CMEK. Format:
      *           `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     *           Learn more about [using your own encryption keys]( https://cloud.google.com/kms/docs/quickstart).
+     *           Learn more about [using your own encryption keys](
+     *           https://cloud.google.com/kms/docs/quickstart).
      *     @type bool $no_public_ip
      *           If true, no public IP will be assigned to this instance.
      *     @type bool $no_proxy_access
@@ -338,7 +348,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Use a Compute Engine VM image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.VmImage vm_image = 2;</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\VmImage|null
+     * @return \Google\Cloud\Notebooks\V1beta1\VmImage|null
      */
     public function getVmImage()
     {
@@ -354,12 +364,12 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Use a Compute Engine VM image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.VmImage vm_image = 2;</code>
-     * @param \Google\Cloud\Notebooks\V1Beta1\VmImage $var
+     * @param \Google\Cloud\Notebooks\V1beta1\VmImage $var
      * @return $this
      */
     public function setVmImage($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\Notebooks\V1Beta1\VmImage::class);
+        GPBUtil::checkMessage($var, \Google\Cloud\Notebooks\V1beta1\VmImage::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -369,7 +379,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Use a container image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.ContainerImage container_image = 3;</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\ContainerImage|null
+     * @return \Google\Cloud\Notebooks\V1beta1\ContainerImage|null
      */
     public function getContainerImage()
     {
@@ -385,12 +395,12 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Use a container image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.ContainerImage container_image = 3;</code>
-     * @param \Google\Cloud\Notebooks\V1Beta1\ContainerImage $var
+     * @param \Google\Cloud\Notebooks\V1beta1\ContainerImage $var
      * @return $this
      */
     public function setContainerImage($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\Notebooks\V1Beta1\ContainerImage::class);
+        GPBUtil::checkMessage($var, \Google\Cloud\Notebooks\V1beta1\ContainerImage::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -427,7 +437,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter
+     * notebook.
      *
      * Generated from protobuf field <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -438,7 +449,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter
+     * notebook.
      *
      * Generated from protobuf field <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -453,7 +465,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format:
+     * `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -467,7 +480,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format:
+     * `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -523,7 +537,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      *
      * Generated from protobuf field <code>string machine_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -535,7 +550,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      *
      * Generated from protobuf field <code>string machine_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -679,8 +695,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The type of the boot disk attached to this instance, defaults to
-     * standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults
+     * to standard persistent disk (`PD_STANDARD`).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskType boot_disk_type = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return int
@@ -691,8 +707,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The type of the boot disk attached to this instance, defaults to
-     * standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults
+     * to standard persistent disk (`PD_STANDARD`).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskType boot_disk_type = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param int $var
@@ -707,9 +723,9 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value is
-     * 100&nbsp;GB. If not specified, this defaults to 100.
+     * Input only. The size of the boot disk in GB attached to this instance, up
+     * to a maximum of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value
+     * is 100&nbsp;GB. If not specified, this defaults to 100.
      *
      * Generated from protobuf field <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return int|string
@@ -720,9 +736,9 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value is
-     * 100&nbsp;GB. If not specified, this defaults to 100.
+     * Input only. The size of the boot disk in GB attached to this instance, up
+     * to a maximum of 64000&nbsp;GB (64&nbsp;TB). The minimum recommended value
+     * is 100&nbsp;GB. If not specified, this defaults to 100.
      *
      * Generated from protobuf field <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param int|string $var
@@ -737,8 +753,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The type of the data disk attached to this instance, defaults to
-     * standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults
+     * to standard persistent disk (`PD_STANDARD`).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskType data_disk_type = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return int
@@ -749,8 +765,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The type of the data disk attached to this instance, defaults to
-     * standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults
+     * to standard persistent disk (`PD_STANDARD`).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskType data_disk_type = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param int $var
@@ -765,10 +781,10 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * Input only. The size of the data disk in GB attached to this instance, up
+     * to a maximum of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the
+     * data disk based on how big your notebooks and data are. If not specified,
+     * this defaults to 100.
      *
      * Generated from protobuf field <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return int|string
@@ -779,10 +795,10 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * Input only. The size of the data disk in GB attached to this instance, up
+     * to a maximum of 64000&nbsp;GB (64&nbsp;TB). You can choose the size of the
+     * data disk based on how big your notebooks and data are. If not specified,
+     * this defaults to 100.
      *
      * Generated from protobuf field <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param int|string $var
@@ -797,7 +813,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. If true, the data disk will not be auto deleted when deleting the instance.
+     * Input only. If true, the data disk will not be auto deleted when deleting
+     * the instance.
      *
      * Generated from protobuf field <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return bool
@@ -808,7 +825,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. If true, the data disk will not be auto deleted when deleting the instance.
+     * Input only. If true, the data disk will not be auto deleted when deleting
+     * the instance.
      *
      * Generated from protobuf field <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param bool $var
@@ -823,7 +841,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks,
+     * defaults to GMEK.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskEncryption disk_encryption = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return int
@@ -834,7 +853,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks,
+     * defaults to GMEK.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.DiskEncryption disk_encryption = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param int $var
@@ -849,11 +869,11 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
-     * is CMEK.
-     * Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if
+     * disk_encryption is CMEK. Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys]( https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](
+     * https://cloud.google.com/kms/docs/quickstart).
      *
      * Generated from protobuf field <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return string
@@ -864,11 +884,11 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
-     * is CMEK.
-     * Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if
+     * disk_encryption is CMEK. Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys]( https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](
+     * https://cloud.google.com/kms/docs/quickstart).
      *
      * Generated from protobuf field <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param string $var

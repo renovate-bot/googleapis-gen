@@ -3,6 +3,16 @@
 return [
     'interfaces' => [
         'google.cloud.notebooks.v1beta1.NotebookService' => [
+            'CreateEnvironment' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Environment',
+                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'CreateInstance' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
@@ -13,39 +23,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'RegisterInstance' => [
+            'DeleteEnvironment' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
-                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'SetInstanceAccelerator' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
-                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'SetInstanceMachineType' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
-                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'SetInstanceLabels' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -63,7 +43,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'StartInstance' => [
+            'RegisterInstance' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
                     'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
@@ -73,7 +53,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'StopInstance' => [
+            'ReportInstanceInfo' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
                     'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
@@ -93,7 +73,47 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ReportInstanceInfo' => [
+            'SetInstanceAccelerator' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
+                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'SetInstanceLabels' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
+                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'SetInstanceMachineType' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
+                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'StartInstance' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
+                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'StopInstance' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Notebooks\V1beta1\Instance',
                     'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
@@ -123,24 +143,14 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'CreateEnvironment' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Notebooks\V1Beta1\Environment',
-                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'DeleteEnvironment' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Notebooks\V1beta1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
+            'ListEnvironments' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getEnvironments',
                 ],
             ],
             'ListInstances' => [
@@ -151,16 +161,6 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getInstances',
-                ],
-            ],
-            'ListEnvironments' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getEnvironments',
                 ],
             ],
         ],

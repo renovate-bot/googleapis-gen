@@ -3,13 +3,59 @@
 return [
     'interfaces' => [
         'google.cloud.notebooks.v1beta1.NotebookService' => [
-            'ListInstances' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/instances',
+            'CreateEnvironment' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/environments',
+                'body' => 'environment',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateInstance' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/instances',
+                'body' => 'instance',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteEnvironment' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/environments/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteInstance' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetEnvironment' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/environments/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -25,10 +71,31 @@ return [
                     ],
                 ],
             ],
-            'CreateInstance' => [
-                'method' => 'post',
+            'IsInstanceUpgradeable' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{notebook_instance=projects/*/locations/*/instances/*}:isUpgradeable',
+                'placeholders' => [
+                    'notebook_instance' => [
+                        'getters' => [
+                            'getNotebookInstance',
+                        ],
+                    ],
+                ],
+            ],
+            'ListEnvironments' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/environments',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListInstances' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/instances',
-                'body' => 'instance',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -49,9 +116,9 @@ return [
                     ],
                 ],
             ],
-            'SetInstanceAccelerator' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:setAccelerator',
+            'ReportInstanceInfo' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:report',
                 'body' => '*',
                 'placeholders' => [
                     'name' => [
@@ -61,9 +128,21 @@ return [
                     ],
                 ],
             ],
-            'SetInstanceMachineType' => [
+            'ResetInstance' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:reset',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'SetInstanceAccelerator' => [
                 'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:setMachineType',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:setAccelerator',
                 'body' => '*',
                 'placeholders' => [
                     'name' => [
@@ -85,9 +164,10 @@ return [
                     ],
                 ],
             ],
-            'DeleteInstance' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}',
+            'SetInstanceMachineType' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:setMachineType',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -120,41 +200,6 @@ return [
                     ],
                 ],
             ],
-            'ResetInstance' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:reset',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ReportInstanceInfo' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:report',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'IsInstanceUpgradeable' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{notebook_instance=projects/*/locations/*/instances/*}:isUpgradeable',
-                'placeholders' => [
-                    'notebook_instance' => [
-                        'getters' => [
-                            'getNotebookInstance',
-                        ],
-                    ],
-                ],
-            ],
             'UpgradeInstance' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:upgrade',
@@ -171,51 +216,6 @@ return [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/instances/*}:upgradeInternal',
                 'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListEnvironments' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/environments',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetEnvironment' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/environments/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateEnvironment' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/environments',
-                'body' => 'environment',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteEnvironment' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/environments/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [

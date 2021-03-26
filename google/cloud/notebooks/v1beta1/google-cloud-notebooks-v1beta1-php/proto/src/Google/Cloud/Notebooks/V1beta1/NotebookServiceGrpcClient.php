@@ -290,7 +290,7 @@ class NotebookServiceGrpcClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.cloud.notebooks.v1beta1.NotebookService/GetEnvironment',
         $argument,
-        ['\Google\Cloud\Notebooks\V1Beta1\Environment', 'decode'],
+        ['\Google\Cloud\Notebooks\V1beta1\Environment', 'decode'],
         $metadata, $options);
     }
 

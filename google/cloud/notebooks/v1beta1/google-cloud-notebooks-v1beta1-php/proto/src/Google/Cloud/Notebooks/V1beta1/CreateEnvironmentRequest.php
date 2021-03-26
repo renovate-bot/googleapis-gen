@@ -22,10 +22,10 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * Required. User-defined unique ID of this environment. The `environment_id` must
-     * be 1 to 63 characters long and contain only lowercase letters,
-     * numeric characters, and dashes. The first character must be a lowercase
-     * letter and the last character cannot be a dash.
+     * Required. User-defined unique ID of this environment. The `environment_id`
+     * must be 1 to 63 characters long and contain only lowercase letters, numeric
+     * characters, and dashes. The first character must be a lowercase letter and
+     * the last character cannot be a dash.
      *
      * Generated from protobuf field <code>string environment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -46,11 +46,11 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Format: `projects/{project_id}/locations/{location}`
      *     @type string $environment_id
-     *           Required. User-defined unique ID of this environment. The `environment_id` must
-     *           be 1 to 63 characters long and contain only lowercase letters,
-     *           numeric characters, and dashes. The first character must be a lowercase
-     *           letter and the last character cannot be a dash.
-     *     @type \Google\Cloud\Notebooks\V1Beta1\Environment $environment
+     *           Required. User-defined unique ID of this environment. The `environment_id`
+     *           must be 1 to 63 characters long and contain only lowercase letters, numeric
+     *           characters, and dashes. The first character must be a lowercase letter and
+     *           the last character cannot be a dash.
+     *     @type \Google\Cloud\Notebooks\V1beta1\Environment $environment
      *           Required. The environment to be created.
      * }
      */
@@ -86,10 +86,10 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. User-defined unique ID of this environment. The `environment_id` must
-     * be 1 to 63 characters long and contain only lowercase letters,
-     * numeric characters, and dashes. The first character must be a lowercase
-     * letter and the last character cannot be a dash.
+     * Required. User-defined unique ID of this environment. The `environment_id`
+     * must be 1 to 63 characters long and contain only lowercase letters, numeric
+     * characters, and dashes. The first character must be a lowercase letter and
+     * the last character cannot be a dash.
      *
      * Generated from protobuf field <code>string environment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -100,10 +100,10 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. User-defined unique ID of this environment. The `environment_id` must
-     * be 1 to 63 characters long and contain only lowercase letters,
-     * numeric characters, and dashes. The first character must be a lowercase
-     * letter and the last character cannot be a dash.
+     * Required. User-defined unique ID of this environment. The `environment_id`
+     * must be 1 to 63 characters long and contain only lowercase letters, numeric
+     * characters, and dashes. The first character must be a lowercase letter and
+     * the last character cannot be a dash.
      *
      * Generated from protobuf field <code>string environment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -121,7 +121,7 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      * Required. The environment to be created.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Environment environment = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\Environment|null
+     * @return \Google\Cloud\Notebooks\V1beta1\Environment|null
      */
     public function getEnvironment()
     {
@@ -142,12 +142,12 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      * Required. The environment to be created.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Environment environment = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Cloud\Notebooks\V1Beta1\Environment $var
+     * @param \Google\Cloud\Notebooks\V1beta1\Environment $var
      * @return $this
      */
     public function setEnvironment($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\Notebooks\V1Beta1\Environment::class);
+        GPBUtil::checkMessage($var, \Google\Cloud\Notebooks\V1beta1\Environment::class);
         $this->environment = $var;
 
         return $this;
