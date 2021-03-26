@@ -3,78 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.domains.v1alpha2.Domains' => [
-            'SearchDomains' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha2/{location=projects/*/locations/*}/registrations:searchDomains',
-                'placeholders' => [
-                    'location' => [
-                        'getters' => [
-                            'getLocation',
-                        ],
-                    ],
-                ],
-            ],
-            'RetrieveRegisterParameters' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha2/{location=projects/*/locations/*}/registrations:retrieveRegisterParameters',
-                'placeholders' => [
-                    'location' => [
-                        'getters' => [
-                            'getLocation',
-                        ],
-                    ],
-                ],
-            ],
-            'RegisterDomain' => [
+            'ConfigureContactSettings' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1alpha2/{parent=projects/*/locations/*}/registrations:register',
-                'body' => '*',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'ListRegistrations' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha2/{parent=projects/*/locations/*}/registrations',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetRegistration' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha2/{name=projects/*/locations/*/registrations/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateRegistration' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1alpha2/{registration.name=projects/*/locations/*/registrations/*}',
-                'body' => 'registration',
-                'placeholders' => [
-                    'registration.name' => [
-                        'getters' => [
-                            'getRegistration',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ConfigureManagementSettings' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha2/{registration=projects/*/locations/*/registrations/*}:configureManagementSettings',
+                'uriTemplate' => '/v1alpha2/{registration=projects/*/locations/*/registrations/*}:configureContactSettings',
                 'body' => '*',
                 'placeholders' => [
                     'registration' => [
@@ -96,14 +27,25 @@ return [
                     ],
                 ],
             ],
-            'ConfigureContactSettings' => [
+            'ConfigureManagementSettings' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1alpha2/{registration=projects/*/locations/*/registrations/*}:configureContactSettings',
+                'uriTemplate' => '/v1alpha2/{registration=projects/*/locations/*/registrations/*}:configureManagementSettings',
                 'body' => '*',
                 'placeholders' => [
                     'registration' => [
                         'getters' => [
                             'getRegistration',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteRegistration' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha2/{name=projects/*/locations/*/registrations/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -120,13 +62,48 @@ return [
                     ],
                 ],
             ],
-            'DeleteRegistration' => [
-                'method' => 'delete',
+            'GetRegistration' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1alpha2/{name=projects/*/locations/*/registrations/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListRegistrations' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha2/{parent=projects/*/locations/*}/registrations',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'RegisterDomain' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha2/{parent=projects/*/locations/*}/registrations:register',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ResetAuthorizationCode' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha2/{registration=projects/*/locations/*/registrations/*}:resetAuthorizationCode',
+                'body' => '*',
+                'placeholders' => [
+                    'registration' => [
+                        'getters' => [
+                            'getRegistration',
                         ],
                     ],
                 ],
@@ -142,14 +119,37 @@ return [
                     ],
                 ],
             ],
-            'ResetAuthorizationCode' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha2/{registration=projects/*/locations/*/registrations/*}:resetAuthorizationCode',
-                'body' => '*',
+            'RetrieveRegisterParameters' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha2/{location=projects/*/locations/*}/registrations:retrieveRegisterParameters',
                 'placeholders' => [
-                    'registration' => [
+                    'location' => [
+                        'getters' => [
+                            'getLocation',
+                        ],
+                    ],
+                ],
+            ],
+            'SearchDomains' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha2/{location=projects/*/locations/*}/registrations:searchDomains',
+                'placeholders' => [
+                    'location' => [
+                        'getters' => [
+                            'getLocation',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateRegistration' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1alpha2/{registration.name=projects/*/locations/*/registrations/*}',
+                'body' => 'registration',
+                'placeholders' => [
+                    'registration.name' => [
                         'getters' => [
                             'getRegistration',
+                            'getName',
                         ],
                     ],
                 ],
