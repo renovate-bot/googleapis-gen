@@ -3,13 +3,15 @@
 return [
     'interfaces' => [
         'google.api.servicemanagement.v1.ServiceManager' => [
-            'ListServices' => [
-                'method' => 'get',
+            'CreateService' => [
+                'method' => 'post',
                 'uriTemplate' => '/v1/services',
+                'body' => 'service',
             ],
-            'GetService' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/services/{service_name}',
+            'CreateServiceConfig' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/services/{service_name}/configs',
+                'body' => 'service_config',
                 'placeholders' => [
                     'service_name' => [
                         'getters' => [
@@ -18,10 +20,17 @@ return [
                     ],
                 ],
             ],
-            'CreateService' => [
+            'CreateServiceRollout' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/services',
-                'body' => 'service',
+                'uriTemplate' => '/v1/services/{service_name}/rollouts',
+                'body' => 'rollout',
+                'placeholders' => [
+                    'service_name' => [
+                        'getters' => [
+                            'getServiceName',
+                        ],
+                    ],
+                ],
             ],
             'DeleteService' => [
                 'method' => 'delete',
@@ -34,9 +43,10 @@ return [
                     ],
                 ],
             ],
-            'UndeleteService' => [
+            'DisableService' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/services/{service_name}:undelete',
+                'uriTemplate' => '/v1/services/{service_name}:disable',
+                'body' => '*',
                 'placeholders' => [
                     'service_name' => [
                         'getters' => [
@@ -45,9 +55,26 @@ return [
                     ],
                 ],
             ],
-            'ListServiceConfigs' => [
+            'EnableService' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/services/{service_name}:enable',
+                'body' => '*',
+                'placeholders' => [
+                    'service_name' => [
+                        'getters' => [
+                            'getServiceName',
+                        ],
+                    ],
+                ],
+            ],
+            'GenerateConfigReport' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/services:generateConfigReport',
+                'body' => '*',
+            ],
+            'GetService' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/services/{service_name}/configs',
+                'uriTemplate' => '/v1/services/{service_name}',
                 'placeholders' => [
                     'service_name' => [
                         'getters' => [
@@ -78,11 +105,15 @@ return [
                     ],
                 ],
             ],
-            'CreateServiceConfig' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/services/{service_name}/configs',
-                'body' => 'service_config',
+            'GetServiceRollout' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/services/{service_name}/rollouts/{rollout_id}',
                 'placeholders' => [
+                    'rollout_id' => [
+                        'getters' => [
+                            'getRolloutId',
+                        ],
+                    ],
                     'service_name' => [
                         'getters' => [
                             'getServiceName',
@@ -90,10 +121,9 @@ return [
                     ],
                 ],
             ],
-            'SubmitConfigSource' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/services/{service_name}/configs:submit',
-                'body' => '*',
+            'ListServiceConfigs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/services/{service_name}/configs',
                 'placeholders' => [
                     'service_name' => [
                         'getters' => [
@@ -113,42 +143,13 @@ return [
                     ],
                 ],
             ],
-            'GetServiceRollout' => [
+            'ListServices' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/services/{service_name}/rollouts/{rollout_id}',
-                'placeholders' => [
-                    'service_name' => [
-                        'getters' => [
-                            'getServiceName',
-                        ],
-                    ],
-                    'rollout_id' => [
-                        'getters' => [
-                            'getRolloutId',
-                        ],
-                    ],
-                ],
+                'uriTemplate' => '/v1/services',
             ],
-            'CreateServiceRollout' => [
+            'SubmitConfigSource' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/services/{service_name}/rollouts',
-                'body' => 'rollout',
-                'placeholders' => [
-                    'service_name' => [
-                        'getters' => [
-                            'getServiceName',
-                        ],
-                    ],
-                ],
-            ],
-            'GenerateConfigReport' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/services:generateConfigReport',
-                'body' => '*',
-            ],
-            'EnableService' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/services/{service_name}:enable',
+                'uriTemplate' => '/v1/services/{service_name}/configs:submit',
                 'body' => '*',
                 'placeholders' => [
                     'service_name' => [
@@ -158,10 +159,9 @@ return [
                     ],
                 ],
             ],
-            'DisableService' => [
+            'UndeleteService' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/services/{service_name}:disable',
-                'body' => '*',
+                'uriTemplate' => '/v1/services/{service_name}:undelete',
                 'placeholders' => [
                     'service_name' => [
                         'getters' => [
