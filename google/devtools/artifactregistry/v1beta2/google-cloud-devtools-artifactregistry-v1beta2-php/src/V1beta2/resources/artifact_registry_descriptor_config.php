@@ -13,7 +13,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteRepository' => [
+            'DeletePackage' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\ArtifactRegistry\V1beta2\OperationMetadata',
@@ -23,7 +23,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeletePackage' => [
+            'DeleteRepository' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\ArtifactRegistry\V1beta2\OperationMetadata',
@@ -43,14 +43,14 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ListRepositories' => [
+            'ListFiles' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getRepositories',
+                    'resourcesGetMethod' => 'getFiles',
                 ],
             ],
             'ListPackages' => [
@@ -63,24 +63,14 @@ return [
                     'resourcesGetMethod' => 'getPackages',
                 ],
             ],
-            'ListVersions' => [
+            'ListRepositories' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getVersions',
-                ],
-            ],
-            'ListFiles' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getFiles',
+                    'resourcesGetMethod' => 'getRepositories',
                 ],
             ],
             'ListTags' => [
@@ -91,6 +81,16 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getTags',
+                ],
+            ],
+            'ListVersions' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getVersions',
                 ],
             ],
         ],

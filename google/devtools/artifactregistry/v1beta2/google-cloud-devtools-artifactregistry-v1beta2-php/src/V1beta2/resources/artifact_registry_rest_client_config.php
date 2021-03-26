@@ -3,28 +3,6 @@
 return [
     'interfaces' => [
         'google.devtools.artifactregistry.v1beta2.ArtifactRegistry' => [
-            'ListRepositories' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*}/repositories',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetRepository' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateRepository' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*}/repositories',
@@ -37,14 +15,24 @@ return [
                     ],
                 ],
             ],
-            'UpdateRepository' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta2/{repository.name=projects/*/locations/*/repositories/*}',
-                'body' => 'repository',
+            'CreateTag' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*/repositories/*/packages/*}/tags',
+                'body' => 'tag',
                 'placeholders' => [
-                    'repository.name' => [
+                    'parent' => [
                         'getters' => [
-                            'getRepository',
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeletePackage' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
                             'getName',
                         ],
                     ],
@@ -61,13 +49,46 @@ return [
                     ],
                 ],
             ],
-            'ListPackages' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*/repositories/*}/packages',
+            'DeleteTag' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/tags/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteVersion' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/versions/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetFile' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/files/**}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetIamPolicy' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta2/{resource=projects/*/locations/*/repositories/*}:getIamPolicy',
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
                         ],
                     ],
                 ],
@@ -83,9 +104,9 @@ return [
                     ],
                 ],
             ],
-            'DeletePackage' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*}',
+            'GetRepository' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -94,30 +115,19 @@ return [
                     ],
                 ],
             ],
-            'ListVersions' => [
+            'GetTag' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*/repositories/*/packages/*}/versions',
+                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/tags/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
             ],
             'GetVersion' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/versions/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteVersion' => [
-                'method' => 'delete',
                 'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/versions/*}',
                 'placeholders' => [
                     'name' => [
@@ -138,13 +148,24 @@ return [
                     ],
                 ],
             ],
-            'GetFile' => [
+            'ListPackages' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/files/**}',
+                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*/repositories/*}/packages',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListRepositories' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*}/repositories',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
@@ -160,49 +181,13 @@ return [
                     ],
                 ],
             ],
-            'GetTag' => [
+            'ListVersions' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/tags/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateTag' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*/repositories/*/packages/*}/tags',
-                'body' => 'tag',
+                'uriTemplate' => '/v1beta2/{parent=projects/*/locations/*/repositories/*/packages/*}/versions',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateTag' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta2/{tag.name=projects/*/locations/*/repositories/*/packages/*/tags/*}',
-                'body' => 'tag',
-                'placeholders' => [
-                    'tag.name' => [
-                        'getters' => [
-                            'getTag',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteTag' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta2/{name=projects/*/locations/*/repositories/*/packages/*/tags/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
@@ -219,17 +204,6 @@ return [
                     ],
                 ],
             ],
-            'GetIamPolicy' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta2/{resource=projects/*/locations/*/repositories/*}:getIamPolicy',
-                'placeholders' => [
-                    'resource' => [
-                        'getters' => [
-                            'getResource',
-                        ],
-                    ],
-                ],
-            ],
             'TestIamPermissions' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta2/{resource=projects/*/locations/*/repositories/*}:testIamPermissions',
@@ -238,6 +212,32 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateRepository' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta2/{repository.name=projects/*/locations/*/repositories/*}',
+                'body' => 'repository',
+                'placeholders' => [
+                    'repository.name' => [
+                        'getters' => [
+                            'getRepository',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateTag' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta2/{tag.name=projects/*/locations/*/repositories/*/packages/*/tags/*}',
+                'body' => 'tag',
+                'placeholders' => [
+                    'tag.name' => [
+                        'getters' => [
+                            'getTag',
+                            'getName',
                         ],
                     ],
                 ],

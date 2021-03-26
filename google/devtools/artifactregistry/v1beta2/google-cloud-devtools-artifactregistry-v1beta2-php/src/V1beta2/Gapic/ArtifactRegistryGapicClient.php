@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +24,15 @@
  * @experimental
  */
 
-namespace Google\Devtools\Artifactregistry\V1beta2\Gapic;
+namespace Google\Cloud\ArtifactRegistry\V1beta2\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
+
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\LongRunning\OperationsClient;
+
 use Google\ApiCore\OperationResponse;
-use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -67,6 +68,7 @@ use Google\Cloud\ArtifactRegistry\V1beta2\UpdateTagRequest;
 use Google\Cloud\ArtifactRegistry\V1beta2\Version;
 use Google\Cloud\Iam\V1\GetIamPolicyRequest;
 use Google\Cloud\Iam\V1\GetPolicyOptions;
+
 use Google\Cloud\Iam\V1\Policy;
 use Google\Cloud\Iam\V1\SetIamPolicyRequest;
 use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
@@ -88,7 +90,7 @@ use Google\Protobuf\GPBEmpty;
  * * Versions, which are specific forms of a package.
  * * Tags, which represent alternative names for versions.
  * * Files, which contain content and are optionally associated with a Package
- *   or Version.
+ * or Version.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -96,33 +98,36 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $artifactRegistryClient = new ArtifactRegistryClient();
  * try {
- *     // Iterate over pages of elements
- *     $pagedResponse = $artifactRegistryClient->listRepositories();
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
+ *     $operationResponse = $artifactRegistryClient->createRepository();
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         $result = $operationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
  *     }
- *
- *
  *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $artifactRegistryClient->listRepositories();
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $artifactRegistryClient->createRepository();
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $artifactRegistryClient->resumeOperation($operationName, 'createRepository');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         $result = $newOperationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
  *     }
  * } finally {
  *     $artifactRegistryClient->close();
  * }
  * ```
- *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
  */
 class ArtifactRegistryGapicClient
 {
@@ -155,8 +160,6 @@ class ArtifactRegistryGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/cloud-platform.read-only',
     ];
-    private static $repositoryNameTemplate;
-    private static $pathTemplateMap;
 
     private $operationsClient;
 
@@ -164,107 +167,25 @@ class ArtifactRegistryGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/artifact_registry_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/artifact_registry_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/artifact_registry_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/artifact_registry_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/artifact_registry_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/artifact_registry_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/artifact_registry_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/artifact_registry_rest_client_config.php',
                 ],
             ],
         ];
-    }
-
-    private static function getRepositoryNameTemplate()
-    {
-        if (null == self::$repositoryNameTemplate) {
-            self::$repositoryNameTemplate = new PathTemplate('projects/{project}/locations/{location}/repositories/{repository}');
-        }
-
-        return self::$repositoryNameTemplate;
-    }
-
-    private static function getPathTemplateMap()
-    {
-        if (null == self::$pathTemplateMap) {
-            self::$pathTemplateMap = [
-                'repository' => self::getRepositoryNameTemplate(),
-            ];
-        }
-
-        return self::$pathTemplateMap;
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a repository resource.
-     *
-     * @param string $project
-     * @param string $location
-     * @param string $repository
-     *
-     * @return string The formatted repository resource.
-     * @experimental
-     */
-    public static function repositoryName($project, $location, $repository)
-    {
-        return self::getRepositoryNameTemplate()->render([
-            'project' => $project,
-            'location' => $location,
-            'repository' => $repository,
-        ]);
-    }
-
-    /**
-     * Parses a formatted name string and returns an associative array of the components in the name.
-     * The following name formats are supported:
-     * Template: Pattern
-     * - repository: projects/{project}/locations/{location}/repositories/{repository}.
-     *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
-     *
-     * @param string $formattedName The formatted name string
-     * @param string $template      Optional name of template to match
-     *
-     * @return array An associative array from name component IDs to component values.
-     *
-     * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
-     */
-    public static function parseName($formattedName, $template = null)
-    {
-        $templateMap = self::getPathTemplateMap();
-
-        if ($template) {
-            if (!isset($templateMap[$template])) {
-                throw new ValidationException("Template name $template does not exist");
-            }
-
-            return $templateMap[$template]->match($formattedName);
-        }
-
-        foreach ($templateMap as $templateName => $pathTemplate) {
-            try {
-                return $pathTemplate->match($formattedName);
-            } catch (ValidationException $ex) {
-                // Swallow the exception to continue trying other path templates
-            }
-        }
-        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
-     * @experimental
      */
     public function getOperationsClient()
     {
@@ -272,26 +193,21 @@ class ArtifactRegistryGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
-     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -299,7 +215,7 @@ class ArtifactRegistryGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -313,31 +229,31 @@ class ArtifactRegistryGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -345,147 +261,12 @@ class ArtifactRegistryGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
-    }
-
-    /**
-     * Lists repositories.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $artifactRegistryClient->listRepositories();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $artifactRegistryClient->listRepositories();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          The name of the parent resource whose repositories will be listed.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listRepositories(array $optionalArgs = [])
-    {
-        $request = new ListRepositoriesRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListRepositories',
-            $optionalArgs,
-            ListRepositoriesResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Gets a repository.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $response = $artifactRegistryClient->getRepository();
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name of the repository to retrieve.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getRepository(array $optionalArgs = [])
-    {
-        $request = new GetRepositoryRequest();
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetRepository',
-            Repository::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -500,15 +281,12 @@ class ArtifactRegistryGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $artifactRegistryClient->createRepository();
      *     $operationName = $operationResponse->getName();
@@ -519,11 +297,11 @@ class ArtifactRegistryGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $artifactRegistryClient->close();
@@ -531,111 +309,167 @@ class ArtifactRegistryGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $parent
-     *          The name of the parent resource where the repository will be created.
+     *           The name of the parent resource where the repository will be created.
      *     @type string $repositoryId
-     *          The repository id to use for this repository.
+     *           The repository id to use for this repository.
      *     @type Repository $repository
-     *          The repository to be created.
+     *           The repository to be created.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createRepository(array $optionalArgs = [])
     {
         $request = new CreateRepositoryRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
+
         if (isset($optionalArgs['repositoryId'])) {
             $request->setRepositoryId($optionalArgs['repositoryId']);
         }
+
         if (isset($optionalArgs['repository'])) {
             $request->setRepository($optionalArgs['repository']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'CreateRepository',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('CreateRepository', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
-     * Updates a repository.
+     * Creates a tag.
      *
      * Sample code:
      * ```
      * $artifactRegistryClient = new ArtifactRegistryClient();
      * try {
-     *     $response = $artifactRegistryClient->updateRepository();
+     *     $response = $artifactRegistryClient->createTag();
      * } finally {
      *     $artifactRegistryClient->close();
      * }
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
-     *     @type Repository $repository
-     *          The repository that replaces the resource on the server.
-     *     @type FieldMask $updateMask
-     *          The update mask applies to the resource. For the `FieldMask` definition,
-     *          see
-     *          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     *     @type string $parent
+     *           The name of the parent resource where the tag will be created.
+     *     @type string $tagId
+     *           The tag id to use for this repository.
+     *     @type Tag $tag
+     *           The tag to be created.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function updateRepository(array $optionalArgs = [])
+    public function createTag(array $optionalArgs = [])
     {
-        $request = new UpdateRepositoryRequest();
-        if (isset($optionalArgs['repository'])) {
-            $request->setRepository($optionalArgs['repository']);
-        }
-        if (isset($optionalArgs['updateMask'])) {
-            $request->setUpdateMask($optionalArgs['updateMask']);
+        $request = new CreateTagRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'repository.name' => $request->getRepository()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        if (isset($optionalArgs['tagId'])) {
+            $request->setTagId($optionalArgs['tagId']);
+        }
 
-        return $this->startCall(
-            'UpdateRepository',
-            Repository::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        if (isset($optionalArgs['tag'])) {
+            $request->setTag($optionalArgs['tag']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateTag', Tag::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Deletes a package and all of its versions and tags. The returned operation
+     * will complete once the package has been deleted.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     $operationResponse = $artifactRegistryClient->deletePackage();
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $artifactRegistryClient->deletePackage();
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $artifactRegistryClient->resumeOperation($operationName, 'deletePackage');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name of the package to delete.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deletePackage(array $optionalArgs = [])
+    {
+        $request = new DeletePackageRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeletePackage', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -655,10 +489,7 @@ class ArtifactRegistryGapicClient
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $artifactRegistryClient->deleteRepository();
      *     $operationName = $operationResponse->getName();
@@ -669,10 +500,10 @@ class ArtifactRegistryGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
+     *         // operation succeeded and returns no value
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $artifactRegistryClient->close();
@@ -680,401 +511,74 @@ class ArtifactRegistryGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name of the repository to delete.
+     *           The name of the repository to delete.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteRepository(array $optionalArgs = [])
     {
         $request = new DeleteRepositoryRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'DeleteRepository',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteRepository', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
-     * Lists packages.
+     * Deletes a tag.
      *
      * Sample code:
      * ```
      * $artifactRegistryClient = new ArtifactRegistryClient();
      * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $artifactRegistryClient->listPackages();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $artifactRegistryClient->listPackages();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     *     $artifactRegistryClient->deleteTag();
      * } finally {
      *     $artifactRegistryClient->close();
      * }
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          The name of the parent resource whose packages will be listed.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listPackages(array $optionalArgs = [])
-    {
-        $request = new ListPackagesRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListPackages',
-            $optionalArgs,
-            ListPackagesResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Gets a package.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $response = $artifactRegistryClient->getPackage();
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name of the package to retrieve.
+     *           The name of the tag to delete.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Package
-     *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function getPackage(array $optionalArgs = [])
+    public function deleteTag(array $optionalArgs = [])
     {
-        $request = new GetPackageRequest();
+        $request = new DeleteTagRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetPackage',
-            Package::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Deletes a package and all of its versions and tags. The returned operation
-     * will complete once the package has been deleted.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $operationResponse = $artifactRegistryClient->deletePackage();
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         // operation succeeded and returns no value
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $artifactRegistryClient->deletePackage();
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $artifactRegistryClient->resumeOperation($operationName, 'deletePackage');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name of the package to delete.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deletePackage(array $optionalArgs = [])
-    {
-        $request = new DeletePackageRequest();
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'DeletePackage',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Lists versions.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $artifactRegistryClient->listVersions();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $artifactRegistryClient->listVersions();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          The name of the parent resource whose versions will be listed.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type int $view
-     *          The view that should be returned in the response.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\ArtifactRegistry\V1beta2\VersionView}
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listVersions(array $optionalArgs = [])
-    {
-        $request = new ListVersionsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['view'])) {
-            $request->setView($optionalArgs['view']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListVersions',
-            $optionalArgs,
-            ListVersionsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Gets a version.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $response = $artifactRegistryClient->getVersion();
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name of the version to retrieve.
-     *     @type int $view
-     *          The view that should be returned in the response.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\ArtifactRegistry\V1beta2\VersionView}
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Version
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getVersion(array $optionalArgs = [])
-    {
-        $request = new GetVersionRequest();
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-        if (isset($optionalArgs['view'])) {
-            $request->setView($optionalArgs['view']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetVersion',
-            Version::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteTag', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1093,10 +597,7 @@ class ArtifactRegistryGapicClient
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $artifactRegistryClient->deleteVersion();
      *     $operationName = $operationResponse->getName();
@@ -1107,10 +608,10 @@ class ArtifactRegistryGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
+     *         // operation succeeded and returns no value
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $artifactRegistryClient->close();
@@ -1118,146 +619,40 @@ class ArtifactRegistryGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name of the version to delete.
+     *           The name of the version to delete.
      *     @type bool $force
-     *          By default, a version that is tagged may not be deleted. If force=true, the
-     *          version and any tags pointing to the version are deleted.
+     *           By default, a version that is tagged may not be deleted. If force=true, the
+     *           version and any tags pointing to the version are deleted.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteVersion(array $optionalArgs = [])
     {
         $request = new DeleteVersionRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
+
         if (isset($optionalArgs['force'])) {
             $request->setForce($optionalArgs['force']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'DeleteVersion',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Lists files.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $artifactRegistryClient->listFiles();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $artifactRegistryClient->listFiles();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          The name of the parent resource whose files will be listed.
-     *     @type string $filter
-     *          An expression for filtering the results of the request. Filter rules are
-     *          case insensitive. The fields eligible for filtering are:
-     *
-     *            * `name`
-     *            * `owner`
-     *
-     *           An example of using a filter:
-     *
-     *            * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/*"` --> Files with an
-     *            ID starting with "a/b/".
-     *            * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` -->
-     *            Files owned by the version `1.0` in package `pkg1`.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listFiles(array $optionalArgs = [])
-    {
-        $request = new ListFilesRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['filter'])) {
-            $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListFiles',
-            $optionalArgs,
-            ListFilesResponse::class,
-            $request
-        );
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteVersion', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -1274,137 +669,167 @@ class ArtifactRegistryGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name of the file to retrieve.
+     *           The name of the file to retrieve.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\File
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getFile(array $optionalArgs = [])
     {
         $request = new GetFileRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetFile',
-            File::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetFile', File::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Lists tags.
+     * Gets the IAM policy for a given resource.
      *
      * Sample code:
      * ```
      * $artifactRegistryClient = new ArtifactRegistryClient();
      * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $artifactRegistryClient->listTags();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
+     *     $resource = 'resource';
+     *     $response = $artifactRegistryClient->getIamPolicy($resource);
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
      *
+     * @param string $resource     REQUIRED: The resource for which the policy is being requested.
+     *                             See the operation documentation for the appropriate value for this field.
+     * @param array  $optionalArgs {
+     *     Optional.
      *
-     *     // Alternatively:
+     *     @type GetPolicyOptions $options
+     *           OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     *           `GetIamPolicy`. This field is only used by Cloud IAM.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
      *
-     *     // Iterate through all elements
-     *     $pagedResponse = $artifactRegistryClient->listTags();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     * @return \Google\Cloud\Iam\V1\Policy
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getIamPolicy($resource, array $optionalArgs = [])
+    {
+        $request = new GetIamPolicyRequest();
+        $requestParamHeaders = [];
+        $request->setResource($resource);
+        $requestParamHeaders['resource'] = $resource;
+        if (isset($optionalArgs['options'])) {
+            $request->setOptions($optionalArgs['options']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetIamPolicy', Policy::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Gets a package.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     $response = $artifactRegistryClient->getPackage();
      * } finally {
      *     $artifactRegistryClient->close();
      * }
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
-     *     @type string $parent
-     *          The name of the parent resource whose tags will be listed.
-     *     @type string $filter
-     *          An expression for filtering the results of the request. Filter rules are
-     *          case insensitive. The fields eligible for filtering are:
-     *
-     *            * `version`
-     *
-     *           An example of using a filter:
-     *
-     *            * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-     *            --> Tags that are applied to the version `1.0` in package `pkg1`.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *     @type string $name
+     *           The name of the package to retrieve.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Package
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function listTags(array $optionalArgs = [])
+    public function getPackage(array $optionalArgs = [])
     {
-        $request = new ListTagsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['filter'])) {
-            $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
+        $request = new GetPackageRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetPackage', Package::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->getPagedListResponse(
-            'ListTags',
-            $optionalArgs,
-            ListTagsResponse::class,
-            $request
-        );
+    /**
+     * Gets a repository.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     $response = $artifactRegistryClient->getRepository();
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name of the repository to retrieve.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getRepository(array $optionalArgs = [])
+    {
+        $request = new GetRepositoryRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetRepository', Repository::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1421,104 +846,625 @@ class ArtifactRegistryGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name of the tag to retrieve.
+     *           The name of the tag to retrieve.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getTag(array $optionalArgs = [])
     {
         $request = new GetTagRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetTag',
-            Tag::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetTag', Tag::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Creates a tag.
+     * Gets a version
      *
      * Sample code:
      * ```
      * $artifactRegistryClient = new ArtifactRegistryClient();
      * try {
-     *     $response = $artifactRegistryClient->createTag();
+     *     $response = $artifactRegistryClient->getVersion();
      * } finally {
      *     $artifactRegistryClient->close();
      * }
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
-     *     @type string $parent
-     *          The name of the parent resource where the tag will be created.
-     *     @type string $tagId
-     *          The tag id to use for this repository.
-     *     @type Tag $tag
-     *          The tag to be created.
+     *     @type string $name
+     *           The name of the version to retrieve.
+     *     @type int $view
+     *           The view that should be returned in the response.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\ArtifactRegistry\V1beta2\VersionView}
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Version
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function createTag(array $optionalArgs = [])
+    public function getVersion(array $optionalArgs = [])
     {
-        $request = new CreateTagRequest();
+        $request = new GetVersionRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        if (isset($optionalArgs['view'])) {
+            $request->setView($optionalArgs['view']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetVersion', Version::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Lists files.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $artifactRegistryClient->listFiles();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $artifactRegistryClient->listFiles();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The name of the parent resource whose files will be listed.
+     *     @type string $filter
+     *           An expression for filtering the results of the request. Filter rules are
+     *           case insensitive. The fields eligible for filtering are:
+     *
+     *           * `name`
+     *           * `owner`
+     *
+     *           An example of using a filter:
+     *
+     *           * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/*"` --> Files with an
+     *           ID starting with "a/b/".
+     *           * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` -->
+     *           Files owned by the version `1.0` in package `pkg1`.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listFiles(array $optionalArgs = [])
+    {
+        $request = new ListFilesRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['tagId'])) {
-            $request->setTagId($optionalArgs['tagId']);
-        }
-        if (isset($optionalArgs['tag'])) {
-            $request->setTag($optionalArgs['tag']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
 
-        return $this->startCall(
-            'CreateTag',
-            Tag::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListFiles', $optionalArgs, ListFilesResponse::class, $request);
+    }
+
+    /**
+     * Lists packages.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $artifactRegistryClient->listPackages();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $artifactRegistryClient->listPackages();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The name of the parent resource whose packages will be listed.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listPackages(array $optionalArgs = [])
+    {
+        $request = new ListPackagesRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListPackages', $optionalArgs, ListPackagesResponse::class, $request);
+    }
+
+    /**
+     * Lists repositories.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $artifactRegistryClient->listRepositories();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $artifactRegistryClient->listRepositories();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The name of the parent resource whose repositories will be listed.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listRepositories(array $optionalArgs = [])
+    {
+        $request = new ListRepositoriesRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListRepositories', $optionalArgs, ListRepositoriesResponse::class, $request);
+    }
+
+    /**
+     * Lists tags.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $artifactRegistryClient->listTags();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $artifactRegistryClient->listTags();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The name of the parent resource whose tags will be listed.
+     *     @type string $filter
+     *           An expression for filtering the results of the request. Filter rules are
+     *           case insensitive. The fields eligible for filtering are:
+     *
+     *           * `version`
+     *
+     *           An example of using a filter:
+     *
+     *           * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
+     *           --> Tags that are applied to the version `1.0` in package `pkg1`.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listTags(array $optionalArgs = [])
+    {
+        $request = new ListTagsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListTags', $optionalArgs, ListTagsResponse::class, $request);
+    }
+
+    /**
+     * Lists versions.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $artifactRegistryClient->listVersions();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $artifactRegistryClient->listVersions();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The name of the parent resource whose versions will be listed.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type int $view
+     *           The view that should be returned in the response.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\ArtifactRegistry\V1beta2\VersionView}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listVersions(array $optionalArgs = [])
+    {
+        $request = new ListVersionsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['view'])) {
+            $request->setView($optionalArgs['view']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListVersions', $optionalArgs, ListVersionsResponse::class, $request);
+    }
+
+    /**
+     * Updates the IAM policy for a given resource.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     $resource = 'resource';
+     *     $policy = new Policy();
+     *     $response = $artifactRegistryClient->setIamPolicy($resource, $policy);
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param string $resource     REQUIRED: The resource for which the policy is being specified.
+     *                             See the operation documentation for the appropriate value for this field.
+     * @param Policy $policy       REQUIRED: The complete policy to be applied to the `resource`. The size of
+     *                             the policy is limited to a few 10s of KB. An empty policy is a
+     *                             valid policy but certain Cloud Platform services (such as Projects)
+     *                             might reject them.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Iam\V1\Policy
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function setIamPolicy($resource, $policy, array $optionalArgs = [])
+    {
+        $request = new SetIamPolicyRequest();
+        $requestParamHeaders = [];
+        $request->setResource($resource);
+        $request->setPolicy($policy);
+        $requestParamHeaders['resource'] = $resource;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetIamPolicy', Policy::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Tests if the caller has a list of permissions on a resource.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     $resource = 'resource';
+     *     $permissions = [];
+     *     $response = $artifactRegistryClient->testIamPermissions($resource, $permissions);
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param string   $resource     REQUIRED: The resource for which the policy detail is being requested.
+     *                               See the operation documentation for the appropriate value for this field.
+     * @param string[] $permissions  The set of permissions to check for the `resource`. Permissions with
+     *                               wildcards (such as '*' or 'storage.*') are not allowed. For more
+     *                               information see
+     *                               [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+     * @param array    $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Iam\V1\TestIamPermissionsResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function testIamPermissions($resource, $permissions, array $optionalArgs = [])
+    {
+        $request = new TestIamPermissionsRequest();
+        $requestParamHeaders = [];
+        $request->setResource($resource);
+        $request->setPermissions($permissions);
+        $requestParamHeaders['resource'] = $resource;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('TestIamPermissions', TestIamPermissionsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Updates a repository.
+     *
+     * Sample code:
+     * ```
+     * $artifactRegistryClient = new ArtifactRegistryClient();
+     * try {
+     *     $response = $artifactRegistryClient->updateRepository();
+     * } finally {
+     *     $artifactRegistryClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type Repository $repository
+     *           The repository that replaces the resource on the server.
+     *     @type FieldMask $updateMask
+     *           The update mask applies to the resource. For the `FieldMask` definition,
+     *           see
+     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateRepository(array $optionalArgs = [])
+    {
+        $request = new UpdateRepositoryRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['repository'])) {
+            $request->setRepository($optionalArgs['repository']);
+        }
+
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateRepository', Repository::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1535,269 +1481,39 @@ class ArtifactRegistryGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type Tag $tag
-     *          The tag that replaces the resource on the server.
+     *           The tag that replaces the resource on the server.
      *     @type FieldMask $updateMask
-     *          The update mask applies to the resource. For the `FieldMask` definition,
-     *          see
-     *          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     *           The update mask applies to the resource. For the `FieldMask` definition,
+     *           see
+     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function updateTag(array $optionalArgs = [])
     {
         $request = new UpdateTagRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['tag'])) {
             $request->setTag($optionalArgs['tag']);
         }
+
         if (isset($optionalArgs['updateMask'])) {
             $request->setUpdateMask($optionalArgs['updateMask']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'tag.name' => $request->getTag()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateTag',
-            Tag::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Deletes a tag.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $artifactRegistryClient->deleteTag();
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name of the tag to delete.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deleteTag(array $optionalArgs = [])
-    {
-        $request = new DeleteTagRequest();
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteTag',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the IAM policy for a given resource.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $resource = '';
-     *     $policy = new Policy();
-     *     $response = $artifactRegistryClient->setIamPolicy($resource, $policy);
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param string $resource     REQUIRED: The resource for which the policy is being specified.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param Policy $policy       REQUIRED: The complete policy to be applied to the `resource`. The size of
-     *                             the policy is limited to a few 10s of KB. An empty policy is a
-     *                             valid policy but certain Cloud Platform services (such as Projects)
-     *                             might reject them.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\Policy
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setIamPolicy($resource, $policy, array $optionalArgs = [])
-    {
-        $request = new SetIamPolicyRequest();
-        $request->setResource($resource);
-        $request->setPolicy($policy);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetIamPolicy',
-            Policy::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Gets the IAM policy for a given resource.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $resource = '';
-     *     $response = $artifactRegistryClient->getIamPolicy($resource);
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param string $resource     REQUIRED: The resource for which the policy is being requested.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type GetPolicyOptions $options
-     *          OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     *          `GetIamPolicy`. This field is only used by Cloud IAM.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\Policy
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getIamPolicy($resource, array $optionalArgs = [])
-    {
-        $request = new GetIamPolicyRequest();
-        $request->setResource($resource);
-        if (isset($optionalArgs['options'])) {
-            $request->setOptions($optionalArgs['options']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetIamPolicy',
-            Policy::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Tests if the caller has a list of permissions on a resource.
-     *
-     * Sample code:
-     * ```
-     * $artifactRegistryClient = new ArtifactRegistryClient();
-     * try {
-     *     $resource = '';
-     *     $permissions = [];
-     *     $response = $artifactRegistryClient->testIamPermissions($resource, $permissions);
-     * } finally {
-     *     $artifactRegistryClient->close();
-     * }
-     * ```
-     *
-     * @param string   $resource     REQUIRED: The resource for which the policy detail is being requested.
-     *                               See the operation documentation for the appropriate value for this field.
-     * @param string[] $permissions  The set of permissions to check for the `resource`. Permissions with
-     *                               wildcards (such as '*' or 'storage.*') are not allowed. For more
-     *                               information see
-     *                               [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-     * @param array    $optionalArgs {
-     *                               Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\TestIamPermissionsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function testIamPermissions($resource, $permissions, array $optionalArgs = [])
-    {
-        $request = new TestIamPermissionsRequest();
-        $request->setResource($resource);
-        $request->setPermissions($permissions);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'TestIamPermissions',
-            TestIamPermissionsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateTag', Tag::class, $optionalArgs, $request)->wait();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Devtools\Artifactregistry\V1beta2;
+namespace Google\Cloud\ArtifactRegistry\V1beta2;
 
-use Google\Devtools\Artifactregistry\V1beta2\Gapic\ArtifactRegistryGapicClient;
+use Google\Cloud\ArtifactRegistry\V1beta2\Gapic\ArtifactRegistryGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class ArtifactRegistryClient extends ArtifactRegistryGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see ArtifactRegistryGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see ArtifactRegistryGapicClient} class.
 }
