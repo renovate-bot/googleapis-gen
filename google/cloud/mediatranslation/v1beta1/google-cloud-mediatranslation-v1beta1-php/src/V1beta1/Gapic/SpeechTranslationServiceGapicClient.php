@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,20 +48,21 @@ use Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResponse;
  *     $request = new StreamingTranslateSpeechRequest();
  *     // Write all requests to the server, then read all responses until the
  *     // stream is complete
- *     $requests = [$request];
+ *     $requests = [
+ *         $request,
+ *     ];
  *     $stream = $speechTranslationServiceClient->streamingTranslateSpeech();
  *     $stream->writeAll($requests);
  *     foreach ($stream->closeWriteAndReadAll() as $element) {
  *         // doSomethingWith($element);
  *     }
- *
- *
  *     // Alternatively:
- *
  *     // Write requests individually, making read() calls if
  *     // required. Call closeWrite() once writes are complete, and read the
  *     // remaining responses from the server.
- *     $requests = [$request];
+ *     $requests = [
+ *         $request,
+ *     ];
  *     $stream = $speechTranslationServiceClient->streamingTranslateSpeech();
  *     foreach ($requests as $request) {
  *         $stream->write($request);
@@ -79,8 +80,6 @@ use Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResponse;
  *     $speechTranslationServiceClient->close();
  * }
  * ```
- *
- * @experimental
  */
 class SpeechTranslationServiceGapicClient
 {
@@ -117,16 +116,16 @@ class SpeechTranslationServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/speech_translation_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/speech_translation_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/speech_translation_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/speech_translation_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/speech_translation_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/speech_translation_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/speech_translation_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/speech_translation_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -136,7 +135,7 @@ class SpeechTranslationServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -150,31 +149,31 @@ class SpeechTranslationServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -182,7 +181,6 @@ class SpeechTranslationServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -201,20 +199,21 @@ class SpeechTranslationServiceGapicClient
      *     $request = new StreamingTranslateSpeechRequest();
      *     // Write all requests to the server, then read all responses until the
      *     // stream is complete
-     *     $requests = [$request];
+     *     $requests = [
+     *         $request,
+     *     ];
      *     $stream = $speechTranslationServiceClient->streamingTranslateSpeech();
      *     $stream->writeAll($requests);
      *     foreach ($stream->closeWriteAndReadAll() as $element) {
      *         // doSomethingWith($element);
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Write requests individually, making read() calls if
      *     // required. Call closeWrite() once writes are complete, and read the
      *     // remaining responses from the server.
-     *     $requests = [$request];
+     *     $requests = [
+     *         $request,
+     *     ];
      *     $stream = $speechTranslationServiceClient->streamingTranslateSpeech();
      *     foreach ($requests as $request) {
      *         $stream->write($request);
@@ -234,25 +233,18 @@ class SpeechTranslationServiceGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type int $timeoutMillis
-     *          Timeout to use for this call.
+     *           Timeout to use for this call.
      * }
      *
      * @return \Google\ApiCore\BidiStream
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function streamingTranslateSpeech(array $optionalArgs = [])
     {
-        return $this->startCall(
-            'StreamingTranslateSpeech',
-            StreamingTranslateSpeechResponse::class,
-            $optionalArgs,
-            null,
-            Call::BIDI_STREAMING_CALL
-        );
+        return $this->startCall('StreamingTranslateSpeech', StreamingTranslateSpeechResponse::class, $optionalArgs, null, Call::BIDI_STREAMING_CALL);
     }
 }
