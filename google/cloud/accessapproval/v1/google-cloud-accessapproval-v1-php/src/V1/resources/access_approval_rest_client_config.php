@@ -3,48 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.accessapproval.v1.AccessApproval' => [
-            'ListApprovalRequests' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*}/approvalRequests',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{parent=folders/*}/approvalRequests',
-                    ],
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{parent=organizations/*}/approvalRequests',
-                    ],
-                ],
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetApprovalRequest' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/approvalRequests/*}',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{name=folders/*/approvalRequests/*}',
-                    ],
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{name=organizations/*/approvalRequests/*}',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'ApproveApprovalRequest' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{name=projects/*/approvalRequests/*}:approve',
@@ -59,6 +17,27 @@ return [
                         'method' => 'post',
                         'uriTemplate' => '/v1/{name=organizations/*/approvalRequests/*}:approve',
                         'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteAccessApprovalSettings' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/accessApprovalSettings}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'delete',
+                        'uriTemplate' => '/v1/{name=folders/*/accessApprovalSettings}',
+                    ],
+                    [
+                        'method' => 'delete',
+                        'uriTemplate' => '/v1/{name=organizations/*/accessApprovalSettings}',
                     ],
                 ],
                 'placeholders' => [
@@ -114,6 +93,48 @@ return [
                     ],
                 ],
             ],
+            'GetApprovalRequest' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/approvalRequests/*}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{name=folders/*/approvalRequests/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{name=organizations/*/approvalRequests/*}',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListApprovalRequests' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*}/approvalRequests',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{parent=folders/*}/approvalRequests',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{parent=organizations/*}/approvalRequests',
+                    ],
+                ],
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'UpdateAccessApprovalSettings' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1/{settings.name=projects/*/accessApprovalSettings}',
@@ -134,27 +155,6 @@ return [
                     'settings.name' => [
                         'getters' => [
                             'getSettings',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteAccessApprovalSettings' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/accessApprovalSettings}',
-                'additionalBindings' => [
-                    [
-                        'method' => 'delete',
-                        'uriTemplate' => '/v1/{name=folders/*/accessApprovalSettings}',
-                    ],
-                    [
-                        'method' => 'delete',
-                        'uriTemplate' => '/v1/{name=organizations/*/accessApprovalSettings}',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],
