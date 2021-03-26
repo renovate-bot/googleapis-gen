@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\Gkehub\V1beta1;
+namespace Google\Cloud\GkeHub\V1beta1;
 
-use Google\Cloud\Gkehub\V1beta1\Gapic\GkeHubMembershipServiceGapicClient;
+use Google\Cloud\GkeHub\V1beta1\Gapic\GkeHubMembershipServiceGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class GkeHubMembershipServiceClient extends GkeHubMembershipServiceGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see GkeHubMembershipServiceGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see GkeHubMembershipServiceGapicClient} class.
 }

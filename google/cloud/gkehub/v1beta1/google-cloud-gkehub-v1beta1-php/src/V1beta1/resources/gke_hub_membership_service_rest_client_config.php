@@ -3,28 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.gkehub.v1beta1.GkeHubMembershipService' => [
-            'ListMemberships' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/memberships',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetMembership' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateMembership' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/memberships',
@@ -48,10 +26,9 @@ return [
                     ],
                 ],
             ],
-            'UpdateMembership' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}',
-                'body' => 'resource',
+            'GenerateConnectManifest' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}:generateConnectManifest',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -60,9 +37,43 @@ return [
                     ],
                 ],
             ],
-            'GenerateConnectManifest' => [
+            'GenerateExclusivityManifest' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}:generateConnectManifest',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}:generateExclusivityManifest',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetMembership' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListMemberships' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/memberships',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateMembership' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}',
+                'body' => 'resource',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -78,17 +89,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GenerateExclusivityManifest' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/memberships/*}:generateExclusivityManifest',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
