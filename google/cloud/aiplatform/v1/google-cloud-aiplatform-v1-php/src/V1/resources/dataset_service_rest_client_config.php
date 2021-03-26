@@ -15,8 +15,8 @@ return [
                     ],
                 ],
             ],
-            'GetDataset' => [
-                'method' => 'get',
+            'DeleteDataset' => [
+                'method' => 'delete',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/datasets/*}',
                 'placeholders' => [
                     'name' => [
@@ -26,32 +26,31 @@ return [
                     ],
                 ],
             ],
-            'UpdateDataset' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{dataset.name=projects/*/locations/*/datasets/*}',
-                'body' => 'dataset',
+            'ExportData' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/datasets/*}:export',
+                'body' => '*',
                 'placeholders' => [
-                    'dataset.name' => [
+                    'name' => [
                         'getters' => [
-                            'getDataset',
                             'getName',
                         ],
                     ],
                 ],
             ],
-            'ListDatasets' => [
+            'GetAnnotationSpec' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/datasets',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
             ],
-            'DeleteDataset' => [
-                'method' => 'delete',
+            'GetDataset' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/datasets/*}',
                 'placeholders' => [
                     'name' => [
@@ -73,14 +72,13 @@ return [
                     ],
                 ],
             ],
-            'ExportData' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/datasets/*}:export',
-                'body' => '*',
+            'ListAnnotations' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/datasets/*/dataItems/*}/annotations',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -96,24 +94,26 @@ return [
                     ],
                 ],
             ],
-            'GetAnnotationSpec' => [
+            'ListDatasets' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListAnnotations' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/datasets/*/dataItems/*}/annotations',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/datasets',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateDataset' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{dataset.name=projects/*/locations/*/datasets/*}',
+                'body' => 'dataset',
+                'placeholders' => [
+                    'dataset.name' => [
+                        'getters' => [
+                            'getDataset',
+                            'getName',
                         ],
                     ],
                 ],

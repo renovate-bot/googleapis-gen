@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ namespace Google\Cloud\Aiplatform\V1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -57,20 +59,17 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $pipelineServiceClient = new PipelineServiceClient();
  * try {
- *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
- *     $trainingPipeline = new TrainingPipeline();
- *     $response = $pipelineServiceClient->createTrainingPipeline($formattedParent, $trainingPipeline);
+ *     $formattedName = $pipelineServiceClient->trainingPipelineName('[PROJECT]', '[LOCATION]', '[TRAINING_PIPELINE]');
+ *     $pipelineServiceClient->cancelTrainingPipeline($formattedName);
  * } finally {
  *     $pipelineServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class PipelineServiceGapicClient
 {
@@ -102,8 +101,11 @@ class PipelineServiceGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
+
     private static $locationNameTemplate;
+
     private static $trainingPipelineNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -112,16 +114,16 @@ class PipelineServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/pipeline_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/pipeline_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/pipeline_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/pipeline_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/pipeline_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/pipeline_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/pipeline_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/pipeline_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -129,7 +131,7 @@ class PipelineServiceGapicClient
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -138,7 +140,7 @@ class PipelineServiceGapicClient
 
     private static function getTrainingPipelineNameTemplate()
     {
-        if (null == self::$trainingPipelineNameTemplate) {
+        if (self::$trainingPipelineNameTemplate == null) {
             self::$trainingPipelineNameTemplate = new PathTemplate('projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}');
         }
 
@@ -147,7 +149,7 @@ class PipelineServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
                 'trainingPipeline' => self::getTrainingPipelineNameTemplate(),
@@ -158,14 +160,13 @@ class PipelineServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location resource.
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
      *
      * @param string $project
      * @param string $location
      *
      * @return string The formatted location resource.
-     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -176,15 +177,14 @@ class PipelineServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a training_pipeline resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * training_pipeline resource.
      *
      * @param string $project
      * @param string $location
      * @param string $trainingPipeline
      *
      * @return string The formatted training_pipeline resource.
-     * @experimental
      */
     public static function trainingPipelineName($project, $location, $trainingPipeline)
     {
@@ -200,12 +200,13 @@ class PipelineServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - location: projects/{project}/locations/{location}
-     * - trainingPipeline: projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}.
+     * - trainingPipeline: projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -213,12 +214,10 @@ class PipelineServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -234,6 +233,7 @@ class PipelineServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -241,7 +241,6 @@ class PipelineServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
-     * @experimental
      */
     public function getOperationsClient()
     {
@@ -249,26 +248,21 @@ class PipelineServiceGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
-     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -276,7 +270,7 @@ class PipelineServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -290,31 +284,31 @@ class PipelineServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -322,306 +316,12 @@ class PipelineServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
-    }
-
-    /**
-     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
-     * attempted to be run.
-     *
-     * Sample code:
-     * ```
-     * $pipelineServiceClient = new PipelineServiceClient();
-     * try {
-     *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
-     *     $trainingPipeline = new TrainingPipeline();
-     *     $response = $pipelineServiceClient->createTrainingPipeline($formattedParent, $trainingPipeline);
-     * } finally {
-     *     $pipelineServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string           $parent           Required. The resource name of the Location to create the TrainingPipeline in.
-     *                                           Format: `projects/{project}/locations/{location}`
-     * @param TrainingPipeline $trainingPipeline Required. The TrainingPipeline to create.
-     * @param array            $optionalArgs     {
-     *                                           Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function createTrainingPipeline($parent, $trainingPipeline, array $optionalArgs = [])
-    {
-        $request = new CreateTrainingPipelineRequest();
-        $request->setParent($parent);
-        $request->setTrainingPipeline($trainingPipeline);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateTrainingPipeline',
-            TrainingPipeline::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Gets a TrainingPipeline.
-     *
-     * Sample code:
-     * ```
-     * $pipelineServiceClient = new PipelineServiceClient();
-     * try {
-     *     $formattedName = $pipelineServiceClient->trainingPipelineName('[PROJECT]', '[LOCATION]', '[TRAINING_PIPELINE]');
-     *     $response = $pipelineServiceClient->getTrainingPipeline($formattedName);
-     * } finally {
-     *     $pipelineServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name Required. The name of the TrainingPipeline resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getTrainingPipeline($name, array $optionalArgs = [])
-    {
-        $request = new GetTrainingPipelineRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetTrainingPipeline',
-            TrainingPipeline::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists TrainingPipelines in a Location.
-     *
-     * Sample code:
-     * ```
-     * $pipelineServiceClient = new PipelineServiceClient();
-     * try {
-     *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $pipelineServiceClient->listTrainingPipelines($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $pipelineServiceClient->listTrainingPipelines($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $pipelineServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The resource name of the Location to list the TrainingPipelines from.
-     *                             Format: `projects/{project}/locations/{location}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $filter
-     *          The standard list filter.
-     *          Supported fields:
-     *
-     *            * `display_name` supports = and !=.
-     *
-     *            * `state` supports = and !=.
-     *
-     *          Some examples of using the filter are:
-     *
-     *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-     *
-     *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *
-     *           * `NOT display_name="my_pipeline"`
-     *
-     *           * `state="PIPELINE_STATE_FAILED"`
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type FieldMask $readMask
-     *          Mask specifying which fields to read.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listTrainingPipelines($parent, array $optionalArgs = [])
-    {
-        $request = new ListTrainingPipelinesRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['filter'])) {
-            $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['readMask'])) {
-            $request->setReadMask($optionalArgs['readMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListTrainingPipelines',
-            $optionalArgs,
-            ListTrainingPipelinesResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Deletes a TrainingPipeline.
-     *
-     * Sample code:
-     * ```
-     * $pipelineServiceClient = new PipelineServiceClient();
-     * try {
-     *     $formattedName = $pipelineServiceClient->trainingPipelineName('[PROJECT]', '[LOCATION]', '[TRAINING_PIPELINE]');
-     *     $operationResponse = $pipelineServiceClient->deleteTrainingPipeline($formattedName);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         // operation succeeded and returns no value
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $pipelineServiceClient->deleteTrainingPipeline($formattedName);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $pipelineServiceClient->resumeOperation($operationName, 'deleteTrainingPipeline');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $pipelineServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name Required. The name of the TrainingPipeline resource to be deleted.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deleteTrainingPipeline($name, array $optionalArgs = [])
-    {
-        $request = new DeleteTrainingPipelineRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'DeleteTrainingPipeline',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
     }
 
     /**
@@ -647,40 +347,281 @@ class PipelineServiceGapicClient
      * }
      * ```
      *
-     * @param string $name Required. The name of the TrainingPipeline to cancel.
-     *                     Format:
+     * @param string $name         Required. The name of the TrainingPipeline to cancel.
+     *                             Format:
      *
-     * `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     *                             `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+     * @param array  $optionalArgs {
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function cancelTrainingPipeline($name, array $optionalArgs = [])
     {
         $request = new CancelTrainingPipelineRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CancelTrainingPipeline', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+    /**
+     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+     * attempted to be run.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $trainingPipeline = new TrainingPipeline();
+     *     $response = $pipelineServiceClient->createTrainingPipeline($formattedParent, $trainingPipeline);
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string           $parent           Required. The resource name of the Location to create the TrainingPipeline in.
+     *                                           Format: `projects/{project}/locations/{location}`
+     * @param TrainingPipeline $trainingPipeline Required. The TrainingPipeline to create.
+     * @param array            $optionalArgs     {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function createTrainingPipeline($parent, $trainingPipeline, array $optionalArgs = [])
+    {
+        $request = new CreateTrainingPipelineRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setTrainingPipeline($trainingPipeline);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateTrainingPipeline', TrainingPipeline::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'CancelTrainingPipeline',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Deletes a TrainingPipeline.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedName = $pipelineServiceClient->trainingPipelineName('[PROJECT]', '[LOCATION]', '[TRAINING_PIPELINE]');
+     *     $operationResponse = $pipelineServiceClient->deleteTrainingPipeline($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $pipelineServiceClient->deleteTrainingPipeline($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $pipelineServiceClient->resumeOperation($operationName, 'deleteTrainingPipeline');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the TrainingPipeline resource to be deleted.
+     *                             Format:
+     *
+     *                             `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deleteTrainingPipeline($name, array $optionalArgs = [])
+    {
+        $request = new DeleteTrainingPipelineRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteTrainingPipeline', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Gets a TrainingPipeline.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedName = $pipelineServiceClient->trainingPipelineName('[PROJECT]', '[LOCATION]', '[TRAINING_PIPELINE]');
+     *     $response = $pipelineServiceClient->getTrainingPipeline($formattedName);
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the TrainingPipeline resource.
+     *                             Format:
+     *
+     *                             `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getTrainingPipeline($name, array $optionalArgs = [])
+    {
+        $request = new GetTrainingPipelineRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetTrainingPipeline', TrainingPipeline::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Lists TrainingPipelines in a Location.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $pipelineServiceClient->listTrainingPipelines($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $pipelineServiceClient->listTrainingPipelines($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The resource name of the Location to list the TrainingPipelines from.
+     *                             Format: `projects/{project}/locations/{location}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $filter
+     *           The standard list filter.
+     *           Supported fields:
+     *
+     *           * `display_name` supports = and !=.
+     *
+     *           * `state` supports = and !=.
+     *
+     *           Some examples of using the filter are:
+     *
+     *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *
+     *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *
+     *           * `NOT display_name="my_pipeline"`
+     *
+     *           * `state="PIPELINE_STATE_FAILED"`
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type FieldMask $readMask
+     *           Mask specifying which fields to read.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listTrainingPipelines($parent, array $optionalArgs = [])
+    {
+        $request = new ListTrainingPipelinesRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListTrainingPipelines', $optionalArgs, ListTrainingPipelinesResponse::class, $request);
     }
 }

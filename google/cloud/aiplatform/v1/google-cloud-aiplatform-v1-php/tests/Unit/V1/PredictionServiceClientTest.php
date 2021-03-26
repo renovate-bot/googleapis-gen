@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,18 +22,19 @@
 
 namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
 
-use Google\Cloud\Aiplatform\V1\PredictionServiceClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Aiplatform\V1\PredictionServiceClient;
 use Google\Cloud\Aiplatform\V1\PredictResponse;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group aiplatform
+ *
  * @group gapic
  */
 class PredictionServiceClientTest extends GeneratedTest
@@ -51,9 +52,7 @@ class PredictionServiceClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -64,7 +63,6 @@ class PredictionServiceClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new PredictionServiceClient($options);
     }
 
@@ -74,20 +72,18 @@ class PredictionServiceClientTest extends GeneratedTest
     public function predictTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $deployedModelId = 'deployedModelId866642506';
         $expectedResponse = new PredictResponse();
         $expectedResponse->setDeployedModelId($deployedModelId);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedEndpoint = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
         $instances = [];
-
         $response = $client->predict($formattedEndpoint, $instances);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -95,14 +91,10 @@ class PredictionServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.aiplatform.v1.PredictionService/Predict', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getEndpoint();
-
         $this->assertProtobufEquals($formattedEndpoint, $actualValue);
         $actualValue = $actualRequestObject->getInstances();
-
         $this->assertProtobufEquals($instances, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -112,26 +104,23 @@ class PredictionServiceClientTest extends GeneratedTest
     public function predictExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedEndpoint = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
         $instances = [];
-
         try {
             $client->predict($formattedEndpoint, $instances);
             // If the $client method call did not throw, fail the test
@@ -140,7 +129,6 @@ class PredictionServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

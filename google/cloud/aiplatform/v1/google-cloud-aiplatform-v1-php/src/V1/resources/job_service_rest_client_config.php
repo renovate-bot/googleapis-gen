@@ -3,43 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.aiplatform.v1.JobService' => [
-            'CreateCustomJob' => [
+            'CancelBatchPredictionJob' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/customJobs',
-                'body' => 'custom_job',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetCustomJob' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/customJobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListCustomJobs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/customJobs',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteCustomJob' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/customJobs/*}',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/batchPredictionJobs/*}:cancel',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -60,100 +27,10 @@ return [
                     ],
                 ],
             ],
-            'CreateDataLabelingJob' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/dataLabelingJobs',
-                'body' => 'data_labeling_job',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetDataLabelingJob' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/dataLabelingJobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListDataLabelingJobs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/dataLabelingJobs',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteDataLabelingJob' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/dataLabelingJobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CancelDataLabelingJob' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/dataLabelingJobs/*}:cancel',
                 'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateHyperparameterTuningJob' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/hyperparameterTuningJobs',
-                'body' => 'hyperparameter_tuning_job',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetHyperparameterTuningJob' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListHyperparameterTuningJobs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/hyperparameterTuningJobs',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteHyperparameterTuningJob' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -186,20 +63,34 @@ return [
                     ],
                 ],
             ],
-            'GetBatchPredictionJob' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/batchPredictionJobs/*}',
+            'CreateCustomJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/customJobs',
+                'body' => 'custom_job',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
             ],
-            'ListBatchPredictionJobs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/batchPredictionJobs',
+            'CreateDataLabelingJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/dataLabelingJobs',
+                'body' => 'data_labeling_job',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateHyperparameterTuningJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/hyperparameterTuningJobs',
+                'body' => 'hyperparameter_tuning_job',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -219,14 +110,123 @@ return [
                     ],
                 ],
             ],
-            'CancelBatchPredictionJob' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/batchPredictionJobs/*}:cancel',
-                'body' => '*',
+            'DeleteCustomJob' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/customJobs/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteDataLabelingJob' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/dataLabelingJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteHyperparameterTuningJob' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetBatchPredictionJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/batchPredictionJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetCustomJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/customJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetDataLabelingJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/dataLabelingJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetHyperparameterTuningJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListBatchPredictionJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/batchPredictionJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListCustomJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/customJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListDataLabelingJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/dataLabelingJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListHyperparameterTuningJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/hyperparameterTuningJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],

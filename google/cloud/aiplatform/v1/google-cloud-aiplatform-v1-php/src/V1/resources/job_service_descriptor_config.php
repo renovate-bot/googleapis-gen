@@ -3,6 +3,16 @@
 return [
     'interfaces' => [
         'google.cloud.aiplatform.v1.JobService' => [
+            'DeleteBatchPredictionJob' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'DeleteCustomJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
@@ -33,14 +43,14 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteBatchPredictionJob' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
+            'ListBatchPredictionJobs' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getBatchPredictionJobs',
                 ],
             ],
             'ListCustomJobs' => [
@@ -71,16 +81,6 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getHyperparameterTuningJobs',
-                ],
-            ],
-            'ListBatchPredictionJobs' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getBatchPredictionJobs',
                 ],
             ],
         ],

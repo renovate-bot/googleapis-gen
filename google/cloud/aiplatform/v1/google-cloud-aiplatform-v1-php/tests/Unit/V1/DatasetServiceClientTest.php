@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,16 +22,19 @@
 
 namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
 
-use Google\Cloud\Aiplatform\V1\DatasetServiceClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Aiplatform\V1\Annotation;
 use Google\Cloud\Aiplatform\V1\AnnotationSpec;
+
 use Google\Cloud\Aiplatform\V1\DataItem;
 use Google\Cloud\Aiplatform\V1\Dataset;
+use Google\Cloud\Aiplatform\V1\DatasetServiceClient;
 use Google\Cloud\Aiplatform\V1\ExportDataConfig;
 use Google\Cloud\Aiplatform\V1\ExportDataResponse;
 use Google\Cloud\Aiplatform\V1\ImportDataResponse;
@@ -48,6 +51,7 @@ use stdClass;
 
 /**
  * @group aiplatform
+ *
  * @group gapic
  */
 class DatasetServiceClientTest extends GeneratedTest
@@ -65,9 +69,7 @@ class DatasetServiceClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -78,7 +80,6 @@ class DatasetServiceClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new DatasetServiceClient($options);
     }
 
@@ -98,10 +99,8 @@ class DatasetServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/createDatasetTest');
@@ -123,11 +122,9 @@ class DatasetServiceClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $dataset = new Dataset();
-
         $response = $client->createDataset($formattedParent, $dataset);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -135,20 +132,15 @@ class DatasetServiceClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/CreateDataset', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getParent();
-
         $this->assertProtobufEquals($formattedParent, $actualValue);
         $actualValue = $actualApiRequestObject->getDataset();
-
         $this->assertProtobufEquals($dataset, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/createDatasetTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -158,12 +150,10 @@ class DatasetServiceClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
@@ -184,39 +174,31 @@ class DatasetServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/createDatasetTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $dataset = new Dataset();
-
         $response = $client->createDataset($formattedParent, $dataset);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/createDatasetTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -227,254 +209,11 @@ class DatasetServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getDatasetTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name2 = 'name2-1052831874';
-        $displayName = 'displayName1615086568';
-        $metadataSchemaUri = 'metadataSchemaUri-152319778';
-        $etag = 'etag3123477';
-        $expectedResponse = new Dataset();
-        $expectedResponse->setName($name2);
-        $expectedResponse->setDisplayName($displayName);
-        $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
-        $expectedResponse->setEtag($etag);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-
-        $response = $client->getDataset($formattedName);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/GetDataset', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getName();
-
-        $this->assertProtobufEquals($formattedName, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getDatasetExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-
-        try {
-            $client->getDataset($formattedName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function updateDatasetTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name = 'name3373707';
-        $displayName = 'displayName1615086568';
-        $metadataSchemaUri = 'metadataSchemaUri-152319778';
-        $etag = 'etag3123477';
-        $expectedResponse = new Dataset();
-        $expectedResponse->setName($name);
-        $expectedResponse->setDisplayName($displayName);
-        $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
-        $expectedResponse->setEtag($etag);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $dataset = new Dataset();
-        $updateMask = new FieldMask();
-
-        $response = $client->updateDataset($dataset, $updateMask);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/UpdateDataset', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getDataset();
-
-        $this->assertProtobufEquals($dataset, $actualValue);
-        $actualValue = $actualRequestObject->getUpdateMask();
-
-        $this->assertProtobufEquals($updateMask, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function updateDatasetExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $dataset = new Dataset();
-        $updateMask = new FieldMask();
-
-        try {
-            $client->updateDataset($dataset, $updateMask);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function listDatasetsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $nextPageToken = '';
-        $datasetsElement = new Dataset();
-        $datasets = [$datasetsElement];
-        $expectedResponse = new ListDatasetsResponse();
-        $expectedResponse->setNextPageToken($nextPageToken);
-        $expectedResponse->setDatasets($datasets);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
-
-        $response = $client->listDatasets($formattedParent);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getDatasets()[0], $resources[0]);
-
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ListDatasets', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getParent();
-
-        $this->assertProtobufEquals($formattedParent, $actualValue);
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function listDatasetsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
-
-        try {
-            $client->listDatasets($formattedParent);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 
     /**
@@ -493,10 +232,8 @@ class DatasetServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/deleteDatasetTest');
@@ -510,10 +247,8 @@ class DatasetServiceClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-
         $response = $client->deleteDataset($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -521,17 +256,13 @@ class DatasetServiceClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/DeleteDataset', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/deleteDatasetTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -541,12 +272,10 @@ class DatasetServiceClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
@@ -567,38 +296,30 @@ class DatasetServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/deleteDatasetTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-
         $response = $client->deleteDataset($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/deleteDatasetTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -609,152 +330,6 @@ class DatasetServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
-        // Call popReceivedCalls to ensure the stubs are exhausted
-        $transport->popReceivedCalls();
-        $operationsTransport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function importDataTest()
-    {
-        $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient([
-            'serviceAddress' => '',
-            'transport' => $operationsTransport,
-            'credentials' => $this->createCredentials(),
-        ]);
-        $transport = $this->createTransport();
-        $client = $this->createClient([
-            'transport' => $transport,
-            'operationsClient' => $operationsClient,
-        ]);
-
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-
-        // Mock response
-        $incompleteOperation = new Operation();
-        $incompleteOperation->setName('operations/importDataTest');
-        $incompleteOperation->setDone(false);
-        $transport->addResponse($incompleteOperation);
-        $expectedResponse = new ImportDataResponse();
-        $anyResponse = new Any();
-        $anyResponse->setValue($expectedResponse->serializeToString());
-        $completeOperation = new Operation();
-        $completeOperation->setName('operations/importDataTest');
-        $completeOperation->setDone(true);
-        $completeOperation->setResponse($anyResponse);
-        $operationsTransport->addResponse($completeOperation);
-
-        // Mock request
-        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-        $importConfigs = [];
-
-        $response = $client->importData($formattedName, $importConfigs);
-        $this->assertFalse($response->isDone());
-        $this->assertNull($response->getResult());
-        $apiRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($apiRequests));
-        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
-        $this->assertSame(0, count($operationsRequestsEmpty));
-
-        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
-        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ImportData', $actualApiFuncCall);
-        $actualValue = $actualApiRequestObject->getName();
-
-        $this->assertProtobufEquals($formattedName, $actualValue);
-        $actualValue = $actualApiRequestObject->getImportConfigs();
-
-        $this->assertProtobufEquals($importConfigs, $actualValue);
-
-        $expectedOperationsRequestObject = new GetOperationRequest();
-        $expectedOperationsRequestObject->setName('operations/importDataTest');
-
-        $response->pollUntilComplete([
-            'initialPollDelayMillis' => 1,
-        ]);
-        $this->assertTrue($response->isDone());
-        $this->assertEquals($expectedResponse, $response->getResult());
-        $apiRequestsEmpty = $transport->popReceivedCalls();
-        $this->assertSame(0, count($apiRequestsEmpty));
-        $operationsRequests = $operationsTransport->popReceivedCalls();
-        $this->assertSame(1, count($operationsRequests));
-
-        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
-        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
-        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
-        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function importDataExceptionTest()
-    {
-        $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient([
-            'serviceAddress' => '',
-            'transport' => $operationsTransport,
-            'credentials' => $this->createCredentials(),
-        ]);
-        $transport = $this->createTransport();
-        $client = $this->createClient([
-            'transport' => $transport,
-            'operationsClient' => $operationsClient,
-        ]);
-
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-
-        // Mock response
-        $incompleteOperation = new Operation();
-        $incompleteOperation->setName('operations/importDataTest');
-        $incompleteOperation->setDone(false);
-        $transport->addResponse($incompleteOperation);
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $operationsTransport->addResponse(null, $status);
-
-        // Mock request
-        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-        $importConfigs = [];
-
-        $response = $client->importData($formattedName, $importConfigs);
-        $this->assertFalse($response->isDone());
-        $this->assertNull($response->getResult());
-
-        $expectedOperationsRequestObject = new GetOperationRequest();
-        $expectedOperationsRequestObject->setName('operations/importDataTest');
-
-        try {
-            $response->pollUntilComplete([
-                'initialPollDelayMillis' => 1,
-            ]);
-            // If the pollUntilComplete() method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
@@ -778,10 +353,8 @@ class DatasetServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/exportDataTest');
@@ -795,11 +368,9 @@ class DatasetServiceClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
         $exportConfig = new ExportDataConfig();
-
         $response = $client->exportData($formattedName, $exportConfig);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -807,20 +378,15 @@ class DatasetServiceClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ExportData', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
         $actualValue = $actualApiRequestObject->getExportConfig();
-
         $this->assertProtobufEquals($exportConfig, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/exportDataTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -830,12 +396,10 @@ class DatasetServiceClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
@@ -856,39 +420,31 @@ class DatasetServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/exportDataTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
         $exportConfig = new ExportDataConfig();
-
         $response = $client->exportData($formattedName, $exportConfig);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/exportDataTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -899,7 +455,6 @@ class DatasetServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
@@ -910,92 +465,13 @@ class DatasetServiceClientTest extends GeneratedTest
     /**
      * @test
      */
-    public function listDataItemsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $nextPageToken = '';
-        $dataItemsElement = new DataItem();
-        $dataItems = [$dataItemsElement];
-        $expectedResponse = new ListDataItemsResponse();
-        $expectedResponse->setNextPageToken($nextPageToken);
-        $expectedResponse->setDataItems($dataItems);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedParent = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-
-        $response = $client->listDataItems($formattedParent);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getDataItems()[0], $resources[0]);
-
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ListDataItems', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getParent();
-
-        $this->assertProtobufEquals($formattedParent, $actualValue);
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function listDataItemsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedParent = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-
-        try {
-            $client->listDataItems($formattedParent);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
     public function getAnnotationSpecTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
@@ -1005,10 +481,8 @@ class DatasetServiceClientTest extends GeneratedTest
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedName = $client->annotationSpecName('[PROJECT]', '[LOCATION]', '[DATASET]', '[ANNOTATION_SPEC]');
-
         $response = $client->getAnnotationSpec($formattedName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -1016,11 +490,8 @@ class DatasetServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/GetAnnotationSpec', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -1030,25 +501,22 @@ class DatasetServiceClientTest extends GeneratedTest
     public function getAnnotationSpecExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->annotationSpecName('[PROJECT]', '[LOCATION]', '[DATASET]', '[ANNOTATION_SPEC]');
-
         try {
             $client->getAnnotationSpec($formattedName);
             // If the $client method call did not throw, fail the test
@@ -1057,7 +525,6 @@ class DatasetServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -1066,39 +533,231 @@ class DatasetServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function getDatasetTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name2 = 'name2-1052831874';
+        $displayName = 'displayName1615086568';
+        $metadataSchemaUri = 'metadataSchemaUri-152319778';
+        $etag = 'etag3123477';
+        $expectedResponse = new Dataset();
+        $expectedResponse->setName($name2);
+        $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
+        $expectedResponse->setEtag($etag);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+        $response = $client->getDataset($formattedName);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/GetDataset', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function getDatasetExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+        try {
+            $client->getDataset($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function importDataTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/importDataTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $expectedResponse = new ImportDataResponse();
+        $anyResponse = new Any();
+        $anyResponse->setValue($expectedResponse->serializeToString());
+        $completeOperation = new Operation();
+        $completeOperation->setName('operations/importDataTest');
+        $completeOperation->setDone(true);
+        $completeOperation->setResponse($anyResponse);
+        $operationsTransport->addResponse($completeOperation);
+        // Mock request
+        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+        $importConfigs = [];
+        $response = $client->importData($formattedName, $importConfigs);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $apiRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($apiRequests));
+        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
+        $this->assertSame(0, count($operationsRequestsEmpty));
+        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
+        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ImportData', $actualApiFuncCall);
+        $actualValue = $actualApiRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $actualValue = $actualApiRequestObject->getImportConfigs();
+        $this->assertProtobufEquals($importConfigs, $actualValue);
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/importDataTest');
+        $response->pollUntilComplete([
+            'initialPollDelayMillis' => 1,
+        ]);
+        $this->assertTrue($response->isDone());
+        $this->assertEquals($expectedResponse, $response->getResult());
+        $apiRequestsEmpty = $transport->popReceivedCalls();
+        $this->assertSame(0, count($apiRequestsEmpty));
+        $operationsRequests = $operationsTransport->popReceivedCalls();
+        $this->assertSame(1, count($operationsRequests));
+        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
+        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
+        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
+        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function importDataExceptionTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/importDataTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $operationsTransport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+        $importConfigs = [];
+        $response = $client->importData($formattedName, $importConfigs);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/importDataTest');
+        try {
+            $response->pollUntilComplete([
+                'initialPollDelayMillis' => 1,
+            ]);
+            // If the pollUntilComplete() method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stubs are exhausted
+        $transport->popReceivedCalls();
+        $operationsTransport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function listAnnotationsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $nextPageToken = '';
         $annotationsElement = new Annotation();
-        $annotations = [$annotationsElement];
+        $annotations = [
+            $annotationsElement,
+        ];
         $expectedResponse = new ListAnnotationsResponse();
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setAnnotations($annotations);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedParent = $client->dataItemName('[PROJECT]', '[LOCATION]', '[DATASET]', '[DATA_ITEM]');
-
         $response = $client->listAnnotations($formattedParent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
         $this->assertEquals($expectedResponse->getAnnotations()[0], $resources[0]);
-
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ListAnnotations', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getParent();
-
         $this->assertProtobufEquals($formattedParent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
@@ -1109,25 +768,22 @@ class DatasetServiceClientTest extends GeneratedTest
     public function listAnnotationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedParent = $client->dataItemName('[PROJECT]', '[LOCATION]', '[DATASET]', '[DATA_ITEM]');
-
         try {
             $client->listAnnotations($formattedParent);
             // If the $client method call did not throw, fail the test
@@ -1136,7 +792,224 @@ class DatasetServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /**
+     * @test
+     */
+    public function listDataItemsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $nextPageToken = '';
+        $dataItemsElement = new DataItem();
+        $dataItems = [
+            $dataItemsElement,
+        ];
+        $expectedResponse = new ListDataItemsResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setDataItems($dataItems);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedParent = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+        $response = $client->listDataItems($formattedParent);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getDataItems()[0], $resources[0]);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ListDataItems', $actualFuncCall);
+        $actualValue = $actualRequestObject->getParent();
+        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listDataItemsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedParent = $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+        try {
+            $client->listDataItems($formattedParent);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listDatasetsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $nextPageToken = '';
+        $datasetsElement = new Dataset();
+        $datasets = [
+            $datasetsElement,
+        ];
+        $expectedResponse = new ListDatasetsResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setDatasets($datasets);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
+        $response = $client->listDatasets($formattedParent);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getDatasets()[0], $resources[0]);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/ListDatasets', $actualFuncCall);
+        $actualValue = $actualRequestObject->getParent();
+        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listDatasetsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
+        try {
+            $client->listDatasets($formattedParent);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function updateDatasetTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name = 'name3373707';
+        $displayName = 'displayName1615086568';
+        $metadataSchemaUri = 'metadataSchemaUri-152319778';
+        $etag = 'etag3123477';
+        $expectedResponse = new Dataset();
+        $expectedResponse->setName($name);
+        $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
+        $expectedResponse->setEtag($etag);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $dataset = new Dataset();
+        $updateMask = new FieldMask();
+        $response = $client->updateDataset($dataset, $updateMask);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1.DatasetService/UpdateDataset', $actualFuncCall);
+        $actualValue = $actualRequestObject->getDataset();
+        $this->assertProtobufEquals($dataset, $actualValue);
+        $actualValue = $actualRequestObject->getUpdateMask();
+        $this->assertProtobufEquals($updateMask, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function updateDatasetExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $dataset = new Dataset();
+        $updateMask = new FieldMask();
+        try {
+            $client->updateDataset($dataset, $updateMask);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

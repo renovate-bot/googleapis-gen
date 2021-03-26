@@ -3,9 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.aiplatform.v1.MigrationService' => [
-            'SearchMigratableResources' => [
+            'BatchMigrateResources' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/migratableResources:search',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/migratableResources:batchMigrate',
                 'body' => '*',
                 'placeholders' => [
                     'parent' => [
@@ -15,9 +15,9 @@ return [
                     ],
                 ],
             ],
-            'BatchMigrateResources' => [
+            'SearchMigratableResources' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/migratableResources:batchMigrate',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/migratableResources:search',
                 'body' => '*',
                 'placeholders' => [
                     'parent' => [

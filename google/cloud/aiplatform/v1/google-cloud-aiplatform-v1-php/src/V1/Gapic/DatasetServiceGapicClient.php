@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ namespace Google\Cloud\Aiplatform\V1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -58,7 +60,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description:.
+ * Service Description:
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -72,15 +74,12 @@ use Google\Protobuf\FieldMask;
  *     $operationResponse->pollUntilComplete();
  *     if ($operationResponse->operationSucceeded()) {
  *         $result = $operationResponse->getResult();
- *         // doSomethingWith($result)
+ *     // doSomethingWith($result)
  *     } else {
  *         $error = $operationResponse->getError();
  *         // handleError($error)
  *     }
- *
- *
  *     // Alternatively:
- *
  *     // start the operation, keep the operation name, and resume later
  *     $operationResponse = $datasetServiceClient->createDataset($formattedParent, $dataset);
  *     $operationName = $operationResponse->getName();
@@ -91,23 +90,21 @@ use Google\Protobuf\FieldMask;
  *         $newOperationResponse->reload();
  *     }
  *     if ($newOperationResponse->operationSucceeded()) {
- *       $result = $newOperationResponse->getResult();
- *       // doSomethingWith($result)
+ *         $result = $newOperationResponse->getResult();
+ *     // doSomethingWith($result)
  *     } else {
- *       $error = $newOperationResponse->getError();
- *       // handleError($error)
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
  *     }
  * } finally {
  *     $datasetServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class DatasetServiceGapicClient
 {
@@ -139,10 +136,15 @@ class DatasetServiceGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
+
     private static $annotationSpecNameTemplate;
+
     private static $dataItemNameTemplate;
+
     private static $datasetNameTemplate;
+
     private static $locationNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -151,16 +153,16 @@ class DatasetServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/dataset_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/dataset_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/dataset_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/dataset_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/dataset_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/dataset_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/dataset_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/dataset_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -168,7 +170,7 @@ class DatasetServiceGapicClient
 
     private static function getAnnotationSpecNameTemplate()
     {
-        if (null == self::$annotationSpecNameTemplate) {
+        if (self::$annotationSpecNameTemplate == null) {
             self::$annotationSpecNameTemplate = new PathTemplate('projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}');
         }
 
@@ -177,7 +179,7 @@ class DatasetServiceGapicClient
 
     private static function getDataItemNameTemplate()
     {
-        if (null == self::$dataItemNameTemplate) {
+        if (self::$dataItemNameTemplate == null) {
             self::$dataItemNameTemplate = new PathTemplate('projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}');
         }
 
@@ -186,7 +188,7 @@ class DatasetServiceGapicClient
 
     private static function getDatasetNameTemplate()
     {
-        if (null == self::$datasetNameTemplate) {
+        if (self::$datasetNameTemplate == null) {
             self::$datasetNameTemplate = new PathTemplate('projects/{project}/locations/{location}/datasets/{dataset}');
         }
 
@@ -195,7 +197,7 @@ class DatasetServiceGapicClient
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -204,7 +206,7 @@ class DatasetServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'annotationSpec' => self::getAnnotationSpecNameTemplate(),
                 'dataItem' => self::getDataItemNameTemplate(),
@@ -217,8 +219,8 @@ class DatasetServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a annotation_spec resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * annotation_spec resource.
      *
      * @param string $project
      * @param string $location
@@ -226,7 +228,6 @@ class DatasetServiceGapicClient
      * @param string $annotationSpec
      *
      * @return string The formatted annotation_spec resource.
-     * @experimental
      */
     public static function annotationSpecName($project, $location, $dataset, $annotationSpec)
     {
@@ -239,8 +240,8 @@ class DatasetServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a data_item resource.
+     * Formats a string containing the fully-qualified path to represent a data_item
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -248,7 +249,6 @@ class DatasetServiceGapicClient
      * @param string $dataItem
      *
      * @return string The formatted data_item resource.
-     * @experimental
      */
     public static function dataItemName($project, $location, $dataset, $dataItem)
     {
@@ -261,15 +261,14 @@ class DatasetServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a dataset resource.
+     * Formats a string containing the fully-qualified path to represent a dataset
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $dataset
      *
      * @return string The formatted dataset resource.
-     * @experimental
      */
     public static function datasetName($project, $location, $dataset)
     {
@@ -281,14 +280,13 @@ class DatasetServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location resource.
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
      *
      * @param string $project
      * @param string $location
      *
      * @return string The formatted location resource.
-     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -305,12 +303,13 @@ class DatasetServiceGapicClient
      * - annotationSpec: projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}
      * - dataItem: projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}
      * - dataset: projects/{project}/locations/{location}/datasets/{dataset}
-     * - location: projects/{project}/locations/{location}.
+     * - location: projects/{project}/locations/{location}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -318,12 +317,10 @@ class DatasetServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -339,6 +336,7 @@ class DatasetServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -346,7 +344,6 @@ class DatasetServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
-     * @experimental
      */
     public function getOperationsClient()
     {
@@ -354,26 +351,21 @@ class DatasetServiceGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
-     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -381,7 +373,7 @@ class DatasetServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -395,31 +387,31 @@ class DatasetServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -427,7 +419,6 @@ class DatasetServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -449,15 +440,12 @@ class DatasetServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $datasetServiceClient->createDataset($formattedParent, $dataset);
      *     $operationName = $operationResponse->getName();
@@ -468,11 +456,11 @@ class DatasetServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $datasetServiceClient->close();
@@ -483,267 +471,29 @@ class DatasetServiceGapicClient
      *                              Format: `projects/{project}/locations/{location}`
      * @param Dataset $dataset      Required. The Dataset to create.
      * @param array   $optionalArgs {
-     *                              Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createDataset($parent, $dataset, array $optionalArgs = [])
     {
         $request = new CreateDatasetRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setDataset($dataset);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'CreateDataset',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Gets a Dataset.
-     *
-     * Sample code:
-     * ```
-     * $datasetServiceClient = new DatasetServiceClient();
-     * try {
-     *     $formattedName = $datasetServiceClient->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-     *     $response = $datasetServiceClient->getDataset($formattedName);
-     * } finally {
-     *     $datasetServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the Dataset resource.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type FieldMask $readMask
-     *          Mask specifying which fields to read.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Aiplatform\V1\Dataset
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getDataset($name, array $optionalArgs = [])
-    {
-        $request = new GetDatasetRequest();
-        $request->setName($name);
-        if (isset($optionalArgs['readMask'])) {
-            $request->setReadMask($optionalArgs['readMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetDataset',
-            Dataset::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates a Dataset.
-     *
-     * Sample code:
-     * ```
-     * $datasetServiceClient = new DatasetServiceClient();
-     * try {
-     *     $dataset = new Dataset();
-     *     $updateMask = new FieldMask();
-     *     $response = $datasetServiceClient->updateDataset($dataset, $updateMask);
-     * } finally {
-     *     $datasetServiceClient->close();
-     * }
-     * ```
-     *
-     * @param Dataset   $dataset    Required. The Dataset which replaces the resource on the server.
-     * @param FieldMask $updateMask Required. The update mask applies to the resource.
-     *                              For the `FieldMask` definition, see
-     *                              [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
-     *                              Updatable fields:
-     *
-     *   * `display_name`
-     *   * `description`
-     *   * `labels`
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Aiplatform\V1\Dataset
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateDataset($dataset, $updateMask, array $optionalArgs = [])
-    {
-        $request = new UpdateDatasetRequest();
-        $request->setDataset($dataset);
-        $request->setUpdateMask($updateMask);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'dataset.name' => $request->getDataset()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateDataset',
-            Dataset::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists Datasets in a Location.
-     *
-     * Sample code:
-     * ```
-     * $datasetServiceClient = new DatasetServiceClient();
-     * try {
-     *     $formattedParent = $datasetServiceClient->locationName('[PROJECT]', '[LOCATION]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $datasetServiceClient->listDatasets($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $datasetServiceClient->listDatasets($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $datasetServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The name of the Dataset's parent resource.
-     *                             Format: `projects/{project}/locations/{location}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $filter
-     *          An expression for filtering the results of the request. For field names
-     *          both snake_case and camelCase are supported.
-     *
-     *            * `display_name`: supports = and !=
-     *            * `metadata_schema_uri`: supports = and !=
-     *            * `labels` supports general map functions that is:
-     *              * `labels.key=value` - key:value equality
-     *              * `labels.key:* or labels:key - key existence
-     *              * A key including a space must be quoted. `labels."a key"`.
-     *
-     *          Some examples:
-     *            * `displayName="myDisplayName"`
-     *            * `labels.myKey="myValue"`
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type FieldMask $readMask
-     *          Mask specifying which fields to read.
-     *     @type string $orderBy
-     *          A comma-separated list of fields to order by, sorted in ascending order.
-     *          Use "desc" after a field name for descending.
-     *          Supported fields:
-     *            * `display_name`
-     *            * `create_time`
-     *            * `update_time`
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listDatasets($parent, array $optionalArgs = [])
-    {
-        $request = new ListDatasetsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['filter'])) {
-            $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['readMask'])) {
-            $request->setReadMask($optionalArgs['readMask']);
-        }
-        if (isset($optionalArgs['orderBy'])) {
-            $request->setOrderBy($optionalArgs['orderBy']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListDatasets',
-            $optionalArgs,
-            ListDatasetsResponse::class,
-            $request
-        );
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('CreateDataset', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -762,10 +512,7 @@ class DatasetServiceGapicClient
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $datasetServiceClient->deleteDataset($formattedName);
      *     $operationName = $operationResponse->getName();
@@ -776,10 +523,10 @@ class DatasetServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
+     *         // operation succeeded and returns no value
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $datasetServiceClient->close();
@@ -790,122 +537,28 @@ class DatasetServiceGapicClient
      *                             Format:
      *                             `projects/{project}/locations/{location}/datasets/{dataset}`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteDataset($name, array $optionalArgs = [])
     {
         $request = new DeleteDatasetRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'DeleteDataset',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Imports data into a Dataset.
-     *
-     * Sample code:
-     * ```
-     * $datasetServiceClient = new DatasetServiceClient();
-     * try {
-     *     $formattedName = $datasetServiceClient->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
-     *     $importConfigs = [];
-     *     $operationResponse = $datasetServiceClient->importData($formattedName, $importConfigs);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $datasetServiceClient->importData($formattedName, $importConfigs);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $datasetServiceClient->resumeOperation($operationName, 'importData');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $datasetServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string             $name          Required. The name of the Dataset resource.
-     *                                          Format:
-     *                                          `projects/{project}/locations/{location}/datasets/{dataset}`
-     * @param ImportDataConfig[] $importConfigs Required. The desired input locations. The contents of all input locations will be
-     *                                          imported in one batch.
-     * @param array              $optionalArgs  {
-     *                                          Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function importData($name, $importConfigs, array $optionalArgs = [])
-    {
-        $request = new ImportDataRequest();
-        $request->setName($name);
-        $request->setImportConfigs($importConfigs);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'ImportData',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteDataset', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -921,15 +574,12 @@ class DatasetServiceGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $datasetServiceClient->exportData($formattedName, $exportConfig);
      *     $operationName = $operationResponse->getName();
@@ -940,11 +590,11 @@ class DatasetServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $datasetServiceClient->close();
@@ -956,39 +606,286 @@ class DatasetServiceGapicClient
      *                                       `projects/{project}/locations/{location}/datasets/{dataset}`
      * @param ExportDataConfig $exportConfig Required. The desired output location.
      * @param array            $optionalArgs {
-     *                                       Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function exportData($name, $exportConfig, array $optionalArgs = [])
     {
         $request = new ExportDataRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
         $request->setExportConfig($exportConfig);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('ExportData', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+    /**
+     * Gets an AnnotationSpec.
+     *
+     * Sample code:
+     * ```
+     * $datasetServiceClient = new DatasetServiceClient();
+     * try {
+     *     $formattedName = $datasetServiceClient->annotationSpecName('[PROJECT]', '[LOCATION]', '[DATASET]', '[ANNOTATION_SPEC]');
+     *     $response = $datasetServiceClient->getAnnotationSpec($formattedName);
+     * } finally {
+     *     $datasetServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the AnnotationSpec resource.
+     *                             Format:
+     *
+     *                             `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $readMask
+     *           Mask specifying which fields to read.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1\AnnotationSpec
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getAnnotationSpec($name, array $optionalArgs = [])
+    {
+        $request = new GetAnnotationSpecRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
+        }
 
-        return $this->startOperationsCall(
-            'ExportData',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetAnnotationSpec', AnnotationSpec::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Gets a Dataset.
+     *
+     * Sample code:
+     * ```
+     * $datasetServiceClient = new DatasetServiceClient();
+     * try {
+     *     $formattedName = $datasetServiceClient->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+     *     $response = $datasetServiceClient->getDataset($formattedName);
+     * } finally {
+     *     $datasetServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the Dataset resource.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $readMask
+     *           Mask specifying which fields to read.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1\Dataset
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getDataset($name, array $optionalArgs = [])
+    {
+        $request = new GetDatasetRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetDataset', Dataset::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Imports data into a Dataset.
+     *
+     * Sample code:
+     * ```
+     * $datasetServiceClient = new DatasetServiceClient();
+     * try {
+     *     $formattedName = $datasetServiceClient->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]');
+     *     $importConfigs = [];
+     *     $operationResponse = $datasetServiceClient->importData($formattedName, $importConfigs);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $datasetServiceClient->importData($formattedName, $importConfigs);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $datasetServiceClient->resumeOperation($operationName, 'importData');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $datasetServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string             $name          Required. The name of the Dataset resource.
+     *                                          Format:
+     *                                          `projects/{project}/locations/{location}/datasets/{dataset}`
+     * @param ImportDataConfig[] $importConfigs Required. The desired input locations. The contents of all input locations will be
+     *                                          imported in one batch.
+     * @param array              $optionalArgs  {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function importData($name, $importConfigs, array $optionalArgs = [])
+    {
+        $request = new ImportDataRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $request->setImportConfigs($importConfigs);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('ImportData', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Lists Annotations belongs to a dataitem
+     *
+     * Sample code:
+     * ```
+     * $datasetServiceClient = new DatasetServiceClient();
+     * try {
+     *     $formattedParent = $datasetServiceClient->dataItemName('[PROJECT]', '[LOCATION]', '[DATASET]', '[DATA_ITEM]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $datasetServiceClient->listAnnotations($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $datasetServiceClient->listAnnotations($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $datasetServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The resource name of the DataItem to list Annotations from.
+     *                             Format:
+     *
+     *                             `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $filter
+     *           The standard list filter.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type FieldMask $readMask
+     *           Mask specifying which fields to read.
+     *     @type string $orderBy
+     *           A comma-separated list of fields to order by, sorted in ascending order.
+     *           Use "desc" after a field name for descending.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listAnnotations($parent, array $optionalArgs = [])
+    {
+        $request = new ListAnnotationsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
+        }
+
+        if (isset($optionalArgs['orderBy'])) {
+            $request->setOrderBy($optionalArgs['orderBy']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListAnnotations', $optionalArgs, ListAnnotationsResponse::class, $request);
     }
 
     /**
@@ -1006,10 +903,7 @@ class DatasetServiceGapicClient
      *             // doSomethingWith($element);
      *         }
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Iterate through all elements
      *     $pagedResponse = $datasetServiceClient->listDataItems($formattedParent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
@@ -1024,150 +918,84 @@ class DatasetServiceGapicClient
      *                             Format:
      *                             `projects/{project}/locations/{location}/datasets/{dataset}`
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $filter
-     *          The standard list filter.
+     *           The standard list filter.
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type FieldMask $readMask
-     *          Mask specifying which fields to read.
+     *           Mask specifying which fields to read.
      *     @type string $orderBy
-     *          A comma-separated list of fields to order by, sorted in ascending order.
-     *          Use "desc" after a field name for descending.
+     *           A comma-separated list of fields to order by, sorted in ascending order.
+     *           Use "desc" after a field name for descending.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function listDataItems($parent, array $optionalArgs = [])
     {
         $request = new ListDataItemsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['filter'])) {
             $request->setFilter($optionalArgs['filter']);
         }
+
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
+
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
+
         if (isset($optionalArgs['readMask'])) {
             $request->setReadMask($optionalArgs['readMask']);
         }
+
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListDataItems',
-            $optionalArgs,
-            ListDataItemsResponse::class,
-            $request
-        );
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListDataItems', $optionalArgs, ListDataItemsResponse::class, $request);
     }
 
     /**
-     * Gets an AnnotationSpec.
+     * Lists Datasets in a Location.
      *
      * Sample code:
      * ```
      * $datasetServiceClient = new DatasetServiceClient();
      * try {
-     *     $formattedName = $datasetServiceClient->annotationSpecName('[PROJECT]', '[LOCATION]', '[DATASET]', '[ANNOTATION_SPEC]');
-     *     $response = $datasetServiceClient->getAnnotationSpec($formattedName);
-     * } finally {
-     *     $datasetServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name Required. The name of the AnnotationSpec resource.
-     *                     Format:
-     *
-     * `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type FieldMask $readMask
-     *          Mask specifying which fields to read.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Aiplatform\V1\AnnotationSpec
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getAnnotationSpec($name, array $optionalArgs = [])
-    {
-        $request = new GetAnnotationSpecRequest();
-        $request->setName($name);
-        if (isset($optionalArgs['readMask'])) {
-            $request->setReadMask($optionalArgs['readMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetAnnotationSpec',
-            AnnotationSpec::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists Annotations belongs to a dataitem.
-     *
-     * Sample code:
-     * ```
-     * $datasetServiceClient = new DatasetServiceClient();
-     * try {
-     *     $formattedParent = $datasetServiceClient->dataItemName('[PROJECT]', '[LOCATION]', '[DATASET]', '[DATA_ITEM]');
+     *     $formattedParent = $datasetServiceClient->locationName('[PROJECT]', '[LOCATION]');
      *     // Iterate over pages of elements
-     *     $pagedResponse = $datasetServiceClient->listAnnotations($formattedParent);
+     *     $pagedResponse = $datasetServiceClient->listDatasets($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Iterate through all elements
-     *     $pagedResponse = $datasetServiceClient->listAnnotations($formattedParent);
+     *     $pagedResponse = $datasetServiceClient->listDatasets($formattedParent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -1176,73 +1004,132 @@ class DatasetServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent Required. The resource name of the DataItem to list Annotations from.
-     *                       Format:
-     *
-     * `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param string $parent       Required. The name of the Dataset's parent resource.
+     *                             Format: `projects/{project}/locations/{location}`
+     * @param array  $optionalArgs {
+     *     Optional.
      *
      *     @type string $filter
-     *          The standard list filter.
+     *           An expression for filtering the results of the request. For field names
+     *           both snake_case and camelCase are supported.
+     *
+     *           * `display_name`: supports = and !=
+     *           * `metadata_schema_uri`: supports = and !=
+     *           * `labels` supports general map functions that is:
+     *           * `labels.key=value` - key:value equality
+     *           * `labels.key:* or labels:key - key existence
+     *           * A key including a space must be quoted. `labels."a key"`.
+     *
+     *           Some examples:
+     *           * `displayName="myDisplayName"`
+     *           * `labels.myKey="myValue"`
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type FieldMask $readMask
-     *          Mask specifying which fields to read.
+     *           Mask specifying which fields to read.
      *     @type string $orderBy
-     *          A comma-separated list of fields to order by, sorted in ascending order.
-     *          Use "desc" after a field name for descending.
+     *           A comma-separated list of fields to order by, sorted in ascending order.
+     *           Use "desc" after a field name for descending.
+     *           Supported fields:
+     *           * `display_name`
+     *           * `create_time`
+     *           * `update_time`
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function listAnnotations($parent, array $optionalArgs = [])
+    public function listDatasets($parent, array $optionalArgs = [])
     {
-        $request = new ListAnnotationsRequest();
+        $request = new ListDatasetsRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['filter'])) {
             $request->setFilter($optionalArgs['filter']);
         }
+
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
+
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
+
         if (isset($optionalArgs['readMask'])) {
             $request->setReadMask($optionalArgs['readMask']);
         }
+
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListDatasets', $optionalArgs, ListDatasetsResponse::class, $request);
+    }
 
-        return $this->getPagedListResponse(
-            'ListAnnotations',
-            $optionalArgs,
-            ListAnnotationsResponse::class,
-            $request
-        );
+    /**
+     * Updates a Dataset.
+     *
+     * Sample code:
+     * ```
+     * $datasetServiceClient = new DatasetServiceClient();
+     * try {
+     *     $dataset = new Dataset();
+     *     $updateMask = new FieldMask();
+     *     $response = $datasetServiceClient->updateDataset($dataset, $updateMask);
+     * } finally {
+     *     $datasetServiceClient->close();
+     * }
+     * ```
+     *
+     * @param Dataset   $dataset      Required. The Dataset which replaces the resource on the server.
+     * @param FieldMask $updateMask   Required. The update mask applies to the resource.
+     *                                For the `FieldMask` definition, see
+     *                                [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *                                Updatable fields:
+     *
+     *                                * `display_name`
+     *                                * `description`
+     *                                * `labels`
+     * @param array     $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1\Dataset
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateDataset($dataset, $updateMask, array $optionalArgs = [])
+    {
+        $request = new UpdateDatasetRequest();
+        $requestParamHeaders = [];
+        $request->setDataset($dataset);
+        $request->setUpdateMask($updateMask);
+        $requestParamHeaders['dataset.name'] = $dataset->getName();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateDataset', Dataset::class, $optionalArgs, $request)->wait();
     }
 }

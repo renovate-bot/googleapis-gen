@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.cloud.aiplatform.v1.PredictionService' => [
-        ],
+        'google.cloud.aiplatform.v1.PredictionService' => [],
     ],
 ];

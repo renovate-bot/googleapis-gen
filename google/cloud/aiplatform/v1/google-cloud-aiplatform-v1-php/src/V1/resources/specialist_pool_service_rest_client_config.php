@@ -15,6 +15,17 @@ return [
                     ],
                 ],
             ],
+            'DeleteSpecialistPool' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/specialistPools/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'GetSpecialistPool' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/specialistPools/*}',
@@ -33,17 +44,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteSpecialistPool' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/specialistPools/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],

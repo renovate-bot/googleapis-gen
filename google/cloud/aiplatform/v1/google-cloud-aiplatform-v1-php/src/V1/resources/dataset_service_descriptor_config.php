@@ -23,16 +23,6 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ImportData' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1\ImportDataResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\ImportDataOperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
             'ExportData' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Aiplatform\V1\ExportDataResponse',
@@ -43,14 +33,24 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ListDatasets' => [
+            'ImportData' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1\ImportDataResponse',
+                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\ImportDataOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'ListAnnotations' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getDatasets',
+                    'resourcesGetMethod' => 'getAnnotations',
                 ],
             ],
             'ListDataItems' => [
@@ -63,14 +63,14 @@ return [
                     'resourcesGetMethod' => 'getDataItems',
                 ],
             ],
-            'ListAnnotations' => [
+            'ListDatasets' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getAnnotations',
+                    'resourcesGetMethod' => 'getDatasets',
                 ],
             ],
         ],
