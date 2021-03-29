@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
    * either omitted or set to `READY`.
    * </pre>
    *
-   * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+   * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override public int getStateValue() {
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
    * either omitted or set to `READY`.
    * </pre>
    *
-   * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+   * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   @java.lang.Override public com.google.spanner.admin.instance.v1.Instance.State getState() {
@@ -1575,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * either omitted or set to `READY`.
      * </pre>
      *
-     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -1590,7 +1590,7 @@ private static final long serialVersionUID = 0L;
      * either omitted or set to `READY`.
      * </pre>
      *
-     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
@@ -1609,7 +1609,7 @@ private static final long serialVersionUID = 0L;
      * either omitted or set to `READY`.
      * </pre>
      *
-     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The state.
      */
     @java.lang.Override
@@ -1627,7 +1627,7 @@ private static final long serialVersionUID = 0L;
      * either omitted or set to `READY`.
      * </pre>
      *
-     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
@@ -1649,7 +1649,7 @@ private static final long serialVersionUID = 0L;
      * either omitted or set to `READY`.
      * </pre>
      *
-     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     * <code>.google.spanner.admin.instance.v1.Instance.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
