@@ -140,6 +140,19 @@ private static final long serialVersionUID = 0L;
             expirationCase_ = 7;
             break;
           }
+          case 74: {
+            com.google.cloud.secretmanager.v1.Rotation.Builder subBuilder = null;
+            if (rotation_ != null) {
+              subBuilder = rotation_.toBuilder();
+            }
+            rotation_ = input.readMessage(com.google.cloud.secretmanager.v1.Rotation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(rotation_);
+              rotation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -632,6 +645,47 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
+  public static final int ROTATION_FIELD_NUMBER = 9;
+  private com.google.cloud.secretmanager.v1.Rotation rotation_;
+  /**
+   * <pre>
+   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+   * rotation policy.
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the rotation field is set.
+   */
+  @java.lang.Override
+  public boolean hasRotation() {
+    return rotation_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+   * rotation policy.
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The rotation.
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.Rotation getRotation() {
+    return rotation_ == null ? com.google.cloud.secretmanager.v1.Rotation.getDefaultInstance() : rotation_;
+  }
+  /**
+   * <pre>
+   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+   * rotation policy.
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.RotationOrBuilder getRotationOrBuilder() {
+    return getRotation();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -669,6 +723,9 @@ private static final long serialVersionUID = 0L;
     }
     if (expirationCase_ == 7) {
       output.writeMessage(7, (com.google.protobuf.Duration) expiration_);
+    }
+    if (rotation_ != null) {
+      output.writeMessage(9, getRotation());
     }
     unknownFields.writeTo(output);
   }
@@ -712,6 +769,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (com.google.protobuf.Duration) expiration_);
     }
+    if (rotation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getRotation());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -743,6 +804,11 @@ private static final long serialVersionUID = 0L;
         other.internalGetLabels())) return false;
     if (!getTopicsList()
         .equals(other.getTopicsList())) return false;
+    if (hasRotation() != other.hasRotation()) return false;
+    if (hasRotation()) {
+      if (!getRotation()
+          .equals(other.getRotation())) return false;
+    }
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 6:
@@ -784,6 +850,10 @@ private static final long serialVersionUID = 0L;
     if (getTopicsCount() > 0) {
       hash = (37 * hash) + TOPICS_FIELD_NUMBER;
       hash = (53 * hash) + getTopicsList().hashCode();
+    }
+    if (hasRotation()) {
+      hash = (37 * hash) + ROTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getRotation().hashCode();
     }
     switch (expirationCase_) {
       case 6:
@@ -981,6 +1051,12 @@ private static final long serialVersionUID = 0L;
       } else {
         topicsBuilder_.clear();
       }
+      if (rotationBuilder_ == null) {
+        rotation_ = null;
+      } else {
+        rotation_ = null;
+        rotationBuilder_ = null;
+      }
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -1045,6 +1121,11 @@ private static final long serialVersionUID = 0L;
         } else {
           result.expiration_ = ttlBuilder_.build();
         }
+      }
+      if (rotationBuilder_ == null) {
+        result.rotation_ = rotation_;
+      } else {
+        result.rotation_ = rotationBuilder_.build();
       }
       result.expirationCase_ = expirationCase_;
       onBuilt();
@@ -1132,6 +1213,9 @@ private static final long serialVersionUID = 0L;
             topicsBuilder_.addAllMessages(other.topics_);
           }
         }
+      }
+      if (other.hasRotation()) {
+        mergeRotation(other.getRotation());
       }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME: {
@@ -2502,6 +2586,170 @@ private static final long serialVersionUID = 0L;
       expirationCase_ = 7;
       onChanged();;
       return ttlBuilder_;
+    }
+
+    private com.google.cloud.secretmanager.v1.Rotation rotation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.secretmanager.v1.Rotation, com.google.cloud.secretmanager.v1.Rotation.Builder, com.google.cloud.secretmanager.v1.RotationOrBuilder> rotationBuilder_;
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the rotation field is set.
+     */
+    public boolean hasRotation() {
+      return rotationBuilder_ != null || rotation_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The rotation.
+     */
+    public com.google.cloud.secretmanager.v1.Rotation getRotation() {
+      if (rotationBuilder_ == null) {
+        return rotation_ == null ? com.google.cloud.secretmanager.v1.Rotation.getDefaultInstance() : rotation_;
+      } else {
+        return rotationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setRotation(com.google.cloud.secretmanager.v1.Rotation value) {
+      if (rotationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rotation_ = value;
+        onChanged();
+      } else {
+        rotationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setRotation(
+        com.google.cloud.secretmanager.v1.Rotation.Builder builderForValue) {
+      if (rotationBuilder_ == null) {
+        rotation_ = builderForValue.build();
+        onChanged();
+      } else {
+        rotationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeRotation(com.google.cloud.secretmanager.v1.Rotation value) {
+      if (rotationBuilder_ == null) {
+        if (rotation_ != null) {
+          rotation_ =
+            com.google.cloud.secretmanager.v1.Rotation.newBuilder(rotation_).mergeFrom(value).buildPartial();
+        } else {
+          rotation_ = value;
+        }
+        onChanged();
+      } else {
+        rotationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearRotation() {
+      if (rotationBuilder_ == null) {
+        rotation_ = null;
+        onChanged();
+      } else {
+        rotation_ = null;
+        rotationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.Rotation.Builder getRotationBuilder() {
+      
+      onChanged();
+      return getRotationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.RotationOrBuilder getRotationOrBuilder() {
+      if (rotationBuilder_ != null) {
+        return rotationBuilder_.getMessageOrBuilder();
+      } else {
+        return rotation_ == null ?
+            com.google.cloud.secretmanager.v1.Rotation.getDefaultInstance() : rotation_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+     * rotation policy.
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.secretmanager.v1.Rotation, com.google.cloud.secretmanager.v1.Rotation.Builder, com.google.cloud.secretmanager.v1.RotationOrBuilder> 
+        getRotationFieldBuilder() {
+      if (rotationBuilder_ == null) {
+        rotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.secretmanager.v1.Rotation, com.google.cloud.secretmanager.v1.Rotation.Builder, com.google.cloud.secretmanager.v1.RotationOrBuilder>(
+                getRotation(),
+                getParentForChildren(),
+                isClean());
+        rotation_ = null;
+      }
+      return rotationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

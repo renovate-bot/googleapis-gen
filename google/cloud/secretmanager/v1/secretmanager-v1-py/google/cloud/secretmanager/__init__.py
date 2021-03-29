@@ -21,6 +21,7 @@ from google.cloud.secretmanager_v1.types.resources import CustomerManagedEncrypt
 from google.cloud.secretmanager_v1.types.resources import CustomerManagedEncryptionStatus
 from google.cloud.secretmanager_v1.types.resources import Replication
 from google.cloud.secretmanager_v1.types.resources import ReplicationStatus
+from google.cloud.secretmanager_v1.types.resources import Rotation
 from google.cloud.secretmanager_v1.types.resources import Secret
 from google.cloud.secretmanager_v1.types.resources import SecretPayload
 from google.cloud.secretmanager_v1.types.resources import SecretVersion
@@ -60,6 +61,7 @@ __all__ = (
     'ListSecretsResponse',
     'Replication',
     'ReplicationStatus',
+    'Rotation',
     'Secret',
     'SecretManagerServiceAsyncClient',
     'SecretManagerServiceClient',
