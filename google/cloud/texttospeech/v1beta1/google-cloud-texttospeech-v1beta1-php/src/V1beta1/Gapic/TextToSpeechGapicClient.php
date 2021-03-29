@@ -184,13 +184,14 @@ class TextToSpeechGapicClient
      *
      *     @type string $languageCode
      *          Optional. Recommended.
-     *          [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-     *          specified, the ListVoices call will only return voices that can be used to
-     *          synthesize this language_code. E.g. when specifying "en-NZ", you will get
-     *          supported "en-\*" voices; when specifying "no", you will get supported
+     *          [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     *          If not specified, the API will return all supported voices.
+     *          If specified, the ListVoices call will only return voices that can be used
+     *          to synthesize this language_code. E.g. when specifying "en-NZ", you will
+     *          get supported "en-NZ" voices; when specifying "no", you will get supported
      *          "no-\*" (Norwegian) and "nb-\*" (Norwegian Bokmal) voices; specifying "zh"
      *          will also get supported "cmn-\*" voices; specifying "zh-hk" will also get
-     *          supported "yue-\*" voices.
+     *          supported "yue-hk" voices.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -242,7 +243,7 @@ class TextToSpeechGapicClient
      *                                           Optional.
      *
      *     @type int[] $enableTimePointing
-     *          Whether and what timepoints should be returned in the response.
+     *          Whether and what timepoints are returned in the response.
      *          For allowed values, use constants defined on {@see \Google\Cloud\TextToSpeech\V1beta1\SynthesizeSpeechRequest\TimepointType}
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

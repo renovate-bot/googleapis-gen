@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
           };
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -420,7 +420,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1369,7 +1369,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1381,7 +1381,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1392,7 +1392,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1404,7 +1404,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1424,7 +1424,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1442,7 +1442,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1460,7 +1460,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1474,7 +1474,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1486,7 +1486,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1498,7 +1498,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1515,7 +1515,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -1530,7 +1530,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>

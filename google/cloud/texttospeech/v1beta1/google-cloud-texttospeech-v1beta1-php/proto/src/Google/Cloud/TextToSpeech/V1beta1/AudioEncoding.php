@@ -55,6 +55,13 @@ class AudioEncoding
      * Generated from protobuf enum <code>MULAW = 5;</code>
      */
     const MULAW = 5;
+    /**
+     * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/A-law.
+     * Audio content returned as ALAW also contains a WAV header.
+     *
+     * Generated from protobuf enum <code>ALAW = 6;</code>
+     */
+    const ALAW = 6;
 
     private static $valueToName = [
         self::AUDIO_ENCODING_UNSPECIFIED => 'AUDIO_ENCODING_UNSPECIFIED',
@@ -63,6 +70,7 @@ class AudioEncoding
         self::MP3_64_KBPS => 'MP3_64_KBPS',
         self::OGG_OPUS => 'OGG_OPUS',
         self::MULAW => 'MULAW',
+        self::ALAW => 'ALAW',
     ];
 
     public static function name($value)

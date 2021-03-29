@@ -90,7 +90,7 @@ public interface SynthesizeSpeechRequestOrBuilder extends
 
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -99,7 +99,7 @@ public interface SynthesizeSpeechRequestOrBuilder extends
   java.util.List<com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType> getEnableTimePointingList();
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -108,7 +108,7 @@ public interface SynthesizeSpeechRequestOrBuilder extends
   int getEnableTimePointingCount();
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -118,7 +118,7 @@ public interface SynthesizeSpeechRequestOrBuilder extends
   com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType getEnableTimePointing(int index);
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
@@ -128,7 +128,7 @@ public interface SynthesizeSpeechRequestOrBuilder extends
   getEnableTimePointingValueList();
   /**
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>

@@ -34,7 +34,7 @@ class SynthesizeSpeechRequest extends \Google\Protobuf\Internal\Message
      */
     protected $audio_config = null;
     /**
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      *
      * Generated from protobuf field <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
      */
@@ -53,7 +53,7 @@ class SynthesizeSpeechRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\TextToSpeech\V1beta1\AudioConfig $audio_config
      *           Required. The configuration of the synthesized audio.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $enable_time_pointing
-     *           Whether and what timepoints should be returned in the response.
+     *           Whether and what timepoints are returned in the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -170,7 +170,7 @@ class SynthesizeSpeechRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      *
      * Generated from protobuf field <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -181,7 +181,7 @@ class SynthesizeSpeechRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      *
      * Generated from protobuf field <code>repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
