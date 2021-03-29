@@ -31,8 +31,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The new ID of this tag template field. For example,
-   * `my_new_field`.
+   * Required. The new ID of this tag template field. For example, `my_new_field`.
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,8 +40,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder extends
   java.lang.String getNewTagTemplateFieldId();
   /**
    * <pre>
-   * Required. The new ID of this tag template field. For example,
-   * `my_new_field`.
+   * Required. The new ID of this tag template field. For example, `my_new_field`.
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -125,9 +125,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The resource name of the entry group in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * Note that this EntryGroup and its child resources may not actually be
-   * stored in the location in this name.
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Note: The entry group itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -149,9 +149,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The resource name of the entry group in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * Note that this EntryGroup and its child resources may not actually be
-   * stored in the location in this name.
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Note: The entry group itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -274,8 +274,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.SystemTimestamps dataCatalogTimestamps_;
   /**
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -287,8 +286,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -300,8 +298,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -687,9 +684,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the entry group in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -710,9 +707,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the entry group in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -734,9 +731,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the entry group in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -756,9 +753,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the entry group in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -773,9 +770,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the entry group in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1006,8 +1003,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.SystemTimestamps, com.google.cloud.datacatalog.v1.SystemTimestamps.Builder, com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder> dataCatalogTimestampsBuilder_;
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1018,8 +1014,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1034,8 +1029,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1055,8 +1049,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1074,8 +1067,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1097,8 +1089,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1116,8 +1107,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1129,8 +1119,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1145,8 +1134,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty
-     * timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

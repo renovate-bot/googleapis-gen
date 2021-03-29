@@ -151,8 +151,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object newTagTemplateFieldId_;
   /**
    * <pre>
-   * Required. The new ID of this tag template field. For example,
-   * `my_new_field`.
+   * Required. The new ID of this tag template field. For example, `my_new_field`.
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -173,8 +172,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The new ID of this tag template field. For example,
-   * `my_new_field`.
+   * Required. The new ID of this tag template field. For example, `my_new_field`.
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -623,8 +621,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object newTagTemplateFieldId_ = "";
     /**
      * <pre>
-     * Required. The new ID of this tag template field. For example,
-     * `my_new_field`.
+     * Required. The new ID of this tag template field. For example, `my_new_field`.
      * </pre>
      *
      * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -644,8 +641,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new ID of this tag template field. For example,
-     * `my_new_field`.
+     * Required. The new ID of this tag template field. For example, `my_new_field`.
      * </pre>
      *
      * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -666,8 +662,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new ID of this tag template field. For example,
-     * `my_new_field`.
+     * Required. The new ID of this tag template field. For example, `my_new_field`.
      * </pre>
      *
      * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -686,8 +681,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new ID of this tag template field. For example,
-     * `my_new_field`.
+     * Required. The new ID of this tag template field. For example, `my_new_field`.
      * </pre>
      *
      * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -701,8 +695,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new ID of this tag template field. For example,
-     * `my_new_field`.
+     * Required. The new ID of this tag template field. For example, `my_new_field`.
      * </pre>
      *
      * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

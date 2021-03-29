@@ -42,7 +42,7 @@ public enum EntryType
   MODEL(5),
   /**
    * <pre>
-   * Output only. An entry type which is used for streaming entries. Example:
+   * An entry type which is used for streaming entries. Example:
    * Pub/Sub topic.
    * </pre>
    *
@@ -58,6 +58,22 @@ public enum EntryType
    * <code>FILESET = 4;</code>
    */
   FILESET(4),
+  /**
+   * <pre>
+   * A database.
+   * </pre>
+   *
+   * <code>DATABASE = 7;</code>
+   */
+  DATABASE(7),
+  /**
+   * <pre>
+   * A service, for example, a Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>SERVICE = 14;</code>
+   */
+  SERVICE(14),
   UNRECOGNIZED(-1),
   ;
 
@@ -89,7 +105,7 @@ public enum EntryType
   public static final int MODEL_VALUE = 5;
   /**
    * <pre>
-   * Output only. An entry type which is used for streaming entries. Example:
+   * An entry type which is used for streaming entries. Example:
    * Pub/Sub topic.
    * </pre>
    *
@@ -105,6 +121,22 @@ public enum EntryType
    * <code>FILESET = 4;</code>
    */
   public static final int FILESET_VALUE = 4;
+  /**
+   * <pre>
+   * A database.
+   * </pre>
+   *
+   * <code>DATABASE = 7;</code>
+   */
+  public static final int DATABASE_VALUE = 7;
+  /**
+   * <pre>
+   * A service, for example, a Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>SERVICE = 14;</code>
+   */
+  public static final int SERVICE_VALUE = 14;
 
 
   public final int getNumber() {
@@ -136,6 +168,8 @@ public enum EntryType
       case 5: return MODEL;
       case 3: return DATA_STREAM;
       case 4: return FILESET;
+      case 7: return DATABASE;
+      case 14: return SERVICE;
       default: return null;
     }
   }

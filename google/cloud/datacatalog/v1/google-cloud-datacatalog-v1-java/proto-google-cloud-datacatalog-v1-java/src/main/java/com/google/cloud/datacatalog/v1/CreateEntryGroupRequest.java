@@ -116,10 +116,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The name of the project this entry group is in. Example:
-   * * projects/{project_id}/locations/{location}
-   * Note that this EntryGroup and its child resources may not actually be
-   * stored in the location in this name.
+   * Required. The name of the project this entry group belongs to. Example:
+   * `projects/{project_id}/locations/{location}`
+   * Note: The entry group itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -140,10 +140,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the project this entry group is in. Example:
-   * * projects/{project_id}/locations/{location}
-   * Note that this EntryGroup and its child resources may not actually be
-   * stored in the location in this name.
+   * Required. The name of the project this entry group belongs to. Example:
+   * `projects/{project_id}/locations/{location}`
+   * Note: The entry group itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -168,9 +168,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object entryGroupId_;
   /**
    * <pre>
-   * Required. The id of the entry group to create.
-   * The id must begin with a letter or underscore, contain only English
-   * letters, numbers and underscores, and be at most 64 characters.
+   * Required. The ID of the entry group to create.
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and must start with a letter or underscore.
+   * The maximum size is 64 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -191,9 +192,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The id of the entry group to create.
-   * The id must begin with a letter or underscore, contain only English
-   * letters, numbers and underscores, and be at most 64 characters.
+   * Required. The ID of the entry group to create.
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and must start with a letter or underscore.
+   * The maximum size is 64 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -609,10 +611,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The name of the project this entry group is in. Example:
-     * * projects/{project_id}/locations/{location}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * Required. The name of the project this entry group belongs to. Example:
+     * `projects/{project_id}/locations/{location}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -632,10 +634,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the project this entry group is in. Example:
-     * * projects/{project_id}/locations/{location}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * Required. The name of the project this entry group belongs to. Example:
+     * `projects/{project_id}/locations/{location}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -656,10 +658,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the project this entry group is in. Example:
-     * * projects/{project_id}/locations/{location}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * Required. The name of the project this entry group belongs to. Example:
+     * `projects/{project_id}/locations/{location}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -678,10 +680,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the project this entry group is in. Example:
-     * * projects/{project_id}/locations/{location}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * Required. The name of the project this entry group belongs to. Example:
+     * `projects/{project_id}/locations/{location}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -695,10 +697,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the project this entry group is in. Example:
-     * * projects/{project_id}/locations/{location}
-     * Note that this EntryGroup and its child resources may not actually be
-     * stored in the location in this name.
+     * Required. The name of the project this entry group belongs to. Example:
+     * `projects/{project_id}/locations/{location}`
+     * Note: The entry group itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -720,9 +722,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object entryGroupId_ = "";
     /**
      * <pre>
-     * Required. The id of the entry group to create.
-     * The id must begin with a letter or underscore, contain only English
-     * letters, numbers and underscores, and be at most 64 characters.
+     * Required. The ID of the entry group to create.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and must start with a letter or underscore.
+     * The maximum size is 64 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -742,9 +745,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The id of the entry group to create.
-     * The id must begin with a letter or underscore, contain only English
-     * letters, numbers and underscores, and be at most 64 characters.
+     * Required. The ID of the entry group to create.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and must start with a letter or underscore.
+     * The maximum size is 64 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,9 +769,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The id of the entry group to create.
-     * The id must begin with a letter or underscore, contain only English
-     * letters, numbers and underscores, and be at most 64 characters.
+     * Required. The ID of the entry group to create.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and must start with a letter or underscore.
+     * The maximum size is 64 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -786,9 +791,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The id of the entry group to create.
-     * The id must begin with a letter or underscore, contain only English
-     * letters, numbers and underscores, and be at most 64 characters.
+     * Required. The ID of the entry group to create.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and must start with a letter or underscore.
+     * The maximum size is 64 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -802,9 +808,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The id of the entry group to create.
-     * The id must begin with a letter or underscore, contain only English
-     * letters, numbers and underscores, and be at most 64 characters.
+     * Required. The ID of the entry group to create.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and must start with a letter or underscore.
+     * The maximum size is 64 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

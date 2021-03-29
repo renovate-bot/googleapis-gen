@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
   private Entry() {
     name_ = "";
     linkedResource_ = "";
+    fullyQualifiedName_ = "";
     displayName_ = "";
     description_ = "";
   }
@@ -178,6 +179,39 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
             systemCase_ = 18;
             system_ = s;
+            break;
+          }
+          case 162: {
+            com.google.cloud.datacatalog.v1.DataSource.Builder subBuilder = null;
+            if (dataSource_ != null) {
+              subBuilder = dataSource_.toBuilder();
+            }
+            dataSource_ = input.readMessage(com.google.cloud.datacatalog.v1.DataSource.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(dataSource_);
+              dataSource_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 194: {
+            com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder subBuilder = null;
+            if (specCase_ == 24) {
+              subBuilder = ((com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_).toBuilder();
+            }
+            spec_ =
+                input.readMessage(com.google.cloud.datacatalog.v1.DatabaseTableSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
+              spec_ = subBuilder.buildPartial();
+            }
+            specCase_ = 24;
+            break;
+          }
+          case 234: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fullyQualifiedName_ = s;
             break;
           }
           default: {
@@ -337,17 +371,57 @@ private static final long serialVersionUID = 0L;
         typeSpecCase_);
   }
 
+  private int specCase_ = 0;
+  private java.lang.Object spec_;
+  public enum SpecCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DATABASE_TABLE_SPEC(24),
+    SPEC_NOT_SET(0);
+    private final int value;
+    private SpecCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SpecCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SpecCase forNumber(int value) {
+      switch (value) {
+        case 24: return DATABASE_TABLE_SPEC;
+        case 0: return SPEC_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SpecCase
+  getSpecCase() {
+    return SpecCase.forNumber(
+        specCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Note that this Entry and its child resources may not actually be stored in
-   * the location in this name.
+   * Output only. The resource name of an entry in URL format.
+   * Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   * Note: The entry itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -365,13 +439,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Note that this Entry and its child resources may not actually be stored in
-   * the location in this name.
+   * Output only. The resource name of an entry in URL format.
+   * Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   * Note: The entry itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -398,10 +473,14 @@ private static final long serialVersionUID = 0L;
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   * Output only when Entry is of type in the EntryType enum. For entries with
-   * user_specified_type, this field is optional and defaults to an empty
-   * string.
+   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+   * Output only when entry is one of the types in the `EntryType` enum.
+   * For entries with a `user_specified_type`, this field is optional and
+   * defaults to an empty string.
+   * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+   * and hashes (#).
+   * The maximum size is 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string linked_resource = 9;</code>
@@ -427,10 +506,14 @@ private static final long serialVersionUID = 0L;
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   * Output only when Entry is of type in the EntryType enum. For entries with
-   * user_specified_type, this field is optional and defaults to an empty
-   * string.
+   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+   * Output only when entry is one of the types in the `EntryType` enum.
+   * For entries with a `user_specified_type`, this field is optional and
+   * defaults to an empty string.
+   * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+   * and hashes (#).
+   * The maximum size is 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string linked_resource = 9;</code>
@@ -445,6 +528,70 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       linkedResource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FULLY_QUALIFIED_NAME_FIELD_NUMBER = 29;
+  private volatile java.lang.Object fullyQualifiedName_;
+  /**
+   * <pre>
+   * Fully qualified name (FQN) of the resource. Set automatically for entries
+   * representing resources from synced systems. Settable only during creation
+   * and read-only afterwards. Can be used for search and lookup of the entries.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 29;</code>
+   * @return The fullyQualifiedName.
+   */
+  @java.lang.Override
+  public java.lang.String getFullyQualifiedName() {
+    java.lang.Object ref = fullyQualifiedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fullyQualifiedName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Fully qualified name (FQN) of the resource. Set automatically for entries
+   * representing resources from synced systems. Settable only during creation
+   * and read-only afterwards. Can be used for search and lookup of the entries.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 29;</code>
+   * @return The bytes for fullyQualifiedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFullyQualifiedNameBytes() {
+    java.lang.Object ref = fullyQualifiedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fullyQualifiedName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -589,8 +736,8 @@ private static final long serialVersionUID = 0L;
   public static final int INTEGRATED_SYSTEM_FIELD_NUMBER = 17;
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -601,8 +748,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -616,8 +763,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -850,13 +997,61 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec.getDefaultInstance();
   }
 
+  public static final int DATABASE_TABLE_SPEC_FIELD_NUMBER = 24;
+  /**
+   * <pre>
+   * Specification that applies to a table resource. Only valid
+   * for entries of `TABLE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+   * @return Whether the databaseTableSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatabaseTableSpec() {
+    return specCase_ == 24;
+  }
+  /**
+   * <pre>
+   * Specification that applies to a table resource. Only valid
+   * for entries of `TABLE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+   * @return The databaseTableSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DatabaseTableSpec getDatabaseTableSpec() {
+    if (specCase_ == 24) {
+       return (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Specification that applies to a table resource. Only valid
+   * for entries of `TABLE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder getDatabaseTableSpecOrBuilder() {
+    if (specCase_ == 24) {
+       return (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Display information such as title and description. A short name to identify
-   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-   * empty string.
+   * Display name of an entry.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum size is 200 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -877,9 +1072,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Display information such as title and description. A short name to identify
-   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-   * empty string.
+   * Display name of an entry.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum size is 200 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -904,8 +1101,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents. Default value is an empty string.
+   * Entry description that can consist of several sentences or paragraphs
+   * that describe entry contents.
+   * The description must not contain Unicode non-characters as well as C0
+   * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+   * (CR), and page breaks (FF).
+   * The maximum size is 2000 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -926,8 +1128,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents. Default value is an empty string.
+   * Entry description that can consist of several sentences or paragraphs
+   * that describe entry contents.
+   * The description must not contain Unicode non-characters as well as C0
+   * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+   * (CR), and page breaks (FF).
+   * The maximum size is 2000 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -1033,6 +1240,44 @@ private static final long serialVersionUID = 0L;
     return getSourceSystemTimestamps();
   }
 
+  public static final int DATA_SOURCE_FIELD_NUMBER = 20;
+  private com.google.cloud.datacatalog.v1.DataSource dataSource_;
+  /**
+   * <pre>
+   * Output only. Physical location of the entry.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the dataSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataSource() {
+    return dataSource_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. Physical location of the entry.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The dataSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DataSource getDataSource() {
+    return dataSource_ == null ? com.google.cloud.datacatalog.v1.DataSource.getDefaultInstance() : dataSource_;
+  }
+  /**
+   * <pre>
+   * Output only. Physical location of the entry.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DataSourceOrBuilder getDataSourceOrBuilder() {
+    return getDataSource();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1085,6 +1330,15 @@ private static final long serialVersionUID = 0L;
     }
     if (systemCase_ == 18) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, system_);
+    }
+    if (dataSource_ != null) {
+      output.writeMessage(20, getDataSource());
+    }
+    if (specCase_ == 24) {
+      output.writeMessage(24, (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
+    }
+    if (!getFullyQualifiedNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, fullyQualifiedName_);
     }
     unknownFields.writeTo(output);
   }
@@ -1141,6 +1395,17 @@ private static final long serialVersionUID = 0L;
     if (systemCase_ == 18) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, system_);
     }
+    if (dataSource_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getDataSource());
+    }
+    if (specCase_ == 24) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
+    }
+    if (!getFullyQualifiedNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, fullyQualifiedName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1160,6 +1425,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getLinkedResource()
         .equals(other.getLinkedResource())) return false;
+    if (!getFullyQualifiedName()
+        .equals(other.getFullyQualifiedName())) return false;
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
     if (!getDescription()
@@ -1173,6 +1440,11 @@ private static final long serialVersionUID = 0L;
     if (hasSourceSystemTimestamps()) {
       if (!getSourceSystemTimestamps()
           .equals(other.getSourceSystemTimestamps())) return false;
+    }
+    if (hasDataSource() != other.hasDataSource()) return false;
+    if (hasDataSource()) {
+      if (!getDataSource()
+          .equals(other.getDataSource())) return false;
     }
     if (!getEntryTypeCase().equals(other.getEntryTypeCase())) return false;
     switch (entryTypeCase_) {
@@ -1217,6 +1489,15 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
+    if (!getSpecCase().equals(other.getSpecCase())) return false;
+    switch (specCase_) {
+      case 24:
+        if (!getDatabaseTableSpec()
+            .equals(other.getDatabaseTableSpec())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1232,6 +1513,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + LINKED_RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getLinkedResource().hashCode();
+    hash = (37 * hash) + FULLY_QUALIFIED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFullyQualifiedName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -1243,6 +1526,10 @@ private static final long serialVersionUID = 0L;
     if (hasSourceSystemTimestamps()) {
       hash = (37 * hash) + SOURCE_SYSTEM_TIMESTAMPS_FIELD_NUMBER;
       hash = (53 * hash) + getSourceSystemTimestamps().hashCode();
+    }
+    if (hasDataSource()) {
+      hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataSource().hashCode();
     }
     switch (entryTypeCase_) {
       case 2:
@@ -1280,6 +1567,14 @@ private static final long serialVersionUID = 0L;
       case 15:
         hash = (37 * hash) + BIGQUERY_DATE_SHARDED_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getBigqueryDateShardedSpec().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (specCase_) {
+      case 24:
+        hash = (37 * hash) + DATABASE_TABLE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDatabaseTableSpec().hashCode();
         break;
       case 0:
       default:
@@ -1433,6 +1728,8 @@ private static final long serialVersionUID = 0L;
 
       linkedResource_ = "";
 
+      fullyQualifiedName_ = "";
+
       displayName_ = "";
 
       description_ = "";
@@ -1449,12 +1746,20 @@ private static final long serialVersionUID = 0L;
         sourceSystemTimestamps_ = null;
         sourceSystemTimestampsBuilder_ = null;
       }
+      if (dataSourceBuilder_ == null) {
+        dataSource_ = null;
+      } else {
+        dataSource_ = null;
+        dataSourceBuilder_ = null;
+      }
       entryTypeCase_ = 0;
       entryType_ = null;
       systemCase_ = 0;
       system_ = null;
       typeSpecCase_ = 0;
       typeSpec_ = null;
+      specCase_ = 0;
+      spec_ = null;
       return this;
     }
 
@@ -1483,6 +1788,7 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.datacatalog.v1.Entry result = new com.google.cloud.datacatalog.v1.Entry(this);
       result.name_ = name_;
       result.linkedResource_ = linkedResource_;
+      result.fullyQualifiedName_ = fullyQualifiedName_;
       if (entryTypeCase_ == 2) {
         result.entryType_ = entryType_;
       }
@@ -1516,6 +1822,13 @@ private static final long serialVersionUID = 0L;
           result.typeSpec_ = bigqueryDateShardedSpecBuilder_.build();
         }
       }
+      if (specCase_ == 24) {
+        if (databaseTableSpecBuilder_ == null) {
+          result.spec_ = spec_;
+        } else {
+          result.spec_ = databaseTableSpecBuilder_.build();
+        }
+      }
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (schemaBuilder_ == null) {
@@ -1528,9 +1841,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.sourceSystemTimestamps_ = sourceSystemTimestampsBuilder_.build();
       }
+      if (dataSourceBuilder_ == null) {
+        result.dataSource_ = dataSource_;
+      } else {
+        result.dataSource_ = dataSourceBuilder_.build();
+      }
       result.entryTypeCase_ = entryTypeCase_;
       result.systemCase_ = systemCase_;
       result.typeSpecCase_ = typeSpecCase_;
+      result.specCase_ = specCase_;
       onBuilt();
       return result;
     }
@@ -1587,6 +1906,10 @@ private static final long serialVersionUID = 0L;
         linkedResource_ = other.linkedResource_;
         onChanged();
       }
+      if (!other.getFullyQualifiedName().isEmpty()) {
+        fullyQualifiedName_ = other.fullyQualifiedName_;
+        onChanged();
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
         onChanged();
@@ -1600,6 +1923,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSourceSystemTimestamps()) {
         mergeSourceSystemTimestamps(other.getSourceSystemTimestamps());
+      }
+      if (other.hasDataSource()) {
+        mergeDataSource(other.getDataSource());
       }
       switch (other.getEntryTypeCase()) {
         case TYPE: {
@@ -1645,6 +1971,15 @@ private static final long serialVersionUID = 0L;
           break;
         }
         case TYPESPEC_NOT_SET: {
+          break;
+        }
+      }
+      switch (other.getSpecCase()) {
+        case DATABASE_TABLE_SPEC: {
+          mergeDatabaseTableSpec(other.getDatabaseTableSpec());
+          break;
+        }
+        case SPEC_NOT_SET: {
           break;
         }
       }
@@ -1721,17 +2056,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int specCase_ = 0;
+    private java.lang.Object spec_;
+    public SpecCase
+        getSpecCase() {
+      return SpecCase.forNumber(
+          specCase_);
+    }
+
+    public Builder clearSpec() {
+      specCase_ = 0;
+      spec_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-     * Note that this Entry and its child resources may not actually be stored in
-     * the location in this name.
+     * Output only. The resource name of an entry in URL format.
+     * Example:
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * Note: The entry itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1748,13 +2099,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-     * Note that this Entry and its child resources may not actually be stored in
-     * the location in this name.
+     * Output only. The resource name of an entry in URL format.
+     * Example:
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * Note: The entry itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1772,13 +2124,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-     * Note that this Entry and its child resources may not actually be stored in
-     * the location in this name.
+     * Output only. The resource name of an entry in URL format.
+     * Example:
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * Note: The entry itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1794,13 +2147,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-     * Note that this Entry and its child resources may not actually be stored in
-     * the location in this name.
+     * Output only. The resource name of an entry in URL format.
+     * Example:
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * Note: The entry itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1811,13 +2165,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-     * Note that this Entry and its child resources may not actually be stored in
-     * the location in this name.
+     * Output only. The resource name of an entry in URL format.
+     * Example:
+     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * Note: The entry itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1841,10 +2196,14 @@ private static final long serialVersionUID = 0L;
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     * Output only when Entry is of type in the EntryType enum. For entries with
-     * user_specified_type, this field is optional and defaults to an empty
-     * string.
+     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+     * Output only when entry is one of the types in the `EntryType` enum.
+     * For entries with a `user_specified_type`, this field is optional and
+     * defaults to an empty string.
+     * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+     * and hashes (#).
+     * The maximum size is 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string linked_resource = 9;</code>
@@ -1869,10 +2228,14 @@ private static final long serialVersionUID = 0L;
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     * Output only when Entry is of type in the EntryType enum. For entries with
-     * user_specified_type, this field is optional and defaults to an empty
-     * string.
+     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+     * Output only when entry is one of the types in the `EntryType` enum.
+     * For entries with a `user_specified_type`, this field is optional and
+     * defaults to an empty string.
+     * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+     * and hashes (#).
+     * The maximum size is 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string linked_resource = 9;</code>
@@ -1898,10 +2261,14 @@ private static final long serialVersionUID = 0L;
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     * Output only when Entry is of type in the EntryType enum. For entries with
-     * user_specified_type, this field is optional and defaults to an empty
-     * string.
+     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+     * Output only when entry is one of the types in the `EntryType` enum.
+     * For entries with a `user_specified_type`, this field is optional and
+     * defaults to an empty string.
+     * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+     * and hashes (#).
+     * The maximum size is 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string linked_resource = 9;</code>
@@ -1925,10 +2292,14 @@ private static final long serialVersionUID = 0L;
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     * Output only when Entry is of type in the EntryType enum. For entries with
-     * user_specified_type, this field is optional and defaults to an empty
-     * string.
+     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+     * Output only when entry is one of the types in the `EntryType` enum.
+     * For entries with a `user_specified_type`, this field is optional and
+     * defaults to an empty string.
+     * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+     * and hashes (#).
+     * The maximum size is 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string linked_resource = 9;</code>
@@ -1947,10 +2318,14 @@ private static final long serialVersionUID = 0L;
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     * Output only when Entry is of type in the EntryType enum. For entries with
-     * user_specified_type, this field is optional and defaults to an empty
-     * string.
+     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+     * Output only when entry is one of the types in the `EntryType` enum.
+     * For entries with a `user_specified_type`, this field is optional and
+     * defaults to an empty string.
+     * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+     * and hashes (#).
+     * The maximum size is 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string linked_resource = 9;</code>
@@ -1965,6 +2340,147 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       linkedResource_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fullyQualifiedName_ = "";
+    /**
+     * <pre>
+     * Fully qualified name (FQN) of the resource. Set automatically for entries
+     * representing resources from synced systems. Settable only during creation
+     * and read-only afterwards. Can be used for search and lookup of the entries.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 29;</code>
+     * @return The fullyQualifiedName.
+     */
+    public java.lang.String getFullyQualifiedName() {
+      java.lang.Object ref = fullyQualifiedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fullyQualifiedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Fully qualified name (FQN) of the resource. Set automatically for entries
+     * representing resources from synced systems. Settable only during creation
+     * and read-only afterwards. Can be used for search and lookup of the entries.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 29;</code>
+     * @return The bytes for fullyQualifiedName.
+     */
+    public com.google.protobuf.ByteString
+        getFullyQualifiedNameBytes() {
+      java.lang.Object ref = fullyQualifiedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fullyQualifiedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Fully qualified name (FQN) of the resource. Set automatically for entries
+     * representing resources from synced systems. Settable only during creation
+     * and read-only afterwards. Can be used for search and lookup of the entries.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 29;</code>
+     * @param value The fullyQualifiedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFullyQualifiedName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fullyQualifiedName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Fully qualified name (FQN) of the resource. Set automatically for entries
+     * representing resources from synced systems. Settable only during creation
+     * and read-only afterwards. Can be used for search and lookup of the entries.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 29;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFullyQualifiedName() {
+      
+      fullyQualifiedName_ = getDefaultInstance().getFullyQualifiedName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Fully qualified name (FQN) of the resource. Set automatically for entries
+     * representing resources from synced systems. Settable only during creation
+     * and read-only afterwards. Can be used for search and lookup of the entries.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 29;</code>
+     * @param value The bytes for fullyQualifiedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFullyQualifiedNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fullyQualifiedName_ = value;
       onChanged();
       return this;
     }
@@ -2241,8 +2757,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2254,8 +2770,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2270,8 +2786,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2286,8 +2802,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2305,8 +2821,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2324,8 +2840,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3052,12 +3568,200 @@ private static final long serialVersionUID = 0L;
       return bigqueryDateShardedSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.DatabaseTableSpec, com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder, com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder> databaseTableSpecBuilder_;
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     * @return Whether the databaseTableSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatabaseTableSpec() {
+      return specCase_ == 24;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     * @return The databaseTableSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.DatabaseTableSpec getDatabaseTableSpec() {
+      if (databaseTableSpecBuilder_ == null) {
+        if (specCase_ == 24) {
+          return (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 24) {
+          return databaseTableSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    public Builder setDatabaseTableSpec(com.google.cloud.datacatalog.v1.DatabaseTableSpec value) {
+      if (databaseTableSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        databaseTableSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 24;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    public Builder setDatabaseTableSpec(
+        com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder builderForValue) {
+      if (databaseTableSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        databaseTableSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 24;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    public Builder mergeDatabaseTableSpec(com.google.cloud.datacatalog.v1.DatabaseTableSpec value) {
+      if (databaseTableSpecBuilder_ == null) {
+        if (specCase_ == 24 &&
+            spec_ != com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance()) {
+          spec_ = com.google.cloud.datacatalog.v1.DatabaseTableSpec.newBuilder((com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 24) {
+          databaseTableSpecBuilder_.mergeFrom(value);
+        }
+        databaseTableSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 24;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    public Builder clearDatabaseTableSpec() {
+      if (databaseTableSpecBuilder_ == null) {
+        if (specCase_ == 24) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 24) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        databaseTableSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    public com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder getDatabaseTableSpecBuilder() {
+      return getDatabaseTableSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder getDatabaseTableSpecOrBuilder() {
+      if ((specCase_ == 24) && (databaseTableSpecBuilder_ != null)) {
+        return databaseTableSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 24) {
+          return (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Specification that applies to a table resource. Only valid
+     * for entries of `TABLE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.DatabaseTableSpec, com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder, com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder> 
+        getDatabaseTableSpecFieldBuilder() {
+      if (databaseTableSpecBuilder_ == null) {
+        if (!(specCase_ == 24)) {
+          spec_ = com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+        }
+        databaseTableSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DatabaseTableSpec, com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder, com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 24;
+      onChanged();;
+      return databaseTableSpecBuilder_;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Display information such as title and description. A short name to identify
-     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-     * empty string.
+     * Display name of an entry.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum size is 200 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -3077,9 +3781,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display information such as title and description. A short name to identify
-     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-     * empty string.
+     * Display name of an entry.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum size is 200 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -3100,9 +3806,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display information such as title and description. A short name to identify
-     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-     * empty string.
+     * Display name of an entry.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum size is 200 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -3121,9 +3829,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display information such as title and description. A short name to identify
-     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-     * empty string.
+     * Display name of an entry.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum size is 200 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -3137,9 +3847,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display information such as title and description. A short name to identify
-     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-     * empty string.
+     * Display name of an entry.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum size is 200 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -3161,8 +3873,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents. Default value is an empty string.
+     * Entry description that can consist of several sentences or paragraphs
+     * that describe entry contents.
+     * The description must not contain Unicode non-characters as well as C0
+     * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+     * (CR), and page breaks (FF).
+     * The maximum size is 2000 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -3182,8 +3899,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents. Default value is an empty string.
+     * Entry description that can consist of several sentences or paragraphs
+     * that describe entry contents.
+     * The description must not contain Unicode non-characters as well as C0
+     * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+     * (CR), and page breaks (FF).
+     * The maximum size is 2000 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -3204,8 +3926,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents. Default value is an empty string.
+     * Entry description that can consist of several sentences or paragraphs
+     * that describe entry contents.
+     * The description must not contain Unicode non-characters as well as C0
+     * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+     * (CR), and page breaks (FF).
+     * The maximum size is 2000 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -3224,8 +3951,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents. Default value is an empty string.
+     * Entry description that can consist of several sentences or paragraphs
+     * that describe entry contents.
+     * The description must not contain Unicode non-characters as well as C0
+     * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+     * (CR), and page breaks (FF).
+     * The maximum size is 2000 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -3239,8 +3971,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents. Default value is an empty string.
+     * Entry description that can consist of several sentences or paragraphs
+     * that describe entry contents.
+     * The description must not contain Unicode non-characters as well as C0
+     * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+     * (CR), and page breaks (FF).
+     * The maximum size is 2000 bytes when encoded in UTF-8.
+     * Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -3594,6 +4331,161 @@ private static final long serialVersionUID = 0L;
         sourceSystemTimestamps_ = null;
       }
       return sourceSystemTimestampsBuilder_;
+    }
+
+    private com.google.cloud.datacatalog.v1.DataSource dataSource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.DataSource, com.google.cloud.datacatalog.v1.DataSource.Builder, com.google.cloud.datacatalog.v1.DataSourceOrBuilder> dataSourceBuilder_;
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the dataSource field is set.
+     */
+    public boolean hasDataSource() {
+      return dataSourceBuilder_ != null || dataSource_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The dataSource.
+     */
+    public com.google.cloud.datacatalog.v1.DataSource getDataSource() {
+      if (dataSourceBuilder_ == null) {
+        return dataSource_ == null ? com.google.cloud.datacatalog.v1.DataSource.getDefaultInstance() : dataSource_;
+      } else {
+        return dataSourceBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setDataSource(com.google.cloud.datacatalog.v1.DataSource value) {
+      if (dataSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataSource_ = value;
+        onChanged();
+      } else {
+        dataSourceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setDataSource(
+        com.google.cloud.datacatalog.v1.DataSource.Builder builderForValue) {
+      if (dataSourceBuilder_ == null) {
+        dataSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataSourceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeDataSource(com.google.cloud.datacatalog.v1.DataSource value) {
+      if (dataSourceBuilder_ == null) {
+        if (dataSource_ != null) {
+          dataSource_ =
+            com.google.cloud.datacatalog.v1.DataSource.newBuilder(dataSource_).mergeFrom(value).buildPartial();
+        } else {
+          dataSource_ = value;
+        }
+        onChanged();
+      } else {
+        dataSourceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearDataSource() {
+      if (dataSourceBuilder_ == null) {
+        dataSource_ = null;
+        onChanged();
+      } else {
+        dataSource_ = null;
+        dataSourceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.datacatalog.v1.DataSource.Builder getDataSourceBuilder() {
+      
+      onChanged();
+      return getDataSourceFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.datacatalog.v1.DataSourceOrBuilder getDataSourceOrBuilder() {
+      if (dataSourceBuilder_ != null) {
+        return dataSourceBuilder_.getMessageOrBuilder();
+      } else {
+        return dataSource_ == null ?
+            com.google.cloud.datacatalog.v1.DataSource.getDefaultInstance() : dataSource_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Physical location of the entry.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.DataSource, com.google.cloud.datacatalog.v1.DataSource.Builder, com.google.cloud.datacatalog.v1.DataSourceOrBuilder> 
+        getDataSourceFieldBuilder() {
+      if (dataSourceBuilder_ == null) {
+        dataSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DataSource, com.google.cloud.datacatalog.v1.DataSource.Builder, com.google.cloud.datacatalog.v1.DataSourceOrBuilder>(
+                getDataSource(),
+                getParentForChildren(),
+                isClean());
+        dataSource_ = null;
+      }
+      return dataSourceBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

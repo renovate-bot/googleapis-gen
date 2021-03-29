@@ -10,6 +10,8 @@ public interface ColumnSchemaOrBuilder extends
   /**
    * <pre>
    * Required. Name of the column.
+   * Must be a UTF-8 string without dots (.).
+   * The maximum size is 64 bytes.
    * </pre>
    *
    * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19,6 +21,8 @@ public interface ColumnSchemaOrBuilder extends
   /**
    * <pre>
    * Required. Name of the column.
+   * Must be a UTF-8 string without dots (.).
+   * The maximum size is 64 bytes.
    * </pre>
    *
    * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30,6 +34,7 @@ public interface ColumnSchemaOrBuilder extends
   /**
    * <pre>
    * Required. Type of the column.
+   * Must be a UTF-8 string with the maximum size of 128 bytes.
    * </pre>
    *
    * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,6 +44,7 @@ public interface ColumnSchemaOrBuilder extends
   /**
    * <pre>
    * Required. Type of the column.
+   * Must be a UTF-8 string with the maximum size of 128 bytes.
    * </pre>
    *
    * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50,6 +56,8 @@ public interface ColumnSchemaOrBuilder extends
   /**
    * <pre>
    * Optional. Description of the column. Default value is an empty string.
+   * The description must be a UTF-8 string with the maximum size of 2000
+   * bytes.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -59,6 +67,8 @@ public interface ColumnSchemaOrBuilder extends
   /**
    * <pre>
    * Optional. Description of the column. Default value is an empty string.
+   * The description must be a UTF-8 string with the maximum size of 2000
+   * bytes.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,8 +79,9 @@ public interface ColumnSchemaOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A column's mode indicates whether the values in this column are required,
-   * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+   * Optional. A column's mode indicates if values in this column are required,
+   * nullable, or repeated.
+   * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
    *
@@ -80,8 +91,9 @@ public interface ColumnSchemaOrBuilder extends
   java.lang.String getMode();
   /**
    * <pre>
-   * Optional. A column's mode indicates whether the values in this column are required,
-   * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+   * Optional. A column's mode indicates if values in this column are required,
+   * nullable, or repeated.
+   * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
    *

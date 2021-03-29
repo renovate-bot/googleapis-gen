@@ -33,6 +33,7 @@ class IntegratedSystem(proto.Enum):
     INTEGRATED_SYSTEM_UNSPECIFIED = 0
     BIGQUERY = 1
     CLOUD_PUBSUB = 2
+    DATAPROC_METASTORE = 3
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

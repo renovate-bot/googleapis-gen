@@ -102,11 +102,12 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> columns_;
   /**
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getColumnsList() {
@@ -114,11 +115,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder> 
@@ -127,11 +129,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public int getColumnsCount() {
@@ -139,11 +142,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.ColumnSchema getColumns(int index) {
@@ -151,11 +155,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder getColumnsOrBuilder(
@@ -523,11 +528,12 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getColumnsList() {
       if (columnsBuilder_ == null) {
@@ -538,11 +544,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public int getColumnsCount() {
       if (columnsBuilder_ == null) {
@@ -553,11 +560,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema getColumns(int index) {
       if (columnsBuilder_ == null) {
@@ -568,11 +576,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder setColumns(
         int index, com.google.cloud.datacatalog.v1.ColumnSchema value) {
@@ -590,11 +599,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder setColumns(
         int index, com.google.cloud.datacatalog.v1.ColumnSchema.Builder builderForValue) {
@@ -609,11 +619,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(com.google.cloud.datacatalog.v1.ColumnSchema value) {
       if (columnsBuilder_ == null) {
@@ -630,11 +641,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(
         int index, com.google.cloud.datacatalog.v1.ColumnSchema value) {
@@ -652,11 +664,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(
         com.google.cloud.datacatalog.v1.ColumnSchema.Builder builderForValue) {
@@ -671,11 +684,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(
         int index, com.google.cloud.datacatalog.v1.ColumnSchema.Builder builderForValue) {
@@ -690,11 +704,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addAllColumns(
         java.lang.Iterable<? extends com.google.cloud.datacatalog.v1.ColumnSchema> values) {
@@ -710,11 +725,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder clearColumns() {
       if (columnsBuilder_ == null) {
@@ -728,11 +744,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder removeColumns(int index) {
       if (columnsBuilder_ == null) {
@@ -746,11 +763,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder getColumnsBuilder(
         int index) {
@@ -758,11 +776,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder getColumnsOrBuilder(
         int index) {
@@ -773,11 +792,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public java.util.List<? extends com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder> 
          getColumnsOrBuilderList() {
@@ -789,11 +809,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder addColumnsBuilder() {
       return getColumnsFieldBuilder().addBuilder(
@@ -801,11 +822,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder addColumnsBuilder(
         int index) {
@@ -814,11 +836,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema.Builder> 
          getColumnsBuilderList() {

@@ -9,8 +9,8 @@ public interface ListTagsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
+   * Required. The name of the Data Catalog resource to list the tags of. The resource
+   * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
    * Examples:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
@@ -23,8 +23,8 @@ public interface ListTagsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
+   * Required. The name of the Data Catalog resource to list the tags of. The resource
+   * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
    * Examples:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}

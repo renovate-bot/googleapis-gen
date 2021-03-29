@@ -37,6 +37,14 @@ public enum IntegratedSystem
    * <code>CLOUD_PUBSUB = 2;</code>
    */
   CLOUD_PUBSUB(2),
+  /**
+   * <pre>
+   * Dataproc Metastore.
+   * </pre>
+   *
+   * <code>DATAPROC_METASTORE = 3;</code>
+   */
+  DATAPROC_METASTORE(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -64,6 +72,14 @@ public enum IntegratedSystem
    * <code>CLOUD_PUBSUB = 2;</code>
    */
   public static final int CLOUD_PUBSUB_VALUE = 2;
+  /**
+   * <pre>
+   * Dataproc Metastore.
+   * </pre>
+   *
+   * <code>DATAPROC_METASTORE = 3;</code>
+   */
+  public static final int DATAPROC_METASTORE_VALUE = 3;
 
 
   public final int getNumber() {
@@ -93,6 +109,7 @@ public enum IntegratedSystem
       case 0: return INTEGRATED_SYSTEM_UNSPECIFIED;
       case 1: return BIGQUERY;
       case 2: return CLOUD_PUBSUB;
+      case 3: return DATAPROC_METASTORE;
       default: return null;
     }
   }

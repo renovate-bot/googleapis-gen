@@ -185,9 +185,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The resource name of the tag in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
    * where `tag_id` is a system-generated identifier.
-   * Note that this Tag may not actually be stored in the location in this name.
+   * Note: The tag itself might not be stored in the location specified in its
+   * name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -209,9 +210,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The resource name of the tag in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
    * where `tag_id` is a system-generated identifier.
-   * Note that this Tag may not actually be stored in the location in this name.
+   * Note: The tag itself might not be stored in the location specified in its
+   * name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -237,7 +239,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the tag template that this tag uses. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -260,7 +262,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the tag template that this tag uses. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -331,11 +333,10 @@ private static final long serialVersionUID = 0L;
   public static final int COLUMN_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * Resources like Entry can have schemas associated with them. This scope
+   * Resources like entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
-   * For attaching a tag to a nested column, use `.` to separate the column
-   * names. Example:
-   * * `outer_column.inner_column`
+   * To attach a tag to a nested column, separate column names with a dot
+   * (`.`). Example: `column.nested_column`.
    * </pre>
    *
    * <code>string column = 4;</code>
@@ -346,11 +347,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Resources like Entry can have schemas associated with them. This scope
+   * Resources like entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
-   * For attaching a tag to a nested column, use `.` to separate the column
-   * names. Example:
-   * * `outer_column.inner_column`
+   * To attach a tag to a nested column, separate column names with a dot
+   * (`.`). Example: `column.nested_column`.
    * </pre>
    *
    * <code>string column = 4;</code>
@@ -375,11 +375,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Resources like Entry can have schemas associated with them. This scope
+   * Resources like entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
-   * For attaching a tag to a nested column, use `.` to separate the column
-   * names. Example:
-   * * `outer_column.inner_column`
+   * To attach a tag to a nested column, separate column names with a dot
+   * (`.`). Example: `column.nested_column`.
    * </pre>
    *
    * <code>string column = 4;</code>
@@ -963,9 +962,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the tag in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
      * where `tag_id` is a system-generated identifier.
-     * Note that this Tag may not actually be stored in the location in this name.
+     * Note: The tag itself might not be stored in the location specified in its
+     * name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -986,9 +986,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the tag in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
      * where `tag_id` is a system-generated identifier.
-     * Note that this Tag may not actually be stored in the location in this name.
+     * Note: The tag itself might not be stored in the location specified in its
+     * name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1010,9 +1011,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the tag in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
      * where `tag_id` is a system-generated identifier.
-     * Note that this Tag may not actually be stored in the location in this name.
+     * Note: The tag itself might not be stored in the location specified in its
+     * name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1032,9 +1034,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the tag in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
      * where `tag_id` is a system-generated identifier.
-     * Note that this Tag may not actually be stored in the location in this name.
+     * Note: The tag itself might not be stored in the location specified in its
+     * name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1049,9 +1052,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource name of the tag in URL format. Example:
-     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
      * where `tag_id` is a system-generated identifier.
-     * Note that this Tag may not actually be stored in the location in this name.
+     * Note: The tag itself might not be stored in the location specified in its
+     * name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1074,7 +1078,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1096,7 +1100,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1119,7 +1123,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1140,7 +1144,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1156,7 +1160,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1274,11 +1278,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Resources like Entry can have schemas associated with them. This scope
+     * Resources like entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use `.` to separate the column
-     * names. Example:
-     * * `outer_column.inner_column`
+     * To attach a tag to a nested column, separate column names with a dot
+     * (`.`). Example: `column.nested_column`.
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1290,11 +1293,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resources like Entry can have schemas associated with them. This scope
+     * Resources like entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use `.` to separate the column
-     * names. Example:
-     * * `outer_column.inner_column`
+     * To attach a tag to a nested column, separate column names with a dot
+     * (`.`). Example: `column.nested_column`.
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1320,11 +1322,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resources like Entry can have schemas associated with them. This scope
+     * Resources like entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use `.` to separate the column
-     * names. Example:
-     * * `outer_column.inner_column`
+     * To attach a tag to a nested column, separate column names with a dot
+     * (`.`). Example: `column.nested_column`.
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1351,11 +1352,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resources like Entry can have schemas associated with them. This scope
+     * Resources like entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use `.` to separate the column
-     * names. Example:
-     * * `outer_column.inner_column`
+     * To attach a tag to a nested column, separate column names with a dot
+     * (`.`). Example: `column.nested_column`.
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1374,11 +1374,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resources like Entry can have schemas associated with them. This scope
+     * Resources like entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use `.` to separate the column
-     * names. Example:
-     * * `outer_column.inner_column`
+     * To attach a tag to a nested column, separate column names with a dot
+     * (`.`). Example: `column.nested_column`.
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1394,11 +1393,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resources like Entry can have schemas associated with them. This scope
+     * Resources like entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use `.` to separate the column
-     * names. Example:
-     * * `outer_column.inner_column`
+     * To attach a tag to a nested column, separate column names with a dot
+     * (`.`). Example: `column.nested_column`.
      * </pre>
      *
      * <code>string column = 4;</code>

@@ -9,25 +9,27 @@ public interface EntryOrBuilder extends
 
   /**
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Note that this Entry and its child resources may not actually be stored in
-   * the location in this name.
+   * Output only. The resource name of an entry in URL format.
+   * Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   * Note: The entry itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Note that this Entry and its child resources may not actually be stored in
-   * the location in this name.
+   * Output only. The resource name of an entry in URL format.
+   * Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   * Note: The entry itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -40,10 +42,14 @@ public interface EntryOrBuilder extends
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   * Output only when Entry is of type in the EntryType enum. For entries with
-   * user_specified_type, this field is optional and defaults to an empty
-   * string.
+   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+   * Output only when entry is one of the types in the `EntryType` enum.
+   * For entries with a `user_specified_type`, this field is optional and
+   * defaults to an empty string.
+   * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+   * and hashes (#).
+   * The maximum size is 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string linked_resource = 9;</code>
@@ -57,10 +63,14 @@ public interface EntryOrBuilder extends
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   * Output only when Entry is of type in the EntryType enum. For entries with
-   * user_specified_type, this field is optional and defaults to an empty
-   * string.
+   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+   * Output only when entry is one of the types in the `EntryType` enum.
+   * For entries with a `user_specified_type`, this field is optional and
+   * defaults to an empty string.
+   * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), periods (.), colons (:), slashes (/), dashes (-),
+   * and hashes (#).
+   * The maximum size is 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string linked_resource = 9;</code>
@@ -68,6 +78,44 @@ public interface EntryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLinkedResourceBytes();
+
+  /**
+   * <pre>
+   * Fully qualified name (FQN) of the resource. Set automatically for entries
+   * representing resources from synced systems. Settable only during creation
+   * and read-only afterwards. Can be used for search and lookup of the entries.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 29;</code>
+   * @return The fullyQualifiedName.
+   */
+  java.lang.String getFullyQualifiedName();
+  /**
+   * <pre>
+   * Fully qualified name (FQN) of the resource. Set automatically for entries
+   * representing resources from synced systems. Settable only during creation
+   * and read-only afterwards. Can be used for search and lookup of the entries.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 29;</code>
+   * @return The bytes for fullyQualifiedName.
+   */
+  com.google.protobuf.ByteString
+      getFullyQualifiedNameBytes();
 
   /**
    * <pre>
@@ -155,8 +203,8 @@ public interface EntryOrBuilder extends
 
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -165,8 +213,8 @@ public interface EntryOrBuilder extends
   boolean hasIntegratedSystem();
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -175,8 +223,8 @@ public interface EntryOrBuilder extends
   int getIntegratedSystemValue();
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -320,9 +368,41 @@ public interface EntryOrBuilder extends
 
   /**
    * <pre>
-   * Display information such as title and description. A short name to identify
-   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-   * empty string.
+   * Specification that applies to a table resource. Only valid
+   * for entries of `TABLE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+   * @return Whether the databaseTableSpec field is set.
+   */
+  boolean hasDatabaseTableSpec();
+  /**
+   * <pre>
+   * Specification that applies to a table resource. Only valid
+   * for entries of `TABLE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+   * @return The databaseTableSpec.
+   */
+  com.google.cloud.datacatalog.v1.DatabaseTableSpec getDatabaseTableSpec();
+  /**
+   * <pre>
+   * Specification that applies to a table resource. Only valid
+   * for entries of `TABLE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
+   */
+  com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder getDatabaseTableSpecOrBuilder();
+
+  /**
+   * <pre>
+   * Display name of an entry.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum size is 200 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -331,9 +411,11 @@ public interface EntryOrBuilder extends
   java.lang.String getDisplayName();
   /**
    * <pre>
-   * Display information such as title and description. A short name to identify
-   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
-   * empty string.
+   * Display name of an entry.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum size is 200 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -344,8 +426,13 @@ public interface EntryOrBuilder extends
 
   /**
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents. Default value is an empty string.
+   * Entry description that can consist of several sentences or paragraphs
+   * that describe entry contents.
+   * The description must not contain Unicode non-characters as well as C0
+   * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+   * (CR), and page breaks (FF).
+   * The maximum size is 2000 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -354,8 +441,13 @@ public interface EntryOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents. Default value is an empty string.
+   * Entry description that can consist of several sentences or paragraphs
+   * that describe entry contents.
+   * The description must not contain Unicode non-characters as well as C0
+   * and C1 control codes except tabs (HT), new lines (LF), carriage returns
+   * (CR), and page breaks (FF).
+   * The maximum size is 2000 bytes when encoded in UTF-8.
+   * Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -427,9 +519,38 @@ public interface EntryOrBuilder extends
    */
   com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder getSourceSystemTimestampsOrBuilder();
 
+  /**
+   * <pre>
+   * Output only. Physical location of the entry.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the dataSource field is set.
+   */
+  boolean hasDataSource();
+  /**
+   * <pre>
+   * Output only. Physical location of the entry.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The dataSource.
+   */
+  com.google.cloud.datacatalog.v1.DataSource getDataSource();
+  /**
+   * <pre>
+   * Output only. Physical location of the entry.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSource data_source = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.cloud.datacatalog.v1.DataSourceOrBuilder getDataSourceOrBuilder();
+
   public com.google.cloud.datacatalog.v1.Entry.EntryTypeCase getEntryTypeCase();
 
   public com.google.cloud.datacatalog.v1.Entry.SystemCase getSystemCase();
 
   public com.google.cloud.datacatalog.v1.Entry.TypeSpecCase getTypeSpecCase();
+
+  public com.google.cloud.datacatalog.v1.Entry.SpecCase getSpecCase();
 }

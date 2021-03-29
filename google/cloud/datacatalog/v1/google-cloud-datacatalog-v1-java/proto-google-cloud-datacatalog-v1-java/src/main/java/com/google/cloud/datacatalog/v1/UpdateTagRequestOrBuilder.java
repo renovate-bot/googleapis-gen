@@ -36,8 +36,11 @@ public interface UpdateTagRequestOrBuilder extends
 
   /**
    * <pre>
-   * The fields to update on the Tag. If absent or empty, all modifiable fields
-   * are updated. Currently the only modifiable field is the field `fields`.
+   * Names of fields whose values to overwrite on a tag. Currently, a tag has
+   * the only modifiable field with the name `fields`.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -46,8 +49,11 @@ public interface UpdateTagRequestOrBuilder extends
   boolean hasUpdateMask();
   /**
    * <pre>
-   * The fields to update on the Tag. If absent or empty, all modifiable fields
-   * are updated. Currently the only modifiable field is the field `fields`.
+   * Names of fields whose values to overwrite on a tag. Currently, a tag has
+   * the only modifiable field with the name `fields`.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -56,8 +62,11 @@ public interface UpdateTagRequestOrBuilder extends
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * The fields to update on the Tag. If absent or empty, all modifiable fields
-   * are updated. Currently the only modifiable field is the field `fields`.
+   * Names of fields whose values to overwrite on a tag. Currently, a tag has
+   * the only modifiable field with the name `fields`.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

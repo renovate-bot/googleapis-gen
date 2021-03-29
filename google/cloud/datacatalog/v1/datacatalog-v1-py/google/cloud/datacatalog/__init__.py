@@ -17,12 +17,18 @@
 
 from google.cloud.datacatalog_v1.services.data_catalog.async_client import DataCatalogAsyncClient
 from google.cloud.datacatalog_v1.services.data_catalog.client import DataCatalogClient
+from google.cloud.datacatalog_v1.services.policy_tag_manager.async_client import PolicyTagManagerAsyncClient
+from google.cloud.datacatalog_v1.services.policy_tag_manager.client import PolicyTagManagerClient
+from google.cloud.datacatalog_v1.services.policy_tag_manager_serialization.async_client import PolicyTagManagerSerializationAsyncClient
+from google.cloud.datacatalog_v1.services.policy_tag_manager_serialization.client import PolicyTagManagerSerializationClient
 from google.cloud.datacatalog_v1.types.common import IntegratedSystem
+from google.cloud.datacatalog_v1.types.data_source import DataSource
 from google.cloud.datacatalog_v1.types.datacatalog import CreateEntryGroupRequest
 from google.cloud.datacatalog_v1.types.datacatalog import CreateEntryRequest
 from google.cloud.datacatalog_v1.types.datacatalog import CreateTagRequest
 from google.cloud.datacatalog_v1.types.datacatalog import CreateTagTemplateFieldRequest
 from google.cloud.datacatalog_v1.types.datacatalog import CreateTagTemplateRequest
+from google.cloud.datacatalog_v1.types.datacatalog import DatabaseTableSpec
 from google.cloud.datacatalog_v1.types.datacatalog import DeleteEntryGroupRequest
 from google.cloud.datacatalog_v1.types.datacatalog import DeleteEntryRequest
 from google.cloud.datacatalog_v1.types.datacatalog import DeleteTagRequest
@@ -41,6 +47,7 @@ from google.cloud.datacatalog_v1.types.datacatalog import ListEntryGroupsRespons
 from google.cloud.datacatalog_v1.types.datacatalog import ListTagsRequest
 from google.cloud.datacatalog_v1.types.datacatalog import ListTagsResponse
 from google.cloud.datacatalog_v1.types.datacatalog import LookupEntryRequest
+from google.cloud.datacatalog_v1.types.datacatalog import RenameTagTemplateFieldEnumValueRequest
 from google.cloud.datacatalog_v1.types.datacatalog import RenameTagTemplateFieldRequest
 from google.cloud.datacatalog_v1.types.datacatalog import SearchCatalogRequest
 from google.cloud.datacatalog_v1.types.datacatalog import SearchCatalogResponse
@@ -51,6 +58,28 @@ from google.cloud.datacatalog_v1.types.datacatalog import UpdateTagTemplateField
 from google.cloud.datacatalog_v1.types.datacatalog import UpdateTagTemplateRequest
 from google.cloud.datacatalog_v1.types.gcs_fileset_spec import GcsFileSpec
 from google.cloud.datacatalog_v1.types.gcs_fileset_spec import GcsFilesetSpec
+from google.cloud.datacatalog_v1.types.policytagmanager import CreatePolicyTagRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import CreateTaxonomyRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import DeletePolicyTagRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import DeleteTaxonomyRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import GetPolicyTagRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import GetTaxonomyRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import ListPolicyTagsRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import ListPolicyTagsResponse
+from google.cloud.datacatalog_v1.types.policytagmanager import ListTaxonomiesRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import ListTaxonomiesResponse
+from google.cloud.datacatalog_v1.types.policytagmanager import PolicyTag
+from google.cloud.datacatalog_v1.types.policytagmanager import Taxonomy
+from google.cloud.datacatalog_v1.types.policytagmanager import UpdatePolicyTagRequest
+from google.cloud.datacatalog_v1.types.policytagmanager import UpdateTaxonomyRequest
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import CrossRegionalSource
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import ExportTaxonomiesRequest
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import ExportTaxonomiesResponse
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import ImportTaxonomiesRequest
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import ImportTaxonomiesResponse
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import InlineSource
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import SerializedPolicyTag
+from google.cloud.datacatalog_v1.types.policytagmanagerserialization import SerializedTaxonomy
 from google.cloud.datacatalog_v1.types.schema import ColumnSchema
 from google.cloud.datacatalog_v1.types.schema import Schema
 from google.cloud.datacatalog_v1.types.search import SearchCatalogResult
@@ -73,39 +102,65 @@ __all__ = (
     'ColumnSchema',
     'CreateEntryGroupRequest',
     'CreateEntryRequest',
+    'CreatePolicyTagRequest',
     'CreateTagRequest',
     'CreateTagTemplateFieldRequest',
     'CreateTagTemplateRequest',
+    'CreateTaxonomyRequest',
+    'CrossRegionalSource',
     'DataCatalogAsyncClient',
     'DataCatalogClient',
+    'DataSource',
+    'DatabaseTableSpec',
     'DeleteEntryGroupRequest',
     'DeleteEntryRequest',
+    'DeletePolicyTagRequest',
     'DeleteTagRequest',
     'DeleteTagTemplateFieldRequest',
     'DeleteTagTemplateRequest',
+    'DeleteTaxonomyRequest',
     'Entry',
     'EntryGroup',
     'EntryType',
+    'ExportTaxonomiesRequest',
+    'ExportTaxonomiesResponse',
     'FieldType',
     'GcsFileSpec',
     'GcsFilesetSpec',
     'GetEntryGroupRequest',
     'GetEntryRequest',
+    'GetPolicyTagRequest',
     'GetTagTemplateRequest',
+    'GetTaxonomyRequest',
+    'ImportTaxonomiesRequest',
+    'ImportTaxonomiesResponse',
+    'InlineSource',
     'IntegratedSystem',
     'ListEntriesRequest',
     'ListEntriesResponse',
     'ListEntryGroupsRequest',
     'ListEntryGroupsResponse',
+    'ListPolicyTagsRequest',
+    'ListPolicyTagsResponse',
     'ListTagsRequest',
     'ListTagsResponse',
+    'ListTaxonomiesRequest',
+    'ListTaxonomiesResponse',
     'LookupEntryRequest',
+    'PolicyTag',
+    'PolicyTagManagerAsyncClient',
+    'PolicyTagManagerClient',
+    'PolicyTagManagerSerializationAsyncClient',
+    'PolicyTagManagerSerializationClient',
+    'RenameTagTemplateFieldEnumValueRequest',
     'RenameTagTemplateFieldRequest',
     'Schema',
     'SearchCatalogRequest',
     'SearchCatalogResponse',
     'SearchCatalogResult',
     'SearchResultType',
+    'SerializedPolicyTag',
+    'SerializedTaxonomy',
     'SystemTimestamps',
     'TableSourceType',
     'TableSpec',
@@ -113,10 +168,13 @@ __all__ = (
     'TagField',
     'TagTemplate',
     'TagTemplateField',
+    'Taxonomy',
     'UpdateEntryGroupRequest',
     'UpdateEntryRequest',
+    'UpdatePolicyTagRequest',
     'UpdateTagRequest',
     'UpdateTagTemplateFieldRequest',
     'UpdateTagTemplateRequest',
+    'UpdateTaxonomyRequest',
     'ViewSpec',
 )

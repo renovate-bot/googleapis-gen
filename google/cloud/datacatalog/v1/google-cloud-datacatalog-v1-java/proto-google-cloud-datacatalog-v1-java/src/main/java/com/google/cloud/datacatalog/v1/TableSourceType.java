@@ -36,6 +36,14 @@ public enum TableSourceType
    * <code>BIGQUERY_TABLE = 5;</code>
    */
   BIGQUERY_TABLE(5),
+  /**
+   * <pre>
+   * BigQuery materialized view.
+   * </pre>
+   *
+   * <code>BIGQUERY_MATERIALIZED_VIEW = 7;</code>
+   */
+  BIGQUERY_MATERIALIZED_VIEW(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -63,6 +71,14 @@ public enum TableSourceType
    * <code>BIGQUERY_TABLE = 5;</code>
    */
   public static final int BIGQUERY_TABLE_VALUE = 5;
+  /**
+   * <pre>
+   * BigQuery materialized view.
+   * </pre>
+   *
+   * <code>BIGQUERY_MATERIALIZED_VIEW = 7;</code>
+   */
+  public static final int BIGQUERY_MATERIALIZED_VIEW_VALUE = 7;
 
 
   public final int getNumber() {
@@ -92,6 +108,7 @@ public enum TableSourceType
       case 0: return TABLE_SOURCE_TYPE_UNSPECIFIED;
       case 2: return BIGQUERY_VIEW;
       case 5: return BIGQUERY_TABLE;
+      case 7: return BIGQUERY_MATERIALIZED_VIEW;
       default: return null;
     }
   }

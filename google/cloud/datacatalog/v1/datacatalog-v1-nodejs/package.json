@@ -21,7 +21,9 @@
     "cloud",
     "google datacatalog",
     "datacatalog",
-    "data catalog"
+    "data catalog",
+    "policy tag manager",
+    "policy tag manager serialization"
   ],
   "scripts": {
     "clean": "gts clean",

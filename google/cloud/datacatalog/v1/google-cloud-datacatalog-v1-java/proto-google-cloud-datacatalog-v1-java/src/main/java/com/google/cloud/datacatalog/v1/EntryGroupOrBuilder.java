@@ -10,9 +10,9 @@ public interface EntryGroupOrBuilder extends
   /**
    * <pre>
    * The resource name of the entry group in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * Note that this EntryGroup and its child resources may not actually be
-   * stored in the location in this name.
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Note: The entry group itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -22,9 +22,9 @@ public interface EntryGroupOrBuilder extends
   /**
    * <pre>
    * The resource name of the entry group in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * Note that this EntryGroup and its child resources may not actually be
-   * stored in the location in this name.
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Note: The entry group itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -81,8 +81,7 @@ public interface EntryGroupOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -91,8 +90,7 @@ public interface EntryGroupOrBuilder extends
   boolean hasDataCatalogTimestamps();
   /**
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -101,8 +99,7 @@ public interface EntryGroupOrBuilder extends
   com.google.cloud.datacatalog.v1.SystemTimestamps getDataCatalogTimestamps();
   /**
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
