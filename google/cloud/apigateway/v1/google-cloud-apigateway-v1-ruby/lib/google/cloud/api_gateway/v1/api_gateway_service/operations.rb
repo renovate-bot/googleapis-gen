@@ -21,7 +21,7 @@ require "google/longrunning/operations_pb"
 
 module Google
   module Cloud
-    module APIGateway
+    module ApiGateway
       module V1
         module ApiGatewayService
           # Service that implements Longrunning Operations API.

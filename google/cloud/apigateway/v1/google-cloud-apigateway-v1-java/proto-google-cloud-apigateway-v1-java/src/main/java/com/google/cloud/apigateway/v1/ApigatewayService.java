@@ -109,7 +109,7 @@ public final class ApigatewayService {
       "nproto/googleapis/cloud/apigateway/v1;ap" +
       "igateway\252\002\032Google.Cloud.ApiGateway.V1\312\002\032" +
       "Google\\Cloud\\ApiGateway\\V1\352\002\035Google::Clo" +
-      "ud::APIGateway::V1b\006proto3"
+      "ud::ApiGateway::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

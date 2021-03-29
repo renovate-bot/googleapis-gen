@@ -310,7 +310,7 @@ public final class Apigateway {
       "proto/googleapis/cloud/apigateway/v1;api" +
       "gateway\252\002\032Google.Cloud.ApiGateway.V1\312\002\032G" +
       "oogle\\Cloud\\ApiGateway\\V1\352\002\035Google::Clou" +
-      "d::APIGateway::V1\352AY\n!iam.googleapis.com" +
+      "d::ApiGateway::V1\352AY\n!iam.googleapis.com" +
       "/ServiceAccount\0224projects/{project}/serv" +
       "iceAccounts/{service_account}\352AE\n/servic" +
       "emanagement.googleapis.com/ManagedServic" +
