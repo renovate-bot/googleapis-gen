@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The resource name of the event_store under which the events are
    * created. The format is
-   * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+   * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The resource name of the event_store under which the events are
    * created. The format is
-   * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+   * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

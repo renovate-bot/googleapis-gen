@@ -54,7 +54,7 @@ type CreateCatalogItemRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent catalog resource name, such as
-	// "projects/*/locations/global/catalogs/default_catalog".
+	// `projects/*/locations/global/catalogs/default_catalog`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Required. The catalog item to create.
 	CatalogItem *CatalogItem `protobuf:"bytes,2,opt,name=catalog_item,json=catalogItem,proto3" json:"catalog_item,omitempty"`
@@ -113,7 +113,7 @@ type GetCatalogItemRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. Full resource name of catalog item, such as
-	// "projects/*/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+	// `projects/*/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -163,7 +163,7 @@ type ListCatalogItemsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent catalog resource name, such as
-	// "projects/*/locations/global/catalogs/default_catalog".
+	// `projects/*/locations/global/catalogs/default_catalog`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Optional. Maximum number of results to return per page. If zero, the
 	// service will choose a reasonable default.
@@ -370,7 +370,7 @@ type DeleteCatalogItemRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. Full resource name of catalog item, such as
-	// "projects/*/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+	// `projects/*/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 

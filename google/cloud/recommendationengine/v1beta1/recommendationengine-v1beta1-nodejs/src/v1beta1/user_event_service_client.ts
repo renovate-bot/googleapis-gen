@@ -351,7 +351,7 @@ export class UserEventServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent eventStore resource name, such as
- *   "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
  * @param {google.cloud.recommendationengine.v1beta1.UserEvent} request.userEvent
  *   Required. User event to write.
  * @param {object} [options]
@@ -429,7 +429,7 @@ export class UserEventServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent eventStore name, such as
- *   "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
  * @param {string} request.userEvent
  *   Required. URL encoded UserEvent proto.
  * @param {string} [request.uri]
@@ -517,7 +517,7 @@ export class UserEventServiceClient {
  * @param {string} request.parent
  *   Required. The resource name of the event_store under which the events are
  *   created. The format is
- *   "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+ *   `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
  * @param {string} request.filter
  *   Required. The filter string to specify the events to be deleted. Empty
  *   string filter is not allowed. This filter can also be used with
@@ -642,7 +642,7 @@ export class UserEventServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required.
- *   "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
  * @param {string} [request.requestId]
  *   Optional. Unique identifier provided by client, within the ancestor
  *   dataset scope. Ensures idempotency for expensive long running operations.
@@ -750,7 +750,7 @@ export class UserEventServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent eventStore resource name, such as
- *   "projects/* /locations/* /catalogs/default_catalog/eventStores/default_event_store".
+ *   `projects/* /locations/* /catalogs/default_catalog/eventStores/default_event_store`.
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If zero, the
  *   service will choose a reasonable default.
@@ -844,7 +844,7 @@ export class UserEventServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent eventStore resource name, such as
- *   "projects/* /locations/* /catalogs/default_catalog/eventStores/default_event_store".
+ *   `projects/* /locations/* /catalogs/default_catalog/eventStores/default_event_store`.
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If zero, the
  *   service will choose a reasonable default.
@@ -925,7 +925,7 @@ export class UserEventServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent eventStore resource name, such as
- *   "projects/* /locations/* /catalogs/default_catalog/eventStores/default_event_store".
+ *   `projects/* /locations/* /catalogs/default_catalog/eventStores/default_event_store`.
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If zero, the
  *   service will choose a reasonable default.

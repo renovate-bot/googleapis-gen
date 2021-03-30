@@ -10,7 +10,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder extends
   /**
    * <pre>
    * Required. The parent resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder extends
   /**
    * <pre>
    * Required. The parent resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

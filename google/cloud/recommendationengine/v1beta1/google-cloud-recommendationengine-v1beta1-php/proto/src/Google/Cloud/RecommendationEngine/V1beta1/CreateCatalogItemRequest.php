@@ -17,7 +17,7 @@ class CreateCatalogItemRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,7 +37,7 @@ class CreateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent catalog resource name, such as
-     *           "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     *           `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *     @type \Google\Cloud\RecommendationEngine\V1beta1\CatalogItem $catalog_item
      *           Required. The catalog item to create.
      * }
@@ -49,7 +49,7 @@ class CreateCatalogItemRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,7 +61,7 @@ class CreateCatalogItemRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

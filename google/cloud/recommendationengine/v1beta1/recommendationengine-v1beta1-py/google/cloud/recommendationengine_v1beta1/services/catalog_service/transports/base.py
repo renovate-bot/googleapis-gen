@@ -36,7 +36,7 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-recommendationengine',
+            'google-cloud-recommendations-ai',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

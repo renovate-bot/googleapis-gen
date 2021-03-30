@@ -17,7 +17,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -54,7 +54,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent eventStore name, such as
-     *           "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     *           `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *     @type string $user_event
      *           Required. URL encoded UserEvent proto.
      *     @type string $uri
@@ -75,7 +75,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -87,7 +87,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

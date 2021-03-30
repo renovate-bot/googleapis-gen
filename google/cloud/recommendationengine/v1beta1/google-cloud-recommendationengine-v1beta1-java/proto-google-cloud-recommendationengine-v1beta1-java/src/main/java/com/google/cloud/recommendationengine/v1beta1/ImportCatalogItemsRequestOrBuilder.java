@@ -9,7 +9,7 @@ public interface ImportCatalogItemsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -18,7 +18,7 @@ public interface ImportCatalogItemsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

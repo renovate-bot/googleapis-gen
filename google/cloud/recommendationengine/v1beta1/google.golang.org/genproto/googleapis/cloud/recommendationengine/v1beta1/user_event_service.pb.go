@@ -56,7 +56,7 @@ type PurgeUserEventsRequest struct {
 
 	// Required. The resource name of the event_store under which the events are
 	// created. The format is
-	// "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+	// `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Required. The filter string to specify the events to be deleted. Empty
 	// string filter is not allowed. This filter can also be used with
@@ -263,7 +263,7 @@ type WriteUserEventRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent eventStore resource name, such as
-	// "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+	// `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Required. User event to write.
 	UserEvent *UserEvent `protobuf:"bytes,2,opt,name=user_event,json=userEvent,proto3" json:"user_event,omitempty"`
@@ -322,7 +322,7 @@ type CollectUserEventRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent eventStore name, such as
-	// "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+	// `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Required. URL encoded UserEvent proto.
 	UserEvent string `protobuf:"bytes,2,opt,name=user_event,json=userEvent,proto3" json:"user_event,omitempty"`
@@ -404,7 +404,7 @@ type ListUserEventsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent eventStore resource name, such as
-	// "projects/*/locations/*/catalogs/default_catalog/eventStores/default_event_store".
+	// `projects/*/locations/*/catalogs/default_catalog/eventStores/default_event_store`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Optional. Maximum number of results to return per page. If zero, the
 	// service will choose a reasonable default.

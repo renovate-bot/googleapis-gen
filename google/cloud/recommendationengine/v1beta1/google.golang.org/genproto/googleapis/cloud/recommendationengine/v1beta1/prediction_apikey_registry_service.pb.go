@@ -101,7 +101,7 @@ type CreatePredictionApiKeyRegistrationRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent resource path.
-	// "projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+	// `projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Required. The prediction API key registration.
 	PredictionApiKeyRegistration *PredictionApiKeyRegistration `protobuf:"bytes,2,opt,name=prediction_api_key_registration,json=predictionApiKeyRegistration,proto3" json:"prediction_api_key_registration,omitempty"`
@@ -160,7 +160,7 @@ type ListPredictionApiKeyRegistrationsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The parent placement resource name such as
-	// "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+	// `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Optional. Maximum number of results to return per page. If unset, the
 	// service will choose a reasonable default.
@@ -288,7 +288,7 @@ type DeletePredictionApiKeyRegistrationRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The API key to unregister including full resource path.
-	// "projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>"
+	// `projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 

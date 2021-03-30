@@ -31,7 +31,7 @@ from google.cloud.recommendationengine_v1beta1.types import prediction_service
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-recommendationengine',
+            'google-cloud-recommendations-ai',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

@@ -177,7 +177,7 @@ class PredictionApiKeyRegistryAsyncClient:
                 `CreatePredictionApiKeyRegistration` method.
             parent (:class:`str`):
                 Required. The parent resource path.
-                "projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+                ``projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -272,7 +272,7 @@ class PredictionApiKeyRegistryAsyncClient:
                 `ListPredictionApiKeyRegistrations`.
             parent (:class:`str`):
                 Required. The parent placement resource name such as
-                "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+                ``projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store``
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -372,7 +372,7 @@ class PredictionApiKeyRegistryAsyncClient:
             name (:class:`str`):
                 Required. The API key to unregister including full
                 resource path.
-                "projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>"
+                ``projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>``
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -443,7 +443,7 @@ class PredictionApiKeyRegistryAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-recommendationengine',
+            'google-cloud-recommendations-ai',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

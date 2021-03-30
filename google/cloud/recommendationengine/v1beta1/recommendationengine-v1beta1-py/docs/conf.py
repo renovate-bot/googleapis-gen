@@ -16,7 +16,7 @@
 #
 
 #
-# google-cloud-recommendationengine documentation build configuration file
+# google-cloud-recommendations-ai documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-recommendationengine"
+project = u"google-cloud-recommendations-ai"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-recommendationengine-doc"
+htmlhelp_basename = "google-cloud-recommendations-ai-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-recommendationengine.tex",
-        u"google-cloud-recommendationengine Documentation",
+        "google-cloud-recommendations-ai.tex",
+        u"google-cloud-recommendations-ai Documentation",
         author,
         "manual",
     )
@@ -310,7 +310,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-recommendationengine",
+        "google-cloud-recommendations-ai",
         u"Google Cloud Recommendationengine Documentation",
         [author],
         1,
@@ -329,10 +329,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-recommendationengine",
-        u"google-cloud-recommendationengine Documentation",
+        "google-cloud-recommendations-ai",
+        u"google-cloud-recommendations-ai Documentation",
         author,
-        "google-cloud-recommendationengine",
+        "google-cloud-recommendations-ai",
         "GAPIC library for Google Cloud Recommendationengine API",
         "APIs",
     )

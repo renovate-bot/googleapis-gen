@@ -51,8 +51,8 @@ type GcsSource struct {
 
 	// Required. Google Cloud Storage URIs to input files. URI can be up to
 	// 2000 characters long. URIs can match the full object path (for example,
-	// gs://bucket/directory/object.json) or a pattern matching one or more
-	// files, such as gs://bucket/directory/*.json. A request can
+	// `gs://bucket/directory/object.json`) or a pattern matching one or more
+	// files, such as `gs://bucket/directory/*.json`. A request can
 	// contain at most 100 files, and each file can be up to 2 GB. See
 	// [Importing catalog information](/recommendations-ai/docs/upload-catalog)
 	// for the expected file format and setup instructions.
@@ -276,7 +276,7 @@ type ImportCatalogItemsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. "projects/1234/locations/global/catalogs/default_catalog"
+	// Required. `projects/1234/locations/global/catalogs/default_catalog`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Optional. Unique identifier provided by client, within the ancestor
 	// dataset scope. Ensures idempotency and used for request deduplication.
@@ -356,7 +356,7 @@ type ImportUserEventsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required.
-	// "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+	// `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Optional. Unique identifier provided by client, within the ancestor
 	// dataset scope. Ensures idempotency for expensive long running operations.

@@ -17,7 +17,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,7 +37,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent eventStore resource name, such as
-     *           "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     *           `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *     @type \Google\Cloud\RecommendationEngine\V1beta1\UserEvent $user_event
      *           Required. User event to write.
      * }
@@ -49,7 +49,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,7 +61,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

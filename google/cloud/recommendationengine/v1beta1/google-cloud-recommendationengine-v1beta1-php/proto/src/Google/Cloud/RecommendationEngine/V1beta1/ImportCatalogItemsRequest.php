@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportCatalogItemsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -50,7 +50,7 @@ class ImportCatalogItemsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. "projects/1234/locations/global/catalogs/default_catalog"
+     *           Required. `projects/1234/locations/global/catalogs/default_catalog`
      *     @type string $request_id
      *           Optional. Unique identifier provided by client, within the ancestor
      *           dataset scope. Ensures idempotency and used for request deduplication.
@@ -68,7 +68,7 @@ class ImportCatalogItemsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -79,7 +79,7 @@ class ImportCatalogItemsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

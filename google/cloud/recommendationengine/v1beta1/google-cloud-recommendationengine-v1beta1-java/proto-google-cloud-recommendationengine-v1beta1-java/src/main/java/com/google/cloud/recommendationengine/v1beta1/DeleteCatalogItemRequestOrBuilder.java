@@ -10,7 +10,7 @@ public interface DeleteCatalogItemRequestOrBuilder extends
   /**
    * <pre>
    * Required. Full resource name of catalog item, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface DeleteCatalogItemRequestOrBuilder extends
   /**
    * <pre>
    * Required. Full resource name of catalog item, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -323,7 +323,7 @@ export class PredictionApiKeyRegistryClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent resource path.
- *   "projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store".
+ *   `projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store`.
  * @param {google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration} request.predictionApiKeyRegistration
  *   Required. The prediction API key registration.
  * @param {object} [options]
@@ -397,7 +397,7 @@ export class PredictionApiKeyRegistryClient {
  *   The request object that will be sent.
  * @param {string} request.name
  *   Required. The API key to unregister including full resource path.
- *   "projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>"
+ *   `projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>`
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -471,7 +471,7 @@ export class PredictionApiKeyRegistryClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent placement resource name such as
- *   "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If unset, the
  *   service will choose a reasonable default.
@@ -532,7 +532,7 @@ export class PredictionApiKeyRegistryClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent placement resource name such as
- *   "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If unset, the
  *   service will choose a reasonable default.
@@ -580,7 +580,7 @@ export class PredictionApiKeyRegistryClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent placement resource name such as
- *   "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If unset, the
  *   service will choose a reasonable default.

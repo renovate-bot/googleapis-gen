@@ -10,7 +10,7 @@ public interface DeletePredictionApiKeyRegistrationRequestOrBuilder extends
   /**
    * <pre>
    * Required. The API key to unregister including full resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface DeletePredictionApiKeyRegistrationRequestOrBuilder extends
   /**
    * <pre>
    * Required. The API key to unregister including full resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

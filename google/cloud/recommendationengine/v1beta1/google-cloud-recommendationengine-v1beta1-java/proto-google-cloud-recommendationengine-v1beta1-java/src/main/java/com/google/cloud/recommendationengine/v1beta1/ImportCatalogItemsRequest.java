@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -744,7 +744,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

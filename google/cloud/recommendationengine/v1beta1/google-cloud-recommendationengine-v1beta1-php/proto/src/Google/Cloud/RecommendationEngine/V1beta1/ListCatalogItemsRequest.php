@@ -17,7 +17,7 @@ class ListCatalogItemsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -50,7 +50,7 @@ class ListCatalogItemsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent catalog resource name, such as
-     *           "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     *           `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *     @type int $page_size
      *           Optional. Maximum number of results to return per page. If zero, the
      *           service will choose a reasonable default.
@@ -67,7 +67,7 @@ class ListCatalogItemsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -79,7 +79,7 @@ class ListCatalogItemsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

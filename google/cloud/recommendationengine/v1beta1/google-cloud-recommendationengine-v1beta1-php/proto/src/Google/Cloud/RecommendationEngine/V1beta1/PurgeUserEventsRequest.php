@@ -18,7 +18,7 @@ class PurgeUserEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -64,7 +64,7 @@ class PurgeUserEventsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The resource name of the event_store under which the events are
      *           created. The format is
-     *           "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     *           `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      *     @type string $filter
      *           Required. The filter string to specify the events to be deleted. Empty
      *           string filter is not allowed. This filter can also be used with
@@ -98,7 +98,7 @@ class PurgeUserEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -111,7 +111,7 @@ class PurgeUserEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the event_store under which the events are
      * created. The format is
-     * "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+     * `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

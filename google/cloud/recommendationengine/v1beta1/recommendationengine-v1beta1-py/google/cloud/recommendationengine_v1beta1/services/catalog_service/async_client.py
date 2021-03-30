@@ -179,7 +179,7 @@ class CatalogServiceAsyncClient:
                 CreateCatalogItem method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
-                "projects/*/locations/global/catalogs/default_catalog".
+                ``projects/*/locations/global/catalogs/default_catalog``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -273,7 +273,7 @@ class CatalogServiceAsyncClient:
                 method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
-                "projects/*/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+                ``projects/*/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id``.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -361,7 +361,7 @@ class CatalogServiceAsyncClient:
                 method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
-                "projects/*/locations/global/catalogs/default_catalog".
+                ``projects/*/locations/global/catalogs/default_catalog``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -578,7 +578,7 @@ class CatalogServiceAsyncClient:
                 DeleteCatalogItem method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
-                "projects/*/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+                ``projects/*/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id``.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -664,7 +664,7 @@ class CatalogServiceAsyncClient:
                 The request object. Request message for Import methods.
             parent (:class:`str`):
                 Required.
-                "projects/1234/locations/global/catalogs/default_catalog"
+                ``projects/1234/locations/global/catalogs/default_catalog``
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -789,7 +789,7 @@ class CatalogServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-recommendationengine',
+            'google-cloud-recommendations-ai',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

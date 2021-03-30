@@ -346,7 +346,7 @@ export class CatalogServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent catalog resource name, such as
- *   "projects/* /locations/global/catalogs/default_catalog".
+ *   `projects/* /locations/global/catalogs/default_catalog`.
  * @param {google.cloud.recommendationengine.v1beta1.CatalogItem} request.catalogItem
  *   Required. The catalog item to create.
  * @param {object} [options]
@@ -420,7 +420,7 @@ export class CatalogServiceClient {
  *   The request object that will be sent.
  * @param {string} request.name
  *   Required. Full resource name of catalog item, such as
- *   "projects/* /locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+ *   `projects/* /locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -571,7 +571,7 @@ export class CatalogServiceClient {
  *   The request object that will be sent.
  * @param {string} request.name
  *   Required. Full resource name of catalog item, such as
- *   "projects/* /locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+ *   `projects/* /locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -648,7 +648,7 @@ export class CatalogServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. "projects/1234/locations/global/catalogs/default_catalog"
+ *   Required. `projects/1234/locations/global/catalogs/default_catalog`
  * @param {string} [request.requestId]
  *   Optional. Unique identifier provided by client, within the ancestor
  *   dataset scope. Ensures idempotency and used for request deduplication.
@@ -754,7 +754,7 @@ export class CatalogServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent catalog resource name, such as
- *   "projects/* /locations/global/catalogs/default_catalog".
+ *   `projects/* /locations/global/catalogs/default_catalog`.
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If zero, the
  *   service will choose a reasonable default.
@@ -817,7 +817,7 @@ export class CatalogServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent catalog resource name, such as
- *   "projects/* /locations/global/catalogs/default_catalog".
+ *   `projects/* /locations/global/catalogs/default_catalog`.
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If zero, the
  *   service will choose a reasonable default.
@@ -867,7 +867,7 @@ export class CatalogServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent catalog resource name, such as
- *   "projects/* /locations/global/catalogs/default_catalog".
+ *   `projects/* /locations/global/catalogs/default_catalog`.
  * @param {number} [request.pageSize]
  *   Optional. Maximum number of results to return per page. If zero, the
  *   service will choose a reasonable default.

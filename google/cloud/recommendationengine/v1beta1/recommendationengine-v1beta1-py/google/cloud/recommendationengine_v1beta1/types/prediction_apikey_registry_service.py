@@ -48,7 +48,7 @@ class CreatePredictionApiKeyRegistrationRequest(proto.Message):
     Attributes:
         parent (str):
             Required. The parent resource path.
-            "projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+            ``projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store``.
         prediction_api_key_registration (google.cloud.recommendationengine_v1beta1.types.PredictionApiKeyRegistration):
             Required. The prediction API key
             registration.
@@ -67,7 +67,7 @@ class ListPredictionApiKeyRegistrationsRequest(proto.Message):
     Attributes:
         parent (str):
             Required. The parent placement resource name such as
-            "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+            ``projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store``
         page_size (int):
             Optional. Maximum number of results to return
             per page. If unset, the service will choose a
@@ -114,7 +114,7 @@ class DeletePredictionApiKeyRegistrationRequest(proto.Message):
         name (str):
             Required. The API key to unregister including full resource
             path.
-            "projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>".
+            ``projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>``
     """
 
     name = proto.Field(proto.STRING, number=1)

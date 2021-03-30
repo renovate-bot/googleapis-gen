@@ -315,7 +315,7 @@ class PredictionApiKeyRegistryGapicClient
      * ```
      *
      * @param string                       $parent                       Required. The parent resource path.
-     *                                                                   "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     *                                                                   `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * @param PredictionApiKeyRegistration $predictionApiKeyRegistration Required. The prediction API key registration.
      * @param array                        $optionalArgs                 {
      *                                                                   Optional.
@@ -383,7 +383,7 @@ class PredictionApiKeyRegistryGapicClient
      * ```
      *
      * @param string $parent       Required. The parent placement resource name such as
-     *                             "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     *                             `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -449,7 +449,7 @@ class PredictionApiKeyRegistryGapicClient
      * ```
      *
      * @param string $name         Required. The API key to unregister including full resource path.
-     *                             "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>"
+     *                             `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>`
      * @param array  $optionalArgs {
      *                             Optional.
      *

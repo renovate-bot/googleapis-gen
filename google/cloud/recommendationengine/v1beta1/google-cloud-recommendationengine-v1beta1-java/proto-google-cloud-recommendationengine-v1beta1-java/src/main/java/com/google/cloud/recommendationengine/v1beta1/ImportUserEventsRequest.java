@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required.
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required.
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required.
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required.
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required.
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required.
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required.
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

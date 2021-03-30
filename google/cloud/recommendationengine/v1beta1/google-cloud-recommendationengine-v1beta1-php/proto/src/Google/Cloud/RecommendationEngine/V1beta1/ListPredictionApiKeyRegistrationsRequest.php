@@ -17,7 +17,7 @@ class ListPredictionApiKeyRegistrationsRequest extends \Google\Protobuf\Internal
 {
     /**
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -44,7 +44,7 @@ class ListPredictionApiKeyRegistrationsRequest extends \Google\Protobuf\Internal
      *
      *     @type string $parent
      *           Required. The parent placement resource name such as
-     *           "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     *           `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      *     @type int $page_size
      *           Optional. Maximum number of results to return per page. If unset, the
      *           service will choose a reasonable default.
@@ -59,7 +59,7 @@ class ListPredictionApiKeyRegistrationsRequest extends \Google\Protobuf\Internal
 
     /**
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -71,7 +71,7 @@ class ListPredictionApiKeyRegistrationsRequest extends \Google\Protobuf\Internal
 
     /**
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
