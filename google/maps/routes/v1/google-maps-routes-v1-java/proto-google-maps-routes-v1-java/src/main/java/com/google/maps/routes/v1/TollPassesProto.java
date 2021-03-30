@@ -24,14 +24,15 @@ public final class TollPassesProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/maps/routes/v1/toll_passes.prot" +
-      "o\022\025google.maps.routes.v1*Z\n\010TollPass\022\031\n\025" +
-      "TOLL_PASS_UNSPECIFIED\020\000\022\024\n\020US_WA_GOOD_TO" +
-      "_GO\020\001\022\014\n\010AU_LINKT\020\002\022\017\n\013AR_TELEPASE\020\003B\245\001\n" +
-      "\031com.google.maps.routes.v1B\017TollPassesPr" +
-      "otoP\001Z;google.golang.org/genproto/google" +
-      "apis/maps/routes/v1;routes\370\001\001\242\002\004GMRS\252\002\025G" +
-      "oogle.Maps.Routes.V1\312\002\025Google\\Maps\\Route" +
-      "s\\V1b\006proto3"
+      "o\022\025google.maps.routes.v1*\222\001\n\010TollPass\022\031\n" +
+      "\025TOLL_PASS_UNSPECIFIED\020\000\022\014\n\010AU_LINKT\020\002\022\017" +
+      "\n\013AR_TELEPASE\020\003\022\021\n\rUS_CA_FASTRAK\020\004\022\017\n\013US" +
+      "_IL_IPASS\020\005\022\022\n\016US_MA_EZPASSMA\020\006\022\024\n\020US_WA" +
+      "_GOOD_TO_GO\020\001B\245\001\n\031com.google.maps.routes" +
+      ".v1B\017TollPassesProtoP\001Z;google.golang.or" +
+      "g/genproto/googleapis/maps/routes/v1;rou" +
+      "tes\370\001\001\242\002\004GMRS\252\002\025Google.Maps.Routes.V1\312\002\025" +
+      "Google\\Maps\\Routes\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

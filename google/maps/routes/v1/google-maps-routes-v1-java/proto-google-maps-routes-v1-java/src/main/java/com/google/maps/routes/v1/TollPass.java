@@ -22,14 +22,6 @@ public enum TollPass
   TOLL_PASS_UNSPECIFIED(0),
   /**
    * <pre>
-   * State pass of the Washington state, United States.
-   * </pre>
-   *
-   * <code>US_WA_GOOD_TO_GO = 1;</code>
-   */
-  US_WA_GOOD_TO_GO(1),
-  /**
-   * <pre>
    * Australia-wide toll pass.
    * See additional details at https://www.linkt.com.au/.
    * </pre>
@@ -45,6 +37,42 @@ public enum TollPass
    * <code>AR_TELEPASE = 3;</code>
    */
   AR_TELEPASE(3),
+  /**
+   * <pre>
+   * State pass of California, United States. Passes vary between Standard,
+   * Flex, and Clean Air. Flex and Clean Air have settings for carpool. See
+   * additional details at https://www.bayareafastrak.org/en/home/index.shtml.
+   * </pre>
+   *
+   * <code>US_CA_FASTRAK = 4;</code>
+   */
+  US_CA_FASTRAK(4),
+  /**
+   * <pre>
+   * State pass of Illinois, United States. See additional details at
+   * https://www.illinoistollway.com/about-ipass.
+   * </pre>
+   *
+   * <code>US_IL_IPASS = 5;</code>
+   */
+  US_IL_IPASS(5),
+  /**
+   * <pre>
+   * State pass of Massachusetts, United States. See additional details at
+   * https://www.mass.gov/ezdrivema.
+   * </pre>
+   *
+   * <code>US_MA_EZPASSMA = 6;</code>
+   */
+  US_MA_EZPASSMA(6),
+  /**
+   * <pre>
+   * State pass of the Washington state, United States.
+   * </pre>
+   *
+   * <code>US_WA_GOOD_TO_GO = 1;</code>
+   */
+  US_WA_GOOD_TO_GO(1),
   UNRECOGNIZED(-1),
   ;
 
@@ -56,14 +84,6 @@ public enum TollPass
    * <code>TOLL_PASS_UNSPECIFIED = 0;</code>
    */
   public static final int TOLL_PASS_UNSPECIFIED_VALUE = 0;
-  /**
-   * <pre>
-   * State pass of the Washington state, United States.
-   * </pre>
-   *
-   * <code>US_WA_GOOD_TO_GO = 1;</code>
-   */
-  public static final int US_WA_GOOD_TO_GO_VALUE = 1;
   /**
    * <pre>
    * Australia-wide toll pass.
@@ -81,6 +101,42 @@ public enum TollPass
    * <code>AR_TELEPASE = 3;</code>
    */
   public static final int AR_TELEPASE_VALUE = 3;
+  /**
+   * <pre>
+   * State pass of California, United States. Passes vary between Standard,
+   * Flex, and Clean Air. Flex and Clean Air have settings for carpool. See
+   * additional details at https://www.bayareafastrak.org/en/home/index.shtml.
+   * </pre>
+   *
+   * <code>US_CA_FASTRAK = 4;</code>
+   */
+  public static final int US_CA_FASTRAK_VALUE = 4;
+  /**
+   * <pre>
+   * State pass of Illinois, United States. See additional details at
+   * https://www.illinoistollway.com/about-ipass.
+   * </pre>
+   *
+   * <code>US_IL_IPASS = 5;</code>
+   */
+  public static final int US_IL_IPASS_VALUE = 5;
+  /**
+   * <pre>
+   * State pass of Massachusetts, United States. See additional details at
+   * https://www.mass.gov/ezdrivema.
+   * </pre>
+   *
+   * <code>US_MA_EZPASSMA = 6;</code>
+   */
+  public static final int US_MA_EZPASSMA_VALUE = 6;
+  /**
+   * <pre>
+   * State pass of the Washington state, United States.
+   * </pre>
+   *
+   * <code>US_WA_GOOD_TO_GO = 1;</code>
+   */
+  public static final int US_WA_GOOD_TO_GO_VALUE = 1;
 
 
   public final int getNumber() {
@@ -108,9 +164,12 @@ public enum TollPass
   public static TollPass forNumber(int value) {
     switch (value) {
       case 0: return TOLL_PASS_UNSPECIFIED;
-      case 1: return US_WA_GOOD_TO_GO;
       case 2: return AU_LINKT;
       case 3: return AR_TELEPASE;
+      case 4: return US_CA_FASTRAK;
+      case 5: return US_IL_IPASS;
+      case 6: return US_MA_EZPASSMA;
+      case 1: return US_WA_GOOD_TO_GO;
       default: return null;
     }
   }
