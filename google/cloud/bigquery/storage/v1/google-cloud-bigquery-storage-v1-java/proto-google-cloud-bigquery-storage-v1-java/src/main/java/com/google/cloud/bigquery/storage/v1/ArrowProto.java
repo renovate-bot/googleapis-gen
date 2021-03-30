@@ -24,6 +24,11 @@ public final class ArrowProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1_ArrowRecordBatch_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_bigquery_storage_v1_ArrowSerializationOptions_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1_ArrowSerializationOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -37,7 +42,12 @@ public final class ArrowProto {
       ".proto\022 google.cloud.bigquery.storage.v1" +
       "\"(\n\013ArrowSchema\022\031\n\021serialized_schema\030\001 \001" +
       "(\014\"F\n\020ArrowRecordBatch\022\037\n\027serialized_rec" +
-      "ord_batch\030\001 \001(\014\022\021\n\trow_count\030\002 \001(\003B\303\001\n$c" +
+      "ord_batch\030\001 \001(\014\022\021\n\trow_count\030\002 \001(\003\"\305\001\n\031A" +
+      "rrowSerializationOptions\022h\n\022buffer_compr" +
+      "ession\030\002 \001(\0162L.google.cloud.bigquery.sto" +
+      "rage.v1.ArrowSerializationOptions.Compre" +
+      "ssionCodec\">\n\020CompressionCodec\022\033\n\027COMPRE" +
+      "SSION_UNSPECIFIED\020\000\022\r\n\tLZ4_FRAME\020\001B\303\001\n$c" +
       "om.google.cloud.bigquery.storage.v1B\nArr" +
       "owProtoP\001ZGgoogle.golang.org/genproto/go" +
       "ogleapis/cloud/bigquery/storage/v1;stora" +
@@ -60,6 +70,12 @@ public final class ArrowProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_bigquery_storage_v1_ArrowRecordBatch_descriptor,
         new java.lang.String[] { "SerializedRecordBatch", "RowCount", });
+    internal_static_google_cloud_bigquery_storage_v1_ArrowSerializationOptions_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_storage_v1_ArrowSerializationOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_bigquery_storage_v1_ArrowSerializationOptions_descriptor,
+        new java.lang.String[] { "BufferCompression", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

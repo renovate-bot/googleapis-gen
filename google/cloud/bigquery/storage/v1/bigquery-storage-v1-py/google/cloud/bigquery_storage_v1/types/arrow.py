@@ -23,6 +23,7 @@ __protobuf__ = proto.module(
     manifest={
         'ArrowSchema',
         'ArrowRecordBatch',
+        'ArrowSerializationOptions',
     },
 )
 
@@ -56,6 +57,24 @@ class ArrowRecordBatch(proto.Message):
     serialized_record_batch = proto.Field(proto.BYTES, number=1)
 
     row_count = proto.Field(proto.INT64, number=2)
+
+
+class ArrowSerializationOptions(proto.Message):
+    r"""Contains options specific to Arrow Serialization.
+
+    Attributes:
+        buffer_compression (google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions.CompressionCodec):
+            The compression codec to use for Arrow
+            buffers in serialized record batches.
+    """
+    class CompressionCodec(proto.Enum):
+        r"""Compression codec's supported by Arrow."""
+        COMPRESSION_UNSPECIFIED = 0
+        LZ4_FRAME = 1
+
+    buffer_compression = proto.Field(proto.ENUM, number=2,
+        enum=CompressionCodec,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

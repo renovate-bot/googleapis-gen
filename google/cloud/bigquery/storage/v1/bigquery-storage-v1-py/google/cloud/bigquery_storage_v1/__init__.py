@@ -18,6 +18,7 @@
 from .services.big_query_read import BigQueryReadClient
 from .types.arrow import ArrowRecordBatch
 from .types.arrow import ArrowSchema
+from .types.arrow import ArrowSerializationOptions
 from .types.avro import AvroRows
 from .types.avro import AvroSchema
 from .types.storage import CreateReadSessionRequest
@@ -35,6 +36,7 @@ from .types.stream import ReadStream
 __all__ = (
     'ArrowRecordBatch',
     'ArrowSchema',
+    'ArrowSerializationOptions',
     'AvroRows',
     'AvroSchema',
     'CreateReadSessionRequest',

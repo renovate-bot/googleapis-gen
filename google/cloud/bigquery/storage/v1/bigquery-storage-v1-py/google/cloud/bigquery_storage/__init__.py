@@ -19,6 +19,7 @@ from google.cloud.bigquery_storage_v1.services.big_query_read.async_client impor
 from google.cloud.bigquery_storage_v1.services.big_query_read.client import BigQueryReadClient
 from google.cloud.bigquery_storage_v1.types.arrow import ArrowRecordBatch
 from google.cloud.bigquery_storage_v1.types.arrow import ArrowSchema
+from google.cloud.bigquery_storage_v1.types.arrow import ArrowSerializationOptions
 from google.cloud.bigquery_storage_v1.types.avro import AvroRows
 from google.cloud.bigquery_storage_v1.types.avro import AvroSchema
 from google.cloud.bigquery_storage_v1.types.storage import CreateReadSessionRequest
@@ -35,6 +36,7 @@ from google.cloud.bigquery_storage_v1.types.stream import ReadStream
 __all__ = (
     'ArrowRecordBatch',
     'ArrowSchema',
+    'ArrowSerializationOptions',
     'AvroRows',
     'AvroSchema',
     'BigQueryReadAsyncClient',
