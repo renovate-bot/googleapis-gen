@@ -160,6 +160,11 @@ module Google
         # @!attribute [rw] property_quota
         #   @return [::Google::Analytics::Data::V1beta::PropertyQuota]
         #     This Analytics Property's quota state including this request.
+        # @!attribute [rw] kind
+        #   @return [::String]
+        #     Identifies what kind of resource this message is. This `kind` is always the
+        #     fixed string "analyticsData#runReport". Useful to distinguish between
+        #     response types in JSON.
         class RunReportResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -291,6 +296,11 @@ module Google
         # @!attribute [rw] property_quota
         #   @return [::Google::Analytics::Data::V1beta::PropertyQuota]
         #     This Analytics Property's quota state including this request.
+        # @!attribute [rw] kind
+        #   @return [::String]
+        #     Identifies what kind of resource this message is. This `kind` is always the
+        #     fixed string "analyticsData#runPivotReport". Useful to distinguish between
+        #     response types in JSON.
         class RunPivotReportResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -321,6 +331,11 @@ module Google
         # @!attribute [rw] reports
         #   @return [::Array<::Google::Analytics::Data::V1beta::RunReportResponse>]
         #     Individual responses. Each response has a separate report request.
+        # @!attribute [rw] kind
+        #   @return [::String]
+        #     Identifies what kind of resource this message is. This `kind` is always the
+        #     fixed string "analyticsData#batchRunReports". Useful to distinguish between
+        #     response types in JSON.
         class BatchRunReportsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -351,6 +366,11 @@ module Google
         # @!attribute [rw] pivot_reports
         #   @return [::Array<::Google::Analytics::Data::V1beta::RunPivotReportResponse>]
         #     Individual responses. Each response has a separate pivot report request.
+        # @!attribute [rw] kind
+        #   @return [::String]
+        #     Identifies what kind of resource this message is. This `kind` is always the
+        #     fixed string "analyticsData#batchRunPivotReports". Useful to distinguish
+        #     between response types in JSON.
         class BatchRunPivotReportsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -457,6 +477,11 @@ module Google
         # @!attribute [rw] property_quota
         #   @return [::Google::Analytics::Data::V1beta::PropertyQuota]
         #     This Analytics Property's Realtime quota state including this request.
+        # @!attribute [rw] kind
+        #   @return [::String]
+        #     Identifies what kind of resource this message is. This `kind` is always the
+        #     fixed string "analyticsData#runRealtimeReport". Useful to distinguish
+        #     between response types in JSON.
         class RunRealtimeReportResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -234,6 +234,11 @@ class RunReportResponse(proto.Message):
         property_quota (google.analytics.data_v1beta.types.PropertyQuota):
             This Analytics Property's quota state
             including this request.
+        kind (str):
+            Identifies what kind of resource this message is. This
+            ``kind`` is always the fixed string
+            "analyticsData#runReport". Useful to distinguish between
+            response types in JSON.
     """
 
     dimension_headers = proto.RepeatedField(proto.MESSAGE, number=1,
@@ -269,6 +274,8 @@ class RunReportResponse(proto.Message):
     property_quota = proto.Field(proto.MESSAGE, number=9,
         message=data.PropertyQuota,
     )
+
+    kind = proto.Field(proto.STRING, number=10)
 
 
 class RunPivotReportRequest(proto.Message):
@@ -443,6 +450,11 @@ class RunPivotReportResponse(proto.Message):
         property_quota (google.analytics.data_v1beta.types.PropertyQuota):
             This Analytics Property's quota state
             including this request.
+        kind (str):
+            Identifies what kind of resource this message is. This
+            ``kind`` is always the fixed string
+            "analyticsData#runPivotReport". Useful to distinguish
+            between response types in JSON.
     """
 
     pivot_headers = proto.RepeatedField(proto.MESSAGE, number=1,
@@ -472,6 +484,8 @@ class RunPivotReportResponse(proto.Message):
     property_quota = proto.Field(proto.MESSAGE, number=7,
         message=data.PropertyQuota,
     )
+
+    kind = proto.Field(proto.STRING, number=8)
 
 
 class BatchRunReportsRequest(proto.Message):
@@ -508,11 +522,18 @@ class BatchRunReportsResponse(proto.Message):
         reports (Sequence[google.analytics.data_v1beta.types.RunReportResponse]):
             Individual responses. Each response has a
             separate report request.
+        kind (str):
+            Identifies what kind of resource this message is. This
+            ``kind`` is always the fixed string
+            "analyticsData#batchRunReports". Useful to distinguish
+            between response types in JSON.
     """
 
     reports = proto.RepeatedField(proto.MESSAGE, number=1,
         message='RunReportResponse',
     )
+
+    kind = proto.Field(proto.STRING, number=2)
 
 
 class BatchRunPivotReportsRequest(proto.Message):
@@ -549,11 +570,18 @@ class BatchRunPivotReportsResponse(proto.Message):
         pivot_reports (Sequence[google.analytics.data_v1beta.types.RunPivotReportResponse]):
             Individual responses. Each response has a
             separate pivot report request.
+        kind (str):
+            Identifies what kind of resource this message is. This
+            ``kind`` is always the fixed string
+            "analyticsData#batchRunPivotReports". Useful to distinguish
+            between response types in JSON.
     """
 
     pivot_reports = proto.RepeatedField(proto.MESSAGE, number=1,
         message='RunPivotReportResponse',
     )
+
+    kind = proto.Field(proto.STRING, number=2)
 
 
 class GetMetadataRequest(proto.Message):
@@ -692,6 +720,11 @@ class RunRealtimeReportResponse(proto.Message):
         property_quota (google.analytics.data_v1beta.types.PropertyQuota):
             This Analytics Property's Realtime quota
             state including this request.
+        kind (str):
+            Identifies what kind of resource this message is. This
+            ``kind`` is always the fixed string
+            "analyticsData#runRealtimeReport". Useful to distinguish
+            between response types in JSON.
     """
 
     dimension_headers = proto.RepeatedField(proto.MESSAGE, number=1,
@@ -723,6 +756,8 @@ class RunRealtimeReportResponse(proto.Message):
     property_quota = proto.Field(proto.MESSAGE, number=8,
         message=data.PropertyQuota,
     )
+
+    kind = proto.Field(proto.STRING, number=9)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

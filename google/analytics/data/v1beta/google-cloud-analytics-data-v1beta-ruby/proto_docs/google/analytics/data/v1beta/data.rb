@@ -424,8 +424,8 @@ module Google
         # @!attribute [rw] limit
         #   @return [::Integer]
         #     The number of unique combinations of dimension values to return in this
-        #     pivot. If unspecified, up to 10,000 unique combinations of dimension values
-        #     are returned. `limit` must be positive.
+        #     pivot. The `limit` parameter is required. A `limit` of 10,000 is common for
+        #     single pivot requests.
         #
         #     The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
         #     must not exceed 100,000. For example, a two pivot request with `limit:
@@ -742,6 +742,12 @@ module Google
         #     Standard Analytics Properties and cloud project pairs can have up to 10
         #     server errors per hour; Analytics 360 Properties and cloud project pairs
         #     can have up to 50 server errors per hour.
+        # @!attribute [rw] potentially_thresholded_requests_per_hour
+        #   @return [::Google::Analytics::Data::V1beta::QuotaStatus]
+        #     Analytics Properties can send up to 120 requests with potentially
+        #     thresholded dimensions per hour. In a batch request, each report request
+        #     is individually counted for this quota if the request contains potentially
+        #     thresholded dimensions.
         class PropertyQuota
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

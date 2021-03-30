@@ -41,6 +41,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :row_count, :int32, 7
       optional :metadata, :message, 8, "google.analytics.data.v1beta.ResponseMetaData"
       optional :property_quota, :message, 9, "google.analytics.data.v1beta.PropertyQuota"
+      optional :kind, :string, 10
     end
     add_message "google.analytics.data.v1beta.RunPivotReportRequest" do
       optional :property, :string, 1
@@ -63,6 +64,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :aggregates, :message, 5, "google.analytics.data.v1beta.Row"
       optional :metadata, :message, 6, "google.analytics.data.v1beta.ResponseMetaData"
       optional :property_quota, :message, 7, "google.analytics.data.v1beta.PropertyQuota"
+      optional :kind, :string, 8
     end
     add_message "google.analytics.data.v1beta.BatchRunReportsRequest" do
       optional :property, :string, 1
@@ -70,6 +72,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.analytics.data.v1beta.BatchRunReportsResponse" do
       repeated :reports, :message, 1, "google.analytics.data.v1beta.RunReportResponse"
+      optional :kind, :string, 2
     end
     add_message "google.analytics.data.v1beta.BatchRunPivotReportsRequest" do
       optional :property, :string, 1
@@ -77,6 +80,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.analytics.data.v1beta.BatchRunPivotReportsResponse" do
       repeated :pivot_reports, :message, 1, "google.analytics.data.v1beta.RunPivotReportResponse"
+      optional :kind, :string, 2
     end
     add_message "google.analytics.data.v1beta.GetMetadataRequest" do
       optional :name, :string, 1
@@ -101,6 +105,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :minimums, :message, 6, "google.analytics.data.v1beta.Row"
       optional :row_count, :int32, 7
       optional :property_quota, :message, 8, "google.analytics.data.v1beta.PropertyQuota"
+      optional :kind, :string, 9
     end
   end
 end

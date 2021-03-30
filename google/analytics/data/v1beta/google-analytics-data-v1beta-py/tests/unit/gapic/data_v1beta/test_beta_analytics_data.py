@@ -367,6 +367,8 @@ def test_run_report(transport: str = 'grpc', request_type=analytics_data_api.Run
         call.return_value = analytics_data_api.RunReportResponse(
             row_count=992,
 
+            kind='kind_value',
+
         )
 
         response = client.run_report(request)
@@ -382,6 +384,8 @@ def test_run_report(transport: str = 'grpc', request_type=analytics_data_api.Run
     assert isinstance(response, analytics_data_api.RunReportResponse)
 
     assert response.row_count == 992
+
+    assert response.kind == 'kind_value'
 
 
 def test_run_report_from_dict():
@@ -424,6 +428,7 @@ async def test_run_report_async(transport: str = 'grpc_asyncio', request_type=an
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(analytics_data_api.RunReportResponse(
             row_count=992,
+            kind='kind_value',
         ))
 
         response = await client.run_report(request)
@@ -438,6 +443,8 @@ async def test_run_report_async(transport: str = 'grpc_asyncio', request_type=an
     assert isinstance(response, analytics_data_api.RunReportResponse)
 
     assert response.row_count == 992
+
+    assert response.kind == 'kind_value'
 
 
 @pytest.mark.asyncio
@@ -524,6 +531,8 @@ def test_run_pivot_report(transport: str = 'grpc', request_type=analytics_data_a
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = analytics_data_api.RunPivotReportResponse(
+            kind='kind_value',
+
         )
 
         response = client.run_pivot_report(request)
@@ -537,6 +546,8 @@ def test_run_pivot_report(transport: str = 'grpc', request_type=analytics_data_a
     # Establish that the response is the type that we expect.
 
     assert isinstance(response, analytics_data_api.RunPivotReportResponse)
+
+    assert response.kind == 'kind_value'
 
 
 def test_run_pivot_report_from_dict():
@@ -578,6 +589,7 @@ async def test_run_pivot_report_async(transport: str = 'grpc_asyncio', request_t
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(analytics_data_api.RunPivotReportResponse(
+            kind='kind_value',
         ))
 
         response = await client.run_pivot_report(request)
@@ -590,6 +602,8 @@ async def test_run_pivot_report_async(transport: str = 'grpc_asyncio', request_t
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_data_api.RunPivotReportResponse)
+
+    assert response.kind == 'kind_value'
 
 
 @pytest.mark.asyncio
@@ -676,6 +690,8 @@ def test_batch_run_reports(transport: str = 'grpc', request_type=analytics_data_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = analytics_data_api.BatchRunReportsResponse(
+            kind='kind_value',
+
         )
 
         response = client.batch_run_reports(request)
@@ -689,6 +705,8 @@ def test_batch_run_reports(transport: str = 'grpc', request_type=analytics_data_
     # Establish that the response is the type that we expect.
 
     assert isinstance(response, analytics_data_api.BatchRunReportsResponse)
+
+    assert response.kind == 'kind_value'
 
 
 def test_batch_run_reports_from_dict():
@@ -730,6 +748,7 @@ async def test_batch_run_reports_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(analytics_data_api.BatchRunReportsResponse(
+            kind='kind_value',
         ))
 
         response = await client.batch_run_reports(request)
@@ -742,6 +761,8 @@ async def test_batch_run_reports_async(transport: str = 'grpc_asyncio', request_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_data_api.BatchRunReportsResponse)
+
+    assert response.kind == 'kind_value'
 
 
 @pytest.mark.asyncio
@@ -828,6 +849,8 @@ def test_batch_run_pivot_reports(transport: str = 'grpc', request_type=analytics
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = analytics_data_api.BatchRunPivotReportsResponse(
+            kind='kind_value',
+
         )
 
         response = client.batch_run_pivot_reports(request)
@@ -841,6 +864,8 @@ def test_batch_run_pivot_reports(transport: str = 'grpc', request_type=analytics
     # Establish that the response is the type that we expect.
 
     assert isinstance(response, analytics_data_api.BatchRunPivotReportsResponse)
+
+    assert response.kind == 'kind_value'
 
 
 def test_batch_run_pivot_reports_from_dict():
@@ -882,6 +907,7 @@ async def test_batch_run_pivot_reports_async(transport: str = 'grpc_asyncio', re
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(analytics_data_api.BatchRunPivotReportsResponse(
+            kind='kind_value',
         ))
 
         response = await client.batch_run_pivot_reports(request)
@@ -894,6 +920,8 @@ async def test_batch_run_pivot_reports_async(transport: str = 'grpc_asyncio', re
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_data_api.BatchRunPivotReportsResponse)
+
+    assert response.kind == 'kind_value'
 
 
 @pytest.mark.asyncio
@@ -1224,6 +1252,8 @@ def test_run_realtime_report(transport: str = 'grpc', request_type=analytics_dat
         call.return_value = analytics_data_api.RunRealtimeReportResponse(
             row_count=992,
 
+            kind='kind_value',
+
         )
 
         response = client.run_realtime_report(request)
@@ -1239,6 +1269,8 @@ def test_run_realtime_report(transport: str = 'grpc', request_type=analytics_dat
     assert isinstance(response, analytics_data_api.RunRealtimeReportResponse)
 
     assert response.row_count == 992
+
+    assert response.kind == 'kind_value'
 
 
 def test_run_realtime_report_from_dict():
@@ -1281,6 +1313,7 @@ async def test_run_realtime_report_async(transport: str = 'grpc_asyncio', reques
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(analytics_data_api.RunRealtimeReportResponse(
             row_count=992,
+            kind='kind_value',
         ))
 
         response = await client.run_realtime_report(request)
@@ -1295,6 +1328,8 @@ async def test_run_realtime_report_async(transport: str = 'grpc_asyncio', reques
     assert isinstance(response, analytics_data_api.RunRealtimeReportResponse)
 
     assert response.row_count == 992
+
+    assert response.kind == 'kind_value'
 
 
 @pytest.mark.asyncio

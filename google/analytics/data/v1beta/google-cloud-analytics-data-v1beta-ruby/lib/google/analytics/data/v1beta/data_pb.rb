@@ -189,6 +189,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :tokens_per_hour, :message, 2, "google.analytics.data.v1beta.QuotaStatus"
       optional :concurrent_requests, :message, 3, "google.analytics.data.v1beta.QuotaStatus"
       optional :server_errors_per_project_per_hour, :message, 4, "google.analytics.data.v1beta.QuotaStatus"
+      optional :potentially_thresholded_requests_per_hour, :message, 5, "google.analytics.data.v1beta.QuotaStatus"
     end
     add_message "google.analytics.data.v1beta.QuotaStatus" do
       optional :consumed, :int32, 1

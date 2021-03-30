@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private BatchRunReportsResponse() {
     reports_ = java.util.Collections.emptyList();
+    kind_ = "";
   }
 
   @java.lang.Override
@@ -61,6 +62,12 @@ private static final long serialVersionUID = 0L;
             }
             reports_.add(
                 input.readMessage(com.google.analytics.data.v1beta.RunReportResponse.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            kind_ = s;
             break;
           }
           default: {
@@ -158,6 +165,56 @@ private static final long serialVersionUID = 0L;
     return reports_.get(index);
   }
 
+  public static final int KIND_FIELD_NUMBER = 2;
+  private volatile java.lang.Object kind_;
+  /**
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+   * response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 2;</code>
+   * @return The kind.
+   */
+  @java.lang.Override
+  public java.lang.String getKind() {
+    java.lang.Object ref = kind_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kind_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+   * response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 2;</code>
+   * @return The bytes for kind.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKindBytes() {
+    java.lang.Object ref = kind_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      kind_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -175,6 +232,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < reports_.size(); i++) {
       output.writeMessage(1, reports_.get(i));
     }
+    if (!getKindBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kind_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -187,6 +247,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < reports_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, reports_.get(i));
+    }
+    if (!getKindBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kind_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,6 +268,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getReportsList()
         .equals(other.getReportsList())) return false;
+    if (!getKind()
+        .equals(other.getKind())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,6 +285,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REPORTS_FIELD_NUMBER;
       hash = (53 * hash) + getReportsList().hashCode();
     }
+    hash = (37 * hash) + KIND_FIELD_NUMBER;
+    hash = (53 * hash) + getKind().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -364,6 +431,8 @@ private static final long serialVersionUID = 0L;
       } else {
         reportsBuilder_.clear();
       }
+      kind_ = "";
+
       return this;
     }
 
@@ -400,6 +469,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.reports_ = reportsBuilder_.build();
       }
+      result.kind_ = kind_;
       onBuilt();
       return result;
     }
@@ -473,6 +543,10 @@ private static final long serialVersionUID = 0L;
             reportsBuilder_.addAllMessages(other.reports_);
           }
         }
+      }
+      if (!other.getKind().isEmpty()) {
+        kind_ = other.kind_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -814,6 +888,112 @@ private static final long serialVersionUID = 0L;
         reports_ = null;
       }
       return reportsBuilder_;
+    }
+
+    private java.lang.Object kind_ = "";
+    /**
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     * @return The kind.
+     */
+    public java.lang.String getKind() {
+      java.lang.Object ref = kind_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kind_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     * @return The bytes for kind.
+     */
+    public com.google.protobuf.ByteString
+        getKindBytes() {
+      java.lang.Object ref = kind_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kind_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     * @param value The kind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKind(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKind() {
+      
+      kind_ = getDefaultInstance().getKind();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     * @param value The bytes for kind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKindBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      kind_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
