@@ -306,8 +306,8 @@ private static final long serialVersionUID = 0L;
   private com.google.devtools.build.v1.OrderedBuildEvent buildEvent_;
   /**
    * <pre>
-   * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-   * with INVALID_REQUEST.
+   * Required. The lifecycle build event. If this is a build tool event, the RPC
+   * will fail with INVALID_REQUEST.
    * </pre>
    *
    * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -319,8 +319,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-   * with INVALID_REQUEST.
+   * Required. The lifecycle build event. If this is a build tool event, the RPC
+   * will fail with INVALID_REQUEST.
    * </pre>
    *
    * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -332,8 +332,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-   * with INVALID_REQUEST.
+   * Required. The lifecycle build event. If this is a build tool event, the RPC
+   * will fail with INVALID_REQUEST.
    * </pre>
    *
    * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1009,8 +1009,8 @@ private static final long serialVersionUID = 0L;
         com.google.devtools.build.v1.OrderedBuildEvent, com.google.devtools.build.v1.OrderedBuildEvent.Builder, com.google.devtools.build.v1.OrderedBuildEventOrBuilder> buildEventBuilder_;
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1021,8 +1021,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1037,8 +1037,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1058,8 +1058,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1077,8 +1077,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1100,8 +1100,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1119,8 +1119,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1132,8 +1132,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1148,8 +1148,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     * with INVALID_REQUEST.
+     * Required. The lifecycle build event. If this is a build tool event, the RPC
+     * will fail with INVALID_REQUEST.
      * </pre>
      *
      * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>

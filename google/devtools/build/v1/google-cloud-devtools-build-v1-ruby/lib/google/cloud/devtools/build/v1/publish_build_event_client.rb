@@ -205,8 +205,8 @@ module Google
             # //util/task/codes.proto.
             #
             # @param build_event [Google::Devtools::Build::V1::OrderedBuildEvent | Hash]
-            #   Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-            #   with INVALID_REQUEST.
+            #   Required. The lifecycle build event. If this is a build tool event, the RPC
+            #   will fail with INVALID_REQUEST.
             #   A hash of the same form as `Google::Devtools::Build::V1::OrderedBuildEvent`
             #   can also be provided.
             # @param project_id [String]

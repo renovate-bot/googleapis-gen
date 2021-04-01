@@ -27,8 +27,8 @@ module Google
         #     The interactivity of this build.
         # @!attribute [rw] build_event
         #   @return [Google::Devtools::Build::V1::OrderedBuildEvent]
-        #     Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-        #     with INVALID_REQUEST.
+        #     Required. The lifecycle build event. If this is a build tool event, the RPC
+        #     will fail with INVALID_REQUEST.
         # @!attribute [rw] stream_timeout
         #   @return [Google::Protobuf::Duration]
         #     If the next event for this build or invocation (depending on the event

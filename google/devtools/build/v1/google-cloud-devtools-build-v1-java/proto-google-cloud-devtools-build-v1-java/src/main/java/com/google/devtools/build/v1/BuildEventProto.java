@@ -111,10 +111,10 @@ public final class BuildEventProto {
       "Component\022\025\n\021UNKNOWN_COMPONENT\020\000\022\016\n\nCONT" +
       "ROLLER\020\001\022\n\n\006WORKER\020\002\022\010\n\004TOOL\020\003*:\n\023Consol" +
       "eOutputStream\022\013\n\007UNKNOWN\020\000\022\n\n\006STDOUT\020\001\022\n" +
-      "\n\006STDERR\020\002Bs\n\034com.google.devtools.build." +
-      "v1B\017BuildEventProtoP\001Z=google.golang.org" +
-      "/genproto/googleapis/devtools/build/v1;b" +
-      "uild\370\001\001b\006proto3"
+      "\n\006STDERR\020\002B\213\001\n\034com.google.devtools.build" +
+      ".v1B\017BuildEventProtoP\001Z=google.golang.or" +
+      "g/genproto/googleapis/devtools/build/v1;" +
+      "build\370\001\001\312\002\025Google\\Cloud\\Build\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -85,10 +85,10 @@ public final class BackendProto {
       "nt,notification_keywords,project_id(\0010\001\032" +
       "T\312A buildeventservice.googleapis.com\322A.h" +
       "ttps://www.googleapis.com/auth/cloud-pla" +
-      "tformBp\n\034com.google.devtools.build.v1B\014B" +
-      "ackendProtoP\001Z=google.golang.org/genprot" +
-      "o/googleapis/devtools/build/v1;build\370\001\001b" +
-      "\006proto3"
+      "tformB\210\001\n\034com.google.devtools.build.v1B\014" +
+      "BackendProtoP\001Z=google.golang.org/genpro" +
+      "to/googleapis/devtools/build/v1;build\370\001\001" +
+      "\312\002\025Google\\Cloud\\Build\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

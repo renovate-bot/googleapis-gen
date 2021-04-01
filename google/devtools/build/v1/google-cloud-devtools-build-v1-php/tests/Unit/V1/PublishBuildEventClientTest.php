@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,24 +20,28 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Devtools\Build\Tests\Unit\V1;
+namespace Google\Cloud\Build\Tests\Unit\V1;
 
-use Google\Cloud\Devtools\Build\V1\PublishBuildEventClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\BidiStream;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Devtools\Build\V1\OrderedBuildEvent;
-use Google\Devtools\Build\V1\PublishBuildToolEventStreamRequest;
-use Google\Devtools\Build\V1\PublishBuildToolEventStreamResponse;
-use Google\Protobuf\Any;
+
+use Google\Cloud\Build\V1\OrderedBuildEvent;
+
+use Google\Cloud\Build\V1\PublishBuildEventClient;
+use Google\Cloud\Build\V1\PublishBuildToolEventStreamRequest;
+use Google\Cloud\Build\V1\PublishBuildToolEventStreamResponse;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group build
+ *
  * @group gapic
  */
 class PublishBuildEventClientTest extends GeneratedTest
@@ -55,9 +59,7 @@ class PublishBuildEventClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -68,83 +70,7 @@ class PublishBuildEventClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new PublishBuildEventClient($options);
-    }
-
-    /**
-     * @test
-     */
-    public function publishLifecycleEventTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new GPBEmpty();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $buildEvent = new OrderedBuildEvent();
-        $projectId = 'projectId-1969970175';
-
-        $client->publishLifecycleEvent($buildEvent, $projectId);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.devtools.build.v1.PublishBuildEvent/PublishLifecycleEvent', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getBuildEvent();
-
-        $this->assertProtobufEquals($buildEvent, $actualValue);
-        $actualValue = $actualRequestObject->getProjectId();
-
-        $this->assertProtobufEquals($projectId, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function publishLifecycleEventExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $buildEvent = new OrderedBuildEvent();
-        $projectId = 'projectId-1969970175';
-
-        try {
-            $client->publishLifecycleEvent($buildEvent, $projectId);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 
     /**
@@ -153,10 +79,10 @@ class PublishBuildEventClientTest extends GeneratedTest
     public function publishBuildToolEventStreamTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $sequenceNumber = 1309190777;
         $expectedResponse = new PublishBuildToolEventStreamResponse();
@@ -170,7 +96,6 @@ class PublishBuildEventClientTest extends GeneratedTest
         $expectedResponse3 = new PublishBuildToolEventStreamResponse();
         $expectedResponse3->setSequenceNumber($sequenceNumber3);
         $transport->addResponse($expectedResponse3);
-
         // Mock request
         $orderedBuildEvent = new OrderedBuildEvent();
         $projectId = 'projectId-1969970175';
@@ -187,15 +112,15 @@ class PublishBuildEventClientTest extends GeneratedTest
         $request3 = new PublishBuildToolEventStreamRequest();
         $request3->setOrderedBuildEvent($orderedBuildEvent3);
         $request3->setProjectId($projectId3);
-
         $bidi = $client->publishBuildToolEventStream();
         $this->assertInstanceOf(BidiStream::class, $bidi);
-
         $bidi->write($request);
         $responses = [];
         $responses[] = $bidi->read();
-
-        $bidi->writeAll([$request2, $request3]);
+        $bidi->writeAll([
+            $request2,
+            $request3,
+        ]);
         foreach ($bidi->closeWriteAndReadAll() as $response) {
             $responses[] = $response;
         }
@@ -205,25 +130,21 @@ class PublishBuildEventClientTest extends GeneratedTest
         $expectedResponses[] = $expectedResponse2;
         $expectedResponses[] = $expectedResponse3;
         $this->assertEquals($expectedResponses, $responses);
-
         $createStreamRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($createStreamRequests));
         $streamFuncCall = $createStreamRequests[0]->getFuncCall();
         $streamRequestObject = $createStreamRequests[0]->getRequestObject();
         $this->assertSame('/google.devtools.build.v1.PublishBuildEvent/PublishBuildToolEventStream', $streamFuncCall);
         $this->assertNull($streamRequestObject);
-
         $callObjects = $transport->popCallObjects();
         $this->assertSame(1, count($callObjects));
         $bidiCall = $callObjects[0];
-
         $writeRequests = $bidiCall->popReceivedCalls();
         $expectedRequests = [];
         $expectedRequests[] = $request;
         $expectedRequests[] = $request2;
         $expectedRequests[] = $request3;
         $this->assertEquals($expectedRequests, $writeRequests);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -233,26 +154,22 @@ class PublishBuildEventClientTest extends GeneratedTest
     public function publishBuildToolEventStreamExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
-
         $transport->setStreamingStatus($status);
-
         $this->assertTrue($transport->isExhausted());
-
         $bidi = $client->publishBuildToolEventStream();
         $results = $bidi->closeWriteAndReadAll();
-
         try {
             iterator_to_array($results);
             // If the close stream method call did not throw, fail the test
@@ -261,7 +178,71 @@ class PublishBuildEventClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /**
+     * @test
+     */
+    public function publishLifecycleEventTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GPBEmpty();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $buildEvent = new OrderedBuildEvent();
+        $projectId = 'projectId-1969970175';
+        $client->publishLifecycleEvent($buildEvent, $projectId);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.devtools.build.v1.PublishBuildEvent/PublishLifecycleEvent', $actualFuncCall);
+        $actualValue = $actualRequestObject->getBuildEvent();
+        $this->assertProtobufEquals($buildEvent, $actualValue);
+        $actualValue = $actualRequestObject->getProjectId();
+        $this->assertProtobufEquals($projectId, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function publishLifecycleEventExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $buildEvent = new OrderedBuildEvent();
+        $projectId = 'projectId-1969970175';
+        try {
+            $client->publishLifecycleEvent($buildEvent, $projectId);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

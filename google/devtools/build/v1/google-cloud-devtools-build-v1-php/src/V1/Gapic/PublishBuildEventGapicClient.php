@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,11 @@
  * @experimental
  */
 
-namespace Google\Cloud\Devtools\Build\V1\Gapic;
+namespace Google\Cloud\Build\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Call;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -35,12 +36,12 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Devtools\Build\V1\OrderedBuildEvent;
-use Google\Devtools\Build\V1\PublishBuildToolEventStreamRequest;
-use Google\Devtools\Build\V1\PublishBuildToolEventStreamResponse;
-use Google\Devtools\Build\V1\PublishLifecycleEventRequest;
-use Google\Devtools\Build\V1\PublishLifecycleEventRequest\ServiceLevel;
+use Google\Cloud\Build\V1\OrderedBuildEvent;
+use Google\Cloud\Build\V1\PublishBuildToolEventStreamRequest;
+use Google\Cloud\Build\V1\PublishBuildToolEventStreamResponse;
+use Google\Cloud\Build\V1\PublishLifecycleEventRequest;
 use Google\Protobuf\Duration;
+
 use Google\Protobuf\GPBEmpty;
 
 /**
@@ -66,15 +67,45 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $publishBuildEventClient = new PublishBuildEventClient();
  * try {
- *     $buildEvent = new OrderedBuildEvent();
- *     $projectId = '';
- *     $publishBuildEventClient->publishLifecycleEvent($buildEvent, $projectId);
+ *     $orderedBuildEvent = new OrderedBuildEvent();
+ *     $projectId = 'project_id';
+ *     $request = new PublishBuildToolEventStreamRequest();
+ *     $request->setOrderedBuildEvent($orderedBuildEvent);
+ *     $request->setProjectId($projectId);
+ *     // Write all requests to the server, then read all responses until the
+ *     // stream is complete
+ *     $requests = [
+ *         $request,
+ *     ];
+ *     $stream = $publishBuildEventClient->publishBuildToolEventStream();
+ *     $stream->writeAll($requests);
+ *     foreach ($stream->closeWriteAndReadAll() as $element) {
+ *         // doSomethingWith($element);
+ *     }
+ *     // Alternatively:
+ *     // Write requests individually, making read() calls if
+ *     // required. Call closeWrite() once writes are complete, and read the
+ *     // remaining responses from the server.
+ *     $requests = [
+ *         $request,
+ *     ];
+ *     $stream = $publishBuildEventClient->publishBuildToolEventStream();
+ *     foreach ($requests as $request) {
+ *         $stream->write($request);
+ *         // if required, read a single response from the stream
+ *         $element = $stream->read();
+ *         // doSomethingWith($element)
+ *     }
+ *     $stream->closeWrite();
+ *     $element = $stream->read();
+ *     while (!is_null($element)) {
+ *         // doSomethingWith($element)
+ *         $element = $stream->read();
+ *     }
  * } finally {
  *     $publishBuildEventClient->close();
  * }
  * ```
- *
- * @experimental
  */
 class PublishBuildEventGapicClient
 {
@@ -111,16 +142,16 @@ class PublishBuildEventGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/publish_build_event_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/publish_build_event_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/publish_build_event_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/publish_build_event_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/publish_build_event_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/publish_build_event_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/publish_build_event_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/publish_build_event_rest_client_config.php',
                 ],
             ],
         ];
@@ -130,7 +161,7 @@ class PublishBuildEventGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -144,31 +175,31 @@ class PublishBuildEventGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -176,98 +207,11 @@ class PublishBuildEventGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
-    }
-
-    /**
-     * Publish a build event stating the new state of a build (typically from the
-     * build queue). The BuildEnqueued event must be publishd before all other
-     * events for the same build ID.
-     *
-     * The backend will persist the event and deliver it to registered frontend
-     * jobs immediately without batching.
-     *
-     * The commit status of the request is reported by the RPC's util_status()
-     * function. The error code is the canoncial error code defined in
-     * //util/task/codes.proto.
-     *
-     * Sample code:
-     * ```
-     * $publishBuildEventClient = new PublishBuildEventClient();
-     * try {
-     *     $buildEvent = new OrderedBuildEvent();
-     *     $projectId = '';
-     *     $publishBuildEventClient->publishLifecycleEvent($buildEvent, $projectId);
-     * } finally {
-     *     $publishBuildEventClient->close();
-     * }
-     * ```
-     *
-     * @param OrderedBuildEvent $buildEvent   Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-     *                                        with INVALID_REQUEST.
-     * @param string            $projectId    Required. The project this build is associated with.
-     *                                        This should match the project used for the initial call to
-     *                                        PublishLifecycleEvent (containing a BuildEnqueued message).
-     * @param array             $optionalArgs {
-     *                                        Optional.
-     *
-     *     @type int $serviceLevel
-     *          The interactivity of this build.
-     *          For allowed values, use constants defined on {@see \Google\Devtools\Build\V1\PublishLifecycleEventRequest\ServiceLevel}
-     *     @type Duration $streamTimeout
-     *          If the next event for this build or invocation (depending on the event
-     *          type) hasn't been published after this duration from when {build_event}
-     *          is written to BES, consider this stream expired. If this field is not set,
-     *          BES backend will use its own default value.
-     *     @type string[] $notificationKeywords
-     *          Additional information about a build request. These are define by the event
-     *          publishers, and the Build Event Service does not validate or interpret
-     *          them. They are used while notifying internal systems of new builds and
-     *          invocations if the OrderedBuildEvent.event type is
-     *          BuildEnqueued/InvocationAttemptStarted.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function publishLifecycleEvent($buildEvent, $projectId, array $optionalArgs = [])
-    {
-        $request = new PublishLifecycleEventRequest();
-        $request->setBuildEvent($buildEvent);
-        $request->setProjectId($projectId);
-        if (isset($optionalArgs['serviceLevel'])) {
-            $request->setServiceLevel($optionalArgs['serviceLevel']);
-        }
-        if (isset($optionalArgs['streamTimeout'])) {
-            $request->setStreamTimeout($optionalArgs['streamTimeout']);
-        }
-        if (isset($optionalArgs['notificationKeywords'])) {
-            $request->setNotificationKeywords($optionalArgs['notificationKeywords']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'project_id' => $request->getProjectId(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'PublishLifecycleEvent',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -279,26 +223,27 @@ class PublishBuildEventGapicClient
      * $publishBuildEventClient = new PublishBuildEventClient();
      * try {
      *     $orderedBuildEvent = new OrderedBuildEvent();
-     *     $projectId = '';
+     *     $projectId = 'project_id';
      *     $request = new PublishBuildToolEventStreamRequest();
      *     $request->setOrderedBuildEvent($orderedBuildEvent);
      *     $request->setProjectId($projectId);
      *     // Write all requests to the server, then read all responses until the
      *     // stream is complete
-     *     $requests = [$request];
+     *     $requests = [
+     *         $request,
+     *     ];
      *     $stream = $publishBuildEventClient->publishBuildToolEventStream();
      *     $stream->writeAll($requests);
      *     foreach ($stream->closeWriteAndReadAll() as $element) {
      *         // doSomethingWith($element);
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Write requests individually, making read() calls if
      *     // required. Call closeWrite() once writes are complete, and read the
      *     // remaining responses from the server.
-     *     $requests = [$request];
+     *     $requests = [
+     *         $request,
+     *     ];
      *     $stream = $publishBuildEventClient->publishBuildToolEventStream();
      *     foreach ($requests as $request) {
      *         $stream->write($request);
@@ -318,25 +263,97 @@ class PublishBuildEventGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type int $timeoutMillis
-     *          Timeout to use for this call.
+     *           Timeout to use for this call.
      * }
      *
      * @return \Google\ApiCore\BidiStream
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function publishBuildToolEventStream(array $optionalArgs = [])
     {
-        return $this->startCall(
-            'PublishBuildToolEventStream',
-            PublishBuildToolEventStreamResponse::class,
-            $optionalArgs,
-            null,
-            Call::BIDI_STREAMING_CALL
-        );
+        return $this->startCall('PublishBuildToolEventStream', PublishBuildToolEventStreamResponse::class, $optionalArgs, null, Call::BIDI_STREAMING_CALL);
+    }
+
+    /**
+     * Publish a build event stating the new state of a build (typically from the
+     * build queue). The BuildEnqueued event must be publishd before all other
+     * events for the same build ID.
+     *
+     * The backend will persist the event and deliver it to registered frontend
+     * jobs immediately without batching.
+     *
+     * The commit status of the request is reported by the RPC's util_status()
+     * function. The error code is the canoncial error code defined in
+     * //util/task/codes.proto.
+     *
+     * Sample code:
+     * ```
+     * $publishBuildEventClient = new PublishBuildEventClient();
+     * try {
+     *     $buildEvent = new OrderedBuildEvent();
+     *     $projectId = 'project_id';
+     *     $publishBuildEventClient->publishLifecycleEvent($buildEvent, $projectId);
+     * } finally {
+     *     $publishBuildEventClient->close();
+     * }
+     * ```
+     *
+     * @param OrderedBuildEvent $buildEvent   Required. The lifecycle build event. If this is a build tool event, the RPC
+     *                                        will fail with INVALID_REQUEST.
+     * @param string            $projectId    Required. The project this build is associated with.
+     *                                        This should match the project used for the initial call to
+     *                                        PublishLifecycleEvent (containing a BuildEnqueued message).
+     * @param array             $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $serviceLevel
+     *           The interactivity of this build.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Build\V1\PublishLifecycleEventRequest\ServiceLevel}
+     *     @type Duration $streamTimeout
+     *           If the next event for this build or invocation (depending on the event
+     *           type) hasn't been published after this duration from when {build_event}
+     *           is written to BES, consider this stream expired. If this field is not set,
+     *           BES backend will use its own default value.
+     *     @type string[] $notificationKeywords
+     *           Additional information about a build request. These are define by the event
+     *           publishers, and the Build Event Service does not validate or interpret
+     *           them. They are used while notifying internal systems of new builds and
+     *           invocations if the OrderedBuildEvent.event type is
+     *           BuildEnqueued/InvocationAttemptStarted.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function publishLifecycleEvent($buildEvent, $projectId, array $optionalArgs = [])
+    {
+        $request = new PublishLifecycleEventRequest();
+        $requestParamHeaders = [];
+        $request->setBuildEvent($buildEvent);
+        $request->setProjectId($projectId);
+        $requestParamHeaders['project_id'] = $projectId;
+        if (isset($optionalArgs['serviceLevel'])) {
+            $request->setServiceLevel($optionalArgs['serviceLevel']);
+        }
+
+        if (isset($optionalArgs['streamTimeout'])) {
+            $request->setStreamTimeout($optionalArgs['streamTimeout']);
+        }
+
+        if (isset($optionalArgs['notificationKeywords'])) {
+            $request->setNotificationKeywords($optionalArgs['notificationKeywords']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('PublishLifecycleEvent', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 }

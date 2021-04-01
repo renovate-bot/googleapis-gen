@@ -41,10 +41,11 @@ public final class BuildStatusProto {
       "_FAILED\020\002\022\016\n\nUSER_ERROR\020\003\022\020\n\014SYSTEM_ERRO" +
       "R\020\004\022\026\n\022RESOURCE_EXHAUSTED\020\005\022 \n\034INVOCATIO" +
       "N_DEADLINE_EXCEEDED\020\006\022\035\n\031REQUEST_DEADLIN" +
-      "E_EXCEEDED\020\010\022\r\n\tCANCELLED\020\007Bt\n\034com.googl" +
-      "e.devtools.build.v1B\020BuildStatusProtoP\001Z" +
-      "=google.golang.org/genproto/googleapis/d" +
-      "evtools/build/v1;build\370\001\001b\006proto3"
+      "E_EXCEEDED\020\010\022\r\n\tCANCELLED\020\007B\214\001\n\034com.goog" +
+      "le.devtools.build.v1B\020BuildStatusProtoP\001" +
+      "Z=google.golang.org/genproto/googleapis/" +
+      "devtools/build/v1;build\370\001\001\312\002\025Google\\Clou" +
+      "d\\Build\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

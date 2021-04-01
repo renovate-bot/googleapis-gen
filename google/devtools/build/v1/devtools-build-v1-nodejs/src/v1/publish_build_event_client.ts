@@ -326,8 +326,8 @@ export class PublishBuildEventClient {
  * @param {google.devtools.build.v1.PublishLifecycleEventRequest.ServiceLevel} request.serviceLevel
  *   The interactivity of this build.
  * @param {google.devtools.build.v1.OrderedBuildEvent} request.buildEvent
- *   Required. The lifecycle build event. If this is a build tool event, the RPC will fail
- *   with INVALID_REQUEST.
+ *   Required. The lifecycle build event. If this is a build tool event, the RPC
+ *   will fail with INVALID_REQUEST.
  * @param {google.protobuf.Duration} request.streamTimeout
  *   If the next event for this build or invocation (depending on the event
  *   type) hasn't been published after this duration from when {build_event}

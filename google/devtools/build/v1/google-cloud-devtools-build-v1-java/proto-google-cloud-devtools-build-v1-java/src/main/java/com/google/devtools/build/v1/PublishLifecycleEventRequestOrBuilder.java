@@ -28,8 +28,8 @@ public interface PublishLifecycleEventRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-   * with INVALID_REQUEST.
+   * Required. The lifecycle build event. If this is a build tool event, the RPC
+   * will fail with INVALID_REQUEST.
    * </pre>
    *
    * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38,8 +38,8 @@ public interface PublishLifecycleEventRequestOrBuilder extends
   boolean hasBuildEvent();
   /**
    * <pre>
-   * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-   * with INVALID_REQUEST.
+   * Required. The lifecycle build event. If this is a build tool event, the RPC
+   * will fail with INVALID_REQUEST.
    * </pre>
    *
    * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48,8 +48,8 @@ public interface PublishLifecycleEventRequestOrBuilder extends
   com.google.devtools.build.v1.OrderedBuildEvent getBuildEvent();
   /**
    * <pre>
-   * Required. The lifecycle build event. If this is a build tool event, the RPC will fail
-   * with INVALID_REQUEST.
+   * Required. The lifecycle build event. If this is a build tool event, the RPC
+   * will fail with INVALID_REQUEST.
    * </pre>
    *
    * <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
