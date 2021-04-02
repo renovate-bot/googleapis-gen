@@ -19,7 +19,7 @@
 namespace Google\Cloud\ServiceManagement\V1;
 
 /**
- * [Google Service Management API](/service-management/overview)
+ * [Google Service Management API](https://cloud.google.com/service-management/overview)
  */
 class ServiceManagerGrpcClient extends \Grpc\BaseStub {
 

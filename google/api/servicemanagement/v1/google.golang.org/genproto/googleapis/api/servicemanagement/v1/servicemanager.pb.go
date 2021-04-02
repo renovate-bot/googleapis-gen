@@ -348,7 +348,7 @@ type DeleteServiceRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 }
@@ -398,7 +398,7 @@ type UndeleteServiceRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service. See the [overview](/service-management/overview)
+	// Required. The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements. For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 }
@@ -497,7 +497,7 @@ type GetServiceConfigRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Required. The id of the service configuration resource.
@@ -569,7 +569,7 @@ type ListServiceConfigsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// The token of the page to retrieve.
@@ -696,7 +696,7 @@ type CreateServiceConfigRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Required. The service configuration resource.
@@ -755,7 +755,7 @@ type SubmitConfigSourceRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Required. The source configuration for the service.
@@ -874,7 +874,7 @@ type CreateServiceRolloutRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Required. The rollout resource. The `service_name` field is output only.
@@ -933,7 +933,7 @@ type ListServiceRolloutsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// The token of the page to retrieve.
@@ -1076,7 +1076,7 @@ type GetServiceRolloutRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the service.  See the [overview](/service-management/overview)
+	// Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
 	// for naming requirements.  For example: `example.googleapis.com`.
 	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Required. The id of the rollout resource.

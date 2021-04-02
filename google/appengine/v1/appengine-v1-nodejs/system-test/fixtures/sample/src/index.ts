@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {ApplicationsClient, AuthorizedCertificatesClient, AuthorizedDomainsClient, DomainMappingsClient, FirewallClient, InstancesClient, ServicesClient, VersionsClient} from '@google-cloud/appengine';
+import {ApplicationsClient, AuthorizedCertificatesClient, AuthorizedDomainsClient, DomainMappingsClient, FirewallClient, InstancesClient, ServicesClient, VersionsClient} from '@google-cloud/appengine-admin';
 
 // check that the client class type name can be used
 function doStuffWithApplicationsClient(client: ApplicationsClient) {

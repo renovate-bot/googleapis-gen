@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object serviceName_;
   /**
    * <pre>
-   * Required. The name of the service.  See the [overview](/service-management/overview)
+   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the service.  See the [overview](/service-management/overview)
+   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -556,7 +556,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object serviceName_ = "";
     /**
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
+     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
+     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
+     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
+     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
+     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *

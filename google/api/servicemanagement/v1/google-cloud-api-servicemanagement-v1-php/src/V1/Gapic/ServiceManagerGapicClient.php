@@ -71,7 +71,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
 
 /**
- * Service Description: [Google Service Management API](/service-management/overview)
+ * Service Description: [Google Service Management API](https://cloud.google.com/service-management/overview)
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -339,7 +339,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string  $serviceName   Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string  $serviceName   Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                               for naming requirements.  For example: `example.googleapis.com`.
      * @param Service $serviceConfig Required. The service configuration resource.
      * @param array   $optionalArgs  {
@@ -421,7 +421,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string  $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string  $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                              for naming requirements.  For example: `example.googleapis.com`.
      * @param Rollout $rollout      Required. The rollout resource. The `service_name` field is output only.
      * @param array   $optionalArgs {
@@ -492,7 +492,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                             for naming requirements.  For example: `example.googleapis.com`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -799,7 +799,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                             for naming requirements.  For example: `example.googleapis.com`.
      * @param string $configId     Required. The id of the service configuration resource.
      *
@@ -855,7 +855,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                             for naming requirements.  For example: `example.googleapis.com`.
      * @param string $rolloutId    Required. The id of the rollout resource.
      * @param array  $optionalArgs {
@@ -912,7 +912,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                             for naming requirements.  For example: `example.googleapis.com`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -984,7 +984,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                             for naming requirements.  For example: `example.googleapis.com`.
      * @param string $filter       Required. Use `filter` to return subset of rollouts.
      *                             The following filters are supported:
@@ -1175,7 +1175,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string       $serviceName  Required. The name of the service.  See the [overview](/service-management/overview)
+     * @param string       $serviceName  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
      *                                   for naming requirements.  For example: `example.googleapis.com`.
      * @param ConfigSource $configSource Required. The source configuration for the service.
      * @param array        $optionalArgs {
@@ -1256,7 +1256,7 @@ class ServiceManagerGapicClient
      * }
      * ```
      *
-     * @param string $serviceName  Required. The name of the service. See the [overview](/service-management/overview)
+     * @param string $serviceName  Required. The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
      *                             for naming requirements. For example: `example.googleapis.com`.
      * @param array  $optionalArgs {
      *     Optional.

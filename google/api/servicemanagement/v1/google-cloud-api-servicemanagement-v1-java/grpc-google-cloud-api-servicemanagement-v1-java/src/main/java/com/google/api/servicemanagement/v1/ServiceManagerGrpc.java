@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * [Google Service Management API](/service-management/overview)
+ * [Google Service Management API](https://cloud.google.com/service-management/overview)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -528,7 +528,7 @@ public final class ServiceManagerGrpc {
 
   /**
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management API](https://cloud.google.com/service-management/overview)
    * </pre>
    */
   public static abstract class ServiceManagerImplBase implements io.grpc.BindableService {
@@ -859,7 +859,7 @@ public final class ServiceManagerGrpc {
 
   /**
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management API](https://cloud.google.com/service-management/overview)
    * </pre>
    */
   public static final class ServiceManagerStub extends io.grpc.stub.AbstractAsyncStub<ServiceManagerStub> {
@@ -1105,7 +1105,7 @@ public final class ServiceManagerGrpc {
 
   /**
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management API](https://cloud.google.com/service-management/overview)
    * </pre>
    */
   public static final class ServiceManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<ServiceManagerBlockingStub> {
@@ -1336,7 +1336,7 @@ public final class ServiceManagerGrpc {
 
   /**
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management API](https://cloud.google.com/service-management/overview)
    * </pre>
    */
   public static final class ServiceManagerFutureStub extends io.grpc.stub.AbstractFutureStub<ServiceManagerFutureStub> {

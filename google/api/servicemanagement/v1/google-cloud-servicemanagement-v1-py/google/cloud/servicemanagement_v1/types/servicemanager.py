@@ -141,8 +141,9 @@ class DeleteServiceRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
     """
 
     service_name = proto.Field(proto.STRING, number=1)
@@ -154,8 +155,9 @@ class UndeleteServiceRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
     """
 
     service_name = proto.Field(proto.STRING, number=1)
@@ -180,8 +182,9 @@ class GetServiceConfigRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         config_id (str):
             Required. The id of the service configuration resource.
 
@@ -211,8 +214,9 @@ class ListServiceConfigsRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         page_token (str):
             The token of the page to retrieve.
         page_size (int):
@@ -255,8 +259,9 @@ class CreateServiceConfigRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         service_config (google.api.service_pb2.Service):
             Required. The service configuration resource.
     """
@@ -274,8 +279,9 @@ class SubmitConfigSourceRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         config_source (google.cloud.servicemanagement_v1.types.ConfigSource):
             Required. The source configuration for the
             service.
@@ -314,8 +320,9 @@ class CreateServiceRolloutRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         rollout (google.cloud.servicemanagement_v1.types.Rollout):
             Required. The rollout resource. The ``service_name`` field
             is output only.
@@ -334,8 +341,9 @@ class ListServiceRolloutsRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         page_token (str):
             The token of the page to retrieve.
         page_size (int):
@@ -389,8 +397,9 @@ class GetServiceRolloutRequest(proto.Message):
     Attributes:
         service_name (str):
             Required. The name of the service. See the
-            `overview </service-management/overview>`__ for naming
-            requirements. For example: ``example.googleapis.com``.
+            `overview <https://cloud.google.com/service-management/overview>`__
+            for naming requirements. For example:
+            ``example.googleapis.com``.
         rollout_id (str):
             Required. The id of the rollout resource.
     """

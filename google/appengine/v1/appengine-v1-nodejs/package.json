@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/appengine",
+  "name": "@google-cloud/appengine-admin",
   "version": "0.1.0",
   "description": "Appengine client for Node.js",
   "repository": "googleapis/nodejs-appengine",

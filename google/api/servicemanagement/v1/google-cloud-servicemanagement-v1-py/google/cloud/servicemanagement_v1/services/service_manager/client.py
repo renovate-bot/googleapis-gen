@@ -100,7 +100,9 @@ class ServiceManagerClientMeta(type):
 
 
 class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
-    """`Google Service Management API </service-management/overview>`__"""
+    """`Google Service Management
+    API <https://cloud.google.com/service-management/overview>`__
+    """
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
@@ -622,8 +624,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -720,8 +723,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -803,8 +807,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 ListServiceConfigs method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -889,8 +894,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1007,8 +1013,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 CreateServiceConfig method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1118,8 +1125,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 SubmitConfigSource method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1223,8 +1231,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 'ListServiceRollouts'
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1324,8 +1333,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 GetServiceRollout method.
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1425,8 +1435,9 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 'CreateServiceRollout'
             service_name (str):
                 Required. The name of the service. See the
-                `overview </service-management/overview>`__ for naming
-                requirements. For example: ``example.googleapis.com``.
+                `overview <https://cloud.google.com/service-management/overview>`__
+                for naming requirements. For example:
+                ``example.googleapis.com``.
 
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
