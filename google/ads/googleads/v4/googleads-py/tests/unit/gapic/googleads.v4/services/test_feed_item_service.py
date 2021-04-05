@@ -26,7 +26,7 @@ from proto.marshal.rules.dates import DurationRule, TimestampRule
 from google import auth
 from google.ads.googleads.v4.common.types import custom_parameter
 from google.ads.googleads.v4.common.types import feed_common
-from google.ads.googleads.v4.common.types import policy
+from google.ads.googleads.v4.common.types import policy as gagc_policy
 from google.ads.googleads.v4.enums.types import feed_item_quality_approval_status
 from google.ads.googleads.v4.enums.types import feed_item_quality_disapproval_reason
 from google.ads.googleads.v4.enums.types import feed_item_status

@@ -27,7 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
@@ -541,7 +541,7 @@ class StorageGrpcTransport(StorageTransport):
     @property
     def get_bucket_iam_policy(self) -> Callable[
             [storage.GetIamPolicyRequest],
-            policy.Policy]:
+            gi_policy.Policy]:
         r"""Return a callable for the get bucket iam policy method over gRPC.
 
         Gets the IAM policy for the specified bucket.
@@ -560,14 +560,14 @@ class StorageGrpcTransport(StorageTransport):
             self._stubs['get_bucket_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.storage.v1.Storage/GetBucketIamPolicy',
                 request_serializer=storage.GetIamPolicyRequest.serialize,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['get_bucket_iam_policy']
 
     @property
     def set_bucket_iam_policy(self) -> Callable[
             [storage.SetIamPolicyRequest],
-            policy.Policy]:
+            gi_policy.Policy]:
         r"""Return a callable for the set bucket iam policy method over gRPC.
 
         Updates an IAM policy for the specified bucket.
@@ -586,7 +586,7 @@ class StorageGrpcTransport(StorageTransport):
             self._stubs['set_bucket_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.storage.v1.Storage/SetBucketIamPolicy',
                 request_serializer=storage.SetIamPolicyRequest.serialize,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['set_bucket_iam_policy']
 
@@ -1513,7 +1513,7 @@ class StorageGrpcTransport(StorageTransport):
     @property
     def get_object_iam_policy(self) -> Callable[
             [storage.GetIamPolicyRequest],
-            policy.Policy]:
+            gi_policy.Policy]:
         r"""Return a callable for the get object iam policy method over gRPC.
 
         Gets the IAM policy for the specified object.
@@ -1532,14 +1532,14 @@ class StorageGrpcTransport(StorageTransport):
             self._stubs['get_object_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.storage.v1.Storage/GetObjectIamPolicy',
                 request_serializer=storage.GetIamPolicyRequest.serialize,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['get_object_iam_policy']
 
     @property
     def set_object_iam_policy(self) -> Callable[
             [storage.SetIamPolicyRequest],
-            policy.Policy]:
+            gi_policy.Policy]:
         r"""Return a callable for the set object iam policy method over gRPC.
 
         Updates an IAM policy for the specified object.
@@ -1558,7 +1558,7 @@ class StorageGrpcTransport(StorageTransport):
             self._stubs['set_object_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.storage.v1.Storage/SetObjectIamPolicy',
                 request_serializer=storage.SetIamPolicyRequest.serialize,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['set_object_iam_policy']
 

@@ -33,7 +33,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.tag_keys import pagers
 from google.cloud.resourcemanager_v3.types import tag_keys
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -622,7 +622,7 @@ class TagKeysAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Gets the access control policy for a TagKey. The returned policy
         may be empty if no such policy or resource exists. The
         ``resource`` field should be the TagKey's resource name. For
@@ -768,7 +768,7 @@ class TagKeysAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Sets the access control policy on a TagKey, replacing any
         existing policy. The ``resource`` field should be the TagKey's
         resource name. For example, "tagKeys/1234". The caller must have

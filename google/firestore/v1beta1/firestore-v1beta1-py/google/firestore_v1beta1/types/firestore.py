@@ -394,14 +394,14 @@ class BeginTransactionRequest(proto.Message):
         database (str):
             Required. The database name. In the format:
             ``projects/{project_id}/databases/{database_id}``.
-        options (google.firestore_v1beta1.types.TransactionOptions):
+        options_ (google.firestore_v1beta1.types.TransactionOptions):
             The options for the transaction.
             Defaults to a read-write transaction.
     """
 
     database = proto.Field(proto.STRING, number=1)
 
-    options = proto.Field(proto.MESSAGE, number=2,
+    options_ = proto.Field(proto.MESSAGE, number=2,
         message=common.TransactionOptions,
     )
 

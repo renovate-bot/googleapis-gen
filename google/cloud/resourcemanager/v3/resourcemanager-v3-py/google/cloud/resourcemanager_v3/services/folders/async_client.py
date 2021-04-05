@@ -33,7 +33,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.folders import pagers
 from google.cloud.resourcemanager_v3.types import folders
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -1014,7 +1014,7 @@ class FoldersAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Gets the access control policy for a folder. The returned policy
         may be empty if no such policy or resource exists. The
         ``resource`` field should be the folder's resource name, for
@@ -1160,7 +1160,7 @@ class FoldersAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Sets the access control policy on a folder, replacing any
         existing policy. The ``resource`` field should be the folder's
         resource name, for example: "folders/1234". The caller must have

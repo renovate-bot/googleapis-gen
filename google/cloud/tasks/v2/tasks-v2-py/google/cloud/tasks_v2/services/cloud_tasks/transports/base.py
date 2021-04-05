@@ -31,7 +31,7 @@ from google.cloud.tasks_v2.types import queue as gct_queue
 from google.cloud.tasks_v2.types import task
 from google.cloud.tasks_v2.types import task as gct_task
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
 
@@ -350,8 +350,8 @@ class CloudTasksTransport(abc.ABC):
     def get_iam_policy(self) -> typing.Callable[
             [iam_policy.GetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                giv_policy.Policy,
+                typing.Awaitable[giv_policy.Policy]
             ]]:
         raise NotImplementedError()
 
@@ -359,8 +359,8 @@ class CloudTasksTransport(abc.ABC):
     def set_iam_policy(self) -> typing.Callable[
             [iam_policy.SetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                giv_policy.Policy,
+                typing.Awaitable[giv_policy.Policy]
             ]]:
         raise NotImplementedError()
 

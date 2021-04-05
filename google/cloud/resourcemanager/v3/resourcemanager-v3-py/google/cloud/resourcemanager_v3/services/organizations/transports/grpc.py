@@ -28,7 +28,7 @@ import grpc  # type: ignore
 
 from google.cloud.resourcemanager_v3.types import organizations
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 
 from .base import OrganizationsTransport, DEFAULT_CLIENT_INFO
 
@@ -281,7 +281,7 @@ class OrganizationsGrpcTransport(OrganizationsTransport):
     @property
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
-            policy.Policy]:
+            giv_policy.Policy]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for an organization resource. The
@@ -307,14 +307,14 @@ class OrganizationsGrpcTransport(OrganizationsTransport):
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Organizations/GetIamPolicy',
                 request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=giv_policy.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 
     @property
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
-            policy.Policy]:
+            giv_policy.Policy]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on an organization resource.
@@ -340,7 +340,7 @@ class OrganizationsGrpcTransport(OrganizationsTransport):
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Organizations/SetIamPolicy',
                 request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=giv_policy.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 

@@ -42,7 +42,7 @@ class firestoreCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
     'batch_get_documents': ('database', 'documents', 'mask', 'transaction', 'new_transaction', 'read_time', ),
-    'begin_transaction': ('database', 'options', ),
+    'begin_transaction': ('database', 'options_', ),
     'commit': ('database', 'writes', 'transaction', ),
     'create_document': ('parent', 'collection_id', 'document', 'document_id', 'mask', ),
     'delete_document': ('name', 'current_document', ),

@@ -29,7 +29,7 @@ import grpc  # type: ignore
 from google.cloud.secretmanager_v1.types import resources
 from google.cloud.secretmanager_v1.types import service
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
 from .base import SecretManagerServiceTransport, DEFAULT_CLIENT_INFO
@@ -583,7 +583,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     @property
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
-            policy.Policy]:
+            gi_policy.Policy]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified secret. Replaces
@@ -608,14 +608,14 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.secretmanager.v1.SecretManagerService/SetIamPolicy',
                 request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 
     @property
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
-            policy.Policy]:
+            gi_policy.Policy]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a secret.
@@ -636,7 +636,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.secretmanager.v1.SecretManagerService/GetIamPolicy',
                 request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 

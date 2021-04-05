@@ -28,7 +28,7 @@ from google.auth import credentials  # type: ignore
 
 from google.cloud.resourcemanager_v3.types import folders
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
 
 
@@ -275,8 +275,8 @@ class FoldersTransport(abc.ABC):
     def get_iam_policy(self) -> typing.Callable[
             [iam_policy.GetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                giv_policy.Policy,
+                typing.Awaitable[giv_policy.Policy]
             ]]:
         raise NotImplementedError()
 
@@ -284,8 +284,8 @@ class FoldersTransport(abc.ABC):
     def set_iam_policy(self) -> typing.Callable[
             [iam_policy.SetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                giv_policy.Policy,
+                typing.Awaitable[giv_policy.Policy]
             ]]:
         raise NotImplementedError()
 

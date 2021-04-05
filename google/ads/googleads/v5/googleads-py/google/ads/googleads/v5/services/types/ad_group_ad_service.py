@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.ads.googleads.v5.common.types import policy
+from google.ads.googleads.v5.common.types import policy as gagc_policy
 from google.ads.googleads.v5.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v5.resources.types import ad_group_ad as gagr_ad_group_ad
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -115,7 +115,7 @@ class AdGroupAdOperation(proto.Message):
         message=field_mask.FieldMask,
     )
     policy_validation_parameter = proto.Field(proto.MESSAGE, number=5,
-        message=policy.PolicyValidationParameter,
+        message=gagc_policy.PolicyValidationParameter,
     )
     create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_ad_group_ad.AdGroupAd,

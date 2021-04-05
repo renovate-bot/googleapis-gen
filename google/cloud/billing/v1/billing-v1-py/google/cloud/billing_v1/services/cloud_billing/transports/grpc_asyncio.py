@@ -29,7 +29,7 @@ from grpc.experimental import aio  # type: ignore
 
 from google.cloud.billing_v1.types import cloud_billing
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 
 from .base import CloudBillingTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudBillingGrpcTransport
@@ -468,7 +468,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     @property
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
-            Awaitable[policy.Policy]]:
+            Awaitable[gi_policy.Policy]]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a billing account. The caller
@@ -490,14 +490,14 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.billing.v1.CloudBilling/GetIamPolicy',
                 request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 
     @property
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
-            Awaitable[policy.Policy]]:
+            Awaitable[gi_policy.Policy]]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy for a billing account. Replaces
@@ -520,7 +520,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.billing.v1.CloudBilling/SetIamPolicy',
                 request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=policy.Policy.FromString,
+                response_deserializer=gi_policy.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 

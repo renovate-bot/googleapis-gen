@@ -26,7 +26,7 @@ from proto.marshal.rules.dates import DurationRule, TimestampRule
 from google import auth
 from google.ads.googleads.v6.common.types import criteria
 from google.ads.googleads.v6.common.types import custom_parameter
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import ad_group_criterion_approval_status
 from google.ads.googleads.v6.enums.types import ad_group_criterion_status
 from google.ads.googleads.v6.enums.types import age_range_type

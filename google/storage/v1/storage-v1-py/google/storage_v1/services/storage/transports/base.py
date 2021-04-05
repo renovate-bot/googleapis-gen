@@ -26,7 +26,7 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials  # type: ignore
 
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
@@ -507,8 +507,8 @@ class StorageTransport(abc.ABC):
     def get_bucket_iam_policy(self) -> typing.Callable[
             [storage.GetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                gi_policy.Policy,
+                typing.Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
@@ -516,8 +516,8 @@ class StorageTransport(abc.ABC):
     def set_bucket_iam_policy(self) -> typing.Callable[
             [storage.SetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                gi_policy.Policy,
+                typing.Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
@@ -813,8 +813,8 @@ class StorageTransport(abc.ABC):
     def get_object_iam_policy(self) -> typing.Callable[
             [storage.GetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                gi_policy.Policy,
+                typing.Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
@@ -822,8 +822,8 @@ class StorageTransport(abc.ABC):
     def set_object_iam_policy(self) -> typing.Callable[
             [storage.SetIamPolicyRequest],
             typing.Union[
-                policy.Policy,
-                typing.Awaitable[policy.Policy]
+                gi_policy.Policy,
+                typing.Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 

@@ -2683,7 +2683,7 @@ def test_begin_transaction_flattened():
         # using the keyword arguments to the method.
         client.begin_transaction(
             session='session_value',
-            options=transaction.TransactionOptions(read_write=None),
+            options_=transaction.TransactionOptions(read_write=None),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2693,7 +2693,7 @@ def test_begin_transaction_flattened():
 
         assert args[0].session == 'session_value'
 
-        assert args[0].options == transaction.TransactionOptions(read_write=None)
+        assert args[0].options_ == transaction.TransactionOptions(read_write=None)
 
 
 def test_begin_transaction_flattened_error():
@@ -2707,7 +2707,7 @@ def test_begin_transaction_flattened_error():
         client.begin_transaction(
             spanner.BeginTransactionRequest(),
             session='session_value',
-            options=transaction.TransactionOptions(read_write=None),
+            options_=transaction.TransactionOptions(read_write=None),
         )
 
 
@@ -2729,7 +2729,7 @@ async def test_begin_transaction_flattened_async():
         # using the keyword arguments to the method.
         response = await client.begin_transaction(
             session='session_value',
-            options=transaction.TransactionOptions(read_write=None),
+            options_=transaction.TransactionOptions(read_write=None),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2739,7 +2739,7 @@ async def test_begin_transaction_flattened_async():
 
         assert args[0].session == 'session_value'
 
-        assert args[0].options == transaction.TransactionOptions(read_write=None)
+        assert args[0].options_ == transaction.TransactionOptions(read_write=None)
 
 
 @pytest.mark.asyncio
@@ -2754,7 +2754,7 @@ async def test_begin_transaction_flattened_error_async():
         await client.begin_transaction(
             spanner.BeginTransactionRequest(),
             session='session_value',
-            options=transaction.TransactionOptions(read_write=None),
+            options_=transaction.TransactionOptions(read_write=None),
         )
 
 

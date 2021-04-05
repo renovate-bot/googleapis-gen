@@ -29,7 +29,7 @@ from google.auth import credentials                    # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.storage_v1.services.storage import pagers
@@ -729,7 +729,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> gi_policy.Policy:
         r"""Gets the IAM policy for the specified bucket.
 
         Args:
@@ -831,7 +831,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> gi_policy.Policy:
         r"""Updates an IAM policy for the specified bucket.
 
         Args:
@@ -2494,7 +2494,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> gi_policy.Policy:
         r"""Gets the IAM policy for the specified object.
 
         Args:
@@ -2596,7 +2596,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> gi_policy.Policy:
         r"""Updates an IAM policy for the specified object.
 
         Args:

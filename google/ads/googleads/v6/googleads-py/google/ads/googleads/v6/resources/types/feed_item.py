@@ -20,7 +20,7 @@ import proto  # type: ignore
 
 from google.ads.googleads.v6.common.types import custom_parameter
 from google.ads.googleads.v6.common.types import feed_common
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import feed_item_quality_approval_status
 from google.ads.googleads.v6.enums.types import feed_item_quality_disapproval_reason
 from google.ads.googleads.v6.enums.types import feed_item_status
@@ -224,7 +224,7 @@ class FeedItemPlaceholderPolicyInfo(proto.Message):
         enum=policy_approval_status.PolicyApprovalStatusEnum.PolicyApprovalStatus,
     )
     policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=5,
-        message=policy.PolicyTopicEntry,
+        message=gagc_policy.PolicyTopicEntry,
     )
     validation_status = proto.Field(proto.ENUM, number=6,
         enum=feed_item_validation_status.FeedItemValidationStatusEnum.FeedItemValidationStatus,

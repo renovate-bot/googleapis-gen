@@ -31,7 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.resourcemanager_v3.services.organizations import pagers
 from google.cloud.resourcemanager_v3.types import organizations
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
 from .transports.base import OrganizationsTransport, DEFAULT_CLIENT_INFO
@@ -360,7 +360,7 @@ class OrganizationsAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Gets the access control policy for an organization resource. The
         policy may be empty if no such policy or resource exists. The
         ``resource`` field should be the organization's resource name,
@@ -508,7 +508,7 @@ class OrganizationsAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Sets the access control policy on an organization resource.
         Replaces any existing policy. The ``resource`` field should be
         the organization's resource name, for example:

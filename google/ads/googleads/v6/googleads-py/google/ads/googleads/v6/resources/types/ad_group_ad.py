@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import ad_group_ad_status
 from google.ads.googleads.v6.enums.types import ad_strength as gage_ad_strength
 from google.ads.googleads.v6.enums.types import policy_approval_status
@@ -92,7 +92,7 @@ class AdGroupAdPolicySummary(proto.Message):
     """
 
     policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=policy.PolicyTopicEntry,
+        message=gagc_policy.PolicyTopicEntry,
     )
     review_status = proto.Field(proto.ENUM, number=2,
         enum=policy_review_status.PolicyReviewStatusEnum.PolicyReviewStatus,

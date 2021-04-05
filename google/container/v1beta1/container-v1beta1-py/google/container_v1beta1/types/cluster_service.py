@@ -950,7 +950,7 @@ class IstioConfig(proto.Message):
     Attributes:
         disabled (bool):
             Whether Istio is enabled for this cluster.
-        auth (google.container_v1beta1.types.IstioConfig.IstioAuthMode):
+        auth_ (google.container_v1beta1.types.IstioConfig.IstioAuthMode):
             The specified Istio auth mode, either none,
             or mutual TLS.
     """
@@ -963,7 +963,7 @@ class IstioConfig(proto.Message):
 
     disabled = proto.Field(proto.BOOL, number=1)
 
-    auth = proto.Field(proto.ENUM, number=2,
+    auth_ = proto.Field(proto.ENUM, number=2,
         enum=IstioAuthMode,
     )
 

@@ -32,7 +32,7 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.api_core import operation as ga_operation  # type: ignore
+from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.appengine_v1.services.versions import pagers
 from google.cloud.appengine_v1.types import app_yaml
@@ -458,7 +458,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Deploys code and resource files to a new version.
 
         Args:
@@ -510,7 +510,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             version.Version,
@@ -526,7 +526,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Updates the specified Version resource. You can specify the
         following fields depending on the App Engine environment and
         type of scaling that the version resource uses:
@@ -613,7 +613,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             version.Version,
@@ -629,7 +629,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Deletes an existing Version resource.
 
         Args:
@@ -692,7 +692,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             empty.Empty,

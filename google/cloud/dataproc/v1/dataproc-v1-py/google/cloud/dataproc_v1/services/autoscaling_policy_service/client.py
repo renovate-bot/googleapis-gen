@@ -330,7 +330,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
             request: autoscaling_policies.CreateAutoscalingPolicyRequest = None,
             *,
             parent: str = None,
-            policy: autoscaling_policies.AutoscalingPolicy = None,
+            policy_: autoscaling_policies.AutoscalingPolicy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -359,11 +359,11 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            policy (google.cloud.dataproc_v1.types.AutoscalingPolicy):
+            policy_ (google.cloud.dataproc_v1.types.AutoscalingPolicy):
                 Required. The autoscaling policy to
                 create.
 
-                This corresponds to the ``policy`` field
+                This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -382,7 +382,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([parent, policy])
+        has_flattened_params = any([parent, policy_])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -399,8 +399,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
             if parent is not None:
                 request.parent = parent
-            if policy is not None:
-                request.policy = policy
+            if policy_ is not None:
+                request.policy_ = policy_
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -428,7 +428,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
     def update_autoscaling_policy(self,
             request: autoscaling_policies.UpdateAutoscalingPolicyRequest = None,
             *,
-            policy: autoscaling_policies.AutoscalingPolicy = None,
+            policy_: autoscaling_policies.AutoscalingPolicy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -442,11 +442,11 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
             request (google.cloud.dataproc_v1.types.UpdateAutoscalingPolicyRequest):
                 The request object. A request to update an autoscaling
                 policy.
-            policy (google.cloud.dataproc_v1.types.AutoscalingPolicy):
+            policy_ (google.cloud.dataproc_v1.types.AutoscalingPolicy):
                 Required. The updated autoscaling
                 policy.
 
-                This corresponds to the ``policy`` field
+                This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -465,7 +465,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([policy])
+        has_flattened_params = any([policy_])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -480,8 +480,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
 
-            if policy is not None:
-                request.policy = policy
+            if policy_ is not None:
+                request.policy_ = policy_
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

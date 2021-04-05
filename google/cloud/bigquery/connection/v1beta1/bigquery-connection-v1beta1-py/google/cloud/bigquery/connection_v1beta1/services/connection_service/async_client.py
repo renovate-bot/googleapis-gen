@@ -31,7 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.bigquery.connection_v1beta1.types import connection
 from google.cloud.bigquery.connection_v1beta1.types import connection as gcbc_connection
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -700,7 +700,7 @@ class ConnectionServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Gets the access control policy for a resource.
         Returns an empty policy if the resource exists and does
         not have a policy set.
@@ -834,7 +834,7 @@ class ConnectionServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Sets the access control policy on the specified resource.
         Replaces any existing policy.
 

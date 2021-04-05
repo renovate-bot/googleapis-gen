@@ -39,7 +39,7 @@ from google.ads.googleads.v6.common.types import feed_item_set_filter_type_infos
 from google.ads.googleads.v6.common.types import final_app_url
 from google.ads.googleads.v6.common.types import frequency_cap
 from google.ads.googleads.v6.common.types import matching_function
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.common.types import real_time_bidding_setting
 from google.ads.googleads.v6.common.types import tag_snippet
 from google.ads.googleads.v6.common.types import targeting_setting

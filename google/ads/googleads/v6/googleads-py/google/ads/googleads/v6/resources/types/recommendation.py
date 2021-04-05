@@ -270,7 +270,7 @@ class Recommendation(proto.Message):
         r"""The Target CPA opt-in recommendation.
 
         Attributes:
-            options (Sequence[google.ads.googleads.v6.resources.types.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption]):
+            options_ (Sequence[google.ads.googleads.v6.resources.types.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption]):
                 Output only. The available goals and
                 corresponding options for Target CPA strategy.
             recommended_target_cpa_micros (int):
@@ -307,7 +307,7 @@ class Recommendation(proto.Message):
                 message='Recommendation.RecommendationImpact',
             )
 
-        options = proto.RepeatedField(proto.MESSAGE, number=1,
+        options_ = proto.RepeatedField(proto.MESSAGE, number=1,
             message='Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption',
         )
         recommended_target_cpa_micros = proto.Field(proto.INT64, number=3, optional=True)

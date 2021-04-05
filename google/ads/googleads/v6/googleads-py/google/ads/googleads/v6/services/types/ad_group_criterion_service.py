@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v6.resources.types import ad_group_criterion as gagr_ad_group_criterion
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -123,7 +123,7 @@ class AdGroupCriterionOperation(proto.Message):
         message=field_mask.FieldMask,
     )
     exempt_policy_violation_keys = proto.RepeatedField(proto.MESSAGE, number=5,
-        message=policy.PolicyViolationKey,
+        message=gagc_policy.PolicyViolationKey,
     )
     create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_ad_group_criterion.AdGroupCriterion,

@@ -31,7 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.iam.admin_v1.services.iam import pagers
 from google.iam.admin_v1.types import iam
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
 from .transports.base import IAMTransport, DEFAULT_CLIENT_INFO
@@ -1747,7 +1747,7 @@ class IAMAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> gi_policy.Policy:
         r"""Gets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
         policy specifies which members have access to the service
@@ -1890,7 +1890,7 @@ class IAMAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> gi_policy.Policy:
         r"""Sets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 

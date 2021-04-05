@@ -29,7 +29,7 @@ from google.ads.googleads.v6.common.types import ad_type_infos
 from google.ads.googleads.v6.common.types import asset_policy
 from google.ads.googleads.v6.common.types import custom_parameter
 from google.ads.googleads.v6.common.types import final_app_url
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.common.types import url_collection
 from google.ads.googleads.v6.enums.types import ad_group_ad_status
 from google.ads.googleads.v6.enums.types import ad_strength

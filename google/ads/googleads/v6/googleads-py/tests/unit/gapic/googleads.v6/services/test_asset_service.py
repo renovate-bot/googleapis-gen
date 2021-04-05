@@ -25,7 +25,7 @@ from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from google import auth
 from google.ads.googleads.v6.common.types import asset_types
-from google.ads.googleads.v6.common.types import policy
+from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import asset_type
 from google.ads.googleads.v6.enums.types import lead_form_call_to_action_type
 from google.ads.googleads.v6.enums.types import lead_form_desired_intent

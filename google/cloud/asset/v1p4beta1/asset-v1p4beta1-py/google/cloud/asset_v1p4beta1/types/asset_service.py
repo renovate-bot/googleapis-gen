@@ -129,7 +129,7 @@ class AnalyzeIamPolicyRequest(proto.Message):
     Attributes:
         analysis_query (google.cloud.asset_v1p4beta1.types.IamPolicyAnalysisQuery):
             Required. The request query.
-        options (google.cloud.asset_v1p4beta1.types.AnalyzeIamPolicyRequest.Options):
+        options_ (google.cloud.asset_v1p4beta1.types.AnalyzeIamPolicyRequest.Options):
             Optional. The request options.
     """
     class Options(proto.Message):
@@ -239,7 +239,7 @@ class AnalyzeIamPolicyRequest(proto.Message):
         message='IamPolicyAnalysisQuery',
     )
 
-    options = proto.Field(proto.MESSAGE, number=2,
+    options_ = proto.Field(proto.MESSAGE, number=2,
         message=Options,
     )
 
@@ -344,7 +344,7 @@ class ExportIamPolicyAnalysisRequest(proto.Message):
     Attributes:
         analysis_query (google.cloud.asset_v1p4beta1.types.IamPolicyAnalysisQuery):
             Required. The request query.
-        options (google.cloud.asset_v1p4beta1.types.ExportIamPolicyAnalysisRequest.Options):
+        options_ (google.cloud.asset_v1p4beta1.types.ExportIamPolicyAnalysisRequest.Options):
             Optional. The request options.
         output_config (google.cloud.asset_v1p4beta1.types.IamPolicyAnalysisOutputConfig):
             Required. Output configuration indicating
@@ -439,7 +439,7 @@ class ExportIamPolicyAnalysisRequest(proto.Message):
         message='IamPolicyAnalysisQuery',
     )
 
-    options = proto.Field(proto.MESSAGE, number=2,
+    options_ = proto.Field(proto.MESSAGE, number=2,
         message=Options,
     )
 

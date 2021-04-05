@@ -399,13 +399,13 @@ class CreatePolicyRequest(proto.Message):
             -  ``projects/{project_id}``
             -  ``folders/{folder_id}``
             -  ``organizations/{organization_id}``
-        policy (google.cloud.orgpolicy_v2.types.Policy):
+        policy_ (google.cloud.orgpolicy_v2.types.Policy):
             Required. ``Policy`` to create.
     """
 
     parent = proto.Field(proto.STRING, number=1)
 
-    policy = proto.Field(proto.MESSAGE, number=3,
+    policy_ = proto.Field(proto.MESSAGE, number=3,
         message='Policy',
     )
 
@@ -415,11 +415,11 @@ class UpdatePolicyRequest(proto.Message):
     [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy] method.
 
     Attributes:
-        policy (google.cloud.orgpolicy_v2.types.Policy):
+        policy_ (google.cloud.orgpolicy_v2.types.Policy):
             Required. ``Policy`` to update.
     """
 
-    policy = proto.Field(proto.MESSAGE, number=1,
+    policy_ = proto.Field(proto.MESSAGE, number=1,
         message='Policy',
     )
 

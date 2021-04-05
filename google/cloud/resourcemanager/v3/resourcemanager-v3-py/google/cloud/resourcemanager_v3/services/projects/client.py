@@ -37,7 +37,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.projects import pagers
 from google.cloud.resourcemanager_v3.types import projects
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -1200,7 +1200,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Returns the IAM access control policy for the
         specified project. Permission is denied if the policy or
         the resource do not exist.
@@ -1333,7 +1333,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> policy.Policy:
+            ) -> giv_policy.Policy:
         r"""Sets the IAM access control policy for the specified project.
 
         CAUTION: This method will replace the existing policy, and

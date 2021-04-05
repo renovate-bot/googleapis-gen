@@ -32,7 +32,7 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.api import auth_pb2 as auth  # type: ignore
+from google.api import auth_pb2 as ga_auth  # type: ignore
 from google.api import backend_pb2 as backend  # type: ignore
 from google.api import billing_pb2 as billing  # type: ignore
 from google.api import context_pb2 as context  # type: ignore

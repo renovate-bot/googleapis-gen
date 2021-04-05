@@ -32,7 +32,7 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.api_core import operation as ga_operation  # type: ignore
+from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.appengine_v1.services.services import pagers
 from google.cloud.appengine_v1.types import appengine
@@ -463,7 +463,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Updates the configuration of the specified service.
 
         Args:
@@ -522,7 +522,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             service.Service,
@@ -538,7 +538,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Deletes the specified service and all enclosed
         versions.
 
@@ -602,7 +602,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             empty.Empty,

@@ -32,7 +32,7 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.api_core import operation as ga_operation  # type: ignore
+from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.appengine_v1.services.domain_mappings import pagers
 from google.cloud.appengine_v1.types import appengine
@@ -451,7 +451,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Maps a domain to an application. A user must be authorized to
         administer a domain in order to map it to an application. For a
         list of available authorized domains, see
@@ -507,7 +507,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             domain_mapping.DomainMapping,
@@ -523,7 +523,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Updates the specified domain mapping. To map an SSL certificate
         to a domain mapping, update ``certificate_id`` to point to an
         ``AuthorizedCertificate`` resource. A user must be authorized to
@@ -580,7 +580,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             domain_mapping.DomainMapping,
@@ -596,7 +596,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> ga_operation.Operation:
+            ) -> gac_operation.Operation:
         r"""Deletes the specified domain mapping. A user must be authorized
         to administer the associated domain in order to delete a
         ``DomainMapping`` resource.
@@ -661,7 +661,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = ga_operation.from_gapic(
+        response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
             empty.Empty,

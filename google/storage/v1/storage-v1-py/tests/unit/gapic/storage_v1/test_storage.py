@@ -33,8 +33,8 @@ from google.api_core import grpc_helpers_async
 from google.auth import credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import options_pb2 as options  # type: ignore
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import options_pb2 as gi_options  # type: ignore
+from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -2057,7 +2057,7 @@ def test_get_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Get
             type(client.transport.get_bucket_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = policy.Policy(
+        call.return_value = gi_policy.Policy(
             version=774,
 
             etag=b'etag_blob',
@@ -2074,7 +2074,7 @@ def test_get_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Get
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -2119,7 +2119,7 @@ async def test_get_bucket_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.get_bucket_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
@@ -2133,7 +2133,7 @@ async def test_get_bucket_iam_policy_async(transport: str = 'grpc_asyncio', requ
         assert args[0] == storage.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -2160,7 +2160,7 @@ def test_set_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Set
             type(client.transport.set_bucket_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = policy.Policy(
+        call.return_value = gi_policy.Policy(
             version=774,
 
             etag=b'etag_blob',
@@ -2177,7 +2177,7 @@ def test_set_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Set
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -2222,7 +2222,7 @@ async def test_set_bucket_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.set_bucket_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
@@ -2236,7 +2236,7 @@ async def test_set_bucket_iam_policy_async(transport: str = 'grpc_asyncio', requ
         assert args[0] == storage.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -6832,7 +6832,7 @@ def test_get_object_iam_policy(transport: str = 'grpc', request_type=storage.Get
             type(client.transport.get_object_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = policy.Policy(
+        call.return_value = gi_policy.Policy(
             version=774,
 
             etag=b'etag_blob',
@@ -6849,7 +6849,7 @@ def test_get_object_iam_policy(transport: str = 'grpc', request_type=storage.Get
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -6894,7 +6894,7 @@ async def test_get_object_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.get_object_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
@@ -6908,7 +6908,7 @@ async def test_get_object_iam_policy_async(transport: str = 'grpc_asyncio', requ
         assert args[0] == storage.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -6935,7 +6935,7 @@ def test_set_object_iam_policy(transport: str = 'grpc', request_type=storage.Set
             type(client.transport.set_object_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = policy.Policy(
+        call.return_value = gi_policy.Policy(
             version=774,
 
             etag=b'etag_blob',
@@ -6952,7 +6952,7 @@ def test_set_object_iam_policy(transport: str = 'grpc', request_type=storage.Set
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 
@@ -6997,7 +6997,7 @@ async def test_set_object_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.set_object_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
@@ -7011,7 +7011,7 @@ async def test_set_object_iam_policy_async(transport: str = 'grpc_asyncio', requ
         assert args[0] == storage.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, policy.Policy)
+    assert isinstance(response, gi_policy.Policy)
 
     assert response.version == 774
 

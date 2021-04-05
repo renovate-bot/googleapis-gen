@@ -729,7 +729,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
             request: orgpolicy.CreatePolicyRequest = None,
             *,
             parent: str = None,
-            policy: orgpolicy.Policy = None,
+            policy_: orgpolicy.Policy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -760,9 +760,9 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            policy (google.cloud.orgpolicy_v2.types.Policy):
+            policy_ (google.cloud.orgpolicy_v2.types.Policy):
                 Required. ``Policy`` to create.
-                This corresponds to the ``policy`` field
+                This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -781,7 +781,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([parent, policy])
+        has_flattened_params = any([parent, policy_])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -798,8 +798,8 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
             if parent is not None:
                 request.parent = parent
-            if policy is not None:
-                request.policy = policy
+            if policy_ is not None:
+                request.policy_ = policy_
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -827,7 +827,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
     def update_policy(self,
             request: orgpolicy.UpdatePolicyRequest = None,
             *,
-            policy: orgpolicy.Policy = None,
+            policy_: orgpolicy.Policy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -849,9 +849,9 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
                 method.
-            policy (google.cloud.orgpolicy_v2.types.Policy):
+            policy_ (google.cloud.orgpolicy_v2.types.Policy):
                 Required. ``Policy`` to update.
-                This corresponds to the ``policy`` field
+                This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -870,7 +870,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([policy])
+        has_flattened_params = any([policy_])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -885,8 +885,8 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
 
-            if policy is not None:
-                request.policy = policy
+            if policy_ is not None:
+                request.policy_ = policy_
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

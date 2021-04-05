@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.ads.googleads.v4.common.types import policy
+from google.ads.googleads.v4.common.types import policy as gagc_policy
 from google.ads.googleads.v4.common.types import value
 from google.ads.googleads.v4.errors.types import access_invitation_error as gage_access_invitation_error
 from google.ads.googleads.v4.errors.types import account_budget_proposal_error as gage_account_budget_proposal_error
@@ -859,7 +859,7 @@ class PolicyViolationDetails(proto.Message):
 
     external_policy_description = proto.Field(proto.STRING, number=2)
     key = proto.Field(proto.MESSAGE, number=4,
-        message=policy.PolicyViolationKey,
+        message=gagc_policy.PolicyViolationKey,
     )
     external_policy_name = proto.Field(proto.STRING, number=5)
     is_exemptible = proto.Field(proto.BOOL, number=6)
@@ -879,7 +879,7 @@ class PolicyFindingDetails(proto.Message):
     """
 
     policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=policy.PolicyTopicEntry,
+        message=gagc_policy.PolicyTopicEntry,
     )
 
 

@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.iam.v1 import policy_pb2 as policy  # type: ignore
+from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.rpc import code_pb2 as gr_code  # type: ignore
 
 
@@ -252,7 +252,7 @@ class IamPolicyAnalysisResult(proto.Message):
     attached_resource_full_name = proto.Field(proto.STRING, number=1)
 
     iam_binding = proto.Field(proto.MESSAGE, number=2,
-        message=policy.Binding,
+        message=giv_policy.Binding,
     )
 
     access_control_lists = proto.RepeatedField(proto.MESSAGE, number=3,
