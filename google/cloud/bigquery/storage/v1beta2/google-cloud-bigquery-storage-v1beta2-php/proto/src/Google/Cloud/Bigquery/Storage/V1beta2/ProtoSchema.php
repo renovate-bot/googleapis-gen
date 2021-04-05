@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf schema is an API presentation the proto buffer schema.
+ * ProtoSchema describes the schema of the serialized protocol buffer data rows.
  *
  * Generated from protobuf message <code>google.cloud.bigquery.storage.v1beta2.ProtoSchema</code>
  */

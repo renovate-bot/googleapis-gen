@@ -569,8 +569,8 @@ class BigQueryWriteGapicClient
      * }
      * ```
      *
-     * @param string   $parent       Required. Parent table that all the streams should belong to, in the form
-     *                               of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * @param string   $parent       Required. Parent table that all the streams should belong to, in the form of
+     *                               `projects/{project}/datasets/{dataset}/tables/{table}`.
      * @param string[] $writeStreams Required. The group of streams that will be committed atomically.
      * @param array    $optionalArgs {
      *                               Optional.

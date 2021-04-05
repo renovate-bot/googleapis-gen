@@ -235,6 +235,22 @@ private static final long serialVersionUID = 0L;
      * <code>NUMERIC = 12;</code>
      */
     NUMERIC(12),
+    /**
+     * <pre>
+     * BigNumeric value
+     * </pre>
+     *
+     * <code>BIGNUMERIC = 13;</code>
+     */
+    BIGNUMERIC(13),
+    /**
+     * <pre>
+     * Interval
+     * </pre>
+     *
+     * <code>INTERVAL = 14;</code>
+     */
+    INTERVAL(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -342,6 +358,22 @@ private static final long serialVersionUID = 0L;
      * <code>NUMERIC = 12;</code>
      */
     public static final int NUMERIC_VALUE = 12;
+    /**
+     * <pre>
+     * BigNumeric value
+     * </pre>
+     *
+     * <code>BIGNUMERIC = 13;</code>
+     */
+    public static final int BIGNUMERIC_VALUE = 13;
+    /**
+     * <pre>
+     * Interval
+     * </pre>
+     *
+     * <code>INTERVAL = 14;</code>
+     */
+    public static final int INTERVAL_VALUE = 14;
 
 
     public final int getNumber() {
@@ -381,6 +413,8 @@ private static final long serialVersionUID = 0L;
         case 10: return DATETIME;
         case 11: return GEOGRAPHY;
         case 12: return NUMERIC;
+        case 13: return BIGNUMERIC;
+        case 14: return INTERVAL;
         default: return null;
       }
     }

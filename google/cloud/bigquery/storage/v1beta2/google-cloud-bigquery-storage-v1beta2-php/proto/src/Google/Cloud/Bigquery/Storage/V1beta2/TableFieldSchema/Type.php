@@ -89,6 +89,18 @@ class Type
      * Generated from protobuf enum <code>NUMERIC = 12;</code>
      */
     const NUMERIC = 12;
+    /**
+     * BigNumeric value
+     *
+     * Generated from protobuf enum <code>BIGNUMERIC = 13;</code>
+     */
+    const BIGNUMERIC = 13;
+    /**
+     * Interval
+     *
+     * Generated from protobuf enum <code>INTERVAL = 14;</code>
+     */
+    const INTERVAL = 14;
 
     private static $valueToName = [
         self::TYPE_UNSPECIFIED => 'TYPE_UNSPECIFIED',
@@ -104,6 +116,8 @@ class Type
         self::DATETIME => 'DATETIME',
         self::GEOGRAPHY => 'GEOGRAPHY',
         self::NUMERIC => 'NUMERIC',
+        self::BIGNUMERIC => 'BIGNUMERIC',
+        self::INTERVAL => 'INTERVAL',
     ];
 
     public static function name($value)

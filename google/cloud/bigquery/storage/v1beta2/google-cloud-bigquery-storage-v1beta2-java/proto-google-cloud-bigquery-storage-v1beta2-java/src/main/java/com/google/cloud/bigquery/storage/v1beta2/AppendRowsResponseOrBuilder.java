@@ -36,19 +36,20 @@ public interface AppendRowsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Error in case of request failed. If set, it means rows are not accepted
-   * into the system. Users can retry or continue with other requests within
-   * the same connection.
-   * ALREADY_EXISTS: happens when offset is specified, it means the entire
-   *   request is already appended, it is safe to ignore this error.
-   * OUT_OF_RANGE: happens when offset is specified, it means the specified
-   *   offset is beyond the end of the stream.
-   * INVALID_ARGUMENT: error caused by malformed request or data.
-   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
-   *   append without offset.
-   * ABORTED: request processing is aborted because of prior failures, request
-   *   can be retried if previous failure is fixed.
-   * INTERNAL: server side errors that can be retried.
+   * Error returned when problems were encountered.  If present,
+   * it indicates rows were not accepted into the system.
+   * Users can retry or continue with other append requests within the
+   * same connection.
+   * Additional information about error signalling:
+   * ALREADY_EXISTS: Happens when an append specified an offset, and the
+   * backend already has received data at this offset.  Typically encountered
+   * in retry scenarios, and can be ignored.
+   * OUT_OF_RANGE: Returned when the specified offset in the stream is beyond
+   * the current end of the stream.
+   * INVALID_ARGUMENT: Indicates a malformed request or data.
+   * ABORTED: Request processing is aborted because of prior failures.  The
+   * request can be retried if previous failure is addressed.
+   * INTERNAL: Indicates server side error(s) that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -57,19 +58,20 @@ public interface AppendRowsResponseOrBuilder extends
   boolean hasError();
   /**
    * <pre>
-   * Error in case of request failed. If set, it means rows are not accepted
-   * into the system. Users can retry or continue with other requests within
-   * the same connection.
-   * ALREADY_EXISTS: happens when offset is specified, it means the entire
-   *   request is already appended, it is safe to ignore this error.
-   * OUT_OF_RANGE: happens when offset is specified, it means the specified
-   *   offset is beyond the end of the stream.
-   * INVALID_ARGUMENT: error caused by malformed request or data.
-   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
-   *   append without offset.
-   * ABORTED: request processing is aborted because of prior failures, request
-   *   can be retried if previous failure is fixed.
-   * INTERNAL: server side errors that can be retried.
+   * Error returned when problems were encountered.  If present,
+   * it indicates rows were not accepted into the system.
+   * Users can retry or continue with other append requests within the
+   * same connection.
+   * Additional information about error signalling:
+   * ALREADY_EXISTS: Happens when an append specified an offset, and the
+   * backend already has received data at this offset.  Typically encountered
+   * in retry scenarios, and can be ignored.
+   * OUT_OF_RANGE: Returned when the specified offset in the stream is beyond
+   * the current end of the stream.
+   * INVALID_ARGUMENT: Indicates a malformed request or data.
+   * ABORTED: Request processing is aborted because of prior failures.  The
+   * request can be retried if previous failure is addressed.
+   * INTERNAL: Indicates server side error(s) that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -78,19 +80,20 @@ public interface AppendRowsResponseOrBuilder extends
   com.google.rpc.Status getError();
   /**
    * <pre>
-   * Error in case of request failed. If set, it means rows are not accepted
-   * into the system. Users can retry or continue with other requests within
-   * the same connection.
-   * ALREADY_EXISTS: happens when offset is specified, it means the entire
-   *   request is already appended, it is safe to ignore this error.
-   * OUT_OF_RANGE: happens when offset is specified, it means the specified
-   *   offset is beyond the end of the stream.
-   * INVALID_ARGUMENT: error caused by malformed request or data.
-   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
-   *   append without offset.
-   * ABORTED: request processing is aborted because of prior failures, request
-   *   can be retried if previous failure is fixed.
-   * INTERNAL: server side errors that can be retried.
+   * Error returned when problems were encountered.  If present,
+   * it indicates rows were not accepted into the system.
+   * Users can retry or continue with other append requests within the
+   * same connection.
+   * Additional information about error signalling:
+   * ALREADY_EXISTS: Happens when an append specified an offset, and the
+   * backend already has received data at this offset.  Typically encountered
+   * in retry scenarios, and can be ignored.
+   * OUT_OF_RANGE: Returned when the specified offset in the stream is beyond
+   * the current end of the stream.
+   * INVALID_ARGUMENT: Indicates a malformed request or data.
+   * ABORTED: Request processing is aborted because of prior failures.  The
+   * request can be retried if previous failure is addressed.
+   * INTERNAL: Indicates server side error(s) that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -100,8 +103,8 @@ public interface AppendRowsResponseOrBuilder extends
   /**
    * <pre>
    * If backend detects a schema update, pass it to user so that user can
-   * use it to input new type of message. It will be empty when there is no
-   * schema updates.
+   * use it to input new type of message. It will be empty when no schema
+   * updates have occurred.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1beta2.TableSchema updated_schema = 3;</code>
@@ -111,8 +114,8 @@ public interface AppendRowsResponseOrBuilder extends
   /**
    * <pre>
    * If backend detects a schema update, pass it to user so that user can
-   * use it to input new type of message. It will be empty when there is no
-   * schema updates.
+   * use it to input new type of message. It will be empty when no schema
+   * updates have occurred.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1beta2.TableSchema updated_schema = 3;</code>
@@ -122,8 +125,8 @@ public interface AppendRowsResponseOrBuilder extends
   /**
    * <pre>
    * If backend detects a schema update, pass it to user so that user can
-   * use it to input new type of message. It will be empty when there is no
-   * schema updates.
+   * use it to input new type of message. It will be empty when no schema
+   * updates have occurred.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1beta2.TableSchema updated_schema = 3;</code>

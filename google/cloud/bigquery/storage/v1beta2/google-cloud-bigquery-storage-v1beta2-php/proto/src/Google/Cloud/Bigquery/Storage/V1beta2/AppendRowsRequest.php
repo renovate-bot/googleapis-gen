@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppendRowsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The stream that is the target of the append operation. This value
-     * must be specified for the initial request. If subsequent requests specify
-     * the stream name, it must equal to the value provided in the first request.
+     * Required. The stream that is the target of the append operation. This value must be
+     * specified for the initial request. If subsequent requests specify the
+     * stream name, it must equal to the value provided in the first request.
      * To write to the _default stream, populate this field with a string in the
      * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *
@@ -50,9 +50,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $write_stream
-     *           Required. The stream that is the target of the append operation. This value
-     *           must be specified for the initial request. If subsequent requests specify
-     *           the stream name, it must equal to the value provided in the first request.
+     *           Required. The stream that is the target of the append operation. This value must be
+     *           specified for the initial request. If subsequent requests specify the
+     *           stream name, it must equal to the value provided in the first request.
      *           To write to the _default stream, populate this field with a string in the
      *           format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *     @type \Google\Protobuf\Int64Value $offset
@@ -73,9 +73,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The stream that is the target of the append operation. This value
-     * must be specified for the initial request. If subsequent requests specify
-     * the stream name, it must equal to the value provided in the first request.
+     * Required. The stream that is the target of the append operation. This value must be
+     * specified for the initial request. If subsequent requests specify the
+     * stream name, it must equal to the value provided in the first request.
      * To write to the _default stream, populate this field with a string in the
      * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *
@@ -88,9 +88,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The stream that is the target of the append operation. This value
-     * must be specified for the initial request. If subsequent requests specify
-     * the stream name, it must equal to the value provided in the first request.
+     * Required. The stream that is the target of the append operation. This value must be
+     * specified for the initial request. If subsequent requests specify the
+     * stream name, it must equal to the value provided in the first request.
      * To write to the _default stream, populate this field with a string in the
      * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *

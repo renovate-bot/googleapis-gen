@@ -109,8 +109,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Parent table that all the streams should belong to, in the form
-   * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * Required. Parent table that all the streams should belong to, in the form of
+   * `projects/{project}/datasets/{dataset}/tables/{table}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -131,8 +131,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Parent table that all the streams should belong to, in the form
-   * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * Required. Parent table that all the streams should belong to, in the form of
+   * `projects/{project}/datasets/{dataset}/tables/{table}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -549,8 +549,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -570,8 +570,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -592,8 +592,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -612,8 +612,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -627,8 +627,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

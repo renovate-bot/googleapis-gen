@@ -4,10 +4,6 @@
 package com.google.cloud.bigquery.storage.v1beta2;
 
 /**
- * <pre>
- * Protobuf rows.
- * </pre>
- *
  * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows}
  */
 public final class ProtoRows extends
@@ -305,10 +301,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Protobuf rows.
-   * </pre>
-   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows}
    */
   public static final class Builder extends

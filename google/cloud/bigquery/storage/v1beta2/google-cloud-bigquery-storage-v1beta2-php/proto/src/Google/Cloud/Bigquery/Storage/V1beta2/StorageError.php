@@ -10,8 +10,9 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Structured custom BigQuery Storage error message. The error can be attached
- * as error details in the returned rpc Status. User can use the info to process
- * errors in a structural way, rather than having to parse error messages.
+ * as error details in the returned rpc Status. In particular, the use of error
+ * codes allows more structured error handling, and reduces the need to evaluate
+ * unstructured error text strings.
  *
  * Generated from protobuf message <code>google.cloud.bigquery.storage.v1beta2.StorageError</code>
  */

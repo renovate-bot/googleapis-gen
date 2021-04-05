@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-// Protobuf schema is an API presentation the proto buffer schema.
+// ProtoSchema describes the schema of the serialized protocol buffer data rows.
 type ProtoSchema struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -91,7 +91,6 @@ func (x *ProtoSchema) GetProtoDescriptor() *descriptorpb.DescriptorProto {
 	return nil
 }
 
-// Protobuf rows.
 type ProtoRows struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

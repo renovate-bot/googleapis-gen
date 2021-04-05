@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A success append result.
+ * AppendResult is returned for successful append requests.
  *
  * Generated from protobuf message <code>google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult</code>
  */

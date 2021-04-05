@@ -46,12 +46,18 @@ class StorageErrorCode
     const INVALID_STREAM_TYPE = 4;
     /**
      * Invalid Stream state.
-     * For example, you try to commit a stream that is not fianlized or is
+     * For example, you try to commit a stream that is not finalized or is
      * garbaged.
      *
      * Generated from protobuf enum <code>INVALID_STREAM_STATE = 5;</code>
      */
     const INVALID_STREAM_STATE = 5;
+    /**
+     * Stream is finalized.
+     *
+     * Generated from protobuf enum <code>STREAM_FINALIZED = 6;</code>
+     */
+    const STREAM_FINALIZED = 6;
 
     private static $valueToName = [
         self::STORAGE_ERROR_CODE_UNSPECIFIED => 'STORAGE_ERROR_CODE_UNSPECIFIED',
@@ -60,6 +66,7 @@ class StorageErrorCode
         self::STREAM_NOT_FOUND => 'STREAM_NOT_FOUND',
         self::INVALID_STREAM_TYPE => 'INVALID_STREAM_TYPE',
         self::INVALID_STREAM_STATE => 'INVALID_STREAM_STATE',
+        self::STREAM_FINALIZED => 'STREAM_FINALIZED',
     ];
 
     public static function name($value)

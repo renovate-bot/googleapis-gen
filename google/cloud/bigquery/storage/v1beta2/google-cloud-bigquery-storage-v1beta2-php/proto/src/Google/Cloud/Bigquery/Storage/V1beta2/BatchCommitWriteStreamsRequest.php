@@ -16,8 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -36,8 +36,8 @@ class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. Parent table that all the streams should belong to, in the form
-     *           of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     *           Required. Parent table that all the streams should belong to, in the form of
+     *           `projects/{project}/datasets/{dataset}/tables/{table}`.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $write_streams
      *           Required. The group of streams that will be committed atomically.
      * }
@@ -48,8 +48,8 @@ class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -60,8 +60,8 @@ class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Parent table that all the streams should belong to, in the form
-     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form of
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

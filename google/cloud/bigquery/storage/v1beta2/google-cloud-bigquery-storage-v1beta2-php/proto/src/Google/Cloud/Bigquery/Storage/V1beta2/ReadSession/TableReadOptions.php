@@ -32,6 +32,7 @@ class TableReadOptions extends \Google\Protobuf\Internal\Message
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     * Restricted to a maximum length for 1 MB.
      *
      * Generated from protobuf field <code>string row_restriction = 2;</code>
      */
@@ -62,6 +63,7 @@ class TableReadOptions extends \Google\Protobuf\Internal\Message
      *                     "nullable_field is not NULL"
      *                     "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *                     "numeric_field BETWEEN 1.0 AND 5.0"
+     *           Restricted to a maximum length for 1 MB.
      *     @type \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSerializationOptions $arrow_serialization_options
      *           Optional. Options specific to the Apache Arrow output format.
      * }
@@ -111,6 +113,7 @@ class TableReadOptions extends \Google\Protobuf\Internal\Message
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     * Restricted to a maximum length for 1 MB.
      *
      * Generated from protobuf field <code>string row_restriction = 2;</code>
      * @return string
@@ -128,6 +131,7 @@ class TableReadOptions extends \Google\Protobuf\Internal\Message
      *           "nullable_field is not NULL"
      *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
      *           "numeric_field BETWEEN 1.0 AND 5.0"
+     * Restricted to a maximum length for 1 MB.
      *
      * Generated from protobuf field <code>string row_restriction = 2;</code>
      * @param string $var

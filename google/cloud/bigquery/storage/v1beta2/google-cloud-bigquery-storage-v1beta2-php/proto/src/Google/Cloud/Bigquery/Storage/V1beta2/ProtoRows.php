@@ -9,8 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf rows.
- *
  * Generated from protobuf message <code>google.cloud.bigquery.storage.v1beta2.ProtoRows</code>
  */
 class ProtoRows extends \Google\Protobuf\Internal\Message

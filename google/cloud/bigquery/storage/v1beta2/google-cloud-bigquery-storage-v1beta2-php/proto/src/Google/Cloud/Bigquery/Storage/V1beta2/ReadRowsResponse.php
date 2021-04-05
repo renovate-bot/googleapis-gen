@@ -36,6 +36,7 @@ class ReadRowsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $throttle_state = null;
     protected $rows;
+    protected $schema;
 
     /**
      * Constructor.
@@ -54,6 +55,10 @@ class ReadRowsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Bigquery\Storage\V1beta2\ThrottleState $throttle_state
      *           Throttling state. If unset, the latest response still describes
      *           the current throttling status.
+     *     @type \Google\Cloud\Bigquery\Storage\V1beta2\AvroSchema $avro_schema
+     *           Output only. Avro schema.
+     *     @type \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSchema $arrow_schema
+     *           Output only. Arrow schema.
      * }
      */
     public function __construct($data = NULL) {
@@ -224,11 +229,81 @@ class ReadRowsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Output only. Avro schema.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\AvroSchema|null
+     */
+    public function getAvroSchema()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasAvroSchema()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Output only. Avro schema.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Bigquery\Storage\V1beta2\AvroSchema $var
+     * @return $this
+     */
+    public function setAvroSchema($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Bigquery\Storage\V1beta2\AvroSchema::class);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. Arrow schema.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSchema|null
+     */
+    public function getArrowSchema()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasArrowSchema()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Output only. Arrow schema.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSchema $var
+     * @return $this
+     */
+    public function setArrowSchema($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSchema::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getRows()
     {
         return $this->whichOneof("rows");
+    }
+
+    /**
+     * @return string
+     */
+    public function getSchema()
+    {
+        return $this->whichOneof("schema");
     }
 
 }
