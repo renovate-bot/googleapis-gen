@@ -27,7 +27,8 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -68,7 +69,8 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      *           `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      *     @type int $type
      *     @type \Google\Protobuf\Timestamp $create_time
-     *           Output only. Create time of the stream.
+     *           Output only. Create time of the stream. For the _default stream, this is the
+     *           creation_time of the table.
      *     @type \Google\Protobuf\Timestamp $commit_time
      *           Output only. Commit time of the stream.
      *           If a stream is of `COMMITTED` type, then it will have a commit_time same as
@@ -139,7 +141,8 @@ class WriteStream extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -160,7 +163,8 @@ class WriteStream extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var

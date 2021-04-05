@@ -53,7 +53,8 @@ public final class Stream {
 
     /**
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -62,7 +63,8 @@ public final class Stream {
     boolean hasCreateTime();
     /**
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -71,7 +73,8 @@ public final class Stream {
     com.google.protobuf.Timestamp getCreateTime();
     /**
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -542,7 +545,8 @@ public final class Stream {
     private com.google.protobuf.Timestamp createTime_;
     /**
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -554,7 +558,8 @@ public final class Stream {
     }
     /**
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -566,7 +571,8 @@ public final class Stream {
     }
     /**
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1305,7 +1311,8 @@ public final class Stream {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1316,7 +1323,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1331,7 +1339,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1351,7 +1360,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1369,7 +1379,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1391,7 +1402,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1409,7 +1421,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1421,7 +1434,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1436,7 +1450,8 @@ public final class Stream {
       }
       /**
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

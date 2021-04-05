@@ -41,7 +41,8 @@ class WriteStream(proto.Message):
         type_ (google.cloud.bigquery.storage_v1alpha2.types.WriteStream.Type):
 
         create_time (google.protobuf.timestamp_pb2.Timestamp):
-            Output only. Create time of the stream.
+            Output only. Create time of the stream. For the \_default
+            stream, this is the creation_time of the table.
         commit_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. Commit time of the stream. If a stream is of
             ``COMMITTED`` type, then it will have a commit_time same as

@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -65,9 +65,9 @@ const (
 	TableFieldSchema_TIME TableFieldSchema_Type = 9
 	// Combination of civil date and civil time
 	TableFieldSchema_DATETIME TableFieldSchema_Type = 10
-	// Geography object (go/googlesql_geography)
+	// Geography object
 	TableFieldSchema_GEOGRAPHY TableFieldSchema_Type = 11
-	// Numeric value (go/googlesql_numeric)
+	// Numeric value
 	TableFieldSchema_NUMERIC TableFieldSchema_Type = 12
 )
 

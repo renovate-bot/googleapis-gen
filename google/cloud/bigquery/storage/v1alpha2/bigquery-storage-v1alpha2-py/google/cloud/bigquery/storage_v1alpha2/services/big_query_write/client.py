@@ -349,7 +349,13 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> stream.WriteStream:
-        r"""Creates a write stream to the given table.
+        r"""Creates a write stream to the given table. Additionally, every
+        table has a special COMMITTED stream named '_default' to which
+        data can be written. This stream doesn't need to be created
+        using CreateWriteStream. It is a stream that can be used
+        simultaneously by any number of clients. Data written to this
+        stream is considered committed as soon as an acknowledgement is
+        received.
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.CreateWriteStreamRequest):
@@ -580,8 +586,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.FinalizeWriteStreamResponse:
-        r"""Finalize a write stream so that no new data can be
-        appended to the stream.
+        r"""Finalize a write stream so that no new data can be appended to
+        the stream. Finalize is not supported on the '_default' stream.
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.FinalizeWriteStreamRequest):
@@ -738,12 +744,12 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.FlushRowsResponse:
-        r"""Flushes rows to a BUFFERED stream.
-        If users are appending rows to BUFFERED stream, flush
-        operation is required in order for the rows to become
-        available for reading. A Flush operation flushes up to
-        any previously flushed offset in a BUFFERED stream, to
-        the offset specified in the request.
+        r"""Flushes rows to a BUFFERED stream. If users are appending rows
+        to BUFFERED stream, flush operation is required in order for the
+        rows to become available for reading. A Flush operation flushes
+        up to any previously flushed offset in a BUFFERED stream, to the
+        offset specified in the request. Flush is not supported on the
+        \_default stream, since it is not BUFFERED.
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.FlushRowsRequest):

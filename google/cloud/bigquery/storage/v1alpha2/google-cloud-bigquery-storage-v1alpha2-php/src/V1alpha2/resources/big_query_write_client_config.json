@@ -62,7 +62,7 @@
           "retry_params_name": "retry_policy_1_params"
         },
         "AppendRows": {
-          "timeout_millis": 86400000
+          "timeout_millis": 21600000
         },
         "GetWriteStream": {
           "timeout_millis": 600000,

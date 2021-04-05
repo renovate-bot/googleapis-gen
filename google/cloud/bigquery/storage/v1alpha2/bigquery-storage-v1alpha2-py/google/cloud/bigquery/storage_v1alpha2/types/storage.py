@@ -67,16 +67,19 @@ class AppendRowsRequest(proto.Message):
 
     Attributes:
         write_stream (str):
-            Required. The stream that is the target of
-            the append operation. This value must be
-            specified for the initial request. If subsequent
-            requests specify the stream name, it must equal
-            to the value provided in the first request.
+            Required. The stream that is the target of the append
+            operation. This value must be specified for the initial
+            request. If subsequent requests specify the stream name, it
+            must equal to the value provided in the first request. To
+            write to the \_default stream, populate this field with a
+            string in the format
+            ``projects/{project}/datasets/{dataset}/tables/{table}/_default``.
         offset (google.protobuf.wrappers_pb2.Int64Value):
-            Optional. If present, the write is only
-            performed if the next append offset is same as
-            the provided value. If not present, the write is
-            performed at the current end of stream.
+            Optional. If present, the write is only performed if the
+            next append offset is same as the provided value. If not
+            present, the write is performed at the current end of
+            stream. Specifying a value for this field is not allowed
+            when calling AppendRows for the '_default' stream.
         proto_rows (google.cloud.bigquery.storage_v1alpha2.types.AppendRowsRequest.ProtoData):
 
         ignore_unknown_fields (bool):
@@ -125,9 +128,19 @@ class AppendRowsResponse(proto.Message):
             The row offset at which the last append
             occurred.
         error (google.rpc.status_pb2.Status):
-            Error in case of append failure. If set, it
-            means rows are not accepted into the system.
-            Users can retry within the same connection.
+            Error in case of append failure. If set, it means rows are
+            not accepted into the system. Users can retry or continue
+            with other requests within the same connection.
+            ALREADY_EXISTS: happens when offset is specified, it means
+            the row is already appended, it is safe to ignore this
+            error. OUT_OF_RANGE: happens when offset is specified, it
+            means the specified offset is beyond the end of the stream.
+            INVALID_ARGUMENT: error caused by malformed request or data.
+            RESOURCE_EXHAUSTED: request rejected due to throttling. Only
+            happens when append without offset. ABORTED: request
+            processing is aborted because of prior failures, request can
+            be retried if previous failure is fixed. INTERNAL: server
+            side errors that can be retried.
         updated_schema (google.cloud.bigquery.storage_v1alpha2.types.TableSchema):
             If backend detects a schema update, pass it
             to user so that user can use it to input new

@@ -314,6 +314,11 @@ export class BigQueryWriteClient {
           {}|null|undefined>): void;
 /**
  * Creates a write stream to the given table.
+ * Additionally, every table has a special COMMITTED stream named '_default'
+ * to which data can be written. This stream doesn't need to be created using
+ * CreateWriteStream. It is a stream that can be used simultaneously by any
+ * number of clients. Data written to this stream is considered committed as
+ * soon as an acknowledgement is received.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -460,7 +465,7 @@ export class BigQueryWriteClient {
           {}|null|undefined>): void;
 /**
  * Finalize a write stream so that no new data can be appended to the
- * stream.
+ * stream. Finalize is not supported on the '_default' stream.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -615,6 +620,7 @@ export class BigQueryWriteClient {
  * required in order for the rows to become available for reading. A
  * Flush operation flushes up to any previously flushed offset in a BUFFERED
  * stream, to the offset specified in the request.
+ * Flush is not supported on the _default stream, since it is not BUFFERED.
  *
  * @param {Object} request
  *   The request object that will be sent.

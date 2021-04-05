@@ -1275,7 +1275,7 @@ public final class Table {
       DATETIME(10),
       /**
        * <pre>
-       * Geography object (go/googlesql_geography)
+       * Geography object
        * </pre>
        *
        * <code>GEOGRAPHY = 11;</code>
@@ -1283,7 +1283,7 @@ public final class Table {
       GEOGRAPHY(11),
       /**
        * <pre>
-       * Numeric value (go/googlesql_numeric)
+       * Numeric value
        * </pre>
        *
        * <code>NUMERIC = 12;</code>
@@ -1382,7 +1382,7 @@ public final class Table {
       public static final int DATETIME_VALUE = 10;
       /**
        * <pre>
-       * Geography object (go/googlesql_geography)
+       * Geography object
        * </pre>
        *
        * <code>GEOGRAPHY = 11;</code>
@@ -1390,7 +1390,7 @@ public final class Table {
       public static final int GEOGRAPHY_VALUE = 11;
       /**
        * <pre>
-       * Numeric value (go/googlesql_numeric)
+       * Numeric value
        * </pre>
        *
        * <code>NUMERIC = 12;</code>

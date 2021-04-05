@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -108,7 +108,8 @@ type WriteStream struct {
 	// `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
 	Name string           `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Type WriteStream_Type `protobuf:"varint,2,opt,name=type,proto3,enum=google.cloud.bigquery.storage.v1alpha2.WriteStream_Type" json:"type,omitempty"`
-	// Output only. Create time of the stream.
+	// Output only. Create time of the stream. For the _default stream, this is the
+	// creation_time of the table.
 	CreateTime *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
 	// Output only. Commit time of the stream.
 	// If a stream is of `COMMITTED` type, then it will have a commit_time same as

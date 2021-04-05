@@ -78,13 +78,13 @@ class Type
      */
     const DATETIME = 10;
     /**
-     * Geography object (go/googlesql_geography)
+     * Geography object
      *
      * Generated from protobuf enum <code>GEOGRAPHY = 11;</code>
      */
     const GEOGRAPHY = 11;
     /**
-     * Numeric value (go/googlesql_numeric)
+     * Numeric value
      *
      * Generated from protobuf enum <code>NUMERIC = 12;</code>
      */

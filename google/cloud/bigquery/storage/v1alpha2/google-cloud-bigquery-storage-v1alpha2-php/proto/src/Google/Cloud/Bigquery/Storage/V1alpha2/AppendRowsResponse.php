@@ -35,7 +35,18 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      *           The row offset at which the last append occurred.
      *     @type \Google\Rpc\Status $error
      *           Error in case of append failure. If set, it means rows are not accepted
-     *           into the system. Users can retry within the same connection.
+     *           into the system. Users can retry or continue with other requests within
+     *           the same connection.
+     *           ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *             already appended, it is safe to ignore this error.
+     *           OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *             offset is beyond the end of the stream.
+     *           INVALID_ARGUMENT: error caused by malformed request or data.
+     *           RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *             append without offset.
+     *           ABORTED: request processing is aborted because of prior failures, request
+     *             can be retried if previous failure is fixed.
+     *           INTERNAL: server side errors that can be retried.
      *     @type \Google\Cloud\Bigquery\Storage\V1alpha2\TableSchema $updated_schema
      *           If backend detects a schema update, pass it to user so that user can
      *           use it to input new type of message. It will be empty when there is no
@@ -80,7 +91,18 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 2;</code>
      * @return \Google\Rpc\Status|null
@@ -97,7 +119,18 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 2;</code>
      * @param \Google\Rpc\Status $var

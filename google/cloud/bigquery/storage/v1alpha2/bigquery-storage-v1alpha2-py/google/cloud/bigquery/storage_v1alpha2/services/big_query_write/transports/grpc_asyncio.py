@@ -229,7 +229,13 @@ class BigQueryWriteGrpcAsyncIOTransport(BigQueryWriteTransport):
             Awaitable[stream.WriteStream]]:
         r"""Return a callable for the create write stream method over gRPC.
 
-        Creates a write stream to the given table.
+        Creates a write stream to the given table. Additionally, every
+        table has a special COMMITTED stream named '_default' to which
+        data can be written. This stream doesn't need to be created
+        using CreateWriteStream. It is a stream that can be used
+        simultaneously by any number of clients. Data written to this
+        stream is considered committed as soon as an acknowledgement is
+        received.
 
         Returns:
             Callable[[~.CreateWriteStreamRequest],
@@ -327,8 +333,8 @@ class BigQueryWriteGrpcAsyncIOTransport(BigQueryWriteTransport):
             Awaitable[storage.FinalizeWriteStreamResponse]]:
         r"""Return a callable for the finalize write stream method over gRPC.
 
-        Finalize a write stream so that no new data can be
-        appended to the stream.
+        Finalize a write stream so that no new data can be appended to
+        the stream. Finalize is not supported on the '_default' stream.
 
         Returns:
             Callable[[~.FinalizeWriteStreamRequest],
@@ -384,12 +390,12 @@ class BigQueryWriteGrpcAsyncIOTransport(BigQueryWriteTransport):
             Awaitable[storage.FlushRowsResponse]]:
         r"""Return a callable for the flush rows method over gRPC.
 
-        Flushes rows to a BUFFERED stream.
-        If users are appending rows to BUFFERED stream, flush
-        operation is required in order for the rows to become
-        available for reading. A Flush operation flushes up to
-        any previously flushed offset in a BUFFERED stream, to
-        the offset specified in the request.
+        Flushes rows to a BUFFERED stream. If users are appending rows
+        to BUFFERED stream, flush operation is required in order for the
+        rows to become available for reading. A Flush operation flushes
+        up to any previously flushed offset in a BUFFERED stream, to the
+        offset specified in the request. Flush is not supported on the
+        \_default stream, since it is not BUFFERED.
 
         Returns:
             Callable[[~.FlushRowsRequest],

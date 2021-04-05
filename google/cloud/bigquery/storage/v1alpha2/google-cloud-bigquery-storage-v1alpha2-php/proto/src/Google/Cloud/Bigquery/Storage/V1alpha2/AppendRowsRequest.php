@@ -19,6 +19,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *
      * Generated from protobuf field <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -26,7 +28,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -51,10 +54,13 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The stream that is the target of the append operation. This value must be
      *           specified for the initial request. If subsequent requests specify the
      *           stream name, it must equal to the value provided in the first request.
+     *           To write to the _default stream, populate this field with a string in the
+     *           format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *     @type \Google\Protobuf\Int64Value $offset
      *           Optional. If present, the write is only performed if the next append offset is same
      *           as the provided value. If not present, the write is performed at the
-     *           current end of stream.
+     *           current end of stream. Specifying a value for this field is not allowed
+     *           when calling AppendRows for the '_default' stream.
      *     @type \Google\Cloud\Bigquery\Storage\V1alpha2\AppendRowsRequest\ProtoData $proto_rows
      *     @type bool $ignore_unknown_fields
      *           Only initial request setting is respected. If true, drop unknown input
@@ -71,6 +77,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *
      * Generated from protobuf field <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -84,6 +92,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      *
      * Generated from protobuf field <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -100,7 +110,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Int64Value|null
@@ -125,7 +136,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
 
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int|string|null
@@ -138,7 +150,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -157,7 +170,8 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
 
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int|string|null $var
