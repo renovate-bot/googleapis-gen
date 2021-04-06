@@ -3,13 +3,25 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.Experiments' => [
-            'ListExperiments' => [
-                'method' => 'get',
+            'CreateExperiment' => [
+                'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/environments/*}/experiments',
+                'body' => 'experiment',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteExperiment' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*/experiments/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -25,38 +37,13 @@ return [
                     ],
                 ],
             ],
-            'CreateExperiment' => [
-                'method' => 'post',
+            'ListExperiments' => [
+                'method' => 'get',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/environments/*}/experiments',
-                'body' => 'experiment',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateExperiment' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3beta1/{experiment.name=projects/*/locations/*/agents/*/environments/*/experiments/*}',
-                'body' => 'experiment',
-                'placeholders' => [
-                    'experiment.name' => [
-                        'getters' => [
-                            'getExperiment',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteExperiment' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*/experiments/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
@@ -80,6 +67,19 @@ return [
                 'placeholders' => [
                     'name' => [
                         'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateExperiment' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3beta1/{experiment.name=projects/*/locations/*/agents/*/environments/*/experiments/*}',
+                'body' => 'experiment',
+                'placeholders' => [
+                    'experiment.name' => [
+                        'getters' => [
+                            'getExperiment',
                             'getName',
                         ],
                     ],

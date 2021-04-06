@@ -3,13 +3,25 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.EntityTypes' => [
-            'ListEntityTypes' => [
-                'method' => 'get',
+            'CreateEntityType' => [
+                'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/entityTypes',
+                'body' => 'entity_type',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteEntityType' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/entityTypes/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -25,10 +37,9 @@ return [
                     ],
                 ],
             ],
-            'CreateEntityType' => [
-                'method' => 'post',
+            'ListEntityTypes' => [
+                'method' => 'get',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/entityTypes',
-                'body' => 'entity_type',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -45,17 +56,6 @@ return [
                     'entity_type.name' => [
                         'getters' => [
                             'getEntityType',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteEntityType' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/entityTypes/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

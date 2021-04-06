@@ -403,6 +403,22 @@ class QueryParameters(proto.Message):
                   from composite entity property names to property
                   values
                -  Else: parameter value
+        current_page (str):
+            The unique identifier of the
+            [page][google.cloud.dialogflow.cx.v3beta1.Page] to override
+            the [current page][QueryResult.current_page] in the session.
+            Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/pages/<page ID>``.
+
+            If ``current_page`` is specified, the previous state of the
+            session will be ignored by Dialogflow, including the
+            [previous page][QueryResult.current_page] and the [previous
+            session parameters][QueryResult.parameters]. In most cases,
+            [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+            and
+            [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+            should be configured together to direct a session to a
+            specific state.
         disable_webhook (bool):
             Whether to disable webhook calls for this
             request.
@@ -442,6 +458,8 @@ class QueryParameters(proto.Message):
     parameters = proto.Field(proto.MESSAGE, number=5,
         message=struct.Struct,
     )
+
+    current_page = proto.Field(proto.STRING, number=6)
 
     disable_webhook = proto.Field(proto.BOOL, number=7)
 

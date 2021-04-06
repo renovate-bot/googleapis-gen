@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ namespace Google\Cloud\Dialogflow\Cx\V3beta1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -60,31 +62,42 @@ use Google\Protobuf\GPBEmpty;
  * $environmentsClient = new EnvironmentsClient();
  * try {
  *     $formattedParent = $environmentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
- *     // Iterate over pages of elements
- *     $pagedResponse = $environmentsClient->listEnvironments($formattedParent);
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
+ *     $environment = new Environment();
+ *     $operationResponse = $environmentsClient->createEnvironment($formattedParent, $environment);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         $result = $operationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
  *     }
- *
- *
  *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $environmentsClient->listEnvironments($formattedParent);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $environmentsClient->createEnvironment($formattedParent, $environment);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $environmentsClient->resumeOperation($operationName, 'createEnvironment');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         $result = $newOperationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
  *     }
  * } finally {
  *     $environmentsClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  *
  * @experimental
  */
@@ -119,8 +132,11 @@ class EnvironmentsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/dialogflow',
     ];
+
     private static $agentNameTemplate;
+
     private static $environmentNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -129,16 +145,16 @@ class EnvironmentsGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/environments_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/environments_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/environments_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/environments_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/environments_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/environments_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/environments_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/environments_rest_client_config.php',
                 ],
             ],
         ];
@@ -146,7 +162,7 @@ class EnvironmentsGapicClient
 
     private static function getAgentNameTemplate()
     {
-        if (null == self::$agentNameTemplate) {
+        if (self::$agentNameTemplate == null) {
             self::$agentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}');
         }
 
@@ -155,7 +171,7 @@ class EnvironmentsGapicClient
 
     private static function getEnvironmentNameTemplate()
     {
-        if (null == self::$environmentNameTemplate) {
+        if (self::$environmentNameTemplate == null) {
             self::$environmentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/environments/{environment}');
         }
 
@@ -164,7 +180,7 @@ class EnvironmentsGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'agent' => self::getAgentNameTemplate(),
                 'environment' => self::getEnvironmentNameTemplate(),
@@ -175,14 +191,15 @@ class EnvironmentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a agent resource.
+     * Formats a string containing the fully-qualified path to represent a agent
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $agent
      *
      * @return string The formatted agent resource.
+     *
      * @experimental
      */
     public static function agentName($project, $location, $agent)
@@ -195,8 +212,8 @@ class EnvironmentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a environment resource.
+     * Formats a string containing the fully-qualified path to represent a environment
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -204,6 +221,7 @@ class EnvironmentsGapicClient
      * @param string $environment
      *
      * @return string The formatted environment resource.
+     *
      * @experimental
      */
     public static function environmentName($project, $location, $agent, $environment)
@@ -221,12 +239,13 @@ class EnvironmentsGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - agent: projects/{project}/locations/{location}/agents/{agent}
-     * - environment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}.
+     * - environment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -234,12 +253,12 @@ class EnvironmentsGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
      * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -255,6 +274,7 @@ class EnvironmentsGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -262,6 +282,7 @@ class EnvironmentsGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
      * @experimental
      */
     public function getOperationsClient()
@@ -270,26 +291,23 @@ class EnvironmentsGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
      * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -297,7 +315,7 @@ class EnvironmentsGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -311,31 +329,31 @@ class EnvironmentsGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -343,6 +361,7 @@ class EnvironmentsGapicClient
      * }
      *
      * @throws ValidationException
+     *
      * @experimental
      */
     public function __construct(array $options = [])
@@ -350,139 +369,6 @@ class EnvironmentsGapicClient
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
-    }
-
-    /**
-     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
-     *
-     * Sample code:
-     * ```
-     * $environmentsClient = new EnvironmentsClient();
-     * try {
-     *     $formattedParent = $environmentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $environmentsClient->listEnvironments($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $environmentsClient->listEnvironments($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $environmentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to list all environments for.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listEnvironments($parent, array $optionalArgs = [])
-    {
-        $request = new ListEnvironmentsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListEnvironments',
-            $optionalArgs,
-            ListEnvironmentsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     *
-     * Sample code:
-     * ```
-     * $environmentsClient = new EnvironmentsClient();
-     * try {
-     *     $formattedName = $environmentsClient->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
-     *     $response = $environmentsClient->getEnvironment($formattedName);
-     * } finally {
-     *     $environmentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/environments/<Environment ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Environment
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getEnvironment($name, array $optionalArgs = [])
-    {
-        $request = new GetEnvironmentRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetEnvironment',
-            Environment::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -498,15 +384,12 @@ class EnvironmentsGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $environmentsClient->createEnvironment($formattedParent, $environment);
      *     $operationName = $operationResponse->getName();
@@ -517,11 +400,11 @@ class EnvironmentsGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $environmentsClient->close();
@@ -532,120 +415,31 @@ class EnvironmentsGapicClient
      *                                  Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
      * @param Environment $environment  Required. The environment to create.
      * @param array       $optionalArgs {
-     *                                  Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function createEnvironment($parent, $environment, array $optionalArgs = [])
     {
         $request = new CreateEnvironmentRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setEnvironment($environment);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'CreateEnvironment',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     *
-     * Sample code:
-     * ```
-     * $environmentsClient = new EnvironmentsClient();
-     * try {
-     *     $environment = new Environment();
-     *     $updateMask = new FieldMask();
-     *     $operationResponse = $environmentsClient->updateEnvironment($environment, $updateMask);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $environmentsClient->updateEnvironment($environment, $updateMask);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $environmentsClient->resumeOperation($operationName, 'updateEnvironment');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $environmentsClient->close();
-     * }
-     * ```
-     *
-     * @param Environment $environment  Required. The environment to update.
-     * @param FieldMask   $updateMask   Required. The mask to control which fields get updated.
-     * @param array       $optionalArgs {
-     *                                  Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateEnvironment($environment, $updateMask, array $optionalArgs = [])
-    {
-        $request = new UpdateEnvironmentRequest();
-        $request->setEnvironment($environment);
-        $request->setUpdateMask($updateMask);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'environment.name' => $request->getEnvironment()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'UpdateEnvironment',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('CreateEnvironment', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -666,36 +460,144 @@ class EnvironmentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/environments/<Environment ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function deleteEnvironment($name, array $optionalArgs = [])
     {
         $request = new DeleteEnvironmentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteEnvironment', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+    /**
+     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     *
+     * Sample code:
+     * ```
+     * $environmentsClient = new EnvironmentsClient();
+     * try {
+     *     $formattedName = $environmentsClient->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
+     *     $response = $environmentsClient->getEnvironment($formattedName);
+     * } finally {
+     *     $environmentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/environments/<Environment ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Environment
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function getEnvironment($name, array $optionalArgs = [])
+    {
+        $request = new GetEnvironmentRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetEnvironment', Environment::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'DeleteEnvironment',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     *
+     * Sample code:
+     * ```
+     * $environmentsClient = new EnvironmentsClient();
+     * try {
+     *     $formattedParent = $environmentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $environmentsClient->listEnvironments($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $environmentsClient->listEnvironments($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $environmentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to list all environments for.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listEnvironments($parent, array $optionalArgs = [])
+    {
+        $request = new ListEnvironmentsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListEnvironments', $optionalArgs, ListEnvironmentsResponse::class, $request);
     }
 
     /**
@@ -713,10 +615,7 @@ class EnvironmentsGapicClient
      *             // doSomethingWith($element);
      *         }
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Iterate through all elements
      *     $pagedResponse = $environmentsClient->lookupEnvironmentHistory($formattedName);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
@@ -731,52 +630,116 @@ class EnvironmentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/environments/<Environment ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function lookupEnvironmentHistory($name, array $optionalArgs = [])
     {
         $request = new LookupEnvironmentHistoryRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
+
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('LookupEnvironmentHistory', $optionalArgs, LookupEnvironmentHistoryResponse::class, $request);
+    }
 
-        return $this->getPagedListResponse(
-            'LookupEnvironmentHistory',
-            $optionalArgs,
-            LookupEnvironmentHistoryResponse::class,
-            $request
-        );
+    /**
+     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     *
+     * Sample code:
+     * ```
+     * $environmentsClient = new EnvironmentsClient();
+     * try {
+     *     $environment = new Environment();
+     *     $updateMask = new FieldMask();
+     *     $operationResponse = $environmentsClient->updateEnvironment($environment, $updateMask);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $environmentsClient->updateEnvironment($environment, $updateMask);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $environmentsClient->resumeOperation($operationName, 'updateEnvironment');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $environmentsClient->close();
+     * }
+     * ```
+     *
+     * @param Environment $environment  Required. The environment to update.
+     * @param FieldMask   $updateMask   Required. The mask to control which fields get updated.
+     * @param array       $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function updateEnvironment($environment, $updateMask, array $optionalArgs = [])
+    {
+        $request = new UpdateEnvironmentRequest();
+        $requestParamHeaders = [];
+        $request->setEnvironment($environment);
+        $request->setUpdateMask($updateMask);
+        $requestParamHeaders['environment.name'] = $environment->getName();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('UpdateEnvironment', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 }

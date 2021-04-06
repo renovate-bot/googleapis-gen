@@ -55,6 +55,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.WebhookRequest" do
       optional :detect_intent_response_id, :string, 1
+      optional :language_code, :string, 15
       optional :fulfillment_info, :message, 6, "google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo"
       optional :intent_info, :message, 3, "google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo"
       optional :page_info, :message, 4, "google.cloud.dialogflow.cx.v3beta1.PageInfo"

@@ -3873,7 +3873,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -3886,7 +3886,7 @@ private static final long serialVersionUID = 0L;
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
 
   @java.lang.Override
@@ -3905,7 +3905,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -3918,7 +3918,7 @@ private static final long serialVersionUID = 0L;
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
 
@@ -3927,7 +3927,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -3940,7 +3940,7 @@ private static final long serialVersionUID = 0L;
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
 
@@ -3954,7 +3954,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -3967,7 +3967,7 @@ private static final long serialVersionUID = 0L;
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
 
@@ -3986,11 +3986,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Optional. Human readable description for better understanding an intent like its
+   * Human readable description for better understanding an intent like its
    * scope, content, result etc. Maximum character limit: 140 characters.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 8;</code>
    * @return The description.
    */
   @java.lang.Override
@@ -4008,11 +4008,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Human readable description for better understanding an intent like its
+   * Human readable description for better understanding an intent like its
    * scope, content, result etc. Maximum character limit: 140 characters.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 8;</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -5570,7 +5570,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5583,7 +5583,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
 
     @java.lang.Override
@@ -5602,7 +5602,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5615,7 +5615,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
 
@@ -5624,7 +5624,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5637,7 +5637,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
 
@@ -5651,7 +5651,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5664,7 +5664,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
 
@@ -5686,7 +5686,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5699,7 +5699,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
 
     public Builder removeLabels(
@@ -5719,7 +5719,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5732,7 +5732,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     public Builder putLabels(
         java.lang.String key,
@@ -5745,7 +5745,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -5758,7 +5758,7 @@ private static final long serialVersionUID = 0L;
      * head intent. "sys-contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
 
     public Builder putAllLabels(
@@ -5771,11 +5771,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -5792,11 +5792,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -5814,11 +5814,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -5834,11 +5834,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -5849,11 +5849,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */

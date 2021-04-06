@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +22,17 @@
 
 namespace Google\Cloud\Dialogflow\Cx\Tests\Unit\V3beta1;
 
-use Google\Cloud\Dialogflow\Cx\V3beta1\VersionsClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListVersionsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\Version;
+
+use Google\Cloud\Dialogflow\Cx\V3beta1\VersionsClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
@@ -40,6 +43,7 @@ use stdClass;
 
 /**
  * @group cx
+ *
  * @group gapic
  */
 class VersionsClientTest extends GeneratedTest
@@ -57,9 +61,7 @@ class VersionsClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -70,164 +72,7 @@ class VersionsClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new VersionsClient($options);
-    }
-
-    /**
-     * @test
-     */
-    public function listVersionsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $nextPageToken = '';
-        $versionsElement = new Version();
-        $versions = [$versionsElement];
-        $expectedResponse = new ListVersionsResponse();
-        $expectedResponse->setNextPageToken($nextPageToken);
-        $expectedResponse->setVersions($versions);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
-
-        $response = $client->listVersions($formattedParent);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getVersions()[0], $resources[0]);
-
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/ListVersions', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getParent();
-
-        $this->assertProtobufEquals($formattedParent, $actualValue);
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function listVersionsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
-
-        try {
-            $client->listVersions($formattedParent);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getVersionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name2 = 'name2-1052831874';
-        $displayName = 'displayName1615086568';
-        $description = 'description-1724546052';
-        $expectedResponse = new Version();
-        $expectedResponse->setName($name2);
-        $expectedResponse->setDisplayName($displayName);
-        $expectedResponse->setDescription($description);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
-
-        $response = $client->getVersion($formattedName);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/GetVersion', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getName();
-
-        $this->assertProtobufEquals($formattedName, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getVersionExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
-
-        try {
-            $client->getVersion($formattedName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 
     /**
@@ -246,10 +91,8 @@ class VersionsClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/createVersionTest');
@@ -269,11 +112,9 @@ class VersionsClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $version = new Version();
-
         $response = $client->createVersion($formattedParent, $version);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -281,20 +122,15 @@ class VersionsClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/CreateVersion', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getParent();
-
         $this->assertProtobufEquals($formattedParent, $actualValue);
         $actualValue = $actualApiRequestObject->getVersion();
-
         $this->assertProtobufEquals($version, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/createVersionTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -304,12 +140,10 @@ class VersionsClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
@@ -330,39 +164,31 @@ class VersionsClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/createVersionTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $version = new Version();
-
         $response = $client->createVersion($formattedParent, $version);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/createVersionTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -373,7 +199,6 @@ class VersionsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
@@ -384,113 +209,26 @@ class VersionsClientTest extends GeneratedTest
     /**
      * @test
      */
-    public function updateVersionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name = 'name3373707';
-        $displayName = 'displayName1615086568';
-        $description = 'description-1724546052';
-        $expectedResponse = new Version();
-        $expectedResponse->setName($name);
-        $expectedResponse->setDisplayName($displayName);
-        $expectedResponse->setDescription($description);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $version = new Version();
-        $updateMask = new FieldMask();
-
-        $response = $client->updateVersion($version, $updateMask);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/UpdateVersion', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getVersion();
-
-        $this->assertProtobufEquals($version, $actualValue);
-        $actualValue = $actualRequestObject->getUpdateMask();
-
-        $this->assertProtobufEquals($updateMask, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function updateVersionExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $version = new Version();
-        $updateMask = new FieldMask();
-
-        try {
-            $client->updateVersion($version, $updateMask);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
     public function deleteVersionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new GPBEmpty();
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
-
         $client->deleteVersion($formattedName);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/DeleteVersion', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -500,25 +238,22 @@ class VersionsClientTest extends GeneratedTest
     public function deleteVersionExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
-
         try {
             $client->deleteVersion($formattedName);
             // If the $client method call did not throw, fail the test
@@ -527,7 +262,146 @@ class VersionsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /**
+     * @test
+     */
+    public function getVersionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name2 = 'name2-1052831874';
+        $displayName = 'displayName1615086568';
+        $description = 'description-1724546052';
+        $expectedResponse = new Version();
+        $expectedResponse->setName($name2);
+        $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setDescription($description);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+        $response = $client->getVersion($formattedName);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/GetVersion', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function getVersionExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+        try {
+            $client->getVersion($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listVersionsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $nextPageToken = '';
+        $versionsElement = new Version();
+        $versions = [
+            $versionsElement,
+        ];
+        $expectedResponse = new ListVersionsResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setVersions($versions);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
+        $response = $client->listVersions($formattedParent);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getVersions()[0], $resources[0]);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/ListVersions', $actualFuncCall);
+        $actualValue = $actualRequestObject->getParent();
+        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listVersionsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
+        try {
+            $client->listVersions($formattedParent);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -549,10 +423,8 @@ class VersionsClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/loadVersionTest');
@@ -566,10 +438,8 @@ class VersionsClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
-
         $response = $client->loadVersion($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -577,17 +447,13 @@ class VersionsClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/LoadVersion', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/loadVersionTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -597,12 +463,10 @@ class VersionsClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
@@ -623,38 +487,30 @@ class VersionsClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/loadVersionTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
-
         $response = $client->loadVersion($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/loadVersionTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -665,11 +521,82 @@ class VersionsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function updateVersionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name = 'name3373707';
+        $displayName = 'displayName1615086568';
+        $description = 'description-1724546052';
+        $expectedResponse = new Version();
+        $expectedResponse->setName($name);
+        $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setDescription($description);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $version = new Version();
+        $updateMask = new FieldMask();
+        $response = $client->updateVersion($version, $updateMask);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/UpdateVersion', $actualFuncCall);
+        $actualValue = $actualRequestObject->getVersion();
+        $this->assertProtobufEquals($version, $actualValue);
+        $actualValue = $actualRequestObject->getUpdateMask();
+        $this->assertProtobufEquals($updateMask, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function updateVersionExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $version = new Version();
+        $updateMask = new FieldMask();
+        try {
+            $client->updateVersion($version, $updateMask);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
     }
 }

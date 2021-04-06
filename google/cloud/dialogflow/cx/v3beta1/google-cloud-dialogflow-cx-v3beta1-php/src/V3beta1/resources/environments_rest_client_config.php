@@ -3,28 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.Environments' => [
-            'ListEnvironments' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/environments',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetEnvironment' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateEnvironment' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/environments',
@@ -33,19 +11,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateEnvironment' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3beta1/{environment.name=projects/*/locations/*/agents/*/environments/*}',
-                'body' => 'environment',
-                'placeholders' => [
-                    'environment.name' => [
-                        'getters' => [
-                            'getEnvironment',
-                            'getName',
                         ],
                     ],
                 ],
@@ -61,12 +26,47 @@ return [
                     ],
                 ],
             ],
+            'GetEnvironment' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListEnvironments' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/environments',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'LookupEnvironmentHistory' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*}:lookupEnvironmentHistory',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateEnvironment' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3beta1/{environment.name=projects/*/locations/*/agents/*/environments/*}',
+                'body' => 'environment',
+                'placeholders' => [
+                    'environment.name' => [
+                        'getters' => [
+                            'getEnvironment',
                             'getName',
                         ],
                     ],

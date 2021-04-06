@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ namespace Google\Cloud\Dialogflow\Cx\V3beta1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
+
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -47,11 +49,11 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\GetAgentValidationResultRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListAgentsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListAgentsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest;
-use Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest\RestoreOption;
 use Google\Cloud\Dialogflow\Cx\V3beta1\UpdateAgentRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ValidateAgentRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
+
 use Google\Protobuf\GPBEmpty;
 
 /**
@@ -64,31 +66,17 @@ use Google\Protobuf\GPBEmpty;
  * $agentsClient = new AgentsClient();
  * try {
  *     $formattedParent = $agentsClient->locationName('[PROJECT]', '[LOCATION]');
- *     // Iterate over pages of elements
- *     $pagedResponse = $agentsClient->listAgents($formattedParent);
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
- *     }
- *
- *
- *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $agentsClient->listAgents($formattedParent);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
+ *     $agent = new Agent();
+ *     $response = $agentsClient->createAgent($formattedParent, $agent);
  * } finally {
  *     $agentsClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  *
  * @experimental
  */
@@ -123,11 +111,17 @@ class AgentsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/dialogflow',
     ];
+
     private static $agentNameTemplate;
+
     private static $agentValidationResultNameTemplate;
+
     private static $flowNameTemplate;
+
     private static $locationNameTemplate;
+
     private static $securitySettingsNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -136,16 +130,16 @@ class AgentsGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/agents_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/agents_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/agents_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/agents_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/agents_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/agents_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/agents_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/agents_rest_client_config.php',
                 ],
             ],
         ];
@@ -153,7 +147,7 @@ class AgentsGapicClient
 
     private static function getAgentNameTemplate()
     {
-        if (null == self::$agentNameTemplate) {
+        if (self::$agentNameTemplate == null) {
             self::$agentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}');
         }
 
@@ -162,7 +156,7 @@ class AgentsGapicClient
 
     private static function getAgentValidationResultNameTemplate()
     {
-        if (null == self::$agentValidationResultNameTemplate) {
+        if (self::$agentValidationResultNameTemplate == null) {
             self::$agentValidationResultNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/validationResult');
         }
 
@@ -171,7 +165,7 @@ class AgentsGapicClient
 
     private static function getFlowNameTemplate()
     {
-        if (null == self::$flowNameTemplate) {
+        if (self::$flowNameTemplate == null) {
             self::$flowNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/flows/{flow}');
         }
 
@@ -180,7 +174,7 @@ class AgentsGapicClient
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -189,7 +183,7 @@ class AgentsGapicClient
 
     private static function getSecuritySettingsNameTemplate()
     {
-        if (null == self::$securitySettingsNameTemplate) {
+        if (self::$securitySettingsNameTemplate == null) {
             self::$securitySettingsNameTemplate = new PathTemplate('projects/{project}/locations/{location}/securitySettings/{security_settings}');
         }
 
@@ -198,7 +192,7 @@ class AgentsGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'agent' => self::getAgentNameTemplate(),
                 'agentValidationResult' => self::getAgentValidationResultNameTemplate(),
@@ -212,14 +206,15 @@ class AgentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a agent resource.
+     * Formats a string containing the fully-qualified path to represent a agent
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $agent
      *
      * @return string The formatted agent resource.
+     *
      * @experimental
      */
     public static function agentName($project, $location, $agent)
@@ -232,14 +227,15 @@ class AgentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a agent_validation_result resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * agent_validation_result resource.
      *
      * @param string $project
      * @param string $location
      * @param string $agent
      *
      * @return string The formatted agent_validation_result resource.
+     *
      * @experimental
      */
     public static function agentValidationResultName($project, $location, $agent)
@@ -252,8 +248,8 @@ class AgentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a flow resource.
+     * Formats a string containing the fully-qualified path to represent a flow
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -261,6 +257,7 @@ class AgentsGapicClient
      * @param string $flow
      *
      * @return string The formatted flow resource.
+     *
      * @experimental
      */
     public static function flowName($project, $location, $agent, $flow)
@@ -274,13 +271,14 @@ class AgentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location resource.
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
      *
      * @param string $project
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
      * @experimental
      */
     public static function locationName($project, $location)
@@ -292,14 +290,15 @@ class AgentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a security_settings resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * security_settings resource.
      *
      * @param string $project
      * @param string $location
      * @param string $securitySettings
      *
      * @return string The formatted security_settings resource.
+     *
      * @experimental
      */
     public static function securitySettingsName($project, $location, $securitySettings)
@@ -319,12 +318,13 @@ class AgentsGapicClient
      * - agentValidationResult: projects/{project}/locations/{location}/agents/{agent}/validationResult
      * - flow: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}
      * - location: projects/{project}/locations/{location}
-     * - securitySettings: projects/{project}/locations/{location}/securitySettings/{security_settings}.
+     * - securitySettings: projects/{project}/locations/{location}/securitySettings/{security_settings}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -332,12 +332,12 @@ class AgentsGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
      * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -353,6 +353,7 @@ class AgentsGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -360,6 +361,7 @@ class AgentsGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
      * @experimental
      */
     public function getOperationsClient()
@@ -368,26 +370,23 @@ class AgentsGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
      * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -395,7 +394,7 @@ class AgentsGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -409,31 +408,31 @@ class AgentsGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -441,6 +440,7 @@ class AgentsGapicClient
      * }
      *
      * @throws ValidationException
+     *
      * @experimental
      */
     public function __construct(array $options = [])
@@ -448,138 +448,6 @@ class AgentsGapicClient
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
-    }
-
-    /**
-     * Returns the list of all agents in the specified location.
-     *
-     * Sample code:
-     * ```
-     * $agentsClient = new AgentsClient();
-     * try {
-     *     $formattedParent = $agentsClient->locationName('[PROJECT]', '[LOCATION]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $agentsClient->listAgents($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $agentsClient->listAgents($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $agentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The location to list all agents for.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listAgents($parent, array $optionalArgs = [])
-    {
-        $request = new ListAgentsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListAgents',
-            $optionalArgs,
-            ListAgentsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Retrieves the specified agent.
-     *
-     * Sample code:
-     * ```
-     * $agentsClient = new AgentsClient();
-     * try {
-     *     $formattedName = $agentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-     *     $response = $agentsClient->getAgent($formattedName);
-     * } finally {
-     *     $agentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the agent.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Agent
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getAgent($name, array $optionalArgs = [])
-    {
-        $request = new GetAgentRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetAgent',
-            Agent::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -601,95 +469,31 @@ class AgentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>`.
      * @param Agent  $agent        Required. The agent to create.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Agent
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function createAgent($parent, $agent, array $optionalArgs = [])
     {
         $request = new CreateAgentRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setAgent($agent);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateAgent',
-            Agent::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the specified agent.
-     *
-     * Sample code:
-     * ```
-     * $agentsClient = new AgentsClient();
-     * try {
-     *     $agent = new Agent();
-     *     $response = $agentsClient->updateAgent($agent);
-     * } finally {
-     *     $agentsClient->close();
-     * }
-     * ```
-     *
-     * @param Agent $agent        Required. The agent to update.
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type FieldMask $updateMask
-     *          The mask to control which fields get updated. If the mask is not present,
-     *          all fields will be updated.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Agent
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateAgent($agent, array $optionalArgs = [])
-    {
-        $request = new UpdateAgentRequest();
-        $request->setAgent($agent);
-        if (isset($optionalArgs['updateMask'])) {
-            $request->setUpdateMask($optionalArgs['updateMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'agent.name' => $request->getAgent()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateAgent',
-            Agent::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateAgent', Agent::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -709,36 +513,28 @@ class AgentsGapicClient
      * @param string $name         Required. The name of the agent to delete.
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function deleteAgent($name, array $optionalArgs = [])
     {
         $request = new DeleteAgentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteAgent',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteAgent', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -753,15 +549,12 @@ class AgentsGapicClient
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
-     *         // doSomethingWith($result)
+     *     // doSomethingWith($result)
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $agentsClient->exportAgent($formattedName);
      *     $operationName = $operationResponse->getName();
@@ -772,11 +565,11 @@ class AgentsGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       $result = $newOperationResponse->getResult();
-     *       // doSomethingWith($result)
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $agentsClient->close();
@@ -786,202 +579,82 @@ class AgentsGapicClient
      * @param string $name         Required. The name of the agent to export.
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $agentUri
-     *          Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     *          export the agent to. The format of this URI must be
-     *          `gs://<bucket-name>/<object-name>`.
-     *          If left unspecified, the serialized agent is returned inline.
+     *           Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     *           export the agent to. The format of this URI must be
+     *           `gs://<bucket-name>/<object-name>`.
+     *           If left unspecified, the serialized agent is returned inline.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function exportAgent($name, array $optionalArgs = [])
     {
         $request = new ExportAgentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['agentUri'])) {
             $request->setAgentUri($optionalArgs['agentUri']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'ExportAgent',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('ExportAgent', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
-     * Restores the specified agent from a binary file.
-     *
-     * Replaces the current agent with a new one. Note that all existing resources
-     * in agent (e.g. intents, entity types, flows) will be removed.
+     * Retrieves the specified agent.
      *
      * Sample code:
      * ```
      * $agentsClient = new AgentsClient();
      * try {
      *     $formattedName = $agentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-     *     $operationResponse = $agentsClient->restoreAgent($formattedName);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         // operation succeeded and returns no value
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $agentsClient->restoreAgent($formattedName);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $agentsClient->resumeOperation($operationName, 'restoreAgent');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
+     *     $response = $agentsClient->getAgent($formattedName);
      * } finally {
      *     $agentsClient->close();
      * }
      * ```
      *
-     * @param string $name         Required. The name of the agent to restore into.
+     * @param string $name         Required. The name of the agent.
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
-     *     @type string $agentUri
-     *          The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
-     *          to restore agent from. The format of this URI must be
-     *          `gs://<bucket-name>/<object-name>`.
-     *     @type string $agentContent
-     *          Uncompressed raw byte content for agent.
-     *     @type int $restoreOption
-     *          Agent restore mode. If not specified, `KEEP` is assumed.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest\RestoreOption}
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\OperationResponse
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Agent
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function restoreAgent($name, array $optionalArgs = [])
+    public function getAgent($name, array $optionalArgs = [])
     {
-        $request = new RestoreAgentRequest();
+        $request = new GetAgentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-        if (isset($optionalArgs['agentUri'])) {
-            $request->setAgentUri($optionalArgs['agentUri']);
-        }
-        if (isset($optionalArgs['agentContent'])) {
-            $request->setAgentContent($optionalArgs['agentContent']);
-        }
-        if (isset($optionalArgs['restoreOption'])) {
-            $request->setRestoreOption($optionalArgs['restoreOption']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'RestoreAgent',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Validates the specified agent and creates or updates validation results.
-     * The agent in draft version is validated. Please call this API after the
-     * training is completed to get the complete validation results.
-     *
-     * Sample code:
-     * ```
-     * $agentsClient = new AgentsClient();
-     * try {
-     *     $formattedName = $agentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-     *     $response = $agentsClient->validateAgent($formattedName);
-     * } finally {
-     *     $agentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The agent to validate.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $languageCode
-     *          If not specified, the agent's default language is used.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\AgentValidationResult
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function validateAgent($name, array $optionalArgs = [])
-    {
-        $request = new ValidateAgentRequest();
-        $request->setName($name);
-        if (isset($optionalArgs['languageCode'])) {
-            $request->setLanguageCode($optionalArgs['languageCode']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ValidateAgent',
-            AgentValidationResult::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetAgent', Agent::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1003,42 +676,297 @@ class AgentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/validationResult`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $languageCode
-     *          If not specified, the agent's default language is used.
+     *           If not specified, the agent's default language is used.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\AgentValidationResult
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function getAgentValidationResult($name, array $optionalArgs = [])
     {
         $request = new GetAgentValidationResultRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['languageCode'])) {
             $request->setLanguageCode($optionalArgs['languageCode']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetAgentValidationResult', AgentValidationResult::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'GetAgentValidationResult',
-            AgentValidationResult::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Returns the list of all agents in the specified location.
+     *
+     * Sample code:
+     * ```
+     * $agentsClient = new AgentsClient();
+     * try {
+     *     $formattedParent = $agentsClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $agentsClient->listAgents($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $agentsClient->listAgents($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $agentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The location to list all agents for.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listAgents($parent, array $optionalArgs = [])
+    {
+        $request = new ListAgentsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListAgents', $optionalArgs, ListAgentsResponse::class, $request);
+    }
+
+    /**
+     * Restores the specified agent from a binary file.
+     *
+     * Replaces the current agent with a new one. Note that all existing resources
+     * in agent (e.g. intents, entity types, flows) will be removed.
+     *
+     * Sample code:
+     * ```
+     * $agentsClient = new AgentsClient();
+     * try {
+     *     $formattedName = $agentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
+     *     $operationResponse = $agentsClient->restoreAgent($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $agentsClient->restoreAgent($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $agentsClient->resumeOperation($operationName, 'restoreAgent');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $agentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the agent to restore into.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $agentUri
+     *           The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+     *           to restore agent from. The format of this URI must be
+     *           `gs://<bucket-name>/<object-name>`.
+     *     @type string $agentContent
+     *           Uncompressed raw byte content for agent.
+     *     @type int $restoreOption
+     *           Agent restore mode. If not specified, `KEEP` is assumed.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest\RestoreOption}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function restoreAgent($name, array $optionalArgs = [])
+    {
+        $request = new RestoreAgentRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['agentUri'])) {
+            $request->setAgentUri($optionalArgs['agentUri']);
+        }
+
+        if (isset($optionalArgs['agentContent'])) {
+            $request->setAgentContent($optionalArgs['agentContent']);
+        }
+
+        if (isset($optionalArgs['restoreOption'])) {
+            $request->setRestoreOption($optionalArgs['restoreOption']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('RestoreAgent', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Updates the specified agent.
+     *
+     * Sample code:
+     * ```
+     * $agentsClient = new AgentsClient();
+     * try {
+     *     $agent = new Agent();
+     *     $response = $agentsClient->updateAgent($agent);
+     * } finally {
+     *     $agentsClient->close();
+     * }
+     * ```
+     *
+     * @param Agent $agent        Required. The agent to update.
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           The mask to control which fields get updated. If the mask is not present,
+     *           all fields will be updated.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Agent
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function updateAgent($agent, array $optionalArgs = [])
+    {
+        $request = new UpdateAgentRequest();
+        $requestParamHeaders = [];
+        $request->setAgent($agent);
+        $requestParamHeaders['agent.name'] = $agent->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateAgent', Agent::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Validates the specified agent and creates or updates validation results.
+     * The agent in draft version is validated. Please call this API after the
+     * training is completed to get the complete validation results.
+     *
+     * Sample code:
+     * ```
+     * $agentsClient = new AgentsClient();
+     * try {
+     *     $formattedName = $agentsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
+     *     $response = $agentsClient->validateAgent($formattedName);
+     * } finally {
+     *     $agentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The agent to validate.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $languageCode
+     *           If not specified, the agent's default language is used.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\AgentValidationResult
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function validateAgent($name, array $optionalArgs = [])
+    {
+        $request = new ValidateAgentRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['languageCode'])) {
+            $request->setLanguageCode($optionalArgs['languageCode']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ValidateAgent', AgentValidationResult::class, $optionalArgs, $request)->wait();
     }
 }

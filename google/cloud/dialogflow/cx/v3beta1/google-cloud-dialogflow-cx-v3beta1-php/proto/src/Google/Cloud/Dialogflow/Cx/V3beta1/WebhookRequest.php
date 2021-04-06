@@ -24,6 +24,13 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     protected $detect_intent_response_id = '';
     /**
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     *
+     * Generated from protobuf field <code>string language_code = 15;</code>
+     */
+    protected $language_code = '';
+    /**
      * Always present. Information about the fulfillment that triggered this
      * webhook call.
      *
@@ -94,6 +101,9 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      *     @type string $trigger_event
      *           If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
      *           the name of the event.
+     *     @type string $language_code
+     *           The language code specified in the [original
+     *           request][QueryInput.language_code].
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\WebhookRequest\FulfillmentInfo $fulfillment_info
      *           Always present. Information about the fulfillment that triggered this
      *           webhook call.
@@ -279,6 +289,34 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(14, $var);
+
+        return $this;
+    }
+
+    /**
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     *
+     * Generated from protobuf field <code>string language_code = 15;</code>
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->language_code;
+    }
+
+    /**
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     *
+     * Generated from protobuf field <code>string language_code = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLanguageCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->language_code = $var;
 
         return $this;
     }

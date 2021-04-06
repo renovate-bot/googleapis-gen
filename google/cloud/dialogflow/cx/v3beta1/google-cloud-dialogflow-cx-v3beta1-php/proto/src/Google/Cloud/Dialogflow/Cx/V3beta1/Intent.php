@@ -71,7 +71,7 @@ class Intent extends \Google\Protobuf\Internal\Message
      */
     protected $is_fallback = false;
     /**
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -83,14 +83,14 @@ class Intent extends \Google\Protobuf\Internal\Message
      * The above labels do not require value. "sys-head" means the intent is a
      * head intent. "sys-contextual" means the intent is a contextual intent.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>map<string, string> labels = 7;</code>
      */
     private $labels;
     /**
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      *
-     * Generated from protobuf field <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string description = 8;</code>
      */
     protected $description = '';
 
@@ -129,7 +129,7 @@ class Intent extends \Google\Protobuf\Internal\Message
      *           requests that are mistakenly matched, since training phrases assigned to
      *           fallback intents act as negative examples that triggers no-match event.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
-     *           Optional. The key/value metadata to label an intent. Labels can contain
+     *           The key/value metadata to label an intent. Labels can contain
      *           lowercase letters, digits and the symbols '-' and '_'. International
      *           characters are allowed, including letters from unicase alphabets. Keys must
      *           start with a letter. Keys and values can be no longer than 63 characters
@@ -141,7 +141,7 @@ class Intent extends \Google\Protobuf\Internal\Message
      *           The above labels do not require value. "sys-head" means the intent is a
      *           head intent. "sys-contextual" means the intent is a contextual intent.
      *     @type string $description
-     *           Optional. Human readable description for better understanding an intent like its
+     *           Human readable description for better understanding an intent like its
      *           scope, content, result etc. Maximum character limit: 140 characters.
      * }
      */
@@ -339,7 +339,7 @@ class Intent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -351,7 +351,7 @@ class Intent extends \Google\Protobuf\Internal\Message
      * The above labels do not require value. "sys-head" means the intent is a
      * head intent. "sys-contextual" means the intent is a contextual intent.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>map<string, string> labels = 7;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -360,7 +360,7 @@ class Intent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -372,7 +372,7 @@ class Intent extends \Google\Protobuf\Internal\Message
      * The above labels do not require value. "sys-head" means the intent is a
      * head intent. "sys-contextual" means the intent is a contextual intent.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>map<string, string> labels = 7;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -385,10 +385,10 @@ class Intent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      *
-     * Generated from protobuf field <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string description = 8;</code>
      * @return string
      */
     public function getDescription()
@@ -397,10 +397,10 @@ class Intent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      *
-     * Generated from protobuf field <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string description = 8;</code>
      * @param string $var
      * @return $this
      */

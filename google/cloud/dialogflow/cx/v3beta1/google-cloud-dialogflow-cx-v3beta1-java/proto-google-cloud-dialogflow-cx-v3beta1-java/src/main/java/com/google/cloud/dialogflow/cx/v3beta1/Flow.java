@@ -36,6 +36,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     transitionRoutes_ = java.util.Collections.emptyList();
     eventHandlers_ = java.util.Collections.emptyList();
+    transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -118,6 +119,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              transitionRouteGroups_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            transitionRouteGroups_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -138,6 +148,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         eventHandlers_ = java.util.Collections.unmodifiableList(eventHandlers_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        transitionRouteGroups_ = transitionRouteGroups_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -520,6 +533,85 @@ private static final long serialVersionUID = 0L;
     return eventHandlers_.get(index);
   }
 
+  public static final int TRANSITION_ROUTE_GROUPS_FIELD_NUMBER = 15;
+  private com.google.protobuf.LazyStringList transitionRouteGroups_;
+  /**
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+   * @return A list containing the transitionRouteGroups.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getTransitionRouteGroupsList() {
+    return transitionRouteGroups_;
+  }
+  /**
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+   * @return The count of transitionRouteGroups.
+   */
+  public int getTransitionRouteGroupsCount() {
+    return transitionRouteGroups_.size();
+  }
+  /**
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The transitionRouteGroups at the given index.
+   */
+  public java.lang.String getTransitionRouteGroups(int index) {
+    return transitionRouteGroups_.get(index);
+  }
+  /**
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the transitionRouteGroups at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getTransitionRouteGroupsBytes(int index) {
+    return transitionRouteGroups_.getByteString(index);
+  }
+
   public static final int NLU_SETTINGS_FIELD_NUMBER = 11;
   private com.google.cloud.dialogflow.cx.v3beta1.NluSettings nluSettings_;
   /**
@@ -590,6 +682,9 @@ private static final long serialVersionUID = 0L;
     if (nluSettings_ != null) {
       output.writeMessage(11, getNluSettings());
     }
+    for (int i = 0; i < transitionRouteGroups_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, transitionRouteGroups_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -620,6 +715,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getNluSettings());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < transitionRouteGroups_.size(); i++) {
+        dataSize += computeStringSizeNoTag(transitionRouteGroups_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTransitionRouteGroupsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -645,6 +748,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTransitionRoutesList())) return false;
     if (!getEventHandlersList()
         .equals(other.getEventHandlersList())) return false;
+    if (!getTransitionRouteGroupsList()
+        .equals(other.getTransitionRouteGroupsList())) return false;
     if (hasNluSettings() != other.hasNluSettings()) return false;
     if (hasNluSettings()) {
       if (!getNluSettings()
@@ -674,6 +779,10 @@ private static final long serialVersionUID = 0L;
     if (getEventHandlersCount() > 0) {
       hash = (37 * hash) + EVENT_HANDLERS_FIELD_NUMBER;
       hash = (53 * hash) + getEventHandlersList().hashCode();
+    }
+    if (getTransitionRouteGroupsCount() > 0) {
+      hash = (37 * hash) + TRANSITION_ROUTE_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getTransitionRouteGroupsList().hashCode();
     }
     if (hasNluSettings()) {
       hash = (37 * hash) + NLU_SETTINGS_FIELD_NUMBER;
@@ -847,6 +956,8 @@ private static final long serialVersionUID = 0L;
       } else {
         eventHandlersBuilder_.clear();
       }
+      transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (nluSettingsBuilder_ == null) {
         nluSettings_ = null;
       } else {
@@ -901,6 +1012,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.eventHandlers_ = eventHandlersBuilder_.build();
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        transitionRouteGroups_ = transitionRouteGroups_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.transitionRouteGroups_ = transitionRouteGroups_;
       if (nluSettingsBuilder_ == null) {
         result.nluSettings_ = nluSettings_;
       } else {
@@ -1017,6 +1133,16 @@ private static final long serialVersionUID = 0L;
             eventHandlersBuilder_.addAllMessages(other.eventHandlers_);
           }
         }
+      }
+      if (!other.transitionRouteGroups_.isEmpty()) {
+        if (transitionRouteGroups_.isEmpty()) {
+          transitionRouteGroups_ = other.transitionRouteGroups_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureTransitionRouteGroupsIsMutable();
+          transitionRouteGroups_.addAll(other.transitionRouteGroups_);
+        }
+        onChanged();
       }
       if (other.hasNluSettings()) {
         mergeNluSettings(other.getNluSettings());
@@ -2336,6 +2462,215 @@ private static final long serialVersionUID = 0L;
         eventHandlers_ = null;
       }
       return eventHandlersBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTransitionRouteGroupsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        transitionRouteGroups_ = new com.google.protobuf.LazyStringArrayList(transitionRouteGroups_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @return A list containing the transitionRouteGroups.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTransitionRouteGroupsList() {
+      return transitionRouteGroups_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @return The count of transitionRouteGroups.
+     */
+    public int getTransitionRouteGroupsCount() {
+      return transitionRouteGroups_.size();
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The transitionRouteGroups at the given index.
+     */
+    public java.lang.String getTransitionRouteGroups(int index) {
+      return transitionRouteGroups_.get(index);
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the transitionRouteGroups at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTransitionRouteGroupsBytes(int index) {
+      return transitionRouteGroups_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The transitionRouteGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransitionRouteGroups(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTransitionRouteGroupsIsMutable();
+      transitionRouteGroups_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The transitionRouteGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTransitionRouteGroups(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTransitionRouteGroupsIsMutable();
+      transitionRouteGroups_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @param values The transitionRouteGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTransitionRouteGroups(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTransitionRouteGroupsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, transitionRouteGroups_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTransitionRouteGroups() {
+      transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+     * </pre>
+     *
+     * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes of the transitionRouteGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTransitionRouteGroupsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureTransitionRouteGroupsIsMutable();
+      transitionRouteGroups_.add(value);
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.dialogflow.cx.v3beta1.NluSettings nluSettings_;

@@ -22,25 +22,6 @@ return [
                     ],
                 ],
             ],
-            'MatchIntent' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3beta1/{session=projects/*/locations/*/agents/*/sessions/*}:matchIntent',
-                'body' => '*',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v3beta1/{session=projects/*/locations/*/agents/*/environments/*/sessions/*}:matchIntent',
-                        'body' => '*',
-                    ],
-                ],
-                'placeholders' => [
-                    'session' => [
-                        'getters' => [
-                            'getSession',
-                        ],
-                    ],
-                ],
-            ],
             'FulfillIntent' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3beta1/{match_intent_request.session=projects/*/locations/*/agents/*/sessions/*}:fulfillIntent',
@@ -56,6 +37,25 @@ return [
                     'match_intent_request.session' => [
                         'getters' => [
                             'getMatchIntentRequest',
+                            'getSession',
+                        ],
+                    ],
+                ],
+            ],
+            'MatchIntent' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3beta1/{session=projects/*/locations/*/agents/*/sessions/*}:matchIntent',
+                'body' => '*',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v3beta1/{session=projects/*/locations/*/agents/*/environments/*/sessions/*}:matchIntent',
+                        'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'session' => [
+                        'getters' => [
                             'getSession',
                         ],
                     ],

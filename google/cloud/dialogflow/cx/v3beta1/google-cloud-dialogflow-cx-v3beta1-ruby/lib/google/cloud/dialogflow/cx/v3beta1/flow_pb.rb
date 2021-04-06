@@ -36,6 +36,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :description, :string, 3
       repeated :transition_routes, :message, 4, "google.cloud.dialogflow.cx.v3beta1.TransitionRoute"
       repeated :event_handlers, :message, 10, "google.cloud.dialogflow.cx.v3beta1.EventHandler"
+      repeated :transition_route_groups, :string, 15
       optional :nlu_settings, :message, 11, "google.cloud.dialogflow.cx.v3beta1.NluSettings"
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest" do

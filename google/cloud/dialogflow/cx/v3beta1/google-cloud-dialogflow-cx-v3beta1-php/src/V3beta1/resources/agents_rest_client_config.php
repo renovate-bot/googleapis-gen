@@ -3,28 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.Agents' => [
-            'ListAgents' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/agents',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetAgent' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateAgent' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/agents',
@@ -33,19 +11,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateAgent' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3beta1/{agent.name=projects/*/locations/*/agents/*}',
-                'body' => 'agent',
-                'placeholders' => [
-                    'agent.name' => [
-                        'getters' => [
-                            'getAgent',
-                            'getName',
                         ],
                     ],
                 ],
@@ -73,6 +38,39 @@ return [
                     ],
                 ],
             ],
+            'GetAgent' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetAgentValidationResult' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/validationResult}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListAgents' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/agents',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'RestoreAgent' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*}:restore',
@@ -85,21 +83,23 @@ return [
                     ],
                 ],
             ],
-            'ValidateAgent' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*}:validate',
-                'body' => '*',
+            'UpdateAgent' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3beta1/{agent.name=projects/*/locations/*/agents/*}',
+                'body' => 'agent',
                 'placeholders' => [
-                    'name' => [
+                    'agent.name' => [
                         'getters' => [
+                            'getAgent',
                             'getName',
                         ],
                     ],
                 ],
             ],
-            'GetAgentValidationResult' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/validationResult}',
+            'ValidateAgent' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*}:validate',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [

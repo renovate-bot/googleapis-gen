@@ -3,28 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.Versions' => [
-            'ListVersions' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/flows/*}/versions',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetVersion' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/flows/*/versions/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateVersion' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/flows/*}/versions',
@@ -33,19 +11,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateVersion' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3beta1/{version.name=projects/*/locations/*/agents/*/flows/*/versions/*}',
-                'body' => 'version',
-                'placeholders' => [
-                    'version.name' => [
-                        'getters' => [
-                            'getVersion',
-                            'getName',
                         ],
                     ],
                 ],
@@ -61,6 +26,28 @@ return [
                     ],
                 ],
             ],
+            'GetVersion' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/flows/*/versions/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListVersions' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/flows/*}/versions',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'LoadVersion' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/flows/*/versions/*}:load',
@@ -68,6 +55,19 @@ return [
                 'placeholders' => [
                     'name' => [
                         'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateVersion' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3beta1/{version.name=projects/*/locations/*/agents/*/flows/*/versions/*}',
+                'body' => 'version',
+                'placeholders' => [
+                    'version.name' => [
+                        'getters' => [
+                            'getVersion',
                             'getName',
                         ],
                     ],

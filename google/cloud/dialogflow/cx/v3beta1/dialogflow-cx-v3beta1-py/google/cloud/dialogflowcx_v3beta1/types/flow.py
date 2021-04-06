@@ -149,6 +149,17 @@ class Flow(proto.Message):
             these handlers are evaluated on a first-match basis. The
             first one that matches the event get executed, with the rest
             being ignored.
+        transition_route_groups (Sequence[str]):
+            A flow's transition route group serve two purposes:
+
+            -  They are responsible for matching the user's first
+               utterances in the flow.
+            -  They are inherited by every page's [transition route
+               groups][Page.transition_route_groups]. Transition route
+               groups defined in the page have higher priority than
+               those defined in the flow.
+
+            Format:\ ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>``.
         nlu_settings (google.cloud.dialogflowcx_v3beta1.types.NluSettings):
             NLU related settings of the flow.
     """
@@ -166,6 +177,8 @@ class Flow(proto.Message):
     event_handlers = proto.RepeatedField(proto.MESSAGE, number=10,
         message=page.EventHandler,
     )
+
+    transition_route_groups = proto.RepeatedField(proto.STRING, number=15)
 
     nlu_settings = proto.Field(proto.MESSAGE, number=11,
         message='NluSettings',

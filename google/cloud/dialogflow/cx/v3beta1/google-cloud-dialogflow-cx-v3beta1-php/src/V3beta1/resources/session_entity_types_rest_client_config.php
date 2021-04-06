@@ -3,19 +3,38 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes' => [
-            'ListSessionEntityTypes' => [
-                'method' => 'get',
+            'CreateSessionEntityType' => [
+                'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/sessions/*}/entityTypes',
+                'body' => 'session_entity_type',
                 'additionalBindings' => [
                     [
-                        'method' => 'get',
+                        'method' => 'post',
                         'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/environments/*/sessions/*}/entityTypes',
+                        'body' => 'session_entity_type',
                     ],
                 ],
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteSessionEntityType' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/sessions/*/entityTypes/*}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'delete',
+                        'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*/sessions/*/entityTypes/*}',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -37,15 +56,13 @@ return [
                     ],
                 ],
             ],
-            'CreateSessionEntityType' => [
-                'method' => 'post',
+            'ListSessionEntityTypes' => [
+                'method' => 'get',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/sessions/*}/entityTypes',
-                'body' => 'session_entity_type',
                 'additionalBindings' => [
                     [
-                        'method' => 'post',
+                        'method' => 'get',
                         'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*/environments/*/sessions/*}/entityTypes',
-                        'body' => 'session_entity_type',
                     ],
                 ],
                 'placeholders' => [
@@ -71,23 +88,6 @@ return [
                     'session_entity_type.name' => [
                         'getters' => [
                             'getSessionEntityType',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteSessionEntityType' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/sessions/*/entityTypes/*}',
-                'additionalBindings' => [
-                    [
-                        'method' => 'delete',
-                        'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/environments/*/sessions/*/entityTypes/*}',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ namespace Google\Cloud\Dialogflow\Cx\V3beta1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -57,31 +58,17 @@ use Google\Protobuf\GPBEmpty;
  * $experimentsClient = new ExperimentsClient();
  * try {
  *     $formattedParent = $experimentsClient->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
- *     // Iterate over pages of elements
- *     $pagedResponse = $experimentsClient->listExperiments($formattedParent);
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
- *     }
- *
- *
- *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $experimentsClient->listExperiments($formattedParent);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
+ *     $experiment = new Experiment();
+ *     $response = $experimentsClient->createExperiment($formattedParent, $experiment);
  * } finally {
  *     $experimentsClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  *
  * @experimental
  */
@@ -116,24 +103,27 @@ class ExperimentsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/dialogflow',
     ];
+
     private static $environmentNameTemplate;
+
     private static $experimentNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/experiments_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/experiments_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/experiments_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/experiments_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/experiments_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/experiments_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/experiments_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/experiments_rest_client_config.php',
                 ],
             ],
         ];
@@ -141,7 +131,7 @@ class ExperimentsGapicClient
 
     private static function getEnvironmentNameTemplate()
     {
-        if (null == self::$environmentNameTemplate) {
+        if (self::$environmentNameTemplate == null) {
             self::$environmentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/environments/{environment}');
         }
 
@@ -150,7 +140,7 @@ class ExperimentsGapicClient
 
     private static function getExperimentNameTemplate()
     {
-        if (null == self::$experimentNameTemplate) {
+        if (self::$experimentNameTemplate == null) {
             self::$experimentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/environments/{environment}/experiments/{experiment}');
         }
 
@@ -159,7 +149,7 @@ class ExperimentsGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'environment' => self::getEnvironmentNameTemplate(),
                 'experiment' => self::getExperimentNameTemplate(),
@@ -170,8 +160,8 @@ class ExperimentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a environment resource.
+     * Formats a string containing the fully-qualified path to represent a environment
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -179,6 +169,7 @@ class ExperimentsGapicClient
      * @param string $environment
      *
      * @return string The formatted environment resource.
+     *
      * @experimental
      */
     public static function environmentName($project, $location, $agent, $environment)
@@ -192,8 +183,8 @@ class ExperimentsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a experiment resource.
+     * Formats a string containing the fully-qualified path to represent a experiment
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -202,6 +193,7 @@ class ExperimentsGapicClient
      * @param string $experiment
      *
      * @return string The formatted experiment resource.
+     *
      * @experimental
      */
     public static function experimentName($project, $location, $agent, $environment, $experiment)
@@ -220,12 +212,13 @@ class ExperimentsGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - environment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}
-     * - experiment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}/experiments/{experiment}.
+     * - experiment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}/experiments/{experiment}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -233,12 +226,12 @@ class ExperimentsGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
      * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -254,6 +247,7 @@ class ExperimentsGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -261,7 +255,7 @@ class ExperimentsGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -275,31 +269,31 @@ class ExperimentsGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -307,146 +301,13 @@ class ExperimentsGapicClient
      * }
      *
      * @throws ValidationException
+     *
      * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
-    }
-
-    /**
-     * Returns the list of all experiments in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     *
-     * Sample code:
-     * ```
-     * $experimentsClient = new ExperimentsClient();
-     * try {
-     *     $formattedParent = $experimentsClient->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $experimentsClient->listExperiments($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $experimentsClient->listExperiments($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $experimentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/environments/<Environment ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listExperiments($parent, array $optionalArgs = [])
-    {
-        $request = new ListExperimentsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListExperiments',
-            $optionalArgs,
-            ListExperimentsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
-     *
-     * Sample code:
-     * ```
-     * $experimentsClient = new ExperimentsClient();
-     * try {
-     *     $formattedName = $experimentsClient->experimentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]', '[EXPERIMENT]');
-     *     $response = $experimentsClient->getExperiment($formattedName);
-     * } finally {
-     *     $experimentsClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getExperiment($name, array $optionalArgs = [])
-    {
-        $request = new GetExperimentRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetExperiment',
-            Experiment::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -469,92 +330,31 @@ class ExperimentsGapicClient
      *                                 ID>/environments/<Environment ID>`.
      * @param Experiment $experiment   Required. The experiment to create.
      * @param array      $optionalArgs {
-     *                                 Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function createExperiment($parent, $experiment, array $optionalArgs = [])
     {
         $request = new CreateExperimentRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setExperiment($experiment);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateExperiment',
-            Experiment::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
-     *
-     * Sample code:
-     * ```
-     * $experimentsClient = new ExperimentsClient();
-     * try {
-     *     $experiment = new Experiment();
-     *     $updateMask = new FieldMask();
-     *     $response = $experimentsClient->updateExperiment($experiment, $updateMask);
-     * } finally {
-     *     $experimentsClient->close();
-     * }
-     * ```
-     *
-     * @param Experiment $experiment   Required. The experiment to update.
-     * @param FieldMask  $updateMask   Required. The mask to control which fields get updated.
-     * @param array      $optionalArgs {
-     *                                 Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateExperiment($experiment, $updateMask, array $optionalArgs = [])
-    {
-        $request = new UpdateExperimentRequest();
-        $request->setExperiment($experiment);
-        $request->setUpdateMask($updateMask);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'experiment.name' => $request->getExperiment()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateExperiment',
-            Experiment::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateExperiment', Experiment::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -575,36 +375,145 @@ class ExperimentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function deleteExperiment($name, array $optionalArgs = [])
     {
         $request = new DeleteExperimentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteExperiment', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+    /**
+     * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     *
+     * Sample code:
+     * ```
+     * $experimentsClient = new ExperimentsClient();
+     * try {
+     *     $formattedName = $experimentsClient->experimentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]', '[EXPERIMENT]');
+     *     $response = $experimentsClient->getExperiment($formattedName);
+     * } finally {
+     *     $experimentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function getExperiment($name, array $optionalArgs = [])
+    {
+        $request = new GetExperimentRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetExperiment', Experiment::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'DeleteExperiment',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Returns the list of all experiments in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     *
+     * Sample code:
+     * ```
+     * $experimentsClient = new ExperimentsClient();
+     * try {
+     *     $formattedParent = $experimentsClient->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $experimentsClient->listExperiments($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $experimentsClient->listExperiments($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $experimentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/environments/<Environment ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listExperiments($parent, array $optionalArgs = [])
+    {
+        $request = new ListExperimentsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListExperiments', $optionalArgs, ListExperimentsResponse::class, $request);
     }
 
     /**
@@ -626,38 +535,30 @@ class ExperimentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function startExperiment($name, array $optionalArgs = [])
     {
         $request = new StartExperimentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'StartExperiment',
-            Experiment::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('StartExperiment', Experiment::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -679,37 +580,74 @@ class ExperimentsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function stopExperiment($name, array $optionalArgs = [])
     {
         $request = new StopExperimentRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('StopExperiment', Experiment::class, $optionalArgs, $request)->wait();
+    }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'StopExperiment',
-            Experiment::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     *
+     * Sample code:
+     * ```
+     * $experimentsClient = new ExperimentsClient();
+     * try {
+     *     $experiment = new Experiment();
+     *     $updateMask = new FieldMask();
+     *     $response = $experimentsClient->updateExperiment($experiment, $updateMask);
+     * } finally {
+     *     $experimentsClient->close();
+     * }
+     * ```
+     *
+     * @param Experiment $experiment   Required. The experiment to update.
+     * @param FieldMask  $updateMask   Required. The mask to control which fields get updated.
+     * @param array      $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Experiment
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function updateExperiment($experiment, $updateMask, array $optionalArgs = [])
+    {
+        $request = new UpdateExperimentRequest();
+        $requestParamHeaders = [];
+        $request->setExperiment($experiment);
+        $request->setUpdateMask($updateMask);
+        $requestParamHeaders['experiment.name'] = $experiment->getName();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateExperiment', Experiment::class, $optionalArgs, $request)->wait();
     }
 }

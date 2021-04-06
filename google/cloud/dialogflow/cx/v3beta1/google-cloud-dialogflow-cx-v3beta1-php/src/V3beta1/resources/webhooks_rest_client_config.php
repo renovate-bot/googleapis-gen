@@ -3,13 +3,25 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3beta1.Webhooks' => [
-            'ListWebhooks' => [
-                'method' => 'get',
+            'CreateWebhook' => [
+                'method' => 'post',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/webhooks',
+                'body' => 'webhook',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteWebhook' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/webhooks/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -25,10 +37,9 @@ return [
                     ],
                 ],
             ],
-            'CreateWebhook' => [
-                'method' => 'post',
+            'ListWebhooks' => [
+                'method' => 'get',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*/agents/*}/webhooks',
-                'body' => 'webhook',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -45,17 +56,6 @@ return [
                     'webhook.name' => [
                         'getters' => [
                             'getWebhook',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteWebhook' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/agents/*/webhooks/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],
