@@ -311,7 +311,7 @@ man_pages = [
     (
         master_doc,
         "google-cloud-appengine-admin",
-        u"Google Cloud Appengine Documentation",
+        u"Google Cloud Appengine Admin Documentation",
         [author],
         1,
     )
@@ -333,7 +333,7 @@ texinfo_documents = [
         u"google-cloud-appengine-admin Documentation",
         author,
         "google-cloud-appengine-admin",
-        "GAPIC library for Google Cloud Appengine API",
+        "GAPIC library for Google Cloud Appengine Admin API",
         "APIs",
     )
 ]

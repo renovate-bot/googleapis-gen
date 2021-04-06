@@ -31,7 +31,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/appengine_v1/',
+        '--cov=google/cloud/appengine_admin_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',
