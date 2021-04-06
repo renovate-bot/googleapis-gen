@@ -40,22 +40,13 @@ class FirestoreGrpcAsyncIOTransport(FirestoreTransport):
     """gRPC AsyncIO backend transport for Firestore.
 
     The Cloud Firestore service.
-
-    This service exposes several types of comparable timestamps:
-
-    -  ``create_time`` - The time at which a document was created.
-       Changes only when a document is deleted, then re-created.
-       Increases in a strict monotonic fashion.
-    -  ``update_time`` - The time at which a document was last updated.
-       Changes every time a document is modified. Does not change when a
-       write results in no modifications. Increases in a strict
-       monotonic fashion.
-    -  ``read_time`` - The time at which a particular state was
-       observed. Used to denote a consistent snapshot of the database or
-       the time at which a Document was observed to not exist.
-    -  ``commit_time`` - The time at which the writes in a transaction
-       were committed. Any read with an equal or greater ``read_time``
-       is guaranteed to see the effects of the transaction.
+    Cloud Firestore is a fast, fully managed, serverless, cloud-
+    native NoSQL document database that simplifies storing, syncing,
+    and querying data for your mobile, web, and IoT apps at global
+    scale. Its client libraries provide live synchronization and
+    offline support, while its security features and integrations
+    with Firebase and Google Cloud Platform (GCP) accelerate
+    building truly serverless apps.
 
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation
@@ -293,32 +284,6 @@ class FirestoreGrpcAsyncIOTransport(FirestoreTransport):
         return self._stubs['list_documents']
 
     @property
-    def create_document(self) -> Callable[
-            [firestore.CreateDocumentRequest],
-            Awaitable[document.Document]]:
-        r"""Return a callable for the create document method over gRPC.
-
-        Creates a new document.
-
-        Returns:
-            Callable[[~.CreateDocumentRequest],
-                    Awaitable[~.Document]]:
-                A function that, when called, will call the underlying RPC
-                on the server.
-        """
-        # Generate a "stub function" on-the-fly which will actually make
-        # the request.
-        # gRPC handles serialization and deserialization, so we just need
-        # to pass in the functions for each.
-        if 'create_document' not in self._stubs:
-            self._stubs['create_document'] = self.grpc_channel.unary_unary(
-                '/google.firestore.v1beta1.Firestore/CreateDocument',
-                request_serializer=firestore.CreateDocumentRequest.serialize,
-                response_deserializer=document.Document.deserialize,
-            )
-        return self._stubs['create_document']
-
-    @property
     def update_document(self) -> Callable[
             [firestore.UpdateDocumentRequest],
             Awaitable[gf_document.Document]]:
@@ -504,6 +469,36 @@ class FirestoreGrpcAsyncIOTransport(FirestoreTransport):
         return self._stubs['run_query']
 
     @property
+    def partition_query(self) -> Callable[
+            [firestore.PartitionQueryRequest],
+            Awaitable[firestore.PartitionQueryResponse]]:
+        r"""Return a callable for the partition query method over gRPC.
+
+        Partitions a query by returning partition cursors
+        that can be used to run the query in parallel. The
+        returned partition cursors are split points that can be
+        used by RunQuery as starting/end points for the query
+        results.
+
+        Returns:
+            Callable[[~.PartitionQueryRequest],
+                    Awaitable[~.PartitionQueryResponse]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'partition_query' not in self._stubs:
+            self._stubs['partition_query'] = self.grpc_channel.unary_unary(
+                '/google.firestore.v1beta1.Firestore/PartitionQuery',
+                request_serializer=firestore.PartitionQueryRequest.serialize,
+                response_deserializer=firestore.PartitionQueryResponse.deserialize,
+            )
+        return self._stubs['partition_query']
+
+    @property
     def write(self) -> Callable[
             [firestore.WriteRequest],
             Awaitable[firestore.WriteResponse]]:
@@ -581,6 +576,68 @@ class FirestoreGrpcAsyncIOTransport(FirestoreTransport):
                 response_deserializer=firestore.ListCollectionIdsResponse.deserialize,
             )
         return self._stubs['list_collection_ids']
+
+    @property
+    def batch_write(self) -> Callable[
+            [firestore.BatchWriteRequest],
+            Awaitable[firestore.BatchWriteResponse]]:
+        r"""Return a callable for the batch write method over gRPC.
+
+        Applies a batch of write operations.
+
+        The BatchWrite method does not apply the write operations
+        atomically and can apply them out of order. Method does not
+        allow more than one write per document. Each write succeeds or
+        fails independently. See the
+        [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse]
+        for the success status of each write.
+
+        If you require an atomically applied set of writes, use
+        [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+
+        Returns:
+            Callable[[~.BatchWriteRequest],
+                    Awaitable[~.BatchWriteResponse]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'batch_write' not in self._stubs:
+            self._stubs['batch_write'] = self.grpc_channel.unary_unary(
+                '/google.firestore.v1beta1.Firestore/BatchWrite',
+                request_serializer=firestore.BatchWriteRequest.serialize,
+                response_deserializer=firestore.BatchWriteResponse.deserialize,
+            )
+        return self._stubs['batch_write']
+
+    @property
+    def create_document(self) -> Callable[
+            [firestore.CreateDocumentRequest],
+            Awaitable[document.Document]]:
+        r"""Return a callable for the create document method over gRPC.
+
+        Creates a new document.
+
+        Returns:
+            Callable[[~.CreateDocumentRequest],
+                    Awaitable[~.Document]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'create_document' not in self._stubs:
+            self._stubs['create_document'] = self.grpc_channel.unary_unary(
+                '/google.firestore.v1beta1.Firestore/CreateDocument',
+                request_serializer=firestore.CreateDocumentRequest.serialize,
+                response_deserializer=document.Document.deserialize,
+            )
+        return self._stubs['create_document']
 
 
 __all__ = (

@@ -21,20 +21,11 @@
  *
  * <p>Service Description: The Cloud Firestore service.
  *
- * <p>This service exposes several types of comparable timestamps:
- *
- * <ul>
- *   <li>`create_time` - The time at which a document was created. Changes only when a document is
- *       deleted, then re-created. Increases in a strict monotonic fashion.
- *   <li>`update_time` - The time at which a document was last updated. Changes every time a
- *       document is modified. Does not change when a write results in no modifications. Increases
- *       in a strict monotonic fashion.
- *   <li>`read_time` - The time at which a particular state was observed. Used to denote a
- *       consistent snapshot of the database or the time at which a Document was observed to not
- *       exist.
- *   <li>`commit_time` - The time at which the writes in a transaction were committed. Any read with
- *       an equal or greater `read_time` is guaranteed to see the effects of the transaction.
- * </ul>
+ * <p>Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL document database
+ * that simplifies storing, syncing, and querying data for your mobile, web, and IoT apps at global
+ * scale. Its client libraries provide live synchronization and offline support, while its security
+ * features and integrations with Firebase and Google Cloud Platform (GCP) accelerate building truly
+ * serverless apps.
  *
  * <p>Sample for FirestoreClient:
  *

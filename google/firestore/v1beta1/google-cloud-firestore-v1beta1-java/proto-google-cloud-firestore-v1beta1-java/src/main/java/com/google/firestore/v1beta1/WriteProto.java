@@ -68,49 +68,51 @@ public final class WriteProto {
       "re/v1beta1/common.proto\032\'google/firestor" +
       "e/v1beta1/document.proto\032\037google/protobu" +
       "f/timestamp.proto\032\034google/api/annotation" +
-      "s.proto\"\235\002\n\005Write\0224\n\006update\030\001 \001(\0132\".goog" +
+      "s.proto\"\364\002\n\005Write\0224\n\006update\030\001 \001(\0132\".goog" +
       "le.firestore.v1beta1.DocumentH\000\022\020\n\006delet" +
       "e\030\002 \001(\tH\000\022@\n\ttransform\030\006 \001(\0132+.google.fi" +
       "restore.v1beta1.DocumentTransformH\000\022;\n\013u" +
       "pdate_mask\030\003 \001(\0132&.google.firestore.v1be" +
-      "ta1.DocumentMask\022@\n\020current_document\030\004 \001" +
-      "(\0132&.google.firestore.v1beta1.Preconditi" +
-      "onB\013\n\toperation\"\210\005\n\021DocumentTransform\022\020\n" +
-      "\010document\030\001 \001(\t\022T\n\020field_transforms\030\002 \003(" +
-      "\0132:.google.firestore.v1beta1.DocumentTra" +
-      "nsform.FieldTransform\032\212\004\n\016FieldTransform" +
-      "\022\022\n\nfield_path\030\001 \001(\t\022e\n\023set_to_server_va" +
-      "lue\030\002 \001(\0162F.google.firestore.v1beta1.Doc" +
-      "umentTransform.FieldTransform.ServerValu" +
-      "eH\000\0224\n\tincrement\030\003 \001(\0132\037.google.firestor" +
-      "e.v1beta1.ValueH\000\0222\n\007maximum\030\004 \001(\0132\037.goo" +
-      "gle.firestore.v1beta1.ValueH\000\0222\n\007minimum" +
-      "\030\005 \001(\0132\037.google.firestore.v1beta1.ValueH" +
-      "\000\022G\n\027append_missing_elements\030\006 \001(\0132$.goo" +
-      "gle.firestore.v1beta1.ArrayValueH\000\022E\n\025re" +
-      "move_all_from_array\030\007 \001(\0132$.google.fires" +
-      "tore.v1beta1.ArrayValueH\000\"=\n\013ServerValue" +
-      "\022\034\n\030SERVER_VALUE_UNSPECIFIED\020\000\022\020\n\014REQUES" +
-      "T_TIME\020\001B\020\n\016transform_type\"z\n\013WriteResul" +
-      "t\022/\n\013update_time\030\001 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022:\n\021transform_results\030\002 \003(\0132\037." +
-      "google.firestore.v1beta1.Value\"v\n\016Docume" +
-      "ntChange\0224\n\010document\030\001 \001(\0132\".google.fire" +
-      "store.v1beta1.Document\022\022\n\ntarget_ids\030\005 \003" +
-      "(\005\022\032\n\022removed_target_ids\030\006 \003(\005\"m\n\016Docume" +
-      "ntDelete\022\020\n\010document\030\001 \001(\t\022\032\n\022removed_ta" +
-      "rget_ids\030\006 \003(\005\022-\n\tread_time\030\004 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\"m\n\016DocumentRemove\022" +
-      "\020\n\010document\030\001 \001(\t\022\032\n\022removed_target_ids\030" +
-      "\002 \003(\005\022-\n\tread_time\030\004 \001(\0132\032.google.protob" +
-      "uf.Timestamp\"3\n\017ExistenceFilter\022\021\n\ttarge" +
-      "t_id\030\001 \001(\005\022\r\n\005count\030\002 \001(\005B\334\001\n\034com.google" +
-      ".firestore.v1beta1B\nWriteProtoP\001ZAgoogle" +
-      ".golang.org/genproto/googleapis/firestor" +
-      "e/v1beta1;firestore\242\002\004GCFS\252\002\036Google.Clou" +
-      "d.Firestore.V1Beta1\312\002\036Google\\Cloud\\Fires" +
-      "tore\\V1beta1\352\002!Google::Cloud::Firestore:" +
-      ":V1beta1b\006proto3"
+      "ta1.DocumentMask\022U\n\021update_transforms\030\007 " +
+      "\003(\0132:.google.firestore.v1beta1.DocumentT" +
+      "ransform.FieldTransform\022@\n\020current_docum" +
+      "ent\030\004 \001(\0132&.google.firestore.v1beta1.Pre" +
+      "conditionB\013\n\toperation\"\210\005\n\021DocumentTrans" +
+      "form\022\020\n\010document\030\001 \001(\t\022T\n\020field_transfor" +
+      "ms\030\002 \003(\0132:.google.firestore.v1beta1.Docu" +
+      "mentTransform.FieldTransform\032\212\004\n\016FieldTr" +
+      "ansform\022\022\n\nfield_path\030\001 \001(\t\022e\n\023set_to_se" +
+      "rver_value\030\002 \001(\0162F.google.firestore.v1be" +
+      "ta1.DocumentTransform.FieldTransform.Ser" +
+      "verValueH\000\0224\n\tincrement\030\003 \001(\0132\037.google.f" +
+      "irestore.v1beta1.ValueH\000\0222\n\007maximum\030\004 \001(" +
+      "\0132\037.google.firestore.v1beta1.ValueH\000\0222\n\007" +
+      "minimum\030\005 \001(\0132\037.google.firestore.v1beta1" +
+      ".ValueH\000\022G\n\027append_missing_elements\030\006 \001(" +
+      "\0132$.google.firestore.v1beta1.ArrayValueH" +
+      "\000\022E\n\025remove_all_from_array\030\007 \001(\0132$.googl" +
+      "e.firestore.v1beta1.ArrayValueH\000\"=\n\013Serv" +
+      "erValue\022\034\n\030SERVER_VALUE_UNSPECIFIED\020\000\022\020\n" +
+      "\014REQUEST_TIME\020\001B\020\n\016transform_type\"z\n\013Wri" +
+      "teResult\022/\n\013update_time\030\001 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022:\n\021transform_results\030\002" +
+      " \003(\0132\037.google.firestore.v1beta1.Value\"v\n" +
+      "\016DocumentChange\0224\n\010document\030\001 \001(\0132\".goog" +
+      "le.firestore.v1beta1.Document\022\022\n\ntarget_" +
+      "ids\030\005 \003(\005\022\032\n\022removed_target_ids\030\006 \003(\005\"m\n" +
+      "\016DocumentDelete\022\020\n\010document\030\001 \001(\t\022\032\n\022rem" +
+      "oved_target_ids\030\006 \003(\005\022-\n\tread_time\030\004 \001(\013" +
+      "2\032.google.protobuf.Timestamp\"m\n\016Document" +
+      "Remove\022\020\n\010document\030\001 \001(\t\022\032\n\022removed_targ" +
+      "et_ids\030\002 \003(\005\022-\n\tread_time\030\004 \001(\0132\032.google" +
+      ".protobuf.Timestamp\"3\n\017ExistenceFilter\022\021" +
+      "\n\ttarget_id\030\001 \001(\005\022\r\n\005count\030\002 \001(\005B\334\001\n\034com" +
+      ".google.firestore.v1beta1B\nWriteProtoP\001Z" +
+      "Agoogle.golang.org/genproto/googleapis/f" +
+      "irestore/v1beta1;firestore\242\002\004GCFS\252\002\036Goog" +
+      "le.Cloud.Firestore.V1Beta1\312\002\036Google\\Clou" +
+      "d\\Firestore\\V1beta1\352\002!Google::Cloud::Fir" +
+      "estore::V1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -125,7 +127,7 @@ public final class WriteProto {
     internal_static_google_firestore_v1beta1_Write_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_firestore_v1beta1_Write_descriptor,
-        new java.lang.String[] { "Update", "Delete", "Transform", "UpdateMask", "CurrentDocument", "Operation", });
+        new java.lang.String[] { "Update", "Delete", "Transform", "UpdateMask", "UpdateTransforms", "CurrentDocument", "Operation", });
     internal_static_google_firestore_v1beta1_DocumentTransform_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_firestore_v1beta1_DocumentTransform_fieldAccessorTable = new

@@ -84,23 +84,6 @@ return [
                     ],
                 ],
             ],
-            'CreateDocument' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents/**}/{collection_id}',
-                'body' => 'document',
-                'placeholders' => [
-                    'collection_id' => [
-                        'getters' => [
-                            'getCollectionId',
-                        ],
-                    ],
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateDocument' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1beta1/{document.name=projects/*/databases/*/documents/*/**}',
@@ -122,6 +105,54 @@ return [
                     'database' => [
                         'getters' => [
                             'getDatabase',
+                        ],
+                    ],
+                ],
+            ],
+            'PartitionQuery' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents}:partitionQuery',
+                'body' => '*',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents/*/**}:partitionQuery',
+                        'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'BatchWrite' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:batchWrite',
+                'body' => '*',
+                'placeholders' => [
+                    'database' => [
+                        'getters' => [
+                            'getDatabase',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateDocument' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents/**}/{collection_id}',
+                'body' => 'document',
+                'placeholders' => [
+                    'collection_id' => [
+                        'getters' => [
+                            'getCollectionId',
+                        ],
+                    ],
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],

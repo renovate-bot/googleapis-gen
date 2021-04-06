@@ -49,7 +49,7 @@ class GetDocumentRequest extends \Google\Protobuf\Internal\Message
      *           Reads the document in a transaction.
      *     @type \Google\Protobuf\Timestamp $read_time
      *           Reads the version of the document at the given time.
-     *           This may not be older than 60 seconds.
+     *           This may not be older than 270 seconds.
      * }
      */
     public function __construct($data = NULL) {
@@ -158,7 +158,7 @@ class GetDocumentRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -175,7 +175,7 @@ class GetDocumentRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var

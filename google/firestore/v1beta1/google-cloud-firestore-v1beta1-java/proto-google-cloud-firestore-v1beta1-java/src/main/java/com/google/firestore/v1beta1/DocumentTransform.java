@@ -612,7 +612,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The time at which the server processed the request, with millisecond
-       * precision.
+       * precision. If used on multiple fields (same or different documents) in
+       * a transaction, all the fields will get the same server timestamp.
        * </pre>
        *
        * <code>REQUEST_TIME = 1;</code>
@@ -632,7 +633,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The time at which the server processed the request, with millisecond
-       * precision.
+       * precision. If used on multiple fields (same or different documents) in
+       * a transaction, all the fields will get the same server timestamp.
        * </pre>
        *
        * <code>REQUEST_TIME = 1;</code>

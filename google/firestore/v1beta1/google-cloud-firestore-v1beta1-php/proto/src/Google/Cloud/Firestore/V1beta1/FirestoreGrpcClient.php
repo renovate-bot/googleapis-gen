@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-//
 namespace Google\Cloud\Firestore\V1beta1;
 
 /**
@@ -24,20 +23,12 @@ namespace Google\Cloud\Firestore\V1beta1;
  *
  * The Cloud Firestore service.
  *
- * This service exposes several types of comparable timestamps:
- *
- * *    `create_time` - The time at which a document was created. Changes only
- *      when a document is deleted, then re-created. Increases in a strict
- *       monotonic fashion.
- * *    `update_time` - The time at which a document was last updated. Changes
- *      every time a document is modified. Does not change when a write results
- *      in no modifications. Increases in a strict monotonic fashion.
- * *    `read_time` - The time at which a particular state was observed. Used
- *      to denote a consistent snapshot of the database or the time at which a
- *      Document was observed to not exist.
- * *    `commit_time` - The time at which the writes in a transaction were
- *      committed. Any read with an equal or greater `read_time` is guaranteed
- *      to see the effects of the transaction.
+ * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+ * document database that simplifies storing, syncing, and querying data for
+ * your mobile, web, and IoT apps at global scale. Its client libraries provide
+ * live synchronization and offline support, while its security features and
+ * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+ * building truly serverless apps.
  */
 class FirestoreGrpcClient extends \Grpc\BaseStub {
 
@@ -77,21 +68,6 @@ class FirestoreGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.firestore.v1beta1.Firestore/ListDocuments',
         $argument,
         ['\Google\Cloud\Firestore\V1beta1\ListDocumentsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Creates a new document.
-     * @param \Google\Cloud\Firestore\V1beta1\CreateDocumentRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function CreateDocument(\Google\Cloud\Firestore\V1beta1\CreateDocumentRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.firestore.v1beta1.Firestore/CreateDocument',
-        $argument,
-        ['\Google\Cloud\Firestore\V1beta1\Document', 'decode'],
         $metadata, $options);
     }
 
@@ -204,6 +180,23 @@ class FirestoreGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     * @param \Google\Cloud\Firestore\V1beta1\PartitionQueryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PartitionQuery(\Google\Cloud\Firestore\V1beta1\PartitionQueryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.firestore.v1beta1.Firestore/PartitionQuery',
+        $argument,
+        ['\Google\Cloud\Firestore\V1beta1\PartitionQueryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Streams batches of document updates and deletes, in order.
      * @param array $metadata metadata
      * @param array $options call options
@@ -239,6 +232,44 @@ class FirestoreGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.firestore.v1beta1.Firestore/ListCollectionIds',
         $argument,
         ['\Google\Cloud\Firestore\V1beta1\ListCollectionIdsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Applies a batch of write operations.
+     *
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for the success status of each write.
+     *
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+     * @param \Google\Cloud\Firestore\V1beta1\BatchWriteRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function BatchWrite(\Google\Cloud\Firestore\V1beta1\BatchWriteRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.firestore.v1beta1.Firestore/BatchWrite',
+        $argument,
+        ['\Google\Cloud\Firestore\V1beta1\BatchWriteResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates a new document.
+     * @param \Google\Cloud\Firestore\V1beta1\CreateDocumentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateDocument(\Google\Cloud\Firestore\V1beta1\CreateDocumentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.firestore.v1beta1.Firestore/CreateDocument',
+        $argument,
+        ['\Google\Cloud\Firestore\V1beta1\Document', 'decode'],
         $metadata, $options);
     }
 

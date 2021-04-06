@@ -5,19 +5,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  * <pre>
  * The Cloud Firestore service.
- * This service exposes several types of comparable timestamps:
- * *    `create_time` - The time at which a document was created. Changes only
- *      when a document is deleted, then re-created. Increases in a strict
- *       monotonic fashion.
- * *    `update_time` - The time at which a document was last updated. Changes
- *      every time a document is modified. Does not change when a write results
- *      in no modifications. Increases in a strict monotonic fashion.
- * *    `read_time` - The time at which a particular state was observed. Used
- *      to denote a consistent snapshot of the database or the time at which a
- *      Document was observed to not exist.
- * *    `commit_time` - The time at which the writes in a transaction were
- *      committed. Any read with an equal or greater `read_time` is guaranteed
- *      to see the effects of the transaction.
+ * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+ * document database that simplifies storing, syncing, and querying data for
+ * your mobile, web, and IoT apps at global scale. Its client libraries provide
+ * live synchronization and offline support, while its security features and
+ * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+ * building truly serverless apps.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -90,37 +83,6 @@ public final class FirestoreGrpc {
       }
     }
     return getListDocumentsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.google.firestore.v1beta1.CreateDocumentRequest,
-      com.google.firestore.v1beta1.Document> getCreateDocumentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateDocument",
-      requestType = com.google.firestore.v1beta1.CreateDocumentRequest.class,
-      responseType = com.google.firestore.v1beta1.Document.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.firestore.v1beta1.CreateDocumentRequest,
-      com.google.firestore.v1beta1.Document> getCreateDocumentMethod() {
-    io.grpc.MethodDescriptor<com.google.firestore.v1beta1.CreateDocumentRequest, com.google.firestore.v1beta1.Document> getCreateDocumentMethod;
-    if ((getCreateDocumentMethod = FirestoreGrpc.getCreateDocumentMethod) == null) {
-      synchronized (FirestoreGrpc.class) {
-        if ((getCreateDocumentMethod = FirestoreGrpc.getCreateDocumentMethod) == null) {
-          FirestoreGrpc.getCreateDocumentMethod = getCreateDocumentMethod =
-              io.grpc.MethodDescriptor.<com.google.firestore.v1beta1.CreateDocumentRequest, com.google.firestore.v1beta1.Document>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDocument"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.firestore.v1beta1.CreateDocumentRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.firestore.v1beta1.Document.getDefaultInstance()))
-              .setSchemaDescriptor(new FirestoreMethodDescriptorSupplier("CreateDocument"))
-              .build();
-        }
-      }
-    }
-    return getCreateDocumentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.firestore.v1beta1.UpdateDocumentRequest,
@@ -340,6 +302,37 @@ public final class FirestoreGrpc {
     return getRunQueryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.firestore.v1beta1.PartitionQueryRequest,
+      com.google.firestore.v1beta1.PartitionQueryResponse> getPartitionQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PartitionQuery",
+      requestType = com.google.firestore.v1beta1.PartitionQueryRequest.class,
+      responseType = com.google.firestore.v1beta1.PartitionQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.firestore.v1beta1.PartitionQueryRequest,
+      com.google.firestore.v1beta1.PartitionQueryResponse> getPartitionQueryMethod() {
+    io.grpc.MethodDescriptor<com.google.firestore.v1beta1.PartitionQueryRequest, com.google.firestore.v1beta1.PartitionQueryResponse> getPartitionQueryMethod;
+    if ((getPartitionQueryMethod = FirestoreGrpc.getPartitionQueryMethod) == null) {
+      synchronized (FirestoreGrpc.class) {
+        if ((getPartitionQueryMethod = FirestoreGrpc.getPartitionQueryMethod) == null) {
+          FirestoreGrpc.getPartitionQueryMethod = getPartitionQueryMethod =
+              io.grpc.MethodDescriptor.<com.google.firestore.v1beta1.PartitionQueryRequest, com.google.firestore.v1beta1.PartitionQueryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PartitionQuery"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.v1beta1.PartitionQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.v1beta1.PartitionQueryResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FirestoreMethodDescriptorSupplier("PartitionQuery"))
+              .build();
+        }
+      }
+    }
+    return getPartitionQueryMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.firestore.v1beta1.WriteRequest,
       com.google.firestore.v1beta1.WriteResponse> getWriteMethod;
 
@@ -433,6 +426,68 @@ public final class FirestoreGrpc {
     return getListCollectionIdsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.firestore.v1beta1.BatchWriteRequest,
+      com.google.firestore.v1beta1.BatchWriteResponse> getBatchWriteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchWrite",
+      requestType = com.google.firestore.v1beta1.BatchWriteRequest.class,
+      responseType = com.google.firestore.v1beta1.BatchWriteResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.firestore.v1beta1.BatchWriteRequest,
+      com.google.firestore.v1beta1.BatchWriteResponse> getBatchWriteMethod() {
+    io.grpc.MethodDescriptor<com.google.firestore.v1beta1.BatchWriteRequest, com.google.firestore.v1beta1.BatchWriteResponse> getBatchWriteMethod;
+    if ((getBatchWriteMethod = FirestoreGrpc.getBatchWriteMethod) == null) {
+      synchronized (FirestoreGrpc.class) {
+        if ((getBatchWriteMethod = FirestoreGrpc.getBatchWriteMethod) == null) {
+          FirestoreGrpc.getBatchWriteMethod = getBatchWriteMethod =
+              io.grpc.MethodDescriptor.<com.google.firestore.v1beta1.BatchWriteRequest, com.google.firestore.v1beta1.BatchWriteResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchWrite"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.v1beta1.BatchWriteRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.v1beta1.BatchWriteResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FirestoreMethodDescriptorSupplier("BatchWrite"))
+              .build();
+        }
+      }
+    }
+    return getBatchWriteMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.firestore.v1beta1.CreateDocumentRequest,
+      com.google.firestore.v1beta1.Document> getCreateDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDocument",
+      requestType = com.google.firestore.v1beta1.CreateDocumentRequest.class,
+      responseType = com.google.firestore.v1beta1.Document.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.firestore.v1beta1.CreateDocumentRequest,
+      com.google.firestore.v1beta1.Document> getCreateDocumentMethod() {
+    io.grpc.MethodDescriptor<com.google.firestore.v1beta1.CreateDocumentRequest, com.google.firestore.v1beta1.Document> getCreateDocumentMethod;
+    if ((getCreateDocumentMethod = FirestoreGrpc.getCreateDocumentMethod) == null) {
+      synchronized (FirestoreGrpc.class) {
+        if ((getCreateDocumentMethod = FirestoreGrpc.getCreateDocumentMethod) == null) {
+          FirestoreGrpc.getCreateDocumentMethod = getCreateDocumentMethod =
+              io.grpc.MethodDescriptor.<com.google.firestore.v1beta1.CreateDocumentRequest, com.google.firestore.v1beta1.Document>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDocument"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.v1beta1.CreateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.v1beta1.Document.getDefaultInstance()))
+              .setSchemaDescriptor(new FirestoreMethodDescriptorSupplier("CreateDocument"))
+              .build();
+        }
+      }
+    }
+    return getCreateDocumentMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -480,19 +535,12 @@ public final class FirestoreGrpc {
   /**
    * <pre>
    * The Cloud Firestore service.
-   * This service exposes several types of comparable timestamps:
-   * *    `create_time` - The time at which a document was created. Changes only
-   *      when a document is deleted, then re-created. Increases in a strict
-   *       monotonic fashion.
-   * *    `update_time` - The time at which a document was last updated. Changes
-   *      every time a document is modified. Does not change when a write results
-   *      in no modifications. Increases in a strict monotonic fashion.
-   * *    `read_time` - The time at which a particular state was observed. Used
-   *      to denote a consistent snapshot of the database or the time at which a
-   *      Document was observed to not exist.
-   * *    `commit_time` - The time at which the writes in a transaction were
-   *      committed. Any read with an equal or greater `read_time` is guaranteed
-   *      to see the effects of the transaction.
+   * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+   * document database that simplifies storing, syncing, and querying data for
+   * your mobile, web, and IoT apps at global scale. Its client libraries provide
+   * live synchronization and offline support, while its security features and
+   * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+   * building truly serverless apps.
    * </pre>
    */
   public static abstract class FirestoreImplBase implements io.grpc.BindableService {
@@ -515,16 +563,6 @@ public final class FirestoreGrpc {
     public void listDocuments(com.google.firestore.v1beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListDocumentsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDocumentsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Creates a new document.
-     * </pre>
-     */
-    public void createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request,
-        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
     }
 
     /**
@@ -601,6 +639,18 @@ public final class FirestoreGrpc {
 
     /**
      * <pre>
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     * </pre>
+     */
+    public void partitionQuery(com.google.firestore.v1beta1.PartitionQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.PartitionQueryResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPartitionQueryMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Streams batches of document updates and deletes, in order.
      * </pre>
      */
@@ -629,6 +679,32 @@ public final class FirestoreGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCollectionIdsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Applies a batch of write operations.
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for the success status of each write.
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+     * </pre>
+     */
+    public void batchWrite(com.google.firestore.v1beta1.BatchWriteRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BatchWriteResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchWriteMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a new document.
+     * </pre>
+     */
+    public void createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -645,13 +721,6 @@ public final class FirestoreGrpc {
                 com.google.firestore.v1beta1.ListDocumentsRequest,
                 com.google.firestore.v1beta1.ListDocumentsResponse>(
                   this, METHODID_LIST_DOCUMENTS)))
-          .addMethod(
-            getCreateDocumentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.google.firestore.v1beta1.CreateDocumentRequest,
-                com.google.firestore.v1beta1.Document>(
-                  this, METHODID_CREATE_DOCUMENT)))
           .addMethod(
             getUpdateDocumentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -702,6 +771,13 @@ public final class FirestoreGrpc {
                 com.google.firestore.v1beta1.RunQueryResponse>(
                   this, METHODID_RUN_QUERY)))
           .addMethod(
+            getPartitionQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.firestore.v1beta1.PartitionQueryRequest,
+                com.google.firestore.v1beta1.PartitionQueryResponse>(
+                  this, METHODID_PARTITION_QUERY)))
+          .addMethod(
             getWriteMethod(),
             io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
@@ -722,6 +798,20 @@ public final class FirestoreGrpc {
                 com.google.firestore.v1beta1.ListCollectionIdsRequest,
                 com.google.firestore.v1beta1.ListCollectionIdsResponse>(
                   this, METHODID_LIST_COLLECTION_IDS)))
+          .addMethod(
+            getBatchWriteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.firestore.v1beta1.BatchWriteRequest,
+                com.google.firestore.v1beta1.BatchWriteResponse>(
+                  this, METHODID_BATCH_WRITE)))
+          .addMethod(
+            getCreateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.firestore.v1beta1.CreateDocumentRequest,
+                com.google.firestore.v1beta1.Document>(
+                  this, METHODID_CREATE_DOCUMENT)))
           .build();
     }
   }
@@ -729,19 +819,12 @@ public final class FirestoreGrpc {
   /**
    * <pre>
    * The Cloud Firestore service.
-   * This service exposes several types of comparable timestamps:
-   * *    `create_time` - The time at which a document was created. Changes only
-   *      when a document is deleted, then re-created. Increases in a strict
-   *       monotonic fashion.
-   * *    `update_time` - The time at which a document was last updated. Changes
-   *      every time a document is modified. Does not change when a write results
-   *      in no modifications. Increases in a strict monotonic fashion.
-   * *    `read_time` - The time at which a particular state was observed. Used
-   *      to denote a consistent snapshot of the database or the time at which a
-   *      Document was observed to not exist.
-   * *    `commit_time` - The time at which the writes in a transaction were
-   *      committed. Any read with an equal or greater `read_time` is guaranteed
-   *      to see the effects of the transaction.
+   * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+   * document database that simplifies storing, syncing, and querying data for
+   * your mobile, web, and IoT apps at global scale. Its client libraries provide
+   * live synchronization and offline support, while its security features and
+   * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+   * building truly serverless apps.
    * </pre>
    */
   public static final class FirestoreStub extends io.grpc.stub.AbstractAsyncStub<FirestoreStub> {
@@ -776,17 +859,6 @@ public final class FirestoreGrpc {
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListDocumentsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Creates a new document.
-     * </pre>
-     */
-    public void createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request,
-        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -870,6 +942,19 @@ public final class FirestoreGrpc {
 
     /**
      * <pre>
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     * </pre>
+     */
+    public void partitionQuery(com.google.firestore.v1beta1.PartitionQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.PartitionQueryResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPartitionQueryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Streams batches of document updates and deletes, in order.
      * </pre>
      */
@@ -900,24 +985,45 @@ public final class FirestoreGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCollectionIdsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Applies a batch of write operations.
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for the success status of each write.
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+     * </pre>
+     */
+    public void batchWrite(com.google.firestore.v1beta1.BatchWriteRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BatchWriteResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchWriteMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a new document.
+     * </pre>
+     */
+    public void createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
    * The Cloud Firestore service.
-   * This service exposes several types of comparable timestamps:
-   * *    `create_time` - The time at which a document was created. Changes only
-   *      when a document is deleted, then re-created. Increases in a strict
-   *       monotonic fashion.
-   * *    `update_time` - The time at which a document was last updated. Changes
-   *      every time a document is modified. Does not change when a write results
-   *      in no modifications. Increases in a strict monotonic fashion.
-   * *    `read_time` - The time at which a particular state was observed. Used
-   *      to denote a consistent snapshot of the database or the time at which a
-   *      Document was observed to not exist.
-   * *    `commit_time` - The time at which the writes in a transaction were
-   *      committed. Any read with an equal or greater `read_time` is guaranteed
-   *      to see the effects of the transaction.
+   * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+   * document database that simplifies storing, syncing, and querying data for
+   * your mobile, web, and IoT apps at global scale. Its client libraries provide
+   * live synchronization and offline support, while its security features and
+   * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+   * building truly serverless apps.
    * </pre>
    */
   public static final class FirestoreBlockingStub extends io.grpc.stub.AbstractBlockingStub<FirestoreBlockingStub> {
@@ -950,16 +1056,6 @@ public final class FirestoreGrpc {
     public com.google.firestore.v1beta1.ListDocumentsResponse listDocuments(com.google.firestore.v1beta1.ListDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Creates a new document.
-     * </pre>
-     */
-    public com.google.firestore.v1beta1.Document createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1038,6 +1134,18 @@ public final class FirestoreGrpc {
 
     /**
      * <pre>
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     * </pre>
+     */
+    public com.google.firestore.v1beta1.PartitionQueryResponse partitionQuery(com.google.firestore.v1beta1.PartitionQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPartitionQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Lists all the collection IDs underneath a document.
      * </pre>
      */
@@ -1045,24 +1153,43 @@ public final class FirestoreGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCollectionIdsMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Applies a batch of write operations.
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for the success status of each write.
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+     * </pre>
+     */
+    public com.google.firestore.v1beta1.BatchWriteResponse batchWrite(com.google.firestore.v1beta1.BatchWriteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchWriteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a new document.
+     * </pre>
+     */
+    public com.google.firestore.v1beta1.Document createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * <pre>
    * The Cloud Firestore service.
-   * This service exposes several types of comparable timestamps:
-   * *    `create_time` - The time at which a document was created. Changes only
-   *      when a document is deleted, then re-created. Increases in a strict
-   *       monotonic fashion.
-   * *    `update_time` - The time at which a document was last updated. Changes
-   *      every time a document is modified. Does not change when a write results
-   *      in no modifications. Increases in a strict monotonic fashion.
-   * *    `read_time` - The time at which a particular state was observed. Used
-   *      to denote a consistent snapshot of the database or the time at which a
-   *      Document was observed to not exist.
-   * *    `commit_time` - The time at which the writes in a transaction were
-   *      committed. Any read with an equal or greater `read_time` is guaranteed
-   *      to see the effects of the transaction.
+   * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+   * document database that simplifies storing, syncing, and querying data for
+   * your mobile, web, and IoT apps at global scale. Its client libraries provide
+   * live synchronization and offline support, while its security features and
+   * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+   * building truly serverless apps.
    * </pre>
    */
   public static final class FirestoreFutureStub extends io.grpc.stub.AbstractFutureStub<FirestoreFutureStub> {
@@ -1097,17 +1224,6 @@ public final class FirestoreGrpc {
         com.google.firestore.v1beta1.ListDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Creates a new document.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.Document> createDocument(
-        com.google.firestore.v1beta1.CreateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1167,6 +1283,19 @@ public final class FirestoreGrpc {
 
     /**
      * <pre>
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.PartitionQueryResponse> partitionQuery(
+        com.google.firestore.v1beta1.PartitionQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPartitionQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Lists all the collection IDs underneath a document.
      * </pre>
      */
@@ -1175,21 +1304,51 @@ public final class FirestoreGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCollectionIdsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Applies a batch of write operations.
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for the success status of each write.
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.BatchWriteResponse> batchWrite(
+        com.google.firestore.v1beta1.BatchWriteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchWriteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a new document.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.Document> createDocument(
+        com.google.firestore.v1beta1.CreateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DOCUMENT = 0;
   private static final int METHODID_LIST_DOCUMENTS = 1;
-  private static final int METHODID_CREATE_DOCUMENT = 2;
-  private static final int METHODID_UPDATE_DOCUMENT = 3;
-  private static final int METHODID_DELETE_DOCUMENT = 4;
-  private static final int METHODID_BATCH_GET_DOCUMENTS = 5;
-  private static final int METHODID_BEGIN_TRANSACTION = 6;
-  private static final int METHODID_COMMIT = 7;
-  private static final int METHODID_ROLLBACK = 8;
-  private static final int METHODID_RUN_QUERY = 9;
+  private static final int METHODID_UPDATE_DOCUMENT = 2;
+  private static final int METHODID_DELETE_DOCUMENT = 3;
+  private static final int METHODID_BATCH_GET_DOCUMENTS = 4;
+  private static final int METHODID_BEGIN_TRANSACTION = 5;
+  private static final int METHODID_COMMIT = 6;
+  private static final int METHODID_ROLLBACK = 7;
+  private static final int METHODID_RUN_QUERY = 8;
+  private static final int METHODID_PARTITION_QUERY = 9;
   private static final int METHODID_LIST_COLLECTION_IDS = 10;
-  private static final int METHODID_WRITE = 11;
-  private static final int METHODID_LISTEN = 12;
+  private static final int METHODID_BATCH_WRITE = 11;
+  private static final int METHODID_CREATE_DOCUMENT = 12;
+  private static final int METHODID_WRITE = 13;
+  private static final int METHODID_LISTEN = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1215,10 +1374,6 @@ public final class FirestoreGrpc {
         case METHODID_LIST_DOCUMENTS:
           serviceImpl.listDocuments((com.google.firestore.v1beta1.ListDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListDocumentsResponse>) responseObserver);
-          break;
-        case METHODID_CREATE_DOCUMENT:
-          serviceImpl.createDocument((com.google.firestore.v1beta1.CreateDocumentRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document>) responseObserver);
           break;
         case METHODID_UPDATE_DOCUMENT:
           serviceImpl.updateDocument((com.google.firestore.v1beta1.UpdateDocumentRequest) request,
@@ -1248,9 +1403,21 @@ public final class FirestoreGrpc {
           serviceImpl.runQuery((com.google.firestore.v1beta1.RunQueryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.RunQueryResponse>) responseObserver);
           break;
+        case METHODID_PARTITION_QUERY:
+          serviceImpl.partitionQuery((com.google.firestore.v1beta1.PartitionQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.PartitionQueryResponse>) responseObserver);
+          break;
         case METHODID_LIST_COLLECTION_IDS:
           serviceImpl.listCollectionIds((com.google.firestore.v1beta1.ListCollectionIdsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListCollectionIdsResponse>) responseObserver);
+          break;
+        case METHODID_BATCH_WRITE:
+          serviceImpl.batchWrite((com.google.firestore.v1beta1.BatchWriteRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BatchWriteResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_DOCUMENT:
+          serviceImpl.createDocument((com.google.firestore.v1beta1.CreateDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1321,7 +1488,6 @@ public final class FirestoreGrpc {
               .setSchemaDescriptor(new FirestoreFileDescriptorSupplier())
               .addMethod(getGetDocumentMethod())
               .addMethod(getListDocumentsMethod())
-              .addMethod(getCreateDocumentMethod())
               .addMethod(getUpdateDocumentMethod())
               .addMethod(getDeleteDocumentMethod())
               .addMethod(getBatchGetDocumentsMethod())
@@ -1329,9 +1495,12 @@ public final class FirestoreGrpc {
               .addMethod(getCommitMethod())
               .addMethod(getRollbackMethod())
               .addMethod(getRunQueryMethod())
+              .addMethod(getPartitionQueryMethod())
               .addMethod(getWriteMethod())
               .addMethod(getListenMethod())
               .addMethod(getListCollectionIdsMethod())
+              .addMethod(getBatchWriteMethod())
+              .addMethod(getCreateDocumentMethod())
               .build();
         }
       }

@@ -33,11 +33,14 @@ import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
+import com.google.firestore.v1beta1.BatchWriteRequest;
+import com.google.firestore.v1beta1.BatchWriteResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
 import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.CreateDocumentRequest;
+import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.DeleteDocumentRequest;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.DocumentMask;
@@ -48,6 +51,8 @@ import com.google.firestore.v1beta1.ListDocumentsRequest;
 import com.google.firestore.v1beta1.ListDocumentsResponse;
 import com.google.firestore.v1beta1.ListenRequest;
 import com.google.firestore.v1beta1.ListenResponse;
+import com.google.firestore.v1beta1.PartitionQueryRequest;
+import com.google.firestore.v1beta1.PartitionQueryResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
@@ -66,20 +71,11 @@ import javax.annotation.Generated;
 /**
  * Service Description: The Cloud Firestore service.
  *
- * <p>This service exposes several types of comparable timestamps:
- *
- * <ul>
- *   <li>`create_time` - The time at which a document was created. Changes only when a document is
- *       deleted, then re-created. Increases in a strict monotonic fashion.
- *   <li>`update_time` - The time at which a document was last updated. Changes every time a
- *       document is modified. Does not change when a write results in no modifications. Increases
- *       in a strict monotonic fashion.
- *   <li>`read_time` - The time at which a particular state was observed. Used to denote a
- *       consistent snapshot of the database or the time at which a Document was observed to not
- *       exist.
- *   <li>`commit_time` - The time at which the writes in a transaction were committed. Any read with
- *       an equal or greater `read_time` is guaranteed to see the effects of the transaction.
- * </ul>
+ * <p>Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL document database
+ * that simplifies storing, syncing, and querying data for your mobile, web, and IoT apps at global
+ * scale. Its client libraries provide live synchronization and offline support, while its security
+ * features and integrations with Firebase and Google Cloud Platform (GCP) accelerate building truly
+ * serverless apps.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -337,59 +333,6 @@ public class FirestoreClient implements BackgroundResource {
    */
   public final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
     return stub.listDocumentsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a new document.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   CreateDocumentRequest request =
-   *       CreateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
-   *           .setCollectionId("collectionId1636075609")
-   *           .setDocumentId("documentId-814940266")
-   *           .setDocument(Document.newBuilder().build())
-   *           .setMask(DocumentMask.newBuilder().build())
-   *           .build();
-   *   Document response = firestoreClient.createDocument(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Document createDocument(CreateDocumentRequest request) {
-    return createDocumentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a new document.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   CreateDocumentRequest request =
-   *       CreateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
-   *           .setCollectionId("collectionId1636075609")
-   *           .setDocumentId("documentId-814940266")
-   *           .setDocument(Document.newBuilder().build())
-   *           .setMask(DocumentMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Document> future = firestoreClient.createDocumentCallable().futureCall(request);
-   *   // Do something.
-   *   Document response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateDocumentRequest, Document> createDocumentCallable() {
-    return stub.createDocumentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -812,6 +755,103 @@ public class FirestoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Partitions a query by returning partition cursors that can be used to run the query in
+   * parallel. The returned partition cursors are split points that can be used by RunQuery as
+   * starting/end points for the query results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   PartitionQueryRequest request =
+   *       PartitionQueryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPartitionCount(-1738969222)
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (Cursor element : firestoreClient.partitionQuery(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PartitionQueryPagedResponse partitionQuery(PartitionQueryRequest request) {
+    return partitionQueryPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Partitions a query by returning partition cursors that can be used to run the query in
+   * parallel. The returned partition cursors are split points that can be used by RunQuery as
+   * starting/end points for the query results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   PartitionQueryRequest request =
+   *       PartitionQueryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPartitionCount(-1738969222)
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<Cursor> future = firestoreClient.partitionQueryPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Cursor element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PartitionQueryRequest, PartitionQueryPagedResponse>
+      partitionQueryPagedCallable() {
+    return stub.partitionQueryPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Partitions a query by returning partition cursors that can be used to run the query in
+   * parallel. The returned partition cursors are split points that can be used by RunQuery as
+   * starting/end points for the query results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   PartitionQueryRequest request =
+   *       PartitionQueryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPartitionCount(-1738969222)
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   while (true) {
+   *     PartitionQueryResponse response = firestoreClient.partitionQueryCallable().call(request);
+   *     for (Cursor element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PartitionQueryRequest, PartitionQueryResponse>
+      partitionQueryCallable() {
+    return stub.partitionQueryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Streams batches of document updates and deletes, in order.
    *
    * <p>Sample code:
@@ -980,6 +1020,125 @@ public class FirestoreClient implements BackgroundResource {
     return stub.listCollectionIdsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Applies a batch of write operations.
+   *
+   * <p>The BatchWrite method does not apply the write operations atomically and can apply them out
+   * of order. Method does not allow more than one write per document. Each write succeeds or fails
+   * independently. See the [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for
+   * the success status of each write.
+   *
+   * <p>If you require an atomically applied set of writes, use
+   * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BatchWriteRequest request =
+   *       BatchWriteRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .addAllWrites(new ArrayList<Write>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   BatchWriteResponse response = firestoreClient.batchWrite(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchWriteResponse batchWrite(BatchWriteRequest request) {
+    return batchWriteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Applies a batch of write operations.
+   *
+   * <p>The BatchWrite method does not apply the write operations atomically and can apply them out
+   * of order. Method does not allow more than one write per document. Each write succeeds or fails
+   * independently. See the [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for
+   * the success status of each write.
+   *
+   * <p>If you require an atomically applied set of writes, use
+   * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BatchWriteRequest request =
+   *       BatchWriteRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .addAllWrites(new ArrayList<Write>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<BatchWriteResponse> future =
+   *       firestoreClient.batchWriteCallable().futureCall(request);
+   *   // Do something.
+   *   BatchWriteResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchWriteRequest, BatchWriteResponse> batchWriteCallable() {
+    return stub.batchWriteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setDocumentId("documentId-814940266")
+   *           .setDocument(Document.newBuilder().build())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   Document response = firestoreClient.createDocument(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Document createDocument(CreateDocumentRequest request) {
+    return createDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setDocumentId("documentId-814940266")
+   *           .setDocument(Document.newBuilder().build())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Document> future = firestoreClient.createDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDocumentRequest, Document> createDocumentCallable() {
+    return stub.createDocumentCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1088,6 +1247,87 @@ public class FirestoreClient implements BackgroundResource {
     protected ListDocumentsFixedSizeCollection createCollection(
         List<ListDocumentsPage> pages, int collectionSize) {
       return new ListDocumentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class PartitionQueryPagedResponse
+      extends AbstractPagedListResponse<
+          PartitionQueryRequest,
+          PartitionQueryResponse,
+          Cursor,
+          PartitionQueryPage,
+          PartitionQueryFixedSizeCollection> {
+
+    public static ApiFuture<PartitionQueryPagedResponse> createAsync(
+        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        ApiFuture<PartitionQueryResponse> futureResponse) {
+      ApiFuture<PartitionQueryPage> futurePage =
+          PartitionQueryPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<PartitionQueryPage, PartitionQueryPagedResponse>() {
+            @Override
+            public PartitionQueryPagedResponse apply(PartitionQueryPage input) {
+              return new PartitionQueryPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private PartitionQueryPagedResponse(PartitionQueryPage page) {
+      super(page, PartitionQueryFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class PartitionQueryPage
+      extends AbstractPage<
+          PartitionQueryRequest, PartitionQueryResponse, Cursor, PartitionQueryPage> {
+
+    private PartitionQueryPage(
+        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        PartitionQueryResponse response) {
+      super(context, response);
+    }
+
+    private static PartitionQueryPage createEmptyPage() {
+      return new PartitionQueryPage(null, null);
+    }
+
+    @Override
+    protected PartitionQueryPage createPage(
+        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        PartitionQueryResponse response) {
+      return new PartitionQueryPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<PartitionQueryPage> createPageAsync(
+        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        ApiFuture<PartitionQueryResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class PartitionQueryFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          PartitionQueryRequest,
+          PartitionQueryResponse,
+          Cursor,
+          PartitionQueryPage,
+          PartitionQueryFixedSizeCollection> {
+
+    private PartitionQueryFixedSizeCollection(List<PartitionQueryPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static PartitionQueryFixedSizeCollection createEmptyCollection() {
+      return new PartitionQueryFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected PartitionQueryFixedSizeCollection createCollection(
+        List<PartitionQueryPage> pages, int collectionSize) {
+      return new PartitionQueryFixedSizeCollection(pages, collectionSize);
     }
   }
 

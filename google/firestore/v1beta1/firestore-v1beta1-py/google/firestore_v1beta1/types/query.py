@@ -167,9 +167,11 @@ class StructuredQuery(proto.Message):
             GREATER_THAN = 3
             GREATER_THAN_OR_EQUAL = 4
             EQUAL = 5
+            NOT_EQUAL = 6
             ARRAY_CONTAINS = 7
             IN = 8
             ARRAY_CONTAINS_ANY = 9
+            NOT_IN = 10
 
         field = proto.Field(proto.MESSAGE, number=1,
             message='StructuredQuery.FieldReference',
@@ -197,6 +199,8 @@ class StructuredQuery(proto.Message):
             OPERATOR_UNSPECIFIED = 0
             IS_NAN = 2
             IS_NULL = 3
+            IS_NOT_NAN = 4
+            IS_NOT_NULL = 5
 
         op = proto.Field(proto.ENUM, number=1,
             enum='StructuredQuery.UnaryFilter.Operator',
@@ -205,6 +209,16 @@ class StructuredQuery(proto.Message):
         field = proto.Field(proto.MESSAGE, number=2, oneof='operand_type',
             message='StructuredQuery.FieldReference',
         )
+
+    class FieldReference(proto.Message):
+        r"""A reference to a field, such as ``max(messages.time) as max_time``.
+
+        Attributes:
+            field_path (str):
+
+        """
+
+        field_path = proto.Field(proto.STRING, number=2)
 
     class Order(proto.Message):
         r"""An order on a field.
@@ -223,16 +237,6 @@ class StructuredQuery(proto.Message):
         direction = proto.Field(proto.ENUM, number=2,
             enum='StructuredQuery.Direction',
         )
-
-    class FieldReference(proto.Message):
-        r"""A reference to a field, such as ``max(messages.time) as max_time``.
-
-        Attributes:
-            field_path (str):
-
-        """
-
-        field_path = proto.Field(proto.STRING, number=2)
 
     class Projection(proto.Message):
         r"""The projection of document's fields to return.

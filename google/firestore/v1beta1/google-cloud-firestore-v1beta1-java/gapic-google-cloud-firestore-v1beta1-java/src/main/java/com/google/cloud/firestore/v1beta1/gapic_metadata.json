@@ -13,6 +13,9 @@
             "BatchGetDocuments": {
               "methods": ["batchGetDocumentsCallable"]
             },
+            "BatchWrite": {
+              "methods": ["batchWrite", "batchWriteCallable"]
+            },
             "BeginTransaction": {
               "methods": ["beginTransaction", "beginTransaction", "beginTransactionCallable"]
             },
@@ -36,6 +39,9 @@
             },
             "Listen": {
               "methods": ["listenCallable"]
+            },
+            "PartitionQuery": {
+              "methods": ["partitionQuery", "partitionQueryPagedCallable", "partitionQueryCallable"]
             },
             "Rollback": {
               "methods": ["rollback", "rollback", "rollbackCallable"]

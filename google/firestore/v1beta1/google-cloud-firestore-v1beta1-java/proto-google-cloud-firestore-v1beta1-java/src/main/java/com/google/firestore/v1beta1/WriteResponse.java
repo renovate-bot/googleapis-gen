@@ -263,7 +263,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp commitTime_;
   /**
    * <pre>
-   * The time at which the commit occurred.
+   * The time at which the commit occurred. Any read with an equal or greater
+   * `read_time` is guaranteed to see the effects of the write.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -275,7 +276,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The time at which the commit occurred.
+   * The time at which the commit occurred. Any read with an equal or greater
+   * `read_time` is guaranteed to see the effects of the write.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -287,7 +289,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The time at which the commit occurred.
+   * The time at which the commit occurred. Any read with an equal or greater
+   * `read_time` is guaranteed to see the effects of the write.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1213,7 +1216,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> commitTimeBuilder_;
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1224,7 +1228,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1239,7 +1244,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1259,7 +1265,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1277,7 +1284,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1299,7 +1307,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1317,7 +1326,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1329,7 +1339,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -1344,7 +1355,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the commit occurred.
+     * The time at which the commit occurred. Any read with an equal or greater
+     * `read_time` is guaranteed to see the effects of the write.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 4;</code>

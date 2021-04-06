@@ -787,100 +787,6 @@ describe Google::Cloud::Firestore::V1beta1::FirestoreClient do
     end
   end
 
-  describe 'create_document' do
-    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Firestore::V1beta1::FirestoreClient#create_document."
-
-    it 'invokes create_document without error' do
-      # Create request parameters
-      parent = ''
-      collection_id = ''
-      document = {}
-
-      # Create expected grpc response
-      name = "name3373707"
-      expected_response = { name: name }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Firestore::V1beta1::Document)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Firestore::V1beta1::CreateDocumentRequest, request)
-        assert_equal(parent, request.parent)
-        assert_equal(collection_id, request.collection_id)
-        assert_equal(Google::Gax::to_proto(document, Google::Firestore::V1beta1::Document), request.document)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1beta1.new(:create_document, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockFirestoreCredentials_v1beta1.new("create_document")
-
-      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Firestore.new(version: :v1beta1)
-
-          # Call method
-          response = client.create_document(
-            parent,
-            collection_id,
-            document
-          )
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.create_document(
-            parent,
-            collection_id,
-            document
-          ) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes create_document with error' do
-      # Create request parameters
-      parent = ''
-      collection_id = ''
-      document = {}
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Firestore::V1beta1::CreateDocumentRequest, request)
-        assert_equal(parent, request.parent)
-        assert_equal(collection_id, request.collection_id)
-        assert_equal(Google::Gax::to_proto(document, Google::Firestore::V1beta1::Document), request.document)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1beta1.new(:create_document, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockFirestoreCredentials_v1beta1.new("create_document")
-
-      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Firestore.new(version: :v1beta1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
-            client.create_document(
-              parent,
-              collection_id,
-              document
-            )
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
   describe 'update_document' do
     custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Firestore::V1beta1::FirestoreClient#update_document."
 
@@ -1019,6 +925,245 @@ describe Google::Cloud::Firestore::V1beta1::FirestoreClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
             client.commit(database)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'partition_query' do
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Firestore::V1beta1::FirestoreClient#partition_query."
+
+    it 'invokes partition_query without error' do
+      # Create request parameters
+      parent = ''
+
+      # Create expected grpc response
+      next_page_token = ""
+      partitions_element = {}
+      partitions = [partitions_element]
+      expected_response = { next_page_token: next_page_token, partitions: partitions }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Firestore::V1beta1::PartitionQueryResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Firestore::V1beta1::PartitionQueryRequest, request)
+        assert_equal(parent, request.parent)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:partition_query, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockFirestoreCredentials_v1beta1.new("partition_query")
+
+      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Firestore.new(version: :v1beta1)
+
+          # Call method
+          response = client.partition_query(parent)
+
+          # Verify the response
+          assert(response.instance_of?(Google::Gax::PagedEnumerable))
+          assert_equal(expected_response, response.page.response)
+          assert_nil(response.next_page)
+          assert_equal(expected_response.partitions.to_a, response.to_a)
+        end
+      end
+    end
+
+    it 'invokes partition_query with error' do
+      # Create request parameters
+      parent = ''
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Firestore::V1beta1::PartitionQueryRequest, request)
+        assert_equal(parent, request.parent)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:partition_query, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockFirestoreCredentials_v1beta1.new("partition_query")
+
+      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Firestore.new(version: :v1beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
+            client.partition_query(parent)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'batch_write' do
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Firestore::V1beta1::FirestoreClient#batch_write."
+
+    it 'invokes batch_write without error' do
+      # Create request parameters
+      database = ''
+
+      # Create expected grpc response
+      expected_response = {}
+      expected_response = Google::Gax::to_proto(expected_response, Google::Firestore::V1beta1::BatchWriteResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Firestore::V1beta1::BatchWriteRequest, request)
+        assert_equal(database, request.database)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:batch_write, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockFirestoreCredentials_v1beta1.new("batch_write")
+
+      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Firestore.new(version: :v1beta1)
+
+          # Call method
+          response = client.batch_write(database)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.batch_write(database) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes batch_write with error' do
+      # Create request parameters
+      database = ''
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Firestore::V1beta1::BatchWriteRequest, request)
+        assert_equal(database, request.database)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:batch_write, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockFirestoreCredentials_v1beta1.new("batch_write")
+
+      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Firestore.new(version: :v1beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
+            client.batch_write(database)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'create_document' do
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Firestore::V1beta1::FirestoreClient#create_document."
+
+    it 'invokes create_document without error' do
+      # Create request parameters
+      parent = ''
+      collection_id = ''
+      document = {}
+
+      # Create expected grpc response
+      name = "name3373707"
+      expected_response = { name: name }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Firestore::V1beta1::Document)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Firestore::V1beta1::CreateDocumentRequest, request)
+        assert_equal(parent, request.parent)
+        assert_equal(collection_id, request.collection_id)
+        assert_equal(Google::Gax::to_proto(document, Google::Firestore::V1beta1::Document), request.document)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:create_document, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockFirestoreCredentials_v1beta1.new("create_document")
+
+      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Firestore.new(version: :v1beta1)
+
+          # Call method
+          response = client.create_document(
+            parent,
+            collection_id,
+            document
+          )
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.create_document(
+            parent,
+            collection_id,
+            document
+          ) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes create_document with error' do
+      # Create request parameters
+      parent = ''
+      collection_id = ''
+      document = {}
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Firestore::V1beta1::CreateDocumentRequest, request)
+        assert_equal(parent, request.parent)
+        assert_equal(collection_id, request.collection_id)
+        assert_equal(Google::Gax::to_proto(document, Google::Firestore::V1beta1::Document), request.document)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1beta1.new(:create_document, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockFirestoreCredentials_v1beta1.new("create_document")
+
+      Google::Firestore::V1beta1::Firestore::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Firestore::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Firestore.new(version: :v1beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
+            client.create_document(
+              parent,
+              collection_id,
+              document
+            )
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

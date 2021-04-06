@@ -289,7 +289,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Reads the version of the document at the given time.
-   * This may not be older than 60 seconds.
+   * This may not be older than 270 seconds.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Reads the version of the document at the given time.
-   * This may not be older than 60 seconds.
+   * This may not be older than 270 seconds.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Reads the version of the document at the given time.
-   * This may not be older than 60 seconds.
+   * This may not be older than 270 seconds.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1088,7 +1088,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1101,7 +1101,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1124,7 +1124,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1145,7 +1145,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1164,7 +1164,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1191,7 +1191,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1215,7 +1215,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1226,7 +1226,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
@@ -1245,7 +1245,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Reads the version of the document at the given time.
-     * This may not be older than 60 seconds.
+     * This may not be older than 270 seconds.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>

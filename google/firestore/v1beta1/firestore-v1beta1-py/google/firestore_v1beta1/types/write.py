@@ -47,10 +47,7 @@ class Write(proto.Message):
             A document name to delete. In the format:
             ``projects/{project_id}/databases/{database_id}/documents/{document_path}``.
         transform (google.firestore_v1beta1.types.DocumentTransform):
-            Applies a transformation to a document. At most one
-            ``transform`` per document is allowed in a given request. An
-            ``update`` cannot follow a ``transform`` on the same
-            document in a given request.
+            Applies a transformation to a document.
         update_mask (google.firestore_v1beta1.types.DocumentMask):
             The fields to update in this write.
 
@@ -62,6 +59,13 @@ class Write(proto.Message):
             the mask, but not present in the input document, are deleted
             from the document on the server. The field paths in this
             mask must not contain a reserved field name.
+        update_transforms (Sequence[google.firestore_v1beta1.types.DocumentTransform.FieldTransform]):
+            The transforms to perform after update.
+
+            This field can be set only when the operation is ``update``.
+            If present, this write is equivalent to performing
+            ``update`` and ``transform`` to the same document atomically
+            and in order.
         current_document (google.firestore_v1beta1.types.Precondition):
             An optional precondition on the document.
             The write will fail if this is set and not met
@@ -80,6 +84,10 @@ class Write(proto.Message):
 
     update_mask = proto.Field(proto.MESSAGE, number=3,
         message=common.DocumentMask,
+    )
+
+    update_transforms = proto.RepeatedField(proto.MESSAGE, number=7,
+        message='DocumentTransform.FieldTransform',
     )
 
     current_document = proto.Field(proto.MESSAGE, number=4,

@@ -112,6 +112,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :read_time, :message, 3, "google.protobuf.Timestamp"
       optional :skipped_results, :int32, 4
     end
+    add_message "google.firestore.v1beta1.PartitionQueryRequest" do
+      optional :parent, :string, 1
+      optional :partition_count, :int64, 3
+      optional :page_token, :string, 4
+      optional :page_size, :int32, 5
+      oneof :query_type do
+        optional :structured_query, :message, 2, "google.firestore.v1beta1.StructuredQuery"
+      end
+    end
+    add_message "google.firestore.v1beta1.PartitionQueryResponse" do
+      repeated :partitions, :message, 1, "google.firestore.v1beta1.Cursor"
+      optional :next_page_token, :string, 2
+    end
     add_message "google.firestore.v1beta1.WriteRequest" do
       optional :database, :string, 1
       optional :stream_id, :string, 2
@@ -186,6 +199,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :collection_ids, :string, 1
       optional :next_page_token, :string, 2
     end
+    add_message "google.firestore.v1beta1.BatchWriteRequest" do
+      optional :database, :string, 1
+      repeated :writes, :message, 2, "google.firestore.v1beta1.Write"
+      map :labels, :string, :string, 3
+    end
+    add_message "google.firestore.v1beta1.BatchWriteResponse" do
+      repeated :write_results, :message, 1, "google.firestore.v1beta1.WriteResult"
+      repeated :status, :message, 2, "google.rpc.Status"
+    end
   end
 end
 
@@ -208,6 +230,8 @@ module Google
         RollbackRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.RollbackRequest").msgclass
         RunQueryRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.RunQueryRequest").msgclass
         RunQueryResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.RunQueryResponse").msgclass
+        PartitionQueryRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.PartitionQueryRequest").msgclass
+        PartitionQueryResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.PartitionQueryResponse").msgclass
         WriteRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.WriteRequest").msgclass
         WriteResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.WriteResponse").msgclass
         ListenRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.ListenRequest").msgclass
@@ -219,6 +243,8 @@ module Google
         TargetChange::TargetChangeType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.TargetChange.TargetChangeType").enummodule
         ListCollectionIdsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.ListCollectionIdsRequest").msgclass
         ListCollectionIdsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.ListCollectionIdsResponse").msgclass
+        BatchWriteRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.BatchWriteRequest").msgclass
+        BatchWriteResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.firestore.v1beta1.BatchWriteResponse").msgclass
       end
     end
   end

@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Write() {
+    updateTransforms_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -42,6 +43,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +114,15 @@ private static final long serialVersionUID = 0L;
             operationCase_ = 6;
             break;
           }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              updateTransforms_ = new java.util.ArrayList<com.google.firestore.v1beta1.DocumentTransform.FieldTransform>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            updateTransforms_.add(
+                input.readMessage(com.google.firestore.v1beta1.DocumentTransform.FieldTransform.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -127,6 +138,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        updateTransforms_ = java.util.Collections.unmodifiableList(updateTransforms_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -301,9 +315,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Applies a transformation to a document.
-   * At most one `transform` per document is allowed in a given request.
-   * An `update` cannot follow a `transform` on the same document in a given
-   * request.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -316,9 +327,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Applies a transformation to a document.
-   * At most one `transform` per document is allowed in a given request.
-   * An `update` cannot follow a `transform` on the same document in a given
-   * request.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -334,9 +342,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Applies a transformation to a document.
-   * At most one `transform` per document is allowed in a given request.
-   * An `update` cannot follow a `transform` on the same document in a given
-   * request.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -411,6 +416,81 @@ private static final long serialVersionUID = 0L;
     return getUpdateMask();
   }
 
+  public static final int UPDATE_TRANSFORMS_FIELD_NUMBER = 7;
+  private java.util.List<com.google.firestore.v1beta1.DocumentTransform.FieldTransform> updateTransforms_;
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.firestore.v1beta1.DocumentTransform.FieldTransform> getUpdateTransformsList() {
+    return updateTransforms_;
+  }
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder> 
+      getUpdateTransformsOrBuilderList() {
+    return updateTransforms_;
+  }
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  @java.lang.Override
+  public int getUpdateTransformsCount() {
+    return updateTransforms_.size();
+  }
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.firestore.v1beta1.DocumentTransform.FieldTransform getUpdateTransforms(int index) {
+    return updateTransforms_.get(index);
+  }
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder getUpdateTransformsOrBuilder(
+      int index) {
+    return updateTransforms_.get(index);
+  }
+
   public static final int CURRENT_DOCUMENT_FIELD_NUMBER = 4;
   private com.google.firestore.v1beta1.Precondition currentDocument_;
   /**
@@ -481,6 +561,9 @@ private static final long serialVersionUID = 0L;
     if (operationCase_ == 6) {
       output.writeMessage(6, (com.google.firestore.v1beta1.DocumentTransform) operation_);
     }
+    for (int i = 0; i < updateTransforms_.size(); i++) {
+      output.writeMessage(7, updateTransforms_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -509,6 +592,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.google.firestore.v1beta1.DocumentTransform) operation_);
     }
+    for (int i = 0; i < updateTransforms_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, updateTransforms_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -529,6 +616,8 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateMask()
           .equals(other.getUpdateMask())) return false;
     }
+    if (!getUpdateTransformsList()
+        .equals(other.getUpdateTransformsList())) return false;
     if (hasCurrentDocument() != other.hasCurrentDocument()) return false;
     if (hasCurrentDocument()) {
       if (!getCurrentDocument()
@@ -565,6 +654,10 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
+    }
+    if (getUpdateTransformsCount() > 0) {
+      hash = (37 * hash) + UPDATE_TRANSFORMS_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTransformsList().hashCode();
     }
     if (hasCurrentDocument()) {
       hash = (37 * hash) + CURRENT_DOCUMENT_FIELD_NUMBER;
@@ -718,6 +811,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getUpdateTransformsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -728,6 +822,12 @@ private static final long serialVersionUID = 0L;
       } else {
         updateMask_ = null;
         updateMaskBuilder_ = null;
+      }
+      if (updateTransformsBuilder_ == null) {
+        updateTransforms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        updateTransformsBuilder_.clear();
       }
       if (currentDocumentBuilder_ == null) {
         currentDocument_ = null;
@@ -763,6 +863,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.firestore.v1beta1.Write buildPartial() {
       com.google.firestore.v1beta1.Write result = new com.google.firestore.v1beta1.Write(this);
+      int from_bitField0_ = bitField0_;
       if (operationCase_ == 1) {
         if (updateBuilder_ == null) {
           result.operation_ = operation_;
@@ -784,6 +885,15 @@ private static final long serialVersionUID = 0L;
         result.updateMask_ = updateMask_;
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
+      }
+      if (updateTransformsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          updateTransforms_ = java.util.Collections.unmodifiableList(updateTransforms_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.updateTransforms_ = updateTransforms_;
+      } else {
+        result.updateTransforms_ = updateTransformsBuilder_.build();
       }
       if (currentDocumentBuilder_ == null) {
         result.currentDocument_ = currentDocument_;
@@ -841,6 +951,32 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.firestore.v1beta1.Write.getDefaultInstance()) return this;
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
+      }
+      if (updateTransformsBuilder_ == null) {
+        if (!other.updateTransforms_.isEmpty()) {
+          if (updateTransforms_.isEmpty()) {
+            updateTransforms_ = other.updateTransforms_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUpdateTransformsIsMutable();
+            updateTransforms_.addAll(other.updateTransforms_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.updateTransforms_.isEmpty()) {
+          if (updateTransformsBuilder_.isEmpty()) {
+            updateTransformsBuilder_.dispose();
+            updateTransformsBuilder_ = null;
+            updateTransforms_ = other.updateTransforms_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            updateTransformsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUpdateTransformsFieldBuilder() : null;
+          } else {
+            updateTransformsBuilder_.addAllMessages(other.updateTransforms_);
+          }
+        }
       }
       if (other.hasCurrentDocument()) {
         mergeCurrentDocument(other.getCurrentDocument());
@@ -907,6 +1043,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder> updateBuilder_;
@@ -1217,9 +1354,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1232,9 +1366,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1257,9 +1388,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1280,9 +1408,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1301,9 +1426,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1330,9 +1452,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1356,9 +1475,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1369,9 +1485,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1390,9 +1503,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Applies a transformation to a document.
-     * At most one `transform` per document is allowed in a given request.
-     * An `update` cannot follow a `transform` on the same document in a given
-     * request.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -1641,6 +1751,372 @@ private static final long serialVersionUID = 0L;
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private java.util.List<com.google.firestore.v1beta1.DocumentTransform.FieldTransform> updateTransforms_ =
+      java.util.Collections.emptyList();
+    private void ensureUpdateTransformsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        updateTransforms_ = new java.util.ArrayList<com.google.firestore.v1beta1.DocumentTransform.FieldTransform>(updateTransforms_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.firestore.v1beta1.DocumentTransform.FieldTransform, com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder, com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder> updateTransformsBuilder_;
+
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public java.util.List<com.google.firestore.v1beta1.DocumentTransform.FieldTransform> getUpdateTransformsList() {
+      if (updateTransformsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(updateTransforms_);
+      } else {
+        return updateTransformsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public int getUpdateTransformsCount() {
+      if (updateTransformsBuilder_ == null) {
+        return updateTransforms_.size();
+      } else {
+        return updateTransformsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentTransform.FieldTransform getUpdateTransforms(int index) {
+      if (updateTransformsBuilder_ == null) {
+        return updateTransforms_.get(index);
+      } else {
+        return updateTransformsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder setUpdateTransforms(
+        int index, com.google.firestore.v1beta1.DocumentTransform.FieldTransform value) {
+      if (updateTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.set(index, value);
+        onChanged();
+      } else {
+        updateTransformsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder setUpdateTransforms(
+        int index, com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder builderForValue) {
+      if (updateTransformsBuilder_ == null) {
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        updateTransformsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder addUpdateTransforms(com.google.firestore.v1beta1.DocumentTransform.FieldTransform value) {
+      if (updateTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.add(value);
+        onChanged();
+      } else {
+        updateTransformsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder addUpdateTransforms(
+        int index, com.google.firestore.v1beta1.DocumentTransform.FieldTransform value) {
+      if (updateTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.add(index, value);
+        onChanged();
+      } else {
+        updateTransformsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder addUpdateTransforms(
+        com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder builderForValue) {
+      if (updateTransformsBuilder_ == null) {
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.add(builderForValue.build());
+        onChanged();
+      } else {
+        updateTransformsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder addUpdateTransforms(
+        int index, com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder builderForValue) {
+      if (updateTransformsBuilder_ == null) {
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        updateTransformsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder addAllUpdateTransforms(
+        java.lang.Iterable<? extends com.google.firestore.v1beta1.DocumentTransform.FieldTransform> values) {
+      if (updateTransformsBuilder_ == null) {
+        ensureUpdateTransformsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, updateTransforms_);
+        onChanged();
+      } else {
+        updateTransformsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder clearUpdateTransforms() {
+      if (updateTransformsBuilder_ == null) {
+        updateTransforms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        updateTransformsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public Builder removeUpdateTransforms(int index) {
+      if (updateTransformsBuilder_ == null) {
+        ensureUpdateTransformsIsMutable();
+        updateTransforms_.remove(index);
+        onChanged();
+      } else {
+        updateTransformsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder getUpdateTransformsBuilder(
+        int index) {
+      return getUpdateTransformsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder getUpdateTransformsOrBuilder(
+        int index) {
+      if (updateTransformsBuilder_ == null) {
+        return updateTransforms_.get(index);  } else {
+        return updateTransformsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public java.util.List<? extends com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder> 
+         getUpdateTransformsOrBuilderList() {
+      if (updateTransformsBuilder_ != null) {
+        return updateTransformsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(updateTransforms_);
+      }
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder addUpdateTransformsBuilder() {
+      return getUpdateTransformsFieldBuilder().addBuilder(
+          com.google.firestore.v1beta1.DocumentTransform.FieldTransform.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder addUpdateTransformsBuilder(
+        int index) {
+      return getUpdateTransformsFieldBuilder().addBuilder(
+          index, com.google.firestore.v1beta1.DocumentTransform.FieldTransform.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The transforms to perform after update.
+     * This field can be set only when the operation is `update`. If present, this
+     * write is equivalent to performing `update` and `transform` to the same
+     * document atomically and in order.
+     * </pre>
+     *
+     * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+     */
+    public java.util.List<com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder> 
+         getUpdateTransformsBuilderList() {
+      return getUpdateTransformsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.firestore.v1beta1.DocumentTransform.FieldTransform, com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder, com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder> 
+        getUpdateTransformsFieldBuilder() {
+      if (updateTransformsBuilder_ == null) {
+        updateTransformsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.firestore.v1beta1.DocumentTransform.FieldTransform, com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder, com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder>(
+                updateTransforms_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        updateTransforms_ = null;
+      }
+      return updateTransformsBuilder_;
     }
 
     private com.google.firestore.v1beta1.Precondition currentDocument_;

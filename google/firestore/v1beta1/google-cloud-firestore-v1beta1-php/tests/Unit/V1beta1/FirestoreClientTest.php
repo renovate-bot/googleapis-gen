@@ -30,13 +30,16 @@ use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Firestore\V1beta1\BatchGetDocumentsResponse;
+use Google\Cloud\Firestore\V1beta1\BatchWriteResponse;
 use Google\Cloud\Firestore\V1beta1\BeginTransactionResponse;
 use Google\Cloud\Firestore\V1beta1\CommitResponse;
+use Google\Cloud\Firestore\V1beta1\Cursor;
 use Google\Cloud\Firestore\V1beta1\Document;
 use Google\Cloud\Firestore\V1beta1\ListCollectionIdsResponse;
 use Google\Cloud\Firestore\V1beta1\ListDocumentsResponse;
 use Google\Cloud\Firestore\V1beta1\ListenRequest;
 use Google\Cloud\Firestore\V1beta1\ListenResponse;
+use Google\Cloud\Firestore\V1beta1\PartitionQueryResponse;
 use Google\Cloud\Firestore\V1beta1\RunQueryResponse;
 use Google\Cloud\Firestore\V1beta1\WriteRequest;
 use Google\Cloud\Firestore\V1beta1\WriteResponse;
@@ -966,89 +969,6 @@ class FirestoreClientTest extends GeneratedTest
     /**
      * @test
      */
-    public function createDocumentTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name = 'name3373707';
-        $expectedResponse = new Document();
-        $expectedResponse->setName($name);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $parent = 'parent-995424086';
-        $collectionId = 'collectionId-821242276';
-        $document = new Document();
-
-        $response = $client->createDocument($parent, $collectionId, $document);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.firestore.v1beta1.Firestore/CreateDocument', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getParent();
-
-        $this->assertProtobufEquals($parent, $actualValue);
-        $actualValue = $actualRequestObject->getCollectionId();
-
-        $this->assertProtobufEquals($collectionId, $actualValue);
-        $actualValue = $actualRequestObject->getDocument();
-
-        $this->assertProtobufEquals($document, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function createDocumentExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $parent = 'parent-995424086';
-        $collectionId = 'collectionId-821242276';
-        $document = new Document();
-
-        try {
-            $client->createDocument($parent, $collectionId, $document);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
     public function updateDocumentTest()
     {
         $transport = $this->createTransport();
@@ -1178,6 +1098,239 @@ class FirestoreClientTest extends GeneratedTest
 
         try {
             $client->commit($database);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function partitionQueryTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $nextPageToken = '';
+        $partitionsElement = new Cursor();
+        $partitions = [$partitionsElement];
+        $expectedResponse = new PartitionQueryResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setPartitions($partitions);
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $parent = 'parent-995424086';
+
+        $response = $client->partitionQuery($parent);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getPartitions()[0], $resources[0]);
+
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.firestore.v1beta1.Firestore/PartitionQuery', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getParent();
+
+        $this->assertProtobufEquals($parent, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function partitionQueryExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $parent = 'parent-995424086';
+
+        try {
+            $client->partitionQuery($parent);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchWriteTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new BatchWriteResponse();
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $database = 'database1789464955';
+
+        $response = $client->batchWrite($database);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.firestore.v1beta1.Firestore/BatchWrite', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getDatabase();
+
+        $this->assertProtobufEquals($database, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchWriteExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $database = 'database1789464955';
+
+        try {
+            $client->batchWrite($database);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function createDocumentTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $name = 'name3373707';
+        $expectedResponse = new Document();
+        $expectedResponse->setName($name);
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $parent = 'parent-995424086';
+        $collectionId = 'collectionId-821242276';
+        $document = new Document();
+
+        $response = $client->createDocument($parent, $collectionId, $document);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.firestore.v1beta1.Firestore/CreateDocument', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getParent();
+
+        $this->assertProtobufEquals($parent, $actualValue);
+        $actualValue = $actualRequestObject->getCollectionId();
+
+        $this->assertProtobufEquals($collectionId, $actualValue);
+        $actualValue = $actualRequestObject->getDocument();
+
+        $this->assertProtobufEquals($document, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function createDocumentExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $parent = 'parent-995424086';
+        $collectionId = 'collectionId-821242276';
+        $document = new Document();
+
+        try {
+            $client->createDocument($parent, $collectionId, $document);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

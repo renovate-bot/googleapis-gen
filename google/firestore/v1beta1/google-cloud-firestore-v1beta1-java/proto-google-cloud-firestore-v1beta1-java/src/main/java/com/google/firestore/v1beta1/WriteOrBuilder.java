@@ -69,9 +69,6 @@ public interface WriteOrBuilder extends
   /**
    * <pre>
    * Applies a transformation to a document.
-   * At most one `transform` per document is allowed in a given request.
-   * An `update` cannot follow a `transform` on the same document in a given
-   * request.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -81,9 +78,6 @@ public interface WriteOrBuilder extends
   /**
    * <pre>
    * Applies a transformation to a document.
-   * At most one `transform` per document is allowed in a given request.
-   * An `update` cannot follow a `transform` on the same document in a given
-   * request.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -93,9 +87,6 @@ public interface WriteOrBuilder extends
   /**
    * <pre>
    * Applies a transformation to a document.
-   * At most one `transform` per document is allowed in a given request.
-   * An `update` cannot follow a `transform` on the same document in a given
-   * request.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
@@ -152,6 +143,65 @@ public interface WriteOrBuilder extends
    * <code>.google.firestore.v1beta1.DocumentMask update_mask = 3;</code>
    */
   com.google.firestore.v1beta1.DocumentMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  java.util.List<com.google.firestore.v1beta1.DocumentTransform.FieldTransform> 
+      getUpdateTransformsList();
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  com.google.firestore.v1beta1.DocumentTransform.FieldTransform getUpdateTransforms(int index);
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  int getUpdateTransformsCount();
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  java.util.List<? extends com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder> 
+      getUpdateTransformsOrBuilderList();
+  /**
+   * <pre>
+   * The transforms to perform after update.
+   * This field can be set only when the operation is `update`. If present, this
+   * write is equivalent to performing `update` and `transform` to the same
+   * document atomically and in order.
+   * </pre>
+   *
+   * <code>repeated .google.firestore.v1beta1.DocumentTransform.FieldTransform update_transforms = 7;</code>
+   */
+  com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder getUpdateTransformsOrBuilder(
+      int index);
 
   /**
    * <pre>

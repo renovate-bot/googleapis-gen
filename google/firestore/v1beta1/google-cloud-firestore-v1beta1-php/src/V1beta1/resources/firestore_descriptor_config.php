@@ -23,6 +23,16 @@ return [
                     'resourcesGetMethod' => 'getDocuments',
                 ],
             ],
+            'PartitionQuery' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getPartitions',
+                ],
+            ],
             'BatchGetDocuments' => [
                 'grpcStreaming' => [
                     'grpcStreamingType' => 'ServerStreaming',

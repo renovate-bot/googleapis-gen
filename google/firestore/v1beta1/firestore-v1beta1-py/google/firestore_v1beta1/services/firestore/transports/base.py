@@ -116,7 +116,6 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=60.0,
@@ -132,16 +131,10 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=60.0,
                 ),
-                default_timeout=60.0,
-                client_info=client_info,
-            ),
-            self.create_document: gapic_v1.method.wrap_method(
-                self.create_document,
                 default_timeout=60.0,
                 client_info=client_info,
             ),
@@ -158,7 +151,6 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=60.0,
@@ -174,7 +166,6 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=300.0,
@@ -190,7 +181,6 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=60.0,
@@ -211,7 +201,6 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=60.0,
@@ -227,12 +216,16 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=300.0,
                 ),
                 default_timeout=300.0,
+                client_info=client_info,
+            ),
+            self.partition_query: gapic_v1.method.wrap_method(
+                self.partition_query,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.write: gapic_v1.method.wrap_method(
@@ -248,7 +241,6 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=86400.0,
@@ -264,11 +256,20 @@ class FirestoreTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=60.0,
                 ),
+                default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.batch_write: gapic_v1.method.wrap_method(
+                self.batch_write,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.create_document: gapic_v1.method.wrap_method(
+                self.create_document,
                 default_timeout=60.0,
                 client_info=client_info,
             ),
@@ -290,15 +291,6 @@ class FirestoreTransport(abc.ABC):
             typing.Union[
                 firestore.ListDocumentsResponse,
                 typing.Awaitable[firestore.ListDocumentsResponse]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def create_document(self) -> typing.Callable[
-            [firestore.CreateDocumentRequest],
-            typing.Union[
-                document.Document,
-                typing.Awaitable[document.Document]
             ]]:
         raise NotImplementedError()
 
@@ -366,6 +358,15 @@ class FirestoreTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def partition_query(self) -> typing.Callable[
+            [firestore.PartitionQueryRequest],
+            typing.Union[
+                firestore.PartitionQueryResponse,
+                typing.Awaitable[firestore.PartitionQueryResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def write(self) -> typing.Callable[
             [firestore.WriteRequest],
             typing.Union[
@@ -389,6 +390,24 @@ class FirestoreTransport(abc.ABC):
             typing.Union[
                 firestore.ListCollectionIdsResponse,
                 typing.Awaitable[firestore.ListCollectionIdsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def batch_write(self) -> typing.Callable[
+            [firestore.BatchWriteRequest],
+            typing.Union[
+                firestore.BatchWriteResponse,
+                typing.Awaitable[firestore.BatchWriteResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_document(self) -> typing.Callable[
+            [firestore.CreateDocumentRequest],
+            typing.Union[
+                document.Document,
+                typing.Awaitable[document.Document]
             ]]:
         raise NotImplementedError()
 

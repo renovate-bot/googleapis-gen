@@ -97,7 +97,8 @@ public interface WriteResponseOrBuilder extends
 
   /**
    * <pre>
-   * The time at which the commit occurred.
+   * The time at which the commit occurred. Any read with an equal or greater
+   * `read_time` is guaranteed to see the effects of the write.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -106,7 +107,8 @@ public interface WriteResponseOrBuilder extends
   boolean hasCommitTime();
   /**
    * <pre>
-   * The time at which the commit occurred.
+   * The time at which the commit occurred. Any read with an equal or greater
+   * `read_time` is guaranteed to see the effects of the write.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 4;</code>
@@ -115,7 +117,8 @@ public interface WriteResponseOrBuilder extends
   com.google.protobuf.Timestamp getCommitTime();
   /**
    * <pre>
-   * The time at which the commit occurred.
+   * The time at which the commit occurred. Any read with an equal or greater
+   * `read_time` is guaranteed to see the effects of the write.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 4;</code>

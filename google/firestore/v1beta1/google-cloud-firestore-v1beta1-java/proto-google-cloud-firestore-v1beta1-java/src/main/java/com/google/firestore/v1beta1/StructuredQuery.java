@@ -3834,7 +3834,9 @@ private static final long serialVersionUID = 0L;
       OPERATOR_UNSPECIFIED(0),
       /**
        * <pre>
-       * Less than. Requires that the field come first in `order_by`.
+       * The given `field` is less than the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>LESS_THAN = 1;</code>
@@ -3842,7 +3844,9 @@ private static final long serialVersionUID = 0L;
       LESS_THAN(1),
       /**
        * <pre>
-       * Less than or equal. Requires that the field come first in `order_by`.
+       * The given `field` is less than or equal to the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>LESS_THAN_OR_EQUAL = 2;</code>
@@ -3850,7 +3854,9 @@ private static final long serialVersionUID = 0L;
       LESS_THAN_OR_EQUAL(2),
       /**
        * <pre>
-       * Greater than. Requires that the field come first in `order_by`.
+       * The given `field` is greater than the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>GREATER_THAN = 3;</code>
@@ -3858,8 +3864,9 @@ private static final long serialVersionUID = 0L;
       GREATER_THAN(3),
       /**
        * <pre>
-       * Greater than or equal. Requires that the field come first in
-       * `order_by`.
+       * The given `field` is greater than or equal to the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>GREATER_THAN_OR_EQUAL = 4;</code>
@@ -3867,7 +3874,7 @@ private static final long serialVersionUID = 0L;
       GREATER_THAN_OR_EQUAL(4),
       /**
        * <pre>
-       * Equal.
+       * The given `field` is equal to the given `value`.
        * </pre>
        *
        * <code>EQUAL = 5;</code>
@@ -3875,7 +3882,18 @@ private static final long serialVersionUID = 0L;
       EQUAL(5),
       /**
        * <pre>
-       * Contains. Requires that the field is an array.
+       * The given `field` is not equal to the given `value`.
+       * Requires:
+       * * No other `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>NOT_EQUAL = 6;</code>
+       */
+      NOT_EQUAL(6),
+      /**
+       * <pre>
+       * The given `field` is an array that contains the given `value`.
        * </pre>
        *
        * <code>ARRAY_CONTAINS = 7;</code>
@@ -3883,8 +3901,10 @@ private static final long serialVersionUID = 0L;
       ARRAY_CONTAINS(7),
       /**
        * <pre>
-       * In. Requires that `value` is a non-empty ArrayValue with at most 10
-       * values.
+       * The given `field` is equal to at least one value in the given array.
+       * Requires:
+       * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+       * * No other `IN` or `ARRAY_CONTAINS_ANY` or `NOT_IN`.
        * </pre>
        *
        * <code>IN = 8;</code>
@@ -3892,13 +3912,29 @@ private static final long serialVersionUID = 0L;
       IN(8),
       /**
        * <pre>
-       * Contains any. Requires that the field is an array and
-       * `value` is a non-empty ArrayValue with at most 10 values.
+       * The given `field` is an array that contains any of the values in the
+       * given array.
+       * Requires:
+       * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+       * * No other `IN` or `ARRAY_CONTAINS_ANY` or `NOT_IN`.
        * </pre>
        *
        * <code>ARRAY_CONTAINS_ANY = 9;</code>
        */
       ARRAY_CONTAINS_ANY(9),
+      /**
+       * <pre>
+       * The value of the `field` is not in the given array.
+       * Requires:
+       * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+       * * No other `IN`, `ARRAY_CONTAINS_ANY`, `NOT_IN`, `NOT_EQUAL`,
+       *   `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>NOT_IN = 10;</code>
+       */
+      NOT_IN(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -3912,7 +3948,9 @@ private static final long serialVersionUID = 0L;
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
       /**
        * <pre>
-       * Less than. Requires that the field come first in `order_by`.
+       * The given `field` is less than the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>LESS_THAN = 1;</code>
@@ -3920,7 +3958,9 @@ private static final long serialVersionUID = 0L;
       public static final int LESS_THAN_VALUE = 1;
       /**
        * <pre>
-       * Less than or equal. Requires that the field come first in `order_by`.
+       * The given `field` is less than or equal to the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>LESS_THAN_OR_EQUAL = 2;</code>
@@ -3928,7 +3968,9 @@ private static final long serialVersionUID = 0L;
       public static final int LESS_THAN_OR_EQUAL_VALUE = 2;
       /**
        * <pre>
-       * Greater than. Requires that the field come first in `order_by`.
+       * The given `field` is greater than the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>GREATER_THAN = 3;</code>
@@ -3936,8 +3978,9 @@ private static final long serialVersionUID = 0L;
       public static final int GREATER_THAN_VALUE = 3;
       /**
        * <pre>
-       * Greater than or equal. Requires that the field come first in
-       * `order_by`.
+       * The given `field` is greater than or equal to the given `value`.
+       * Requires:
+       * * That `field` come first in `order_by`.
        * </pre>
        *
        * <code>GREATER_THAN_OR_EQUAL = 4;</code>
@@ -3945,7 +3988,7 @@ private static final long serialVersionUID = 0L;
       public static final int GREATER_THAN_OR_EQUAL_VALUE = 4;
       /**
        * <pre>
-       * Equal.
+       * The given `field` is equal to the given `value`.
        * </pre>
        *
        * <code>EQUAL = 5;</code>
@@ -3953,7 +3996,18 @@ private static final long serialVersionUID = 0L;
       public static final int EQUAL_VALUE = 5;
       /**
        * <pre>
-       * Contains. Requires that the field is an array.
+       * The given `field` is not equal to the given `value`.
+       * Requires:
+       * * No other `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>NOT_EQUAL = 6;</code>
+       */
+      public static final int NOT_EQUAL_VALUE = 6;
+      /**
+       * <pre>
+       * The given `field` is an array that contains the given `value`.
        * </pre>
        *
        * <code>ARRAY_CONTAINS = 7;</code>
@@ -3961,8 +4015,10 @@ private static final long serialVersionUID = 0L;
       public static final int ARRAY_CONTAINS_VALUE = 7;
       /**
        * <pre>
-       * In. Requires that `value` is a non-empty ArrayValue with at most 10
-       * values.
+       * The given `field` is equal to at least one value in the given array.
+       * Requires:
+       * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+       * * No other `IN` or `ARRAY_CONTAINS_ANY` or `NOT_IN`.
        * </pre>
        *
        * <code>IN = 8;</code>
@@ -3970,13 +4026,29 @@ private static final long serialVersionUID = 0L;
       public static final int IN_VALUE = 8;
       /**
        * <pre>
-       * Contains any. Requires that the field is an array and
-       * `value` is a non-empty ArrayValue with at most 10 values.
+       * The given `field` is an array that contains any of the values in the
+       * given array.
+       * Requires:
+       * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+       * * No other `IN` or `ARRAY_CONTAINS_ANY` or `NOT_IN`.
        * </pre>
        *
        * <code>ARRAY_CONTAINS_ANY = 9;</code>
        */
       public static final int ARRAY_CONTAINS_ANY_VALUE = 9;
+      /**
+       * <pre>
+       * The value of the `field` is not in the given array.
+       * Requires:
+       * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+       * * No other `IN`, `ARRAY_CONTAINS_ANY`, `NOT_IN`, `NOT_EQUAL`,
+       *   `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>NOT_IN = 10;</code>
+       */
+      public static final int NOT_IN_VALUE = 10;
 
 
       public final int getNumber() {
@@ -4009,9 +4081,11 @@ private static final long serialVersionUID = 0L;
           case 3: return GREATER_THAN;
           case 4: return GREATER_THAN_OR_EQUAL;
           case 5: return EQUAL;
+          case 6: return NOT_EQUAL;
           case 7: return ARRAY_CONTAINS;
           case 8: return IN;
           case 9: return ARRAY_CONTAINS_ANY;
+          case 10: return NOT_IN;
           default: return null;
         }
       }
@@ -5145,7 +5219,7 @@ private static final long serialVersionUID = 0L;
       OPERATOR_UNSPECIFIED(0),
       /**
        * <pre>
-       * Test if a field is equal to NaN.
+       * The given `field` is equal to `NaN`.
        * </pre>
        *
        * <code>IS_NAN = 2;</code>
@@ -5153,12 +5227,34 @@ private static final long serialVersionUID = 0L;
       IS_NAN(2),
       /**
        * <pre>
-       * Test if an expression evaluates to Null.
+       * The given `field` is equal to `NULL`.
        * </pre>
        *
        * <code>IS_NULL = 3;</code>
        */
       IS_NULL(3),
+      /**
+       * <pre>
+       * The given `field` is not equal to `NaN`.
+       * Requires:
+       * * No other `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>IS_NOT_NAN = 4;</code>
+       */
+      IS_NOT_NAN(4),
+      /**
+       * <pre>
+       * The given `field` is not equal to `NULL`.
+       * Requires:
+       * * A single `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>IS_NOT_NULL = 5;</code>
+       */
+      IS_NOT_NULL(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -5172,7 +5268,7 @@ private static final long serialVersionUID = 0L;
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
       /**
        * <pre>
-       * Test if a field is equal to NaN.
+       * The given `field` is equal to `NaN`.
        * </pre>
        *
        * <code>IS_NAN = 2;</code>
@@ -5180,12 +5276,34 @@ private static final long serialVersionUID = 0L;
       public static final int IS_NAN_VALUE = 2;
       /**
        * <pre>
-       * Test if an expression evaluates to Null.
+       * The given `field` is equal to `NULL`.
        * </pre>
        *
        * <code>IS_NULL = 3;</code>
        */
       public static final int IS_NULL_VALUE = 3;
+      /**
+       * <pre>
+       * The given `field` is not equal to `NaN`.
+       * Requires:
+       * * No other `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>IS_NOT_NAN = 4;</code>
+       */
+      public static final int IS_NOT_NAN_VALUE = 4;
+      /**
+       * <pre>
+       * The given `field` is not equal to `NULL`.
+       * Requires:
+       * * A single `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+       * * That `field` comes first in the `order_by`.
+       * </pre>
+       *
+       * <code>IS_NOT_NULL = 5;</code>
+       */
+      public static final int IS_NOT_NULL_VALUE = 5;
 
 
       public final int getNumber() {
@@ -5215,6 +5333,8 @@ private static final long serialVersionUID = 0L;
           case 0: return OPERATOR_UNSPECIFIED;
           case 2: return IS_NAN;
           case 3: return IS_NULL;
+          case 4: return IS_NOT_NAN;
+          case 5: return IS_NOT_NULL;
           default: return null;
         }
       }
@@ -6041,6 +6161,582 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FieldReferenceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.StructuredQuery.FieldReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string field_path = 2;</code>
+     * @return The fieldPath.
+     */
+    java.lang.String getFieldPath();
+    /**
+     * <code>string field_path = 2;</code>
+     * @return The bytes for fieldPath.
+     */
+    com.google.protobuf.ByteString
+        getFieldPathBytes();
+  }
+  /**
+   * <pre>
+   * A reference to a field, such as `max(messages.time) as max_time`.
+   * </pre>
+   *
+   * Protobuf type {@code google.firestore.v1beta1.StructuredQuery.FieldReference}
+   */
+  public static final class FieldReference extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.firestore.v1beta1.StructuredQuery.FieldReference)
+      FieldReferenceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FieldReference.newBuilder() to construct.
+    private FieldReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FieldReference() {
+      fieldPath_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FieldReference();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FieldReference(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fieldPath_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.firestore.v1beta1.StructuredQuery.FieldReference.class, com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder.class);
+    }
+
+    public static final int FIELD_PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object fieldPath_;
+    /**
+     * <code>string field_path = 2;</code>
+     * @return The fieldPath.
+     */
+    @java.lang.Override
+    public java.lang.String getFieldPath() {
+      java.lang.Object ref = fieldPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fieldPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string field_path = 2;</code>
+     * @return The bytes for fieldPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFieldPathBytes() {
+      java.lang.Object ref = fieldPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fieldPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFieldPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fieldPath_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFieldPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fieldPath_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.firestore.v1beta1.StructuredQuery.FieldReference)) {
+        return super.equals(obj);
+      }
+      com.google.firestore.v1beta1.StructuredQuery.FieldReference other = (com.google.firestore.v1beta1.StructuredQuery.FieldReference) obj;
+
+      if (!getFieldPath()
+          .equals(other.getFieldPath())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FIELD_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldPath().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.FieldReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A reference to a field, such as `max(messages.time) as max_time`.
+     * </pre>
+     *
+     * Protobuf type {@code google.firestore.v1beta1.StructuredQuery.FieldReference}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.firestore.v1beta1.StructuredQuery.FieldReference)
+        com.google.firestore.v1beta1.StructuredQuery.FieldReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.firestore.v1beta1.StructuredQuery.FieldReference.class, com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder.class);
+      }
+
+      // Construct using com.google.firestore.v1beta1.StructuredQuery.FieldReference.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        fieldPath_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstanceForType() {
+        return com.google.firestore.v1beta1.StructuredQuery.FieldReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.firestore.v1beta1.StructuredQuery.FieldReference build() {
+        com.google.firestore.v1beta1.StructuredQuery.FieldReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.firestore.v1beta1.StructuredQuery.FieldReference buildPartial() {
+        com.google.firestore.v1beta1.StructuredQuery.FieldReference result = new com.google.firestore.v1beta1.StructuredQuery.FieldReference(this);
+        result.fieldPath_ = fieldPath_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.firestore.v1beta1.StructuredQuery.FieldReference) {
+          return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.FieldReference)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.firestore.v1beta1.StructuredQuery.FieldReference other) {
+        if (other == com.google.firestore.v1beta1.StructuredQuery.FieldReference.getDefaultInstance()) return this;
+        if (!other.getFieldPath().isEmpty()) {
+          fieldPath_ = other.fieldPath_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.firestore.v1beta1.StructuredQuery.FieldReference parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.firestore.v1beta1.StructuredQuery.FieldReference) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object fieldPath_ = "";
+      /**
+       * <code>string field_path = 2;</code>
+       * @return The fieldPath.
+       */
+      public java.lang.String getFieldPath() {
+        java.lang.Object ref = fieldPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fieldPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string field_path = 2;</code>
+       * @return The bytes for fieldPath.
+       */
+      public com.google.protobuf.ByteString
+          getFieldPathBytes() {
+        java.lang.Object ref = fieldPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fieldPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string field_path = 2;</code>
+       * @param value The fieldPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        fieldPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string field_path = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldPath() {
+        
+        fieldPath_ = getDefaultInstance().getFieldPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string field_path = 2;</code>
+       * @param value The bytes for fieldPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fieldPath_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.firestore.v1beta1.StructuredQuery.FieldReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.firestore.v1beta1.StructuredQuery.FieldReference)
+    private static final com.google.firestore.v1beta1.StructuredQuery.FieldReference DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.firestore.v1beta1.StructuredQuery.FieldReference();
+    }
+
+    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FieldReference>
+        PARSER = new com.google.protobuf.AbstractParser<FieldReference>() {
+      @java.lang.Override
+      public FieldReference parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FieldReference(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FieldReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FieldReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6873,582 +7569,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.Order getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FieldReferenceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.StructuredQuery.FieldReference)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string field_path = 2;</code>
-     * @return The fieldPath.
-     */
-    java.lang.String getFieldPath();
-    /**
-     * <code>string field_path = 2;</code>
-     * @return The bytes for fieldPath.
-     */
-    com.google.protobuf.ByteString
-        getFieldPathBytes();
-  }
-  /**
-   * <pre>
-   * A reference to a field, such as `max(messages.time) as max_time`.
-   * </pre>
-   *
-   * Protobuf type {@code google.firestore.v1beta1.StructuredQuery.FieldReference}
-   */
-  public static final class FieldReference extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.firestore.v1beta1.StructuredQuery.FieldReference)
-      FieldReferenceOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FieldReference.newBuilder() to construct.
-    private FieldReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FieldReference() {
-      fieldPath_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FieldReference();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FieldReference(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fieldPath_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.firestore.v1beta1.StructuredQuery.FieldReference.class, com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder.class);
-    }
-
-    public static final int FIELD_PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fieldPath_;
-    /**
-     * <code>string field_path = 2;</code>
-     * @return The fieldPath.
-     */
-    @java.lang.Override
-    public java.lang.String getFieldPath() {
-      java.lang.Object ref = fieldPath_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fieldPath_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string field_path = 2;</code>
-     * @return The bytes for fieldPath.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFieldPathBytes() {
-      java.lang.Object ref = fieldPath_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fieldPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getFieldPathBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fieldPath_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getFieldPathBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fieldPath_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.firestore.v1beta1.StructuredQuery.FieldReference)) {
-        return super.equals(obj);
-      }
-      com.google.firestore.v1beta1.StructuredQuery.FieldReference other = (com.google.firestore.v1beta1.StructuredQuery.FieldReference) obj;
-
-      if (!getFieldPath()
-          .equals(other.getFieldPath())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FIELD_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getFieldPath().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.FieldReference prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * A reference to a field, such as `max(messages.time) as max_time`.
-     * </pre>
-     *
-     * Protobuf type {@code google.firestore.v1beta1.StructuredQuery.FieldReference}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.firestore.v1beta1.StructuredQuery.FieldReference)
-        com.google.firestore.v1beta1.StructuredQuery.FieldReferenceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.firestore.v1beta1.StructuredQuery.FieldReference.class, com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder.class);
-      }
-
-      // Construct using com.google.firestore.v1beta1.StructuredQuery.FieldReference.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        fieldPath_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstanceForType() {
-        return com.google.firestore.v1beta1.StructuredQuery.FieldReference.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.firestore.v1beta1.StructuredQuery.FieldReference build() {
-        com.google.firestore.v1beta1.StructuredQuery.FieldReference result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.firestore.v1beta1.StructuredQuery.FieldReference buildPartial() {
-        com.google.firestore.v1beta1.StructuredQuery.FieldReference result = new com.google.firestore.v1beta1.StructuredQuery.FieldReference(this);
-        result.fieldPath_ = fieldPath_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.firestore.v1beta1.StructuredQuery.FieldReference) {
-          return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.FieldReference)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.firestore.v1beta1.StructuredQuery.FieldReference other) {
-        if (other == com.google.firestore.v1beta1.StructuredQuery.FieldReference.getDefaultInstance()) return this;
-        if (!other.getFieldPath().isEmpty()) {
-          fieldPath_ = other.fieldPath_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.firestore.v1beta1.StructuredQuery.FieldReference parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.firestore.v1beta1.StructuredQuery.FieldReference) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object fieldPath_ = "";
-      /**
-       * <code>string field_path = 2;</code>
-       * @return The fieldPath.
-       */
-      public java.lang.String getFieldPath() {
-        java.lang.Object ref = fieldPath_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fieldPath_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string field_path = 2;</code>
-       * @return The bytes for fieldPath.
-       */
-      public com.google.protobuf.ByteString
-          getFieldPathBytes() {
-        java.lang.Object ref = fieldPath_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fieldPath_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string field_path = 2;</code>
-       * @param value The fieldPath to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFieldPath(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        fieldPath_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string field_path = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFieldPath() {
-        
-        fieldPath_ = getDefaultInstance().getFieldPath();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string field_path = 2;</code>
-       * @param value The bytes for fieldPath to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFieldPathBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fieldPath_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.firestore.v1beta1.StructuredQuery.FieldReference)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.firestore.v1beta1.StructuredQuery.FieldReference)
-    private static final com.google.firestore.v1beta1.StructuredQuery.FieldReference DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.firestore.v1beta1.StructuredQuery.FieldReference();
-    }
-
-    public static com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FieldReference>
-        PARSER = new com.google.protobuf.AbstractParser<FieldReference>() {
-      @java.lang.Override
-      public FieldReference parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FieldReference(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FieldReference> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FieldReference> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

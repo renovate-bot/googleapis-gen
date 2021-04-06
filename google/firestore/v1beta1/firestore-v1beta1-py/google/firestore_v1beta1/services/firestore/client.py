@@ -37,8 +37,10 @@ from google.firestore_v1beta1.types import common
 from google.firestore_v1beta1.types import document
 from google.firestore_v1beta1.types import document as gf_document
 from google.firestore_v1beta1.types import firestore
+from google.firestore_v1beta1.types import query
 from google.firestore_v1beta1.types import write as gf_write
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.rpc import status_pb2 as status  # type: ignore
 
 from .transports.base import FirestoreTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import FirestoreGrpcTransport
@@ -79,22 +81,13 @@ class FirestoreClientMeta(type):
 
 class FirestoreClient(metaclass=FirestoreClientMeta):
     """The Cloud Firestore service.
-
-    This service exposes several types of comparable timestamps:
-
-    -  ``create_time`` - The time at which a document was created.
-       Changes only when a document is deleted, then re-created.
-       Increases in a strict monotonic fashion.
-    -  ``update_time`` - The time at which a document was last updated.
-       Changes every time a document is modified. Does not change when a
-       write results in no modifications. Increases in a strict
-       monotonic fashion.
-    -  ``read_time`` - The time at which a particular state was
-       observed. Used to denote a consistent snapshot of the database or
-       the time at which a Document was observed to not exist.
-    -  ``commit_time`` - The time at which the writes in a transaction
-       were committed. Any read with an equal or greater ``read_time``
-       is guaranteed to see the effects of the transaction.
+    Cloud Firestore is a fast, fully managed, serverless, cloud-
+    native NoSQL document database that simplifies storing, syncing,
+    and querying data for your mobile, web, and IoT apps at global
+    scale. Its client libraries provide live synchronization and
+    offline support, while its security features and integrations
+    with Firebase and Google Cloud Platform (GCP) accelerate
+    building truly serverless apps.
     """
 
     @staticmethod
@@ -457,64 +450,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             method=rpc,
             request=request,
             response=response,
-            metadata=metadata,
-        )
-
-        # Done; return the response.
-        return response
-
-    def create_document(self,
-            request: firestore.CreateDocumentRequest = None,
-            *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
-            timeout: float = None,
-            metadata: Sequence[Tuple[str, str]] = (),
-            ) -> document.Document:
-        r"""Creates a new document.
-
-        Args:
-            request (google.firestore_v1beta1.types.CreateDocumentRequest):
-                The request object. The request for
-                [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
-
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
-
-        Returns:
-            google.firestore_v1beta1.types.Document:
-                A Firestore document.
-                Must not exceed 1 MiB - 4 bytes.
-
-        """
-        # Create or coerce a protobuf request object.
-
-        # Minor optimization to avoid making a copy if the user passes
-        # in a firestore.CreateDocumentRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, firestore.CreateDocumentRequest):
-            request = firestore.CreateDocumentRequest(request)
-
-        # Wrap the RPC method; this adds retry and timeout information,
-        # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.create_document]
-
-        # Certain fields should be provided within the metadata header;
-        # add these here.
-        metadata = tuple(metadata) + (
-            gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
-            )),
-        )
-
-        # Send the request.
-        response = rpc(
-            request,
-            retry=retry,
-            timeout=timeout,
             metadata=metadata,
         )
 
@@ -1051,6 +986,80 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # Done; return the response.
         return response
 
+    def partition_query(self,
+            request: firestore.PartitionQueryRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.PartitionQueryPager:
+        r"""Partitions a query by returning partition cursors
+        that can be used to run the query in parallel. The
+        returned partition cursors are split points that can be
+        used by RunQuery as starting/end points for the query
+        results.
+
+        Args:
+            request (google.firestore_v1beta1.types.PartitionQueryRequest):
+                The request object. The request for
+                [Firestore.PartitionQuery][google.firestore.v1beta1.Firestore.PartitionQuery].
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.firestore_v1beta1.services.firestore.pagers.PartitionQueryPager:
+                The response for
+                [Firestore.PartitionQuery][google.firestore.v1beta1.Firestore.PartitionQuery].
+
+                Iterating over this object will yield results and
+                resolve additional pages automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a firestore.PartitionQueryRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, firestore.PartitionQueryRequest):
+            request = firestore.PartitionQueryRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.partition_query]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__iter__` convenience method.
+        response = pagers.PartitionQueryPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     def write(self,
             requests: Iterator[firestore.WriteRequest] = None,
             *,
@@ -1244,6 +1253,132 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             method=rpc,
             request=request,
             response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def batch_write(self,
+            request: firestore.BatchWriteRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> firestore.BatchWriteResponse:
+        r"""Applies a batch of write operations.
+
+        The BatchWrite method does not apply the write operations
+        atomically and can apply them out of order. Method does not
+        allow more than one write per document. Each write succeeds or
+        fails independently. See the
+        [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse]
+        for the success status of each write.
+
+        If you require an atomically applied set of writes, use
+        [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+
+        Args:
+            request (google.firestore_v1beta1.types.BatchWriteRequest):
+                The request object. The request for
+                [Firestore.BatchWrite][google.firestore.v1beta1.Firestore.BatchWrite].
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.firestore_v1beta1.types.BatchWriteResponse:
+                The response from
+                [Firestore.BatchWrite][google.firestore.v1beta1.Firestore.BatchWrite].
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a firestore.BatchWriteRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, firestore.BatchWriteRequest):
+            request = firestore.BatchWriteRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.batch_write]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('database', request.database),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def create_document(self,
+            request: firestore.CreateDocumentRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> document.Document:
+        r"""Creates a new document.
+
+        Args:
+            request (google.firestore_v1beta1.types.CreateDocumentRequest):
+                The request object. The request for
+                [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.firestore_v1beta1.types.Document:
+                A Firestore document.
+                Must not exceed 1 MiB - 4 bytes.
+
+        """
+        # Create or coerce a protobuf request object.
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a firestore.CreateDocumentRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, firestore.CreateDocumentRequest):
+            request = firestore.CreateDocumentRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.create_document]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
             metadata=metadata,
         )
 

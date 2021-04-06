@@ -23,7 +23,7 @@ from google.firestore_v1beta1.types import document as gf_document
 from google.firestore_v1beta1.types import query as gf_query
 from google.firestore_v1beta1.types import write
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.rpc import status_pb2 as gr_status  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -44,6 +44,8 @@ __protobuf__ = proto.module(
         'RollbackRequest',
         'RunQueryRequest',
         'RunQueryResponse',
+        'PartitionQueryRequest',
+        'PartitionQueryResponse',
         'WriteRequest',
         'WriteResponse',
         'ListenRequest',
@@ -52,6 +54,8 @@ __protobuf__ = proto.module(
         'TargetChange',
         'ListCollectionIdsRequest',
         'ListCollectionIdsResponse',
+        'BatchWriteRequest',
+        'BatchWriteResponse',
     },
 )
 
@@ -75,7 +79,7 @@ class GetDocumentRequest(proto.Message):
             Reads the document in a transaction.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads the version of the document at the
-            given time. This may not be older than 60
+            given time. This may not be older than 270
             seconds.
     """
 
@@ -126,7 +130,7 @@ class ListDocumentsRequest(proto.Message):
             Reads documents in a transaction.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads documents as they were at the given
-            time. This may not be older than 60 seconds.
+            time. This may not be older than 270 seconds.
         show_missing (bool):
             If the list should show missing documents. A missing
             document is a document that does not exist but has
@@ -328,7 +332,7 @@ class BatchGetDocumentsRequest(proto.Message):
             first response in the stream.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads documents as they were at the given
-            time. This may not be older than 60 seconds.
+            time. This may not be older than 270 seconds.
     """
 
     database = proto.Field(proto.STRING, number=1)
@@ -453,7 +457,9 @@ class CommitResponse(proto.Message):
             This i-th write result corresponds to the i-th
             write in the request.
         commit_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time at which the commit occurred.
+            The time at which the commit occurred. Any read with an
+            equal or greater ``read_time`` is guaranteed to see the
+            effects of the commit.
     """
 
     write_results = proto.RepeatedField(proto.MESSAGE, number=1,
@@ -506,7 +512,7 @@ class RunQueryRequest(proto.Message):
             first response in the stream.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads documents as they were at the given
-            time. This may not be older than 60 seconds.
+            time. This may not be older than 270 seconds.
     """
 
     parent = proto.Field(proto.STRING, number=1)
@@ -566,6 +572,117 @@ class RunQueryResponse(proto.Message):
     )
 
     skipped_results = proto.Field(proto.INT32, number=4)
+
+
+class PartitionQueryRequest(proto.Message):
+    r"""The request for
+    [Firestore.PartitionQuery][google.firestore.v1beta1.Firestore.PartitionQuery].
+
+    Attributes:
+        parent (str):
+            Required. The parent resource name. In the format:
+            ``projects/{project_id}/databases/{database_id}/documents``.
+            Document resource names are not supported; only database
+            resource names can be specified.
+        structured_query (google.firestore_v1beta1.types.StructuredQuery):
+            A structured query.
+            Query must specify collection with all
+            descendants and be ordered by name ascending.
+            Other filters, order bys, limits, offsets, and
+            start/end cursors are not supported.
+        partition_count (int):
+            The desired maximum number of partition
+            points. The partitions may be returned across
+            multiple pages of results. The number must be
+            positive. The actual number of partitions
+            returned may be fewer.
+
+            For example, this may be set to one fewer than
+            the number of parallel queries to be run, or in
+            running a data pipeline job, one fewer than the
+            number of workers or compute instances
+            available.
+        page_token (str):
+            The ``next_page_token`` value returned from a previous call
+            to PartitionQuery that may be used to get an additional set
+            of results. There are no ordering guarantees between sets of
+            results. Thus, using multiple sets of results will require
+            merging the different result sets.
+
+            For example, two subsequent calls using a page_token may
+            return:
+
+            -  cursor B, cursor M, cursor Q
+            -  cursor A, cursor U, cursor W
+
+            To obtain a complete result set ordered with respect to the
+            results of the query supplied to PartitionQuery, the results
+            sets should be merged: cursor A, cursor B, cursor M, cursor
+            Q, cursor U, cursor W
+        page_size (int):
+            The maximum number of partitions to return in this call,
+            subject to ``partition_count``.
+
+            For example, if ``partition_count`` = 10 and ``page_size`` =
+            8, the first call to PartitionQuery will return up to 8
+            partitions and a ``next_page_token`` if more results exist.
+            A second call to PartitionQuery will return up to 2
+            partitions, to complete the total of 10 specified in
+            ``partition_count``.
+    """
+
+    parent = proto.Field(proto.STRING, number=1)
+
+    structured_query = proto.Field(proto.MESSAGE, number=2, oneof='query_type',
+        message=gf_query.StructuredQuery,
+    )
+
+    partition_count = proto.Field(proto.INT64, number=3)
+
+    page_token = proto.Field(proto.STRING, number=4)
+
+    page_size = proto.Field(proto.INT32, number=5)
+
+
+class PartitionQueryResponse(proto.Message):
+    r"""The response for
+    [Firestore.PartitionQuery][google.firestore.v1beta1.Firestore.PartitionQuery].
+
+    Attributes:
+        partitions (Sequence[google.firestore_v1beta1.types.Cursor]):
+            Partition results. Each partition is a split point that can
+            be used by RunQuery as a starting or end point for the query
+            results. The RunQuery requests must be made with the same
+            query supplied to this PartitionQuery request. The partition
+            cursors will be ordered according to same ordering as the
+            results of the query supplied to PartitionQuery.
+
+            For example, if a PartitionQuery request returns partition
+            cursors A and B, running the following three queries will
+            return the entire result set of the original query:
+
+            -  query, end_at A
+            -  query, start_at A, end_at B
+            -  query, start_at B
+
+            An empty result may indicate that the query has too few
+            results to be partitioned.
+        next_page_token (str):
+            A page token that may be used to request an additional set
+            of results, up to the number specified by
+            ``partition_count`` in the PartitionQuery request. If blank,
+            there are no more results.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    partitions = proto.RepeatedField(proto.MESSAGE, number=1,
+        message=gf_query.Cursor,
+    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class WriteRequest(proto.Message):
@@ -651,7 +768,9 @@ class WriteResponse(proto.Message):
             This i-th write result corresponds to the i-th
             write in the request.
         commit_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time at which the commit occurred.
+            The time at which the commit occurred. Any read with an
+            equal or greater ``read_time`` is guaranteed to see the
+            effects of the write.
     """
 
     stream_id = proto.Field(proto.STRING, number=1)
@@ -873,7 +992,7 @@ class TargetChange(proto.Message):
     target_ids = proto.RepeatedField(proto.INT32, number=2)
 
     cause = proto.Field(proto.MESSAGE, number=3,
-        message=status.Status,
+        message=gr_status.Status,
     )
 
     resume_token = proto.Field(proto.BYTES, number=4)
@@ -926,6 +1045,57 @@ class ListCollectionIdsResponse(proto.Message):
     collection_ids = proto.RepeatedField(proto.STRING, number=1)
 
     next_page_token = proto.Field(proto.STRING, number=2)
+
+
+class BatchWriteRequest(proto.Message):
+    r"""The request for
+    [Firestore.BatchWrite][google.firestore.v1beta1.Firestore.BatchWrite].
+
+    Attributes:
+        database (str):
+            Required. The database name. In the format:
+            ``projects/{project_id}/databases/{database_id}``.
+        writes (Sequence[google.firestore_v1beta1.types.Write]):
+            The writes to apply.
+            Method does not apply writes atomically and does
+            not guarantee ordering. Each write succeeds or
+            fails independently. You cannot write to the
+            same document more than once per request.
+        labels (Sequence[google.firestore_v1beta1.types.BatchWriteRequest.LabelsEntry]):
+            Labels associated with this batch write.
+    """
+
+    database = proto.Field(proto.STRING, number=1)
+
+    writes = proto.RepeatedField(proto.MESSAGE, number=2,
+        message=write.Write,
+    )
+
+    labels = proto.MapField(proto.STRING, proto.STRING, number=3)
+
+
+class BatchWriteResponse(proto.Message):
+    r"""The response from
+    [Firestore.BatchWrite][google.firestore.v1beta1.Firestore.BatchWrite].
+
+    Attributes:
+        write_results (Sequence[google.firestore_v1beta1.types.WriteResult]):
+            The result of applying the writes.
+            This i-th write result corresponds to the i-th
+            write in the request.
+        status (Sequence[google.rpc.status_pb2.Status]):
+            The status of applying the writes.
+            This i-th write status corresponds to the i-th
+            write in the request.
+    """
+
+    write_results = proto.RepeatedField(proto.MESSAGE, number=1,
+        message=write.WriteResult,
+    )
+
+    status = proto.RepeatedField(proto.MESSAGE, number=2,
+        message=gr_status.Status,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

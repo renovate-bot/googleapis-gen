@@ -19,6 +19,8 @@ package com.google.cloud.firestore.v1beta1;
 import com.google.api.core.BetaApi;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
+import com.google.firestore.v1beta1.BatchWriteRequest;
+import com.google.firestore.v1beta1.BatchWriteResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
 import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
@@ -34,6 +36,8 @@ import com.google.firestore.v1beta1.ListDocumentsRequest;
 import com.google.firestore.v1beta1.ListDocumentsResponse;
 import com.google.firestore.v1beta1.ListenRequest;
 import com.google.firestore.v1beta1.ListenResponse;
+import com.google.firestore.v1beta1.PartitionQueryRequest;
+import com.google.firestore.v1beta1.PartitionQueryResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
@@ -118,27 +122,6 @@ public class MockFirestoreImpl extends FirestoreImplBase {
                   "Unrecognized response type %s for method ListDocuments, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDocumentsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createDocument(
-      CreateDocumentRequest request, StreamObserver<Document> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Document) {
-      requests.add(request);
-      responseObserver.onNext(((Document) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateDocument, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Document.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -289,6 +272,27 @@ public class MockFirestoreImpl extends FirestoreImplBase {
   }
 
   @Override
+  public void partitionQuery(
+      PartitionQueryRequest request, StreamObserver<PartitionQueryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PartitionQueryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((PartitionQueryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PartitionQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PartitionQueryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public StreamObserver<WriteRequest> write(final StreamObserver<WriteResponse> responseObserver) {
     StreamObserver<WriteRequest> requestObserver =
         new StreamObserver<WriteRequest>() {
@@ -379,6 +383,48 @@ public class MockFirestoreImpl extends FirestoreImplBase {
                   "Unrecognized response type %s for method ListCollectionIds, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCollectionIdsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchWrite(
+      BatchWriteRequest request, StreamObserver<BatchWriteResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchWriteResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchWriteResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchWrite, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchWriteResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDocument(
+      CreateDocumentRequest request, StreamObserver<Document> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Document) {
+      requests.add(request);
+      responseObserver.onNext(((Document) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDocument, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Document.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -20,56 +20,88 @@ class Operator
      */
     const OPERATOR_UNSPECIFIED = 0;
     /**
-     * Less than. Requires that the field come first in `order_by`.
+     * The given `field` is less than the given `value`.
+     * Requires:
+     * * That `field` come first in `order_by`.
      *
      * Generated from protobuf enum <code>LESS_THAN = 1;</code>
      */
     const LESS_THAN = 1;
     /**
-     * Less than or equal. Requires that the field come first in `order_by`.
+     * The given `field` is less than or equal to the given `value`.
+     * Requires:
+     * * That `field` come first in `order_by`.
      *
      * Generated from protobuf enum <code>LESS_THAN_OR_EQUAL = 2;</code>
      */
     const LESS_THAN_OR_EQUAL = 2;
     /**
-     * Greater than. Requires that the field come first in `order_by`.
+     * The given `field` is greater than the given `value`.
+     * Requires:
+     * * That `field` come first in `order_by`.
      *
      * Generated from protobuf enum <code>GREATER_THAN = 3;</code>
      */
     const GREATER_THAN = 3;
     /**
-     * Greater than or equal. Requires that the field come first in
-     * `order_by`.
+     * The given `field` is greater than or equal to the given `value`.
+     * Requires:
+     * * That `field` come first in `order_by`.
      *
      * Generated from protobuf enum <code>GREATER_THAN_OR_EQUAL = 4;</code>
      */
     const GREATER_THAN_OR_EQUAL = 4;
     /**
-     * Equal.
+     * The given `field` is equal to the given `value`.
      *
      * Generated from protobuf enum <code>EQUAL = 5;</code>
      */
     const EQUAL = 5;
     /**
-     * Contains. Requires that the field is an array.
+     * The given `field` is not equal to the given `value`.
+     * Requires:
+     * * No other `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+     * * That `field` comes first in the `order_by`.
+     *
+     * Generated from protobuf enum <code>NOT_EQUAL = 6;</code>
+     */
+    const NOT_EQUAL = 6;
+    /**
+     * The given `field` is an array that contains the given `value`.
      *
      * Generated from protobuf enum <code>ARRAY_CONTAINS = 7;</code>
      */
     const ARRAY_CONTAINS = 7;
     /**
-     * In. Requires that `value` is a non-empty ArrayValue with at most 10
-     * values.
+     * The given `field` is equal to at least one value in the given array.
+     * Requires:
+     * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+     * * No other `IN` or `ARRAY_CONTAINS_ANY` or `NOT_IN`.
      *
      * Generated from protobuf enum <code>IN = 8;</code>
      */
     const IN = 8;
     /**
-     * Contains any. Requires that the field is an array and
-     * `value` is a non-empty ArrayValue with at most 10 values.
+     * The given `field` is an array that contains any of the values in the
+     * given array.
+     * Requires:
+     * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+     * * No other `IN` or `ARRAY_CONTAINS_ANY` or `NOT_IN`.
      *
      * Generated from protobuf enum <code>ARRAY_CONTAINS_ANY = 9;</code>
      */
     const ARRAY_CONTAINS_ANY = 9;
+    /**
+     * The value of the `field` is not in the given array.
+     * Requires:
+     * * That `value` is a non-empty `ArrayValue` with at most 10 values.
+     * * No other `IN`, `ARRAY_CONTAINS_ANY`, `NOT_IN`, `NOT_EQUAL`,
+     *   `IS_NOT_NULL`, or `IS_NOT_NAN`.
+     * * That `field` comes first in the `order_by`.
+     *
+     * Generated from protobuf enum <code>NOT_IN = 10;</code>
+     */
+    const NOT_IN = 10;
 
     private static $valueToName = [
         self::OPERATOR_UNSPECIFIED => 'OPERATOR_UNSPECIFIED',
@@ -78,9 +110,11 @@ class Operator
         self::GREATER_THAN => 'GREATER_THAN',
         self::GREATER_THAN_OR_EQUAL => 'GREATER_THAN_OR_EQUAL',
         self::EQUAL => 'EQUAL',
+        self::NOT_EQUAL => 'NOT_EQUAL',
         self::ARRAY_CONTAINS => 'ARRAY_CONTAINS',
         self::IN => 'IN',
         self::ARRAY_CONTAINS_ANY => 'ARRAY_CONTAINS_ANY',
+        self::NOT_IN => 'NOT_IN',
     ];
 
     public static function name($value)

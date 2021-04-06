@@ -20,22 +20,42 @@ class Operator
      */
     const OPERATOR_UNSPECIFIED = 0;
     /**
-     * Test if a field is equal to NaN.
+     * The given `field` is equal to `NaN`.
      *
      * Generated from protobuf enum <code>IS_NAN = 2;</code>
      */
     const IS_NAN = 2;
     /**
-     * Test if an expression evaluates to Null.
+     * The given `field` is equal to `NULL`.
      *
      * Generated from protobuf enum <code>IS_NULL = 3;</code>
      */
     const IS_NULL = 3;
+    /**
+     * The given `field` is not equal to `NaN`.
+     * Requires:
+     * * No other `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+     * * That `field` comes first in the `order_by`.
+     *
+     * Generated from protobuf enum <code>IS_NOT_NAN = 4;</code>
+     */
+    const IS_NOT_NAN = 4;
+    /**
+     * The given `field` is not equal to `NULL`.
+     * Requires:
+     * * A single `NOT_EQUAL`, `NOT_IN`, `IS_NOT_NULL`, or `IS_NOT_NAN`.
+     * * That `field` comes first in the `order_by`.
+     *
+     * Generated from protobuf enum <code>IS_NOT_NULL = 5;</code>
+     */
+    const IS_NOT_NULL = 5;
 
     private static $valueToName = [
         self::OPERATOR_UNSPECIFIED => 'OPERATOR_UNSPECIFIED',
         self::IS_NAN => 'IS_NAN',
         self::IS_NULL => 'IS_NULL',
+        self::IS_NOT_NAN => 'IS_NOT_NAN',
+        self::IS_NOT_NULL => 'IS_NOT_NULL',
     ];
 
     public static function name($value)

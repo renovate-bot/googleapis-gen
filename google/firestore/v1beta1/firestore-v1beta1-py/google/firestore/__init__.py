@@ -26,6 +26,8 @@ from google.firestore_v1beta1.types.document import MapValue
 from google.firestore_v1beta1.types.document import Value
 from google.firestore_v1beta1.types.firestore import BatchGetDocumentsRequest
 from google.firestore_v1beta1.types.firestore import BatchGetDocumentsResponse
+from google.firestore_v1beta1.types.firestore import BatchWriteRequest
+from google.firestore_v1beta1.types.firestore import BatchWriteResponse
 from google.firestore_v1beta1.types.firestore import BeginTransactionRequest
 from google.firestore_v1beta1.types.firestore import BeginTransactionResponse
 from google.firestore_v1beta1.types.firestore import CommitRequest
@@ -39,6 +41,8 @@ from google.firestore_v1beta1.types.firestore import ListDocumentsRequest
 from google.firestore_v1beta1.types.firestore import ListDocumentsResponse
 from google.firestore_v1beta1.types.firestore import ListenRequest
 from google.firestore_v1beta1.types.firestore import ListenResponse
+from google.firestore_v1beta1.types.firestore import PartitionQueryRequest
+from google.firestore_v1beta1.types.firestore import PartitionQueryResponse
 from google.firestore_v1beta1.types.firestore import RollbackRequest
 from google.firestore_v1beta1.types.firestore import RunQueryRequest
 from google.firestore_v1beta1.types.firestore import RunQueryResponse
@@ -61,6 +65,8 @@ __all__ = (
     'ArrayValue',
     'BatchGetDocumentsRequest',
     'BatchGetDocumentsResponse',
+    'BatchWriteRequest',
+    'BatchWriteResponse',
     'BeginTransactionRequest',
     'BeginTransactionResponse',
     'CommitRequest',
@@ -85,6 +91,8 @@ __all__ = (
     'ListenRequest',
     'ListenResponse',
     'MapValue',
+    'PartitionQueryRequest',
+    'PartitionQueryResponse',
     'Precondition',
     'RollbackRequest',
     'RunQueryRequest',

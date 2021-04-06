@@ -18,6 +18,7 @@ package com.google.cloud.firestore.v1beta1;
 
 import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
 import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
+import static com.google.cloud.firestore.v1beta1.FirestoreClient.PartitionQueryPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -36,6 +37,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
+import com.google.firestore.v1beta1.BatchWriteRequest;
+import com.google.firestore.v1beta1.BatchWriteResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
 import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
@@ -50,6 +53,8 @@ import com.google.firestore.v1beta1.ListDocumentsRequest;
 import com.google.firestore.v1beta1.ListDocumentsResponse;
 import com.google.firestore.v1beta1.ListenRequest;
 import com.google.firestore.v1beta1.ListenResponse;
+import com.google.firestore.v1beta1.PartitionQueryRequest;
+import com.google.firestore.v1beta1.PartitionQueryResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
@@ -107,11 +112,6 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
     return ((FirestoreStubSettings) getStubSettings()).listDocumentsSettings();
   }
 
-  /** Returns the object with the settings used for calls to createDocument. */
-  public UnaryCallSettings<CreateDocumentRequest, Document> createDocumentSettings() {
-    return ((FirestoreStubSettings) getStubSettings()).createDocumentSettings();
-  }
-
   /** Returns the object with the settings used for calls to updateDocument. */
   public UnaryCallSettings<UpdateDocumentRequest, Document> updateDocumentSettings() {
     return ((FirestoreStubSettings) getStubSettings()).updateDocumentSettings();
@@ -149,6 +149,13 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
     return ((FirestoreStubSettings) getStubSettings()).runQuerySettings();
   }
 
+  /** Returns the object with the settings used for calls to partitionQuery. */
+  public PagedCallSettings<
+          PartitionQueryRequest, PartitionQueryResponse, PartitionQueryPagedResponse>
+      partitionQuerySettings() {
+    return ((FirestoreStubSettings) getStubSettings()).partitionQuerySettings();
+  }
+
   /** Returns the object with the settings used for calls to write. */
   public StreamingCallSettings<WriteRequest, WriteResponse> writeSettings() {
     return ((FirestoreStubSettings) getStubSettings()).writeSettings();
@@ -164,6 +171,16 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
           ListCollectionIdsRequest, ListCollectionIdsResponse, ListCollectionIdsPagedResponse>
       listCollectionIdsSettings() {
     return ((FirestoreStubSettings) getStubSettings()).listCollectionIdsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchWrite. */
+  public UnaryCallSettings<BatchWriteRequest, BatchWriteResponse> batchWriteSettings() {
+    return ((FirestoreStubSettings) getStubSettings()).batchWriteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDocument. */
+  public UnaryCallSettings<CreateDocumentRequest, Document> createDocumentSettings() {
+    return ((FirestoreStubSettings) getStubSettings()).createDocumentSettings();
   }
 
   public static final FirestoreSettings create(FirestoreStubSettings stub) throws IOException {
@@ -275,11 +292,6 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
       return getStubSettingsBuilder().listDocumentsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createDocument. */
-    public UnaryCallSettings.Builder<CreateDocumentRequest, Document> createDocumentSettings() {
-      return getStubSettingsBuilder().createDocumentSettings();
-    }
-
     /** Returns the builder for the settings used for calls to updateDocument. */
     public UnaryCallSettings.Builder<UpdateDocumentRequest, Document> updateDocumentSettings() {
       return getStubSettingsBuilder().updateDocumentSettings();
@@ -318,6 +330,13 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
       return getStubSettingsBuilder().runQuerySettings();
     }
 
+    /** Returns the builder for the settings used for calls to partitionQuery. */
+    public PagedCallSettings.Builder<
+            PartitionQueryRequest, PartitionQueryResponse, PartitionQueryPagedResponse>
+        partitionQuerySettings() {
+      return getStubSettingsBuilder().partitionQuerySettings();
+    }
+
     /** Returns the builder for the settings used for calls to write. */
     public StreamingCallSettings.Builder<WriteRequest, WriteResponse> writeSettings() {
       return getStubSettingsBuilder().writeSettings();
@@ -333,6 +352,16 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
             ListCollectionIdsRequest, ListCollectionIdsResponse, ListCollectionIdsPagedResponse>
         listCollectionIdsSettings() {
       return getStubSettingsBuilder().listCollectionIdsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchWrite. */
+    public UnaryCallSettings.Builder<BatchWriteRequest, BatchWriteResponse> batchWriteSettings() {
+      return getStubSettingsBuilder().batchWriteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDocument. */
+    public UnaryCallSettings.Builder<CreateDocumentRequest, Document> createDocumentSettings() {
+      return getStubSettingsBuilder().createDocumentSettings();
     }
 
     @Override

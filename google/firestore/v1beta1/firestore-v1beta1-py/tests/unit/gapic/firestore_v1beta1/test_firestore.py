@@ -46,6 +46,7 @@ from google.oauth2 import service_account
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.rpc import status_pb2 as status  # type: ignore
 from google.type import latlng_pb2 as latlng  # type: ignore
 
 
@@ -861,165 +862,6 @@ async def test_list_documents_async_pages():
             pages.append(page_)
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
-
-
-def test_create_document(transport: str = 'grpc', request_type=firestore.CreateDocumentRequest):
-    client = FirestoreClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_document),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = document.Document(
-            name='name_value',
-
-        )
-
-        response = client.create_document(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == firestore.CreateDocumentRequest()
-
-    # Establish that the response is the type that we expect.
-
-    assert isinstance(response, document.Document)
-
-    assert response.name == 'name_value'
-
-
-def test_create_document_from_dict():
-    test_create_document(request_type=dict)
-
-
-def test_create_document_empty_call():
-    # This test is a coverage failsafe to make sure that totally empty calls,
-    # i.e. request == None and no flattened fields passed, work.
-    client = FirestoreClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_document),
-            '__call__') as call:
-        client.create_document()
-        call.assert_called()
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == firestore.CreateDocumentRequest()
-
-@pytest.mark.asyncio
-async def test_create_document_async(transport: str = 'grpc_asyncio', request_type=firestore.CreateDocumentRequest):
-    client = FirestoreAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_document),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(document.Document(
-            name='name_value',
-        ))
-
-        response = await client.create_document(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == firestore.CreateDocumentRequest()
-
-    # Establish that the response is the type that we expect.
-    assert isinstance(response, document.Document)
-
-    assert response.name == 'name_value'
-
-
-@pytest.mark.asyncio
-async def test_create_document_async_from_dict():
-    await test_create_document_async(request_type=dict)
-
-
-def test_create_document_field_headers():
-    client = FirestoreClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = firestore.CreateDocumentRequest()
-    request.parent = 'parent/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_document),
-            '__call__') as call:
-        call.return_value = document.Document()
-
-        client.create_document(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'parent=parent/value',
-    ) in kw['metadata']
-
-
-@pytest.mark.asyncio
-async def test_create_document_field_headers_async():
-    client = FirestoreAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = firestore.CreateDocumentRequest()
-    request.parent = 'parent/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_document),
-            '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(document.Document())
-
-        await client.create_document(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'parent=parent/value',
-    ) in kw['metadata']
 
 
 def test_update_document(transport: str = 'grpc', request_type=firestore.UpdateDocumentRequest):
@@ -2535,6 +2377,352 @@ async def test_run_query_field_headers_async():
     ) in kw['metadata']
 
 
+def test_partition_query(transport: str = 'grpc', request_type=firestore.PartitionQueryRequest):
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = firestore.PartitionQueryResponse(
+            next_page_token='next_page_token_value',
+
+        )
+
+        response = client.partition_query(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.PartitionQueryRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, pagers.PartitionQueryPager)
+
+    assert response.next_page_token == 'next_page_token_value'
+
+
+def test_partition_query_from_dict():
+    test_partition_query(request_type=dict)
+
+
+def test_partition_query_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        client.partition_query()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.PartitionQueryRequest()
+
+@pytest.mark.asyncio
+async def test_partition_query_async(transport: str = 'grpc_asyncio', request_type=firestore.PartitionQueryRequest):
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(firestore.PartitionQueryResponse(
+            next_page_token='next_page_token_value',
+        ))
+
+        response = await client.partition_query(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.PartitionQueryRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.PartitionQueryAsyncPager)
+
+    assert response.next_page_token == 'next_page_token_value'
+
+
+@pytest.mark.asyncio
+async def test_partition_query_async_from_dict():
+    await test_partition_query_async(request_type=dict)
+
+
+def test_partition_query_field_headers():
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = firestore.PartitionQueryRequest()
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        call.return_value = firestore.PartitionQueryResponse()
+
+        client.partition_query(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_partition_query_field_headers_async():
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = firestore.PartitionQueryRequest()
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(firestore.PartitionQueryResponse())
+
+        await client.partition_query(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+def test_partition_query_pager():
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+                next_page_token='abc',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[],
+                next_page_token='def',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                ],
+                next_page_token='ghi',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', ''),
+            )),
+        )
+        pager = client.partition_query(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, query.Cursor)
+                   for i in results)
+
+def test_partition_query_pages():
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+                next_page_token='abc',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[],
+                next_page_token='def',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                ],
+                next_page_token='ghi',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.partition_query(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_partition_query_async_pager():
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+                next_page_token='abc',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[],
+                next_page_token='def',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                ],
+                next_page_token='ghi',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.partition_query(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, query.Cursor)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_partition_query_async_pages():
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+                next_page_token='abc',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[],
+                next_page_token='def',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                ],
+                next_page_token='ghi',
+            ),
+            firestore.PartitionQueryResponse(
+                partitions=[
+                    query.Cursor(),
+                    query.Cursor(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.partition_query(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+
 def test_write(transport: str = 'grpc', request_type=firestore.WriteRequest):
     client = FirestoreClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3121,6 +3309,317 @@ async def test_list_collection_ids_async_pages():
             assert page_.raw_page.next_page_token == token
 
 
+def test_batch_write(transport: str = 'grpc', request_type=firestore.BatchWriteRequest):
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = firestore.BatchWriteResponse(
+        )
+
+        response = client.batch_write(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.BatchWriteRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, firestore.BatchWriteResponse)
+
+
+def test_batch_write_from_dict():
+    test_batch_write(request_type=dict)
+
+
+def test_batch_write_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write),
+            '__call__') as call:
+        client.batch_write()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.BatchWriteRequest()
+
+@pytest.mark.asyncio
+async def test_batch_write_async(transport: str = 'grpc_asyncio', request_type=firestore.BatchWriteRequest):
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(firestore.BatchWriteResponse(
+        ))
+
+        response = await client.batch_write(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.BatchWriteRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, firestore.BatchWriteResponse)
+
+
+@pytest.mark.asyncio
+async def test_batch_write_async_from_dict():
+    await test_batch_write_async(request_type=dict)
+
+
+def test_batch_write_field_headers():
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = firestore.BatchWriteRequest()
+    request.database = 'database/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write),
+            '__call__') as call:
+        call.return_value = firestore.BatchWriteResponse()
+
+        client.batch_write(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'database=database/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_batch_write_field_headers_async():
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = firestore.BatchWriteRequest()
+    request.database = 'database/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(firestore.BatchWriteResponse())
+
+        await client.batch_write(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'database=database/value',
+    ) in kw['metadata']
+
+
+def test_create_document(transport: str = 'grpc', request_type=firestore.CreateDocumentRequest):
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_document),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = document.Document(
+            name='name_value',
+
+        )
+
+        response = client.create_document(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.CreateDocumentRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, document.Document)
+
+    assert response.name == 'name_value'
+
+
+def test_create_document_from_dict():
+    test_create_document(request_type=dict)
+
+
+def test_create_document_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_document),
+            '__call__') as call:
+        client.create_document()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.CreateDocumentRequest()
+
+@pytest.mark.asyncio
+async def test_create_document_async(transport: str = 'grpc_asyncio', request_type=firestore.CreateDocumentRequest):
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_document),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(document.Document(
+            name='name_value',
+        ))
+
+        response = await client.create_document(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.CreateDocumentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, document.Document)
+
+    assert response.name == 'name_value'
+
+
+@pytest.mark.asyncio
+async def test_create_document_async_from_dict():
+    await test_create_document_async(request_type=dict)
+
+
+def test_create_document_field_headers():
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = firestore.CreateDocumentRequest()
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_document),
+            '__call__') as call:
+        call.return_value = document.Document()
+
+        client.create_document(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_create_document_field_headers_async():
+    client = FirestoreAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = firestore.CreateDocumentRequest()
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_document),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(document.Document())
+
+        await client.create_document(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.FirestoreGrpcTransport(
@@ -3222,7 +3721,6 @@ def test_firestore_base_transport():
     methods = (
         'get_document',
         'list_documents',
-        'create_document',
         'update_document',
         'delete_document',
         'batch_get_documents',
@@ -3230,9 +3728,12 @@ def test_firestore_base_transport():
         'commit',
         'rollback',
         'run_query',
+        'partition_query',
         'write',
         'listen',
         'list_collection_ids',
+        'batch_write',
+        'create_document',
         )
     for method in methods:
         with pytest.raises(NotImplementedError):

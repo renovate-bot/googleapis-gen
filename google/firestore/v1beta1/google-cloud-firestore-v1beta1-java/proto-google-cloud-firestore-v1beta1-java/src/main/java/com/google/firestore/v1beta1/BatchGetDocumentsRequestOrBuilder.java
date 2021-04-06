@@ -173,7 +173,7 @@ public interface BatchGetDocumentsRequestOrBuilder extends
   /**
    * <pre>
    * Reads documents as they were at the given time.
-   * This may not be older than 60 seconds.
+   * This may not be older than 270 seconds.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 7;</code>
@@ -183,7 +183,7 @@ public interface BatchGetDocumentsRequestOrBuilder extends
   /**
    * <pre>
    * Reads documents as they were at the given time.
-   * This may not be older than 60 seconds.
+   * This may not be older than 270 seconds.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 7;</code>
@@ -193,7 +193,7 @@ public interface BatchGetDocumentsRequestOrBuilder extends
   /**
    * <pre>
    * Reads documents as they were at the given time.
-   * This may not be older than 60 seconds.
+   * This may not be older than 270 seconds.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 7;</code>

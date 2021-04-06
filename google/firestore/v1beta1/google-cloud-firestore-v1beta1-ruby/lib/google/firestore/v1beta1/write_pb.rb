@@ -11,6 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/firestore/v1beta1/write.proto", :syntax => :proto3) do
     add_message "google.firestore.v1beta1.Write" do
       optional :update_mask, :message, 3, "google.firestore.v1beta1.DocumentMask"
+      repeated :update_transforms, :message, 7, "google.firestore.v1beta1.DocumentTransform.FieldTransform"
       optional :current_document, :message, 4, "google.firestore.v1beta1.Precondition"
       oneof :operation do
         optional :update, :message, 1, "google.firestore.v1beta1.Document"

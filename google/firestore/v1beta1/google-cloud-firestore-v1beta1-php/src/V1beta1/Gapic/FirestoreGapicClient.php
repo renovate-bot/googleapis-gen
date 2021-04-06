@@ -37,6 +37,8 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Firestore\V1beta1\BatchGetDocumentsRequest;
 use Google\Cloud\Firestore\V1beta1\BatchGetDocumentsResponse;
+use Google\Cloud\Firestore\V1beta1\BatchWriteRequest;
+use Google\Cloud\Firestore\V1beta1\BatchWriteResponse;
 use Google\Cloud\Firestore\V1beta1\BeginTransactionRequest;
 use Google\Cloud\Firestore\V1beta1\BeginTransactionResponse;
 use Google\Cloud\Firestore\V1beta1\CommitRequest;
@@ -52,6 +54,8 @@ use Google\Cloud\Firestore\V1beta1\ListDocumentsRequest;
 use Google\Cloud\Firestore\V1beta1\ListDocumentsResponse;
 use Google\Cloud\Firestore\V1beta1\ListenRequest;
 use Google\Cloud\Firestore\V1beta1\ListenResponse;
+use Google\Cloud\Firestore\V1beta1\PartitionQueryRequest;
+use Google\Cloud\Firestore\V1beta1\PartitionQueryResponse;
 use Google\Cloud\Firestore\V1beta1\Precondition;
 use Google\Cloud\Firestore\V1beta1\RollbackRequest;
 use Google\Cloud\Firestore\V1beta1\RunQueryRequest;
@@ -69,20 +73,12 @@ use Google\Protobuf\Timestamp;
 /**
  * Service Description: The Cloud Firestore service.
  *
- * This service exposes several types of comparable timestamps:
- *
- * *    `create_time` - The time at which a document was created. Changes only
- *      when a document is deleted, then re-created. Increases in a strict
- *       monotonic fashion.
- * *    `update_time` - The time at which a document was last updated. Changes
- *      every time a document is modified. Does not change when a write results
- *      in no modifications. Increases in a strict monotonic fashion.
- * *    `read_time` - The time at which a particular state was observed. Used
- *      to denote a consistent snapshot of the database or the time at which a
- *      Document was observed to not exist.
- * *    `commit_time` - The time at which the writes in a transaction were
- *      committed. Any read with an equal or greater `read_time` is guaranteed
- *      to see the effects of the transaction.
+ * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+ * document database that simplifies storing, syncing, and querying data for
+ * your mobile, web, and IoT apps at global scale. Its client libraries provide
+ * live synchronization and offline support, while its security features and
+ * integrations with Firebase and Google Cloud Platform (GCP) accelerate
+ * building truly serverless apps.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -308,7 +304,7 @@ class FirestoreGapicClient
      *          stream.
      *     @type Timestamp $readTime
      *          Reads documents as they were at the given time.
-     *          This may not be older than 60 seconds.
+     *          This may not be older than 270 seconds.
      *     @type int $timeoutMillis
      *          Timeout to use for this call.
      * }
@@ -501,7 +497,7 @@ class FirestoreGapicClient
      *          stream.
      *     @type Timestamp $readTime
      *          Reads documents as they were at the given time.
-     *          This may not be older than 60 seconds.
+     *          This may not be older than 270 seconds.
      *     @type int $timeoutMillis
      *          Timeout to use for this call.
      * }
@@ -789,7 +785,7 @@ class FirestoreGapicClient
      *          Reads the document in a transaction.
      *     @type Timestamp $readTime
      *          Reads the version of the document at the given time.
-     *          This may not be older than 60 seconds.
+     *          This may not be older than 270 seconds.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -892,7 +888,7 @@ class FirestoreGapicClient
      *          Reads documents in a transaction.
      *     @type Timestamp $readTime
      *          Reads documents as they were at the given time.
-     *          This may not be older than 60 seconds.
+     *          This may not be older than 270 seconds.
      *     @type bool $showMissing
      *          If the list should show missing documents. A missing document is a
      *          document that does not exist but has sub-documents. These documents will
@@ -946,72 +942,6 @@ class FirestoreGapicClient
             ListDocumentsResponse::class,
             $request
         );
-    }
-
-    /**
-     * Creates a new document.
-     *
-     * Sample code:
-     * ```
-     * $firestoreClient = new FirestoreClient();
-     * try {
-     *     $parent = '';
-     *     $collectionId = '';
-     *     $document = new Document();
-     *     $response = $firestoreClient->createDocument($parent, $collectionId, $document);
-     * } finally {
-     *     $firestoreClient->close();
-     * }
-     * ```
-     *
-     * @param string   $parent       Required. The parent resource. For example:
-     *                               `projects/{project_id}/databases/{database_id}/documents` or
-     *                               `projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
-     * @param string   $collectionId Required. The collection ID, relative to `parent`, to list. For example: `chatrooms`.
-     * @param Document $document     Required. The document to create. `name` must not be set.
-     * @param array    $optionalArgs {
-     *                               Optional.
-     *
-     *     @type string $documentId
-     *          The client-assigned document ID to use for this document.
-     *
-     *          Optional. If not specified, an ID will be assigned by the service.
-     *     @type DocumentMask $mask
-     *          The fields to return. If not set, returns all fields.
-     *
-     *          If the document has a field that is not present in this mask, that field
-     *          will not be returned in the response.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Firestore\V1beta1\Document
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function createDocument($parent, $collectionId, $document, array $optionalArgs = [])
-    {
-        $request = new CreateDocumentRequest();
-        $request->setParent($parent);
-        $request->setCollectionId($collectionId);
-        $request->setDocument($document);
-        if (isset($optionalArgs['documentId'])) {
-            $request->setDocumentId($optionalArgs['documentId']);
-        }
-        if (isset($optionalArgs['mask'])) {
-            $request->setMask($optionalArgs['mask']);
-        }
-
-        return $this->startCall(
-            'CreateDocument',
-            Document::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -1148,6 +1078,250 @@ class FirestoreGapicClient
         return $this->startCall(
             'Commit',
             CommitResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     *
+     * Sample code:
+     * ```
+     * $firestoreClient = new FirestoreClient();
+     * try {
+     *     $parent = '';
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $firestoreClient->partitionQuery($parent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $firestoreClient->partitionQuery($parent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $firestoreClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent resource name. In the format:
+     *                             `projects/{project_id}/databases/{database_id}/documents`.
+     *                             Document resource names are not supported; only database resource names
+     *                             can be specified.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type StructuredQuery $structuredQuery
+     *          A structured query.
+     *          Query must specify collection with all descendants and be ordered by name
+     *          ascending. Other filters, order bys, limits, offsets, and start/end
+     *          cursors are not supported.
+     *     @type int $partitionCount
+     *          The desired maximum number of partition points.
+     *          The partitions may be returned across multiple pages of results.
+     *          The number must be positive. The actual number of partitions
+     *          returned may be fewer.
+     *
+     *          For example, this may be set to one fewer than the number of parallel
+     *          queries to be run, or in running a data pipeline job, one fewer than the
+     *          number of workers or compute instances available.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function partitionQuery($parent, array $optionalArgs = [])
+    {
+        $request = new PartitionQueryRequest();
+        $request->setParent($parent);
+        if (isset($optionalArgs['structuredQuery'])) {
+            $request->setStructuredQuery($optionalArgs['structuredQuery']);
+        }
+        if (isset($optionalArgs['partitionCount'])) {
+            $request->setPartitionCount($optionalArgs['partitionCount']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'PartitionQuery',
+            $optionalArgs,
+            PartitionQueryResponse::class,
+            $request
+        );
+    }
+
+    /**
+     * Applies a batch of write operations.
+     *
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1beta1.BatchWriteResponse] for the success status of each write.
+     *
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
+     *
+     * Sample code:
+     * ```
+     * $firestoreClient = new FirestoreClient();
+     * try {
+     *     $database = '';
+     *     $response = $firestoreClient->batchWrite($database);
+     * } finally {
+     *     $firestoreClient->close();
+     * }
+     * ```
+     *
+     * @param string $database     Required. The database name. In the format:
+     *                             `projects/{project_id}/databases/{database_id}`.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type Write[] $writes
+     *          The writes to apply.
+     *
+     *          Method does not apply writes atomically and does not guarantee ordering.
+     *          Each write succeeds or fails independently. You cannot write to the same
+     *          document more than once per request.
+     *     @type array $labels
+     *          Labels associated with this batch write.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Firestore\V1beta1\BatchWriteResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function batchWrite($database, array $optionalArgs = [])
+    {
+        $request = new BatchWriteRequest();
+        $request->setDatabase($database);
+        if (isset($optionalArgs['writes'])) {
+            $request->setWrites($optionalArgs['writes']);
+        }
+        if (isset($optionalArgs['labels'])) {
+            $request->setLabels($optionalArgs['labels']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'database' => $request->getDatabase(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'BatchWrite',
+            BatchWriteResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Creates a new document.
+     *
+     * Sample code:
+     * ```
+     * $firestoreClient = new FirestoreClient();
+     * try {
+     *     $parent = '';
+     *     $collectionId = '';
+     *     $document = new Document();
+     *     $response = $firestoreClient->createDocument($parent, $collectionId, $document);
+     * } finally {
+     *     $firestoreClient->close();
+     * }
+     * ```
+     *
+     * @param string   $parent       Required. The parent resource. For example:
+     *                               `projects/{project_id}/databases/{database_id}/documents` or
+     *                               `projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
+     * @param string   $collectionId Required. The collection ID, relative to `parent`, to list. For example: `chatrooms`.
+     * @param Document $document     Required. The document to create. `name` must not be set.
+     * @param array    $optionalArgs {
+     *                               Optional.
+     *
+     *     @type string $documentId
+     *          The client-assigned document ID to use for this document.
+     *
+     *          Optional. If not specified, an ID will be assigned by the service.
+     *     @type DocumentMask $mask
+     *          The fields to return. If not set, returns all fields.
+     *
+     *          If the document has a field that is not present in this mask, that field
+     *          will not be returned in the response.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Firestore\V1beta1\Document
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function createDocument($parent, $collectionId, $document, array $optionalArgs = [])
+    {
+        $request = new CreateDocumentRequest();
+        $request->setParent($parent);
+        $request->setCollectionId($collectionId);
+        $request->setDocument($document);
+        if (isset($optionalArgs['documentId'])) {
+            $request->setDocumentId($optionalArgs['documentId']);
+        }
+        if (isset($optionalArgs['mask'])) {
+            $request->setMask($optionalArgs['mask']);
+        }
+
+        return $this->startCall(
+            'CreateDocument',
+            Document::class,
             $optionalArgs,
             $request
         )->wait();
