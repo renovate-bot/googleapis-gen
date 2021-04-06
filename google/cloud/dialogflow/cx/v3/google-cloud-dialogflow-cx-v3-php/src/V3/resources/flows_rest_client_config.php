@@ -26,6 +26,28 @@ return [
                     ],
                 ],
             ],
+            'GetFlow' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetFlowValidationResult' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*/validationResult}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'ListFlows' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*}/flows',
@@ -37,9 +59,10 @@ return [
                     ],
                 ],
             ],
-            'GetFlow' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}',
+            'TrainFlow' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}:train',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -61,33 +84,10 @@ return [
                     ],
                 ],
             ],
-            'TrainFlow' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}:train',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'ValidateFlow' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}:validate',
                 'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'GetFlowValidationResult' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*/validationResult}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [

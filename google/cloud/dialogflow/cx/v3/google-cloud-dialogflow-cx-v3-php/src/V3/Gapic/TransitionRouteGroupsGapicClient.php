@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,6 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/dialogflow/cx/v3/transition_route_group.proto
  * and updates to that file get reflected here through a refresh process.
- *
- * @experimental
  */
 
 namespace Google\Cloud\Dialogflow\Cx\V3\Gapic;
@@ -29,6 +27,7 @@ namespace Google\Cloud\Dialogflow\Cx\V3\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -55,33 +54,17 @@ use Google\Protobuf\GPBEmpty;
  * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
  * try {
  *     $formattedParent = $transitionRouteGroupsClient->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
- *     // Iterate over pages of elements
- *     $pagedResponse = $transitionRouteGroupsClient->listTransitionRouteGroups($formattedParent);
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
- *     }
- *
- *
- *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $transitionRouteGroupsClient->listTransitionRouteGroups($formattedParent);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
+ *     $transitionRouteGroup = new TransitionRouteGroup();
+ *     $response = $transitionRouteGroupsClient->createTransitionRouteGroup($formattedParent, $transitionRouteGroup);
  * } finally {
  *     $transitionRouteGroupsClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class TransitionRouteGroupsGapicClient
 {
@@ -114,24 +97,27 @@ class TransitionRouteGroupsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/dialogflow',
     ];
+
     private static $flowNameTemplate;
+
     private static $transitionRouteGroupNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/transition_route_groups_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/transition_route_groups_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/transition_route_groups_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/transition_route_groups_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/transition_route_groups_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/transition_route_groups_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/transition_route_groups_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/transition_route_groups_rest_client_config.php',
                 ],
             ],
         ];
@@ -139,7 +125,7 @@ class TransitionRouteGroupsGapicClient
 
     private static function getFlowNameTemplate()
     {
-        if (null == self::$flowNameTemplate) {
+        if (self::$flowNameTemplate == null) {
             self::$flowNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/flows/{flow}');
         }
 
@@ -148,7 +134,7 @@ class TransitionRouteGroupsGapicClient
 
     private static function getTransitionRouteGroupNameTemplate()
     {
-        if (null == self::$transitionRouteGroupNameTemplate) {
+        if (self::$transitionRouteGroupNameTemplate == null) {
             self::$transitionRouteGroupNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}');
         }
 
@@ -157,7 +143,7 @@ class TransitionRouteGroupsGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'flow' => self::getFlowNameTemplate(),
                 'transitionRouteGroup' => self::getTransitionRouteGroupNameTemplate(),
@@ -168,8 +154,8 @@ class TransitionRouteGroupsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a flow resource.
+     * Formats a string containing the fully-qualified path to represent a flow
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -177,7 +163,6 @@ class TransitionRouteGroupsGapicClient
      * @param string $flow
      *
      * @return string The formatted flow resource.
-     * @experimental
      */
     public static function flowName($project, $location, $agent, $flow)
     {
@@ -190,8 +175,8 @@ class TransitionRouteGroupsGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a transition_route_group resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * transition_route_group resource.
      *
      * @param string $project
      * @param string $location
@@ -200,7 +185,6 @@ class TransitionRouteGroupsGapicClient
      * @param string $transitionRouteGroup
      *
      * @return string The formatted transition_route_group resource.
-     * @experimental
      */
     public static function transitionRouteGroupName($project, $location, $agent, $flow, $transitionRouteGroup)
     {
@@ -218,12 +202,13 @@ class TransitionRouteGroupsGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - flow: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}
-     * - transitionRouteGroup: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}.
+     * - transitionRouteGroup: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -231,12 +216,10 @@ class TransitionRouteGroupsGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -252,6 +235,7 @@ class TransitionRouteGroupsGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -259,7 +243,7 @@ class TransitionRouteGroupsGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -273,31 +257,31 @@ class TransitionRouteGroupsGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -305,172 +289,11 @@ class TransitionRouteGroupsGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
-    }
-
-    /**
-     * Returns the list of all transition route groups in the specified flow.
-     *
-     * Sample code:
-     * ```
-     * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
-     * try {
-     *     $formattedParent = $transitionRouteGroupsClient->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $transitionRouteGroupsClient->listTransitionRouteGroups($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $transitionRouteGroupsClient->listTransitionRouteGroups($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $transitionRouteGroupsClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The flow to list all transition route groups for.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/flows/<Flow ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type string $languageCode
-     *          The language to list transition route groups for. The field
-     *          [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     *          [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
-     *
-     *          If not specified, the agent's default language is used.
-     *          [Many
-     *          languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
-     *          are supported.
-     *          Note: languages must be enabled in the agent before they can be used.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listTransitionRouteGroups($parent, array $optionalArgs = [])
-    {
-        $request = new ListTransitionRouteGroupsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['languageCode'])) {
-            $request->setLanguageCode($optionalArgs['languageCode']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListTransitionRouteGroups',
-            $optionalArgs,
-            ListTransitionRouteGroupsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
-     *
-     * Sample code:
-     * ```
-     * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
-     * try {
-     *     $formattedName = $transitionRouteGroupsClient->transitionRouteGroupName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[TRANSITION_ROUTE_GROUP]');
-     *     $response = $transitionRouteGroupsClient->getTransitionRouteGroup($formattedName);
-     * } finally {
-     *     $transitionRouteGroupsClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $languageCode
-     *          The language to list transition route groups for. The field
-     *          [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     *          [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
-     *
-     *          If not specified, the agent's default language is used.
-     *          [Many
-     *          languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
-     *          are supported.
-     *          Note: languages must be enabled in the agent before they can be used.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getTransitionRouteGroup($name, array $optionalArgs = [])
-    {
-        $request = new GetTransitionRouteGroupRequest();
-        $request->setName($name);
-        if (isset($optionalArgs['languageCode'])) {
-            $request->setLanguageCode($optionalArgs['languageCode']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetTransitionRouteGroup',
-            TransitionRouteGroup::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -493,120 +316,43 @@ class TransitionRouteGroupsGapicClient
      *                                                   ID>/flows/<Flow ID>`.
      * @param TransitionRouteGroup $transitionRouteGroup Required. The transition route group to create.
      * @param array                $optionalArgs         {
-     *                                                   Optional.
+     *     Optional.
      *
      *     @type string $languageCode
-     *          The language to list transition route groups for. The field
-     *          [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     *          [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     *           The language to list transition route groups for. The field
+     *           [`messages`][TransitionRoute.trigger_fulfillment.messages] in
+     *           [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
      *
-     *          If not specified, the agent's default language is used.
-     *          [Many
-     *          languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
-     *          are supported.
-     *          Note: languages must be enabled in the agent before they can be used.
+     *           If not specified, the agent's default language is used.
+     *           [Many
+     *           languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     *           are supported.
+     *           Note: languages must be enabled in the agent before they can be used.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createTransitionRouteGroup($parent, $transitionRouteGroup, array $optionalArgs = [])
     {
         $request = new CreateTransitionRouteGroupRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setTransitionRouteGroup($transitionRouteGroup);
+        $requestParamHeaders['parent'] = $parent;
         if (isset($optionalArgs['languageCode'])) {
             $request->setLanguageCode($optionalArgs['languageCode']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateTransitionRouteGroup',
-            TransitionRouteGroup::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
-     *
-     * Sample code:
-     * ```
-     * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
-     * try {
-     *     $transitionRouteGroup = new TransitionRouteGroup();
-     *     $response = $transitionRouteGroupsClient->updateTransitionRouteGroup($transitionRouteGroup);
-     * } finally {
-     *     $transitionRouteGroupsClient->close();
-     * }
-     * ```
-     *
-     * @param TransitionRouteGroup $transitionRouteGroup Required. The transition route group to update.
-     * @param array                $optionalArgs         {
-     *                                                   Optional.
-     *
-     *     @type FieldMask $updateMask
-     *          The mask to control which fields get updated.
-     *     @type string $languageCode
-     *          The language to list transition route groups for. The field
-     *          [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     *          [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
-     *
-     *          If not specified, the agent's default language is used.
-     *          [Many
-     *          languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
-     *          are supported.
-     *          Note: languages must be enabled in the agent before they can be used.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateTransitionRouteGroup($transitionRouteGroup, array $optionalArgs = [])
-    {
-        $request = new UpdateTransitionRouteGroupRequest();
-        $request->setTransitionRouteGroup($transitionRouteGroup);
-        if (isset($optionalArgs['updateMask'])) {
-            $request->setUpdateMask($optionalArgs['updateMask']);
-        }
-        if (isset($optionalArgs['languageCode'])) {
-            $request->setLanguageCode($optionalArgs['languageCode']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'transition_route_group.name' => $request->getTransitionRouteGroup()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateTransitionRouteGroup',
-            TransitionRouteGroup::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateTransitionRouteGroup', TransitionRouteGroup::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -627,46 +373,238 @@ class TransitionRouteGroupsGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type bool $force
-     *          This field has no effect for transition route group that no page is using.
-     *          If the transition route group is referenced by any page:
+     *           This field has no effect for transition route group that no page is using.
+     *           If the transition route group is referenced by any page:
      *
-     *          *  If `force` is set to false, an error will be returned with message
-     *             indicating pages that reference the transition route group.
-     *          *  If `force` is set to true, Dialogflow will remove the transition route
-     *             group, as well as any reference to it.
+     *           *  If `force` is set to false, an error will be returned with message
+     *           indicating pages that reference the transition route group.
+     *           *  If `force` is set to true, Dialogflow will remove the transition route
+     *           group, as well as any reference to it.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteTransitionRouteGroup($name, array $optionalArgs = [])
     {
         $request = new DeleteTransitionRouteGroupRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['force'])) {
             $request->setForce($optionalArgs['force']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteTransitionRouteGroup', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'DeleteTransitionRouteGroup',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     *
+     * Sample code:
+     * ```
+     * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
+     * try {
+     *     $formattedName = $transitionRouteGroupsClient->transitionRouteGroupName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[TRANSITION_ROUTE_GROUP]');
+     *     $response = $transitionRouteGroupsClient->getTransitionRouteGroup($formattedName);
+     * } finally {
+     *     $transitionRouteGroupsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $languageCode
+     *           The language to list transition route groups for. The field
+     *           [`messages`][TransitionRoute.trigger_fulfillment.messages] in
+     *           [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     *
+     *           If not specified, the agent's default language is used.
+     *           [Many
+     *           languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     *           are supported.
+     *           Note: languages must be enabled in the agent before they can be used.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getTransitionRouteGroup($name, array $optionalArgs = [])
+    {
+        $request = new GetTransitionRouteGroupRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['languageCode'])) {
+            $request->setLanguageCode($optionalArgs['languageCode']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetTransitionRouteGroup', TransitionRouteGroup::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Returns the list of all transition route groups in the specified flow.
+     *
+     * Sample code:
+     * ```
+     * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
+     * try {
+     *     $formattedParent = $transitionRouteGroupsClient->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $transitionRouteGroupsClient->listTransitionRouteGroups($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $transitionRouteGroupsClient->listTransitionRouteGroups($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $transitionRouteGroupsClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The flow to list all transition route groups for.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type string $languageCode
+     *           The language to list transition route groups for. The field
+     *           [`messages`][TransitionRoute.trigger_fulfillment.messages] in
+     *           [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     *
+     *           If not specified, the agent's default language is used.
+     *           [Many
+     *           languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     *           are supported.
+     *           Note: languages must be enabled in the agent before they can be used.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listTransitionRouteGroups($parent, array $optionalArgs = [])
+    {
+        $request = new ListTransitionRouteGroupsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['languageCode'])) {
+            $request->setLanguageCode($optionalArgs['languageCode']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListTransitionRouteGroups', $optionalArgs, ListTransitionRouteGroupsResponse::class, $request);
+    }
+
+    /**
+     * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     *
+     * Sample code:
+     * ```
+     * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
+     * try {
+     *     $transitionRouteGroup = new TransitionRouteGroup();
+     *     $response = $transitionRouteGroupsClient->updateTransitionRouteGroup($transitionRouteGroup);
+     * } finally {
+     *     $transitionRouteGroupsClient->close();
+     * }
+     * ```
+     *
+     * @param TransitionRouteGroup $transitionRouteGroup Required. The transition route group to update.
+     * @param array                $optionalArgs         {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           The mask to control which fields get updated.
+     *     @type string $languageCode
+     *           The language to list transition route groups for. The field
+     *           [`messages`][TransitionRoute.trigger_fulfillment.messages] in
+     *           [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     *
+     *           If not specified, the agent's default language is used.
+     *           [Many
+     *           languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     *           are supported.
+     *           Note: languages must be enabled in the agent before they can be used.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateTransitionRouteGroup($transitionRouteGroup, array $optionalArgs = [])
+    {
+        $request = new UpdateTransitionRouteGroupRequest();
+        $requestParamHeaders = [];
+        $request->setTransitionRouteGroup($transitionRouteGroup);
+        $requestParamHeaders['transition_route_group.name'] = $transitionRouteGroup->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        if (isset($optionalArgs['languageCode'])) {
+            $request->setLanguageCode($optionalArgs['languageCode']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateTransitionRouteGroup', TransitionRouteGroup::class, $optionalArgs, $request)->wait();
     }
 }

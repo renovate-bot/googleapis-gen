@@ -128,6 +128,8 @@ use Google\Protobuf\GPBEmpty;
  *     $artifactRegistryClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class ArtifactRegistryGapicClient
 {
@@ -186,6 +188,8 @@ class ArtifactRegistryGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -202,6 +206,8 @@ class ArtifactRegistryGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -261,6 +267,8 @@ class ArtifactRegistryGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -327,6 +335,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createRepository(array $optionalArgs = [])
     {
@@ -382,6 +392,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createTag(array $optionalArgs = [])
     {
@@ -457,6 +469,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deletePackage(array $optionalArgs = [])
     {
@@ -525,6 +539,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteRepository(array $optionalArgs = [])
     {
@@ -566,6 +582,8 @@ class ArtifactRegistryGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteTag(array $optionalArgs = [])
     {
@@ -636,6 +654,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteVersion(array $optionalArgs = [])
     {
@@ -683,6 +703,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\File
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getFile(array $optionalArgs = [])
     {
@@ -730,6 +752,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\Iam\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getIamPolicy($resource, array $optionalArgs = [])
     {
@@ -774,6 +798,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Package
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getPackage(array $optionalArgs = [])
     {
@@ -817,6 +843,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getRepository(array $optionalArgs = [])
     {
@@ -860,6 +888,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getTag(array $optionalArgs = [])
     {
@@ -906,6 +936,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Version
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getVersion(array $optionalArgs = [])
     {
@@ -987,6 +1019,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listFiles(array $optionalArgs = [])
     {
@@ -1063,6 +1097,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listPackages(array $optionalArgs = [])
     {
@@ -1135,6 +1171,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listRepositories(array $optionalArgs = [])
     {
@@ -1217,6 +1255,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listTags(array $optionalArgs = [])
     {
@@ -1296,6 +1336,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listVersions(array $optionalArgs = [])
     {
@@ -1357,6 +1399,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\Iam\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function setIamPolicy($resource, $policy, array $optionalArgs = [])
     {
@@ -1404,6 +1448,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\Iam\V1\TestIamPermissionsResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function testIamPermissions($resource, $permissions, array $optionalArgs = [])
     {
@@ -1449,6 +1495,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateRepository(array $optionalArgs = [])
     {
@@ -1499,6 +1547,8 @@ class ArtifactRegistryGapicClient
      * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateTag(array $optionalArgs = [])
     {

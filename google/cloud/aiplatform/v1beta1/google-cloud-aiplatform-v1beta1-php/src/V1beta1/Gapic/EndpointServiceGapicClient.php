@@ -99,6 +99,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class EndpointServiceGapicClient
 {
@@ -209,6 +211,8 @@ class EndpointServiceGapicClient
      * @param string $endpoint
      *
      * @return string The formatted endpoint resource.
+     *
+     * @experimental
      */
     public static function endpointName($project, $location, $endpoint)
     {
@@ -227,6 +231,8 @@ class EndpointServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -245,6 +251,8 @@ class EndpointServiceGapicClient
      * @param string $model
      *
      * @return string The formatted model resource.
+     *
+     * @experimental
      */
     public static function modelName($project, $location, $model)
     {
@@ -275,6 +283,8 @@ class EndpointServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -302,6 +312,8 @@ class EndpointServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -318,6 +330,8 @@ class EndpointServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -377,6 +391,8 @@ class EndpointServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -441,6 +457,8 @@ class EndpointServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createEndpoint($parent, $endpoint, array $optionalArgs = [])
     {
@@ -507,6 +525,8 @@ class EndpointServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteEndpoint($name, array $optionalArgs = [])
     {
@@ -591,6 +611,8 @@ class EndpointServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deployModel($endpoint, $deployedModel, array $optionalArgs = [])
     {
@@ -638,6 +660,8 @@ class EndpointServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Endpoint
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getEndpoint($name, array $optionalArgs = [])
     {
@@ -718,6 +742,8 @@ class EndpointServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listEndpoints($parent, array $optionalArgs = [])
     {
@@ -812,6 +838,8 @@ class EndpointServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function undeployModel($endpoint, $deployedModelId, array $optionalArgs = [])
     {
@@ -861,6 +889,8 @@ class EndpointServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Endpoint
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateEndpoint($endpoint, $updateMask, array $optionalArgs = [])
     {

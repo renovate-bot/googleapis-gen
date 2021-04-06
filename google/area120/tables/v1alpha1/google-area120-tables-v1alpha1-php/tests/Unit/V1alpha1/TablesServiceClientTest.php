@@ -156,7 +156,9 @@ class TablesServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->tableName('[TABLE]');
-        $formattedNames = $client->rowName('[TABLE]', '[ROW]');
+        $formattedNames = [
+            $client->rowName('[TABLE]', '[ROW]'),
+        ];
         $client->batchDeleteRows($formattedParent, $formattedNames);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -192,7 +194,9 @@ class TablesServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $formattedParent = $client->tableName('[TABLE]');
-        $formattedNames = $client->rowName('[TABLE]', '[ROW]');
+        $formattedNames = [
+            $client->rowName('[TABLE]', '[ROW]'),
+        ];
         try {
             $client->batchDeleteRows($formattedParent, $formattedNames);
             // If the $client method call did not throw, fail the test

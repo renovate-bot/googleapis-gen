@@ -70,6 +70,8 @@ use Google\Protobuf\GPBEmpty;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class PipelineServiceGapicClient
 {
@@ -167,6 +169,8 @@ class PipelineServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -185,6 +189,8 @@ class PipelineServiceGapicClient
      * @param string $trainingPipeline
      *
      * @return string The formatted training_pipeline resource.
+     *
+     * @experimental
      */
     public static function trainingPipelineName($project, $location, $trainingPipeline)
     {
@@ -214,6 +220,8 @@ class PipelineServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -241,6 +249,8 @@ class PipelineServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -257,6 +267,8 @@ class PipelineServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -316,6 +328,8 @@ class PipelineServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -361,6 +375,8 @@ class PipelineServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function cancelTrainingPipeline($name, array $optionalArgs = [])
     {
@@ -405,6 +421,8 @@ class PipelineServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\TrainingPipeline
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createTrainingPipeline($parent, $trainingPipeline, array $optionalArgs = [])
     {
@@ -471,6 +489,8 @@ class PipelineServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteTrainingPipeline($name, array $optionalArgs = [])
     {
@@ -513,6 +533,8 @@ class PipelineServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\TrainingPipeline
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getTrainingPipeline($name, array $optionalArgs = [])
     {
@@ -594,6 +616,8 @@ class PipelineServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listTrainingPipelines($parent, array $optionalArgs = [])
     {

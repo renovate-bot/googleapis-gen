@@ -80,6 +80,8 @@ use Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResponse;
  *     $speechTranslationServiceClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class SpeechTranslationServiceGapicClient
 {
@@ -181,6 +183,8 @@ class SpeechTranslationServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -242,6 +246,8 @@ class SpeechTranslationServiceGapicClient
      * @return \Google\ApiCore\BidiStream
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function streamingTranslateSpeech(array $optionalArgs = [])
     {

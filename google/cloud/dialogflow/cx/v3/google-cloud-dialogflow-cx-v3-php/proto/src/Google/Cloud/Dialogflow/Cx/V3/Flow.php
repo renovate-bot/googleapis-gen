@@ -80,6 +80,19 @@ class Flow extends \Google\Protobuf\Internal\Message
      */
     private $event_handlers;
     /**
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>`.
+     *
+     * Generated from protobuf field <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = {</code>
+     */
+    private $transition_route_groups;
+    /**
      * NLU related settings of the flow.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.NluSettings nlu_settings = 11;</code>
@@ -125,6 +138,15 @@ class Flow extends \Google\Protobuf\Internal\Message
      *           Unlike [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes], these handlers are
      *           evaluated on a first-match basis. The first one that matches the event
      *           get executed, with the rest being ignored.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $transition_route_groups
+     *           A flow's transition route group serve two purposes:
+     *           *   They are responsible for matching the user's first utterances in the
+     *           flow.
+     *           *   They are inherited by every page's [transition
+     *           route groups][Page.transition_route_groups]. Transition route groups
+     *           defined in the page have higher priority than those defined in the flow.
+     *           Format:`projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>`.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\NluSettings $nlu_settings
      *           NLU related settings of the flow.
      * }
@@ -306,6 +328,46 @@ class Flow extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Dialogflow\Cx\V3\EventHandler::class);
         $this->event_handlers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>`.
+     *
+     * Generated from protobuf field <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = {</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTransitionRouteGroups()
+    {
+        return $this->transition_route_groups;
+    }
+
+    /**
+     * A flow's transition route group serve two purposes:
+     * *   They are responsible for matching the user's first utterances in the
+     * flow.
+     * *   They are inherited by every page's [transition
+     * route groups][Page.transition_route_groups]. Transition route groups
+     * defined in the page have higher priority than those defined in the flow.
+     * Format:`projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>`.
+     *
+     * Generated from protobuf field <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = {</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTransitionRouteGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->transition_route_groups = $arr;
 
         return $this;
     }

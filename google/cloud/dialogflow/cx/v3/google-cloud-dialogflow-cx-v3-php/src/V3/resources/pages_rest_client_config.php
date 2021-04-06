@@ -3,13 +3,25 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3.Pages' => [
-            'ListPages' => [
-                'method' => 'get',
+            'CreatePage' => [
+                'method' => 'post',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*/flows/*}/pages',
+                'body' => 'page',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeletePage' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*/pages/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -25,10 +37,9 @@ return [
                     ],
                 ],
             ],
-            'CreatePage' => [
-                'method' => 'post',
+            'ListPages' => [
+                'method' => 'get',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*/flows/*}/pages',
-                'body' => 'page',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -45,17 +56,6 @@ return [
                     'page.name' => [
                         'getters' => [
                             'getPage',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeletePage' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*/pages/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

@@ -91,6 +91,8 @@ use Google\Protobuf\GPBEmpty;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class VizierServiceGapicClient
 {
@@ -213,6 +215,8 @@ class VizierServiceGapicClient
      * @param string $customJob
      *
      * @return string The formatted custom_job resource.
+     *
+     * @experimental
      */
     public static function customJobName($project, $location, $customJob)
     {
@@ -231,6 +235,8 @@ class VizierServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -249,6 +255,8 @@ class VizierServiceGapicClient
      * @param string $study
      *
      * @return string The formatted study resource.
+     *
+     * @experimental
      */
     public static function studyName($project, $location, $study)
     {
@@ -269,6 +277,8 @@ class VizierServiceGapicClient
      * @param string $trial
      *
      * @return string The formatted trial resource.
+     *
+     * @experimental
      */
     public static function trialName($project, $location, $study, $trial)
     {
@@ -301,6 +311,8 @@ class VizierServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -328,6 +340,8 @@ class VizierServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -344,6 +358,8 @@ class VizierServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -403,6 +419,8 @@ class VizierServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -444,6 +462,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function addTrialMeasurement($trialName, $measurement, array $optionalArgs = [])
     {
@@ -515,6 +535,8 @@ class VizierServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function checkTrialEarlyStoppingState($trialName, array $optionalArgs = [])
     {
@@ -567,6 +589,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function completeTrial($name, array $optionalArgs = [])
     {
@@ -623,6 +647,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Study
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createStudy($parent, $study, array $optionalArgs = [])
     {
@@ -667,6 +693,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createTrial($parent, $trial, array $optionalArgs = [])
     {
@@ -707,6 +735,8 @@ class VizierServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteStudy($name, array $optionalArgs = [])
     {
@@ -747,6 +777,8 @@ class VizierServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteTrial($name, array $optionalArgs = [])
     {
@@ -788,6 +820,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Study
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getStudy($name, array $optionalArgs = [])
     {
@@ -830,6 +864,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getTrial($name, array $optionalArgs = [])
     {
@@ -873,6 +909,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\ListOptimalTrialsResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listOptimalTrials($parent, array $optionalArgs = [])
     {
@@ -935,6 +973,8 @@ class VizierServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listStudies($parent, array $optionalArgs = [])
     {
@@ -1005,6 +1045,8 @@ class VizierServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listTrials($parent, array $optionalArgs = [])
     {
@@ -1057,6 +1099,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Study
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function lookupStudy($parent, $displayName, array $optionalArgs = [])
     {
@@ -1100,6 +1144,8 @@ class VizierServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function stopTrial($name, array $optionalArgs = [])
     {
@@ -1178,6 +1224,8 @@ class VizierServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function suggestTrials($parent, $suggestionCount, $clientId, array $optionalArgs = [])
     {

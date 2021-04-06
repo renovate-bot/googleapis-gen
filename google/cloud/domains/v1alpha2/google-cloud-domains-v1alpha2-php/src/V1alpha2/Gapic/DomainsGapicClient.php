@@ -112,6 +112,8 @@ use Google\Type\Money;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class DomainsGapicClient
 {
@@ -209,6 +211,8 @@ class DomainsGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -227,6 +231,8 @@ class DomainsGapicClient
      * @param string $registration
      *
      * @return string The formatted registration resource.
+     *
+     * @experimental
      */
     public static function registrationName($project, $location, $registration)
     {
@@ -256,6 +262,8 @@ class DomainsGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -283,6 +291,8 @@ class DomainsGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -299,6 +309,8 @@ class DomainsGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -358,6 +370,8 @@ class DomainsGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -433,6 +447,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function configureContactSettings($registration, $updateMask, array $optionalArgs = [])
     {
@@ -526,6 +542,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function configureDnsSettings($registration, $updateMask, array $optionalArgs = [])
     {
@@ -607,6 +625,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function configureManagementSettings($registration, $updateMask, array $optionalArgs = [])
     {
@@ -681,6 +701,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteRegistration($name, array $optionalArgs = [])
     {
@@ -760,6 +782,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function exportRegistration($name, array $optionalArgs = [])
     {
@@ -801,6 +825,8 @@ class DomainsGapicClient
      * @return \Google\Cloud\Domains\V1alpha2\Registration
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getRegistration($name, array $optionalArgs = [])
     {
@@ -880,6 +906,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listRegistrations($parent, array $optionalArgs = [])
     {
@@ -989,6 +1017,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function registerDomain($parent, $registration, $yearlyPrice, array $optionalArgs = [])
     {
@@ -1047,6 +1077,8 @@ class DomainsGapicClient
      * @return \Google\Cloud\Domains\V1alpha2\AuthorizationCode
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function resetAuthorizationCode($registration, array $optionalArgs = [])
     {
@@ -1092,6 +1124,8 @@ class DomainsGapicClient
      * @return \Google\Cloud\Domains\V1alpha2\AuthorizationCode
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function retrieveAuthorizationCode($registration, array $optionalArgs = [])
     {
@@ -1135,6 +1169,8 @@ class DomainsGapicClient
      * @return \Google\Cloud\Domains\V1alpha2\RetrieveRegisterParametersResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function retrieveRegisterParameters($domainName, $location, array $optionalArgs = [])
     {
@@ -1182,6 +1218,8 @@ class DomainsGapicClient
      * @return \Google\Cloud\Domains\V1alpha2\SearchDomainsResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function searchDomains($query, $location, array $optionalArgs = [])
     {
@@ -1257,6 +1295,8 @@ class DomainsGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateRegistration($updateMask, array $optionalArgs = [])
     {

@@ -64,6 +64,8 @@ use Google\Protobuf\Value;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class PredictionServiceGapicClient
 {
@@ -148,6 +150,8 @@ class PredictionServiceGapicClient
      * @param string $endpoint
      *
      * @return string The formatted endpoint resource.
+     *
+     * @experimental
      */
     public static function endpointName($project, $location, $endpoint)
     {
@@ -176,6 +180,8 @@ class PredictionServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -249,6 +255,8 @@ class PredictionServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -322,6 +330,8 @@ class PredictionServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\ExplainResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function explain($endpoint, $instances, array $optionalArgs = [])
     {
@@ -392,6 +402,8 @@ class PredictionServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\PredictResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function predict($endpoint, $instances, array $optionalArgs = [])
     {

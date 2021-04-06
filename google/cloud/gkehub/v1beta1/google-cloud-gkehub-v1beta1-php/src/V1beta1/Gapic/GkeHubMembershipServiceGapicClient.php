@@ -28,11 +28,12 @@ namespace Google\Cloud\GkeHub\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-
 use Google\ApiCore\GapicClientTrait;
-use Google\ApiCore\LongRunning\OperationsClient;
 
+use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
+
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -98,6 +99,13 @@ use Google\Protobuf\FieldMask;
  *     $gkeHubMembershipServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class GkeHubMembershipServiceGapicClient
 {
@@ -130,6 +138,10 @@ class GkeHubMembershipServiceGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private static $membershipNameTemplate;
+
+    private static $pathTemplateMap;
+
     private $operationsClient;
 
     private static function getClientDefaults()
@@ -151,10 +163,96 @@ class GkeHubMembershipServiceGapicClient
         ];
     }
 
+    private static function getMembershipNameTemplate()
+    {
+        if (self::$membershipNameTemplate == null) {
+            self::$membershipNameTemplate = new PathTemplate('projects/{project}/locations/{location}/memberships/{membership}');
+        }
+
+        return self::$membershipNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'membership' => self::getMembershipNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a membership
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $membership
+     *
+     * @return string The formatted membership resource.
+     *
+     * @experimental
+     */
+    public static function membershipName($project, $location, $membership)
+    {
+        return self::getMembershipNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'membership' => $membership,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - membership: projects/{project}/locations/{location}/memberships/{membership}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
+    }
+
     /**
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -171,6 +269,8 @@ class GkeHubMembershipServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -230,6 +330,8 @@ class GkeHubMembershipServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -304,6 +406,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createMembership($parent, $membershipId, $resource, array $optionalArgs = [])
     {
@@ -370,6 +474,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteMembership($name, array $optionalArgs = [])
     {
@@ -423,6 +529,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\Cloud\GkeHub\V1beta1\GenerateConnectManifestResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function generateConnectManifest($name, array $optionalArgs = [])
     {
@@ -503,6 +611,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\Cloud\GkeHub\V1beta1\GenerateExclusivityManifestResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function generateExclusivityManifest($name, array $optionalArgs = [])
     {
@@ -552,6 +662,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\Cloud\GkeHub\V1beta1\Membership
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getMembership($name, array $optionalArgs = [])
     {
@@ -638,6 +750,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listMemberships($parent, array $optionalArgs = [])
     {
@@ -730,6 +844,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateMembership($name, $updateMask, $resource, array $optionalArgs = [])
     {
@@ -780,6 +896,8 @@ class GkeHubMembershipServiceGapicClient
      * @return \Google\Cloud\GkeHub\V1beta1\ValidateExclusivityResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function validateExclusivity($parent, $intendedMembership, array $optionalArgs = [])
     {

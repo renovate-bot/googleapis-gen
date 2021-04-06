@@ -268,6 +268,9 @@ class WebhookRequest(proto.Message):
             If an [event][google.cloud.dialogflow.cx.v3.EventInput] was
             provided as input, this field will contain the name of the
             event.
+        language_code (str):
+            The language code specified in the [original
+            request][QueryInput.language_code].
         fulfillment_info (google.cloud.dialogflowcx_v3.types.WebhookRequest.FulfillmentInfo):
             Always present. Information about the
             fulfillment that triggered this webhook call.
@@ -379,6 +382,8 @@ class WebhookRequest(proto.Message):
     transcript = proto.Field(proto.STRING, number=12, oneof='query')
 
     trigger_event = proto.Field(proto.STRING, number=14, oneof='query')
+
+    language_code = proto.Field(proto.STRING, number=15)
 
     fulfillment_info = proto.Field(proto.MESSAGE, number=6,
         message=FulfillmentInfo,

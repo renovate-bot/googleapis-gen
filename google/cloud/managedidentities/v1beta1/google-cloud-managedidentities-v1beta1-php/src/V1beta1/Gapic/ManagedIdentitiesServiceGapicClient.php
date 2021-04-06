@@ -94,6 +94,8 @@ use Google\Protobuf\FieldMask;
  *     $managedIdentitiesServiceClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class ManagedIdentitiesServiceGapicClient
 {
@@ -151,6 +153,8 @@ class ManagedIdentitiesServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -167,6 +171,8 @@ class ManagedIdentitiesServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -226,6 +232,8 @@ class ManagedIdentitiesServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -290,6 +298,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function attachTrust(array $optionalArgs = [])
     {
@@ -376,6 +386,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createMicrosoftAdDomain(array $optionalArgs = [])
     {
@@ -451,6 +463,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteDomain(array $optionalArgs = [])
     {
@@ -522,6 +536,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function detachTrust(array $optionalArgs = [])
     {
@@ -570,6 +586,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\Cloud\ManagedIdentities\V1beta1\Domain
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getDomain(array $optionalArgs = [])
     {
@@ -643,6 +661,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listDomains(array $optionalArgs = [])
     {
@@ -734,6 +754,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function reconfigureTrust(array $optionalArgs = [])
     {
@@ -786,6 +808,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\Cloud\ManagedIdentities\V1beta1\ResetAdminPasswordResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function resetAdminPassword(array $optionalArgs = [])
     {
@@ -862,6 +886,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateDomain(array $optionalArgs = [])
     {
@@ -937,6 +963,8 @@ class ManagedIdentitiesServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function validateTrust(array $optionalArgs = [])
     {

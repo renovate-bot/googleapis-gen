@@ -60,6 +60,8 @@ use Google\Cloud\PhishingProtection\V1beta1\ReportPhishingResponse;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class PhishingProtectionServiceV1Beta1GapicClient
 {
@@ -142,6 +144,8 @@ class PhishingProtectionServiceV1Beta1GapicClient
      * @param string $project
      *
      * @return string The formatted project resource.
+     *
+     * @experimental
      */
     public static function projectName($project)
     {
@@ -168,6 +172,8 @@ class PhishingProtectionServiceV1Beta1GapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -241,6 +247,8 @@ class PhishingProtectionServiceV1Beta1GapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -285,6 +293,8 @@ class PhishingProtectionServiceV1Beta1GapicClient
      * @return \Google\Cloud\PhishingProtection\V1beta1\ReportPhishingResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function reportPhishing($parent, $uri, array $optionalArgs = [])
     {

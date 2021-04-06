@@ -209,6 +209,17 @@ class FlowsClient(metaclass=FlowsClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def transition_route_group_path(project: str,location: str,agent: str,flow: str,transition_route_group: str,) -> str:
+        """Return a fully-qualified transition_route_group string."""
+        return "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}".format(project=project, location=location, agent=agent, flow=flow, transition_route_group=transition_route_group, )
+
+    @staticmethod
+    def parse_transition_route_group_path(path: str) -> Dict[str,str]:
+        """Parse a transition_route_group path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/flows/(?P<flow>.+?)/transitionRouteGroups/(?P<transition_route_group>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def webhook_path(project: str,location: str,agent: str,webhook: str,) -> str:
         """Return a fully-qualified webhook string."""
         return "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}".format(project=project, location=location, agent=agent, webhook=webhook, )

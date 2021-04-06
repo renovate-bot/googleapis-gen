@@ -28,11 +28,12 @@ namespace Google\Cloud\Notebooks\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-
 use Google\ApiCore\GapicClientTrait;
-use Google\ApiCore\LongRunning\OperationsClient;
 
+use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
+
+use Google\ApiCore\PathTemplate;
 
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -110,6 +111,13 @@ use Google\LongRunning\Operation;
  *     $notebookServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class NotebookServiceGapicClient
 {
@@ -142,6 +150,12 @@ class NotebookServiceGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private static $environmentNameTemplate;
+
+    private static $instanceNameTemplate;
+
+    private static $pathTemplateMap;
+
     private $operationsClient;
 
     private static function getClientDefaults()
@@ -163,10 +177,124 @@ class NotebookServiceGapicClient
         ];
     }
 
+    private static function getEnvironmentNameTemplate()
+    {
+        if (self::$environmentNameTemplate == null) {
+            self::$environmentNameTemplate = new PathTemplate('projects/{project}/environments/{environment}');
+        }
+
+        return self::$environmentNameTemplate;
+    }
+
+    private static function getInstanceNameTemplate()
+    {
+        if (self::$instanceNameTemplate == null) {
+            self::$instanceNameTemplate = new PathTemplate('projects/{project}/instances/{instance}');
+        }
+
+        return self::$instanceNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'environment' => self::getEnvironmentNameTemplate(),
+                'instance' => self::getInstanceNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a environment
+     * resource.
+     *
+     * @param string $project
+     * @param string $environment
+     *
+     * @return string The formatted environment resource.
+     *
+     * @experimental
+     */
+    public static function environmentName($project, $environment)
+    {
+        return self::getEnvironmentNameTemplate()->render([
+            'project' => $project,
+            'environment' => $environment,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a instance
+     * resource.
+     *
+     * @param string $project
+     * @param string $instance
+     *
+     * @return string The formatted instance resource.
+     *
+     * @experimental
+     */
+    public static function instanceName($project, $instance)
+    {
+        return self::getInstanceNameTemplate()->render([
+            'project' => $project,
+            'instance' => $instance,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - environment: projects/{project}/environments/{environment}
+     * - instance: projects/{project}/instances/{instance}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
+    }
+
     /**
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -183,6 +311,8 @@ class NotebookServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -242,6 +372,8 @@ class NotebookServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -310,6 +442,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createEnvironment($parent, $environmentId, $environment, array $optionalArgs = [])
     {
@@ -382,6 +516,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createInstance($parent, $instanceId, $instance, array $optionalArgs = [])
     {
@@ -448,6 +584,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteEnvironment($name, array $optionalArgs = [])
     {
@@ -512,6 +650,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteInstance($name, array $optionalArgs = [])
     {
@@ -553,6 +693,8 @@ class NotebookServiceGapicClient
      * @return \Google\Cloud\Notebooks\V1beta1\Environment
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getEnvironment($name, array $optionalArgs = [])
     {
@@ -594,6 +736,8 @@ class NotebookServiceGapicClient
      * @return \Google\Cloud\Notebooks\V1beta1\Instance
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getInstance($name, array $optionalArgs = [])
     {
@@ -635,6 +779,8 @@ class NotebookServiceGapicClient
      * @return \Google\Cloud\Notebooks\V1beta1\IsInstanceUpgradeableResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function isInstanceUpgradeable($notebookInstance, array $optionalArgs = [])
     {
@@ -696,6 +842,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listEnvironments($parent, array $optionalArgs = [])
     {
@@ -766,6 +914,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listInstances($parent, array $optionalArgs = [])
     {
@@ -848,6 +998,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function registerInstance($parent, $instanceId, array $optionalArgs = [])
     {
@@ -924,6 +1076,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function reportInstanceInfo($name, $vmId, array $optionalArgs = [])
     {
@@ -995,6 +1149,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function resetInstance($name, array $optionalArgs = [])
     {
@@ -1069,6 +1225,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function setInstanceAccelerator($name, $type, $coreCount, array $optionalArgs = [])
     {
@@ -1140,6 +1298,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function setInstanceLabels($name, array $optionalArgs = [])
     {
@@ -1213,6 +1373,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function setInstanceMachineType($name, $machineType, array $optionalArgs = [])
     {
@@ -1280,6 +1442,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function startInstance($name, array $optionalArgs = [])
     {
@@ -1346,6 +1510,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function stopInstance($name, array $optionalArgs = [])
     {
@@ -1412,6 +1578,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function upgradeInstance($name, array $optionalArgs = [])
     {
@@ -1482,6 +1650,8 @@ class NotebookServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function upgradeInstanceInternal($name, $vmId, array $optionalArgs = [])
     {

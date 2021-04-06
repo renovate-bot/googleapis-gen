@@ -15,8 +15,8 @@ return [
                     ],
                 ],
             ],
-            'GetSecuritySettings' => [
-                'method' => 'get',
+            'DeleteSecuritySettings' => [
+                'method' => 'delete',
                 'uriTemplate' => '/v3/{name=projects/*/locations/*/securitySettings/*}',
                 'placeholders' => [
                     'name' => [
@@ -26,14 +26,12 @@ return [
                     ],
                 ],
             ],
-            'UpdateSecuritySettings' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3/{security_settings.name=projects/*/locations/*/securitySettings/*}',
-                'body' => 'security_settings',
+            'GetSecuritySettings' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/securitySettings/*}',
                 'placeholders' => [
-                    'security_settings.name' => [
+                    'name' => [
                         'getters' => [
-                            'getSecuritySettings',
                             'getName',
                         ],
                     ],
@@ -50,12 +48,14 @@ return [
                     ],
                 ],
             ],
-            'DeleteSecuritySettings' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3/{name=projects/*/locations/*/securitySettings/*}',
+            'UpdateSecuritySettings' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3/{security_settings.name=projects/*/locations/*/securitySettings/*}',
+                'body' => 'security_settings',
                 'placeholders' => [
-                    'name' => [
+                    'security_settings.name' => [
                         'getters' => [
+                            'getSecuritySettings',
                             'getName',
                         ],
                     ],

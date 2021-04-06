@@ -76,6 +76,8 @@ use Google\Protobuf\GPBEmpty;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class TranscoderServiceGapicClient
 {
@@ -184,6 +186,8 @@ class TranscoderServiceGapicClient
      * @param string $job
      *
      * @return string The formatted job resource.
+     *
+     * @experimental
      */
     public static function jobName($project, $location, $job)
     {
@@ -203,6 +207,8 @@ class TranscoderServiceGapicClient
      * @param string $jobTemplate
      *
      * @return string The formatted job_template resource.
+     *
+     * @experimental
      */
     public static function jobTemplateName($project, $location, $jobTemplate)
     {
@@ -221,6 +227,8 @@ class TranscoderServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -250,6 +258,8 @@ class TranscoderServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -323,6 +333,8 @@ class TranscoderServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -361,6 +373,8 @@ class TranscoderServiceGapicClient
      * @return \Google\Cloud\Video\Transcoder\V1beta1\Job
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createJob($parent, $job, array $optionalArgs = [])
     {
@@ -411,6 +425,8 @@ class TranscoderServiceGapicClient
      * @return \Google\Cloud\Video\Transcoder\V1beta1\JobTemplate
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createJobTemplate($parent, $jobTemplate, $jobTemplateId, array $optionalArgs = [])
     {
@@ -452,6 +468,8 @@ class TranscoderServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteJob($name, array $optionalArgs = [])
     {
@@ -491,6 +509,8 @@ class TranscoderServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteJobTemplate($name, array $optionalArgs = [])
     {
@@ -532,6 +552,8 @@ class TranscoderServiceGapicClient
      * @return \Google\Cloud\Video\Transcoder\V1beta1\Job
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getJob($name, array $optionalArgs = [])
     {
@@ -574,6 +596,8 @@ class TranscoderServiceGapicClient
      * @return \Google\Cloud\Video\Transcoder\V1beta1\JobTemplate
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getJobTemplate($name, array $optionalArgs = [])
     {
@@ -636,6 +660,8 @@ class TranscoderServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listJobTemplates($parent, array $optionalArgs = [])
     {
@@ -705,6 +731,8 @@ class TranscoderServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listJobs($parent, array $optionalArgs = [])
     {

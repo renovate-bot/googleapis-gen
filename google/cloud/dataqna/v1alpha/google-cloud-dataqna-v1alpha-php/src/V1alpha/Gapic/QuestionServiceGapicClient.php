@@ -80,6 +80,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class QuestionServiceGapicClient
 {
@@ -187,6 +189,8 @@ class QuestionServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -205,6 +209,8 @@ class QuestionServiceGapicClient
      * @param string $question
      *
      * @return string The formatted question resource.
+     *
+     * @experimental
      */
     public static function questionName($project, $location, $question)
     {
@@ -224,6 +230,8 @@ class QuestionServiceGapicClient
      * @param string $question
      *
      * @return string The formatted user_feedback resource.
+     *
+     * @experimental
      */
     public static function userFeedbackName($project, $location, $question)
     {
@@ -254,6 +262,8 @@ class QuestionServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -327,6 +337,8 @@ class QuestionServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -365,6 +377,8 @@ class QuestionServiceGapicClient
      * @return \Google\Cloud\DataQnA\V1alpha\Question
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createQuestion($parent, $question, array $optionalArgs = [])
     {
@@ -409,6 +423,8 @@ class QuestionServiceGapicClient
      * @return \Google\Cloud\DataQnA\V1alpha\Question
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function executeQuestion($name, $interpretationIndex, array $optionalArgs = [])
     {
@@ -453,6 +469,8 @@ class QuestionServiceGapicClient
      * @return \Google\Cloud\DataQnA\V1alpha\Question
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getQuestion($name, array $optionalArgs = [])
     {
@@ -499,6 +517,8 @@ class QuestionServiceGapicClient
      * @return \Google\Cloud\DataQnA\V1alpha\UserFeedback
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getUserFeedback($name, array $optionalArgs = [])
     {
@@ -545,6 +565,8 @@ class QuestionServiceGapicClient
      * @return \Google\Cloud\DataQnA\V1alpha\UserFeedback
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateUserFeedback($userFeedback, array $optionalArgs = [])
     {

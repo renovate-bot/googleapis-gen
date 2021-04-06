@@ -100,6 +100,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class SpecialistPoolServiceGapicClient
 {
@@ -197,6 +199,8 @@ class SpecialistPoolServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -215,6 +219,8 @@ class SpecialistPoolServiceGapicClient
      * @param string $specialistPool
      *
      * @return string The formatted specialist_pool resource.
+     *
+     * @experimental
      */
     public static function specialistPoolName($project, $location, $specialistPool)
     {
@@ -244,6 +250,8 @@ class SpecialistPoolServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -271,6 +279,8 @@ class SpecialistPoolServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -287,6 +297,8 @@ class SpecialistPoolServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -346,6 +358,8 @@ class SpecialistPoolServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -410,6 +424,8 @@ class SpecialistPoolServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createSpecialistPool($parent, $specialistPool, array $optionalArgs = [])
     {
@@ -479,6 +495,8 @@ class SpecialistPoolServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteSpecialistPool($name, array $optionalArgs = [])
     {
@@ -525,6 +543,8 @@ class SpecialistPoolServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\SpecialistPool
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getSpecialistPool($name, array $optionalArgs = [])
     {
@@ -589,6 +609,8 @@ class SpecialistPoolServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listSpecialistPools($parent, array $optionalArgs = [])
     {
@@ -668,6 +690,8 @@ class SpecialistPoolServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateSpecialistPool($specialistPool, $updateMask, array $optionalArgs = [])
     {

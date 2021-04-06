@@ -106,6 +106,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class HubServiceGapicClient
 {
@@ -239,6 +241,8 @@ class HubServiceGapicClient
      * @param string $hub
      *
      * @return string The formatted hub resource.
+     *
+     * @experimental
      */
     public static function hubName($project, $hub)
     {
@@ -257,6 +261,8 @@ class HubServiceGapicClient
      * @param string $resourceId
      *
      * @return string The formatted interconnect_attachment resource.
+     *
+     * @experimental
      */
     public static function interconnectAttachmentName($project, $region, $resourceId)
     {
@@ -275,6 +281,8 @@ class HubServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -293,6 +301,8 @@ class HubServiceGapicClient
      * @param string $spoke
      *
      * @return string The formatted spoke resource.
+     *
+     * @experimental
      */
     public static function spokeName($project, $location, $spoke)
     {
@@ -312,6 +322,8 @@ class HubServiceGapicClient
      * @param string $resourceId
      *
      * @return string The formatted vpn_tunnel resource.
+     *
+     * @experimental
      */
     public static function vpnTunnelName($project, $region, $resourceId)
     {
@@ -344,6 +356,8 @@ class HubServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -371,6 +385,8 @@ class HubServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -387,6 +403,8 @@ class HubServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -446,6 +464,8 @@ class HubServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -525,6 +545,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createHub($parent, $hub, array $optionalArgs = [])
     {
@@ -617,6 +639,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createSpoke($parent, $spoke, array $optionalArgs = [])
     {
@@ -703,6 +727,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteHub($name, array $optionalArgs = [])
     {
@@ -784,6 +810,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteSpoke($name, array $optionalArgs = [])
     {
@@ -828,6 +856,8 @@ class HubServiceGapicClient
      * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Hub
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getHub($name, array $optionalArgs = [])
     {
@@ -868,6 +898,8 @@ class HubServiceGapicClient
      * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Spoke
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getSpoke($name, array $optionalArgs = [])
     {
@@ -933,6 +965,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listHubs($parent, array $optionalArgs = [])
     {
@@ -1014,6 +1048,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listSpokes($parent, array $optionalArgs = [])
     {
@@ -1115,6 +1151,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateHub($hub, array $optionalArgs = [])
     {
@@ -1208,6 +1246,8 @@ class HubServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateSpoke($spoke, array $optionalArgs = [])
     {

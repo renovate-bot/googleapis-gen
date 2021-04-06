@@ -130,6 +130,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class DataprocMetastoreGapicClient
 {
@@ -265,6 +267,8 @@ class DataprocMetastoreGapicClient
      * @param string $backup
      *
      * @return string The formatted backup resource.
+     *
+     * @experimental
      */
     public static function backupName($project, $location, $service, $backup)
     {
@@ -284,6 +288,8 @@ class DataprocMetastoreGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -303,6 +309,8 @@ class DataprocMetastoreGapicClient
      * @param string $metadataImport
      *
      * @return string The formatted metadata_import resource.
+     *
+     * @experimental
      */
     public static function metadataImportName($project, $location, $service, $metadataImport)
     {
@@ -322,6 +330,8 @@ class DataprocMetastoreGapicClient
      * @param string $network
      *
      * @return string The formatted network resource.
+     *
+     * @experimental
      */
     public static function networkName($project, $network)
     {
@@ -340,6 +350,8 @@ class DataprocMetastoreGapicClient
      * @param string $service
      *
      * @return string The formatted service resource.
+     *
+     * @experimental
      */
     public static function serviceName($project, $location, $service)
     {
@@ -372,6 +384,8 @@ class DataprocMetastoreGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -399,6 +413,8 @@ class DataprocMetastoreGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -415,6 +431,8 @@ class DataprocMetastoreGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -474,6 +492,8 @@ class DataprocMetastoreGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -561,6 +581,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createBackup($parent, $backupId, $backup, array $optionalArgs = [])
     {
@@ -659,6 +681,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createMetadataImport($parent, $metadataImportId, $metadataImport, array $optionalArgs = [])
     {
@@ -757,6 +781,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createService($parent, $serviceId, $service, array $optionalArgs = [])
     {
@@ -842,6 +868,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteBackup($name, array $optionalArgs = [])
     {
@@ -925,6 +953,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteService($name, array $optionalArgs = [])
     {
@@ -1017,6 +1047,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function exportMetadata($service, array $optionalArgs = [])
     {
@@ -1072,6 +1104,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\Cloud\Metastore\V1alpha\Backup
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getBackup($name, array $optionalArgs = [])
     {
@@ -1115,6 +1149,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\Cloud\Metastore\V1alpha\MetadataImport
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getMetadataImport($name, array $optionalArgs = [])
     {
@@ -1158,6 +1194,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\Cloud\Metastore\V1alpha\Service
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getService($name, array $optionalArgs = [])
     {
@@ -1228,6 +1266,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listBackups($parent, array $optionalArgs = [])
     {
@@ -1314,6 +1354,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listMetadataImports($parent, array $optionalArgs = [])
     {
@@ -1400,6 +1442,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listServices($parent, array $optionalArgs = [])
     {
@@ -1505,6 +1549,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function restoreService($service, $backup, array $optionalArgs = [])
     {
@@ -1602,6 +1648,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateMetadataImport($updateMask, $metadataImport, array $optionalArgs = [])
     {
@@ -1694,6 +1742,8 @@ class DataprocMetastoreGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateService($updateMask, $service, array $optionalArgs = [])
     {

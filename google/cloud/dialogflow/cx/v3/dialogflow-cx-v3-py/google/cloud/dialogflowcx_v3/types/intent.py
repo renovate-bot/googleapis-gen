@@ -91,12 +91,12 @@ class Intent(proto.Message):
             assigned to fallback intents act as negative
             examples that triggers no-match event.
         labels (Sequence[google.cloud.dialogflowcx_v3.types.Intent.LabelsEntry]):
-            Optional. The key/value metadata to label an intent. Labels
-            can contain lowercase letters, digits and the symbols '-'
-            and '_'. International characters are allowed, including
-            letters from unicase alphabets. Keys must start with a
-            letter. Keys and values can be no longer than 63 characters
-            and no more than 128 bytes.
+            The key/value metadata to label an intent. Labels can
+            contain lowercase letters, digits and the symbols '-' and
+            '_'. International characters are allowed, including letters
+            from unicase alphabets. Keys must start with a letter. Keys
+            and values can be no longer than 63 characters and no more
+            than 128 bytes.
 
             Prefix "sys." is reserved for Dialogflow defined labels.
             Currently allowed Dialogflow defined labels include:
@@ -106,10 +106,10 @@ class Intent(proto.Message):
                "sys.head" means the intent is a head intent.
                "sys.contextual" means the intent is a contextual intent.
         description (str):
-            Optional. Human readable description for
-            better understanding an intent like its scope,
-            content, result etc. Maximum character limit:
-            140 characters.
+            Human readable description for better
+            understanding an intent like its scope, content,
+            result etc. Maximum character limit: 140
+            characters.
     """
     class TrainingPhrase(proto.Message):
         r"""Represents an example that the agent is trained on to

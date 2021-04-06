@@ -125,6 +125,8 @@ use Google\Cloud\DataQnA\V1alpha\SuggestQueriesResponse;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class AutoSuggestionServiceGapicClient
 {
@@ -208,6 +210,8 @@ class AutoSuggestionServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -235,6 +239,8 @@ class AutoSuggestionServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -308,6 +314,8 @@ class AutoSuggestionServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -361,6 +369,8 @@ class AutoSuggestionServiceGapicClient
      * @return \Google\Cloud\DataQnA\V1alpha\SuggestQueriesResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function suggestQueries($parent, array $optionalArgs = [])
     {

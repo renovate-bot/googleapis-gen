@@ -3,13 +3,25 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3.TransitionRouteGroups' => [
-            'ListTransitionRouteGroups' => [
-                'method' => 'get',
+            'CreateTransitionRouteGroup' => [
+                'method' => 'post',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*/flows/*}/transitionRouteGroups',
+                'body' => 'transition_route_group',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteTransitionRouteGroup' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*/transitionRouteGroups/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -25,10 +37,9 @@ return [
                     ],
                 ],
             ],
-            'CreateTransitionRouteGroup' => [
-                'method' => 'post',
+            'ListTransitionRouteGroups' => [
+                'method' => 'get',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*/flows/*}/transitionRouteGroups',
-                'body' => 'transition_route_group',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -45,17 +56,6 @@ return [
                     'transition_route_group.name' => [
                         'getters' => [
                             'getTransitionRouteGroup',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteTransitionRouteGroup' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*/transitionRouteGroups/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

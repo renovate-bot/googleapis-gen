@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private WebhookRequest() {
     detectIntentResponseId_ = "";
+    languageCode_ = "";
     messages_ = java.util.Collections.emptyList();
   }
 
@@ -171,6 +172,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
             queryCase_ = 14;
             query_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            languageCode_ = s;
             break;
           }
           default: {
@@ -4065,6 +4072,54 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 15;
+  private volatile java.lang.Object languageCode_;
+  /**
+   * <pre>
+   * The language code specified in the [original
+   * request][QueryInput.language_code].
+   * </pre>
+   *
+   * <code>string language_code = 15;</code>
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The language code specified in the [original
+   * request][QueryInput.language_code].
+   * </pre>
+   *
+   * <code>string language_code = 15;</code>
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FULFILLMENT_INFO_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo fulfillmentInfo_;
   /**
@@ -4419,6 +4474,9 @@ private static final long serialVersionUID = 0L;
     if (queryCase_ == 14) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, query_);
     }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, languageCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -4471,6 +4529,9 @@ private static final long serialVersionUID = 0L;
     if (queryCase_ == 14) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, query_);
     }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, languageCode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4488,6 +4549,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getDetectIntentResponseId()
         .equals(other.getDetectIntentResponseId())) return false;
+    if (!getLanguageCode()
+        .equals(other.getLanguageCode())) return false;
     if (hasFulfillmentInfo() != other.hasFulfillmentInfo()) return false;
     if (hasFulfillmentInfo()) {
       if (!getFulfillmentInfo()
@@ -4554,6 +4617,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DETECT_INTENT_RESPONSE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDetectIntentResponseId().hashCode();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     if (hasFulfillmentInfo()) {
       hash = (37 * hash) + FULFILLMENT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getFulfillmentInfo().hashCode();
@@ -4743,6 +4808,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       detectIntentResponseId_ = "";
 
+      languageCode_ = "";
+
       if (fulfillmentInfoBuilder_ == null) {
         fulfillmentInfo_ = null;
       } else {
@@ -4827,6 +4894,7 @@ private static final long serialVersionUID = 0L;
       if (queryCase_ == 14) {
         result.query_ = query_;
       }
+      result.languageCode_ = languageCode_;
       if (fulfillmentInfoBuilder_ == null) {
         result.fulfillmentInfo_ = fulfillmentInfo_;
       } else {
@@ -4917,6 +4985,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.cloud.dialogflow.cx.v3.WebhookRequest.getDefaultInstance()) return this;
       if (!other.getDetectIntentResponseId().isEmpty()) {
         detectIntentResponseId_ = other.detectIntentResponseId_;
+        onChanged();
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
         onChanged();
       }
       if (other.hasFulfillmentInfo()) {
@@ -5654,6 +5726,107 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       queryCase_ = 14;
       query_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     * <pre>
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     * </pre>
+     *
+     * <code>string language_code = 15;</code>
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     * </pre>
+     *
+     * <code>string language_code = 15;</code>
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString
+        getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     * </pre>
+     *
+     * <code>string language_code = 15;</code>
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     * </pre>
+     *
+     * <code>string language_code = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The language code specified in the [original
+     * request][QueryInput.language_code].
+     * </pre>
+     *
+     * <code>string language_code = 15;</code>
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      languageCode_ = value;
       onChanged();
       return this;
     }

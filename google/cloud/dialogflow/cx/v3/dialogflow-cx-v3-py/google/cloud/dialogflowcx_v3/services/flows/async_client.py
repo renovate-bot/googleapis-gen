@@ -61,6 +61,8 @@ class FlowsAsyncClient:
     parse_intent_path = staticmethod(FlowsClient.parse_intent_path)
     page_path = staticmethod(FlowsClient.page_path)
     parse_page_path = staticmethod(FlowsClient.parse_page_path)
+    transition_route_group_path = staticmethod(FlowsClient.transition_route_group_path)
+    parse_transition_route_group_path = staticmethod(FlowsClient.parse_transition_route_group_path)
     webhook_path = staticmethod(FlowsClient.webhook_path)
     parse_webhook_path = staticmethod(FlowsClient.parse_webhook_path)
 

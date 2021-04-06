@@ -92,6 +92,8 @@ use Google\Protobuf\GPBEmpty;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class TablesServiceGapicClient
 {
@@ -204,6 +206,8 @@ class TablesServiceGapicClient
      * @param string $row
      *
      * @return string The formatted row resource.
+     *
+     * @experimental
      */
     public static function rowName($table, $row)
     {
@@ -220,6 +224,8 @@ class TablesServiceGapicClient
      * @param string $table
      *
      * @return string The formatted table resource.
+     *
+     * @experimental
      */
     public static function tableName($table)
     {
@@ -235,6 +241,8 @@ class TablesServiceGapicClient
      * @param string $workspace
      *
      * @return string The formatted workspace resource.
+     *
+     * @experimental
      */
     public static function workspaceName($workspace)
     {
@@ -263,6 +271,8 @@ class TablesServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -336,6 +346,8 @@ class TablesServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -376,6 +388,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\BatchCreateRowsResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function batchCreateRows($parent, $requests, array $optionalArgs = [])
     {
@@ -397,7 +411,9 @@ class TablesServiceGapicClient
      * $tablesServiceClient = new TablesServiceClient();
      * try {
      *     $formattedParent = $tablesServiceClient->tableName('[TABLE]');
-     *     $formattedNames = $tablesServiceClient->rowName('[TABLE]', '[ROW]');
+     *     $formattedNames = [
+     *         $tablesServiceClient->rowName('[TABLE]', '[ROW]'),
+     *     ];
      *     $tablesServiceClient->batchDeleteRows($formattedParent, $formattedNames);
      * } finally {
      *     $tablesServiceClient->close();
@@ -421,6 +437,8 @@ class TablesServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function batchDeleteRows($parent, $names, array $optionalArgs = [])
     {
@@ -467,6 +485,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\BatchUpdateRowsResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function batchUpdateRows($parent, $requests, array $optionalArgs = [])
     {
@@ -515,6 +535,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\Row
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createRow($parent, $row, array $optionalArgs = [])
     {
@@ -559,6 +581,8 @@ class TablesServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteRow($name, array $optionalArgs = [])
     {
@@ -604,6 +628,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\Row
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getRow($name, array $optionalArgs = [])
     {
@@ -649,6 +675,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\Table
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getTable($name, array $optionalArgs = [])
     {
@@ -690,6 +718,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\Workspace
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getWorkspace($name, array $optionalArgs = [])
     {
@@ -760,6 +790,8 @@ class TablesServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listRows($parent, array $optionalArgs = [])
     {
@@ -835,6 +867,8 @@ class TablesServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listTables(array $optionalArgs = [])
     {
@@ -897,6 +931,8 @@ class TablesServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listWorkspaces(array $optionalArgs = [])
     {
@@ -946,6 +982,8 @@ class TablesServiceGapicClient
      * @return \Google\Area120\Tables\V1alpha1\Row
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateRow($row, array $optionalArgs = [])
     {

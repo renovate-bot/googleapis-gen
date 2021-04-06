@@ -102,6 +102,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class ModelServiceGapicClient
 {
@@ -235,6 +237,8 @@ class ModelServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -253,6 +257,8 @@ class ModelServiceGapicClient
      * @param string $model
      *
      * @return string The formatted model resource.
+     *
+     * @experimental
      */
     public static function modelName($project, $location, $model)
     {
@@ -273,6 +279,8 @@ class ModelServiceGapicClient
      * @param string $evaluation
      *
      * @return string The formatted model_evaluation resource.
+     *
+     * @experimental
      */
     public static function modelEvaluationName($project, $location, $model, $evaluation)
     {
@@ -295,6 +303,8 @@ class ModelServiceGapicClient
      * @param string $slice
      *
      * @return string The formatted model_evaluation_slice resource.
+     *
+     * @experimental
      */
     public static function modelEvaluationSliceName($project, $location, $model, $evaluation, $slice)
     {
@@ -316,6 +326,8 @@ class ModelServiceGapicClient
      * @param string $trainingPipeline
      *
      * @return string The formatted training_pipeline resource.
+     *
+     * @experimental
      */
     public static function trainingPipelineName($project, $location, $trainingPipeline)
     {
@@ -348,6 +360,8 @@ class ModelServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -375,6 +389,8 @@ class ModelServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -391,6 +407,8 @@ class ModelServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -450,6 +468,8 @@ class ModelServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -512,6 +532,8 @@ class ModelServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteModel($name, array $optionalArgs = [])
     {
@@ -582,6 +604,8 @@ class ModelServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function exportModel($name, $outputConfig, array $optionalArgs = [])
     {
@@ -624,6 +648,8 @@ class ModelServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Model
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getModel($name, array $optionalArgs = [])
     {
@@ -666,6 +692,8 @@ class ModelServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\ModelEvaluation
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getModelEvaluation($name, array $optionalArgs = [])
     {
@@ -708,6 +736,8 @@ class ModelServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\ModelEvaluationSlice
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getModelEvaluationSlice($name, array $optionalArgs = [])
     {
@@ -777,6 +807,8 @@ class ModelServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listModelEvaluationSlices($parent, array $optionalArgs = [])
     {
@@ -859,6 +891,8 @@ class ModelServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listModelEvaluations($parent, array $optionalArgs = [])
     {
@@ -955,6 +989,8 @@ class ModelServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listModels($parent, array $optionalArgs = [])
     {
@@ -1015,6 +1051,8 @@ class ModelServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Model
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateModel($model, $updateMask, array $optionalArgs = [])
     {
@@ -1084,6 +1122,8 @@ class ModelServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function uploadModel($parent, $model, array $optionalArgs = [])
     {

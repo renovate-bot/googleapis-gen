@@ -76,6 +76,8 @@ use Google\Protobuf\GPBEmpty;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class BinauthzManagementServiceV1Beta1GapicClient
 {
@@ -183,6 +185,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @param string $attestor
      *
      * @return string The formatted attestor resource.
+     *
+     * @experimental
      */
     public static function attestorName($project, $attestor)
     {
@@ -199,6 +203,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @param string $project
      *
      * @return string The formatted policy resource.
+     *
+     * @experimental
      */
     public static function policyName($project)
     {
@@ -214,6 +220,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @param string $project
      *
      * @return string The formatted project resource.
+     *
+     * @experimental
      */
     public static function projectName($project)
     {
@@ -242,6 +250,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -315,6 +325,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -359,6 +371,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return \Google\Cloud\BinaryAuthorization\V1beta1\Attestor
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createAttestor($parent, $attestorId, $attestor, array $optionalArgs = [])
     {
@@ -401,6 +415,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteAttestor($name, array $optionalArgs = [])
     {
@@ -443,6 +459,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return \Google\Cloud\BinaryAuthorization\V1beta1\Attestor
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getAttestor($name, array $optionalArgs = [])
     {
@@ -490,6 +508,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return \Google\Cloud\BinaryAuthorization\V1beta1\Policy
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getPolicy($name, array $optionalArgs = [])
     {
@@ -553,6 +573,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listAttestors($parent, array $optionalArgs = [])
     {
@@ -604,6 +626,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return \Google\Cloud\BinaryAuthorization\V1beta1\Attestor
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateAttestor($attestor, array $optionalArgs = [])
     {
@@ -650,6 +674,8 @@ class BinauthzManagementServiceV1Beta1GapicClient
      * @return \Google\Cloud\BinaryAuthorization\V1beta1\Policy
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updatePolicy($policy, array $optionalArgs = [])
     {

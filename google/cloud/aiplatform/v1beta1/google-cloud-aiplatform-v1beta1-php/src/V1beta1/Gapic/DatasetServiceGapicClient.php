@@ -105,6 +105,8 @@ use Google\Protobuf\FieldMask;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class DatasetServiceGapicClient
 {
@@ -228,6 +230,8 @@ class DatasetServiceGapicClient
      * @param string $annotationSpec
      *
      * @return string The formatted annotation_spec resource.
+     *
+     * @experimental
      */
     public static function annotationSpecName($project, $location, $dataset, $annotationSpec)
     {
@@ -249,6 +253,8 @@ class DatasetServiceGapicClient
      * @param string $dataItem
      *
      * @return string The formatted data_item resource.
+     *
+     * @experimental
      */
     public static function dataItemName($project, $location, $dataset, $dataItem)
     {
@@ -269,6 +275,8 @@ class DatasetServiceGapicClient
      * @param string $dataset
      *
      * @return string The formatted dataset resource.
+     *
+     * @experimental
      */
     public static function datasetName($project, $location, $dataset)
     {
@@ -287,6 +295,8 @@ class DatasetServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -317,6 +327,8 @@ class DatasetServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -344,6 +356,8 @@ class DatasetServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -360,6 +374,8 @@ class DatasetServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -419,6 +435,8 @@ class DatasetServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -483,6 +501,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createDataset($parent, $dataset, array $optionalArgs = [])
     {
@@ -549,6 +569,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteDataset($name, array $optionalArgs = [])
     {
@@ -618,6 +640,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function exportData($name, $exportConfig, array $optionalArgs = [])
     {
@@ -663,6 +687,8 @@ class DatasetServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\AnnotationSpec
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getAnnotationSpec($name, array $optionalArgs = [])
     {
@@ -709,6 +735,8 @@ class DatasetServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Dataset
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getDataset($name, array $optionalArgs = [])
     {
@@ -783,6 +811,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function importData($name, $importConfigs, array $optionalArgs = [])
     {
@@ -854,6 +884,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listAnnotations($parent, array $optionalArgs = [])
     {
@@ -944,6 +976,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listDataItems($parent, array $optionalArgs = [])
     {
@@ -1049,6 +1083,8 @@ class DatasetServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listDatasets($parent, array $optionalArgs = [])
     {
@@ -1118,6 +1154,8 @@ class DatasetServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\Dataset
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function updateDataset($dataset, $updateMask, array $optionalArgs = [])
     {

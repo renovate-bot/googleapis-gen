@@ -383,6 +383,8 @@ def test_create_flow(transport: str = 'grpc', request_type=gcdc_flow.CreateFlowR
 
             description='description_value',
 
+            transition_route_groups=['transition_route_groups_value'],
+
         )
 
         response = client.create_flow(request)
@@ -402,6 +404,8 @@ def test_create_flow(transport: str = 'grpc', request_type=gcdc_flow.CreateFlowR
     assert response.display_name == 'display_name_value'
 
     assert response.description == 'description_value'
+
+    assert response.transition_route_groups == ['transition_route_groups_value']
 
 
 def test_create_flow_from_dict():
@@ -446,6 +450,7 @@ async def test_create_flow_async(transport: str = 'grpc_asyncio', request_type=g
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            transition_route_groups=['transition_route_groups_value'],
         ))
 
         response = await client.create_flow(request)
@@ -464,6 +469,8 @@ async def test_create_flow_async(transport: str = 'grpc_asyncio', request_type=g
     assert response.display_name == 'display_name_value'
 
     assert response.description == 'description_value'
+
+    assert response.transition_route_groups == ['transition_route_groups_value']
 
 
 @pytest.mark.asyncio
@@ -1308,6 +1315,8 @@ def test_get_flow(transport: str = 'grpc', request_type=flow.GetFlowRequest):
 
             description='description_value',
 
+            transition_route_groups=['transition_route_groups_value'],
+
         )
 
         response = client.get_flow(request)
@@ -1327,6 +1336,8 @@ def test_get_flow(transport: str = 'grpc', request_type=flow.GetFlowRequest):
     assert response.display_name == 'display_name_value'
 
     assert response.description == 'description_value'
+
+    assert response.transition_route_groups == ['transition_route_groups_value']
 
 
 def test_get_flow_from_dict():
@@ -1371,6 +1382,7 @@ async def test_get_flow_async(transport: str = 'grpc_asyncio', request_type=flow
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            transition_route_groups=['transition_route_groups_value'],
         ))
 
         response = await client.get_flow(request)
@@ -1389,6 +1401,8 @@ async def test_get_flow_async(transport: str = 'grpc_asyncio', request_type=flow
     assert response.display_name == 'display_name_value'
 
     assert response.description == 'description_value'
+
+    assert response.transition_route_groups == ['transition_route_groups_value']
 
 
 @pytest.mark.asyncio
@@ -1564,6 +1578,8 @@ def test_update_flow(transport: str = 'grpc', request_type=gcdc_flow.UpdateFlowR
 
             description='description_value',
 
+            transition_route_groups=['transition_route_groups_value'],
+
         )
 
         response = client.update_flow(request)
@@ -1583,6 +1599,8 @@ def test_update_flow(transport: str = 'grpc', request_type=gcdc_flow.UpdateFlowR
     assert response.display_name == 'display_name_value'
 
     assert response.description == 'description_value'
+
+    assert response.transition_route_groups == ['transition_route_groups_value']
 
 
 def test_update_flow_from_dict():
@@ -1627,6 +1645,7 @@ async def test_update_flow_async(transport: str = 'grpc_asyncio', request_type=g
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            transition_route_groups=['transition_route_groups_value'],
         ))
 
         response = await client.update_flow(request)
@@ -1645,6 +1664,8 @@ async def test_update_flow_async(transport: str = 'grpc_asyncio', request_type=g
     assert response.display_name == 'display_name_value'
 
     assert response.description == 'description_value'
+
+    assert response.transition_route_groups == ['transition_route_groups_value']
 
 
 @pytest.mark.asyncio
@@ -2925,11 +2946,38 @@ def test_parse_page_path():
     actual = FlowsClient.parse_page_path(path)
     assert expected == actual
 
-def test_webhook_path():
+def test_transition_route_group_path():
     project = "scallop"
     location = "abalone"
     agent = "squid"
-    webhook = "clam"
+    flow = "clam"
+    transition_route_group = "whelk"
+
+    expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}".format(project=project, location=location, agent=agent, flow=flow, transition_route_group=transition_route_group, )
+    actual = FlowsClient.transition_route_group_path(project, location, agent, flow, transition_route_group)
+    assert expected == actual
+
+
+def test_parse_transition_route_group_path():
+    expected = {
+    "project": "octopus",
+    "location": "oyster",
+    "agent": "nudibranch",
+    "flow": "cuttlefish",
+    "transition_route_group": "mussel",
+
+    }
+    path = FlowsClient.transition_route_group_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = FlowsClient.parse_transition_route_group_path(path)
+    assert expected == actual
+
+def test_webhook_path():
+    project = "winkle"
+    location = "nautilus"
+    agent = "scallop"
+    webhook = "abalone"
 
     expected = "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}".format(project=project, location=location, agent=agent, webhook=webhook, )
     actual = FlowsClient.webhook_path(project, location, agent, webhook)
@@ -2938,10 +2986,10 @@ def test_webhook_path():
 
 def test_parse_webhook_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-    "agent": "oyster",
-    "webhook": "nudibranch",
+    "project": "squid",
+    "location": "clam",
+    "agent": "whelk",
+    "webhook": "octopus",
 
     }
     path = FlowsClient.webhook_path(**expected)
@@ -2951,7 +2999,7 @@ def test_parse_webhook_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "cuttlefish"
+    billing_account = "oyster"
 
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FlowsClient.common_billing_account_path(billing_account)
@@ -2960,7 +3008,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
+    "billing_account": "nudibranch",
 
     }
     path = FlowsClient.common_billing_account_path(**expected)
@@ -2970,7 +3018,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "winkle"
+    folder = "cuttlefish"
 
     expected = "folders/{folder}".format(folder=folder, )
     actual = FlowsClient.common_folder_path(folder)
@@ -2979,7 +3027,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
+    "folder": "mussel",
 
     }
     path = FlowsClient.common_folder_path(**expected)
@@ -2989,7 +3037,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "scallop"
+    organization = "winkle"
 
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FlowsClient.common_organization_path(organization)
@@ -2998,7 +3046,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
+    "organization": "nautilus",
 
     }
     path = FlowsClient.common_organization_path(**expected)
@@ -3008,7 +3056,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "squid"
+    project = "scallop"
 
     expected = "projects/{project}".format(project=project, )
     actual = FlowsClient.common_project_path(project)
@@ -3017,7 +3065,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
+    "project": "abalone",
 
     }
     path = FlowsClient.common_project_path(**expected)
@@ -3027,8 +3075,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "whelk"
-    location = "octopus"
+    project = "squid"
+    location = "clam"
 
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FlowsClient.common_location_path(project, location)
@@ -3037,8 +3085,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
+    "project": "whelk",
+    "location": "octopus",
 
     }
     path = FlowsClient.common_location_path(**expected)

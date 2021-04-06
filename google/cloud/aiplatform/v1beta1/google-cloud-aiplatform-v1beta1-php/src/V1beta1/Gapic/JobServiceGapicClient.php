@@ -91,6 +91,8 @@ use Google\Protobuf\GPBEmpty;
  * assistwith these names, this class includes a format method for each type of
  * name, and additionallya parseName method to extract the individual identifiers
  * contained within formatted namesthat are returned by the API.
+ *
+ * @experimental
  */
 class JobServiceGapicClient
 {
@@ -249,6 +251,8 @@ class JobServiceGapicClient
      * @param string $batchPredictionJob
      *
      * @return string The formatted batch_prediction_job resource.
+     *
+     * @experimental
      */
     public static function batchPredictionJobName($project, $location, $batchPredictionJob)
     {
@@ -268,6 +272,8 @@ class JobServiceGapicClient
      * @param string $customJob
      *
      * @return string The formatted custom_job resource.
+     *
+     * @experimental
      */
     public static function customJobName($project, $location, $customJob)
     {
@@ -287,6 +293,8 @@ class JobServiceGapicClient
      * @param string $dataLabelingJob
      *
      * @return string The formatted data_labeling_job resource.
+     *
+     * @experimental
      */
     public static function dataLabelingJobName($project, $location, $dataLabelingJob)
     {
@@ -306,6 +314,8 @@ class JobServiceGapicClient
      * @param string $dataset
      *
      * @return string The formatted dataset resource.
+     *
+     * @experimental
      */
     public static function datasetName($project, $location, $dataset)
     {
@@ -325,6 +335,8 @@ class JobServiceGapicClient
      * @param string $hyperparameterTuningJob
      *
      * @return string The formatted hyperparameter_tuning_job resource.
+     *
+     * @experimental
      */
     public static function hyperparameterTuningJobName($project, $location, $hyperparameterTuningJob)
     {
@@ -343,6 +355,8 @@ class JobServiceGapicClient
      * @param string $location
      *
      * @return string The formatted location resource.
+     *
+     * @experimental
      */
     public static function locationName($project, $location)
     {
@@ -361,6 +375,8 @@ class JobServiceGapicClient
      * @param string $model
      *
      * @return string The formatted model resource.
+     *
+     * @experimental
      */
     public static function modelName($project, $location, $model)
     {
@@ -395,6 +411,8 @@ class JobServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
+     *
+     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
@@ -422,6 +440,8 @@ class JobServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
+     *
+     * @experimental
      */
     public function getOperationsClient()
     {
@@ -438,6 +458,8 @@ class JobServiceGapicClient
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
+     *
+     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
@@ -497,6 +519,8 @@ class JobServiceGapicClient
      * }
      *
      * @throws ValidationException
+     *
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -542,6 +566,8 @@ class JobServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function cancelBatchPredictionJob($name, array $optionalArgs = [])
     {
@@ -591,6 +617,8 @@ class JobServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function cancelCustomJob($name, array $optionalArgs = [])
     {
@@ -631,6 +659,8 @@ class JobServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function cancelDataLabelingJob($name, array $optionalArgs = [])
     {
@@ -680,6 +710,8 @@ class JobServiceGapicClient
      * }
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function cancelHyperparameterTuningJob($name, array $optionalArgs = [])
     {
@@ -724,6 +756,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createBatchPredictionJob($parent, $batchPredictionJob, array $optionalArgs = [])
     {
@@ -769,6 +803,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\CustomJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createCustomJob($parent, $customJob, array $optionalArgs = [])
     {
@@ -813,6 +849,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\DataLabelingJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createDataLabelingJob($parent, $dataLabelingJob, array $optionalArgs = [])
     {
@@ -857,6 +895,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\HyperparameterTuningJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function createHyperparameterTuningJob($parent, $hyperparameterTuningJob, array $optionalArgs = [])
     {
@@ -924,6 +964,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteBatchPredictionJob($name, array $optionalArgs = [])
     {
@@ -989,6 +1031,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteCustomJob($name, array $optionalArgs = [])
     {
@@ -1054,6 +1098,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteDataLabelingJob($name, array $optionalArgs = [])
     {
@@ -1119,6 +1165,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function deleteHyperparameterTuningJob($name, array $optionalArgs = [])
     {
@@ -1161,6 +1209,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getBatchPredictionJob($name, array $optionalArgs = [])
     {
@@ -1203,6 +1253,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\CustomJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getCustomJob($name, array $optionalArgs = [])
     {
@@ -1245,6 +1297,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\DataLabelingJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getDataLabelingJob($name, array $optionalArgs = [])
     {
@@ -1287,6 +1341,8 @@ class JobServiceGapicClient
      * @return \Google\Cloud\Aiplatform\V1beta1\HyperparameterTuningJob
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function getHyperparameterTuningJob($name, array $optionalArgs = [])
     {
@@ -1371,6 +1427,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listBatchPredictionJobs($parent, array $optionalArgs = [])
     {
@@ -1469,6 +1527,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listCustomJobs($parent, array $optionalArgs = [])
     {
@@ -1574,6 +1634,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listDataLabelingJobs($parent, array $optionalArgs = [])
     {
@@ -1676,6 +1738,8 @@ class JobServiceGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     *
+     * @experimental
      */
     public function listHyperparameterTuningJobs($parent, array $optionalArgs = [])
     {

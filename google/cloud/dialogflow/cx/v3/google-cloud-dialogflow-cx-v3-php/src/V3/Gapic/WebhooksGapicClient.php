@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,6 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/dialogflow/cx/v3/webhook.proto
  * and updates to that file get reflected here through a refresh process.
- *
- * @experimental
  */
 
 namespace Google\Cloud\Dialogflow\Cx\V3\Gapic;
@@ -29,6 +27,7 @@ namespace Google\Cloud\Dialogflow\Cx\V3\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -55,33 +54,17 @@ use Google\Protobuf\GPBEmpty;
  * $webhooksClient = new WebhooksClient();
  * try {
  *     $formattedParent = $webhooksClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
- *     // Iterate over pages of elements
- *     $pagedResponse = $webhooksClient->listWebhooks($formattedParent);
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
- *     }
- *
- *
- *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $webhooksClient->listWebhooks($formattedParent);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
+ *     $webhook = new Webhook();
+ *     $response = $webhooksClient->createWebhook($formattedParent, $webhook);
  * } finally {
  *     $webhooksClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class WebhooksGapicClient
 {
@@ -114,24 +97,27 @@ class WebhooksGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/dialogflow',
     ];
+
     private static $agentNameTemplate;
+
     private static $webhookNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/webhooks_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/webhooks_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/webhooks_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/webhooks_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/webhooks_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/webhooks_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/webhooks_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/webhooks_rest_client_config.php',
                 ],
             ],
         ];
@@ -139,7 +125,7 @@ class WebhooksGapicClient
 
     private static function getAgentNameTemplate()
     {
-        if (null == self::$agentNameTemplate) {
+        if (self::$agentNameTemplate == null) {
             self::$agentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}');
         }
 
@@ -148,7 +134,7 @@ class WebhooksGapicClient
 
     private static function getWebhookNameTemplate()
     {
-        if (null == self::$webhookNameTemplate) {
+        if (self::$webhookNameTemplate == null) {
             self::$webhookNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}');
         }
 
@@ -157,7 +143,7 @@ class WebhooksGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'agent' => self::getAgentNameTemplate(),
                 'webhook' => self::getWebhookNameTemplate(),
@@ -168,15 +154,14 @@ class WebhooksGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a agent resource.
+     * Formats a string containing the fully-qualified path to represent a agent
+     * resource.
      *
      * @param string $project
      * @param string $location
      * @param string $agent
      *
      * @return string The formatted agent resource.
-     * @experimental
      */
     public static function agentName($project, $location, $agent)
     {
@@ -188,8 +173,8 @@ class WebhooksGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a webhook resource.
+     * Formats a string containing the fully-qualified path to represent a webhook
+     * resource.
      *
      * @param string $project
      * @param string $location
@@ -197,7 +182,6 @@ class WebhooksGapicClient
      * @param string $webhook
      *
      * @return string The formatted webhook resource.
-     * @experimental
      */
     public static function webhookName($project, $location, $agent, $webhook)
     {
@@ -214,12 +198,13 @@ class WebhooksGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - agent: projects/{project}/locations/{location}/agents/{agent}
-     * - webhook: projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}.
+     * - webhook: projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -227,12 +212,10 @@ class WebhooksGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -248,6 +231,7 @@ class WebhooksGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -255,7 +239,7 @@ class WebhooksGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -269,31 +253,31 @@ class WebhooksGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -301,145 +285,11 @@ class WebhooksGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
-    }
-
-    /**
-     * Returns the list of all webhooks in the specified agent.
-     *
-     * Sample code:
-     * ```
-     * $webhooksClient = new WebhooksClient();
-     * try {
-     *     $formattedParent = $webhooksClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $webhooksClient->listWebhooks($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $webhooksClient->listWebhooks($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $webhooksClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. The agent to list all webhooks for.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listWebhooks($parent, array $optionalArgs = [])
-    {
-        $request = new ListWebhooksRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListWebhooks',
-            $optionalArgs,
-            ListWebhooksResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Retrieves the specified webhook.
-     *
-     * Sample code:
-     * ```
-     * $webhooksClient = new WebhooksClient();
-     * try {
-     *     $formattedName = $webhooksClient->webhookName('[PROJECT]', '[LOCATION]', '[AGENT]', '[WEBHOOK]');
-     *     $response = $webhooksClient->getWebhook($formattedName);
-     * } finally {
-     *     $webhooksClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the webhook.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/webhooks/<Webhook ID>`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getWebhook($name, array $optionalArgs = [])
-    {
-        $request = new GetWebhookRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetWebhook',
-            Webhook::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -461,95 +311,29 @@ class WebhooksGapicClient
      *                              Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
      * @param Webhook $webhook      Required. The webhook to create.
      * @param array   $optionalArgs {
-     *                              Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createWebhook($parent, $webhook, array $optionalArgs = [])
     {
         $request = new CreateWebhookRequest();
+        $requestParamHeaders = [];
         $request->setParent($parent);
         $request->setWebhook($webhook);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateWebhook',
-            Webhook::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the specified webhook.
-     *
-     * Sample code:
-     * ```
-     * $webhooksClient = new WebhooksClient();
-     * try {
-     *     $webhook = new Webhook();
-     *     $response = $webhooksClient->updateWebhook($webhook);
-     * } finally {
-     *     $webhooksClient->close();
-     * }
-     * ```
-     *
-     * @param Webhook $webhook      Required. The webhook to update.
-     * @param array   $optionalArgs {
-     *                              Optional.
-     *
-     *     @type FieldMask $updateMask
-     *          The mask to control which fields get updated. If the mask is not present,
-     *          all fields will be updated.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateWebhook($webhook, array $optionalArgs = [])
-    {
-        $request = new UpdateWebhookRequest();
-        $request->setWebhook($webhook);
-        if (isset($optionalArgs['updateMask'])) {
-            $request->setUpdateMask($optionalArgs['updateMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'webhook.name' => $request->getWebhook()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateWebhook',
-            Webhook::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateWebhook', Webhook::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -570,48 +354,198 @@ class WebhooksGapicClient
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/webhooks/<Webhook ID>`.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type bool $force
-     *          This field has no effect for webhook not being used.
-     *          For webhooks that are used by pages/flows/transition route groups:
+     *           This field has no effect for webhook not being used.
+     *           For webhooks that are used by pages/flows/transition route groups:
      *
-     *          *  If `force` is set to false, an error will be returned with message
-     *             indicating the referenced resources.
-     *          *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *             as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook]
-     *             and [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that point to this webhook
-     *             will be removed).
+     *           *  If `force` is set to false, an error will be returned with message
+     *           indicating the referenced resources.
+     *           *  If `force` is set to true, Dialogflow will remove the webhook, as well
+     *           as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook]
+     *           and [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that point to this webhook
+     *           will be removed).
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteWebhook($name, array $optionalArgs = [])
     {
         $request = new DeleteWebhookRequest();
+        $requestParamHeaders = [];
         $request->setName($name);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['force'])) {
             $request->setForce($optionalArgs['force']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteWebhook', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'DeleteWebhook',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Retrieves the specified webhook.
+     *
+     * Sample code:
+     * ```
+     * $webhooksClient = new WebhooksClient();
+     * try {
+     *     $formattedName = $webhooksClient->webhookName('[PROJECT]', '[LOCATION]', '[AGENT]', '[WEBHOOK]');
+     *     $response = $webhooksClient->getWebhook($formattedName);
+     * } finally {
+     *     $webhooksClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the webhook.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/webhooks/<Webhook ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getWebhook($name, array $optionalArgs = [])
+    {
+        $request = new GetWebhookRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetWebhook', Webhook::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Returns the list of all webhooks in the specified agent.
+     *
+     * Sample code:
+     * ```
+     * $webhooksClient = new WebhooksClient();
+     * try {
+     *     $formattedParent = $webhooksClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $webhooksClient->listWebhooks($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $webhooksClient->listWebhooks($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $webhooksClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The agent to list all webhooks for.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listWebhooks($parent, array $optionalArgs = [])
+    {
+        $request = new ListWebhooksRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListWebhooks', $optionalArgs, ListWebhooksResponse::class, $request);
+    }
+
+    /**
+     * Updates the specified webhook.
+     *
+     * Sample code:
+     * ```
+     * $webhooksClient = new WebhooksClient();
+     * try {
+     *     $webhook = new Webhook();
+     *     $response = $webhooksClient->updateWebhook($webhook);
+     * } finally {
+     *     $webhooksClient->close();
+     * }
+     * ```
+     *
+     * @param Webhook $webhook      Required. The webhook to update.
+     * @param array   $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           The mask to control which fields get updated. If the mask is not present,
+     *           all fields will be updated.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateWebhook($webhook, array $optionalArgs = [])
+    {
+        $request = new UpdateWebhookRequest();
+        $requestParamHeaders = [];
+        $request->setWebhook($webhook);
+        $requestParamHeaders['webhook.name'] = $webhook->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateWebhook', Webhook::class, $optionalArgs, $request)->wait();
     }
 }

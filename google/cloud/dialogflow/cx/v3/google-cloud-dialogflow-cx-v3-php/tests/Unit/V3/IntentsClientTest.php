@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,20 +22,22 @@
 
 namespace Google\Cloud\Dialogflow\Cx\Tests\Unit\V3;
 
-use Google\Cloud\Dialogflow\Cx\V3\IntentsClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+
 use Google\Cloud\Dialogflow\Cx\V3\Intent;
+use Google\Cloud\Dialogflow\Cx\V3\IntentsClient;
 use Google\Cloud\Dialogflow\Cx\V3\ListIntentsResponse;
-use Google\Protobuf\Any;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group cx
+ *
  * @group gapic
  */
 class IntentsClientTest extends GeneratedTest
@@ -53,9 +55,7 @@ class IntentsClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -66,84 +66,141 @@ class IntentsClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new IntentsClient($options);
     }
 
     /**
      * @test
      */
-    public function listIntentsTest()
+    public function createIntentTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
-        $nextPageToken = '';
-        $intentsElement = new Intent();
-        $intents = [$intentsElement];
-        $expectedResponse = new ListIntentsResponse();
-        $expectedResponse->setNextPageToken($nextPageToken);
-        $expectedResponse->setIntents($intents);
+        $name = 'name3373707';
+        $displayName = 'displayName1615086568';
+        $priority = 1165461084;
+        $isFallback = false;
+        $description = 'description-1724546052';
+        $expectedResponse = new Intent();
+        $expectedResponse->setName($name);
+        $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setPriority($priority);
+        $expectedResponse->setIsFallback($isFallback);
+        $expectedResponse->setDescription($description);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-
-        $response = $client->listIntents($formattedParent);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getIntents()[0], $resources[0]);
-
+        $intent = new Intent();
+        $response = $client->createIntent($formattedParent, $intent);
+        $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/ListIntents', $actualFuncCall);
-
+        $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/CreateIntent', $actualFuncCall);
         $actualValue = $actualRequestObject->getParent();
-
         $this->assertProtobufEquals($formattedParent, $actualValue);
+        $actualValue = $actualRequestObject->getIntent();
+        $this->assertProtobufEquals($intent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
     /**
      * @test
      */
-    public function listIntentsExceptionTest()
+    public function createIntentExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-
+        $intent = new Intent();
         try {
-            $client->listIntents($formattedParent);
+            $client->createIntent($formattedParent, $intent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /**
+     * @test
+     */
+    public function deleteIntentTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GPBEmpty();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->intentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[INTENT]');
+        $client->deleteIntent($formattedName);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/DeleteIntent', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function deleteIntentExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->intentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[INTENT]');
+        try {
+            $client->deleteIntent($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -155,10 +212,10 @@ class IntentsClientTest extends GeneratedTest
     public function getIntentTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
@@ -172,10 +229,8 @@ class IntentsClientTest extends GeneratedTest
         $expectedResponse->setIsFallback($isFallback);
         $expectedResponse->setDescription($description);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedName = $client->intentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[INTENT]');
-
         $response = $client->getIntent($formattedName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -183,11 +238,8 @@ class IntentsClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/GetIntent', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -197,25 +249,22 @@ class IntentsClientTest extends GeneratedTest
     public function getIntentExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->intentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[INTENT]');
-
         try {
             $client->getIntent($formattedName);
             // If the $client method call did not throw, fail the test
@@ -224,7 +273,6 @@ class IntentsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -233,84 +281,70 @@ class IntentsClientTest extends GeneratedTest
     /**
      * @test
      */
-    public function createIntentTest()
+    public function listIntentsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
-        $name = 'name3373707';
-        $displayName = 'displayName1615086568';
-        $priority = 1165461084;
-        $isFallback = false;
-        $description = 'description-1724546052';
-        $expectedResponse = new Intent();
-        $expectedResponse->setName($name);
-        $expectedResponse->setDisplayName($displayName);
-        $expectedResponse->setPriority($priority);
-        $expectedResponse->setIsFallback($isFallback);
-        $expectedResponse->setDescription($description);
+        $nextPageToken = '';
+        $intentsElement = new Intent();
+        $intents = [
+            $intentsElement,
+        ];
+        $expectedResponse = new ListIntentsResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setIntents($intents);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-        $intent = new Intent();
-
-        $response = $client->createIntent($formattedParent, $intent);
-        $this->assertEquals($expectedResponse, $response);
+        $response = $client->listIntents($formattedParent);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getIntents()[0], $resources[0]);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/CreateIntent', $actualFuncCall);
-
+        $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/ListIntents', $actualFuncCall);
         $actualValue = $actualRequestObject->getParent();
-
         $this->assertProtobufEquals($formattedParent, $actualValue);
-        $actualValue = $actualRequestObject->getIntent();
-
-        $this->assertProtobufEquals($intent, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
     /**
      * @test
      */
-    public function createIntentExceptionTest()
+    public function listIntentsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
-        $intent = new Intent();
-
         try {
-            $client->createIntent($formattedParent, $intent);
+            $client->listIntents($formattedParent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -322,10 +356,10 @@ class IntentsClientTest extends GeneratedTest
     public function updateIntentTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
@@ -339,10 +373,8 @@ class IntentsClientTest extends GeneratedTest
         $expectedResponse->setIsFallback($isFallback);
         $expectedResponse->setDescription($description);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $intent = new Intent();
-
         $response = $client->updateIntent($intent);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -350,11 +382,8 @@ class IntentsClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/UpdateIntent', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getIntent();
-
         $this->assertProtobufEquals($intent, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -364,25 +393,22 @@ class IntentsClientTest extends GeneratedTest
     public function updateIntentExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $intent = new Intent();
-
         try {
             $client->updateIntent($intent);
             // If the $client method call did not throw, fail the test
@@ -391,77 +417,6 @@ class IntentsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function deleteIntentTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new GPBEmpty();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedName = $client->intentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[INTENT]');
-
-        $client->deleteIntent($formattedName);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.dialogflow.cx.v3.Intents/DeleteIntent', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getName();
-
-        $this->assertProtobufEquals($formattedName, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function deleteIntentExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedName = $client->intentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[INTENT]');
-
-        try {
-            $client->deleteIntent($formattedName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

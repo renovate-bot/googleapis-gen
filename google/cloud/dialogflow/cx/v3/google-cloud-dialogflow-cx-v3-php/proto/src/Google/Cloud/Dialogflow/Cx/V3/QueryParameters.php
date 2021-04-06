@@ -68,6 +68,21 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      */
     protected $parameters = null;
     /**
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/<Project
+     * ID>/locations/<Location ID>/agents/<Agent ID>/pages/<page ID>`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     *
+     * Generated from protobuf field <code>string current_page = 6 [(.google.api.resource_reference) = {</code>
+     */
+    protected $current_page = '';
+    /**
      * Whether to disable webhook calls for this request.
      *
      * Generated from protobuf field <code>bool disable_webhook = 7;</code>
@@ -132,6 +147,17 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      *               -   If parameter's entity type is a composite entity:
      *                   map from composite entity property names to property values
      *               -   Else: parameter value
+     *     @type string $current_page
+     *           The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     *           page][QueryResult.current_page] in the session. Format: `projects/<Project
+     *           ID>/locations/<Location ID>/agents/<Agent ID>/pages/<page ID>`.
+     *           If `current_page` is specified, the previous state of the session will be
+     *           ignored by Dialogflow, including the [previous
+     *           page][QueryResult.current_page] and the [previous session
+     *           parameters][QueryResult.parameters].
+     *           In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     *           [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     *           direct a session to a specific state.
      *     @type bool $disable_webhook
      *           Whether to disable webhook calls for this request.
      *     @type bool $analyze_query_text_sentiment
@@ -353,6 +379,50 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->parameters = $var;
+
+        return $this;
+    }
+
+    /**
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/<Project
+     * ID>/locations/<Location ID>/agents/<Agent ID>/pages/<page ID>`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     *
+     * Generated from protobuf field <code>string current_page = 6 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCurrentPage()
+    {
+        return $this->current_page;
+    }
+
+    /**
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/<Project
+     * ID>/locations/<Location ID>/agents/<Agent ID>/pages/<page ID>`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     *
+     * Generated from protobuf field <code>string current_page = 6 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCurrentPage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->current_page = $var;
 
         return $this;
     }
