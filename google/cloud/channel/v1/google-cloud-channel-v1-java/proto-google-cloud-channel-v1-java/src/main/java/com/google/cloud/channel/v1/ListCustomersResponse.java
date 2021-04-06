@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.channel.v1.Customer> customers_;
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -590,7 +590,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -784,7 +784,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -826,7 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>

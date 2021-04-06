@@ -9,7 +9,7 @@ public interface TransferEntitlementsResponseOrBuilder extends
 
   /**
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -18,7 +18,7 @@ public interface TransferEntitlementsResponseOrBuilder extends
       getEntitlementsList();
   /**
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -26,7 +26,7 @@ public interface TransferEntitlementsResponseOrBuilder extends
   com.google.cloud.channel.v1.Entitlement getEntitlements(int index);
   /**
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -34,7 +34,7 @@ public interface TransferEntitlementsResponseOrBuilder extends
   int getEntitlementsCount();
   /**
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -43,7 +43,7 @@ public interface TransferEntitlementsResponseOrBuilder extends
       getEntitlementsOrBuilderList();
   /**
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>

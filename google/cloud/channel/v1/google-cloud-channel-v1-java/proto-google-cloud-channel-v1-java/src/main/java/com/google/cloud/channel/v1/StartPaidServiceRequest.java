@@ -102,8 +102,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The name of the entitlement for which paid service is being started.
-   * The name takes the format:
+   * Required. The name of the entitlement to start a paid service for.
+   * Name uses the format:
    * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    * </pre>
    *
@@ -125,8 +125,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the entitlement for which paid service is being started.
-   * The name takes the format:
+   * Required. The name of the entitlement to start a paid service for.
+   * Name uses the format:
    * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    * </pre>
    *
@@ -152,13 +152,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object requestId_;
   /**
    * <pre>
-   * Optional. An optional request ID to identify requests. Specify a unique request ID so
-   * that if you must retry your request, the server will know to ignore the
-   * request if it has already been completed.
-   * For example, consider a situation where you make an initial request and
-   * the request times out. If you make the request again with the same
-   * request ID, the server can check if the original operation with the same
-   * request ID was received, and if so, will ignore the second request.
+   * Optional. You can specify an optional unique request ID, and if you need to retry
+   * your request, the server will know to ignore the request if it's complete.
+   * For example, you make an initial request and the request times out. If you
+   * make the request again with the same request ID, the server can check if
+   * it received the original operation with the same request ID. If it did, it
+   * will ignore the second request.
    * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
    * with the exception that zero UUID is not supported
    * (`00000000-0000-0000-0000-000000000000`).
@@ -182,13 +181,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. An optional request ID to identify requests. Specify a unique request ID so
-   * that if you must retry your request, the server will know to ignore the
-   * request if it has already been completed.
-   * For example, consider a situation where you make an initial request and
-   * the request times out. If you make the request again with the same
-   * request ID, the server can check if the original operation with the same
-   * request ID was received, and if so, will ignore the second request.
+   * Optional. You can specify an optional unique request ID, and if you need to retry
+   * your request, the server will know to ignore the request if it's complete.
+   * For example, you make an initial request and the request times out. If you
+   * make the request again with the same request ID, the server can check if
+   * it received the original operation with the same request ID. If it did, it
+   * will ignore the second request.
    * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
    * with the exception that zero UUID is not supported
    * (`00000000-0000-0000-0000-000000000000`).
@@ -538,8 +536,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The name of the entitlement for which paid service is being started.
-     * The name takes the format:
+     * Required. The name of the entitlement to start a paid service for.
+     * Name uses the format:
      * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
@@ -560,8 +558,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entitlement for which paid service is being started.
-     * The name takes the format:
+     * Required. The name of the entitlement to start a paid service for.
+     * Name uses the format:
      * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
@@ -583,8 +581,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entitlement for which paid service is being started.
-     * The name takes the format:
+     * Required. The name of the entitlement to start a paid service for.
+     * Name uses the format:
      * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
@@ -604,8 +602,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entitlement for which paid service is being started.
-     * The name takes the format:
+     * Required. The name of the entitlement to start a paid service for.
+     * Name uses the format:
      * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
@@ -620,8 +618,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entitlement for which paid service is being started.
-     * The name takes the format:
+     * Required. The name of the entitlement to start a paid service for.
+     * Name uses the format:
      * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
@@ -644,13 +642,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object requestId_ = "";
     /**
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID so
-     * that if you must retry your request, the server will know to ignore the
-     * request if it has already been completed.
-     * For example, consider a situation where you make an initial request and
-     * the request times out. If you make the request again with the same
-     * request ID, the server can check if the original operation with the same
-     * request ID was received, and if so, will ignore the second request.
+     * Optional. You can specify an optional unique request ID, and if you need to retry
+     * your request, the server will know to ignore the request if it's complete.
+     * For example, you make an initial request and the request times out. If you
+     * make the request again with the same request ID, the server can check if
+     * it received the original operation with the same request ID. If it did, it
+     * will ignore the second request.
      * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
      * with the exception that zero UUID is not supported
      * (`00000000-0000-0000-0000-000000000000`).
@@ -673,13 +670,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID so
-     * that if you must retry your request, the server will know to ignore the
-     * request if it has already been completed.
-     * For example, consider a situation where you make an initial request and
-     * the request times out. If you make the request again with the same
-     * request ID, the server can check if the original operation with the same
-     * request ID was received, and if so, will ignore the second request.
+     * Optional. You can specify an optional unique request ID, and if you need to retry
+     * your request, the server will know to ignore the request if it's complete.
+     * For example, you make an initial request and the request times out. If you
+     * make the request again with the same request ID, the server can check if
+     * it received the original operation with the same request ID. If it did, it
+     * will ignore the second request.
      * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
      * with the exception that zero UUID is not supported
      * (`00000000-0000-0000-0000-000000000000`).
@@ -703,13 +699,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID so
-     * that if you must retry your request, the server will know to ignore the
-     * request if it has already been completed.
-     * For example, consider a situation where you make an initial request and
-     * the request times out. If you make the request again with the same
-     * request ID, the server can check if the original operation with the same
-     * request ID was received, and if so, will ignore the second request.
+     * Optional. You can specify an optional unique request ID, and if you need to retry
+     * your request, the server will know to ignore the request if it's complete.
+     * For example, you make an initial request and the request times out. If you
+     * make the request again with the same request ID, the server can check if
+     * it received the original operation with the same request ID. If it did, it
+     * will ignore the second request.
      * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
      * with the exception that zero UUID is not supported
      * (`00000000-0000-0000-0000-000000000000`).
@@ -731,13 +726,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID so
-     * that if you must retry your request, the server will know to ignore the
-     * request if it has already been completed.
-     * For example, consider a situation where you make an initial request and
-     * the request times out. If you make the request again with the same
-     * request ID, the server can check if the original operation with the same
-     * request ID was received, and if so, will ignore the second request.
+     * Optional. You can specify an optional unique request ID, and if you need to retry
+     * your request, the server will know to ignore the request if it's complete.
+     * For example, you make an initial request and the request times out. If you
+     * make the request again with the same request ID, the server can check if
+     * it received the original operation with the same request ID. If it did, it
+     * will ignore the second request.
      * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
      * with the exception that zero UUID is not supported
      * (`00000000-0000-0000-0000-000000000000`).
@@ -754,13 +748,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID so
-     * that if you must retry your request, the server will know to ignore the
-     * request if it has already been completed.
-     * For example, consider a situation where you make an initial request and
-     * the request times out. If you make the request again with the same
-     * request ID, the server can check if the original operation with the same
-     * request ID was received, and if so, will ignore the second request.
+     * Optional. You can specify an optional unique request ID, and if you need to retry
+     * your request, the server will know to ignore the request if it's complete.
+     * For example, you make an initial request and the request times out. If you
+     * make the request again with the same request ID, the server can check if
+     * it received the original operation with the same request ID. If it did, it
+     * will ignore the second request.
      * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
      * with the exception that zero UUID is not supported
      * (`00000000-0000-0000-0000-000000000000`).

@@ -102,8 +102,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The resource name of the reseller account.
-   * The parent takes the format: accounts/{account_id}
+   * Required. The reseller account's resource name.
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -124,8 +124,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the reseller account.
-   * The parent takes the format: accounts/{account_id}
+   * Required. The reseller account's resource name.
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object domain_;
   /**
    * <pre>
-   * Required. Domain for which the Cloud Identity account customer is fetched.
+   * Required. Domain to fetch for Cloud Identity account customer.
    * </pre>
    *
    * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Domain for which the Cloud Identity account customer is fetched.
+   * Required. Domain to fetch for Cloud Identity account customer.
    * </pre>
    *
    * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -518,8 +518,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -539,8 +539,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -561,8 +561,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -581,8 +581,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -596,8 +596,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object domain_ = "";
     /**
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>

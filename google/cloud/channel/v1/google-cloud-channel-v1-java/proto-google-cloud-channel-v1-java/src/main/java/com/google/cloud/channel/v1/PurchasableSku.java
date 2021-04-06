@@ -5,7 +5,7 @@ package com.google.cloud.channel.v1;
 
 /**
  * <pre>
- * SKU that can be used for a puchase. This is used in ListPurchasableSku API
+ * SKU that you can purchase. This is used in ListPurchasableSku API
  * response.
  * </pre>
  *
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * SKU that can be used for a puchase. This is used in ListPurchasableSku API
+   * SKU that you can purchase. This is used in ListPurchasableSku API
    * response.
    * </pre>
    *

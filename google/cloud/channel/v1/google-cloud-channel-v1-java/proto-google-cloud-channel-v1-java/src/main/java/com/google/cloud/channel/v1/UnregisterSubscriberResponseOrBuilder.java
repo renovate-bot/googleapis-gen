@@ -9,8 +9,7 @@ public interface UnregisterSubscriberResponseOrBuilder extends
 
   /**
    * <pre>
-   * Name of the topic from which the service account subscriber access has been
-   * removed.
+   * Name of the topic the service account subscriber access was removed from.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -19,8 +18,7 @@ public interface UnregisterSubscriberResponseOrBuilder extends
   java.lang.String getTopic();
   /**
    * <pre>
-   * Name of the topic from which the service account subscriber access has been
-   * removed.
+   * Name of the topic the service account subscriber access was removed from.
    * </pre>
    *
    * <code>string topic = 1;</code>

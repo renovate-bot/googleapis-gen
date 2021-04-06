@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the reseller account from which to list Offers.
-   * The parent takes the format: accounts/{account_id}.
+   * Parent uses the format: accounts/{account_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the reseller account from which to list Offers.
-   * The parent takes the format: accounts/{account_id}.
+   * Parent uses the format: accounts/{account_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -170,8 +170,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, at most 500 Offers will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * If unspecified, returns at most 500 Offers.
+   * The maximum value is 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
+   * Optional. A token for a page of results other than the first page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,7 +207,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
+   * Optional. A token for a page of results other than the first page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The expression to filter results by name (name of
-   * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+   * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
    * Product).
    * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
    * Example 2: name=accounts/a1/offers/o1
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The expression to filter results by name (name of
-   * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+   * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
    * Product).
    * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
    * Example 2: name=accounts/a1/offers/o1
@@ -286,9 +286,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object languageCode_;
   /**
    * <pre>
-   * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * Optional. The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -309,9 +309,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * Optional. The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the reseller account from which to list Offers.
-     * The parent takes the format: accounts/{account_id}.
+     * Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the reseller account from which to list Offers.
-     * The parent takes the format: accounts/{account_id}.
+     * Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the reseller account from which to list Offers.
-     * The parent takes the format: accounts/{account_id}.
+     * Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the reseller account from which to list Offers.
-     * The parent takes the format: accounts/{account_id}.
+     * Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the reseller account from which to list Offers.
-     * The parent takes the format: accounts/{account_id}.
+     * Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -811,8 +811,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, at most 500 Offers will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * If unspecified, returns at most 500 Offers.
+     * The maximum value is 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -825,8 +825,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, at most 500 Offers will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * If unspecified, returns at most 500 Offers.
+     * The maximum value is 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -842,8 +842,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, at most 500 Offers will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * If unspecified, returns at most 500 Offers.
+     * The maximum value is 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -900,7 +900,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -933,7 +933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
      * Product).
      * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
      * Example 2: name=accounts/a1/offers/o1
@@ -980,7 +980,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
      * Product).
      * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
      * Example 2: name=accounts/a1/offers/o1
@@ -1005,7 +1005,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
      * Product).
      * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
      * Example 2: name=accounts/a1/offers/o1
@@ -1028,7 +1028,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
      * Product).
      * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
      * Example 2: name=accounts/a1/offers/o1
@@ -1046,7 +1046,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU) or sku.product.name (name of the
+     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
      * Product).
      * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
      * Example 2: name=accounts/a1/offers/o1
@@ -1071,9 +1071,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object languageCode_ = "";
     /**
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1093,9 +1093,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1116,9 +1116,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1137,9 +1137,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1153,9 +1153,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

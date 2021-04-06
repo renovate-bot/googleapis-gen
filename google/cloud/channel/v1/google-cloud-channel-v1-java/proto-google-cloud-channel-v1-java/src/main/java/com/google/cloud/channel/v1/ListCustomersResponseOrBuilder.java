@@ -9,7 +9,7 @@ public interface ListCustomersResponseOrBuilder extends
 
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -18,7 +18,7 @@ public interface ListCustomersResponseOrBuilder extends
       getCustomersList();
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -26,7 +26,7 @@ public interface ListCustomersResponseOrBuilder extends
   com.google.cloud.channel.v1.Customer getCustomers(int index);
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -34,7 +34,7 @@ public interface ListCustomersResponseOrBuilder extends
   int getCustomersCount();
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -43,7 +43,7 @@ public interface ListCustomersResponseOrBuilder extends
       getCustomersOrBuilderList();
   /**
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>

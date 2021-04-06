@@ -109,8 +109,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.channel.v1.TransferableSku> transferableSkus_;
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -121,8 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -134,8 +132,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -146,8 +143,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -158,8 +154,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -597,8 +592,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -612,8 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -627,8 +620,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -642,8 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -664,8 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -683,8 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -704,8 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -726,8 +714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -745,8 +732,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -764,8 +750,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -784,8 +769,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -802,8 +786,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -820,8 +803,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -832,8 +814,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -847,8 +828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -863,8 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -875,8 +854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -888,8 +866,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>

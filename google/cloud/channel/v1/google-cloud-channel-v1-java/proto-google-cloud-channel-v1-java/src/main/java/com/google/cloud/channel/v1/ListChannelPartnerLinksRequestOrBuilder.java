@@ -11,7 +11,7 @@ public interface ListChannelPartnerLinksRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the reseller account for listing channel partner
    * links.
-   * The parent takes the format: accounts/{account_id}
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -22,7 +22,7 @@ public interface ListChannelPartnerLinksRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the reseller account for listing channel partner
    * links.
-   * The parent takes the format: accounts/{account_id}
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -35,7 +35,7 @@ public interface ListChannelPartnerLinksRequestOrBuilder extends
    * <pre>
    * Optional. Requested page size. Server might return fewer results than requested.
    * If unspecified, server will pick a default size (25).
-   * The maximum value is 200, values above 200 will be coerced to 200.
+   * The maximum value is 200; the server will coerce values above 200.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45,8 +45,8 @@ public interface ListChannelPartnerLinksRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
-   * Typically obtained via
+   * Optional. A token for a page of results other than the first page.
+   * Obtained using
    * [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token] of the previous
    * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks] call.
    * </pre>
@@ -57,8 +57,8 @@ public interface ListChannelPartnerLinksRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
-   * Typically obtained via
+   * Optional. A token for a page of results other than the first page.
+   * Obtained using
    * [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token] of the previous
    * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks] call.
    * </pre>

@@ -5,7 +5,7 @@ package com.google.cloud.channel.v1;
 
 /**
  * <pre>
- * Offer that can be puchased for a customer. This is used in
+ * Offer that you can purchase for a customer. This is used in the
  * ListPurchasableOffer API response.
  * </pre>
  *
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Offer that can be puchased for a customer. This is used in
+   * Offer that you can purchase for a customer. This is used in the
    * ListPurchasableOffer API response.
    * </pre>
    *

@@ -39,7 +39,7 @@ public interface ListTransferableOffersRequestOrBuilder extends
   /**
    * <pre>
    * A reseller should create a customer and use the resource name of
-   * the created customer here.
+   * that customer here.
    * </pre>
    *
    * <code>string customer_name = 5;</code>
@@ -49,7 +49,7 @@ public interface ListTransferableOffersRequestOrBuilder extends
   /**
    * <pre>
    * A reseller should create a customer and use the resource name of
-   * the created customer here.
+   * that customer here.
    * </pre>
    *
    * <code>string customer_name = 5;</code>
@@ -59,7 +59,7 @@ public interface ListTransferableOffersRequestOrBuilder extends
   /**
    * <pre>
    * A reseller should create a customer and use the resource name of
-   * the created customer here.
+   * that customer here.
    * </pre>
    *
    * <code>string customer_name = 5;</code>
@@ -91,8 +91,8 @@ public interface ListTransferableOffersRequestOrBuilder extends
   /**
    * <pre>
    * Requested page size. Server might return fewer results than requested.
-   * If unspecified, at most 100 Offers will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * If unspecified, returns at most 100 offers.
+   * The maximum value is 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -102,8 +102,8 @@ public interface ListTransferableOffersRequestOrBuilder extends
 
   /**
    * <pre>
-   * A token identifying a page of results, if other than the first one.
-   * Typically obtained via
+   * A token for a page of results other than the first page.
+   * Obtained using
    * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
    * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
    * </pre>
@@ -114,8 +114,8 @@ public interface ListTransferableOffersRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * A token identifying a page of results, if other than the first one.
-   * Typically obtained via
+   * A token for a page of results other than the first page.
+   * Obtained using
    * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
    * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
    * </pre>
@@ -128,7 +128,7 @@ public interface ListTransferableOffersRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. SKU for which the Offers are being looked up.
+   * Required. The SKU to look up Offers for.
    * </pre>
    *
    * <code>string sku = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -137,7 +137,7 @@ public interface ListTransferableOffersRequestOrBuilder extends
   java.lang.String getSku();
   /**
    * <pre>
-   * Required. SKU for which the Offers are being looked up.
+   * Required. The SKU to look up Offers for.
    * </pre>
    *
    * <code>string sku = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -148,9 +148,9 @@ public interface ListTransferableOffersRequestOrBuilder extends
 
   /**
    * <pre>
-   * The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 7;</code>
@@ -159,9 +159,9 @@ public interface ListTransferableOffersRequestOrBuilder extends
   java.lang.String getLanguageCode();
   /**
    * <pre>
-   * The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 7;</code>

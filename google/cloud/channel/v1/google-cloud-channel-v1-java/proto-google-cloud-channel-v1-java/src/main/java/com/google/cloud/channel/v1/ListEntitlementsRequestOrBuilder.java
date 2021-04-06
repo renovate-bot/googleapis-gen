@@ -9,9 +9,9 @@ public interface ListEntitlementsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the reseller's customer account for which to list
-   * entitlements.
-   * The parent takes the format: accounts/{account_id}/customers/{customer_id}
+   * Required. The resource name of the reseller's customer account to list
+   * entitlements for.
+   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +20,9 @@ public interface ListEntitlementsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The resource name of the reseller's customer account for which to list
-   * entitlements.
-   * The parent takes the format: accounts/{account_id}/customers/{customer_id}
+   * Required. The resource name of the reseller's customer account to list
+   * entitlements for.
+   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -34,8 +34,8 @@ public interface ListEntitlementsRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, at most 50 entitlements will be returned.
-   * The maximum value is 100; values above 100 will be coerced to 100.
+   * If unspecified, return at most 50 entitlements.
+   * The maximum value is 100; the server will coerce values above 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45,8 +45,8 @@ public interface ListEntitlementsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
-   * Typically obtained via
+   * Optional. A token for a page of results other than the first page.
+   * Obtained using
    * [ListEntitlementsResponse.next_page_token][google.cloud.channel.v1.ListEntitlementsResponse.next_page_token] of the previous
    * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements] call.
    * </pre>
@@ -57,8 +57,8 @@ public interface ListEntitlementsRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
-   * Typically obtained via
+   * Optional. A token for a page of results other than the first page.
+   * Obtained using
    * [ListEntitlementsResponse.next_page_token][google.cloud.channel.v1.ListEntitlementsResponse.next_page_token] of the previous
    * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements] call.
    * </pre>

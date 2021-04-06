@@ -5,7 +5,7 @@ package com.google.cloud.channel.v1;
 
 /**
  * <pre>
- * Entity representing a Cloud Identity account which may or may not be
+ * Entity representing a Cloud Identity account that may be
  * associated with a Channel Services API partner.
  * </pre>
  *
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   private boolean existing_;
   /**
    * <pre>
-   * True if a Cloud Identity account exists for a specific domain.
+   * Returns true if a Cloud Identity account exists for a specific domain.
    * </pre>
    *
    * <code>bool existing = 1;</code>
@@ -128,8 +128,8 @@ private static final long serialVersionUID = 0L;
   private boolean owned_;
   /**
    * <pre>
-   * True if the Cloud Identity account is associated with a customer
-   * belonging to the Channel Services partner making the API call.
+   * Returns true if the Cloud Identity account is associated with a customer
+   * of the Channel Services partner.
    * </pre>
    *
    * <code>bool owned = 2;</code>
@@ -144,9 +144,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object customerName_;
   /**
    * <pre>
-   * Name of the customer that owns the Cloud Identity account. This field is
-   * populated ONLY if owned = true.
-   * The customer_name takes the format:
+   * If owned = true, the name of the customer that owns the Cloud Identity
+   * account.
+   * Customer_name uses the format:
    * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
@@ -168,9 +168,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Name of the customer that owns the Cloud Identity account. This field is
-   * populated ONLY if owned = true.
-   * The customer_name takes the format:
+   * If owned = true, the name of the customer that owns the Cloud Identity
+   * account.
+   * Customer_name uses the format:
    * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
@@ -196,8 +196,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object customerCloudIdentityId_;
   /**
    * <pre>
-   * Cloud Identity ID of the customer. This field is populated ONLY if
-   * existing = true.
+   * If existing = true, the Cloud Identity ID of the customer.
    * </pre>
    *
    * <code>string customer_cloud_identity_id = 4;</code>
@@ -218,8 +217,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Cloud Identity ID of the customer. This field is populated ONLY if
-   * existing = true.
+   * If existing = true, the Cloud Identity ID of the customer.
    * </pre>
    *
    * <code>string customer_cloud_identity_id = 4;</code>
@@ -430,7 +428,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Entity representing a Cloud Identity account which may or may not be
+   * Entity representing a Cloud Identity account that may be
    * associated with a Channel Services API partner.
    * </pre>
    *
@@ -603,7 +601,7 @@ private static final long serialVersionUID = 0L;
     private boolean existing_ ;
     /**
      * <pre>
-     * True if a Cloud Identity account exists for a specific domain.
+     * Returns true if a Cloud Identity account exists for a specific domain.
      * </pre>
      *
      * <code>bool existing = 1;</code>
@@ -615,7 +613,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * True if a Cloud Identity account exists for a specific domain.
+     * Returns true if a Cloud Identity account exists for a specific domain.
      * </pre>
      *
      * <code>bool existing = 1;</code>
@@ -630,7 +628,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * True if a Cloud Identity account exists for a specific domain.
+     * Returns true if a Cloud Identity account exists for a specific domain.
      * </pre>
      *
      * <code>bool existing = 1;</code>
@@ -646,8 +644,8 @@ private static final long serialVersionUID = 0L;
     private boolean owned_ ;
     /**
      * <pre>
-     * True if the Cloud Identity account is associated with a customer
-     * belonging to the Channel Services partner making the API call.
+     * Returns true if the Cloud Identity account is associated with a customer
+     * of the Channel Services partner.
      * </pre>
      *
      * <code>bool owned = 2;</code>
@@ -659,8 +657,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * True if the Cloud Identity account is associated with a customer
-     * belonging to the Channel Services partner making the API call.
+     * Returns true if the Cloud Identity account is associated with a customer
+     * of the Channel Services partner.
      * </pre>
      *
      * <code>bool owned = 2;</code>
@@ -675,8 +673,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * True if the Cloud Identity account is associated with a customer
-     * belonging to the Channel Services partner making the API call.
+     * Returns true if the Cloud Identity account is associated with a customer
+     * of the Channel Services partner.
      * </pre>
      *
      * <code>bool owned = 2;</code>
@@ -692,9 +690,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object customerName_ = "";
     /**
      * <pre>
-     * Name of the customer that owns the Cloud Identity account. This field is
-     * populated ONLY if owned = true.
-     * The customer_name takes the format:
+     * If owned = true, the name of the customer that owns the Cloud Identity
+     * account.
+     * Customer_name uses the format:
      * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
@@ -715,9 +713,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the customer that owns the Cloud Identity account. This field is
-     * populated ONLY if owned = true.
-     * The customer_name takes the format:
+     * If owned = true, the name of the customer that owns the Cloud Identity
+     * account.
+     * Customer_name uses the format:
      * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
@@ -739,9 +737,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the customer that owns the Cloud Identity account. This field is
-     * populated ONLY if owned = true.
-     * The customer_name takes the format:
+     * If owned = true, the name of the customer that owns the Cloud Identity
+     * account.
+     * Customer_name uses the format:
      * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
@@ -761,9 +759,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the customer that owns the Cloud Identity account. This field is
-     * populated ONLY if owned = true.
-     * The customer_name takes the format:
+     * If owned = true, the name of the customer that owns the Cloud Identity
+     * account.
+     * Customer_name uses the format:
      * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
@@ -778,9 +776,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the customer that owns the Cloud Identity account. This field is
-     * populated ONLY if owned = true.
-     * The customer_name takes the format:
+     * If owned = true, the name of the customer that owns the Cloud Identity
+     * account.
+     * Customer_name uses the format:
      * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
@@ -803,8 +801,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object customerCloudIdentityId_ = "";
     /**
      * <pre>
-     * Cloud Identity ID of the customer. This field is populated ONLY if
-     * existing = true.
+     * If existing = true, the Cloud Identity ID of the customer.
      * </pre>
      *
      * <code>string customer_cloud_identity_id = 4;</code>
@@ -824,8 +821,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cloud Identity ID of the customer. This field is populated ONLY if
-     * existing = true.
+     * If existing = true, the Cloud Identity ID of the customer.
      * </pre>
      *
      * <code>string customer_cloud_identity_id = 4;</code>
@@ -846,8 +842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cloud Identity ID of the customer. This field is populated ONLY if
-     * existing = true.
+     * If existing = true, the Cloud Identity ID of the customer.
      * </pre>
      *
      * <code>string customer_cloud_identity_id = 4;</code>
@@ -866,8 +861,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cloud Identity ID of the customer. This field is populated ONLY if
-     * existing = true.
+     * If existing = true, the Cloud Identity ID of the customer.
      * </pre>
      *
      * <code>string customer_cloud_identity_id = 4;</code>
@@ -881,8 +875,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cloud Identity ID of the customer. This field is populated ONLY if
-     * existing = true.
+     * If existing = true, the Cloud Identity ID of the customer.
      * </pre>
      *
      * <code>string customer_cloud_identity_id = 4;</code>

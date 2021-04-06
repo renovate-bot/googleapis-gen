@@ -95,8 +95,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object topic_;
   /**
    * <pre>
-   * Name of the topic from which the service account subscriber access has been
-   * removed.
+   * Name of the topic the service account subscriber access was removed from.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -117,8 +116,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Name of the topic from which the service account subscriber access has been
-   * removed.
+   * Name of the topic the service account subscriber access was removed from.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -448,8 +446,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object topic_ = "";
     /**
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -469,8 +466,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -491,8 +487,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -511,8 +506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -526,8 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>

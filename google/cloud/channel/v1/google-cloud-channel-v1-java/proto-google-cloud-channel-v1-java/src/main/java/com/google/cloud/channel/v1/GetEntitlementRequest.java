@@ -96,8 +96,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the entitlement to retrieve.
-   * The name takes the format:
-   * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+   * Name uses the format:
+   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -119,8 +119,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the entitlement to retrieve.
-   * The name takes the format:
-   * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+   * Name uses the format:
+   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -451,8 +451,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entitlement to retrieve.
-     * The name takes the format:
-     * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+     * Name uses the format:
+     * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -473,8 +473,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entitlement to retrieve.
-     * The name takes the format:
-     * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+     * Name uses the format:
+     * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -496,8 +496,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entitlement to retrieve.
-     * The name takes the format:
-     * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+     * Name uses the format:
+     * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -517,8 +517,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entitlement to retrieve.
-     * The name takes the format:
-     * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+     * Name uses the format:
+     * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -533,8 +533,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entitlement to retrieve.
-     * The name takes the format:
-     * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+     * Name uses the format:
+     * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -9,7 +9,7 @@ public interface RegisterSubscriberResponseOrBuilder extends
 
   /**
    * <pre>
-   * Name of the topic to which the subscriber will listen to.
+   * Name of the topic the subscriber will listen to.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -18,7 +18,7 @@ public interface RegisterSubscriberResponseOrBuilder extends
   java.lang.String getTopic();
   /**
    * <pre>
-   * Name of the topic to which the subscriber will listen to.
+   * Name of the topic the subscriber will listen to.
    * </pre>
    *
    * <code>string topic = 1;</code>

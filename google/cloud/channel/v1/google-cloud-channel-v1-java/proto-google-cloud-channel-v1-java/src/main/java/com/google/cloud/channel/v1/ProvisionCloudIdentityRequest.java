@@ -250,8 +250,7 @@ private static final long serialVersionUID = 0L;
   private boolean validateOnly_;
   /**
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * post it.
+   * Validate the request and preview the review, but do not post it.
    * </pre>
    *
    * <code>bool validate_only = 4;</code>
@@ -1060,8 +1059,7 @@ private static final long serialVersionUID = 0L;
     private boolean validateOnly_ ;
     /**
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * post it.
+     * Validate the request and preview the review, but do not post it.
      * </pre>
      *
      * <code>bool validate_only = 4;</code>
@@ -1073,8 +1071,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * post it.
+     * Validate the request and preview the review, but do not post it.
      * </pre>
      *
      * <code>bool validate_only = 4;</code>
@@ -1089,8 +1086,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * post it.
+     * Validate the request and preview the review, but do not post it.
      * </pre>
      *
      * <code>bool validate_only = 4;</code>

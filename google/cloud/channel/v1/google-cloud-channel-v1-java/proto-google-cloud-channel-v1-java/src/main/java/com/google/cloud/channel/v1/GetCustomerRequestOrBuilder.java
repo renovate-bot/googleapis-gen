@@ -10,7 +10,7 @@ public interface GetCustomerRequestOrBuilder extends
   /**
    * <pre>
    * Required. The resource name of the customer to retrieve.
-   * The name takes the format: accounts/{account_id}/customers/{customer_id}
+   * Name uses the format: accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface GetCustomerRequestOrBuilder extends
   /**
    * <pre>
    * Required. The resource name of the customer to retrieve.
-   * The name takes the format: accounts/{account_id}/customers/{customer_id}
+   * Name uses the format: accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

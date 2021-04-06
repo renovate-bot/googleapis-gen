@@ -31,8 +31,8 @@ public interface ListSubscribersRequestOrBuilder extends
    * <pre>
    * Optional. The maximum number of service accounts to return. The service may return
    * fewer than this value.
-   * If unspecified, at most 100 service accounts will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * If unspecified, returns at most 100 service accounts.
+   * The maximum value is 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45,7 +45,7 @@ public interface ListSubscribersRequestOrBuilder extends
    * Optional. A page token, received from a previous `ListSubscribers` call.
    * Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListSubscribers` must
-   *  match the call that provided the page token.
+   * match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -57,7 +57,7 @@ public interface ListSubscribersRequestOrBuilder extends
    * Optional. A page token, received from a previous `ListSubscribers` call.
    * Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListSubscribers` must
-   *  match the call that provided the page token.
+   * match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -95,7 +95,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object topic_;
   /**
    * <pre>
-   * Name of the topic to which the subscriber will listen to.
+   * Name of the topic the subscriber will listen to.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Name of the topic to which the subscriber will listen to.
+   * Name of the topic the subscriber will listen to.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -446,7 +446,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object topic_ = "";
     /**
      * <pre>
-     * Name of the topic to which the subscriber will listen to.
+     * Name of the topic the subscriber will listen to.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -466,7 +466,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to which the subscriber will listen to.
+     * Name of the topic the subscriber will listen to.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to which the subscriber will listen to.
+     * Name of the topic the subscriber will listen to.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to which the subscriber will listen to.
+     * Name of the topic the subscriber will listen to.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to which the subscriber will listen to.
+     * Name of the topic the subscriber will listen to.
      * </pre>
      *
      * <code>string topic = 1;</code>

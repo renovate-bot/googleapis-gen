@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of reseller account in which to create the customer.
-   * The parent takes the format: accounts/{account_id}
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of reseller account in which to create the customer.
-   * The parent takes the format: accounts/{account_id}
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -530,7 +530,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of reseller account in which to create the customer.
-     * The parent takes the format: accounts/{account_id}
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of reseller account in which to create the customer.
-     * The parent takes the format: accounts/{account_id}
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of reseller account in which to create the customer.
-     * The parent takes the format: accounts/{account_id}
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of reseller account in which to create the customer.
-     * The parent takes the format: accounts/{account_id}
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -608,7 +608,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of reseller account in which to create the customer.
-     * The parent takes the format: accounts/{account_id}
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

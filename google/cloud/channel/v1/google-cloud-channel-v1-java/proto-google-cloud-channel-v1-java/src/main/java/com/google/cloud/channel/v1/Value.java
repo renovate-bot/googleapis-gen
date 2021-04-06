@@ -82,6 +82,11 @@ private static final long serialVersionUID = 0L;
             kindCase_ = 4;
             break;
           }
+          case 40: {
+            kindCase_ = 5;
+            kind_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -123,6 +128,7 @@ private static final long serialVersionUID = 0L;
     STRING_VALUE(2),
     DOUBLE_VALUE(3),
     PROTO_VALUE(4),
+    BOOL_VALUE(5),
     KIND_NOT_SET(0);
     private final int value;
     private KindCase(int value) {
@@ -144,6 +150,7 @@ private static final long serialVersionUID = 0L;
         case 2: return STRING_VALUE;
         case 3: return DOUBLE_VALUE;
         case 4: return PROTO_VALUE;
+        case 5: return BOOL_VALUE;
         case 0: return KIND_NOT_SET;
         default: return null;
       }
@@ -324,6 +331,35 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.Any.getDefaultInstance();
   }
 
+  public static final int BOOL_VALUE_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Represents a boolean value.
+   * </pre>
+   *
+   * <code>bool bool_value = 5;</code>
+   * @return Whether the boolValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolValue() {
+    return kindCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Represents a boolean value.
+   * </pre>
+   *
+   * <code>bool bool_value = 5;</code>
+   * @return The boolValue.
+   */
+  @java.lang.Override
+  public boolean getBoolValue() {
+    if (kindCase_ == 5) {
+      return (java.lang.Boolean) kind_;
+    }
+    return false;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -352,6 +388,10 @@ private static final long serialVersionUID = 0L;
     if (kindCase_ == 4) {
       output.writeMessage(4, (com.google.protobuf.Any) kind_);
     }
+    if (kindCase_ == 5) {
+      output.writeBool(
+          5, (boolean)((java.lang.Boolean) kind_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -377,6 +417,11 @@ private static final long serialVersionUID = 0L;
     if (kindCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.protobuf.Any) kind_);
+    }
+    if (kindCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            5, (boolean)((java.lang.Boolean) kind_));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -412,6 +457,10 @@ private static final long serialVersionUID = 0L;
         if (!getProtoValue()
             .equals(other.getProtoValue())) return false;
         break;
+      case 5:
+        if (getBoolValue()
+            != other.getBoolValue()) return false;
+        break;
       case 0:
       default:
     }
@@ -444,6 +493,11 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + PROTO_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getProtoValue().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + BOOL_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getBoolValue());
         break;
       case 0:
       default:
@@ -629,6 +683,9 @@ private static final long serialVersionUID = 0L;
           result.kind_ = protoValueBuilder_.build();
         }
       }
+      if (kindCase_ == 5) {
+        result.kind_ = kind_;
+      }
       result.kindCase_ = kindCase_;
       onBuilt();
       return result;
@@ -695,6 +752,10 @@ private static final long serialVersionUID = 0L;
         }
         case PROTO_VALUE: {
           mergeProtoValue(other.getProtoValue());
+          break;
+        }
+        case BOOL_VALUE: {
+          setBoolValue(other.getBoolValue());
           break;
         }
         case KIND_NOT_SET: {
@@ -1155,6 +1216,63 @@ private static final long serialVersionUID = 0L;
       kindCase_ = 4;
       onChanged();;
       return protoValueBuilder_;
+    }
+
+    /**
+     * <pre>
+     * Represents a boolean value.
+     * </pre>
+     *
+     * <code>bool bool_value = 5;</code>
+     * @return Whether the boolValue field is set.
+     */
+    public boolean hasBoolValue() {
+      return kindCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Represents a boolean value.
+     * </pre>
+     *
+     * <code>bool bool_value = 5;</code>
+     * @return The boolValue.
+     */
+    public boolean getBoolValue() {
+      if (kindCase_ == 5) {
+        return (java.lang.Boolean) kind_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Represents a boolean value.
+     * </pre>
+     *
+     * <code>bool bool_value = 5;</code>
+     * @param value The boolValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoolValue(boolean value) {
+      kindCase_ = 5;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Represents a boolean value.
+     * </pre>
+     *
+     * <code>bool bool_value = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBoolValue() {
+      if (kindCase_ == 5) {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+      }
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

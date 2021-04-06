@@ -9,8 +9,7 @@ public interface ListTransferableSkusResponseOrBuilder extends
 
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -19,8 +18,7 @@ public interface ListTransferableSkusResponseOrBuilder extends
       getTransferableSkusList();
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -28,8 +26,7 @@ public interface ListTransferableSkusResponseOrBuilder extends
   com.google.cloud.channel.v1.TransferableSku getTransferableSkus(int index);
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -37,8 +34,7 @@ public interface ListTransferableSkusResponseOrBuilder extends
   int getTransferableSkusCount();
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -47,8 +43,7 @@ public interface ListTransferableSkusResponseOrBuilder extends
       getTransferableSkusOrBuilderList();
   /**
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>

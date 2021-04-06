@@ -85,8 +85,7 @@ public interface ProvisionCloudIdentityRequestOrBuilder extends
 
   /**
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * post it.
+   * Validate the request and preview the review, but do not post it.
    * </pre>
    *
    * <code>bool validate_only = 4;</code>
