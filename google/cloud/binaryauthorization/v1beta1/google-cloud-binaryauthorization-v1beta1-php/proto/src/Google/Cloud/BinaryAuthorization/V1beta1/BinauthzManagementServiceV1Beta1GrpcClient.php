@@ -42,13 +42,16 @@ class BinauthzManagementServiceV1Beta1GrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] that must attest to
-     * a container image, before the project is allowed to deploy that
+     * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] specifies the
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] that must
+     * attest to a container image, before the project is allowed to deploy that
      * image. There is at most one policy per project. All image admission
      * requests are permitted if a project has no policy.
      *
-     * Gets the [policy][google.cloud.binaryauthorization.v1beta1.Policy] for this project. Returns a default
-     * [policy][google.cloud.binaryauthorization.v1beta1.Policy] if the project does not have one.
+     * Gets the [policy][google.cloud.binaryauthorization.v1beta1.Policy] for this
+     * project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1beta1.Policy] if the project
+     * does not have one.
      * @param \Google\Cloud\BinaryAuthorization\V1beta1\GetPolicyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -63,11 +66,13 @@ class BinauthzManagementServiceV1Beta1GrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1beta1.Policy], and returns a copy of the
-     * new [policy][google.cloud.binaryauthorization.v1beta1.Policy]. A policy is always updated as a whole, to avoid race
-     * conditions with concurrent policy enforcement (or management!)
-     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-     * if the request is malformed.
+     * Creates or updates a project's
+     * [policy][google.cloud.binaryauthorization.v1beta1.Policy], and returns a
+     * copy of the new [policy][google.cloud.binaryauthorization.v1beta1.Policy].
+     * A policy is always updated as a whole, to avoid race conditions with
+     * concurrent policy enforcement (or management!) requests. Returns NOT_FOUND
+     * if the project does not exist, INVALID_ARGUMENT if the request is
+     * malformed.
      * @param \Google\Cloud\BinaryAuthorization\V1beta1\UpdatePolicyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -82,10 +87,13 @@ class BinauthzManagementServiceV1Beta1GrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor], and returns a copy of the new
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the project does not exist,
-     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] already exists.
+     * Creates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor],
+     * and returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns
+     * NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is
+     * malformed, ALREADY_EXISTS if the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] already
+     * exists.
      * @param \Google\Cloud\BinaryAuthorization\V1beta1\CreateAttestorRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -101,7 +109,9 @@ class BinauthzManagementServiceV1Beta1GrpcClient extends \Grpc\BaseStub {
 
     /**
      * Gets an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
+     * Returns NOT_FOUND if the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not
+     * exist.
      * @param \Google\Cloud\BinaryAuthorization\V1beta1\GetAttestorRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -117,7 +127,9 @@ class BinauthzManagementServiceV1Beta1GrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
+     * Returns NOT_FOUND if the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not
+     * exist.
      * @param \Google\Cloud\BinaryAuthorization\V1beta1\UpdateAttestorRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -148,8 +160,10 @@ class BinauthzManagementServiceV1Beta1GrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Deletes an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Returns NOT_FOUND if the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not
+     * exist.
      * @param \Google\Cloud\BinaryAuthorization\V1beta1\DeleteAttestorRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
