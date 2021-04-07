@@ -189,6 +189,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 178: {
+            com.google.protobuf.BoolValue.Builder subBuilder = null;
+            if (enableSpokenPunctuation_ != null) {
+              subBuilder = enableSpokenPunctuation_.toBuilder();
+            }
+            enableSpokenPunctuation_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(enableSpokenPunctuation_);
+              enableSpokenPunctuation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 186: {
+            com.google.protobuf.BoolValue.Builder subBuilder = null;
+            if (enableSpokenEmojis_ != null) {
+              subBuilder = enableSpokenEmojis_.toBuilder();
+            }
+            enableSpokenEmojis_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(enableSpokenEmojis_);
+              enableSpokenEmojis_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -827,7 +853,7 @@ private static final long serialVersionUID = 0L;
    * Speech adaptation configuration improves the accuracy of speech
    * recognition. When speech adaptation is set it supersedes the
    * `speech_contexts` field. For more information, see the [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
    * </pre>
    *
@@ -843,7 +869,7 @@ private static final long serialVersionUID = 0L;
    * Speech adaptation configuration improves the accuracy of speech
    * recognition. When speech adaptation is set it supersedes the
    * `speech_contexts` field. For more information, see the [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
    * </pre>
    *
@@ -859,7 +885,7 @@ private static final long serialVersionUID = 0L;
    * Speech adaptation configuration improves the accuracy of speech
    * recognition. When speech adaptation is set it supersedes the
    * `speech_contexts` field. For more information, see the [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
    * </pre>
    *
@@ -878,7 +904,7 @@ private static final long serialVersionUID = 0L;
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -893,7 +919,7 @@ private static final long serialVersionUID = 0L;
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -909,7 +935,7 @@ private static final long serialVersionUID = 0L;
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -924,7 +950,7 @@ private static final long serialVersionUID = 0L;
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -939,7 +965,7 @@ private static final long serialVersionUID = 0L;
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -1001,6 +1027,112 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
+  }
+
+  public static final int ENABLE_SPOKEN_PUNCTUATION_FIELD_NUMBER = 22;
+  private com.google.protobuf.BoolValue enableSpokenPunctuation_;
+  /**
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   * @return Whether the enableSpokenPunctuation field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableSpokenPunctuation() {
+    return enableSpokenPunctuation_ != null;
+  }
+  /**
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   * @return The enableSpokenPunctuation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableSpokenPunctuation() {
+    return enableSpokenPunctuation_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableSpokenPunctuation_;
+  }
+  /**
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableSpokenPunctuationOrBuilder() {
+    return getEnableSpokenPunctuation();
+  }
+
+  public static final int ENABLE_SPOKEN_EMOJIS_FIELD_NUMBER = 23;
+  private com.google.protobuf.BoolValue enableSpokenEmojis_;
+  /**
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   * @return Whether the enableSpokenEmojis field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableSpokenEmojis() {
+    return enableSpokenEmojis_ != null;
+  }
+  /**
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   * @return The enableSpokenEmojis.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableSpokenEmojis() {
+    return enableSpokenEmojis_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableSpokenEmojis_;
+  }
+  /**
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableSpokenEmojisOrBuilder() {
+    return getEnableSpokenEmojis();
   }
 
   public static final int ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER = 16;
@@ -1335,6 +1467,12 @@ private static final long serialVersionUID = 0L;
     if (adaptation_ != null) {
       output.writeMessage(20, getAdaptation());
     }
+    if (enableSpokenPunctuation_ != null) {
+      output.writeMessage(22, getEnableSpokenPunctuation());
+    }
+    if (enableSpokenEmojis_ != null) {
+      output.writeMessage(23, getEnableSpokenEmojis());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1422,6 +1560,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getAdaptation());
     }
+    if (enableSpokenPunctuation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getEnableSpokenPunctuation());
+    }
+    if (enableSpokenEmojis_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getEnableSpokenEmojis());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1465,6 +1611,16 @@ private static final long serialVersionUID = 0L;
         != other.getEnableWordConfidence()) return false;
     if (getEnableAutomaticPunctuation()
         != other.getEnableAutomaticPunctuation()) return false;
+    if (hasEnableSpokenPunctuation() != other.hasEnableSpokenPunctuation()) return false;
+    if (hasEnableSpokenPunctuation()) {
+      if (!getEnableSpokenPunctuation()
+          .equals(other.getEnableSpokenPunctuation())) return false;
+    }
+    if (hasEnableSpokenEmojis() != other.hasEnableSpokenEmojis()) return false;
+    if (hasEnableSpokenEmojis()) {
+      if (!getEnableSpokenEmojis()
+          .equals(other.getEnableSpokenEmojis())) return false;
+    }
     if (getEnableSpeakerDiarization()
         != other.getEnableSpeakerDiarization()) return false;
     if (getDiarizationSpeakerCount()
@@ -1531,6 +1687,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableAutomaticPunctuation());
+    if (hasEnableSpokenPunctuation()) {
+      hash = (37 * hash) + ENABLE_SPOKEN_PUNCTUATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableSpokenPunctuation().hashCode();
+    }
+    if (hasEnableSpokenEmojis()) {
+      hash = (37 * hash) + ENABLE_SPOKEN_EMOJIS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableSpokenEmojis().hashCode();
+    }
     hash = (37 * hash) + ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableSpeakerDiarization());
@@ -1722,6 +1886,18 @@ private static final long serialVersionUID = 0L;
 
       enableAutomaticPunctuation_ = false;
 
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuation_ = null;
+      } else {
+        enableSpokenPunctuation_ = null;
+        enableSpokenPunctuationBuilder_ = null;
+      }
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojis_ = null;
+      } else {
+        enableSpokenEmojis_ = null;
+        enableSpokenEmojisBuilder_ = null;
+      }
       enableSpeakerDiarization_ = false;
 
       diarizationSpeakerCount_ = 0;
@@ -1798,6 +1974,16 @@ private static final long serialVersionUID = 0L;
       result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
       result.enableWordConfidence_ = enableWordConfidence_;
       result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      if (enableSpokenPunctuationBuilder_ == null) {
+        result.enableSpokenPunctuation_ = enableSpokenPunctuation_;
+      } else {
+        result.enableSpokenPunctuation_ = enableSpokenPunctuationBuilder_.build();
+      }
+      if (enableSpokenEmojisBuilder_ == null) {
+        result.enableSpokenEmojis_ = enableSpokenEmojis_;
+      } else {
+        result.enableSpokenEmojis_ = enableSpokenEmojisBuilder_.build();
+      }
       result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
       result.diarizationSpeakerCount_ = diarizationSpeakerCount_;
       if (diarizationConfigBuilder_ == null) {
@@ -1929,6 +2115,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
+      if (other.hasEnableSpokenPunctuation()) {
+        mergeEnableSpokenPunctuation(other.getEnableSpokenPunctuation());
+      }
+      if (other.hasEnableSpokenEmojis()) {
+        mergeEnableSpokenEmojis(other.getEnableSpokenEmojis());
       }
       if (other.getEnableSpeakerDiarization() != false) {
         setEnableSpeakerDiarization(other.getEnableSpeakerDiarization());
@@ -2733,7 +2925,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2748,7 +2940,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2767,7 +2959,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2791,7 +2983,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2813,7 +3005,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2839,7 +3031,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2861,7 +3053,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2877,7 +3069,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2896,7 +3088,7 @@ private static final long serialVersionUID = 0L;
      * Speech adaptation configuration improves the accuracy of speech
      * recognition. When speech adaptation is set it supersedes the
      * `speech_contexts` field. For more information, see the [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
      * </pre>
      *
@@ -2934,7 +3126,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2952,7 +3144,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2970,7 +3162,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2988,7 +3180,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3013,7 +3205,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3035,7 +3227,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3059,7 +3251,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3084,7 +3276,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3106,7 +3298,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3128,7 +3320,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3151,7 +3343,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3172,7 +3364,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3193,7 +3385,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3208,7 +3400,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3226,7 +3418,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3245,7 +3437,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3260,7 +3452,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3276,7 +3468,7 @@ private static final long serialVersionUID = 0L;
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3451,6 +3643,406 @@ private static final long serialVersionUID = 0L;
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.BoolValue enableSpokenPunctuation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enableSpokenPunctuationBuilder_;
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     * @return Whether the enableSpokenPunctuation field is set.
+     */
+    public boolean hasEnableSpokenPunctuation() {
+      return enableSpokenPunctuationBuilder_ != null || enableSpokenPunctuation_ != null;
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     * @return The enableSpokenPunctuation.
+     */
+    public com.google.protobuf.BoolValue getEnableSpokenPunctuation() {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        return enableSpokenPunctuation_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableSpokenPunctuation_;
+      } else {
+        return enableSpokenPunctuationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder setEnableSpokenPunctuation(com.google.protobuf.BoolValue value) {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableSpokenPunctuation_ = value;
+        onChanged();
+      } else {
+        enableSpokenPunctuationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder setEnableSpokenPunctuation(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuation_ = builderForValue.build();
+        onChanged();
+      } else {
+        enableSpokenPunctuationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder mergeEnableSpokenPunctuation(com.google.protobuf.BoolValue value) {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        if (enableSpokenPunctuation_ != null) {
+          enableSpokenPunctuation_ =
+            com.google.protobuf.BoolValue.newBuilder(enableSpokenPunctuation_).mergeFrom(value).buildPartial();
+        } else {
+          enableSpokenPunctuation_ = value;
+        }
+        onChanged();
+      } else {
+        enableSpokenPunctuationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public Builder clearEnableSpokenPunctuation() {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuation_ = null;
+        onChanged();
+      } else {
+        enableSpokenPunctuation_ = null;
+        enableSpokenPunctuationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableSpokenPunctuationBuilder() {
+      
+      onChanged();
+      return getEnableSpokenPunctuationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableSpokenPunctuationOrBuilder() {
+      if (enableSpokenPunctuationBuilder_ != null) {
+        return enableSpokenPunctuationBuilder_.getMessageOrBuilder();
+      } else {
+        return enableSpokenPunctuation_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enableSpokenPunctuation_;
+      }
+    }
+    /**
+     * <pre>
+     * The spoken punctuation behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * e.g. command_and_search will enable spoken punctuation by default
+     * If 'true', replaces spoken punctuation with the corresponding symbols in
+     * the request. For example, "how are you question mark" becomes "how are
+     * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+     * for support. If 'false', spoken punctuation is not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnableSpokenPunctuationFieldBuilder() {
+      if (enableSpokenPunctuationBuilder_ == null) {
+        enableSpokenPunctuationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnableSpokenPunctuation(),
+                getParentForChildren(),
+                isClean());
+        enableSpokenPunctuation_ = null;
+      }
+      return enableSpokenPunctuationBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue enableSpokenEmojis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enableSpokenEmojisBuilder_;
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     * @return Whether the enableSpokenEmojis field is set.
+     */
+    public boolean hasEnableSpokenEmojis() {
+      return enableSpokenEmojisBuilder_ != null || enableSpokenEmojis_ != null;
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     * @return The enableSpokenEmojis.
+     */
+    public com.google.protobuf.BoolValue getEnableSpokenEmojis() {
+      if (enableSpokenEmojisBuilder_ == null) {
+        return enableSpokenEmojis_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableSpokenEmojis_;
+      } else {
+        return enableSpokenEmojisBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder setEnableSpokenEmojis(com.google.protobuf.BoolValue value) {
+      if (enableSpokenEmojisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableSpokenEmojis_ = value;
+        onChanged();
+      } else {
+        enableSpokenEmojisBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder setEnableSpokenEmojis(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojis_ = builderForValue.build();
+        onChanged();
+      } else {
+        enableSpokenEmojisBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder mergeEnableSpokenEmojis(com.google.protobuf.BoolValue value) {
+      if (enableSpokenEmojisBuilder_ == null) {
+        if (enableSpokenEmojis_ != null) {
+          enableSpokenEmojis_ =
+            com.google.protobuf.BoolValue.newBuilder(enableSpokenEmojis_).mergeFrom(value).buildPartial();
+        } else {
+          enableSpokenEmojis_ = value;
+        }
+        onChanged();
+      } else {
+        enableSpokenEmojisBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public Builder clearEnableSpokenEmojis() {
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojis_ = null;
+        onChanged();
+      } else {
+        enableSpokenEmojis_ = null;
+        enableSpokenEmojisBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableSpokenEmojisBuilder() {
+      
+      onChanged();
+      return getEnableSpokenEmojisFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableSpokenEmojisOrBuilder() {
+      if (enableSpokenEmojisBuilder_ != null) {
+        return enableSpokenEmojisBuilder_.getMessageOrBuilder();
+      } else {
+        return enableSpokenEmojis_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enableSpokenEmojis_;
+      }
+    }
+    /**
+     * <pre>
+     * The spoken emoji behavior for the call
+     * If not set, uses default behavior based on model of choice
+     * If 'true', adds spoken emoji formatting for the request. This will replace
+     * spoken emojis with the corresponding Unicode symbols in the final
+     * transcript. If 'false', spoken emojis are not replaced.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnableSpokenEmojisFieldBuilder() {
+      if (enableSpokenEmojisBuilder_ == null) {
+        enableSpokenEmojisBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnableSpokenEmojis(),
+                getParentForChildren(),
+                isClean());
+        enableSpokenEmojis_ = null;
+      }
+      return enableSpokenEmojisBuilder_;
     }
 
     private boolean enableSpeakerDiarization_ ;
