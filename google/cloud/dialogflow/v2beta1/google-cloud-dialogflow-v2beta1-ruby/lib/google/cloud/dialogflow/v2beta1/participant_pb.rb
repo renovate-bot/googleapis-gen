@@ -59,14 +59,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :participant, :message, 1, "google.cloud.dialogflow.v2beta1.Participant"
       optional :update_mask, :message, 2, "google.protobuf.FieldMask"
     end
-    add_message "google.cloud.dialogflow.v2beta1.InputText" do
-      optional :text, :string, 1
-      optional :language_code, :string, 2
-    end
-    add_message "google.cloud.dialogflow.v2beta1.InputAudio" do
-      optional :config, :message, 1, "google.cloud.dialogflow.v2beta1.InputAudioConfig"
-      optional :audio, :bytes, 2
-    end
     add_message "google.cloud.dialogflow.v2beta1.OutputAudio" do
       optional :config, :message, 1, "google.cloud.dialogflow.v2beta1.OutputAudioConfig"
       optional :audio, :bytes, 2
@@ -255,8 +247,6 @@ module Google
         ListParticipantsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ListParticipantsRequest").msgclass
         ListParticipantsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ListParticipantsResponse").msgclass
         UpdateParticipantRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.UpdateParticipantRequest").msgclass
-        InputText = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.InputText").msgclass
-        InputAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.InputAudio").msgclass
         OutputAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.OutputAudio").msgclass
         AutomatedAgentReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AutomatedAgentReply").msgclass
         SuggestionFeature = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SuggestionFeature").msgclass

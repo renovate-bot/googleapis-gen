@@ -170,8 +170,6 @@ from google.cloud.dialogflow_v2beta1.types.participant import CreateParticipantR
 from google.cloud.dialogflow_v2beta1.types.participant import DtmfParameters
 from google.cloud.dialogflow_v2beta1.types.participant import FaqAnswer
 from google.cloud.dialogflow_v2beta1.types.participant import GetParticipantRequest
-from google.cloud.dialogflow_v2beta1.types.participant import InputAudio
-from google.cloud.dialogflow_v2beta1.types.participant import InputText
 from google.cloud.dialogflow_v2beta1.types.participant import ListParticipantsRequest
 from google.cloud.dialogflow_v2beta1.types.participant import ListParticipantsResponse
 from google.cloud.dialogflow_v2beta1.types.participant import ListSuggestionsRequest
@@ -318,9 +316,7 @@ __all__ = (
     'ImportDocumentTemplate',
     'ImportDocumentsRequest',
     'ImportDocumentsResponse',
-    'InputAudio',
     'InputAudioConfig',
-    'InputText',
     'Intent',
     'IntentBatch',
     'IntentView',
