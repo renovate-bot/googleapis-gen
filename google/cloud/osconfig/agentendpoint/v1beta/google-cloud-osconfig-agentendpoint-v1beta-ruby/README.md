@@ -17,7 +17,7 @@ steps:
 
 ### Installation
 ```
-$ gem install google-cloud-os_config-agentendpoint
+$ gem install google-cloud-osconfig-agentendpoint
 ```
 
 ### Next Steps
@@ -28,7 +28,7 @@ $ gem install google-cloud-os_config-agentendpoint
 - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
   to see the full list of Cloud APIs that we cover.
 
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-os_config-agentendpoint/latest/google/cloud/osconfig/agentendpoint/v1beta
+[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-osconfig-agentendpoint/latest/google/cloud/osconfig/agentendpoint/v1beta
 [Product Documentation]: https://cloud.google.com/osconfig-agentendpoint
 
 ## Enabling Logging

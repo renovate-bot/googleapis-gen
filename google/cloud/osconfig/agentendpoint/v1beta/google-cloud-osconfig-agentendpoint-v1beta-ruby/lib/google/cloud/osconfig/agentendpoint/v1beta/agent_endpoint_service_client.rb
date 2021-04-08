@@ -14,7 +14,7 @@
 #
 # EDITING INSTRUCTIONS
 # This file was generated from the file
-# https://github.com/googleapis/googleapis/blob/master/google/cloud/osconfig/agentendpoint/v1/agentendpoint.proto,
+# https://github.com/googleapis/googleapis/blob/master/google/cloud/osconfig/agentendpoint/v1beta/agentendpoint.proto,
 # and updates to that file get reflected here through a refresh process.
 # For the short term, the refresh process will only be runnable by Google
 # engineers.
@@ -24,18 +24,18 @@ require "pathname"
 
 require "google/gax"
 
-require "google/cloud/osconfig/agentendpoint/v1/agentendpoint_pb"
-require "google/cloud/os_config/agentendpoint/v1/credentials"
+require "google/cloud/osconfig/agentendpoint/v1beta/agentendpoint_pb"
+require "google/cloud/osconfig/agentendpoint/v1beta/credentials"
 
 module Google
   module Cloud
-    module OsConfig
+    module Osconfig
       module Agentendpoint
-        module V1
+        module V1beta
           # OS Config agent endpoint API.
           #
           # @!attribute [r] agent_endpoint_service_stub
-          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Stub]
+          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub]
           class AgentEndpointServiceClient
             attr_reader :agent_endpoint_service_stub
 
@@ -98,12 +98,12 @@ module Google
               # the gRPC module only when it's required.
               # See https://github.com/googleapis/toolkit/issues/446
               require "google/gax/grpc"
-              require "google/cloud/osconfig/agentendpoint/v1/agentendpoint_services_pb"
+              require "google/cloud/osconfig/agentendpoint/v1beta/agentendpoint_services_pb"
 
-              credentials ||= Google::Cloud::OsConfig::Agentendpoint::V1::Credentials.default
+              credentials ||= Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.default
 
               if credentials.is_a?(String) || credentials.is_a?(Hash)
-                updater_proc = Google::Cloud::OsConfig::Agentendpoint::V1::Credentials.new(credentials).updater_proc
+                updater_proc = Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.new(credentials).updater_proc
               end
               if credentials.is_a?(GRPC::Core::Channel)
                 channel = credentials
@@ -118,7 +118,7 @@ module Google
                 updater_proc = credentials.updater_proc
               end
 
-              package_version = Gem.loaded_specs['google-cloud-os_config-agentendpoint'].version.version
+              package_version = Gem.loaded_specs['google-cloud-osconfig-agentendpoint'].version.version
 
               google_api_client = "gl-ruby/#{RUBY_VERSION}"
               google_api_client << " #{lib_name}/#{lib_version}" if lib_name
@@ -136,7 +136,7 @@ module Google
               )
               defaults = client_config_file.open do |f|
                 Google::Gax.construct_settings(
-                  "google.cloud.osconfig.agentendpoint.v1.AgentEndpointService",
+                  "google.cloud.osconfig.agentendpoint.v1beta.AgentEndpointService",
                   JSON.parse(f.read),
                   client_config,
                   Google::Gax::Grpc::STATUS_CODE_NAMES,
@@ -158,7 +158,7 @@ module Google
                 updater_proc: updater_proc,
                 scopes: scopes,
                 interceptors: interceptors,
-                &Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Stub.method(:new)
+                &Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.method(:new)
               )
 
               @receive_task_notification = Google::Gax.create_api_call(
@@ -181,14 +181,14 @@ module Google
                 defaults["report_task_complete"],
                 exception_transformer: exception_transformer
               )
+              @lookup_effective_guest_policy = Google::Gax.create_api_call(
+                @agent_endpoint_service_stub.method(:lookup_effective_guest_policy),
+                defaults["lookup_effective_guest_policy"],
+                exception_transformer: exception_transformer
+              )
               @register_agent = Google::Gax.create_api_call(
                 @agent_endpoint_service_stub.method(:register_agent),
                 defaults["register_agent"],
-                exception_transformer: exception_transformer
-              )
-              @report_inventory = Google::Gax.create_api_call(
-                @agent_endpoint_service_stub.method(:report_inventory),
-                defaults["report_inventory"],
                 exception_transformer: exception_transformer
               )
             end
@@ -206,14 +206,14 @@ module Google
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
-            # @return [Enumerable<Google::Cloud::Osconfig::Agentendpoint::V1::ReceiveTaskNotificationResponse>]
-            #   An enumerable of Google::Cloud::Osconfig::Agentendpoint::V1::ReceiveTaskNotificationResponse instances.
+            # @return [Enumerable<Google::Cloud::Osconfig::Agentendpoint::V1beta::ReceiveTaskNotificationResponse>]
+            #   An enumerable of Google::Cloud::Osconfig::Agentendpoint::V1beta::ReceiveTaskNotificationResponse instances.
             #
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
-            #   require "google/cloud/os_config/agentendpoint"
+            #   require "google/cloud/osconfig/agentendpoint"
             #
-            #   agent_endpoint_client = Google::Cloud::OsConfig::Agentendpoint.new(version: :v1)
+            #   agent_endpoint_client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new(version: :v1beta)
             #
             #   # TODO: Initialize `instance_id_token`:
             #   instance_id_token = ''
@@ -232,7 +232,7 @@ module Google
                 instance_id_token: instance_id_token,
                 agent_version: agent_version
               }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::ReceiveTaskNotificationRequest)
+              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1beta::ReceiveTaskNotificationRequest)
               @receive_task_notification.call(req, options)
             end
 
@@ -246,14 +246,14 @@ module Google
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
             # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1::StartNextTaskResponse]
+            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1beta::StartNextTaskResponse]
             # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Osconfig::Agentendpoint::V1::StartNextTaskResponse]
+            # @return [Google::Cloud::Osconfig::Agentendpoint::V1beta::StartNextTaskResponse]
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
-            #   require "google/cloud/os_config/agentendpoint"
+            #   require "google/cloud/osconfig/agentendpoint"
             #
-            #   agent_endpoint_client = Google::Cloud::OsConfig::Agentendpoint.new(version: :v1)
+            #   agent_endpoint_client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new(version: :v1beta)
             #
             #   # TODO: Initialize `instance_id_token`:
             #   instance_id_token = ''
@@ -266,7 +266,7 @@ module Google
               req = {
                 instance_id_token: instance_id_token
               }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::StartNextTaskRequest)
+              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1beta::StartNextTaskRequest)
               @start_next_task.call(req, options, &block)
             end
 
@@ -278,37 +278,33 @@ module Google
             #   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
             # @param task_id [String]
             #   Required. Unique identifier of the task this applies to.
-            # @param task_type [Google::Cloud::Osconfig::Agentendpoint::V1::TaskType]
+            # @param task_type [Google::Cloud::Osconfig::Agentendpoint::V1beta::TaskType]
             #   Required. The type of task to report progress on.
             #
             #   Progress must include the appropriate message based on this enum as
             #   specified below:
             #   APPLY_PATCHES = ApplyPatchesTaskProgress
             #   EXEC_STEP = Progress not supported for this type.
-            # @param apply_patches_task_progress [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskProgress | Hash]
+            # @param apply_patches_task_progress [Google::Cloud::Osconfig::Agentendpoint::V1beta::ApplyPatchesTaskProgress | Hash]
             #   Details about the progress of the apply patches task.
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskProgress`
+            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1beta::ApplyPatchesTaskProgress`
             #   can also be provided.
-            # @param exec_step_task_progress [Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskProgress | Hash]
+            # @param exec_step_task_progress [Google::Cloud::Osconfig::Agentendpoint::V1beta::ExecStepTaskProgress | Hash]
             #   Details about the progress of the exec step task.
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskProgress`
-            #   can also be provided.
-            # @param apply_config_task_progress [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskProgress | Hash]
-            #   Details about the progress of the apply config task.
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskProgress`
+            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1beta::ExecStepTaskProgress`
             #   can also be provided.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
             # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressResponse]
+            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1beta::ReportTaskProgressResponse]
             # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressResponse]
+            # @return [Google::Cloud::Osconfig::Agentendpoint::V1beta::ReportTaskProgressResponse]
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
-            #   require "google/cloud/os_config/agentendpoint"
+            #   require "google/cloud/osconfig/agentendpoint"
             #
-            #   agent_endpoint_client = Google::Cloud::OsConfig::Agentendpoint.new(version: :v1)
+            #   agent_endpoint_client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new(version: :v1beta)
             #
             #   # TODO: Initialize `instance_id_token`:
             #   instance_id_token = ''
@@ -326,7 +322,6 @@ module Google
                 task_type,
                 apply_patches_task_progress: nil,
                 exec_step_task_progress: nil,
-                apply_config_task_progress: nil,
                 options: nil,
                 &block
               req = {
@@ -334,10 +329,9 @@ module Google
                 task_id: task_id,
                 task_type: task_type,
                 apply_patches_task_progress: apply_patches_task_progress,
-                exec_step_task_progress: exec_step_task_progress,
-                apply_config_task_progress: apply_config_task_progress
+                exec_step_task_progress: exec_step_task_progress
               }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressRequest)
+              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1beta::ReportTaskProgressRequest)
               @report_task_progress.call(req, options, &block)
             end
 
@@ -350,39 +344,35 @@ module Google
             #   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
             # @param task_id [String]
             #   Required. Unique identifier of the task this applies to.
-            # @param task_type [Google::Cloud::Osconfig::Agentendpoint::V1::TaskType]
+            # @param task_type [Google::Cloud::Osconfig::Agentendpoint::V1beta::TaskType]
             #   Required. The type of task to report completed.
             #
-            #   Output must include the appropriate message based on this enum as
-            #   specified below:
+            #   The output must include the appropriate message based on the following
+            #   enum values:
             #   APPLY_PATCHES = ApplyPatchesTaskOutput
             #   EXEC_STEP = ExecStepTaskOutput
             # @param error_message [String]
             #   Descriptive error message if the task execution ended in error.
-            # @param apply_patches_task_output [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskOutput | Hash]
+            # @param apply_patches_task_output [Google::Cloud::Osconfig::Agentendpoint::V1beta::ApplyPatchesTaskOutput | Hash]
             #   Final output details of the apply patches task;
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskOutput`
+            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1beta::ApplyPatchesTaskOutput`
             #   can also be provided.
-            # @param exec_step_task_output [Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskOutput | Hash]
+            # @param exec_step_task_output [Google::Cloud::Osconfig::Agentendpoint::V1beta::ExecStepTaskOutput | Hash]
             #   Final output details of the exec step task;
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskOutput`
-            #   can also be provided.
-            # @param apply_config_task_output [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput | Hash]
-            #   Final output details of the apply config task;
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput`
+            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1beta::ExecStepTaskOutput`
             #   can also be provided.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
             # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskCompleteResponse]
+            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1beta::ReportTaskCompleteResponse]
             # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskCompleteResponse]
+            # @return [Google::Cloud::Osconfig::Agentendpoint::V1beta::ReportTaskCompleteResponse]
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
-            #   require "google/cloud/os_config/agentendpoint"
+            #   require "google/cloud/osconfig/agentendpoint"
             #
-            #   agent_endpoint_client = Google::Cloud::OsConfig::Agentendpoint.new(version: :v1)
+            #   agent_endpoint_client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new(version: :v1beta)
             #
             #   # TODO: Initialize `instance_id_token`:
             #   instance_id_token = ''
@@ -401,7 +391,6 @@ module Google
                 error_message: nil,
                 apply_patches_task_output: nil,
                 exec_step_task_output: nil,
-                apply_config_task_output: nil,
                 options: nil,
                 &block
               req = {
@@ -410,11 +399,63 @@ module Google
                 task_type: task_type,
                 error_message: error_message,
                 apply_patches_task_output: apply_patches_task_output,
-                exec_step_task_output: exec_step_task_output,
-                apply_config_task_output: apply_config_task_output
+                exec_step_task_output: exec_step_task_output
               }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskCompleteRequest)
+              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1beta::ReportTaskCompleteRequest)
               @report_task_complete.call(req, options, &block)
+            end
+
+            # Lookup the effective guest policy that applies to a VM instance. This
+            # lookup merges all policies that are assigned to the instance ancestry.
+            #
+            # @param instance_id_token [String]
+            #   Required. This is the GCE instance identity token described in
+            #   https://cloud.google.com/compute/docs/instances/verifying-instance-identity
+            #   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
+            # @param os_short_name [String]
+            #   Short name of the OS running on the instance. The OS Config agent only
+            #   provideS this field for targeting if OS Inventory is enabled for that
+            #   instance.
+            # @param os_version [String]
+            #   Version of the OS running on the instance. The OS Config agent only
+            #   provide this field for targeting if OS Inventory is enabled for that
+            #   VM instance.
+            # @param os_architecture [String]
+            #   Architecture of OS running on the instance. The OS Config agent only
+            #   provide this field for targeting if OS Inventory is enabled for that
+            #   instance.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1beta::EffectiveGuestPolicy]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Osconfig::Agentendpoint::V1beta::EffectiveGuestPolicy]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/osconfig/agentendpoint"
+            #
+            #   agent_endpoint_client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new(version: :v1beta)
+            #
+            #   # TODO: Initialize `instance_id_token`:
+            #   instance_id_token = ''
+            #   response = agent_endpoint_client.lookup_effective_guest_policy(instance_id_token)
+
+            def lookup_effective_guest_policy \
+                instance_id_token,
+                os_short_name: nil,
+                os_version: nil,
+                os_architecture: nil,
+                options: nil,
+                &block
+              req = {
+                instance_id_token: instance_id_token,
+                os_short_name: os_short_name,
+                os_version: os_version,
+                os_architecture: os_architecture
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1beta::LookupEffectiveGuestPolicyRequest)
+              @lookup_effective_guest_policy.call(req, options, &block)
             end
 
             # Registers the agent running on the VM.
@@ -433,14 +474,14 @@ module Google
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
             # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentResponse]
+            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1beta::RegisterAgentResponse]
             # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentResponse]
+            # @return [Google::Cloud::Osconfig::Agentendpoint::V1beta::RegisterAgentResponse]
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
-            #   require "google/cloud/os_config/agentendpoint"
+            #   require "google/cloud/osconfig/agentendpoint"
             #
-            #   agent_endpoint_client = Google::Cloud::OsConfig::Agentendpoint.new(version: :v1)
+            #   agent_endpoint_client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new(version: :v1beta)
             #
             #   # TODO: Initialize `instance_id_token`:
             #   instance_id_token = ''
@@ -463,59 +504,8 @@ module Google
                 agent_version: agent_version,
                 supported_capabilities: supported_capabilities
               }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentRequest)
+              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1beta::RegisterAgentRequest)
               @register_agent.call(req, options, &block)
-            end
-
-            # Reports the VMs current inventory.
-            #
-            # @param instance_id_token [String]
-            #   Required. This is the Compute Engine instance identity token described in
-            #   https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-            #   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
-            # @param inventory_checksum [String]
-            #   Required. This is a client created checksum that should be generated based on the
-            #   contents of the reported inventory.  This will be used by the service to
-            #   determine if it has the latest version of inventory.
-            # @param inventory [Google::Cloud::Osconfig::Agentendpoint::V1::Inventory | Hash]
-            #   Optional. This is the details of the inventory.  Should only be provided if the
-            #   inventory has changed since the last report, or if instructed by the
-            #   service to provide full inventory.
-            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::Inventory`
-            #   can also be provided.
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Osconfig::Agentendpoint::V1::ReportInventoryResponse]
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Osconfig::Agentendpoint::V1::ReportInventoryResponse]
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/os_config/agentendpoint"
-            #
-            #   agent_endpoint_client = Google::Cloud::OsConfig::Agentendpoint.new(version: :v1)
-            #
-            #   # TODO: Initialize `instance_id_token`:
-            #   instance_id_token = ''
-            #
-            #   # TODO: Initialize `inventory_checksum`:
-            #   inventory_checksum = ''
-            #   response = agent_endpoint_client.report_inventory(instance_id_token, inventory_checksum)
-
-            def report_inventory \
-                instance_id_token,
-                inventory_checksum,
-                inventory: nil,
-                options: nil,
-                &block
-              req = {
-                instance_id_token: instance_id_token,
-                inventory_checksum: inventory_checksum,
-                inventory: inventory
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::ReportInventoryRequest)
-              @report_inventory.call(req, options, &block)
             end
           end
         end

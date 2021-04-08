@@ -12,18 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require "google/cloud/os_config/agentendpoint/v1/agent_endpoint_service_client"
+require "google/cloud/osconfig/agentendpoint/v1beta/agent_endpoint_service_client"
 
 module Google
   module Cloud
-    module OsConfig
+    module Osconfig
       module Agentendpoint
         # rubocop:disable LineLength
 
         ##
-        # # Ruby Client for OS Config API ([Alpha](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
+        # # Ruby Client for Cloud OS Config API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
         #
-        # [OS Config API][Product Documentation]:
+        # [Cloud OS Config API][Product Documentation]:
         # OS management tools that can be used for patch management, patch
         # compliance, and configuration management on VM instances.
         # - [Product Documentation][]
@@ -34,16 +34,16 @@ module Google
         #
         # 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
         # 2. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
-        # 3. [Enable the OS Config API.](https://console.cloud.google.com/apis/library/osconfig-agentendpoint.googleapis.com)
+        # 3. [Enable the Cloud OS Config API.](https://console.cloud.google.com/apis/library/osconfig-agentendpoint.googleapis.com)
         # 4. [Setup Authentication.](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud/master/guides/authentication)
         #
         # ### Installation
         # ```
-        # $ gem install google-cloud-os_config-agentendpoint
+        # $ gem install google-cloud-osconfig-agentendpoint
         # ```
         #
         # ### Next Steps
-        # - Read the [OS Config API Product documentation][Product Documentation]
+        # - Read the [Cloud OS Config API Product documentation][Product Documentation]
         #   to learn more about the product and see How-to Guides.
         # - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
         #   to see the full list of Cloud APIs that we cover.
@@ -76,7 +76,7 @@ module Google
         # end
         # ```
         #
-        module V1
+        module V1beta
           # rubocop:enable LineLength
 
           ##
@@ -130,7 +130,7 @@ module Google
               lib_name: lib_name,
               lib_version: lib_version
             }.select { |_, v| v != nil }
-            Google::Cloud::OsConfig::Agentendpoint::V1::AgentEndpointServiceClient.new(**kwargs)
+            Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient.new(**kwargs)
           end
         end
       end

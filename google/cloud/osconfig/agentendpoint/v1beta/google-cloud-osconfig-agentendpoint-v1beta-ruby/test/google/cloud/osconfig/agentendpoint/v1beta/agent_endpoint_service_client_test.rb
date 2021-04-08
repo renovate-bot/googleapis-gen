@@ -17,8 +17,8 @@ require "minitest/spec"
 
 require "google/gax"
 
-require "google/cloud/os_config/agentendpoint/v1beta"
-require "google/cloud/os_config/agentendpoint/v1beta/agent_endpoint_service_client"
+require "google/cloud/osconfig/agentendpoint/v1beta"
+require "google/cloud/osconfig/agentendpoint/v1beta/agent_endpoint_service_client"
 require "google/cloud/osconfig/agentendpoint/v1beta/agentendpoint_services_pb"
 
 class CustomTestError_v1beta < StandardError; end
@@ -52,7 +52,7 @@ class MockGrpcClientStub_v1beta
   end
 end
 
-class MockAgentEndpointServiceCredentials_v1beta < Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials
+class MockAgentEndpointServiceCredentials_v1beta < Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials
   def initialize(method_name)
     @method_name = method_name
   end
@@ -65,10 +65,10 @@ class MockAgentEndpointServiceCredentials_v1beta < Google::Cloud::OsConfig::Agen
   end
 end
 
-describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient do
+describe Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient do
 
   describe 'receive_task_notification' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient#receive_task_notification."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient#receive_task_notification."
 
     it 'invokes receive_task_notification without error' do
       # Create request parameters
@@ -92,8 +92,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("receive_task_notification")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           response = client.receive_task_notification(instance_id_token, agent_version)
@@ -123,8 +123,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("receive_task_notification")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -139,7 +139,7 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
   end
 
   describe 'start_next_task' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient#start_next_task."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient#start_next_task."
 
     it 'invokes start_next_task without error' do
       # Create request parameters
@@ -161,8 +161,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("start_next_task")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           response = client.start_next_task(instance_id_token)
@@ -196,8 +196,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("start_next_task")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -212,7 +212,7 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
   end
 
   describe 'report_task_progress' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient#report_task_progress."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient#report_task_progress."
 
     it 'invokes report_task_progress without error' do
       # Create request parameters
@@ -238,8 +238,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("report_task_progress")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           response = client.report_task_progress(
@@ -285,8 +285,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("report_task_progress")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -305,7 +305,7 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
   end
 
   describe 'report_task_complete' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient#report_task_complete."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient#report_task_complete."
 
     it 'invokes report_task_complete without error' do
       # Create request parameters
@@ -331,8 +331,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("report_task_complete")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           response = client.report_task_complete(
@@ -378,8 +378,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("report_task_complete")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -398,7 +398,7 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
   end
 
   describe 'lookup_effective_guest_policy' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient#lookup_effective_guest_policy."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient#lookup_effective_guest_policy."
 
     it 'invokes lookup_effective_guest_policy without error' do
       # Create request parameters
@@ -420,8 +420,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("lookup_effective_guest_policy")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           response = client.lookup_effective_guest_policy(instance_id_token)
@@ -455,8 +455,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("lookup_effective_guest_policy")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -471,7 +471,7 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
   end
 
   describe 'register_agent' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceClient#register_agent."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointServiceClient#register_agent."
 
     it 'invokes register_agent without error' do
       # Create request parameters
@@ -497,8 +497,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("register_agent")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           response = client.register_agent(
@@ -544,8 +544,8 @@ describe Google::Cloud::OsConfig::Agentendpoint::V1beta::AgentEndpointServiceCli
       mock_credentials = MockAgentEndpointServiceCredentials_v1beta.new("register_agent")
 
       Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::OsConfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::OsConfig::Agentendpoint::V1beta.new
+        Google::Cloud::Osconfig::Agentendpoint::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Osconfig::Agentendpoint::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do

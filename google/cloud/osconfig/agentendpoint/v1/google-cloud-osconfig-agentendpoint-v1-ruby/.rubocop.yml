@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "google-cloud-os_config-agentendpoint.gemspec"
+    - "google-cloud-osconfig-agentendpoint.gemspec"
     - "lib/google/**/*"
     - "Rakefile"
     - "test/**/*"

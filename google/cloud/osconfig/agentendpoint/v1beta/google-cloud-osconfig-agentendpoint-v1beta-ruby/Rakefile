@@ -30,7 +30,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-cloud-os_config-agentendpoint"
+      command_name "google-cloud-osconfig-agentendpoint"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -40,7 +40,7 @@ namespace :test do
 end
 
 # Acceptance tests
-desc "Run the google-cloud-os_config-agentendpoint acceptance tests."
+desc "Run the google-cloud-osconfig-agentendpoint acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
 
   Rake::Task["acceptance:run"].invoke
@@ -48,7 +48,7 @@ end
 
 namespace :acceptance do
   task :run do
-    puts "The google-cloud-os_config-agentendpoint gem does not have acceptance tests."
+    puts "The google-cloud-osconfig-agentendpoint gem does not have acceptance tests."
   end
 
   desc "Run acceptance tests with coverage."
@@ -64,7 +64,7 @@ require "yard"
 require "yard/rake/yardoc_task"
 YARD::Rake::YardocTask.new
 
-desc "Generates JSON output from google-cloud-os_config-agentendpoint .yardoc"
+desc "Generates JSON output from google-cloud-osconfig-agentendpoint .yardoc"
 task :jsondoc => :yard do
   require "rubygems"
   require "gcloud/jsondoc"
@@ -79,7 +79,7 @@ task :jsondoc => :yard do
         modules: [
           {
             title: "Google::Cloud::Osconfig::Agentendpoint::V1beta",
-            include: ["google/cloud/os_config/agentendpoint/v1beta"]
+            include: ["google/cloud/osconfig/agentendpoint/v1beta"]
           },
           {
             title: "Google::Protobuf",
@@ -95,7 +95,7 @@ task :jsondoc => :yard do
   }
 
   generator = Gcloud::Jsondoc::Generator.new registry,
-                                             "google-cloud-os_config-agentendpoint",
+                                             "google-cloud-osconfig-agentendpoint",
                                              generate: toc_config
   rm_rf "jsondoc", verbose: true
   generator.write_to "jsondoc"
@@ -104,19 +104,19 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-cloud-os_config-agentendpoint gem does not have doctest tests."
+  puts "The google-cloud-osconfig-agentendpoint gem does not have doctest tests."
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-cloud-os_config-agentendpoint"
-  header "google-cloud-os_config-agentendpoint rubocop", "*"
+  header "BUILDING google-cloud-osconfig-agentendpoint"
+  header "google-cloud-osconfig-agentendpoint rubocop", "*"
   sh "bundle exec rake rubocop"
-  header "google-cloud-os_config-agentendpoint jsondoc", "*"
+  header "google-cloud-osconfig-agentendpoint jsondoc", "*"
   sh "bundle exec rake jsondoc"
-  header "google-cloud-os_config-agentendpoint doctest", "*"
+  header "google-cloud-osconfig-agentendpoint doctest", "*"
   sh "bundle exec rake doctest"
-  header "google-cloud-os_config-agentendpoint test", "*"
+  header "google-cloud-osconfig-agentendpoint test", "*"
   sh "bundle exec rake test"
 end
 
@@ -124,7 +124,7 @@ namespace :ci do
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task["ci"].invoke
-    header "google-cloud-os_config-agentendpoint acceptance", "*"
+    header "google-cloud-osconfig-agentendpoint acceptance", "*"
     sh "bundle exec rake acceptance -v"
   end
   task :a do

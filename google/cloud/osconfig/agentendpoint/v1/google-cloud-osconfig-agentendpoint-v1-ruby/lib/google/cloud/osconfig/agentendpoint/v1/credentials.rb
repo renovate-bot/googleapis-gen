@@ -16,9 +16,9 @@ require "googleauth"
 
 module Google
   module Cloud
-    module OsConfig
+    module Osconfig
       module Agentendpoint
-        module V1beta
+        module V1
           class Credentials < Google::Auth::Credentials
             SCOPE = [
             ].freeze

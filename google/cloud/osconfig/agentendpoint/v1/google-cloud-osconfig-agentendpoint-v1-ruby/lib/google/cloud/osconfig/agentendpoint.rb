@@ -17,7 +17,7 @@ require "pathname"
 
 module Google
   module Cloud
-    module OsConfig
+    module Osconfig
       # rubocop:disable LineLength
 
       ##
@@ -39,7 +39,7 @@ module Google
       #
       # ### Installation
       # ```
-      # $ gem install google-cloud-os_config-agentendpoint
+      # $ gem install google-cloud-osconfig-agentendpoint
       # ```
       #
       # ### Next Steps
@@ -130,11 +130,11 @@ module Google
           end
 
           require "#{FILE_DIR}/#{version.to_s.downcase}"
-          version_module = Google::Cloud::OsConfig::Agentendpoint
+          version_module = Google::Cloud::Osconfig::Agentendpoint
             .constants
             .select {|sym| sym.to_s.downcase == version.to_s.downcase}
             .first
-          Google::Cloud::OsConfig::Agentendpoint.const_get(version_module).new(*args, **kwargs)
+          Google::Cloud::Osconfig::Agentendpoint.const_get(version_module).new(*args, **kwargs)
         end
       end
     end

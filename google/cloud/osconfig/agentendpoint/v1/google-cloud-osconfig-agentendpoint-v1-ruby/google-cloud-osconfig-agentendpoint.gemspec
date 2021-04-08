@@ -2,12 +2,12 @@
 # encoding: utf-8
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-os_config-agentendpoint"
+  gem.name          = "google-cloud-osconfig-agentendpoint"
   gem.version       = "0.1.0"
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-os_config-agentendpoint is the official library for OS Config API."
+  gem.description   = "google-cloud-osconfig-agentendpoint is the official library for OS Config API."
   gem.summary       = "API Client library for OS Config API"
   gem.homepage      = "https://github.com/googleapis/googleapis"
   gem.license       = "Apache-2.0"
