@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud Metastore V1beta API
+# Ruby Client for the Dataproc Metastore V1beta API
 
-API Client library for the Google Cloud Metastore V1beta API
+API Client library for the Dataproc Metastore V1beta API
 
-google-cloud-metastore-v1beta is the official client library for the Google Cloud Metastore V1beta API.
+Dataproc Metastore is a fully managed, highly available within a region, autohealing serverless Apache Hive metastore (HMS) on Google Cloud for data analytics products. It supports HMS and serves as a critical component for managing the metadata of relational entities and provides interoperability between data processing applications in the open source data ecosystem.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Metastore V1beta API. Most users should consider using
+specific version of the Dataproc Metastore V1beta API. Most users should consider using
 the main client gem,
 [google-cloud-metastore](https://rubygems.org/gems/google-cloud-metastore).
 See the section below titled *Which client should I use?* for more information.
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/metastore.googleapis.com)
 1. {file:AUTHENTICATION.md Set up authentication.}
 
 ## Quick Start
@@ -38,6 +39,9 @@ response = client.list_services request
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-metastore-v1beta/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/dataproc-metastore/)
+for general usage information.
 
 ## Enabling Logging
 
