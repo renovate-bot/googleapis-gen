@@ -57,6 +57,11 @@ private static final long serialVersionUID = 0L;
             maxFailuresPerHour_ = input.readInt32();
             break;
           }
+          case 16: {
+
+            maxFailuresTotal_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -94,7 +99,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Maximum number of times per hour a driver may be restarted as
-   * a result of driver terminating with non-zero code before job is
+   * a result of driver exiting with non-zero code before job is
    * reported failed.
    * A job may be reported as thrashing if driver exits with non-zero code
    * 4 times within 10 minute window.
@@ -107,6 +112,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getMaxFailuresPerHour() {
     return maxFailuresPerHour_;
+  }
+
+  public static final int MAX_FAILURES_TOTAL_FIELD_NUMBER = 2;
+  private int maxFailuresTotal_;
+  /**
+   * <pre>
+   * Optional. Maximum number of times in total a driver may be restarted as a
+   * result of driver exiting with non-zero code before job is reported failed.
+   * Maximum value is 240.
+   * </pre>
+   *
+   * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The maxFailuresTotal.
+   */
+  @java.lang.Override
+  public int getMaxFailuresTotal() {
+    return maxFailuresTotal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -126,6 +148,9 @@ private static final long serialVersionUID = 0L;
     if (maxFailuresPerHour_ != 0) {
       output.writeInt32(1, maxFailuresPerHour_);
     }
+    if (maxFailuresTotal_ != 0) {
+      output.writeInt32(2, maxFailuresTotal_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -138,6 +163,10 @@ private static final long serialVersionUID = 0L;
     if (maxFailuresPerHour_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, maxFailuresPerHour_);
+    }
+    if (maxFailuresTotal_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, maxFailuresTotal_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -156,6 +185,8 @@ private static final long serialVersionUID = 0L;
 
     if (getMaxFailuresPerHour()
         != other.getMaxFailuresPerHour()) return false;
+    if (getMaxFailuresTotal()
+        != other.getMaxFailuresTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -169,6 +200,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MAX_FAILURES_PER_HOUR_FIELD_NUMBER;
     hash = (53 * hash) + getMaxFailuresPerHour();
+    hash = (37 * hash) + MAX_FAILURES_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxFailuresTotal();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -308,6 +341,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       maxFailuresPerHour_ = 0;
 
+      maxFailuresTotal_ = 0;
+
       return this;
     }
 
@@ -335,6 +370,7 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.JobScheduling buildPartial() {
       com.google.cloud.dataproc.v1.JobScheduling result = new com.google.cloud.dataproc.v1.JobScheduling(this);
       result.maxFailuresPerHour_ = maxFailuresPerHour_;
+      result.maxFailuresTotal_ = maxFailuresTotal_;
       onBuilt();
       return result;
     }
@@ -386,6 +422,9 @@ private static final long serialVersionUID = 0L;
       if (other.getMaxFailuresPerHour() != 0) {
         setMaxFailuresPerHour(other.getMaxFailuresPerHour());
       }
+      if (other.getMaxFailuresTotal() != 0) {
+        setMaxFailuresTotal(other.getMaxFailuresTotal());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -419,7 +458,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Maximum number of times per hour a driver may be restarted as
-     * a result of driver terminating with non-zero code before job is
+     * a result of driver exiting with non-zero code before job is
      * reported failed.
      * A job may be reported as thrashing if driver exits with non-zero code
      * 4 times within 10 minute window.
@@ -436,7 +475,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Maximum number of times per hour a driver may be restarted as
-     * a result of driver terminating with non-zero code before job is
+     * a result of driver exiting with non-zero code before job is
      * reported failed.
      * A job may be reported as thrashing if driver exits with non-zero code
      * 4 times within 10 minute window.
@@ -456,7 +495,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Maximum number of times per hour a driver may be restarted as
-     * a result of driver terminating with non-zero code before job is
+     * a result of driver exiting with non-zero code before job is
      * reported failed.
      * A job may be reported as thrashing if driver exits with non-zero code
      * 4 times within 10 minute window.
@@ -469,6 +508,55 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaxFailuresPerHour() {
       
       maxFailuresPerHour_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxFailuresTotal_ ;
+    /**
+     * <pre>
+     * Optional. Maximum number of times in total a driver may be restarted as a
+     * result of driver exiting with non-zero code before job is reported failed.
+     * Maximum value is 240.
+     * </pre>
+     *
+     * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The maxFailuresTotal.
+     */
+    @java.lang.Override
+    public int getMaxFailuresTotal() {
+      return maxFailuresTotal_;
+    }
+    /**
+     * <pre>
+     * Optional. Maximum number of times in total a driver may be restarted as a
+     * result of driver exiting with non-zero code before job is reported failed.
+     * Maximum value is 240.
+     * </pre>
+     *
+     * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The maxFailuresTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxFailuresTotal(int value) {
+      
+      maxFailuresTotal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Maximum number of times in total a driver may be restarted as a
+     * result of driver exiting with non-zero code before job is reported failed.
+     * Maximum value is 240.
+     * </pre>
+     *
+     * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxFailuresTotal() {
+      
+      maxFailuresTotal_ = 0;
       onChanged();
       return this;
     }

@@ -205,11 +205,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object rootPrincipalPasswordUri_;
   /**
    * <pre>
-   * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+   * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
    * principal password.
    * </pre>
    *
-   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rootPrincipalPasswordUri.
    */
   @java.lang.Override
@@ -227,11 +227,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+   * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
    * principal password.
    * </pre>
    *
-   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for rootPrincipalPasswordUri.
    */
   @java.lang.Override
@@ -253,11 +253,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object kmsKeyUri_;
   /**
    * <pre>
-   * Required. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The uri of the KMS key used to encrypt various sensitive
    * files.
    * </pre>
    *
-   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The kmsKeyUri.
    */
   @java.lang.Override
@@ -275,11 +275,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The uri of the KMS key used to encrypt various sensitive
    * files.
    * </pre>
    *
-   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for kmsKeyUri.
    */
   @java.lang.Override
@@ -1448,11 +1448,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object rootPrincipalPasswordUri_ = "";
     /**
      * <pre>
-     * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+     * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
      * principal password.
      * </pre>
      *
-     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The rootPrincipalPasswordUri.
      */
     public java.lang.String getRootPrincipalPasswordUri() {
@@ -1469,11 +1469,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+     * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
      * principal password.
      * </pre>
      *
-     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for rootPrincipalPasswordUri.
      */
     public com.google.protobuf.ByteString
@@ -1491,11 +1491,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+     * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
      * principal password.
      * </pre>
      *
-     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The rootPrincipalPasswordUri to set.
      * @return This builder for chaining.
      */
@@ -1511,11 +1511,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+     * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
      * principal password.
      * </pre>
      *
-     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearRootPrincipalPasswordUri() {
@@ -1526,11 +1526,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+     * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
      * principal password.
      * </pre>
      *
-     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for rootPrincipalPasswordUri to set.
      * @return This builder for chaining.
      */
@@ -1549,11 +1549,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object kmsKeyUri_ = "";
     /**
      * <pre>
-     * Required. The uri of the KMS key used to encrypt various sensitive
+     * Optional. The uri of the KMS key used to encrypt various sensitive
      * files.
      * </pre>
      *
-     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The kmsKeyUri.
      */
     public java.lang.String getKmsKeyUri() {
@@ -1570,11 +1570,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The uri of the KMS key used to encrypt various sensitive
+     * Optional. The uri of the KMS key used to encrypt various sensitive
      * files.
      * </pre>
      *
-     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for kmsKeyUri.
      */
     public com.google.protobuf.ByteString
@@ -1592,11 +1592,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The uri of the KMS key used to encrypt various sensitive
+     * Optional. The uri of the KMS key used to encrypt various sensitive
      * files.
      * </pre>
      *
-     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The kmsKeyUri to set.
      * @return This builder for chaining.
      */
@@ -1612,11 +1612,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The uri of the KMS key used to encrypt various sensitive
+     * Optional. The uri of the KMS key used to encrypt various sensitive
      * files.
      * </pre>
      *
-     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyUri() {
@@ -1627,11 +1627,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The uri of the KMS key used to encrypt various sensitive
+     * Optional. The uri of the KMS key used to encrypt various sensitive
      * files.
      * </pre>
      *
-     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for kmsKeyUri to set.
      * @return This builder for chaining.
      */

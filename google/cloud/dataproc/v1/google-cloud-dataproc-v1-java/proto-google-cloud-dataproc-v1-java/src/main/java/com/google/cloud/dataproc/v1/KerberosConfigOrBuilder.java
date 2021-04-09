@@ -20,21 +20,21 @@ public interface KerberosConfigOrBuilder extends
 
   /**
    * <pre>
-   * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+   * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
    * principal password.
    * </pre>
    *
-   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rootPrincipalPasswordUri.
    */
   java.lang.String getRootPrincipalPasswordUri();
   /**
    * <pre>
-   * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+   * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
    * principal password.
    * </pre>
    *
-   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for rootPrincipalPasswordUri.
    */
   com.google.protobuf.ByteString
@@ -42,21 +42,21 @@ public interface KerberosConfigOrBuilder extends
 
   /**
    * <pre>
-   * Required. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The uri of the KMS key used to encrypt various sensitive
    * files.
    * </pre>
    *
-   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The kmsKeyUri.
    */
   java.lang.String getKmsKeyUri();
   /**
    * <pre>
-   * Required. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The uri of the KMS key used to encrypt various sensitive
    * files.
    * </pre>
    *
-   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for kmsKeyUri.
    */
   com.google.protobuf.ByteString

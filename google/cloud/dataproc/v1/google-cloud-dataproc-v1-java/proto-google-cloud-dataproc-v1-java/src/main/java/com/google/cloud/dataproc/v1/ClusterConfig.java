@@ -207,6 +207,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 162: {
+            com.google.cloud.dataproc.v1.MetastoreConfig.Builder subBuilder = null;
+            if (metastoreConfig_ != null) {
+              subBuilder = metastoreConfig_.toBuilder();
+            }
+            metastoreConfig_ = input.readMessage(com.google.cloud.dataproc.v1.MetastoreConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metastoreConfig_);
+              metastoreConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 170: {
+            com.google.cloud.dataproc.v1.GkeClusterConfig.Builder subBuilder = null;
+            if (gkeClusterConfig_ != null) {
+              subBuilder = gkeClusterConfig_.toBuilder();
+            }
+            gkeClusterConfig_ = input.readMessage(com.google.cloud.dataproc.v1.GkeClusterConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gkeClusterConfig_);
+              gkeClusterConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -255,6 +281,8 @@ private static final long serialVersionUID = 0L;
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
    * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -284,6 +312,8 @@ private static final long serialVersionUID = 0L;
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
    * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -317,6 +347,8 @@ private static final long serialVersionUID = 0L;
    * and manage this project-level, per-location bucket. The default bucket has
    * a TTL of 90 days, but you can use any TTL (or none) if you specify a
    * bucket.
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,6 +378,8 @@ private static final long serialVersionUID = 0L;
    * and manage this project-level, per-location bucket. The default bucket has
    * a TTL of 90 days, but you can use any TTL (or none) if you specify a
    * bucket.
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -876,6 +910,91 @@ private static final long serialVersionUID = 0L;
     return getEndpointConfig();
   }
 
+  public static final int METASTORE_CONFIG_FIELD_NUMBER = 20;
+  private com.google.cloud.dataproc.v1.MetastoreConfig metastoreConfig_;
+  /**
+   * <pre>
+   * Optional. Metastore configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the metastoreConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetastoreConfig() {
+    return metastoreConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Metastore configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The metastoreConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.MetastoreConfig getMetastoreConfig() {
+    return metastoreConfig_ == null ? com.google.cloud.dataproc.v1.MetastoreConfig.getDefaultInstance() : metastoreConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. Metastore configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder getMetastoreConfigOrBuilder() {
+    return getMetastoreConfig();
+  }
+
+  public static final int GKE_CLUSTER_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.dataproc.v1.GkeClusterConfig gkeClusterConfig_;
+  /**
+   * <pre>
+   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the gkeClusterConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeClusterConfig() {
+    return gkeClusterConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The gkeClusterConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.GkeClusterConfig getGkeClusterConfig() {
+    return gkeClusterConfig_ == null ? com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance() : gkeClusterConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder getGkeClusterConfigOrBuilder() {
+    return getGkeClusterConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -928,6 +1047,12 @@ private static final long serialVersionUID = 0L;
     }
     if (endpointConfig_ != null) {
       output.writeMessage(19, getEndpointConfig());
+    }
+    if (metastoreConfig_ != null) {
+      output.writeMessage(20, getMetastoreConfig());
+    }
+    if (gkeClusterConfig_ != null) {
+      output.writeMessage(21, getGkeClusterConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -987,6 +1112,14 @@ private static final long serialVersionUID = 0L;
     if (endpointConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getEndpointConfig());
+    }
+    if (metastoreConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getMetastoreConfig());
+    }
+    if (gkeClusterConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getGkeClusterConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1059,6 +1192,16 @@ private static final long serialVersionUID = 0L;
       if (!getEndpointConfig()
           .equals(other.getEndpointConfig())) return false;
     }
+    if (hasMetastoreConfig() != other.hasMetastoreConfig()) return false;
+    if (hasMetastoreConfig()) {
+      if (!getMetastoreConfig()
+          .equals(other.getMetastoreConfig())) return false;
+    }
+    if (hasGkeClusterConfig() != other.hasGkeClusterConfig()) return false;
+    if (hasGkeClusterConfig()) {
+      if (!getGkeClusterConfig()
+          .equals(other.getGkeClusterConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1117,6 +1260,14 @@ private static final long serialVersionUID = 0L;
     if (hasEndpointConfig()) {
       hash = (37 * hash) + ENDPOINT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointConfig().hashCode();
+    }
+    if (hasMetastoreConfig()) {
+      hash = (37 * hash) + METASTORE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMetastoreConfig().hashCode();
+    }
+    if (hasGkeClusterConfig()) {
+      hash = (37 * hash) + GKE_CLUSTER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGkeClusterConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1326,6 +1477,18 @@ private static final long serialVersionUID = 0L;
         endpointConfig_ = null;
         endpointConfigBuilder_ = null;
       }
+      if (metastoreConfigBuilder_ == null) {
+        metastoreConfig_ = null;
+      } else {
+        metastoreConfig_ = null;
+        metastoreConfigBuilder_ = null;
+      }
+      if (gkeClusterConfigBuilder_ == null) {
+        gkeClusterConfig_ = null;
+      } else {
+        gkeClusterConfig_ = null;
+        gkeClusterConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1413,6 +1576,16 @@ private static final long serialVersionUID = 0L;
         result.endpointConfig_ = endpointConfig_;
       } else {
         result.endpointConfig_ = endpointConfigBuilder_.build();
+      }
+      if (metastoreConfigBuilder_ == null) {
+        result.metastoreConfig_ = metastoreConfig_;
+      } else {
+        result.metastoreConfig_ = metastoreConfigBuilder_.build();
+      }
+      if (gkeClusterConfigBuilder_ == null) {
+        result.gkeClusterConfig_ = gkeClusterConfig_;
+      } else {
+        result.gkeClusterConfig_ = gkeClusterConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1526,6 +1699,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasEndpointConfig()) {
         mergeEndpointConfig(other.getEndpointConfig());
       }
+      if (other.hasMetastoreConfig()) {
+        mergeMetastoreConfig(other.getMetastoreConfig());
+      }
+      if (other.hasGkeClusterConfig()) {
+        mergeGkeClusterConfig(other.getGkeClusterConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1568,6 +1747,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket (see
      * [Dataproc staging
      * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1596,6 +1777,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket (see
      * [Dataproc staging
      * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1625,6 +1808,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket (see
      * [Dataproc staging
      * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1652,6 +1837,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket (see
      * [Dataproc staging
      * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1674,6 +1861,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket (see
      * [Dataproc staging
      * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1704,6 +1893,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
      * bucket.
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1732,6 +1923,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
      * bucket.
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1761,6 +1954,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
      * bucket.
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1788,6 +1983,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
      * bucket.
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1810,6 +2007,8 @@ private static final long serialVersionUID = 0L;
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
      * bucket.
+     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+     * Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3931,6 +4130,343 @@ private static final long serialVersionUID = 0L;
         endpointConfig_ = null;
       }
       return endpointConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.MetastoreConfig metastoreConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dataproc.v1.MetastoreConfig, com.google.cloud.dataproc.v1.MetastoreConfig.Builder, com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder> metastoreConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the metastoreConfig field is set.
+     */
+    public boolean hasMetastoreConfig() {
+      return metastoreConfigBuilder_ != null || metastoreConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The metastoreConfig.
+     */
+    public com.google.cloud.dataproc.v1.MetastoreConfig getMetastoreConfig() {
+      if (metastoreConfigBuilder_ == null) {
+        return metastoreConfig_ == null ? com.google.cloud.dataproc.v1.MetastoreConfig.getDefaultInstance() : metastoreConfig_;
+      } else {
+        return metastoreConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setMetastoreConfig(com.google.cloud.dataproc.v1.MetastoreConfig value) {
+      if (metastoreConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metastoreConfig_ = value;
+        onChanged();
+      } else {
+        metastoreConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setMetastoreConfig(
+        com.google.cloud.dataproc.v1.MetastoreConfig.Builder builderForValue) {
+      if (metastoreConfigBuilder_ == null) {
+        metastoreConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        metastoreConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeMetastoreConfig(com.google.cloud.dataproc.v1.MetastoreConfig value) {
+      if (metastoreConfigBuilder_ == null) {
+        if (metastoreConfig_ != null) {
+          metastoreConfig_ =
+            com.google.cloud.dataproc.v1.MetastoreConfig.newBuilder(metastoreConfig_).mergeFrom(value).buildPartial();
+        } else {
+          metastoreConfig_ = value;
+        }
+        onChanged();
+      } else {
+        metastoreConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearMetastoreConfig() {
+      if (metastoreConfigBuilder_ == null) {
+        metastoreConfig_ = null;
+        onChanged();
+      } else {
+        metastoreConfig_ = null;
+        metastoreConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dataproc.v1.MetastoreConfig.Builder getMetastoreConfigBuilder() {
+      
+      onChanged();
+      return getMetastoreConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder getMetastoreConfigOrBuilder() {
+      if (metastoreConfigBuilder_ != null) {
+        return metastoreConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return metastoreConfig_ == null ?
+            com.google.cloud.dataproc.v1.MetastoreConfig.getDefaultInstance() : metastoreConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Metastore configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dataproc.v1.MetastoreConfig, com.google.cloud.dataproc.v1.MetastoreConfig.Builder, com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder> 
+        getMetastoreConfigFieldBuilder() {
+      if (metastoreConfigBuilder_ == null) {
+        metastoreConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.MetastoreConfig, com.google.cloud.dataproc.v1.MetastoreConfig.Builder, com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder>(
+                getMetastoreConfig(),
+                getParentForChildren(),
+                isClean());
+        metastoreConfig_ = null;
+      }
+      return metastoreConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.GkeClusterConfig gkeClusterConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dataproc.v1.GkeClusterConfig, com.google.cloud.dataproc.v1.GkeClusterConfig.Builder, com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder> gkeClusterConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the gkeClusterConfig field is set.
+     */
+    public boolean hasGkeClusterConfig() {
+      return gkeClusterConfigBuilder_ != null || gkeClusterConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The gkeClusterConfig.
+     */
+    public com.google.cloud.dataproc.v1.GkeClusterConfig getGkeClusterConfig() {
+      if (gkeClusterConfigBuilder_ == null) {
+        return gkeClusterConfig_ == null ? com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance() : gkeClusterConfig_;
+      } else {
+        return gkeClusterConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setGkeClusterConfig(com.google.cloud.dataproc.v1.GkeClusterConfig value) {
+      if (gkeClusterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gkeClusterConfig_ = value;
+        onChanged();
+      } else {
+        gkeClusterConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setGkeClusterConfig(
+        com.google.cloud.dataproc.v1.GkeClusterConfig.Builder builderForValue) {
+      if (gkeClusterConfigBuilder_ == null) {
+        gkeClusterConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeClusterConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeGkeClusterConfig(com.google.cloud.dataproc.v1.GkeClusterConfig value) {
+      if (gkeClusterConfigBuilder_ == null) {
+        if (gkeClusterConfig_ != null) {
+          gkeClusterConfig_ =
+            com.google.cloud.dataproc.v1.GkeClusterConfig.newBuilder(gkeClusterConfig_).mergeFrom(value).buildPartial();
+        } else {
+          gkeClusterConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gkeClusterConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearGkeClusterConfig() {
+      if (gkeClusterConfigBuilder_ == null) {
+        gkeClusterConfig_ = null;
+        onChanged();
+      } else {
+        gkeClusterConfig_ = null;
+        gkeClusterConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dataproc.v1.GkeClusterConfig.Builder getGkeClusterConfigBuilder() {
+      
+      onChanged();
+      return getGkeClusterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder getGkeClusterConfigOrBuilder() {
+      if (gkeClusterConfigBuilder_ != null) {
+        return gkeClusterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gkeClusterConfig_ == null ?
+            com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance() : gkeClusterConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dataproc.v1.GkeClusterConfig, com.google.cloud.dataproc.v1.GkeClusterConfig.Builder, com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder> 
+        getGkeClusterConfigFieldBuilder() {
+      if (gkeClusterConfigBuilder_ == null) {
+        gkeClusterConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.GkeClusterConfig, com.google.cloud.dataproc.v1.GkeClusterConfig.Builder, com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder>(
+                getGkeClusterConfig(),
+                getParentForChildren(),
+                isClean());
+        gkeClusterConfig_ = null;
+      }
+      return gkeClusterConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

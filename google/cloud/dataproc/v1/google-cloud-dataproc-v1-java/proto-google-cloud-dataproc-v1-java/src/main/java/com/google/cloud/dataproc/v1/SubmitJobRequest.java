@@ -255,8 +255,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-   * id, then the second request will be ignored and the
+   * receives two
+   * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+   * with the same id, then the second request will be ignored and the
    * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
    * is returned.
    * It is recommended to always set this value to a
@@ -284,8 +285,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-   * id, then the second request will be ignored and the
+   * receives two
+   * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+   * with the same id, then the second request will be ignored and the
    * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
    * is returned.
    * It is recommended to always set this value to a
@@ -1038,8 +1040,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
@@ -1066,8 +1069,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
@@ -1095,8 +1099,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
@@ -1122,8 +1127,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
@@ -1144,8 +1150,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [SubmitJobRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.SubmitJobRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a

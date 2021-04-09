@@ -44,10 +44,10 @@ public interface TemplateParameterOrBuilder extends
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -89,10 +89,10 @@ public interface TemplateParameterOrBuilder extends
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -133,10 +133,10 @@ public interface TemplateParameterOrBuilder extends
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -178,10 +178,10 @@ public interface TemplateParameterOrBuilder extends
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']

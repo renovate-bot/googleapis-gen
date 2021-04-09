@@ -144,6 +144,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.dataproc.v1.TemplateParameter.parser(), extensionRegistry));
             break;
           }
+          case 82: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (dagTimeout_ != null) {
+              subBuilder = dagTimeout_.toBuilder();
+            }
+            dagTimeout_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(dagTimeout_);
+              dagTimeout_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -687,6 +700,71 @@ private static final long serialVersionUID = 0L;
     return parameters_.get(index);
   }
 
+  public static final int DAG_TIMEOUT_FIELD_NUMBER = 10;
+  private com.google.protobuf.Duration dagTimeout_;
+  /**
+   * <pre>
+   * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
+   * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * The timeout duration must be from 10 minutes ("600s") to 24 hours
+   * ("86400s"). The timer begins when the first job is submitted. If the
+   * workflow is running at the end of the timeout period, any remaining jobs
+   * are cancelled, the workflow is ended, and if the workflow was running on a
+   * [managed
+   * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+   * the cluster is deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the dagTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasDagTimeout() {
+    return dagTimeout_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
+   * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * The timeout duration must be from 10 minutes ("600s") to 24 hours
+   * ("86400s"). The timer begins when the first job is submitted. If the
+   * workflow is running at the end of the timeout period, any remaining jobs
+   * are cancelled, the workflow is ended, and if the workflow was running on a
+   * [managed
+   * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+   * the cluster is deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The dagTimeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDagTimeout() {
+    return dagTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
+  }
+  /**
+   * <pre>
+   * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
+   * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * The timeout duration must be from 10 minutes ("600s") to 24 hours
+   * ("86400s"). The timer begins when the first job is submitted. If the
+   * workflow is running at the end of the timeout period, any remaining jobs
+   * are cancelled, the workflow is ended, and if the workflow was running on a
+   * [managed
+   * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+   * the cluster is deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder() {
+    return getDagTimeout();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -730,6 +808,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < parameters_.size(); i++) {
       output.writeMessage(9, parameters_.get(i));
+    }
+    if (dagTimeout_ != null) {
+      output.writeMessage(10, getDagTimeout());
     }
     unknownFields.writeTo(output);
   }
@@ -780,6 +861,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, parameters_.get(i));
     }
+    if (dagTimeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getDagTimeout());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -822,6 +907,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getJobsList())) return false;
     if (!getParametersList()
         .equals(other.getParametersList())) return false;
+    if (hasDagTimeout() != other.hasDagTimeout()) return false;
+    if (hasDagTimeout()) {
+      if (!getDagTimeout()
+          .equals(other.getDagTimeout())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -862,6 +952,10 @@ private static final long serialVersionUID = 0L;
     if (getParametersCount() > 0) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParametersList().hashCode();
+    }
+    if (hasDagTimeout()) {
+      hash = (37 * hash) + DAG_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getDagTimeout().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1061,6 +1155,12 @@ private static final long serialVersionUID = 0L;
       } else {
         parametersBuilder_.clear();
       }
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeout_ = null;
+      } else {
+        dagTimeout_ = null;
+        dagTimeoutBuilder_ = null;
+      }
       return this;
     }
 
@@ -1125,6 +1225,11 @@ private static final long serialVersionUID = 0L;
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
+      }
+      if (dagTimeoutBuilder_ == null) {
+        result.dagTimeout_ = dagTimeout_;
+      } else {
+        result.dagTimeout_ = dagTimeoutBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1247,6 +1352,9 @@ private static final long serialVersionUID = 0L;
             parametersBuilder_.addAllMessages(other.parameters_);
           }
         }
+      }
+      if (other.hasDagTimeout()) {
+        mergeDagTimeout(other.getDagTimeout());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2884,6 +2992,242 @@ private static final long serialVersionUID = 0L;
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private com.google.protobuf.Duration dagTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> dagTimeoutBuilder_;
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the dagTimeout field is set.
+     */
+    public boolean hasDagTimeout() {
+      return dagTimeoutBuilder_ != null || dagTimeout_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The dagTimeout.
+     */
+    public com.google.protobuf.Duration getDagTimeout() {
+      if (dagTimeoutBuilder_ == null) {
+        return dagTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
+      } else {
+        return dagTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDagTimeout(com.google.protobuf.Duration value) {
+      if (dagTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dagTimeout_ = value;
+        onChanged();
+      } else {
+        dagTimeoutBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDagTimeout(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeout_ = builderForValue.build();
+        onChanged();
+      } else {
+        dagTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeDagTimeout(com.google.protobuf.Duration value) {
+      if (dagTimeoutBuilder_ == null) {
+        if (dagTimeout_ != null) {
+          dagTimeout_ =
+            com.google.protobuf.Duration.newBuilder(dagTimeout_).mergeFrom(value).buildPartial();
+        } else {
+          dagTimeout_ = value;
+        }
+        onChanged();
+      } else {
+        dagTimeoutBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearDagTimeout() {
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeout_ = null;
+        onChanged();
+      } else {
+        dagTimeout_ = null;
+        dagTimeoutBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Duration.Builder getDagTimeoutBuilder() {
+      
+      onChanged();
+      return getDagTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder() {
+      if (dagTimeoutBuilder_ != null) {
+        return dagTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return dagTimeout_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
+     * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * The timeout duration must be from 10 minutes ("600s") to 24 hours
+     * ("86400s"). The timer begins when the first job is submitted. If the
+     * workflow is running at the end of the timeout period, any remaining jobs
+     * are cancelled, the workflow is ended, and if the workflow was running on a
+     * [managed
+     * cluster](/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
+     * the cluster is deleted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dag_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getDagTimeoutFieldBuilder() {
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getDagTimeout(),
+                getParentForChildren(),
+                isClean());
+        dagTimeout_ = null;
+      }
+      return dagTimeoutBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

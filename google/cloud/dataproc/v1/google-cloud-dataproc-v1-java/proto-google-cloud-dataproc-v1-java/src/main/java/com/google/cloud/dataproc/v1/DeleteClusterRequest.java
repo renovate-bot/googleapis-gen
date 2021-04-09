@@ -312,8 +312,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
+   * receives two
+   * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+   * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
    * backend is returned.
    * It is recommended to always set this value to a
@@ -341,8 +342,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
+   * receives two
+   * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+   * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
    * backend is returned.
    * It is recommended to always set this value to a
@@ -1141,8 +1143,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
      * backend is returned.
      * It is recommended to always set this value to a
@@ -1169,8 +1172,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
      * backend is returned.
      * It is recommended to always set this value to a
@@ -1198,8 +1202,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
      * backend is returned.
      * It is recommended to always set this value to a
@@ -1225,8 +1230,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
      * backend is returned.
      * It is recommended to always set this value to a
@@ -1247,8 +1253,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
+     * receives two
+     * [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
+     * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
      * backend is returned.
      * It is recommended to always set this value to a

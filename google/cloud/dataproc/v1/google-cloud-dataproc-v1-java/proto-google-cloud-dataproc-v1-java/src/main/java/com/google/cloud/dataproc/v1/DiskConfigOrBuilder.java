@@ -10,8 +10,10 @@ public interface DiskConfigOrBuilder extends
   /**
    * <pre>
    * Optional. Type of the boot disk (default is "pd-standard").
-   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
+   * "pd-ssd" (Persistent Disk Solid State Drive),
+   * or "pd-standard" (Persistent Disk Hard Disk Drive).
+   * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
    * </pre>
    *
    * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -21,8 +23,10 @@ public interface DiskConfigOrBuilder extends
   /**
    * <pre>
    * Optional. Type of the boot disk (default is "pd-standard").
-   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
+   * "pd-ssd" (Persistent Disk Solid State Drive),
+   * or "pd-standard" (Persistent Disk Hard Disk Drive).
+   * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
    * </pre>
    *
    * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
