@@ -117,7 +117,12 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).listTransferConfigsSettings();
   }
 
-  /** Returns the object with the settings used for calls to scheduleTransferRuns. */
+  /**
+   * Returns the object with the settings used for calls to scheduleTransferRuns.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).scheduleTransferRunsSettings();
@@ -302,7 +307,12 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       return getStubSettingsBuilder().listTransferConfigsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to scheduleTransferRuns. */
+    /**
+     * Returns the builder for the settings used for calls to scheduleTransferRuns.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsSettings() {
       return getStubSettingsBuilder().scheduleTransferRunsSettings();

@@ -116,14 +116,24 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).suggestSmartRepliesSettings();
   }
 
-  /** Returns the object with the settings used for calls to listSuggestions. */
+  /**
+   * Returns the object with the settings used for calls to listSuggestions.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
       listSuggestionsSettings() {
     return ((ParticipantsStubSettings) getStubSettings()).listSuggestionsSettings();
   }
 
-  /** Returns the object with the settings used for calls to compileSuggestion. */
+  /**
+   * Returns the object with the settings used for calls to compileSuggestion.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionSettings() {
     return ((ParticipantsStubSettings) getStubSettings()).compileSuggestionSettings();
@@ -275,14 +285,24 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
       return getStubSettingsBuilder().suggestSmartRepliesSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listSuggestions. */
+    /**
+     * Returns the builder for the settings used for calls to listSuggestions.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
         listSuggestionsSettings() {
       return getStubSettingsBuilder().listSuggestionsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to compileSuggestion. */
+    /**
+     * Returns the builder for the settings used for calls to compileSuggestion.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CompileSuggestionRequest, CompileSuggestionResponse>
         compileSuggestionSettings() {
       return getStubSettingsBuilder().compileSuggestionSettings();

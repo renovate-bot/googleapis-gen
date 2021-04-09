@@ -1039,7 +1039,9 @@ public class ClusterManagerClient implements BackgroundResource {
    *     removed.
    *     <p>This list must always include the cluster's primary zone.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Operation setLocations(
       String projectId, String zone, String clusterId, List<String> locations) {
     SetLocationsRequest request =
@@ -1076,7 +1078,9 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Operation setLocations(SetLocationsRequest request) {
     return setLocationsCallable().call(request);
   }
@@ -1104,7 +1108,10 @@ public class ClusterManagerClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SetLocationsRequest, Operation> setLocationsCallable() {
     return stub.setLocationsCallable();
   }
