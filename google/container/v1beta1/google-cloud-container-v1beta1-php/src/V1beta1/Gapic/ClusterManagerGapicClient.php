@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ namespace Google\Cloud\Container\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
+
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -47,6 +48,7 @@ use Google\Cloud\Container\V1beta1\GetClusterRequest;
 use Google\Cloud\Container\V1beta1\GetJSONWebKeysRequest;
 use Google\Cloud\Container\V1beta1\GetJSONWebKeysResponse;
 use Google\Cloud\Container\V1beta1\GetNodePoolRequest;
+
 use Google\Cloud\Container\V1beta1\GetOperationRequest;
 use Google\Cloud\Container\V1beta1\GetServerConfigRequest;
 use Google\Cloud\Container\V1beta1\LinuxNodeConfig;
@@ -66,8 +68,8 @@ use Google\Cloud\Container\V1beta1\NetworkPolicy;
 use Google\Cloud\Container\V1beta1\NodeKubeletConfig;
 use Google\Cloud\Container\V1beta1\NodeManagement;
 use Google\Cloud\Container\V1beta1\NodePool;
-use Google\Cloud\Container\V1beta1\NodePoolAutoscaling;
 use Google\Cloud\Container\V1beta1\NodePool\UpgradeSettings;
+use Google\Cloud\Container\V1beta1\NodePoolAutoscaling;
 use Google\Cloud\Container\V1beta1\Operation;
 use Google\Cloud\Container\V1beta1\RollbackNodePoolUpgradeRequest;
 use Google\Cloud\Container\V1beta1\ServerConfig;
@@ -92,7 +94,7 @@ use Google\Cloud\Container\V1beta1\WorkloadMetadataConfig;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: Google Kubernetes Engine Cluster Manager v1beta1.
+ * Service Description: Google Kubernetes Engine Cluster Manager v1beta1
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -100,9 +102,10 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $clusterManagerClient = new ClusterManagerClient();
  * try {
- *     $projectId = '';
- *     $zone = '';
- *     $response = $clusterManagerClient->listClusters($projectId, $zone);
+ *     $projectId = 'project_id';
+ *     $zone = 'zone';
+ *     $operationId = 'operation_id';
+ *     $clusterManagerClient->cancelOperation($projectId, $zone, $operationId);
  * } finally {
  *     $clusterManagerClient->close();
  * }
@@ -145,16 +148,16 @@ class ClusterManagerGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/cluster_manager_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/cluster_manager_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/cluster_manager_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/cluster_manager_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/cluster_manager_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/cluster_manager_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/cluster_manager_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/cluster_manager_rest_client_config.php',
                 ],
             ],
         ];
@@ -164,7 +167,7 @@ class ClusterManagerGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -178,31 +181,31 @@ class ClusterManagerGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -210,6 +213,7 @@ class ClusterManagerGapicClient
      * }
      *
      * @throws ValidationException
+     *
      * @experimental
      */
     public function __construct(array $options = [])
@@ -219,16 +223,16 @@ class ClusterManagerGapicClient
     }
 
     /**
-     * Lists all clusters owned by a project in either the specified zone or all
-     * zones.
+     * Cancels the specified operation.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $response = $clusterManagerClient->listClusters($projectId, $zone);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $operationId = 'operation_id';
+     *     $clusterManagerClient->cancelOperation($projectId, $zone, $operationId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
@@ -236,120 +240,112 @@ class ClusterManagerGapicClient
      *
      * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
      *                             number](https://support.google.com/cloud/answer/6158840).
-     *                             This field has been deprecated and replaced by the parent field.
+     *                             This field has been deprecated and replaced by the name field.
      * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
      *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                             cluster resides, or "-" for all zones. This field has been deprecated and
-     *                             replaced by the parent field.
+     *                             operation resides. This field has been deprecated and replaced by the name
+     *                             field.
+     * @param string $operationId  Required. Deprecated. The server-assigned `name` of the operation.
+     *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
-     *     @type string $parent
-     *          The parent (project and location) where the clusters will be listed.
-     *          Specified in the format `projects/&#42;/locations/*`.
-     *          Location "-" matches all zones and all regions.
+     *     @type string $name
+     *           The name (project, location, operation id) of the operation to cancel.
+     *           Specified in the format `projects/&#42;/locations/&#42;/operations/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Container\V1beta1\ListClustersResponse
-     *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function listClusters($projectId, $zone, array $optionalArgs = [])
+    public function cancelOperation($projectId, $zone, $operationId, array $optionalArgs = [])
     {
-        $request = new ListClustersRequest();
+        $request = new CancelOperationRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
+        $request->setOperationId($operationId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['operation_id'] = $operationId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ListClusters',
-            ListClustersResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CancelOperation', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Gets the details for a specific cluster.
+     * Completes master IP rotation.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $response = $clusterManagerClient->getCluster($projectId, $zone, $clusterId);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $response = $clusterManagerClient->completeIPRotation($projectId, $zone, $clusterId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
      * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://support.google.com/cloud/answer/6158840).
+     *                             number](https://developers.google.com/console/help/new/#projectnumber).
      *                             This field has been deprecated and replaced by the name field.
      * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
      *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      *                             cluster resides. This field has been deprecated and replaced by the name
      *                             field.
-     * @param string $clusterId    Required. Deprecated. The name of the cluster to retrieve.
+     * @param string $clusterId    Required. Deprecated. The name of the cluster.
      *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster) of the cluster to retrieve.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster id) of the cluster to complete IP
+     *           rotation. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Container\V1beta1\Cluster
+     * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function getCluster($projectId, $zone, $clusterId, array $optionalArgs = [])
+    public function completeIPRotation($projectId, $zone, $clusterId, array $optionalArgs = [])
     {
-        $request = new GetClusterRequest();
+        $request = new CompleteIPRotationRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetCluster',
-            Cluster::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CompleteIPRotation', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -372,8 +368,8 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
      *     $cluster = new Cluster();
      *     $response = $clusterManagerClient->createCluster($projectId, $zone, $cluster);
      * } finally {
@@ -391,782 +387,109 @@ class ClusterManagerGapicClient
      * @param Cluster $cluster      Required. A [cluster
      *                              resource](https://cloud.google.com/container-engine/reference/rest/v1beta1/projects.locations.clusters)
      * @param array   $optionalArgs {
-     *                              Optional.
+     *     Optional.
      *
      *     @type string $parent
-     *          The parent (project and location) where the cluster will be created.
-     *          Specified in the format `projects/&#42;/locations/*`.
+     *           The parent (project and location) where the cluster will be created.
+     *           Specified in the format `projects/&#42;/locations/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function createCluster($projectId, $zone, $cluster, array $optionalArgs = [])
     {
         $request = new CreateClusterRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setCluster($cluster);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateCluster',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateCluster', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Updates the settings for a specific cluster.
+     * Creates a node pool for a cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $update = new ClusterUpdate();
-     *     $response = $clusterManagerClient->updateCluster($projectId, $zone, $clusterId, $update);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePool = new NodePool();
+     *     $response = $clusterManagerClient->createNodePool($projectId, $zone, $clusterId, $nodePool);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string        $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                                    number](https://support.google.com/cloud/answer/6158840).
-     *                                    This field has been deprecated and replaced by the name field.
-     * @param string        $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                                    [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                    cluster resides. This field has been deprecated and replaced by the name
-     *                                    field.
-     * @param string        $clusterId    Required. Deprecated. The name of the cluster to upgrade.
-     *                                    This field has been deprecated and replaced by the name field.
-     * @param ClusterUpdate $update       Required. A description of the update.
-     * @param array         $optionalArgs {
-     *                                    Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to update.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateCluster($projectId, $zone, $clusterId, $update, array $optionalArgs = [])
-    {
-        $request = new UpdateClusterRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setUpdate($update);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateCluster',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the version and/or image type of a specific node pool.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
-     *     $nodeVersion = '';
-     *     $imageType = '';
-     *     $response = $clusterManagerClient->updateNodePool($projectId, $zone, $clusterId, $nodePoolId, $nodeVersion, $imageType);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId   Required. Deprecated. The Google Developers Console [project ID or project
-     *                            number](https://support.google.com/cloud/answer/6158840).
-     *                            This field has been deprecated and replaced by the name field.
-     * @param string $zone        Required. Deprecated. The name of the Google Compute Engine
-     *                            [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                            cluster resides. This field has been deprecated and replaced by the name
-     *                            field.
-     * @param string $clusterId   Required. Deprecated. The name of the cluster to upgrade.
-     *                            This field has been deprecated and replaced by the name field.
-     * @param string $nodePoolId  Required. Deprecated. The name of the node pool to upgrade.
-     *                            This field has been deprecated and replaced by the name field.
-     * @param string $nodeVersion Required. The Kubernetes version to change the nodes to (typically an
-     *                            upgrade).
-     *
-     * Users may specify either explicit versions offered by Kubernetes Engine or
-     * version aliases, which have the following behavior:
-     *
-     * - "latest": picks the highest valid Kubernetes version
-     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
-     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
-     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
-     * - "-": picks the Kubernetes master version
-     * @param string $imageType    Required. The desired image type for the node pool.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string[] $locations
-     *          The desired list of Google Compute Engine
-     *          [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     *          node pool's nodes should be located. Changing the locations for a node pool
-     *          will result in nodes being either created or removed from the node pool,
-     *          depending on whether locations are being added or removed.
-     *     @type WorkloadMetadataConfig $workloadMetadataConfig
-     *          The desired workload metadata config for the node pool.
-     *     @type string $name
-     *          The name (project, location, cluster, node pool) of the node pool to
-     *          update. Specified in the format
-     *          `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
-     *     @type UpgradeSettings $upgradeSettings
-     *          Upgrade settings control disruption and speed of the upgrade.
-     *     @type LinuxNodeConfig $linuxNodeConfig
-     *          Parameters that can be configured on Linux nodes.
-     *     @type NodeKubeletConfig $kubeletConfig
-     *          Node kubelet configs.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateNodePool($projectId, $zone, $clusterId, $nodePoolId, $nodeVersion, $imageType, array $optionalArgs = [])
-    {
-        $request = new UpdateNodePoolRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setNodePoolId($nodePoolId);
-        $request->setNodeVersion($nodeVersion);
-        $request->setImageType($imageType);
-        if (isset($optionalArgs['locations'])) {
-            $request->setLocations($optionalArgs['locations']);
-        }
-        if (isset($optionalArgs['workloadMetadataConfig'])) {
-            $request->setWorkloadMetadataConfig($optionalArgs['workloadMetadataConfig']);
-        }
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-        if (isset($optionalArgs['upgradeSettings'])) {
-            $request->setUpgradeSettings($optionalArgs['upgradeSettings']);
-        }
-        if (isset($optionalArgs['linuxNodeConfig'])) {
-            $request->setLinuxNodeConfig($optionalArgs['linuxNodeConfig']);
-        }
-        if (isset($optionalArgs['kubeletConfig'])) {
-            $request->setKubeletConfig($optionalArgs['kubeletConfig']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateNodePool',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Sets the autoscaling settings of a specific node pool.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
-     *     $autoscaling = new NodePoolAutoscaling();
-     *     $response = $clusterManagerClient->setNodePoolAutoscaling($projectId, $zone, $clusterId, $nodePoolId, $autoscaling);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string              $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                                          number](https://support.google.com/cloud/answer/6158840).
-     *                                          This field has been deprecated and replaced by the name field.
-     * @param string              $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                                          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                          cluster resides. This field has been deprecated and replaced by the name
-     *                                          field.
-     * @param string              $clusterId    Required. Deprecated. The name of the cluster to upgrade.
-     *                                          This field has been deprecated and replaced by the name field.
-     * @param string              $nodePoolId   Required. Deprecated. The name of the node pool to upgrade.
-     *                                          This field has been deprecated and replaced by the name field.
-     * @param NodePoolAutoscaling $autoscaling  Required. Autoscaling configuration for the node pool.
-     * @param array               $optionalArgs {
-     *                                          Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster, node pool) of the node pool to set
-     *          autoscaler settings. Specified in the format
-     *          `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setNodePoolAutoscaling($projectId, $zone, $clusterId, $nodePoolId, $autoscaling, array $optionalArgs = [])
-    {
-        $request = new SetNodePoolAutoscalingRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setNodePoolId($nodePoolId);
-        $request->setAutoscaling($autoscaling);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetNodePoolAutoscaling',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Sets the logging service for a specific cluster.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $loggingService = '';
-     *     $response = $clusterManagerClient->setLoggingService($projectId, $zone, $clusterId, $loggingService);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId      Required. Deprecated. The Google Developers Console [project ID or project
-     *                               number](https://support.google.com/cloud/answer/6158840).
-     *                               This field has been deprecated and replaced by the name field.
-     * @param string $zone           Required. Deprecated. The name of the Google Compute Engine
+     * @param string   $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                               number](https://developers.google.com/console/help/new/#projectnumber).
+     *                               This field has been deprecated and replaced by the parent field.
+     * @param string   $zone         Required. Deprecated. The name of the Google Compute Engine
      *                               [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                               cluster resides. This field has been deprecated and replaced by the name
+     *                               cluster resides. This field has been deprecated and replaced by the parent
      *                               field.
-     * @param string $clusterId      Required. Deprecated. The name of the cluster to upgrade.
-     *                               This field has been deprecated and replaced by the name field.
-     * @param string $loggingService Required. The logging service the cluster should use to write logs.
-     *                               Currently available options:
+     * @param string   $clusterId    Required. Deprecated. The name of the cluster.
+     *                               This field has been deprecated and replaced by the parent field.
+     * @param NodePool $nodePool     Required. The node pool to create.
+     * @param array    $optionalArgs {
+     *     Optional.
      *
-     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
-     * service with a Kubernetes-native resource model
-     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
-     *   available as of GKE 1.15).
-     * * `none` - no logs will be exported from the cluster.
-     *
-     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
-     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to set logging.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type string $parent
+     *           The parent (project, location, cluster id) where the node pool will be
+     *           created. Specified in the format
+     *           `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function setLoggingService($projectId, $zone, $clusterId, $loggingService, array $optionalArgs = [])
+    public function createNodePool($projectId, $zone, $clusterId, $nodePool, array $optionalArgs = [])
     {
-        $request = new SetLoggingServiceRequest();
+        $request = new CreateNodePoolRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
-        $request->setLoggingService($loggingService);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
+        $request->setNodePool($nodePool);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetLoggingService',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Sets the monitoring service for a specific cluster.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $monitoringService = '';
-     *     $response = $clusterManagerClient->setMonitoringService($projectId, $zone, $clusterId, $monitoringService);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId         Required. Deprecated. The Google Developers Console [project ID or project
-     *                                  number](https://support.google.com/cloud/answer/6158840).
-     *                                  This field has been deprecated and replaced by the name field.
-     * @param string $zone              Required. Deprecated. The name of the Google Compute Engine
-     *                                  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                  cluster resides. This field has been deprecated and replaced by the name
-     *                                  field.
-     * @param string $clusterId         Required. Deprecated. The name of the cluster to upgrade.
-     *                                  This field has been deprecated and replaced by the name field.
-     * @param string $monitoringService Required. The monitoring service the cluster should use to write metrics.
-     *                                  Currently available options:
-     *
-     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
-     * service with a Kubernetes-native resource model
-     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
-     *   longer available as of GKE 1.15).
-     * * `none` - No metrics will be exported from the cluster.
-     *
-     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
-     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to set monitoring.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setMonitoringService($projectId, $zone, $clusterId, $monitoringService, array $optionalArgs = [])
-    {
-        $request = new SetMonitoringServiceRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setMonitoringService($monitoringService);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetMonitoringService',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Sets the addons for a specific cluster.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $addonsConfig = new AddonsConfig();
-     *     $response = $clusterManagerClient->setAddonsConfig($projectId, $zone, $clusterId, $addonsConfig);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string       $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                                   number](https://support.google.com/cloud/answer/6158840).
-     *                                   This field has been deprecated and replaced by the name field.
-     * @param string       $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                                   [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                   cluster resides. This field has been deprecated and replaced by the name
-     *                                   field.
-     * @param string       $clusterId    Required. Deprecated. The name of the cluster to upgrade.
-     *                                   This field has been deprecated and replaced by the name field.
-     * @param AddonsConfig $addonsConfig Required. The desired configurations for the various addons available to run in the
-     *                                   cluster.
-     * @param array        $optionalArgs {
-     *                                   Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to set addons.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setAddonsConfig($projectId, $zone, $clusterId, $addonsConfig, array $optionalArgs = [])
-    {
-        $request = new SetAddonsConfigRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setAddonsConfig($addonsConfig);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetAddonsConfig',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Sets the locations for a specific cluster.
-     * Deprecated. Use
-     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters/update)
-     * instead.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $locations = [];
-     *     $response = $clusterManagerClient->setLocations($projectId, $zone, $clusterId, $locations);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string   $projectId Required. Deprecated. The Google Developers Console [project ID or project
-     *                            number](https://support.google.com/cloud/answer/6158840).
-     *                            This field has been deprecated and replaced by the name field.
-     * @param string   $zone      Required. Deprecated. The name of the Google Compute Engine
-     *                            [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                            cluster resides. This field has been deprecated and replaced by the name
-     *                            field.
-     * @param string   $clusterId Required. Deprecated. The name of the cluster to upgrade.
-     *                            This field has been deprecated and replaced by the name field.
-     * @param string[] $locations Required. The desired list of Google Compute Engine
-     *                            [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                            cluster's nodes should be located. Changing the locations a cluster is in
-     *                            will result in nodes being either created or removed from the cluster,
-     *                            depending on whether locations are being added or removed.
-     *
-     * This list must always include the cluster's primary zone.
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to set locations.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setLocations($projectId, $zone, $clusterId, $locations, array $optionalArgs = [])
-    {
-        $request = new SetLocationsRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setLocations($locations);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetLocations',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates the master for a specific cluster.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $masterVersion = '';
-     *     $response = $clusterManagerClient->updateMaster($projectId, $zone, $clusterId, $masterVersion);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId     Required. Deprecated. The Google Developers Console [project ID or project
-     *                              number](https://support.google.com/cloud/answer/6158840).
-     *                              This field has been deprecated and replaced by the name field.
-     * @param string $zone          Required. Deprecated. The name of the Google Compute Engine
-     *                              [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                              cluster resides. This field has been deprecated and replaced by the name
-     *                              field.
-     * @param string $clusterId     Required. Deprecated. The name of the cluster to upgrade.
-     *                              This field has been deprecated and replaced by the name field.
-     * @param string $masterVersion Required. The Kubernetes version to change the master to.
-     *
-     * Users may specify either explicit versions offered by
-     * Kubernetes Engine or version aliases, which have the following behavior:
-     *
-     * - "latest": picks the highest valid Kubernetes version
-     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
-     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
-     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
-     * - "-": picks the default Kubernetes version
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to update.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateMaster($projectId, $zone, $clusterId, $masterVersion, array $optionalArgs = [])
-    {
-        $request = new UpdateMasterRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setMasterVersion($masterVersion);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateMaster',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Sets master auth materials. Currently supports changing the admin password
-     * or a specific cluster, either via password generation or explicitly setting
-     * the password.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $action = Action::UNKNOWN;
-     *     $update = new MasterAuth();
-     *     $response = $clusterManagerClient->setMasterAuth($projectId, $zone, $clusterId, $action, $update);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string     $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                                 number](https://support.google.com/cloud/answer/6158840).
-     *                                 This field has been deprecated and replaced by the name field.
-     * @param string     $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                                 [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                 cluster resides. This field has been deprecated and replaced by the name
-     *                                 field.
-     * @param string     $clusterId    Required. Deprecated. The name of the cluster to upgrade.
-     *                                 This field has been deprecated and replaced by the name field.
-     * @param int        $action       Required. The exact form of action to be taken on the master auth.
-     *                                 For allowed values, use constants defined on {@see \Google\Cloud\Container\V1beta1\SetMasterAuthRequest\Action}
-     * @param MasterAuth $update       Required. A description of the update.
-     * @param array      $optionalArgs {
-     *                                 Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, cluster) of the cluster to set auth.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setMasterAuth($projectId, $zone, $clusterId, $action, $update, array $optionalArgs = [])
-    {
-        $request = new SetMasterAuthRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setAction($action);
-        $request->setUpdate($update);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetMasterAuth',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateNodePool', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1184,9 +507,9 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
      *     $response = $clusterManagerClient->deleteCluster($projectId, $zone, $clusterId);
      * } finally {
      *     $clusterManagerClient->close();
@@ -1203,124 +526,125 @@ class ClusterManagerGapicClient
      * @param string $clusterId    Required. Deprecated. The name of the cluster to delete.
      *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster) of the cluster to delete.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster) of the cluster to delete.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function deleteCluster($projectId, $zone, $clusterId, array $optionalArgs = [])
     {
         $request = new DeleteClusterRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteCluster',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteCluster', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Lists all operations in a project in the specified zone or all zones.
+     * Deletes a node pool from a cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $response = $clusterManagerClient->listOperations($projectId, $zone);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
+     *     $response = $clusterManagerClient->deleteNodePool($projectId, $zone, $clusterId, $nodePoolId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
      * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://support.google.com/cloud/answer/6158840).
-     *                             This field has been deprecated and replaced by the parent field.
+     *                             number](https://developers.google.com/console/help/new/#projectnumber).
+     *                             This field has been deprecated and replaced by the name field.
      * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                             [zone](https://cloud.google.com/compute/docs/zones#available) to return
-     *                             operations for, or `-` for all zones. This field has been deprecated and
-     *                             replaced by the parent field.
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                             cluster resides. This field has been deprecated and replaced by the name
+     *                             field.
+     * @param string $clusterId    Required. Deprecated. The name of the cluster.
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $nodePoolId   Required. Deprecated. The name of the node pool to delete.
+     *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
-     *     @type string $parent
-     *          The parent (project and location) where the operations will be listed.
-     *          Specified in the format `projects/&#42;/locations/*`.
-     *          Location "-" matches all zones and all regions.
+     *     @type string $name
+     *           The name (project, location, cluster, node pool id) of the node pool to
+     *           delete. Specified in the format
+     *           `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Container\V1beta1\ListOperationsResponse
+     * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function listOperations($projectId, $zone, array $optionalArgs = [])
+    public function deleteNodePool($projectId, $zone, $clusterId, $nodePoolId, array $optionalArgs = [])
     {
-        $request = new ListOperationsRequest();
+        $request = new DeleteNodePoolRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
+        $request->setClusterId($clusterId);
+        $request->setNodePoolId($nodePoolId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ListOperations',
-            ListOperationsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteNodePool', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Gets the specified operation.
+     * Gets the details for a specific cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $operationId = '';
-     *     $response = $clusterManagerClient->getOperation($projectId, $zone, $operationId);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $response = $clusterManagerClient->getCluster($projectId, $zone, $clusterId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
@@ -1333,247 +657,45 @@ class ClusterManagerGapicClient
      *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      *                             cluster resides. This field has been deprecated and replaced by the name
      *                             field.
-     * @param string $operationId  Required. Deprecated. The server-assigned `name` of the operation.
+     * @param string $clusterId    Required. Deprecated. The name of the cluster to retrieve.
      *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, operation id) of the operation to get.
-     *          Specified in the format `projects/&#42;/locations/&#42;/operations/*`.
+     *           The name (project, location, cluster) of the cluster to retrieve.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Container\V1beta1\Operation
+     * @return \Google\Cloud\Container\V1beta1\Cluster
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function getOperation($projectId, $zone, $operationId, array $optionalArgs = [])
+    public function getCluster($projectId, $zone, $clusterId, array $optionalArgs = [])
     {
-        $request = new GetOperationRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setOperationId($operationId);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetOperation',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Cancels the specified operation.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $operationId = '';
-     *     $clusterManagerClient->cancelOperation($projectId, $zone, $operationId);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://support.google.com/cloud/answer/6158840).
-     *                             This field has been deprecated and replaced by the name field.
-     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                             operation resides. This field has been deprecated and replaced by the name
-     *                             field.
-     * @param string $operationId  Required. Deprecated. The server-assigned `name` of the operation.
-     *                             This field has been deprecated and replaced by the name field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $name
-     *          The name (project, location, operation id) of the operation to cancel.
-     *          Specified in the format `projects/&#42;/locations/&#42;/operations/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function cancelOperation($projectId, $zone, $operationId, array $optionalArgs = [])
-    {
-        $request = new CancelOperationRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        $request->setOperationId($operationId);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CancelOperation',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Returns configuration info about the Google Kubernetes Engine service.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $response = $clusterManagerClient->getServerConfig($projectId, $zone);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://support.google.com/cloud/answer/6158840).
-     *                             This field has been deprecated and replaced by the name field.
-     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                             [zone](https://cloud.google.com/compute/docs/zones#available) to return
-     *                             operations for. This field has been deprecated and replaced by the name
-     *                             field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $name
-     *          The name (project and location) of the server config to get,
-     *          specified in the format `projects/&#42;/locations/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\ServerConfig
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getServerConfig($projectId, $zone, array $optionalArgs = [])
-    {
-        $request = new GetServerConfigRequest();
-        $request->setProjectId($projectId);
-        $request->setZone($zone);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetServerConfig',
-            ServerConfig::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists the node pools for a cluster.
-     *
-     * Sample code:
-     * ```
-     * $clusterManagerClient = new ClusterManagerClient();
-     * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $response = $clusterManagerClient->listNodePools($projectId, $zone, $clusterId);
-     * } finally {
-     *     $clusterManagerClient->close();
-     * }
-     * ```
-     *
-     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://developers.google.com/console/help/new/#projectnumber).
-     *                             This field has been deprecated and replaced by the parent field.
-     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                             cluster resides. This field has been deprecated and replaced by the parent
-     *                             field.
-     * @param string $clusterId    Required. Deprecated. The name of the cluster.
-     *                             This field has been deprecated and replaced by the parent field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $parent
-     *          The parent (project, location, cluster id) where the node pools will be
-     *          listed. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Container\V1beta1\ListNodePoolsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listNodePools($projectId, $zone, $clusterId, array $optionalArgs = [])
-    {
-        $request = new ListNodePoolsRequest();
+        $request = new GetClusterRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ListNodePools',
-            ListNodePoolsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetCluster', Cluster::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1593,43 +715,36 @@ class ClusterManagerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $parent
-     *          The cluster (project, location, cluster id) to get keys for. Specified in
-     *          the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The cluster (project, location, cluster id) to get keys for. Specified in
+     *           the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\GetJSONWebKeysResponse
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function getJSONWebKeys(array $optionalArgs = [])
     {
         $request = new GetJSONWebKeysRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetJSONWebKeys',
-            GetJSONWebKeysResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetJSONWebKeys', GetJSONWebKeysResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1639,10 +754,10 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
      *     $response = $clusterManagerClient->getNodePool($projectId, $zone, $clusterId, $nodePoolId);
      * } finally {
      *     $clusterManagerClient->close();
@@ -1661,134 +776,285 @@ class ClusterManagerGapicClient
      * @param string $nodePoolId   Required. Deprecated. The name of the node pool.
      *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster, node pool id) of the node pool to
-     *          get. Specified in the format
-     *          `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *           The name (project, location, cluster, node pool id) of the node pool to
+     *           get. Specified in the format
+     *           `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\NodePool
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function getNodePool($projectId, $zone, $clusterId, $nodePoolId, array $optionalArgs = [])
     {
         $request = new GetNodePoolRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
         $request->setNodePoolId($nodePoolId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetNodePool',
-            NodePool::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetNodePool', NodePool::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Creates a node pool for a cluster.
+     * Gets the specified operation.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePool = new NodePool();
-     *     $response = $clusterManagerClient->createNodePool($projectId, $zone, $clusterId, $nodePool);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $operationId = 'operation_id';
+     *     $response = $clusterManagerClient->getOperation($projectId, $zone, $operationId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string   $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                               number](https://developers.google.com/console/help/new/#projectnumber).
-     *                               This field has been deprecated and replaced by the parent field.
-     * @param string   $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                               [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                               cluster resides. This field has been deprecated and replaced by the parent
-     *                               field.
-     * @param string   $clusterId    Required. Deprecated. The name of the cluster.
-     *                               This field has been deprecated and replaced by the parent field.
-     * @param NodePool $nodePool     Required. The node pool to create.
-     * @param array    $optionalArgs {
-     *                               Optional.
+     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                             number](https://support.google.com/cloud/answer/6158840).
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                             cluster resides. This field has been deprecated and replaced by the name
+     *                             field.
+     * @param string $operationId  Required. Deprecated. The server-assigned `name` of the operation.
+     *                             This field has been deprecated and replaced by the name field.
+     * @param array  $optionalArgs {
+     *     Optional.
      *
-     *     @type string $parent
-     *          The parent (project, location, cluster id) where the node pool will be
-     *          created. Specified in the format
-     *          `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type string $name
+     *           The name (project, location, operation id) of the operation to get.
+     *           Specified in the format `projects/&#42;/locations/&#42;/operations/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function createNodePool($projectId, $zone, $clusterId, $nodePool, array $optionalArgs = [])
+    public function getOperation($projectId, $zone, $operationId, array $optionalArgs = [])
     {
-        $request = new CreateNodePoolRequest();
+        $request = new GetOperationRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
-        $request->setClusterId($clusterId);
-        $request->setNodePool($nodePool);
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
+        $request->setOperationId($operationId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['operation_id'] = $operationId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateNodePool',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetOperation', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Deletes a node pool from a cluster.
+     * Returns configuration info about the Google Kubernetes Engine service.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
-     *     $response = $clusterManagerClient->deleteNodePool($projectId, $zone, $clusterId, $nodePoolId);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $response = $clusterManagerClient->getServerConfig($projectId, $zone);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                             number](https://support.google.com/cloud/answer/6158840).
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) to return
+     *                             operations for. This field has been deprecated and replaced by the name
+     *                             field.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project and location) of the server config to get,
+     *           specified in the format `projects/&#42;/locations/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\ServerConfig
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function getServerConfig($projectId, $zone, array $optionalArgs = [])
+    {
+        $request = new GetServerConfigRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetServerConfig', ServerConfig::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Lists all clusters owned by a project in either the specified zone or all
+     * zones.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $response = $clusterManagerClient->listClusters($projectId, $zone);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                             number](https://support.google.com/cloud/answer/6158840).
+     *                             This field has been deprecated and replaced by the parent field.
+     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                             cluster resides, or "-" for all zones. This field has been deprecated and
+     *                             replaced by the parent field.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The parent (project and location) where the clusters will be listed.
+     *           Specified in the format `projects/&#42;/locations/*`.
+     *           Location "-" matches all zones and all regions.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\ListClustersResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listClusters($projectId, $zone, array $optionalArgs = [])
+    {
+        $request = new ListClustersRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListClusters', ListClustersResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Fetches locations that offer Google Kubernetes Engine.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $parent = 'parent';
+     *     $response = $clusterManagerClient->listLocations($parent);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. Contains the name of the resource requested.
+     *                             Specified in the format `projects/*`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\ListLocationsResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listLocations($parent, array $optionalArgs = [])
+    {
+        $request = new ListLocationsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListLocations', ListLocationsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Lists the node pools for a cluster.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $response = $clusterManagerClient->listNodePools($projectId, $zone, $clusterId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
@@ -1796,58 +1062,191 @@ class ClusterManagerGapicClient
      *
      * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
      *                             number](https://developers.google.com/console/help/new/#projectnumber).
-     *                             This field has been deprecated and replaced by the name field.
+     *                             This field has been deprecated and replaced by the parent field.
      * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
      *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                             cluster resides. This field has been deprecated and replaced by the name
+     *                             cluster resides. This field has been deprecated and replaced by the parent
      *                             field.
      * @param string $clusterId    Required. Deprecated. The name of the cluster.
-     *                             This field has been deprecated and replaced by the name field.
-     * @param string $nodePoolId   Required. Deprecated. The name of the node pool to delete.
-     *                             This field has been deprecated and replaced by the name field.
+     *                             This field has been deprecated and replaced by the parent field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
-     *     @type string $name
-     *          The name (project, location, cluster, node pool id) of the node pool to
-     *          delete. Specified in the format
-     *          `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *     @type string $parent
+     *           The parent (project, location, cluster id) where the node pools will be
+     *           listed. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Container\V1beta1\Operation
+     * @return \Google\Cloud\Container\V1beta1\ListNodePoolsResponse
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function deleteNodePool($projectId, $zone, $clusterId, $nodePoolId, array $optionalArgs = [])
+    public function listNodePools($projectId, $zone, $clusterId, array $optionalArgs = [])
     {
-        $request = new DeleteNodePoolRequest();
+        $request = new ListNodePoolsRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
-        $request->setNodePoolId($nodePoolId);
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListNodePools', ListNodePoolsResponse::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'DeleteNodePool',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Lists all operations in a project in the specified zone or all zones.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $response = $clusterManagerClient->listOperations($projectId, $zone);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                             number](https://support.google.com/cloud/answer/6158840).
+     *                             This field has been deprecated and replaced by the parent field.
+     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) to return
+     *                             operations for, or `-` for all zones. This field has been deprecated and
+     *                             replaced by the parent field.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           The parent (project and location) where the operations will be listed.
+     *           Specified in the format `projects/&#42;/locations/*`.
+     *           Location "-" matches all zones and all regions.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\ListOperationsResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listOperations($projectId, $zone, array $optionalArgs = [])
+    {
+        $request = new ListOperationsRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListOperations', ListOperationsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Lists subnetworks that can be used for creating clusters in a project.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $parent = 'parent';
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $clusterManagerClient->listUsableSubnetworks($parent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $clusterManagerClient->listUsableSubnetworks($parent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent project where subnetworks are usable.
+     *                             Specified in the format `projects/*`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $filter
+     *           Filtering currently only supports equality on the networkProjectId and must
+     *           be in the form: "networkProjectId=[PROJECTID]", where `networkProjectId`
+     *           is the project which owns the listed subnetworks. This defaults to the
+     *           parent project ID.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listUsableSubnetworks($parent, array $optionalArgs = [])
+    {
+        $request = new ListUsableSubnetworksRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListUsableSubnetworks', $optionalArgs, ListUsableSubnetworksResponse::class, $request);
     }
 
     /**
@@ -1858,10 +1257,10 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
      *     $response = $clusterManagerClient->rollbackNodePoolUpgrade($projectId, $zone, $clusterId, $nodePoolId);
      * } finally {
      *     $clusterManagerClient->close();
@@ -1880,124 +1279,113 @@ class ClusterManagerGapicClient
      * @param string $nodePoolId   Required. Deprecated. The name of the node pool to rollback.
      *                             This field has been deprecated and replaced by the name field.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster, node pool id) of the node poll to
-     *          rollback upgrade.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *           The name (project, location, cluster, node pool id) of the node poll to
+     *           rollback upgrade.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function rollbackNodePoolUpgrade($projectId, $zone, $clusterId, $nodePoolId, array $optionalArgs = [])
     {
         $request = new RollbackNodePoolUpgradeRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
         $request->setNodePoolId($nodePoolId);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'RollbackNodePoolUpgrade',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('RollbackNodePoolUpgrade', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Sets the NodeManagement options for a node pool.
+     * Sets the addons for a specific cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
-     *     $management = new NodeManagement();
-     *     $response = $clusterManagerClient->setNodePoolManagement($projectId, $zone, $clusterId, $nodePoolId, $management);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $addonsConfig = new AddonsConfig();
+     *     $response = $clusterManagerClient->setAddonsConfig($projectId, $zone, $clusterId, $addonsConfig);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string         $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                                     number](https://support.google.com/cloud/answer/6158840).
-     *                                     This field has been deprecated and replaced by the name field.
-     * @param string         $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                                     [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                     cluster resides. This field has been deprecated and replaced by the name
-     *                                     field.
-     * @param string         $clusterId    Required. Deprecated. The name of the cluster to update.
-     *                                     This field has been deprecated and replaced by the name field.
-     * @param string         $nodePoolId   Required. Deprecated. The name of the node pool to update.
-     *                                     This field has been deprecated and replaced by the name field.
-     * @param NodeManagement $management   Required. NodeManagement configuration for the node pool.
-     * @param array          $optionalArgs {
-     *                                     Optional.
+     * @param string       $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                                   number](https://support.google.com/cloud/answer/6158840).
+     *                                   This field has been deprecated and replaced by the name field.
+     * @param string       $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                                   [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                   cluster resides. This field has been deprecated and replaced by the name
+     *                                   field.
+     * @param string       $clusterId    Required. Deprecated. The name of the cluster to upgrade.
+     *                                   This field has been deprecated and replaced by the name field.
+     * @param AddonsConfig $addonsConfig Required. The desired configurations for the various addons available to run in the
+     *                                   cluster.
+     * @param array        $optionalArgs {
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster, node pool id) of the node pool to set
-     *          management properties. Specified in the format
-     *          `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *           The name (project, location, cluster) of the cluster to set addons.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function setNodePoolManagement($projectId, $zone, $clusterId, $nodePoolId, $management, array $optionalArgs = [])
+    public function setAddonsConfig($projectId, $zone, $clusterId, $addonsConfig, array $optionalArgs = [])
     {
-        $request = new SetNodePoolManagementRequest();
+        $request = new SetAddonsConfigRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
-        $request->setNodePoolId($nodePoolId);
-        $request->setManagement($management);
+        $request->setAddonsConfig($addonsConfig);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetNodePoolManagement',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetAddonsConfig', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -2007,11 +1395,11 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
      *     $resourceLabels = [];
-     *     $labelFingerprint = '';
+     *     $labelFingerprint = 'label_fingerprint';
      *     $response = $clusterManagerClient->setLabels($projectId, $zone, $clusterId, $resourceLabels, $labelFingerprint);
      * } finally {
      *     $clusterManagerClient->close();
@@ -2035,48 +1423,44 @@ class ClusterManagerGapicClient
      *                                 updating or changing labels. Make a `get()` request to the
      *                                 resource to get the latest fingerprint.
      * @param array  $optionalArgs     {
-     *                                 Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster id) of the cluster to set labels.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster id) of the cluster to set labels.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function setLabels($projectId, $zone, $clusterId, $resourceLabels, $labelFingerprint, array $optionalArgs = [])
     {
         $request = new SetLabelsRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
         $request->setResourceLabels($resourceLabels);
         $request->setLabelFingerprint($labelFingerprint);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetLabels',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetLabels', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -2086,9 +1470,9 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
      *     $enabled = false;
      *     $response = $clusterManagerClient->setLegacyAbac($projectId, $zone, $clusterId, $enabled);
      * } finally {
@@ -2107,188 +1491,625 @@ class ClusterManagerGapicClient
      *                             This field has been deprecated and replaced by the name field.
      * @param bool   $enabled      Required. Whether ABAC authorization will be enabled in the cluster.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster id) of the cluster to set legacy abac.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster id) of the cluster to set legacy abac.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function setLegacyAbac($projectId, $zone, $clusterId, $enabled, array $optionalArgs = [])
     {
         $request = new SetLegacyAbacRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
         $request->setEnabled($enabled);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetLegacyAbac',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetLegacyAbac', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Starts master IP rotation.
+     * Sets the locations for a specific cluster.
+     * Deprecated. Use
+     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters/update)
+     * instead.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $response = $clusterManagerClient->startIPRotation($projectId, $zone, $clusterId);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $locations = [];
+     *     $response = $clusterManagerClient->setLocations($projectId, $zone, $clusterId, $locations);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://developers.google.com/console/help/new/#projectnumber).
-     *                             This field has been deprecated and replaced by the name field.
-     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                             cluster resides. This field has been deprecated and replaced by the name
-     *                             field.
-     * @param string $clusterId    Required. Deprecated. The name of the cluster.
-     *                             This field has been deprecated and replaced by the name field.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string   $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                               number](https://support.google.com/cloud/answer/6158840).
+     *                               This field has been deprecated and replaced by the name field.
+     * @param string   $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                               [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                               cluster resides. This field has been deprecated and replaced by the name
+     *                               field.
+     * @param string   $clusterId    Required. Deprecated. The name of the cluster to upgrade.
+     *                               This field has been deprecated and replaced by the name field.
+     * @param string[] $locations    Required. The desired list of Google Compute Engine
+     *                               [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                               cluster's nodes should be located. Changing the locations a cluster is in
+     *                               will result in nodes being either created or removed from the cluster,
+     *                               depending on whether locations are being added or removed.
+     *
+     *                               This list must always include the cluster's primary zone.
+     * @param array    $optionalArgs {
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster id) of the cluster to start IP
-     *          rotation. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
-     *     @type bool $rotateCredentials
-     *          Whether to rotate credentials during IP rotation.
+     *           The name (project, location, cluster) of the cluster to set locations.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function startIPRotation($projectId, $zone, $clusterId, array $optionalArgs = [])
+    public function setLocations($projectId, $zone, $clusterId, $locations, array $optionalArgs = [])
     {
-        $request = new StartIPRotationRequest();
+        $request = new SetLocationsRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
+        $request->setLocations($locations);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
-        }
-        if (isset($optionalArgs['rotateCredentials'])) {
-            $request->setRotateCredentials($optionalArgs['rotateCredentials']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'StartIPRotation',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetLocations', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Completes master IP rotation.
+     * Sets the logging service for a specific cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $response = $clusterManagerClient->completeIPRotation($projectId, $zone, $clusterId);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $loggingService = 'logging_service';
+     *     $response = $clusterManagerClient->setLoggingService($projectId, $zone, $clusterId, $loggingService);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
-     *                             number](https://developers.google.com/console/help/new/#projectnumber).
-     *                             This field has been deprecated and replaced by the name field.
-     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
-     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                             cluster resides. This field has been deprecated and replaced by the name
-     *                             field.
-     * @param string $clusterId    Required. Deprecated. The name of the cluster.
-     *                             This field has been deprecated and replaced by the name field.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $projectId      Required. Deprecated. The Google Developers Console [project ID or project
+     *                               number](https://support.google.com/cloud/answer/6158840).
+     *                               This field has been deprecated and replaced by the name field.
+     * @param string $zone           Required. Deprecated. The name of the Google Compute Engine
+     *                               [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                               cluster resides. This field has been deprecated and replaced by the name
+     *                               field.
+     * @param string $clusterId      Required. Deprecated. The name of the cluster to upgrade.
+     *                               This field has been deprecated and replaced by the name field.
+     * @param string $loggingService Required. The logging service the cluster should use to write logs.
+     *                               Currently available options:
+     *
+     *                               * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     *                               service with a Kubernetes-native resource model
+     *                               * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *                               available as of GKE 1.15).
+     *                               * `none` - no logs will be exported from the cluster.
+     *
+     *                               If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     *                               used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
+     * @param array  $optionalArgs   {
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster id) of the cluster to complete IP
-     *          rotation. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster) of the cluster to set logging.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function completeIPRotation($projectId, $zone, $clusterId, array $optionalArgs = [])
+    public function setLoggingService($projectId, $zone, $clusterId, $loggingService, array $optionalArgs = [])
     {
-        $request = new CompleteIPRotationRequest();
+        $request = new SetLoggingServiceRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
+        $request->setLoggingService($loggingService);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetLoggingService', Operation::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'CompleteIPRotation',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Sets the maintenance policy for a cluster.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $maintenancePolicy = new MaintenancePolicy();
+     *     $response = $clusterManagerClient->setMaintenancePolicy($projectId, $zone, $clusterId, $maintenancePolicy);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string            $projectId         Required. The Google Developers Console [project ID or project
+     *                                             number](https://support.google.com/cloud/answer/6158840).
+     * @param string            $zone              Required. The name of the Google Compute Engine
+     *                                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                             cluster resides.
+     * @param string            $clusterId         Required. The name of the cluster to update.
+     * @param MaintenancePolicy $maintenancePolicy Required. The maintenance policy to be set for the cluster. An empty field
+     *                                             clears the existing maintenance policy.
+     * @param array             $optionalArgs      {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster id) of the cluster to set maintenance
+     *           policy.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\Operation
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function setMaintenancePolicy($projectId, $zone, $clusterId, $maintenancePolicy, array $optionalArgs = [])
+    {
+        $request = new SetMaintenancePolicyRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setMaintenancePolicy($maintenancePolicy);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetMaintenancePolicy', Operation::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Sets master auth materials. Currently supports changing the admin password
+     * or a specific cluster, either via password generation or explicitly setting
+     * the password.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $action = Action::UNKNOWN;
+     *     $update = new MasterAuth();
+     *     $response = $clusterManagerClient->setMasterAuth($projectId, $zone, $clusterId, $action, $update);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string     $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                                 number](https://support.google.com/cloud/answer/6158840).
+     *                                 This field has been deprecated and replaced by the name field.
+     * @param string     $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                                 [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                 cluster resides. This field has been deprecated and replaced by the name
+     *                                 field.
+     * @param string     $clusterId    Required. Deprecated. The name of the cluster to upgrade.
+     *                                 This field has been deprecated and replaced by the name field.
+     * @param int        $action       Required. The exact form of action to be taken on the master auth.
+     *                                 For allowed values, use constants defined on {@see \Google\Cloud\Container\V1beta1\SetMasterAuthRequest\Action}
+     * @param MasterAuth $update       Required. A description of the update.
+     * @param array      $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster) of the cluster to set auth.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\Operation
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function setMasterAuth($projectId, $zone, $clusterId, $action, $update, array $optionalArgs = [])
+    {
+        $request = new SetMasterAuthRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setAction($action);
+        $request->setUpdate($update);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetMasterAuth', Operation::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Sets the monitoring service for a specific cluster.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $monitoringService = 'monitoring_service';
+     *     $response = $clusterManagerClient->setMonitoringService($projectId, $zone, $clusterId, $monitoringService);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string $projectId         Required. Deprecated. The Google Developers Console [project ID or project
+     *                                  number](https://support.google.com/cloud/answer/6158840).
+     *                                  This field has been deprecated and replaced by the name field.
+     * @param string $zone              Required. Deprecated. The name of the Google Compute Engine
+     *                                  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                  cluster resides. This field has been deprecated and replaced by the name
+     *                                  field.
+     * @param string $clusterId         Required. Deprecated. The name of the cluster to upgrade.
+     *                                  This field has been deprecated and replaced by the name field.
+     * @param string $monitoringService Required. The monitoring service the cluster should use to write metrics.
+     *                                  Currently available options:
+     *
+     *                                  * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     *                                  service with a Kubernetes-native resource model
+     *                                  * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *                                  longer available as of GKE 1.15).
+     *                                  * `none` - No metrics will be exported from the cluster.
+     *
+     *                                  If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     *                                  used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
+     * @param array  $optionalArgs      {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster) of the cluster to set monitoring.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\Operation
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function setMonitoringService($projectId, $zone, $clusterId, $monitoringService, array $optionalArgs = [])
+    {
+        $request = new SetMonitoringServiceRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setMonitoringService($monitoringService);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetMonitoringService', Operation::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Enables or disables Network Policy for a cluster.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $networkPolicy = new NetworkPolicy();
+     *     $response = $clusterManagerClient->setNetworkPolicy($projectId, $zone, $clusterId, $networkPolicy);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string        $projectId     Required. Deprecated. The Google Developers Console [project ID or project
+     *                                     number](https://developers.google.com/console/help/new/#projectnumber).
+     *                                     This field has been deprecated and replaced by the name field.
+     * @param string        $zone          Required. Deprecated. The name of the Google Compute Engine
+     *                                     [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                     cluster resides. This field has been deprecated and replaced by the name
+     *                                     field.
+     * @param string        $clusterId     Required. Deprecated. The name of the cluster.
+     *                                     This field has been deprecated and replaced by the name field.
+     * @param NetworkPolicy $networkPolicy Required. Configuration options for the NetworkPolicy feature.
+     * @param array         $optionalArgs  {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster id) of the cluster to set networking
+     *           policy. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\Operation
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function setNetworkPolicy($projectId, $zone, $clusterId, $networkPolicy, array $optionalArgs = [])
+    {
+        $request = new SetNetworkPolicyRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setNetworkPolicy($networkPolicy);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetNetworkPolicy', Operation::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Sets the autoscaling settings of a specific node pool.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
+     *     $autoscaling = new NodePoolAutoscaling();
+     *     $response = $clusterManagerClient->setNodePoolAutoscaling($projectId, $zone, $clusterId, $nodePoolId, $autoscaling);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string              $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                                          number](https://support.google.com/cloud/answer/6158840).
+     *                                          This field has been deprecated and replaced by the name field.
+     * @param string              $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                                          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                          cluster resides. This field has been deprecated and replaced by the name
+     *                                          field.
+     * @param string              $clusterId    Required. Deprecated. The name of the cluster to upgrade.
+     *                                          This field has been deprecated and replaced by the name field.
+     * @param string              $nodePoolId   Required. Deprecated. The name of the node pool to upgrade.
+     *                                          This field has been deprecated and replaced by the name field.
+     * @param NodePoolAutoscaling $autoscaling  Required. Autoscaling configuration for the node pool.
+     * @param array               $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster, node pool) of the node pool to set
+     *           autoscaler settings. Specified in the format
+     *           `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\Operation
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function setNodePoolAutoscaling($projectId, $zone, $clusterId, $nodePoolId, $autoscaling, array $optionalArgs = [])
+    {
+        $request = new SetNodePoolAutoscalingRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setNodePoolId($nodePoolId);
+        $request->setAutoscaling($autoscaling);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetNodePoolAutoscaling', Operation::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Sets the NodeManagement options for a node pool.
+     *
+     * Sample code:
+     * ```
+     * $clusterManagerClient = new ClusterManagerClient();
+     * try {
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
+     *     $management = new NodeManagement();
+     *     $response = $clusterManagerClient->setNodePoolManagement($projectId, $zone, $clusterId, $nodePoolId, $management);
+     * } finally {
+     *     $clusterManagerClient->close();
+     * }
+     * ```
+     *
+     * @param string         $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                                     number](https://support.google.com/cloud/answer/6158840).
+     *                                     This field has been deprecated and replaced by the name field.
+     * @param string         $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                                     [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                     cluster resides. This field has been deprecated and replaced by the name
+     *                                     field.
+     * @param string         $clusterId    Required. Deprecated. The name of the cluster to update.
+     *                                     This field has been deprecated and replaced by the name field.
+     * @param string         $nodePoolId   Required. Deprecated. The name of the node pool to update.
+     *                                     This field has been deprecated and replaced by the name field.
+     * @param NodeManagement $management   Required. NodeManagement configuration for the node pool.
+     * @param array          $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster, node pool id) of the node pool to set
+     *           management properties. Specified in the format
+     *           `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Container\V1beta1\Operation
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function setNodePoolManagement($projectId, $zone, $clusterId, $nodePoolId, $management, array $optionalArgs = [])
+    {
+        $request = new SetNodePoolManagementRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setNodePoolId($nodePoolId);
+        $request->setManagement($management);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetNodePoolManagement', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -2298,10 +2119,10 @@ class ClusterManagerGapicClient
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $nodePoolId = '';
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
      *     $nodeCount = 0;
      *     $response = $clusterManagerClient->setNodePoolSize($projectId, $zone, $clusterId, $nodePoolId, $nodeCount);
      * } finally {
@@ -2322,329 +2143,378 @@ class ClusterManagerGapicClient
      *                             This field has been deprecated and replaced by the name field.
      * @param int    $nodeCount    Required. The desired node count for the pool.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster, node pool id) of the node pool to set
-     *          size.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *           The name (project, location, cluster, node pool id) of the node pool to set
+     *           size.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
     public function setNodePoolSize($projectId, $zone, $clusterId, $nodePoolId, $nodeCount, array $optionalArgs = [])
     {
         $request = new SetNodePoolSizeRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
         $request->setNodePoolId($nodePoolId);
         $request->setNodeCount($nodeCount);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetNodePoolSize',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SetNodePoolSize', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Enables or disables Network Policy for a cluster.
+     * Starts master IP rotation.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $networkPolicy = new NetworkPolicy();
-     *     $response = $clusterManagerClient->setNetworkPolicy($projectId, $zone, $clusterId, $networkPolicy);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $response = $clusterManagerClient->startIPRotation($projectId, $zone, $clusterId);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string        $projectId     Required. Deprecated. The Google Developers Console [project ID or project
-     *                                     number](https://developers.google.com/console/help/new/#projectnumber).
-     *                                     This field has been deprecated and replaced by the name field.
-     * @param string        $zone          Required. Deprecated. The name of the Google Compute Engine
-     *                                     [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                     cluster resides. This field has been deprecated and replaced by the name
-     *                                     field.
-     * @param string        $clusterId     Required. Deprecated. The name of the cluster.
-     *                                     This field has been deprecated and replaced by the name field.
-     * @param NetworkPolicy $networkPolicy Required. Configuration options for the NetworkPolicy feature.
-     * @param array         $optionalArgs  {
-     *                                     Optional.
+     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                             number](https://developers.google.com/console/help/new/#projectnumber).
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                             cluster resides. This field has been deprecated and replaced by the name
+     *                             field.
+     * @param string $clusterId    Required. Deprecated. The name of the cluster.
+     *                             This field has been deprecated and replaced by the name field.
+     * @param array  $optionalArgs {
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster id) of the cluster to set networking
-     *          policy. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster id) of the cluster to start IP
+     *           rotation. Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *     @type bool $rotateCredentials
+     *           Whether to rotate credentials during IP rotation.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function setNetworkPolicy($projectId, $zone, $clusterId, $networkPolicy, array $optionalArgs = [])
+    public function startIPRotation($projectId, $zone, $clusterId, array $optionalArgs = [])
     {
-        $request = new SetNetworkPolicyRequest();
+        $request = new StartIPRotationRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
-        $request->setNetworkPolicy($networkPolicy);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        if (isset($optionalArgs['rotateCredentials'])) {
+            $request->setRotateCredentials($optionalArgs['rotateCredentials']);
+        }
 
-        return $this->startCall(
-            'SetNetworkPolicy',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('StartIPRotation', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Sets the maintenance policy for a cluster.
+     * Updates the settings for a specific cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $projectId = '';
-     *     $zone = '';
-     *     $clusterId = '';
-     *     $maintenancePolicy = new MaintenancePolicy();
-     *     $response = $clusterManagerClient->setMaintenancePolicy($projectId, $zone, $clusterId, $maintenancePolicy);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $update = new ClusterUpdate();
+     *     $response = $clusterManagerClient->updateCluster($projectId, $zone, $clusterId, $update);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string            $projectId         Required. The Google Developers Console [project ID or project
-     *                                             number](https://support.google.com/cloud/answer/6158840).
-     * @param string            $zone              Required. The name of the Google Compute Engine
-     *                                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     *                                             cluster resides.
-     * @param string            $clusterId         Required. The name of the cluster to update.
-     * @param MaintenancePolicy $maintenancePolicy Required. The maintenance policy to be set for the cluster. An empty field
-     *                                             clears the existing maintenance policy.
-     * @param array             $optionalArgs      {
-     *                                             Optional.
+     * @param string        $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                                    number](https://support.google.com/cloud/answer/6158840).
+     *                                    This field has been deprecated and replaced by the name field.
+     * @param string        $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                                    [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                                    cluster resides. This field has been deprecated and replaced by the name
+     *                                    field.
+     * @param string        $clusterId    Required. Deprecated. The name of the cluster to upgrade.
+     *                                    This field has been deprecated and replaced by the name field.
+     * @param ClusterUpdate $update       Required. A description of the update.
+     * @param array         $optionalArgs {
+     *     Optional.
      *
      *     @type string $name
-     *          The name (project, location, cluster id) of the cluster to set maintenance
-     *          policy.
-     *          Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
+     *           The name (project, location, cluster) of the cluster to update.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function setMaintenancePolicy($projectId, $zone, $clusterId, $maintenancePolicy, array $optionalArgs = [])
+    public function updateCluster($projectId, $zone, $clusterId, $update, array $optionalArgs = [])
     {
-        $request = new SetMaintenancePolicyRequest();
+        $request = new UpdateClusterRequest();
+        $requestParamHeaders = [];
         $request->setProjectId($projectId);
         $request->setZone($zone);
         $request->setClusterId($clusterId);
-        $request->setMaintenancePolicy($maintenancePolicy);
+        $request->setUpdate($update);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetMaintenancePolicy',
-            Operation::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateCluster', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Lists subnetworks that can be used for creating clusters in a project.
+     * Updates the master for a specific cluster.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $parent = '';
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $clusterManagerClient->listUsableSubnetworks($parent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $clusterManagerClient->listUsableSubnetworks($parent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $masterVersion = 'master_version';
+     *     $response = $clusterManagerClient->updateMaster($projectId, $zone, $clusterId, $masterVersion);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string $parent       Required. The parent project where subnetworks are usable.
-     *                             Specified in the format `projects/*`.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $projectId     Required. Deprecated. The Google Developers Console [project ID or project
+     *                              number](https://support.google.com/cloud/answer/6158840).
+     *                              This field has been deprecated and replaced by the name field.
+     * @param string $zone          Required. Deprecated. The name of the Google Compute Engine
+     *                              [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                              cluster resides. This field has been deprecated and replaced by the name
+     *                              field.
+     * @param string $clusterId     Required. Deprecated. The name of the cluster to upgrade.
+     *                              This field has been deprecated and replaced by the name field.
+     * @param string $masterVersion Required. The Kubernetes version to change the master to.
      *
-     *     @type string $filter
-     *          Filtering currently only supports equality on the networkProjectId and must
-     *          be in the form: "networkProjectId=[PROJECTID]", where `networkProjectId`
-     *          is the project which owns the listed subnetworks. This defaults to the
-     *          parent project ID.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *                              Users may specify either explicit versions offered by
+     *                              Kubernetes Engine or version aliases, which have the following behavior:
+     *
+     *                              - "latest": picks the highest valid Kubernetes version
+     *                              - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     *                              - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     *                              - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     *                              - "-": picks the default Kubernetes version
+     * @param array  $optionalArgs  {
+     *     Optional.
+     *
+     *     @type string $name
+     *           The name (project, location, cluster) of the cluster to update.
+     *           Specified in the format `projects/&#42;/locations/&#42;/clusters/*`.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function listUsableSubnetworks($parent, array $optionalArgs = [])
+    public function updateMaster($projectId, $zone, $clusterId, $masterVersion, array $optionalArgs = [])
     {
-        $request = new ListUsableSubnetworksRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['filter'])) {
-            $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
+        $request = new UpdateMasterRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setMasterVersion($masterVersion);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListUsableSubnetworks',
-            $optionalArgs,
-            ListUsableSubnetworksResponse::class,
-            $request
-        );
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateMaster', Operation::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Fetches locations that offer Google Kubernetes Engine.
+     * Updates the version and/or image type of a specific node pool.
      *
      * Sample code:
      * ```
      * $clusterManagerClient = new ClusterManagerClient();
      * try {
-     *     $parent = '';
-     *     $response = $clusterManagerClient->listLocations($parent);
+     *     $projectId = 'project_id';
+     *     $zone = 'zone';
+     *     $clusterId = 'cluster_id';
+     *     $nodePoolId = 'node_pool_id';
+     *     $nodeVersion = 'node_version';
+     *     $imageType = 'image_type';
+     *     $response = $clusterManagerClient->updateNodePool($projectId, $zone, $clusterId, $nodePoolId, $nodeVersion, $imageType);
      * } finally {
      *     $clusterManagerClient->close();
      * }
      * ```
      *
-     * @param string $parent       Required. Contains the name of the resource requested.
-     *                             Specified in the format `projects/*`.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $projectId    Required. Deprecated. The Google Developers Console [project ID or project
+     *                             number](https://support.google.com/cloud/answer/6158840).
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $zone         Required. Deprecated. The name of the Google Compute Engine
+     *                             [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     *                             cluster resides. This field has been deprecated and replaced by the name
+     *                             field.
+     * @param string $clusterId    Required. Deprecated. The name of the cluster to upgrade.
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $nodePoolId   Required. Deprecated. The name of the node pool to upgrade.
+     *                             This field has been deprecated and replaced by the name field.
+     * @param string $nodeVersion  Required. The Kubernetes version to change the nodes to (typically an
+     *                             upgrade).
      *
+     *                             Users may specify either explicit versions offered by Kubernetes Engine or
+     *                             version aliases, which have the following behavior:
+     *
+     *                             - "latest": picks the highest valid Kubernetes version
+     *                             - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     *                             - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     *                             - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     *                             - "-": picks the Kubernetes master version
+     * @param string $imageType    Required. The desired image type for the node pool.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string[] $locations
+     *           The desired list of Google Compute Engine
+     *           [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     *           node pool's nodes should be located. Changing the locations for a node pool
+     *           will result in nodes being either created or removed from the node pool,
+     *           depending on whether locations are being added or removed.
+     *     @type WorkloadMetadataConfig $workloadMetadataConfig
+     *           The desired workload metadata config for the node pool.
+     *     @type string $name
+     *           The name (project, location, cluster, node pool) of the node pool to
+     *           update. Specified in the format
+     *           `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
+     *     @type UpgradeSettings $upgradeSettings
+     *           Upgrade settings control disruption and speed of the upgrade.
+     *     @type LinuxNodeConfig $linuxNodeConfig
+     *           Parameters that can be configured on Linux nodes.
+     *     @type NodeKubeletConfig $kubeletConfig
+     *           Node kubelet configs.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Container\V1beta1\ListLocationsResponse
+     * @return \Google\Cloud\Container\V1beta1\Operation
      *
      * @throws ApiException if the remote call fails
+     *
      * @experimental
      */
-    public function listLocations($parent, array $optionalArgs = [])
+    public function updateNodePool($projectId, $zone, $clusterId, $nodePoolId, $nodeVersion, $imageType, array $optionalArgs = [])
     {
-        $request = new ListLocationsRequest();
-        $request->setParent($parent);
+        $request = new UpdateNodePoolRequest();
+        $requestParamHeaders = [];
+        $request->setProjectId($projectId);
+        $request->setZone($zone);
+        $request->setClusterId($clusterId);
+        $request->setNodePoolId($nodePoolId);
+        $request->setNodeVersion($nodeVersion);
+        $request->setImageType($imageType);
+        $requestParamHeaders['project_id'] = $projectId;
+        $requestParamHeaders['zone'] = $zone;
+        $requestParamHeaders['cluster_id'] = $clusterId;
+        $requestParamHeaders['node_pool_id'] = $nodePoolId;
+        if (isset($optionalArgs['locations'])) {
+            $request->setLocations($optionalArgs['locations']);
+        }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        if (isset($optionalArgs['workloadMetadataConfig'])) {
+            $request->setWorkloadMetadataConfig($optionalArgs['workloadMetadataConfig']);
+        }
 
-        return $this->startCall(
-            'ListLocations',
-            ListLocationsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        if (isset($optionalArgs['upgradeSettings'])) {
+            $request->setUpgradeSettings($optionalArgs['upgradeSettings']);
+        }
+
+        if (isset($optionalArgs['linuxNodeConfig'])) {
+            $request->setLinuxNodeConfig($optionalArgs['linuxNodeConfig']);
+        }
+
+        if (isset($optionalArgs['kubeletConfig'])) {
+            $request->setKubeletConfig($optionalArgs['kubeletConfig']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateNodePool', Operation::class, $optionalArgs, $request)->wait();
     }
 }
