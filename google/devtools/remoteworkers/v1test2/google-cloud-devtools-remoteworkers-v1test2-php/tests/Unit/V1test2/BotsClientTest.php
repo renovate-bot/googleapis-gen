@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,21 +20,22 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Devtools\Remoteworkers\Tests\Unit\V1test2;
+namespace Google\Cloud\Remoteworkers\Tests\Unit\V1test2;
 
-use Google\Cloud\Devtools\Remoteworkers\V1test2\BotsClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
-use Google\Devtools\Remoteworkers\V1test2\BotSession;
-use Google\Protobuf\Any;
+use Google\Cloud\Remoteworkers\V1test2\BotsClient;
+use Google\Cloud\Remoteworkers\V1test2\BotSession;
 use Google\Protobuf\FieldMask;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group remoteworkers
+ *
  * @group gapic
  */
 class BotsClientTest extends GeneratedTest
@@ -52,9 +53,7 @@ class BotsClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -65,7 +64,6 @@ class BotsClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new BotsClient($options);
     }
 
@@ -75,10 +73,10 @@ class BotsClientTest extends GeneratedTest
     public function createBotSessionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $name = 'name3373707';
         $botId = 'botId-1383249261';
@@ -88,11 +86,9 @@ class BotsClientTest extends GeneratedTest
         $expectedResponse->setBotId($botId);
         $expectedResponse->setVersion($version);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $parent = 'parent-995424086';
         $botSession = new BotSession();
-
         $response = $client->createBotSession($parent, $botSession);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -100,14 +96,10 @@ class BotsClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.devtools.remoteworkers.v1test2.Bots/CreateBotSession', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getParent();
-
         $this->assertProtobufEquals($parent, $actualValue);
         $actualValue = $actualRequestObject->getBotSession();
-
         $this->assertProtobufEquals($botSession, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -117,26 +109,23 @@ class BotsClientTest extends GeneratedTest
     public function createBotSessionExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $parent = 'parent-995424086';
         $botSession = new BotSession();
-
         try {
             $client->createBotSession($parent, $botSession);
             // If the $client method call did not throw, fail the test
@@ -145,7 +134,6 @@ class BotsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -157,10 +145,10 @@ class BotsClientTest extends GeneratedTest
     public function updateBotSessionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $name2 = 'name2-1052831874';
         $botId = 'botId-1383249261';
@@ -170,12 +158,10 @@ class BotsClientTest extends GeneratedTest
         $expectedResponse->setBotId($botId);
         $expectedResponse->setVersion($version);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedName = $client->botSessionName('[UNKNOWN_PATH]', '[BOT_SESSION]');
         $botSession = new BotSession();
         $updateMask = new FieldMask();
-
         $response = $client->updateBotSession($formattedName, $botSession, $updateMask);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -183,17 +169,12 @@ class BotsClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.devtools.remoteworkers.v1test2.Bots/UpdateBotSession', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getName();
-
         $this->assertProtobufEquals($formattedName, $actualValue);
         $actualValue = $actualRequestObject->getBotSession();
-
         $this->assertProtobufEquals($botSession, $actualValue);
         $actualValue = $actualRequestObject->getUpdateMask();
-
         $this->assertProtobufEquals($updateMask, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -203,27 +184,24 @@ class BotsClientTest extends GeneratedTest
     public function updateBotSessionExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedName = $client->botSessionName('[UNKNOWN_PATH]', '[BOT_SESSION]');
         $botSession = new BotSession();
         $updateMask = new FieldMask();
-
         try {
             $client->updateBotSession($formattedName, $botSession, $updateMask);
             // If the $client method call did not throw, fail the test
@@ -232,7 +210,6 @@ class BotsClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

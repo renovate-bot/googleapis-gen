@@ -19,7 +19,7 @@ class Command
         \GPBMetadata\Google\Rpc\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-­
+Ò
 3google/devtools/remoteworkers/v1test2/command.proto%google.devtools.remoteworkers.v1test2google/protobuf/duration.protogoogle/rpc/status.proto"Ñ
 CommandTaskI
 inputs (29.google.devtools.remoteworkers.v1test2.CommandTask.InputsT
@@ -73,8 +73,8 @@ size_bytes ("W
 contents ("ž
 	DirectoryB
 files (23.google.devtools.remoteworkers.v1test2.FileMetadataM
-directories (28.google.devtools.remoteworkers.v1test2.DirectoryMetadataBÅ
-)com.google.devtools.remoteworkers.v1test2BRemoteWorkersCommandsPZRgoogle.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2;remoteworkers¢RWª%Google.DevTools.RemoteWorkers.V1Test2bproto3'
+directories (28.google.devtools.remoteworkers.v1test2.DirectoryMetadataBê
+)com.google.devtools.remoteworkers.v1test2BRemoteWorkersCommandsPZRgoogle.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2;remoteworkers¢RWª%Google.DevTools.RemoteWorkers.V1Test2Ê"Google\\Cloud\\Remoteworkers\\V1test2bproto3'
         , true);
 
         static::$is_initialized = true;

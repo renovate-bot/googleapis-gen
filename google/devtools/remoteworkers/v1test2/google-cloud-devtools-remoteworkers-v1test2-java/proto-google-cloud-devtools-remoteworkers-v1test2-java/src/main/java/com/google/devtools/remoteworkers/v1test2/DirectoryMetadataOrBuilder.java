@@ -9,7 +9,8 @@ public interface DirectoryMetadataOrBuilder extends
 
   /**
    * <pre>
-   * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+   * The path of the directory, as in
+   * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -18,7 +19,8 @@ public interface DirectoryMetadataOrBuilder extends
   java.lang.String getPath();
   /**
    * <pre>
-   * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+   * The path of the directory, as in
+   * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
    * </pre>
    *
    * <code>string path = 1;</code>

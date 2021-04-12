@@ -139,12 +139,13 @@ public final class RemoteWorkersCommands {
       "vtools.remoteworkers.v1test2.FileMetadat" +
       "a\022M\n\013directories\030\002 \003(\01328.google.devtools" +
       ".remoteworkers.v1test2.DirectoryMetadata" +
-      "B\305\001\n)com.google.devtools.remoteworkers.v" +
+      "B\352\001\n)com.google.devtools.remoteworkers.v" +
       "1test2B\025RemoteWorkersCommandsP\001ZRgoogle." +
       "golang.org/genproto/googleapis/devtools/" +
       "remoteworkers/v1test2;remoteworkers\242\002\002RW" +
       "\252\002%Google.DevTools.RemoteWorkers.V1Test2" +
-      "b\006proto3"
+      "\312\002\"Google\\Cloud\\Remoteworkers\\V1test2b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

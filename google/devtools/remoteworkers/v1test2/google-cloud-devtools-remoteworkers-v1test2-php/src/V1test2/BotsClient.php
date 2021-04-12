@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,19 +20,15 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/devtools/remoteworkers/v1test2/bots.proto
  * and updates to that file get reflected here through a refresh process.
- *
- * @experimental
  */
 
-namespace Google\Cloud\Devtools\Remoteworkers\V1test2;
+namespace Google\Cloud\Remoteworkers\V1test2;
 
-use Google\Cloud\Devtools\Remoteworkers\V1test2\Gapic\BotsGapicClient;
+use Google\Cloud\Remoteworkers\V1test2\Gapic\BotsGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class BotsClient extends BotsGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see BotsGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see BotsGapicClient} class.
 }

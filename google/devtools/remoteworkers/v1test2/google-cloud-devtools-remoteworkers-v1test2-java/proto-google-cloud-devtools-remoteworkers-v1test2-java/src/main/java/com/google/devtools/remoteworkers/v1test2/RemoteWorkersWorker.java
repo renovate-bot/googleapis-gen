@@ -61,12 +61,13 @@ public final class RemoteWorkersWorker {
       "ce\022\016\n\006handle\030\001 \001(\t\022J\n\nproperties\030\002 \003(\01326" +
       ".google.devtools.remoteworkers.v1test2.D" +
       "evice.Property\032&\n\010Property\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\tB\303\001\n)com.google.devtools.r" +
+      "\r\n\005value\030\002 \001(\tB\350\001\n)com.google.devtools.r" +
       "emoteworkers.v1test2B\023RemoteWorkersWorke" +
       "rP\001ZRgoogle.golang.org/genproto/googleap" +
       "is/devtools/remoteworkers/v1test2;remote" +
       "workers\242\002\002RW\252\002%Google.DevTools.RemoteWor" +
-      "kers.V1Test2b\006proto3"
+      "kers.V1Test2\312\002\"Google\\Cloud\\Remoteworker" +
+      "s\\V1test2b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

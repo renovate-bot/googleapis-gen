@@ -16,7 +16,7 @@ class Worker
         }
         $pool->internalAddGeneratedFile(
             '
-ä
+‰
 2google/devtools/remoteworkers/v1test2/worker.proto%google.devtools.remoteworkers.v1test2"©
 Worker>
 devices (2-.google.devtools.remoteworkers.v1test2.DeviceJ
@@ -35,8 +35,8 @@ properties (26.google.devtools.remoteworkers.v1test2.Worker.PropertyE
 properties (26.google.devtools.remoteworkers.v1test2.Device.Property&
 Property
 key (	
-value (	BÃ
-)com.google.devtools.remoteworkers.v1test2BRemoteWorkersWorkerPZRgoogle.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2;remoteworkers¢RWª%Google.DevTools.RemoteWorkers.V1Test2bproto3'
+value (	Bè
+)com.google.devtools.remoteworkers.v1test2BRemoteWorkersWorkerPZRgoogle.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2;remoteworkers¢RWª%Google.DevTools.RemoteWorkers.V1Test2Ê"Google\\Cloud\\Remoteworkers\\V1test2bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -109,7 +109,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object path_;
   /**
    * <pre>
-   * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+   * The path of the directory, as in
+   * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -130,7 +131,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+   * The path of the directory, as in
+   * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -532,7 +534,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object path_ = "";
     /**
      * <pre>
-     * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+     * The path of the directory, as in
+     * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -552,7 +555,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+     * The path of the directory, as in
+     * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -573,7 +577,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+     * The path of the directory, as in
+     * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -592,7 +597,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+     * The path of the directory, as in
+     * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -606,7 +612,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path of the directory, as in [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+     * The path of the directory, as in
+     * [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
      * </pre>
      *
      * <code>string path = 1;</code>

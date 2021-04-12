@@ -108,12 +108,13 @@ public final class RemoteWorkersBots {
       "otSession\"T\202\323\344\223\002/2 /v1test2/{name=**/bot" +
       "Sessions/*}:\013bot_session\332A\034name,bot_sess" +
       "ion,update_mask\032\037\312A\034remoteworkers.google" +
-      "apis.comB\301\001\n)com.google.devtools.remotew" +
+      "apis.comB\346\001\n)com.google.devtools.remotew" +
       "orkers.v1test2B\021RemoteWorkersBotsP\001ZRgoo" +
       "gle.golang.org/genproto/googleapis/devto" +
       "ols/remoteworkers/v1test2;remoteworkers\242" +
       "\002\002RW\252\002%Google.DevTools.RemoteWorkers.V1T" +
-      "est2b\006proto3"
+      "est2\312\002\"Google\\Cloud\\Remoteworkers\\V1test" +
+      "2b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
