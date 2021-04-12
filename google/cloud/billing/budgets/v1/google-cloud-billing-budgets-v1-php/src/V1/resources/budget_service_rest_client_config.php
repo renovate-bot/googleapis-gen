@@ -15,14 +15,12 @@ return [
                     ],
                 ],
             ],
-            'UpdateBudget' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{budget.name=billingAccounts/*/budgets/*}',
-                'body' => 'budget',
+            'DeleteBudget' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=billingAccounts/*/budgets/*}',
                 'placeholders' => [
-                    'budget.name' => [
+                    'name' => [
                         'getters' => [
-                            'getBudget',
                             'getName',
                         ],
                     ],
@@ -50,12 +48,14 @@ return [
                     ],
                 ],
             ],
-            'DeleteBudget' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=billingAccounts/*/budgets/*}',
+            'UpdateBudget' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{budget.name=billingAccounts/*/budgets/*}',
+                'body' => 'budget',
                 'placeholders' => [
-                    'name' => [
+                    'budget.name' => [
                         'getters' => [
+                            'getBudget',
                             'getName',
                         ],
                     ],
