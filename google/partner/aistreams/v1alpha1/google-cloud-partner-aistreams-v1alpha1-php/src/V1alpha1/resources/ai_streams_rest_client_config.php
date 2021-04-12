@@ -107,13 +107,48 @@ return [
             ],
         ],
         'google.partner.aistreams.v1alpha1.AIStreams' => [
-            'ListClusters' => [
-                'method' => 'get',
+            'CreateCluster' => [
+                'method' => 'post',
                 'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*}/clusters',
+                'body' => 'cluster',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateStream' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*/clusters/*}/streams',
+                'body' => 'stream',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteCluster' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/clusters/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteStream' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/clusters/*/streams/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -129,10 +164,31 @@ return [
                     ],
                 ],
             ],
-            'CreateCluster' => [
-                'method' => 'post',
+            'GetStream' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/clusters/*/streams/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListClusters' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*}/clusters',
-                'body' => 'cluster',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListStreams' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*/clusters/*}/streams',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -154,51 +210,6 @@ return [
                     ],
                 ],
             ],
-            'DeleteCluster' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/clusters/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListStreams' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*/clusters/*}/streams',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetStream' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/clusters/*/streams/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateStream' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1alpha1/{parent=projects/*/locations/*/clusters/*}/streams',
-                'body' => 'stream',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateStream' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1alpha1/{stream.name=projects/*/locations/*/clusters/*/streams/*}',
@@ -207,17 +218,6 @@ return [
                     'stream.name' => [
                         'getters' => [
                             'getStream',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteStream' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1alpha1/{name=projects/*/locations/*/clusters/*/streams/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

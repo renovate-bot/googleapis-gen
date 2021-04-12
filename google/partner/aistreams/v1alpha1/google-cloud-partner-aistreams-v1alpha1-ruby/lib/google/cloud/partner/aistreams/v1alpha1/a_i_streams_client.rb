@@ -436,10 +436,10 @@ module Google
             #   A hash of the same form as `Google::Partner::Aistreams::V1alpha1::Cluster`
             #   can also be provided.
             # @param request_id [String]
-            #   Optional. An optional request ID to identify requests. Specify a unique request ID
-            #   so that if you must retry your request, the server will know to ignore
-            #   the request if it has already been completed. The server will guarantee
-            #   that for at least 60 minutes since the first request.
+            #   Optional. An optional request ID to identify requests. Specify a unique
+            #   request ID so that if you must retry your request, the server will know to
+            #   ignore the request if it has already been completed. The server will
+            #   guarantee that for at least 60 minutes since the first request.
             #
             #   For example, consider a situation where you make an initial request and the
             #   request times out. If you make the request again with the same request ID,
@@ -532,10 +532,10 @@ module Google
             #   A hash of the same form as `Google::Partner::Aistreams::V1alpha1::Cluster`
             #   can also be provided.
             # @param request_id [String]
-            #   Optional. An optional request ID to identify requests. Specify a unique request ID
-            #   so that if you must retry your request, the server will know to ignore
-            #   the request if it has already been completed. The server will guarantee
-            #   that for at least 60 minutes since the first request.
+            #   Optional. An optional request ID to identify requests. Specify a unique
+            #   request ID so that if you must retry your request, the server will know to
+            #   ignore the request if it has already been completed. The server will
+            #   guarantee that for at least 60 minutes since the first request.
             #
             #   For example, consider a situation where you make an initial request and the
             #   request times out. If you make the request again with the same request ID,
@@ -615,10 +615,10 @@ module Google
             # @param name [String]
             #   Required. The name of cluster to delete.
             # @param request_id [String]
-            #   Optional. An optional request ID to identify requests. Specify a unique request ID
-            #   so that if you must retry your request, the server will know to ignore
-            #   the request if it has already been completed. The server will guarantee
-            #   that for at least 60 minutes after the first request.
+            #   Optional. An optional request ID to identify requests. Specify a unique
+            #   request ID so that if you must retry your request, the server will know to
+            #   ignore the request if it has already been completed. The server will
+            #   guarantee that for at least 60 minutes after the first request.
             #
             #   For example, consider a situation where you make an initial request and the
             #   request times out. If you make the request again with the same request ID,
@@ -789,10 +789,10 @@ module Google
             #   A hash of the same form as `Google::Partner::Aistreams::V1alpha1::Stream`
             #   can also be provided.
             # @param request_id [String]
-            #   Optional. An optional request ID to identify requests. Specify a unique request ID
-            #   so that if you must retry your request, the server will know to ignore
-            #   the request if it has already been completed. The server will guarantee
-            #   that for at least 60 minutes since the first request.
+            #   Optional. An optional request ID to identify requests. Specify a unique
+            #   request ID so that if you must retry your request, the server will know to
+            #   ignore the request if it has already been completed. The server will
+            #   guarantee that for at least 60 minutes since the first request.
             #
             #   For example, consider a situation where you make an initial request and t
             #   he request times out. If you make the request again with the same request
@@ -885,10 +885,10 @@ module Google
             #   A hash of the same form as `Google::Partner::Aistreams::V1alpha1::Stream`
             #   can also be provided.
             # @param request_id [String]
-            #   Optional. An optional request ID to identify requests. Specify a unique request ID
-            #   so that if you must retry your request, the server will know to ignore
-            #   the request if it has already been completed. The server will guarantee
-            #   that for at least 60 minutes since the first request.
+            #   Optional. An optional request ID to identify requests. Specify a unique
+            #   request ID so that if you must retry your request, the server will know to
+            #   ignore the request if it has already been completed. The server will
+            #   guarantee that for at least 60 minutes since the first request.
             #
             #   For example, consider a situation where you make an initial request and t
             #   he request times out. If you make the request again with the same request
@@ -968,10 +968,10 @@ module Google
             # @param name [String]
             #   Required. The name of the stream.
             # @param request_id [String]
-            #   Optional. An optional request ID to identify requests. Specify a unique request ID
-            #   so that if you must retry your request, the server will know to ignore
-            #   the request if it has already been completed. The server will guarantee
-            #   that for at least 60 minutes after the first request.
+            #   Optional. An optional request ID to identify requests. Specify a unique
+            #   request ID so that if you must retry your request, the server will know to
+            #   ignore the request if it has already been completed. The server will
+            #   guarantee that for at least 60 minutes after the first request.
             #
             #   For example, consider a situation where you make an initial request and t
             #   he request times out. If you make the request again with the same request

@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-namespace Google\Partner\Aistreams\V1alpha1;
+namespace Google\Cloud\Partner\Aistreams\V1alpha1;
 
 /**
  * AIStreams service.
@@ -34,42 +34,42 @@ class AIStreamsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Lists Clusters in a given project and location.
-     * @param \Google\Partner\Aistreams\V1alpha1\ListClustersRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\ListClustersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function ListClusters(\Google\Partner\Aistreams\V1alpha1\ListClustersRequest $argument,
+    public function ListClusters(\Google\Cloud\Partner\Aistreams\V1alpha1\ListClustersRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/ListClusters',
         $argument,
-        ['\Google\Partner\Aistreams\V1alpha1\ListClustersResponse', 'decode'],
+        ['\Google\Cloud\Partner\Aistreams\V1alpha1\ListClustersResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Gets details of a single Cluster.
-     * @param \Google\Partner\Aistreams\V1alpha1\GetClusterRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\GetClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GetCluster(\Google\Partner\Aistreams\V1alpha1\GetClusterRequest $argument,
+    public function GetCluster(\Google\Cloud\Partner\Aistreams\V1alpha1\GetClusterRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/GetCluster',
         $argument,
-        ['\Google\Partner\Aistreams\V1alpha1\Cluster', 'decode'],
+        ['\Google\Cloud\Partner\Aistreams\V1alpha1\Cluster', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Creates a new Cluster in a given project and location.
-     * @param \Google\Partner\Aistreams\V1alpha1\CreateClusterRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\CreateClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateCluster(\Google\Partner\Aistreams\V1alpha1\CreateClusterRequest $argument,
+    public function CreateCluster(\Google\Cloud\Partner\Aistreams\V1alpha1\CreateClusterRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/CreateCluster',
         $argument,
@@ -79,12 +79,12 @@ class AIStreamsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the parameters of a single Cluster.
-     * @param \Google\Partner\Aistreams\V1alpha1\UpdateClusterRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\UpdateClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateCluster(\Google\Partner\Aistreams\V1alpha1\UpdateClusterRequest $argument,
+    public function UpdateCluster(\Google\Cloud\Partner\Aistreams\V1alpha1\UpdateClusterRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/UpdateCluster',
         $argument,
@@ -94,12 +94,12 @@ class AIStreamsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes a single Cluster.
-     * @param \Google\Partner\Aistreams\V1alpha1\DeleteClusterRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\DeleteClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function DeleteCluster(\Google\Partner\Aistreams\V1alpha1\DeleteClusterRequest $argument,
+    public function DeleteCluster(\Google\Cloud\Partner\Aistreams\V1alpha1\DeleteClusterRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/DeleteCluster',
         $argument,
@@ -109,42 +109,42 @@ class AIStreamsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Lists Streams in a given project, location and cluster.
-     * @param \Google\Partner\Aistreams\V1alpha1\ListStreamsRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\ListStreamsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function ListStreams(\Google\Partner\Aistreams\V1alpha1\ListStreamsRequest $argument,
+    public function ListStreams(\Google\Cloud\Partner\Aistreams\V1alpha1\ListStreamsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/ListStreams',
         $argument,
-        ['\Google\Partner\Aistreams\V1alpha1\ListStreamsResponse', 'decode'],
+        ['\Google\Cloud\Partner\Aistreams\V1alpha1\ListStreamsResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Gets details of a single Stream.
-     * @param \Google\Partner\Aistreams\V1alpha1\GetStreamRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\GetStreamRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GetStream(\Google\Partner\Aistreams\V1alpha1\GetStreamRequest $argument,
+    public function GetStream(\Google\Cloud\Partner\Aistreams\V1alpha1\GetStreamRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/GetStream',
         $argument,
-        ['\Google\Partner\Aistreams\V1alpha1\Stream', 'decode'],
+        ['\Google\Cloud\Partner\Aistreams\V1alpha1\Stream', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Creates a new Stream in a given project and location.
-     * @param \Google\Partner\Aistreams\V1alpha1\CreateStreamRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\CreateStreamRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateStream(\Google\Partner\Aistreams\V1alpha1\CreateStreamRequest $argument,
+    public function CreateStream(\Google\Cloud\Partner\Aistreams\V1alpha1\CreateStreamRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/CreateStream',
         $argument,
@@ -154,12 +154,12 @@ class AIStreamsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the parameters of a single Stream.
-     * @param \Google\Partner\Aistreams\V1alpha1\UpdateStreamRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\UpdateStreamRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateStream(\Google\Partner\Aistreams\V1alpha1\UpdateStreamRequest $argument,
+    public function UpdateStream(\Google\Cloud\Partner\Aistreams\V1alpha1\UpdateStreamRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/UpdateStream',
         $argument,
@@ -169,12 +169,12 @@ class AIStreamsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes a single Stream.
-     * @param \Google\Partner\Aistreams\V1alpha1\DeleteStreamRequest $argument input argument
+     * @param \Google\Cloud\Partner\Aistreams\V1alpha1\DeleteStreamRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function DeleteStream(\Google\Partner\Aistreams\V1alpha1\DeleteStreamRequest $argument,
+    public function DeleteStream(\Google\Cloud\Partner\Aistreams\V1alpha1\DeleteStreamRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.partner.aistreams.v1alpha1.AIStreams/DeleteStream',
         $argument,

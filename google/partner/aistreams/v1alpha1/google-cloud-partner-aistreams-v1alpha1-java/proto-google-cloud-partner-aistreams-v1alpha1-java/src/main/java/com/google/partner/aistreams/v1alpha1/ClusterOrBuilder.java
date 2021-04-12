@@ -139,8 +139,8 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The certificate for creating the secure connection between the client and
-   * the AI Streams data plane.
+   * Output only. The certificate for creating the secure connection between the
+   * client and the AI Streams data plane.
    * </pre>
    *
    * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -149,8 +149,8 @@ public interface ClusterOrBuilder extends
   java.lang.String getCertificate();
   /**
    * <pre>
-   * Output only. The certificate for creating the secure connection between the client and
-   * the AI Streams data plane.
+   * Output only. The certificate for creating the secure connection between the
+   * client and the AI Streams data plane.
    * </pre>
    *
    * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

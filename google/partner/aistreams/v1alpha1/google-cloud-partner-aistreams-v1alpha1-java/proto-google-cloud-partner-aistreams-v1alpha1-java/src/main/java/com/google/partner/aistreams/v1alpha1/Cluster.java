@@ -382,8 +382,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object certificate_;
   /**
    * <pre>
-   * Output only. The certificate for creating the secure connection between the client and
-   * the AI Streams data plane.
+   * Output only. The certificate for creating the secure connection between the
+   * client and the AI Streams data plane.
    * </pre>
    *
    * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -404,8 +404,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The certificate for creating the secure connection between the client and
-   * the AI Streams data plane.
+   * Output only. The certificate for creating the secure connection between the
+   * client and the AI Streams data plane.
    * </pre>
    *
    * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1493,8 +1493,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object certificate_ = "";
     /**
      * <pre>
-     * Output only. The certificate for creating the secure connection between the client and
-     * the AI Streams data plane.
+     * Output only. The certificate for creating the secure connection between the
+     * client and the AI Streams data plane.
      * </pre>
      *
      * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1514,8 +1514,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The certificate for creating the secure connection between the client and
-     * the AI Streams data plane.
+     * Output only. The certificate for creating the secure connection between the
+     * client and the AI Streams data plane.
      * </pre>
      *
      * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1536,8 +1536,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The certificate for creating the secure connection between the client and
-     * the AI Streams data plane.
+     * Output only. The certificate for creating the secure connection between the
+     * client and the AI Streams data plane.
      * </pre>
      *
      * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1556,8 +1556,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The certificate for creating the secure connection between the client and
-     * the AI Streams data plane.
+     * Output only. The certificate for creating the secure connection between the
+     * client and the AI Streams data plane.
      * </pre>
      *
      * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1571,8 +1571,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The certificate for creating the secure connection between the client and
-     * the AI Streams data plane.
+     * Output only. The certificate for creating the secure connection between the
+     * client and the AI Streams data plane.
      * </pre>
      *
      * <code>string certificate = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -1,0 +1,68 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.partner.aistreams.v1alpha1",
+    "libraryPackage": "Google\\Cloud\\Partner\\Aistreams\\V1alpha1",
+    "services": {
+        "AIStreams": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AIStreamsGapicClient",
+                    "rpcs": {
+                        "CreateCluster": {
+                            "methods": [
+                                "createCluster"
+                            ]
+                        },
+                        "CreateStream": {
+                            "methods": [
+                                "createStream"
+                            ]
+                        },
+                        "DeleteCluster": {
+                            "methods": [
+                                "deleteCluster"
+                            ]
+                        },
+                        "DeleteStream": {
+                            "methods": [
+                                "deleteStream"
+                            ]
+                        },
+                        "GetCluster": {
+                            "methods": [
+                                "getCluster"
+                            ]
+                        },
+                        "GetStream": {
+                            "methods": [
+                                "getStream"
+                            ]
+                        },
+                        "ListClusters": {
+                            "methods": [
+                                "listClusters"
+                            ]
+                        },
+                        "ListStreams": {
+                            "methods": [
+                                "listStreams"
+                            ]
+                        },
+                        "UpdateCluster": {
+                            "methods": [
+                                "updateCluster"
+                            ]
+                        },
+                        "UpdateStream": {
+                            "methods": [
+                                "updateStream"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

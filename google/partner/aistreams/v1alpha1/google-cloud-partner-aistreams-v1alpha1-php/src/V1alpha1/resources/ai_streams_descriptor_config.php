@@ -5,18 +5,18 @@ return [
         'google.partner.aistreams.v1alpha1.AIStreams' => [
             'CreateCluster' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Partner\Aistreams\V1alpha1\Cluster',
-                    'metadataReturnType' => '\Google\Partner\Aistreams\V1alpha1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\Cluster',
+                    'metadataReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateCluster' => [
+            'CreateStream' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Partner\Aistreams\V1alpha1\Cluster',
-                    'metadataReturnType' => '\Google\Partner\Aistreams\V1alpha1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\Stream',
+                    'metadataReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -26,27 +26,7 @@ return [
             'DeleteCluster' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Partner\Aistreams\V1alpha1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'CreateStream' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Partner\Aistreams\V1alpha1\Stream',
-                    'metadataReturnType' => '\Google\Partner\Aistreams\V1alpha1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'UpdateStream' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Partner\Aistreams\V1alpha1\Stream',
-                    'metadataReturnType' => '\Google\Partner\Aistreams\V1alpha1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -56,7 +36,27 @@ return [
             'DeleteStream' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Partner\Aistreams\V1alpha1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'UpdateCluster' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\Cluster',
+                    'metadataReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'UpdateStream' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\Stream',
+                    'metadataReturnType' => '\Google\Cloud\Partner\Aistreams\V1alpha1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

@@ -23,7 +23,7 @@ class Aistreams
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ƒ*
+­*
 1google/partner/aistreams/v1alpha1/aistreams.proto!google.partner.aistreams.v1alpha1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"–
 Cluster
 name (	4
@@ -135,8 +135,8 @@ GetCluster4.google.partner.aistreams.v1alpha1.GetClusterRequest*.google.partne
 UpdateStream6.google.partner.aistreams.v1alpha1.UpdateStreamRequest.google.longrunning.Operation"†‚Óä“M2C/v1alpha1/{stream.name=projects/*/locations/*/clusters/*/streams/*}:streamÚAstream,update_maskÊA
 StreamOperationMetadataß
 DeleteStream6.google.partner.aistreams.v1alpha1.DeleteStreamRequest.google.longrunning.Operation"x‚Óä“>*</v1alpha1/{name=projects/*/locations/*/clusters/*/streams/*}ÚAnameÊA*
-google.protobuf.EmptyOperationMetadataLÊAaistreams.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBˆ
-%com.google.partner.aistreams.v1alpha1BAIStreamsProtoPZJgoogle.golang.org/genproto/googleapis/partner/aistreams/v1alpha1;aistreamsøbproto3'
+google.protobuf.EmptyOperationMetadataLÊAaistreams.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB²
+%com.google.partner.aistreams.v1alpha1BAIStreamsProtoPZJgoogle.golang.org/genproto/googleapis/partner/aistreams/v1alpha1;aistreamsøÊ\'Google\\Cloud\\Partner\\Aistreams\\V1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

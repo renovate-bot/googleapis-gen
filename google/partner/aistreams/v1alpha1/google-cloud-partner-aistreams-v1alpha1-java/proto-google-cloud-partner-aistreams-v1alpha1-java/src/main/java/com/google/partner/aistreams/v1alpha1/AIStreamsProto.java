@@ -239,11 +239,12 @@ public final class AIStreamsProto {
       "*/streams/*}\332A\004name\312A*\n\025google.protobuf." +
       "Empty\022\021OperationMetadata\032L\312A\030aistreams.g" +
       "oogleapis.com\322A.https://www.googleapis.c" +
-      "om/auth/cloud-platformB\210\001\n%com.google.pa" +
+      "om/auth/cloud-platformB\262\001\n%com.google.pa" +
       "rtner.aistreams.v1alpha1B\016AIStreamsProto" +
       "P\001ZJgoogle.golang.org/genproto/googleapi" +
       "s/partner/aistreams/v1alpha1;aistreams\370\001" +
-      "\001b\006proto3"
+      "\001\312\002\'Google\\Cloud\\Partner\\Aistreams\\V1alp" +
+      "ha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

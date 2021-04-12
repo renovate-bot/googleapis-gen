@@ -539,10 +539,10 @@ export class AIStreamsClient {
  * @param {google.partner.aistreams.v1alpha1.Cluster} request.cluster
  *   Required. The cluster resource to create.
  * @param {string} [request.requestId]
- *   Optional. An optional request ID to identify requests. Specify a unique request ID
- *   so that if you must retry your request, the server will know to ignore
- *   the request if it has already been completed. The server will guarantee
- *   that for at least 60 minutes since the first request.
+ *   Optional. An optional request ID to identify requests. Specify a unique
+ *   request ID so that if you must retry your request, the server will know to
+ *   ignore the request if it has already been completed. The server will
+ *   guarantee that for at least 60 minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and the
  *   request times out. If you make the request again with the same request ID,
@@ -654,10 +654,10 @@ export class AIStreamsClient {
  * @param {google.partner.aistreams.v1alpha1.Cluster} request.cluster
  *   Required. The Cluster resource to update.
  * @param {string} [request.requestId]
- *   Optional. An optional request ID to identify requests. Specify a unique request ID
- *   so that if you must retry your request, the server will know to ignore
- *   the request if it has already been completed. The server will guarantee
- *   that for at least 60 minutes since the first request.
+ *   Optional. An optional request ID to identify requests. Specify a unique
+ *   request ID so that if you must retry your request, the server will know to
+ *   ignore the request if it has already been completed. The server will
+ *   guarantee that for at least 60 minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and the
  *   request times out. If you make the request again with the same request ID,
@@ -763,10 +763,10 @@ export class AIStreamsClient {
  * @param {string} request.name
  *   Required. The name of cluster to delete.
  * @param {string} [request.requestId]
- *   Optional. An optional request ID to identify requests. Specify a unique request ID
- *   so that if you must retry your request, the server will know to ignore
- *   the request if it has already been completed. The server will guarantee
- *   that for at least 60 minutes after the first request.
+ *   Optional. An optional request ID to identify requests. Specify a unique
+ *   request ID so that if you must retry your request, the server will know to
+ *   ignore the request if it has already been completed. The server will
+ *   guarantee that for at least 60 minutes after the first request.
  *
  *   For example, consider a situation where you make an initial request and the
  *   request times out. If you make the request again with the same request ID,
@@ -876,10 +876,10 @@ export class AIStreamsClient {
  * @param {google.partner.aistreams.v1alpha1.Stream} request.stream
  *   Required. The stream to create.
  * @param {string} [request.requestId]
- *   Optional. An optional request ID to identify requests. Specify a unique request ID
- *   so that if you must retry your request, the server will know to ignore
- *   the request if it has already been completed. The server will guarantee
- *   that for at least 60 minutes since the first request.
+ *   Optional. An optional request ID to identify requests. Specify a unique
+ *   request ID so that if you must retry your request, the server will know to
+ *   ignore the request if it has already been completed. The server will
+ *   guarantee that for at least 60 minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -991,10 +991,10 @@ export class AIStreamsClient {
  * @param {google.partner.aistreams.v1alpha1.Stream} request.stream
  *   Required. The stream resource to update.
  * @param {string} [request.requestId]
- *   Optional. An optional request ID to identify requests. Specify a unique request ID
- *   so that if you must retry your request, the server will know to ignore
- *   the request if it has already been completed. The server will guarantee
- *   that for at least 60 minutes since the first request.
+ *   Optional. An optional request ID to identify requests. Specify a unique
+ *   request ID so that if you must retry your request, the server will know to
+ *   ignore the request if it has already been completed. The server will
+ *   guarantee that for at least 60 minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1100,10 +1100,10 @@ export class AIStreamsClient {
  * @param {string} request.name
  *   Required. The name of the stream.
  * @param {string} [request.requestId]
- *   Optional. An optional request ID to identify requests. Specify a unique request ID
- *   so that if you must retry your request, the server will know to ignore
- *   the request if it has already been completed. The server will guarantee
- *   that for at least 60 minutes after the first request.
+ *   Optional. An optional request ID to identify requests. Specify a unique
+ *   request ID so that if you must retry your request, the server will know to
+ *   ignore the request if it has already been completed. The server will
+ *   guarantee that for at least 60 minutes after the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
