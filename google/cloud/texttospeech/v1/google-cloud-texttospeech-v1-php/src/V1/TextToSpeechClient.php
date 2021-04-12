@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,19 +20,15 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/texttospeech/v1/cloud_tts.proto
  * and updates to that file get reflected here through a refresh process.
- *
- * @experimental
  */
 
 namespace Google\Cloud\TextToSpeech\V1;
 
 use Google\Cloud\TextToSpeech\V1\Gapic\TextToSpeechGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class TextToSpeechClient extends TextToSpeechGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see TextToSpeechGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see TextToSpeechGapicClient} class.
 }
