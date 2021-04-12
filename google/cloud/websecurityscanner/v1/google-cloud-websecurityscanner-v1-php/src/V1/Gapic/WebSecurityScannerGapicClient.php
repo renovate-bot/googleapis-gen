@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,13 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/websecurityscanner/v1/web_security_scanner.proto
  * and updates to that file get reflected here through a refresh process.
- *
- * @experimental
  */
 
 namespace Google\Cloud\WebSecurityScanner\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
+
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -42,10 +41,10 @@ use Google\Cloud\WebSecurityScanner\V1\GetScanConfigRequest;
 use Google\Cloud\WebSecurityScanner\V1\GetScanRunRequest;
 use Google\Cloud\WebSecurityScanner\V1\ListCrawledUrlsRequest;
 use Google\Cloud\WebSecurityScanner\V1\ListCrawledUrlsResponse;
-use Google\Cloud\WebSecurityScanner\V1\ListFindingTypeStatsRequest;
-use Google\Cloud\WebSecurityScanner\V1\ListFindingTypeStatsResponse;
 use Google\Cloud\WebSecurityScanner\V1\ListFindingsRequest;
 use Google\Cloud\WebSecurityScanner\V1\ListFindingsResponse;
+use Google\Cloud\WebSecurityScanner\V1\ListFindingTypeStatsRequest;
+use Google\Cloud\WebSecurityScanner\V1\ListFindingTypeStatsResponse;
 use Google\Cloud\WebSecurityScanner\V1\ListScanConfigsRequest;
 use Google\Cloud\WebSecurityScanner\V1\ListScanConfigsResponse;
 use Google\Cloud\WebSecurityScanner\V1\ListScanRunsRequest;
@@ -74,8 +73,6 @@ use Google\Protobuf\GPBEmpty;
  *     $webSecurityScannerClient->close();
  * }
  * ```
- *
- * @experimental
  */
 class WebSecurityScannerGapicClient
 {
@@ -112,16 +109,16 @@ class WebSecurityScannerGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/web_security_scanner_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/web_security_scanner_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/web_security_scanner_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/web_security_scanner_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/web_security_scanner_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/web_security_scanner_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/web_security_scanner_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/web_security_scanner_rest_client_config.php',
                 ],
             ],
         ];
@@ -131,7 +128,7 @@ class WebSecurityScannerGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -145,31 +142,31 @@ class WebSecurityScannerGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -177,7 +174,6 @@ class WebSecurityScannerGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -199,48 +195,40 @@ class WebSecurityScannerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $parent
-     *          Required. The parent resource name where the scan is created, which should be a
-     *          project resource name in the format 'projects/{projectId}'.
+     *           Required. The parent resource name where the scan is created, which should be a
+     *           project resource name in the format 'projects/{projectId}'.
      *     @type ScanConfig $scanConfig
-     *          Required. The ScanConfig to be created.
+     *           Required. The ScanConfig to be created.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createScanConfig(array $optionalArgs = [])
     {
         $request = new CreateScanConfigRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
+
         if (isset($optionalArgs['scanConfig'])) {
             $request->setScanConfig($optionalArgs['scanConfig']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateScanConfig',
-            ScanConfig::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateScanConfig', ScanConfig::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -257,41 +245,77 @@ class WebSecurityScannerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          Required. The resource name of the ScanConfig to be deleted. The name follows the
-     *          format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+     *           Required. The resource name of the ScanConfig to be deleted. The name follows the
+     *           format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function deleteScanConfig(array $optionalArgs = [])
     {
         $request = new DeleteScanConfigRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteScanConfig', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'DeleteScanConfig',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Gets a Finding.
+     *
+     * Sample code:
+     * ```
+     * $webSecurityScannerClient = new WebSecurityScannerClient();
+     * try {
+     *     $response = $webSecurityScannerClient->getFinding();
+     * } finally {
+     *     $webSecurityScannerClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           Required. The resource name of the Finding to be returned. The name follows the
+     *           format of
+     *           'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}/findings/{findingId}'.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\WebSecurityScanner\V1\Finding
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getFinding(array $optionalArgs = [])
+    {
+        $request = new GetFindingRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetFinding', Finding::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -308,240 +332,34 @@ class WebSecurityScannerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          Required. The resource name of the ScanConfig to be returned. The name follows the
-     *          format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+     *           Required. The resource name of the ScanConfig to be returned. The name follows the
+     *           format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getScanConfig(array $optionalArgs = [])
     {
         $request = new GetScanConfigRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetScanConfig',
-            ScanConfig::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists ScanConfigs under a given project.
-     *
-     * Sample code:
-     * ```
-     * $webSecurityScannerClient = new WebSecurityScannerClient();
-     * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $webSecurityScannerClient->listScanConfigs();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $webSecurityScannerClient->listScanConfigs();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $webSecurityScannerClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          Required. The parent resource name, which should be a project resource name in the
-     *          format 'projects/{projectId}'.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listScanConfigs(array $optionalArgs = [])
-    {
-        $request = new ListScanConfigsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListScanConfigs',
-            $optionalArgs,
-            ListScanConfigsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Updates a ScanConfig. This method support partial update of a ScanConfig.
-     *
-     * Sample code:
-     * ```
-     * $webSecurityScannerClient = new WebSecurityScannerClient();
-     * try {
-     *     $response = $webSecurityScannerClient->updateScanConfig();
-     * } finally {
-     *     $webSecurityScannerClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type ScanConfig $scanConfig
-     *          Required. The ScanConfig to be updated. The name field must be set to identify the
-     *          resource to be updated. The values of fields not covered by the mask
-     *          will be ignored.
-     *     @type FieldMask $updateMask
-     *          Required. The update mask applies to the resource. For the `FieldMask` definition,
-     *          see
-     *          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateScanConfig(array $optionalArgs = [])
-    {
-        $request = new UpdateScanConfigRequest();
-        if (isset($optionalArgs['scanConfig'])) {
-            $request->setScanConfig($optionalArgs['scanConfig']);
-        }
-        if (isset($optionalArgs['updateMask'])) {
-            $request->setUpdateMask($optionalArgs['updateMask']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'scan_config.name' => $request->getScanConfig()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateScanConfig',
-            ScanConfig::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Start a ScanRun according to the given ScanConfig.
-     *
-     * Sample code:
-     * ```
-     * $webSecurityScannerClient = new WebSecurityScannerClient();
-     * try {
-     *     $response = $webSecurityScannerClient->startScanRun();
-     * } finally {
-     *     $webSecurityScannerClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          Required. The resource name of the ScanConfig to be used. The name follows the
-     *          format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanRun
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function startScanRun(array $optionalArgs = [])
-    {
-        $request = new StartScanRunRequest();
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'StartScanRun',
-            ScanRun::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetScanConfig', ScanConfig::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -558,44 +376,310 @@ class WebSecurityScannerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          Required. The resource name of the ScanRun to be returned. The name follows the
-     *          format of
-     *          'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+     *           Required. The resource name of the ScanRun to be returned. The name follows the
+     *           format of
+     *           'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\WebSecurityScanner\V1\ScanRun
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getScanRun(array $optionalArgs = [])
     {
         $request = new GetScanRunRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetScanRun', ScanRun::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'GetScanRun',
-            ScanRun::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * List CrawledUrls under a given ScanRun.
+     *
+     * Sample code:
+     * ```
+     * $webSecurityScannerClient = new WebSecurityScannerClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $webSecurityScannerClient->listCrawledUrls();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $webSecurityScannerClient->listCrawledUrls();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $webSecurityScannerClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           Required. The parent resource name, which should be a scan run resource name in the
+     *           format
+     *           'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listCrawledUrls(array $optionalArgs = [])
+    {
+        $request = new ListCrawledUrlsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListCrawledUrls', $optionalArgs, ListCrawledUrlsResponse::class, $request);
+    }
+
+    /**
+     * List all FindingTypeStats under a given ScanRun.
+     *
+     * Sample code:
+     * ```
+     * $webSecurityScannerClient = new WebSecurityScannerClient();
+     * try {
+     *     $response = $webSecurityScannerClient->listFindingTypeStats();
+     * } finally {
+     *     $webSecurityScannerClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           Required. The parent resource name, which should be a scan run resource name in the
+     *           format
+     *           'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\WebSecurityScanner\V1\ListFindingTypeStatsResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listFindingTypeStats(array $optionalArgs = [])
+    {
+        $request = new ListFindingTypeStatsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListFindingTypeStats', ListFindingTypeStatsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * List Findings under a given ScanRun.
+     *
+     * Sample code:
+     * ```
+     * $webSecurityScannerClient = new WebSecurityScannerClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $webSecurityScannerClient->listFindings();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $webSecurityScannerClient->listFindings();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $webSecurityScannerClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           Required. The parent resource name, which should be a scan run resource name in the
+     *           format
+     *           'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+     *     @type string $filter
+     *           The filter expression. The expression must be in the format: <field>
+     *           <operator> <value>.
+     *           Supported field: 'finding_type'.
+     *           Supported operator: '='.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listFindings(array $optionalArgs = [])
+    {
+        $request = new ListFindingsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListFindings', $optionalArgs, ListFindingsResponse::class, $request);
+    }
+
+    /**
+     * Lists ScanConfigs under a given project.
+     *
+     * Sample code:
+     * ```
+     * $webSecurityScannerClient = new WebSecurityScannerClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $webSecurityScannerClient->listScanConfigs();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $webSecurityScannerClient->listScanConfigs();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $webSecurityScannerClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $parent
+     *           Required. The parent resource name, which should be a project resource name in the
+     *           format 'projects/{projectId}'.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listScanConfigs(array $optionalArgs = [])
+    {
+        $request = new ListScanConfigsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListScanConfigs', $optionalArgs, ListScanConfigsResponse::class, $request);
     }
 
     /**
@@ -613,10 +697,7 @@ class WebSecurityScannerGapicClient
      *             // doSomethingWith($element);
      *         }
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Iterate through all elements
      *     $pagedResponse = $webSecurityScannerClient->listScanRuns();
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
@@ -628,58 +709,95 @@ class WebSecurityScannerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $parent
-     *          Required. The parent resource name, which should be a scan resource name in the
-     *          format 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+     *           Required. The parent resource name, which should be a scan resource name in the
+     *           format 'projects/{projectId}/scanConfigs/{scanConfigId}'.
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function listScanRuns(array $optionalArgs = [])
     {
         $request = new ListScanRunsRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['parent'])) {
             $request->setParent($optionalArgs['parent']);
+            $requestParamHeaders['parent'] = $optionalArgs['parent'];
         }
+
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
+
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListScanRuns', $optionalArgs, ListScanRunsResponse::class, $request);
+    }
 
-        return $this->getPagedListResponse(
-            'ListScanRuns',
-            $optionalArgs,
-            ListScanRunsResponse::class,
-            $request
-        );
+    /**
+     * Start a ScanRun according to the given ScanConfig.
+     *
+     * Sample code:
+     * ```
+     * $webSecurityScannerClient = new WebSecurityScannerClient();
+     * try {
+     *     $response = $webSecurityScannerClient->startScanRun();
+     * } finally {
+     *     $webSecurityScannerClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $name
+     *           Required. The resource name of the ScanConfig to be used. The name follows the
+     *           format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanRun
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function startScanRun(array $optionalArgs = [])
+    {
+        $request = new StartScanRunRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('StartScanRun', ScanRun::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -696,327 +814,86 @@ class WebSecurityScannerGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type string $name
-     *          Required. The resource name of the ScanRun to be stopped. The name follows the
-     *          format of
-     *          'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+     *           Required. The resource name of the ScanRun to be stopped. The name follows the
+     *           format of
+     *           'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Cloud\WebSecurityScanner\V1\ScanRun
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function stopScanRun(array $optionalArgs = [])
     {
         $request = new StopScanRunRequest();
+        $requestParamHeaders = [];
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
+            $requestParamHeaders['name'] = $optionalArgs['name'];
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'StopScanRun',
-            ScanRun::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('StopScanRun', ScanRun::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * List CrawledUrls under a given ScanRun.
+     * Updates a ScanConfig. This method support partial update of a ScanConfig.
      *
      * Sample code:
      * ```
      * $webSecurityScannerClient = new WebSecurityScannerClient();
      * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $webSecurityScannerClient->listCrawledUrls();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $webSecurityScannerClient->listCrawledUrls();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     *     $response = $webSecurityScannerClient->updateScanConfig();
      * } finally {
      *     $webSecurityScannerClient->close();
      * }
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
-     *     @type string $parent
-     *          Required. The parent resource name, which should be a scan run resource name in the
-     *          format
-     *          'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *     @type ScanConfig $scanConfig
+     *           Required. The ScanConfig to be updated. The name field must be set to identify the
+     *           resource to be updated. The values of fields not covered by the mask
+     *           will be ignored.
+     *     @type FieldMask $updateMask
+     *           Required. The update mask applies to the resource. For the `FieldMask` definition,
+     *           see
+     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function listCrawledUrls(array $optionalArgs = [])
+    public function updateScanConfig(array $optionalArgs = [])
     {
-        $request = new ListCrawledUrlsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
+        $request = new UpdateScanConfigRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['scanConfig'])) {
+            $request->setScanConfig($optionalArgs['scanConfig']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListCrawledUrls',
-            $optionalArgs,
-            ListCrawledUrlsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Gets a Finding.
-     *
-     * Sample code:
-     * ```
-     * $webSecurityScannerClient = new WebSecurityScannerClient();
-     * try {
-     *     $response = $webSecurityScannerClient->getFinding();
-     * } finally {
-     *     $webSecurityScannerClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $name
-     *          Required. The resource name of the Finding to be returned. The name follows the
-     *          format of
-     *          'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}/findings/{findingId}'.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\WebSecurityScanner\V1\Finding
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getFinding(array $optionalArgs = [])
-    {
-        $request = new GetFindingRequest();
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
         }
 
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetFinding',
-            Finding::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * List Findings under a given ScanRun.
-     *
-     * Sample code:
-     * ```
-     * $webSecurityScannerClient = new WebSecurityScannerClient();
-     * try {
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $webSecurityScannerClient->listFindings();
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $webSecurityScannerClient->listFindings();
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $webSecurityScannerClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          Required. The parent resource name, which should be a scan run resource name in the
-     *          format
-     *          'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
-     *     @type string $filter
-     *          The filter expression. The expression must be in the format: <field>
-     *          <operator> <value>.
-     *          Supported field: 'finding_type'.
-     *          Supported operator: '='.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listFindings(array $optionalArgs = [])
-    {
-        $request = new ListFindingsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['filter'])) {
-            $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListFindings',
-            $optionalArgs,
-            ListFindingsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * List all FindingTypeStats under a given ScanRun.
-     *
-     * Sample code:
-     * ```
-     * $webSecurityScannerClient = new WebSecurityScannerClient();
-     * try {
-     *     $response = $webSecurityScannerClient->listFindingTypeStats();
-     * } finally {
-     *     $webSecurityScannerClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          Required. The parent resource name, which should be a scan run resource name in the
-     *          format
-     *          'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\WebSecurityScanner\V1\ListFindingTypeStatsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listFindingTypeStats(array $optionalArgs = [])
-    {
-        $request = new ListFindingTypeStatsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ListFindingTypeStats',
-            ListFindingTypeStatsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateScanConfig', ScanConfig::class, $optionalArgs, $request)->wait();
     }
 }
