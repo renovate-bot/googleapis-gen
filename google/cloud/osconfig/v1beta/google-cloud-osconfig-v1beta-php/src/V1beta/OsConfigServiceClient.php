@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,13 @@
  * @experimental
  */
 
-namespace Google\Cloud\OsConfig\V1beta;
+namespace Google\Cloud\Osconfig\V1beta;
 
-use Google\Cloud\OsConfig\V1beta\Gapic\OsConfigServiceGapicClient;
+use Google\Cloud\Osconfig\V1beta\Gapic\OsConfigServiceGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class OsConfigServiceClient extends OsConfigServiceGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see OsConfigServiceGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see OsConfigServiceGapicClient} class.
 }

@@ -3,24 +3,14 @@
 return [
     'interfaces' => [
         'google.cloud.osconfig.v1beta.OsConfigService' => [
-            'ListPatchJobs' => [
+            'ListGuestPolicies' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getPatchJobs',
-                ],
-            ],
-            'ListPatchJobInstanceDetails' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getPatchJobInstanceDetails',
+                    'resourcesGetMethod' => 'getGuestPolicies',
                 ],
             ],
             'ListPatchDeployments' => [
@@ -33,14 +23,24 @@ return [
                     'resourcesGetMethod' => 'getPatchDeployments',
                 ],
             ],
-            'ListGuestPolicies' => [
+            'ListPatchJobInstanceDetails' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getGuestPolicies',
+                    'resourcesGetMethod' => 'getPatchJobInstanceDetails',
+                ],
+            ],
+            'ListPatchJobs' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getPatchJobs',
                 ],
             ],
         ],

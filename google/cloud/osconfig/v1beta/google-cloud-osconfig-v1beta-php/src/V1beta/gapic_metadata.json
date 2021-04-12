@@ -1,0 +1,93 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.osconfig.v1beta",
+    "libraryPackage": "Google\\Cloud\\Osconfig\\V1beta",
+    "services": {
+        "OsConfigService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "OsConfigServiceGapicClient",
+                    "rpcs": {
+                        "CancelPatchJob": {
+                            "methods": [
+                                "cancelPatchJob"
+                            ]
+                        },
+                        "CreateGuestPolicy": {
+                            "methods": [
+                                "createGuestPolicy"
+                            ]
+                        },
+                        "CreatePatchDeployment": {
+                            "methods": [
+                                "createPatchDeployment"
+                            ]
+                        },
+                        "DeleteGuestPolicy": {
+                            "methods": [
+                                "deleteGuestPolicy"
+                            ]
+                        },
+                        "DeletePatchDeployment": {
+                            "methods": [
+                                "deletePatchDeployment"
+                            ]
+                        },
+                        "ExecutePatchJob": {
+                            "methods": [
+                                "executePatchJob"
+                            ]
+                        },
+                        "GetGuestPolicy": {
+                            "methods": [
+                                "getGuestPolicy"
+                            ]
+                        },
+                        "GetPatchDeployment": {
+                            "methods": [
+                                "getPatchDeployment"
+                            ]
+                        },
+                        "GetPatchJob": {
+                            "methods": [
+                                "getPatchJob"
+                            ]
+                        },
+                        "ListGuestPolicies": {
+                            "methods": [
+                                "listGuestPolicies"
+                            ]
+                        },
+                        "ListPatchDeployments": {
+                            "methods": [
+                                "listPatchDeployments"
+                            ]
+                        },
+                        "ListPatchJobInstanceDetails": {
+                            "methods": [
+                                "listPatchJobInstanceDetails"
+                            ]
+                        },
+                        "ListPatchJobs": {
+                            "methods": [
+                                "listPatchJobs"
+                            ]
+                        },
+                        "LookupEffectiveGuestPolicy": {
+                            "methods": [
+                                "lookupEffectiveGuestPolicy"
+                            ]
+                        },
+                        "UpdateGuestPolicy": {
+                            "methods": [
+                                "updateGuestPolicy"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
