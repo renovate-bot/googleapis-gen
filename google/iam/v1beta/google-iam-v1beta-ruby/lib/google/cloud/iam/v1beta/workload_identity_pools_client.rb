@@ -27,12 +27,12 @@ require "google/gax/operation"
 require "google/longrunning/operations_client"
 
 require "google/iam/v1beta/workload_identity_pool_pb"
-require "google/cloud/iam/v1_beta/credentials"
+require "google/cloud/iam/v1beta/credentials"
 
 module Google
   module Cloud
     module Iam
-      module V1Beta
+      module V1beta
         # Manages WorkloadIdentityPools.
         #
         # @!attribute [r] workload_identity_pools_stub
@@ -174,7 +174,7 @@ module Google
             require "google/gax/grpc"
             require "google/iam/v1beta/workload_identity_pool_services_pb"
 
-            credentials ||= Google::Cloud::Iam::V1Beta::Credentials.default
+            credentials ||= Google::Cloud::Iam::V1beta::Credentials.default
 
             @operations_client = OperationsClient.new(
               credentials: credentials,
@@ -187,7 +187,7 @@ module Google
             )
 
             if credentials.is_a?(String) || credentials.is_a?(Hash)
-              updater_proc = Google::Cloud::Iam::V1Beta::Credentials.new(credentials).updater_proc
+              updater_proc = Google::Cloud::Iam::V1beta::Credentials.new(credentials).updater_proc
             end
             if credentials.is_a?(GRPC::Core::Channel)
               channel = credentials
@@ -374,10 +374,10 @@ module Google
           #   object.
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
           #
           #   # Iterate over all results.
           #   workload_identity_pools_client.list_workload_identity_pools(formatted_parent).each do |element|
@@ -421,10 +421,10 @@ module Google
           # @return [Google::Iam::V1beta::WorkloadIdentityPool]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
           #   response = workload_identity_pools_client.get_workload_identity_pool(formatted_name)
 
           def get_workload_identity_pool \
@@ -461,10 +461,10 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `workload_identity_pool`:
           #   workload_identity_pool = {}
@@ -538,9 +538,9 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
           #
           #   # TODO: Initialize `workload_identity_pool`:
           #   workload_identity_pool = {}
@@ -616,10 +616,10 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
           #
           #   # Register a callback during the method call.
           #   operation = workload_identity_pools_client.delete_workload_identity_pool(formatted_name) do |op|
@@ -677,10 +677,10 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
           #
           #   # Register a callback during the method call.
           #   operation = workload_identity_pools_client.undelete_workload_identity_pool(formatted_name) do |op|
@@ -755,10 +755,10 @@ module Google
           #   object.
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
           #
           #   # Iterate over all results.
           #   workload_identity_pools_client.list_workload_identity_pool_providers(formatted_parent).each do |element|
@@ -802,10 +802,10 @@ module Google
           # @return [Google::Iam::V1beta::WorkloadIdentityPoolProvider]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
           #   response = workload_identity_pools_client.get_workload_identity_pool_provider(formatted_name)
 
           def get_workload_identity_pool_provider \
@@ -843,10 +843,10 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
           #
           #   # TODO: Initialize `workload_identity_pool_provider`:
           #   workload_identity_pool_provider = {}
@@ -920,9 +920,9 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
           #
           #   # TODO: Initialize `workload_identity_pool_provider`:
           #   workload_identity_pool_provider = {}
@@ -993,10 +993,10 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
           #
           #   # Register a callback during the method call.
           #   operation = workload_identity_pools_client.delete_workload_identity_pool_provider(formatted_name) do |op|
@@ -1055,10 +1055,10 @@ module Google
           # @return [Google::Gax::Operation]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/cloud/iam/v1_beta"
+          #   require "google/cloud/iam"
           #
-          #   workload_identity_pools_client = Google::Cloud::Iam::V1Beta.new(version: :v1beta)
-          #   formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+          #   workload_identity_pools_client = Google::Cloud::Iam::V1beta.new(version: :v1beta)
+          #   formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
           #
           #   # Register a callback during the method call.
           #   operation = workload_identity_pools_client.undelete_workload_identity_pool_provider(formatted_name) do |op|

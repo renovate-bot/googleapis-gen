@@ -3,28 +3,6 @@
 return [
     'interfaces' => [
         'google.iam.v1beta.WorkloadIdentityPools' => [
-            'ListWorkloadIdentityPools' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta/{parent=projects/*/locations/*}/workloadIdentityPools',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetWorkloadIdentityPool' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateWorkloadIdentityPool' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta/{parent=projects/*/locations/*}/workloadIdentityPools',
@@ -37,15 +15,14 @@ return [
                     ],
                 ],
             ],
-            'UpdateWorkloadIdentityPool' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta/{workload_identity_pool.name=projects/*/locations/*/workloadIdentityPools/*}',
-                'body' => 'workload_identity_pool',
+            'CreateWorkloadIdentityPoolProvider' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta/{parent=projects/*/locations/*/workloadIdentityPools/*}/providers',
+                'body' => 'workload_identity_pool_provider',
                 'placeholders' => [
-                    'workload_identity_pool.name' => [
+                    'parent' => [
                         'getters' => [
-                            'getWorkloadIdentityPool',
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -61,10 +38,31 @@ return [
                     ],
                 ],
             ],
-            'UndeleteWorkloadIdentityPool' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*}:undelete',
-                'body' => '*',
+            'DeleteWorkloadIdentityPoolProvider' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*/providers/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetWorkloadIdentityPool' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetWorkloadIdentityPoolProvider' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*/providers/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -84,21 +82,9 @@ return [
                     ],
                 ],
             ],
-            'GetWorkloadIdentityPoolProvider' => [
+            'ListWorkloadIdentityPools' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*/providers/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateWorkloadIdentityPoolProvider' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta/{parent=projects/*/locations/*/workloadIdentityPools/*}/providers',
-                'body' => 'workload_identity_pool_provider',
+                'uriTemplate' => '/v1beta/{parent=projects/*/locations/*}/workloadIdentityPools',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -107,22 +93,10 @@ return [
                     ],
                 ],
             ],
-            'UpdateWorkloadIdentityPoolProvider' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta/{workload_identity_pool_provider.name=projects/*/locations/*/workloadIdentityPools/*/providers/*}',
-                'body' => 'workload_identity_pool_provider',
-                'placeholders' => [
-                    'workload_identity_pool_provider.name' => [
-                        'getters' => [
-                            'getWorkloadIdentityPoolProvider',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteWorkloadIdentityPoolProvider' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*/providers/*}',
+            'UndeleteWorkloadIdentityPool' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta/{name=projects/*/locations/*/workloadIdentityPools/*}:undelete',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -138,6 +112,32 @@ return [
                 'placeholders' => [
                     'name' => [
                         'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateWorkloadIdentityPool' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta/{workload_identity_pool.name=projects/*/locations/*/workloadIdentityPools/*}',
+                'body' => 'workload_identity_pool',
+                'placeholders' => [
+                    'workload_identity_pool.name' => [
+                        'getters' => [
+                            'getWorkloadIdentityPool',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateWorkloadIdentityPoolProvider' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta/{workload_identity_pool_provider.name=projects/*/locations/*/workloadIdentityPools/*/providers/*}',
+                'body' => 'workload_identity_pool_provider',
+                'placeholders' => [
+                    'workload_identity_pool_provider.name' => [
+                        'getters' => [
+                            'getWorkloadIdentityPoolProvider',
                             'getName',
                         ],
                     ],

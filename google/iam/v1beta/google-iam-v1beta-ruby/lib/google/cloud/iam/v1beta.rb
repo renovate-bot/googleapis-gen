@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require "google/cloud/iam/v1_beta/workload_identity_pools_client"
+require "google/cloud/iam/v1beta/workload_identity_pools_client"
 
 module Google
   module Cloud
@@ -81,7 +81,7 @@ module Google
       # end
       # ```
       #
-      module V1Beta
+      module V1beta
         # rubocop:enable LineLength
 
         ##
@@ -135,7 +135,7 @@ module Google
             lib_name: lib_name,
             lib_version: lib_version
           }.select { |_, v| v != nil }
-          Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.new(**kwargs)
+          Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.new(**kwargs)
         end
       end
     end

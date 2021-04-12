@@ -17,7 +17,7 @@ require "googleauth"
 module Google
   module Cloud
     module Iam
-      module V1Beta
+      module V1beta
         class Credentials < Google::Auth::Credentials
           SCOPE = [
             "https://www.googleapis.com/auth/cloud-platform"

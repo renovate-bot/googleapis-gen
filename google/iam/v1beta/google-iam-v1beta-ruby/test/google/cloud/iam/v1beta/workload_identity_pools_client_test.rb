@@ -17,8 +17,8 @@ require "minitest/spec"
 
 require "google/gax"
 
-require "google/cloud/iam/v1_beta"
-require "google/cloud/iam/v1_beta/workload_identity_pools_client"
+require "google/cloud/iam/v1beta"
+require "google/cloud/iam/v1beta/workload_identity_pools_client"
 require "google/iam/v1beta/workload_identity_pool_services_pb"
 require "google/longrunning/operations_pb"
 
@@ -53,7 +53,7 @@ class MockGrpcClientStub_v1beta
   end
 end
 
-class MockWorkloadIdentityPoolsCredentials_v1beta < Google::Cloud::Iam::V1Beta::Credentials
+class MockWorkloadIdentityPoolsCredentials_v1beta < Google::Cloud::Iam::V1beta::Credentials
   def initialize(method_name)
     @method_name = method_name
   end
@@ -66,14 +66,14 @@ class MockWorkloadIdentityPoolsCredentials_v1beta < Google::Cloud::Iam::V1Beta::
   end
 end
 
-describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
+describe Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient do
 
   describe 'list_workload_identity_pools' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#list_workload_identity_pools."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#list_workload_identity_pools."
 
     it 'invokes list_workload_identity_pools without error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
 
       # Create expected grpc response
       next_page_token = ""
@@ -94,8 +94,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("list_workload_identity_pools")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.list_workload_identity_pools(formatted_parent)
@@ -111,7 +111,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes list_workload_identity_pools with error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -125,8 +125,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("list_workload_identity_pools")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -141,11 +141,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'get_workload_identity_pool' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#get_workload_identity_pool."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#get_workload_identity_pool."
 
     it 'invokes get_workload_identity_pool without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -172,8 +172,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("get_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.get_workload_identity_pool(formatted_name)
@@ -193,7 +193,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes get_workload_identity_pool with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -207,8 +207,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("get_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -223,11 +223,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'create_workload_identity_pool' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#create_workload_identity_pool."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#create_workload_identity_pool."
 
     it 'invokes create_workload_identity_pool without error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
       workload_identity_pool = {}
       workload_identity_pool_id = ''
 
@@ -265,8 +265,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("create_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.create_workload_identity_pool(
@@ -283,13 +283,13 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes create_workload_identity_pool and returns an operation error.' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
       workload_identity_pool = {}
       workload_identity_pool_id = ''
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#create_workload_identity_pool.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#create_workload_identity_pool.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/create_workload_identity_pool_test',
@@ -311,8 +311,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("create_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.create_workload_identity_pool(
@@ -330,7 +330,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes create_workload_identity_pool with error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.project_path("[PROJECT]")
       workload_identity_pool = {}
       workload_identity_pool_id = ''
 
@@ -348,8 +348,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("create_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -368,7 +368,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'update_workload_identity_pool' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#update_workload_identity_pool."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#update_workload_identity_pool."
 
     it 'invokes update_workload_identity_pool without error' do
       # Create request parameters
@@ -408,8 +408,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("update_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.update_workload_identity_pool(workload_identity_pool, update_mask)
@@ -427,7 +427,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#update_workload_identity_pool.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#update_workload_identity_pool.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/update_workload_identity_pool_test',
@@ -448,8 +448,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("update_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.update_workload_identity_pool(workload_identity_pool, update_mask)
@@ -479,8 +479,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("update_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -495,11 +495,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'delete_workload_identity_pool' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool."
 
     it 'invokes delete_workload_identity_pool without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -533,8 +533,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("delete_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.delete_workload_identity_pool(formatted_name)
@@ -547,11 +547,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes delete_workload_identity_pool and returns an operation error.' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/delete_workload_identity_pool_test',
@@ -571,8 +571,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("delete_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.delete_workload_identity_pool(formatted_name)
@@ -586,7 +586,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes delete_workload_identity_pool with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -600,8 +600,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("delete_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -616,11 +616,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'undelete_workload_identity_pool' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool."
 
     it 'invokes undelete_workload_identity_pool without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -654,8 +654,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("undelete_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.undelete_workload_identity_pool(formatted_name)
@@ -668,11 +668,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes undelete_workload_identity_pool and returns an operation error.' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/undelete_workload_identity_pool_test',
@@ -692,8 +692,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("undelete_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.undelete_workload_identity_pool(formatted_name)
@@ -707,7 +707,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes undelete_workload_identity_pool with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -721,8 +721,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("undelete_workload_identity_pool")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -737,11 +737,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'list_workload_identity_pool_providers' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#list_workload_identity_pool_providers."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#list_workload_identity_pool_providers."
 
     it 'invokes list_workload_identity_pool_providers without error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Create expected grpc response
       next_page_token = ""
@@ -762,8 +762,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("list_workload_identity_pool_providers")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.list_workload_identity_pool_providers(formatted_parent)
@@ -779,7 +779,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes list_workload_identity_pool_providers with error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -793,8 +793,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("list_workload_identity_pool_providers")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -809,11 +809,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'get_workload_identity_pool_provider' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#get_workload_identity_pool_provider."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#get_workload_identity_pool_provider."
 
     it 'invokes get_workload_identity_pool_provider without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -842,8 +842,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("get_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.get_workload_identity_pool_provider(formatted_name)
@@ -863,7 +863,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes get_workload_identity_pool_provider with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -877,8 +877,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("get_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -893,11 +893,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'create_workload_identity_pool_provider' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#create_workload_identity_pool_provider."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#create_workload_identity_pool_provider."
 
     it 'invokes create_workload_identity_pool_provider without error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
       workload_identity_pool_provider = {}
       workload_identity_pool_provider_id = ''
 
@@ -937,8 +937,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("create_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.create_workload_identity_pool_provider(
@@ -955,13 +955,13 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes create_workload_identity_pool_provider and returns an operation error.' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
       workload_identity_pool_provider = {}
       workload_identity_pool_provider_id = ''
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#create_workload_identity_pool_provider.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#create_workload_identity_pool_provider.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/create_workload_identity_pool_provider_test',
@@ -983,8 +983,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("create_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.create_workload_identity_pool_provider(
@@ -1002,7 +1002,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes create_workload_identity_pool_provider with error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+      formatted_parent = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
       workload_identity_pool_provider = {}
       workload_identity_pool_provider_id = ''
 
@@ -1020,8 +1020,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("create_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -1040,7 +1040,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'update_workload_identity_pool_provider' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#update_workload_identity_pool_provider."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#update_workload_identity_pool_provider."
 
     it 'invokes update_workload_identity_pool_provider without error' do
       # Create request parameters
@@ -1082,8 +1082,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("update_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.update_workload_identity_pool_provider(workload_identity_pool_provider, update_mask)
@@ -1101,7 +1101,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#update_workload_identity_pool_provider.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#update_workload_identity_pool_provider.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/update_workload_identity_pool_provider_test',
@@ -1122,8 +1122,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("update_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.update_workload_identity_pool_provider(workload_identity_pool_provider, update_mask)
@@ -1153,8 +1153,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("update_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -1169,11 +1169,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'delete_workload_identity_pool_provider' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool_provider."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool_provider."
 
     it 'invokes delete_workload_identity_pool_provider without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -1209,8 +1209,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("delete_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.delete_workload_identity_pool_provider(formatted_name)
@@ -1223,11 +1223,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes delete_workload_identity_pool_provider and returns an operation error.' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool_provider.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#delete_workload_identity_pool_provider.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/delete_workload_identity_pool_provider_test',
@@ -1247,8 +1247,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("delete_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.delete_workload_identity_pool_provider(formatted_name)
@@ -1262,7 +1262,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes delete_workload_identity_pool_provider with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -1276,8 +1276,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("delete_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do
@@ -1292,11 +1292,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
   end
 
   describe 'undelete_workload_identity_pool_provider' do
-    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool_provider."
+    custom_error = CustomTestError_v1beta.new "Custom test error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool_provider."
 
     it 'invokes undelete_workload_identity_pool_provider without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -1332,8 +1332,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("undelete_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.undelete_workload_identity_pool_provider(formatted_name)
@@ -1346,11 +1346,11 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes undelete_workload_identity_pool_provider and returns an operation error.' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool_provider.'
+        message: 'Operation error for Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient#undelete_workload_identity_pool_provider.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/undelete_workload_identity_pool_provider_test',
@@ -1370,8 +1370,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("undelete_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           response = client.undelete_workload_identity_pool_provider(formatted_name)
@@ -1385,7 +1385,7 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
 
     it 'invokes undelete_workload_identity_pool_provider with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+      formatted_name = Google::Cloud::Iam::V1beta::WorkloadIdentityPoolsClient.workload_identity_pool_provider_path("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]", "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -1399,8 +1399,8 @@ describe Google::Cloud::Iam::V1Beta::WorkloadIdentityPoolsClient do
       mock_credentials = MockWorkloadIdentityPoolsCredentials_v1beta.new("undelete_workload_identity_pool_provider")
 
       Google::Iam::V1beta::WorkloadIdentityPools::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Iam::V1Beta::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Iam::V1Beta.new
+        Google::Cloud::Iam::V1beta::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Iam::V1beta.new
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta do

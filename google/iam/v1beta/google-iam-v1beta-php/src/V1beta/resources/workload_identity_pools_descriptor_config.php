@@ -13,10 +13,10 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateWorkloadIdentityPool' => [
+            'CreateWorkloadIdentityPoolProvider' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPool',
-                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolOperationMetadata',
+                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProvider',
+                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProviderOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -33,40 +33,20 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UndeleteWorkloadIdentityPool' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPool',
-                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolOperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'CreateWorkloadIdentityPoolProvider' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProvider',
-                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProviderOperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'UpdateWorkloadIdentityPoolProvider' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProvider',
-                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProviderOperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
             'DeleteWorkloadIdentityPoolProvider' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProvider',
                     'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProviderOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'UndeleteWorkloadIdentityPool' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPool',
+                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -83,14 +63,24 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ListWorkloadIdentityPools' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getWorkloadIdentityPools',
+            'UpdateWorkloadIdentityPool' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPool',
+                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'UpdateWorkloadIdentityPoolProvider' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProvider',
+                    'metadataReturnType' => '\Google\Iam\V1beta\WorkloadIdentityPoolProviderOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
                 ],
             ],
             'ListWorkloadIdentityPoolProviders' => [
@@ -101,6 +91,16 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getWorkloadIdentityPoolProviders',
+                ],
+            ],
+            'ListWorkloadIdentityPools' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getWorkloadIdentityPools',
                 ],
             ],
         ],
