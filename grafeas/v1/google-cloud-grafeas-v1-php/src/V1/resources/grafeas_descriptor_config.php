@@ -3,7 +3,7 @@
 return [
     'interfaces' => [
         'grafeas.v1.Grafeas' => [
-            'ListOccurrences' => [
+            'ListNoteOccurrences' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
@@ -23,7 +23,7 @@ return [
                     'resourcesGetMethod' => 'getNotes',
                 ],
             ],
-            'ListNoteOccurrences' => [
+            'ListOccurrences' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',

@@ -3,43 +3,10 @@
 return [
     'interfaces' => [
         'grafeas.v1.Grafeas' => [
-            'GetOccurrence' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListOccurrences' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*}/occurrences',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteOccurrence' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateOccurrence' => [
+            'BatchCreateNotes' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*}/occurrences',
-                'body' => 'occurrence',
+                'uriTemplate' => '/v1/{parent=projects/*}/notes:batchCreate',
+                'body' => '*',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -60,43 +27,22 @@ return [
                     ],
                 ],
             ],
-            'UpdateOccurrence' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}',
-                'body' => 'occurrence',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'GetOccurrenceNote' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}/notes',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'GetNote' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/notes/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListNotes' => [
-                'method' => 'get',
+            'CreateNote' => [
+                'method' => 'post',
                 'uriTemplate' => '/v1/{parent=projects/*}/notes',
+                'body' => 'note',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateOccurrence' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*}/occurrences',
+                'body' => 'occurrence',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -116,10 +62,64 @@ return [
                     ],
                 ],
             ],
-            'CreateNote' => [
-                'method' => 'post',
+            'DeleteOccurrence' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetNote' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/notes/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetOccurrence' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetOccurrenceNote' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}/notes',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListNoteOccurrences' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/notes/*}/occurrences',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListNotes' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1/{parent=projects/*}/notes',
-                'body' => 'note',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -128,10 +128,9 @@ return [
                     ],
                 ],
             ],
-            'BatchCreateNotes' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*}/notes:batchCreate',
-                'body' => '*',
+            'ListOccurrences' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*}/occurrences',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -152,9 +151,10 @@ return [
                     ],
                 ],
             ],
-            'ListNoteOccurrences' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/notes/*}/occurrences',
+            'UpdateOccurrence' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{name=projects/*/occurrences/*}',
+                'body' => 'occurrence',
                 'placeholders' => [
                     'name' => [
                         'getters' => [

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,19 +20,15 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/grafeas/v1/grafeas.proto
  * and updates to that file get reflected here through a refresh process.
- *
- * @experimental
  */
 
 namespace Grafeas\V1;
 
 use Grafeas\V1\Gapic\GrafeasGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class GrafeasClient extends GrafeasGapicClient
 {
-    // This class is intentionally empty, and is intended to hold manual
-    // additions to the generated {@see GrafeasGapicClient} class.
+    // This class is intentionally empty, and is intended to hold manual additions to
+    // the generated {@see GrafeasGapicClient} class.
 }
