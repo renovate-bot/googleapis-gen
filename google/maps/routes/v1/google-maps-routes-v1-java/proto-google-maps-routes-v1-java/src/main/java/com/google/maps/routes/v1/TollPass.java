@@ -39,6 +39,73 @@ public enum TollPass
   AR_TELEPASE(3),
   /**
    * <pre>
+   * Brazil toll pass. See additional details at https://conectcar.com.
+   * </pre>
+   *
+   * <code>BR_CONECTCAR = 7;</code>
+   */
+  BR_CONECTCAR(7),
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at https://movemais.com.
+   * </pre>
+   *
+   * <code>BR_MOVE_MAIS = 8;</code>
+   */
+  BR_MOVE_MAIS(8),
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at https://www.semparar.com.br.
+   * </pre>
+   *
+   * <code>BR_SEM_PARAR = 9;</code>
+   */
+  BR_SEM_PARAR(9),
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at https://taggy.com.br.
+   * </pre>
+   *
+   * <code>BR_TAGGY = 10;</code>
+   */
+  BR_TAGGY(10),
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at
+   * https://veloe.com.br/site/onde-usar.
+   * </pre>
+   *
+   * <code>BR_VELOE = 11;</code>
+   */
+  BR_VELOE(11),
+  /**
+   * <pre>
+   * Mexico toll pass.
+   * </pre>
+   *
+   * <code>MX_TAG_IAVE = 12;</code>
+   */
+  MX_TAG_IAVE(12),
+  /**
+   * <pre>
+   * Mexico toll pass company. One of many operating in Mexico City. See
+   * additional details at https://www.televia.com.mx.
+   * </pre>
+   *
+   * <code>MX_TAG_TELEVIA = 13;</code>
+   */
+  MX_TAG_TELEVIA(13),
+  /**
+   * <pre>
+   * Mexico toll pass. See additional details at
+   * https://www.viapass.com.mx/viapass/web_home.aspx.
+   * </pre>
+   *
+   * <code>MX_VIAPASS = 14;</code>
+   */
+  MX_VIAPASS(14),
+  /**
+   * <pre>
    * State pass of California, United States. Passes vary between Standard,
    * Flex, and Clean Air. Flex and Clean Air have settings for carpool. See
    * additional details at https://www.bayareafastrak.org/en/home/index.shtml.
@@ -65,6 +132,15 @@ public enum TollPass
    * <code>US_MA_EZPASSMA = 6;</code>
    */
   US_MA_EZPASSMA(6),
+  /**
+   * <pre>
+   * State pass of New York, United States. See additional details at
+   * https://www.e-zpassny.com.
+   * </pre>
+   *
+   * <code>US_NY_EZPASSNY = 15;</code>
+   */
+  US_NY_EZPASSNY(15),
   /**
    * <pre>
    * State pass of the Washington state, United States.
@@ -103,6 +179,73 @@ public enum TollPass
   public static final int AR_TELEPASE_VALUE = 3;
   /**
    * <pre>
+   * Brazil toll pass. See additional details at https://conectcar.com.
+   * </pre>
+   *
+   * <code>BR_CONECTCAR = 7;</code>
+   */
+  public static final int BR_CONECTCAR_VALUE = 7;
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at https://movemais.com.
+   * </pre>
+   *
+   * <code>BR_MOVE_MAIS = 8;</code>
+   */
+  public static final int BR_MOVE_MAIS_VALUE = 8;
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at https://www.semparar.com.br.
+   * </pre>
+   *
+   * <code>BR_SEM_PARAR = 9;</code>
+   */
+  public static final int BR_SEM_PARAR_VALUE = 9;
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at https://taggy.com.br.
+   * </pre>
+   *
+   * <code>BR_TAGGY = 10;</code>
+   */
+  public static final int BR_TAGGY_VALUE = 10;
+  /**
+   * <pre>
+   * Brazil toll pass. See additional details at
+   * https://veloe.com.br/site/onde-usar.
+   * </pre>
+   *
+   * <code>BR_VELOE = 11;</code>
+   */
+  public static final int BR_VELOE_VALUE = 11;
+  /**
+   * <pre>
+   * Mexico toll pass.
+   * </pre>
+   *
+   * <code>MX_TAG_IAVE = 12;</code>
+   */
+  public static final int MX_TAG_IAVE_VALUE = 12;
+  /**
+   * <pre>
+   * Mexico toll pass company. One of many operating in Mexico City. See
+   * additional details at https://www.televia.com.mx.
+   * </pre>
+   *
+   * <code>MX_TAG_TELEVIA = 13;</code>
+   */
+  public static final int MX_TAG_TELEVIA_VALUE = 13;
+  /**
+   * <pre>
+   * Mexico toll pass. See additional details at
+   * https://www.viapass.com.mx/viapass/web_home.aspx.
+   * </pre>
+   *
+   * <code>MX_VIAPASS = 14;</code>
+   */
+  public static final int MX_VIAPASS_VALUE = 14;
+  /**
+   * <pre>
    * State pass of California, United States. Passes vary between Standard,
    * Flex, and Clean Air. Flex and Clean Air have settings for carpool. See
    * additional details at https://www.bayareafastrak.org/en/home/index.shtml.
@@ -129,6 +272,15 @@ public enum TollPass
    * <code>US_MA_EZPASSMA = 6;</code>
    */
   public static final int US_MA_EZPASSMA_VALUE = 6;
+  /**
+   * <pre>
+   * State pass of New York, United States. See additional details at
+   * https://www.e-zpassny.com.
+   * </pre>
+   *
+   * <code>US_NY_EZPASSNY = 15;</code>
+   */
+  public static final int US_NY_EZPASSNY_VALUE = 15;
   /**
    * <pre>
    * State pass of the Washington state, United States.
@@ -166,9 +318,18 @@ public enum TollPass
       case 0: return TOLL_PASS_UNSPECIFIED;
       case 2: return AU_LINKT;
       case 3: return AR_TELEPASE;
+      case 7: return BR_CONECTCAR;
+      case 8: return BR_MOVE_MAIS;
+      case 9: return BR_SEM_PARAR;
+      case 10: return BR_TAGGY;
+      case 11: return BR_VELOE;
+      case 12: return MX_TAG_IAVE;
+      case 13: return MX_TAG_TELEVIA;
+      case 14: return MX_VIAPASS;
       case 4: return US_CA_FASTRAK;
       case 5: return US_IL_IPASS;
       case 6: return US_MA_EZPASSMA;
+      case 15: return US_NY_EZPASSNY;
       case 1: return US_WA_GOOD_TO_GO;
       default: return null;
     }
