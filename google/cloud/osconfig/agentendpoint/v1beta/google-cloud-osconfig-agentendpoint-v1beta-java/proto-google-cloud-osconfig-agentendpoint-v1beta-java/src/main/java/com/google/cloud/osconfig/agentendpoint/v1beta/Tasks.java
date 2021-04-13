@@ -110,11 +110,11 @@ public final class Tasks {
       "TASK_DIRECTIVE_UNSPECIFIED\020\000\022\014\n\010CONTINUE" +
       "\020\001\022\010\n\004STOP\020\002*L\n\010TaskType\022\031\n\025TASK_TYPE_UN" +
       "SPECIFIED\020\000\022\021\n\rAPPLY_PATCHES\020\001\022\022\n\016EXEC_S" +
-      "TEP_TASK\020\002B\222\001\n.com.google.cloud.osconfig" +
+      "TEP_TASK\020\002B\261\001\n.com.google.cloud.osconfig" +
       ".agentendpoint.v1betaB\005TasksP\001ZWgoogle.g" +
       "olang.org/genproto/googleapis/cloud/osco" +
-      "nfig/agentendpoint/v1beta;agentendpointb" +
-      "\006proto3"
+      "nfig/agentendpoint/v1beta;agentendpoint\312" +
+      "\002\034Google\\Cloud\\OsConfig\\V1betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

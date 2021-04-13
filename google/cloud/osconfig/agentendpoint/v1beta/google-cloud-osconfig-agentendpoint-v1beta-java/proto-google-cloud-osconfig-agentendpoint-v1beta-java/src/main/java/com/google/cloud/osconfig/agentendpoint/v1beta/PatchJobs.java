@@ -13579,11 +13579,12 @@ public final class PatchJobs {
       "eter\022\033\n\027INTERPRETER_UNSPECIFIED\020\000\022\t\n\005SHE" +
       "LL\020\001\022\016\n\nPOWERSHELL\020\002B\014\n\nexecutable\"F\n\tGc" +
       "sObject\022\016\n\006bucket\030\001 \001(\t\022\016\n\006object\030\002 \001(\t\022" +
-      "\031\n\021generation_number\030\003 \001(\003B\224\001\n.com.googl" +
+      "\031\n\021generation_number\030\003 \001(\003B\263\001\n.com.googl" +
       "e.cloud.osconfig.agentendpoint.v1betaB\tP" +
       "atchJobsZWgoogle.golang.org/genproto/goo" +
       "gleapis/cloud/osconfig/agentendpoint/v1b" +
-      "eta;agentendpointb\006proto3"
+      "eta;agentendpoint\312\002\034Google\\Cloud\\OsConfi" +
+      "g\\V1betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

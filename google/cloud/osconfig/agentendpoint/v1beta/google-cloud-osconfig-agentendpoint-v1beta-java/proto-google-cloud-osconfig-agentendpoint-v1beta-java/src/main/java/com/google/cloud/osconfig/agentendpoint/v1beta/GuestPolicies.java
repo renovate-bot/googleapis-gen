@@ -29931,11 +29931,12 @@ public final class GuestPolicies {
       "pe\030\002 \001(\0132:.google.cloud.osconfig.agenten" +
       "dpoint.v1beta.SoftwareRecipe*V\n\014DesiredS" +
       "tate\022\035\n\031DESIRED_STATE_UNSPECIFIED\020\000\022\r\n\tI" +
-      "NSTALLED\020\001\022\013\n\007UPDATED\020\002\022\013\n\007REMOVED\020\003B\230\001\n" +
+      "NSTALLED\020\001\022\013\n\007UPDATED\020\002\022\013\n\007REMOVED\020\003B\267\001\n" +
       ".com.google.cloud.osconfig.agentendpoint" +
       ".v1betaB\rGuestPoliciesZWgoogle.golang.or" +
       "g/genproto/googleapis/cloud/osconfig/age" +
-      "ntendpoint/v1beta;agentendpointb\006proto3"
+      "ntendpoint/v1beta;agentendpoint\312\002\034Google" +
+      "\\Cloud\\OsConfig\\V1betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

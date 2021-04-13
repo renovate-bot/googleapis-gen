@@ -146,12 +146,12 @@ public final class AgentEndpointProto {
       "google.cloud.osconfig.agentendpoint.v1be" +
       "ta.RegisterAgentResponse\"9\332A6instance_id" +
       "_token,agent_version,supported_capabilit" +
-      "ies\032\032\312A\027osconfig.googleapis.comB\237\001\n.com." +
+      "ies\032\032\312A\027osconfig.googleapis.comB\276\001\n.com." +
       "google.cloud.osconfig.agentendpoint.v1be" +
       "taB\022AgentEndpointProtoP\001ZWgoogle.golang." +
       "org/genproto/googleapis/cloud/osconfig/a" +
-      "gentendpoint/v1beta;agentendpointb\006proto" +
-      "3"
+      "gentendpoint/v1beta;agentendpoint\312\002\034Goog" +
+      "le\\Cloud\\OsConfig\\V1betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
