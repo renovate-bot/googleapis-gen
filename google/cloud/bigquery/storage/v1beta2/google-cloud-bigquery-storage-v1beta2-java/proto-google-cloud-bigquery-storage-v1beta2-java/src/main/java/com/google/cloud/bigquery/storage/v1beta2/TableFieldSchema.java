@@ -251,6 +251,14 @@ private static final long serialVersionUID = 0L;
      * <code>INTERVAL = 14;</code>
      */
     INTERVAL(14),
+    /**
+     * <pre>
+     * JSON, String
+     * </pre>
+     *
+     * <code>JSON = 15;</code>
+     */
+    JSON(15),
     UNRECOGNIZED(-1),
     ;
 
@@ -374,6 +382,14 @@ private static final long serialVersionUID = 0L;
      * <code>INTERVAL = 14;</code>
      */
     public static final int INTERVAL_VALUE = 14;
+    /**
+     * <pre>
+     * JSON, String
+     * </pre>
+     *
+     * <code>JSON = 15;</code>
+     */
+    public static final int JSON_VALUE = 15;
 
 
     public final int getNumber() {
@@ -415,6 +431,7 @@ private static final long serialVersionUID = 0L;
         case 12: return NUMERIC;
         case 13: return BIGNUMERIC;
         case 14: return INTERVAL;
+        case 15: return JSON;
         default: return null;
       }
     }
