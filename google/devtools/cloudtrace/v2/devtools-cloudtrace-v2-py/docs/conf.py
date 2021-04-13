@@ -16,7 +16,7 @@
 #
 
 #
-# google-devtools-cloudtrace documentation build configuration file
+# google-cloud-trace documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-devtools-cloudtrace"
+project = u"google-cloud-trace"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -148,7 +148,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Devtools Client Libraries for Python",
+    "description": "Google Cloud Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-devtools-cloudtrace-doc"
+htmlhelp_basename = "google-cloud-trace-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-devtools-cloudtrace.tex",
-        u"google-devtools-cloudtrace Documentation",
+        "google-cloud-trace.tex",
+        u"google-cloud-trace Documentation",
         author,
         "manual",
     )
@@ -310,8 +310,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-devtools-cloudtrace",
-        u"Google Devtools Cloudtrace Documentation",
+        "google-cloud-trace",
+        u"Google Cloud Trace Documentation",
         [author],
         1,
     )
@@ -329,11 +329,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-devtools-cloudtrace",
-        u"google-devtools-cloudtrace Documentation",
+        "google-cloud-trace",
+        u"google-cloud-trace Documentation",
         author,
-        "google-devtools-cloudtrace",
-        "GAPIC library for Google Devtools Cloudtrace API",
+        "google-cloud-trace",
+        "GAPIC library for Google Cloud Trace API",
         "APIs",
     )
 ]

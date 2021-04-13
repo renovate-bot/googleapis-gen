@@ -31,7 +31,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/devtools/cloudtrace_v2/',
+        '--cov=google/cloud/trace_v2/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

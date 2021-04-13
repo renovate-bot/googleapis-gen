@@ -3,5 +3,5 @@ API Reference
 .. toctree::
     :maxdepth: 2
 
-    cloudtrace_v2/services
-    cloudtrace_v2/types
+    trace_v2/services
+    trace_v2/types
