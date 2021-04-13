@@ -1184,6 +1184,7 @@ public final class IAMGrpc {
      * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public void signBlob(com.google.iam.admin.v1.SignBlobRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.SignBlobResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSignBlobMethod(), responseObserver);
@@ -1201,6 +1202,7 @@ public final class IAMGrpc {
      * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public void signJwt(com.google.iam.admin.v1.SignJwtRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.SignJwtResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSignJwtMethod(), responseObserver);
@@ -1824,6 +1826,7 @@ public final class IAMGrpc {
      * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public void signBlob(com.google.iam.admin.v1.SignBlobRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.SignBlobResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1842,6 +1845,7 @@ public final class IAMGrpc {
      * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public void signJwt(com.google.iam.admin.v1.SignJwtRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.SignJwtResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -2257,6 +2261,7 @@ public final class IAMGrpc {
      * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.iam.admin.v1.SignBlobResponse signBlob(com.google.iam.admin.v1.SignBlobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSignBlobMethod(), getCallOptions(), request);
@@ -2274,6 +2279,7 @@ public final class IAMGrpc {
      * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.iam.admin.v1.SignJwtResponse signJwt(com.google.iam.admin.v1.SignJwtRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSignJwtMethod(), getCallOptions(), request);
@@ -2689,6 +2695,7 @@ public final class IAMGrpc {
      * Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.SignBlobResponse> signBlob(
         com.google.iam.admin.v1.SignBlobRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2707,6 +2714,7 @@ public final class IAMGrpc {
      * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.admin.v1.SignJwtResponse> signJwt(
         com.google.iam.admin.v1.SignJwtRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(

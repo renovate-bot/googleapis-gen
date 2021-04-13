@@ -1578,7 +1578,9 @@ public class IAMClient implements BackgroundResource {
    *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
    *     <p>The bytes to sign.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SignBlobResponse signBlob(ServiceAccountName name, ByteString bytesToSign) {
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
@@ -1619,7 +1621,9 @@ public class IAMClient implements BackgroundResource {
    *     API](https://cloud.google.com/iam/help/credentials/migrate-api).
    *     <p>The bytes to sign.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SignBlobResponse signBlob(String name, ByteString bytesToSign) {
     SignBlobRequest request =
         SignBlobRequest.newBuilder().setName(name).setBytesToSign(bytesToSign).build();
@@ -1652,7 +1656,9 @@ public class IAMClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SignBlobResponse signBlob(SignBlobRequest request) {
     return signBlobCallable().call(request);
   }
@@ -1682,7 +1688,10 @@ public class IAMClient implements BackgroundResource {
    *   SignBlobResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable() {
     return stub.signBlobCallable();
   }
@@ -1723,7 +1732,9 @@ public class IAMClient implements BackgroundResource {
    *     <p>If the JWT Claims Set does not contain an expiration time (`exp`) claim, this claim is
    *     added automatically, with a timestamp that is 1 hour in the future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SignJwtResponse signJwt(ServiceAccountName name, String payload) {
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
@@ -1769,7 +1780,9 @@ public class IAMClient implements BackgroundResource {
    *     <p>If the JWT Claims Set does not contain an expiration time (`exp`) claim, this claim is
    *     added automatically, with a timestamp that is 1 hour in the future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SignJwtResponse signJwt(String name, String payload) {
     SignJwtRequest request = SignJwtRequest.newBuilder().setName(name).setPayload(payload).build();
     return signJwt(request);
@@ -1801,7 +1814,9 @@ public class IAMClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SignJwtResponse signJwt(SignJwtRequest request) {
     return signJwtCallable().call(request);
   }
@@ -1831,7 +1846,10 @@ public class IAMClient implements BackgroundResource {
    *   SignJwtResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     return stub.signJwtCallable();
   }

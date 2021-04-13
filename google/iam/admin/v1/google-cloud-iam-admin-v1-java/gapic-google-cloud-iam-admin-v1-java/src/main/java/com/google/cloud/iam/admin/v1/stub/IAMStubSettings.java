@@ -508,12 +508,22 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     return deleteServiceAccountKeySettings;
   }
 
-  /** Returns the object with the settings used for calls to signBlob. */
+  /**
+   * Returns the object with the settings used for calls to signBlob.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SignBlobRequest, SignBlobResponse> signBlobSettings() {
     return signBlobSettings;
   }
 
-  /** Returns the object with the settings used for calls to signJwt. */
+  /**
+   * Returns the object with the settings used for calls to signJwt.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SignJwtRequest, SignJwtResponse> signJwtSettings() {
     return signJwtSettings;
   }
@@ -1205,12 +1215,22 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       return deleteServiceAccountKeySettings;
     }
 
-    /** Returns the builder for the settings used for calls to signBlob. */
+    /**
+     * Returns the builder for the settings used for calls to signBlob.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SignBlobRequest, SignBlobResponse> signBlobSettings() {
       return signBlobSettings;
     }
 
-    /** Returns the builder for the settings used for calls to signJwt. */
+    /**
+     * Returns the builder for the settings used for calls to signJwt.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings() {
       return signJwtSettings;
     }

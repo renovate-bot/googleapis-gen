@@ -196,12 +196,22 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
     return ((IAMStubSettings) getStubSettings()).deleteServiceAccountKeySettings();
   }
 
-  /** Returns the object with the settings used for calls to signBlob. */
+  /**
+   * Returns the object with the settings used for calls to signBlob.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SignBlobRequest, SignBlobResponse> signBlobSettings() {
     return ((IAMStubSettings) getStubSettings()).signBlobSettings();
   }
 
-  /** Returns the object with the settings used for calls to signJwt. */
+  /**
+   * Returns the object with the settings used for calls to signJwt.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SignJwtRequest, SignJwtResponse> signJwtSettings() {
     return ((IAMStubSettings) getStubSettings()).signJwtSettings();
   }
@@ -464,12 +474,22 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
       return getStubSettingsBuilder().deleteServiceAccountKeySettings();
     }
 
-    /** Returns the builder for the settings used for calls to signBlob. */
+    /**
+     * Returns the builder for the settings used for calls to signBlob.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SignBlobRequest, SignBlobResponse> signBlobSettings() {
       return getStubSettingsBuilder().signBlobSettings();
     }
 
-    /** Returns the builder for the settings used for calls to signJwt. */
+    /**
+     * Returns the builder for the settings used for calls to signJwt.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings() {
       return getStubSettingsBuilder().signJwtSettings();
     }

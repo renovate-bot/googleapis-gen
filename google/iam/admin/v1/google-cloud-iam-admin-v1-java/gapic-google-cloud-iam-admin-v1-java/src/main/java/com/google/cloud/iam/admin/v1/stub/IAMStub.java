@@ -145,10 +145,12 @@ public abstract class IAMStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteServiceAccountKeyCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable() {
     throw new UnsupportedOperationException("Not implemented: signBlobCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     throw new UnsupportedOperationException("Not implemented: signJwtCallable()");
   }

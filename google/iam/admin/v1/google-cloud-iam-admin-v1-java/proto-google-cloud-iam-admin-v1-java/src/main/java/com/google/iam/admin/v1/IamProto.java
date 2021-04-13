@@ -391,7 +391,7 @@ public final class IamProto {
       "Y\020\002*Y\n\027ServiceAccountKeyOrigin\022\026\n\022ORIGIN" +
       "_UNSPECIFIED\020\000\022\021\n\rUSER_PROVIDED\020\001\022\023\n\017GOO" +
       "GLE_PROVIDED\020\002*\037\n\010RoleView\022\t\n\005BASIC\020\000\022\010\n" +
-      "\004FULL\020\0012\255(\n\003IAM\022\256\001\n\023ListServiceAccounts\022" +
+      "\004FULL\020\0012\263(\n\003IAM\022\256\001\n\023ListServiceAccounts\022" +
       "/.google.iam.admin.v1.ListServiceAccount" +
       "sRequest\0320.google.iam.admin.v1.ListServi" +
       "ceAccountsResponse\"4\202\323\344\223\002\'\022%/v1/{name=pr" +
@@ -453,77 +453,77 @@ public final class IamProto {
       "ceAccountKey\0223.google.iam.admin.v1.Delet" +
       "eServiceAccountKeyRequest\032\026.google.proto" +
       "buf.Empty\"=\202\323\344\223\0020*./v1/{name=projects/*/" +
-      "serviceAccounts/*/keys/*}\332A\004name\022\251\001\n\010Sig" +
+      "serviceAccounts/*/keys/*}\332A\004name\022\254\001\n\010Sig" +
       "nBlob\022$.google.iam.admin.v1.SignBlobRequ" +
       "est\032%.google.iam.admin.v1.SignBlobRespon" +
-      "se\"P\202\323\344\223\0025\"0/v1/{name=projects/*/service" +
-      "Accounts/*}:signBlob:\001*\332A\022name,bytes_to_" +
-      "sign\022\237\001\n\007SignJwt\022#.google.iam.admin.v1.S" +
-      "ignJwtRequest\032$.google.iam.admin.v1.Sign" +
-      "JwtResponse\"I\202\323\344\223\0024\"//v1/{name=projects/" +
-      "*/serviceAccounts/*}:signJwt:\001*\332A\014name,p" +
-      "ayload\022\226\001\n\014GetIamPolicy\022\".google.iam.v1." +
-      "GetIamPolicyRequest\032\025.google.iam.v1.Poli" +
-      "cy\"K\202\323\344\223\002:\"8/v1/{resource=projects/*/ser" +
-      "viceAccounts/*}:getIamPolicy\332A\010resource\022" +
-      "\240\001\n\014SetIamPolicy\022\".google.iam.v1.SetIamP" +
-      "olicyRequest\032\025.google.iam.v1.Policy\"U\202\323\344" +
-      "\223\002=\"8/v1/{resource=projects/*/serviceAcc" +
-      "ounts/*}:setIamPolicy:\001*\332A\017resource,poli" +
-      "cy\022\313\001\n\022TestIamPermissions\022(.google.iam.v" +
-      "1.TestIamPermissionsRequest\032).google.iam" +
-      ".v1.TestIamPermissionsResponse\"`\202\323\344\223\002C\">" +
-      "/v1/{resource=projects/*/serviceAccounts" +
-      "/*}:testIamPermissions:\001*\332A\024resource,per" +
-      "missions\022\267\001\n\023QueryGrantableRoles\022/.googl" +
-      "e.iam.admin.v1.QueryGrantableRolesReques" +
-      "t\0320.google.iam.admin.v1.QueryGrantableRo" +
-      "lesResponse\"=\202\323\344\223\002\"\"\035/v1/roles:queryGran" +
-      "tableRoles:\001*\332A\022full_resource_name\022\264\001\n\tL" +
-      "istRoles\022%.google.iam.admin.v1.ListRoles" +
-      "Request\032&.google.iam.admin.v1.ListRolesR" +
-      "esponse\"X\202\323\344\223\002R\022\t/v1/rolesZ$\022\"/v1/{paren" +
-      "t=organizations/*}/rolesZ\037\022\035/v1/{parent=" +
-      "projects/*}/roles\022\254\001\n\007GetRole\022#.google.i" +
-      "am.admin.v1.GetRoleRequest\032\031.google.iam." +
-      "admin.v1.Role\"a\202\323\344\223\002[\022\022/v1/{name=roles/*" +
-      "}Z$\022\"/v1/{name=organizations/*/roles/*}Z" +
-      "\037\022\035/v1/{name=projects/*/roles/*}\022\242\001\n\nCre" +
-      "ateRole\022&.google.iam.admin.v1.CreateRole" +
-      "Request\032\031.google.iam.admin.v1.Role\"Q\202\323\344\223" +
-      "\002K\"\"/v1/{parent=organizations/*}/roles:\001" +
-      "*Z\"\"\035/v1/{parent=projects/*}/roles:\001*\022\250\001" +
-      "\n\nUpdateRole\022&.google.iam.admin.v1.Updat" +
-      "eRoleRequest\032\031.google.iam.admin.v1.Role\"" +
-      "W\202\323\344\223\002Q2\"/v1/{name=organizations/*/roles" +
-      "/*}:\004roleZ%2\035/v1/{name=projects/*/roles/" +
-      "*}:\004role\022\234\001\n\nDeleteRole\022&.google.iam.adm" +
-      "in.v1.DeleteRoleRequest\032\031.google.iam.adm" +
-      "in.v1.Role\"K\202\323\344\223\002E*\"/v1/{name=organizati" +
-      "ons/*/roles/*}Z\037*\035/v1/{name=projects/*/r" +
-      "oles/*}\022\270\001\n\014UndeleteRole\022(.google.iam.ad" +
-      "min.v1.UndeleteRoleRequest\032\031.google.iam." +
-      "admin.v1.Role\"c\202\323\344\223\002]\"+/v1/{name=organiz" +
-      "ations/*/roles/*}:undelete:\001*Z+\"&/v1/{na" +
-      "me=projects/*/roles/*}:undelete:\001*\022\274\001\n\030Q" +
-      "ueryTestablePermissions\0224.google.iam.adm" +
-      "in.v1.QueryTestablePermissionsRequest\0325." +
-      "google.iam.admin.v1.QueryTestablePermiss" +
-      "ionsResponse\"3\202\323\344\223\002-\"(/v1/permissions:qu" +
-      "eryTestablePermissions:\001*\022\264\001\n\026QueryAudit" +
-      "ableServices\0222.google.iam.admin.v1.Query" +
-      "AuditableServicesRequest\0323.google.iam.ad" +
-      "min.v1.QueryAuditableServicesResponse\"1\202" +
-      "\323\344\223\002+\"&/v1/iamPolicies:queryAuditableSer" +
-      "vices:\001*\022\204\001\n\nLintPolicy\022&.google.iam.adm" +
-      "in.v1.LintPolicyRequest\032\'.google.iam.adm" +
-      "in.v1.LintPolicyResponse\"%\202\323\344\223\002\037\"\032/v1/ia" +
-      "mPolicies:lintPolicy:\001*\032F\312A\022iam.googleap" +
-      "is.com\322A.https://www.googleapis.com/auth" +
-      "/cloud-platformBb\n\027com.google.iam.admin." +
-      "v1B\010IamProtoP\001Z8google.golang.org/genpro" +
-      "to/googleapis/iam/admin/v1;admin\370\001\001b\006pro" +
-      "to3"
+      "se\"S\210\002\001\202\323\344\223\0025\"0/v1/{name=projects/*/serv" +
+      "iceAccounts/*}:signBlob:\001*\332A\022name,bytes_" +
+      "to_sign\022\242\001\n\007SignJwt\022#.google.iam.admin.v" +
+      "1.SignJwtRequest\032$.google.iam.admin.v1.S" +
+      "ignJwtResponse\"L\210\002\001\202\323\344\223\0024\"//v1/{name=pro" +
+      "jects/*/serviceAccounts/*}:signJwt:\001*\332A\014" +
+      "name,payload\022\226\001\n\014GetIamPolicy\022\".google.i" +
+      "am.v1.GetIamPolicyRequest\032\025.google.iam.v" +
+      "1.Policy\"K\202\323\344\223\002:\"8/v1/{resource=projects" +
+      "/*/serviceAccounts/*}:getIamPolicy\332A\010res" +
+      "ource\022\240\001\n\014SetIamPolicy\022\".google.iam.v1.S" +
+      "etIamPolicyRequest\032\025.google.iam.v1.Polic" +
+      "y\"U\202\323\344\223\002=\"8/v1/{resource=projects/*/serv" +
+      "iceAccounts/*}:setIamPolicy:\001*\332A\017resourc" +
+      "e,policy\022\313\001\n\022TestIamPermissions\022(.google" +
+      ".iam.v1.TestIamPermissionsRequest\032).goog" +
+      "le.iam.v1.TestIamPermissionsResponse\"`\202\323" +
+      "\344\223\002C\">/v1/{resource=projects/*/serviceAc" +
+      "counts/*}:testIamPermissions:\001*\332A\024resour" +
+      "ce,permissions\022\267\001\n\023QueryGrantableRoles\022/" +
+      ".google.iam.admin.v1.QueryGrantableRoles" +
+      "Request\0320.google.iam.admin.v1.QueryGrant" +
+      "ableRolesResponse\"=\202\323\344\223\002\"\"\035/v1/roles:que" +
+      "ryGrantableRoles:\001*\332A\022full_resource_name" +
+      "\022\264\001\n\tListRoles\022%.google.iam.admin.v1.Lis" +
+      "tRolesRequest\032&.google.iam.admin.v1.List" +
+      "RolesResponse\"X\202\323\344\223\002R\022\t/v1/rolesZ$\022\"/v1/" +
+      "{parent=organizations/*}/rolesZ\037\022\035/v1/{p" +
+      "arent=projects/*}/roles\022\254\001\n\007GetRole\022#.go" +
+      "ogle.iam.admin.v1.GetRoleRequest\032\031.googl" +
+      "e.iam.admin.v1.Role\"a\202\323\344\223\002[\022\022/v1/{name=r" +
+      "oles/*}Z$\022\"/v1/{name=organizations/*/rol" +
+      "es/*}Z\037\022\035/v1/{name=projects/*/roles/*}\022\242" +
+      "\001\n\nCreateRole\022&.google.iam.admin.v1.Crea" +
+      "teRoleRequest\032\031.google.iam.admin.v1.Role" +
+      "\"Q\202\323\344\223\002K\"\"/v1/{parent=organizations/*}/r" +
+      "oles:\001*Z\"\"\035/v1/{parent=projects/*}/roles" +
+      ":\001*\022\250\001\n\nUpdateRole\022&.google.iam.admin.v1" +
+      ".UpdateRoleRequest\032\031.google.iam.admin.v1" +
+      ".Role\"W\202\323\344\223\002Q2\"/v1/{name=organizations/*" +
+      "/roles/*}:\004roleZ%2\035/v1/{name=projects/*/" +
+      "roles/*}:\004role\022\234\001\n\nDeleteRole\022&.google.i" +
+      "am.admin.v1.DeleteRoleRequest\032\031.google.i" +
+      "am.admin.v1.Role\"K\202\323\344\223\002E*\"/v1/{name=orga" +
+      "nizations/*/roles/*}Z\037*\035/v1/{name=projec" +
+      "ts/*/roles/*}\022\270\001\n\014UndeleteRole\022(.google." +
+      "iam.admin.v1.UndeleteRoleRequest\032\031.googl" +
+      "e.iam.admin.v1.Role\"c\202\323\344\223\002]\"+/v1/{name=o" +
+      "rganizations/*/roles/*}:undelete:\001*Z+\"&/" +
+      "v1/{name=projects/*/roles/*}:undelete:\001*" +
+      "\022\274\001\n\030QueryTestablePermissions\0224.google.i" +
+      "am.admin.v1.QueryTestablePermissionsRequ" +
+      "est\0325.google.iam.admin.v1.QueryTestableP" +
+      "ermissionsResponse\"3\202\323\344\223\002-\"(/v1/permissi" +
+      "ons:queryTestablePermissions:\001*\022\264\001\n\026Quer" +
+      "yAuditableServices\0222.google.iam.admin.v1" +
+      ".QueryAuditableServicesRequest\0323.google." +
+      "iam.admin.v1.QueryAuditableServicesRespo" +
+      "nse\"1\202\323\344\223\002+\"&/v1/iamPolicies:queryAudita" +
+      "bleServices:\001*\022\204\001\n\nLintPolicy\022&.google.i" +
+      "am.admin.v1.LintPolicyRequest\032\'.google.i" +
+      "am.admin.v1.LintPolicyResponse\"%\202\323\344\223\002\037\"\032" +
+      "/v1/iamPolicies:lintPolicy:\001*\032F\312A\022iam.go" +
+      "ogleapis.com\322A.https://www.googleapis.co" +
+      "m/auth/cloud-platformBb\n\027com.google.iam." +
+      "admin.v1B\010IamProtoP\001Z8google.golang.org/" +
+      "genproto/googleapis/iam/admin/v1;admin\370\001" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
