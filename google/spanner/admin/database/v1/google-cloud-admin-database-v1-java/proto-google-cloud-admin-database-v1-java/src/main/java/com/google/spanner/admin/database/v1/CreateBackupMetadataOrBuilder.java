@@ -50,8 +50,7 @@ public interface CreateBackupMetadataOrBuilder extends
   /**
    * <pre>
    * The progress of the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -61,8 +60,7 @@ public interface CreateBackupMetadataOrBuilder extends
   /**
    * <pre>
    * The progress of the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -72,8 +70,7 @@ public interface CreateBackupMetadataOrBuilder extends
   /**
    * <pre>
    * The progress of the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>

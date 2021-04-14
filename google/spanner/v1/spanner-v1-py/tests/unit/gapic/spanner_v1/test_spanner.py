@@ -36,6 +36,7 @@ from google.cloud.spanner_v1.services.spanner import SpannerAsyncClient
 from google.cloud.spanner_v1.services.spanner import SpannerClient
 from google.cloud.spanner_v1.services.spanner import pagers
 from google.cloud.spanner_v1.services.spanner import transports
+from google.cloud.spanner_v1.types import commit_response
 from google.cloud.spanner_v1.types import keys
 from google.cloud.spanner_v1.types import mutation
 from google.cloud.spanner_v1.types import result_set
@@ -2773,7 +2774,7 @@ def test_commit(transport: str = 'grpc', request_type=spanner.CommitRequest):
             type(client.transport.commit),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = spanner.CommitResponse(
+        call.return_value = commit_response.CommitResponse(
         )
 
         response = client.commit(request)
@@ -2786,7 +2787,7 @@ def test_commit(transport: str = 'grpc', request_type=spanner.CommitRequest):
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, spanner.CommitResponse)
+    assert isinstance(response, commit_response.CommitResponse)
 
 
 def test_commit_from_dict():
@@ -2827,7 +2828,7 @@ async def test_commit_async(transport: str = 'grpc_asyncio', request_type=spanne
             type(client.transport.commit),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner.CommitResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(commit_response.CommitResponse(
         ))
 
         response = await client.commit(request)
@@ -2839,7 +2840,7 @@ async def test_commit_async(transport: str = 'grpc_asyncio', request_type=spanne
         assert args[0] == spanner.CommitRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, spanner.CommitResponse)
+    assert isinstance(response, commit_response.CommitResponse)
 
 
 @pytest.mark.asyncio
@@ -2861,7 +2862,7 @@ def test_commit_field_headers():
     with mock.patch.object(
             type(client.transport.commit),
             '__call__') as call:
-        call.return_value = spanner.CommitResponse()
+        call.return_value = commit_response.CommitResponse()
 
         client.commit(request)
 
@@ -2893,7 +2894,7 @@ async def test_commit_field_headers_async():
     with mock.patch.object(
             type(client.transport.commit),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner.CommitResponse())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(commit_response.CommitResponse())
 
         await client.commit(request)
 
@@ -2920,7 +2921,7 @@ def test_commit_flattened():
             type(client.transport.commit),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = spanner.CommitResponse()
+        call.return_value = commit_response.CommitResponse()
 
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
@@ -2971,9 +2972,9 @@ async def test_commit_flattened_async():
             type(client.transport.commit),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = spanner.CommitResponse()
+        call.return_value = commit_response.CommitResponse()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner.CommitResponse())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(commit_response.CommitResponse())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.commit(

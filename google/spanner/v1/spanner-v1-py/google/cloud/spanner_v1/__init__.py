@@ -16,6 +16,7 @@
 #
 
 from .services.spanner import SpannerClient
+from .types.commit_response import CommitResponse
 from .types.keys import KeyRange
 from .types.keys import KeySet
 from .types.mutation import Mutation
@@ -29,7 +30,6 @@ from .types.spanner import BatchCreateSessionsRequest
 from .types.spanner import BatchCreateSessionsResponse
 from .types.spanner import BeginTransactionRequest
 from .types.spanner import CommitRequest
-from .types.spanner import CommitResponse
 from .types.spanner import CreateSessionRequest
 from .types.spanner import DeleteSessionRequest
 from .types.spanner import ExecuteBatchDmlRequest

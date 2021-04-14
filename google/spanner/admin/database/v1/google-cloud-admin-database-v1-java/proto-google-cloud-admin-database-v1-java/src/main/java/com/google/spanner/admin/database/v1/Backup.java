@@ -327,10 +327,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object database_;
   /**
    * <pre>
-   * Required for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation. Name of the database from which this backup was created. This
-   * needs to be in the same instance as the backup. Values are of the form
+   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * Name of the database from which this backup was
+   * created. This needs to be in the same instance as the backup.
+   * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * </pre>
    *
@@ -352,10 +352,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation. Name of the database from which this backup was created. This
-   * needs to be in the same instance as the backup. Values are of the form
+   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * Name of the database from which this backup was
+   * created. This needs to be in the same instance as the backup.
+   * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * </pre>
    *
@@ -428,8 +428,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp expireTime_;
   /**
    * <pre>
-   * Required for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * operation. The expiration time of the backup, with microseconds
    * granularity that must be at least 6 hours and at most 366 days
    * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -446,8 +445,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * operation. The expiration time of the backup, with microseconds
    * granularity that must be at least 6 hours and at most 366 days
    * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -464,8 +462,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * operation. The expiration time of the backup, with microseconds
    * granularity that must be at least 6 hours and at most 366 days
    * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -484,11 +481,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Output only for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation. Required for the
-   * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-   * operation.
+   * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
    * A globally unique identifier for the backup which cannot be
    * changed. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -518,11 +512,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only for the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-   * operation. Required for the
-   * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-   * operation.
+   * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
    * A globally unique identifier for the backup which cannot be
    * changed. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -556,8 +547,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * Output only. The time the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * request is received. If the request does not specify `version_time`, the
    * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
@@ -571,8 +561,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The time the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * request is received. If the request does not specify `version_time`, the
    * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
@@ -586,8 +575,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The time the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * request is received. If the request does not specify `version_time`, the
    * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
@@ -1270,10 +1258,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object database_ = "";
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Name of the database from which this backup was created. This
-     * needs to be in the same instance as the backup. Values are of the form
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Name of the database from which this backup was
+     * created. This needs to be in the same instance as the backup.
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
      * </pre>
      *
@@ -1294,10 +1282,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Name of the database from which this backup was created. This
-     * needs to be in the same instance as the backup. Values are of the form
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Name of the database from which this backup was
+     * created. This needs to be in the same instance as the backup.
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
      * </pre>
      *
@@ -1319,10 +1307,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Name of the database from which this backup was created. This
-     * needs to be in the same instance as the backup. Values are of the form
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Name of the database from which this backup was
+     * created. This needs to be in the same instance as the backup.
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
      * </pre>
      *
@@ -1342,10 +1330,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Name of the database from which this backup was created. This
-     * needs to be in the same instance as the backup. Values are of the form
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Name of the database from which this backup was
+     * created. This needs to be in the same instance as the backup.
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
      * </pre>
      *
@@ -1360,10 +1348,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Name of the database from which this backup was created. This
-     * needs to be in the same instance as the backup. Values are of the form
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Name of the database from which this backup was
+     * created. This needs to be in the same instance as the backup.
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
      * </pre>
      *
@@ -1570,8 +1558,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1587,8 +1574,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1608,8 +1594,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1634,8 +1619,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1658,8 +1642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1686,8 +1669,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1710,8 +1692,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1728,8 +1709,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1749,8 +1729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * operation. The expiration time of the backup, with microseconds
      * granularity that must be at least 6 hours and at most 366 days
      * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -1777,11 +1756,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Output only for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Required for the
-     * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-     * operation.
+     * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
      * A globally unique identifier for the backup which cannot be
      * changed. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -1810,11 +1786,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Required for the
-     * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-     * operation.
+     * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
      * A globally unique identifier for the backup which cannot be
      * changed. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -1844,11 +1817,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Required for the
-     * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-     * operation.
+     * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
      * A globally unique identifier for the backup which cannot be
      * changed. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -1876,11 +1846,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Required for the
-     * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-     * operation.
+     * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
      * A globally unique identifier for the backup which cannot be
      * changed. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -1903,11 +1870,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only for the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
-     * operation. Required for the
-     * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
-     * operation.
+     * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
      * A globally unique identifier for the backup which cannot be
      * changed. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -1940,8 +1904,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -1954,8 +1917,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -1972,8 +1934,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -1995,8 +1956,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -2016,8 +1976,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -2041,8 +2000,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -2062,8 +2020,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -2077,8 +2034,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
@@ -2095,8 +2051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
      * request is received. If the request does not specify `version_time`, the
      * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>

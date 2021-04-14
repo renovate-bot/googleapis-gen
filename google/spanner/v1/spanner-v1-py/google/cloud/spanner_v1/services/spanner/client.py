@@ -33,6 +33,7 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.spanner_v1.services.spanner import pagers
+from google.cloud.spanner_v1.types import commit_response
 from google.cloud.spanner_v1.types import mutation
 from google.cloud.spanner_v1.types import result_set
 from google.cloud.spanner_v1.types import spanner
@@ -1260,7 +1261,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> spanner.CommitResponse:
+            ) -> commit_response.CommitResponse:
         r"""Commits a transaction. The request includes the mutations to be
         applied to rows in the database.
 

@@ -112,8 +112,8 @@ public interface CreateDatabaseRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The encryption configuration for the database. If this field is
-   * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+   * Optional. The encryption configuration for the database. If this field is not
+   * specified, Cloud Spanner will encrypt/decrypt all data at rest using
    * Google default encryption.
    * </pre>
    *
@@ -123,8 +123,8 @@ public interface CreateDatabaseRequestOrBuilder extends
   boolean hasEncryptionConfig();
   /**
    * <pre>
-   * Optional. The encryption configuration for the database. If this field is
-   * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+   * Optional. The encryption configuration for the database. If this field is not
+   * specified, Cloud Spanner will encrypt/decrypt all data at rest using
    * Google default encryption.
    * </pre>
    *
@@ -134,8 +134,8 @@ public interface CreateDatabaseRequestOrBuilder extends
   com.google.spanner.admin.database.v1.EncryptionConfig getEncryptionConfig();
   /**
    * <pre>
-   * Optional. The encryption configuration for the database. If this field is
-   * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+   * Optional. The encryption configuration for the database. If this field is not
+   * specified, Cloud Spanner will encrypt/decrypt all data at rest using
    * Google default encryption.
    * </pre>
    *

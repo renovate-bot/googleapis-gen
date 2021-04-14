@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+from .commit_response import (
+    CommitResponse,
+)
 from .keys import (
     KeyRange,
     KeySet,
@@ -37,7 +40,6 @@ from .spanner import (
     BatchCreateSessionsResponse,
     BeginTransactionRequest,
     CommitRequest,
-    CommitResponse,
     CreateSessionRequest,
     DeleteSessionRequest,
     ExecuteBatchDmlRequest,
@@ -68,6 +70,7 @@ from .type import (
 )
 
 __all__ = (
+    'CommitResponse',
     'KeyRange',
     'KeySet',
     'Mutation',
@@ -81,7 +84,6 @@ __all__ = (
     'BatchCreateSessionsResponse',
     'BeginTransactionRequest',
     'CommitRequest',
-    'CommitResponse',
     'CreateSessionRequest',
     'DeleteSessionRequest',
     'ExecuteBatchDmlRequest',

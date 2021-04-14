@@ -295,9 +295,9 @@ private static final long serialVersionUID = 0L;
   private com.google.rpc.Status encryptionStatus_;
   /**
    * <pre>
-   * Output only. If present, the status of a recent encrypt/decrypt call on
-   * underlying data for this database or backup. Regardless of status, data is
-   * always encrypted at rest.
+   * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+   * for this database or backup. Regardless of status, data is always encrypted
+   * at rest.
    * </pre>
    *
    * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -309,9 +309,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. If present, the status of a recent encrypt/decrypt call on
-   * underlying data for this database or backup. Regardless of status, data is
-   * always encrypted at rest.
+   * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+   * for this database or backup. Regardless of status, data is always encrypted
+   * at rest.
    * </pre>
    *
    * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -323,9 +323,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. If present, the status of a recent encrypt/decrypt call on
-   * underlying data for this database or backup. Regardless of status, data is
-   * always encrypted at rest.
+   * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+   * for this database or backup. Regardless of status, data is always encrypted
+   * at rest.
    * </pre>
    *
    * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -339,8 +339,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object kmsKeyVersion_;
   /**
    * <pre>
-   * Output only. A Cloud KMS key version that is being used to protect the
-   * database or backup.
+   * Output only. A Cloud KMS key version that is being used to protect the database or
+   * backup.
    * </pre>
    *
    * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -361,8 +361,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. A Cloud KMS key version that is being used to protect the
-   * database or backup.
+   * Output only. A Cloud KMS key version that is being used to protect the database or
+   * backup.
    * </pre>
    *
    * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -814,9 +814,9 @@ private static final long serialVersionUID = 0L;
         com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> encryptionStatusBuilder_;
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -827,9 +827,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -844,9 +844,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -866,9 +866,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -886,9 +886,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -910,9 +910,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -930,9 +930,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -944,9 +944,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -961,9 +961,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If present, the status of a recent encrypt/decrypt call on
-     * underlying data for this database or backup. Regardless of status, data is
-     * always encrypted at rest.
+     * Output only. If present, the status of a recent encrypt/decrypt call on underlying data
+     * for this database or backup. Regardless of status, data is always encrypted
+     * at rest.
      * </pre>
      *
      * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -985,8 +985,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object kmsKeyVersion_ = "";
     /**
      * <pre>
-     * Output only. A Cloud KMS key version that is being used to protect the
-     * database or backup.
+     * Output only. A Cloud KMS key version that is being used to protect the database or
+     * backup.
      * </pre>
      *
      * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -1006,8 +1006,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud KMS key version that is being used to protect the
-     * database or backup.
+     * Output only. A Cloud KMS key version that is being used to protect the database or
+     * backup.
      * </pre>
      *
      * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -1028,8 +1028,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud KMS key version that is being used to protect the
-     * database or backup.
+     * Output only. A Cloud KMS key version that is being used to protect the database or
+     * backup.
      * </pre>
      *
      * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -1048,8 +1048,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud KMS key version that is being used to protect the
-     * database or backup.
+     * Output only. A Cloud KMS key version that is being used to protect the database or
+     * backup.
      * </pre>
      *
      * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -1063,8 +1063,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A Cloud KMS key version that is being used to protect the
-     * database or backup.
+     * Output only. A Cloud KMS key version that is being used to protect the database or
+     * backup.
      * </pre>
      *
      * <code>string kms_key_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>

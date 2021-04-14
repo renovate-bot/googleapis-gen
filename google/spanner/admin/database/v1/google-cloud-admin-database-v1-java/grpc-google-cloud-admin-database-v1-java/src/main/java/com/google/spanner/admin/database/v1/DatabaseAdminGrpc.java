@@ -620,8 +620,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -648,8 +648,7 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
-     * The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
      * </pre>
      */
     public void updateDatabaseDdl(com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest request,
@@ -738,12 +737,12 @@ public final class DatabaseAdminGrpc {
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;/operations/&lt;operation_id&gt;`
      * and can be used to track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.spanner.admin.database.v1.Backup], if successful.
-     * Cancelling the returned operation will stop the creation and delete the
-     * backup. There can be only one pending backup creation per database. Backup
-     * creation of different databases can run concurrently.
+     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.spanner.admin.database.v1.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
+     * There can be only one pending backup creation per database. Backup creation
+     * of different databases can run concurrently.
      * </pre>
      */
     public void createBackup(com.google.spanner.admin.database.v1.CreateBackupRequest request,
@@ -753,8 +752,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Gets metadata on a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Gets metadata on a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public void getBackup(com.google.spanner.admin.database.v1.GetBackupRequest request,
@@ -764,8 +762,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Updates a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Updates a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public void updateBackup(com.google.spanner.admin.database.v1.UpdateBackupRequest request,
@@ -775,8 +772,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Deletes a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Deletes a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public void deleteBackup(com.google.spanner.admin.database.v1.DeleteBackupRequest request,
@@ -1022,8 +1018,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -1052,8 +1048,7 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
-     * The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
      * </pre>
      */
     public void updateDatabaseDdl(com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest request,
@@ -1148,12 +1143,12 @@ public final class DatabaseAdminGrpc {
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;/operations/&lt;operation_id&gt;`
      * and can be used to track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.spanner.admin.database.v1.Backup], if successful.
-     * Cancelling the returned operation will stop the creation and delete the
-     * backup. There can be only one pending backup creation per database. Backup
-     * creation of different databases can run concurrently.
+     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.spanner.admin.database.v1.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
+     * There can be only one pending backup creation per database. Backup creation
+     * of different databases can run concurrently.
      * </pre>
      */
     public void createBackup(com.google.spanner.admin.database.v1.CreateBackupRequest request,
@@ -1164,8 +1159,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Gets metadata on a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Gets metadata on a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public void getBackup(com.google.spanner.admin.database.v1.GetBackupRequest request,
@@ -1176,8 +1170,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Updates a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Updates a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public void updateBackup(com.google.spanner.admin.database.v1.UpdateBackupRequest request,
@@ -1188,8 +1181,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Deletes a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Deletes a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public void deleteBackup(com.google.spanner.admin.database.v1.DeleteBackupRequest request,
@@ -1315,8 +1307,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -1343,8 +1335,7 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
-     * The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
      * </pre>
      */
     public com.google.longrunning.Operation updateDatabaseDdl(com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest request) {
@@ -1433,12 +1424,12 @@ public final class DatabaseAdminGrpc {
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;/operations/&lt;operation_id&gt;`
      * and can be used to track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.spanner.admin.database.v1.Backup], if successful.
-     * Cancelling the returned operation will stop the creation and delete the
-     * backup. There can be only one pending backup creation per database. Backup
-     * creation of different databases can run concurrently.
+     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.spanner.admin.database.v1.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
+     * There can be only one pending backup creation per database. Backup creation
+     * of different databases can run concurrently.
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(com.google.spanner.admin.database.v1.CreateBackupRequest request) {
@@ -1448,8 +1439,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Gets metadata on a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Gets metadata on a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public com.google.spanner.admin.database.v1.Backup getBackup(com.google.spanner.admin.database.v1.GetBackupRequest request) {
@@ -1459,8 +1449,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Updates a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Updates a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public com.google.spanner.admin.database.v1.Backup updateBackup(com.google.spanner.admin.database.v1.UpdateBackupRequest request) {
@@ -1470,8 +1459,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Deletes a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Deletes a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public com.google.protobuf.Empty deleteBackup(com.google.spanner.admin.database.v1.DeleteBackupRequest request) {
@@ -1593,8 +1581,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -1623,8 +1611,7 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
-     * The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateDatabaseDdl(
@@ -1719,12 +1706,12 @@ public final class DatabaseAdminGrpc {
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;/operations/&lt;operation_id&gt;`
      * and can be used to track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata].
-     * The [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.spanner.admin.database.v1.Backup], if successful.
-     * Cancelling the returned operation will stop the creation and delete the
-     * backup. There can be only one pending backup creation per database. Backup
-     * creation of different databases can run concurrently.
+     * [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.spanner.admin.database.v1.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
+     * There can be only one pending backup creation per database. Backup creation
+     * of different databases can run concurrently.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createBackup(
@@ -1735,8 +1722,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Gets metadata on a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Gets metadata on a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.spanner.admin.database.v1.Backup> getBackup(
@@ -1747,8 +1733,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Updates a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Updates a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.spanner.admin.database.v1.Backup> updateBackup(
@@ -1759,8 +1744,7 @@ public final class DatabaseAdminGrpc {
 
     /**
      * <pre>
-     * Deletes a pending or completed
-     * [Backup][google.spanner.admin.database.v1.Backup].
+     * Deletes a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBackup(

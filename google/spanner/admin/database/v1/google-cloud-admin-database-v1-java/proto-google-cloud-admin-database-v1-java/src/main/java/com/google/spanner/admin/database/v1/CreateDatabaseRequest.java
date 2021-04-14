@@ -5,8 +5,7 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for
- * [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
+ * The request for [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.CreateDatabaseRequest}
@@ -295,8 +294,8 @@ private static final long serialVersionUID = 0L;
   private com.google.spanner.admin.database.v1.EncryptionConfig encryptionConfig_;
   /**
    * <pre>
-   * Optional. The encryption configuration for the database. If this field is
-   * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+   * Optional. The encryption configuration for the database. If this field is not
+   * specified, Cloud Spanner will encrypt/decrypt all data at rest using
    * Google default encryption.
    * </pre>
    *
@@ -309,8 +308,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The encryption configuration for the database. If this field is
-   * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+   * Optional. The encryption configuration for the database. If this field is not
+   * specified, Cloud Spanner will encrypt/decrypt all data at rest using
    * Google default encryption.
    * </pre>
    *
@@ -323,8 +322,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The encryption configuration for the database. If this field is
-   * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+   * Optional. The encryption configuration for the database. If this field is not
+   * specified, Cloud Spanner will encrypt/decrypt all data at rest using
    * Google default encryption.
    * </pre>
    *
@@ -534,8 +533,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for
-   * [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
+   * The request for [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.CreateDatabaseRequest}
@@ -1120,8 +1118,8 @@ private static final long serialVersionUID = 0L;
         com.google.spanner.admin.database.v1.EncryptionConfig, com.google.spanner.admin.database.v1.EncryptionConfig.Builder, com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder> encryptionConfigBuilder_;
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1133,8 +1131,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1150,8 +1148,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1172,8 +1170,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1192,8 +1190,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1216,8 +1214,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1236,8 +1234,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1250,8 +1248,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *
@@ -1267,8 +1265,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration for the database. If this field is
-     * not specified, Cloud Spanner will encrypt/decrypt all data at rest using
+     * Optional. The encryption configuration for the database. If this field is not
+     * specified, Cloud Spanner will encrypt/decrypt all data at rest using
      * Google default encryption.
      * </pre>
      *

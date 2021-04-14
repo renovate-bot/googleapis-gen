@@ -17,6 +17,7 @@
 
 from google.cloud.spanner_v1.services.spanner.async_client import SpannerAsyncClient
 from google.cloud.spanner_v1.services.spanner.client import SpannerClient
+from google.cloud.spanner_v1.types.commit_response import CommitResponse
 from google.cloud.spanner_v1.types.keys import KeyRange
 from google.cloud.spanner_v1.types.keys import KeySet
 from google.cloud.spanner_v1.types.mutation import Mutation
@@ -30,7 +31,6 @@ from google.cloud.spanner_v1.types.spanner import BatchCreateSessionsRequest
 from google.cloud.spanner_v1.types.spanner import BatchCreateSessionsResponse
 from google.cloud.spanner_v1.types.spanner import BeginTransactionRequest
 from google.cloud.spanner_v1.types.spanner import CommitRequest
-from google.cloud.spanner_v1.types.spanner import CommitResponse
 from google.cloud.spanner_v1.types.spanner import CreateSessionRequest
 from google.cloud.spanner_v1.types.spanner import DeleteSessionRequest
 from google.cloud.spanner_v1.types.spanner import ExecuteBatchDmlRequest

@@ -5,8 +5,7 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for
- * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
+ * The request for [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.CreateBackupRequest}
@@ -273,11 +272,11 @@ private static final long serialVersionUID = 0L;
   private com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryptionConfig_;
   /**
    * <pre>
-   * Optional. The encryption configuration used to encrypt the backup. If this
-   * field is not specified, the backup will use the same encryption
-   * configuration as the database by default, namely
-   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-   * = `USE_DATABASE_ENCRYPTION`.
+   * Optional. The encryption configuration used to encrypt the backup. If this field is
+   * not specified, the backup will use the same
+   * encryption configuration as the database by default, namely
+   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+   * `USE_DATABASE_ENCRYPTION`.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -289,11 +288,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The encryption configuration used to encrypt the backup. If this
-   * field is not specified, the backup will use the same encryption
-   * configuration as the database by default, namely
-   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-   * = `USE_DATABASE_ENCRYPTION`.
+   * Optional. The encryption configuration used to encrypt the backup. If this field is
+   * not specified, the backup will use the same
+   * encryption configuration as the database by default, namely
+   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+   * `USE_DATABASE_ENCRYPTION`.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -305,11 +304,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The encryption configuration used to encrypt the backup. If this
-   * field is not specified, the backup will use the same encryption
-   * configuration as the database by default, namely
-   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-   * = `USE_DATABASE_ENCRYPTION`.
+   * Optional. The encryption configuration used to encrypt the backup. If this field is
+   * not specified, the backup will use the same
+   * encryption configuration as the database by default, namely
+   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+   * `USE_DATABASE_ENCRYPTION`.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -517,8 +516,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
+   * The request for [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.CreateBackupRequest}
@@ -1090,11 +1088,11 @@ private static final long serialVersionUID = 0L;
         com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfigOrBuilder> encryptionConfigBuilder_;
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1105,11 +1103,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1124,11 +1122,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1148,11 +1146,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1170,11 +1168,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1196,11 +1194,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1218,11 +1216,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1234,11 +1232,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1253,11 +1251,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The encryption configuration used to encrypt the backup. If this
-     * field is not specified, the backup will use the same encryption
-     * configuration as the database by default, namely
-     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
-     * = `USE_DATABASE_ENCRYPTION`.
+     * Optional. The encryption configuration used to encrypt the backup. If this field is
+     * not specified, the backup will use the same
+     * encryption configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type] =
+     * `USE_DATABASE_ENCRYPTION`.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

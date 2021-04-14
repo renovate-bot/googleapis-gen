@@ -28,10 +28,10 @@ public interface RestoreDatabaseEncryptionConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The Cloud KMS key that will be used to encrypt/decrypt the
-   * restored database. This field should be set only when
-   * [encryption_type][google.spanner.admin.database.v1.RestoreDatabaseEncryptionConfig.encryption_type]
-   * is `CUSTOMER_MANAGED_ENCRYPTION`. Values are of the form
+   * Optional. The Cloud KMS key that will be used to encrypt/decrypt the restored
+   * database. This field should be set only when
+   * [encryption_type][google.spanner.admin.database.v1.RestoreDatabaseEncryptionConfig.encryption_type] is
+   * `CUSTOMER_MANAGED_ENCRYPTION`. Values are of the form
    * `projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;key_ring&gt;/cryptoKeys/&lt;kms_key_name&gt;`.
    * </pre>
    *
@@ -41,10 +41,10 @@ public interface RestoreDatabaseEncryptionConfigOrBuilder extends
   java.lang.String getKmsKeyName();
   /**
    * <pre>
-   * Optional. The Cloud KMS key that will be used to encrypt/decrypt the
-   * restored database. This field should be set only when
-   * [encryption_type][google.spanner.admin.database.v1.RestoreDatabaseEncryptionConfig.encryption_type]
-   * is `CUSTOMER_MANAGED_ENCRYPTION`. Values are of the form
+   * Optional. The Cloud KMS key that will be used to encrypt/decrypt the restored
+   * database. This field should be set only when
+   * [encryption_type][google.spanner.admin.database.v1.RestoreDatabaseEncryptionConfig.encryption_type] is
+   * `CUSTOMER_MANAGED_ENCRYPTION`. Values are of the form
    * `projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;key_ring&gt;/cryptoKeys/&lt;kms_key_name&gt;`.
    * </pre>
    *
