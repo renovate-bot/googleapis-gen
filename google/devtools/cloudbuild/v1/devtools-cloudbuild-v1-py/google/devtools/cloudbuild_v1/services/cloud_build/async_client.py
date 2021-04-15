@@ -66,6 +66,10 @@ class CloudBuildAsyncClient:
     parse_secret_version_path = staticmethod(CloudBuildClient.parse_secret_version_path)
     service_account_path = staticmethod(CloudBuildClient.service_account_path)
     parse_service_account_path = staticmethod(CloudBuildClient.parse_service_account_path)
+    subscription_path = staticmethod(CloudBuildClient.subscription_path)
+    parse_subscription_path = staticmethod(CloudBuildClient.parse_subscription_path)
+    topic_path = staticmethod(CloudBuildClient.topic_path)
+    parse_topic_path = staticmethod(CloudBuildClient.parse_topic_path)
 
     common_billing_account_path = staticmethod(CloudBuildClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudBuildClient.parse_common_billing_account_path)

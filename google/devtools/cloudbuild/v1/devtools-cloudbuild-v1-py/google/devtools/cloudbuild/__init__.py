@@ -45,6 +45,7 @@ from google.devtools.cloudbuild_v1.types.cloudbuild import ListBuildsResponse
 from google.devtools.cloudbuild_v1.types.cloudbuild import ListWorkerPoolsRequest
 from google.devtools.cloudbuild_v1.types.cloudbuild import ListWorkerPoolsResponse
 from google.devtools.cloudbuild_v1.types.cloudbuild import Network
+from google.devtools.cloudbuild_v1.types.cloudbuild import PubsubConfig
 from google.devtools.cloudbuild_v1.types.cloudbuild import PullRequestFilter
 from google.devtools.cloudbuild_v1.types.cloudbuild import PushFilter
 from google.devtools.cloudbuild_v1.types.cloudbuild import ReceiveTriggerWebhookRequest
@@ -97,6 +98,7 @@ __all__ = (
     'ListWorkerPoolsRequest',
     'ListWorkerPoolsResponse',
     'Network',
+    'PubsubConfig',
     'PullRequestFilter',
     'PushFilter',
     'ReceiveTriggerWebhookRequest',

@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -180,6 +181,25 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
+            break;
+          }
+          case 234: {
+            com.google.cloudbuild.v1.PubsubConfig.Builder subBuilder = null;
+            if (pubsubConfig_ != null) {
+              subBuilder = pubsubConfig_.toBuilder();
+            }
+            pubsubConfig_ = input.readMessage(com.google.cloudbuild.v1.PubsubConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pubsubConfig_);
+              pubsubConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 242: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            filter_ = s;
             break;
           }
           default: {
@@ -565,6 +585,47 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder getGithubOrBuilder() {
     return getGithub();
+  }
+
+  public static final int PUBSUB_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloudbuild.v1.PubsubConfig pubsubConfig_;
+  /**
+   * <pre>
+   * Optional. PubsubConfig describes the configuration of a trigger that
+   * creates a build whenever a Pub/Sub message is published.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the pubsubConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPubsubConfig() {
+    return pubsubConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. PubsubConfig describes the configuration of a trigger that
+   * creates a build whenever a Pub/Sub message is published.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pubsubConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.PubsubConfig getPubsubConfig() {
+    return pubsubConfig_ == null ? com.google.cloudbuild.v1.PubsubConfig.getDefaultInstance() : pubsubConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. PubsubConfig describes the configuration of a trigger that
+   * creates a build whenever a Pub/Sub message is published.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.PubsubConfigOrBuilder getPubsubConfigOrBuilder() {
+    return getPubsubConfig();
   }
 
   public static final int BUILD_FIELD_NUMBER = 4;
@@ -981,6 +1042,52 @@ private static final long serialVersionUID = 0L;
     return includedFiles_.getByteString(index);
   }
 
+  public static final int FILTER_FIELD_NUMBER = 30;
+  private volatile java.lang.Object filter_;
+  /**
+   * <pre>
+   * Optional. A Common Expression Language string.
+   * </pre>
+   *
+   * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. A Common Expression Language string.
+   * </pre>
+   *
+   * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1036,6 +1143,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, name_);
+    }
+    if (pubsubConfig_ != null) {
+      output.writeMessage(29, getPubsubConfig());
+    }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, filter_);
     }
     unknownFields.writeTo(output);
   }
@@ -1112,6 +1225,13 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, name_);
     }
+    if (pubsubConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(29, getPubsubConfig());
+    }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, filter_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1145,6 +1265,11 @@ private static final long serialVersionUID = 0L;
       if (!getGithub()
           .equals(other.getGithub())) return false;
     }
+    if (hasPubsubConfig() != other.hasPubsubConfig()) return false;
+    if (hasPubsubConfig()) {
+      if (!getPubsubConfig()
+          .equals(other.getPubsubConfig())) return false;
+    }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime()
@@ -1158,6 +1283,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIgnoredFilesList())) return false;
     if (!getIncludedFilesList()
         .equals(other.getIncludedFilesList())) return false;
+    if (!getFilter()
+        .equals(other.getFilter())) return false;
     if (!getBuildTemplateCase().equals(other.getBuildTemplateCase())) return false;
     switch (buildTemplateCase_) {
       case 4:
@@ -1200,6 +1327,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + GITHUB_FIELD_NUMBER;
       hash = (53 * hash) + getGithub().hashCode();
     }
+    if (hasPubsubConfig()) {
+      hash = (37 * hash) + PUBSUB_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPubsubConfig().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1219,6 +1350,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INCLUDED_FILES_FIELD_NUMBER;
       hash = (53 * hash) + getIncludedFilesList().hashCode();
     }
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     switch (buildTemplateCase_) {
       case 4:
         hash = (37 * hash) + BUILD_FIELD_NUMBER;
@@ -1411,6 +1544,12 @@ private static final long serialVersionUID = 0L;
         github_ = null;
         githubBuilder_ = null;
       }
+      if (pubsubConfigBuilder_ == null) {
+        pubsubConfig_ = null;
+      } else {
+        pubsubConfig_ = null;
+        pubsubConfigBuilder_ = null;
+      }
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1424,6 +1563,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      filter_ = "";
+
       buildTemplateCase_ = 0;
       buildTemplate_ = null;
       return this;
@@ -1471,6 +1612,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.github_ = githubBuilder_.build();
       }
+      if (pubsubConfigBuilder_ == null) {
+        result.pubsubConfig_ = pubsubConfig_;
+      } else {
+        result.pubsubConfig_ = pubsubConfigBuilder_.build();
+      }
       if (buildTemplateCase_ == 4) {
         if (buildBuilder_ == null) {
           result.buildTemplate_ = buildTemplate_;
@@ -1499,6 +1645,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.includedFiles_ = includedFiles_;
+      result.filter_ = filter_;
       result.buildTemplateCase_ = buildTemplateCase_;
       onBuilt();
       return result;
@@ -1576,6 +1723,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasGithub()) {
         mergeGithub(other.getGithub());
       }
+      if (other.hasPubsubConfig()) {
+        mergePubsubConfig(other.getPubsubConfig());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1602,6 +1752,10 @@ private static final long serialVersionUID = 0L;
           ensureIncludedFilesIsMutable();
           includedFiles_.addAll(other.includedFiles_);
         }
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
         onChanged();
       }
       switch (other.getBuildTemplateCase()) {
@@ -2480,6 +2634,170 @@ private static final long serialVersionUID = 0L;
         github_ = null;
       }
       return githubBuilder_;
+    }
+
+    private com.google.cloudbuild.v1.PubsubConfig pubsubConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloudbuild.v1.PubsubConfig, com.google.cloudbuild.v1.PubsubConfig.Builder, com.google.cloudbuild.v1.PubsubConfigOrBuilder> pubsubConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the pubsubConfig field is set.
+     */
+    public boolean hasPubsubConfig() {
+      return pubsubConfigBuilder_ != null || pubsubConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The pubsubConfig.
+     */
+    public com.google.cloudbuild.v1.PubsubConfig getPubsubConfig() {
+      if (pubsubConfigBuilder_ == null) {
+        return pubsubConfig_ == null ? com.google.cloudbuild.v1.PubsubConfig.getDefaultInstance() : pubsubConfig_;
+      } else {
+        return pubsubConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setPubsubConfig(com.google.cloudbuild.v1.PubsubConfig value) {
+      if (pubsubConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pubsubConfig_ = value;
+        onChanged();
+      } else {
+        pubsubConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setPubsubConfig(
+        com.google.cloudbuild.v1.PubsubConfig.Builder builderForValue) {
+      if (pubsubConfigBuilder_ == null) {
+        pubsubConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        pubsubConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergePubsubConfig(com.google.cloudbuild.v1.PubsubConfig value) {
+      if (pubsubConfigBuilder_ == null) {
+        if (pubsubConfig_ != null) {
+          pubsubConfig_ =
+            com.google.cloudbuild.v1.PubsubConfig.newBuilder(pubsubConfig_).mergeFrom(value).buildPartial();
+        } else {
+          pubsubConfig_ = value;
+        }
+        onChanged();
+      } else {
+        pubsubConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearPubsubConfig() {
+      if (pubsubConfigBuilder_ == null) {
+        pubsubConfig_ = null;
+        onChanged();
+      } else {
+        pubsubConfig_ = null;
+        pubsubConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloudbuild.v1.PubsubConfig.Builder getPubsubConfigBuilder() {
+      
+      onChanged();
+      return getPubsubConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloudbuild.v1.PubsubConfigOrBuilder getPubsubConfigOrBuilder() {
+      if (pubsubConfigBuilder_ != null) {
+        return pubsubConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pubsubConfig_ == null ?
+            com.google.cloudbuild.v1.PubsubConfig.getDefaultInstance() : pubsubConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. PubsubConfig describes the configuration of a trigger that
+     * creates a build whenever a Pub/Sub message is published.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloudbuild.v1.PubsubConfig, com.google.cloudbuild.v1.PubsubConfig.Builder, com.google.cloudbuild.v1.PubsubConfigOrBuilder> 
+        getPubsubConfigFieldBuilder() {
+      if (pubsubConfigBuilder_ == null) {
+        pubsubConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.PubsubConfig, com.google.cloudbuild.v1.PubsubConfig.Builder, com.google.cloudbuild.v1.PubsubConfigOrBuilder>(
+                getPubsubConfig(),
+                getParentForChildren(),
+                isClean());
+        pubsubConfig_ = null;
+      }
+      return pubsubConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3543,6 +3861,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureIncludedFilesIsMutable();
       includedFiles_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     * <pre>
+     * Optional. A Common Expression Language string.
+     * </pre>
+     *
+     * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A Common Expression Language string.
+     * </pre>
+     *
+     * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A Common Expression Language string.
+     * </pre>
+     *
+     * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A Common Expression Language string.
+     * </pre>
+     *
+     * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A Common Expression Language string.
+     * </pre>
+     *
+     * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      filter_ = value;
       onChanged();
       return this;
     }
