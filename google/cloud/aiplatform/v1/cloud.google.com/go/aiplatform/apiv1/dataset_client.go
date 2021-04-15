@@ -173,6 +173,11 @@ func (c *DatasetClient) setGoogleClientInfo(keyval ...string) {
 
 // CreateDataset creates a Dataset.
 func (c *DatasetClient) CreateDataset(ctx context.Context, req *aiplatformpb.CreateDatasetRequest, opts ...gax.CallOption) (*CreateDatasetOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateDataset[0:len(c.CallOptions.CreateDataset):len(c.CallOptions.CreateDataset)], opts...)
@@ -192,6 +197,11 @@ func (c *DatasetClient) CreateDataset(ctx context.Context, req *aiplatformpb.Cre
 
 // GetDataset gets a Dataset.
 func (c *DatasetClient) GetDataset(ctx context.Context, req *aiplatformpb.GetDatasetRequest, opts ...gax.CallOption) (*aiplatformpb.Dataset, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetDataset[0:len(c.CallOptions.GetDataset):len(c.CallOptions.GetDataset)], opts...)
@@ -209,6 +219,11 @@ func (c *DatasetClient) GetDataset(ctx context.Context, req *aiplatformpb.GetDat
 
 // UpdateDataset updates a Dataset.
 func (c *DatasetClient) UpdateDataset(ctx context.Context, req *aiplatformpb.UpdateDatasetRequest, opts ...gax.CallOption) (*aiplatformpb.Dataset, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "dataset.name", url.QueryEscape(req.GetDataset().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.UpdateDataset[0:len(c.CallOptions.UpdateDataset):len(c.CallOptions.UpdateDataset)], opts...)
@@ -267,6 +282,11 @@ func (c *DatasetClient) ListDatasets(ctx context.Context, req *aiplatformpb.List
 
 // DeleteDataset deletes a Dataset.
 func (c *DatasetClient) DeleteDataset(ctx context.Context, req *aiplatformpb.DeleteDatasetRequest, opts ...gax.CallOption) (*DeleteDatasetOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteDataset[0:len(c.CallOptions.DeleteDataset):len(c.CallOptions.DeleteDataset)], opts...)
@@ -286,6 +306,11 @@ func (c *DatasetClient) DeleteDataset(ctx context.Context, req *aiplatformpb.Del
 
 // ImportData imports data into a Dataset.
 func (c *DatasetClient) ImportData(ctx context.Context, req *aiplatformpb.ImportDataRequest, opts ...gax.CallOption) (*ImportDataOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.ImportData[0:len(c.CallOptions.ImportData):len(c.CallOptions.ImportData)], opts...)
@@ -305,6 +330,11 @@ func (c *DatasetClient) ImportData(ctx context.Context, req *aiplatformpb.Import
 
 // ExportData exports data from a Dataset.
 func (c *DatasetClient) ExportData(ctx context.Context, req *aiplatformpb.ExportDataRequest, opts ...gax.CallOption) (*ExportDataOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.ExportData[0:len(c.CallOptions.ExportData):len(c.CallOptions.ExportData)], opts...)
@@ -365,6 +395,11 @@ func (c *DatasetClient) ListDataItems(ctx context.Context, req *aiplatformpb.Lis
 
 // GetAnnotationSpec gets an AnnotationSpec.
 func (c *DatasetClient) GetAnnotationSpec(ctx context.Context, req *aiplatformpb.GetAnnotationSpecRequest, opts ...gax.CallOption) (*aiplatformpb.AnnotationSpec, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetAnnotationSpec[0:len(c.CallOptions.GetAnnotationSpec):len(c.CallOptions.GetAnnotationSpec)], opts...)

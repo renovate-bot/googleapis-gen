@@ -165,6 +165,11 @@ func (c *PipelineClient) setGoogleClientInfo(keyval ...string) {
 // CreateTrainingPipeline creates a TrainingPipeline. A created TrainingPipeline right away will be
 // attempted to be run.
 func (c *PipelineClient) CreateTrainingPipeline(ctx context.Context, req *aiplatformpb.CreateTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateTrainingPipeline[0:len(c.CallOptions.CreateTrainingPipeline):len(c.CallOptions.CreateTrainingPipeline)], opts...)
@@ -182,6 +187,11 @@ func (c *PipelineClient) CreateTrainingPipeline(ctx context.Context, req *aiplat
 
 // GetTrainingPipeline gets a TrainingPipeline.
 func (c *PipelineClient) GetTrainingPipeline(ctx context.Context, req *aiplatformpb.GetTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetTrainingPipeline[0:len(c.CallOptions.GetTrainingPipeline):len(c.CallOptions.GetTrainingPipeline)], opts...)
@@ -240,6 +250,11 @@ func (c *PipelineClient) ListTrainingPipelines(ctx context.Context, req *aiplatf
 
 // DeleteTrainingPipeline deletes a TrainingPipeline.
 func (c *PipelineClient) DeleteTrainingPipeline(ctx context.Context, req *aiplatformpb.DeleteTrainingPipelineRequest, opts ...gax.CallOption) (*DeleteTrainingPipelineOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteTrainingPipeline[0:len(c.CallOptions.DeleteTrainingPipeline):len(c.CallOptions.DeleteTrainingPipeline)], opts...)
@@ -268,6 +283,11 @@ func (c *PipelineClient) DeleteTrainingPipeline(ctx context.Context, req *aiplat
 // corresponding to Code.CANCELLED, and TrainingPipeline.state is set to
 // CANCELLED.
 func (c *PipelineClient) CancelTrainingPipeline(ctx context.Context, req *aiplatformpb.CancelTrainingPipelineRequest, opts ...gax.CallOption) error {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CancelTrainingPipeline[0:len(c.CallOptions.CancelTrainingPipeline):len(c.CallOptions.CancelTrainingPipeline)], opts...)

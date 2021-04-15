@@ -167,6 +167,11 @@ func (c *EndpointClient) setGoogleClientInfo(keyval ...string) {
 
 // CreateEndpoint creates an Endpoint.
 func (c *EndpointClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.CreateEndpointRequest, opts ...gax.CallOption) (*CreateEndpointOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateEndpoint[0:len(c.CallOptions.CreateEndpoint):len(c.CallOptions.CreateEndpoint)], opts...)
@@ -186,6 +191,11 @@ func (c *EndpointClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.C
 
 // GetEndpoint gets an Endpoint.
 func (c *EndpointClient) GetEndpoint(ctx context.Context, req *aiplatformpb.GetEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetEndpoint[0:len(c.CallOptions.GetEndpoint):len(c.CallOptions.GetEndpoint)], opts...)
@@ -244,6 +254,11 @@ func (c *EndpointClient) ListEndpoints(ctx context.Context, req *aiplatformpb.Li
 
 // UpdateEndpoint updates an Endpoint.
 func (c *EndpointClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.UpdateEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint.name", url.QueryEscape(req.GetEndpoint().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.UpdateEndpoint[0:len(c.CallOptions.UpdateEndpoint):len(c.CallOptions.UpdateEndpoint)], opts...)
@@ -261,6 +276,11 @@ func (c *EndpointClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.U
 
 // DeleteEndpoint deletes an Endpoint.
 func (c *EndpointClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.DeleteEndpointRequest, opts ...gax.CallOption) (*DeleteEndpointOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteEndpoint[0:len(c.CallOptions.DeleteEndpoint):len(c.CallOptions.DeleteEndpoint)], opts...)
@@ -280,6 +300,11 @@ func (c *EndpointClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.D
 
 // DeployModel deploys a Model into this Endpoint, creating a DeployedModel within it.
 func (c *EndpointClient) DeployModel(ctx context.Context, req *aiplatformpb.DeployModelRequest, opts ...gax.CallOption) (*DeployModelOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint", url.QueryEscape(req.GetEndpoint())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeployModel[0:len(c.CallOptions.DeployModel):len(c.CallOptions.DeployModel)], opts...)
@@ -300,6 +325,11 @@ func (c *EndpointClient) DeployModel(ctx context.Context, req *aiplatformpb.Depl
 // UndeployModel undeploys a Model from an Endpoint, removing a DeployedModel from it, and
 // freeing all resources it’s using.
 func (c *EndpointClient) UndeployModel(ctx context.Context, req *aiplatformpb.UndeployModelRequest, opts ...gax.CallOption) (*UndeployModelOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint", url.QueryEscape(req.GetEndpoint())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.UndeployModel[0:len(c.CallOptions.UndeployModel):len(c.CallOptions.UndeployModel)], opts...)

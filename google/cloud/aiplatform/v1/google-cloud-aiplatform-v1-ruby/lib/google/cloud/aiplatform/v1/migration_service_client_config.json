@@ -30,7 +30,7 @@
           "max_rpc_timeout_millis": 0,
           "total_timeout_millis": 0
         },
-        "no_retry_5_params": {
+        "no_retry_1_params": {
           "initial_retry_delay_millis": 0,
           "retry_delay_multiplier": 0.0,
           "max_retry_delay_millis": 0,
@@ -39,7 +39,7 @@
           "max_rpc_timeout_millis": 5000,
           "total_timeout_millis": 5000
         },
-        "no_retry_1_params": {
+        "no_retry_5_params": {
           "initial_retry_delay_millis": 0,
           "retry_delay_multiplier": 0.0,
           "max_retry_delay_millis": 0,

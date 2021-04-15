@@ -195,6 +195,11 @@ func (c *JobClient) setGoogleClientInfo(keyval ...string) {
 // CreateCustomJob creates a CustomJob. A created CustomJob right away
 // will be attempted to be run.
 func (c *JobClient) CreateCustomJob(ctx context.Context, req *aiplatformpb.CreateCustomJobRequest, opts ...gax.CallOption) (*aiplatformpb.CustomJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateCustomJob[0:len(c.CallOptions.CreateCustomJob):len(c.CallOptions.CreateCustomJob)], opts...)
@@ -212,6 +217,11 @@ func (c *JobClient) CreateCustomJob(ctx context.Context, req *aiplatformpb.Creat
 
 // GetCustomJob gets a CustomJob.
 func (c *JobClient) GetCustomJob(ctx context.Context, req *aiplatformpb.GetCustomJobRequest, opts ...gax.CallOption) (*aiplatformpb.CustomJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetCustomJob[0:len(c.CallOptions.GetCustomJob):len(c.CallOptions.GetCustomJob)], opts...)
@@ -270,6 +280,11 @@ func (c *JobClient) ListCustomJobs(ctx context.Context, req *aiplatformpb.ListCu
 
 // DeleteCustomJob deletes a CustomJob.
 func (c *JobClient) DeleteCustomJob(ctx context.Context, req *aiplatformpb.DeleteCustomJobRequest, opts ...gax.CallOption) (*DeleteCustomJobOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteCustomJob[0:len(c.CallOptions.DeleteCustomJob):len(c.CallOptions.DeleteCustomJob)], opts...)
@@ -298,6 +313,11 @@ func (c *JobClient) DeleteCustomJob(ctx context.Context, req *aiplatformpb.Delet
 // corresponding to Code.CANCELLED, and CustomJob.state is set to
 // CANCELLED.
 func (c *JobClient) CancelCustomJob(ctx context.Context, req *aiplatformpb.CancelCustomJobRequest, opts ...gax.CallOption) error {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CancelCustomJob[0:len(c.CallOptions.CancelCustomJob):len(c.CallOptions.CancelCustomJob)], opts...)
@@ -311,6 +331,11 @@ func (c *JobClient) CancelCustomJob(ctx context.Context, req *aiplatformpb.Cance
 
 // CreateDataLabelingJob creates a DataLabelingJob.
 func (c *JobClient) CreateDataLabelingJob(ctx context.Context, req *aiplatformpb.CreateDataLabelingJobRequest, opts ...gax.CallOption) (*aiplatformpb.DataLabelingJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateDataLabelingJob[0:len(c.CallOptions.CreateDataLabelingJob):len(c.CallOptions.CreateDataLabelingJob)], opts...)
@@ -328,6 +353,11 @@ func (c *JobClient) CreateDataLabelingJob(ctx context.Context, req *aiplatformpb
 
 // GetDataLabelingJob gets a DataLabelingJob.
 func (c *JobClient) GetDataLabelingJob(ctx context.Context, req *aiplatformpb.GetDataLabelingJobRequest, opts ...gax.CallOption) (*aiplatformpb.DataLabelingJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetDataLabelingJob[0:len(c.CallOptions.GetDataLabelingJob):len(c.CallOptions.GetDataLabelingJob)], opts...)
@@ -386,6 +416,11 @@ func (c *JobClient) ListDataLabelingJobs(ctx context.Context, req *aiplatformpb.
 
 // DeleteDataLabelingJob deletes a DataLabelingJob.
 func (c *JobClient) DeleteDataLabelingJob(ctx context.Context, req *aiplatformpb.DeleteDataLabelingJobRequest, opts ...gax.CallOption) (*DeleteDataLabelingJobOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteDataLabelingJob[0:len(c.CallOptions.DeleteDataLabelingJob):len(c.CallOptions.DeleteDataLabelingJob)], opts...)
@@ -405,6 +440,11 @@ func (c *JobClient) DeleteDataLabelingJob(ctx context.Context, req *aiplatformpb
 
 // CancelDataLabelingJob cancels a DataLabelingJob. Success of cancellation is not guaranteed.
 func (c *JobClient) CancelDataLabelingJob(ctx context.Context, req *aiplatformpb.CancelDataLabelingJobRequest, opts ...gax.CallOption) error {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CancelDataLabelingJob[0:len(c.CallOptions.CancelDataLabelingJob):len(c.CallOptions.CancelDataLabelingJob)], opts...)
@@ -418,6 +458,11 @@ func (c *JobClient) CancelDataLabelingJob(ctx context.Context, req *aiplatformpb
 
 // CreateHyperparameterTuningJob creates a HyperparameterTuningJob
 func (c *JobClient) CreateHyperparameterTuningJob(ctx context.Context, req *aiplatformpb.CreateHyperparameterTuningJobRequest, opts ...gax.CallOption) (*aiplatformpb.HyperparameterTuningJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateHyperparameterTuningJob[0:len(c.CallOptions.CreateHyperparameterTuningJob):len(c.CallOptions.CreateHyperparameterTuningJob)], opts...)
@@ -435,6 +480,11 @@ func (c *JobClient) CreateHyperparameterTuningJob(ctx context.Context, req *aipl
 
 // GetHyperparameterTuningJob gets a HyperparameterTuningJob
 func (c *JobClient) GetHyperparameterTuningJob(ctx context.Context, req *aiplatformpb.GetHyperparameterTuningJobRequest, opts ...gax.CallOption) (*aiplatformpb.HyperparameterTuningJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetHyperparameterTuningJob[0:len(c.CallOptions.GetHyperparameterTuningJob):len(c.CallOptions.GetHyperparameterTuningJob)], opts...)
@@ -493,6 +543,11 @@ func (c *JobClient) ListHyperparameterTuningJobs(ctx context.Context, req *aipla
 
 // DeleteHyperparameterTuningJob deletes a HyperparameterTuningJob.
 func (c *JobClient) DeleteHyperparameterTuningJob(ctx context.Context, req *aiplatformpb.DeleteHyperparameterTuningJobRequest, opts ...gax.CallOption) (*DeleteHyperparameterTuningJobOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteHyperparameterTuningJob[0:len(c.CallOptions.DeleteHyperparameterTuningJob):len(c.CallOptions.DeleteHyperparameterTuningJob)], opts...)
@@ -521,6 +576,11 @@ func (c *JobClient) DeleteHyperparameterTuningJob(ctx context.Context, req *aipl
 // of 1, corresponding to Code.CANCELLED, and
 // HyperparameterTuningJob.state is set to CANCELLED.
 func (c *JobClient) CancelHyperparameterTuningJob(ctx context.Context, req *aiplatformpb.CancelHyperparameterTuningJobRequest, opts ...gax.CallOption) error {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CancelHyperparameterTuningJob[0:len(c.CallOptions.CancelHyperparameterTuningJob):len(c.CallOptions.CancelHyperparameterTuningJob)], opts...)
@@ -535,6 +595,11 @@ func (c *JobClient) CancelHyperparameterTuningJob(ctx context.Context, req *aipl
 // CreateBatchPredictionJob creates a BatchPredictionJob. A BatchPredictionJob once created will
 // right away be attempted to start.
 func (c *JobClient) CreateBatchPredictionJob(ctx context.Context, req *aiplatformpb.CreateBatchPredictionJobRequest, opts ...gax.CallOption) (*aiplatformpb.BatchPredictionJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateBatchPredictionJob[0:len(c.CallOptions.CreateBatchPredictionJob):len(c.CallOptions.CreateBatchPredictionJob)], opts...)
@@ -552,6 +617,11 @@ func (c *JobClient) CreateBatchPredictionJob(ctx context.Context, req *aiplatfor
 
 // GetBatchPredictionJob gets a BatchPredictionJob
 func (c *JobClient) GetBatchPredictionJob(ctx context.Context, req *aiplatformpb.GetBatchPredictionJobRequest, opts ...gax.CallOption) (*aiplatformpb.BatchPredictionJob, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.GetBatchPredictionJob[0:len(c.CallOptions.GetBatchPredictionJob):len(c.CallOptions.GetBatchPredictionJob)], opts...)
@@ -611,6 +681,11 @@ func (c *JobClient) ListBatchPredictionJobs(ctx context.Context, req *aiplatform
 // DeleteBatchPredictionJob deletes a BatchPredictionJob. Can only be called on jobs that already
 // finished.
 func (c *JobClient) DeleteBatchPredictionJob(ctx context.Context, req *aiplatformpb.DeleteBatchPredictionJobRequest, opts ...gax.CallOption) (*DeleteBatchPredictionJobOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.DeleteBatchPredictionJob[0:len(c.CallOptions.DeleteBatchPredictionJob):len(c.CallOptions.DeleteBatchPredictionJob)], opts...)
@@ -639,6 +714,11 @@ func (c *JobClient) DeleteBatchPredictionJob(ctx context.Context, req *aiplatfor
 // BatchPredictionJob.state is set to CANCELLED. Any files already
 // outputted by the job are not deleted.
 func (c *JobClient) CancelBatchPredictionJob(ctx context.Context, req *aiplatformpb.CancelBatchPredictionJobRequest, opts ...gax.CallOption) error {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CancelBatchPredictionJob[0:len(c.CallOptions.CancelBatchPredictionJob):len(c.CallOptions.CancelBatchPredictionJob)], opts...)
