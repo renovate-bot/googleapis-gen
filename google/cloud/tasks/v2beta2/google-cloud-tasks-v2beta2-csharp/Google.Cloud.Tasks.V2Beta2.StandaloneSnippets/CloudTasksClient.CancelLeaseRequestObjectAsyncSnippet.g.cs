@@ -1,0 +1,44 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+namespace Google.Cloud.Tasks.V2Beta2.Snippets
+{
+    using Google.Protobuf.WellKnownTypes;
+    using System.Threading.Tasks;
+    using gctv = Google.Cloud.Tasks.V2Beta2;
+
+    public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
+    {
+        /// <summary>Snippet for CancelLeaseAsync</summary>
+        public async Task CancelLeaseRequestObjectAsync()
+        {
+            // Snippet: CancelLeaseAsync(CancelLeaseRequest, CallSettings)
+            // Additional: CancelLeaseAsync(CancelLeaseRequest, CancellationToken)
+            // Create client
+            CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
+            // Initialize request argument(s)
+            CancelLeaseRequest request = new CancelLeaseRequest
+            {
+                TaskName = TaskName.FromProjectLocationQueueTask("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]"),
+                ScheduleTime = new Timestamp(),
+                ResponseView = gctv::Task.Types.View.Unspecified,
+            };
+            // Make the request
+            gctv::Task response = await cloudTasksClient.CancelLeaseAsync(request);
+            // End snippet
+        }
+    }
+}

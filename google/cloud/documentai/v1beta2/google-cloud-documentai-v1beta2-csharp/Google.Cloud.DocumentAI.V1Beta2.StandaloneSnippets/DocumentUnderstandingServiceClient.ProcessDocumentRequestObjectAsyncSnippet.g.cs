@@ -1,0 +1,48 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+namespace Google.Cloud.DocumentAI.V1Beta2.Snippets
+{
+    using System.Threading.Tasks;
+
+    public sealed partial class GeneratedDocumentUnderstandingServiceClientStandaloneSnippets
+    {
+        /// <summary>Snippet for ProcessDocumentAsync</summary>
+        public async Task ProcessDocumentRequestObjectAsync()
+        {
+            // Snippet: ProcessDocumentAsync(ProcessDocumentRequest, CallSettings)
+            // Additional: ProcessDocumentAsync(ProcessDocumentRequest, CancellationToken)
+            // Create client
+            DocumentUnderstandingServiceClient documentUnderstandingServiceClient = await DocumentUnderstandingServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ProcessDocumentRequest request = new ProcessDocumentRequest
+            {
+                InputConfig = new InputConfig(),
+                OutputConfig = new OutputConfig(),
+                DocumentType = "",
+                TableExtractionParams = new TableExtractionParams(),
+                FormExtractionParams = new FormExtractionParams(),
+                EntityExtractionParams = new EntityExtractionParams(),
+                OcrParams = new OcrParams(),
+                AutomlParams = new AutoMlParams(),
+                Parent = "",
+            };
+            // Make the request
+            Document response = await documentUnderstandingServiceClient.ProcessDocumentAsync(request);
+            // End snippet
+        }
+    }
+}

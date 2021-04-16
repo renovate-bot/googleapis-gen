@@ -1,0 +1,310 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+using gagve = Google.Ads.GoogleAds.V4.Enums;
+using gagvr = Google.Ads.GoogleAds.V4.Resources;
+using gaxgrpc = Google.Api.Gax.Grpc;
+using gr = Google.Rpc;
+using grpccore = Grpc.Core;
+using moq = Moq;
+using st = System.Threading;
+using stt = System.Threading.Tasks;
+using xunit = Xunit;
+
+namespace Google.Ads.GoogleAds.V4.Services.Tests
+{
+    /// <summary>Generated unit tests.</summary>
+    public sealed class GeneratedAdGroupExtensionSettingServiceClientTest
+    {
+        [xunit::FactAttribute]
+        public void GetAdGroupExtensionSettingRequestObject()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            GetAdGroupExtensionSettingRequest request = new GetAdGroupExtensionSettingRequest
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+            };
+            gagvr::AdGroupExtensionSetting expectedResponse = new gagvr::AdGroupExtensionSetting
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+                ExtensionType = gagve::ExtensionTypeEnum.Types.ExtensionType.Promotion,
+                AdGroupAsAdGroupName = gagvr::AdGroupName.FromCustomerAdGroup("[CUSTOMER]", "[AD_GROUP]"),
+                ExtensionFeedItemsAsExtensionFeedItemNames =
+                {
+                    gagvr::ExtensionFeedItemName.FromCustomerExtensionFeedItem("[CUSTOMER]", "[EXTENSION_FEED_ITEM]"),
+                },
+                Device = gagve::ExtensionSettingDeviceEnum.Types.ExtensionSettingDevice.Unknown,
+            };
+            mockGrpcClient.Setup(x => x.GetAdGroupExtensionSetting(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            gagvr::AdGroupExtensionSetting response = client.GetAdGroupExtensionSetting(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task GetAdGroupExtensionSettingRequestObjectAsync()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            GetAdGroupExtensionSettingRequest request = new GetAdGroupExtensionSettingRequest
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+            };
+            gagvr::AdGroupExtensionSetting expectedResponse = new gagvr::AdGroupExtensionSetting
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+                ExtensionType = gagve::ExtensionTypeEnum.Types.ExtensionType.Promotion,
+                AdGroupAsAdGroupName = gagvr::AdGroupName.FromCustomerAdGroup("[CUSTOMER]", "[AD_GROUP]"),
+                ExtensionFeedItemsAsExtensionFeedItemNames =
+                {
+                    gagvr::ExtensionFeedItemName.FromCustomerExtensionFeedItem("[CUSTOMER]", "[EXTENSION_FEED_ITEM]"),
+                },
+                Device = gagve::ExtensionSettingDeviceEnum.Types.ExtensionSettingDevice.Unknown,
+            };
+            mockGrpcClient.Setup(x => x.GetAdGroupExtensionSettingAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<gagvr::AdGroupExtensionSetting>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            gagvr::AdGroupExtensionSetting responseCallSettings = await client.GetAdGroupExtensionSettingAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            gagvr::AdGroupExtensionSetting responseCancellationToken = await client.GetAdGroupExtensionSettingAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void GetAdGroupExtensionSetting()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            GetAdGroupExtensionSettingRequest request = new GetAdGroupExtensionSettingRequest
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+            };
+            gagvr::AdGroupExtensionSetting expectedResponse = new gagvr::AdGroupExtensionSetting
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+                ExtensionType = gagve::ExtensionTypeEnum.Types.ExtensionType.Promotion,
+                AdGroupAsAdGroupName = gagvr::AdGroupName.FromCustomerAdGroup("[CUSTOMER]", "[AD_GROUP]"),
+                ExtensionFeedItemsAsExtensionFeedItemNames =
+                {
+                    gagvr::ExtensionFeedItemName.FromCustomerExtensionFeedItem("[CUSTOMER]", "[EXTENSION_FEED_ITEM]"),
+                },
+                Device = gagve::ExtensionSettingDeviceEnum.Types.ExtensionSettingDevice.Unknown,
+            };
+            mockGrpcClient.Setup(x => x.GetAdGroupExtensionSetting(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            gagvr::AdGroupExtensionSetting response = client.GetAdGroupExtensionSetting(request.ResourceName);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task GetAdGroupExtensionSettingAsync()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            GetAdGroupExtensionSettingRequest request = new GetAdGroupExtensionSettingRequest
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+            };
+            gagvr::AdGroupExtensionSetting expectedResponse = new gagvr::AdGroupExtensionSetting
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+                ExtensionType = gagve::ExtensionTypeEnum.Types.ExtensionType.Promotion,
+                AdGroupAsAdGroupName = gagvr::AdGroupName.FromCustomerAdGroup("[CUSTOMER]", "[AD_GROUP]"),
+                ExtensionFeedItemsAsExtensionFeedItemNames =
+                {
+                    gagvr::ExtensionFeedItemName.FromCustomerExtensionFeedItem("[CUSTOMER]", "[EXTENSION_FEED_ITEM]"),
+                },
+                Device = gagve::ExtensionSettingDeviceEnum.Types.ExtensionSettingDevice.Unknown,
+            };
+            mockGrpcClient.Setup(x => x.GetAdGroupExtensionSettingAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<gagvr::AdGroupExtensionSetting>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            gagvr::AdGroupExtensionSetting responseCallSettings = await client.GetAdGroupExtensionSettingAsync(request.ResourceName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            gagvr::AdGroupExtensionSetting responseCancellationToken = await client.GetAdGroupExtensionSettingAsync(request.ResourceName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void GetAdGroupExtensionSettingResourceNames()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            GetAdGroupExtensionSettingRequest request = new GetAdGroupExtensionSettingRequest
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+            };
+            gagvr::AdGroupExtensionSetting expectedResponse = new gagvr::AdGroupExtensionSetting
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+                ExtensionType = gagve::ExtensionTypeEnum.Types.ExtensionType.Promotion,
+                AdGroupAsAdGroupName = gagvr::AdGroupName.FromCustomerAdGroup("[CUSTOMER]", "[AD_GROUP]"),
+                ExtensionFeedItemsAsExtensionFeedItemNames =
+                {
+                    gagvr::ExtensionFeedItemName.FromCustomerExtensionFeedItem("[CUSTOMER]", "[EXTENSION_FEED_ITEM]"),
+                },
+                Device = gagve::ExtensionSettingDeviceEnum.Types.ExtensionSettingDevice.Unknown,
+            };
+            mockGrpcClient.Setup(x => x.GetAdGroupExtensionSetting(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            gagvr::AdGroupExtensionSetting response = client.GetAdGroupExtensionSetting(request.ResourceNameAsAdGroupExtensionSettingName);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task GetAdGroupExtensionSettingResourceNamesAsync()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            GetAdGroupExtensionSettingRequest request = new GetAdGroupExtensionSettingRequest
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+            };
+            gagvr::AdGroupExtensionSetting expectedResponse = new gagvr::AdGroupExtensionSetting
+            {
+                ResourceNameAsAdGroupExtensionSettingName = gagvr::AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]"),
+                ExtensionType = gagve::ExtensionTypeEnum.Types.ExtensionType.Promotion,
+                AdGroupAsAdGroupName = gagvr::AdGroupName.FromCustomerAdGroup("[CUSTOMER]", "[AD_GROUP]"),
+                ExtensionFeedItemsAsExtensionFeedItemNames =
+                {
+                    gagvr::ExtensionFeedItemName.FromCustomerExtensionFeedItem("[CUSTOMER]", "[EXTENSION_FEED_ITEM]"),
+                },
+                Device = gagve::ExtensionSettingDeviceEnum.Types.ExtensionSettingDevice.Unknown,
+            };
+            mockGrpcClient.Setup(x => x.GetAdGroupExtensionSettingAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<gagvr::AdGroupExtensionSetting>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            gagvr::AdGroupExtensionSetting responseCallSettings = await client.GetAdGroupExtensionSettingAsync(request.ResourceNameAsAdGroupExtensionSettingName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            gagvr::AdGroupExtensionSetting responseCancellationToken = await client.GetAdGroupExtensionSettingAsync(request.ResourceNameAsAdGroupExtensionSettingName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void MutateAdGroupExtensionSettingsRequestObject()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            MutateAdGroupExtensionSettingsRequest request = new MutateAdGroupExtensionSettingsRequest
+            {
+                CustomerId = "customer_id3b3724cb",
+                Operations =
+                {
+                    new AdGroupExtensionSettingOperation(),
+                },
+                PartialFailure = false,
+                ValidateOnly = true,
+            };
+            MutateAdGroupExtensionSettingsResponse expectedResponse = new MutateAdGroupExtensionSettingsResponse
+            {
+                Results =
+                {
+                    new MutateAdGroupExtensionSettingResult(),
+                },
+                PartialFailureError = new gr::Status(),
+            };
+            mockGrpcClient.Setup(x => x.MutateAdGroupExtensionSettings(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            MutateAdGroupExtensionSettingsResponse response = client.MutateAdGroupExtensionSettings(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task MutateAdGroupExtensionSettingsRequestObjectAsync()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            MutateAdGroupExtensionSettingsRequest request = new MutateAdGroupExtensionSettingsRequest
+            {
+                CustomerId = "customer_id3b3724cb",
+                Operations =
+                {
+                    new AdGroupExtensionSettingOperation(),
+                },
+                PartialFailure = false,
+                ValidateOnly = true,
+            };
+            MutateAdGroupExtensionSettingsResponse expectedResponse = new MutateAdGroupExtensionSettingsResponse
+            {
+                Results =
+                {
+                    new MutateAdGroupExtensionSettingResult(),
+                },
+                PartialFailureError = new gr::Status(),
+            };
+            mockGrpcClient.Setup(x => x.MutateAdGroupExtensionSettingsAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<MutateAdGroupExtensionSettingsResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            MutateAdGroupExtensionSettingsResponse responseCallSettings = await client.MutateAdGroupExtensionSettingsAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            MutateAdGroupExtensionSettingsResponse responseCancellationToken = await client.MutateAdGroupExtensionSettingsAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void MutateAdGroupExtensionSettings()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            MutateAdGroupExtensionSettingsRequest request = new MutateAdGroupExtensionSettingsRequest
+            {
+                CustomerId = "customer_id3b3724cb",
+                Operations =
+                {
+                    new AdGroupExtensionSettingOperation(),
+                },
+            };
+            MutateAdGroupExtensionSettingsResponse expectedResponse = new MutateAdGroupExtensionSettingsResponse
+            {
+                Results =
+                {
+                    new MutateAdGroupExtensionSettingResult(),
+                },
+                PartialFailureError = new gr::Status(),
+            };
+            mockGrpcClient.Setup(x => x.MutateAdGroupExtensionSettings(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            MutateAdGroupExtensionSettingsResponse response = client.MutateAdGroupExtensionSettings(request.CustomerId, request.Operations);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task MutateAdGroupExtensionSettingsAsync()
+        {
+            moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient> mockGrpcClient = new moq::Mock<AdGroupExtensionSettingService.AdGroupExtensionSettingServiceClient>(moq::MockBehavior.Strict);
+            MutateAdGroupExtensionSettingsRequest request = new MutateAdGroupExtensionSettingsRequest
+            {
+                CustomerId = "customer_id3b3724cb",
+                Operations =
+                {
+                    new AdGroupExtensionSettingOperation(),
+                },
+            };
+            MutateAdGroupExtensionSettingsResponse expectedResponse = new MutateAdGroupExtensionSettingsResponse
+            {
+                Results =
+                {
+                    new MutateAdGroupExtensionSettingResult(),
+                },
+                PartialFailureError = new gr::Status(),
+            };
+            mockGrpcClient.Setup(x => x.MutateAdGroupExtensionSettingsAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<MutateAdGroupExtensionSettingsResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdGroupExtensionSettingServiceClient client = new AdGroupExtensionSettingServiceClientImpl(mockGrpcClient.Object, null);
+            MutateAdGroupExtensionSettingsResponse responseCallSettings = await client.MutateAdGroupExtensionSettingsAsync(request.CustomerId, request.Operations, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            MutateAdGroupExtensionSettingsResponse responseCancellationToken = await client.MutateAdGroupExtensionSettingsAsync(request.CustomerId, request.Operations, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+    }
+}

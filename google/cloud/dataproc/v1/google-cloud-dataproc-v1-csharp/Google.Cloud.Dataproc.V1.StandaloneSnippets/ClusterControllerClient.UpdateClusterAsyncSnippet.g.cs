@@ -1,0 +1,59 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+namespace Google.Cloud.Dataproc.V1.Snippets
+{
+    using Google.LongRunning;
+    using Google.Protobuf.WellKnownTypes;
+    using System.Threading.Tasks;
+
+    public sealed partial class GeneratedClusterControllerClientStandaloneSnippets
+    {
+        /// <summary>Snippet for UpdateClusterAsync</summary>
+        public async Task UpdateClusterAsync()
+        {
+            // Snippet: UpdateClusterAsync(string, string, string, Cluster, FieldMask, CallSettings)
+            // Additional: UpdateClusterAsync(string, string, string, Cluster, FieldMask, CancellationToken)
+            // Create client
+            ClusterControllerClient clusterControllerClient = await ClusterControllerClient.CreateAsync();
+            // Initialize request argument(s)
+            string projectId = "";
+            string region = "";
+            string clusterName = "";
+            Cluster cluster = new Cluster();
+            FieldMask updateMask = new FieldMask();
+            // Make the request
+            Operation<Cluster, ClusterOperationMetadata> response = await clusterControllerClient.UpdateClusterAsync(projectId, region, clusterName, cluster, updateMask);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Cluster, ClusterOperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Cluster result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Cluster, ClusterOperationMetadata> retrievedResponse = await clusterControllerClient.PollOnceUpdateClusterAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Cluster retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+    }
+}
