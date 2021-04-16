@@ -202,23 +202,17 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.Taxonomy:
-                A taxonomy is a collection of
-                hierarchical policy tags that classify
-                data along a common axis. For instance a
-                "data sensitivity" taxonomy could
-                contain the following policy tags:
-                + PII
-                  + Account number
-                  + Age
-                  + SSN
-                  + Zipcode
-                + Financials
-                  + Revenue
-                A "data origin" taxonomy could contain
-                the following policy tags: + User data
-                + Employee data
-                + Partner data
-                + Public data
+                A taxonomy is a collection of hierarchical policy tags that classify data
+                   along a common axis. For instance a "data
+                   sensitivity" taxonomy could contain the following
+                   policy tags:
+
+                   :literal:`\` + PII   + Account number   + Age   + SSN   + Zipcode + Financials   + Revenue`\ \`
+
+                   A "data origin" taxonomy could contain the following
+                   policy tags:
+
+                   :literal:`\` + User data + Employee data + Partner data + Public data`\ \`
 
         """
         # Create or coerce a protobuf request object.
@@ -369,23 +363,17 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.Taxonomy:
-                A taxonomy is a collection of
-                hierarchical policy tags that classify
-                data along a common axis. For instance a
-                "data sensitivity" taxonomy could
-                contain the following policy tags:
-                + PII
-                  + Account number
-                  + Age
-                  + SSN
-                  + Zipcode
-                + Financials
-                  + Revenue
-                A "data origin" taxonomy could contain
-                the following policy tags: + User data
-                + Employee data
-                + Partner data
-                + Public data
+                A taxonomy is a collection of hierarchical policy tags that classify data
+                   along a common axis. For instance a "data
+                   sensitivity" taxonomy could contain the following
+                   policy tags:
+
+                   :literal:`\` + PII   + Account number   + Age   + SSN   + Zipcode + Financials   + Revenue`\ \`
+
+                   A "data origin" taxonomy could contain the following
+                   policy tags:
+
+                   :literal:`\` + User data + Employee data + Partner data + Public data`\ \`
 
         """
         # Create or coerce a protobuf request object.
@@ -551,23 +539,17 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.Taxonomy:
-                A taxonomy is a collection of
-                hierarchical policy tags that classify
-                data along a common axis. For instance a
-                "data sensitivity" taxonomy could
-                contain the following policy tags:
-                + PII
-                  + Account number
-                  + Age
-                  + SSN
-                  + Zipcode
-                + Financials
-                  + Revenue
-                A "data origin" taxonomy could contain
-                the following policy tags: + User data
-                + Employee data
-                + Partner data
-                + Public data
+                A taxonomy is a collection of hierarchical policy tags that classify data
+                   along a common axis. For instance a "data
+                   sensitivity" taxonomy could contain the following
+                   policy tags:
+
+                   :literal:`\` + PII   + Account number   + Age   + SSN   + Zipcode + Financials   + Revenue`\ \`
+
+                   A "data origin" taxonomy could contain the following
+                   policy tags:
+
+                   :literal:`\` + User data + Employee data + Partner data + Public data`\ \`
 
         """
         # Create or coerce a protobuf request object.
@@ -650,16 +632,14 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.PolicyTag:
-                Denotes one policy tag in a taxonomy
-                (e.g. ssn). Policy tags can be defined
-                in a hierarchy. For example, consider
-                the following hierarchy: + Geolocation
-                  + LatLong
-                  + City
-                  + ZipCode
-                Policy tag "Geolocation" contains 3
-                child policy tags: "LatLong", "City",
-                and "ZipCode".
+                Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
+                   in a hierarchy. For example, consider the following
+                   hierarchy:
+
+                   :literal:`\` + Geolocation   + LatLong   + City   + ZipCode`\ \`
+
+                   Policy tag "Geolocation" contains 3 child policy
+                   tags: "LatLong", "City", and "ZipCode".
 
         """
         # Create or coerce a protobuf request object.
@@ -715,11 +695,13 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
-        r"""Deletes a policy tag. This method also deletes
-        - all of its descendant policy tags, if any,
-          - the policies associated with the policy tag and its
-        descendants, and   - references from BigQuery table
-        schema of the policy tag and its     descendants.
+        r"""Deletes a policy tag. This method also deletes:
+
+        -  all of its descendant policy tags, if any
+        -  the policies associated with the policy tag and its
+           descendants
+        -  references from BigQuery table schema of the policy tag and
+           its descendants.
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeletePolicyTagRequest`):
@@ -813,16 +795,14 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.PolicyTag:
-                Denotes one policy tag in a taxonomy
-                (e.g. ssn). Policy tags can be defined
-                in a hierarchy. For example, consider
-                the following hierarchy: + Geolocation
-                  + LatLong
-                  + City
-                  + ZipCode
-                Policy tag "Geolocation" contains 3
-                child policy tags: "LatLong", "City",
-                and "ZipCode".
+                Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
+                   in a hierarchy. For example, consider the following
+                   hierarchy:
+
+                   :literal:`\` + Geolocation   + LatLong   + City   + ZipCode`\ \`
+
+                   Policy tag "Geolocation" contains 3 child policy
+                   tags: "LatLong", "City", and "ZipCode".
 
         """
         # Create or coerce a protobuf request object.
@@ -987,16 +967,14 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.PolicyTag:
-                Denotes one policy tag in a taxonomy
-                (e.g. ssn). Policy tags can be defined
-                in a hierarchy. For example, consider
-                the following hierarchy: + Geolocation
-                  + LatLong
-                  + City
-                  + ZipCode
-                Policy tag "Geolocation" contains 3
-                child policy tags: "LatLong", "City",
-                and "ZipCode".
+                Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
+                   in a hierarchy. For example, consider the following
+                   hierarchy:
+
+                   :literal:`\` + Geolocation   + LatLong   + City   + ZipCode`\ \`
+
+                   Policy tag "Geolocation" contains 3 child policy
+                   tags: "LatLong", "City", and "ZipCode".
 
         """
         # Create or coerce a protobuf request object.

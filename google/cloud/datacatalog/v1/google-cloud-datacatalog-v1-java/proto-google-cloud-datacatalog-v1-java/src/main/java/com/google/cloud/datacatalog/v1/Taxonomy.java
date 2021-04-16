@@ -8,6 +8,7 @@ package com.google.cloud.datacatalog.v1;
  * A taxonomy is a collection of hierarchical policy tags that classify data
  * along a common axis. For instance a "data sensitivity" taxonomy could contain
  * the following policy tags:
+ * ```
  * + PII
  *   + Account number
  *   + Age
@@ -15,11 +16,14 @@ package com.google.cloud.datacatalog.v1;
  *   + Zipcode
  * + Financials
  *   + Revenue
+ * ```
  * A "data origin" taxonomy could contain the following policy tags:
+ * ```
  * + User data
  * + Employee data
  * + Partner data
  * + Public data
+ * ```
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.Taxonomy}
@@ -812,6 +816,7 @@ private static final long serialVersionUID = 0L;
    * A taxonomy is a collection of hierarchical policy tags that classify data
    * along a common axis. For instance a "data sensitivity" taxonomy could contain
    * the following policy tags:
+   * ```
    * + PII
    *   + Account number
    *   + Age
@@ -819,11 +824,14 @@ private static final long serialVersionUID = 0L;
    *   + Zipcode
    * + Financials
    *   + Revenue
+   * ```
    * A "data origin" taxonomy could contain the following policy tags:
+   * ```
    * + User data
    * + Employee data
    * + Partner data
    * + Public data
+   * ```
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.Taxonomy}

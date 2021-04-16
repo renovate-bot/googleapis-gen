@@ -100,6 +100,8 @@ func (Taxonomy_PolicyType) EnumDescriptor() ([]byte, []int) {
 // A taxonomy is a collection of hierarchical policy tags that classify data
 // along a common axis. For instance a "data sensitivity" taxonomy could contain
 // the following policy tags:
+//
+// ```
 // + PII
 //   + Account number
 //   + Age
@@ -107,11 +109,16 @@ func (Taxonomy_PolicyType) EnumDescriptor() ([]byte, []int) {
 //   + Zipcode
 // + Financials
 //   + Revenue
+// ```
+//
 // A "data origin" taxonomy could contain the following policy tags:
+//
+// ```
 // + User data
 // + Employee data
 // + Partner data
 // + Public data
+// ```
 type Taxonomy struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -214,10 +221,14 @@ func (x *Taxonomy) GetActivatedPolicyTypes() []Taxonomy_PolicyType {
 
 // Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
 // in a hierarchy. For example, consider the following hierarchy:
+//
+// ```
 // + Geolocation
 //   + LatLong
 //   + City
 //   + ZipCode
+// ```
+//
 // Policy tag "Geolocation" contains 3 child policy tags: "LatLong", "City", and
 // "ZipCode".
 type PolicyTag struct {
@@ -1706,11 +1717,12 @@ type PolicyTagManagerClient interface {
 	GetTaxonomy(ctx context.Context, in *GetTaxonomyRequest, opts ...grpc.CallOption) (*Taxonomy, error)
 	// Creates a policy tag in a taxonomy.
 	CreatePolicyTag(ctx context.Context, in *CreatePolicyTagRequest, opts ...grpc.CallOption) (*PolicyTag, error)
-	// Deletes a policy tag. This method also deletes
-	//   - all of its descendant policy tags, if any,
-	//   - the policies associated with the policy tag and its descendants, and
-	//   - references from BigQuery table schema of the policy tag and its
-	//     descendants.
+	// Deletes a policy tag. This method also deletes:
+	//
+	// * all of its descendant policy tags, if any
+	// * the policies associated with the policy tag and its descendants
+	// * references from BigQuery table schema of the policy tag and its
+	//   descendants.
 	DeletePolicyTag(ctx context.Context, in *DeletePolicyTagRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Updates a policy tag. This method can update the policy tag's display
 	// name, description, and parent policy tag.
@@ -1872,11 +1884,12 @@ type PolicyTagManagerServer interface {
 	GetTaxonomy(context.Context, *GetTaxonomyRequest) (*Taxonomy, error)
 	// Creates a policy tag in a taxonomy.
 	CreatePolicyTag(context.Context, *CreatePolicyTagRequest) (*PolicyTag, error)
-	// Deletes a policy tag. This method also deletes
-	//   - all of its descendant policy tags, if any,
-	//   - the policies associated with the policy tag and its descendants, and
-	//   - references from BigQuery table schema of the policy tag and its
-	//     descendants.
+	// Deletes a policy tag. This method also deletes:
+	//
+	// * all of its descendant policy tags, if any
+	// * the policies associated with the policy tag and its descendants
+	// * references from BigQuery table schema of the policy tag and its
+	//   descendants.
 	DeletePolicyTag(context.Context, *DeletePolicyTagRequest) (*emptypb.Empty, error)
 	// Updates a policy tag. This method can update the policy tag's display
 	// name, description, and parent policy tag.

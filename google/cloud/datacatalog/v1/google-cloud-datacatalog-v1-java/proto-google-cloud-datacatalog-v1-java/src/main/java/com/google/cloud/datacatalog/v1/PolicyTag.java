@@ -7,10 +7,12 @@ package com.google.cloud.datacatalog.v1;
  * <pre>
  * Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
  * in a hierarchy. For example, consider the following hierarchy:
+ * ```
  * + Geolocation
  *   + LatLong
  *   + City
  *   + ZipCode
+ * ```
  * Policy tag "Geolocation" contains 3 child policy tags: "LatLong", "City", and
  * "ZipCode".
  * </pre>
@@ -601,10 +603,12 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
    * in a hierarchy. For example, consider the following hierarchy:
+   * ```
    * + Geolocation
    *   + LatLong
    *   + City
    *   + ZipCode
+   * ```
    * Policy tag "Geolocation" contains 3 child policy tags: "LatLong", "City", and
    * "ZipCode".
    * </pre>
