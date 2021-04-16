@@ -34,9 +34,8 @@ import { operationsProtos } from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
- *  [Certificate Authority
- *  Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
- *  manages private certificate authorities and issued certificates.
+ *  {@link google.cloud.security.privateca.v1.CertificateAuthorityService|Certificate Authority Service} manages private
+ *  certificate authorities and issued certificates.
  * @class
  * @memberof v1
  */
@@ -466,32 +465,26 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.ICreateCertificateRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Create a new {@link google.cloud.security.privateca.v1.Certificate|Certificate}
- * in a given Project, Location from a particular
+ * Create a new {@link google.cloud.security.privateca.v1.Certificate|Certificate} in a given Project, Location from a particular
  * {@link google.cloud.security.privateca.v1.CaPool|CaPool}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The resource name of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificate}, in the
- *   format `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name of the {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the {@link google.cloud.security.privateca.v1.Certificate|Certificate},
+ *   in the format `projects/* /locations/* /caPools/*`.
  * @param {string} [request.certificateId]
  *   Optional. It must be unique within a location and match the regular
  *   expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the Enterprise
- *   {@link google.cloud.security.privateca.v1.CaPool.Tier|CaPool.Tier}, but is
- *   optional and its value is ignored otherwise.
+ *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the Enterprise {@link |CertificateAuthority.Tier},
+ *   but is optional and its value is ignored otherwise.
  * @param {google.cloud.security.privateca.v1.Certificate} request.certificate
- *   Required. A {@link google.cloud.security.privateca.v1.Certificate|Certificate}
- *   with initial field values.
+ *   Required. A {@link google.cloud.security.privateca.v1.Certificate|Certificate} with initial field values.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -502,34 +495,21 @@ export class CertificateAuthorityServiceClient {
  *   The request ID must be a valid UUID with the exception that zero UUID is
  *   not supported (00000000-0000-0000-0000-000000000000).
  * @param {boolean} [request.validateOnly]
- *   Optional. If this is true, no
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificate} resource will
- *   be persisted regardless of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool}'s
- *   {@link google.cloud.security.privateca.v1.CaPool.tier|tier}, and the returned
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificate} will not
- *   contain the
- *   {@link google.cloud.security.privateca.v1.Certificate.pem_certificate|pem_certificate}
- *   field.
+ *   Optional. If this is true, no {@link google.cloud.security.privateca.v1.Certificate|Certificate} resource will be persisted regardless
+ *   of the {@link google.cloud.security.privateca.v1.CaPool|CaPool}'s {@link google.cloud.security.privateca.v1.CaPool.tier|tier}, and the returned {@link google.cloud.security.privateca.v1.Certificate|Certificate}
+ *   will not contain the {@link google.cloud.security.privateca.v1.Certificate.pem_certificate|pem_certificate} field.
  * @param {string} [request.issuingCertificateAuthorityId]
- *   Optional. The resource ID of the
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   that should issue the certificate.  This optional field will ignore the
- *   load-balancing scheme of the Pool and directly issue the certificate from
- *   the CA with the specified ID, contained in the same
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} referenced by `parent`.
- *   Per-CA quota rules apply. If left empty, a
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   will be chosen from the {@link google.cloud.security.privateca.v1.CaPool|CaPool}
- *   by the service. For example, to issue a
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificate} from a
- *   Certificate Authority with resource name
+ *   Optional. The resource ID of the {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} that should issue the
+ *   certificate.  This optional field will ignore the load-balancing scheme of
+ *   the Pool and directly issue the certificate from the CA with the specified
+ *   ID, contained in the same {@link google.cloud.security.privateca.v1.CaPool|CaPool} referenced by `parent`. Per-CA quota
+ *   rules apply. If left empty, a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} will be chosen from
+ *   the {@link google.cloud.security.privateca.v1.CaPool|CaPool} by the service. For example, to issue a {@link google.cloud.security.privateca.v1.Certificate|Certificate} from
+ *   a Certificate Authority with resource name
  *   "projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca",
- *   you can set the
- *   {@link google.cloud.security.privateca.v1.CreateCertificateRequest.parent|parent}
- *   to "projects/my-project/locations/us-central1/caPools/my-pool" and the
- *   {@link google.cloud.security.privateca.v1.CreateCertificateRequest.issuing_certificate_authority_id|issuing_certificate_authority_id}
- *   to "my-ca".
+ *   you can set the {@link google.cloud.security.privateca.v1.CreateCertificateRequest.parent|parent} to
+ *   "projects/my-project/locations/us-central1/caPools/my-pool" and the
+ *   {@link google.cloud.security.privateca.v1.CreateCertificateRequest.issuing_certificate_authority_id|issuing_certificate_authority_id} to "my-ca".
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -600,9 +580,7 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The {@link google.cloud.security.privateca.v1.Certificate.name|name}
- *   of the {@link google.cloud.security.privateca.v1.Certificate|Certificate} to
- *   get.
+ *   Required. The {@link google.cloud.security.privateca.v1.Certificate.name|name} of the {@link google.cloud.security.privateca.v1.Certificate|Certificate} to get.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -673,18 +651,16 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificate} in the format
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.Certificate|Certificate} in the
+ *   format
  *   `projects/* /locations/* /caPools/* /certificates/*`.
  * @param {google.cloud.security.privateca.v1.RevocationReason} request.reason
- *   Required. The
- *   {@link google.cloud.security.privateca.v1.RevocationReason|RevocationReason} for
- *   revoking this certificate.
+ *   Required. The {@link google.cloud.security.privateca.v1.RevocationReason|RevocationReason} for revoking this certificate.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -759,22 +735,20 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IUpdateCertificateRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Update a {@link google.cloud.security.privateca.v1.Certificate|Certificate}.
- * Currently, the only field you can update is the
+ * Update a {@link google.cloud.security.privateca.v1.Certificate|Certificate}. Currently, the only field you can update is the
  * {@link google.cloud.security.privateca.v1.Certificate.labels|labels} field.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.security.privateca.v1.Certificate} request.certificate
- *   Required. {@link google.cloud.security.privateca.v1.Certificate|Certificate}
- *   with updated values.
+ *   Required. {@link google.cloud.security.privateca.v1.Certificate|Certificate} with updated values.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A list of fields to be updated in this request.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -849,24 +823,19 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Fetch a certificate signing request (CSR) from a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
+ * Fetch a certificate signing request (CSR) from a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
  * that is in state
  * {@link google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION|AWAITING_USER_ACTIVATION}
- * and is of type
- * {@link google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE|SUBORDINATE}.
- * The CSR must then be signed by the desired parent Certificate Authority,
- * which could be another
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- * resource, or could be an on-prem certificate authority. See also
- * {@link google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority|ActivateCertificateAuthority}.
+ * and is of type {@link google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE|SUBORDINATE}. The
+ * CSR must then be signed by the desired parent Certificate Authority, which
+ * could be another {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} resource, or could be an on-prem
+ * certificate authority. See also {@link google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority|ActivateCertificateAuthority}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the
+ *   format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -932,16 +901,13 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IGetCertificateAuthorityRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
+ * Returns a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority.name|name} of the
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   to get.
+ *   Required. The {@link google.cloud.security.privateca.v1.CertificateAuthority.name|name} of the {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} to
+ *   get.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1012,8 +978,7 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The {@link google.cloud.security.privateca.v1.CaPool.name|name} of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} to get.
+ *   Required. The {@link google.cloud.security.privateca.v1.CaPool.name|name} of the {@link google.cloud.security.privateca.v1.CaPool|CaPool} to get.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1079,23 +1044,20 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IFetchCaCertsRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * FetchCaCerts returns the current trust anchor for the
- * {@link google.cloud.security.privateca.v1.CaPool|CaPool}. This will include CA
- * certificate chains for all ACTIVE
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
+ * FetchCaCerts returns the current trust anchor for the {@link google.cloud.security.privateca.v1.CaPool|CaPool}. This will
+ * include CA certificate chains for all ACTIVE {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
  * resources in the {@link google.cloud.security.privateca.v1.CaPool|CaPool}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.caPool
- *   Required. The resource name for the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} in the format
- *   `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name for the {@link google.cloud.security.privateca.v1.CaPool|CaPool} in the
+ *   format `projects/* /locations/* /caPools/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1170,17 +1132,13 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IGetCertificateRevocationListRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns a
- * {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList}.
+ * Returns a {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList.name|name}
- *   of the
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList}
- *   to get.
+ *   Required. The {@link google.cloud.security.privateca.v1.CertificateRevocationList.name|name} of the
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList} to get.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1246,16 +1204,13 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IGetCertificateTemplateRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns a
- * {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}.
+ * Returns a {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate.name|name} of the
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}
- *   to get.
+ *   Required. The {@link google.cloud.security.privateca.v1.CertificateTemplate.name|name} of the {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate} to
+ *   get.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1322,34 +1277,29 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Activate a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- * that is in state
+ * Activate a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} that is in state
  * {@link google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION|AWAITING_USER_ACTIVATION}
- * and is of type
- * {@link google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE|SUBORDINATE}.
- * After the parent Certificate Authority signs a certificate signing request
- * from
- * {@link google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr|FetchCertificateAuthorityCsr},
- * this method can complete the activation process.
+ * and is of type {@link google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE|SUBORDINATE}. After
+ * the parent Certificate Authority signs a certificate signing request from
+ * {@link google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr|FetchCertificateAuthorityCsr}, this method can complete the activation
+ * process.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the
+ *   format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {string} request.pemCaCertificate
  *   Required. The signed CA certificate issued from
  *   {@link google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrResponse.pem_csr|FetchCertificateAuthorityCsrResponse.pem_csr}.
  * @param {google.cloud.security.privateca.v1.SubordinateConfig} request.subordinateConfig
- *   Required. Must include information about the issuer of
- *   'pem_ca_certificate', and any further issuers until the self-signed CA.
+ *   Required. Must include information about the issuer of 'pem_ca_certificate', and any
+ *   further issuers until the self-signed CA.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1448,29 +1398,24 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Create a new
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- * in a given Project and Location.
+ * Create a new {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in a given Project and Location.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The resource name of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities},
- *   in the format `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name of the {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
+ *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {string} request.certificateAuthorityId
  *   Required. It must be unique within a location and match the regular
  *   expression `[a-zA-Z0-9_-]{1,63}`
  * @param {google.cloud.security.privateca.v1.CertificateAuthority} request.certificateAuthority
- *   Required. A
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   with initial field values.
+ *   Required. A {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} with initial field values.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1569,20 +1514,18 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Disable a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
+ * Disable a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the
+ *   format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1681,20 +1624,18 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Enable a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
+ * Enable a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the
+ *   format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1793,21 +1734,18 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Undelete a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- * that has been deleted.
+ * Undelete a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} that has been deleted.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the
+ *   format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -1906,20 +1844,18 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Delete a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
+ * Delete a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} in the
+ *   format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2021,22 +1957,19 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Update a
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
+ * Update a {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.security.privateca.v1.CertificateAuthority} request.certificateAuthority
- *   Required.
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority}
- *   with updated values.
+ *   Required. {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthority} with updated values.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A list of fields to be updated in this request.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2141,19 +2074,17 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool}, in the format
- *   `projects/* /locations/*`.
+ *   {@link google.cloud.security.privateca.v1.CaPool|CaPool}, in the format `projects/* /locations/*`.
  * @param {string} request.caPoolId
  *   Required. It must be unique within a location and match the regular
  *   expression `[a-zA-Z0-9_-]{1,63}`
  * @param {google.cloud.security.privateca.v1.CaPool} request.caPool
- *   Required. A {@link google.cloud.security.privateca.v1.CaPool|CaPool} with
- *   initial field values.
+ *   Required. A {@link google.cloud.security.privateca.v1.CaPool|CaPool} with initial field values.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2257,15 +2188,14 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.security.privateca.v1.CaPool} request.caPool
- *   Required. {@link google.cloud.security.privateca.v1.CaPool|CaPool} with updated
- *   values.
+ *   Required. {@link google.cloud.security.privateca.v1.CaPool|CaPool} with updated values.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A list of fields to be updated in this request.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2369,14 +2299,13 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} in the format
- *   `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CaPool|CaPool} in the
+ *   format `projects/* /locations/* /caPools/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2475,22 +2404,19 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Update a
- * {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList}.
+ * Update a {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.security.privateca.v1.CertificateRevocationList} request.certificateRevocationList
- *   Required.
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList}
- *   with updated values.
+ *   Required. {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationList} with updated values.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A list of fields to be updated in this request.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2589,28 +2515,24 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Create a new
- * {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}
- * in a given Project and Location.
+ * Create a new {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate} in a given Project and Location.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate},
- *   in the format `projects/* /locations/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}, in the format
+ *   `projects/* /locations/*`.
  * @param {string} request.certificateTemplateId
  *   Required. It must be unique within a location and match the regular
  *   expression `[a-zA-Z0-9_-]{1,63}`
  * @param {google.cloud.security.privateca.v1.CertificateTemplate} request.certificateTemplate
- *   Required. A
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}
- *   with initial field values.
+ *   Required. A {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate} with initial field values.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2709,20 +2631,18 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * DeleteCertificateTemplate deletes a
- * {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}.
+ * DeleteCertificateTemplate deletes a {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name for this
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}
- *   in the format `projects/* /locations/* /certificateTemplates/*`.
+ *   Required. The resource name for this {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate} in the format
+ *   `projects/* /locations/* /certificateTemplates/*`.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2821,22 +2741,19 @@ export class CertificateAuthorityServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Update a
- * {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}.
+ * Update a {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.security.privateca.v1.CertificateTemplate} request.certificateTemplate
- *   Required.
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate}
- *   with updated values.
+ *   Required. {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplate} with updated values.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A list of fields to be updated in this request.
  * @param {string} [request.requestId]
- *   Optional. An ID to identify requests. Specify a unique request ID so that
- *   if you must retry your request, the server will know to ignore the request
- *   if it has already been completed. The server will guarantee that for at
- *   least 60 minutes since the first request.
+ *   Optional. An ID to identify requests. Specify a unique request ID so that if you must
+ *   retry your request, the server will know to ignore the request if it has
+ *   already been completed. The server will guarantee that for at least 60
+ *   minutes since the first request.
  *
  *   For example, consider a situation where you make an initial request and t
  *   he request times out. If you make the request again with the same request
@@ -2942,27 +2859,25 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates}, in the
- *   format `projects/* /locations/* /caPools/*`.
+ *   {@link google.cloud.security.privateca.v1.Certificate|Certificates}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} to include
- *   in the response. Further
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} can
- *   subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} to include in the
+ *   response. Further {@link google.cloud.security.privateca.v1.Certificate|Certificates} can subsequently be obtained
+ *   by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token}.
  * @param {string} [request.filter]
- *   Optional. Only include resources that match the filter in the response. For
- *   details on supported filters and syntax, see [Certificates Filtering
+ *   Optional. Only include resources that match the filter in the response. For details
+ *   on supported filters and syntax, see [Certificates Filtering
  *   documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#filtering_support).
  * @param {string} [request.orderBy]
- *   Optional. Specify how the results should be sorted. For details on
- *   supported fields and syntax, see [Certificates Sorting
+ *   Optional. Specify how the results should be sorted. For details on supported fields
+ *   and syntax, see [Certificates Sorting
  *   documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support).
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -3019,27 +2934,25 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates}, in the
- *   format `projects/* /locations/* /caPools/*`.
+ *   {@link google.cloud.security.privateca.v1.Certificate|Certificates}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} to include
- *   in the response. Further
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} can
- *   subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} to include in the
+ *   response. Further {@link google.cloud.security.privateca.v1.Certificate|Certificates} can subsequently be obtained
+ *   by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token}.
  * @param {string} [request.filter]
- *   Optional. Only include resources that match the filter in the response. For
- *   details on supported filters and syntax, see [Certificates Filtering
+ *   Optional. Only include resources that match the filter in the response. For details
+ *   on supported filters and syntax, see [Certificates Filtering
  *   documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#filtering_support).
  * @param {string} [request.orderBy]
- *   Optional. Specify how the results should be sorted. For details on
- *   supported fields and syntax, see [Certificates Sorting
+ *   Optional. Specify how the results should be sorted. For details on supported fields
+ *   and syntax, see [Certificates Sorting
  *   documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support).
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -3083,27 +2996,25 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates}, in the
- *   format `projects/* /locations/* /caPools/*`.
+ *   {@link google.cloud.security.privateca.v1.Certificate|Certificates}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} to include
- *   in the response. Further
- *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} can
- *   subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.Certificate|Certificates} to include in the
+ *   response. Further {@link google.cloud.security.privateca.v1.Certificate|Certificates} can subsequently be obtained
+ *   by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificatesResponse.next_page_token|ListCertificatesResponse.next_page_token}.
  * @param {string} [request.filter]
- *   Optional. Only include resources that match the filter in the response. For
- *   details on supported filters and syntax, see [Certificates Filtering
+ *   Optional. Only include resources that match the filter in the response. For details
+ *   on supported filters and syntax, see [Certificates Filtering
  *   documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#filtering_support).
  * @param {string} [request.orderBy]
- *   Optional. Specify how the results should be sorted. For details on
- *   supported fields and syntax, see [Certificates Sorting
+ *   Optional. Specify how the results should be sorted. For details on supported fields
+ *   and syntax, see [Certificates Sorting
  *   documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support).
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -3165,25 +3076,21 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesResponse|null|undefined,
           protos.google.cloud.security.privateca.v1.ICertificateAuthority>): void;
 /**
- * Lists
- * {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}.
+ * Lists {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The resource name of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities},
- *   in the format `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name of the {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
+ *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {number} [request.pageSize]
- *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}
- *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   Optional. Limit on the number of {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities} to
+ *   include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token}.
@@ -3245,19 +3152,16 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The resource name of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities},
- *   in the format `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name of the {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
+ *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {number} [request.pageSize]
- *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}
- *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   Optional. Limit on the number of {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities} to
+ *   include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token}.
@@ -3306,19 +3210,16 @@ export class CertificateAuthorityServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The resource name of the
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities},
- *   in the format `projects/* /locations/* /caPools/*`.
+ *   Required. The resource name of the {@link google.cloud.security.privateca.v1.CaPool|CaPool} associated with the
+ *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}, in the format
+ *   `projects/* /locations/* /caPools/*`.
  * @param {number} [request.pageSize]
- *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities}
- *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   Optional. Limit on the number of {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities} to
+ *   include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CertificateAuthority|CertificateAuthorities} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token|ListCertificateAuthoritiesResponse.next_page_token}.
@@ -3395,13 +3296,12 @@ export class CertificateAuthorityServiceClient {
  *   {@link google.cloud.security.privateca.v1.CaPool|CaPools}, in the format
  *   `projects/* /locations/*`.
  * @param {number} [request.pageSize]
- *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPools} to include in the
- *   response. Further {@link google.cloud.security.privateca.v1.CaPool|CaPools} can
- *   subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   Optional. Limit on the number of {@link google.cloud.security.privateca.v1.CaPool|CaPools} to
+ *   include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CaPool|CaPools} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token}.
@@ -3467,13 +3367,12 @@ export class CertificateAuthorityServiceClient {
  *   {@link google.cloud.security.privateca.v1.CaPool|CaPools}, in the format
  *   `projects/* /locations/*`.
  * @param {number} [request.pageSize]
- *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPools} to include in the
- *   response. Further {@link google.cloud.security.privateca.v1.CaPool|CaPools} can
- *   subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   Optional. Limit on the number of {@link google.cloud.security.privateca.v1.CaPool|CaPools} to
+ *   include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CaPool|CaPools} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token}.
@@ -3526,13 +3425,12 @@ export class CertificateAuthorityServiceClient {
  *   {@link google.cloud.security.privateca.v1.CaPool|CaPools}, in the format
  *   `projects/* /locations/*`.
  * @param {number} [request.pageSize]
- *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CaPool|CaPools} to include in the
- *   response. Further {@link google.cloud.security.privateca.v1.CaPool|CaPools} can
- *   subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   Optional. Limit on the number of {@link google.cloud.security.privateca.v1.CaPool|CaPools} to
+ *   include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CaPool|CaPools} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token|ListCaPoolsResponse.next_page_token}.
@@ -3600,24 +3498,21 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsResponse|null|undefined,
           protos.google.cloud.security.privateca.v1.ICertificateRevocationList>): void;
 /**
- * Lists
- * {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}.
+ * Lists {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists},
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}, in the format
+ *   `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists} to include in the
+ *   response. Further {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
  *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token}.
@@ -3680,17 +3575,15 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists},
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}, in the format
+ *   `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists} to include in the
+ *   response. Further {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
  *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token}.
@@ -3740,17 +3633,15 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists},
- *   in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}, in the format
+ *   `projects/* /locations/* /caPools/* /certificateAuthorities/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
+ *   {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists} to include in the
+ *   response. Further {@link google.cloud.security.privateca.v1.CertificateRevocationList|CertificateRevocationLists}
  *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse.next_page_token|ListCertificateRevocationListsResponse.next_page_token}.
@@ -3818,24 +3709,21 @@ export class CertificateAuthorityServiceClient {
           protos.google.cloud.security.privateca.v1.IListCertificateTemplatesResponse|null|undefined,
           protos.google.cloud.security.privateca.v1.ICertificateTemplate>): void;
 /**
- * Lists
- * {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}.
+ * Lists {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates},
- *   in the format `projects/* /locations/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}, in the format
+ *   `projects/* /locations/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}
- *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates} to include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token}.
@@ -3898,17 +3786,15 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates},
- *   in the format `projects/* /locations/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}, in the format
+ *   `projects/* /locations/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}
- *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates} to include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token}.
@@ -3958,17 +3844,15 @@ export class CertificateAuthorityServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the location associated with the
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates},
- *   in the format `projects/* /locations/*`.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}, in the format
+ *   `projects/* /locations/*`.
  * @param {number} [request.pageSize]
  *   Optional. Limit on the number of
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}
- *   to include in the response. Further
- *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates}
- *   can subsequently be obtained by including the
- *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token}
- *   in a subsequent request. If unspecified, the server will pick an
- *   appropriate default.
+ *   {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates} to include in the response.
+ *   Further {@link google.cloud.security.privateca.v1.CertificateTemplate|CertificateTemplates} can subsequently be
+ *   obtained by including the
+ *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token} in a subsequent
+ *   request. If unspecified, the server will pick an appropriate default.
  * @param {string} [request.pageToken]
  *   Optional. Pagination token, returned earlier via
  *   {@link google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token|ListCertificateTemplatesResponse.next_page_token}.

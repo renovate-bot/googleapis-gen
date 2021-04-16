@@ -123,8 +123,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.security.privateca.v1.CertificateAuthority> certificateAuthorities_;
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -135,8 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -148,8 +146,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -160,8 +157,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -172,8 +168,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -697,8 +692,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -712,8 +706,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -727,8 +720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -742,8 +734,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -764,8 +755,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -783,8 +773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -804,8 +793,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -826,8 +814,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -845,8 +832,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -864,8 +850,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -884,8 +869,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -902,8 +886,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -920,8 +903,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -932,8 +914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -947,8 +928,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -963,8 +943,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -975,8 +954,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -988,8 +966,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>

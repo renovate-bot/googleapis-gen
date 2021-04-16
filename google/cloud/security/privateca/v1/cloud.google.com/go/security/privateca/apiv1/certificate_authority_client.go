@@ -494,9 +494,8 @@ type CertificateAuthorityClient struct {
 
 // NewCertificateAuthorityClient creates a new certificate authority service client.
 //
-// [Certificate Authority
-// Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-// manages private certificate authorities and issued certificates.
+// [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+// certificate authorities and issued certificates.
 func NewCertificateAuthorityClient(ctx context.Context, opts ...option.ClientOption) (*CertificateAuthorityClient, error) {
 	clientOpts := defaultCertificateAuthorityClientOptions()
 
@@ -561,8 +560,7 @@ func (c *CertificateAuthorityClient) setGoogleClientInfo(keyval ...string) {
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateCertificate create a new Certificate
-// in a given Project, Location from a particular
+// CreateCertificate create a new Certificate in a given Project, Location from a particular
 // CaPool.
 func (c *CertificateAuthorityClient) CreateCertificate(ctx context.Context, req *privatecapb.CreateCertificateRequest, opts ...gax.CallOption) (*privatecapb.Certificate, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
@@ -670,8 +668,7 @@ func (c *CertificateAuthorityClient) RevokeCertificate(ctx context.Context, req 
 	return resp, nil
 }
 
-// UpdateCertificate update a Certificate.
-// Currently, the only field you can update is the
+// UpdateCertificate update a Certificate. Currently, the only field you can update is the
 // labels field.
 func (c *CertificateAuthorityClient) UpdateCertificate(ctx context.Context, req *privatecapb.UpdateCertificateRequest, opts ...gax.CallOption) (*privatecapb.Certificate, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
@@ -694,16 +691,12 @@ func (c *CertificateAuthorityClient) UpdateCertificate(ctx context.Context, req 
 	return resp, nil
 }
 
-// ActivateCertificateAuthority activate a
-// CertificateAuthority
-// that is in state
+// ActivateCertificateAuthority activate a CertificateAuthority that is in state
 // AWAITING_USER_ACTIVATION
-// and is of type
-// SUBORDINATE.
-// After the parent Certificate Authority signs a certificate signing request
-// from
-// FetchCertificateAuthorityCsr,
-// this method can complete the activation process.
+// and is of type SUBORDINATE. After
+// the parent Certificate Authority signs a certificate signing request from
+// FetchCertificateAuthorityCsr, this method can complete the activation
+// process.
 func (c *CertificateAuthorityClient) ActivateCertificateAuthority(ctx context.Context, req *privatecapb.ActivateCertificateAuthorityRequest, opts ...gax.CallOption) (*ActivateCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -727,9 +720,7 @@ func (c *CertificateAuthorityClient) ActivateCertificateAuthority(ctx context.Co
 	}, nil
 }
 
-// CreateCertificateAuthority create a new
-// CertificateAuthority
-// in a given Project and Location.
+// CreateCertificateAuthority create a new CertificateAuthority in a given Project and Location.
 func (c *CertificateAuthorityClient) CreateCertificateAuthority(ctx context.Context, req *privatecapb.CreateCertificateAuthorityRequest, opts ...gax.CallOption) (*CreateCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -753,8 +744,7 @@ func (c *CertificateAuthorityClient) CreateCertificateAuthority(ctx context.Cont
 	}, nil
 }
 
-// DisableCertificateAuthority disable a
-// CertificateAuthority.
+// DisableCertificateAuthority disable a CertificateAuthority.
 func (c *CertificateAuthorityClient) DisableCertificateAuthority(ctx context.Context, req *privatecapb.DisableCertificateAuthorityRequest, opts ...gax.CallOption) (*DisableCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -778,8 +768,7 @@ func (c *CertificateAuthorityClient) DisableCertificateAuthority(ctx context.Con
 	}, nil
 }
 
-// EnableCertificateAuthority enable a
-// CertificateAuthority.
+// EnableCertificateAuthority enable a CertificateAuthority.
 func (c *CertificateAuthorityClient) EnableCertificateAuthority(ctx context.Context, req *privatecapb.EnableCertificateAuthorityRequest, opts ...gax.CallOption) (*EnableCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -803,17 +792,13 @@ func (c *CertificateAuthorityClient) EnableCertificateAuthority(ctx context.Cont
 	}, nil
 }
 
-// FetchCertificateAuthorityCsr fetch a certificate signing request (CSR) from a
-// CertificateAuthority
+// FetchCertificateAuthorityCsr fetch a certificate signing request (CSR) from a CertificateAuthority
 // that is in state
 // AWAITING_USER_ACTIVATION
-// and is of type
-// SUBORDINATE.
-// The CSR must then be signed by the desired parent Certificate Authority,
-// which could be another
-// CertificateAuthority
-// resource, or could be an on-prem certificate authority. See also
-// ActivateCertificateAuthority.
+// and is of type SUBORDINATE. The
+// CSR must then be signed by the desired parent Certificate Authority, which
+// could be another CertificateAuthority resource, or could be an on-prem
+// certificate authority. See also ActivateCertificateAuthority.
 func (c *CertificateAuthorityClient) FetchCertificateAuthorityCsr(ctx context.Context, req *privatecapb.FetchCertificateAuthorityCsrRequest, opts ...gax.CallOption) (*privatecapb.FetchCertificateAuthorityCsrResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -835,8 +820,7 @@ func (c *CertificateAuthorityClient) FetchCertificateAuthorityCsr(ctx context.Co
 	return resp, nil
 }
 
-// GetCertificateAuthority returns a
-// CertificateAuthority.
+// GetCertificateAuthority returns a CertificateAuthority.
 func (c *CertificateAuthorityClient) GetCertificateAuthority(ctx context.Context, req *privatecapb.GetCertificateAuthorityRequest, opts ...gax.CallOption) (*privatecapb.CertificateAuthority, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -858,8 +842,7 @@ func (c *CertificateAuthorityClient) GetCertificateAuthority(ctx context.Context
 	return resp, nil
 }
 
-// ListCertificateAuthorities lists
-// CertificateAuthorities.
+// ListCertificateAuthorities lists CertificateAuthorities.
 func (c *CertificateAuthorityClient) ListCertificateAuthorities(ctx context.Context, req *privatecapb.ListCertificateAuthoritiesRequest, opts ...gax.CallOption) *CertificateAuthorityIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -900,9 +883,7 @@ func (c *CertificateAuthorityClient) ListCertificateAuthorities(ctx context.Cont
 	return it
 }
 
-// UndeleteCertificateAuthority undelete a
-// CertificateAuthority
-// that has been deleted.
+// UndeleteCertificateAuthority undelete a CertificateAuthority that has been deleted.
 func (c *CertificateAuthorityClient) UndeleteCertificateAuthority(ctx context.Context, req *privatecapb.UndeleteCertificateAuthorityRequest, opts ...gax.CallOption) (*UndeleteCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -926,8 +907,7 @@ func (c *CertificateAuthorityClient) UndeleteCertificateAuthority(ctx context.Co
 	}, nil
 }
 
-// DeleteCertificateAuthority delete a
-// CertificateAuthority.
+// DeleteCertificateAuthority delete a CertificateAuthority.
 func (c *CertificateAuthorityClient) DeleteCertificateAuthority(ctx context.Context, req *privatecapb.DeleteCertificateAuthorityRequest, opts ...gax.CallOption) (*DeleteCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -951,8 +931,7 @@ func (c *CertificateAuthorityClient) DeleteCertificateAuthority(ctx context.Cont
 	}, nil
 }
 
-// UpdateCertificateAuthority update a
-// CertificateAuthority.
+// UpdateCertificateAuthority update a CertificateAuthority.
 func (c *CertificateAuthorityClient) UpdateCertificateAuthority(ctx context.Context, req *privatecapb.UpdateCertificateAuthorityRequest, opts ...gax.CallOption) (*UpdateCertificateAuthorityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1111,10 +1090,8 @@ func (c *CertificateAuthorityClient) DeleteCaPool(ctx context.Context, req *priv
 	}, nil
 }
 
-// FetchCaCerts fetchCaCerts returns the current trust anchor for the
-// CaPool. This will include CA
-// certificate chains for all ACTIVE
-// CertificateAuthority
+// FetchCaCerts fetchCaCerts returns the current trust anchor for the CaPool. This will
+// include CA certificate chains for all ACTIVE CertificateAuthority
 // resources in the CaPool.
 func (c *CertificateAuthorityClient) FetchCaCerts(ctx context.Context, req *privatecapb.FetchCaCertsRequest, opts ...gax.CallOption) (*privatecapb.FetchCaCertsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
@@ -1137,8 +1114,7 @@ func (c *CertificateAuthorityClient) FetchCaCerts(ctx context.Context, req *priv
 	return resp, nil
 }
 
-// GetCertificateRevocationList returns a
-// CertificateRevocationList.
+// GetCertificateRevocationList returns a CertificateRevocationList.
 func (c *CertificateAuthorityClient) GetCertificateRevocationList(ctx context.Context, req *privatecapb.GetCertificateRevocationListRequest, opts ...gax.CallOption) (*privatecapb.CertificateRevocationList, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1160,8 +1136,7 @@ func (c *CertificateAuthorityClient) GetCertificateRevocationList(ctx context.Co
 	return resp, nil
 }
 
-// ListCertificateRevocationLists lists
-// CertificateRevocationLists.
+// ListCertificateRevocationLists lists CertificateRevocationLists.
 func (c *CertificateAuthorityClient) ListCertificateRevocationLists(ctx context.Context, req *privatecapb.ListCertificateRevocationListsRequest, opts ...gax.CallOption) *CertificateRevocationListIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -1202,8 +1177,7 @@ func (c *CertificateAuthorityClient) ListCertificateRevocationLists(ctx context.
 	return it
 }
 
-// UpdateCertificateRevocationList update a
-// CertificateRevocationList.
+// UpdateCertificateRevocationList update a CertificateRevocationList.
 func (c *CertificateAuthorityClient) UpdateCertificateRevocationList(ctx context.Context, req *privatecapb.UpdateCertificateRevocationListRequest, opts ...gax.CallOption) (*UpdateCertificateRevocationListOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1227,9 +1201,7 @@ func (c *CertificateAuthorityClient) UpdateCertificateRevocationList(ctx context
 	}, nil
 }
 
-// CreateCertificateTemplate create a new
-// CertificateTemplate
-// in a given Project and Location.
+// CreateCertificateTemplate create a new CertificateTemplate in a given Project and Location.
 func (c *CertificateAuthorityClient) CreateCertificateTemplate(ctx context.Context, req *privatecapb.CreateCertificateTemplateRequest, opts ...gax.CallOption) (*CreateCertificateTemplateOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1253,8 +1225,7 @@ func (c *CertificateAuthorityClient) CreateCertificateTemplate(ctx context.Conte
 	}, nil
 }
 
-// DeleteCertificateTemplate deleteCertificateTemplate deletes a
-// CertificateTemplate.
+// DeleteCertificateTemplate deleteCertificateTemplate deletes a CertificateTemplate.
 func (c *CertificateAuthorityClient) DeleteCertificateTemplate(ctx context.Context, req *privatecapb.DeleteCertificateTemplateRequest, opts ...gax.CallOption) (*DeleteCertificateTemplateOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1278,8 +1249,7 @@ func (c *CertificateAuthorityClient) DeleteCertificateTemplate(ctx context.Conte
 	}, nil
 }
 
-// GetCertificateTemplate returns a
-// CertificateTemplate.
+// GetCertificateTemplate returns a CertificateTemplate.
 func (c *CertificateAuthorityClient) GetCertificateTemplate(ctx context.Context, req *privatecapb.GetCertificateTemplateRequest, opts ...gax.CallOption) (*privatecapb.CertificateTemplate, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1301,8 +1271,7 @@ func (c *CertificateAuthorityClient) GetCertificateTemplate(ctx context.Context,
 	return resp, nil
 }
 
-// ListCertificateTemplates lists
-// CertificateTemplates.
+// ListCertificateTemplates lists CertificateTemplates.
 func (c *CertificateAuthorityClient) ListCertificateTemplates(ctx context.Context, req *privatecapb.ListCertificateTemplatesRequest, opts ...gax.CallOption) *CertificateTemplateIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -1343,8 +1312,7 @@ func (c *CertificateAuthorityClient) ListCertificateTemplates(ctx context.Contex
 	return it
 }
 
-// UpdateCertificateTemplate update a
-// CertificateTemplate.
+// UpdateCertificateTemplate update a CertificateTemplate.
 func (c *CertificateAuthorityClient) UpdateCertificateTemplate(ctx context.Context, req *privatecapb.UpdateCertificateTemplateRequest, opts ...gax.CallOption) (*UpdateCertificateTemplateOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)

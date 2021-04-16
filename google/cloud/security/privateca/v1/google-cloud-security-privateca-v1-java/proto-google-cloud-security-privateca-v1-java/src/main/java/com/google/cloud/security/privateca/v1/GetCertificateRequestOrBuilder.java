@@ -9,9 +9,7 @@ public interface GetCertificateRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-   * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-   * get.
+   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +18,7 @@ public interface GetCertificateRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-   * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-   * get.
+   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

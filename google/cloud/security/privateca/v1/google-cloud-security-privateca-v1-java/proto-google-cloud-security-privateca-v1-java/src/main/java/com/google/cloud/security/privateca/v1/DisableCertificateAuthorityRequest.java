@@ -103,9 +103,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The resource name for this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -126,9 +125,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name for this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -153,10 +151,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object requestId_;
   /**
    * <pre>
-   * Optional. An ID to identify requests. Specify a unique request ID so that
-   * if you must retry your request, the server will know to ignore the request
-   * if it has already been completed. The server will guarantee that for at
-   * least 60 minutes since the first request.
+   * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has
+   * already been completed. The server will guarantee that for at least 60
+   * minutes since the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -184,10 +182,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. An ID to identify requests. Specify a unique request ID so that
-   * if you must retry your request, the server will know to ignore the request
-   * if it has already been completed. The server will guarantee that for at
-   * least 60 minutes since the first request.
+   * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has
+   * already been completed. The server will guarantee that for at least 60
+   * minutes since the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -542,9 +540,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -564,9 +561,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -587,9 +583,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -608,9 +603,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -624,9 +618,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -648,10 +641,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object requestId_ = "";
     /**
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -678,10 +671,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -709,10 +702,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -738,10 +731,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -762,10 +755,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID

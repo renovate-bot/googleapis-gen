@@ -336,7 +336,7 @@ module Google
               #   @return [::Google::Cloud::Security::PrivateCA::V1::CaPool::IssuancePolicy::AllowedKeyType::RsaKeyType]
               #     Represents an allowed RSA key type.
               # @!attribute [rw] elliptic_curve
-              #   @return [::Google::Cloud::Security::PrivateCA::V1::CaPool::IssuancePolicy::AllowedKeyType::NamedCurve]
+              #   @return [::Google::Cloud::Security::PrivateCA::V1::CaPool::IssuancePolicy::AllowedKeyType::EcKeyType]
               #     Represents an allowed Elliptic Curve key type.
               class AllowedKeyType
                 include ::Google::Protobuf::MessageExts
@@ -359,20 +359,34 @@ module Google
                   extend ::Google::Protobuf::MessageExts::ClassMethods
                 end
 
-                # Describes a named Elliptic Curve that may be used in a {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}
+                # Describes an Elliptic Curve key that may be used in a {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}
                 # issued from a {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}.
-                module NamedCurve
-                  # Not specified.
-                  NAMED_CURVE_UNSPECIFIED = 0
+                # @!attribute [rw] signature_algorithm
+                #   @return [::Google::Cloud::Security::PrivateCA::V1::CaPool::IssuancePolicy::AllowedKeyType::EcKeyType::EcSignatureAlgorithm]
+                #     Optional. A signature algorithm that must be used. If this is omitted, any
+                #     EC-based signature algorithm will be allowed.
+                class EcKeyType
+                  include ::Google::Protobuf::MessageExts
+                  extend ::Google::Protobuf::MessageExts::ClassMethods
 
-                  # Refers to the NIST P-256 curve.
-                  ECDSA_P256 = 2
+                  # Describes an elliptic curve-based signature algorithm that may be
+                  # used in a {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} issued from a {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}.
+                  module EcSignatureAlgorithm
+                    # Not specified. Signifies that any signature algorithm may be used.
+                    EC_SIGNATURE_ALGORITHM_UNSPECIFIED = 0
 
-                  # Refers to the NIST P-384 curve.
-                  ECDSA_P384 = 3
+                    # Refers to the Elliptic Curve Digital Signature Algorithm over the
+                    # NIST P-256 curve.
+                    ECDSA_P256 = 1
 
-                  # Refers to the Ed25519 curve, as described in RFC 8410.
-                  EDDSA_25519 = 4
+                    # Refers to the Elliptic Curve Digital Signature Algorithm over the
+                    # NIST P-384 curve.
+                    ECDSA_P384 = 2
+
+                    # Refers to the Edwards-curve Digital Signature Algorithm over curve
+                    # 25519, as described in RFC 8410.
+                    EDDSA_25519 = 3
+                  end
                 end
               end
 
@@ -1163,7 +1177,7 @@ module Google
             # on the caller's identity. This mode will ignore any explicitly specified
             # {::Google::Cloud::Security::PrivateCA::V1::Subject Subject} and/or {::Google::Cloud::Security::PrivateCA::V1::SubjectAltNames SubjectAltNames} in the certificate request.
             # This mode requires the caller to have the
-            # `privateca.certificates.createReflected` permission.
+            # `privateca.certificates.createForSelf` permission.
             REFLECTED_SPIFFE = 2
           end
         end

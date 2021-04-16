@@ -9,8 +9,7 @@ public interface ListCertificateAuthoritiesResponseOrBuilder extends
 
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -19,8 +18,7 @@ public interface ListCertificateAuthoritiesResponseOrBuilder extends
       getCertificateAuthoritiesList();
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -28,8 +26,7 @@ public interface ListCertificateAuthoritiesResponseOrBuilder extends
   com.google.cloud.security.privateca.v1.CertificateAuthority getCertificateAuthorities(int index);
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -37,8 +34,7 @@ public interface ListCertificateAuthoritiesResponseOrBuilder extends
   int getCertificateAuthoritiesCount();
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
@@ -47,8 +43,7 @@ public interface ListCertificateAuthoritiesResponseOrBuilder extends
       getCertificateAuthoritiesOrBuilderList();
   /**
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>

@@ -9,8 +9,7 @@ public interface ListCertificateTemplatesResponseOrBuilder extends
 
   /**
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
@@ -19,8 +18,7 @@ public interface ListCertificateTemplatesResponseOrBuilder extends
       getCertificateTemplatesList();
   /**
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
@@ -28,8 +26,7 @@ public interface ListCertificateTemplatesResponseOrBuilder extends
   com.google.cloud.security.privateca.v1.CertificateTemplate getCertificateTemplates(int index);
   /**
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
@@ -37,8 +34,7 @@ public interface ListCertificateTemplatesResponseOrBuilder extends
   int getCertificateTemplatesCount();
   /**
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
@@ -47,8 +43,7 @@ public interface ListCertificateTemplatesResponseOrBuilder extends
       getCertificateTemplatesOrBuilderList();
   /**
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>

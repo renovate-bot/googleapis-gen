@@ -17,10 +17,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource name of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -33,18 +32,16 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $certificate_authority_id = '';
     /**
-     * Required. A
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * with initial field values.
+     * Required. A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with initial field values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CertificateAuthority certificate_authority = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $certificate_authority = null;
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -64,22 +61,19 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The resource name of the
-     *           [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     *           [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
-     *           in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     *           Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     *           [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
+     *           `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      *     @type string $certificate_authority_id
      *           Required. It must be unique within a location and match the regular
      *           expression `[a-zA-Z0-9_-]{1,63}`
      *     @type \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority $certificate_authority
-     *           Required. A
-     *           [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     *           with initial field values.
+     *           Required. A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with initial field values.
      *     @type string $request_id
-     *           Optional. An ID to identify requests. Specify a unique request ID so that
-     *           if you must retry your request, the server will know to ignore the request
-     *           if it has already been completed. The server will guarantee that for at
-     *           least 60 minutes since the first request.
+     *           Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     *           retry your request, the server will know to ignore the request if it has
+     *           already been completed. The server will guarantee that for at least 60
+     *           minutes since the first request.
      *           For example, consider a situation where you make an initial request and t
      *           he request times out. If you make the request again with the same request
      *           ID, the server can check if original operation with the same request ID
@@ -95,10 +89,9 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required. The resource name of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -109,10 +102,9 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required. The resource name of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -155,9 +147,7 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required. A
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * with initial field values.
+     * Required. A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with initial field values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CertificateAuthority certificate_authority = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority|null
@@ -178,9 +168,7 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required. A
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * with initial field values.
+     * Required. A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with initial field values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CertificateAuthority certificate_authority = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority $var
@@ -195,10 +183,10 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -216,10 +204,10 @@ class CreateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID

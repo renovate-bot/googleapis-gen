@@ -83,9 +83,8 @@ class CreateCertificateRequest(proto.Message):
             regular expression ``[a-zA-Z0-9_-]{1,63}``. This field is
             required when using a
             [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-            in the Enterprise
-            [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier],
-            but is optional and its value is ignored otherwise.
+            in the Enterprise [CertificateAuthority.Tier][], but is
+            optional and its value is ignored otherwise.
         certificate (google.cloud.security.privateca_v1.types.Certificate):
             Required. A
             [Certificate][google.cloud.security.privateca.v1.Certificate]

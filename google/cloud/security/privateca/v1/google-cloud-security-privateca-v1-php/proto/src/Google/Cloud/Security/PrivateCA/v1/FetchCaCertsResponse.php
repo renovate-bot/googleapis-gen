@@ -18,8 +18,7 @@ class FetchCaCertsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;</code>
@@ -34,8 +33,7 @@ class FetchCaCertsResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Security\PrivateCA\v1\FetchCaCertsResponse\CertChain[]|\Google\Protobuf\Internal\RepeatedField $ca_certs
      *           The PEM encoded CA certificate chains of all
-     *           [ACTIVE][CertificateAuthority.State.ACTIVE]
-     *           [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     *           [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      *           resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * }
      */
@@ -46,8 +44,7 @@ class FetchCaCertsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;</code>
@@ -60,8 +57,7 @@ class FetchCaCertsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;</code>

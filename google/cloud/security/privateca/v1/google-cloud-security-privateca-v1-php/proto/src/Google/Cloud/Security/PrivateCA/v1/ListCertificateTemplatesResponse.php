@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListCertificateTemplatesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
      */
@@ -45,8 +44,7 @@ class ListCertificateTemplatesResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Security\PrivateCA\V1\CertificateTemplate[]|\Google\Protobuf\Internal\RepeatedField $certificate_templates
-     *           The list of
-     *           [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     *           The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      *     @type string $next_page_token
      *           A token to retrieve next page of results. Pass this value in
      *           [ListCertificateTemplatesRequest.next_page_token][] to retrieve
@@ -61,8 +59,7 @@ class ListCertificateTemplatesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -73,8 +70,7 @@ class ListCertificateTemplatesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.CertificateTemplate certificate_templates = 1;</code>
      * @param \Google\Cloud\Security\PrivateCA\V1\CertificateTemplate[]|\Google\Protobuf\Internal\RepeatedField $var

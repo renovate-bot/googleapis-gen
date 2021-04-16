@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListCertificateAuthoritiesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
      */
@@ -45,8 +44,7 @@ class ListCertificateAuthoritiesResponse extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority[]|\Google\Protobuf\Internal\RepeatedField $certificate_authorities
-     *           The list of
-     *           [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     *           The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      *     @type string $next_page_token
      *           A token to retrieve next page of results. Pass this value in
      *           [ListCertificateAuthoritiesRequest.next_page_token][] to retrieve the next
@@ -61,8 +59,7 @@ class ListCertificateAuthoritiesResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -73,8 +70,7 @@ class ListCertificateAuthoritiesResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      *
      * Generated from protobuf field <code>repeated .google.cloud.security.privateca.v1.CertificateAuthority certificate_authorities = 1;</code>
      * @param \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority[]|\Google\Protobuf\Internal\RepeatedField $var

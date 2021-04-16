@@ -810,8 +810,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
@@ -824,8 +823,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
@@ -839,8 +837,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
@@ -853,8 +850,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
@@ -867,8 +863,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
@@ -1242,8 +1237,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1259,8 +1253,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1276,8 +1269,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1293,8 +1285,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1317,8 +1308,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1338,8 +1328,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1361,8 +1350,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1385,8 +1373,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1406,8 +1393,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1427,8 +1413,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1449,8 +1434,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1469,8 +1453,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1489,8 +1472,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1503,8 +1485,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1520,8 +1501,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1538,8 +1518,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1552,8 +1531,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
@@ -1567,8 +1545,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * [ACTIVE][CertificateAuthority.State.ACTIVE] [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *

@@ -9,8 +9,7 @@ public interface ListCertificateRevocationListsResponseOrBuilder extends
 
   /**
    * <pre>
-   * The list of
-   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateRevocationList certificate_revocation_lists = 1;</code>
@@ -19,8 +18,7 @@ public interface ListCertificateRevocationListsResponseOrBuilder extends
       getCertificateRevocationListsList();
   /**
    * <pre>
-   * The list of
-   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateRevocationList certificate_revocation_lists = 1;</code>
@@ -28,8 +26,7 @@ public interface ListCertificateRevocationListsResponseOrBuilder extends
   com.google.cloud.security.privateca.v1.CertificateRevocationList getCertificateRevocationLists(int index);
   /**
    * <pre>
-   * The list of
-   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateRevocationList certificate_revocation_lists = 1;</code>
@@ -37,8 +34,7 @@ public interface ListCertificateRevocationListsResponseOrBuilder extends
   int getCertificateRevocationListsCount();
   /**
    * <pre>
-   * The list of
-   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateRevocationList certificate_revocation_lists = 1;</code>
@@ -47,8 +43,7 @@ public interface ListCertificateRevocationListsResponseOrBuilder extends
       getCertificateRevocationListsOrBuilderList();
   /**
    * <pre>
-   * The list of
-   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.CertificateRevocationList certificate_revocation_lists = 1;</code>

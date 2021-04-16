@@ -33,9 +33,8 @@ module Google
       module PrivateCA
         module v1
           ##
-          # [Certificate Authority
-          # Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-          # manages private certificate authorities and issued certificates.
+          # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client Certificate Authority Service} manages private
+          # certificate authorities and issued certificates.
           #
           # To load this service and instantiate a client:
           #

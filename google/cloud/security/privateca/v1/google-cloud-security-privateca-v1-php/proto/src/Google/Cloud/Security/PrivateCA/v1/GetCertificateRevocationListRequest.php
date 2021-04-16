@@ -17,11 +17,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetCertificateRevocationListRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateRevocationList.name]
-     * of the
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateRevocationList.name] of the
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] to get.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -34,11 +31,8 @@ class GetCertificateRevocationListRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The
-     *           [name][google.cloud.security.privateca.v1.CertificateRevocationList.name]
-     *           of the
-     *           [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
-     *           to get.
+     *           Required. The [name][google.cloud.security.privateca.v1.CertificateRevocationList.name] of the
+     *           [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] to get.
      * }
      */
     public function __construct($data = NULL) {
@@ -47,11 +41,8 @@ class GetCertificateRevocationListRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateRevocationList.name]
-     * of the
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateRevocationList.name] of the
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] to get.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -62,11 +53,8 @@ class GetCertificateRevocationListRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateRevocationList.name]
-     * of the
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateRevocationList.name] of the
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] to get.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

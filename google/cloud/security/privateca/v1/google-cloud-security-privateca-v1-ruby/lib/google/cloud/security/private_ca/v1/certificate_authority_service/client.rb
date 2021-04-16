@@ -28,9 +28,8 @@ module Google
             ##
             # Client for the CertificateAuthorityService service.
             #
-            # [Certificate Authority
-            # Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-            # manages private certificate authorities and issued certificates.
+            # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client Certificate Authority Service} manages private
+            # certificate authorities and issued certificates.
             #
             class Client
               include Paths
@@ -174,8 +173,7 @@ module Google
               # Service calls
 
               ##
-              # Create a new {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}
-              # in a given Project, Location from a particular
+              # Create a new {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} in a given Project, Location from a particular
               # {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}.
               #
               # @overload create_certificate(request, options = nil)
@@ -194,25 +192,20 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The resource name of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}, in the
-              #     format `projects/*/locations/*/caPools/*`.
+              #     Required. The resource name of the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} associated with the {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate},
+              #     in the format `projects/*/locations/*/caPools/*`.
               #   @param certificate_id [::String]
               #     Optional. It must be unique within a location and match the regular
               #     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the Enterprise
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool::Tier CaPool.Tier}, but is
-              #     optional and its value is ignored otherwise.
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the Enterprise [CertificateAuthority.Tier][],
+              #     but is optional and its value is ignored otherwise.
               #   @param certificate [::Google::Cloud::Security::PrivateCA::V1::Certificate, ::Hash]
-              #     Required. A {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}
-              #     with initial field values.
+              #     Required. A {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} with initial field values.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -223,34 +216,21 @@ module Google
               #     The request ID must be a valid UUID with the exception that zero UUID is
               #     not supported (00000000-0000-0000-0000-000000000000).
               #   @param validate_only [::Boolean]
-              #     Optional. If this is true, no
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} resource will
-              #     be persisted regardless of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}'s
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool#tier tier}, and the returned
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} will not
-              #     contain the
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate#pem_certificate pem_certificate}
-              #     field.
+              #     Optional. If this is true, no {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} resource will be persisted regardless
+              #     of the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}'s {::Google::Cloud::Security::PrivateCA::V1::CaPool#tier tier}, and the returned {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}
+              #     will not contain the {::Google::Cloud::Security::PrivateCA::V1::Certificate#pem_certificate pem_certificate} field.
               #   @param issuing_certificate_authority_id [::String]
-              #     Optional. The resource ID of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     that should issue the certificate.  This optional field will ignore the
-              #     load-balancing scheme of the Pool and directly issue the certificate from
-              #     the CA with the specified ID, contained in the same
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} referenced by `parent`.
-              #     Per-CA quota rules apply. If left empty, a
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     will be chosen from the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}
-              #     by the service. For example, to issue a
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} from a
-              #     Certificate Authority with resource name
+              #     Optional. The resource ID of the {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} that should issue the
+              #     certificate.  This optional field will ignore the load-balancing scheme of
+              #     the Pool and directly issue the certificate from the CA with the specified
+              #     ID, contained in the same {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} referenced by `parent`. Per-CA quota
+              #     rules apply. If left empty, a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} will be chosen from
+              #     the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} by the service. For example, to issue a {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} from
+              #     a Certificate Authority with resource name
               #     "projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca",
-              #     you can set the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest#parent parent}
-              #     to "projects/my-project/locations/us-central1/caPools/my-pool" and the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest#issuing_certificate_authority_id issuing_certificate_authority_id}
-              #     to "my-ca".
+              #     you can set the {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest#parent parent} to
+              #     "projects/my-project/locations/us-central1/caPools/my-pool" and the
+              #     {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest#issuing_certificate_authority_id issuing_certificate_authority_id} to "my-ca".
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::Certificate]
@@ -316,9 +296,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::Certificate#name name}
-              #     of the {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} to
-              #     get.
+              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::Certificate#name name} of the {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} to get.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::Certificate]
@@ -385,27 +363,25 @@ module Google
               #
               #   @param parent [::String]
               #     Required. The resource name of the location associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificates}, in the
-              #     format `projects/*/locations/*/caPools/*`.
+              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificates}, in the format
+              #     `projects/*/locations/*/caPools/*`.
               #   @param page_size [::Integer]
               #     Optional. Limit on the number of
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificates} to include
-              #     in the response. Further
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificates} can
-              #     subsequently be obtained by including the
-              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificatesResponse#next_page_token ListCertificatesResponse.next_page_token}
-              #     in a subsequent request. If unspecified, the server will pick an
-              #     appropriate default.
+              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificates} to include in the
+              #     response. Further {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificates} can subsequently be obtained
+              #     by including the
+              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificatesResponse#next_page_token ListCertificatesResponse.next_page_token} in a subsequent
+              #     request. If unspecified, the server will pick an appropriate default.
               #   @param page_token [::String]
               #     Optional. Pagination token, returned earlier via
               #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificatesResponse#next_page_token ListCertificatesResponse.next_page_token}.
               #   @param filter [::String]
-              #     Optional. Only include resources that match the filter in the response. For
-              #     details on supported filters and syntax, see [Certificates Filtering
+              #     Optional. Only include resources that match the filter in the response. For details
+              #     on supported filters and syntax, see [Certificates Filtering
               #     documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#filtering_support).
               #   @param order_by [::String]
-              #     Optional. Specify how the results should be sorted. For details on
-              #     supported fields and syntax, see [Certificates Sorting
+              #     Optional. Specify how the results should be sorted. For details on supported fields
+              #     and syntax, see [Certificates Sorting
               #     documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support).
               #
               # @yield [response, operation] Access the result along with the RPC operation
@@ -473,18 +449,16 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} in the format
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} in the
+              #     format
               #     `projects/*/locations/*/caPools/*/certificates/*`.
               #   @param reason [::Google::Cloud::Security::PrivateCA::V1::RevocationReason]
-              #     Required. The
-              #     {::Google::Cloud::Security::PrivateCA::V1::RevocationReason RevocationReason} for
-              #     revoking this certificate.
+              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::RevocationReason RevocationReason} for revoking this certificate.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -541,8 +515,7 @@ module Google
               end
 
               ##
-              # Update a {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}.
-              # Currently, the only field you can update is the
+              # Update a {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}. Currently, the only field you can update is the
               # {::Google::Cloud::Security::PrivateCA::V1::Certificate#labels labels} field.
               #
               # @overload update_certificate(request, options = nil)
@@ -561,15 +534,14 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param certificate [::Google::Cloud::Security::PrivateCA::V1::Certificate, ::Hash]
-              #     Required. {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate}
-              #     with updated values.
+              #     Required. {::Google::Cloud::Security::PrivateCA::V1::Certificate Certificate} with updated values.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. A list of fields to be updated in this request.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -626,16 +598,12 @@ module Google
               end
 
               ##
-              # Activate a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              # that is in state
+              # Activate a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} that is in state
               # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority::State::AWAITING_USER_ACTIVATION AWAITING_USER_ACTIVATION}
-              # and is of type
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority::Type::SUBORDINATE SUBORDINATE}.
-              # After the parent Certificate Authority signs a certificate signing request
-              # from
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client#fetch_certificate_authority_csr FetchCertificateAuthorityCsr},
-              # this method can complete the activation process.
+              # and is of type {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority::Type::SUBORDINATE SUBORDINATE}. After
+              # the parent Certificate Authority signs a certificate signing request from
+              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client#fetch_certificate_authority_csr FetchCertificateAuthorityCsr}, this method can complete the activation
+              # process.
               #
               # @overload activate_certificate_authority(request, options = nil)
               #   Pass arguments to `activate_certificate_authority` via a request object, either of type
@@ -653,20 +621,19 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the
+              #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #   @param pem_ca_certificate [::String]
               #     Required. The signed CA certificate issued from
               #     {::Google::Cloud::Security::PrivateCA::V1::FetchCertificateAuthorityCsrResponse#pem_csr FetchCertificateAuthorityCsrResponse.pem_csr}.
               #   @param subordinate_config [::Google::Cloud::Security::PrivateCA::V1::SubordinateConfig, ::Hash]
-              #     Required. Must include information about the issuer of
-              #     'pem_ca_certificate', and any further issuers until the self-signed CA.
+              #     Required. Must include information about the issuer of 'pem_ca_certificate', and any
+              #     further issuers until the self-signed CA.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -724,9 +691,7 @@ module Google
               end
 
               ##
-              # Create a new
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              # in a given Project and Location.
+              # Create a new {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in a given Project and Location.
               #
               # @overload create_certificate_authority(request, options = nil)
               #   Pass arguments to `create_certificate_authority` via a request object, either of type
@@ -744,22 +709,19 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The resource name of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities},
-              #     in the format `projects/*/locations/*/caPools/*`.
+              #     Required. The resource name of the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} associated with the
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities}, in the format
+              #     `projects/*/locations/*/caPools/*`.
               #   @param certificate_authority_id [::String]
               #     Required. It must be unique within a location and match the regular
               #     expression `[a-zA-Z0-9_-]{1,63}`
               #   @param certificate_authority [::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority, ::Hash]
-              #     Required. A
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     with initial field values.
+              #     Required. A {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} with initial field values.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -817,8 +779,7 @@ module Google
               end
 
               ##
-              # Disable a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
+              # Disable a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
               #
               # @overload disable_certificate_authority(request, options = nil)
               #   Pass arguments to `disable_certificate_authority` via a request object, either of type
@@ -836,14 +797,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the
+              #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -901,8 +861,7 @@ module Google
               end
 
               ##
-              # Enable a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
+              # Enable a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
               #
               # @overload enable_certificate_authority(request, options = nil)
               #   Pass arguments to `enable_certificate_authority` via a request object, either of type
@@ -920,14 +879,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the
+              #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -985,17 +943,13 @@ module Google
               end
 
               ##
-              # Fetch a certificate signing request (CSR) from a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
+              # Fetch a certificate signing request (CSR) from a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
               # that is in state
               # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority::State::AWAITING_USER_ACTIVATION AWAITING_USER_ACTIVATION}
-              # and is of type
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority::Type::SUBORDINATE SUBORDINATE}.
-              # The CSR must then be signed by the desired parent Certificate Authority,
-              # which could be another
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              # resource, or could be an on-prem certificate authority. See also
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client#activate_certificate_authority ActivateCertificateAuthority}.
+              # and is of type {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority::Type::SUBORDINATE SUBORDINATE}. The
+              # CSR must then be signed by the desired parent Certificate Authority, which
+              # could be another {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} resource, or could be an on-prem
+              # certificate authority. See also {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client#activate_certificate_authority ActivateCertificateAuthority}.
               #
               # @overload fetch_certificate_authority_csr(request, options = nil)
               #   Pass arguments to `fetch_certificate_authority_csr` via a request object, either of type
@@ -1013,9 +967,8 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the
+              #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::v1::FetchCertificateAuthorityCsrResponse]
@@ -1063,8 +1016,7 @@ module Google
               end
 
               ##
-              # Returns a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
+              # Returns a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
               #
               # @overload get_certificate_authority(request, options = nil)
               #   Pass arguments to `get_certificate_authority` via a request object, either of type
@@ -1082,10 +1034,8 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority#name name} of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     to get.
+              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority#name name} of the {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} to
+              #     get.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority]
@@ -1133,8 +1083,7 @@ module Google
               end
 
               ##
-              # Lists
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities}.
+              # Lists {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities}.
               #
               # @overload list_certificate_authorities(request, options = nil)
               #   Pass arguments to `list_certificate_authorities` via a request object, either of type
@@ -1152,19 +1101,16 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The resource name of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities},
-              #     in the format `projects/*/locations/*/caPools/*`.
+              #     Required. The resource name of the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} associated with the
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities}, in the format
+              #     `projects/*/locations/*/caPools/*`.
               #   @param page_size [::Integer]
-              #     Optional. Limit on the number of
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities}
-              #     to include in the response. Further
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities}
-              #     can subsequently be obtained by including the
-              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateAuthoritiesResponse#next_page_token ListCertificateAuthoritiesResponse.next_page_token}
-              #     in a subsequent request. If unspecified, the server will pick an
-              #     appropriate default.
+              #     Optional. Limit on the number of {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities} to
+              #     include in the response.
+              #     Further {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthorities} can subsequently be
+              #     obtained by including the
+              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateAuthoritiesResponse#next_page_token ListCertificateAuthoritiesResponse.next_page_token} in a subsequent
+              #     request. If unspecified, the server will pick an appropriate default.
               #   @param page_token [::String]
               #     Optional. Pagination token, returned earlier via
               #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateAuthoritiesResponse#next_page_token ListCertificateAuthoritiesResponse.next_page_token}.
@@ -1220,9 +1166,7 @@ module Google
               end
 
               ##
-              # Undelete a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              # that has been deleted.
+              # Undelete a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} that has been deleted.
               #
               # @overload undelete_certificate_authority(request, options = nil)
               #   Pass arguments to `undelete_certificate_authority` via a request object, either of type
@@ -1240,14 +1184,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the
+              #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1305,8 +1248,7 @@ module Google
               end
 
               ##
-              # Delete a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
+              # Delete a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
               #
               # @overload delete_certificate_authority(request, options = nil)
               #   Pass arguments to `delete_certificate_authority` via a request object, either of type
@@ -1324,14 +1266,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} in the
+              #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1392,8 +1333,7 @@ module Google
               end
 
               ##
-              # Update a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
+              # Update a {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}.
               #
               # @overload update_certificate_authority(request, options = nil)
               #   Pass arguments to `update_certificate_authority` via a request object, either of type
@@ -1411,16 +1351,14 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param certificate_authority [::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority, ::Hash]
-              #     Required.
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
-              #     with updated values.
+              #     Required. {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority} with updated values.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. A list of fields to be updated in this request.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1497,19 +1435,17 @@ module Google
               #
               #   @param parent [::String]
               #     Required. The resource name of the location associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}, in the format
-              #     `projects/*/locations/*`.
+              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}, in the format `projects/*/locations/*`.
               #   @param ca_pool_id [::String]
               #     Required. It must be unique within a location and match the regular
               #     expression `[a-zA-Z0-9_-]{1,63}`
               #   @param ca_pool [::Google::Cloud::Security::PrivateCA::V1::CaPool, ::Hash]
-              #     Required. A {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} with
-              #     initial field values.
+              #     Required. A {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} with initial field values.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1585,15 +1521,14 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param ca_pool [::Google::Cloud::Security::PrivateCA::V1::CaPool, ::Hash]
-              #     Required. {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} with updated
-              #     values.
+              #     Required. {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} with updated values.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. A list of fields to be updated in this request.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1669,8 +1604,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::CaPool#name name} of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} to get.
+              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::CaPool#name name} of the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} to get.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::CaPool]
@@ -1740,13 +1674,12 @@ module Google
               #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPools}, in the format
               #     `projects/*/locations/*`.
               #   @param page_size [::Integer]
-              #     Optional. Limit on the number of
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPools} to include in the
-              #     response. Further {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPools} can
-              #     subsequently be obtained by including the
-              #     {::Google::Cloud::Security::PrivateCA::V1::ListCaPoolsResponse#next_page_token ListCaPoolsResponse.next_page_token}
-              #     in a subsequent request. If unspecified, the server will pick an
-              #     appropriate default.
+              #     Optional. Limit on the number of {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPools} to
+              #     include in the response.
+              #     Further {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPools} can subsequently be
+              #     obtained by including the
+              #     {::Google::Cloud::Security::PrivateCA::V1::ListCaPoolsResponse#next_page_token ListCaPoolsResponse.next_page_token} in a subsequent
+              #     request. If unspecified, the server will pick an appropriate default.
               #   @param page_token [::String]
               #     Optional. Pagination token, returned earlier via
               #     {::Google::Cloud::Security::PrivateCA::V1::ListCaPoolsResponse#next_page_token ListCaPoolsResponse.next_page_token}.
@@ -1820,14 +1753,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} in the format
-              #     `projects/*/locations/*/caPools/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} in the
+              #     format `projects/*/locations/*/caPools/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1885,10 +1817,8 @@ module Google
               end
 
               ##
-              # FetchCaCerts returns the current trust anchor for the
-              # {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}. This will include CA
-              # certificate chains for all ACTIVE
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
+              # FetchCaCerts returns the current trust anchor for the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}. This will
+              # include CA certificate chains for all ACTIVE {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
               # resources in the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}.
               #
               # @overload fetch_ca_certs(request, options = nil)
@@ -1907,14 +1837,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param ca_pool [::String]
-              #     Required. The resource name for the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} in the format
-              #     `projects/*/locations/*/caPools/*`.
+              #     Required. The resource name for the {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool} in the
+              #     format `projects/*/locations/*/caPools/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -1971,8 +1900,7 @@ module Google
               end
 
               ##
-              # Returns a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList}.
+              # Returns a {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList}.
               #
               # @overload get_certificate_revocation_list(request, options = nil)
               #   Pass arguments to `get_certificate_revocation_list` via a request object, either of type
@@ -1990,11 +1918,8 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList#name name}
-              #     of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList}
-              #     to get.
+              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList#name name} of the
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList} to get.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList]
@@ -2042,8 +1967,7 @@ module Google
               end
 
               ##
-              # Lists
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists}.
+              # Lists {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists}.
               #
               # @overload list_certificate_revocation_lists(request, options = nil)
               #   Pass arguments to `list_certificate_revocation_lists` via a request object, either of type
@@ -2062,17 +1986,15 @@ module Google
               #
               #   @param parent [::String]
               #     Required. The resource name of the location associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists},
-              #     in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists}, in the format
+              #     `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #   @param page_size [::Integer]
               #     Optional. Limit on the number of
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists}
-              #     to include in the response. Further
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists}
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists} to include in the
+              #     response. Further {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationLists}
               #     can subsequently be obtained by including the
-              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateRevocationListsResponse#next_page_token ListCertificateRevocationListsResponse.next_page_token}
-              #     in a subsequent request. If unspecified, the server will pick an
-              #     appropriate default.
+              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateRevocationListsResponse#next_page_token ListCertificateRevocationListsResponse.next_page_token} in a subsequent
+              #     request. If unspecified, the server will pick an appropriate default.
               #   @param page_token [::String]
               #     Optional. Pagination token, returned earlier via
               #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateRevocationListsResponse#next_page_token ListCertificateRevocationListsResponse.next_page_token}.
@@ -2128,8 +2050,7 @@ module Google
               end
 
               ##
-              # Update a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList}.
+              # Update a {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList}.
               #
               # @overload update_certificate_revocation_list(request, options = nil)
               #   Pass arguments to `update_certificate_revocation_list` via a request object, either of type
@@ -2147,16 +2068,14 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param certificate_revocation_list [::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList, ::Hash]
-              #     Required.
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList}
-              #     with updated values.
+              #     Required. {::Google::Cloud::Security::PrivateCA::V1::CertificateRevocationList CertificateRevocationList} with updated values.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. A list of fields to be updated in this request.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -2214,9 +2133,7 @@ module Google
               end
 
               ##
-              # Create a new
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}
-              # in a given Project and Location.
+              # Create a new {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate} in a given Project and Location.
               #
               # @overload create_certificate_template(request, options = nil)
               #   Pass arguments to `create_certificate_template` via a request object, either of type
@@ -2235,20 +2152,18 @@ module Google
               #
               #   @param parent [::String]
               #     Required. The resource name of the location associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate},
-              #     in the format `projects/*/locations/*`.
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}, in the format
+              #     `projects/*/locations/*`.
               #   @param certificate_template_id [::String]
               #     Required. It must be unique within a location and match the regular
               #     expression `[a-zA-Z0-9_-]{1,63}`
               #   @param certificate_template [::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate, ::Hash]
-              #     Required. A
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}
-              #     with initial field values.
+              #     Required. A {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate} with initial field values.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -2306,8 +2221,7 @@ module Google
               end
 
               ##
-              # DeleteCertificateTemplate deletes a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}.
+              # DeleteCertificateTemplate deletes a {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}.
               #
               # @overload delete_certificate_template(request, options = nil)
               #   Pass arguments to `delete_certificate_template` via a request object, either of type
@@ -2325,14 +2239,13 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The resource name for this
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}
-              #     in the format `projects/*/locations/*/certificateTemplates/*`.
+              #     Required. The resource name for this {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate} in the format
+              #     `projects/*/locations/*/certificateTemplates/*`.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request
@@ -2390,8 +2303,7 @@ module Google
               end
 
               ##
-              # Returns a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}.
+              # Returns a {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}.
               #
               # @overload get_certificate_template(request, options = nil)
               #   Pass arguments to `get_certificate_template` via a request object, either of type
@@ -2409,10 +2321,8 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate#name name} of the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}
-              #     to get.
+              #     Required. The {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate#name name} of the {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate} to
+              #     get.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate]
@@ -2460,8 +2370,7 @@ module Google
               end
 
               ##
-              # Lists
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates}.
+              # Lists {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates}.
               #
               # @overload list_certificate_templates(request, options = nil)
               #   Pass arguments to `list_certificate_templates` via a request object, either of type
@@ -2480,17 +2389,15 @@ module Google
               #
               #   @param parent [::String]
               #     Required. The resource name of the location associated with the
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates},
-              #     in the format `projects/*/locations/*`.
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates}, in the format
+              #     `projects/*/locations/*`.
               #   @param page_size [::Integer]
               #     Optional. Limit on the number of
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates}
-              #     to include in the response. Further
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates}
-              #     can subsequently be obtained by including the
-              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateTemplatesResponse#next_page_token ListCertificateTemplatesResponse.next_page_token}
-              #     in a subsequent request. If unspecified, the server will pick an
-              #     appropriate default.
+              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates} to include in the response.
+              #     Further {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplates} can subsequently be
+              #     obtained by including the
+              #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateTemplatesResponse#next_page_token ListCertificateTemplatesResponse.next_page_token} in a subsequent
+              #     request. If unspecified, the server will pick an appropriate default.
               #   @param page_token [::String]
               #     Optional. Pagination token, returned earlier via
               #     {::Google::Cloud::Security::PrivateCA::V1::ListCertificateTemplatesResponse#next_page_token ListCertificateTemplatesResponse.next_page_token}.
@@ -2546,8 +2453,7 @@ module Google
               end
 
               ##
-              # Update a
-              # {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}.
+              # Update a {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}.
               #
               # @overload update_certificate_template(request, options = nil)
               #   Pass arguments to `update_certificate_template` via a request object, either of type
@@ -2565,16 +2471,14 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param certificate_template [::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate, ::Hash]
-              #     Required.
-              #     {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate}
-              #     with updated values.
+              #     Required. {::Google::Cloud::Security::PrivateCA::V1::CertificateTemplate CertificateTemplate} with updated values.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. A list of fields to be updated in this request.
               #   @param request_id [::String]
-              #     Optional. An ID to identify requests. Specify a unique request ID so that
-              #     if you must retry your request, the server will know to ignore the request
-              #     if it has already been completed. The server will guarantee that for at
-              #     least 60 minutes since the first request.
+              #     Optional. An ID to identify requests. Specify a unique request ID so that if you must
+              #     retry your request, the server will know to ignore the request if it has
+              #     already been completed. The server will guarantee that for at least 60
+              #     minutes since the first request.
               #
               #     For example, consider a situation where you make an initial request and t
               #     he request times out. If you make the request again with the same request

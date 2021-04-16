@@ -35,7 +35,7 @@ class SubjectRequestMode
      * on the caller's identity. This mode will ignore any explicitly specified
      * [Subject][google.cloud.security.privateca.v1.Subject] and/or [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] in the certificate request.
      * This mode requires the caller to have the
-     * `privateca.certificates.createReflected` permission.
+     * `privateca.certificates.createForSelf` permission.
      *
      * Generated from protobuf enum <code>REFLECTED_SPIFFE = 2;</code>
      */

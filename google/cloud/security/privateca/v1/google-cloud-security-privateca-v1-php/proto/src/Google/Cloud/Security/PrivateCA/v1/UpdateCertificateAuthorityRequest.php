@@ -17,9 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required.
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * with updated values.
+     * Required. [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with updated values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CertificateAuthority certificate_authority = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -31,10 +29,10 @@ class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $update_mask = null;
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -54,16 +52,14 @@ class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority $certificate_authority
-     *           Required.
-     *           [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     *           with updated values.
+     *           Required. [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with updated values.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. A list of fields to be updated in this request.
      *     @type string $request_id
-     *           Optional. An ID to identify requests. Specify a unique request ID so that
-     *           if you must retry your request, the server will know to ignore the request
-     *           if it has already been completed. The server will guarantee that for at
-     *           least 60 minutes since the first request.
+     *           Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     *           retry your request, the server will know to ignore the request if it has
+     *           already been completed. The server will guarantee that for at least 60
+     *           minutes since the first request.
      *           For example, consider a situation where you make an initial request and t
      *           he request times out. If you make the request again with the same request
      *           ID, the server can check if original operation with the same request ID
@@ -79,9 +75,7 @@ class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required.
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * with updated values.
+     * Required. [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with updated values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CertificateAuthority certificate_authority = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority|null
@@ -102,9 +96,7 @@ class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required.
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * with updated values.
+     * Required. [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] with updated values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CertificateAuthority certificate_authority = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Security\PrivateCA\V1\CertificateAuthority $var
@@ -155,10 +147,10 @@ class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -176,10 +168,10 @@ class UpdateCertificateAuthorityRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID

@@ -19,9 +19,8 @@
 namespace Google\Cloud\Security\PrivateCA\v1;
 
 /**
- * [Certificate Authority
- * Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
- * manages private certificate authorities and issued certificates.
+ * [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+ * certificate authorities and issued certificates.
  */
 class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -35,8 +34,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate]
-     * in a given Project, Location from a particular
+     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate] in a given Project, Location from a particular
      * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * @param \Google\Cloud\Security\PrivateCA\v1\CreateCertificateRequest $argument input argument
      * @param array $metadata metadata
@@ -97,8 +95,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate].
-     * Currently, the only field you can update is the
+     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate]. Currently, the only field you can update is the
      * [labels][google.cloud.security.privateca.v1.Certificate.labels] field.
      * @param \Google\Cloud\Security\PrivateCA\v1\UpdateCertificateRequest $argument input argument
      * @param array $metadata metadata
@@ -114,16 +111,12 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Activate a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that is in state
+     * Activate a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * After the parent Certificate Authority signs a certificate signing request
-     * from
-     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr],
-     * this method can complete the activation process.
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. After
+     * the parent Certificate Authority signs a certificate signing request from
+     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr], this method can complete the activation
+     * process.
      * @param \Google\Cloud\Security\PrivateCA\v1\ActivateCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -138,9 +131,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Create a new
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in a given Project and Location.
+     * Create a new [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in a given Project and Location.
      * @param \Google\Cloud\Security\PrivateCA\v1\CreateCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -155,8 +146,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Disable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Disable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\DisableCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -171,8 +161,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Enable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Enable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\EnableCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -187,17 +176,13 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Fetch a certificate signing request (CSR) from a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Fetch a certificate signing request (CSR) from a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * The CSR must then be signed by the desired parent Certificate Authority,
-     * which could be another
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resource, or could be an on-prem certificate authority. See also
-     * [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. The
+     * CSR must then be signed by the desired parent Certificate Authority, which
+     * could be another [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resource, or could be an on-prem
+     * certificate authority. See also [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\FetchCertificateAuthorityCsrRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -212,8 +197,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Returns a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\GetCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -228,8 +212,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Lists
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Lists [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\ListCertificateAuthoritiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -244,9 +227,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Undelete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that has been deleted.
+     * Undelete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that has been deleted.
      * @param \Google\Cloud\Security\PrivateCA\v1\UndeleteCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -261,8 +242,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Delete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Delete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\DeleteCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -277,8 +257,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Update a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Update a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * @param \Google\Cloud\Security\PrivateCA\v1\UpdateCertificateAuthorityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -368,10 +347,8 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * FetchCaCerts returns the current trust anchor for the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will
+     * include CA certificate chains for all ACTIVE [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
      * @param \Google\Cloud\Security\PrivateCA\v1\FetchCaCertsRequest $argument input argument
      * @param array $metadata metadata
@@ -387,8 +364,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * @param \Google\Cloud\Security\PrivateCA\v1\GetCertificateRevocationListRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -403,8 +379,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Lists
-     * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Lists [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
      * @param \Google\Cloud\Security\PrivateCA\v1\ListCertificateRevocationListsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -419,8 +394,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Update a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Update a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * @param \Google\Cloud\Security\PrivateCA\v1\UpdateCertificateRevocationListRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -435,9 +409,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Create a new
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * in a given Project and Location.
+     * Create a new [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in a given Project and Location.
      * @param \Google\Cloud\Security\PrivateCA\v1\CreateCertificateTemplateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -452,8 +424,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * DeleteCertificateTemplate deletes a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * DeleteCertificateTemplate deletes a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * @param \Google\Cloud\Security\PrivateCA\v1\DeleteCertificateTemplateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -468,8 +439,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Returns a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * @param \Google\Cloud\Security\PrivateCA\v1\GetCertificateTemplateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -484,8 +454,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Lists
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Lists [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      * @param \Google\Cloud\Security\PrivateCA\v1\ListCertificateTemplatesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -500,8 +469,7 @@ class CertificateAuthorityServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Update a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Update a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * @param \Google\Cloud\Security\PrivateCA\v1\UpdateCertificateTemplateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

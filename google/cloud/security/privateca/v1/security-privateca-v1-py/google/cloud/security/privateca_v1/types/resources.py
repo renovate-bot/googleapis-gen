@@ -497,20 +497,10 @@ class CaPool(proto.Message):
             Attributes:
                 rsa (google.cloud.security.privateca_v1.types.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType):
                     Represents an allowed RSA key type.
-                elliptic_curve (google.cloud.security.privateca_v1.types.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve):
+                elliptic_curve (google.cloud.security.privateca_v1.types.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType):
                     Represents an allowed Elliptic Curve key
                     type.
             """
-            class NamedCurve(proto.Enum):
-                r"""Describes a named Elliptic Curve that may be used in a
-                [Certificate][google.cloud.security.privateca.v1.Certificate] issued
-                from a [CaPool][google.cloud.security.privateca.v1.CaPool].
-                """
-                NAMED_CURVE_UNSPECIFIED = 0
-                ECDSA_P256 = 2
-                ECDSA_P384 = 3
-                EDDSA_25519 = 4
-
             class RsaKeyType(proto.Message):
                 r"""Describes an RSA key that may be used in a
                 [Certificate][google.cloud.security.privateca.v1.Certificate] issued
@@ -533,12 +523,38 @@ class CaPool(proto.Message):
 
                 max_modulus_size = proto.Field(proto.INT64, number=2)
 
+            class EcKeyType(proto.Message):
+                r"""Describes an Elliptic Curve key that may be used in a
+                [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+                from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+
+                Attributes:
+                    signature_algorithm (google.cloud.security.privateca_v1.types.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm):
+                        Optional. A signature algorithm that must be
+                        used. If this is omitted, any EC-based signature
+                        algorithm will be allowed.
+                """
+                class EcSignatureAlgorithm(proto.Enum):
+                    r"""Describes an elliptic curve-based signature algorithm that may be
+                    used in a
+                    [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+                    from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+                    """
+                    EC_SIGNATURE_ALGORITHM_UNSPECIFIED = 0
+                    ECDSA_P256 = 1
+                    ECDSA_P384 = 2
+                    EDDSA_25519 = 3
+
+                signature_algorithm = proto.Field(proto.ENUM, number=1,
+                    enum='CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm',
+                )
+
             rsa = proto.Field(proto.MESSAGE, number=1, oneof='key_type',
                 message='CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType',
             )
 
-            elliptic_curve = proto.Field(proto.ENUM, number=2, oneof='key_type',
-                enum='CaPool.IssuancePolicy.AllowedKeyType.NamedCurve',
+            elliptic_curve = proto.Field(proto.MESSAGE, number=2, oneof='key_type',
+                message='CaPool.IssuancePolicy.AllowedKeyType.EcKeyType',
             )
 
         class IssuanceModes(proto.Message):

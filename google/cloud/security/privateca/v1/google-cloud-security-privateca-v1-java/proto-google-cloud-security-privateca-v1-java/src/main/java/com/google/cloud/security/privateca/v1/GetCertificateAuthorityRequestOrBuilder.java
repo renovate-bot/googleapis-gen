@@ -9,10 +9,8 @@ public interface GetCertificateAuthorityRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+   * get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -21,10 +19,8 @@ public interface GetCertificateAuthorityRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+   * get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

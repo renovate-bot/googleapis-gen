@@ -18,8 +18,7 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the location associated with the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool], in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * [CaPool][google.cloud.security.privateca.v1.CaPool], in the format `projects/&#42;&#47;locations/&#42;`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -32,17 +31,16 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
      */
     protected $ca_pool_id = '';
     /**
-     * Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with
-     * initial field values.
+     * Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with initial field values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool ca_pool = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $ca_pool = null;
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -63,19 +61,17 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The resource name of the location associated with the
-     *           [CaPool][google.cloud.security.privateca.v1.CaPool], in the format
-     *           `projects/&#42;&#47;locations/&#42;`.
+     *           [CaPool][google.cloud.security.privateca.v1.CaPool], in the format `projects/&#42;&#47;locations/&#42;`.
      *     @type string $ca_pool_id
      *           Required. It must be unique within a location and match the regular
      *           expression `[a-zA-Z0-9_-]{1,63}`
      *     @type \Google\Cloud\Security\PrivateCA\V1\CaPool $ca_pool
-     *           Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with
-     *           initial field values.
+     *           Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with initial field values.
      *     @type string $request_id
-     *           Optional. An ID to identify requests. Specify a unique request ID so that
-     *           if you must retry your request, the server will know to ignore the request
-     *           if it has already been completed. The server will guarantee that for at
-     *           least 60 minutes since the first request.
+     *           Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     *           retry your request, the server will know to ignore the request if it has
+     *           already been completed. The server will guarantee that for at least 60
+     *           minutes since the first request.
      *           For example, consider a situation where you make an initial request and t
      *           he request times out. If you make the request again with the same request
      *           ID, the server can check if original operation with the same request ID
@@ -92,8 +88,7 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the location associated with the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool], in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * [CaPool][google.cloud.security.privateca.v1.CaPool], in the format `projects/&#42;&#47;locations/&#42;`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -105,8 +100,7 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the location associated with the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool], in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * [CaPool][google.cloud.security.privateca.v1.CaPool], in the format `projects/&#42;&#47;locations/&#42;`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -149,8 +143,7 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with
-     * initial field values.
+     * Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with initial field values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool ca_pool = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Security\PrivateCA\V1\CaPool|null
@@ -171,8 +164,7 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with
-     * initial field values.
+     * Required. A [CaPool][google.cloud.security.privateca.v1.CaPool] with initial field values.
      *
      * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool ca_pool = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Security\PrivateCA\V1\CaPool $var
@@ -187,10 +179,10 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -208,10 +200,10 @@ class CreateCaPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID

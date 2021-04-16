@@ -5,8 +5,7 @@ package com.google.cloud.security.privateca.v1;
 
 /**
  * <pre>
- * Request message for
- * [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
+ * Request message for [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.GetCertificateAuthorityRequest}
@@ -96,10 +95,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+   * get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -120,10 +117,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+   * get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -300,8 +295,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for
-   * [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
+   * Request message for [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.GetCertificateAuthorityRequest}
@@ -454,10 +448,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+     * get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -477,10 +469,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+     * get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -501,10 +491,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+     * get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -523,10 +511,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+     * get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -540,10 +526,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
+     * get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

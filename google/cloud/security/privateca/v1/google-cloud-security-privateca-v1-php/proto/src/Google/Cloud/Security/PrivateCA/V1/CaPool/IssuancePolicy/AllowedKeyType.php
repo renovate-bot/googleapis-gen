@@ -29,7 +29,7 @@ class AllowedKeyType extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Security\PrivateCA\V1\CaPool\IssuancePolicy\AllowedKeyType\RsaKeyType $rsa
      *           Represents an allowed RSA key type.
-     *     @type int $elliptic_curve
+     *     @type \Google\Cloud\Security\PrivateCA\V1\CaPool\IssuancePolicy\AllowedKeyType\EcKeyType $elliptic_curve
      *           Represents an allowed Elliptic Curve key type.
      * }
      */
@@ -72,8 +72,8 @@ class AllowedKeyType extends \Google\Protobuf\Internal\Message
     /**
      * Represents an allowed Elliptic Curve key type.
      *
-     * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;</code>
+     * @return \Google\Cloud\Security\PrivateCA\V1\CaPool\IssuancePolicy\AllowedKeyType\EcKeyType|null
      */
     public function getEllipticCurve()
     {
@@ -88,13 +88,13 @@ class AllowedKeyType extends \Google\Protobuf\Internal\Message
     /**
      * Represents an allowed Elliptic Curve key type.
      *
-     * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;</code>
+     * @param \Google\Cloud\Security\PrivateCA\V1\CaPool\IssuancePolicy\AllowedKeyType\EcKeyType $var
      * @return $this
      */
     public function setEllipticCurve($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Security\PrivateCA\V1\CaPool\IssuancePolicy\AllowedKeyType\NamedCurve::class);
+        GPBUtil::checkMessage($var, \Google\Cloud\Security\PrivateCA\V1\CaPool\IssuancePolicy\AllowedKeyType\EcKeyType::class);
         $this->writeOneof(2, $var);
 
         return $this;

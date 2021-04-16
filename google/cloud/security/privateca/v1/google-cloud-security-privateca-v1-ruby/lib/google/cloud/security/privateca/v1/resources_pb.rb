@@ -86,18 +86,21 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType" do
       oneof :key_type do
         optional :rsa, :message, 1, "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType"
-        optional :elliptic_curve, :enum, 2, "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve"
+        optional :elliptic_curve, :message, 2, "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType"
       end
     end
     add_message "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType" do
       optional :min_modulus_size, :int64, 1
       optional :max_modulus_size, :int64, 2
     end
-    add_enum "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve" do
-      value :NAMED_CURVE_UNSPECIFIED, 0
-      value :ECDSA_P256, 2
-      value :ECDSA_P384, 3
-      value :EDDSA_25519, 4
+    add_message "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType" do
+      optional :signature_algorithm, :enum, 1, "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm"
+    end
+    add_enum "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm" do
+      value :EC_SIGNATURE_ALGORITHM_UNSPECIFIED, 0
+      value :ECDSA_P256, 1
+      value :ECDSA_P384, 2
+      value :EDDSA_25519, 3
     end
     add_message "google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes" do
       optional :allow_csr_based_issuance, :bool, 1
@@ -324,7 +327,8 @@ module Google
           CaPool::IssuancePolicy = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy").msgclass
           CaPool::IssuancePolicy::AllowedKeyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType").msgclass
           CaPool::IssuancePolicy::AllowedKeyType::RsaKeyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType").msgclass
-          CaPool::IssuancePolicy::AllowedKeyType::NamedCurve = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve").enummodule
+          CaPool::IssuancePolicy::AllowedKeyType::EcKeyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType").msgclass
+          CaPool::IssuancePolicy::AllowedKeyType::EcKeyType::EcSignatureAlgorithm = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm").enummodule
           CaPool::IssuancePolicy::IssuanceModes = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes").msgclass
           CaPool::Tier = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CaPool.Tier").enummodule
           CertificateRevocationList = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CertificateRevocationList").msgclass

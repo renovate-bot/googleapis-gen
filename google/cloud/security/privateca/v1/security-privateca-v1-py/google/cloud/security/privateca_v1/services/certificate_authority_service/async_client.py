@@ -212,9 +212,8 @@ class CertificateAuthorityServiceAsyncClient:
                 the regular expression ``[a-zA-Z0-9_-]{1,63}``. This
                 field is required when using a
                 [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-                in the Enterprise
-                [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier],
-                but is optional and its value is ignored otherwise.
+                in the Enterprise [CertificateAuthority.Tier][], but is
+                optional and its value is ignored otherwise.
 
                 This corresponds to the ``certificate_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -394,7 +393,7 @@ class CertificateAuthorityServiceAsyncClient:
         Returns:
             google.cloud.security.privateca_v1.services.certificate_authority_service.pagers.ListCertificatesAsyncPager:
                 Response message for
-                   [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
+                [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
