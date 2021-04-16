@@ -26,8 +26,8 @@ class ListRealmsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The maximum number of items to return.  If unspecified, server
      * will pick an appropriate default. Server may return fewer items than
      * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token] to
-     * determine if there are more realms left to be queried.
+     * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token]
+     * to determine if there are more realms left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -66,8 +66,8 @@ class ListRealmsRequest extends \Google\Protobuf\Internal\Message
      *           Optional. The maximum number of items to return.  If unspecified, server
      *           will pick an appropriate default. Server may return fewer items than
      *           requested. A caller should only rely on response's
-     *           [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token] to
-     *           determine if there are more realms left to be queried.
+     *           [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token]
+     *           to determine if there are more realms left to be queried.
      *     @type string $page_token
      *           Optional. The next_page_token value returned from a previous List request,
      *           if any.
@@ -115,8 +115,8 @@ class ListRealmsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The maximum number of items to return.  If unspecified, server
      * will pick an appropriate default. Server may return fewer items than
      * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token] to
-     * determine if there are more realms left to be queried.
+     * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token]
+     * to determine if there are more realms left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int
@@ -130,8 +130,8 @@ class ListRealmsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The maximum number of items to return.  If unspecified, server
      * will pick an appropriate default. Server may return fewer items than
      * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token] to
-     * determine if there are more realms left to be queried.
+     * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token]
+     * to determine if there are more realms left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int $var

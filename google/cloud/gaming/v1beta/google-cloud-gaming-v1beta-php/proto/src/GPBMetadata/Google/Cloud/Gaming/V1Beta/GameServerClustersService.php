@@ -20,7 +20,7 @@ class GameServerClustersService
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-†
+æ
 =google/cloud/gaming/v1beta/game_server_clusters_service.protogoogle.cloud.gaming.v1betagoogle/api/client.proto5google/cloud/gaming/v1beta/game_server_clusters.proto#google/longrunning/operations.proto2ﬂ
 GameServerClustersServiceÂ
 ListGameServerClusters9.google.cloud.gaming.v1beta.ListGameServerClustersRequest:.google.cloud.gaming.v1beta.ListGameServerClustersResponse"TÇ”‰ìEC/v1beta/{parent=projects/*/locations/*/realms/*}/gameServerClusters⁄Aparent“
@@ -33,8 +33,8 @@ class GameServerClustersService
 PreviewDeleteGameServerClusterA.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterRequestB.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse"YÇ”‰ìS*Q/v1beta/{name=projects/*/locations/*/realms/*/gameServerClusters/*}:previewDelete∂
 UpdateGameServerCluster:.google.cloud.gaming.v1beta.UpdateGameServerClusterRequest.google.longrunning.Operation"øÇ”‰ìn2W/v1beta/{game_server_cluster.name=projects/*/locations/*/realms/*/gameServerClusters/*}:game_server_cluster⁄Agame_server_cluster,update_mask A&
 GameServerClusterOperationMetadata¨
-PreviewUpdateGameServerClusterA.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterRequestB.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse"ÇÇ”‰ì|2e/v1beta/{game_server_cluster.name=projects/*/locations/*/realms/*/gameServerClusters/*}:previewUpdate:game_server_clusterO Agameservices.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBd
-com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingbproto3'
+PreviewUpdateGameServerClusterA.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterRequestB.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse"ÇÇ”‰ì|2e/v1beta/{game_server_cluster.name=projects/*/locations/*/realms/*/gameServerClusters/*}:previewUpdate:game_server_clusterO Agameservices.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBÅ
+com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gaming Google\\Cloud\\Gaming\\V1betabproto3'
         , true);
 
         static::$is_initialized = true;

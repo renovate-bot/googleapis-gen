@@ -20,7 +20,7 @@ class GameServerDeploymentsService
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‹
+©
 @google/cloud/gaming/v1beta/game_server_deployments_service.protogoogle.cloud.gaming.v1betagoogle/api/client.proto8google/cloud/gaming/v1beta/game_server_deployments.proto#google/longrunning/operations.proto2Ä
 GameServerDeploymentsServiceè
 ListGameServerDeployments<.google.cloud.gaming.v1beta.ListGameServerDeploymentsRequest=.google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse"N‚Óä“?=/v1beta/{parent=projects/*/locations/*}/gameServerDeploymentsÚAparentÕ
@@ -35,8 +35,8 @@ class GameServerDeploymentsService
 !UpdateGameServerDeploymentRolloutD.google.cloud.gaming.v1beta.UpdateGameServerDeploymentRolloutRequest.google.longrunning.Operation" ‚Óä“X2M/v1beta/{rollout.name=projects/*/locations/*/gameServerDeployments/*}/rollout:rolloutÚArollout,update_maskÊA)
 GameServerDeploymentOperationMetadata›
 "PreviewGameServerDeploymentRolloutE.google.cloud.gaming.v1beta.PreviewGameServerDeploymentRolloutRequestF.google.cloud.gaming.v1beta.PreviewGameServerDeploymentRolloutResponse"f‚Óä“`2U/v1beta/{rollout.name=projects/*/locations/*/gameServerDeployments/*}/rollout:preview:rolloutè
-FetchDeploymentState7.google.cloud.gaming.v1beta.FetchDeploymentStateRequest8.google.cloud.gaming.v1beta.FetchDeploymentStateResponse"]‚Óä“W"R/v1beta/{name=projects/*/locations/*/gameServerDeployments/*}:fetchDeploymentState:*OÊAgameservices.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBd
-com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingbproto3'
+FetchDeploymentState7.google.cloud.gaming.v1beta.FetchDeploymentStateRequest8.google.cloud.gaming.v1beta.FetchDeploymentStateResponse"]‚Óä“W"R/v1beta/{name=projects/*/locations/*/gameServerDeployments/*}:fetchDeploymentState:*OÊAgameservices.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB
+com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingÊGoogle\\Cloud\\Gaming\\V1betabproto3'
         , true);
 
         static::$is_initialized = true;

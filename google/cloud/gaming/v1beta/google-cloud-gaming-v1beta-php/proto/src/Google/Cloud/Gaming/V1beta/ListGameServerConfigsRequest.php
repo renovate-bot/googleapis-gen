@@ -26,14 +26,15 @@ class ListGameServerConfigsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The maximum number of items to return.  If unspecified, server
      * will pick an appropriate default. Server may return fewer items than
      * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token] to
-     * determine if there are more GameServerConfigs left to be queried.
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token]
+     * to determine if there are more GameServerConfigs left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $page_size = 0;
     /**
-     * Optional. The next_page_token value returned from a previous list request, if any.
+     * Optional. The next_page_token value returned from a previous list request,
+     * if any.
      *
      * Generated from protobuf field <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -65,10 +66,11 @@ class ListGameServerConfigsRequest extends \Google\Protobuf\Internal\Message
      *           Optional. The maximum number of items to return.  If unspecified, server
      *           will pick an appropriate default. Server may return fewer items than
      *           requested. A caller should only rely on response's
-     *           [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token] to
-     *           determine if there are more GameServerConfigs left to be queried.
+     *           [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token]
+     *           to determine if there are more GameServerConfigs left to be queried.
      *     @type string $page_token
-     *           Optional. The next_page_token value returned from a previous list request, if any.
+     *           Optional. The next_page_token value returned from a previous list request,
+     *           if any.
      *     @type string $filter
      *           Optional. The filter to apply to list results.
      *     @type string $order_by
@@ -113,8 +115,8 @@ class ListGameServerConfigsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The maximum number of items to return.  If unspecified, server
      * will pick an appropriate default. Server may return fewer items than
      * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token] to
-     * determine if there are more GameServerConfigs left to be queried.
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token]
+     * to determine if there are more GameServerConfigs left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int
@@ -128,8 +130,8 @@ class ListGameServerConfigsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The maximum number of items to return.  If unspecified, server
      * will pick an appropriate default. Server may return fewer items than
      * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token] to
-     * determine if there are more GameServerConfigs left to be queried.
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerConfigsResponse.next_page_token]
+     * to determine if there are more GameServerConfigs left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int $var
@@ -144,7 +146,8 @@ class ListGameServerConfigsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The next_page_token value returned from a previous list request, if any.
+     * Optional. The next_page_token value returned from a previous list request,
+     * if any.
      *
      * Generated from protobuf field <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
@@ -155,7 +158,8 @@ class ListGameServerConfigsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The next_page_token value returned from a previous list request, if any.
+     * Optional. The next_page_token value returned from a previous list request,
+     * if any.
      *
      * Generated from protobuf field <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var

@@ -96,7 +96,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The name of the game server delpoyment to retrieve. Uses the form:
+   * Required. The name of the game server delpoyment to retrieve. Uses the
+   * form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * </pre>
    *
@@ -118,7 +119,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the game server delpoyment to retrieve. Uses the form:
+   * Required. The name of the game server delpoyment to retrieve. Uses the
+   * form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * </pre>
    *
@@ -450,7 +452,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The name of the game server delpoyment to retrieve. Uses the form:
+     * Required. The name of the game server delpoyment to retrieve. Uses the
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * </pre>
      *
@@ -471,7 +474,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the game server delpoyment to retrieve. Uses the form:
+     * Required. The name of the game server delpoyment to retrieve. Uses the
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * </pre>
      *
@@ -493,7 +497,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the game server delpoyment to retrieve. Uses the form:
+     * Required. The name of the game server delpoyment to retrieve. Uses the
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * </pre>
      *
@@ -513,7 +518,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the game server delpoyment to retrieve. Uses the form:
+     * Required. The name of the game server delpoyment to retrieve. Uses the
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * </pre>
      *
@@ -528,7 +534,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the game server delpoyment to retrieve. Uses the form:
+     * Required. The name of the game server delpoyment to retrieve. Uses the
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * </pre>
      *

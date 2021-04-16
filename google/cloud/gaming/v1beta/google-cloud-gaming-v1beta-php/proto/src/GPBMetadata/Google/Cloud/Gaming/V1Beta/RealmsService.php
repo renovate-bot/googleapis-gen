@@ -20,7 +20,7 @@ class RealmsService
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ú
+∫
 /google/cloud/gaming/v1beta/realms_service.protogoogle.cloud.gaming.v1betagoogle/api/client.proto\'google/cloud/gaming/v1beta/realms.proto#google/longrunning/operations.proto2˜	
 RealmsService¨
 
@@ -32,8 +32,8 @@ ListRealms-.google.cloud.gaming.v1beta.ListRealmsRequest..google.cloud.gaming.
 google.protobuf.EmptyOperationMetadata“
 UpdateRealm..google.cloud.gaming.v1beta.UpdateRealmRequest.google.longrunning.Operation"tÇ”‰ì=24/v1beta/{realm.name=projects/*/locations/*/realms/*}:realm⁄Arealm,update_mask A
 RealmOperationMetadata÷
-PreviewRealmUpdate5.google.cloud.gaming.v1beta.PreviewRealmUpdateRequest6.google.cloud.gaming.v1beta.PreviewRealmUpdateResponse"QÇ”‰ìK2B/v1beta/{realm.name=projects/*/locations/*/realms/*}:previewUpdate:realmO Agameservices.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBd
-com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingbproto3'
+PreviewRealmUpdate5.google.cloud.gaming.v1beta.PreviewRealmUpdateRequest6.google.cloud.gaming.v1beta.PreviewRealmUpdateResponse"QÇ”‰ìK2B/v1beta/{realm.name=projects/*/locations/*/realms/*}:previewUpdate:realmO Agameservices.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBÅ
+com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gaming Google\\Cloud\\Gaming\\V1betabproto3'
         , true);
 
         static::$is_initialized = true;

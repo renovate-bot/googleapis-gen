@@ -42,8 +42,8 @@ class Realm extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      *
      * Generated from protobuf field <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -79,8 +79,8 @@ class Realm extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           The labels associated with this realm. Each label is a key-value pair.
      *     @type string $time_zone
-     *           Required. Time zone where all policies targeting this realm are evaluated. The value
-     *           of this field must be from the IANA time zone database:
+     *           Required. Time zone where all policies targeting this realm are evaluated.
+     *           The value of this field must be from the IANA time zone database:
      *           https://www.iana.org/time-zones.
      *     @type string $etag
      *           ETag of the resource.
@@ -222,8 +222,8 @@ class Realm extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      *
      * Generated from protobuf field <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -235,8 +235,8 @@ class Realm extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      *
      * Generated from protobuf field <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>

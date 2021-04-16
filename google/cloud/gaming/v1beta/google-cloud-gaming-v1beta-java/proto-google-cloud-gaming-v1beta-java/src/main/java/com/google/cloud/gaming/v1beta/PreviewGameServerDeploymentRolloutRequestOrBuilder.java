@@ -78,8 +78,8 @@ public interface PreviewGameServerDeploymentRolloutRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88,8 +88,8 @@ public interface PreviewGameServerDeploymentRolloutRequestOrBuilder extends
   boolean hasPreviewTime();
   /**
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,8 +98,8 @@ public interface PreviewGameServerDeploymentRolloutRequestOrBuilder extends
   com.google.protobuf.Timestamp getPreviewTime();
   /**
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

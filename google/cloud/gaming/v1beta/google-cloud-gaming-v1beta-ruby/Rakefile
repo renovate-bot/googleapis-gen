@@ -79,7 +79,7 @@ task :jsondoc => :yard do
         modules: [
           {
             title: "Google::Cloud::Gaming::V1beta",
-            include: ["google/cloud/gaming/v1_beta"]
+            include: ["google/cloud/gaming/v1beta"]
           },
           {
             title: "Google::Protobuf",

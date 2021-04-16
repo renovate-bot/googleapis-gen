@@ -391,8 +391,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object timeZone_;
   /**
    * <pre>
-   * Required. Time zone where all policies targeting this realm are evaluated. The value
-   * of this field must be from the IANA time zone database:
+   * Required. Time zone where all policies targeting this realm are evaluated.
+   * The value of this field must be from the IANA time zone database:
    * https://www.iana.org/time-zones.
    * </pre>
    *
@@ -414,8 +414,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Time zone where all policies targeting this realm are evaluated. The value
-   * of this field must be from the IANA time zone database:
+   * Required. Time zone where all policies targeting this realm are evaluated.
+   * The value of this field must be from the IANA time zone database:
    * https://www.iana.org/time-zones.
    * </pre>
    *
@@ -1572,8 +1572,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object timeZone_ = "";
     /**
      * <pre>
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      * </pre>
      *
@@ -1594,8 +1594,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      * </pre>
      *
@@ -1617,8 +1617,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      * </pre>
      *
@@ -1638,8 +1638,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      * </pre>
      *
@@ -1654,8 +1654,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time zone where all policies targeting this realm are evaluated. The value
-     * of this field must be from the IANA time zone database:
+     * Required. Time zone where all policies targeting this realm are evaluated.
+     * The value of this field must be from the IANA time zone database:
      * https://www.iana.org/time-zones.
      * </pre>
      *

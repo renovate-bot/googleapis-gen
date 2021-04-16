@@ -33,8 +33,8 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
      */
     protected $update_mask = null;
     /**
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -56,8 +56,8 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
      *           //developers.google.com/protocol-buffers
      *           // /docs/reference/google.protobuf#fieldmask
      *     @type \Google\Protobuf\Timestamp $preview_time
-     *           Optional. The target timestamp to compute the preview. Defaults to the immediately
-     *           after the proposed rollout completes.
+     *           Optional. The target timestamp to compute the preview. Defaults to the
+     *           immediately after the proposed rollout completes.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,8 +148,8 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
     }
 
     /**
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -170,8 +170,8 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
     }
 
     /**
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Protobuf\Timestamp $var

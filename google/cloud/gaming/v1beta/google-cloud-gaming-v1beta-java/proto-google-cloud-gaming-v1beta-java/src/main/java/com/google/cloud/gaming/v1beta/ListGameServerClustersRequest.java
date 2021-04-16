@@ -169,11 +169,11 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * Optional. The maximum number of items to return.  If unspecified, the server
-   * will pick an appropriate default. The server may return fewer items than
-   * requested. A caller should only rely on response's
-   * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token] to
-   * determine if there are more GameServerClusters left to be queried.
+   * Optional. The maximum number of items to return.  If unspecified, the
+   * server will pick an appropriate default. The server may return fewer items
+   * than requested. A caller should only rely on response's
+   * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token]
+   * to determine if there are more GameServerClusters left to be queried.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -188,7 +188,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Optional. The next_page_token value returned from a previous List request, if any.
+   * Optional. The next_page_token value returned from a previous List request,
+   * if any.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -209,7 +210,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The next_page_token value returned from a previous List request, if any.
+   * Optional. The next_page_token value returned from a previous List request,
+   * if any.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -802,11 +804,11 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * Optional. The maximum number of items to return.  If unspecified, the server
-     * will pick an appropriate default. The server may return fewer items than
-     * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token] to
-     * determine if there are more GameServerClusters left to be queried.
+     * Optional. The maximum number of items to return.  If unspecified, the
+     * server will pick an appropriate default. The server may return fewer items
+     * than requested. A caller should only rely on response's
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token]
+     * to determine if there are more GameServerClusters left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -818,11 +820,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The maximum number of items to return.  If unspecified, the server
-     * will pick an appropriate default. The server may return fewer items than
-     * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token] to
-     * determine if there are more GameServerClusters left to be queried.
+     * Optional. The maximum number of items to return.  If unspecified, the
+     * server will pick an appropriate default. The server may return fewer items
+     * than requested. A caller should only rely on response's
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token]
+     * to determine if there are more GameServerClusters left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -837,11 +839,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The maximum number of items to return.  If unspecified, the server
-     * will pick an appropriate default. The server may return fewer items than
-     * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token] to
-     * determine if there are more GameServerClusters left to be queried.
+     * Optional. The maximum number of items to return.  If unspecified, the
+     * server will pick an appropriate default. The server may return fewer items
+     * than requested. A caller should only rely on response's
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerClustersResponse.next_page_token]
+     * to determine if there are more GameServerClusters left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -857,7 +859,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Optional. The next_page_token value returned from a previous List request, if any.
+     * Optional. The next_page_token value returned from a previous List request,
+     * if any.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -877,7 +880,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The next_page_token value returned from a previous List request, if any.
+     * Optional. The next_page_token value returned from a previous List request,
+     * if any.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -898,7 +902,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The next_page_token value returned from a previous List request, if any.
+     * Optional. The next_page_token value returned from a previous List request,
+     * if any.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -917,7 +922,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The next_page_token value returned from a previous List request, if any.
+     * Optional. The next_page_token value returned from a previous List request,
+     * if any.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -931,7 +937,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The next_page_token value returned from a previous List request, if any.
+     * Optional. The next_page_token value returned from a previous List request,
+     * if any.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -20,7 +20,7 @@ class GameServerConfigsService
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ƒ
+¡
 <google/cloud/gaming/v1beta/game_server_configs_service.protogoogle.cloud.gaming.v1betagoogle/api/client.proto4google/cloud/gaming/v1beta/game_server_configs.proto#google/longrunning/operations.proto2Ä
 GameServerConfigsServiceæ
 ListGameServerConfigs8.google.cloud.gaming.v1beta.ListGameServerConfigsRequest9.google.cloud.gaming.v1beta.ListGameServerConfigsResponse"X‚Óä“IG/v1beta/{parent=projects/*/locations/*/gameServerDeployments/*}/configsÚAparentÓ
@@ -28,8 +28,8 @@ class GameServerConfigsService
 CreateGameServerConfig9.google.cloud.gaming.v1beta.CreateGameServerConfigRequest.google.longrunning.Operation"§‚Óä“]"G/v1beta/{parent=projects/*/locations/*/gameServerDeployments/*}/configs:game_server_configÚAparent,game_server_configÊA%
 GameServerConfigOperationMetadataø
 DeleteGameServerConfig9.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest.google.longrunning.Operation"ƒ‚Óä“I*G/v1beta/{name=projects/*/locations/*/gameServerDeployments/*/configs/*}ÚAnameÊA*
-google.protobuf.EmptyOperationMetadataOÊAgameservices.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBd
-com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingbproto3'
+google.protobuf.EmptyOperationMetadataOÊAgameservices.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB
+com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingÊGoogle\\Cloud\\Gaming\\V1betabproto3'
         , true);
 
         static::$is_initialized = true;

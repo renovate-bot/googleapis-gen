@@ -23,11 +23,11 @@ class ListGameServerDeploymentsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * Optional. The maximum number of items to return.  If unspecified, the server
-     * will pick an appropriate default. The server may return fewer items than
-     * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token] to
-     * determine if there are more GameServerDeployments left to be queried.
+     * Optional. The maximum number of items to return.  If unspecified, the
+     * server will pick an appropriate default. The server may return fewer items
+     * than requested. A caller should only rely on response's
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token]
+     * to determine if there are more GameServerDeployments left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -63,11 +63,11 @@ class ListGameServerDeploymentsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The parent resource name. Uses the form:
      *           `projects/{project}/locations/{location}`.
      *     @type int $page_size
-     *           Optional. The maximum number of items to return.  If unspecified, the server
-     *           will pick an appropriate default. The server may return fewer items than
-     *           requested. A caller should only rely on response's
-     *           [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token] to
-     *           determine if there are more GameServerDeployments left to be queried.
+     *           Optional. The maximum number of items to return.  If unspecified, the
+     *           server will pick an appropriate default. The server may return fewer items
+     *           than requested. A caller should only rely on response's
+     *           [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token]
+     *           to determine if there are more GameServerDeployments left to be queried.
      *     @type string $page_token
      *           Optional. The next_page_token value returned from a previous List request,
      *           if any.
@@ -112,11 +112,11 @@ class ListGameServerDeploymentsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The maximum number of items to return.  If unspecified, the server
-     * will pick an appropriate default. The server may return fewer items than
-     * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token] to
-     * determine if there are more GameServerDeployments left to be queried.
+     * Optional. The maximum number of items to return.  If unspecified, the
+     * server will pick an appropriate default. The server may return fewer items
+     * than requested. A caller should only rely on response's
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token]
+     * to determine if there are more GameServerDeployments left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int
@@ -127,11 +127,11 @@ class ListGameServerDeploymentsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The maximum number of items to return.  If unspecified, the server
-     * will pick an appropriate default. The server may return fewer items than
-     * requested. A caller should only rely on response's
-     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token] to
-     * determine if there are more GameServerDeployments left to be queried.
+     * Optional. The maximum number of items to return.  If unspecified, the
+     * server will pick an appropriate default. The server may return fewer items
+     * than requested. A caller should only rely on response's
+     * [next_page_token][google.cloud.gaming.v1beta.ListGameServerDeploymentsResponse.next_page_token]
+     * to determine if there are more GameServerDeployments left to be queried.
      *
      * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int $var

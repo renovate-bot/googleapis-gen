@@ -218,8 +218,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp previewTime_;
   /**
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -231,8 +231,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -244,8 +244,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -994,8 +994,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> previewTimeBuilder_;
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1006,8 +1006,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1022,8 +1022,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1043,8 +1043,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1062,8 +1062,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1085,8 +1085,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1104,8 +1104,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1117,8 +1117,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1133,8 +1133,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

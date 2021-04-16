@@ -21,7 +21,7 @@ class GameServerConfigs
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‹
+˙
 4google/cloud/gaming/v1beta/game_server_configs.protogoogle.cloud.gaming.v1betagoogle/api/resource.proto\'google/cloud/gaming/v1beta/common.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"¡
 ListGameServerConfigsRequestD
 parent (	B4‡A˙A.,gameservices.googleapis.com/GameServerConfig
@@ -64,8 +64,8 @@ fleet_spec (	
 LabelsEntry
 key (	
 value (	:8:èÍAã
-,gameservices.googleapis.com/GameServerConfig[projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}Bd
-com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gamingbproto3'
+,gameservices.googleapis.com/GameServerConfig[projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}BÅ
+com.google.cloud.gaming.v1betaPZ@google.golang.org/genproto/googleapis/cloud/gaming/v1beta;gaming Google\\Cloud\\Gaming\\V1betabproto3'
         , true);
 
         static::$is_initialized = true;
