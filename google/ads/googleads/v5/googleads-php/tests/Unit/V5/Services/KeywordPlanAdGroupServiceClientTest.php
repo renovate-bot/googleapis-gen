@@ -20,6 +20,8 @@
  * This file was automatically generated - do not edit!
  */
 
+declare(strict_types=1);
+
 namespace Google\Ads\GoogleAds\Tests\Unit\V5\Services;
 
 use Google\Ads\GoogleAds\V5\Services\KeywordPlanAdGroupServiceClient;

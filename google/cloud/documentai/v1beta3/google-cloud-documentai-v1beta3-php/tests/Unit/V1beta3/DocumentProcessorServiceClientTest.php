@@ -20,6 +20,8 @@
  * This file was automatically generated - do not edit!
  */
 
+declare(strict_types=1);
+
 namespace Google\Cloud\DocumentAI\Tests\Unit\V1beta3;
 
 use Google\ApiCore\ApiException;

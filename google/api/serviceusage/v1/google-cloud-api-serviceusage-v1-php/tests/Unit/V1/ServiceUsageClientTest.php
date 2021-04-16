@@ -20,6 +20,8 @@
  * This file was automatically generated - do not edit!
  */
 
+declare(strict_types=1);
+
 namespace Google\Api\Serviceusage\Tests\Unit\V1;
 
 use Google\Api\Serviceusage\V1\BatchEnableServicesResponse;
