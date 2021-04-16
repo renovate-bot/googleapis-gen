@@ -19,6 +19,8 @@ from google.cloud.billing.budgets_v1.services.budget_service.async_client import
 from google.cloud.billing.budgets_v1.services.budget_service.client import BudgetServiceClient
 from google.cloud.billing.budgets_v1.types.budget_model import Budget
 from google.cloud.billing.budgets_v1.types.budget_model import BudgetAmount
+from google.cloud.billing.budgets_v1.types.budget_model import CalendarPeriod
+from google.cloud.billing.budgets_v1.types.budget_model import CustomPeriod
 from google.cloud.billing.budgets_v1.types.budget_model import Filter
 from google.cloud.billing.budgets_v1.types.budget_model import LastPeriodAmount
 from google.cloud.billing.budgets_v1.types.budget_model import NotificationsRule
@@ -35,7 +37,9 @@ __all__ = (
     'BudgetAmount',
     'BudgetServiceAsyncClient',
     'BudgetServiceClient',
+    'CalendarPeriod',
     'CreateBudgetRequest',
+    'CustomPeriod',
     'DeleteBudgetRequest',
     'Filter',
     'GetBudgetRequest',

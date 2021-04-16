@@ -30,12 +30,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      *
      * Generated from protobuf field <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -77,6 +76,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, .google.protobuf.ListValue> labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $labels;
+    protected $usage_period;
 
     /**
      * Constructor.
@@ -95,12 +95,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
      *           is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      *           subtracted from gross cost to determine the spend for threshold
-     *           calculations.
+     *           calculations. See [a list of acceptable credit type
+     *           values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      *           If
      *           [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
-     *           is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     *           of acceptable credit type
-     *           values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     *           is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      *     @type int $credit_types_treatment
      *           Optional. If not set, default behavior is `INCLUDE_ALL_CREDITS`.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $services
@@ -122,6 +121,16 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           this set of labeled resources should be included in the budget. Currently,
      *           multiple entries or multiple values per entry are not allowed. If omitted,
      *           the report will include all labeled and unlabeled usage.
+     *     @type int $calendar_period
+     *           Optional. Specifies to track usage for recurring calendar period.
+     *           For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     *           track usage from April 1 to June 30, when the current calendar month is
+     *           April, May, June. After that, it will track usage from July 1 to
+     *           September 30 when the current calendar month is July, August, September,
+     *           so on.
+     *     @type \Google\Cloud\Billing\Budgets\V1\CustomPeriod $custom_period
+     *           Optional. Specifies to track usage from any start date (required) to any
+     *           end date (optional). This time period is static, it does not recur.
      * }
      */
     public function __construct($data = NULL) {
@@ -168,12 +177,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      *
      * Generated from protobuf field <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -188,12 +196,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      *
      * Generated from protobuf field <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -335,6 +342,88 @@ class Filter extends \Google\Protobuf\Internal\Message
         $this->labels = $arr;
 
         return $this;
+    }
+
+    /**
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     *
+     * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return int
+     */
+    public function getCalendarPeriod()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasCalendarPeriod()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     *
+     * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCalendarPeriod($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Billing\Budgets\V1\CalendarPeriod::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     *
+     * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Cloud\Billing\Budgets\V1\CustomPeriod|null
+     */
+    public function getCustomPeriod()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasCustomPeriod()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     *
+     * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Cloud\Billing\Budgets\V1\CustomPeriod $var
+     * @return $this
+     */
+    public function setCustomPeriod($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Billing\Budgets\V1\CustomPeriod::class);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsagePeriod()
+    {
+        return $this->whichOneof("usage_period");
     }
 
 }

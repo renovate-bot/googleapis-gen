@@ -55,8 +55,9 @@ public interface BudgetOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -65,8 +66,9 @@ public interface BudgetOrBuilder extends
   boolean hasBudgetFilter();
   /**
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -75,8 +77,9 @@ public interface BudgetOrBuilder extends
   com.google.cloud.billing.budgets.v1.Filter getBudgetFilter();
   /**
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

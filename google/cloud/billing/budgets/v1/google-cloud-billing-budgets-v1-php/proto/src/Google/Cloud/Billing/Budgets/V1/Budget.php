@@ -12,8 +12,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * A budget is a plan that describes what you expect to spend on Cloud
  * projects, plus the rules to execute as spend is tracked against that plan,
  * (for example, send an alert when 90% of the target spend is met).
- * Currently all plans are monthly budgets so the usage period(s) tracked are
- * implied (calendar months of usage back-to-back).
+ * The budget time period is configurable, with options such as month (default),
+ * quarter, year, or custom time period.
  *
  * Generated from protobuf message <code>google.cloud.billing.budgets.v1.Budget</code>
  */
@@ -35,8 +35,9 @@ class Budget extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -84,8 +85,9 @@ class Budget extends \Google\Protobuf\Internal\Message
      *           User data for display name in UI. The name must be less than or equal to 60
      *           characters.
      *     @type \Google\Cloud\Billing\Budgets\V1\Filter $budget_filter
-     *           Optional. Filters that define which resources are used to compute
-     *           the actual spend against the budget.
+     *           Optional. Filters that define which resources are used to compute the
+     *           actual spend against the budget amount, such as projects, services, and the
+     *           budget's time period, as well as other filters.
      *     @type \Google\Cloud\Billing\Budgets\V1\BudgetAmount $amount
      *           Required. Budgeted amount.
      *     @type \Google\Cloud\Billing\Budgets\V1\ThresholdRule[]|\Google\Protobuf\Internal\RepeatedField $threshold_rules
@@ -164,8 +166,9 @@ class Budget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Cloud\Billing\Budgets\V1\Filter|null
@@ -186,8 +189,9 @@ class Budget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Cloud\Billing\Budgets\V1\Filter $var
