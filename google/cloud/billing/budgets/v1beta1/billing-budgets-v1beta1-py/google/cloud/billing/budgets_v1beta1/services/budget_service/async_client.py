@@ -185,10 +185,10 @@ class BudgetServiceAsyncClient:
                 projects, plus the rules to execute as
                 spend is tracked against that plan, (for
                 example, send an alert when 90% of the
-                target spend is met). Currently all
-                plans are monthly budgets so the usage
-                period(s) tracked are implied (calendar
-                months of usage back-to-back).
+                target spend is met). The budget time
+                period is configurable, with options
+                such as month (default), quarter, year,
+                or custom time period.
 
         """
         # Create or coerce a protobuf request object.
@@ -252,10 +252,10 @@ class BudgetServiceAsyncClient:
                 projects, plus the rules to execute as
                 spend is tracked against that plan, (for
                 example, send an alert when 90% of the
-                target spend is met). Currently all
-                plans are monthly budgets so the usage
-                period(s) tracked are implied (calendar
-                months of usage back-to-back).
+                target spend is met). The budget time
+                period is configurable, with options
+                such as month (default), quarter, year,
+                or custom time period.
 
         """
         # Create or coerce a protobuf request object.
@@ -330,10 +330,10 @@ class BudgetServiceAsyncClient:
                 projects, plus the rules to execute as
                 spend is tracked against that plan, (for
                 example, send an alert when 90% of the
-                target spend is met). Currently all
-                plans are monthly budgets so the usage
-                period(s) tracked are implied (calendar
-                months of usage back-to-back).
+                target spend is met). The budget time
+                period is configurable, with options
+                such as month (default), quarter, year,
+                or custom time period.
 
         """
         # Create or coerce a protobuf request object.

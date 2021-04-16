@@ -113,6 +113,26 @@ private static final long serialVersionUID = 0L;
             creditTypes_.add(s);
             break;
           }
+          case 64: {
+            int rawValue = input.readEnum();
+            usagePeriodCase_ = 8;
+            usagePeriod_ = rawValue;
+            break;
+          }
+          case 74: {
+            com.google.cloud.billing.budgets.v1beta1.CustomPeriod.Builder subBuilder = null;
+            if (usagePeriodCase_ == 9) {
+              subBuilder = ((com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_).toBuilder();
+            }
+            usagePeriod_ =
+                input.readMessage(com.google.cloud.billing.budgets.v1beta1.CustomPeriod.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_);
+              usagePeriod_ = subBuilder.buildPartial();
+            }
+            usagePeriodCase_ = 9;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -171,8 +191,11 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Specifies how credits should be treated when determining spend for
-   * threshold calculations.
+   * Specifies how credits are applied when determining the spend for
+   * threshold calculations. Budgets track the total cost minus any applicable
+   * selected credits.
+   * [See the documentation for a list of credit
+   * types](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * </pre>
    *
    * Protobuf enum {@code google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment}
@@ -203,7 +226,9 @@ private static final long serialVersionUID = 0L;
     EXCLUDE_ALL_CREDITS(2),
     /**
      * <pre>
-     * Credit types specified in the credit_types field are subtracted from the
+     * [Credit
+     * types](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type)
+     * specified in the credit_types field are subtracted from the
      * gross cost to determine the spend for threshold calculations.
      * </pre>
      *
@@ -237,7 +262,9 @@ private static final long serialVersionUID = 0L;
     public static final int EXCLUDE_ALL_CREDITS_VALUE = 2;
     /**
      * <pre>
-     * Credit types specified in the credit_types field are subtracted from the
+     * [Credit
+     * types](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type)
+     * specified in the credit_types field are subtracted from the
      * gross cost to determine the spend for threshold calculations.
      * </pre>
      *
@@ -330,6 +357,47 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment)
   }
 
+  private int usagePeriodCase_ = 0;
+  private java.lang.Object usagePeriod_;
+  public enum UsagePeriodCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CALENDAR_PERIOD(8),
+    CUSTOM_PERIOD(9),
+    USAGEPERIOD_NOT_SET(0);
+    private final int value;
+    private UsagePeriodCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static UsagePeriodCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static UsagePeriodCase forNumber(int value) {
+      switch (value) {
+        case 8: return CALENDAR_PERIOD;
+        case 9: return CUSTOM_PERIOD;
+        case 0: return USAGEPERIOD_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public UsagePeriodCase
+  getUsagePeriodCase() {
+    return UsagePeriodCase.forNumber(
+        usagePeriodCase_);
+  }
+
   public static final int PROJECTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList projects_;
   /**
@@ -405,12 +473,11 @@ private static final long serialVersionUID = 0L;
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
    * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
    * subtracted from gross cost to determine the spend for threshold
-   * calculations.
+   * calculations. See [a list of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-   * of acceptable credit type
-   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -426,12 +493,11 @@ private static final long serialVersionUID = 0L;
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
    * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
    * subtracted from gross cost to determine the spend for threshold
-   * calculations.
+   * calculations. See [a list of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-   * of acceptable credit type
-   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -446,12 +512,11 @@ private static final long serialVersionUID = 0L;
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
    * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
    * subtracted from gross cost to determine the spend for threshold
-   * calculations.
+   * calculations. See [a list of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-   * of acceptable credit type
-   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -467,12 +532,11 @@ private static final long serialVersionUID = 0L;
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
    * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
    * subtracted from gross cost to determine the spend for threshold
-   * calculations.
+   * calculations. See [a list of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-   * of acceptable credit type
-   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -762,6 +826,111 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int CALENDAR_PERIOD_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Optional. Specifies to track usage for recurring calendar period.
+   * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+   * track usage from April 1 to June 30, when the current calendar month is
+   * April, May, June. After that, it will track usage from July 1 to
+   * September 30 when the current calendar month is July, August, September,
+   * so on.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the calendarPeriod field is set.
+   */
+  public boolean hasCalendarPeriod() {
+    return usagePeriodCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Optional. Specifies to track usage for recurring calendar period.
+   * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+   * track usage from April 1 to June 30, when the current calendar month is
+   * April, May, June. After that, it will track usage from July 1 to
+   * September 30 when the current calendar month is July, August, September,
+   * so on.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for calendarPeriod.
+   */
+  public int getCalendarPeriodValue() {
+    if (usagePeriodCase_ == 8) {
+      return (java.lang.Integer) usagePeriod_;
+    }
+    return 0;
+  }
+  /**
+   * <pre>
+   * Optional. Specifies to track usage for recurring calendar period.
+   * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+   * track usage from April 1 to June 30, when the current calendar month is
+   * April, May, June. After that, it will track usage from July 1 to
+   * September 30 when the current calendar month is July, August, September,
+   * so on.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The calendarPeriod.
+   */
+  public com.google.cloud.billing.budgets.v1beta1.CalendarPeriod getCalendarPeriod() {
+    if (usagePeriodCase_ == 8) {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.billing.budgets.v1beta1.CalendarPeriod result = com.google.cloud.billing.budgets.v1beta1.CalendarPeriod.valueOf(
+          (java.lang.Integer) usagePeriod_);
+      return result == null ? com.google.cloud.billing.budgets.v1beta1.CalendarPeriod.UNRECOGNIZED : result;
+    }
+    return com.google.cloud.billing.budgets.v1beta1.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
+  }
+
+  public static final int CUSTOM_PERIOD_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * Optional. Specifies to track usage from any start date (required) to any
+   * end date (optional). This time period is static, it does not recur.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the customPeriod field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomPeriod() {
+    return usagePeriodCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Optional. Specifies to track usage from any start date (required) to any
+   * end date (optional). This time period is static, it does not recur.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The customPeriod.
+   */
+  @java.lang.Override
+  public com.google.cloud.billing.budgets.v1beta1.CustomPeriod getCustomPeriod() {
+    if (usagePeriodCase_ == 9) {
+       return (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_;
+    }
+    return com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Optional. Specifies to track usage from any start date (required) to any
+   * end date (optional). This time period is static, it does not recur.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.billing.budgets.v1beta1.CustomPeriodOrBuilder getCustomPeriodOrBuilder() {
+    if (usagePeriodCase_ == 9) {
+       return (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_;
+    }
+    return com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -796,6 +965,12 @@ private static final long serialVersionUID = 0L;
         6);
     for (int i = 0; i < creditTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creditTypes_.getRaw(i));
+    }
+    if (usagePeriodCase_ == 8) {
+      output.writeEnum(8, ((java.lang.Integer) usagePeriod_));
+    }
+    if (usagePeriodCase_ == 9) {
+      output.writeMessage(9, (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_);
     }
     unknownFields.writeTo(output);
   }
@@ -852,6 +1027,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getCreditTypesList().size();
     }
+    if (usagePeriodCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, ((java.lang.Integer) usagePeriod_));
+    }
+    if (usagePeriodCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -878,6 +1061,19 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSubaccountsList())) return false;
     if (!internalGetLabels().equals(
         other.internalGetLabels())) return false;
+    if (!getUsagePeriodCase().equals(other.getUsagePeriodCase())) return false;
+    switch (usagePeriodCase_) {
+      case 8:
+        if (getCalendarPeriodValue()
+            != other.getCalendarPeriodValue()) return false;
+        break;
+      case 9:
+        if (!getCustomPeriod()
+            .equals(other.getCustomPeriod())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -910,6 +1106,18 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    switch (usagePeriodCase_) {
+      case 8:
+        hash = (37 * hash) + CALENDAR_PERIOD_FIELD_NUMBER;
+        hash = (53 * hash) + getCalendarPeriodValue();
+        break;
+      case 9:
+        hash = (37 * hash) + CUSTOM_PERIOD_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomPeriod().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1081,6 +1289,8 @@ private static final long serialVersionUID = 0L;
       subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().clear();
+      usagePeriodCase_ = 0;
+      usagePeriod_ = null;
       return this;
     }
 
@@ -1131,6 +1341,17 @@ private static final long serialVersionUID = 0L;
       result.subaccounts_ = subaccounts_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (usagePeriodCase_ == 8) {
+        result.usagePeriod_ = usagePeriod_;
+      }
+      if (usagePeriodCase_ == 9) {
+        if (customPeriodBuilder_ == null) {
+          result.usagePeriod_ = usagePeriod_;
+        } else {
+          result.usagePeriod_ = customPeriodBuilder_.build();
+        }
+      }
+      result.usagePeriodCase_ = usagePeriodCase_;
       onBuilt();
       return result;
     }
@@ -1224,6 +1445,19 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      switch (other.getUsagePeriodCase()) {
+        case CALENDAR_PERIOD: {
+          setCalendarPeriodValue(other.getCalendarPeriodValue());
+          break;
+        }
+        case CUSTOM_PERIOD: {
+          mergeCustomPeriod(other.getCustomPeriod());
+          break;
+        }
+        case USAGEPERIOD_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1252,6 +1486,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int usagePeriodCase_ = 0;
+    private java.lang.Object usagePeriod_;
+    public UsagePeriodCase
+        getUsagePeriodCase() {
+      return UsagePeriodCase.forNumber(
+          usagePeriodCase_);
+    }
+
+    public Builder clearUsagePeriod() {
+      usagePeriodCase_ = 0;
+      usagePeriod_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.google.protobuf.LazyStringList projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1449,12 +1698,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1470,12 +1718,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1490,12 +1737,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1511,12 +1757,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1533,12 +1778,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1562,12 +1806,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1590,12 +1833,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1616,12 +1858,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1639,12 +1880,11 @@ private static final long serialVersionUID = 0L;
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
      * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
      * subtracted from gross cost to determine the spend for threshold
-     * calculations.
+     * calculations. See [a list of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * If
      * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
-     * of acceptable credit type
-     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2294,6 +2534,317 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    /**
+     * <pre>
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the calendarPeriod field is set.
+     */
+    @java.lang.Override
+    public boolean hasCalendarPeriod() {
+      return usagePeriodCase_ == 8;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enum numeric value on the wire for calendarPeriod.
+     */
+    @java.lang.Override
+    public int getCalendarPeriodValue() {
+      if (usagePeriodCase_ == 8) {
+        return ((java.lang.Integer) usagePeriod_).intValue();
+      }
+      return 0;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enum numeric value on the wire for calendarPeriod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCalendarPeriodValue(int value) {
+      usagePeriodCase_ = 8;
+      usagePeriod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The calendarPeriod.
+     */
+    @java.lang.Override
+    public com.google.cloud.billing.budgets.v1beta1.CalendarPeriod getCalendarPeriod() {
+      if (usagePeriodCase_ == 8) {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.billing.budgets.v1beta1.CalendarPeriod result = com.google.cloud.billing.budgets.v1beta1.CalendarPeriod.valueOf(
+            (java.lang.Integer) usagePeriod_);
+        return result == null ? com.google.cloud.billing.budgets.v1beta1.CalendarPeriod.UNRECOGNIZED : result;
+      }
+      return com.google.cloud.billing.budgets.v1beta1.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The calendarPeriod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCalendarPeriod(com.google.cloud.billing.budgets.v1beta1.CalendarPeriod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      usagePeriodCase_ = 8;
+      usagePeriod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage for recurring calendar period.
+     * For example, assume that CalendarPeriod.QUARTER is set. The budget will
+     * track usage from April 1 to June 30, when the current calendar month is
+     * April, May, June. After that, it will track usage from July 1 to
+     * September 30 when the current calendar month is July, August, September,
+     * so on.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CalendarPeriod calendar_period = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCalendarPeriod() {
+      if (usagePeriodCase_ == 8) {
+        usagePeriodCase_ = 0;
+        usagePeriod_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.billing.budgets.v1beta1.CustomPeriod, com.google.cloud.billing.budgets.v1beta1.CustomPeriod.Builder, com.google.cloud.billing.budgets.v1beta1.CustomPeriodOrBuilder> customPeriodBuilder_;
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the customPeriod field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomPeriod() {
+      return usagePeriodCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The customPeriod.
+     */
+    @java.lang.Override
+    public com.google.cloud.billing.budgets.v1beta1.CustomPeriod getCustomPeriod() {
+      if (customPeriodBuilder_ == null) {
+        if (usagePeriodCase_ == 9) {
+          return (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_;
+        }
+        return com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance();
+      } else {
+        if (usagePeriodCase_ == 9) {
+          return customPeriodBuilder_.getMessage();
+        }
+        return com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setCustomPeriod(com.google.cloud.billing.budgets.v1beta1.CustomPeriod value) {
+      if (customPeriodBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        usagePeriod_ = value;
+        onChanged();
+      } else {
+        customPeriodBuilder_.setMessage(value);
+      }
+      usagePeriodCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setCustomPeriod(
+        com.google.cloud.billing.budgets.v1beta1.CustomPeriod.Builder builderForValue) {
+      if (customPeriodBuilder_ == null) {
+        usagePeriod_ = builderForValue.build();
+        onChanged();
+      } else {
+        customPeriodBuilder_.setMessage(builderForValue.build());
+      }
+      usagePeriodCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeCustomPeriod(com.google.cloud.billing.budgets.v1beta1.CustomPeriod value) {
+      if (customPeriodBuilder_ == null) {
+        if (usagePeriodCase_ == 9 &&
+            usagePeriod_ != com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance()) {
+          usagePeriod_ = com.google.cloud.billing.budgets.v1beta1.CustomPeriod.newBuilder((com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          usagePeriod_ = value;
+        }
+        onChanged();
+      } else {
+        if (usagePeriodCase_ == 9) {
+          customPeriodBuilder_.mergeFrom(value);
+        }
+        customPeriodBuilder_.setMessage(value);
+      }
+      usagePeriodCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearCustomPeriod() {
+      if (customPeriodBuilder_ == null) {
+        if (usagePeriodCase_ == 9) {
+          usagePeriodCase_ = 0;
+          usagePeriod_ = null;
+          onChanged();
+        }
+      } else {
+        if (usagePeriodCase_ == 9) {
+          usagePeriodCase_ = 0;
+          usagePeriod_ = null;
+        }
+        customPeriodBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.billing.budgets.v1beta1.CustomPeriod.Builder getCustomPeriodBuilder() {
+      return getCustomPeriodFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.billing.budgets.v1beta1.CustomPeriodOrBuilder getCustomPeriodOrBuilder() {
+      if ((usagePeriodCase_ == 9) && (customPeriodBuilder_ != null)) {
+        return customPeriodBuilder_.getMessageOrBuilder();
+      } else {
+        if (usagePeriodCase_ == 9) {
+          return (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_;
+        }
+        return com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.budgets.v1beta1.CustomPeriod custom_period = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.billing.budgets.v1beta1.CustomPeriod, com.google.cloud.billing.budgets.v1beta1.CustomPeriod.Builder, com.google.cloud.billing.budgets.v1beta1.CustomPeriodOrBuilder> 
+        getCustomPeriodFieldBuilder() {
+      if (customPeriodBuilder_ == null) {
+        if (!(usagePeriodCase_ == 9)) {
+          usagePeriod_ = com.google.cloud.billing.budgets.v1beta1.CustomPeriod.getDefaultInstance();
+        }
+        customPeriodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.billing.budgets.v1beta1.CustomPeriod, com.google.cloud.billing.budgets.v1beta1.CustomPeriod.Builder, com.google.cloud.billing.budgets.v1beta1.CustomPeriodOrBuilder>(
+                (com.google.cloud.billing.budgets.v1beta1.CustomPeriod) usagePeriod_,
+                getParentForChildren(),
+                isClean());
+        usagePeriod_ = null;
+      }
+      usagePeriodCase_ = 9;
+      onChanged();;
+      return customPeriodBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

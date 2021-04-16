@@ -7,8 +7,11 @@ namespace Google\Cloud\Billing\Budgets\V1beta1\Filter;
 use UnexpectedValueException;
 
 /**
- * Specifies how credits should be treated when determining spend for
- * threshold calculations.
+ * Specifies how credits are applied when determining the spend for
+ * threshold calculations. Budgets track the total cost minus any applicable
+ * selected credits.
+ * [See the documentation for a list of credit
+ * types](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
  *
  * Protobuf type <code>google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment</code>
  */
@@ -33,7 +36,9 @@ class CreditTypesTreatment
      */
     const EXCLUDE_ALL_CREDITS = 2;
     /**
-     * Credit types specified in the credit_types field are subtracted from the
+     * [Credit
+     * types](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type)
+     * specified in the credit_types field are subtracted from the
      * gross cost to determine the spend for threshold calculations.
      *
      * Generated from protobuf enum <code>INCLUDE_SPECIFIED_CREDITS = 3;</code>

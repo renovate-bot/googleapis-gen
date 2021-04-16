@@ -20,6 +20,8 @@ from google.cloud.billing.budgets_v1beta1.services.budget_service.client import 
 from google.cloud.billing.budgets_v1beta1.types.budget_model import AllUpdatesRule
 from google.cloud.billing.budgets_v1beta1.types.budget_model import Budget
 from google.cloud.billing.budgets_v1beta1.types.budget_model import BudgetAmount
+from google.cloud.billing.budgets_v1beta1.types.budget_model import CalendarPeriod
+from google.cloud.billing.budgets_v1beta1.types.budget_model import CustomPeriod
 from google.cloud.billing.budgets_v1beta1.types.budget_model import Filter
 from google.cloud.billing.budgets_v1beta1.types.budget_model import LastPeriodAmount
 from google.cloud.billing.budgets_v1beta1.types.budget_model import ThresholdRule
@@ -36,7 +38,9 @@ __all__ = (
     'BudgetAmount',
     'BudgetServiceAsyncClient',
     'BudgetServiceClient',
+    'CalendarPeriod',
     'CreateBudgetRequest',
+    'CustomPeriod',
     'DeleteBudgetRequest',
     'Filter',
     'GetBudgetRequest',
