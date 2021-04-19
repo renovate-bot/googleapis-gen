@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.cloud.datalabeling.v1beta1.DataLabelingService' => [
+            'CreateAnnotationSpecSet' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*}/annotationSpecSets',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'CreateDataset' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{parent=projects/*}/datasets',
@@ -15,9 +27,33 @@ return [
                     ],
                 ],
             ],
-            'GetDataset' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*}',
+            'CreateEvaluationJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*}/evaluationJobs',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateInstruction' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*}/instructions',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteAnnotatedDataset' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -26,13 +62,13 @@ return [
                     ],
                 ],
             ],
-            'ListDatasets' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*}/datasets',
+            'DeleteAnnotationSpecSet' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/annotationSpecSets/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
@@ -48,10 +84,20 @@ return [
                     ],
                 ],
             ],
-            'ImportData' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*}:importData',
-                'body' => '*',
+            'DeleteEvaluationJob' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteInstruction' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/instructions/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -72,28 +118,6 @@ return [
                     ],
                 ],
             ],
-            'GetDataItem' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/dataItems/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListDataItems' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/dataItems',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'GetAnnotatedDataset' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}',
@@ -105,20 +129,87 @@ return [
                     ],
                 ],
             ],
-            'ListAnnotatedDatasets' => [
+            'GetAnnotationSpecSet' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/annotatedDatasets',
+                'uriTemplate' => '/v1beta1/{name=projects/*/annotationSpecSets/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
             ],
-            'DeleteAnnotatedDataset' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}',
+            'GetDataItem' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/dataItems/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetDataset' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetEvaluation' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/evaluations/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetEvaluationJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetExample' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*/examples/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetInstruction' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/instructions/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ImportData' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*}:importData',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -130,18 +221,6 @@ return [
             'LabelImage' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/image:label',
-                'body' => '*',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'LabelVideo' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/video:label',
                 'body' => '*',
                 'placeholders' => [
                     'parent' => [
@@ -163,31 +242,9 @@ return [
                     ],
                 ],
             ],
-            'GetExample' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*/examples/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListExamples' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*/annotatedDatasets/*}/examples',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateAnnotationSpecSet' => [
+            'LabelVideo' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*}/annotationSpecSets',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/video:label',
                 'body' => '*',
                 'placeholders' => [
                     'parent' => [
@@ -197,13 +254,13 @@ return [
                     ],
                 ],
             ],
-            'GetAnnotationSpecSet' => [
+            'ListAnnotatedDatasets' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/annotationSpecSets/*}',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/annotatedDatasets',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -219,21 +276,9 @@ return [
                     ],
                 ],
             ],
-            'DeleteAnnotationSpecSet' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/annotationSpecSets/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateInstruction' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*}/instructions',
-                'body' => '*',
+            'ListDataItems' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*}/dataItems',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -242,13 +287,35 @@ return [
                     ],
                 ],
             ],
-            'GetInstruction' => [
+            'ListDatasets' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/instructions/*}',
+                'uriTemplate' => '/v1beta1/{parent=projects/*}/datasets',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListEvaluationJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*}/evaluationJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListExamples' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/datasets/*/annotatedDatasets/*}/examples',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
@@ -264,9 +331,10 @@ return [
                     ],
                 ],
             ],
-            'DeleteInstruction' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/instructions/*}',
+            'PauseEvaluationJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}:pause',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -275,9 +343,10 @@ return [
                     ],
                 ],
             ],
-            'GetEvaluation' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/datasets/*/evaluations/*}',
+            'ResumeEvaluationJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}:resume',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -309,18 +378,6 @@ return [
                     ],
                 ],
             ],
-            'CreateEvaluationJob' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*}/evaluationJobs',
-                'body' => '*',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateEvaluationJob' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1beta1/{evaluation_job.name=projects/*/evaluationJobs/*}',
@@ -330,63 +387,6 @@ return [
                         'getters' => [
                             'getEvaluationJob',
                             'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'GetEvaluationJob' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'PauseEvaluationJob' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}:pause',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ResumeEvaluationJob' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}:resume',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteEvaluationJob' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/evaluationJobs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListEvaluationJobs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*}/evaluationJobs',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
                         ],
                     ],
                 ],

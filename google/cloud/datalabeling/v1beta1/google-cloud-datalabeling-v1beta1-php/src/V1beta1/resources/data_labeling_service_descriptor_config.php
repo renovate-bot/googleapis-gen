@@ -3,10 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.datalabeling.v1beta1.DataLabelingService' => [
-            'ImportData' => [
+            'CreateInstruction' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\ImportDataOperationResponse',
-                    'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\ImportDataOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\Instruction',
+                    'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\CreateInstructionMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -23,17 +23,17 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'LabelImage' => [
+            'ImportData' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\AnnotatedDataset',
-                    'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\LabelOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\ImportDataOperationResponse',
+                    'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\ImportDataOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'LabelVideo' => [
+            'LabelImage' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\AnnotatedDataset',
                     'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\LabelOperationMetadata',
@@ -53,34 +53,14 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'CreateInstruction' => [
+            'LabelVideo' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\Instruction',
-                    'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\CreateInstructionMetadata',
+                    'operationReturnType' => '\Google\Cloud\DataLabeling\V1beta1\AnnotatedDataset',
+                    'metadataReturnType' => '\Google\Cloud\DataLabeling\V1beta1\LabelOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'ListDatasets' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getDatasets',
-                ],
-            ],
-            'ListDataItems' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getDataItems',
                 ],
             ],
             'ListAnnotatedDatasets' => [
@@ -93,16 +73,6 @@ return [
                     'resourcesGetMethod' => 'getAnnotatedDatasets',
                 ],
             ],
-            'ListExamples' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getExamples',
-                ],
-            ],
             'ListAnnotationSpecSets' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
@@ -111,6 +81,46 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getAnnotationSpecSets',
+                ],
+            ],
+            'ListDataItems' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getDataItems',
+                ],
+            ],
+            'ListDatasets' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getDatasets',
+                ],
+            ],
+            'ListEvaluationJobs' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getEvaluationJobs',
+                ],
+            ],
+            'ListExamples' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getExamples',
                 ],
             ],
             'ListInstructions' => [
@@ -141,16 +151,6 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getExampleComparisons',
-                ],
-            ],
-            'ListEvaluationJobs' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getEvaluationJobs',
                 ],
             ],
         ],
