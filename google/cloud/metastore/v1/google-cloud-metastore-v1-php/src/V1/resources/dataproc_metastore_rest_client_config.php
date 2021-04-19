@@ -27,24 +27,14 @@ return [
             ],
         ],
         'google.cloud.metastore.v1.DataprocMetastore' => [
-            'ListServices' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/services',
+            'CreateMetadataImport' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/services/*}/metadataImports',
+                'body' => 'metadata_import',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetService' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/services/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
@@ -61,21 +51,42 @@ return [
                     ],
                 ],
             ],
-            'UpdateService' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{service.name=projects/*/locations/*/services/*}',
-                'body' => 'service',
+            'DeleteService' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/services/*}',
                 'placeholders' => [
-                    'service.name' => [
+                    'name' => [
                         'getters' => [
-                            'getService',
                             'getName',
                         ],
                     ],
                 ],
             ],
-            'DeleteService' => [
-                'method' => 'delete',
+            'ExportMetadata' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{service=projects/*/locations/*/services/*}:exportMetadata',
+                'body' => '*',
+                'placeholders' => [
+                    'service' => [
+                        'getters' => [
+                            'getService',
+                        ],
+                    ],
+                ],
+            ],
+            'GetMetadataImport' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/services/*/metadataImports/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetService' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/services/*}',
                 'placeholders' => [
                     'name' => [
@@ -96,21 +107,9 @@ return [
                     ],
                 ],
             ],
-            'GetMetadataImport' => [
+            'ListServices' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/services/*/metadataImports/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateMetadataImport' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/services/*}/metadataImports',
-                'body' => 'metadata_import',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/services',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -132,14 +131,15 @@ return [
                     ],
                 ],
             ],
-            'ExportMetadata' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{service=projects/*/locations/*/services/*}:exportMetadata',
-                'body' => '*',
+            'UpdateService' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{service.name=projects/*/locations/*/services/*}',
+                'body' => 'service',
                 'placeholders' => [
-                    'service' => [
+                    'service.name' => [
                         'getters' => [
                             'getService',
+                            'getName',
                         ],
                     ],
                 ],
