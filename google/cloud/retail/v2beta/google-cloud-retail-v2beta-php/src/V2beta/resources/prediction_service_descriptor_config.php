@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.cloud.retail.v2beta.PredictionService' => [
-        ],
+        'google.cloud.retail.v2beta.PredictionService' => [],
     ],
 ];
