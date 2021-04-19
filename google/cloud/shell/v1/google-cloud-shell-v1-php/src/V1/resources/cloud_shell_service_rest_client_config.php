@@ -3,25 +3,14 @@
 return [
     'interfaces' => [
         'google.cloud.shell.v1.CloudShellService' => [
-            'GetEnvironment' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=users/*/environments/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'StartEnvironment' => [
+            'AddPublicKey' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{name=users/*/environments/*}:start',
+                'uriTemplate' => '/v1/{environment=users/*/environments/*}:addPublicKey',
                 'body' => '*',
                 'placeholders' => [
-                    'name' => [
+                    'environment' => [
                         'getters' => [
-                            'getName',
+                            'getEnvironment',
                         ],
                     ],
                 ],
@@ -38,14 +27,13 @@ return [
                     ],
                 ],
             ],
-            'AddPublicKey' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{environment=users/*/environments/*}:addPublicKey',
-                'body' => '*',
+            'GetEnvironment' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=users/*/environments/*}',
                 'placeholders' => [
-                    'environment' => [
+                    'name' => [
                         'getters' => [
-                            'getEnvironment',
+                            'getName',
                         ],
                     ],
                 ],
@@ -58,6 +46,18 @@ return [
                     'environment' => [
                         'getters' => [
                             'getEnvironment',
+                        ],
+                    ],
+                ],
+            ],
+            'StartEnvironment' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=users/*/environments/*}:start',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],

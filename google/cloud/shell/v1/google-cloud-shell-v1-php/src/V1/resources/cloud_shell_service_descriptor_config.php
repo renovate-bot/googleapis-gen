@@ -3,10 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.shell.v1.CloudShellService' => [
-            'StartEnvironment' => [
+            'AddPublicKey' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Shell\V1\StartEnvironmentResponse',
-                    'metadataReturnType' => '\Google\Cloud\Shell\V1\StartEnvironmentMetadata',
+                    'operationReturnType' => '\Google\Cloud\Shell\V1\AddPublicKeyResponse',
+                    'metadataReturnType' => '\Google\Cloud\Shell\V1\AddPublicKeyMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -23,20 +23,20 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'AddPublicKey' => [
+            'RemovePublicKey' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Shell\V1\AddPublicKeyResponse',
-                    'metadataReturnType' => '\Google\Cloud\Shell\V1\AddPublicKeyMetadata',
+                    'operationReturnType' => '\Google\Cloud\Shell\V1\RemovePublicKeyResponse',
+                    'metadataReturnType' => '\Google\Cloud\Shell\V1\RemovePublicKeyMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'RemovePublicKey' => [
+            'StartEnvironment' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Shell\V1\RemovePublicKeyResponse',
-                    'metadataReturnType' => '\Google\Cloud\Shell\V1\RemovePublicKeyMetadata',
+                    'operationReturnType' => '\Google\Cloud\Shell\V1\StartEnvironmentResponse',
+                    'metadataReturnType' => '\Google\Cloud\Shell\V1\StartEnvironmentMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
