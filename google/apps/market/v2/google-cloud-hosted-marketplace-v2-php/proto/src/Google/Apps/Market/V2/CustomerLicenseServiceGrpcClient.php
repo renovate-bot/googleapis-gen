@@ -16,11 +16,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-namespace Ccc\Hosted\Marketplace\V2;
+namespace Google\Apps\Market\V2;
 
 /**
  */
-class LicenseNotificationServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerLicenseServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
      * @param string $hostname hostname
@@ -32,17 +32,18 @@ class LicenseNotificationServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Get a list of licensing notifications with regards to a given app.
-     * @param \Ccc\Hosted\Marketplace\V2\LicenseNotificationListRequest $argument input argument
+     * Get the status of a license for a customer to determine if they have access
+     * for a given app.
+     * @param \Google\Apps\Market\V2\CustomerLicenseGetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function List(\Ccc\Hosted\Marketplace\V2\LicenseNotificationListRequest $argument,
+    public function Get(\Google\Apps\Market\V2\CustomerLicenseGetRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ccc.hosted.marketplace.v2.LicenseNotificationService/List',
+        return $this->_simpleRequest('/ccc.hosted.marketplace.v2.CustomerLicenseService/Get',
         $argument,
-        ['\Ccc\Hosted\Marketplace\V2\LicenseNotificationList', 'decode'],
+        ['\Google\Apps\Market\V2\CustomerLicense', 'decode'],
         $metadata, $options);
     }
 

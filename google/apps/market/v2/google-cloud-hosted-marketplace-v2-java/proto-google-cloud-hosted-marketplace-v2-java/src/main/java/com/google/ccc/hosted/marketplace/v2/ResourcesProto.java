@@ -102,10 +102,11 @@ public final class ResourcesProto {
       "\030\002 \001(\010\022\r\n\005state\030\003 \001(\t\022\026\n\nedition_id\030\004 \001(" +
       "\tB\002\030\001\022\023\n\013customer_id\030\005 \001(\t\022\026\n\016applicatio" +
       "n_id\030\006 \001(\t\022\n\n\002id\030e \001(\t\022\017\n\007user_id\030f \001(\tB" +
-      "\205\001\n$com.google.ccc.hosted.marketplace.v2" +
+      "\235\001\n$com.google.ccc.hosted.marketplace.v2" +
       "B\016ResourcesProtoP\001ZKgoogle.golang.org/ge" +
       "nproto/googleapis/ccc/hosted/marketplace" +
-      "/v2;marketplaceb\006proto3"
+      "/v2;marketplace\312\002\025Google\\Apps\\Market\\V2b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -54,10 +54,10 @@ namespace Ccc.Hosted.Marketplace.V2 {
             "EgwKBGtpbmQYASABKAkSDwoHZW5hYmxlZBgCIAEoCBINCgVzdGF0ZRgDIAEo",
             "CRIWCgplZGl0aW9uX2lkGAQgASgJQgIYARITCgtjdXN0b21lcl9pZBgFIAEo",
             "CRIWCg5hcHBsaWNhdGlvbl9pZBgGIAEoCRIKCgJpZBhlIAEoCRIPCgd1c2Vy",
-            "X2lkGGYgASgJQoUBCiRjb20uZ29vZ2xlLmNjYy5ob3N0ZWQubWFya2V0cGxh",
+            "X2lkGGYgASgJQp0BCiRjb20uZ29vZ2xlLmNjYy5ob3N0ZWQubWFya2V0cGxh",
             "Y2UudjJCDlJlc291cmNlc1Byb3RvUAFaS2dvb2dsZS5nb2xhbmcub3JnL2dl",
             "bnByb3RvL2dvb2dsZWFwaXMvY2NjL2hvc3RlZC9tYXJrZXRwbGFjZS92Mjtt",
-            "YXJrZXRwbGFjZWIGcHJvdG8z"));
+            "YXJrZXRwbGFjZcoCFUdvb2dsZVxBcHBzXE1hcmtldFxWMmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

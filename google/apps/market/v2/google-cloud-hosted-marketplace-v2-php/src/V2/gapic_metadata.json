@@ -1,0 +1,51 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "ccc.hosted.marketplace.v2",
+    "libraryPackage": "Google\\Apps\\Market\\V2",
+    "services": {
+        "CustomerLicenseService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerLicenseServiceGapicClient",
+                    "rpcs": {
+                        "Get": {
+                            "methods": [
+                                "get"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LicenseNotificationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LicenseNotificationServiceGapicClient",
+                    "rpcs": {
+                        "List": {
+                            "methods": [
+                                "list"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "UserLicenseService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "UserLicenseServiceGapicClient",
+                    "rpcs": {
+                        "Get": {
+                            "methods": [
+                                "get"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

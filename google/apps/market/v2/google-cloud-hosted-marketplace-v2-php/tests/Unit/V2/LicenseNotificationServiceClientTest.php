@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,20 +20,23 @@
  * This file was automatically generated - do not edit!
  */
 
+declare(strict_types=1);
+
 namespace Google\Apps\Market\Tests\Unit\V2;
 
-use Google\Apps\Market\V2\LicenseNotificationServiceClient;
-use Ccc\Hosted\Marketplace\V2\LicenseNotificationList;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
+use Google\Apps\Market\V2\LicenseNotificationList;
+use Google\Apps\Market\V2\LicenseNotificationServiceClient;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group market
+ *
  * @group gapic
  */
 class LicenseNotificationServiceClientTest extends GeneratedTest
@@ -51,9 +54,7 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -64,7 +65,6 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new LicenseNotificationServiceClient($options);
     }
 
@@ -74,10 +74,10 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
     public function listTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $kind = 'kind3292052';
         $nextPageToken = 'nextPageToken-1530815211';
@@ -85,15 +85,13 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $transport->addResponse($expectedResponse);
-
-        $response = $client->list_();
+        $response = $client->list();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/ccc.hosted.marketplace.v2.LicenseNotificationService/List', $actualFuncCall);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -103,31 +101,28 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
     public function listExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         try {
-            $client->list_();
+            $client->list();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

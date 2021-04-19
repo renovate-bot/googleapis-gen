@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'ccc.hosted.marketplace.v2.LicenseNotificationService' => [
-        ],
+        'ccc.hosted.marketplace.v2.LicenseNotificationService' => [],
     ],
 ];

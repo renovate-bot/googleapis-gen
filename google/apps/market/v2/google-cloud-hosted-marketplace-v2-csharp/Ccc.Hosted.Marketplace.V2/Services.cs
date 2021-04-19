@@ -52,10 +52,11 @@ namespace Ccc.Hosted.Marketplace.V2 {
             "ZXJMaWNlbnNlIj2C0+STAjcSNS9hcHBzbWFya2V0L3YyL3VzZXJMaWNlbnNl",
             "L3thcHBsaWNhdGlvbl9pZH0ve3VzZXJfaWR9GlbKQRlhcHBzbWFya2V0Lmdv",
             "b2dsZWFwaXMuY29t0kE3aHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0",
-            "aC9hcHBzbWFya2V0cGxhY2UubGljZW5zZUKDAQokY29tLmdvb2dsZS5jY2Mu",
+            "aC9hcHBzbWFya2V0cGxhY2UubGljZW5zZUKbAQokY29tLmdvb2dsZS5jY2Mu",
             "aG9zdGVkLm1hcmtldHBsYWNlLnYyQgxTZXJ2aWNlUHJvdG9QAVpLZ29vZ2xl",
             "LmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jY2MvaG9zdGVkL21h",
-            "cmtldHBsYWNlL3YyO21hcmtldHBsYWNlYgZwcm90bzM="));
+            "cmtldHBsYWNlL3YyO21hcmtldHBsYWNlygIVR29vZ2xlXEFwcHNcTWFya2V0",
+            "XFYyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Ccc.Hosted.Marketplace.V2.ResourcesReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

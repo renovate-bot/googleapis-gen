@@ -7,14 +7,14 @@ return [
                 'method' => 'get',
                 'uriTemplate' => '/appsmarket/v2/customerLicense/{application_id}/{customer_id}',
                 'placeholders' => [
-                    'customer_id' => [
-                        'getters' => [
-                            'getCustomerId',
-                        ],
-                    ],
                     'application_id' => [
                         'getters' => [
                             'getApplicationId',
+                        ],
+                    ],
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
                         ],
                     ],
                 ],

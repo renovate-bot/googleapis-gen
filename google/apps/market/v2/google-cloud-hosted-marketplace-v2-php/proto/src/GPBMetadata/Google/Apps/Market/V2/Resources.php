@@ -17,7 +17,7 @@ class Resources
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¡
+Ÿ
 %google/apps/market/v2/resources.protoccc.hosted.marketplace.v2"ç
 CustomerLicense
 kind (	
@@ -80,8 +80,8 @@ edition_id (	B
 application_id (	
 
 ide (	
-user_idf (	BÖ
-$com.google.ccc.hosted.marketplace.v2BResourcesProtoPZKgoogle.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2;marketplacebproto3'
+user_idf (	Bù
+$com.google.ccc.hosted.marketplace.v2BResourcesProtoPZKgoogle.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2;marketplace Google\\Apps\\Market\\V2bproto3'
         , true);
 
         static::$is_initialized = true;

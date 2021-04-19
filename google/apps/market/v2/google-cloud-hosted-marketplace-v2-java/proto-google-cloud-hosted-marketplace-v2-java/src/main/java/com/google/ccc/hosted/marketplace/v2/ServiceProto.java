@@ -70,10 +70,11 @@ public final class ServiceProto {
       "serLicense/{application_id}/{user_id}\032V\312" +
       "A\031appsmarket.googleapis.com\322A7https://ww" +
       "w.googleapis.com/auth/appsmarketplace.li" +
-      "censeB\203\001\n$com.google.ccc.hosted.marketpl" +
+      "censeB\233\001\n$com.google.ccc.hosted.marketpl" +
       "ace.v2B\014ServiceProtoP\001ZKgoogle.golang.or" +
       "g/genproto/googleapis/ccc/hosted/marketp" +
-      "lace/v2;marketplaceb\006proto3"
+      "lace/v2;marketplace\312\002\025Google\\Apps\\Market" +
+      "\\V2b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

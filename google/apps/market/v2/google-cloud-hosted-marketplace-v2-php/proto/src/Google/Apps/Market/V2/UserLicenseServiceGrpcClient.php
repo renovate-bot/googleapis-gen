@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-namespace Ccc\Hosted\Marketplace\V2;
+namespace Google\Apps\Market\V2;
 
 /**
  */
@@ -33,16 +33,16 @@ class UserLicenseServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Get the user's licensing status for their permission to use a given app.
-     * @param \Ccc\Hosted\Marketplace\V2\UserLicenseGetRequest $argument input argument
+     * @param \Google\Apps\Market\V2\UserLicenseGetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function Get(\Ccc\Hosted\Marketplace\V2\UserLicenseGetRequest $argument,
+    public function Get(\Google\Apps\Market\V2\UserLicenseGetRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/ccc.hosted.marketplace.v2.UserLicenseService/Get',
         $argument,
-        ['\Ccc\Hosted\Marketplace\V2\UserLicense', 'decode'],
+        ['\Google\Apps\Market\V2\UserLicense', 'decode'],
         $metadata, $options);
     }
 

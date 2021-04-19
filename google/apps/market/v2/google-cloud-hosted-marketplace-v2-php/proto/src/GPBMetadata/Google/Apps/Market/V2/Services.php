@@ -19,8 +19,7 @@ class Services
         \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ı
-
+ç
 $google/apps/market/v2/services.protoccc.hosted.marketplace.v2%google/apps/market/v2/resources.protogoogle/api/client.proto"H
 CustomerLicenseGetRequest
 application_id (	
@@ -38,8 +37,8 @@ $google/apps/market/v2/services.protoccc.hosted.marketplace.v2%google/apps/ma
 LicenseNotificationServiceµ
 List9.ccc.hosted.marketplace.v2.LicenseNotificationListRequest2.ccc.hosted.marketplace.v2.LicenseNotificationList">Ç”‰ì83/appsmarket/v2/licenseNotification/{application_id}:*V Aappsmarket.googleapis.com“A7https://www.googleapis.com/auth/appsmarketplace.license2ç
 UserLicenseServiceû
-Get0.ccc.hosted.marketplace.v2.UserLicenseGetRequest&.ccc.hosted.marketplace.v2.UserLicense"=Ç”‰ì75/appsmarket/v2/userLicense/{application_id}/{user_id}V Aappsmarket.googleapis.com“A7https://www.googleapis.com/auth/appsmarketplace.licenseBÉ
-$com.google.ccc.hosted.marketplace.v2BServiceProtoPZKgoogle.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2;marketplacebproto3'
+Get0.ccc.hosted.marketplace.v2.UserLicenseGetRequest&.ccc.hosted.marketplace.v2.UserLicense"=Ç”‰ì75/appsmarket/v2/userLicense/{application_id}/{user_id}V Aappsmarket.googleapis.com“A7https://www.googleapis.com/auth/appsmarketplace.licenseBõ
+$com.google.ccc.hosted.marketplace.v2BServiceProtoPZKgoogle.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2;marketplace Google\\Apps\\Market\\V2bproto3'
         , true);
 
         static::$is_initialized = true;

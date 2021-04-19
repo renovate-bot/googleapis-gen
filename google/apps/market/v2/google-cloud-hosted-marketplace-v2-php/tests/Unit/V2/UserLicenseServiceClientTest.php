@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,20 +20,23 @@
  * This file was automatically generated - do not edit!
  */
 
+declare(strict_types=1);
+
 namespace Google\Apps\Market\Tests\Unit\V2;
 
-use Google\Apps\Market\V2\UserLicenseServiceClient;
-use Ccc\Hosted\Marketplace\V2\UserLicense;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
+use Google\Apps\Market\V2\UserLicense;
+use Google\Apps\Market\V2\UserLicenseServiceClient;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group market
+ *
  * @group gapic
  */
 class UserLicenseServiceClientTest extends GeneratedTest
@@ -51,9 +54,7 @@ class UserLicenseServiceClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -64,7 +65,6 @@ class UserLicenseServiceClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new UserLicenseServiceClient($options);
     }
 
@@ -74,10 +74,10 @@ class UserLicenseServiceClientTest extends GeneratedTest
     public function getTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $kind = 'kind3292052';
         $enabled = false;
@@ -97,7 +97,6 @@ class UserLicenseServiceClientTest extends GeneratedTest
         $expectedResponse->setId($id);
         $expectedResponse->setUserId($userId);
         $transport->addResponse($expectedResponse);
-
         $response = $client->get();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -105,7 +104,6 @@ class UserLicenseServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/ccc.hosted.marketplace.v2.UserLicenseService/Get', $actualFuncCall);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -115,22 +113,20 @@ class UserLicenseServiceClientTest extends GeneratedTest
     public function getExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         try {
             $client->get();
             // If the $client method call did not throw, fail the test
@@ -139,7 +135,6 @@ class UserLicenseServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
