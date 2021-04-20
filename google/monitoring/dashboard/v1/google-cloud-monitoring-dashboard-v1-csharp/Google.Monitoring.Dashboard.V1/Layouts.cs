@@ -40,11 +40,12 @@ namespace Google.Monitoring.Dashboard.V1 {
             "V2lkZ2V0IqcBCgxDb2x1bW5MYXlvdXQSRAoHY29sdW1ucxgBIAMoCzIzLmdv",
             "b2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5Db2x1bW5MYXlvdXQuQ29s",
             "dW1uGlEKBkNvbHVtbhIOCgZ3ZWlnaHQYASABKAMSNwoHd2lkZ2V0cxgCIAMo",
-            "CzImLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5XaWRnZXRCqAEK",
+            "CzImLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5XaWRnZXRCzwEK",
             "ImNvbS5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjFCDExheW91dHNQ",
             "cm90b1ABWkdnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlz",
-            "L21vbml0b3JpbmcvZGFzaGJvYXJkL3YxO2Rhc2hib2FyZOoCKEdvb2dsZTo6",
-            "Q2xvdWQ6Ok1vbml0b3Jpbmc6OkRhc2hib2FyZDo6VjFiBnByb3RvMw=="));
+            "L21vbml0b3JpbmcvZGFzaGJvYXJkL3YxO2Rhc2hib2FyZMoCJEdvb2dsZVxD",
+            "bG91ZFxNb25pdG9yaW5nXERhc2hib2FyZFxWMeoCKEdvb2dsZTo6Q2xvdWQ6",
+            "Ok1vbml0b3Jpbmc6OkRhc2hib2FyZDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Monitoring.Dashboard.V1.WidgetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

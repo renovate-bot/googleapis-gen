@@ -63,11 +63,12 @@ namespace Google.Monitoring.Dashboard.V1 {
             "T1cQBBIHCgNSRUQQBiI8CglEaXJlY3Rpb24SGQoVRElSRUNUSU9OX1VOU1BF",
             "Q0lGSUVEEAASCQoFQUJPVkUQARIJCgVCRUxPVxACKlEKDlNwYXJrQ2hhcnRU",
             "eXBlEiAKHFNQQVJLX0NIQVJUX1RZUEVfVU5TUEVDSUZJRUQQABIOCgpTUEFS",
-            "S19MSU5FEAESDQoJU1BBUktfQkFSEAJCqAEKImNvbS5nb29nbGUubW9uaXRv",
+            "S19MSU5FEAESDQoJU1BBUktfQkFSEAJCzwEKImNvbS5nb29nbGUubW9uaXRv",
             "cmluZy5kYXNoYm9hcmQudjFCDE1ldHJpY3NQcm90b1ABWkdnb29nbGUuZ29s",
             "YW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL21vbml0b3JpbmcvZGFzaGJv",
-            "YXJkL3YxO2Rhc2hib2FyZOoCKEdvb2dsZTo6Q2xvdWQ6Ok1vbml0b3Jpbmc6",
-            "OkRhc2hib2FyZDo6VjFiBnByb3RvMw=="));
+            "YXJkL3YxO2Rhc2hib2FyZMoCJEdvb2dsZVxDbG91ZFxNb25pdG9yaW5nXERh",
+            "c2hib2FyZFxWMeoCKEdvb2dsZTo6Q2xvdWQ6Ok1vbml0b3Jpbmc6OkRhc2hi",
+            "b2FyZDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Monitoring.Dashboard.V1.SparkChartType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -521,8 +522,9 @@ namespace Google.Monitoring.Dashboard.V1 {
     public const int FilterFieldNumber = 1;
     private string filter_ = "";
     /// <summary>
-    /// Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-    /// that identifies the metric types, resources, and projects to query.
+    /// Required. The [monitoring
+    /// filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+    /// the metric types, resources, and projects to query.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Filter {

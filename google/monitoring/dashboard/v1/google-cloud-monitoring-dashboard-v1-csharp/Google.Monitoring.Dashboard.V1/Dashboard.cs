@@ -38,11 +38,11 @@ namespace Google.Monitoring.Dashboard.V1 {
             "Lm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLkNvbHVtbkxheW91dEgAOlPqQVAK",
             "I21vbml0b3JpbmcuZ29vZ2xlYXBpcy5jb20vRGFzaGJvYXJkEilwcm9qZWN0",
             "cy97cHJvamVjdH0vZGFzaGJvYXJkcy97ZGFzaGJvYXJkfUIICgZsYXlvdXRC",
-            "qwEKImNvbS5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjFCD0Rhc2hi",
+            "0gEKImNvbS5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjFCD0Rhc2hi",
             "b2FyZHNQcm90b1ABWkdnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29n",
-            "bGVhcGlzL21vbml0b3JpbmcvZGFzaGJvYXJkL3YxO2Rhc2hib2FyZOoCKEdv",
-            "b2dsZTo6Q2xvdWQ6Ok1vbml0b3Jpbmc6OkRhc2hib2FyZDo6VjFiBnByb3Rv",
-            "Mw=="));
+            "bGVhcGlzL21vbml0b3JpbmcvZGFzaGJvYXJkL3YxO2Rhc2hib2FyZMoCJEdv",
+            "b2dsZVxDbG91ZFxNb25pdG9yaW5nXERhc2hib2FyZFxWMeoCKEdvb2dsZTo6",
+            "Q2xvdWQ6Ok1vbml0b3Jpbmc6OkRhc2hib2FyZDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.LayoutsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

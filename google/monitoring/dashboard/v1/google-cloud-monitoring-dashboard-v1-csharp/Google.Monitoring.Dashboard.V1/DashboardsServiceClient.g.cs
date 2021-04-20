@@ -272,8 +272,12 @@ namespace Google.Monitoring.Dashboard.V1
         public virtual DashboardsService.DashboardsServiceClient GrpcClient => throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-        /// This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+        /// Creates a new custom dashboard. For examples on how you can use this API to
+        /// create dashboards, see [Managing dashboards by
+        /// API](/monitoring/dashboards/api-dashboard). This method requires the
+        /// `monitoring.dashboards.create` permission on the specified project. For
+        /// more information about permissions, see [Cloud Identity and Access
+        /// Management](/iam).
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -282,8 +286,12 @@ namespace Google.Monitoring.Dashboard.V1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-        /// This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+        /// Creates a new custom dashboard. For examples on how you can use this API to
+        /// create dashboards, see [Managing dashboards by
+        /// API](/monitoring/dashboards/api-dashboard). This method requires the
+        /// `monitoring.dashboards.create` permission on the specified project. For
+        /// more information about permissions, see [Cloud Identity and Access
+        /// Management](/iam).
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -292,8 +300,12 @@ namespace Google.Monitoring.Dashboard.V1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-        /// This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+        /// Creates a new custom dashboard. For examples on how you can use this API to
+        /// create dashboards, see [Managing dashboards by
+        /// API](/monitoring/dashboards/api-dashboard). This method requires the
+        /// `monitoring.dashboards.create` permission on the specified project. For
+        /// more information about permissions, see [Cloud Identity and Access
+        /// Management](/iam).
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -518,8 +530,12 @@ namespace Google.Monitoring.Dashboard.V1
         partial void Modify_UpdateDashboardRequest(ref UpdateDashboardRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
-        /// Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-        /// This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+        /// Creates a new custom dashboard. For examples on how you can use this API to
+        /// create dashboards, see [Managing dashboards by
+        /// API](/monitoring/dashboards/api-dashboard). This method requires the
+        /// `monitoring.dashboards.create` permission on the specified project. For
+        /// more information about permissions, see [Cloud Identity and Access
+        /// Management](/iam).
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -531,8 +547,12 @@ namespace Google.Monitoring.Dashboard.V1
         }
 
         /// <summary>
-        /// Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-        /// This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+        /// Creates a new custom dashboard. For examples on how you can use this API to
+        /// create dashboards, see [Managing dashboards by
+        /// API](/monitoring/dashboards/api-dashboard). This method requires the
+        /// `monitoring.dashboards.create` permission on the specified project. For
+        /// more information about permissions, see [Cloud Identity and Access
+        /// Management](/iam).
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

@@ -1,0 +1,43 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.monitoring.dashboard.v1",
+    "libraryPackage": "Google\\Cloud\\Monitoring\\Dashboard\\V1",
+    "services": {
+        "DashboardsService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DashboardsServiceGapicClient",
+                    "rpcs": {
+                        "CreateDashboard": {
+                            "methods": [
+                                "createDashboard"
+                            ]
+                        },
+                        "DeleteDashboard": {
+                            "methods": [
+                                "deleteDashboard"
+                            ]
+                        },
+                        "GetDashboard": {
+                            "methods": [
+                                "getDashboard"
+                            ]
+                        },
+                        "ListDashboards": {
+                            "methods": [
+                                "listDashboards"
+                            ]
+                        },
+                        "UpdateDashboard": {
+                            "methods": [
+                                "updateDashboard"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

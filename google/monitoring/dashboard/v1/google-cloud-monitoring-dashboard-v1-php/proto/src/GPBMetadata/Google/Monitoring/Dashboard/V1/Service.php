@@ -16,9 +16,9 @@ class Service
         }
         $pool->internalAddGeneratedFile(
             '
-‹
-,google/monitoring/dashboard/v1/service.protogoogle.monitoring.dashboard.v1B²
-"com.google.monitoring.dashboard.v1BServiceMonitoringProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboardê(Google::Cloud::Monitoring::Dashboard::V1bproto3'
+²
+,google/monitoring/dashboard/v1/service.protogoogle.monitoring.dashboard.v1BÙ
+"com.google.monitoring.dashboard.v1BServiceMonitoringProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboardÊ$Google\\Cloud\\Monitoring\\Dashboard\\V1ê(Google::Cloud::Monitoring::Dashboard::V1bproto3'
         , true);
 
         static::$is_initialized = true;

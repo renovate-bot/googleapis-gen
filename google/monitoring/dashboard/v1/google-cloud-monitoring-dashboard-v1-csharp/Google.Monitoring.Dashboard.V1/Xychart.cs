@@ -51,11 +51,12 @@ namespace Google.Monitoring.Dashboard.V1 {
             "RzEwEAIijgEKDENoYXJ0T3B0aW9ucxI/CgRtb2RlGAEgASgOMjEuZ29vZ2xl",
             "Lm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLkNoYXJ0T3B0aW9ucy5Nb2RlIj0K",
             "BE1vZGUSFAoQTU9ERV9VTlNQRUNJRklFRBAAEgkKBUNPTE9SEAESCQoFWF9S",
-            "QVkQAhIJCgVTVEFUUxADQqgBCiJjb20uZ29vZ2xlLm1vbml0b3JpbmcuZGFz",
+            "QVkQAhIJCgVTVEFUUxADQs8BCiJjb20uZ29vZ2xlLm1vbml0b3JpbmcuZGFz",
             "aGJvYXJkLnYxQgxYeUNoYXJ0UHJvdG9QAVpHZ29vZ2xlLmdvbGFuZy5vcmcv",
             "Z2VucHJvdG8vZ29vZ2xlYXBpcy9tb25pdG9yaW5nL2Rhc2hib2FyZC92MTtk",
-            "YXNoYm9hcmTqAihHb29nbGU6OkNsb3VkOjpNb25pdG9yaW5nOjpEYXNoYm9h",
-            "cmQ6OlYxYgZwcm90bzM="));
+            "YXNoYm9hcmTKAiRHb29nbGVcQ2xvdWRcTW9uaXRvcmluZ1xEYXNoYm9hcmRc",
+            "VjHqAihHb29nbGU6OkNsb3VkOjpNb25pdG9yaW5nOjpEYXNoYm9hcmQ6OlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.MetricsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -554,10 +555,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         public const int MinAlignmentPeriodFieldNumber = 4;
         private global::Google.Protobuf.WellKnownTypes.Duration minAlignmentPeriod_;
         /// <summary>
-        /// Optional. The lower bound on data point frequency for this data set, implemented by
-        /// specifying the minimum alignment period to use in a time series query
-        /// For example, if the data is published once every 10 minutes, the
-        /// `min_alignment_period` should be at least 10 minutes. It would not
+        /// Optional. The lower bound on data point frequency for this data set,
+        /// implemented by specifying the minimum alignment period to use in a time
+        /// series query. For example, if the data is published once every 10 minutes,
+        /// the `min_alignment_period` should be at least 10 minutes. It would not
         /// make sense to fetch and align data at one minute intervals.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,11 +26,12 @@ namespace Google.Monitoring.Dashboard.V1 {
           string.Concat(
             "Ci9nb29nbGUvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjEvZHJpbGxkb3ducy5w",
             "cm90bxIeZ29vZ2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxGitnb29nbGUv",
-            "bW9uaXRvcmluZy9kYXNoYm9hcmQvdjEvY29tbW9uLnByb3RvQqsBCiJjb20u",
+            "bW9uaXRvcmluZy9kYXNoYm9hcmQvdjEvY29tbW9uLnByb3RvQtIBCiJjb20u",
             "Z29vZ2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxQg9EcmlsbGRvd25zUHJv",
             "dG9QAVpHZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9t",
-            "b25pdG9yaW5nL2Rhc2hib2FyZC92MTtkYXNoYm9hcmTqAihHb29nbGU6OkNs",
-            "b3VkOjpNb25pdG9yaW5nOjpEYXNoYm9hcmQ6OlYxYgZwcm90bzM="));
+            "b25pdG9yaW5nL2Rhc2hib2FyZC92MTtkYXNoYm9hcmTKAiRHb29nbGVcQ2xv",
+            "dWRcTW9uaXRvcmluZ1xEYXNoYm9hcmRcVjHqAihHb29nbGU6OkNsb3VkOjpN",
+            "b25pdG9yaW5nOjpEYXNoYm9hcmQ6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Monitoring.Dashboard.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, null));

@@ -15,13 +15,13 @@ return [
                     ],
                 ],
             ],
-            'ListDashboards' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*}/dashboards',
+            'DeleteDashboard' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/dashboards/*}',
                 'placeholders' => [
-                    'parent' => [
+                    'name' => [
                         'getters' => [
-                            'getParent',
+                            'getName',
                         ],
                     ],
                 ],
@@ -37,13 +37,13 @@ return [
                     ],
                 ],
             ],
-            'DeleteDashboard' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/dashboards/*}',
+            'ListDashboards' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*}/dashboards',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],

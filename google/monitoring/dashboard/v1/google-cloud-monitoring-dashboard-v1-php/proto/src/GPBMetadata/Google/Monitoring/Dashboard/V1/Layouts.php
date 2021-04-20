@@ -17,7 +17,7 @@ class Layouts
         \GPBMetadata\Google\Monitoring\Dashboard\V1\Widget::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿ
+¦
 ,google/monitoring/dashboard/v1/layouts.protogoogle.monitoring.dashboard.v1"V
 
 GridLayout
@@ -41,8 +41,8 @@ GridLayout
 columns (23.google.monitoring.dashboard.v1.ColumnLayout.ColumnQ
 Column
 weight (7
-widgets (2&.google.monitoring.dashboard.v1.WidgetB¨
-"com.google.monitoring.dashboard.v1BLayoutsProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboardê(Google::Cloud::Monitoring::Dashboard::V1bproto3'
+widgets (2&.google.monitoring.dashboard.v1.WidgetBÏ
+"com.google.monitoring.dashboard.v1BLayoutsProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboardÊ$Google\\Cloud\\Monitoring\\Dashboard\\V1ê(Google::Cloud::Monitoring::Dashboard::V1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -62,10 +62,11 @@ namespace Google.Monitoring.Dashboard.V1 {
             "bmcuZGFzaGJvYXJkLnYxLlN0YXRpc3RpY2FsVGltZVNlcmllc0ZpbHRlci5N",
             "ZXRob2QSFwoPbnVtX3RpbWVfc2VyaWVzGAIgASgFIjwKBk1ldGhvZBIWChJN",
             "RVRIT0RfVU5TUEVDSUZJRUQQABIaChZNRVRIT0RfQ0xVU1RFUl9PVVRMSUVS",
-            "EAFCpwEKImNvbS5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjFCC0Nv",
+            "EAFCzgEKImNvbS5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjFCC0Nv",
             "bW1vblByb3RvUAFaR2dvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
-            "ZWFwaXMvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjE7ZGFzaGJvYXJk6gIoR29v",
-            "Z2xlOjpDbG91ZDo6TW9uaXRvcmluZzo6RGFzaGJvYXJkOjpWMWIGcHJvdG8z"));
+            "ZWFwaXMvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjE7ZGFzaGJvYXJkygIkR29v",
+            "Z2xlXENsb3VkXE1vbml0b3JpbmdcRGFzaGJvYXJkXFYx6gIoR29vZ2xlOjpD",
+            "bG91ZDo6TW9uaXRvcmluZzo6RGFzaGJvYXJkOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.DistributionReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

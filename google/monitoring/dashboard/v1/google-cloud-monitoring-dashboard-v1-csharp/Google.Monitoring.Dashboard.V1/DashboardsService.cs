@@ -68,11 +68,12 @@ namespace Google.Monitoring.Dashboard.V1 {
             "YXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSxodHRwczovL3d3dy5nb29n",
             "bGVhcGlzLmNvbS9hdXRoL21vbml0b3JpbmcsaHR0cHM6Ly93d3cuZ29vZ2xl",
             "YXBpcy5jb20vYXV0aC9tb25pdG9yaW5nLnJlYWQsaHR0cHM6Ly93d3cuZ29v",
-            "Z2xlYXBpcy5jb20vYXV0aC9tb25pdG9yaW5nLndyaXRlQrIBCiJjb20uZ29v",
+            "Z2xlYXBpcy5jb20vYXV0aC9tb25pdG9yaW5nLndyaXRlQtkBCiJjb20uZ29v",
             "Z2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxQhZEYXNoYm9hcmRzU2Vydmlj",
             "ZVByb3RvUAFaR2dvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
-            "aXMvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjE7ZGFzaGJvYXJk6gIoR29vZ2xl",
-            "OjpDbG91ZDo6TW9uaXRvcmluZzo6RGFzaGJvYXJkOjpWMWIGcHJvdG8z"));
+            "aXMvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjE7ZGFzaGJvYXJkygIkR29vZ2xl",
+            "XENsb3VkXE1vbml0b3JpbmdcRGFzaGJvYXJkXFYx6gIoR29vZ2xlOjpDbG91",
+            "ZDo6TW9uaXRvcmluZzo6RGFzaGJvYXJkOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.DashboardReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
