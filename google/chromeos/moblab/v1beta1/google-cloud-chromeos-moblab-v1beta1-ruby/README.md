@@ -18,7 +18,7 @@ steps:
 
 ### Installation
 ```
-$ gem install google-chromeos-moblab
+$ gem install google-cloud-chromeos-moblab
 ```
 
 ### Next Steps
@@ -29,7 +29,7 @@ $ gem install google-chromeos-moblab
 - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
   to see the full list of Cloud APIs that we cover.
 
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-chromeos-moblab/latest/google/chromeos/moblab/v1beta1
+[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-chromeos-moblab/latest/google/chromeos/moblab/v1beta1
 [Product Documentation]: https://cloud.google.com/chromeos-moblab
 
 ## Enabling Logging

@@ -2,12 +2,12 @@
 # encoding: utf-8
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-chromeos-moblab"
+  gem.name          = "google-cloud-chromeos-moblab"
   gem.version       = "0.1.0"
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-chromeos-moblab is the official library for Chrome OS Moblab API."
+  gem.description   = "google-cloud-chromeos-moblab is the official library for Chrome OS Moblab API."
   gem.summary       = "API Client library for Chrome OS Moblab API"
   gem.homepage      = "https://github.com/googleapis/googleapis"
   gem.license       = "Apache-2.0"

@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "google-chromeos-moblab.gemspec"
+    - "google-cloud-chromeos-moblab.gemspec"
     - "lib/google/**/*"
     - "Rakefile"
     - "test/**/*"

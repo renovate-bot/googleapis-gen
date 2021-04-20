@@ -30,7 +30,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-chromeos-moblab"
+      command_name "google-cloud-chromeos-moblab"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -40,7 +40,7 @@ namespace :test do
 end
 
 # Acceptance tests
-desc "Run the google-chromeos-moblab acceptance tests."
+desc "Run the google-cloud-chromeos-moblab acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
 
   Rake::Task["acceptance:run"].invoke
@@ -48,7 +48,7 @@ end
 
 namespace :acceptance do
   task :run do
-    puts "The google-chromeos-moblab gem does not have acceptance tests."
+    puts "The google-cloud-chromeos-moblab gem does not have acceptance tests."
   end
 
   desc "Run acceptance tests with coverage."
@@ -64,7 +64,7 @@ require "yard"
 require "yard/rake/yardoc_task"
 YARD::Rake::YardocTask.new
 
-desc "Generates JSON output from google-chromeos-moblab .yardoc"
+desc "Generates JSON output from google-cloud-chromeos-moblab .yardoc"
 task :jsondoc => :yard do
   require "rubygems"
   require "gcloud/jsondoc"
@@ -79,7 +79,7 @@ task :jsondoc => :yard do
         modules: [
           {
             title: "Google::Chromeos::Moblab::V1beta1",
-            include: ["google/chromeos/moblab/v1beta1"]
+            include: ["google/cloud/chromeos/moblab/v1beta1"]
           },
           {
             title: "Google::Protobuf",
@@ -95,7 +95,7 @@ task :jsondoc => :yard do
   }
 
   generator = Gcloud::Jsondoc::Generator.new registry,
-                                             "google-chromeos-moblab",
+                                             "google-cloud-chromeos-moblab",
                                              generate: toc_config
   rm_rf "jsondoc", verbose: true
   generator.write_to "jsondoc"
@@ -104,19 +104,19 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-chromeos-moblab gem does not have doctest tests."
+  puts "The google-cloud-chromeos-moblab gem does not have doctest tests."
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-chromeos-moblab"
-  header "google-chromeos-moblab rubocop", "*"
+  header "BUILDING google-cloud-chromeos-moblab"
+  header "google-cloud-chromeos-moblab rubocop", "*"
   sh "bundle exec rake rubocop"
-  header "google-chromeos-moblab jsondoc", "*"
+  header "google-cloud-chromeos-moblab jsondoc", "*"
   sh "bundle exec rake jsondoc"
-  header "google-chromeos-moblab doctest", "*"
+  header "google-cloud-chromeos-moblab doctest", "*"
   sh "bundle exec rake doctest"
-  header "google-chromeos-moblab test", "*"
+  header "google-cloud-chromeos-moblab test", "*"
   sh "bundle exec rake test"
 end
 
@@ -124,7 +124,7 @@ namespace :ci do
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task["ci"].invoke
-    header "google-chromeos-moblab acceptance", "*"
+    header "google-cloud-chromeos-moblab acceptance", "*"
     sh "bundle exec rake acceptance -v"
   end
   task :a do

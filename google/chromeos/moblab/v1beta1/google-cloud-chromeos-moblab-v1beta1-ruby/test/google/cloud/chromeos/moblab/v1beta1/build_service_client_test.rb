@@ -17,8 +17,8 @@ require "minitest/spec"
 
 require "google/gax"
 
-require "google/chromeos/moblab"
-require "google/chromeos/moblab/v1beta1/build_service_client"
+require "google/cloud/chromeos/moblab"
+require "google/cloud/chromeos/moblab/v1beta1/build_service_client"
 require "google/chromeos/moblab/v1beta1/build_service_services_pb"
 require "google/longrunning/operations_pb"
 
@@ -53,7 +53,7 @@ class MockGrpcClientStub_v1beta1
   end
 end
 
-class MockBuildServiceCredentials_v1beta1 < Google::Chromeos::Moblab::V1beta1::Credentials
+class MockBuildServiceCredentials_v1beta1 < Google::Cloud::Chromeos::Moblab::V1beta1::Credentials
   def initialize(method_name)
     @method_name = method_name
   end
@@ -66,14 +66,14 @@ class MockBuildServiceCredentials_v1beta1 < Google::Chromeos::Moblab::V1beta1::C
   end
 end
 
-describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
+describe Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient do
 
   describe 'list_builds' do
-    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Chromeos::Moblab::V1beta1::BuildServiceClient#list_builds."
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient#list_builds."
 
     it 'invokes list_builds without error' do
       # Create request parameters
-      formatted_parent = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.model_path("[BUILD_TARGET]", "[MODEL]")
+      formatted_parent = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.model_path("[BUILD_TARGET]", "[MODEL]")
 
       # Create expected grpc response
       next_page_token = ""
@@ -99,8 +99,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("list_builds")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           response = client.list_builds(formatted_parent)
@@ -116,7 +116,7 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
 
     it 'invokes list_builds with error' do
       # Create request parameters
-      formatted_parent = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.model_path("[BUILD_TARGET]", "[MODEL]")
+      formatted_parent = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.model_path("[BUILD_TARGET]", "[MODEL]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -130,8 +130,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("list_builds")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
@@ -146,11 +146,11 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
   end
 
   describe 'check_build_stage_status' do
-    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Chromeos::Moblab::V1beta1::BuildServiceClient#check_build_stage_status."
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient#check_build_stage_status."
 
     it 'invokes check_build_stage_status without error' do
       # Create request parameters
-      formatted_name = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+      formatted_name = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
 
       # Create expected grpc response
       is_build_staged = true
@@ -169,8 +169,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("check_build_stage_status")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           response = client.check_build_stage_status(formatted_name)
@@ -190,7 +190,7 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
 
     it 'invokes check_build_stage_status with error' do
       # Create request parameters
-      formatted_name = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+      formatted_name = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -204,8 +204,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("check_build_stage_status")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do
@@ -220,11 +220,11 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
   end
 
   describe 'stage_build' do
-    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Chromeos::Moblab::V1beta1::BuildServiceClient#stage_build."
+    custom_error = CustomTestError_v1beta1.new "Custom test error for Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient#stage_build."
 
     it 'invokes stage_build without error' do
       # Create request parameters
-      formatted_name = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+      formatted_name = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
 
       # Create expected grpc response
       expected_response = {}
@@ -249,8 +249,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("stage_build")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           response = client.stage_build(formatted_name)
@@ -263,11 +263,11 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
 
     it 'invokes stage_build and returns an operation error.' do
       # Create request parameters
-      formatted_name = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+      formatted_name = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
 
       # Create expected grpc response
       operation_error = Google::Rpc::Status.new(
-        message: 'Operation error for Google::Chromeos::Moblab::V1beta1::BuildServiceClient#stage_build.'
+        message: 'Operation error for Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient#stage_build.'
       )
       operation = Google::Longrunning::Operation.new(
         name: 'operations/stage_build_test',
@@ -287,8 +287,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("stage_build")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           response = client.stage_build(formatted_name)
@@ -302,7 +302,7 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
 
     it 'invokes stage_build with error' do
       # Create request parameters
-      formatted_name = Google::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+      formatted_name = Google::Cloud::Chromeos::Moblab::V1beta1::BuildServiceClient.build_artifact_path("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -316,8 +316,8 @@ describe Google::Chromeos::Moblab::V1beta1::BuildServiceClient do
       mock_credentials = MockBuildServiceCredentials_v1beta1.new("stage_build")
 
       Google::Chromeos::Moblab::V1beta1::BuildService::Stub.stub(:new, mock_stub) do
-        Google::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Chromeos::Moblab.new(version: :v1beta1)
+        Google::Cloud::Chromeos::Moblab::V1beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Chromeos::Moblab.new(version: :v1beta1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1beta1 do

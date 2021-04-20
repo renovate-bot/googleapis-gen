@@ -3,17 +3,6 @@
 return [
     'interfaces' => [
         'google.chromeos.moblab.v1beta1.BuildService' => [
-            'ListBuilds' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=buildTargets/*/models/*}/builds',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'CheckBuildStageStatus' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:check',
@@ -21,6 +10,17 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListBuilds' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=buildTargets/*/models/*}/builds',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
