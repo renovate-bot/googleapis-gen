@@ -118,10 +118,10 @@ namespace Google.Monitoring.Dashboard.V1 {
       /// <summary>
       /// Creates a new custom dashboard. For examples on how you can use this API to
       /// create dashboards, see [Managing dashboards by
-      /// API](/monitoring/dashboards/api-dashboard). This method requires the
+      /// API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
       /// `monitoring.dashboards.create` permission on the specified project. For
       /// more information about permissions, see [Cloud Identity and Access
-      /// Management](/iam).
+      /// Management](https://cloud.google.com/iam).
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -219,10 +219,10 @@ namespace Google.Monitoring.Dashboard.V1 {
       /// <summary>
       /// Creates a new custom dashboard. For examples on how you can use this API to
       /// create dashboards, see [Managing dashboards by
-      /// API](/monitoring/dashboards/api-dashboard). This method requires the
+      /// API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
       /// `monitoring.dashboards.create` permission on the specified project. For
       /// more information about permissions, see [Cloud Identity and Access
-      /// Management](/iam).
+      /// Management](https://cloud.google.com/iam).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -236,10 +236,10 @@ namespace Google.Monitoring.Dashboard.V1 {
       /// <summary>
       /// Creates a new custom dashboard. For examples on how you can use this API to
       /// create dashboards, see [Managing dashboards by
-      /// API](/monitoring/dashboards/api-dashboard). This method requires the
+      /// API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
       /// `monitoring.dashboards.create` permission on the specified project. For
       /// more information about permissions, see [Cloud Identity and Access
-      /// Management](/iam).
+      /// Management](https://cloud.google.com/iam).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -251,10 +251,10 @@ namespace Google.Monitoring.Dashboard.V1 {
       /// <summary>
       /// Creates a new custom dashboard. For examples on how you can use this API to
       /// create dashboards, see [Managing dashboards by
-      /// API](/monitoring/dashboards/api-dashboard). This method requires the
+      /// API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
       /// `monitoring.dashboards.create` permission on the specified project. For
       /// more information about permissions, see [Cloud Identity and Access
-      /// Management](/iam).
+      /// Management](https://cloud.google.com/iam).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -268,10 +268,10 @@ namespace Google.Monitoring.Dashboard.V1 {
       /// <summary>
       /// Creates a new custom dashboard. For examples on how you can use this API to
       /// create dashboards, see [Managing dashboards by
-      /// API](/monitoring/dashboards/api-dashboard). This method requires the
+      /// API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
       /// `monitoring.dashboards.create` permission on the specified project. For
       /// more information about permissions, see [Cloud Identity and Access
-      /// Management](/iam).
+      /// Management](https://cloud.google.com/iam).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

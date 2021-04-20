@@ -36,10 +36,10 @@ class DashboardsServiceGrpcClient extends \Grpc\BaseStub {
     /**
      * Creates a new custom dashboard. For examples on how you can use this API to
      * create dashboards, see [Managing dashboards by
-     * API](/monitoring/dashboards/api-dashboard). This method requires the
+     * API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
      * `monitoring.dashboards.create` permission on the specified project. For
      * more information about permissions, see [Cloud Identity and Access
-     * Management](/iam).
+     * Management](https://cloud.google.com/iam).
      * @param \Google\Cloud\Monitoring\Dashboard\V1\CreateDashboardRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
