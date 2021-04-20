@@ -27,21 +27,49 @@ return [
             ],
         ],
         'google.cloud.translation.v3beta1.TranslationService' => [
-            'TranslateText' => [
+            'BatchTranslateDocument' => [
                 'method' => 'post',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}:translateText',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}:batchTranslateDocument',
                 'body' => '*',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v3beta1/{parent=projects/*}:translateText',
-                        'body' => '*',
-                    ],
-                ],
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'BatchTranslateText' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}:batchTranslateText',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateGlossary' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/glossaries',
+                'body' => 'glossary',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteGlossary' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/glossaries/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -65,6 +93,17 @@ return [
                     ],
                 ],
             ],
+            'GetGlossary' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/glossaries/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'GetSupportedLanguages' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/supportedLanguages',
@@ -74,6 +113,17 @@ return [
                         'uriTemplate' => '/v3beta1/{parent=projects/*}/supportedLanguages',
                     ],
                 ],
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListGlossaries' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/glossaries',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -94,71 +144,21 @@ return [
                     ],
                 ],
             ],
-            'BatchTranslateText' => [
+            'TranslateText' => [
                 'method' => 'post',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}:batchTranslateText',
+                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}:translateText',
                 'body' => '*',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v3beta1/{parent=projects/*}:translateText',
+                        'body' => '*',
+                    ],
+                ],
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'BatchTranslateDocument' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}:batchTranslateDocument',
-                'body' => '*',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateGlossary' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/glossaries',
-                'body' => 'glossary',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'ListGlossaries' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{parent=projects/*/locations/*}/glossaries',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetGlossary' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/glossaries/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteGlossary' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v3beta1/{name=projects/*/locations/*/glossaries/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],

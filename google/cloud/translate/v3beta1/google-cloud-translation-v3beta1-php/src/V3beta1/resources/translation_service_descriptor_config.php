@@ -3,20 +3,20 @@
 return [
     'interfaces' => [
         'google.cloud.translation.v3beta1.TranslationService' => [
-            'BatchTranslateText' => [
+            'BatchTranslateDocument' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateResponse',
-                    'metadataReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateMetadata',
+                    'operationReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateDocumentResponse',
+                    'metadataReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateDocumentMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'BatchTranslateDocument' => [
+            'BatchTranslateText' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateDocumentResponse',
-                    'metadataReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateDocumentMetadata',
+                    'operationReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateResponse',
+                    'metadataReturnType' => '\Google\Cloud\Translate\V3beta1\BatchTranslateMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
