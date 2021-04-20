@@ -13,9 +13,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateFunction' => [
+            'DeleteFunction' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Functions\V1\CloudFunction',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\Functions\V1\OperationMetadataV1',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -23,9 +23,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteFunction' => [
+            'UpdateFunction' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'operationReturnType' => '\Google\Cloud\Functions\V1\CloudFunction',
                     'metadataReturnType' => '\Google\Cloud\Functions\V1\OperationMetadataV1',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',

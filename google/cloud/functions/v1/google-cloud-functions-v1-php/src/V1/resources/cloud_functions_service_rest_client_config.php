@@ -3,20 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.functions.v1.CloudFunctionsService' => [
-            'ListFunctions' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/functions',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetFunction' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}',
+            'CallFunction' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}:call',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -37,19 +27,6 @@ return [
                     ],
                 ],
             ],
-            'UpdateFunction' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{function.name=projects/*/locations/*/functions/*}',
-                'body' => 'function',
-                'placeholders' => [
-                    'function.name' => [
-                        'getters' => [
-                            'getFunction',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'DeleteFunction' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}',
@@ -61,9 +38,9 @@ return [
                     ],
                 ],
             ],
-            'CallFunction' => [
+            'GenerateDownloadUrl' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}:call',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}:generateDownloadUrl',
                 'body' => '*',
                 'placeholders' => [
                     'name' => [
@@ -85,14 +62,35 @@ return [
                     ],
                 ],
             ],
-            'GenerateDownloadUrl' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}:generateDownloadUrl',
-                'body' => '*',
+            'GetFunction' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/functions/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetIamPolicy' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{resource=projects/*/locations/*/functions/*}:getIamPolicy',
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'ListFunctions' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/functions',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
@@ -109,17 +107,6 @@ return [
                     ],
                 ],
             ],
-            'GetIamPolicy' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{resource=projects/*/locations/*/functions/*}:getIamPolicy',
-                'placeholders' => [
-                    'resource' => [
-                        'getters' => [
-                            'getResource',
-                        ],
-                    ],
-                ],
-            ],
             'TestIamPermissions' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{resource=projects/*/locations/*/functions/*}:testIamPermissions',
@@ -128,6 +115,19 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateFunction' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{function.name=projects/*/locations/*/functions/*}',
+                'body' => 'function',
+                'placeholders' => [
+                    'function.name' => [
+                        'getters' => [
+                            'getFunction',
+                            'getName',
                         ],
                     ],
                 ],
