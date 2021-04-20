@@ -17,8 +17,8 @@ require "minitest/spec"
 
 require "google/gax"
 
-require "google/home/graph"
-require "google/home/graph/v1/home_graph_api_service_client"
+require "google/cloud/home/graph"
+require "google/cloud/home/graph/v1/home_graph_api_service_client"
 require "google/home/graph/v1/homegraph_services_pb"
 
 class CustomTestError_v1 < StandardError; end
@@ -52,7 +52,7 @@ class MockGrpcClientStub_v1
   end
 end
 
-class MockHomeGraphApiServiceCredentials_v1 < Google::Home::Graph::V1::Credentials
+class MockHomeGraphApiServiceCredentials_v1 < Google::Cloud::Home::Graph::V1::Credentials
   def initialize(method_name)
     @method_name = method_name
   end
@@ -65,10 +65,10 @@ class MockHomeGraphApiServiceCredentials_v1 < Google::Home::Graph::V1::Credentia
   end
 end
 
-describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
+describe Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient do
 
   describe 'request_sync_devices' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Home::Graph::V1::HomeGraphApiServiceClient#request_sync_devices."
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient#request_sync_devices."
 
     it 'invokes request_sync_devices without error' do
       # Create request parameters
@@ -90,8 +90,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("request_sync_devices")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           response = client.request_sync_devices(agent_user_id)
@@ -125,8 +125,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("request_sync_devices")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
@@ -141,7 +141,7 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
   end
 
   describe 'report_state_and_notification' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Home::Graph::V1::HomeGraphApiServiceClient#report_state_and_notification."
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient#report_state_and_notification."
 
     it 'invokes report_state_and_notification without error' do
       # Create request parameters
@@ -166,8 +166,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("report_state_and_notification")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           response = client.report_state_and_notification(agent_user_id, payload)
@@ -203,8 +203,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("report_state_and_notification")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
@@ -219,11 +219,11 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
   end
 
   describe 'delete_agent_user' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Home::Graph::V1::HomeGraphApiServiceClient#delete_agent_user."
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient#delete_agent_user."
 
     it 'invokes delete_agent_user without error' do
       # Create request parameters
-      formatted_agent_user_id = Google::Home::Graph::V1::HomeGraphApiServiceClient.agent_user_path_path("[AGENT_USER_PATH]")
+      formatted_agent_user_id = Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient.agent_user_path_path("[AGENT_USER_PATH]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -237,8 +237,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("delete_agent_user")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           response = client.delete_agent_user(formatted_agent_user_id)
@@ -258,7 +258,7 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
 
     it 'invokes delete_agent_user with error' do
       # Create request parameters
-      formatted_agent_user_id = Google::Home::Graph::V1::HomeGraphApiServiceClient.agent_user_path_path("[AGENT_USER_PATH]")
+      formatted_agent_user_id = Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient.agent_user_path_path("[AGENT_USER_PATH]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -272,8 +272,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("delete_agent_user")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
@@ -288,7 +288,7 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
   end
 
   describe 'query' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Home::Graph::V1::HomeGraphApiServiceClient#query."
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient#query."
 
     it 'invokes query without error' do
       # Create request parameters
@@ -316,8 +316,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("query")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           response = client.query(agent_user_id, inputs)
@@ -356,8 +356,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("query")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
@@ -372,7 +372,7 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
   end
 
   describe 'sync' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Home::Graph::V1::HomeGraphApiServiceClient#sync."
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::Home::Graph::V1::HomeGraphApiServiceClient#sync."
 
     it 'invokes sync without error' do
       # Create request parameters
@@ -395,8 +395,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("sync")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           response = client.sync(agent_user_id)
@@ -430,8 +430,8 @@ describe Google::Home::Graph::V1::HomeGraphApiServiceClient do
       mock_credentials = MockHomeGraphApiServiceCredentials_v1.new("sync")
 
       Google::Home::Graph::V1::HomeGraphApiService::Stub.stub(:new, mock_stub) do
-        Google::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Home::Graph.new(version: :v1)
+        Google::Cloud::Home::Graph::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Home::Graph.new(version: :v1)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do

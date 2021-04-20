@@ -6643,10 +6643,10 @@ public final class DeviceProto {
       "\024\n\014manufacturer\030\001 \001(\t\022\r\n\005model\030\002 \001(\t\022\022\n\n" +
       "hw_version\030\003 \001(\t\022\022\n\nsw_version\030\004 \001(\t\"9\n\022" +
       "AgentOtherDeviceId\022\020\n\010agent_id\030\001 \001(\t\022\021\n\t" +
-      "device_id\030\002 \001(\tBb\n\030com.google.home.graph" +
+      "device_id\030\002 \001(\tBy\n\030com.google.home.graph" +
       ".v1B\013DeviceProtoZ9google.golang.org/genp" +
-      "roto/googleapis/home/graph/v1;graphb\006pro" +
-      "to3"
+      "roto/googleapis/home/graph/v1;graph\312\002\024Go" +
+      "ogle\\Home\\Graph\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

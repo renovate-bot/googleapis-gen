@@ -23,7 +23,7 @@ class Homegraph
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ô
+ë
 $google/home/graph/v1/homegraph.protogoogle.home.graph.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto!google/home/graph/v1/device.protogoogle/protobuf/empty.protogoogle/protobuf/struct.proto"K
 RequestSyncDevicesRequest
 agent_user_id (	BàA
@@ -86,8 +86,8 @@ request_id (	:
 ReportStateAndNotification7.google.home.graph.v1.ReportStateAndNotificationRequest8.google.home.graph.v1.ReportStateAndNotificationResponse"]‚Óä“+"&/v1/devices:reportStateAndNotification:*ÚA)request_id,event_id,agent_user_id,payload
 DeleteAgentUser,.google.home.graph.v1.DeleteAgentUserRequest.google.protobuf.Empty"D‚Óä“#*!/v1/{agent_user_id=agentUsers/**}ÚArequest_id,agent_user_id
 Query".google.home.graph.v1.QueryRequest#.google.home.graph.v1.QueryResponse">‚Óä“"/v1/devices:query:*ÚArequest_id,agent_user_id,inputs…
-Sync!.google.home.graph.v1.SyncRequest".google.home.graph.v1.SyncResponse"6‚Óä“"/v1/devices:sync:*ÚArequest_id,agent_user_idÊAhomegraph.googleapis.comB»
-com.google.home.graph.v1BHomeGraphApiServiceProtoZ9google.golang.org/genproto/googleapis/home/graph/v1;graphêAI
+Sync!.google.home.graph.v1.SyncRequest".google.home.graph.v1.SyncResponse"6‚Óä“"/v1/devices:sync:*ÚArequest_id,agent_user_idÊAhomegraph.googleapis.comBÒ
+com.google.home.graph.v1BHomeGraphApiServiceProtoZ9google.golang.org/genproto/googleapis/home/graph/v1;graphÊGoogle\\Home\\Graph\\V1êAI
 &homegraph.googleapis.com/AgentUserPathagentUsers/{agent_user_path=**}bproto3'
         , true);
 

@@ -40,9 +40,10 @@ namespace Google.Home.Graph.V1 {
             "IlkKCkRldmljZUluZm8SFAoMbWFudWZhY3R1cmVyGAEgASgJEg0KBW1vZGVs",
             "GAIgASgJEhIKCmh3X3ZlcnNpb24YAyABKAkSEgoKc3dfdmVyc2lvbhgEIAEo",
             "CSI5ChJBZ2VudE90aGVyRGV2aWNlSWQSEAoIYWdlbnRfaWQYASABKAkSEQoJ",
-            "ZGV2aWNlX2lkGAIgASgJQmIKGGNvbS5nb29nbGUuaG9tZS5ncmFwaC52MUIL",
+            "ZGV2aWNlX2lkGAIgASgJQnkKGGNvbS5nb29nbGUuaG9tZS5ncmFwaC52MUIL",
             "RGV2aWNlUHJvdG9aOWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
-            "ZWFwaXMvaG9tZS9ncmFwaC92MTtncmFwaGIGcHJvdG8z"));
+            "ZWFwaXMvaG9tZS9ncmFwaC92MTtncmFwaMoCFEdvb2dsZVxIb21lXEdyYXBo",
+            "XFYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

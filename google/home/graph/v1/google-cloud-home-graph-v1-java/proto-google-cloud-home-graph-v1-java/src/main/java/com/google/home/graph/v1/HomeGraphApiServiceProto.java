@@ -14104,12 +14104,12 @@ public final class HomeGraphApiServiceProto {
       "SyncRequest\032\".google.home.graph.v1.SyncR" +
       "esponse\"6\202\323\344\223\002\025\"\020/v1/devices:sync:\001*\332A\030r" +
       "equest_id,agent_user_id\032\033\312A\030homegraph.go" +
-      "ogleapis.comB\273\001\n\030com.google.home.graph.v" +
+      "ogleapis.comB\322\001\n\030com.google.home.graph.v" +
       "1B\030HomeGraphApiServiceProtoZ9google.gola" +
       "ng.org/genproto/googleapis/home/graph/v1" +
-      ";graph\352AI\n&homegraph.googleapis.com/Agen" +
-      "tUserPath\022\037agentUsers/{agent_user_path=*" +
-      "*}b\006proto3"
+      ";graph\312\002\024Google\\Home\\Graph\\V1\352AI\n&homegr" +
+      "aph.googleapis.com/AgentUserPath\022\037agentU" +
+      "sers/{agent_user_path=**}b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

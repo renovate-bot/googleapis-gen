@@ -16,7 +16,7 @@ steps:
 
 ### Installation
 ```
-$ gem install google-home-graph
+$ gem install google-cloud-home-graph
 ```
 
 ### Next Steps
@@ -27,7 +27,7 @@ $ gem install google-home-graph
 - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
   to see the full list of Cloud APIs that we cover.
 
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-home-graph/latest/google/home/graph/v1
+[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-home-graph/latest/google/home/graph/v1
 [Product Documentation]: https://cloud.google.com/home-graph
 
 ## Enabling Logging

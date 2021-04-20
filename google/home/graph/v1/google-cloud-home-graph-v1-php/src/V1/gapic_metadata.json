@@ -1,0 +1,43 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.home.graph.v1",
+    "libraryPackage": "Google\\Home\\Graph\\V1",
+    "services": {
+        "HomeGraphApiService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "HomeGraphApiServiceGapicClient",
+                    "rpcs": {
+                        "DeleteAgentUser": {
+                            "methods": [
+                                "deleteAgentUser"
+                            ]
+                        },
+                        "Query": {
+                            "methods": [
+                                "query"
+                            ]
+                        },
+                        "ReportStateAndNotification": {
+                            "methods": [
+                                "reportStateAndNotification"
+                            ]
+                        },
+                        "RequestSyncDevices": {
+                            "methods": [
+                                "requestSyncDevices"
+                            ]
+                        },
+                        "Sync": {
+                            "methods": [
+                                "sync"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

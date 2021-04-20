@@ -17,7 +17,7 @@ class Device
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-­
+Ä
 !google/home/graph/v1/device.protogoogle.home.graph.v1"¨
 Device
 
@@ -49,8 +49,8 @@ hw_version (	
 sw_version (	"9
 AgentOtherDeviceId
 agent_id (	
-	device_id (	Bb
-com.google.home.graph.v1BDeviceProtoZ9google.golang.org/genproto/googleapis/home/graph/v1;graphbproto3'
+	device_id (	By
+com.google.home.graph.v1BDeviceProtoZ9google.golang.org/genproto/googleapis/home/graph/v1;graphÊGoogle\\Home\\Graph\\V1bproto3'
         , true);
 
         static::$is_initialized = true;

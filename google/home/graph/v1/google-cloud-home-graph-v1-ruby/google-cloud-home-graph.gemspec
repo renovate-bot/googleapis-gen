@@ -2,12 +2,12 @@
 # encoding: utf-8
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-home-graph"
+  gem.name          = "google-cloud-home-graph"
   gem.version       = "0.1.0"
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-home-graph is the official library for HomeGraph API."
+  gem.description   = "google-cloud-home-graph is the official library for HomeGraph API."
   gem.summary       = "API Client library for HomeGraph API"
   gem.homepage      = "https://github.com/googleapis/googleapis"
   gem.license       = "Apache-2.0"

@@ -30,7 +30,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-home-graph"
+      command_name "google-cloud-home-graph"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -40,7 +40,7 @@ namespace :test do
 end
 
 # Acceptance tests
-desc "Run the google-home-graph acceptance tests."
+desc "Run the google-cloud-home-graph acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
 
   Rake::Task["acceptance:run"].invoke
@@ -48,7 +48,7 @@ end
 
 namespace :acceptance do
   task :run do
-    puts "The google-home-graph gem does not have acceptance tests."
+    puts "The google-cloud-home-graph gem does not have acceptance tests."
   end
 
   desc "Run acceptance tests with coverage."
@@ -64,7 +64,7 @@ require "yard"
 require "yard/rake/yardoc_task"
 YARD::Rake::YardocTask.new
 
-desc "Generates JSON output from google-home-graph .yardoc"
+desc "Generates JSON output from google-cloud-home-graph .yardoc"
 task :jsondoc => :yard do
   require "rubygems"
   require "gcloud/jsondoc"
@@ -79,7 +79,7 @@ task :jsondoc => :yard do
         modules: [
           {
             title: "Google::Home::Graph::V1",
-            include: ["google/home/graph/v1"]
+            include: ["google/cloud/home/graph/v1"]
           },
           {
             title: "Google::Protobuf",
@@ -95,7 +95,7 @@ task :jsondoc => :yard do
   }
 
   generator = Gcloud::Jsondoc::Generator.new registry,
-                                             "google-home-graph",
+                                             "google-cloud-home-graph",
                                              generate: toc_config
   rm_rf "jsondoc", verbose: true
   generator.write_to "jsondoc"
@@ -104,19 +104,19 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-home-graph gem does not have doctest tests."
+  puts "The google-cloud-home-graph gem does not have doctest tests."
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-home-graph"
-  header "google-home-graph rubocop", "*"
+  header "BUILDING google-cloud-home-graph"
+  header "google-cloud-home-graph rubocop", "*"
   sh "bundle exec rake rubocop"
-  header "google-home-graph jsondoc", "*"
+  header "google-cloud-home-graph jsondoc", "*"
   sh "bundle exec rake jsondoc"
-  header "google-home-graph doctest", "*"
+  header "google-cloud-home-graph doctest", "*"
   sh "bundle exec rake doctest"
-  header "google-home-graph test", "*"
+  header "google-cloud-home-graph test", "*"
   sh "bundle exec rake test"
 end
 
@@ -124,7 +124,7 @@ namespace :ci do
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task["ci"].invoke
-    header "google-home-graph acceptance", "*"
+    header "google-cloud-home-graph acceptance", "*"
     sh "bundle exec rake acceptance -v"
   end
   task :a do

@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "google-home-graph.gemspec"
+    - "google-cloud-home-graph.gemspec"
     - "lib/google/**/*"
     - "Rakefile"
     - "test/**/*"
