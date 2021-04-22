@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-namespace Google\Devtools\Containeranalysis\V1;
+namespace Google\Cloud\ContainerAnalysis\V1;
 
 /**
  * Retrieves analysis results of Cloud components such as Docker container
@@ -111,16 +111,16 @@ class ContainerAnalysisGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Gets a summary of the number and severity of occurrences.
-     * @param \Google\Devtools\Containeranalysis\V1\GetVulnerabilityOccurrencesSummaryRequest $argument input argument
+     * @param \Google\Cloud\ContainerAnalysis\V1\GetVulnerabilityOccurrencesSummaryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GetVulnerabilityOccurrencesSummary(\Google\Devtools\Containeranalysis\V1\GetVulnerabilityOccurrencesSummaryRequest $argument,
+    public function GetVulnerabilityOccurrencesSummary(\Google\Cloud\ContainerAnalysis\V1\GetVulnerabilityOccurrencesSummaryRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.devtools.containeranalysis.v1.ContainerAnalysis/GetVulnerabilityOccurrencesSummary',
         $argument,
-        ['\Google\Devtools\Containeranalysis\V1\VulnerabilityOccurrencesSummary', 'decode'],
+        ['\Google\Cloud\ContainerAnalysis\V1\VulnerabilityOccurrencesSummary', 'decode'],
         $metadata, $options);
     }
 

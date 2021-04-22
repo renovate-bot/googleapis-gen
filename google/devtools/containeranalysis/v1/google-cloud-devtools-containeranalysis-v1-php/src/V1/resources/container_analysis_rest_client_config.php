@@ -3,14 +3,14 @@
 return [
     'interfaces' => [
         'google.devtools.containeranalysis.v1.ContainerAnalysis' => [
-            'SetIamPolicy' => [
+            'GetIamPolicy' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{resource=projects/*/notes/*}:setIamPolicy',
+                'uriTemplate' => '/v1/{resource=projects/*/notes/*}:getIamPolicy',
                 'body' => '*',
                 'additionalBindings' => [
                     [
                         'method' => 'post',
-                        'uriTemplate' => '/v1/{resource=projects/*/occurrences/*}:setIamPolicy',
+                        'uriTemplate' => '/v1/{resource=projects/*/occurrences/*}:getIamPolicy',
                         'body' => '*',
                     ],
                 ],
@@ -22,14 +22,25 @@ return [
                     ],
                 ],
             ],
-            'GetIamPolicy' => [
+            'GetVulnerabilityOccurrencesSummary' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*}/occurrences:vulnerabilitySummary',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'SetIamPolicy' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{resource=projects/*/notes/*}:getIamPolicy',
+                'uriTemplate' => '/v1/{resource=projects/*/notes/*}:setIamPolicy',
                 'body' => '*',
                 'additionalBindings' => [
                     [
                         'method' => 'post',
-                        'uriTemplate' => '/v1/{resource=projects/*/occurrences/*}:getIamPolicy',
+                        'uriTemplate' => '/v1/{resource=projects/*/occurrences/*}:setIamPolicy',
                         'body' => '*',
                     ],
                 ],
@@ -56,17 +67,6 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
-                        ],
-                    ],
-                ],
-            ],
-            'GetVulnerabilityOccurrencesSummary' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*}/occurrences:vulnerabilitySummary',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
                         ],
                     ],
                 ],

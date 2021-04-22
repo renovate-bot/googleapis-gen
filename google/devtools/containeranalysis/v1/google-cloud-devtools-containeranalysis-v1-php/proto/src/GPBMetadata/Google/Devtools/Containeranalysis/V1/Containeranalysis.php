@@ -24,7 +24,7 @@ class Containeranalysis
         \GPBMetadata\Grafeas\V1\Vulnerability::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ð
+ô
 <google/devtools/containeranalysis/v1/containeranalysis.proto$google.devtools.containeranalysis.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/iam/v1/iam_policy.protogoogle/iam/v1/policy.protogoogle/protobuf/timestamp.protografeas/v1/vulnerability.proto"€
 )GetVulnerabilityOccurrencesSummaryRequestC
 parent (	B3úA-
@@ -41,8 +41,8 @@ class Containeranalysis
 SetIamPolicy".google.iam.v1.SetIamPolicyRequest.google.iam.v1.Policy"†‚Óä“n"./v1/{resource=projects/*/notes/*}:setIamPolicy:*Z9"4/v1/{resource=projects/*/occurrences/*}:setIamPolicy:*ÚAresource,policyÊ
 GetIamPolicy".google.iam.v1.GetIamPolicyRequest.google.iam.v1.Policy"‚Óä“n"./v1/{resource=projects/*/notes/*}:getIamPolicy:*Z9"4/v1/{resource=projects/*/occurrences/*}:getIamPolicy:*ÚAresourceƒ
 TestIamPermissions(.google.iam.v1.TestIamPermissionsRequest).google.iam.v1.TestIamPermissionsResponse"—‚Óä“z"4/v1/{resource=projects/*/notes/*}:testIamPermissions:*Z?":/v1/{resource=projects/*/occurrences/*}:testIamPermissions:*ÚAresource,permissionsŽ
-"GetVulnerabilityOccurrencesSummaryO.google.devtools.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequestE.google.devtools.containeranalysis.v1.VulnerabilityOccurrencesSummary"P‚Óä“:8/v1/{parent=projects/*}/occurrences:vulnerabilitySummaryÚAparent,filterTÊA containeranalysis.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÔ
-com.google.containeranalysis.v1PZUgoogle.golang.org/genproto/googleapis/devtools/containeranalysis/v1;containeranalysis¢GCAª*Google.Cloud.DevTools.ContainerAnalysis.V1ê$Google::Cloud::ContainerAnalysis::V1bproto3'
+"GetVulnerabilityOccurrencesSummaryO.google.devtools.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequestE.google.devtools.containeranalysis.v1.VulnerabilityOccurrencesSummary"P‚Óä“:8/v1/{parent=projects/*}/occurrences:vulnerabilitySummaryÚAparent,filterTÊA containeranalysis.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBø
+com.google.containeranalysis.v1PZUgoogle.golang.org/genproto/googleapis/devtools/containeranalysis/v1;containeranalysis¢GCAª*Google.Cloud.DevTools.ContainerAnalysis.V1Ê!Google\\Cloud\\ContainerAnalysis\\V1ê$Google::Cloud::ContainerAnalysis::V1bproto3'
         , true);
 
         static::$is_initialized = true;
