@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const servicemanagement = require('servicemanagement');
+const servicemanagement = require('@google-cloud/service-management');
 
 function main() {
   const serviceManagerClient = new servicemanagement.ServiceManagerClient();

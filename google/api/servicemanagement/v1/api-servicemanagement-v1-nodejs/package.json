@@ -1,5 +1,5 @@
 {
-  "name": "servicemanagement",
+  "name": "@google-cloud/service-management",
   "version": "0.1.0",
   "description": "Servicemanagement client for Node.js",
   "repository": "googleapis/nodejs-servicemanagement",
