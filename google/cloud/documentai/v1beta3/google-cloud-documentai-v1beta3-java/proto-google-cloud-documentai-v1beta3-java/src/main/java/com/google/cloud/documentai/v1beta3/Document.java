@@ -36889,6 +36889,16 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.documentai.v1beta3.BoundingPoly bounding_poly = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.cloud.documentai.v1beta3.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
+
+      /**
+       * <pre>
+       * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+       * </pre>
+       *
+       * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The confidence.
+       */
+      float getConfidence();
     }
     /**
      * <pre>
@@ -36969,6 +36979,11 @@ private static final long serialVersionUID = 0L;
                   boundingPoly_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+              case 45: {
+
+                confidence_ = input.readFloat();
                 break;
               }
               default: {
@@ -37360,6 +37375,21 @@ private static final long serialVersionUID = 0L;
         return getBoundingPoly();
       }
 
+      public static final int CONFIDENCE_FIELD_NUMBER = 5;
+      private float confidence_;
+      /**
+       * <pre>
+       * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+       * </pre>
+       *
+       * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The confidence.
+       */
+      @java.lang.Override
+      public float getConfidence() {
+        return confidence_;
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -37386,6 +37416,9 @@ private static final long serialVersionUID = 0L;
         if (boundingPoly_ != null) {
           output.writeMessage(4, getBoundingPoly());
         }
+        if (confidence_ != 0F) {
+          output.writeFloat(5, confidence_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -37409,6 +37442,10 @@ private static final long serialVersionUID = 0L;
         if (boundingPoly_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, getBoundingPoly());
+        }
+        if (confidence_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(5, confidence_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -37435,6 +37472,9 @@ private static final long serialVersionUID = 0L;
           if (!getBoundingPoly()
               .equals(other.getBoundingPoly())) return false;
         }
+        if (java.lang.Float.floatToIntBits(getConfidence())
+            != java.lang.Float.floatToIntBits(
+                other.getConfidence())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -37457,6 +37497,9 @@ private static final long serialVersionUID = 0L;
           hash = (37 * hash) + BOUNDING_POLY_FIELD_NUMBER;
           hash = (53 * hash) + getBoundingPoly().hashCode();
         }
+        hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getConfidence());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -37606,6 +37649,8 @@ private static final long serialVersionUID = 0L;
             boundingPoly_ = null;
             boundingPolyBuilder_ = null;
           }
+          confidence_ = 0F;
+
           return this;
         }
 
@@ -37640,6 +37685,7 @@ private static final long serialVersionUID = 0L;
           } else {
             result.boundingPoly_ = boundingPolyBuilder_.build();
           }
+          result.confidence_ = confidence_;
           onBuilt();
           return result;
         }
@@ -37700,6 +37746,9 @@ private static final long serialVersionUID = 0L;
           }
           if (other.hasBoundingPoly()) {
             mergeBoundingPoly(other.getBoundingPoly());
+          }
+          if (other.getConfidence() != 0F) {
+            setConfidence(other.getConfidence());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -38099,6 +38148,49 @@ private static final long serialVersionUID = 0L;
             boundingPoly_ = null;
           }
           return boundingPolyBuilder_;
+        }
+
+        private float confidence_ ;
+        /**
+         * <pre>
+         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * </pre>
+         *
+         * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         * @return The confidence.
+         */
+        @java.lang.Override
+        public float getConfidence() {
+          return confidence_;
+        }
+        /**
+         * <pre>
+         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * </pre>
+         *
+         * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         * @param value The confidence to set.
+         * @return This builder for chaining.
+         */
+        public Builder setConfidence(float value) {
+          
+          confidence_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * </pre>
+         *
+         * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearConfidence() {
+          
+          confidence_ = 0F;
+          onChanged();
+          return this;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
