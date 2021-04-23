@@ -18,81 +18,31 @@
 import proto  # type: ignore
 
 
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
-
 __protobuf__ = proto.module(
     package='google.cloud.resourcesettings.v1',
     manifest={
-        'SettingValue',
+        'SettingView',
         'Setting',
+        'SettingMetadata',
         'Value',
         'ListSettingsRequest',
         'ListSettingsResponse',
-        'SearchSettingValuesRequest',
-        'SearchSettingValuesResponse',
-        'GetSettingValueRequest',
-        'LookupEffectiveSettingValueRequest',
-        'CreateSettingValueRequest',
-        'UpdateSettingValueRequest',
-        'DeleteSettingValueRequest',
+        'GetSettingRequest',
+        'UpdateSettingRequest',
     },
 )
 
 
-class SettingValue(proto.Message):
-    r"""The instantiation of a setting. Every setting value is
-    parented by its corresponding setting.
-
-    Attributes:
-        name (str):
-            The resource name of the setting value. Must be in one of
-            the following forms:
-
-            -  ``projects/{project_number}/settings/{setting_name}/value``
-            -  ``folders/{folder_id}/settings/{setting_name}/value``
-            -  ``organizations/{organization_id}/settings/{setting_name}/value``
-
-            For example,
-            "/projects/123/settings/gcp-enableMyFeature/value".
-        value (google.cloud.resourcesettings_v1.types.Value):
-            The value of the setting. The data type of
-            [Value][google.cloud.resourcesettings.v1.Value] must always
-            be consistent with the data type defined by the parent
-            setting.
-        etag (str):
-            A fingerprint used for optimistic concurrency. See
-            [UpdateSettingValue][google.cloud.resourcesettings.v1.ResourceSettingsService.UpdateSettingValue]
-            for more details.
-        read_only (bool):
-            Output only. A flag indicating that this setting value
-            cannot be modified. This flag is inherited from its parent
-            setting and is for convenience purposes. See
-            [Setting.read_only][google.cloud.resourcesettings.v1.Setting.read_only]
-            for more details.
-        update_time (google.protobuf.timestamp_pb2.Timestamp):
-            Output only. The timestamp indicating when
-            the setting value was last updated.
-    """
-
-    name = proto.Field(proto.STRING, number=1)
-
-    value = proto.Field(proto.MESSAGE, number=2,
-        message='Value',
-    )
-
-    etag = proto.Field(proto.STRING, number=3)
-
-    read_only = proto.Field(proto.BOOL, number=4)
-
-    update_time = proto.Field(proto.MESSAGE, number=5,
-        message=timestamp.Timestamp,
-    )
+class SettingView(proto.Enum):
+    r"""View options for Settings."""
+    SETTING_VIEW_UNSPECIFIED = 0
+    SETTING_VIEW_BASIC = 1
+    SETTING_VIEW_EFFECTIVE_VALUE = 2
+    SETTING_VIEW_LOCAL_VALUE = 3
 
 
 class Setting(proto.Message):
-    r"""The schema for setting values. At a given Cloud resource, a
-    setting can parent at most one setting value.
+    r"""The schema for settings.
 
     Attributes:
         name (str):
@@ -104,6 +54,65 @@ class Setting(proto.Message):
             -  ``organizations/{organization_id}/settings/{setting_name}``
 
             For example, "/projects/123/settings/gcp-enableMyFeature".
+        metadata (google.cloud.resourcesettings_v1.types.SettingMetadata):
+            Output only. Metadata about a setting which
+            is not editable by the end user.
+        local_value (google.cloud.resourcesettings_v1.types.Value):
+            The configured value of the setting at the given parent
+            resource (ignoring the resource hierarchy). The data type of
+            [Value][google.cloud.resourcesettings.v1.Value] must always
+            be consistent with the data type defined in
+            [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
+        effective_value (google.cloud.resourcesettings_v1.types.Value):
+            Output only. The computed effective value of the setting at
+            the given parent resource (based on the resource hierarchy).
+
+            The effective value evaluates to one of the following
+            options in the given order (the next option is used if the
+            previous one does not exist):
+
+            1. the local setting value on the given resource:
+               [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
+            2. if one of the given resource's ancestors have a local
+               setting value, the local value at the nearest such
+               ancestor
+            3. the setting's default value:
+               [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
+            4. an empty value (defined as a ``Value`` with all fields
+               unset)
+
+            The data type of
+            [Value][google.cloud.resourcesettings.v1.Value] must always
+            be consistent with the data type defined in
+            [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
+        etag (str):
+            A fingerprint used for optimistic concurrency. See
+            [UpdateSetting][google.cloud.resourcesettings.v1.ResourceSettingsService.UpdateSetting]
+            for more details.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+    metadata = proto.Field(proto.MESSAGE, number=7,
+        message='SettingMetadata',
+    )
+
+    local_value = proto.Field(proto.MESSAGE, number=8,
+        message='Value',
+    )
+
+    effective_value = proto.Field(proto.MESSAGE, number=9,
+        message='Value',
+    )
+
+    etag = proto.Field(proto.STRING, number=10)
+
+
+class SettingMetadata(proto.Message):
+    r"""Metadata about a setting which is not editable by the end
+    user.
+
+    Attributes:
         display_name (str):
             The human readable name for this setting.
         description (str):
@@ -113,11 +122,11 @@ class Setting(proto.Message):
             A flag indicating that values of this setting
             cannot be modified (see documentation of the
             specific setting for updates and reasons).
-        data_type (google.cloud.resourcesettings_v1.types.Setting.DataType):
+        data_type (google.cloud.resourcesettings_v1.types.SettingMetadata.DataType):
             The data type for this setting.
         default_value (google.cloud.resourcesettings_v1.types.Value):
-            The value received by
-            [LookupEffectiveSettingValue][google.cloud.resourcesettings.v1.ResourceSettingsService.LookupEffectiveSettingValue]
+            The value provided by
+            [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
             if no setting value is explicitly set.
 
             Note: not all settings have a default value.
@@ -133,19 +142,17 @@ class Setting(proto.Message):
         STRING_SET = 3
         ENUM_VALUE = 4
 
-    name = proto.Field(proto.STRING, number=1)
+    display_name = proto.Field(proto.STRING, number=1)
 
-    display_name = proto.Field(proto.STRING, number=2)
+    description = proto.Field(proto.STRING, number=2)
 
-    description = proto.Field(proto.STRING, number=3)
+    read_only = proto.Field(proto.BOOL, number=3)
 
-    read_only = proto.Field(proto.BOOL, number=4)
-
-    data_type = proto.Field(proto.ENUM, number=5,
+    data_type = proto.Field(proto.ENUM, number=4,
         enum=DataType,
     )
 
-    default_value = proto.Field(proto.MESSAGE, number=6,
+    default_value = proto.Field(proto.MESSAGE, number=5,
         message='Value',
     )
 
@@ -165,7 +172,7 @@ class Value(proto.Message):
     """
     class StringSet(proto.Message):
         r"""A string set value that can hold a set of strings. The
-        maximum length of each string is 60 characters and there can be
+        maximum length of each string is 200 characters and there can be
         a maximum of 50 strings in the string set.
 
         Attributes:
@@ -182,7 +189,7 @@ class Value(proto.Message):
 
         Attributes:
             value (str):
-
+                The value of this enum
         """
 
         value = proto.Field(proto.STRING, number=1)
@@ -217,6 +224,8 @@ class ListSettingsRequest(proto.Message):
         page_token (str):
             Unused. A page token used to retrieve the
             next page.
+        view (google.cloud.resourcesettings_v1.types.SettingView):
+            The SettingView for this request.
     """
 
     parent = proto.Field(proto.STRING, number=1)
@@ -224,6 +233,10 @@ class ListSettingsRequest(proto.Message):
     page_size = proto.Field(proto.INT32, number=2)
 
     page_token = proto.Field(proto.STRING, number=3)
+
+    view = proto.Field(proto.ENUM, number=4,
+        enum='SettingView',
+    )
 
 
 class ListSettingsResponse(proto.Message):
@@ -249,130 +262,38 @@ class ListSettingsResponse(proto.Message):
     next_page_token = proto.Field(proto.STRING, number=2)
 
 
-class SearchSettingValuesRequest(proto.Message):
-    r"""The request for SearchSettingValues.
-
-    Attributes:
-        parent (str):
-            Required. The Cloud resource that parents the setting. Must
-            be in one of the following forms:
-
-            -  ``projects/{project_number}``
-            -  ``projects/{project_id}``
-            -  ``folders/{folder_id}``
-            -  ``organizations/{organization_id}``
-        page_size (int):
-            Unused. The size of the page to be returned.
-        page_token (str):
-            Unused. A page token used to retrieve the
-            next page.
-    """
-
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-
-class SearchSettingValuesResponse(proto.Message):
-    r"""The response from SearchSettingValues.
-
-    Attributes:
-        setting_values (Sequence[google.cloud.resourcesettings_v1.types.SettingValue]):
-            All setting values that exist on the
-            specified Cloud resource.
-        next_page_token (str):
-            Unused. A page token used to retrieve the
-            next page.
-    """
-
-    @property
-    def raw_page(self):
-        return self
-
-    setting_values = proto.RepeatedField(proto.MESSAGE, number=1,
-        message='SettingValue',
-    )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-
-class GetSettingValueRequest(proto.Message):
-    r"""The request for GetSettingValue.
+class GetSettingRequest(proto.Message):
+    r"""The request for GetSetting.
 
     Attributes:
         name (str):
-            Required. The name of the setting value to get. See
-            [SettingValue][google.cloud.resourcesettings.v1.SettingValue]
-            for naming requirements.
-    """
-
-    name = proto.Field(proto.STRING, number=1)
-
-
-class LookupEffectiveSettingValueRequest(proto.Message):
-    r"""The request for LookupEffectiveSettingValue.
-
-    Attributes:
-        name (str):
-            Required. The setting value for which an effective value
-            will be evaluated. See
-            [SettingValue][google.cloud.resourcesettings.v1.SettingValue]
-            for naming requirements.
-    """
-
-    name = proto.Field(proto.STRING, number=1)
-
-
-class CreateSettingValueRequest(proto.Message):
-    r"""The request for CreateSettingValue.
-
-    Attributes:
-        parent (str):
-            Required. The name of the setting for which a value should
-            be created. See
+            Required. The name of the setting to get. See
             [Setting][google.cloud.resourcesettings.v1.Setting] for
             naming requirements.
-        setting_value (google.cloud.resourcesettings_v1.types.SettingValue):
-            Required. The setting value to create. See
-            [SettingValue][google.cloud.resourcesettings.v1.SettingValue]
-            for field requirements.
-    """
-
-    parent = proto.Field(proto.STRING, number=1)
-
-    setting_value = proto.Field(proto.MESSAGE, number=2,
-        message='SettingValue',
-    )
-
-
-class UpdateSettingValueRequest(proto.Message):
-    r"""The request for UpdateSettingValue.
-
-    Attributes:
-        setting_value (google.cloud.resourcesettings_v1.types.SettingValue):
-            Required. The setting value to update. See
-            [SettingValue][google.cloud.resourcesettings.v1.SettingValue]
-            for field requirements.
-    """
-
-    setting_value = proto.Field(proto.MESSAGE, number=1,
-        message='SettingValue',
-    )
-
-
-class DeleteSettingValueRequest(proto.Message):
-    r"""The request for DeleteSettingValue.
-
-    Attributes:
-        name (str):
-            Required. The name of the setting value to delete. See
-            [SettingValue][google.cloud.resourcesettings.v1.SettingValue]
-            for naming requirements.
+        view (google.cloud.resourcesettings_v1.types.SettingView):
+            The SettingView for this request.
     """
 
     name = proto.Field(proto.STRING, number=1)
+
+    view = proto.Field(proto.ENUM, number=2,
+        enum='SettingView',
+    )
+
+
+class UpdateSettingRequest(proto.Message):
+    r"""The request for UpdateSetting.
+
+    Attributes:
+        setting (google.cloud.resourcesettings_v1.types.Setting):
+            Required. The setting to update. See
+            [Setting][google.cloud.resourcesettings.v1.Setting] for
+            field requirements.
+    """
+
+    setting = proto.Field(proto.MESSAGE, number=1,
+        message='Setting',
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

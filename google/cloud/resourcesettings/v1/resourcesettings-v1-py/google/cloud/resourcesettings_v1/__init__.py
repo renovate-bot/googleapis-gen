@@ -16,32 +16,24 @@
 #
 
 from .services.resource_settings_service import ResourceSettingsServiceClient
-from .types.resource_settings import CreateSettingValueRequest
-from .types.resource_settings import DeleteSettingValueRequest
-from .types.resource_settings import GetSettingValueRequest
+from .types.resource_settings import GetSettingRequest
 from .types.resource_settings import ListSettingsRequest
 from .types.resource_settings import ListSettingsResponse
-from .types.resource_settings import LookupEffectiveSettingValueRequest
-from .types.resource_settings import SearchSettingValuesRequest
-from .types.resource_settings import SearchSettingValuesResponse
 from .types.resource_settings import Setting
-from .types.resource_settings import SettingValue
-from .types.resource_settings import UpdateSettingValueRequest
+from .types.resource_settings import SettingMetadata
+from .types.resource_settings import SettingView
+from .types.resource_settings import UpdateSettingRequest
 from .types.resource_settings import Value
 
 
 __all__ = (
-    'CreateSettingValueRequest',
-    'DeleteSettingValueRequest',
-    'GetSettingValueRequest',
+    'GetSettingRequest',
     'ListSettingsRequest',
     'ListSettingsResponse',
-    'LookupEffectiveSettingValueRequest',
-    'SearchSettingValuesRequest',
-    'SearchSettingValuesResponse',
     'Setting',
-    'SettingValue',
-    'UpdateSettingValueRequest',
+    'SettingMetadata',
+    'SettingView',
+    'UpdateSettingRequest',
     'Value',
 'ResourceSettingsServiceClient',
 )

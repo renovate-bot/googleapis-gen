@@ -16,31 +16,23 @@
 #
 
 from .resource_settings import (
-    CreateSettingValueRequest,
-    DeleteSettingValueRequest,
-    GetSettingValueRequest,
+    GetSettingRequest,
     ListSettingsRequest,
     ListSettingsResponse,
-    LookupEffectiveSettingValueRequest,
-    SearchSettingValuesRequest,
-    SearchSettingValuesResponse,
     Setting,
-    SettingValue,
-    UpdateSettingValueRequest,
+    SettingMetadata,
+    UpdateSettingRequest,
     Value,
+    SettingView,
 )
 
 __all__ = (
-    'CreateSettingValueRequest',
-    'DeleteSettingValueRequest',
-    'GetSettingValueRequest',
+    'GetSettingRequest',
     'ListSettingsRequest',
     'ListSettingsResponse',
-    'LookupEffectiveSettingValueRequest',
-    'SearchSettingValuesRequest',
-    'SearchSettingValuesResponse',
     'Setting',
-    'SettingValue',
-    'UpdateSettingValueRequest',
+    'SettingMetadata',
+    'UpdateSettingRequest',
     'Value',
+    'SettingView',
 )

@@ -17,32 +17,24 @@
 
 from google.cloud.resourcesettings_v1.services.resource_settings_service.async_client import ResourceSettingsServiceAsyncClient
 from google.cloud.resourcesettings_v1.services.resource_settings_service.client import ResourceSettingsServiceClient
-from google.cloud.resourcesettings_v1.types.resource_settings import CreateSettingValueRequest
-from google.cloud.resourcesettings_v1.types.resource_settings import DeleteSettingValueRequest
-from google.cloud.resourcesettings_v1.types.resource_settings import GetSettingValueRequest
+from google.cloud.resourcesettings_v1.types.resource_settings import GetSettingRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import ListSettingsRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import ListSettingsResponse
-from google.cloud.resourcesettings_v1.types.resource_settings import LookupEffectiveSettingValueRequest
-from google.cloud.resourcesettings_v1.types.resource_settings import SearchSettingValuesRequest
-from google.cloud.resourcesettings_v1.types.resource_settings import SearchSettingValuesResponse
 from google.cloud.resourcesettings_v1.types.resource_settings import Setting
-from google.cloud.resourcesettings_v1.types.resource_settings import SettingValue
-from google.cloud.resourcesettings_v1.types.resource_settings import UpdateSettingValueRequest
+from google.cloud.resourcesettings_v1.types.resource_settings import SettingMetadata
+from google.cloud.resourcesettings_v1.types.resource_settings import SettingView
+from google.cloud.resourcesettings_v1.types.resource_settings import UpdateSettingRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import Value
 
 __all__ = (
-    'CreateSettingValueRequest',
-    'DeleteSettingValueRequest',
-    'GetSettingValueRequest',
+    'GetSettingRequest',
     'ListSettingsRequest',
     'ListSettingsResponse',
-    'LookupEffectiveSettingValueRequest',
     'ResourceSettingsServiceAsyncClient',
     'ResourceSettingsServiceClient',
-    'SearchSettingValuesRequest',
-    'SearchSettingValuesResponse',
     'Setting',
-    'SettingValue',
-    'UpdateSettingValueRequest',
+    'SettingMetadata',
+    'SettingView',
+    'UpdateSettingRequest',
     'Value',
 )

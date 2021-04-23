@@ -38,7 +38,6 @@ from google.cloud.resourcesettings_v1.services.resource_settings_service import 
 from google.cloud.resourcesettings_v1.services.resource_settings_service import transports
 from google.cloud.resourcesettings_v1.types import resource_settings
 from google.oauth2 import service_account
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
 
 def client_cert_source_callback():
@@ -779,7 +778,7 @@ async def test_list_settings_async_pages():
             assert page_.raw_page.next_page_token == token
 
 
-def test_search_setting_values(transport: str = 'grpc', request_type=resource_settings.SearchSettingValuesRequest):
+def test_get_setting(transport: str = 'grpc', request_type=resource_settings.GetSettingRequest):
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
         transport=transport,
@@ -791,34 +790,38 @@ def test_search_setting_values(transport: str = 'grpc', request_type=resource_se
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.search_setting_values),
+            type(client.transport.get_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SearchSettingValuesResponse(
-            next_page_token='next_page_token_value',
+        call.return_value = resource_settings.Setting(
+            name='name_value',
+
+            etag='etag_value',
 
         )
 
-        response = client.search_setting_values(request)
+        response = client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
 
-        assert args[0] == resource_settings.SearchSettingValuesRequest()
+        assert args[0] == resource_settings.GetSettingRequest()
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, pagers.SearchSettingValuesPager)
+    assert isinstance(response, resource_settings.Setting)
 
-    assert response.next_page_token == 'next_page_token_value'
+    assert response.name == 'name_value'
 
-
-def test_search_setting_values_from_dict():
-    test_search_setting_values(request_type=dict)
+    assert response.etag == 'etag_value'
 
 
-def test_search_setting_values_empty_call():
+def test_get_setting_from_dict():
+    test_get_setting(request_type=dict)
+
+
+def test_get_setting_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ResourceSettingsServiceClient(
@@ -828,16 +831,16 @@ def test_search_setting_values_empty_call():
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.search_setting_values),
+            type(client.transport.get_setting),
             '__call__') as call:
-        client.search_setting_values()
+        client.get_setting()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
 
-        assert args[0] == resource_settings.SearchSettingValuesRequest()
+        assert args[0] == resource_settings.GetSettingRequest()
 
 @pytest.mark.asyncio
-async def test_search_setting_values_async(transport: str = 'grpc_asyncio', request_type=resource_settings.SearchSettingValuesRequest):
+async def test_get_setting_async(transport: str = 'grpc_asyncio', request_type=resource_settings.GetSettingRequest):
     client = ResourceSettingsServiceAsyncClient(
         credentials=credentials.AnonymousCredentials(),
         transport=transport,
@@ -849,409 +852,52 @@ async def test_search_setting_values_async(transport: str = 'grpc_asyncio', requ
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.search_setting_values),
+            type(client.transport.get_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SearchSettingValuesResponse(
-            next_page_token='next_page_token_value',
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting(
+            name='name_value',
+            etag='etag_value',
         ))
 
-        response = await client.search_setting_values(request)
+        response = await client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
 
-        assert args[0] == resource_settings.SearchSettingValuesRequest()
+        assert args[0] == resource_settings.GetSettingRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, pagers.SearchSettingValuesAsyncPager)
-
-    assert response.next_page_token == 'next_page_token_value'
-
-
-@pytest.mark.asyncio
-async def test_search_setting_values_async_from_dict():
-    await test_search_setting_values_async(request_type=dict)
-
-
-def test_search_setting_values_field_headers():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.SearchSettingValuesRequest()
-    request.parent = 'parent/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.search_setting_values),
-            '__call__') as call:
-        call.return_value = resource_settings.SearchSettingValuesResponse()
-
-        client.search_setting_values(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'parent=parent/value',
-    ) in kw['metadata']
-
-
-@pytest.mark.asyncio
-async def test_search_setting_values_field_headers_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.SearchSettingValuesRequest()
-    request.parent = 'parent/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.search_setting_values),
-            '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SearchSettingValuesResponse())
-
-        await client.search_setting_values(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'parent=parent/value',
-    ) in kw['metadata']
-
-
-def test_search_setting_values_pager():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials,
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.search_setting_values),
-            '__call__') as call:
-        # Set the response to a series of pages.
-        call.side_effect = (
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='abc',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[],
-                next_page_token='def',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='ghi',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-            ),
-            RuntimeError,
-        )
-
-        metadata = ()
-        metadata = tuple(metadata) + (
-            gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', ''),
-            )),
-        )
-        pager = client.search_setting_values(request={})
-
-        assert pager._metadata == metadata
-
-        results = [i for i in pager]
-        assert len(results) == 6
-        assert all(isinstance(i, resource_settings.SettingValue)
-                   for i in results)
-
-def test_search_setting_values_pages():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials,
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.search_setting_values),
-            '__call__') as call:
-        # Set the response to a series of pages.
-        call.side_effect = (
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='abc',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[],
-                next_page_token='def',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='ghi',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-            ),
-            RuntimeError,
-        )
-        pages = list(client.search_setting_values(request={}).pages)
-        for page_, token in zip(pages, ['abc','def','ghi', '']):
-            assert page_.raw_page.next_page_token == token
-
-@pytest.mark.asyncio
-async def test_search_setting_values_async_pager():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.search_setting_values),
-            '__call__', new_callable=mock.AsyncMock) as call:
-        # Set the response to a series of pages.
-        call.side_effect = (
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='abc',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[],
-                next_page_token='def',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='ghi',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-            ),
-            RuntimeError,
-        )
-        async_pager = await client.search_setting_values(request={},)
-        assert async_pager.next_page_token == 'abc'
-        responses = []
-        async for response in async_pager:
-            responses.append(response)
-
-        assert len(responses) == 6
-        assert all(isinstance(i, resource_settings.SettingValue)
-                   for i in responses)
-
-@pytest.mark.asyncio
-async def test_search_setting_values_async_pages():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.search_setting_values),
-            '__call__', new_callable=mock.AsyncMock) as call:
-        # Set the response to a series of pages.
-        call.side_effect = (
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='abc',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[],
-                next_page_token='def',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                ],
-                next_page_token='ghi',
-            ),
-            resource_settings.SearchSettingValuesResponse(
-                setting_values=[
-                    resource_settings.SettingValue(),
-                    resource_settings.SettingValue(),
-                ],
-            ),
-            RuntimeError,
-        )
-        pages = []
-        async for page_ in (await client.search_setting_values(request={})).pages:
-            pages.append(page_)
-        for page_, token in zip(pages, ['abc','def','ghi', '']):
-            assert page_.raw_page.next_page_token == token
-
-
-def test_get_setting_value(transport: str = 'grpc', request_type=resource_settings.GetSettingValueRequest):
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.get_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue(
-            name='name_value',
-
-            etag='etag_value',
-
-            read_only=True,
-
-        )
-
-        response = client.get_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.GetSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-
-    assert isinstance(response, resource_settings.SettingValue)
+    assert isinstance(response, resource_settings.Setting)
 
     assert response.name == 'name_value'
 
     assert response.etag == 'etag_value'
 
-    assert response.read_only is True
-
-
-def test_get_setting_value_from_dict():
-    test_get_setting_value(request_type=dict)
-
-
-def test_get_setting_value_empty_call():
-    # This test is a coverage failsafe to make sure that totally empty calls,
-    # i.e. request == None and no flattened fields passed, work.
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.get_setting_value),
-            '__call__') as call:
-        client.get_setting_value()
-        call.assert_called()
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.GetSettingValueRequest()
 
 @pytest.mark.asyncio
-async def test_get_setting_value_async(transport: str = 'grpc_asyncio', request_type=resource_settings.GetSettingValueRequest):
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.get_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue(
-            name='name_value',
-            etag='etag_value',
-            read_only=True,
-        ))
-
-        response = await client.get_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.GetSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-    assert isinstance(response, resource_settings.SettingValue)
-
-    assert response.name == 'name_value'
-
-    assert response.etag == 'etag_value'
-
-    assert response.read_only is True
+async def test_get_setting_async_from_dict():
+    await test_get_setting_async(request_type=dict)
 
 
-@pytest.mark.asyncio
-async def test_get_setting_value_async_from_dict():
-    await test_get_setting_value_async(request_type=dict)
-
-
-def test_get_setting_value_field_headers():
+def test_get_setting_field_headers():
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = resource_settings.GetSettingValueRequest()
+    request = resource_settings.GetSettingRequest()
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.get_setting_value),
+            type(client.transport.get_setting),
             '__call__') as call:
-        call.return_value = resource_settings.SettingValue()
+        call.return_value = resource_settings.Setting()
 
-        client.get_setting_value(request)
+        client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
@@ -1267,23 +913,23 @@ def test_get_setting_value_field_headers():
 
 
 @pytest.mark.asyncio
-async def test_get_setting_value_field_headers_async():
+async def test_get_setting_field_headers_async():
     client = ResourceSettingsServiceAsyncClient(
         credentials=credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = resource_settings.GetSettingValueRequest()
+    request = resource_settings.GetSettingRequest()
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.get_setting_value),
+            type(client.transport.get_setting),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting())
 
-        await client.get_setting_value(request)
+        await client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
@@ -1298,21 +944,21 @@ async def test_get_setting_value_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_setting_value_flattened():
+def test_get_setting_flattened():
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.get_setting_value),
+            type(client.transport.get_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue()
+        call.return_value = resource_settings.Setting()
 
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
-        client.get_setting_value(
+        client.get_setting(
             name='name_value',
         )
 
@@ -1324,7 +970,7 @@ def test_get_setting_value_flattened():
         assert args[0].name == 'name_value'
 
 
-def test_get_setting_value_flattened_error():
+def test_get_setting_flattened_error():
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
     )
@@ -1332,29 +978,29 @@ def test_get_setting_value_flattened_error():
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.get_setting_value(
-            resource_settings.GetSettingValueRequest(),
+        client.get_setting(
+            resource_settings.GetSettingRequest(),
             name='name_value',
         )
 
 
 @pytest.mark.asyncio
-async def test_get_setting_value_flattened_async():
+async def test_get_setting_flattened_async():
     client = ResourceSettingsServiceAsyncClient(
         credentials=credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.get_setting_value),
+            type(client.transport.get_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue()
+        call.return_value = resource_settings.Setting()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
-        response = await client.get_setting_value(
+        response = await client.get_setting(
             name='name_value',
         )
 
@@ -1367,7 +1013,7 @@ async def test_get_setting_value_flattened_async():
 
 
 @pytest.mark.asyncio
-async def test_get_setting_value_flattened_error_async():
+async def test_get_setting_flattened_error_async():
     client = ResourceSettingsServiceAsyncClient(
         credentials=credentials.AnonymousCredentials(),
     )
@@ -1375,13 +1021,13 @@ async def test_get_setting_value_flattened_error_async():
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        await client.get_setting_value(
-            resource_settings.GetSettingValueRequest(),
+        await client.get_setting(
+            resource_settings.GetSettingRequest(),
             name='name_value',
         )
 
 
-def test_lookup_effective_setting_value(transport: str = 'grpc', request_type=resource_settings.LookupEffectiveSettingValueRequest):
+def test_update_setting(transport: str = 'grpc', request_type=resource_settings.UpdateSettingRequest):
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
         transport=transport,
@@ -1393,42 +1039,38 @@ def test_lookup_effective_setting_value(transport: str = 'grpc', request_type=re
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.lookup_effective_setting_value),
+            type(client.transport.update_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue(
+        call.return_value = resource_settings.Setting(
             name='name_value',
 
             etag='etag_value',
 
-            read_only=True,
-
         )
 
-        response = client.lookup_effective_setting_value(request)
+        response = client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
 
-        assert args[0] == resource_settings.LookupEffectiveSettingValueRequest()
+        assert args[0] == resource_settings.UpdateSettingRequest()
 
     # Establish that the response is the type that we expect.
 
-    assert isinstance(response, resource_settings.SettingValue)
+    assert isinstance(response, resource_settings.Setting)
 
     assert response.name == 'name_value'
 
     assert response.etag == 'etag_value'
 
-    assert response.read_only is True
+
+def test_update_setting_from_dict():
+    test_update_setting(request_type=dict)
 
 
-def test_lookup_effective_setting_value_from_dict():
-    test_lookup_effective_setting_value(request_type=dict)
-
-
-def test_lookup_effective_setting_value_empty_call():
+def test_update_setting_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ResourceSettingsServiceClient(
@@ -1438,16 +1080,16 @@ def test_lookup_effective_setting_value_empty_call():
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.lookup_effective_setting_value),
+            type(client.transport.update_setting),
             '__call__') as call:
-        client.lookup_effective_setting_value()
+        client.update_setting()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
 
-        assert args[0] == resource_settings.LookupEffectiveSettingValueRequest()
+        assert args[0] == resource_settings.UpdateSettingRequest()
 
 @pytest.mark.asyncio
-async def test_lookup_effective_setting_value_async(transport: str = 'grpc_asyncio', request_type=resource_settings.LookupEffectiveSettingValueRequest):
+async def test_update_setting_async(transport: str = 'grpc_asyncio', request_type=resource_settings.UpdateSettingRequest):
     client = ResourceSettingsServiceAsyncClient(
         credentials=credentials.AnonymousCredentials(),
         transport=transport,
@@ -1459,55 +1101,52 @@ async def test_lookup_effective_setting_value_async(transport: str = 'grpc_async
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.lookup_effective_setting_value),
+            type(client.transport.update_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting(
             name='name_value',
             etag='etag_value',
-            read_only=True,
         ))
 
-        response = await client.lookup_effective_setting_value(request)
+        response = await client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
 
-        assert args[0] == resource_settings.LookupEffectiveSettingValueRequest()
+        assert args[0] == resource_settings.UpdateSettingRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, resource_settings.SettingValue)
+    assert isinstance(response, resource_settings.Setting)
 
     assert response.name == 'name_value'
 
     assert response.etag == 'etag_value'
 
-    assert response.read_only is True
-
 
 @pytest.mark.asyncio
-async def test_lookup_effective_setting_value_async_from_dict():
-    await test_lookup_effective_setting_value_async(request_type=dict)
+async def test_update_setting_async_from_dict():
+    await test_update_setting_async(request_type=dict)
 
 
-def test_lookup_effective_setting_value_field_headers():
+def test_update_setting_field_headers():
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = resource_settings.LookupEffectiveSettingValueRequest()
-    request.name = 'name/value'
+    request = resource_settings.UpdateSettingRequest()
+    request.setting.name = 'setting.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.lookup_effective_setting_value),
+            type(client.transport.update_setting),
             '__call__') as call:
-        call.return_value = resource_settings.SettingValue()
+        call.return_value = resource_settings.Setting()
 
-        client.lookup_effective_setting_value(request)
+        client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
@@ -1518,28 +1157,28 @@ def test_lookup_effective_setting_value_field_headers():
     _, _, kw = call.mock_calls[0]
     assert (
         'x-goog-request-params',
-        'name=name/value',
+        'setting.name=setting.name/value',
     ) in kw['metadata']
 
 
 @pytest.mark.asyncio
-async def test_lookup_effective_setting_value_field_headers_async():
+async def test_update_setting_field_headers_async():
     client = ResourceSettingsServiceAsyncClient(
         credentials=credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = resource_settings.LookupEffectiveSettingValueRequest()
-    request.name = 'name/value'
+    request = resource_settings.UpdateSettingRequest()
+    request.setting.name = 'setting.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
-            type(client.transport.lookup_effective_setting_value),
+            type(client.transport.update_setting),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting())
 
-        await client.lookup_effective_setting_value(request)
+        await client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
@@ -1550,677 +1189,8 @@ async def test_lookup_effective_setting_value_field_headers_async():
     _, _, kw = call.mock_calls[0]
     assert (
         'x-goog-request-params',
-        'name=name/value',
+        'setting.name=setting.name/value',
     ) in kw['metadata']
-
-
-def test_create_setting_value(transport: str = 'grpc', request_type=resource_settings.CreateSettingValueRequest):
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue(
-            name='name_value',
-
-            etag='etag_value',
-
-            read_only=True,
-
-        )
-
-        response = client.create_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.CreateSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-
-    assert isinstance(response, resource_settings.SettingValue)
-
-    assert response.name == 'name_value'
-
-    assert response.etag == 'etag_value'
-
-    assert response.read_only is True
-
-
-def test_create_setting_value_from_dict():
-    test_create_setting_value(request_type=dict)
-
-
-def test_create_setting_value_empty_call():
-    # This test is a coverage failsafe to make sure that totally empty calls,
-    # i.e. request == None and no flattened fields passed, work.
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        client.create_setting_value()
-        call.assert_called()
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.CreateSettingValueRequest()
-
-@pytest.mark.asyncio
-async def test_create_setting_value_async(transport: str = 'grpc_asyncio', request_type=resource_settings.CreateSettingValueRequest):
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue(
-            name='name_value',
-            etag='etag_value',
-            read_only=True,
-        ))
-
-        response = await client.create_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.CreateSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-    assert isinstance(response, resource_settings.SettingValue)
-
-    assert response.name == 'name_value'
-
-    assert response.etag == 'etag_value'
-
-    assert response.read_only is True
-
-
-@pytest.mark.asyncio
-async def test_create_setting_value_async_from_dict():
-    await test_create_setting_value_async(request_type=dict)
-
-
-def test_create_setting_value_field_headers():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.CreateSettingValueRequest()
-    request.parent = 'parent/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        call.return_value = resource_settings.SettingValue()
-
-        client.create_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'parent=parent/value',
-    ) in kw['metadata']
-
-
-@pytest.mark.asyncio
-async def test_create_setting_value_field_headers_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.CreateSettingValueRequest()
-    request.parent = 'parent/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue())
-
-        await client.create_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'parent=parent/value',
-    ) in kw['metadata']
-
-
-def test_create_setting_value_flattened():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue()
-
-        # Call the method with a truthy value for each flattened field,
-        # using the keyword arguments to the method.
-        client.create_setting_value(
-            parent='parent_value',
-            setting_value=resource_settings.SettingValue(name='name_value'),
-        )
-
-        # Establish that the underlying call was made with the expected
-        # request object values.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0].parent == 'parent_value'
-
-        assert args[0].setting_value == resource_settings.SettingValue(name='name_value')
-
-
-def test_create_setting_value_flattened_error():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Attempting to call a method with both a request object and flattened
-    # fields is an error.
-    with pytest.raises(ValueError):
-        client.create_setting_value(
-            resource_settings.CreateSettingValueRequest(),
-            parent='parent_value',
-            setting_value=resource_settings.SettingValue(name='name_value'),
-        )
-
-
-@pytest.mark.asyncio
-async def test_create_setting_value_flattened_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.create_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue()
-
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue())
-        # Call the method with a truthy value for each flattened field,
-        # using the keyword arguments to the method.
-        response = await client.create_setting_value(
-            parent='parent_value',
-            setting_value=resource_settings.SettingValue(name='name_value'),
-        )
-
-        # Establish that the underlying call was made with the expected
-        # request object values.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0].parent == 'parent_value'
-
-        assert args[0].setting_value == resource_settings.SettingValue(name='name_value')
-
-
-@pytest.mark.asyncio
-async def test_create_setting_value_flattened_error_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Attempting to call a method with both a request object and flattened
-    # fields is an error.
-    with pytest.raises(ValueError):
-        await client.create_setting_value(
-            resource_settings.CreateSettingValueRequest(),
-            parent='parent_value',
-            setting_value=resource_settings.SettingValue(name='name_value'),
-        )
-
-
-def test_update_setting_value(transport: str = 'grpc', request_type=resource_settings.UpdateSettingValueRequest):
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.update_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = resource_settings.SettingValue(
-            name='name_value',
-
-            etag='etag_value',
-
-            read_only=True,
-
-        )
-
-        response = client.update_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.UpdateSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-
-    assert isinstance(response, resource_settings.SettingValue)
-
-    assert response.name == 'name_value'
-
-    assert response.etag == 'etag_value'
-
-    assert response.read_only is True
-
-
-def test_update_setting_value_from_dict():
-    test_update_setting_value(request_type=dict)
-
-
-def test_update_setting_value_empty_call():
-    # This test is a coverage failsafe to make sure that totally empty calls,
-    # i.e. request == None and no flattened fields passed, work.
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.update_setting_value),
-            '__call__') as call:
-        client.update_setting_value()
-        call.assert_called()
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.UpdateSettingValueRequest()
-
-@pytest.mark.asyncio
-async def test_update_setting_value_async(transport: str = 'grpc_asyncio', request_type=resource_settings.UpdateSettingValueRequest):
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.update_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue(
-            name='name_value',
-            etag='etag_value',
-            read_only=True,
-        ))
-
-        response = await client.update_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.UpdateSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-    assert isinstance(response, resource_settings.SettingValue)
-
-    assert response.name == 'name_value'
-
-    assert response.etag == 'etag_value'
-
-    assert response.read_only is True
-
-
-@pytest.mark.asyncio
-async def test_update_setting_value_async_from_dict():
-    await test_update_setting_value_async(request_type=dict)
-
-
-def test_update_setting_value_field_headers():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.UpdateSettingValueRequest()
-    request.setting_value.name = 'setting_value.name/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.update_setting_value),
-            '__call__') as call:
-        call.return_value = resource_settings.SettingValue()
-
-        client.update_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'setting_value.name=setting_value.name/value',
-    ) in kw['metadata']
-
-
-@pytest.mark.asyncio
-async def test_update_setting_value_field_headers_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.UpdateSettingValueRequest()
-    request.setting_value.name = 'setting_value.name/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.update_setting_value),
-            '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.SettingValue())
-
-        await client.update_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'setting_value.name=setting_value.name/value',
-    ) in kw['metadata']
-
-
-def test_delete_setting_value(transport: str = 'grpc', request_type=resource_settings.DeleteSettingValueRequest):
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = None
-
-        response = client.delete_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.DeleteSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-    assert response is None
-
-
-def test_delete_setting_value_from_dict():
-    test_delete_setting_value(request_type=dict)
-
-
-def test_delete_setting_value_empty_call():
-    # This test is a coverage failsafe to make sure that totally empty calls,
-    # i.e. request == None and no flattened fields passed, work.
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        client.delete_setting_value()
-        call.assert_called()
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.DeleteSettingValueRequest()
-
-@pytest.mark.asyncio
-async def test_delete_setting_value_async(transport: str = 'grpc_asyncio', request_type=resource_settings.DeleteSettingValueRequest):
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-        transport=transport,
-    )
-
-    # Everything is optional in proto3 as far as the runtime is concerned,
-    # and we are mocking out the actual API, so just send an empty request.
-    request = request_type()
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
-        response = await client.delete_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0] == resource_settings.DeleteSettingValueRequest()
-
-    # Establish that the response is the type that we expect.
-    assert response is None
-
-
-@pytest.mark.asyncio
-async def test_delete_setting_value_async_from_dict():
-    await test_delete_setting_value_async(request_type=dict)
-
-
-def test_delete_setting_value_field_headers():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.DeleteSettingValueRequest()
-    request.name = 'name/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        call.return_value = None
-
-        client.delete_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'name=name/value',
-    ) in kw['metadata']
-
-
-@pytest.mark.asyncio
-async def test_delete_setting_value_field_headers_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Any value that is part of the HTTP/1.1 URI should be sent as
-    # a field header. Set these to a non-empty value.
-    request = resource_settings.DeleteSettingValueRequest()
-    request.name = 'name/value'
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
-        await client.delete_setting_value(request)
-
-        # Establish that the underlying gRPC stub method was called.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-        assert args[0] == request
-
-    # Establish that the field header was sent.
-    _, _, kw = call.mock_calls[0]
-    assert (
-        'x-goog-request-params',
-        'name=name/value',
-    ) in kw['metadata']
-
-
-def test_delete_setting_value_flattened():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = None
-
-        # Call the method with a truthy value for each flattened field,
-        # using the keyword arguments to the method.
-        client.delete_setting_value(
-            name='name_value',
-        )
-
-        # Establish that the underlying call was made with the expected
-        # request object values.
-        assert len(call.mock_calls) == 1
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0].name == 'name_value'
-
-
-def test_delete_setting_value_flattened_error():
-    client = ResourceSettingsServiceClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Attempting to call a method with both a request object and flattened
-    # fields is an error.
-    with pytest.raises(ValueError):
-        client.delete_setting_value(
-            resource_settings.DeleteSettingValueRequest(),
-            name='name_value',
-        )
-
-
-@pytest.mark.asyncio
-async def test_delete_setting_value_flattened_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Mock the actual call within the gRPC stub, and fake the request.
-    with mock.patch.object(
-            type(client.transport.delete_setting_value),
-            '__call__') as call:
-        # Designate an appropriate return value for the call.
-        call.return_value = None
-
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-        # Call the method with a truthy value for each flattened field,
-        # using the keyword arguments to the method.
-        response = await client.delete_setting_value(
-            name='name_value',
-        )
-
-        # Establish that the underlying call was made with the expected
-        # request object values.
-        assert len(call.mock_calls)
-        _, args, _ = call.mock_calls[0]
-
-        assert args[0].name == 'name_value'
-
-
-@pytest.mark.asyncio
-async def test_delete_setting_value_flattened_error_async():
-    client = ResourceSettingsServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
-    )
-
-    # Attempting to call a method with both a request object and flattened
-    # fields is an error.
-    with pytest.raises(ValueError):
-        await client.delete_setting_value(
-            resource_settings.DeleteSettingValueRequest(),
-            name='name_value',
-        )
 
 
 def test_credentials_transport_error():
@@ -2323,12 +1293,8 @@ def test_resource_settings_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'list_settings',
-        'search_setting_values',
-        'get_setting_value',
-        'lookup_effective_setting_value',
-        'create_setting_value',
-        'update_setting_value',
-        'delete_setting_value',
+        'get_setting',
+        'update_setting',
         )
     for method in methods:
         with pytest.raises(NotImplementedError):
@@ -2578,29 +1544,8 @@ def test_parse_setting_path():
     actual = ResourceSettingsServiceClient.parse_setting_path(path)
     assert expected == actual
 
-def test_setting_value_path():
-    project_number = "oyster"
-    setting_name = "nudibranch"
-
-    expected = "projects/{project_number}/settings/{setting_name}/value".format(project_number=project_number, setting_name=setting_name, )
-    actual = ResourceSettingsServiceClient.setting_value_path(project_number, setting_name)
-    assert expected == actual
-
-
-def test_parse_setting_value_path():
-    expected = {
-    "project_number": "cuttlefish",
-    "setting_name": "mussel",
-
-    }
-    path = ResourceSettingsServiceClient.setting_value_path(**expected)
-
-    # Check that the path construction is reversible.
-    actual = ResourceSettingsServiceClient.parse_setting_value_path(path)
-    assert expected == actual
-
 def test_common_billing_account_path():
-    billing_account = "winkle"
+    billing_account = "oyster"
 
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ResourceSettingsServiceClient.common_billing_account_path(billing_account)
@@ -2609,7 +1554,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
+    "billing_account": "nudibranch",
 
     }
     path = ResourceSettingsServiceClient.common_billing_account_path(**expected)
@@ -2619,7 +1564,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "scallop"
+    folder = "cuttlefish"
 
     expected = "folders/{folder}".format(folder=folder, )
     actual = ResourceSettingsServiceClient.common_folder_path(folder)
@@ -2628,7 +1573,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
+    "folder": "mussel",
 
     }
     path = ResourceSettingsServiceClient.common_folder_path(**expected)
@@ -2638,7 +1583,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "squid"
+    organization = "winkle"
 
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ResourceSettingsServiceClient.common_organization_path(organization)
@@ -2647,7 +1592,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
+    "organization": "nautilus",
 
     }
     path = ResourceSettingsServiceClient.common_organization_path(**expected)
@@ -2657,7 +1602,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "whelk"
+    project = "scallop"
 
     expected = "projects/{project}".format(project=project, )
     actual = ResourceSettingsServiceClient.common_project_path(project)
@@ -2666,7 +1611,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
+    "project": "abalone",
 
     }
     path = ResourceSettingsServiceClient.common_project_path(**expected)
@@ -2676,8 +1621,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "oyster"
-    location = "nudibranch"
+    project = "squid"
+    location = "clam"
 
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ResourceSettingsServiceClient.common_location_path(project, location)
@@ -2686,8 +1631,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
+    "project": "whelk",
+    "location": "octopus",
 
     }
     path = ResourceSettingsServiceClient.common_location_path(**expected)

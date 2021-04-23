@@ -41,13 +41,9 @@ def partition(
 class resourcesettingsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'create_setting_value': ('parent', 'setting_value', ),
-    'delete_setting_value': ('name', ),
-    'get_setting_value': ('name', ),
-    'list_settings': ('parent', 'page_size', 'page_token', ),
-    'lookup_effective_setting_value': ('name', ),
-    'search_setting_values': ('parent', 'page_size', 'page_token', ),
-    'update_setting_value': ('setting_value', ),
+    'get_setting': ('name', 'view', ),
+    'list_settings': ('parent', 'page_size', 'page_token', 'view', ),
+    'update_setting': ('setting', ),
 
     }
 

@@ -26,7 +26,6 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials  # type: ignore
 
 from google.cloud.resourcesettings_v1.types import resource_settings
-from google.protobuf import empty_pb2 as empty  # type: ignore
 
 
 try:
@@ -120,94 +119,14 @@ class ResourceSettingsServiceTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
-            self.search_setting_values: gapic_v1.method.wrap_method(
-                self.search_setting_values,
-                default_retry=retries.Retry(
-                    initial=1.0,
-                    maximum=10.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
-                        exceptions.DeadlineExceeded,
-                        exceptions.ServiceUnavailable,
-                    ),
-                    deadline=60.0,
-                ),
-                default_timeout=60.0,
+            self.get_setting: gapic_v1.method.wrap_method(
+                self.get_setting,
+                default_timeout=None,
                 client_info=client_info,
             ),
-            self.get_setting_value: gapic_v1.method.wrap_method(
-                self.get_setting_value,
-                default_retry=retries.Retry(
-                    initial=1.0,
-                    maximum=10.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
-                        exceptions.DeadlineExceeded,
-                        exceptions.ServiceUnavailable,
-                    ),
-                    deadline=60.0,
-                ),
-                default_timeout=60.0,
-                client_info=client_info,
-            ),
-            self.lookup_effective_setting_value: gapic_v1.method.wrap_method(
-                self.lookup_effective_setting_value,
-                default_retry=retries.Retry(
-                    initial=1.0,
-                    maximum=10.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
-                        exceptions.DeadlineExceeded,
-                        exceptions.ServiceUnavailable,
-                    ),
-                    deadline=60.0,
-                ),
-                default_timeout=60.0,
-                client_info=client_info,
-            ),
-            self.create_setting_value: gapic_v1.method.wrap_method(
-                self.create_setting_value,
-                default_retry=retries.Retry(
-                    initial=1.0,
-                    maximum=10.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
-                        exceptions.DeadlineExceeded,
-                        exceptions.ServiceUnavailable,
-                    ),
-                    deadline=60.0,
-                ),
-                default_timeout=60.0,
-                client_info=client_info,
-            ),
-            self.update_setting_value: gapic_v1.method.wrap_method(
-                self.update_setting_value,
-                default_retry=retries.Retry(
-                    initial=1.0,
-                    maximum=10.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
-                        exceptions.DeadlineExceeded,
-                        exceptions.ServiceUnavailable,
-                    ),
-                    deadline=60.0,
-                ),
-                default_timeout=60.0,
-                client_info=client_info,
-            ),
-            self.delete_setting_value: gapic_v1.method.wrap_method(
-                self.delete_setting_value,
-                default_retry=retries.Retry(
-                    initial=1.0,
-                    maximum=10.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
-                        exceptions.DeadlineExceeded,
-                        exceptions.ServiceUnavailable,
-                    ),
-                    deadline=60.0,
-                ),
-                default_timeout=60.0,
+            self.update_setting: gapic_v1.method.wrap_method(
+                self.update_setting,
+                default_timeout=None,
                 client_info=client_info,
             ),
 
@@ -223,56 +142,20 @@ class ResourceSettingsServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
-    def search_setting_values(self) -> typing.Callable[
-            [resource_settings.SearchSettingValuesRequest],
+    def get_setting(self) -> typing.Callable[
+            [resource_settings.GetSettingRequest],
             typing.Union[
-                resource_settings.SearchSettingValuesResponse,
-                typing.Awaitable[resource_settings.SearchSettingValuesResponse]
+                resource_settings.Setting,
+                typing.Awaitable[resource_settings.Setting]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_setting_value(self) -> typing.Callable[
-            [resource_settings.GetSettingValueRequest],
+    def update_setting(self) -> typing.Callable[
+            [resource_settings.UpdateSettingRequest],
             typing.Union[
-                resource_settings.SettingValue,
-                typing.Awaitable[resource_settings.SettingValue]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def lookup_effective_setting_value(self) -> typing.Callable[
-            [resource_settings.LookupEffectiveSettingValueRequest],
-            typing.Union[
-                resource_settings.SettingValue,
-                typing.Awaitable[resource_settings.SettingValue]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def create_setting_value(self) -> typing.Callable[
-            [resource_settings.CreateSettingValueRequest],
-            typing.Union[
-                resource_settings.SettingValue,
-                typing.Awaitable[resource_settings.SettingValue]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def update_setting_value(self) -> typing.Callable[
-            [resource_settings.UpdateSettingValueRequest],
-            typing.Union[
-                resource_settings.SettingValue,
-                typing.Awaitable[resource_settings.SettingValue]
-            ]]:
-        raise NotImplementedError()
-
-    @property
-    def delete_setting_value(self) -> typing.Callable[
-            [resource_settings.DeleteSettingValueRequest],
-            typing.Union[
-                empty.Empty,
-                typing.Awaitable[empty.Empty]
+                resource_settings.Setting,
+                typing.Awaitable[resource_settings.Setting]
             ]]:
         raise NotImplementedError()
 
