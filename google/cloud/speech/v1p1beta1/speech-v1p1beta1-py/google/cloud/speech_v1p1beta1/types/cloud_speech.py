@@ -370,7 +370,7 @@ class RecognitionConfig(proto.Message):
                   </tr>
                   <tr>
                     <td><code>video</code></td>
-                    <td>Best for audio that originated from from video or includes multiple
+                    <td>Best for audio that originated from video or includes multiple
                         speakers. Ideally the audio is recorded at a 16khz or greater
                         sampling rate. This is a premium model that costs more than the
                         standard rate.</td>
@@ -429,6 +429,7 @@ class RecognitionConfig(proto.Message):
         OGG_OPUS = 6
         SPEEX_WITH_HEADER_BYTE = 7
         MP3 = 8
+        WEBM_OPUS = 9
 
     encoding = proto.Field(proto.ENUM, number=1,
         enum=AudioEncoding,
