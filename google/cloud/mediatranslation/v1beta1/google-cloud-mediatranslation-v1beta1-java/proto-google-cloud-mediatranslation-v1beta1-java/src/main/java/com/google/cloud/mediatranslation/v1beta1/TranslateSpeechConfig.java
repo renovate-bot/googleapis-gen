@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
   private TranslateSpeechConfig() {
     audioEncoding_ = "";
     sourceLanguageCode_ = "";
-    alternativeSourceLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     targetLanguageCode_ = "";
     model_ = "";
   }
@@ -48,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -88,15 +86,6 @@ private static final long serialVersionUID = 0L;
             model_ = s;
             break;
           }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              alternativeSourceLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            alternativeSourceLanguageCodes_.add(s);
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,9 +101,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        alternativeSourceLanguageCodes_ = alternativeSourceLanguageCodes_.getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -140,6 +126,24 @@ private static final long serialVersionUID = 0L;
    * Supported formats:
    * - `linear16`
    *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * - `flac`
+   *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+   *   because it is lossless--therefore recognition is not compromised--and
+   *   requires only about half the bandwidth of `linear16`.
+   * - `mulaw`
+   *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * - `amr`
+   *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+   * - `amr-wb`
+   *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+   * - `ogg-opus`
+   *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+   *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+   *   or 48000.
+   * - `mp3`
+   *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+   *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+   *   sample rate of the file being used.
    * </pre>
    *
    * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -164,6 +168,24 @@ private static final long serialVersionUID = 0L;
    * Supported formats:
    * - `linear16`
    *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * - `flac`
+   *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+   *   because it is lossless--therefore recognition is not compromised--and
+   *   requires only about half the bandwidth of `linear16`.
+   * - `mulaw`
+   *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * - `amr`
+   *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+   * - `amr-wb`
+   *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+   * - `ogg-opus`
+   *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+   *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+   *   or 48000.
+   * - `mp3`
+   *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+   *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+   *   sample rate of the file being used.
    * </pre>
    *
    * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -230,77 +252,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ALTERNATIVE_SOURCE_LANGUAGE_CODES_FIELD_NUMBER = 6;
-  private com.google.protobuf.LazyStringList alternativeSourceLanguageCodes_;
-  /**
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return A list containing the alternativeSourceLanguageCodes.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getAlternativeSourceLanguageCodesList() {
-    return alternativeSourceLanguageCodes_;
-  }
-  /**
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The count of alternativeSourceLanguageCodes.
-   */
-  public int getAlternativeSourceLanguageCodesCount() {
-    return alternativeSourceLanguageCodes_.size();
-  }
-  /**
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @param index The index of the element to return.
-   * @return The alternativeSourceLanguageCodes at the given index.
-   */
-  public java.lang.String getAlternativeSourceLanguageCodes(int index) {
-    return alternativeSourceLanguageCodes_.get(index);
-  }
-  /**
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the alternativeSourceLanguageCodes at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getAlternativeSourceLanguageCodesBytes(int index) {
-    return alternativeSourceLanguageCodes_.getByteString(index);
-  }
-
   public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 3;
   private volatile java.lang.Object targetLanguageCode_;
   /**
@@ -354,8 +305,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Sample rate in Hertz of the audio data. Valid values are:
    * 8000-48000. 16000 is optimal. For best results, set the sampling rate of
    * the audio source to 16000 Hz. If that's not possible, use the native sample
-   * rate of the audio source (instead of re-sampling). This field can only be
-   * omitted for `FLAC` and `WAV` audio files.
+   * rate of the audio source (instead of re-sampling).
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -370,7 +320,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object model_;
   /**
    * <pre>
-   * Optional.
+   * Optional. `google-provided-model/video` and
+   * `google-provided-model/enhanced-phone-call` are premium models.
+   * `google-provided-model/phone-call` is not premium model.
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -391,7 +343,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional.
+   * Optional. `google-provided-model/video` and
+   * `google-provided-model/enhanced-phone-call` are premium models.
+   * `google-provided-model/phone-call` is not premium model.
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -441,9 +395,6 @@ private static final long serialVersionUID = 0L;
     if (!getModelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, model_);
     }
-    for (int i = 0; i < alternativeSourceLanguageCodes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, alternativeSourceLanguageCodes_.getRaw(i));
-    }
     unknownFields.writeTo(output);
   }
 
@@ -469,14 +420,6 @@ private static final long serialVersionUID = 0L;
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, model_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < alternativeSourceLanguageCodes_.size(); i++) {
-        dataSize += computeStringSizeNoTag(alternativeSourceLanguageCodes_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getAlternativeSourceLanguageCodesList().size();
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -496,8 +439,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAudioEncoding())) return false;
     if (!getSourceLanguageCode()
         .equals(other.getSourceLanguageCode())) return false;
-    if (!getAlternativeSourceLanguageCodesList()
-        .equals(other.getAlternativeSourceLanguageCodesList())) return false;
     if (!getTargetLanguageCode()
         .equals(other.getTargetLanguageCode())) return false;
     if (getSampleRateHertz()
@@ -519,10 +460,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAudioEncoding().hashCode();
     hash = (37 * hash) + SOURCE_LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getSourceLanguageCode().hashCode();
-    if (getAlternativeSourceLanguageCodesCount() > 0) {
-      hash = (37 * hash) + ALTERNATIVE_SOURCE_LANGUAGE_CODES_FIELD_NUMBER;
-      hash = (53 * hash) + getAlternativeSourceLanguageCodesList().hashCode();
-    }
     hash = (37 * hash) + TARGET_LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getTargetLanguageCode().hashCode();
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
@@ -671,8 +608,6 @@ private static final long serialVersionUID = 0L;
 
       sourceLanguageCode_ = "";
 
-      alternativeSourceLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetLanguageCode_ = "";
 
       sampleRateHertz_ = 0;
@@ -705,14 +640,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig buildPartial() {
       com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig result = new com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig(this);
-      int from_bitField0_ = bitField0_;
       result.audioEncoding_ = audioEncoding_;
       result.sourceLanguageCode_ = sourceLanguageCode_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        alternativeSourceLanguageCodes_ = alternativeSourceLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.alternativeSourceLanguageCodes_ = alternativeSourceLanguageCodes_;
       result.targetLanguageCode_ = targetLanguageCode_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.model_ = model_;
@@ -772,16 +701,6 @@ private static final long serialVersionUID = 0L;
         sourceLanguageCode_ = other.sourceLanguageCode_;
         onChanged();
       }
-      if (!other.alternativeSourceLanguageCodes_.isEmpty()) {
-        if (alternativeSourceLanguageCodes_.isEmpty()) {
-          alternativeSourceLanguageCodes_ = other.alternativeSourceLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureAlternativeSourceLanguageCodesIsMutable();
-          alternativeSourceLanguageCodes_.addAll(other.alternativeSourceLanguageCodes_);
-        }
-        onChanged();
-      }
       if (!other.getTargetLanguageCode().isEmpty()) {
         targetLanguageCode_ = other.targetLanguageCode_;
         onChanged();
@@ -821,7 +740,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object audioEncoding_ = "";
     /**
@@ -830,6 +748,24 @@ private static final long serialVersionUID = 0L;
      * Supported formats:
      * - `linear16`
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     * - `flac`
+     *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+     *   because it is lossless--therefore recognition is not compromised--and
+     *   requires only about half the bandwidth of `linear16`.
+     * - `mulaw`
+     *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     * - `amr`
+     *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     * - `amr-wb`
+     *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     * - `ogg-opus`
+     *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+     *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+     *   or 48000.
+     * - `mp3`
+     *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+     *   sample rate of the file being used.
      * </pre>
      *
      * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -853,6 +789,24 @@ private static final long serialVersionUID = 0L;
      * Supported formats:
      * - `linear16`
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     * - `flac`
+     *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+     *   because it is lossless--therefore recognition is not compromised--and
+     *   requires only about half the bandwidth of `linear16`.
+     * - `mulaw`
+     *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     * - `amr`
+     *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     * - `amr-wb`
+     *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     * - `ogg-opus`
+     *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+     *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+     *   or 48000.
+     * - `mp3`
+     *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+     *   sample rate of the file being used.
      * </pre>
      *
      * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -877,6 +831,24 @@ private static final long serialVersionUID = 0L;
      * Supported formats:
      * - `linear16`
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     * - `flac`
+     *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+     *   because it is lossless--therefore recognition is not compromised--and
+     *   requires only about half the bandwidth of `linear16`.
+     * - `mulaw`
+     *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     * - `amr`
+     *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     * - `amr-wb`
+     *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     * - `ogg-opus`
+     *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+     *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+     *   or 48000.
+     * - `mp3`
+     *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+     *   sample rate of the file being used.
      * </pre>
      *
      * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -899,6 +871,24 @@ private static final long serialVersionUID = 0L;
      * Supported formats:
      * - `linear16`
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     * - `flac`
+     *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+     *   because it is lossless--therefore recognition is not compromised--and
+     *   requires only about half the bandwidth of `linear16`.
+     * - `mulaw`
+     *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     * - `amr`
+     *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     * - `amr-wb`
+     *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     * - `ogg-opus`
+     *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+     *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+     *   or 48000.
+     * - `mp3`
+     *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+     *   sample rate of the file being used.
      * </pre>
      *
      * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -916,6 +906,24 @@ private static final long serialVersionUID = 0L;
      * Supported formats:
      * - `linear16`
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     * - `flac`
+     *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+     *   because it is lossless--therefore recognition is not compromised--and
+     *   requires only about half the bandwidth of `linear16`.
+     * - `mulaw`
+     *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     * - `amr`
+     *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     * - `amr-wb`
+     *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     * - `ogg-opus`
+     *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+     *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+     *   or 48000.
+     * - `mp3`
+     *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+     *   sample rate of the file being used.
      * </pre>
      *
      * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1030,197 +1038,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList alternativeSourceLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureAlternativeSourceLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        alternativeSourceLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(alternativeSourceLanguageCodes_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return A list containing the alternativeSourceLanguageCodes.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getAlternativeSourceLanguageCodesList() {
-      return alternativeSourceLanguageCodes_.getUnmodifiableView();
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The count of alternativeSourceLanguageCodes.
-     */
-    public int getAlternativeSourceLanguageCodesCount() {
-      return alternativeSourceLanguageCodes_.size();
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param index The index of the element to return.
-     * @return The alternativeSourceLanguageCodes at the given index.
-     */
-    public java.lang.String getAlternativeSourceLanguageCodes(int index) {
-      return alternativeSourceLanguageCodes_.get(index);
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the alternativeSourceLanguageCodes at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getAlternativeSourceLanguageCodesBytes(int index) {
-      return alternativeSourceLanguageCodes_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param index The index to set the value at.
-     * @param value The alternativeSourceLanguageCodes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAlternativeSourceLanguageCodes(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAlternativeSourceLanguageCodesIsMutable();
-      alternativeSourceLanguageCodes_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The alternativeSourceLanguageCodes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAlternativeSourceLanguageCodes(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAlternativeSourceLanguageCodesIsMutable();
-      alternativeSourceLanguageCodes_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param values The alternativeSourceLanguageCodes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllAlternativeSourceLanguageCodes(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureAlternativeSourceLanguageCodesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, alternativeSourceLanguageCodes_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAlternativeSourceLanguageCodes() {
-      alternativeSourceLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-     * alternative languages of the supplied audio. If alternative source
-     * languages are listed, speech translation result will translate in the most
-     * likely language detected including the main source_language_code. The
-     * translated result will include the language code of the language detected
-     * in the audio.
-     * </pre>
-     *
-     * <code>repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes of the alternativeSourceLanguageCodes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAlternativeSourceLanguageCodesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureAlternativeSourceLanguageCodesIsMutable();
-      alternativeSourceLanguageCodes_.add(value);
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object targetLanguageCode_ = "";
     /**
      * <pre>
@@ -1323,8 +1140,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Sample rate in Hertz of the audio data. Valid values are:
      * 8000-48000. 16000 is optimal. For best results, set the sampling rate of
      * the audio source to 16000 Hz. If that's not possible, use the native sample
-     * rate of the audio source (instead of re-sampling). This field can only be
-     * omitted for `FLAC` and `WAV` audio files.
+     * rate of the audio source (instead of re-sampling).
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1339,8 +1155,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Sample rate in Hertz of the audio data. Valid values are:
      * 8000-48000. 16000 is optimal. For best results, set the sampling rate of
      * the audio source to 16000 Hz. If that's not possible, use the native sample
-     * rate of the audio source (instead of re-sampling). This field can only be
-     * omitted for `FLAC` and `WAV` audio files.
+     * rate of the audio source (instead of re-sampling).
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1358,8 +1173,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Sample rate in Hertz of the audio data. Valid values are:
      * 8000-48000. 16000 is optimal. For best results, set the sampling rate of
      * the audio source to 16000 Hz. If that's not possible, use the native sample
-     * rate of the audio source (instead of re-sampling). This field can only be
-     * omitted for `FLAC` and `WAV` audio files.
+     * rate of the audio source (instead of re-sampling).
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1375,7 +1189,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object model_ = "";
     /**
      * <pre>
-     * Optional.
+     * Optional. `google-provided-model/video` and
+     * `google-provided-model/enhanced-phone-call` are premium models.
+     * `google-provided-model/phone-call` is not premium model.
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1395,7 +1211,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional.
+     * Optional. `google-provided-model/video` and
+     * `google-provided-model/enhanced-phone-call` are premium models.
+     * `google-provided-model/phone-call` is not premium model.
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1416,7 +1234,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional.
+     * Optional. `google-provided-model/video` and
+     * `google-provided-model/enhanced-phone-call` are premium models.
+     * `google-provided-model/phone-call` is not premium model.
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1435,7 +1255,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional.
+     * Optional. `google-provided-model/video` and
+     * `google-provided-model/enhanced-phone-call` are premium models.
+     * `google-provided-model/phone-call` is not premium model.
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1449,7 +1271,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional.
+     * Optional. `google-provided-model/video` and
+     * `google-provided-model/enhanced-phone-call` are premium models.
+     * `google-provided-model/phone-call` is not premium model.
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

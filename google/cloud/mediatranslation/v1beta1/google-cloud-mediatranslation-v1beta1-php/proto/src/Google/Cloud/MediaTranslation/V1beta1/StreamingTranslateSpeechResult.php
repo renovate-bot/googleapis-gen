@@ -16,15 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class StreamingTranslateSpeechResult extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     *
-     * Generated from protobuf field <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    protected $recognition_result = '';
     protected $result;
 
     /**
@@ -35,11 +26,6 @@ class StreamingTranslateSpeechResult extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResult\TextTranslationResult $text_translation_result
      *           Text translation result.
-     *     @type string $recognition_result
-     *           Output only. The debug only recognition result in original language. This field is debug
-     *           only and will be set to empty string if not available.
-     *           This is implementation detail and will not be backward compatible.
-     *           Still need to decide whether to expose this field by default.
      * }
      */
     public function __construct($data = NULL) {
@@ -74,38 +60,6 @@ class StreamingTranslateSpeechResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResult\TextTranslationResult::class);
         $this->writeOneof(1, $var);
-
-        return $this;
-    }
-
-    /**
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     *
-     * Generated from protobuf field <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return string
-     */
-    public function getRecognitionResult()
-    {
-        return $this->recognition_result;
-    }
-
-    /**
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     *
-     * Generated from protobuf field <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRecognitionResult($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->recognition_result = $var;
 
         return $this;
     }

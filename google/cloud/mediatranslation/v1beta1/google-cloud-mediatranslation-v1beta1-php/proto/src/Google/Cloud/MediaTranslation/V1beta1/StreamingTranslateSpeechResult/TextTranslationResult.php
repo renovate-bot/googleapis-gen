@@ -32,14 +32,6 @@ class TextTranslationResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_final = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $is_final = false;
-    /**
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     *
-     * Generated from protobuf field <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    protected $detected_source_language_code = '';
 
     /**
      * Constructor.
@@ -56,10 +48,6 @@ class TextTranslationResult extends \Google\Protobuf\Internal\Message
      *           `StreamingTranslateSpeechResult`, the streaming translator will not
      *           return any further hypotheses for this portion of the transcript and
      *           corresponding audio.
-     *     @type string $detected_source_language_code
-     *           Output only. The source language code (BCP-47) detected in the audio. Speech
-     *           translation result will translate in the most likely language detected
-     *           including the alternative source languages and main source_language_code.
      * }
      */
     public function __construct($data = NULL) {
@@ -125,36 +113,6 @@ class TextTranslationResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_final = $var;
-
-        return $this;
-    }
-
-    /**
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     *
-     * Generated from protobuf field <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return string
-     */
-    public function getDetectedSourceLanguageCode()
-    {
-        return $this->detected_source_language_code;
-    }
-
-    /**
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     *
-     * Generated from protobuf field <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setDetectedSourceLanguageCode($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->detected_source_language_code = $var;
 
         return $this;
     }
