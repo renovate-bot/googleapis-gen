@@ -905,6 +905,9 @@ class Document(proto.Message):
                 bounding_poly (google.cloud.documentai_v1.types.BoundingPoly):
                     Optional. Identifies the bounding polygon of
                     a layout element on the page.
+                confidence (float):
+                    Optional. Confidence of detected page element, if
+                    applicable. Range [0, 1].
             """
             class LayoutType(proto.Enum):
                 r"""The type of layout that is being referenced."""
@@ -928,6 +931,8 @@ class Document(proto.Message):
             bounding_poly = proto.Field(proto.MESSAGE, number=4,
                 message=geometry.BoundingPoly,
             )
+
+            confidence = proto.Field(proto.FLOAT, number=5)
 
         page_refs = proto.RepeatedField(proto.MESSAGE, number=1,
             message='Document.PageAnchor.PageRef',

@@ -41,6 +41,12 @@ class PageRef extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $bounding_poly = null;
+    /**
+     * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+     *
+     * Generated from protobuf field <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $confidence = 0.0;
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
      *           Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
      *     @type \Google\Cloud\DocumentAI\V1\BoundingPoly $bounding_poly
      *           Optional. Identifies the bounding polygon of a layout element on the page.
+     *     @type float $confidence
+     *           Optional. Confidence of detected page element, if applicable. Range [0, 1].
      * }
      */
     public function __construct($data = NULL) {
@@ -180,6 +188,32 @@ class PageRef extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1\BoundingPoly::class);
         $this->bounding_poly = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+     *
+     * Generated from protobuf field <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return float
+     */
+    public function getConfidence()
+    {
+        return $this->confidence;
+    }
+
+    /**
+     * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+     *
+     * Generated from protobuf field <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConfidence($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->confidence = $var;
 
         return $this;
     }
