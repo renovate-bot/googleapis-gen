@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -31,7 +29,6 @@ from google.ads.googleads.v6.resources.types import campaign_experiment
 from google.ads.googleads.v6.services.types import campaign_experiment_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import CampaignExperimentServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -72,7 +69,8 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -232,7 +230,9 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def get_campaign_experiment(self) -> Callable[
             [campaign_experiment_service.GetCampaignExperimentRequest],
             campaign_experiment.CampaignExperiment]:
-        r"""Return a callable for the get campaign experiment method over gRPC.
+        r"""Return a callable for the
+        get campaign experiment
+          method over gRPC.
 
         Returns the requested campaign experiment in full
         detail.
@@ -259,7 +259,9 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def create_campaign_experiment(self) -> Callable[
             [campaign_experiment_service.CreateCampaignExperimentRequest],
             operations.Operation]:
-        r"""Return a callable for the create campaign experiment method over gRPC.
+        r"""Return a callable for the
+        create campaign experiment
+          method over gRPC.
 
         Creates a campaign experiment based on a campaign
         draft. The draft campaign will be forked into a real
@@ -296,7 +298,9 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def mutate_campaign_experiments(self) -> Callable[
             [campaign_experiment_service.MutateCampaignExperimentsRequest],
             campaign_experiment_service.MutateCampaignExperimentsResponse]:
-        r"""Return a callable for the mutate campaign experiments method over gRPC.
+        r"""Return a callable for the
+        mutate campaign experiments
+          method over gRPC.
 
         Updates campaign experiments. Operation statuses are
         returned.
@@ -323,7 +327,9 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def graduate_campaign_experiment(self) -> Callable[
             [campaign_experiment_service.GraduateCampaignExperimentRequest],
             campaign_experiment_service.GraduateCampaignExperimentResponse]:
-        r"""Return a callable for the graduate campaign experiment method over gRPC.
+        r"""Return a callable for the
+        graduate campaign experiment
+          method over gRPC.
 
         Graduates a campaign experiment to a full campaign.
         The base and experiment campaigns will start running
@@ -351,7 +357,9 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def promote_campaign_experiment(self) -> Callable[
             [campaign_experiment_service.PromoteCampaignExperimentRequest],
             operations.Operation]:
-        r"""Return a callable for the promote campaign experiment method over gRPC.
+        r"""Return a callable for the
+        promote campaign experiment
+          method over gRPC.
 
         Promotes the changes in a experiment campaign back to
         the base campaign.
@@ -384,7 +392,9 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def end_campaign_experiment(self) -> Callable[
             [campaign_experiment_service.EndCampaignExperimentRequest],
             empty.Empty]:
-        r"""Return a callable for the end campaign experiment method over gRPC.
+        r"""Return a callable for the
+        end campaign experiment
+          method over gRPC.
 
         Immediately ends a campaign experiment, changing the
         experiment's scheduled end date and without waiting for
@@ -413,8 +423,10 @@ class CampaignExperimentServiceGrpcTransport(CampaignExperimentServiceTransport)
     def list_campaign_experiment_async_errors(self) -> Callable[
             [campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest],
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse]:
-        r"""Return a callable for the list campaign experiment async
-        errors method over gRPC.
+        r"""Return a callable for the
+        list campaign experiment async
+        errors
+          method over gRPC.
 
         Returns all errors that occurred during
         CampaignExperiment create or promote (whichever occurred

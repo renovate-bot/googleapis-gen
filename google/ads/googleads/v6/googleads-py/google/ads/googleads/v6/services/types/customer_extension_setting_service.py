@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.resources.types import customer_extension_setting
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -46,7 +43,10 @@ class GetCustomerExtensionSettingRequest(proto.Message):
             extension setting to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCustomerExtensionSettingsRequest(proto.Message):
@@ -71,12 +71,23 @@ class MutateCustomerExtensionSettingsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CustomerExtensionSettingOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class CustomerExtensionSettingOperation(proto.Message):
@@ -101,21 +112,32 @@ class CustomerExtensionSettingOperation(proto.Message):
             ``customers/{customer_id}/customerExtensionSettings/{extension_type}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=4,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=customer_extension_setting.CustomerExtensionSetting,
     )
-    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=customer_extension_setting.CustomerExtensionSetting,
     )
-    remove = proto.Field(proto.STRING, number=3, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='operation',
+    )
 
 
 class MutateCustomerExtensionSettingsResponse(proto.Message):
     r"""Response message for a customer extension setting mutate.
-
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -127,23 +149,29 @@ class MutateCustomerExtensionSettingsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateCustomerExtensionSettingResult',
     )
 
 
 class MutateCustomerExtensionSettingResult(proto.Message):
     r"""The result for the customer extension setting mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

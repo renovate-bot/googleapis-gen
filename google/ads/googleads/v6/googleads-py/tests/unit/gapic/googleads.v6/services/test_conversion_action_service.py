@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -276,73 +274,42 @@ def test_get_conversion_action(transport: str = 'grpc', request_type=conversion_
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action.ConversionAction(
             resource_name='resource_name_value',
-
             id=205,
-
             name='name_value',
-
             status=conversion_action_status.ConversionActionStatusEnum.ConversionActionStatus.UNKNOWN,
-
             type_=conversion_action_type.ConversionActionTypeEnum.ConversionActionType.UNKNOWN,
-
             category=conversion_action_category.ConversionActionCategoryEnum.ConversionActionCategory.UNKNOWN,
-
             owner_customer='owner_customer_value',
-
             include_in_conversions_metric=True,
-
             click_through_lookback_window_days=3602,
-
             view_through_lookback_window_days=3527,
-
             counting_type=conversion_action_counting_type.ConversionActionCountingTypeEnum.ConversionActionCountingType.UNKNOWN,
-
             phone_call_duration_seconds=2856,
-
             app_id='app_id_value',
-
             mobile_app_vendor=mobile_app_vendor.MobileAppVendorEnum.MobileAppVendor.UNKNOWN,
-
         )
-
         response = client.get_conversion_action(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == conversion_action_service.GetConversionActionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, conversion_action.ConversionAction)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.name == 'name_value'
-
     assert response.status == conversion_action_status.ConversionActionStatusEnum.ConversionActionStatus.UNKNOWN
-
     assert response.type_ == conversion_action_type.ConversionActionTypeEnum.ConversionActionType.UNKNOWN
-
     assert response.category == conversion_action_category.ConversionActionCategoryEnum.ConversionActionCategory.UNKNOWN
-
     assert response.owner_customer == 'owner_customer_value'
-
     assert response.include_in_conversions_metric is True
-
     assert response.click_through_lookback_window_days == 3602
-
     assert response.view_through_lookback_window_days == 3527
-
     assert response.counting_type == conversion_action_counting_type.ConversionActionCountingTypeEnum.ConversionActionCountingType.UNKNOWN
-
     assert response.phone_call_duration_seconds == 2856
-
     assert response.app_id == 'app_id_value'
-
     assert response.mobile_app_vendor == mobile_app_vendor.MobileAppVendorEnum.MobileAppVendor.UNKNOWN
 
 
@@ -358,6 +325,7 @@ def test_get_conversion_action_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversion_action_service.GetConversionActionRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -365,7 +333,6 @@ def test_get_conversion_action_field_headers():
             type(client.transport.get_conversion_action),
             '__call__') as call:
         call.return_value = conversion_action.ConversionAction()
-
         client.get_conversion_action(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -392,7 +359,6 @@ def test_get_conversion_action_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action.ConversionAction()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_conversion_action(
@@ -403,7 +369,6 @@ def test_get_conversion_action_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -438,17 +403,14 @@ def test_mutate_conversion_actions(transport: str = 'grpc', request_type=convers
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action_service.MutateConversionActionsResponse(
         )
-
         response = client.mutate_conversion_actions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == conversion_action_service.MutateConversionActionsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, conversion_action_service.MutateConversionActionsResponse)
 
 
@@ -464,6 +426,7 @@ def test_mutate_conversion_actions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversion_action_service.MutateConversionActionsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -471,7 +434,6 @@ def test_mutate_conversion_actions_field_headers():
             type(client.transport.mutate_conversion_actions),
             '__call__') as call:
         call.return_value = conversion_action_service.MutateConversionActionsResponse()
-
         client.mutate_conversion_actions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -498,7 +460,6 @@ def test_mutate_conversion_actions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action_service.MutateConversionActionsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_conversion_actions(
@@ -510,9 +471,7 @@ def test_mutate_conversion_actions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [conversion_action_service.ConversionActionOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -595,7 +554,7 @@ def test_conversion_action_service_base_transport():
     methods = (
         'get_conversion_action',
         'mutate_conversion_actions',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -747,7 +706,6 @@ def test_conversion_action_service_transport_channel_mtls_with_adc(
 def test_conversion_action_path():
     customer_id = "squid"
     conversion_action_id = "clam"
-
     expected = "customers/{customer_id}/conversionActions/{conversion_action_id}".format(customer_id=customer_id, conversion_action_id=conversion_action_id, )
     actual = ConversionActionServiceClient.conversion_action_path(customer_id, conversion_action_id)
     assert expected == actual
@@ -755,9 +713,8 @@ def test_conversion_action_path():
 
 def test_parse_conversion_action_path():
     expected = {
-    "customer_id": "whelk",
-    "conversion_action_id": "octopus",
-
+        "customer_id": "whelk",
+        "conversion_action_id": "octopus",
     }
     path = ConversionActionServiceClient.conversion_action_path(**expected)
 
@@ -767,7 +724,6 @@ def test_parse_conversion_action_path():
 
 def test_customer_path():
     customer_id = "oyster"
-
     expected = "customers/{customer_id}".format(customer_id=customer_id, )
     actual = ConversionActionServiceClient.customer_path(customer_id)
     assert expected == actual
@@ -775,8 +731,7 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-    "customer_id": "nudibranch",
-
+        "customer_id": "nudibranch",
     }
     path = ConversionActionServiceClient.customer_path(**expected)
 
@@ -786,7 +741,6 @@ def test_parse_customer_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ConversionActionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -794,8 +748,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = ConversionActionServiceClient.common_billing_account_path(**expected)
 
@@ -805,7 +758,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ConversionActionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -813,8 +765,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = ConversionActionServiceClient.common_folder_path(**expected)
 
@@ -824,7 +775,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ConversionActionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -832,8 +782,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = ConversionActionServiceClient.common_organization_path(**expected)
 
@@ -843,7 +792,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = ConversionActionServiceClient.common_project_path(project)
     assert expected == actual
@@ -851,8 +799,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = ConversionActionServiceClient.common_project_path(**expected)
 
@@ -863,7 +810,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ConversionActionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -871,9 +817,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = ConversionActionServiceClient.common_location_path(**expected)
 

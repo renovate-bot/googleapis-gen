@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v6.resources.types import feed_item_target as gagr_feed_item_target
@@ -45,7 +42,10 @@ class GetFeedItemTargetRequest(proto.Message):
             targets to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateFeedItemTargetsRequest(proto.Message):
@@ -65,18 +65,24 @@ class MutateFeedItemTargetsRequest(proto.Message):
             resource name should be returned post mutation.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='FeedItemTargetOperation',
     )
-    response_content_type = proto.Field(proto.ENUM, number=5,
+    response_content_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
 
 
 class FeedItemTargetOperation(proto.Message):
     r"""A single operation (create, remove) on an feed item target.
-
     Attributes:
         create (google.ads.googleads.v6.resources.types.FeedItemTarget):
             Create operation: No resource name is
@@ -88,28 +94,35 @@ class FeedItemTargetOperation(proto.Message):
             ``customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}``
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=gagr_feed_item_target.FeedItemTarget,
     )
-    remove = proto.Field(proto.STRING, number=2, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='operation',
+    )
 
 
 class MutateFeedItemTargetsResponse(proto.Message):
     r"""Response message for an feed item target mutate.
-
     Attributes:
         results (Sequence[google.ads.googleads.v6.services.types.MutateFeedItemTargetResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateFeedItemTargetResult',
     )
 
 
 class MutateFeedItemTargetResult(proto.Message):
     r"""The result for the feed item target mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -119,8 +132,13 @@ class MutateFeedItemTargetResult(proto.Message):
             response_content_type is set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    feed_item_target = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    feed_item_target = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gagr_feed_item_target.FeedItemTarget,
     )
 

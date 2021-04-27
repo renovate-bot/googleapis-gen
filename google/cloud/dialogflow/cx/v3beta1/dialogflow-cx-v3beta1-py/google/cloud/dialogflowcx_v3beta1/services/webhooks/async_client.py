@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -33,7 +31,6 @@ from google.cloud.dialogflowcx_v3beta1.types import webhook
 from google.cloud.dialogflowcx_v3beta1.types import webhook as gcdc_webhook
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import WebhooksTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import WebhooksGrpcAsyncIOTransport
 from .client import WebhooksClient
@@ -51,19 +48,14 @@ class WebhooksAsyncClient:
 
     webhook_path = staticmethod(WebhooksClient.webhook_path)
     parse_webhook_path = staticmethod(WebhooksClient.parse_webhook_path)
-
     common_billing_account_path = staticmethod(WebhooksClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(WebhooksClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(WebhooksClient.common_folder_path)
     parse_common_folder_path = staticmethod(WebhooksClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(WebhooksClient.common_organization_path)
     parse_common_organization_path = staticmethod(WebhooksClient.parse_common_organization_path)
-
     common_project_path = staticmethod(WebhooksClient.common_project_path)
     parse_common_project_path = staticmethod(WebhooksClient.parse_common_project_path)
-
     common_location_path = staticmethod(WebhooksClient.common_location_path)
     parse_common_location_path = staticmethod(WebhooksClient.parse_common_location_path)
 
@@ -148,7 +140,6 @@ class WebhooksAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = WebhooksClient(
             credentials=credentials,
             transport=transport,
@@ -170,7 +161,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListWebhooksRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3beta1.Webhooks.ListWebhooks].
             parent (:class:`str`):
                 Required. The agent to list all webhooks for. Format:
@@ -179,7 +171,6 @@ class WebhooksAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,7 +198,6 @@ class WebhooksAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -259,7 +249,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.GetWebhook].
             name (:class:`str`):
                 Required. The name of the webhook. Format:
@@ -268,7 +259,6 @@ class WebhooksAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -298,7 +288,6 @@ class WebhooksAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -342,7 +331,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.CreateWebhook].
             parent (:class:`str`):
                 Required. The agent to create a webhook for. Format:
@@ -356,7 +346,6 @@ class WebhooksAsyncClient:
                 This corresponds to the ``webhook`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -386,7 +375,6 @@ class WebhooksAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if webhook is not None:
@@ -432,7 +420,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.UpdateWebhook].
             webhook (:class:`google.cloud.dialogflowcx_v3beta1.types.Webhook`):
                 Required. The webhook to update.
@@ -447,7 +436,6 @@ class WebhooksAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -477,7 +465,6 @@ class WebhooksAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if webhook is not None:
             request.webhook = webhook
         if update_mask is not None:
@@ -522,7 +509,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
             name (:class:`str`):
                 Required. The name of the webhook to delete. Format:
@@ -531,7 +519,6 @@ class WebhooksAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -550,7 +537,6 @@ class WebhooksAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -577,8 +563,6 @@ class WebhooksAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import customer
 from google.ads.googleads.v6.services.types import customer_service
-
 from .base import CustomerServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CustomerServiceGrpcTransport(CustomerServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CustomerServiceGrpcTransport(CustomerServiceTransport):
     def get_customer(self) -> Callable[
             [customer_service.GetCustomerRequest],
             customer.Customer]:
-        r"""Return a callable for the get customer method over gRPC.
+        r"""Return a callable for the
+        get customer
+          method over gRPC.
 
         Returns the requested customer in full detail.
 
@@ -229,7 +229,9 @@ class CustomerServiceGrpcTransport(CustomerServiceTransport):
     def mutate_customer(self) -> Callable[
             [customer_service.MutateCustomerRequest],
             customer_service.MutateCustomerResponse]:
-        r"""Return a callable for the mutate customer method over gRPC.
+        r"""Return a callable for the
+        mutate customer
+          method over gRPC.
 
         Updates a customer. Operation statuses are returned.
 
@@ -255,7 +257,9 @@ class CustomerServiceGrpcTransport(CustomerServiceTransport):
     def list_accessible_customers(self) -> Callable[
             [customer_service.ListAccessibleCustomersRequest],
             customer_service.ListAccessibleCustomersResponse]:
-        r"""Return a callable for the list accessible customers method over gRPC.
+        r"""Return a callable for the
+        list accessible customers
+          method over gRPC.
 
         Returns resource names of customers directly
         accessible by the user authenticating the call.
@@ -282,7 +286,9 @@ class CustomerServiceGrpcTransport(CustomerServiceTransport):
     def create_customer_client(self) -> Callable[
             [customer_service.CreateCustomerClientRequest],
             customer_service.CreateCustomerClientResponse]:
-        r"""Return a callable for the create customer client method over gRPC.
+        r"""Return a callable for the
+        create customer client
+          method over gRPC.
 
         Creates a new client under manager. The new client
         customer is returned.

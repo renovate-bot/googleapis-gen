@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import feed_item_target
 from google.ads.googleads.v6.services.types import feed_item_target_service
-
 from .base import FeedItemTargetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class FeedItemTargetServiceGrpcTransport(FeedItemTargetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class FeedItemTargetServiceGrpcTransport(FeedItemTargetServiceTransport):
     def get_feed_item_target(self) -> Callable[
             [feed_item_target_service.GetFeedItemTargetRequest],
             feed_item_target.FeedItemTarget]:
-        r"""Return a callable for the get feed item target method over gRPC.
+        r"""Return a callable for the
+        get feed item target
+          method over gRPC.
 
         Returns the requested feed item targets in full
         detail.
@@ -230,7 +230,9 @@ class FeedItemTargetServiceGrpcTransport(FeedItemTargetServiceTransport):
     def mutate_feed_item_targets(self) -> Callable[
             [feed_item_target_service.MutateFeedItemTargetsRequest],
             feed_item_target_service.MutateFeedItemTargetsResponse]:
-        r"""Return a callable for the mutate feed item targets method over gRPC.
+        r"""Return a callable for the
+        mutate feed item targets
+          method over gRPC.
 
         Creates or removes feed item targets. Operation
         statuses are returned.

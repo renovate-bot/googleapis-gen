@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import asset
 from google.ads.googleads.v6.services.types import asset_service
-
 from .base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,7 +58,8 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,7 +203,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def get_asset(self) -> Callable[
             [asset_service.GetAssetRequest],
             asset.Asset]:
-        r"""Return a callable for the get asset method over gRPC.
+        r"""Return a callable for the
+        get asset
+          method over gRPC.
 
         Returns the requested asset in full detail.
 
@@ -231,7 +231,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def mutate_assets(self) -> Callable[
             [asset_service.MutateAssetsRequest],
             asset_service.MutateAssetsResponse]:
-        r"""Return a callable for the mutate assets method over gRPC.
+        r"""Return a callable for the
+        mutate assets
+          method over gRPC.
 
         Creates assets. Operation statuses are returned.
 

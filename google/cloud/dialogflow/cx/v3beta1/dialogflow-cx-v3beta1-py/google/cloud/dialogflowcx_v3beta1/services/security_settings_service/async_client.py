@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -32,7 +30,6 @@ from google.cloud.dialogflowcx_v3beta1.services.security_settings_service import
 from google.cloud.dialogflowcx_v3beta1.types import security_settings
 from google.cloud.dialogflowcx_v3beta1.types import security_settings as gcdc_security_settings
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import SecuritySettingsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SecuritySettingsServiceGrpcAsyncIOTransport
 from .client import SecuritySettingsServiceClient
@@ -48,19 +45,14 @@ class SecuritySettingsServiceAsyncClient:
 
     security_settings_path = staticmethod(SecuritySettingsServiceClient.security_settings_path)
     parse_security_settings_path = staticmethod(SecuritySettingsServiceClient.parse_security_settings_path)
-
     common_billing_account_path = staticmethod(SecuritySettingsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SecuritySettingsServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(SecuritySettingsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(SecuritySettingsServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(SecuritySettingsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(SecuritySettingsServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(SecuritySettingsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(SecuritySettingsServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(SecuritySettingsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(SecuritySettingsServiceClient.parse_common_location_path)
 
@@ -145,7 +137,6 @@ class SecuritySettingsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = SecuritySettingsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -167,7 +158,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettings.CreateSecuritySettings][].
             parent (:class:`str`):
                 Required. The location to create an
@@ -185,7 +177,6 @@ class SecuritySettingsServiceAsyncClient:
                 This corresponds to the ``security_settings`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -214,7 +205,6 @@ class SecuritySettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if security_settings is not None:
@@ -261,7 +251,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettingsService.GetSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.GetSecuritySettings].
             name (:class:`str`):
                 Required. Resource name of the settings. Format:
@@ -270,7 +261,6 @@ class SecuritySettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -299,7 +289,6 @@ class SecuritySettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -344,7 +333,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings].
             security_settings (:class:`google.cloud.dialogflowcx_v3beta1.types.SecuritySettings`):
                 Required. [SecuritySettings] object that contains values
@@ -361,7 +351,6 @@ class SecuritySettingsServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -390,7 +379,6 @@ class SecuritySettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if security_settings is not None:
             request.security_settings = security_settings
         if update_mask is not None:
@@ -436,7 +424,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettings.ListSecuritySettings][].
             parent (:class:`str`):
                 Required. The location to list all security settings
@@ -446,7 +435,6 @@ class SecuritySettingsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -474,7 +462,6 @@ class SecuritySettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -527,7 +514,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettings.DeleteSecuritySettings][].
             name (:class:`str`):
                 Required. The name of the
@@ -538,7 +526,6 @@ class SecuritySettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -557,7 +544,6 @@ class SecuritySettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -584,8 +570,6 @@ class SecuritySettingsServiceAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

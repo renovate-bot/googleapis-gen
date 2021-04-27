@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import ad_group_simulation
 from google.ads.googleads.v6.services.types import ad_group_simulation_service
-
 from .base import AdGroupSimulationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class AdGroupSimulationServiceGrpcTransport(AdGroupSimulationServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class AdGroupSimulationServiceGrpcTransport(AdGroupSimulationServiceTransport):
     def get_ad_group_simulation(self) -> Callable[
             [ad_group_simulation_service.GetAdGroupSimulationRequest],
             ad_group_simulation.AdGroupSimulation]:
-        r"""Return a callable for the get ad group simulation method over gRPC.
+        r"""Return a callable for the
+        get ad group simulation
+          method over gRPC.
 
         Returns the requested ad group simulation in full
         detail.

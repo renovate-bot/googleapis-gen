@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import campaign_label
 from google.ads.googleads.v6.services.types import campaign_label_service
-
 from .base import CampaignLabelServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CampaignLabelServiceGrpcTransport(CampaignLabelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CampaignLabelServiceGrpcTransport(CampaignLabelServiceTransport):
     def get_campaign_label(self) -> Callable[
             [campaign_label_service.GetCampaignLabelRequest],
             campaign_label.CampaignLabel]:
-        r"""Return a callable for the get campaign label method over gRPC.
+        r"""Return a callable for the
+        get campaign label
+          method over gRPC.
 
         Returns the requested campaign-label relationship in
         full detail.
@@ -230,7 +230,9 @@ class CampaignLabelServiceGrpcTransport(CampaignLabelServiceTransport):
     def mutate_campaign_labels(self) -> Callable[
             [campaign_label_service.MutateCampaignLabelsRequest],
             campaign_label_service.MutateCampaignLabelsResponse]:
-        r"""Return a callable for the mutate campaign labels method over gRPC.
+        r"""Return a callable for the
+        mutate campaign labels
+          method over gRPC.
 
         Creates and removes campaign-label relationships.
         Operation statuses are returned.

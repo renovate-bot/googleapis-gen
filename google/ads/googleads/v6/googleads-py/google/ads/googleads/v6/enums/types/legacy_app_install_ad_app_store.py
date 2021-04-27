@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class LegacyAppInstallAdAppStoreEnum(proto.Message):
     r"""Container for enum describing app store type in a legacy app
     install ad.
-    """
+        """
     class LegacyAppInstallAdAppStore(proto.Enum):
         r"""App store type in a legacy app install ad."""
         UNSPECIFIED = 0

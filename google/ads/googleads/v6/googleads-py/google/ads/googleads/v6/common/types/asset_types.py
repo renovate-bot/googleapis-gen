@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.enums.types import lead_form_call_to_action_type
 from google.ads.googleads.v6.enums.types import lead_form_desired_intent
@@ -46,7 +43,6 @@ __protobuf__ = proto.module(
 
 class YoutubeVideoAsset(proto.Message):
     r"""A YouTube asset.
-
     Attributes:
         youtube_video_id (str):
             YouTube video id. This is the 11 character
@@ -55,13 +51,19 @@ class YoutubeVideoAsset(proto.Message):
             YouTube video title.
     """
 
-    youtube_video_id = proto.Field(proto.STRING, number=2, optional=True)
-    youtube_video_title = proto.Field(proto.STRING, number=3)
+    youtube_video_id = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
+    youtube_video_title = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class MediaBundleAsset(proto.Message):
     r"""A MediaBundle asset.
-
     Attributes:
         data (bytes):
             Media bundle (ZIP file) asset data. The
@@ -72,12 +74,15 @@ class MediaBundleAsset(proto.Message):
             MediaBundleAsset. This field is mutate only.
     """
 
-    data = proto.Field(proto.BYTES, number=2, optional=True)
+    data = proto.Field(
+        proto.BYTES,
+        number=2,
+        optional=True,
+    )
 
 
 class ImageAsset(proto.Message):
     r"""An Image asset.
-
     Attributes:
         data (bytes):
             The raw bytes data of an image. This field is
@@ -90,12 +95,24 @@ class ImageAsset(proto.Message):
             Metadata for this image at its original size.
     """
 
-    data = proto.Field(proto.BYTES, number=5, optional=True)
-    file_size = proto.Field(proto.INT64, number=6, optional=True)
-    mime_type = proto.Field(proto.ENUM, number=3,
+    data = proto.Field(
+        proto.BYTES,
+        number=5,
+        optional=True,
+    )
+    file_size = proto.Field(
+        proto.INT64,
+        number=6,
+        optional=True,
+    )
+    mime_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=gage_mime_type.MimeTypeEnum.MimeType,
     )
-    full_size = proto.Field(proto.MESSAGE, number=4,
+    full_size = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ImageDimension',
     )
 
@@ -114,25 +131,39 @@ class ImageDimension(proto.Message):
             and width.
     """
 
-    height_pixels = proto.Field(proto.INT64, number=4, optional=True)
-    width_pixels = proto.Field(proto.INT64, number=5, optional=True)
-    url = proto.Field(proto.STRING, number=6, optional=True)
+    height_pixels = proto.Field(
+        proto.INT64,
+        number=4,
+        optional=True,
+    )
+    width_pixels = proto.Field(
+        proto.INT64,
+        number=5,
+        optional=True,
+    )
+    url = proto.Field(
+        proto.STRING,
+        number=6,
+        optional=True,
+    )
 
 
 class TextAsset(proto.Message):
     r"""A Text asset.
-
     Attributes:
         text (str):
             Text content of the text asset.
     """
 
-    text = proto.Field(proto.STRING, number=2, optional=True)
+    text = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class LeadFormAsset(proto.Message):
     r"""A Lead Form asset.
-
     Attributes:
         business_name (str):
             Required. The name of the business being
@@ -185,35 +216,75 @@ class LeadFormAsset(proto.Message):
             allowed customers only.
     """
 
-    business_name = proto.Field(proto.STRING, number=10)
-    call_to_action_type = proto.Field(proto.ENUM, number=17,
+    business_name = proto.Field(
+        proto.STRING,
+        number=10,
+    )
+    call_to_action_type = proto.Field(
+        proto.ENUM,
+        number=17,
         enum=lead_form_call_to_action_type.LeadFormCallToActionTypeEnum.LeadFormCallToActionType,
     )
-    call_to_action_description = proto.Field(proto.STRING, number=18)
-    headline = proto.Field(proto.STRING, number=12)
-    description = proto.Field(proto.STRING, number=13)
-    privacy_policy_url = proto.Field(proto.STRING, number=14)
-    post_submit_headline = proto.Field(proto.STRING, number=15, optional=True)
-    post_submit_description = proto.Field(proto.STRING, number=16, optional=True)
-    fields = proto.RepeatedField(proto.MESSAGE, number=8,
+    call_to_action_description = proto.Field(
+        proto.STRING,
+        number=18,
+    )
+    headline = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    privacy_policy_url = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    post_submit_headline = proto.Field(
+        proto.STRING,
+        number=15,
+        optional=True,
+    )
+    post_submit_description = proto.Field(
+        proto.STRING,
+        number=16,
+        optional=True,
+    )
+    fields = proto.RepeatedField(
+        proto.MESSAGE,
+        number=8,
         message='LeadFormField',
     )
-    delivery_methods = proto.RepeatedField(proto.MESSAGE, number=9,
+    delivery_methods = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
         message='LeadFormDeliveryMethod',
     )
-    post_submit_call_to_action_type = proto.Field(proto.ENUM, number=19,
+    post_submit_call_to_action_type = proto.Field(
+        proto.ENUM,
+        number=19,
         enum=lead_form_post_submit_call_to_action_type.LeadFormPostSubmitCallToActionTypeEnum.LeadFormPostSubmitCallToActionType,
     )
-    background_image_asset = proto.Field(proto.STRING, number=20, optional=True)
-    desired_intent = proto.Field(proto.ENUM, number=21,
+    background_image_asset = proto.Field(
+        proto.STRING,
+        number=20,
+        optional=True,
+    )
+    desired_intent = proto.Field(
+        proto.ENUM,
+        number=21,
         enum=lead_form_desired_intent.LeadFormDesiredIntentEnum.LeadFormDesiredIntent,
     )
-    custom_disclosure = proto.Field(proto.STRING, number=22, optional=True)
+    custom_disclosure = proto.Field(
+        proto.STRING,
+        number=22,
+        optional=True,
+    )
 
 
 class LeadFormField(proto.Message):
     r"""One input field instance within a form.
-
     Attributes:
         input_type (google.ads.googleads.v6.enums.types.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType):
             Describes the input type, which may be a
@@ -226,10 +297,15 @@ class LeadFormField(proto.Message):
             and maximum of 12 allowed.
     """
 
-    input_type = proto.Field(proto.ENUM, number=1,
+    input_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=lead_form_field_user_input_type.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType,
     )
-    single_choice_answers = proto.Field(proto.MESSAGE, number=2, oneof='answers',
+    single_choice_answers = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='answers',
         message='LeadFormSingleChoiceAnswers',
     )
 
@@ -245,18 +321,23 @@ class LeadFormSingleChoiceAnswers(proto.Message):
             of 2 answers required and maximum of 12 allowed.
     """
 
-    answers = proto.RepeatedField(proto.STRING, number=1)
+    answers = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
 
 
 class LeadFormDeliveryMethod(proto.Message):
     r"""A configuration of how leads are delivered to the advertiser.
-
     Attributes:
         webhook (google.ads.googleads.v6.common.types.WebhookDelivery):
             Webhook method of delivery.
     """
 
-    webhook = proto.Field(proto.MESSAGE, number=1, oneof='delivery_details',
+    webhook = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='delivery_details',
         message='WebhookDelivery',
     )
 
@@ -279,16 +360,28 @@ class WebhookDelivery(proto.Message):
             instance will use.
     """
 
-    advertiser_webhook_url = proto.Field(proto.STRING, number=4, optional=True)
-    google_secret = proto.Field(proto.STRING, number=5, optional=True)
-    payload_schema_version = proto.Field(proto.INT64, number=6, optional=True)
+    advertiser_webhook_url = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
+    google_secret = proto.Field(
+        proto.STRING,
+        number=5,
+        optional=True,
+    )
+    payload_schema_version = proto.Field(
+        proto.INT64,
+        number=6,
+        optional=True,
+    )
 
 
 class BookOnGoogleAsset(proto.Message):
     r"""A Book on Google asset. Used to redirect user to book through
     Google. Book on Google will change the redirect url to book
     directly through Google.
-    """
+        """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

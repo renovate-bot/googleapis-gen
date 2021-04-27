@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -61,13 +59,40 @@ class PaymentsAccount(proto.Message):
             account.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    payments_account_id = proto.Field(proto.STRING, number=8, optional=True)
-    name = proto.Field(proto.STRING, number=9, optional=True)
-    currency_code = proto.Field(proto.STRING, number=10, optional=True)
-    payments_profile_id = proto.Field(proto.STRING, number=11, optional=True)
-    secondary_payments_profile_id = proto.Field(proto.STRING, number=12, optional=True)
-    paying_manager_customer = proto.Field(proto.STRING, number=13, optional=True)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    payments_account_id = proto.Field(
+        proto.STRING,
+        number=8,
+        optional=True,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=9,
+        optional=True,
+    )
+    currency_code = proto.Field(
+        proto.STRING,
+        number=10,
+        optional=True,
+    )
+    payments_profile_id = proto.Field(
+        proto.STRING,
+        number=11,
+        optional=True,
+    )
+    secondary_payments_profile_id = proto.Field(
+        proto.STRING,
+        number=12,
+        optional=True,
+    )
+    paying_manager_customer = proto.Field(
+        proto.STRING,
+        number=13,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

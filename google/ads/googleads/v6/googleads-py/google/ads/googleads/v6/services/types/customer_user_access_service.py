@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.resources.types import customer_user_access
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -45,7 +42,10 @@ class GetCustomerUserAccessRequest(proto.Message):
             access.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCustomerUserAccessRequest(proto.Message):
@@ -61,15 +61,19 @@ class MutateCustomerUserAccessRequest(proto.Message):
             customer
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operation = proto.Field(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operation = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CustomerUserAccessOperation',
     )
 
 
 class CustomerUserAccessOperation(proto.Message):
     r"""A single operation (update, remove) on customer user access.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -84,37 +88,49 @@ class CustomerUserAccessOperation(proto.Message):
             ``customers/{customer_id}/customerUserAccesses/{CustomerUserAccess.user_id}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=3,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=field_mask.FieldMask,
     )
-    update = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=customer_user_access.CustomerUserAccess,
     )
-    remove = proto.Field(proto.STRING, number=2, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='operation',
+    )
 
 
 class MutateCustomerUserAccessResponse(proto.Message):
     r"""Response message for customer user access mutate.
-
     Attributes:
         result (google.ads.googleads.v6.services.types.MutateCustomerUserAccessResult):
             Result for the mutate.
     """
 
-    result = proto.Field(proto.MESSAGE, number=1,
+    result = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='MutateCustomerUserAccessResult',
     )
 
 
 class MutateCustomerUserAccessResult(proto.Message):
     r"""The result for the customer user access mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

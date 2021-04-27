@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -32,7 +30,6 @@ from google.cloud.dialogflowcx_v3beta1.services.entity_types import pagers
 from google.cloud.dialogflowcx_v3beta1.types import entity_type
 from google.cloud.dialogflowcx_v3beta1.types import entity_type as gcdc_entity_type
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import EntityTypesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import EntityTypesGrpcAsyncIOTransport
 from .client import EntityTypesClient
@@ -50,19 +47,14 @@ class EntityTypesAsyncClient:
 
     entity_type_path = staticmethod(EntityTypesClient.entity_type_path)
     parse_entity_type_path = staticmethod(EntityTypesClient.parse_entity_type_path)
-
     common_billing_account_path = staticmethod(EntityTypesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(EntityTypesClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(EntityTypesClient.common_folder_path)
     parse_common_folder_path = staticmethod(EntityTypesClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(EntityTypesClient.common_organization_path)
     parse_common_organization_path = staticmethod(EntityTypesClient.parse_common_organization_path)
-
     common_project_path = staticmethod(EntityTypesClient.common_project_path)
     parse_common_project_path = staticmethod(EntityTypesClient.parse_common_project_path)
-
     common_location_path = staticmethod(EntityTypesClient.common_location_path)
     parse_common_location_path = staticmethod(EntityTypesClient.parse_common_location_path)
 
@@ -147,7 +139,6 @@ class EntityTypesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = EntityTypesClient(
             credentials=credentials,
             transport=transport,
@@ -169,7 +160,8 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListEntityTypesRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.ListEntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityTypes.ListEntityTypes].
             parent (:class:`str`):
                 Required. The agent to list all entity types for.
@@ -179,7 +171,6 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,7 +198,6 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -259,7 +249,8 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.GetEntityType].
             name (:class:`str`):
                 Required. The name of the entity type. Format:
@@ -268,7 +259,6 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -325,7 +315,6 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -369,7 +358,8 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.CreateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.CreateEntityType].
             parent (:class:`str`):
                 Required. The agent to create a entity type for. Format:
@@ -383,7 +373,6 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``entity_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -440,7 +429,6 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if entity_type is not None:
@@ -486,7 +474,8 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
             entity_type (:class:`google.cloud.dialogflowcx_v3beta1.types.EntityType`):
                 Required. The entity type to update.
@@ -500,7 +489,6 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -557,7 +545,6 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if entity_type is not None:
             request.entity_type = entity_type
         if update_mask is not None:
@@ -602,7 +589,8 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.DeleteEntityType].
             name (:class:`str`):
                 Required. The name of the entity type to delete. Format:
@@ -611,7 +599,6 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -630,7 +617,6 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -657,8 +643,6 @@ class EntityTypesAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

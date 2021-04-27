@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import keyword_plan
 from google.ads.googleads.v6.services.types import keyword_plan_service
-
 from .base import KeywordPlanServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
     def get_keyword_plan(self) -> Callable[
             [keyword_plan_service.GetKeywordPlanRequest],
             keyword_plan.KeywordPlan]:
-        r"""Return a callable for the get keyword plan method over gRPC.
+        r"""Return a callable for the
+        get keyword plan
+          method over gRPC.
 
         Returns the requested plan in full detail.
 
@@ -229,7 +229,9 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
     def mutate_keyword_plans(self) -> Callable[
             [keyword_plan_service.MutateKeywordPlansRequest],
             keyword_plan_service.MutateKeywordPlansResponse]:
-        r"""Return a callable for the mutate keyword plans method over gRPC.
+        r"""Return a callable for the
+        mutate keyword plans
+          method over gRPC.
 
         Creates, updates, or removes keyword plans. Operation
         statuses are returned.
@@ -256,7 +258,9 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
     def generate_forecast_curve(self) -> Callable[
             [keyword_plan_service.GenerateForecastCurveRequest],
             keyword_plan_service.GenerateForecastCurveResponse]:
-        r"""Return a callable for the generate forecast curve method over gRPC.
+        r"""Return a callable for the
+        generate forecast curve
+          method over gRPC.
 
         Returns the requested Keyword Plan forecast curve.
         Only the bidding strategy is considered for generating
@@ -287,7 +291,9 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
     def generate_forecast_time_series(self) -> Callable[
             [keyword_plan_service.GenerateForecastTimeSeriesRequest],
             keyword_plan_service.GenerateForecastTimeSeriesResponse]:
-        r"""Return a callable for the generate forecast time series method over gRPC.
+        r"""Return a callable for the
+        generate forecast time series
+          method over gRPC.
 
         Returns a forecast in the form of a time series for
         the Keyword Plan over the next 52 weeks.
@@ -320,7 +326,9 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
     def generate_forecast_metrics(self) -> Callable[
             [keyword_plan_service.GenerateForecastMetricsRequest],
             keyword_plan_service.GenerateForecastMetricsResponse]:
-        r"""Return a callable for the generate forecast metrics method over gRPC.
+        r"""Return a callable for the
+        generate forecast metrics
+          method over gRPC.
 
         Returns the requested Keyword Plan forecasts.
 
@@ -346,7 +354,9 @@ class KeywordPlanServiceGrpcTransport(KeywordPlanServiceTransport):
     def generate_historical_metrics(self) -> Callable[
             [keyword_plan_service.GenerateHistoricalMetricsRequest],
             keyword_plan_service.GenerateHistoricalMetricsResponse]:
-        r"""Return a callable for the generate historical metrics method over gRPC.
+        r"""Return a callable for the
+        generate historical metrics
+          method over gRPC.
 
         Returns the requested Keyword Plan historical
         metrics.

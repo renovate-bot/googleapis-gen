@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import customer_manager_link
 from google.ads.googleads.v6.services.types import customer_manager_link_service
-
 from .base import CustomerManagerLinkServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CustomerManagerLinkServiceGrpcTransport(CustomerManagerLinkServiceTranspor
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CustomerManagerLinkServiceGrpcTransport(CustomerManagerLinkServiceTranspor
     def get_customer_manager_link(self) -> Callable[
             [customer_manager_link_service.GetCustomerManagerLinkRequest],
             customer_manager_link.CustomerManagerLink]:
-        r"""Return a callable for the get customer manager link method over gRPC.
+        r"""Return a callable for the
+        get customer manager link
+          method over gRPC.
 
         Returns the requested CustomerManagerLink in full
         detail.
@@ -230,7 +230,9 @@ class CustomerManagerLinkServiceGrpcTransport(CustomerManagerLinkServiceTranspor
     def mutate_customer_manager_link(self) -> Callable[
             [customer_manager_link_service.MutateCustomerManagerLinkRequest],
             customer_manager_link_service.MutateCustomerManagerLinkResponse]:
-        r"""Return a callable for the mutate customer manager link method over gRPC.
+        r"""Return a callable for the
+        mutate customer manager link
+          method over gRPC.
 
         Creates or updates customer manager links. Operation
         statuses are returned.
@@ -257,7 +259,9 @@ class CustomerManagerLinkServiceGrpcTransport(CustomerManagerLinkServiceTranspor
     def move_manager_link(self) -> Callable[
             [customer_manager_link_service.MoveManagerLinkRequest],
             customer_manager_link_service.MoveManagerLinkResponse]:
-        r"""Return a callable for the move manager link method over gRPC.
+        r"""Return a callable for the
+        move manager link
+          method over gRPC.
 
         Moves a client customer to a new manager customer.
         This simplifies the complex request that requires two

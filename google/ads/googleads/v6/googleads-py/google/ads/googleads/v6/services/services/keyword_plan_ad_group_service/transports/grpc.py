@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import keyword_plan_ad_group
 from google.ads.googleads.v6.services.types import keyword_plan_ad_group_service
-
 from .base import KeywordPlanAdGroupServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class KeywordPlanAdGroupServiceGrpcTransport(KeywordPlanAdGroupServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class KeywordPlanAdGroupServiceGrpcTransport(KeywordPlanAdGroupServiceTransport)
     def get_keyword_plan_ad_group(self) -> Callable[
             [keyword_plan_ad_group_service.GetKeywordPlanAdGroupRequest],
             keyword_plan_ad_group.KeywordPlanAdGroup]:
-        r"""Return a callable for the get keyword plan ad group method over gRPC.
+        r"""Return a callable for the
+        get keyword plan ad group
+          method over gRPC.
 
         Returns the requested Keyword Plan ad group in full
         detail.
@@ -230,7 +230,9 @@ class KeywordPlanAdGroupServiceGrpcTransport(KeywordPlanAdGroupServiceTransport)
     def mutate_keyword_plan_ad_groups(self) -> Callable[
             [keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsRequest],
             keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsResponse]:
-        r"""Return a callable for the mutate keyword plan ad groups method over gRPC.
+        r"""Return a callable for the
+        mutate keyword plan ad groups
+          method over gRPC.
 
         Creates, updates, or removes Keyword Plan ad groups.
         Operation statuses are returned.

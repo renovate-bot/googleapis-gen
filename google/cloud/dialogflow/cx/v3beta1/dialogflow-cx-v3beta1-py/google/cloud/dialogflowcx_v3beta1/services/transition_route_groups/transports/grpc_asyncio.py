@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.dialogflowcx_v3beta1.types import transition_route_group
 from google.cloud.dialogflowcx_v3beta1.types import transition_route_group as gcdc_transition_route_group
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import TransitionRouteGroupsTransport, DEFAULT_CLIENT_INFO
 from .grpc import TransitionRouteGroupsGrpcTransport
 
@@ -81,13 +79,15 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,7 +166,6 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -228,7 +228,9 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def list_transition_route_groups(self) -> Callable[
             [transition_route_group.ListTransitionRouteGroupsRequest],
             Awaitable[transition_route_group.ListTransitionRouteGroupsResponse]]:
-        r"""Return a callable for the list transition route groups method over gRPC.
+        r"""Return a callable for the
+        list transition route groups
+          method over gRPC.
 
         Returns the list of all transition route groups in
         the specified flow.
@@ -255,7 +257,9 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def get_transition_route_group(self) -> Callable[
             [transition_route_group.GetTransitionRouteGroupRequest],
             Awaitable[transition_route_group.TransitionRouteGroup]]:
-        r"""Return a callable for the get transition route group method over gRPC.
+        r"""Return a callable for the
+        get transition route group
+          method over gRPC.
 
         Retrieves the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
@@ -282,7 +286,9 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def create_transition_route_group(self) -> Callable[
             [gcdc_transition_route_group.CreateTransitionRouteGroupRequest],
             Awaitable[gcdc_transition_route_group.TransitionRouteGroup]]:
-        r"""Return a callable for the create transition route group method over gRPC.
+        r"""Return a callable for the
+        create transition route group
+          method over gRPC.
 
         Creates an
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
@@ -310,7 +316,9 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def update_transition_route_group(self) -> Callable[
             [gcdc_transition_route_group.UpdateTransitionRouteGroupRequest],
             Awaitable[gcdc_transition_route_group.TransitionRouteGroup]]:
-        r"""Return a callable for the update transition route group method over gRPC.
+        r"""Return a callable for the
+        update transition route group
+          method over gRPC.
 
         Updates the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
@@ -337,7 +345,9 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def delete_transition_route_group(self) -> Callable[
             [transition_route_group.DeleteTransitionRouteGroupRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete transition route group method over gRPC.
+        r"""Return a callable for the
+        delete transition route group
+          method over gRPC.
 
         Deletes the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].

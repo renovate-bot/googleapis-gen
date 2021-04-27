@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.resources.types import custom_interest
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -45,7 +42,10 @@ class GetCustomInterestRequest(proto.Message):
             interest to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCustomInterestsRequest(proto.Message):
@@ -64,16 +64,23 @@ class MutateCustomInterestsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CustomInterestOperation',
     )
-    validate_only = proto.Field(proto.BOOL, number=4)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class CustomInterestOperation(proto.Message):
     r"""A single operation (create, update) on a custom interest.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -86,39 +93,50 @@ class CustomInterestOperation(proto.Message):
             expected to have a valid resource name.
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=4,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=custom_interest.CustomInterest,
     )
-    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=custom_interest.CustomInterest,
     )
 
 
 class MutateCustomInterestsResponse(proto.Message):
     r"""Response message for custom interest mutate.
-
     Attributes:
         results (Sequence[google.ads.googleads.v6.services.types.MutateCustomInterestResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateCustomInterestResult',
     )
 
 
 class MutateCustomInterestResult(proto.Message):
     r"""The result for the custom interest mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

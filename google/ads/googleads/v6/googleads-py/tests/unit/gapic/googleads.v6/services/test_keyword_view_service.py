@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -264,21 +262,16 @@ def test_get_keyword_view(transport: str = 'grpc', request_type=keyword_view_ser
         # Designate an appropriate return value for the call.
         call.return_value = keyword_view.KeywordView(
             resource_name='resource_name_value',
-
         )
-
         response = client.get_keyword_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_view_service.GetKeywordViewRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_view.KeywordView)
-
     assert response.resource_name == 'resource_name_value'
 
 
@@ -294,6 +287,7 @@ def test_get_keyword_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_view_service.GetKeywordViewRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -301,7 +295,6 @@ def test_get_keyword_view_field_headers():
             type(client.transport.get_keyword_view),
             '__call__') as call:
         call.return_value = keyword_view.KeywordView()
-
         client.get_keyword_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -328,7 +321,6 @@ def test_get_keyword_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_view.KeywordView()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_keyword_view(
@@ -339,7 +331,6 @@ def test_get_keyword_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -420,7 +411,7 @@ def test_keyword_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_keyword_view',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -573,7 +564,6 @@ def test_keyword_view_path():
     customer_id = "squid"
     ad_group_id = "clam"
     criterion_id = "whelk"
-
     expected = "customers/{customer_id}/keywordViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = KeywordViewServiceClient.keyword_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -581,10 +571,9 @@ def test_keyword_view_path():
 
 def test_parse_keyword_view_path():
     expected = {
-    "customer_id": "octopus",
-    "ad_group_id": "oyster",
-    "criterion_id": "nudibranch",
-
+        "customer_id": "octopus",
+        "ad_group_id": "oyster",
+        "criterion_id": "nudibranch",
     }
     path = KeywordViewServiceClient.keyword_view_path(**expected)
 
@@ -594,7 +583,6 @@ def test_parse_keyword_view_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = KeywordViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -602,8 +590,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = KeywordViewServiceClient.common_billing_account_path(**expected)
 
@@ -613,7 +600,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = KeywordViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -621,8 +607,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = KeywordViewServiceClient.common_folder_path(**expected)
 
@@ -632,7 +617,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = KeywordViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -640,8 +624,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = KeywordViewServiceClient.common_organization_path(**expected)
 
@@ -651,7 +634,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = KeywordViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -659,8 +641,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = KeywordViewServiceClient.common_project_path(**expected)
 
@@ -671,7 +652,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = KeywordViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -679,9 +659,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = KeywordViewServiceClient.common_location_path(**expected)
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -29,7 +27,6 @@ __protobuf__ = proto.module(
 
 class CampaignLabel(proto.Message):
     r"""Represents a relationship between a campaign and a label.
-
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. Campaign label resource
@@ -43,9 +40,20 @@ class CampaignLabel(proto.Message):
             campaign.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign = proto.Field(proto.STRING, number=4, optional=True)
-    label = proto.Field(proto.STRING, number=5, optional=True)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
+    label = proto.Field(
+        proto.STRING,
+        number=5,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

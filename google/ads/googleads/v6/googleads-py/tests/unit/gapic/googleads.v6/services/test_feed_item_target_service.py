@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -272,38 +270,25 @@ def test_get_feed_item_target(transport: str = 'grpc', request_type=feed_item_ta
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_target.FeedItemTarget(
             resource_name='resource_name_value',
-
             feed_item='feed_item_value',
-
             feed_item_target_type=feed_item_target_type.FeedItemTargetTypeEnum.FeedItemTargetType.UNKNOWN,
-
             feed_item_target_id=1972,
-
             status=feed_item_target_status.FeedItemTargetStatusEnum.FeedItemTargetStatus.UNKNOWN,
-
             campaign='campaign_value',
         )
-
         response = client.get_feed_item_target(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == feed_item_target_service.GetFeedItemTargetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, feed_item_target.FeedItemTarget)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.feed_item == 'feed_item_value'
-
     assert response.feed_item_target_type == feed_item_target_type.FeedItemTargetTypeEnum.FeedItemTargetType.UNKNOWN
-
     assert response.feed_item_target_id == 1972
-
     assert response.status == feed_item_target_status.FeedItemTargetStatusEnum.FeedItemTargetStatus.UNKNOWN
 
 
@@ -319,6 +304,7 @@ def test_get_feed_item_target_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = feed_item_target_service.GetFeedItemTargetRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -326,7 +312,6 @@ def test_get_feed_item_target_field_headers():
             type(client.transport.get_feed_item_target),
             '__call__') as call:
         call.return_value = feed_item_target.FeedItemTarget()
-
         client.get_feed_item_target(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -353,7 +338,6 @@ def test_get_feed_item_target_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_target.FeedItemTarget()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_feed_item_target(
@@ -364,7 +348,6 @@ def test_get_feed_item_target_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -399,17 +382,14 @@ def test_mutate_feed_item_targets(transport: str = 'grpc', request_type=feed_ite
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_target_service.MutateFeedItemTargetsResponse(
         )
-
         response = client.mutate_feed_item_targets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == feed_item_target_service.MutateFeedItemTargetsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, feed_item_target_service.MutateFeedItemTargetsResponse)
 
 
@@ -425,6 +405,7 @@ def test_mutate_feed_item_targets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = feed_item_target_service.MutateFeedItemTargetsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -432,7 +413,6 @@ def test_mutate_feed_item_targets_field_headers():
             type(client.transport.mutate_feed_item_targets),
             '__call__') as call:
         call.return_value = feed_item_target_service.MutateFeedItemTargetsResponse()
-
         client.mutate_feed_item_targets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -459,7 +439,6 @@ def test_mutate_feed_item_targets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_target_service.MutateFeedItemTargetsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_feed_item_targets(
@@ -471,9 +450,7 @@ def test_mutate_feed_item_targets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [feed_item_target_service.FeedItemTargetOperation(create=feed_item_target.FeedItemTarget(resource_name='resource_name_value'))]
 
 
@@ -556,7 +533,7 @@ def test_feed_item_target_service_base_transport():
     methods = (
         'get_feed_item_target',
         'mutate_feed_item_targets',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -708,7 +685,6 @@ def test_feed_item_target_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer_id = "squid"
     ad_group_id = "clam"
-
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = FeedItemTargetServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -716,9 +692,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer_id": "whelk",
-    "ad_group_id": "octopus",
-
+        "customer_id": "whelk",
+        "ad_group_id": "octopus",
     }
     path = FeedItemTargetServiceClient.ad_group_path(**expected)
 
@@ -729,7 +704,6 @@ def test_parse_ad_group_path():
 def test_campaign_path():
     customer_id = "oyster"
     campaign_id = "nudibranch"
-
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = FeedItemTargetServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -737,9 +711,8 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-    "customer_id": "cuttlefish",
-    "campaign_id": "mussel",
-
+        "customer_id": "cuttlefish",
+        "campaign_id": "mussel",
     }
     path = FeedItemTargetServiceClient.campaign_path(**expected)
 
@@ -751,7 +724,6 @@ def test_feed_item_path():
     customer_id = "winkle"
     feed_id = "nautilus"
     feed_item_id = "scallop"
-
     expected = "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, )
     actual = FeedItemTargetServiceClient.feed_item_path(customer_id, feed_id, feed_item_id)
     assert expected == actual
@@ -759,10 +731,9 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-    "customer_id": "abalone",
-    "feed_id": "squid",
-    "feed_item_id": "clam",
-
+        "customer_id": "abalone",
+        "feed_id": "squid",
+        "feed_item_id": "clam",
     }
     path = FeedItemTargetServiceClient.feed_item_path(**expected)
 
@@ -776,7 +747,6 @@ def test_feed_item_target_path():
     feed_item_id = "oyster"
     feed_item_target_type = "nudibranch"
     feed_item_target_id = "cuttlefish"
-
     expected = "customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, feed_item_target_type=feed_item_target_type, feed_item_target_id=feed_item_target_id, )
     actual = FeedItemTargetServiceClient.feed_item_target_path(customer_id, feed_id, feed_item_id, feed_item_target_type, feed_item_target_id)
     assert expected == actual
@@ -784,12 +754,11 @@ def test_feed_item_target_path():
 
 def test_parse_feed_item_target_path():
     expected = {
-    "customer_id": "mussel",
-    "feed_id": "winkle",
-    "feed_item_id": "nautilus",
-    "feed_item_target_type": "scallop",
-    "feed_item_target_id": "abalone",
-
+        "customer_id": "mussel",
+        "feed_id": "winkle",
+        "feed_item_id": "nautilus",
+        "feed_item_target_type": "scallop",
+        "feed_item_target_id": "abalone",
     }
     path = FeedItemTargetServiceClient.feed_item_target_path(**expected)
 
@@ -799,7 +768,6 @@ def test_parse_feed_item_target_path():
 
 def test_geo_target_constant_path():
     criterion_id = "squid"
-
     expected = "geoTargetConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = FeedItemTargetServiceClient.geo_target_constant_path(criterion_id)
     assert expected == actual
@@ -807,8 +775,7 @@ def test_geo_target_constant_path():
 
 def test_parse_geo_target_constant_path():
     expected = {
-    "criterion_id": "clam",
-
+        "criterion_id": "clam",
     }
     path = FeedItemTargetServiceClient.geo_target_constant_path(**expected)
 
@@ -818,7 +785,6 @@ def test_parse_geo_target_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FeedItemTargetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -826,8 +792,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = FeedItemTargetServiceClient.common_billing_account_path(**expected)
 
@@ -837,7 +802,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FeedItemTargetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -845,8 +809,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = FeedItemTargetServiceClient.common_folder_path(**expected)
 
@@ -856,7 +819,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FeedItemTargetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -864,8 +826,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = FeedItemTargetServiceClient.common_organization_path(**expected)
 
@@ -875,7 +836,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = FeedItemTargetServiceClient.common_project_path(project)
     assert expected == actual
@@ -883,8 +843,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = FeedItemTargetServiceClient.common_project_path(**expected)
 
@@ -895,7 +854,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FeedItemTargetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -903,9 +861,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = FeedItemTargetServiceClient.common_location_path(**expected)
 

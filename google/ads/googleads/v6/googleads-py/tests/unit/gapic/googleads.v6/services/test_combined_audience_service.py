@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -265,37 +263,24 @@ def test_get_combined_audience(transport: str = 'grpc', request_type=combined_au
         # Designate an appropriate return value for the call.
         call.return_value = combined_audience.CombinedAudience(
             resource_name='resource_name_value',
-
             id=205,
-
             status=combined_audience_status.CombinedAudienceStatusEnum.CombinedAudienceStatus.UNKNOWN,
-
             name='name_value',
-
             description='description_value',
-
         )
-
         response = client.get_combined_audience(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == combined_audience_service.GetCombinedAudienceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, combined_audience.CombinedAudience)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.status == combined_audience_status.CombinedAudienceStatusEnum.CombinedAudienceStatus.UNKNOWN
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
 
 
@@ -311,6 +296,7 @@ def test_get_combined_audience_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = combined_audience_service.GetCombinedAudienceRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -318,7 +304,6 @@ def test_get_combined_audience_field_headers():
             type(client.transport.get_combined_audience),
             '__call__') as call:
         call.return_value = combined_audience.CombinedAudience()
-
         client.get_combined_audience(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -345,7 +330,6 @@ def test_get_combined_audience_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = combined_audience.CombinedAudience()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_combined_audience(
@@ -356,7 +340,6 @@ def test_get_combined_audience_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -437,7 +420,7 @@ def test_combined_audience_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_combined_audience',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -589,7 +572,6 @@ def test_combined_audience_service_transport_channel_mtls_with_adc(
 def test_combined_audience_path():
     customer_id = "squid"
     combined_audience_id = "clam"
-
     expected = "customers/{customer_id}/combinedAudiences/{combined_audience_id}".format(customer_id=customer_id, combined_audience_id=combined_audience_id, )
     actual = CombinedAudienceServiceClient.combined_audience_path(customer_id, combined_audience_id)
     assert expected == actual
@@ -597,9 +579,8 @@ def test_combined_audience_path():
 
 def test_parse_combined_audience_path():
     expected = {
-    "customer_id": "whelk",
-    "combined_audience_id": "octopus",
-
+        "customer_id": "whelk",
+        "combined_audience_id": "octopus",
     }
     path = CombinedAudienceServiceClient.combined_audience_path(**expected)
 
@@ -609,7 +590,6 @@ def test_parse_combined_audience_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CombinedAudienceServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -617,8 +597,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = CombinedAudienceServiceClient.common_billing_account_path(**expected)
 
@@ -628,7 +607,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CombinedAudienceServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -636,8 +614,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = CombinedAudienceServiceClient.common_folder_path(**expected)
 
@@ -647,7 +624,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CombinedAudienceServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -655,8 +631,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = CombinedAudienceServiceClient.common_organization_path(**expected)
 
@@ -666,7 +641,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = CombinedAudienceServiceClient.common_project_path(project)
     assert expected == actual
@@ -674,8 +648,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = CombinedAudienceServiceClient.common_project_path(**expected)
 
@@ -686,7 +659,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CombinedAudienceServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -694,9 +666,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = CombinedAudienceServiceClient.common_location_path(**expected)
 

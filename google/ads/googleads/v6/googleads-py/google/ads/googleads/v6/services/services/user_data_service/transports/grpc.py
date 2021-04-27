@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -27,7 +25,6 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.ads.googleads.v6.services.types import user_data_service
-
 from .base import UserDataServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class UserDataServiceGrpcTransport(UserDataServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class UserDataServiceGrpcTransport(UserDataServiceTransport):
     def upload_user_data(self) -> Callable[
             [user_data_service.UploadUserDataRequest],
             user_data_service.UploadUserDataResponse]:
-        r"""Return a callable for the upload user data method over gRPC.
+        r"""Return a callable for the
+        upload user data
+          method over gRPC.
 
         Uploads the given user data.
 

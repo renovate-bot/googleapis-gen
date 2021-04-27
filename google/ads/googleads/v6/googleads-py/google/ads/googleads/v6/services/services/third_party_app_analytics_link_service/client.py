@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.ads.googleads.v6.resources.types import third_party_app_analytics_link
 from google.ads.googleads.v6.services.types import third_party_app_analytics_link_service
-
 from .transports.base import ThirdPartyAppAnalyticsLinkServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ThirdPartyAppAnalyticsLinkServiceGrpcTransport
 
@@ -165,7 +162,6 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
         """Parse a third_party_app_analytics_link path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/thirdPartyAppAnalyticsLinks/(?P<customer_link_id>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -338,9 +334,9 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.GetThirdPartyAppAnalyticsLinkRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ThirdPartyAppAnalyticsLinkService.GetThirdPartyAppAnalyticsLink][google.ads.googleads.v6.services.ThirdPartyAppAnalyticsLinkService.GetThirdPartyAppAnalyticsLink].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -355,8 +351,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
 
         """
         # Create or coerce a protobuf request object.
-
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
@@ -378,7 +373,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -399,9 +394,9 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.RegenerateShareableLinkIdRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId][google.ads.googleads.v6.services.ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -415,8 +410,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
 
         """
         # Create or coerce a protobuf request object.
-
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a third_party_app_analytics_link_service.RegenerateShareableLinkIdRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
@@ -438,7 +432,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

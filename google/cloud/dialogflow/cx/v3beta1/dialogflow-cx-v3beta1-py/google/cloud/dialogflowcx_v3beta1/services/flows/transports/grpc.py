@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.dialogflowcx_v3beta1.types import flow
 from google.cloud.dialogflowcx_v3beta1.types import flow as gcdc_flow
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import FlowsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -66,7 +63,8 @@ class FlowsGrpcTransport(FlowsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -206,13 +204,15 @@ class FlowsGrpcTransport(FlowsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -242,7 +242,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def create_flow(self) -> Callable[
             [gcdc_flow.CreateFlowRequest],
             gcdc_flow.Flow]:
-        r"""Return a callable for the create flow method over gRPC.
+        r"""Return a callable for the
+        create flow
+          method over gRPC.
 
         Creates a flow in the specified agent.
 
@@ -268,7 +270,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def delete_flow(self) -> Callable[
             [flow.DeleteFlowRequest],
             empty.Empty]:
-        r"""Return a callable for the delete flow method over gRPC.
+        r"""Return a callable for the
+        delete flow
+          method over gRPC.
 
         Deletes a specified flow.
 
@@ -294,7 +298,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def list_flows(self) -> Callable[
             [flow.ListFlowsRequest],
             flow.ListFlowsResponse]:
-        r"""Return a callable for the list flows method over gRPC.
+        r"""Return a callable for the
+        list flows
+          method over gRPC.
 
         Returns the list of all flows in the specified agent.
 
@@ -320,7 +326,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def get_flow(self) -> Callable[
             [flow.GetFlowRequest],
             flow.Flow]:
-        r"""Return a callable for the get flow method over gRPC.
+        r"""Return a callable for the
+        get flow
+          method over gRPC.
 
         Retrieves the specified flow.
 
@@ -346,7 +354,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def update_flow(self) -> Callable[
             [gcdc_flow.UpdateFlowRequest],
             gcdc_flow.Flow]:
-        r"""Return a callable for the update flow method over gRPC.
+        r"""Return a callable for the
+        update flow
+          method over gRPC.
 
         Updates the specified flow.
 
@@ -372,7 +382,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def train_flow(self) -> Callable[
             [flow.TrainFlowRequest],
             operations.Operation]:
-        r"""Return a callable for the train flow method over gRPC.
+        r"""Return a callable for the
+        train flow
+          method over gRPC.
 
         Trains the specified flow. Note that only the flow in
         'draft' environment is trained.
@@ -399,7 +411,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def validate_flow(self) -> Callable[
             [flow.ValidateFlowRequest],
             flow.FlowValidationResult]:
-        r"""Return a callable for the validate flow method over gRPC.
+        r"""Return a callable for the
+        validate flow
+          method over gRPC.
 
         Validates the specified flow and creates or updates
         validation results. Please call this API after the
@@ -428,7 +442,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def get_flow_validation_result(self) -> Callable[
             [flow.GetFlowValidationResultRequest],
             flow.FlowValidationResult]:
-        r"""Return a callable for the get flow validation result method over gRPC.
+        r"""Return a callable for the
+        get flow validation result
+          method over gRPC.
 
         Gets the latest flow validation result. Flow
         validation is performed when ValidateFlow is called.

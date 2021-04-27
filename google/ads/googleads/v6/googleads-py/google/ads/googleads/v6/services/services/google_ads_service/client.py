@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,7 +34,6 @@ from google.ads.googleads.v6.services.services.google_ads_service import pagers
 from google.ads.googleads.v6.services.types import google_ads_service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import GoogleAdsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import GoogleAdsServiceGrpcTransport
 
@@ -1275,7 +1272,6 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         """Parse a video path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/videos/(?P<video_id>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -1449,7 +1445,8 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.SearchGoogleAdsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GoogleAdsService.Search][google.ads.googleads.v6.services.GoogleAdsService.Search].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -1463,7 +1460,6 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1486,16 +1482,14 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a google_ads_service.SearchGoogleAdsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, google_ads_service.SearchGoogleAdsRequest):
             request = google_ads_service.SearchGoogleAdsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if query is not None:
@@ -1516,7 +1510,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -1546,7 +1540,8 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.SearchGoogleAdsStreamRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GoogleAdsService.SearchStream][google.ads.googleads.v6.services.GoogleAdsService.SearchStream].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -1560,7 +1555,6 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1580,16 +1574,14 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a google_ads_service.SearchGoogleAdsStreamRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, google_ads_service.SearchGoogleAdsStreamRequest):
             request = google_ads_service.SearchGoogleAdsStreamRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if query is not None:
@@ -1610,7 +1602,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -1689,7 +1681,8 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.MutateGoogleAdsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GoogleAdsService.Mutate][google.ads.googleads.v6.services.GoogleAdsService.Mutate].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -1705,7 +1698,6 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
                 This corresponds to the ``mutate_operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1725,16 +1717,14 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a google_ads_service.MutateGoogleAdsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, google_ads_service.MutateGoogleAdsRequest):
             request = google_ads_service.MutateGoogleAdsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if mutate_operations is not None:
@@ -1755,7 +1745,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

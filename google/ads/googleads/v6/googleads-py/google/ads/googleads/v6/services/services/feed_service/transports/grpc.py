@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import feed
 from google.ads.googleads.v6.services.types import feed_service
-
 from .base import FeedServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class FeedServiceGrpcTransport(FeedServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class FeedServiceGrpcTransport(FeedServiceTransport):
     def get_feed(self) -> Callable[
             [feed_service.GetFeedRequest],
             feed.Feed]:
-        r"""Return a callable for the get feed method over gRPC.
+        r"""Return a callable for the
+        get feed
+          method over gRPC.
 
         Returns the requested feed in full detail.
 
@@ -229,7 +229,9 @@ class FeedServiceGrpcTransport(FeedServiceTransport):
     def mutate_feeds(self) -> Callable[
             [feed_service.MutateFeedsRequest],
             feed_service.MutateFeedsResponse]:
-        r"""Return a callable for the mutate feeds method over gRPC.
+        r"""Return a callable for the
+        mutate feeds
+          method over gRPC.
 
         Creates, updates, or removes feeds. Operation
         statuses are returned.

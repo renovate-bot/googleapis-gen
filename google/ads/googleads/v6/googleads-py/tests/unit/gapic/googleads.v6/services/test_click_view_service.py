@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -265,41 +263,26 @@ def test_get_click_view(transport: str = 'grpc', request_type=click_view_service
         # Designate an appropriate return value for the call.
         call.return_value = click_view.ClickView(
             resource_name='resource_name_value',
-
             gclid='gclid_value',
-
             page_number=1157,
-
             ad_group_ad='ad_group_ad_value',
-
             campaign_location_target='campaign_location_target_value',
-
             user_list='user_list_value',
-
         )
-
         response = client.get_click_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == click_view_service.GetClickViewRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, click_view.ClickView)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.gclid == 'gclid_value'
-
     assert response.page_number == 1157
-
     assert response.ad_group_ad == 'ad_group_ad_value'
-
     assert response.campaign_location_target == 'campaign_location_target_value'
-
     assert response.user_list == 'user_list_value'
 
 
@@ -315,6 +298,7 @@ def test_get_click_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = click_view_service.GetClickViewRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -322,7 +306,6 @@ def test_get_click_view_field_headers():
             type(client.transport.get_click_view),
             '__call__') as call:
         call.return_value = click_view.ClickView()
-
         client.get_click_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -349,7 +332,6 @@ def test_get_click_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = click_view.ClickView()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_click_view(
@@ -360,7 +342,6 @@ def test_get_click_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -441,7 +422,7 @@ def test_click_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_click_view',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -594,7 +575,6 @@ def test_ad_group_ad_path():
     customer_id = "squid"
     ad_group_id = "clam"
     ad_id = "whelk"
-
     expected = "customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, )
     actual = ClickViewServiceClient.ad_group_ad_path(customer_id, ad_group_id, ad_id)
     assert expected == actual
@@ -602,10 +582,9 @@ def test_ad_group_ad_path():
 
 def test_parse_ad_group_ad_path():
     expected = {
-    "customer_id": "octopus",
-    "ad_group_id": "oyster",
-    "ad_id": "nudibranch",
-
+        "customer_id": "octopus",
+        "ad_group_id": "oyster",
+        "ad_id": "nudibranch",
     }
     path = ClickViewServiceClient.ad_group_ad_path(**expected)
 
@@ -617,7 +596,6 @@ def test_click_view_path():
     customer_id = "cuttlefish"
     date = "mussel"
     gclid = "winkle"
-
     expected = "customers/{customer_id}/clickViews/{date}~{gclid}".format(customer_id=customer_id, date=date, gclid=gclid, )
     actual = ClickViewServiceClient.click_view_path(customer_id, date, gclid)
     assert expected == actual
@@ -625,10 +603,9 @@ def test_click_view_path():
 
 def test_parse_click_view_path():
     expected = {
-    "customer_id": "nautilus",
-    "date": "scallop",
-    "gclid": "abalone",
-
+        "customer_id": "nautilus",
+        "date": "scallop",
+        "gclid": "abalone",
     }
     path = ClickViewServiceClient.click_view_path(**expected)
 
@@ -638,7 +615,6 @@ def test_parse_click_view_path():
 
 def test_geo_target_constant_path():
     criterion_id = "squid"
-
     expected = "geoTargetConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = ClickViewServiceClient.geo_target_constant_path(criterion_id)
     assert expected == actual
@@ -646,8 +622,7 @@ def test_geo_target_constant_path():
 
 def test_parse_geo_target_constant_path():
     expected = {
-    "criterion_id": "clam",
-
+        "criterion_id": "clam",
     }
     path = ClickViewServiceClient.geo_target_constant_path(**expected)
 
@@ -658,7 +633,6 @@ def test_parse_geo_target_constant_path():
 def test_user_list_path():
     customer_id = "whelk"
     user_list_id = "octopus"
-
     expected = "customers/{customer_id}/userLists/{user_list_id}".format(customer_id=customer_id, user_list_id=user_list_id, )
     actual = ClickViewServiceClient.user_list_path(customer_id, user_list_id)
     assert expected == actual
@@ -666,9 +640,8 @@ def test_user_list_path():
 
 def test_parse_user_list_path():
     expected = {
-    "customer_id": "oyster",
-    "user_list_id": "nudibranch",
-
+        "customer_id": "oyster",
+        "user_list_id": "nudibranch",
     }
     path = ClickViewServiceClient.user_list_path(**expected)
 
@@ -678,7 +651,6 @@ def test_parse_user_list_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ClickViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -686,8 +658,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = ClickViewServiceClient.common_billing_account_path(**expected)
 
@@ -697,7 +668,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ClickViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -705,8 +675,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = ClickViewServiceClient.common_folder_path(**expected)
 
@@ -716,7 +685,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ClickViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -724,8 +692,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = ClickViewServiceClient.common_organization_path(**expected)
 
@@ -735,7 +702,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = ClickViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -743,8 +709,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = ClickViewServiceClient.common_project_path(**expected)
 
@@ -755,7 +720,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ClickViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -763,9 +727,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = ClickViewServiceClient.common_location_path(**expected)
 

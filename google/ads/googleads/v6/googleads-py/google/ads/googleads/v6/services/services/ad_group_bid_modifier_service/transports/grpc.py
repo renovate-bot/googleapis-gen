@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import ad_group_bid_modifier
 from google.ads.googleads.v6.services.types import ad_group_bid_modifier_service
-
 from .base import AdGroupBidModifierServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class AdGroupBidModifierServiceGrpcTransport(AdGroupBidModifierServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class AdGroupBidModifierServiceGrpcTransport(AdGroupBidModifierServiceTransport)
     def get_ad_group_bid_modifier(self) -> Callable[
             [ad_group_bid_modifier_service.GetAdGroupBidModifierRequest],
             ad_group_bid_modifier.AdGroupBidModifier]:
-        r"""Return a callable for the get ad group bid modifier method over gRPC.
+        r"""Return a callable for the
+        get ad group bid modifier
+          method over gRPC.
 
         Returns the requested ad group bid modifier in full
         detail.
@@ -230,7 +230,9 @@ class AdGroupBidModifierServiceGrpcTransport(AdGroupBidModifierServiceTransport)
     def mutate_ad_group_bid_modifiers(self) -> Callable[
             [ad_group_bid_modifier_service.MutateAdGroupBidModifiersRequest],
             ad_group_bid_modifier_service.MutateAdGroupBidModifiersResponse]:
-        r"""Return a callable for the mutate ad group bid modifiers method over gRPC.
+        r"""Return a callable for the
+        mutate ad group bid modifiers
+          method over gRPC.
 
         Creates, updates, or removes ad group bid modifiers.
         Operation statuses are returned.

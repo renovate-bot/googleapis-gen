@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import ad_group_ad_status
@@ -38,7 +35,6 @@ __protobuf__ = proto.module(
 
 class AdGroupAd(proto.Message):
     r"""An ad group ad.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad. Ad group ad resource
@@ -59,25 +55,39 @@ class AdGroupAd(proto.Message):
             group ad.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    status = proto.Field(proto.ENUM, number=3,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=ad_group_ad_status.AdGroupAdStatusEnum.AdGroupAdStatus,
     )
-    ad_group = proto.Field(proto.STRING, number=9, optional=True)
-    ad = proto.Field(proto.MESSAGE, number=5,
+    ad_group = proto.Field(
+        proto.STRING,
+        number=9,
+        optional=True,
+    )
+    ad = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=gagr_ad.Ad,
     )
-    policy_summary = proto.Field(proto.MESSAGE, number=6,
+    policy_summary = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='AdGroupAdPolicySummary',
     )
-    ad_strength = proto.Field(proto.ENUM, number=7,
+    ad_strength = proto.Field(
+        proto.ENUM,
+        number=7,
         enum=gage_ad_strength.AdStrengthEnum.AdStrength,
     )
 
 
 class AdGroupAdPolicySummary(proto.Message):
     r"""Contains policy information for an ad.
-
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v6.common.types.PolicyTopicEntry]):
             Output only. The list of policy findings for
@@ -91,13 +101,19 @@ class AdGroupAdPolicySummary(proto.Message):
             individual policy topic entries.
     """
 
-    policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=1,
+    policy_topic_entries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gagc_policy.PolicyTopicEntry,
     )
-    review_status = proto.Field(proto.ENUM, number=2,
+    review_status = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=policy_review_status.PolicyReviewStatusEnum.PolicyReviewStatus,
     )
-    approval_status = proto.Field(proto.ENUM, number=3,
+    approval_status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=policy_approval_status.PolicyApprovalStatusEnum.PolicyApprovalStatus,
     )
 
