@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -32,7 +30,6 @@ from google.cloud.dlp_v2.services.dlp_service import pagers
 from google.cloud.dlp_v2.types import dlp
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import DlpServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DlpServiceGrpcAsyncIOTransport
 from .client import DlpServiceClient
@@ -69,19 +66,14 @@ class DlpServiceAsyncClient:
     parse_job_trigger_path = staticmethod(DlpServiceClient.parse_job_trigger_path)
     stored_info_type_path = staticmethod(DlpServiceClient.stored_info_type_path)
     parse_stored_info_type_path = staticmethod(DlpServiceClient.parse_stored_info_type_path)
-
     common_billing_account_path = staticmethod(DlpServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DlpServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(DlpServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DlpServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(DlpServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DlpServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(DlpServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DlpServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(DlpServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DlpServiceClient.parse_common_location_path)
 
@@ -166,7 +158,6 @@ class DlpServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = DlpServiceClient(
             credentials=credentials,
             transport=transport,
@@ -195,9 +186,9 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.InspectContentRequest`):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in a ContentItem.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -209,7 +200,6 @@ class DlpServiceAsyncClient:
                 Results of inspecting an item.
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.InspectContentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -217,10 +207,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.inspect_content,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -269,10 +256,10 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.RedactImageRequest`):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in an image and redact it by covering it
                 with a colored rectangle.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -284,7 +271,6 @@ class DlpServiceAsyncClient:
                 Results of redacting an image.
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.RedactImageRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -292,10 +278,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.redact_image,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -344,9 +327,9 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeidentifyContentRequest`):
-                The request object. Request to de-identify a list of
+                The request object.
+                Request to de-identify a list of
                 items.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -360,7 +343,6 @@ class DlpServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.DeidentifyContentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -368,10 +350,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.deidentify_content,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -413,8 +392,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ReidentifyContentRequest`):
-                The request object. Request to re-identify an item.
-
+                The request object.
+                Request to re-identify an item.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +405,6 @@ class DlpServiceAsyncClient:
                 Results of re-identifying a item.
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.ReidentifyContentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -434,10 +412,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.reidentify_content,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -481,7 +456,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListInfoTypesRequest`):
-                The request object. Request for the list of infoTypes.
+                The request object.
+                Request for the list of infoTypes.
             parent (:class:`str`):
                 The parent resource name.
 
@@ -494,7 +470,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -519,7 +494,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -528,10 +502,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_info_types,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -568,7 +539,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateInspectTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateInspectTemplate.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -606,7 +578,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``inspect_template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -636,7 +607,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if inspect_template is not None:
@@ -685,7 +655,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateInspectTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateInspectTemplate.
             name (:class:`str`):
                 Required. Resource name of organization and
@@ -708,7 +679,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -738,7 +708,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if inspect_template is not None:
@@ -787,7 +756,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetInspectTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetInspectTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -798,7 +768,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -828,7 +797,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -837,10 +805,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_inspect_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -883,7 +848,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListInspectTemplatesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListInspectTemplates.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -914,7 +880,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -942,7 +907,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -951,10 +915,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_inspect_templates,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1006,7 +967,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteInspectTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteInspectTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -1017,7 +979,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1036,7 +997,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1045,10 +1005,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_inspect_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1091,7 +1048,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateDeidentifyTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateDeidentifyTemplate.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -1129,7 +1087,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``deidentify_template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1157,7 +1114,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if deidentify_template is not None:
@@ -1206,7 +1162,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateDeidentifyTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateDeidentifyTemplate.
             name (:class:`str`):
                 Required. Resource name of organization and deidentify
@@ -1229,7 +1186,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1257,7 +1213,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if deidentify_template is not None:
@@ -1306,7 +1261,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetDeidentifyTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetDeidentifyTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -1317,7 +1273,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1345,7 +1300,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1354,10 +1308,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_deidentify_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1400,7 +1351,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListDeidentifyTemplatesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListDeidentifyTemplates.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -1431,7 +1383,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1459,7 +1410,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1468,10 +1418,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_deidentify_templates,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1523,7 +1470,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteDeidentifyTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteDeidentifyTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -1534,7 +1482,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1553,7 +1500,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1562,10 +1508,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_deidentify_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1608,7 +1551,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateJobTriggerRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateJobTrigger.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -1639,7 +1583,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``job_trigger`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1666,7 +1609,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if job_trigger is not None:
@@ -1715,7 +1657,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateJobTriggerRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateJobTrigger.
             name (:class:`str`):
                 Required. Resource name of the project and the
@@ -1737,7 +1680,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1764,7 +1706,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if job_trigger is not None:
@@ -1818,7 +1759,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.HybridInspectJobTriggerRequest`):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in a custom location.
             name (:class:`str`):
                 Required. Resource name of the trigger to execute a
@@ -1828,7 +1770,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1853,7 +1794,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1898,7 +1838,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetJobTriggerRequest`):
-                The request object. Request message for GetJobTrigger.
+                The request object.
+                Request message for GetJobTrigger.
             name (:class:`str`):
                 Required. Resource name of the project and the
                 triggeredJob, for example
@@ -1907,7 +1848,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1934,7 +1874,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1943,10 +1882,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_job_trigger,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1989,7 +1925,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListJobTriggersRequest`):
-                The request object. Request message for ListJobTriggers.
+                The request object.
+                Request message for ListJobTriggers.
             parent (:class:`str`):
                 Required. Parent resource name.
 
@@ -2014,7 +1951,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2041,7 +1977,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -2050,10 +1985,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_job_triggers,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2105,7 +2037,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteJobTriggerRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteJobTrigger.
             name (:class:`str`):
                 Required. Resource name of the project and the
@@ -2115,7 +2048,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2134,7 +2066,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -2143,10 +2074,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_job_trigger,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2185,9 +2113,9 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ActivateJobTriggerRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ActivateJobTrigger.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2201,7 +2129,6 @@ class DlpServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.ActivateJobTriggerRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2253,7 +2180,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateDlpJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateDlpJobRequest. Used to initiate long running jobs
                 such as calculating risk metrics or inspecting Google
                 Cloud Storage.
@@ -2295,7 +2223,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``risk_job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2320,7 +2247,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if inspect_job is not None:
@@ -2371,7 +2297,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListDlpJobsRequest`):
-                The request object. The request message for listing DLP
+                The request object.
+                The request message for listing DLP
                 jobs.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -2397,7 +2324,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2425,7 +2351,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -2434,10 +2359,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_dlp_jobs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2490,7 +2412,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetDlpJobRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [DlpJobs.GetDlpJob][].
             name (:class:`str`):
                 Required. The name of the DlpJob
@@ -2499,7 +2422,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2524,7 +2446,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -2533,10 +2454,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_dlp_job,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2582,7 +2500,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteDlpJobRequest`):
-                The request object. The request message for deleting a
+                The request object.
+                The request message for deleting a
                 DLP job.
             name (:class:`str`):
                 Required. The name of the DlpJob
@@ -2591,7 +2510,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2610,7 +2528,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -2619,10 +2536,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_dlp_job,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2664,9 +2578,9 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CancelDlpJobRequest`):
-                The request object. The request message for canceling a
+                The request object.
+                The request message for canceling a
                 DLP job.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2674,7 +2588,6 @@ class DlpServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.CancelDlpJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2717,7 +2630,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateStoredInfoTypeRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateStoredInfoType.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -2755,7 +2669,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2781,7 +2694,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if config is not None:
@@ -2832,7 +2744,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateStoredInfoTypeRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateStoredInfoType.
             name (:class:`str`):
                 Required. Resource name of organization and
@@ -2859,7 +2772,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2885,7 +2797,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if config is not None:
@@ -2934,7 +2845,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetStoredInfoTypeRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetStoredInfoType.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -2945,7 +2857,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2971,7 +2882,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -2980,10 +2890,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_stored_info_type,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -3026,7 +2933,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListStoredInfoTypesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListStoredInfoTypes.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -3057,7 +2965,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3085,7 +2992,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -3094,10 +3000,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_stored_info_types,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -3149,7 +3052,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteStoredInfoTypeRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteStoredInfoType.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -3160,7 +3064,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3179,7 +3082,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -3188,10 +3090,7 @@ class DlpServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_stored_info_type,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -3235,7 +3134,8 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.HybridInspectDlpJobRequest`):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in a custom location.
             name (:class:`str`):
                 Required. Resource name of the job to execute a hybrid
@@ -3245,7 +3145,6 @@ class DlpServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3270,7 +3169,6 @@ class DlpServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -3317,9 +3215,9 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.FinishDlpJobRequest`):
-                The request object. The request message for finishing a
+                The request object.
+                The request message for finishing a
                 DLP hybrid job.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3327,7 +3225,6 @@ class DlpServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = dlp.FinishDlpJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -3353,8 +3250,6 @@ class DlpServiceAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

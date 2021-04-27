@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,7 +36,6 @@ from google.cloud.asset_v1.services.asset_service import pagers
 from google.cloud.asset_v1.types import asset_service
 from google.cloud.asset_v1.types import assets
 from google.type import expr_pb2 as expr  # type: ignore
-
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AssetServiceGrpcTransport
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
@@ -362,8 +359,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.ExportAssetsRequest):
-                The request object. Export asset request.
-
+                The request object.
+                Export asset request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,7 +379,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a asset_service.ExportAssetsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -438,8 +434,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.BatchGetAssetsHistoryRequest):
-                The request object. Batch get assets history request.
-
+                The request object.
+                Batch get assets history request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -451,7 +447,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 Batch get assets history response.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a asset_service.BatchGetAssetsHistoryRequest.
         # There's no risk of modifying the input as we've already verified
@@ -496,7 +491,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.CreateFeedRequest):
-                The request object. Create asset feed request.
+                The request object.
+                Create asset feed request.
             parent (str):
                 Required. The name of the
                 project/folder/organization where this
@@ -511,7 +507,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -543,10 +538,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.CreateFeedRequest):
             request = asset_service.CreateFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -585,7 +578,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.GetFeedRequest):
-                The request object. Get asset feed request.
+                The request object.
+                Get asset feed request.
             name (str):
                 Required. The name of the Feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -595,7 +589,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -627,10 +620,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.GetFeedRequest):
             request = asset_service.GetFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -670,7 +661,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.ListFeedsRequest):
-                The request object. List asset feeds request.
+                The request object.
+                List asset feeds request.
             parent (str):
                 Required. The parent
                 project/folder/organization whose feeds
@@ -682,7 +674,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -707,10 +698,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.ListFeedsRequest):
             request = asset_service.ListFeedsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -749,7 +738,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.UpdateFeedRequest):
-                The request object. Update asset feed request.
+                The request object.
+                Update asset feed request.
             feed (google.cloud.asset_v1.types.Feed):
                 Required. The new values of feed details. It must match
                 an existing feed and the field ``name`` must be in the
@@ -760,7 +750,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``feed`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -792,10 +781,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.UpdateFeedRequest):
             request = asset_service.UpdateFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if feed is not None:
                 request.feed = feed
 
@@ -835,6 +822,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         Args:
             request (google.cloud.asset_v1.types.DeleteFeedRequest):
                 The request object.
+
             name (str):
                 Required. The name of the feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -844,7 +832,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -865,10 +852,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.DeleteFeedRequest):
             request = asset_service.DeleteFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -909,7 +894,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.SearchAllResourcesRequest):
-                The request object. Search all resources request.
+                The request object.
+                Search all resources request.
             scope (str):
                 Required. A scope can be a project, a folder, or an
                 organization. The search is limited to the resources
@@ -981,7 +967,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``asset_types`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1010,10 +995,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.SearchAllResourcesRequest):
             request = asset_service.SearchAllResourcesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if scope is not None:
                 request.scope = scope
             if query is not None:
@@ -1069,7 +1052,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.SearchAllIamPoliciesRequest):
-                The request object. Search all IAM policies request.
+                The request object.
+                Search all IAM policies request.
             scope (str):
                 Required. A scope can be a project, a folder, or an
                 organization. The search is limited to the IAM policies
@@ -1125,7 +1109,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1154,10 +1137,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.SearchAllIamPoliciesRequest):
             request = asset_service.SearchAllIamPoliciesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if scope is not None:
                 request.scope = scope
             if query is not None:
@@ -1207,9 +1188,9 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.AnalyzeIamPolicyRequest):
-                The request object. A request message for
+                The request object.
+                A request message for
                 [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1223,7 +1204,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a asset_service.AnalyzeIamPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1276,9 +1256,9 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1.types.AnalyzeIamPolicyLongrunningRequest):
-                The request object. A request message for
+                The request object.
+                A request message for
                 [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1296,7 +1276,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a asset_service.AnalyzeIamPolicyLongrunningRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1334,8 +1313,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

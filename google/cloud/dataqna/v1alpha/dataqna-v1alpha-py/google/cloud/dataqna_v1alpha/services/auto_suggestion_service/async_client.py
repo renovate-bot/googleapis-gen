@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -29,7 +27,6 @@ from google.auth import credentials                    # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.dataqna_v1alpha.types import auto_suggestion_service
-
 from .transports.base import AutoSuggestionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AutoSuggestionServiceGrpcAsyncIOTransport
 from .client import AutoSuggestionServiceClient
@@ -116,16 +113,12 @@ class AutoSuggestionServiceAsyncClient:
 
     common_billing_account_path = staticmethod(AutoSuggestionServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AutoSuggestionServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AutoSuggestionServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AutoSuggestionServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AutoSuggestionServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AutoSuggestionServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AutoSuggestionServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AutoSuggestionServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(AutoSuggestionServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AutoSuggestionServiceClient.parse_common_location_path)
 
@@ -210,7 +203,6 @@ class AutoSuggestionServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AutoSuggestionServiceClient(
             credentials=credentials,
             transport=transport,
@@ -231,8 +223,8 @@ class AutoSuggestionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataqna_v1alpha.types.SuggestQueriesRequest`):
-                The request object. Request for query suggestions.
-
+                The request object.
+                Request for query suggestions.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -244,7 +236,6 @@ class AutoSuggestionServiceAsyncClient:
                 Response to SuggestQueries.
         """
         # Create or coerce a protobuf request object.
-
         request = auto_suggestion_service.SuggestQueriesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -273,8 +264,6 @@ class AutoSuggestionServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -31,7 +29,7 @@ class UserListMembershipStatusEnum(proto.Message):
     r"""Membership status of this user list. Indicates whether a user
     list is open or active. Only open user lists can accumulate more
     users and can be used for targeting.
-    """
+        """
     class UserListMembershipStatus(proto.Enum):
         r"""Enum containing possible user list membership statuses."""
         UNSPECIFIED = 0

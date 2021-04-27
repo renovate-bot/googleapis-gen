@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,7 +31,6 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.errorreporting_v1beta1.types import report_errors_service
-
 from .transports.base import ReportErrorsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ReportErrorsServiceGrpcTransport
 from .transports.grpc_asyncio import ReportErrorsServiceGrpcAsyncIOTransport
@@ -340,7 +337,8 @@ class ReportErrorsServiceClient(metaclass=ReportErrorsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.ReportErrorEventRequest):
-                The request object. A request for reporting an
+                The request object.
+                A request for reporting an
                 individual error event.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
@@ -360,7 +358,6 @@ class ReportErrorsServiceClient(metaclass=ReportErrorsServiceClientMeta):
                 This corresponds to the ``event`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,10 +385,8 @@ class ReportErrorsServiceClient(metaclass=ReportErrorsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, report_errors_service.ReportErrorEventRequest):
             request = report_errors_service.ReportErrorEventRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_name is not None:
                 request.project_name = project_name
             if event is not None:
@@ -419,8 +414,6 @@ class ReportErrorsServiceClient(metaclass=ReportErrorsServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

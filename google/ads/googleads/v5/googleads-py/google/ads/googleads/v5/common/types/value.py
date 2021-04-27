@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -29,7 +27,6 @@ __protobuf__ = proto.module(
 
 class Value(proto.Message):
     r"""A generic data container.
-
     Attributes:
         boolean_value (bool):
             A boolean.
@@ -43,11 +40,31 @@ class Value(proto.Message):
             A string.
     """
 
-    boolean_value = proto.Field(proto.BOOL, number=1, oneof='value')
-    int64_value = proto.Field(proto.INT64, number=2, oneof='value')
-    float_value = proto.Field(proto.FLOAT, number=3, oneof='value')
-    double_value = proto.Field(proto.DOUBLE, number=4, oneof='value')
-    string_value = proto.Field(proto.STRING, number=5, oneof='value')
+    boolean_value = proto.Field(
+        proto.BOOL,
+        number=1,
+        oneof='value',
+    )
+    int64_value = proto.Field(
+        proto.INT64,
+        number=2,
+        oneof='value',
+    )
+    float_value = proto.Field(
+        proto.FLOAT,
+        number=3,
+        oneof='value',
+    )
+    double_value = proto.Field(
+        proto.DOUBLE,
+        number=4,
+        oneof='value',
+    )
+    string_value = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='value',
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

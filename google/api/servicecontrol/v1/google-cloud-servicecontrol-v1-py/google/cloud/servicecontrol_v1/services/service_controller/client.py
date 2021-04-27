@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.servicecontrol_v1.types import check_error
 from google.cloud.servicecontrol_v1.types import service_controller
-
 from .transports.base import ServiceControllerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ServiceControllerGrpcTransport
 from .transports.grpc_asyncio import ServiceControllerGrpcAsyncIOTransport
@@ -347,9 +344,9 @@ class ServiceControllerClient(metaclass=ServiceControllerClientMeta):
 
         Args:
             request (google.cloud.servicecontrol_v1.types.CheckRequest):
-                The request object. Request message for the Check
+                The request object.
+                Request message for the Check
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -363,7 +360,6 @@ class ServiceControllerClient(metaclass=ServiceControllerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service_controller.CheckRequest.
         # There's no risk of modifying the input as we've already verified
@@ -414,9 +410,9 @@ class ServiceControllerClient(metaclass=ServiceControllerClientMeta):
 
         Args:
             request (google.cloud.servicecontrol_v1.types.ReportRequest):
-                The request object. Request message for the Report
+                The request object.
+                Request message for the Report
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -430,7 +426,6 @@ class ServiceControllerClient(metaclass=ServiceControllerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service_controller.ReportRequest.
         # There's no risk of modifying the input as we've already verified
@@ -452,8 +447,6 @@ class ServiceControllerClient(metaclass=ServiceControllerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

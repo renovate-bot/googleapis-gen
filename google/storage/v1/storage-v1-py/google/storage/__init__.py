@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -101,8 +100,7 @@ from google.storage_v1.types.storage_resources import Owner
 from google.storage_v1.types.storage_resources import ProjectTeam
 from google.storage_v1.types.storage_resources import ServiceAccount
 
-__all__ = (
-    'Bucket',
+__all__ = ('Bucket',
     'BucketAccessControl',
     'Channel',
     'ChecksummedData',

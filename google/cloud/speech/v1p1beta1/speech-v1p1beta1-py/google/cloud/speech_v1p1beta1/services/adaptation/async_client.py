@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -32,7 +30,6 @@ from google.cloud.speech_v1p1beta1.services.adaptation import pagers
 from google.cloud.speech_v1p1beta1.types import cloud_speech_adaptation
 from google.cloud.speech_v1p1beta1.types import resource
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import AdaptationTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AdaptationGrpcAsyncIOTransport
 from .client import AdaptationClient
@@ -50,19 +47,14 @@ class AdaptationAsyncClient:
     parse_custom_class_path = staticmethod(AdaptationClient.parse_custom_class_path)
     phrase_set_path = staticmethod(AdaptationClient.phrase_set_path)
     parse_phrase_set_path = staticmethod(AdaptationClient.parse_phrase_set_path)
-
     common_billing_account_path = staticmethod(AdaptationClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AdaptationClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AdaptationClient.common_folder_path)
     parse_common_folder_path = staticmethod(AdaptationClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AdaptationClient.common_organization_path)
     parse_common_organization_path = staticmethod(AdaptationClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AdaptationClient.common_project_path)
     parse_common_project_path = staticmethod(AdaptationClient.parse_common_project_path)
-
     common_location_path = staticmethod(AdaptationClient.common_location_path)
     parse_common_location_path = staticmethod(AdaptationClient.parse_common_location_path)
 
@@ -147,7 +139,6 @@ class AdaptationAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AdaptationClient(
             credentials=credentials,
             transport=transport,
@@ -173,7 +164,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.CreatePhraseSetRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `CreatePhraseSet` method.
             parent (:class:`str`):
                 Required. The parent resource where this phrase set will
@@ -198,7 +190,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``phrase_set_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -224,7 +215,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if phrase_set is not None:
@@ -271,7 +261,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.GetPhraseSetRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `GetPhraseSet` method.
             name (:class:`str`):
                 Required. The name of the phrase set to retrieve.
@@ -281,7 +272,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -307,7 +297,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -350,7 +339,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.ListPhraseSetRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `ListPhraseSet` method.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -360,7 +350,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,7 +377,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -441,7 +429,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.UpdatePhraseSetRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `UpdatePhraseSet` method.
             phrase_set (:class:`google.cloud.speech_v1p1beta1.types.PhraseSet`):
                 Required. The phrase set to update.
@@ -458,7 +447,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -484,7 +472,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if phrase_set is not None:
             request.phrase_set = phrase_set
         if update_mask is not None:
@@ -529,7 +516,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.DeletePhraseSetRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `DeletePhraseSet` method.
             name (:class:`str`):
                 Required. The name of the phrase set to delete. Format:
@@ -538,7 +526,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -557,7 +544,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -599,7 +585,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.CreateCustomClassRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `CreateCustomClass` method.
             parent (:class:`str`):
                 Required. The parent resource where this custom class
@@ -624,7 +611,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``custom_class_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -654,7 +640,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if custom_class is not None:
@@ -701,7 +686,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.GetCustomClassRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `GetCustomClass` method.
             name (:class:`str`):
                 Required. The name of the custom class to retrieve.
@@ -711,7 +697,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -741,7 +726,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -784,7 +768,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.ListCustomClassesRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `ListCustomClasses` method.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
@@ -794,7 +779,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -822,7 +806,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -875,7 +858,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.UpdateCustomClassRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `UpdateCustomClass` method.
             custom_class (:class:`google.cloud.speech_v1p1beta1.types.CustomClass`):
                 Required. The custom class to update.
@@ -892,7 +876,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -922,7 +905,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if custom_class is not None:
             request.custom_class = custom_class
         if update_mask is not None:
@@ -967,7 +949,8 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.DeleteCustomClassRequest`):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `DeleteCustomClass` method.
             name (:class:`str`):
                 Required. The name of the custom class to delete.
@@ -977,7 +960,6 @@ class AdaptationAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -996,7 +978,6 @@ class AdaptationAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1023,8 +1004,6 @@ class AdaptationAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

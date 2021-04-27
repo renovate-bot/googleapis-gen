@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,7 +35,6 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.tag_bindings import pagers
 from google.cloud.resourcemanager_v3.types import tag_bindings
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .transports.base import TagBindingsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TagBindingsGrpcTransport
 from .transports.grpc_asyncio import TagBindingsGrpcAsyncIOTransport
@@ -347,7 +344,8 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.ListTagBindingsRequest):
-                The request object. The request message to list all
+                The request object.
+                The request message to list all
                 TagBindings for a parent.
             parent (str):
                 Required. The full resource name of a
@@ -358,7 +356,6 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -387,10 +384,8 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_bindings.ListTagBindingsRequest):
             request = tag_bindings.ListTagBindingsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -431,7 +426,8 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.CreateTagBindingRequest):
-                The request object. The request message to create a
+                The request object.
+                The request message to create a
                 TagBinding.
             tag_binding (google.cloud.resourcemanager_v3.types.TagBinding):
                 Required. The TagBinding to be
@@ -440,7 +436,6 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
                 This corresponds to the ``tag_binding`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,10 +467,8 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_bindings.CreateTagBindingRequest):
             request = tag_bindings.CreateTagBindingRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if tag_binding is not None:
                 request.tag_binding = tag_binding
 
@@ -514,7 +507,8 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.DeleteTagBindingRequest):
-                The request object. The request message to delete a
+                The request object.
+                The request message to delete a
                 TagBinding.
             name (str):
                 Required. The name of the TagBinding. This is a String
@@ -524,7 +518,6 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -564,10 +557,8 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_bindings.DeleteTagBindingRequest):
             request = tag_bindings.DeleteTagBindingRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -601,8 +592,6 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

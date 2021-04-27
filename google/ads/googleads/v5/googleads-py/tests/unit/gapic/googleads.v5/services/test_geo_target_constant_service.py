@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -265,49 +263,30 @@ def test_get_geo_target_constant(transport: str = 'grpc', request_type=geo_targe
         # Designate an appropriate return value for the call.
         call.return_value = geo_target_constant.GeoTargetConstant(
             resource_name='resource_name_value',
-
             id=205,
-
             name='name_value',
-
             country_code='country_code_value',
-
             target_type='target_type_value',
-
             status=geo_target_constant_status.GeoTargetConstantStatusEnum.GeoTargetConstantStatus.UNKNOWN,
-
             canonical_name='canonical_name_value',
-
             parent_geo_target='parent_geo_target_value',
-
         )
-
         response = client.get_geo_target_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == geo_target_constant_service.GetGeoTargetConstantRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, geo_target_constant.GeoTargetConstant)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.name == 'name_value'
-
     assert response.country_code == 'country_code_value'
-
     assert response.target_type == 'target_type_value'
-
     assert response.status == geo_target_constant_status.GeoTargetConstantStatusEnum.GeoTargetConstantStatus.UNKNOWN
-
     assert response.canonical_name == 'canonical_name_value'
-
     assert response.parent_geo_target == 'parent_geo_target_value'
 
 
@@ -323,6 +302,7 @@ def test_get_geo_target_constant_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = geo_target_constant_service.GetGeoTargetConstantRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -330,7 +310,6 @@ def test_get_geo_target_constant_field_headers():
             type(client.transport.get_geo_target_constant),
             '__call__') as call:
         call.return_value = geo_target_constant.GeoTargetConstant()
-
         client.get_geo_target_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -357,7 +336,6 @@ def test_get_geo_target_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = geo_target_constant.GeoTargetConstant()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_geo_target_constant(
@@ -368,7 +346,6 @@ def test_get_geo_target_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -403,17 +380,14 @@ def test_suggest_geo_target_constants(transport: str = 'grpc', request_type=geo_
         # Designate an appropriate return value for the call.
         call.return_value = geo_target_constant_service.SuggestGeoTargetConstantsResponse(
         )
-
         response = client.suggest_geo_target_constants(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == geo_target_constant_service.SuggestGeoTargetConstantsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, geo_target_constant_service.SuggestGeoTargetConstantsResponse)
 
 
@@ -485,7 +459,7 @@ def test_geo_target_constant_service_base_transport():
     methods = (
         'get_geo_target_constant',
         'suggest_geo_target_constants',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -636,7 +610,6 @@ def test_geo_target_constant_service_transport_channel_mtls_with_adc(
 
 def test_geo_target_constant_path():
     geo_target_constant = "squid"
-
     expected = "geoTargetConstants/{geo_target_constant}".format(geo_target_constant=geo_target_constant, )
     actual = GeoTargetConstantServiceClient.geo_target_constant_path(geo_target_constant)
     assert expected == actual
@@ -644,8 +617,7 @@ def test_geo_target_constant_path():
 
 def test_parse_geo_target_constant_path():
     expected = {
-    "geo_target_constant": "clam",
-
+        "geo_target_constant": "clam",
     }
     path = GeoTargetConstantServiceClient.geo_target_constant_path(**expected)
 
@@ -655,7 +627,6 @@ def test_parse_geo_target_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GeoTargetConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -663,8 +634,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = GeoTargetConstantServiceClient.common_billing_account_path(**expected)
 
@@ -674,7 +644,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = GeoTargetConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -682,8 +651,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = GeoTargetConstantServiceClient.common_folder_path(**expected)
 
@@ -693,7 +661,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GeoTargetConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -701,8 +668,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = GeoTargetConstantServiceClient.common_organization_path(**expected)
 
@@ -712,7 +678,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = GeoTargetConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -720,8 +685,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = GeoTargetConstantServiceClient.common_project_path(**expected)
 
@@ -732,7 +696,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GeoTargetConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -740,9 +703,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = GeoTargetConstantServiceClient.common_location_path(**expected)
 

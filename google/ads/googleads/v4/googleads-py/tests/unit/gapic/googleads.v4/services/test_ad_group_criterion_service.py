@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -291,54 +289,33 @@ def test_get_ad_group_criterion(transport: str = 'grpc', request_type=ad_group_c
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_criterion.AdGroupCriterion(
             resource_name='resource_name_value',
-
             status=ad_group_criterion_status.AdGroupCriterionStatusEnum.AdGroupCriterionStatus.UNKNOWN,
-
             type_=criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN,
-
             system_serving_status=criterion_system_serving_status.CriterionSystemServingStatusEnum.CriterionSystemServingStatus.UNKNOWN,
-
             approval_status=ad_group_criterion_approval_status.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus.UNKNOWN,
-
             effective_cpc_bid_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-
             effective_cpm_bid_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-
             effective_cpv_bid_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-
             effective_percent_cpc_bid_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-
             keyword=criteria.KeywordInfo(text=wrappers.StringValue(value='value_value')),
         )
-
         response = client.get_ad_group_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_criterion_service.GetAdGroupCriterionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_criterion.AdGroupCriterion)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.status == ad_group_criterion_status.AdGroupCriterionStatusEnum.AdGroupCriterionStatus.UNKNOWN
-
     assert response.type_ == criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN
-
     assert response.system_serving_status == criterion_system_serving_status.CriterionSystemServingStatusEnum.CriterionSystemServingStatus.UNKNOWN
-
     assert response.approval_status == ad_group_criterion_approval_status.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus.UNKNOWN
-
     assert response.effective_cpc_bid_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
-
     assert response.effective_cpm_bid_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
-
     assert response.effective_cpv_bid_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
-
     assert response.effective_percent_cpc_bid_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
 
 
@@ -354,6 +331,7 @@ def test_get_ad_group_criterion_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_criterion_service.GetAdGroupCriterionRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -361,7 +339,6 @@ def test_get_ad_group_criterion_field_headers():
             type(client.transport.get_ad_group_criterion),
             '__call__') as call:
         call.return_value = ad_group_criterion.AdGroupCriterion()
-
         client.get_ad_group_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -388,7 +365,6 @@ def test_get_ad_group_criterion_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_criterion.AdGroupCriterion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_criterion(
@@ -399,7 +375,6 @@ def test_get_ad_group_criterion_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -434,17 +409,14 @@ def test_mutate_ad_group_criteria(transport: str = 'grpc', request_type=ad_group
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_criterion_service.MutateAdGroupCriteriaResponse(
         )
-
         response = client.mutate_ad_group_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_criterion_service.MutateAdGroupCriteriaRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_criterion_service.MutateAdGroupCriteriaResponse)
 
 
@@ -460,6 +432,7 @@ def test_mutate_ad_group_criteria_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_criterion_service.MutateAdGroupCriteriaRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -467,7 +440,6 @@ def test_mutate_ad_group_criteria_field_headers():
             type(client.transport.mutate_ad_group_criteria),
             '__call__') as call:
         call.return_value = ad_group_criterion_service.MutateAdGroupCriteriaResponse()
-
         client.mutate_ad_group_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -494,7 +466,6 @@ def test_mutate_ad_group_criteria_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_criterion_service.MutateAdGroupCriteriaResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_group_criteria(
@@ -506,9 +477,7 @@ def test_mutate_ad_group_criteria_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [ad_group_criterion_service.AdGroupCriterionOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -591,7 +560,7 @@ def test_ad_group_criterion_service_base_transport():
     methods = (
         'get_ad_group_criterion',
         'mutate_ad_group_criteria',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -743,7 +712,6 @@ def test_ad_group_criterion_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer = "squid"
     ad_group = "clam"
-
     expected = "customers/{customer}/adGroups/{ad_group}".format(customer=customer, ad_group=ad_group, )
     actual = AdGroupCriterionServiceClient.ad_group_path(customer, ad_group)
     assert expected == actual
@@ -751,9 +719,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer": "whelk",
-    "ad_group": "octopus",
-
+        "customer": "whelk",
+        "ad_group": "octopus",
     }
     path = AdGroupCriterionServiceClient.ad_group_path(**expected)
 
@@ -764,7 +731,6 @@ def test_parse_ad_group_path():
 def test_ad_group_criterion_path():
     customer = "oyster"
     ad_group_criterion = "nudibranch"
-
     expected = "customers/{customer}/adGroupCriteria/{ad_group_criterion}".format(customer=customer, ad_group_criterion=ad_group_criterion, )
     actual = AdGroupCriterionServiceClient.ad_group_criterion_path(customer, ad_group_criterion)
     assert expected == actual
@@ -772,9 +738,8 @@ def test_ad_group_criterion_path():
 
 def test_parse_ad_group_criterion_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_group_criterion": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_group_criterion": "mussel",
     }
     path = AdGroupCriterionServiceClient.ad_group_criterion_path(**expected)
 
@@ -784,7 +749,6 @@ def test_parse_ad_group_criterion_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupCriterionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -792,8 +756,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = AdGroupCriterionServiceClient.common_billing_account_path(**expected)
 
@@ -803,7 +766,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupCriterionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -811,8 +773,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = AdGroupCriterionServiceClient.common_folder_path(**expected)
 
@@ -822,7 +783,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupCriterionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -830,8 +790,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = AdGroupCriterionServiceClient.common_organization_path(**expected)
 
@@ -841,7 +800,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupCriterionServiceClient.common_project_path(project)
     assert expected == actual
@@ -849,8 +807,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = AdGroupCriterionServiceClient.common_project_path(**expected)
 
@@ -861,7 +818,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupCriterionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -869,9 +825,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = AdGroupCriterionServiceClient.common_location_path(**expected)
 

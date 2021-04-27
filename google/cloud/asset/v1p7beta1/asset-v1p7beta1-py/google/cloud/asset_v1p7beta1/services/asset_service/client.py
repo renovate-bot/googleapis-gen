@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.asset_v1p7beta1.types import asset_service
-
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AssetServiceGrpcTransport
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
@@ -348,8 +345,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p7beta1.types.ExportAssetsRequest):
-                The request object. Export asset request.
-
+                The request object.
+                Export asset request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -368,7 +365,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a asset_service.ExportAssetsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -406,8 +402,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

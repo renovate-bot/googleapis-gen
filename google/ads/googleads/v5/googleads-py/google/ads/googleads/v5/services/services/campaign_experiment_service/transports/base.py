@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
 import typing
 import pkg_resources
@@ -29,7 +27,6 @@ from google.ads.googleads.v5.resources.types import campaign_experiment
 from google.ads.googleads.v5.services.types import campaign_experiment_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -57,7 +54,8 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -123,8 +121,7 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
                 default_timeout=None,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
     def operations_client(self) -> operations_v1.OperationsClient:

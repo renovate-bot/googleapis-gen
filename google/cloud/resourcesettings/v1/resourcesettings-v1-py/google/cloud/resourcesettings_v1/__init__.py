@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.resource_settings_service import ResourceSettingsServiceClient
+
 from .types.resource_settings import GetSettingRequest
 from .types.resource_settings import ListSettingsRequest
 from .types.resource_settings import ListSettingsResponse
@@ -24,7 +24,6 @@ from .types.resource_settings import SettingMetadata
 from .types.resource_settings import SettingView
 from .types.resource_settings import UpdateSettingRequest
 from .types.resource_settings import Value
-
 
 __all__ = (
     'GetSettingRequest',

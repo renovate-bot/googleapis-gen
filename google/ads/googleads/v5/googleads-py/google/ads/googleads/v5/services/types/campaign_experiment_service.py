@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v5.resources.types import campaign_experiment as gagr_campaign_experiment
@@ -55,7 +52,10 @@ class GetCampaignExperimentRequest(proto.Message):
             experiment to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCampaignExperimentsRequest(proto.Message):
@@ -84,20 +84,32 @@ class MutateCampaignExperimentsRequest(proto.Message):
             resource name should be returned post mutation.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CampaignExperimentOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
-    response_content_type = proto.Field(proto.ENUM, number=5,
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    response_content_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
 
 
 class CampaignExperimentOperation(proto.Message):
     r"""A single update operation on a campaign experiment.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -112,18 +124,26 @@ class CampaignExperimentOperation(proto.Message):
             ``customers/{customer_id}/campaignExperiments/{campaign_experiment_id}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=3,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=field_mask.FieldMask,
     )
-    update = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=gagr_campaign_experiment.CampaignExperiment,
     )
-    remove = proto.Field(proto.STRING, number=2, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='operation',
+    )
 
 
 class MutateCampaignExperimentsResponse(proto.Message):
     r"""Response message for campaign experiment mutate.
-
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -135,17 +155,20 @@ class MutateCampaignExperimentsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateCampaignExperimentResult',
     )
 
 
 class MutateCampaignExperimentResult(proto.Message):
     r"""The result for the campaign experiment mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -155,8 +178,13 @@ class MutateCampaignExperimentResult(proto.Message):
             response_content_type is set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign_experiment = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign_experiment = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gagr_campaign_experiment.CampaignExperiment,
     )
 
@@ -177,11 +205,19 @@ class CreateCampaignExperimentRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    campaign_experiment = proto.Field(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign_experiment = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gagr_campaign_experiment.CampaignExperiment,
     )
-    validate_only = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class CreateCampaignExperimentMetadata(proto.Message):
@@ -193,7 +229,10 @@ class CreateCampaignExperimentMetadata(proto.Message):
             Resource name of campaign experiment created.
     """
 
-    campaign_experiment = proto.Field(proto.STRING, number=1)
+    campaign_experiment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GraduateCampaignExperimentRequest(proto.Message):
@@ -210,13 +249,18 @@ class GraduateCampaignExperimentRequest(proto.Message):
             experiment.
     """
 
-    campaign_experiment = proto.Field(proto.STRING, number=1)
-    campaign_budget = proto.Field(proto.STRING, number=2)
+    campaign_experiment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign_budget = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GraduateCampaignExperimentResponse(proto.Message):
     r"""Response message for campaign experiment graduate.
-
     Attributes:
         graduated_campaign (str):
             The resource name of the campaign from the graduated
@@ -224,7 +268,10 @@ class GraduateCampaignExperimentResponse(proto.Message):
             CampaignExperiment.experiment_campaign.
     """
 
-    graduated_campaign = proto.Field(proto.STRING, number=1)
+    graduated_campaign = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class PromoteCampaignExperimentRequest(proto.Message):
@@ -237,7 +284,10 @@ class PromoteCampaignExperimentRequest(proto.Message):
             experiment to promote.
     """
 
-    campaign_experiment = proto.Field(proto.STRING, number=1)
+    campaign_experiment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class EndCampaignExperimentRequest(proto.Message):
@@ -250,7 +300,10 @@ class EndCampaignExperimentRequest(proto.Message):
             experiment to end.
     """
 
-    campaign_experiment = proto.Field(proto.STRING, number=1)
+    campaign_experiment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListCampaignExperimentAsyncErrorsRequest(proto.Message):
@@ -273,9 +326,18 @@ class ListCampaignExperimentAsyncErrorsRequest(proto.Message):
             returned resources.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    page_token = proto.Field(proto.STRING, number=2)
-    page_size = proto.Field(proto.INT32, number=3)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ListCampaignExperimentAsyncErrorsResponse(proto.Message):
@@ -297,10 +359,15 @@ class ListCampaignExperimentAsyncErrorsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    errors = proto.RepeatedField(proto.MESSAGE, number=1,
+    errors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=status.Status,
     )
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

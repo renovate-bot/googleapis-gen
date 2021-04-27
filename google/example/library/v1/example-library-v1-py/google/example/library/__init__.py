@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,8 +32,7 @@ from google.example.library_v1.types.library import MoveBookRequest
 from google.example.library_v1.types.library import Shelf
 from google.example.library_v1.types.library import UpdateBookRequest
 
-__all__ = (
-    'Book',
+__all__ = ('Book',
     'CreateBookRequest',
     'CreateShelfRequest',
     'DeleteBookRequest',

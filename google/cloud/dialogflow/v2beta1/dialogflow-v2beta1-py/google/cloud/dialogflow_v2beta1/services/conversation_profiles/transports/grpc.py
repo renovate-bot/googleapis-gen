@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 from google.cloud.dialogflow_v2beta1.types import conversation_profile
 from google.cloud.dialogflow_v2beta1.types import conversation_profile as gcd_conversation_profile
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ConversationProfilesTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,7 +61,8 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,13 +201,15 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -223,7 +223,9 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def list_conversation_profiles(self) -> Callable[
             [conversation_profile.ListConversationProfilesRequest],
             conversation_profile.ListConversationProfilesResponse]:
-        r"""Return a callable for the list conversation profiles method over gRPC.
+        r"""Return a callable for the
+        list conversation profiles
+          method over gRPC.
 
         Returns the list of all conversation profiles in the
         specified project.
@@ -250,7 +252,9 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def get_conversation_profile(self) -> Callable[
             [conversation_profile.GetConversationProfileRequest],
             conversation_profile.ConversationProfile]:
-        r"""Return a callable for the get conversation profile method over gRPC.
+        r"""Return a callable for the
+        get conversation profile
+          method over gRPC.
 
         Retrieves the specified conversation profile.
 
@@ -276,7 +280,9 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def create_conversation_profile(self) -> Callable[
             [gcd_conversation_profile.CreateConversationProfileRequest],
             gcd_conversation_profile.ConversationProfile]:
-        r"""Return a callable for the create conversation profile method over gRPC.
+        r"""Return a callable for the
+        create conversation profile
+          method over gRPC.
 
         Creates a conversation profile in the specified project.
 
@@ -308,7 +314,9 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def update_conversation_profile(self) -> Callable[
             [gcd_conversation_profile.UpdateConversationProfileRequest],
             gcd_conversation_profile.ConversationProfile]:
-        r"""Return a callable for the update conversation profile method over gRPC.
+        r"""Return a callable for the
+        update conversation profile
+          method over gRPC.
 
         Updates the specified conversation profile.
 
@@ -340,7 +348,9 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def delete_conversation_profile(self) -> Callable[
             [conversation_profile.DeleteConversationProfileRequest],
             empty.Empty]:
-        r"""Return a callable for the delete conversation profile method over gRPC.
+        r"""Return a callable for the
+        delete conversation profile
+          method over gRPC.
 
         Deletes the specified conversation profile.
 

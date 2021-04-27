@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,7 +34,6 @@ from google.cloud.appengine_admin_v1.services.authorized_certificates import pag
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import certificate
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import AuthorizedCertificatesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AuthorizedCertificatesGrpcTransport
 from .transports.grpc_asyncio import AuthorizedCertificatesGrpcAsyncIOTransport
@@ -330,9 +327,9 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListAuthorizedCertificatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.ListAuthorizedCertificates`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -349,7 +346,6 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListAuthorizedCertificatesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -400,9 +396,9 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.GetAuthorizedCertificate`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -419,7 +415,6 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetAuthorizedCertificateRequest.
         # There's no risk of modifying the input as we've already verified
@@ -461,9 +456,9 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.CreateAuthorizedCertificate`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -480,7 +475,6 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.CreateAuthorizedCertificateRequest.
         # There's no risk of modifying the input as we've already verified
@@ -527,9 +521,9 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.UpdateAuthorizedCertificate`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -546,7 +540,6 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.UpdateAuthorizedCertificateRequest.
         # There's no risk of modifying the input as we've already verified
@@ -588,9 +581,9 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.DeleteAuthorizedCertificate`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -598,7 +591,6 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DeleteAuthorizedCertificateRequest.
         # There's no risk of modifying the input as we've already verified
@@ -625,8 +617,6 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

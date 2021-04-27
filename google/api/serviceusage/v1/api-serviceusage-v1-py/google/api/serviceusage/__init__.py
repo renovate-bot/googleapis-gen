@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,8 +32,7 @@ from google.api.serviceusage_v1.types.serviceusage import GetServiceRequest
 from google.api.serviceusage_v1.types.serviceusage import ListServicesRequest
 from google.api.serviceusage_v1.types.serviceusage import ListServicesResponse
 
-__all__ = (
-    'BatchEnableServicesRequest',
+__all__ = ('BatchEnableServicesRequest',
     'BatchEnableServicesResponse',
     'BatchGetServicesRequest',
     'BatchGetServicesResponse',

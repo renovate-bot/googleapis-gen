@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.devtools.clouddebugger_v2.types import debugger
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import Debugger2Transport, DEFAULT_CLIENT_INFO
 
 
@@ -74,7 +71,8 @@ class Debugger2GrpcTransport(Debugger2Transport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -213,13 +211,15 @@ class Debugger2GrpcTransport(Debugger2Transport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -233,7 +233,9 @@ class Debugger2GrpcTransport(Debugger2Transport):
     def set_breakpoint(self) -> Callable[
             [debugger.SetBreakpointRequest],
             debugger.SetBreakpointResponse]:
-        r"""Return a callable for the set breakpoint method over gRPC.
+        r"""Return a callable for the
+        set breakpoint
+          method over gRPC.
 
         Sets the breakpoint to the debuggee.
 
@@ -259,7 +261,9 @@ class Debugger2GrpcTransport(Debugger2Transport):
     def get_breakpoint(self) -> Callable[
             [debugger.GetBreakpointRequest],
             debugger.GetBreakpointResponse]:
-        r"""Return a callable for the get breakpoint method over gRPC.
+        r"""Return a callable for the
+        get breakpoint
+          method over gRPC.
 
         Gets breakpoint information.
 
@@ -285,7 +289,9 @@ class Debugger2GrpcTransport(Debugger2Transport):
     def delete_breakpoint(self) -> Callable[
             [debugger.DeleteBreakpointRequest],
             empty.Empty]:
-        r"""Return a callable for the delete breakpoint method over gRPC.
+        r"""Return a callable for the
+        delete breakpoint
+          method over gRPC.
 
         Deletes the breakpoint from the debuggee.
 
@@ -311,7 +317,9 @@ class Debugger2GrpcTransport(Debugger2Transport):
     def list_breakpoints(self) -> Callable[
             [debugger.ListBreakpointsRequest],
             debugger.ListBreakpointsResponse]:
-        r"""Return a callable for the list breakpoints method over gRPC.
+        r"""Return a callable for the
+        list breakpoints
+          method over gRPC.
 
         Lists all breakpoints for the debuggee.
 
@@ -337,7 +345,9 @@ class Debugger2GrpcTransport(Debugger2Transport):
     def list_debuggees(self) -> Callable[
             [debugger.ListDebuggeesRequest],
             debugger.ListDebuggeesResponse]:
-        r"""Return a callable for the list debuggees method over gRPC.
+        r"""Return a callable for the
+        list debuggees
+          method over gRPC.
 
         Lists all the debuggees that the user has access to.
 

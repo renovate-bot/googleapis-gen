@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.asset_v1p2beta1.types import asset_service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import AssetServiceGrpcTransport
 
@@ -79,13 +77,15 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -105,7 +105,8 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -163,7 +164,6 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,7 +226,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def create_feed(self) -> Callable[
             [asset_service.CreateFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the create feed method over gRPC.
+        r"""Return a callable for the
+        create feed
+          method over gRPC.
 
         Creates a feed in a parent
         project/folder/organization to listen to its asset
@@ -254,7 +256,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def get_feed(self) -> Callable[
             [asset_service.GetFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the get feed method over gRPC.
+        r"""Return a callable for the
+        get feed
+          method over gRPC.
 
         Gets details about an asset feed.
 
@@ -280,7 +284,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def list_feeds(self) -> Callable[
             [asset_service.ListFeedsRequest],
             Awaitable[asset_service.ListFeedsResponse]]:
-        r"""Return a callable for the list feeds method over gRPC.
+        r"""Return a callable for the
+        list feeds
+          method over gRPC.
 
         Lists all asset feeds in a parent
         project/folder/organization.
@@ -307,7 +313,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def update_feed(self) -> Callable[
             [asset_service.UpdateFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the update feed method over gRPC.
+        r"""Return a callable for the
+        update feed
+          method over gRPC.
 
         Updates an asset feed configuration.
 
@@ -333,7 +341,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def delete_feed(self) -> Callable[
             [asset_service.DeleteFeedRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete feed method over gRPC.
+        r"""Return a callable for the
+        delete feed
+          method over gRPC.
 
         Deletes an asset feed.
 

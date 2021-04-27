@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.iam import IAMClient
+
 from .types.audit_data import AuditData
 from .types.iam import CreateRoleRequest
 from .types.iam import CreateServiceAccountKeyRequest
@@ -62,7 +62,6 @@ from .types.iam import UndeleteServiceAccountRequest
 from .types.iam import UndeleteServiceAccountResponse
 from .types.iam import UpdateRoleRequest
 from .types.iam import UploadServiceAccountKeyRequest
-
 
 __all__ = (
     'AuditData',

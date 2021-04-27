@@ -1,0 +1,93 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.home.enterprise.sdm_v1",
+  "protoPackage": "google.home.enterprise.sdm.v1",
+  "schema": "1.0",
+  "services": {
+    "SmartDeviceManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartDeviceManagementServiceClient",
+          "rpcs": {
+            "ExecuteDeviceCommand": {
+              "methods": [
+                "execute_device_command"
+              ]
+            },
+            "GetDevice": {
+              "methods": [
+                "get_device"
+              ]
+            },
+            "GetRoom": {
+              "methods": [
+                "get_room"
+              ]
+            },
+            "GetStructure": {
+              "methods": [
+                "get_structure"
+              ]
+            },
+            "ListDevices": {
+              "methods": [
+                "list_devices"
+              ]
+            },
+            "ListRooms": {
+              "methods": [
+                "list_rooms"
+              ]
+            },
+            "ListStructures": {
+              "methods": [
+                "list_structures"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SmartDeviceManagementServiceAsyncClient",
+          "rpcs": {
+            "ExecuteDeviceCommand": {
+              "methods": [
+                "execute_device_command"
+              ]
+            },
+            "GetDevice": {
+              "methods": [
+                "get_device"
+              ]
+            },
+            "GetRoom": {
+              "methods": [
+                "get_room"
+              ]
+            },
+            "GetStructure": {
+              "methods": [
+                "get_structure"
+              ]
+            },
+            "ListDevices": {
+              "methods": [
+                "list_devices"
+              ]
+            },
+            "ListRooms": {
+              "methods": [
+                "list_rooms"
+              ]
+            },
+            "ListStructures": {
+              "methods": [
+                "list_structures"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

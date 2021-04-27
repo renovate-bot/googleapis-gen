@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
+import packaging.version
 import pkg_resources
 
 from google import auth  # type: ignore
+import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -30,7 +30,6 @@ from google.cloud.asset_v1.types import asset_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
-
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -40,6 +39,18 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
+try:
+    # google.auth.__version__ was added in 1.26.0
+    _GOOGLE_AUTH_VERSION = auth.__version__
+except AttributeError:
+    try:  # try pkg_resources if it is available
+        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
+    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
+        _GOOGLE_AUTH_VERSION = None
+
+_API_CORE_VERSION = google.api_core.__version__
+
+
 class AssetServiceTransport(abc.ABC):
     """Abstract transport class for AssetService."""
 
@@ -47,20 +58,22 @@ class AssetServiceTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
+    DEFAULT_HOST: str = 'cloudasset.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'cloudasset.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: credentials.Credentials = None,
-            credentials_file: typing.Optional[str] = None,
-            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
-            quota_project_id: typing.Optional[str] = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -69,7 +82,7 @@ class AssetServiceTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scope (Optional[Sequence[str]]): A list of scopes.
+            scopes (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -83,6 +96,8 @@ class AssetServiceTransport(abc.ABC):
             host += ':443'
         self._host = host
 
+        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
+
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -94,15 +109,56 @@ class AssetServiceTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                scopes=self._scopes,
+                                **scopes_kwargs,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
+
+    # TODO(busunkim): These two class methods are in the base transport
+    # to avoid duplicating code across the transport classes. These functions
+    # should be deleted once the minimum required versions of google-api-core
+    # and google-auth are increased.
+
+    # TODO: Remove this function once google-auth >= 1.25.0 is required
+    @classmethod
+    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
+        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
+
+        scopes_kwargs = {}
+
+        if _GOOGLE_AUTH_VERSION and (
+            packaging.version.parse(_GOOGLE_AUTH_VERSION)
+            >= packaging.version.parse("1.25.0")
+        ):
+            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
+        else:
+            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
+
+        return scopes_kwargs
+
+    # TODO: Remove this function once google-api-core >= 1.26.0 is required
+    @classmethod
+    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
+        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
+
+        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
+
+        if _API_CORE_VERSION and (
+            packaging.version.parse(_API_CORE_VERSION)
+            >= packaging.version.parse("1.26.0")
+        ):
+            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
+            self_signed_jwt_kwargs["scopes"] = scopes
+            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
+        else:
+            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
+
+        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -115,10 +171,7 @@ class AssetServiceTransport(abc.ABC):
             self.batch_get_assets_history: gapic_v1.method.wrap_method(
                 self.batch_get_assets_history,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -135,10 +188,7 @@ class AssetServiceTransport(abc.ABC):
             self.get_feed: gapic_v1.method.wrap_method(
                 self.get_feed,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -150,10 +200,7 @@ class AssetServiceTransport(abc.ABC):
             self.list_feeds: gapic_v1.method.wrap_method(
                 self.list_feeds,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -170,10 +217,7 @@ class AssetServiceTransport(abc.ABC):
             self.delete_feed: gapic_v1.method.wrap_method(
                 self.delete_feed,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -185,10 +229,7 @@ class AssetServiceTransport(abc.ABC):
             self.search_all_resources: gapic_v1.method.wrap_method(
                 self.search_all_resources,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -200,10 +241,7 @@ class AssetServiceTransport(abc.ABC):
             self.search_all_iam_policies: gapic_v1.method.wrap_method(
                 self.search_all_iam_policies,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -215,10 +253,7 @@ class AssetServiceTransport(abc.ABC):
             self.analyze_iam_policy: gapic_v1.method.wrap_method(
                 self.analyze_iam_policy,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.ServiceUnavailable,
                     ),
                     deadline=300.0,
@@ -231,8 +266,7 @@ class AssetServiceTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
     def operations_client(self) -> operations_v1.OperationsClient:
@@ -240,101 +274,101 @@ class AssetServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
-    def export_assets(self) -> typing.Callable[
+    def export_assets(self) -> Callable[
             [asset_service.ExportAssetsRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def batch_get_assets_history(self) -> typing.Callable[
+    def batch_get_assets_history(self) -> Callable[
             [asset_service.BatchGetAssetsHistoryRequest],
-            typing.Union[
+            Union[
                 asset_service.BatchGetAssetsHistoryResponse,
-                typing.Awaitable[asset_service.BatchGetAssetsHistoryResponse]
+                Awaitable[asset_service.BatchGetAssetsHistoryResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_feed(self) -> typing.Callable[
+    def create_feed(self) -> Callable[
             [asset_service.CreateFeedRequest],
-            typing.Union[
+            Union[
                 asset_service.Feed,
-                typing.Awaitable[asset_service.Feed]
+                Awaitable[asset_service.Feed]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_feed(self) -> typing.Callable[
+    def get_feed(self) -> Callable[
             [asset_service.GetFeedRequest],
-            typing.Union[
+            Union[
                 asset_service.Feed,
-                typing.Awaitable[asset_service.Feed]
+                Awaitable[asset_service.Feed]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_feeds(self) -> typing.Callable[
+    def list_feeds(self) -> Callable[
             [asset_service.ListFeedsRequest],
-            typing.Union[
+            Union[
                 asset_service.ListFeedsResponse,
-                typing.Awaitable[asset_service.ListFeedsResponse]
+                Awaitable[asset_service.ListFeedsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_feed(self) -> typing.Callable[
+    def update_feed(self) -> Callable[
             [asset_service.UpdateFeedRequest],
-            typing.Union[
+            Union[
                 asset_service.Feed,
-                typing.Awaitable[asset_service.Feed]
+                Awaitable[asset_service.Feed]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_feed(self) -> typing.Callable[
+    def delete_feed(self) -> Callable[
             [asset_service.DeleteFeedRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def search_all_resources(self) -> typing.Callable[
+    def search_all_resources(self) -> Callable[
             [asset_service.SearchAllResourcesRequest],
-            typing.Union[
+            Union[
                 asset_service.SearchAllResourcesResponse,
-                typing.Awaitable[asset_service.SearchAllResourcesResponse]
+                Awaitable[asset_service.SearchAllResourcesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def search_all_iam_policies(self) -> typing.Callable[
+    def search_all_iam_policies(self) -> Callable[
             [asset_service.SearchAllIamPoliciesRequest],
-            typing.Union[
+            Union[
                 asset_service.SearchAllIamPoliciesResponse,
-                typing.Awaitable[asset_service.SearchAllIamPoliciesResponse]
+                Awaitable[asset_service.SearchAllIamPoliciesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def analyze_iam_policy(self) -> typing.Callable[
+    def analyze_iam_policy(self) -> Callable[
             [asset_service.AnalyzeIamPolicyRequest],
-            typing.Union[
+            Union[
                 asset_service.AnalyzeIamPolicyResponse,
-                typing.Awaitable[asset_service.AnalyzeIamPolicyResponse]
+                Awaitable[asset_service.AnalyzeIamPolicyResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def analyze_iam_policy_longrunning(self) -> typing.Callable[
+    def analyze_iam_policy_longrunning(self) -> Callable[
             [asset_service.AnalyzeIamPolicyLongrunningRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 

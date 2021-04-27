@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -39,7 +37,6 @@ from google.cloud.securitycenter.settings_v1beta1.types import settings as gcss_
 from google.cloud.securitycenter.settings_v1beta1.types import sink_settings
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import SecurityCenterSettingsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SecurityCenterSettingsServiceGrpcAsyncIOTransport
 from .client import SecurityCenterSettingsServiceClient
@@ -66,19 +63,14 @@ class SecurityCenterSettingsServiceAsyncClient:
     parse_service_account_path = staticmethod(SecurityCenterSettingsServiceClient.parse_service_account_path)
     settings_path = staticmethod(SecurityCenterSettingsServiceClient.settings_path)
     parse_settings_path = staticmethod(SecurityCenterSettingsServiceClient.parse_settings_path)
-
     common_billing_account_path = staticmethod(SecurityCenterSettingsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SecurityCenterSettingsServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(SecurityCenterSettingsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(SecurityCenterSettingsServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(SecurityCenterSettingsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(SecurityCenterSettingsServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(SecurityCenterSettingsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(SecurityCenterSettingsServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(SecurityCenterSettingsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(SecurityCenterSettingsServiceClient.parse_common_location_path)
 
@@ -163,7 +155,6 @@ class SecurityCenterSettingsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = SecurityCenterSettingsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -196,7 +187,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetServiceAccountRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetServiceAccount.
             name (:class:`str`):
                 Required. The relative resource name of the service
@@ -207,7 +199,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -233,7 +224,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -242,10 +232,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_service_account,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -286,7 +273,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetSettingsRequest`):
-                The request object. Request message for GetSettings.
+                The request object.
+                Request message for GetSettings.
             name (:class:`str`):
                 Required. The name of the settings to retrieve. Formats:
 
@@ -300,7 +288,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -325,7 +312,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -334,10 +320,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -379,7 +362,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.UpdateSettingsRequest`):
-                The request object. Request message for UpdateSettings.
+                The request object.
+                Request message for UpdateSettings.
             settings (:class:`google.cloud.securitycenter.settings_v1beta1.types.Settings`):
                 Required. The settings to update.
 
@@ -403,7 +387,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -428,7 +411,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if settings is not None:
             request.settings = settings
         if update_mask is not None:
@@ -439,10 +421,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -492,8 +471,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ResetSettingsRequest`):
-                The request object. Request message for ResetSettings.
-
+                The request object.
+                Request message for ResetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -501,7 +480,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = securitycenter_settings_service.ResetSettingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -509,10 +487,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.reset_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -549,9 +524,9 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.BatchGetSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 BatchGetSettings.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -565,7 +540,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = securitycenter_settings_service.BatchGetSettingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -573,10 +547,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_get_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -628,7 +599,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CalculateEffectiveSettings.
             name (:class:`str`):
                 Required. The name of the effective settings to
@@ -644,7 +616,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -669,7 +640,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -678,10 +648,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.calculate_effective_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -721,9 +688,9 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.BatchCalculateEffectiveSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 BatchGetEffectiveSettings.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -737,7 +704,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = securitycenter_settings_service.BatchCalculateEffectiveSettingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -745,10 +711,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_calculate_effective_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -789,7 +752,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetComponentSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetComponentSettings.
             name (:class:`str`):
                 Required. The component settings to retrieve.
@@ -806,7 +770,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -831,7 +794,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -840,10 +802,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_component_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -885,7 +844,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.UpdateComponentSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateComponentSettings.
             component_settings (:class:`google.cloud.securitycenter.settings_v1beta1.types.ComponentSettings`):
                 Required. The component settings to update.
@@ -910,7 +870,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -935,7 +894,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if component_settings is not None:
             request.component_settings = component_settings
         if update_mask is not None:
@@ -946,10 +904,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_component_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -994,9 +949,9 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ResetComponentSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ResetComponentSettings.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1004,7 +959,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = securitycenter_settings_service.ResetComponentSettingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1012,10 +966,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.reset_component_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1053,7 +1004,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveComponentSettingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CalculateEffectiveComponentSettings.
             name (:class:`str`):
                 Required. The effective component settings to retrieve.
@@ -1070,7 +1022,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1095,7 +1046,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1104,10 +1054,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.calculate_effective_component_settings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1148,7 +1095,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ListDetectorsRequest`):
-                The request object. Request message for ListDetectors.
+                The request object.
+                Request message for ListDetectors.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
                 detectors. Format:
@@ -1158,7 +1106,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1185,7 +1132,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1194,10 +1140,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_detectors,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1248,7 +1191,8 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ListComponentsRequest`):
-                The request object. Request message for ListComponents.
+                The request object.
+                Request message for ListComponents.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
                 components. Format:
@@ -1258,7 +1202,6 @@ class SecurityCenterSettingsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1285,7 +1228,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1294,10 +1236,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_components,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1334,8 +1273,6 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

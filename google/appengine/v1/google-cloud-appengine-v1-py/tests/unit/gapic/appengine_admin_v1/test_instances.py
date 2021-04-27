@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,6 +39,8 @@ from google.cloud.appengine_admin_v1.services.instances import InstancesAsyncCli
 from google.cloud.appengine_admin_v1.services.instances import InstancesClient
 from google.cloud.appengine_admin_v1.services.instances import pagers
 from google.cloud.appengine_admin_v1.services.instances import transports
+from google.cloud.appengine_admin_v1.services.instances.transports.base import _API_CORE_VERSION
+from google.cloud.appengine_admin_v1.services.instances.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import instance
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
@@ -46,6 +48,28 @@ from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -213,12 +237,10 @@ def test_instances_client_client_options(client_class, transport_class, transpor
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (InstancesClient, transports.InstancesGrpcTransport, "grpc", "true"),
     (InstancesAsyncClient, transports.InstancesGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (InstancesClient, transports.InstancesGrpcTransport, "grpc", "false"),
     (InstancesAsyncClient, transports.InstancesGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(InstancesClient, "DEFAULT_ENDPOINT", modify_default_endpoint(InstancesClient))
 @mock.patch.object(InstancesAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(InstancesAsyncClient))
@@ -373,21 +395,16 @@ def test_list_instances(transport: str = 'grpc', request_type=appengine.ListInst
         # Designate an appropriate return value for the call.
         call.return_value = appengine.ListInstancesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_instances(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.ListInstancesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListInstancesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -410,8 +427,8 @@ def test_list_instances_empty_call():
         client.list_instances()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.ListInstancesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_instances_async(transport: str = 'grpc_asyncio', request_type=appengine.ListInstancesRequest):
@@ -429,21 +446,18 @@ async def test_list_instances_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.list_instances),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(appengine.ListInstancesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(appengine.ListInstancesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_instances(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.ListInstancesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListInstancesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -460,6 +474,7 @@ def test_list_instances_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.ListInstancesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -467,7 +482,6 @@ def test_list_instances_field_headers():
             type(client.transport.list_instances),
             '__call__') as call:
         call.return_value = appengine.ListInstancesResponse()
-
         client.list_instances(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -492,6 +506,7 @@ async def test_list_instances_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.ListInstancesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -499,7 +514,6 @@ async def test_list_instances_field_headers_async():
             type(client.transport.list_instances),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(appengine.ListInstancesResponse())
-
         await client.list_instances(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -701,7 +715,6 @@ async def test_list_instances_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_instance(transport: str = 'grpc', request_type=appengine.GetInstanceRequest):
     client = InstancesClient(
         credentials=credentials.AnonymousCredentials(),
@@ -719,81 +732,46 @@ def test_get_instance(transport: str = 'grpc', request_type=appengine.GetInstanc
         # Designate an appropriate return value for the call.
         call.return_value = instance.Instance(
             name='name_value',
-
             id='id_value',
-
             app_engine_release='app_engine_release_value',
-
             availability=instance.Instance.Availability.RESIDENT,
-
             vm_name='vm_name_value',
-
             vm_zone_name='vm_zone_name_value',
-
             vm_id='vm_id_value',
-
             requests=892,
-
             errors=669,
-
             qps=0.340,
-
             average_latency=1578,
-
             memory_usage=1293,
-
             vm_status='vm_status_value',
-
             vm_debug_enabled=True,
-
             vm_ip='vm_ip_value',
-
             vm_liveness=instance.Instance.Liveness.LivenessState.UNKNOWN,
-
         )
-
         response = client.get_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.GetInstanceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, instance.Instance)
-
     assert response.name == 'name_value'
-
     assert response.id == 'id_value'
-
     assert response.app_engine_release == 'app_engine_release_value'
-
     assert response.availability == instance.Instance.Availability.RESIDENT
-
     assert response.vm_name == 'vm_name_value'
-
     assert response.vm_zone_name == 'vm_zone_name_value'
-
     assert response.vm_id == 'vm_id_value'
-
     assert response.requests == 892
-
     assert response.errors == 669
-
     assert math.isclose(response.qps, 0.340, rel_tol=1e-6)
-
     assert response.average_latency == 1578
-
     assert response.memory_usage == 1293
-
     assert response.vm_status == 'vm_status_value'
-
     assert response.vm_debug_enabled is True
-
     assert response.vm_ip == 'vm_ip_value'
-
     assert response.vm_liveness == instance.Instance.Liveness.LivenessState.UNKNOWN
 
 
@@ -816,8 +794,8 @@ def test_get_instance_empty_call():
         client.get_instance()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.GetInstanceRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=appengine.GetInstanceRequest):
@@ -835,7 +813,7 @@ async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_instance),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(instance.Instance(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(instance.Instance(
             name='name_value',
             id='id_value',
             app_engine_release='app_engine_release_value',
@@ -853,48 +831,30 @@ async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=
             vm_ip='vm_ip_value',
             vm_liveness=instance.Instance.Liveness.LivenessState.UNKNOWN,
         ))
-
         response = await client.get_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.GetInstanceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, instance.Instance)
-
     assert response.name == 'name_value'
-
     assert response.id == 'id_value'
-
     assert response.app_engine_release == 'app_engine_release_value'
-
     assert response.availability == instance.Instance.Availability.RESIDENT
-
     assert response.vm_name == 'vm_name_value'
-
     assert response.vm_zone_name == 'vm_zone_name_value'
-
     assert response.vm_id == 'vm_id_value'
-
     assert response.requests == 892
-
     assert response.errors == 669
-
     assert math.isclose(response.qps, 0.340, rel_tol=1e-6)
-
     assert response.average_latency == 1578
-
     assert response.memory_usage == 1293
-
     assert response.vm_status == 'vm_status_value'
-
     assert response.vm_debug_enabled is True
-
     assert response.vm_ip == 'vm_ip_value'
-
     assert response.vm_liveness == instance.Instance.Liveness.LivenessState.UNKNOWN
 
 
@@ -911,6 +871,7 @@ def test_get_instance_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.GetInstanceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -918,7 +879,6 @@ def test_get_instance_field_headers():
             type(client.transport.get_instance),
             '__call__') as call:
         call.return_value = instance.Instance()
-
         client.get_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -943,6 +903,7 @@ async def test_get_instance_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.GetInstanceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -950,7 +911,6 @@ async def test_get_instance_field_headers_async():
             type(client.transport.get_instance),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(instance.Instance())
-
         await client.get_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -982,13 +942,11 @@ def test_delete_instance(transport: str = 'grpc', request_type=appengine.DeleteI
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DeleteInstanceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1014,8 +972,8 @@ def test_delete_instance_empty_call():
         client.delete_instance()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DeleteInstanceRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_instance_async(transport: str = 'grpc_asyncio', request_type=appengine.DeleteInstanceRequest):
@@ -1036,13 +994,11 @@ async def test_delete_instance_async(transport: str = 'grpc_asyncio', request_ty
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DeleteInstanceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1062,6 +1018,7 @@ def test_delete_instance_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.DeleteInstanceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1069,7 +1026,6 @@ def test_delete_instance_field_headers():
             type(client.transport.delete_instance),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1094,6 +1050,7 @@ async def test_delete_instance_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.DeleteInstanceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1101,7 +1058,6 @@ async def test_delete_instance_field_headers_async():
             type(client.transport.delete_instance),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1133,13 +1089,11 @@ def test_debug_instance(transport: str = 'grpc', request_type=appengine.DebugIns
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.debug_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DebugInstanceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1165,8 +1119,8 @@ def test_debug_instance_empty_call():
         client.debug_instance()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DebugInstanceRequest()
+
 
 @pytest.mark.asyncio
 async def test_debug_instance_async(transport: str = 'grpc_asyncio', request_type=appengine.DebugInstanceRequest):
@@ -1187,13 +1141,11 @@ async def test_debug_instance_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.debug_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DebugInstanceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1213,6 +1165,7 @@ def test_debug_instance_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.DebugInstanceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1220,7 +1173,6 @@ def test_debug_instance_field_headers():
             type(client.transport.debug_instance),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.debug_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1245,6 +1197,7 @@ async def test_debug_instance_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.DebugInstanceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1252,7 +1205,6 @@ async def test_debug_instance_field_headers_async():
             type(client.transport.debug_instance),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.debug_instance(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1308,7 +1260,6 @@ def test_transport_instance():
     client = InstancesClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.InstancesGrpcTransport(
@@ -1323,7 +1274,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.InstancesGrpcTransport,
     transports.InstancesGrpcAsyncIOTransport,
@@ -1335,7 +1285,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = InstancesClient(
@@ -1345,7 +1294,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.InstancesGrpcTransport,
     )
-
 
 def test_instances_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1371,7 +1319,7 @@ def test_instances_base_transport():
         'get_instance',
         'delete_instance',
         'debug_instance',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1382,9 +1330,27 @@ def test_instances_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_instances_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.appengine_admin_v1.services.instances.transports.InstancesTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.appengine_admin_v1.services.instances.transports.InstancesTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.InstancesTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/appengine.admin',            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloud-platform.read-only',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_instances_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.appengine_admin_v1.services.instances.transports.InstancesTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.InstancesTransport(
@@ -1402,37 +1368,186 @@ def test_instances_base_transport_with_credentials_file():
 
 def test_instances_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.appengine_admin_v1.services.instances.transports.InstancesTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.appengine_admin_v1.services.instances.transports.InstancesTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.InstancesTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_instances_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         InstancesClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/appengine.admin',
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
+
             quota_project_id=None,
         )
 
 
-def test_instances_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_instances_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        InstancesClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.InstancesGrpcTransport,
+        transports.InstancesGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_instances_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.InstancesGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.InstancesGrpcTransport,
+        transports.InstancesGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_instances_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/appengine.admin',
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.InstancesGrpcTransport, grpc_helpers),
+        (transports.InstancesGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_instances_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "appengine.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            scopes=["1", "2"],
+            default_host="appengine.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.InstancesGrpcTransport, grpc_helpers),
+        (transports.InstancesGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_instances_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "appengine.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.InstancesGrpcTransport, grpc_helpers),
+        (transports.InstancesGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_instances_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "appengine.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1496,7 +1611,6 @@ def test_instances_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='appengine.googleapis.com:8000'),
     )
     assert client.transport._host == 'appengine.googleapis.com:8000'
-
 
 def test_instances_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1655,7 +1769,6 @@ def test_instance_path():
     service = "clam"
     version = "whelk"
     instance = "octopus"
-
     expected = "apps/{app}/services/{service}/versions/{version}/instances/{instance}".format(app=app, service=service, version=version, instance=instance, )
     actual = InstancesClient.instance_path(app, service, version, instance)
     assert expected == actual
@@ -1663,11 +1776,10 @@ def test_instance_path():
 
 def test_parse_instance_path():
     expected = {
-    "app": "oyster",
-    "service": "nudibranch",
-    "version": "cuttlefish",
-    "instance": "mussel",
-
+        "app": "oyster",
+        "service": "nudibranch",
+        "version": "cuttlefish",
+        "instance": "mussel",
     }
     path = InstancesClient.instance_path(**expected)
 
@@ -1677,7 +1789,6 @@ def test_parse_instance_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = InstancesClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1685,8 +1796,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = InstancesClient.common_billing_account_path(**expected)
 
@@ -1696,7 +1806,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = InstancesClient.common_folder_path(folder)
     assert expected == actual
@@ -1704,8 +1813,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = InstancesClient.common_folder_path(**expected)
 
@@ -1715,7 +1823,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = InstancesClient.common_organization_path(organization)
     assert expected == actual
@@ -1723,8 +1830,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = InstancesClient.common_organization_path(**expected)
 
@@ -1734,7 +1840,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = InstancesClient.common_project_path(project)
     assert expected == actual
@@ -1742,8 +1847,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = InstancesClient.common_project_path(**expected)
 
@@ -1754,7 +1858,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = InstancesClient.common_location_path(project, location)
     assert expected == actual
@@ -1762,9 +1865,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = InstancesClient.common_location_path(**expected)
 

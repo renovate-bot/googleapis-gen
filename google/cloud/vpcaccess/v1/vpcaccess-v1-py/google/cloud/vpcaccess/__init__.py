@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,8 +24,7 @@ from google.cloud.vpcaccess_v1.types.vpc_access import ListConnectorsRequest
 from google.cloud.vpcaccess_v1.types.vpc_access import ListConnectorsResponse
 from google.cloud.vpcaccess_v1.types.vpc_access import OperationMetadata
 
-__all__ = (
-    'Connector',
+__all__ = ('Connector',
     'CreateConnectorRequest',
     'DeleteConnectorRequest',
     'GetConnectorRequest',

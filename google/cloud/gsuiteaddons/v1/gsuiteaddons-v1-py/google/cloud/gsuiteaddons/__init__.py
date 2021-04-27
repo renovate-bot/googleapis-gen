@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,8 +31,7 @@ from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import ListDeploymentsRespo
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import ReplaceDeploymentRequest
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import UninstallDeploymentRequest
 
-__all__ = (
-    'AddOns',
+__all__ = ('AddOns',
     'Authorization',
     'CreateDeploymentRequest',
     'DeleteDeploymentRequest',

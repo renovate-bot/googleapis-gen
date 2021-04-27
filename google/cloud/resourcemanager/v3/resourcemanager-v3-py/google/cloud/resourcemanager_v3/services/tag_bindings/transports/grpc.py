@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 
 from google.cloud.resourcemanager_v3.types import tag_bindings
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import TagBindingsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,7 +62,8 @@ class TagBindingsGrpcTransport(TagBindingsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,13 +203,15 @@ class TagBindingsGrpcTransport(TagBindingsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -241,7 +241,9 @@ class TagBindingsGrpcTransport(TagBindingsTransport):
     def list_tag_bindings(self) -> Callable[
             [tag_bindings.ListTagBindingsRequest],
             tag_bindings.ListTagBindingsResponse]:
-        r"""Return a callable for the list tag bindings method over gRPC.
+        r"""Return a callable for the
+        list tag bindings
+          method over gRPC.
 
         Lists the TagBindings for the given cloud resource, as specified
         with ``parent``.
@@ -272,7 +274,9 @@ class TagBindingsGrpcTransport(TagBindingsTransport):
     def create_tag_binding(self) -> Callable[
             [tag_bindings.CreateTagBindingRequest],
             operations.Operation]:
-        r"""Return a callable for the create tag binding method over gRPC.
+        r"""Return a callable for the
+        create tag binding
+          method over gRPC.
 
         Creates a TagBinding between a TagValue and a cloud
         resource (currently project, folder, or organization).
@@ -299,7 +303,9 @@ class TagBindingsGrpcTransport(TagBindingsTransport):
     def delete_tag_binding(self) -> Callable[
             [tag_bindings.DeleteTagBindingRequest],
             operations.Operation]:
-        r"""Return a callable for the delete tag binding method over gRPC.
+        r"""Return a callable for the
+        delete tag binding
+          method over gRPC.
 
         Deletes a TagBinding.
 

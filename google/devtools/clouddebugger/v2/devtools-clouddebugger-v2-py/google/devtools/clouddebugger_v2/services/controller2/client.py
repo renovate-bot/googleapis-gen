@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.devtools.clouddebugger_v2.types import controller
 from google.devtools.clouddebugger_v2.types import data
-
 from .transports.base import Controller2Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc import Controller2GrpcTransport
 from .transports.grpc_asyncio import Controller2GrpcAsyncIOTransport
@@ -358,7 +355,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.RegisterDebuggeeRequest):
-                The request object. Request to register a debuggee.
+                The request object.
+                Request to register a debuggee.
             debuggee (google.devtools.clouddebugger_v2.types.Debuggee):
                 Required. Debuggee information to register. The fields
                 ``project``, ``uniquifier``, ``description`` and
@@ -367,7 +365,6 @@ class Controller2Client(metaclass=Controller2ClientMeta):
                 This corresponds to the ``debuggee`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -392,10 +389,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, controller.RegisterDebuggeeRequest):
             request = controller.RegisterDebuggeeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if debuggee is not None:
                 request.debuggee = debuggee
 
@@ -439,13 +434,13 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.ListActiveBreakpointsRequest):
-                The request object. Request to list active breakpoints.
+                The request object.
+                Request to list active breakpoints.
             debuggee_id (str):
                 Required. Identifies the debuggee.
                 This corresponds to the ``debuggee_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,10 +467,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, controller.ListActiveBreakpointsRequest):
             request = controller.ListActiveBreakpointsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
 
@@ -515,7 +508,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.UpdateActiveBreakpointRequest):
-                The request object. Request to update an active
+                The request object.
+                Request to update an active
                 breakpoint.
             debuggee_id (str):
                 Required. Identifies the debuggee
@@ -532,7 +526,6 @@ class Controller2Client(metaclass=Controller2ClientMeta):
                 This corresponds to the ``breakpoint_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -560,10 +553,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, controller.UpdateActiveBreakpointRequest):
             request = controller.UpdateActiveBreakpointRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
             if breakpoint_ is not None:
@@ -583,8 +574,6 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

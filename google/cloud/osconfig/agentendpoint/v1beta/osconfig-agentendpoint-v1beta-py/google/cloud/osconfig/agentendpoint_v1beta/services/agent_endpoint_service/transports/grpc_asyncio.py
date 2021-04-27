@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.osconfig.agentendpoint_v1beta.types import agentendpoint
 from google.cloud.osconfig.agentendpoint_v1beta.types import guest_policies
-
 from .base import AgentEndpointServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import AgentEndpointServiceGrpcTransport
 
@@ -79,13 +77,15 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -105,7 +105,8 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -163,7 +164,6 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,7 +226,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
     def receive_task_notification(self) -> Callable[
             [agentendpoint.ReceiveTaskNotificationRequest],
             Awaitable[agentendpoint.ReceiveTaskNotificationResponse]]:
-        r"""Return a callable for the receive task notification method over gRPC.
+        r"""Return a callable for the
+        receive task notification
+          method over gRPC.
 
         Stream established by client to receive Task
         notifications.
@@ -253,7 +255,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
     def start_next_task(self) -> Callable[
             [agentendpoint.StartNextTaskRequest],
             Awaitable[agentendpoint.StartNextTaskResponse]]:
-        r"""Return a callable for the start next task method over gRPC.
+        r"""Return a callable for the
+        start next task
+          method over gRPC.
 
         Signals the start of a task execution and returns the
         task info.
@@ -280,7 +284,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
     def report_task_progress(self) -> Callable[
             [agentendpoint.ReportTaskProgressRequest],
             Awaitable[agentendpoint.ReportTaskProgressResponse]]:
-        r"""Return a callable for the report task progress method over gRPC.
+        r"""Return a callable for the
+        report task progress
+          method over gRPC.
 
         Signals an intermediary progress checkpoint in task
         execution.
@@ -307,7 +313,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
     def report_task_complete(self) -> Callable[
             [agentendpoint.ReportTaskCompleteRequest],
             Awaitable[agentendpoint.ReportTaskCompleteResponse]]:
-        r"""Return a callable for the report task complete method over gRPC.
+        r"""Return a callable for the
+        report task complete
+          method over gRPC.
 
         Signals that the task execution is complete and
         optionally returns the next task.
@@ -334,7 +342,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
     def lookup_effective_guest_policy(self) -> Callable[
             [guest_policies.LookupEffectiveGuestPolicyRequest],
             Awaitable[guest_policies.EffectiveGuestPolicy]]:
-        r"""Return a callable for the lookup effective guest policy method over gRPC.
+        r"""Return a callable for the
+        lookup effective guest policy
+          method over gRPC.
 
         Lookup the effective guest policy that applies to a
         VM instance. This lookup merges all policies that are
@@ -362,7 +372,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
     def register_agent(self) -> Callable[
             [agentendpoint.RegisterAgentRequest],
             Awaitable[agentendpoint.RegisterAgentResponse]]:
-        r"""Return a callable for the register agent method over gRPC.
+        r"""Return a callable for the
+        register agent
+          method over gRPC.
 
         Registers the agent running on the VM.
 

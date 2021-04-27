@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -96,8 +95,7 @@ from google.analytics.admin_v1alpha.types.resources import PropertySummary
 from google.analytics.admin_v1alpha.types.resources import UserLink
 from google.analytics.admin_v1alpha.types.resources import WebDataStream
 
-__all__ = (
-    'Account',
+__all__ = ('Account',
     'AccountSummary',
     'AnalyticsAdminServiceAsyncClient',
     'AnalyticsAdminServiceClient',

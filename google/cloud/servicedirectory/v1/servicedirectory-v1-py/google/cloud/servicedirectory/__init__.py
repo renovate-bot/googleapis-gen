@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,8 +42,7 @@ from google.cloud.servicedirectory_v1.types.registration_service import UpdateNa
 from google.cloud.servicedirectory_v1.types.registration_service import UpdateServiceRequest
 from google.cloud.servicedirectory_v1.types.service import Service
 
-__all__ = (
-    'CreateEndpointRequest',
+__all__ = ('CreateEndpointRequest',
     'CreateNamespaceRequest',
     'CreateServiceRequest',
     'DeleteEndpointRequest',

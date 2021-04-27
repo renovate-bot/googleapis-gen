@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -153,8 +152,7 @@ from google.cloud.datalabeling_v1beta1.types.operations import LabelVideoEventOp
 from google.cloud.datalabeling_v1beta1.types.operations import LabelVideoObjectDetectionOperationMetadata
 from google.cloud.datalabeling_v1beta1.types.operations import LabelVideoObjectTrackingOperationMetadata
 
-__all__ = (
-    'AnnotatedDataset',
+__all__ = ('AnnotatedDataset',
     'AnnotatedDatasetMetadata',
     'Annotation',
     'AnnotationMetadata',

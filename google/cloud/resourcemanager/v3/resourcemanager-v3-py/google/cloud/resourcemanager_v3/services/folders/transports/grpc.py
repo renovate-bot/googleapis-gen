@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.resourcemanager_v3.types import folders
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import FoldersTransport, DEFAULT_CLIENT_INFO
 
 
@@ -68,7 +65,8 @@ class FoldersGrpcTransport(FoldersTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -208,13 +206,15 @@ class FoldersGrpcTransport(FoldersTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -244,7 +244,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def get_folder(self) -> Callable[
             [folders.GetFolderRequest],
             folders.Folder]:
-        r"""Return a callable for the get folder method over gRPC.
+        r"""Return a callable for the
+        get folder
+          method over gRPC.
 
         Retrieves a folder identified by the supplied resource name.
         Valid folder resource names have the format
@@ -274,7 +276,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def list_folders(self) -> Callable[
             [folders.ListFoldersRequest],
             folders.ListFoldersResponse]:
-        r"""Return a callable for the list folders method over gRPC.
+        r"""Return a callable for the
+        list folders
+          method over gRPC.
 
         Lists the folders that are direct descendants of supplied parent
         resource. ``list()`` provides a strongly consistent view of the
@@ -306,7 +310,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def search_folders(self) -> Callable[
             [folders.SearchFoldersRequest],
             folders.SearchFoldersResponse]:
-        r"""Return a callable for the search folders method over gRPC.
+        r"""Return a callable for the
+        search folders
+          method over gRPC.
 
         Search for folders that match specific filter criteria.
         ``search()`` provides an eventually consistent view of the
@@ -338,7 +344,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def create_folder(self) -> Callable[
             [folders.CreateFolderRequest],
             operations.Operation]:
-        r"""Return a callable for the create folder method over gRPC.
+        r"""Return a callable for the
+        create folder
+          method over gRPC.
 
         Creates a folder in the resource hierarchy. Returns an
         ``Operation`` which can be used to track the progress of the
@@ -392,7 +400,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def update_folder(self) -> Callable[
             [folders.UpdateFolderRequest],
             operations.Operation]:
-        r"""Return a callable for the update folder method over gRPC.
+        r"""Return a callable for the
+        update folder
+          method over gRPC.
 
         Updates a folder, changing its ``display_name``. Changes to the
         folder ``display_name`` will be rejected if they violate either
@@ -435,7 +445,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def move_folder(self) -> Callable[
             [folders.MoveFolderRequest],
             operations.Operation]:
-        r"""Return a callable for the move folder method over gRPC.
+        r"""Return a callable for the
+        move folder
+          method over gRPC.
 
         Moves a folder under a new resource parent. Returns an
         ``Operation`` which can be used to track the progress of the
@@ -478,7 +490,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def delete_folder(self) -> Callable[
             [folders.DeleteFolderRequest],
             operations.Operation]:
-        r"""Return a callable for the delete folder method over gRPC.
+        r"""Return a callable for the
+        delete folder
+          method over gRPC.
 
         Requests deletion of a folder. The folder is moved into the
         [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Folder.State.DELETE_REQUESTED]
@@ -515,7 +529,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def undelete_folder(self) -> Callable[
             [folders.UndeleteFolderRequest],
             operations.Operation]:
-        r"""Return a callable for the undelete folder method over gRPC.
+        r"""Return a callable for the
+        undelete folder
+          method over gRPC.
 
         Cancels the deletion request for a folder. This method may be
         called on a folder in any state. If the folder is in the
@@ -553,7 +569,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a folder. The returned policy
         may be empty if no such policy or resource exists. The
@@ -584,7 +602,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on a folder, replacing any
         existing policy. The ``resource`` field should be the folder's
@@ -614,7 +634,9 @@ class FoldersGrpcTransport(FoldersTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on the specified folder.
         The ``resource`` field should be the folder's resource name, for

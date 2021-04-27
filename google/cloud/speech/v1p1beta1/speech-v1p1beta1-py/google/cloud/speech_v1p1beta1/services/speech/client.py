@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,7 +34,6 @@ from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.speech_v1p1beta1.types import cloud_speech
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import SpeechTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SpeechGrpcTransport
 from .transports.grpc_asyncio import SpeechGrpcAsyncIOTransport
@@ -351,7 +348,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.RecognizeRequest):
-                The request object. The top-level message sent by the
+                The request object.
+                The top-level message sent by the
                 client for the `Recognize` method.
             config (google.cloud.speech_v1p1beta1.types.RecognitionConfig):
                 Required. Provides information to the
@@ -368,7 +366,6 @@ class SpeechClient(metaclass=SpeechClientMeta):
                 This corresponds to the ``audio`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -396,10 +393,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech.RecognizeRequest):
             request = cloud_speech.RecognizeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if config is not None:
                 request.config = config
             if audio is not None:
@@ -438,7 +433,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.LongRunningRecognizeRequest):
-                The request object. The top-level message sent by the
+                The request object.
+                The top-level message sent by the
                 client for the `LongRunningRecognize` method.
             config (google.cloud.speech_v1p1beta1.types.RecognitionConfig):
                 Required. Provides information to the
@@ -455,7 +451,6 @@ class SpeechClient(metaclass=SpeechClientMeta):
                 This corresponds to the ``audio`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,10 +483,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech.LongRunningRecognizeRequest):
             request = cloud_speech.LongRunningRecognizeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if config is not None:
                 request.config = config
             if audio is not None:
@@ -533,7 +526,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         Args:
             requests (Iterator[google.cloud.speech_v1p1beta1.types.StreamingRecognizeRequest]):
-                The request object iterator. The top-level message sent by the
+                The request object iterator.
+                The top-level message sent by the
                 client for the `StreamingRecognize` method. Multiple
                 `StreamingRecognizeRequest` messages are sent. The first
                 message must contain a `streaming_config` message and
@@ -625,8 +619,6 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

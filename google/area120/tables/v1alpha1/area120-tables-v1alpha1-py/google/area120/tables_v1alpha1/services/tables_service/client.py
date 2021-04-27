@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.area120.tables_v1alpha1.services.tables_service import pagers
 from google.area120.tables_v1alpha1.types import tables
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import TablesServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TablesServiceGrpcTransport
 from .transports.grpc_asyncio import TablesServiceGrpcAsyncIOTransport
@@ -373,7 +370,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.GetTableRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.GetTable.
             name (str):
                 Required. The name of the table to
@@ -382,7 +380,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -407,10 +404,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.GetTableRequest):
             request = tables.GetTableRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -448,9 +443,9 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.ListTablesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.ListTables.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -467,7 +462,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a tables.ListTablesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -512,7 +506,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.GetWorkspaceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.GetWorkspace.
             name (str):
                 Required. The name of the workspace
@@ -522,7 +517,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -547,10 +541,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.GetWorkspaceRequest):
             request = tables.GetWorkspaceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -588,9 +580,9 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.ListWorkspacesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.ListWorkspaces.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -607,7 +599,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a tables.ListWorkspacesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -652,7 +643,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.GetRowRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.GetRow.
             name (str):
                 Required. The name of the row to
@@ -662,7 +654,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -687,10 +678,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.GetRowRequest):
             request = tables.GetRowRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -730,7 +719,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.ListRowsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.ListRows.
             parent (str):
                 Required. The parent table.
@@ -739,7 +729,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -769,10 +758,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.ListRowsRequest):
             request = tables.ListRowsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -821,7 +808,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.CreateRowRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.CreateRow.
             parent (str):
                 Required. The parent table where this
@@ -836,7 +824,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``row`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -861,10 +848,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.CreateRowRequest):
             request = tables.CreateRowRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if row is not None:
@@ -904,9 +889,9 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.BatchCreateRowsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.BatchCreateRows.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -920,7 +905,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a tables.BatchCreateRowsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -964,7 +948,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.UpdateRowRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.UpdateRow.
             row (google.area120.tables_v1alpha1.types.Row):
                 Required. The row to update.
@@ -976,7 +961,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1001,10 +985,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.UpdateRowRequest):
             request = tables.UpdateRowRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if row is not None:
                 request.row = row
             if update_mask is not None:
@@ -1044,9 +1026,9 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.BatchUpdateRowsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.BatchUpdateRows.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1060,7 +1042,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a tables.BatchUpdateRowsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1103,7 +1084,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.DeleteRowRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.DeleteRow
             name (str):
                 Required. The name of the row to
@@ -1113,7 +1095,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1134,10 +1115,8 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.DeleteRowRequest):
             request = tables.DeleteRowRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1172,9 +1151,9 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.BatchDeleteRowsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.BatchDeleteRows
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1182,7 +1161,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a tables.BatchDeleteRowsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1209,8 +1187,6 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

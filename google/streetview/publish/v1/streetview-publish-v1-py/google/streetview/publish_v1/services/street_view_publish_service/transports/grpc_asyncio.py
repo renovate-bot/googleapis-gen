@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.streetview.publish_v1.types import resources
 from google.streetview.publish_v1.types import rpcmessages
-
 from .base import StreetViewPublishServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import StreetViewPublishServiceGrpcTransport
 
@@ -81,13 +79,15 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,7 +166,6 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -228,7 +228,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def start_upload(self) -> Callable[
             [empty.Empty],
             Awaitable[resources.UploadRef]]:
-        r"""Return a callable for the start upload method over gRPC.
+        r"""Return a callable for the
+        start upload
+          method over gRPC.
 
         Creates an upload session to start uploading photo bytes. The
         method uses the upload URL of the returned
@@ -276,7 +278,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def create_photo(self) -> Callable[
             [rpcmessages.CreatePhotoRequest],
             Awaitable[resources.Photo]]:
-        r"""Return a callable for the create photo method over gRPC.
+        r"""Return a callable for the
+        create photo
+          method over gRPC.
 
         After the client finishes uploading the photo with the returned
         [UploadRef][google.streetview.publish.v1.UploadRef],
@@ -324,7 +328,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def get_photo(self) -> Callable[
             [rpcmessages.GetPhotoRequest],
             Awaitable[resources.Photo]]:
-        r"""Return a callable for the get photo method over gRPC.
+        r"""Return a callable for the
+        get photo
+          method over gRPC.
 
         Gets the metadata of the specified
         [Photo][google.streetview.publish.v1.Photo].
@@ -363,7 +369,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def batch_get_photos(self) -> Callable[
             [rpcmessages.BatchGetPhotosRequest],
             Awaitable[rpcmessages.BatchGetPhotosResponse]]:
-        r"""Return a callable for the batch get photos method over gRPC.
+        r"""Return a callable for the
+        batch get photos
+          method over gRPC.
 
         Gets the metadata of the specified
         [Photo][google.streetview.publish.v1.Photo] batch.
@@ -404,7 +412,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def list_photos(self) -> Callable[
             [rpcmessages.ListPhotosRequest],
             Awaitable[rpcmessages.ListPhotosResponse]]:
-        r"""Return a callable for the list photos method over gRPC.
+        r"""Return a callable for the
+        list photos
+          method over gRPC.
 
         Lists all the [Photos][google.streetview.publish.v1.Photo] that
         belong to the user.
@@ -436,7 +446,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def update_photo(self) -> Callable[
             [rpcmessages.UpdatePhotoRequest],
             Awaitable[resources.Photo]]:
-        r"""Return a callable for the update photo method over gRPC.
+        r"""Return a callable for the
+        update photo
+          method over gRPC.
 
         Updates the metadata of a
         [Photo][google.streetview.publish.v1.Photo], such as pose, place
@@ -482,7 +494,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def batch_update_photos(self) -> Callable[
             [rpcmessages.BatchUpdatePhotosRequest],
             Awaitable[rpcmessages.BatchUpdatePhotosResponse]]:
-        r"""Return a callable for the batch update photos method over gRPC.
+        r"""Return a callable for the
+        batch update photos
+          method over gRPC.
 
         Updates the metadata of
         [Photos][google.streetview.publish.v1.Photo], such as pose,
@@ -543,7 +557,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def delete_photo(self) -> Callable[
             [rpcmessages.DeletePhotoRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete photo method over gRPC.
+        r"""Return a callable for the
+        delete photo
+          method over gRPC.
 
         Deletes a [Photo][google.streetview.publish.v1.Photo] and its
         metadata.
@@ -577,7 +593,9 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def batch_delete_photos(self) -> Callable[
             [rpcmessages.BatchDeletePhotosRequest],
             Awaitable[rpcmessages.BatchDeletePhotosResponse]]:
-        r"""Return a callable for the batch delete photos method over gRPC.
+        r"""Return a callable for the
+        batch delete photos
+          method over gRPC.
 
         Deletes a list of [Photos][google.streetview.publish.v1.Photo]
         and their metadata.

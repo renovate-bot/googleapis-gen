@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.servicecontrol_v1.types import distribution
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class MetricValue(proto.Message):
     r"""Represents a single metric value.
-
     Attributes:
         labels (Sequence[google.cloud.servicecontrol_v1.types.MetricValue.LabelsEntry]):
             The labels describing the metric value. See comments on
@@ -62,25 +58,45 @@ class MetricValue(proto.Message):
             A distribution value.
     """
 
-    labels = proto.MapField(proto.STRING, proto.STRING, number=1)
-
-    start_time = proto.Field(proto.MESSAGE, number=2,
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=1
+    )
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=3,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
-
-    bool_value = proto.Field(proto.BOOL, number=4, oneof='value')
-
-    int64_value = proto.Field(proto.INT64, number=5, oneof='value')
-
-    double_value = proto.Field(proto.DOUBLE, number=6, oneof='value')
-
-    string_value = proto.Field(proto.STRING, number=7, oneof='value')
-
-    distribution_value = proto.Field(proto.MESSAGE, number=8, oneof='value',
+    bool_value = proto.Field(
+        proto.BOOL,
+        number=4,
+        oneof='value',
+    )
+    int64_value = proto.Field(
+        proto.INT64,
+        number=5,
+        oneof='value',
+    )
+    double_value = proto.Field(
+        proto.DOUBLE,
+        number=6,
+        oneof='value',
+    )
+    string_value = proto.Field(
+        proto.STRING,
+        number=7,
+        oneof='value',
+    )
+    distribution_value = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='value',
         message=distribution.Distribution,
     )
 
@@ -98,9 +114,13 @@ class MetricValueSet(proto.Message):
             The values in this metric.
     """
 
-    metric_name = proto.Field(proto.STRING, number=1)
-
-    metric_values = proto.RepeatedField(proto.MESSAGE, number=2,
+    metric_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    metric_values = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MetricValue',
     )
 

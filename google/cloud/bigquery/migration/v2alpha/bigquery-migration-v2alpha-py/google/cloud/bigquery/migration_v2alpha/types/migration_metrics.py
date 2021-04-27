@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.api import distribution_pb2 as distribution  # type: ignore
 from google.api import metric_pb2 as ga_metric  # type: ignore
@@ -36,7 +33,6 @@ __protobuf__ = proto.module(
 
 class TimeSeries(proto.Message):
     r"""The metrics object for a SubTask.
-
     Attributes:
         metric (str):
             Required. The name of the metric.
@@ -64,24 +60,29 @@ class TimeSeries(proto.Message):
             ``BOOL``, ``INT64``, ``DOUBLE``, or ``DISTRIBUTION``.
     """
 
-    metric = proto.Field(proto.STRING, number=1)
-
-    value_type = proto.Field(proto.ENUM, number=2,
+    metric = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    value_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=ga_metric.MetricDescriptor.ValueType,
     )
-
-    metric_kind = proto.Field(proto.ENUM, number=3,
+    metric_kind = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=ga_metric.MetricDescriptor.MetricKind,
     )
-
-    points = proto.RepeatedField(proto.MESSAGE, number=4,
+    points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='Point',
     )
 
 
 class Point(proto.Message):
     r"""A single data point in a time series.
-
     Attributes:
         interval (google.cloud.bigquery.migration_v2alpha.types.TimeInterval):
             The time interval to which the data point applies. For
@@ -99,11 +100,14 @@ class Point(proto.Message):
             The value of the data point.
     """
 
-    interval = proto.Field(proto.MESSAGE, number=1,
+    interval = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='TimeInterval',
     )
-
-    value = proto.Field(proto.MESSAGE, number=2,
+    value = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TypedValue',
     )
 
@@ -123,18 +127,20 @@ class TimeInterval(proto.Message):
             Required. The end of the time interval.
     """
 
-    start_time = proto.Field(proto.MESSAGE, number=1,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
 
 
 class TypedValue(proto.Message):
     r"""A single strongly-typed value.
-
     Attributes:
         bool_value (bool):
             A Boolean value: ``true`` or ``false``.
@@ -152,15 +158,30 @@ class TypedValue(proto.Message):
             A distribution value.
     """
 
-    bool_value = proto.Field(proto.BOOL, number=1, oneof='value')
-
-    int64_value = proto.Field(proto.INT64, number=2, oneof='value')
-
-    double_value = proto.Field(proto.DOUBLE, number=3, oneof='value')
-
-    string_value = proto.Field(proto.STRING, number=4, oneof='value')
-
-    distribution_value = proto.Field(proto.MESSAGE, number=5, oneof='value',
+    bool_value = proto.Field(
+        proto.BOOL,
+        number=1,
+        oneof='value',
+    )
+    int64_value = proto.Field(
+        proto.INT64,
+        number=2,
+        oneof='value',
+    )
+    double_value = proto.Field(
+        proto.DOUBLE,
+        number=3,
+        oneof='value',
+    )
+    string_value = proto.Field(
+        proto.STRING,
+        number=4,
+        oneof='value',
+    )
+    distribution_value = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='value',
         message=distribution.Distribution,
     )
 

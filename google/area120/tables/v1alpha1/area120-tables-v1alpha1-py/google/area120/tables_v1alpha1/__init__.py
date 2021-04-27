@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.tables_service import TablesServiceClient
+
 from .types.tables import BatchCreateRowsRequest
 from .types.tables import BatchCreateRowsResponse
 from .types.tables import BatchDeleteRowsRequest
@@ -41,7 +41,6 @@ from .types.tables import Table
 from .types.tables import UpdateRowRequest
 from .types.tables import View
 from .types.tables import Workspace
-
 
 __all__ = (
     'BatchCreateRowsRequest',

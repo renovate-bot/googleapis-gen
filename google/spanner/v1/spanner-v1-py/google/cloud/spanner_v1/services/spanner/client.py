@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -41,7 +39,6 @@ from google.cloud.spanner_v1.types import transaction
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import SpannerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SpannerGrpcTransport
 from .transports.grpc_asyncio import SpannerGrpcAsyncIOTransport
@@ -375,7 +372,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.CreateSessionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateSession][google.spanner.v1.Spanner.CreateSession].
             database (str):
                 Required. The database in which the
@@ -384,7 +382,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``database`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -409,10 +406,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.CreateSessionRequest):
             request = spanner.CreateSessionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if database is not None:
                 request.database = database
 
@@ -455,7 +450,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.BatchCreateSessionsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [BatchCreateSessions][google.spanner.v1.Spanner.BatchCreateSessions].
             database (str):
                 Required. The database in which the
@@ -476,7 +472,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``session_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -503,10 +498,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.BatchCreateSessionsRequest):
             request = spanner.BatchCreateSessionsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if database is not None:
                 request.database = database
             if session_count is not None:
@@ -549,7 +542,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.GetSessionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetSession][google.spanner.v1.Spanner.GetSession].
             name (str):
                 Required. The name of the session to
@@ -558,7 +552,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -583,10 +576,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.GetSessionRequest):
             request = spanner.GetSessionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -625,7 +616,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ListSessionsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListSessions][google.spanner.v1.Spanner.ListSessions].
             database (str):
                 Required. The database in which to
@@ -634,7 +626,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``database`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -664,10 +655,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.ListSessionsRequest):
             request = spanner.ListSessionsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if database is not None:
                 request.database = database
 
@@ -717,7 +706,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.DeleteSessionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteSession][google.spanner.v1.Spanner.DeleteSession].
             name (str):
                 Required. The name of the session to
@@ -726,7 +716,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -747,10 +736,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.DeleteSessionRequest):
             request = spanner.DeleteSessionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -798,10 +785,10 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ExecuteSqlRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -815,7 +802,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.ExecuteSqlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -862,10 +848,10 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ExecuteSqlRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -882,7 +868,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.ExecuteSqlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -937,9 +922,9 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ExecuteBatchDmlRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -990,7 +975,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.ExecuteBatchDmlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1046,10 +1030,10 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ReadRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1063,7 +1047,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.ReadRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1110,10 +1093,10 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ReadRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1130,7 +1113,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.ReadRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1178,7 +1160,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.BeginTransactionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
             session (str):
                 Required. The session in which the
@@ -1194,7 +1177,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``options_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1219,10 +1201,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.BeginTransactionRequest):
             request = spanner.BeginTransactionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if session is not None:
                 request.session = session
             if options_ is not None:
@@ -1281,7 +1261,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.CommitRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Commit][google.spanner.v1.Spanner.Commit].
             session (str):
                 Required. The session in which the
@@ -1321,7 +1302,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``single_use_transaction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1348,10 +1328,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.CommitRequest):
             request = spanner.CommitRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if session is not None:
                 request.session = session
             if transaction_id is not None:
@@ -1406,7 +1384,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.RollbackRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Rollback][google.spanner.v1.Spanner.Rollback].
             session (str):
                 Required. The session in which the
@@ -1422,7 +1401,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 This corresponds to the ``transaction_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1443,10 +1421,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.RollbackRequest):
             request = spanner.RollbackRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if session is not None:
                 request.session = session
             if transaction_id is not None:
@@ -1496,9 +1472,9 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.PartitionQueryRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1513,7 +1489,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.PartitionQueryRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1571,9 +1546,9 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.PartitionReadRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionRead][google.spanner.v1.Spanner.PartitionRead]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1588,7 +1563,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a spanner.PartitionReadRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1618,8 +1592,6 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

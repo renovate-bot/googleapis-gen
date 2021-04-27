@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,7 +34,6 @@ from google.cloud.dialogflow_v2beta1.services.answer_records import pagers
 from google.cloud.dialogflow_v2beta1.types import answer_record
 from google.cloud.dialogflow_v2beta1.types import answer_record as gcd_answer_record
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import AnswerRecordsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AnswerRecordsGrpcTransport
 from .transports.grpc_asyncio import AnswerRecordsGrpcAsyncIOTransport
@@ -340,9 +337,9 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetAnswerRecordRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,7 +385,6 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a answer_record.GetAnswerRecordRequest.
         # There's no risk of modifying the input as we've already verified
@@ -432,7 +428,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListAnswerRecordsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
             parent (str):
                 Required. The project to list all answer records for in
@@ -442,7 +439,6 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,10 +468,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, answer_record.ListAnswerRecordsRequest):
             request = answer_record.ListAnswerRecordsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -524,7 +518,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateAnswerRecordRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord].
             answer_record (google.cloud.dialogflow_v2beta1.types.AnswerRecord):
                 Required. Answer record to update.
@@ -538,7 +533,6 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -597,10 +591,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_answer_record.UpdateAnswerRecordRequest):
             request = gcd_answer_record.UpdateAnswerRecordRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if answer_record is not None:
                 request.answer_record = answer_record
             if update_mask is not None:
@@ -628,8 +620,6 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.devtools.containeranalysis_v1.types import containeranalysis
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-
 from .base import ContainerAnalysisTransport, DEFAULT_CLIENT_INFO
 from .grpc import ContainerAnalysisGrpcTransport
 
@@ -94,13 +92,15 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -120,7 +120,8 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -178,7 +179,6 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -241,7 +241,9 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on the specified note or
         occurrence. Requires ``containeranalysis.notes.setIamPolicy`` or
@@ -275,7 +277,9 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a note or an occurrence
         resource. Requires ``containeranalysis.notes.setIamPolicy`` or
@@ -309,7 +313,9 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns the permissions that a caller has on the specified note
         or occurrence. Requires list permission on the project (for
@@ -342,8 +348,10 @@ class ContainerAnalysisGrpcAsyncIOTransport(ContainerAnalysisTransport):
     def get_vulnerability_occurrences_summary(self) -> Callable[
             [containeranalysis.GetVulnerabilityOccurrencesSummaryRequest],
             Awaitable[containeranalysis.VulnerabilityOccurrencesSummary]]:
-        r"""Return a callable for the get vulnerability occurrences
-        summary method over gRPC.
+        r"""Return a callable for the
+        get vulnerability occurrences
+        summary
+          method over gRPC.
 
         Gets a summary of the number and severity of
         occurrences.

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.data_migration_service import DataMigrationServiceClient
+
 from .types.clouddms import CreateConnectionProfileRequest
 from .types.clouddms import CreateMigrationJobRequest
 from .types.clouddms import DeleteConnectionProfileRequest
@@ -55,7 +55,6 @@ from .types.clouddms_resources import SqlIpConfig
 from .types.clouddms_resources import SslConfig
 from .types.clouddms_resources import StaticIpConnectivity
 from .types.clouddms_resources import VpcPeeringConnectivity
-
 
 __all__ = (
     'CloudSqlConnectionProfile',

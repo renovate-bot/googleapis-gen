@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.cloud.logging_v2.types import logging_metrics
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import MetricsServiceV2Transport, DEFAULT_CLIENT_INFO
 
 
@@ -62,7 +59,8 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,13 +199,15 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -221,7 +221,9 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
     def list_log_metrics(self) -> Callable[
             [logging_metrics.ListLogMetricsRequest],
             logging_metrics.ListLogMetricsResponse]:
-        r"""Return a callable for the list log metrics method over gRPC.
+        r"""Return a callable for the
+        list log metrics
+          method over gRPC.
 
         Lists logs-based metrics.
 
@@ -247,7 +249,9 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
     def get_log_metric(self) -> Callable[
             [logging_metrics.GetLogMetricRequest],
             logging_metrics.LogMetric]:
-        r"""Return a callable for the get log metric method over gRPC.
+        r"""Return a callable for the
+        get log metric
+          method over gRPC.
 
         Gets a logs-based metric.
 
@@ -273,7 +277,9 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
     def create_log_metric(self) -> Callable[
             [logging_metrics.CreateLogMetricRequest],
             logging_metrics.LogMetric]:
-        r"""Return a callable for the create log metric method over gRPC.
+        r"""Return a callable for the
+        create log metric
+          method over gRPC.
 
         Creates a logs-based metric.
 
@@ -299,7 +305,9 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
     def update_log_metric(self) -> Callable[
             [logging_metrics.UpdateLogMetricRequest],
             logging_metrics.LogMetric]:
-        r"""Return a callable for the update log metric method over gRPC.
+        r"""Return a callable for the
+        update log metric
+          method over gRPC.
 
         Creates or updates a logs-based metric.
 
@@ -325,7 +333,9 @@ class MetricsServiceV2GrpcTransport(MetricsServiceV2Transport):
     def delete_log_metric(self) -> Callable[
             [logging_metrics.DeleteLogMetricRequest],
             empty.Empty]:
-        r"""Return a callable for the delete log metric method over gRPC.
+        r"""Return a callable for the
+        delete log metric
+          method over gRPC.
 
         Deletes a logs-based metric.
 

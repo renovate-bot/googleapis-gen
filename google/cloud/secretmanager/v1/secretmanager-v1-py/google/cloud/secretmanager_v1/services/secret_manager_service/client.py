@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import SecretManagerServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SecretManagerServiceGrpcTransport
 from .transports.grpc_asyncio import SecretManagerServiceGrpcAsyncIOTransport
@@ -371,7 +368,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.ListSecretsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.ListSecrets][google.cloud.secretmanager.v1.SecretManagerService.ListSecrets].
             parent (str):
                 Required. The resource name of the project associated
@@ -382,7 +380,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -412,10 +409,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListSecretsRequest):
             request = service.ListSecretsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -467,7 +462,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.CreateSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.CreateSecret][google.cloud.secretmanager.v1.SecretManagerService.CreateSecret].
             parent (str):
                 Required. The resource name of the project to associate
@@ -496,7 +492,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``secret`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -528,10 +523,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateSecretRequest):
             request = service.CreateSecretRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if secret_id is not None:
@@ -578,7 +571,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.AddSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
             parent (str):
                 Required. The resource name of the
@@ -597,7 +591,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -624,10 +617,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.AddSecretVersionRequest):
             request = service.AddSecretVersionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if payload is not None:
@@ -669,7 +660,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.GetSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.GetSecret][google.cloud.secretmanager.v1.SecretManagerService.GetSecret].
             name (str):
                 Required. The resource name of the
@@ -679,7 +671,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -711,10 +702,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetSecretRequest):
             request = service.GetSecretRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -755,7 +744,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.UpdateSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.UpdateSecret][google.cloud.secretmanager.v1.SecretManagerService.UpdateSecret].
             secret (google.cloud.secretmanager_v1.types.Secret):
                 Required. [Secret][google.cloud.secretmanager.v1.Secret]
@@ -771,7 +761,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -803,10 +792,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateSecretRequest):
             request = service.UpdateSecretRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if secret is not None:
                 request.secret = secret
             if update_mask is not None:
@@ -847,7 +834,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.DeleteSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DeleteSecret][google.cloud.secretmanager.v1.SecretManagerService.DeleteSecret].
             name (str):
                 Required. The resource name of the
@@ -857,7 +845,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -878,10 +865,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteSecretRequest):
             request = service.DeleteSecretRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -919,7 +904,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.ListSecretVersionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.ListSecretVersions][google.cloud.secretmanager.v1.SecretManagerService.ListSecretVersions].
             parent (str):
                 Required. The resource name of the
@@ -931,7 +917,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -961,10 +946,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListSecretVersionsRequest):
             request = service.ListSecretVersionsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1017,7 +1000,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.GetSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.GetSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.GetSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1030,7 +1014,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1057,10 +1040,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetSecretVersionRequest):
             request = service.GetSecretVersionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1105,7 +1086,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.AccessSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1115,7 +1097,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1142,10 +1123,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.AccessSecretVersionRequest):
             request = service.AccessSecretVersionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1191,7 +1170,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.DisableSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DisableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.DisableSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1202,7 +1182,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1229,10 +1208,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DisableSecretVersionRequest):
             request = service.DisableSecretVersionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1278,7 +1255,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.EnableSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.EnableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.EnableSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1289,7 +1267,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1316,10 +1293,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.EnableSecretVersionRequest):
             request = service.EnableSecretVersionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1366,7 +1341,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1.types.DestroySecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DestroySecretVersion][google.cloud.secretmanager.v1.SecretManagerService.DestroySecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1377,7 +1353,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1404,10 +1379,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DestroySecretVersionRequest):
             request = service.DestroySecretVersionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1451,9 +1424,9 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1520,8 +1493,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1565,9 +1537,9 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1634,8 +1606,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -1684,9 +1655,9 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1698,8 +1669,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
@@ -1729,8 +1699,6 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

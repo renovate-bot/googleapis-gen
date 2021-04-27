@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,8 +51,7 @@ from google.cloud.osconfig_v1.types.patch_jobs import WindowsUpdateSettings
 from google.cloud.osconfig_v1.types.patch_jobs import YumSettings
 from google.cloud.osconfig_v1.types.patch_jobs import ZypperSettings
 
-__all__ = (
-    'AptSettings',
+__all__ = ('AptSettings',
     'CancelPatchJobRequest',
     'CreatePatchDeploymentRequest',
     'DeletePatchDeploymentRequest',

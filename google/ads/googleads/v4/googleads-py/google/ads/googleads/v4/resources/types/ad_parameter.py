@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -69,14 +66,23 @@ class AdParameter(proto.Message):
             valid.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    ad_group_criterion = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ad_group_criterion = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    parameter_index = proto.Field(proto.MESSAGE, number=3,
+    parameter_index = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-    insertion_text = proto.Field(proto.MESSAGE, number=4,
+    insertion_text = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
 

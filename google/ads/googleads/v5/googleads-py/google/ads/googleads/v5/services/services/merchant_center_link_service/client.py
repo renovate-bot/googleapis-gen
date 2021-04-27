@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.ads.googleads.v5.enums.types import merchant_center_link_status
 from google.ads.googleads.v5.resources.types import merchant_center_link
 from google.ads.googleads.v5.services.types import merchant_center_link_service
-
 from .transports.base import MerchantCenterLinkServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import MerchantCenterLinkServiceGrpcTransport
 
@@ -166,7 +163,6 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         """Parse a merchant_center_link path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)/merchantCenterLinks/(?P<merchant_center_link>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -340,7 +336,8 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.ListMerchantCenterLinksRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [MerchantCenterLinkService.ListMerchantCenterLinks][google.ads.googleads.v5.services.MerchantCenterLinkService.ListMerchantCenterLinks].
             customer_id (:class:`str`):
                 Required. The ID of the customer onto
@@ -350,7 +347,6 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
                 This corresponds to the ``customer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -370,16 +366,14 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a merchant_center_link_service.ListMerchantCenterLinksRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, merchant_center_link_service.ListMerchantCenterLinksRequest):
             request = merchant_center_link_service.ListMerchantCenterLinksRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
 
@@ -398,7 +392,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -418,7 +412,8 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.GetMerchantCenterLinkRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [MerchantCenterLinkService.GetMerchantCenterLink][google.ads.googleads.v5.services.MerchantCenterLinkService.GetMerchantCenterLink].
             resource_name (:class:`str`):
                 Required. Resource name of the
@@ -427,7 +422,6 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -448,16 +442,14 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a merchant_center_link_service.GetMerchantCenterLinkRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, merchant_center_link_service.GetMerchantCenterLinkRequest):
             request = merchant_center_link_service.GetMerchantCenterLinkRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -476,7 +468,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -497,7 +489,8 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.MutateMerchantCenterLinkRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [MerchantCenterLinkService.MutateMerchantCenterLink][google.ads.googleads.v5.services.MerchantCenterLinkService.MutateMerchantCenterLink].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -513,7 +506,6 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
                 This corresponds to the ``operation`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -533,16 +525,14 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a merchant_center_link_service.MutateMerchantCenterLinkRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, merchant_center_link_service.MutateMerchantCenterLinkRequest):
             request = merchant_center_link_service.MutateMerchantCenterLinkRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if operation is not None:
@@ -563,7 +553,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

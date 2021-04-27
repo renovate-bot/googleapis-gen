@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -96,8 +95,7 @@ from google.cloud.datacatalog_v1.types.tags import TagTemplate
 from google.cloud.datacatalog_v1.types.tags import TagTemplateField
 from google.cloud.datacatalog_v1.types.timestamps import SystemTimestamps
 
-__all__ = (
-    'BigQueryDateShardedSpec',
+__all__ = ('BigQueryDateShardedSpec',
     'BigQueryTableSpec',
     'ColumnSchema',
     'CreateEntryGroupRequest',

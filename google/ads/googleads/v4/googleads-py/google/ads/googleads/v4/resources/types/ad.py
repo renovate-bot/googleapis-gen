@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.common.types import ad_type_infos
 from google.ads.googleads.v4.common.types import custom_parameter
@@ -39,7 +36,6 @@ __protobuf__ = proto.module(
 
 class Ad(proto.Message):
     r"""An ad.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad. Ad resource names
@@ -152,104 +148,192 @@ class Ad(proto.Message):
             Listing ad.
     """
 
-    resource_name = proto.Field(proto.STRING, number=37)
-    id = proto.Field(proto.MESSAGE, number=1,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=37,
+    )
+    id = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int64Value,
     )
-    final_urls = proto.RepeatedField(proto.MESSAGE, number=2,
+    final_urls = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    final_app_urls = proto.RepeatedField(proto.MESSAGE, number=35,
+    final_app_urls = proto.RepeatedField(
+        proto.MESSAGE,
+        number=35,
         message=final_app_url.FinalAppUrl,
     )
-    final_mobile_urls = proto.RepeatedField(proto.MESSAGE, number=16,
+    final_mobile_urls = proto.RepeatedField(
+        proto.MESSAGE,
+        number=16,
         message=wrappers.StringValue,
     )
-    tracking_url_template = proto.Field(proto.MESSAGE, number=12,
+    tracking_url_template = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=wrappers.StringValue,
     )
-    final_url_suffix = proto.Field(proto.MESSAGE, number=38,
+    final_url_suffix = proto.Field(
+        proto.MESSAGE,
+        number=38,
         message=wrappers.StringValue,
     )
-    url_custom_parameters = proto.RepeatedField(proto.MESSAGE, number=10,
+    url_custom_parameters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=10,
         message=custom_parameter.CustomParameter,
     )
-    display_url = proto.Field(proto.MESSAGE, number=4,
+    display_url = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    type_ = proto.Field(proto.ENUM, number=5,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=ad_type.AdTypeEnum.AdType,
     )
-    added_by_google_ads = proto.Field(proto.MESSAGE, number=19,
+    added_by_google_ads = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message=wrappers.BoolValue,
     )
-    device_preference = proto.Field(proto.ENUM, number=20,
+    device_preference = proto.Field(
+        proto.ENUM,
+        number=20,
         enum=device.DeviceEnum.Device,
     )
-    url_collections = proto.RepeatedField(proto.MESSAGE, number=26,
+    url_collections = proto.RepeatedField(
+        proto.MESSAGE,
+        number=26,
         message=url_collection.UrlCollection,
     )
-    name = proto.Field(proto.MESSAGE, number=23,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=23,
         message=wrappers.StringValue,
     )
-    system_managed_resource_source = proto.Field(proto.ENUM, number=27,
+    system_managed_resource_source = proto.Field(
+        proto.ENUM,
+        number=27,
         enum=system_managed_entity_source.SystemManagedResourceSourceEnum.SystemManagedResourceSource,
     )
-    text_ad = proto.Field(proto.MESSAGE, number=6, oneof='ad_data',
+    text_ad = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='ad_data',
         message=ad_type_infos.TextAdInfo,
     )
-    expanded_text_ad = proto.Field(proto.MESSAGE, number=7, oneof='ad_data',
+    expanded_text_ad = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='ad_data',
         message=ad_type_infos.ExpandedTextAdInfo,
     )
-    call_only_ad = proto.Field(proto.MESSAGE, number=13, oneof='ad_data',
+    call_only_ad = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        oneof='ad_data',
         message=ad_type_infos.CallOnlyAdInfo,
     )
-    expanded_dynamic_search_ad = proto.Field(proto.MESSAGE, number=14, oneof='ad_data',
+    expanded_dynamic_search_ad = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        oneof='ad_data',
         message=ad_type_infos.ExpandedDynamicSearchAdInfo,
     )
-    hotel_ad = proto.Field(proto.MESSAGE, number=15, oneof='ad_data',
+    hotel_ad = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        oneof='ad_data',
         message=ad_type_infos.HotelAdInfo,
     )
-    shopping_smart_ad = proto.Field(proto.MESSAGE, number=17, oneof='ad_data',
+    shopping_smart_ad = proto.Field(
+        proto.MESSAGE,
+        number=17,
+        oneof='ad_data',
         message=ad_type_infos.ShoppingSmartAdInfo,
     )
-    shopping_product_ad = proto.Field(proto.MESSAGE, number=18, oneof='ad_data',
+    shopping_product_ad = proto.Field(
+        proto.MESSAGE,
+        number=18,
+        oneof='ad_data',
         message=ad_type_infos.ShoppingProductAdInfo,
     )
-    gmail_ad = proto.Field(proto.MESSAGE, number=21, oneof='ad_data',
+    gmail_ad = proto.Field(
+        proto.MESSAGE,
+        number=21,
+        oneof='ad_data',
         message=ad_type_infos.GmailAdInfo,
     )
-    image_ad = proto.Field(proto.MESSAGE, number=22, oneof='ad_data',
+    image_ad = proto.Field(
+        proto.MESSAGE,
+        number=22,
+        oneof='ad_data',
         message=ad_type_infos.ImageAdInfo,
     )
-    video_ad = proto.Field(proto.MESSAGE, number=24, oneof='ad_data',
+    video_ad = proto.Field(
+        proto.MESSAGE,
+        number=24,
+        oneof='ad_data',
         message=ad_type_infos.VideoAdInfo,
     )
-    responsive_search_ad = proto.Field(proto.MESSAGE, number=25, oneof='ad_data',
+    responsive_search_ad = proto.Field(
+        proto.MESSAGE,
+        number=25,
+        oneof='ad_data',
         message=ad_type_infos.ResponsiveSearchAdInfo,
     )
-    legacy_responsive_display_ad = proto.Field(proto.MESSAGE, number=28, oneof='ad_data',
+    legacy_responsive_display_ad = proto.Field(
+        proto.MESSAGE,
+        number=28,
+        oneof='ad_data',
         message=ad_type_infos.LegacyResponsiveDisplayAdInfo,
     )
-    app_ad = proto.Field(proto.MESSAGE, number=29, oneof='ad_data',
+    app_ad = proto.Field(
+        proto.MESSAGE,
+        number=29,
+        oneof='ad_data',
         message=ad_type_infos.AppAdInfo,
     )
-    legacy_app_install_ad = proto.Field(proto.MESSAGE, number=30, oneof='ad_data',
+    legacy_app_install_ad = proto.Field(
+        proto.MESSAGE,
+        number=30,
+        oneof='ad_data',
         message=ad_type_infos.LegacyAppInstallAdInfo,
     )
-    responsive_display_ad = proto.Field(proto.MESSAGE, number=31, oneof='ad_data',
+    responsive_display_ad = proto.Field(
+        proto.MESSAGE,
+        number=31,
+        oneof='ad_data',
         message=ad_type_infos.ResponsiveDisplayAdInfo,
     )
-    local_ad = proto.Field(proto.MESSAGE, number=32, oneof='ad_data',
+    local_ad = proto.Field(
+        proto.MESSAGE,
+        number=32,
+        oneof='ad_data',
         message=ad_type_infos.LocalAdInfo,
     )
-    display_upload_ad = proto.Field(proto.MESSAGE, number=33, oneof='ad_data',
+    display_upload_ad = proto.Field(
+        proto.MESSAGE,
+        number=33,
+        oneof='ad_data',
         message=ad_type_infos.DisplayUploadAdInfo,
     )
-    app_engagement_ad = proto.Field(proto.MESSAGE, number=34, oneof='ad_data',
+    app_engagement_ad = proto.Field(
+        proto.MESSAGE,
+        number=34,
+        oneof='ad_data',
         message=ad_type_infos.AppEngagementAdInfo,
     )
-    shopping_comparison_listing_ad = proto.Field(proto.MESSAGE, number=36, oneof='ad_data',
+    shopping_comparison_listing_ad = proto.Field(
+        proto.MESSAGE,
+        number=36,
+        oneof='ad_data',
         message=ad_type_infos.ShoppingComparisonListingAdInfo,
     )
 

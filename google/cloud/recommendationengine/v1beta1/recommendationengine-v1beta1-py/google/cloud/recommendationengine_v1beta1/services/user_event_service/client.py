@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -42,7 +40,6 @@ from google.cloud.recommendationengine_v1beta1.types import user_event as gcr_us
 from google.cloud.recommendationengine_v1beta1.types import user_event_service
 from google.protobuf import any_pb2 as gp_any  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import UserEventServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import UserEventServiceGrpcTransport
 from .transports.grpc_asyncio import UserEventServiceGrpcAsyncIOTransport
@@ -347,7 +344,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.WriteUserEventRequest):
-                The request object. Request message for WriteUserEvent
+                The request object.
+                Request message for WriteUserEvent
                 method.
             parent (str):
                 Required. The parent eventStore resource name, such as
@@ -361,7 +359,6 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
                 This corresponds to the ``user_event`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -390,10 +387,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.WriteUserEventRequest):
             request = user_event_service.WriteUserEventRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if user_event is not None:
@@ -442,7 +437,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.CollectUserEventRequest):
-                The request object. Request message for CollectUserEvent
+                The request object.
+                Request message for CollectUserEvent
                 method.
             parent (str):
                 Required. The parent eventStore name, such as
@@ -481,7 +477,6 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
                 This corresponds to the ``ets`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -551,10 +546,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.CollectUserEventRequest):
             request = user_event_service.CollectUserEventRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if user_event is not None:
@@ -601,7 +594,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ListUserEventsRequest):
-                The request object. Request message for ListUserEvents
+                The request object.
+                Request message for ListUserEvents
                 method.
             parent (str):
                 Required. The parent eventStore resource name, such as
@@ -651,7 +645,6 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -681,10 +674,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.ListUserEventsRequest):
             request = user_event_service.ListUserEventsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -740,7 +731,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.PurgeUserEventsRequest):
-                The request object. Request message for PurgeUserEvents
+                The request object.
+                Request message for PurgeUserEvents
                 method.
             parent (str):
                 Required. The resource name of the event_store under
@@ -784,7 +776,6 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
                 This corresponds to the ``force`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -814,10 +805,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.PurgeUserEventsRequest):
             request = user_event_service.PurgeUserEventsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -877,7 +866,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ImportUserEventsRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 ImportUserEvents request.
             parent (str):
                 Required.
@@ -912,7 +902,6 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
                 This corresponds to the ``errors_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -944,10 +933,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, import_.ImportUserEventsRequest):
             request = import_.ImportUserEventsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if request_id is not None:
@@ -987,8 +974,6 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

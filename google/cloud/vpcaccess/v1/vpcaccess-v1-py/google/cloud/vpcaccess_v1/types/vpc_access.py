@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -37,7 +34,6 @@ __protobuf__ = proto.module(
 
 class Connector(proto.Message):
     r"""Definition of a Serverless VPC Access connector.
-
     Attributes:
         name (str):
             The resource name in the format
@@ -74,7 +70,6 @@ class Connector(proto.Message):
 
     class Subnet(proto.Message):
         r"""The subnet in which to house the connector
-
         Attributes:
             name (str):
                 Subnet name (relative, not fully qualified).
@@ -89,34 +84,53 @@ class Connector(proto.Message):
                 was issued.
         """
 
-        name = proto.Field(proto.STRING, number=1)
+        name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        project_id = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        project_id = proto.Field(proto.STRING, number=2)
-
-    name = proto.Field(proto.STRING, number=1)
-
-    network = proto.Field(proto.STRING, number=2)
-
-    ip_cidr_range = proto.Field(proto.STRING, number=3)
-
-    state = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    network = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    ip_cidr_range = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=State,
     )
-
-    min_throughput = proto.Field(proto.INT32, number=5)
-
-    max_throughput = proto.Field(proto.INT32, number=6)
-
-    connected_projects = proto.RepeatedField(proto.STRING, number=7)
-
-    subnet = proto.Field(proto.MESSAGE, number=8,
+    min_throughput = proto.Field(
+        proto.INT32,
+        number=5,
+    )
+    max_throughput = proto.Field(
+        proto.INT32,
+        number=6,
+    )
+    connected_projects = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
+    subnet = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=Subnet,
     )
 
 
 class CreateConnectorRequest(proto.Message):
     r"""Request for creating a Serverless VPC Access connector.
-
     Attributes:
         parent (str):
             Required. The project and location in which the
@@ -128,25 +142,33 @@ class CreateConnectorRequest(proto.Message):
             Required. Resource to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    connector_id = proto.Field(proto.STRING, number=2)
-
-    connector = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    connector_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    connector = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Connector',
     )
 
 
 class GetConnectorRequest(proto.Message):
     r"""Request for getting a Serverless VPC Access connector.
-
     Attributes:
         name (str):
             Required. Name of a Serverless VPC Access
             connector to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListConnectorsRequest(proto.Message):
@@ -164,16 +186,22 @@ class ListConnectorsRequest(proto.Message):
             Continuation token.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListConnectorsResponse(proto.Message):
     r"""Response for listing Serverless VPC Access connectors.
-
     Attributes:
         connectors (Sequence[google.cloud.vpcaccess_v1.types.Connector]):
             List of Serverless VPC Access connectors.
@@ -185,28 +213,33 @@ class ListConnectorsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    connectors = proto.RepeatedField(proto.MESSAGE, number=1,
+    connectors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Connector',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DeleteConnectorRequest(proto.Message):
     r"""Request for deleting a Serverless VPC Access connector.
-
     Attributes:
         name (str):
             Required. Name of a Serverless VPC Access
             connector to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class OperationMetadata(proto.Message):
     r"""Metadata for google.longrunning.Operation.
-
     Attributes:
         method (str):
             Output only. Method that initiated the
@@ -224,17 +257,24 @@ class OperationMetadata(proto.Message):
             project/locations/us-central1/connectors/v1.
     """
 
-    method = proto.Field(proto.STRING, number=1)
-
-    create_time = proto.Field(proto.MESSAGE, number=2,
+    method = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=3,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
-
-    target = proto.Field(proto.STRING, number=5)
+    target = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

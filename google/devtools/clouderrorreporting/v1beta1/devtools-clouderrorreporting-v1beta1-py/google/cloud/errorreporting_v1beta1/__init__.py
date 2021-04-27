@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,7 @@
 from .services.error_group_service import ErrorGroupServiceClient
 from .services.error_stats_service import ErrorStatsServiceClient
 from .services.report_errors_service import ReportErrorsServiceClient
+
 from .types.common import ErrorContext
 from .types.common import ErrorEvent
 from .types.common import ErrorGroup
@@ -43,7 +43,6 @@ from .types.error_stats_service import TimedCountAlignment
 from .types.report_errors_service import ReportErrorEventRequest
 from .types.report_errors_service import ReportErrorEventResponse
 from .types.report_errors_service import ReportedErrorEvent
-
 
 __all__ = (
     'DeleteEventsRequest',

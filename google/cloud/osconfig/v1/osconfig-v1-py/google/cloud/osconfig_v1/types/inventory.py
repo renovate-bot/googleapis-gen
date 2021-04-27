@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -31,7 +28,6 @@ __protobuf__ = proto.module(
 
 class Inventory(proto.Message):
     r"""The inventory details of a VM.
-
     Attributes:
         os_info (google.cloud.osconfig_v1.types.Inventory.OsInfo):
             Base level operating system information for
@@ -43,9 +39,9 @@ class Inventory(proto.Message):
             and addressable inventory item and will change,
             when there is a new package version.
     """
+
     class OsInfo(proto.Message):
         r"""Operating system information for the VM.
-
         Attributes:
             hostname (str):
                 The VM hostname.
@@ -70,25 +66,41 @@ class Inventory(proto.Message):
                 running on the VM.
         """
 
-        hostname = proto.Field(proto.STRING, number=9)
-
-        long_name = proto.Field(proto.STRING, number=2)
-
-        short_name = proto.Field(proto.STRING, number=3)
-
-        version = proto.Field(proto.STRING, number=4)
-
-        architecture = proto.Field(proto.STRING, number=5)
-
-        kernel_version = proto.Field(proto.STRING, number=6)
-
-        kernel_release = proto.Field(proto.STRING, number=7)
-
-        osconfig_agent_version = proto.Field(proto.STRING, number=8)
+        hostname = proto.Field(
+            proto.STRING,
+            number=9,
+        )
+        long_name = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        short_name = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        version = proto.Field(
+            proto.STRING,
+            number=4,
+        )
+        architecture = proto.Field(
+            proto.STRING,
+            number=5,
+        )
+        kernel_version = proto.Field(
+            proto.STRING,
+            number=6,
+        )
+        kernel_release = proto.Field(
+            proto.STRING,
+            number=7,
+        )
+        osconfig_agent_version = proto.Field(
+            proto.STRING,
+            number=8,
+        )
 
     class Item(proto.Message):
         r"""A single piece of inventory on a VM.
-
         Attributes:
             id (str):
                 Identifier for this item, unique across items
@@ -119,35 +131,45 @@ class Inventory(proto.Message):
             INSTALLED_PACKAGE = 1
             AVAILABLE_PACKAGE = 2
 
-        id = proto.Field(proto.STRING, number=1)
-
-        origin_type = proto.Field(proto.ENUM, number=2,
+        id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        origin_type = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='Inventory.Item.OriginType',
         )
-
-        create_time = proto.Field(proto.MESSAGE, number=8,
+        create_time = proto.Field(
+            proto.MESSAGE,
+            number=8,
             message=timestamp.Timestamp,
         )
-
-        update_time = proto.Field(proto.MESSAGE, number=9,
+        update_time = proto.Field(
+            proto.MESSAGE,
+            number=9,
             message=timestamp.Timestamp,
         )
-
-        type_ = proto.Field(proto.ENUM, number=5,
+        type_ = proto.Field(
+            proto.ENUM,
+            number=5,
             enum='Inventory.Item.Type',
         )
-
-        installed_package = proto.Field(proto.MESSAGE, number=6, oneof='details',
+        installed_package = proto.Field(
+            proto.MESSAGE,
+            number=6,
+            oneof='details',
             message='Inventory.SoftwarePackage',
         )
-
-        available_package = proto.Field(proto.MESSAGE, number=7, oneof='details',
+        available_package = proto.Field(
+            proto.MESSAGE,
+            number=7,
+            oneof='details',
             message='Inventory.SoftwarePackage',
         )
 
     class SoftwarePackage(proto.Message):
         r"""Software package information of the operating system.
-
         Attributes:
             yum_package (google.cloud.osconfig_v1.types.Inventory.VersionedPackage):
                 Yum package info. For details about the yum package manager,
@@ -183,35 +205,52 @@ class Inventory(proto.Message):
                 Details of a COS package.
         """
 
-        yum_package = proto.Field(proto.MESSAGE, number=1, oneof='details',
+        yum_package = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            oneof='details',
             message='Inventory.VersionedPackage',
         )
-
-        apt_package = proto.Field(proto.MESSAGE, number=2, oneof='details',
+        apt_package = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='details',
             message='Inventory.VersionedPackage',
         )
-
-        zypper_package = proto.Field(proto.MESSAGE, number=3, oneof='details',
+        zypper_package = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            oneof='details',
             message='Inventory.VersionedPackage',
         )
-
-        googet_package = proto.Field(proto.MESSAGE, number=4, oneof='details',
+        googet_package = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            oneof='details',
             message='Inventory.VersionedPackage',
         )
-
-        zypper_patch = proto.Field(proto.MESSAGE, number=5, oneof='details',
+        zypper_patch = proto.Field(
+            proto.MESSAGE,
+            number=5,
+            oneof='details',
             message='Inventory.ZypperPatch',
         )
-
-        wua_package = proto.Field(proto.MESSAGE, number=6, oneof='details',
+        wua_package = proto.Field(
+            proto.MESSAGE,
+            number=6,
+            oneof='details',
             message='Inventory.WindowsUpdatePackage',
         )
-
-        qfe_package = proto.Field(proto.MESSAGE, number=7, oneof='details',
+        qfe_package = proto.Field(
+            proto.MESSAGE,
+            number=7,
+            oneof='details',
             message='Inventory.WindowsQuickFixEngineeringPackage',
         )
-
-        cos_package = proto.Field(proto.MESSAGE, number=8, oneof='details',
+        cos_package = proto.Field(
+            proto.MESSAGE,
+            number=8,
+            oneof='details',
             message='Inventory.VersionedPackage',
         )
 
@@ -230,11 +269,18 @@ class Inventory(proto.Message):
                 The version of the package.
         """
 
-        package_name = proto.Field(proto.STRING, number=4)
-
-        architecture = proto.Field(proto.STRING, number=2)
-
-        version = proto.Field(proto.STRING, number=3)
+        package_name = proto.Field(
+            proto.STRING,
+            number=4,
+        )
+        architecture = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        version = proto.Field(
+            proto.STRING,
+            number=3,
+        )
 
     class WindowsUpdatePackage(proto.Message):
         r"""Details related to a Windows Update package. Field data and names
@@ -271,9 +317,9 @@ class Inventory(proto.Message):
                 The last published date of the update, in
                 (UTC) date and time.
         """
+
         class WindowsUpdateCategory(proto.Message):
             r"""Categories specified by the Windows Update.
-
             Attributes:
                 id (str):
                     The identifier of the windows update
@@ -282,35 +328,56 @@ class Inventory(proto.Message):
                     The name of the windows update category.
             """
 
-            id = proto.Field(proto.STRING, number=1)
+            id = proto.Field(
+                proto.STRING,
+                number=1,
+            )
+            name = proto.Field(
+                proto.STRING,
+                number=2,
+            )
 
-            name = proto.Field(proto.STRING, number=2)
-
-        title = proto.Field(proto.STRING, number=1)
-
-        description = proto.Field(proto.STRING, number=2)
-
-        categories = proto.RepeatedField(proto.MESSAGE, number=3,
+        title = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        description = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        categories = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message='Inventory.WindowsUpdatePackage.WindowsUpdateCategory',
         )
-
-        kb_article_ids = proto.RepeatedField(proto.STRING, number=4)
-
-        support_url = proto.Field(proto.STRING, number=11)
-
-        more_info_urls = proto.RepeatedField(proto.STRING, number=5)
-
-        update_id = proto.Field(proto.STRING, number=6)
-
-        revision_number = proto.Field(proto.INT32, number=7)
-
-        last_deployment_change_time = proto.Field(proto.MESSAGE, number=10,
+        kb_article_ids = proto.RepeatedField(
+            proto.STRING,
+            number=4,
+        )
+        support_url = proto.Field(
+            proto.STRING,
+            number=11,
+        )
+        more_info_urls = proto.RepeatedField(
+            proto.STRING,
+            number=5,
+        )
+        update_id = proto.Field(
+            proto.STRING,
+            number=6,
+        )
+        revision_number = proto.Field(
+            proto.INT32,
+            number=7,
+        )
+        last_deployment_change_time = proto.Field(
+            proto.MESSAGE,
+            number=10,
             message=timestamp.Timestamp,
         )
 
     class ZypperPatch(proto.Message):
         r"""Details related to a Zypper Patch.
-
         Attributes:
             patch_name (str):
                 The name of the patch.
@@ -323,13 +390,22 @@ class Inventory(proto.Message):
                 patch.
         """
 
-        patch_name = proto.Field(proto.STRING, number=5)
-
-        category = proto.Field(proto.STRING, number=2)
-
-        severity = proto.Field(proto.STRING, number=3)
-
-        summary = proto.Field(proto.STRING, number=4)
+        patch_name = proto.Field(
+            proto.STRING,
+            number=5,
+        )
+        category = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        severity = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        summary = proto.Field(
+            proto.STRING,
+            number=4,
+        )
 
     class WindowsQuickFixEngineeringPackage(proto.Message):
         r"""Information related to a Quick Fix Engineering package.
@@ -352,21 +428,33 @@ class Inventory(proto.Message):
                 installed_on field.
         """
 
-        caption = proto.Field(proto.STRING, number=1)
-
-        description = proto.Field(proto.STRING, number=2)
-
-        hot_fix_id = proto.Field(proto.STRING, number=3)
-
-        install_time = proto.Field(proto.MESSAGE, number=5,
+        caption = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        description = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        hot_fix_id = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        install_time = proto.Field(
+            proto.MESSAGE,
+            number=5,
             message=timestamp.Timestamp,
         )
 
-    os_info = proto.Field(proto.MESSAGE, number=1,
+    os_info = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=OsInfo,
     )
-
-    items = proto.MapField(proto.STRING, proto.MESSAGE, number=2,
+    items = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=2
         message=Item,
     )
 

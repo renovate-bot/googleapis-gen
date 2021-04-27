@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -56,7 +53,6 @@ __protobuf__ = proto.module(
 
 class Service(proto.Message):
     r"""A managed metastore service that serves metadata queries.
-
     Attributes:
         hive_metastore_config (google.cloud.metastore_v1.types.HiveMetastoreConfig):
             Configuration information specific to running
@@ -143,51 +139,78 @@ class Service(proto.Message):
         CANARY = 1
         STABLE = 2
 
-    hive_metastore_config = proto.Field(proto.MESSAGE, number=5, oneof='metastore_config',
+    hive_metastore_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='metastore_config',
         message='HiveMetastoreConfig',
     )
-
-    name = proto.Field(proto.STRING, number=1)
-
-    create_time = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=3,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    network = proto.Field(proto.STRING, number=7)
-
-    endpoint_uri = proto.Field(proto.STRING, number=8)
-
-    port = proto.Field(proto.INT32, number=9)
-
-    state = proto.Field(proto.ENUM, number=10,
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4
+    )
+    network = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    endpoint_uri = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    port = proto.Field(
+        proto.INT32,
+        number=9,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=10,
         enum=State,
     )
-
-    state_message = proto.Field(proto.STRING, number=11)
-
-    artifact_gcs_uri = proto.Field(proto.STRING, number=12)
-
-    tier = proto.Field(proto.ENUM, number=13,
+    state_message = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    artifact_gcs_uri = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    tier = proto.Field(
+        proto.ENUM,
+        number=13,
         enum=Tier,
     )
-
-    maintenance_window = proto.Field(proto.MESSAGE, number=15,
+    maintenance_window = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message='MaintenanceWindow',
     )
-
-    uid = proto.Field(proto.STRING, number=16)
-
-    metadata_management_activity = proto.Field(proto.MESSAGE, number=17,
+    uid = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+    metadata_management_activity = proto.Field(
+        proto.MESSAGE,
+        number=17,
         message='MetadataManagementActivity',
     )
-
-    release_channel = proto.Field(proto.ENUM, number=19,
+    release_channel = proto.Field(
+        proto.ENUM,
+        number=19,
         enum=ReleaseChannel,
     )
 
@@ -204,11 +227,14 @@ class MaintenanceWindow(proto.Message):
             The day of week, when the window starts.
     """
 
-    hour_of_day = proto.Field(proto.MESSAGE, number=1,
+    hour_of_day = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int32Value,
     )
-
-    day_of_week = proto.Field(proto.ENUM, number=2,
+    day_of_week = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=dayofweek.DayOfWeek,
     )
 
@@ -234,18 +260,24 @@ class HiveMetastoreConfig(proto.Message):
             the request's ``service``.
     """
 
-    version = proto.Field(proto.STRING, number=1)
-
-    config_overrides = proto.MapField(proto.STRING, proto.STRING, number=2)
-
-    kerberos_config = proto.Field(proto.MESSAGE, number=3,
+    version = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    config_overrides = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=2
+    )
+    kerberos_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='KerberosConfig',
     )
 
 
 class KerberosConfig(proto.Message):
     r"""Configuration information for a Kerberos principal.
-
     Attributes:
         keytab (google.cloud.metastore_v1.types.Secret):
             A Kerberos keytab file that can be used to
@@ -262,18 +294,23 @@ class KerberosConfig(proto.Message):
             does not need to be named krb5.conf explicitly.
     """
 
-    keytab = proto.Field(proto.MESSAGE, number=1,
+    keytab = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Secret',
     )
-
-    principal = proto.Field(proto.STRING, number=2)
-
-    krb5_config_gcs_uri = proto.Field(proto.STRING, number=3)
+    principal = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    krb5_config_gcs_uri = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class Secret(proto.Message):
     r"""A securely stored value.
-
     Attributes:
         cloud_secret (str):
             The relative resource name of a Secret Manager secret
@@ -282,26 +319,30 @@ class Secret(proto.Message):
             ``projects/{project_number}/secrets/{secret_id}/versions/{version_id}``.
     """
 
-    cloud_secret = proto.Field(proto.STRING, number=2, oneof='value')
+    cloud_secret = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='value',
+    )
 
 
 class MetadataManagementActivity(proto.Message):
     r"""The metadata management activities of the metastore service.
-
     Attributes:
         metadata_exports (Sequence[google.cloud.metastore_v1.types.MetadataExport]):
             Output only. The latest metadata exports of
             the metastore service.
     """
 
-    metadata_exports = proto.RepeatedField(proto.MESSAGE, number=1,
+    metadata_exports = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='MetadataExport',
     )
 
 
 class MetadataImport(proto.Message):
     r"""A metastore resource that imports metadata.
-
     Attributes:
         database_dump (google.cloud.metastore_v1.types.MetadataImport.DatabaseDump):
             Immutable. A database dump from a pre-
@@ -351,40 +392,54 @@ class MetadataImport(proto.Message):
             DATABASE_TYPE_UNSPECIFIED = 0
             MYSQL = 1
 
-        database_type = proto.Field(proto.ENUM, number=1,
+        database_type = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='MetadataImport.DatabaseDump.DatabaseType',
         )
-
-        gcs_uri = proto.Field(proto.STRING, number=2)
-
-        type_ = proto.Field(proto.ENUM, number=4,
+        gcs_uri = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        type_ = proto.Field(
+            proto.ENUM,
+            number=4,
             enum='DatabaseDumpSpec.Type',
         )
 
-    database_dump = proto.Field(proto.MESSAGE, number=6, oneof='metadata',
+    database_dump = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='metadata',
         message=DatabaseDump,
     )
-
-    name = proto.Field(proto.STRING, number=1)
-
-    description = proto.Field(proto.STRING, number=2)
-
-    create_time = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=4,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamp.Timestamp,
     )
-
-    state = proto.Field(proto.ENUM, number=5,
+    state = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=State,
     )
 
 
 class MetadataExport(proto.Message):
     r"""The details of a metadata export operation.
-
     Attributes:
         destination_gcs_uri (str):
             Output only. A Cloud Storage URI of a folder that metadata
@@ -409,21 +464,29 @@ class MetadataExport(proto.Message):
         FAILED = 3
         CANCELLED = 4
 
-    destination_gcs_uri = proto.Field(proto.STRING, number=4, oneof='destination')
-
-    start_time = proto.Field(proto.MESSAGE, number=1,
+    destination_gcs_uri = proto.Field(
+        proto.STRING,
+        number=4,
+        oneof='destination',
+    )
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    state = proto.Field(proto.ENUM, number=3,
+    state = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=State,
     )
-
-    database_dump_type = proto.Field(proto.ENUM, number=5,
+    database_dump_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum='DatabaseDumpSpec.Type',
     )
 
@@ -465,15 +528,26 @@ class ListServicesRequest(proto.Message):
             order.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListServicesResponse(proto.Message):
@@ -495,13 +569,19 @@ class ListServicesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    services = proto.RepeatedField(proto.MESSAGE, number=1,
+    services = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Service',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    unreachable = proto.RepeatedField(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    unreachable = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetServiceRequest(proto.Message):
@@ -516,7 +596,10 @@ class GetServiceRequest(proto.Message):
             ``projects/{project_number}/locations/{location_id}/services/{service_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateServiceRequest(proto.Message):
@@ -559,15 +642,23 @@ class CreateServiceRequest(proto.Message):
             supported.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    service_id = proto.Field(proto.STRING, number=2)
-
-    service = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    service = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Service',
     )
-
-    request_id = proto.Field(proto.STRING, number=4)
+    request_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class UpdateServiceRequest(proto.Message):
@@ -606,15 +697,20 @@ class UpdateServiceRequest(proto.Message):
             supported.
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=1,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=field_mask.FieldMask,
     )
-
-    service = proto.Field(proto.MESSAGE, number=2,
+    service = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Service',
     )
-
-    request_id = proto.Field(proto.STRING, number=3)
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DeleteServiceRequest(proto.Message):
@@ -645,9 +741,14 @@ class DeleteServiceRequest(proto.Message):
             supported.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListMetadataImportsRequest(proto.Message):
@@ -687,15 +788,26 @@ class ListMetadataImportsRequest(proto.Message):
             order.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListMetadataImportsResponse(proto.Message):
@@ -717,13 +829,19 @@ class ListMetadataImportsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    metadata_imports = proto.RepeatedField(proto.MESSAGE, number=1,
+    metadata_imports = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='MetadataImport',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    unreachable = proto.RepeatedField(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    unreachable = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetMetadataImportRequest(proto.Message):
@@ -738,7 +856,10 @@ class GetMetadataImportRequest(proto.Message):
             ``projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateMetadataImportRequest(proto.Message):
@@ -781,15 +902,23 @@ class CreateMetadataImportRequest(proto.Message):
             supported.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    metadata_import_id = proto.Field(proto.STRING, number=2)
-
-    metadata_import = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    metadata_import_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    metadata_import = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='MetadataImport',
     )
-
-    request_id = proto.Field(proto.STRING, number=4)
+    request_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class UpdateMetadataImportRequest(proto.Message):
@@ -828,15 +957,20 @@ class UpdateMetadataImportRequest(proto.Message):
             supported.
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=1,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=field_mask.FieldMask,
     )
-
-    metadata_import = proto.Field(proto.MESSAGE, number=2,
+    metadata_import = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='MetadataImport',
     )
-
-    request_id = proto.Field(proto.STRING, number=3)
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ExportMetadataRequest(proto.Message):
@@ -875,20 +1009,28 @@ class ExportMetadataRequest(proto.Message):
             defaults to ``MYSQL``.
     """
 
-    destination_gcs_folder = proto.Field(proto.STRING, number=2, oneof='destination')
-
-    service = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=3)
-
-    database_dump_type = proto.Field(proto.ENUM, number=4,
+    destination_gcs_folder = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='destination',
+    )
+    service = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    database_dump_type = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='DatabaseDumpSpec.Type',
     )
 
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of a long-running operation.
-
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -916,28 +1058,40 @@ class OperationMetadata(proto.Message):
             operation.
     """
 
-    create_time = proto.Field(proto.MESSAGE, number=1,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    target = proto.Field(proto.STRING, number=3)
-
-    verb = proto.Field(proto.STRING, number=4)
-
-    status_message = proto.Field(proto.STRING, number=5)
-
-    requested_cancellation = proto.Field(proto.BOOL, number=6)
-
-    api_version = proto.Field(proto.STRING, number=7)
+    target = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    verb = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    status_message = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    requested_cancellation = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+    api_version = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class LocationMetadata(proto.Message):
     r"""Metadata about the service in a location.
-
     Attributes:
         supported_hive_metastore_versions (Sequence[google.cloud.metastore_v1.types.LocationMetadata.HiveMetastoreVersion]):
             The versions of Hive Metastore that can be used when
@@ -945,6 +1099,7 @@ class LocationMetadata(proto.Message):
             server guarantees that exactly one ``HiveMetastoreVersion``
             in the list will set ``is_default``.
     """
+
     class HiveMetastoreVersion(proto.Message):
         r"""A specification of a supported version of the Hive Metastore
         software.
@@ -959,11 +1114,18 @@ class LocationMetadata(proto.Message):
                 that omits the ``version``.
         """
 
-        version = proto.Field(proto.STRING, number=1)
+        version = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        is_default = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
 
-        is_default = proto.Field(proto.BOOL, number=2)
-
-    supported_hive_metastore_versions = proto.RepeatedField(proto.MESSAGE, number=1,
+    supported_hive_metastore_versions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=HiveMetastoreVersion,
     )
 
@@ -971,7 +1133,7 @@ class LocationMetadata(proto.Message):
 class DatabaseDumpSpec(proto.Message):
     r"""The specification of database dump to import from or export
     to.
-    """
+        """
     class Type(proto.Enum):
         r"""The type of the database dump."""
         TYPE_UNSPECIFIED = 0

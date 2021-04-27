@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,11 +23,14 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
+
 from google import auth
 from google.api.serviceusage_v1beta1.services.service_usage import ServiceUsageAsyncClient
 from google.api.serviceusage_v1beta1.services.service_usage import ServiceUsageClient
 from google.api.serviceusage_v1beta1.services.service_usage import pagers
 from google.api.serviceusage_v1beta1.services.service_usage import transports
+from google.api.serviceusage_v1beta1.services.service_usage.transports.base import _API_CORE_VERSION
+from google.api.serviceusage_v1beta1.services.service_usage.transports.base import _GOOGLE_AUTH_VERSION
 from google.api.serviceusage_v1beta1.types import resources
 from google.api.serviceusage_v1beta1.types import serviceusage
 from google.api_core import client_options
@@ -45,6 +47,28 @@ from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -212,12 +236,10 @@ def test_service_usage_client_client_options(client_class, transport_class, tran
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (ServiceUsageClient, transports.ServiceUsageGrpcTransport, "grpc", "true"),
     (ServiceUsageAsyncClient, transports.ServiceUsageGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ServiceUsageClient, transports.ServiceUsageGrpcTransport, "grpc", "false"),
     (ServiceUsageAsyncClient, transports.ServiceUsageGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(ServiceUsageClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ServiceUsageClient))
 @mock.patch.object(ServiceUsageAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ServiceUsageAsyncClient))
@@ -371,13 +393,11 @@ def test_enable_service(transport: str = 'grpc', request_type=serviceusage.Enabl
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.enable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.EnableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -403,8 +423,8 @@ def test_enable_service_empty_call():
         client.enable_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.EnableServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_enable_service_async(transport: str = 'grpc_asyncio', request_type=serviceusage.EnableServiceRequest):
@@ -425,13 +445,11 @@ async def test_enable_service_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.enable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.EnableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -451,6 +469,7 @@ def test_enable_service_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.EnableServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -458,7 +477,6 @@ def test_enable_service_field_headers():
             type(client.transport.enable_service),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.enable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -483,6 +501,7 @@ async def test_enable_service_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.EnableServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -490,7 +509,6 @@ async def test_enable_service_field_headers_async():
             type(client.transport.enable_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.enable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -522,13 +540,11 @@ def test_disable_service(transport: str = 'grpc', request_type=serviceusage.Disa
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.disable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DisableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -554,8 +570,8 @@ def test_disable_service_empty_call():
         client.disable_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DisableServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_disable_service_async(transport: str = 'grpc_asyncio', request_type=serviceusage.DisableServiceRequest):
@@ -576,13 +592,11 @@ async def test_disable_service_async(transport: str = 'grpc_asyncio', request_ty
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.disable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DisableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -602,6 +616,7 @@ def test_disable_service_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.DisableServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -609,7 +624,6 @@ def test_disable_service_field_headers():
             type(client.transport.disable_service),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.disable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -634,6 +648,7 @@ async def test_disable_service_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.DisableServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -641,7 +656,6 @@ async def test_disable_service_field_headers_async():
             type(client.transport.disable_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.disable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -674,29 +688,20 @@ def test_get_service(transport: str = 'grpc', request_type=serviceusage.GetServi
         # Designate an appropriate return value for the call.
         call.return_value = resources.Service(
             name='name_value',
-
             parent='parent_value',
-
             state=resources.State.DISABLED,
-
         )
-
         response = client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetServiceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.Service)
-
     assert response.name == 'name_value'
-
     assert response.parent == 'parent_value'
-
     assert response.state == resources.State.DISABLED
 
 
@@ -719,8 +724,8 @@ def test_get_service_empty_call():
         client.get_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=serviceusage.GetServiceRequest):
@@ -738,27 +743,22 @@ async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.get_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Service(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Service(
             name='name_value',
             parent='parent_value',
             state=resources.State.DISABLED,
         ))
-
         response = await client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Service)
-
     assert response.name == 'name_value'
-
     assert response.parent == 'parent_value'
-
     assert response.state == resources.State.DISABLED
 
 
@@ -775,6 +775,7 @@ def test_get_service_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GetServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -782,7 +783,6 @@ def test_get_service_field_headers():
             type(client.transport.get_service),
             '__call__') as call:
         call.return_value = resources.Service()
-
         client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -807,6 +807,7 @@ async def test_get_service_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GetServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -814,7 +815,6 @@ async def test_get_service_field_headers_async():
             type(client.transport.get_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Service())
-
         await client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -847,21 +847,16 @@ def test_list_services(transport: str = 'grpc', request_type=serviceusage.ListSe
         # Designate an appropriate return value for the call.
         call.return_value = serviceusage.ListServicesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListServicesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListServicesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -884,8 +879,8 @@ def test_list_services_empty_call():
         client.list_services()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListServicesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_services_async(transport: str = 'grpc_asyncio', request_type=serviceusage.ListServicesRequest):
@@ -903,21 +898,18 @@ async def test_list_services_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_services),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListServicesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListServicesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListServicesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServicesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -934,6 +926,7 @@ def test_list_services_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListServicesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -941,7 +934,6 @@ def test_list_services_field_headers():
             type(client.transport.list_services),
             '__call__') as call:
         call.return_value = serviceusage.ListServicesResponse()
-
         client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -966,6 +958,7 @@ async def test_list_services_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListServicesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -973,7 +966,6 @@ async def test_list_services_field_headers_async():
             type(client.transport.list_services),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListServicesResponse())
-
         await client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1175,7 +1167,6 @@ async def test_list_services_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_batch_enable_services(transport: str = 'grpc', request_type=serviceusage.BatchEnableServicesRequest):
     client = ServiceUsageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1192,13 +1183,11 @@ def test_batch_enable_services(transport: str = 'grpc', request_type=serviceusag
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.batch_enable_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.BatchEnableServicesRequest()
 
     # Establish that the response is the type that we expect.
@@ -1224,8 +1213,8 @@ def test_batch_enable_services_empty_call():
         client.batch_enable_services()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.BatchEnableServicesRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_enable_services_async(transport: str = 'grpc_asyncio', request_type=serviceusage.BatchEnableServicesRequest):
@@ -1246,13 +1235,11 @@ async def test_batch_enable_services_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.batch_enable_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.BatchEnableServicesRequest()
 
     # Establish that the response is the type that we expect.
@@ -1272,6 +1259,7 @@ def test_batch_enable_services_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.BatchEnableServicesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1279,7 +1267,6 @@ def test_batch_enable_services_field_headers():
             type(client.transport.batch_enable_services),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.batch_enable_services(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1304,6 +1291,7 @@ async def test_batch_enable_services_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.BatchEnableServicesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1311,7 +1299,6 @@ async def test_batch_enable_services_field_headers_async():
             type(client.transport.batch_enable_services),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.batch_enable_services(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1344,21 +1331,16 @@ def test_list_consumer_quota_metrics(transport: str = 'grpc', request_type=servi
         # Designate an appropriate return value for the call.
         call.return_value = serviceusage.ListConsumerQuotaMetricsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_consumer_quota_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListConsumerQuotaMetricsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListConsumerQuotaMetricsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1381,8 +1363,8 @@ def test_list_consumer_quota_metrics_empty_call():
         client.list_consumer_quota_metrics()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListConsumerQuotaMetricsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_consumer_quota_metrics_async(transport: str = 'grpc_asyncio', request_type=serviceusage.ListConsumerQuotaMetricsRequest):
@@ -1400,21 +1382,18 @@ async def test_list_consumer_quota_metrics_async(transport: str = 'grpc_asyncio'
             type(client.transport.list_consumer_quota_metrics),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListConsumerQuotaMetricsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListConsumerQuotaMetricsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_consumer_quota_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListConsumerQuotaMetricsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConsumerQuotaMetricsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1431,6 +1410,7 @@ def test_list_consumer_quota_metrics_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListConsumerQuotaMetricsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1438,7 +1418,6 @@ def test_list_consumer_quota_metrics_field_headers():
             type(client.transport.list_consumer_quota_metrics),
             '__call__') as call:
         call.return_value = serviceusage.ListConsumerQuotaMetricsResponse()
-
         client.list_consumer_quota_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1463,6 +1442,7 @@ async def test_list_consumer_quota_metrics_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListConsumerQuotaMetricsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1470,7 +1450,6 @@ async def test_list_consumer_quota_metrics_field_headers_async():
             type(client.transport.list_consumer_quota_metrics),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListConsumerQuotaMetricsResponse())
-
         await client.list_consumer_quota_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1672,7 +1651,6 @@ async def test_list_consumer_quota_metrics_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_consumer_quota_metric(transport: str = 'grpc', request_type=serviceusage.GetConsumerQuotaMetricRequest):
     client = ServiceUsageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1690,33 +1668,22 @@ def test_get_consumer_quota_metric(transport: str = 'grpc', request_type=service
         # Designate an appropriate return value for the call.
         call.return_value = resources.ConsumerQuotaMetric(
             name='name_value',
-
             metric='metric_value',
-
             display_name='display_name_value',
-
             unit='unit_value',
-
         )
-
         response = client.get_consumer_quota_metric(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetConsumerQuotaMetricRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.ConsumerQuotaMetric)
-
     assert response.name == 'name_value'
-
     assert response.metric == 'metric_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.unit == 'unit_value'
 
 
@@ -1739,8 +1706,8 @@ def test_get_consumer_quota_metric_empty_call():
         client.get_consumer_quota_metric()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetConsumerQuotaMetricRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_consumer_quota_metric_async(transport: str = 'grpc_asyncio', request_type=serviceusage.GetConsumerQuotaMetricRequest):
@@ -1758,30 +1725,24 @@ async def test_get_consumer_quota_metric_async(transport: str = 'grpc_asyncio', 
             type(client.transport.get_consumer_quota_metric),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ConsumerQuotaMetric(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.ConsumerQuotaMetric(
             name='name_value',
             metric='metric_value',
             display_name='display_name_value',
             unit='unit_value',
         ))
-
         response = await client.get_consumer_quota_metric(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetConsumerQuotaMetricRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.ConsumerQuotaMetric)
-
     assert response.name == 'name_value'
-
     assert response.metric == 'metric_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.unit == 'unit_value'
 
 
@@ -1798,6 +1759,7 @@ def test_get_consumer_quota_metric_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GetConsumerQuotaMetricRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1805,7 +1767,6 @@ def test_get_consumer_quota_metric_field_headers():
             type(client.transport.get_consumer_quota_metric),
             '__call__') as call:
         call.return_value = resources.ConsumerQuotaMetric()
-
         client.get_consumer_quota_metric(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1830,6 +1791,7 @@ async def test_get_consumer_quota_metric_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GetConsumerQuotaMetricRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1837,7 +1799,6 @@ async def test_get_consumer_quota_metric_field_headers_async():
             type(client.transport.get_consumer_quota_metric),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ConsumerQuotaMetric())
-
         await client.get_consumer_quota_metric(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1870,37 +1831,24 @@ def test_get_consumer_quota_limit(transport: str = 'grpc', request_type=serviceu
         # Designate an appropriate return value for the call.
         call.return_value = resources.ConsumerQuotaLimit(
             name='name_value',
-
             metric='metric_value',
-
             unit='unit_value',
-
             is_precise=True,
-
             allows_admin_overrides=True,
-
         )
-
         response = client.get_consumer_quota_limit(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetConsumerQuotaLimitRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.ConsumerQuotaLimit)
-
     assert response.name == 'name_value'
-
     assert response.metric == 'metric_value'
-
     assert response.unit == 'unit_value'
-
     assert response.is_precise is True
-
     assert response.allows_admin_overrides is True
 
 
@@ -1923,8 +1871,8 @@ def test_get_consumer_quota_limit_empty_call():
         client.get_consumer_quota_limit()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetConsumerQuotaLimitRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_consumer_quota_limit_async(transport: str = 'grpc_asyncio', request_type=serviceusage.GetConsumerQuotaLimitRequest):
@@ -1942,33 +1890,26 @@ async def test_get_consumer_quota_limit_async(transport: str = 'grpc_asyncio', r
             type(client.transport.get_consumer_quota_limit),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ConsumerQuotaLimit(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.ConsumerQuotaLimit(
             name='name_value',
             metric='metric_value',
             unit='unit_value',
             is_precise=True,
             allows_admin_overrides=True,
         ))
-
         response = await client.get_consumer_quota_limit(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GetConsumerQuotaLimitRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.ConsumerQuotaLimit)
-
     assert response.name == 'name_value'
-
     assert response.metric == 'metric_value'
-
     assert response.unit == 'unit_value'
-
     assert response.is_precise is True
-
     assert response.allows_admin_overrides is True
 
 
@@ -1985,6 +1926,7 @@ def test_get_consumer_quota_limit_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GetConsumerQuotaLimitRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1992,7 +1934,6 @@ def test_get_consumer_quota_limit_field_headers():
             type(client.transport.get_consumer_quota_limit),
             '__call__') as call:
         call.return_value = resources.ConsumerQuotaLimit()
-
         client.get_consumer_quota_limit(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2017,6 +1958,7 @@ async def test_get_consumer_quota_limit_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GetConsumerQuotaLimitRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2024,7 +1966,6 @@ async def test_get_consumer_quota_limit_field_headers_async():
             type(client.transport.get_consumer_quota_limit),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ConsumerQuotaLimit())
-
         await client.get_consumer_quota_limit(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2056,13 +1997,11 @@ def test_create_admin_override(transport: str = 'grpc', request_type=serviceusag
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.CreateAdminOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -2088,8 +2027,8 @@ def test_create_admin_override_empty_call():
         client.create_admin_override()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.CreateAdminOverrideRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_admin_override_async(transport: str = 'grpc_asyncio', request_type=serviceusage.CreateAdminOverrideRequest):
@@ -2110,13 +2049,11 @@ async def test_create_admin_override_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.CreateAdminOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -2136,6 +2073,7 @@ def test_create_admin_override_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.CreateAdminOverrideRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2143,7 +2081,6 @@ def test_create_admin_override_field_headers():
             type(client.transport.create_admin_override),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2168,6 +2105,7 @@ async def test_create_admin_override_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.CreateAdminOverrideRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2175,7 +2113,6 @@ async def test_create_admin_override_field_headers_async():
             type(client.transport.create_admin_override),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2207,13 +2144,11 @@ def test_update_admin_override(transport: str = 'grpc', request_type=serviceusag
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.UpdateAdminOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -2239,8 +2174,8 @@ def test_update_admin_override_empty_call():
         client.update_admin_override()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.UpdateAdminOverrideRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_admin_override_async(transport: str = 'grpc_asyncio', request_type=serviceusage.UpdateAdminOverrideRequest):
@@ -2261,13 +2196,11 @@ async def test_update_admin_override_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.UpdateAdminOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -2287,6 +2220,7 @@ def test_update_admin_override_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.UpdateAdminOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2294,7 +2228,6 @@ def test_update_admin_override_field_headers():
             type(client.transport.update_admin_override),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2319,6 +2252,7 @@ async def test_update_admin_override_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.UpdateAdminOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2326,7 +2260,6 @@ async def test_update_admin_override_field_headers_async():
             type(client.transport.update_admin_override),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2358,13 +2291,11 @@ def test_delete_admin_override(transport: str = 'grpc', request_type=serviceusag
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DeleteAdminOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -2390,8 +2321,8 @@ def test_delete_admin_override_empty_call():
         client.delete_admin_override()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DeleteAdminOverrideRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_admin_override_async(transport: str = 'grpc_asyncio', request_type=serviceusage.DeleteAdminOverrideRequest):
@@ -2412,13 +2343,11 @@ async def test_delete_admin_override_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DeleteAdminOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -2438,6 +2367,7 @@ def test_delete_admin_override_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.DeleteAdminOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2445,7 +2375,6 @@ def test_delete_admin_override_field_headers():
             type(client.transport.delete_admin_override),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2470,6 +2399,7 @@ async def test_delete_admin_override_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.DeleteAdminOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2477,7 +2407,6 @@ async def test_delete_admin_override_field_headers_async():
             type(client.transport.delete_admin_override),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_admin_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2510,21 +2439,16 @@ def test_list_admin_overrides(transport: str = 'grpc', request_type=serviceusage
         # Designate an appropriate return value for the call.
         call.return_value = serviceusage.ListAdminOverridesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListAdminOverridesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListAdminOverridesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2547,8 +2471,8 @@ def test_list_admin_overrides_empty_call():
         client.list_admin_overrides()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListAdminOverridesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_admin_overrides_async(transport: str = 'grpc_asyncio', request_type=serviceusage.ListAdminOverridesRequest):
@@ -2566,21 +2490,18 @@ async def test_list_admin_overrides_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.list_admin_overrides),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListAdminOverridesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListAdminOverridesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListAdminOverridesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAdminOverridesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2597,6 +2518,7 @@ def test_list_admin_overrides_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListAdminOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2604,7 +2526,6 @@ def test_list_admin_overrides_field_headers():
             type(client.transport.list_admin_overrides),
             '__call__') as call:
         call.return_value = serviceusage.ListAdminOverridesResponse()
-
         client.list_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2629,6 +2550,7 @@ async def test_list_admin_overrides_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListAdminOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2636,7 +2558,6 @@ async def test_list_admin_overrides_field_headers_async():
             type(client.transport.list_admin_overrides),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListAdminOverridesResponse())
-
         await client.list_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2838,7 +2759,6 @@ async def test_list_admin_overrides_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_import_admin_overrides(transport: str = 'grpc', request_type=serviceusage.ImportAdminOverridesRequest):
     client = ServiceUsageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2855,13 +2775,11 @@ def test_import_admin_overrides(transport: str = 'grpc', request_type=serviceusa
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.import_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ImportAdminOverridesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2887,8 +2805,8 @@ def test_import_admin_overrides_empty_call():
         client.import_admin_overrides()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ImportAdminOverridesRequest()
+
 
 @pytest.mark.asyncio
 async def test_import_admin_overrides_async(transport: str = 'grpc_asyncio', request_type=serviceusage.ImportAdminOverridesRequest):
@@ -2909,13 +2827,11 @@ async def test_import_admin_overrides_async(transport: str = 'grpc_asyncio', req
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.import_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ImportAdminOverridesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2935,6 +2851,7 @@ def test_import_admin_overrides_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ImportAdminOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2942,7 +2859,6 @@ def test_import_admin_overrides_field_headers():
             type(client.transport.import_admin_overrides),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.import_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2967,6 +2883,7 @@ async def test_import_admin_overrides_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ImportAdminOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2974,7 +2891,6 @@ async def test_import_admin_overrides_field_headers_async():
             type(client.transport.import_admin_overrides),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.import_admin_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3006,13 +2922,11 @@ def test_create_consumer_override(transport: str = 'grpc', request_type=serviceu
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.CreateConsumerOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -3038,8 +2952,8 @@ def test_create_consumer_override_empty_call():
         client.create_consumer_override()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.CreateConsumerOverrideRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_consumer_override_async(transport: str = 'grpc_asyncio', request_type=serviceusage.CreateConsumerOverrideRequest):
@@ -3060,13 +2974,11 @@ async def test_create_consumer_override_async(transport: str = 'grpc_asyncio', r
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.CreateConsumerOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -3086,6 +2998,7 @@ def test_create_consumer_override_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.CreateConsumerOverrideRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3093,7 +3006,6 @@ def test_create_consumer_override_field_headers():
             type(client.transport.create_consumer_override),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3118,6 +3030,7 @@ async def test_create_consumer_override_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.CreateConsumerOverrideRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3125,7 +3038,6 @@ async def test_create_consumer_override_field_headers_async():
             type(client.transport.create_consumer_override),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3157,13 +3069,11 @@ def test_update_consumer_override(transport: str = 'grpc', request_type=serviceu
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.UpdateConsumerOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -3189,8 +3099,8 @@ def test_update_consumer_override_empty_call():
         client.update_consumer_override()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.UpdateConsumerOverrideRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_consumer_override_async(transport: str = 'grpc_asyncio', request_type=serviceusage.UpdateConsumerOverrideRequest):
@@ -3211,13 +3121,11 @@ async def test_update_consumer_override_async(transport: str = 'grpc_asyncio', r
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.UpdateConsumerOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -3237,6 +3145,7 @@ def test_update_consumer_override_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.UpdateConsumerOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3244,7 +3153,6 @@ def test_update_consumer_override_field_headers():
             type(client.transport.update_consumer_override),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3269,6 +3177,7 @@ async def test_update_consumer_override_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.UpdateConsumerOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3276,7 +3185,6 @@ async def test_update_consumer_override_field_headers_async():
             type(client.transport.update_consumer_override),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3308,13 +3216,11 @@ def test_delete_consumer_override(transport: str = 'grpc', request_type=serviceu
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DeleteConsumerOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -3340,8 +3246,8 @@ def test_delete_consumer_override_empty_call():
         client.delete_consumer_override()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DeleteConsumerOverrideRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_consumer_override_async(transport: str = 'grpc_asyncio', request_type=serviceusage.DeleteConsumerOverrideRequest):
@@ -3362,13 +3268,11 @@ async def test_delete_consumer_override_async(transport: str = 'grpc_asyncio', r
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.DeleteConsumerOverrideRequest()
 
     # Establish that the response is the type that we expect.
@@ -3388,6 +3292,7 @@ def test_delete_consumer_override_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.DeleteConsumerOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3395,7 +3300,6 @@ def test_delete_consumer_override_field_headers():
             type(client.transport.delete_consumer_override),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3420,6 +3324,7 @@ async def test_delete_consumer_override_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.DeleteConsumerOverrideRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3427,7 +3332,6 @@ async def test_delete_consumer_override_field_headers_async():
             type(client.transport.delete_consumer_override),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_consumer_override(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3460,21 +3364,16 @@ def test_list_consumer_overrides(transport: str = 'grpc', request_type=serviceus
         # Designate an appropriate return value for the call.
         call.return_value = serviceusage.ListConsumerOverridesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListConsumerOverridesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListConsumerOverridesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3497,8 +3396,8 @@ def test_list_consumer_overrides_empty_call():
         client.list_consumer_overrides()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListConsumerOverridesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_consumer_overrides_async(transport: str = 'grpc_asyncio', request_type=serviceusage.ListConsumerOverridesRequest):
@@ -3516,21 +3415,18 @@ async def test_list_consumer_overrides_async(transport: str = 'grpc_asyncio', re
             type(client.transport.list_consumer_overrides),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListConsumerOverridesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListConsumerOverridesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ListConsumerOverridesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConsumerOverridesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3547,6 +3443,7 @@ def test_list_consumer_overrides_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListConsumerOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3554,7 +3451,6 @@ def test_list_consumer_overrides_field_headers():
             type(client.transport.list_consumer_overrides),
             '__call__') as call:
         call.return_value = serviceusage.ListConsumerOverridesResponse()
-
         client.list_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3579,6 +3475,7 @@ async def test_list_consumer_overrides_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ListConsumerOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3586,7 +3483,6 @@ async def test_list_consumer_overrides_field_headers_async():
             type(client.transport.list_consumer_overrides),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(serviceusage.ListConsumerOverridesResponse())
-
         await client.list_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3788,7 +3684,6 @@ async def test_list_consumer_overrides_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_import_consumer_overrides(transport: str = 'grpc', request_type=serviceusage.ImportConsumerOverridesRequest):
     client = ServiceUsageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3805,13 +3700,11 @@ def test_import_consumer_overrides(transport: str = 'grpc', request_type=service
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.import_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ImportConsumerOverridesRequest()
 
     # Establish that the response is the type that we expect.
@@ -3837,8 +3730,8 @@ def test_import_consumer_overrides_empty_call():
         client.import_consumer_overrides()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ImportConsumerOverridesRequest()
+
 
 @pytest.mark.asyncio
 async def test_import_consumer_overrides_async(transport: str = 'grpc_asyncio', request_type=serviceusage.ImportConsumerOverridesRequest):
@@ -3859,13 +3752,11 @@ async def test_import_consumer_overrides_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.import_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.ImportConsumerOverridesRequest()
 
     # Establish that the response is the type that we expect.
@@ -3885,6 +3776,7 @@ def test_import_consumer_overrides_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ImportConsumerOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3892,7 +3784,6 @@ def test_import_consumer_overrides_field_headers():
             type(client.transport.import_consumer_overrides),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.import_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3917,6 +3808,7 @@ async def test_import_consumer_overrides_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.ImportConsumerOverridesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3924,7 +3816,6 @@ async def test_import_consumer_overrides_field_headers_async():
             type(client.transport.import_consumer_overrides),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.import_consumer_overrides(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3956,13 +3847,11 @@ def test_generate_service_identity(transport: str = 'grpc', request_type=service
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.generate_service_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GenerateServiceIdentityRequest()
 
     # Establish that the response is the type that we expect.
@@ -3988,8 +3877,8 @@ def test_generate_service_identity_empty_call():
         client.generate_service_identity()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GenerateServiceIdentityRequest()
+
 
 @pytest.mark.asyncio
 async def test_generate_service_identity_async(transport: str = 'grpc_asyncio', request_type=serviceusage.GenerateServiceIdentityRequest):
@@ -4010,13 +3899,11 @@ async def test_generate_service_identity_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.generate_service_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == serviceusage.GenerateServiceIdentityRequest()
 
     # Establish that the response is the type that we expect.
@@ -4036,6 +3923,7 @@ def test_generate_service_identity_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GenerateServiceIdentityRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4043,7 +3931,6 @@ def test_generate_service_identity_field_headers():
             type(client.transport.generate_service_identity),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.generate_service_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4068,6 +3955,7 @@ async def test_generate_service_identity_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = serviceusage.GenerateServiceIdentityRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4075,7 +3963,6 @@ async def test_generate_service_identity_field_headers_async():
             type(client.transport.generate_service_identity),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.generate_service_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4131,7 +4018,6 @@ def test_transport_instance():
     client = ServiceUsageClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ServiceUsageGrpcTransport(
@@ -4146,7 +4032,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.ServiceUsageGrpcTransport,
     transports.ServiceUsageGrpcAsyncIOTransport,
@@ -4158,7 +4043,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ServiceUsageClient(
@@ -4168,7 +4052,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.ServiceUsageGrpcTransport,
     )
-
 
 def test_service_usage_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -4209,7 +4092,7 @@ def test_service_usage_base_transport():
         'list_consumer_overrides',
         'import_consumer_overrides',
         'generate_service_identity',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -4220,9 +4103,27 @@ def test_service_usage_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_service_usage_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.api.serviceusage_v1beta1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.api.serviceusage_v1beta1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.ServiceUsageTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_service_usage_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.api.serviceusage_v1beta1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ServiceUsageTransport(
@@ -4238,33 +4139,182 @@ def test_service_usage_base_transport_with_credentials_file():
 
 def test_service_usage_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.api.serviceusage_v1beta1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.api.serviceusage_v1beta1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ServiceUsageTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_service_usage_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ServiceUsageClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_service_usage_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_service_usage_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        ServiceUsageClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.ServiceUsageGrpcTransport,
+        transports.ServiceUsageGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_service_usage_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.ServiceUsageGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.ServiceUsageGrpcTransport,
+        transports.ServiceUsageGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_service_usage_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ServiceUsageGrpcTransport, grpc_helpers),
+        (transports.ServiceUsageGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_service_usage_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "serviceusage.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="serviceusage.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ServiceUsageGrpcTransport, grpc_helpers),
+        (transports.ServiceUsageGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_service_usage_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "serviceusage.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ServiceUsageGrpcTransport, grpc_helpers),
+        (transports.ServiceUsageGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_service_usage_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "serviceusage.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -4326,7 +4376,6 @@ def test_service_usage_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='serviceusage.googleapis.com:8000'),
     )
     assert client.transport._host == 'serviceusage.googleapis.com:8000'
-
 
 def test_service_usage_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4478,7 +4527,6 @@ def test_service_usage_grpc_lro_async_client():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ServiceUsageClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4486,8 +4534,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = ServiceUsageClient.common_billing_account_path(**expected)
 
@@ -4497,7 +4544,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ServiceUsageClient.common_folder_path(folder)
     assert expected == actual
@@ -4505,8 +4551,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = ServiceUsageClient.common_folder_path(**expected)
 
@@ -4516,7 +4561,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ServiceUsageClient.common_organization_path(organization)
     assert expected == actual
@@ -4524,8 +4568,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = ServiceUsageClient.common_organization_path(**expected)
 
@@ -4535,7 +4578,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = ServiceUsageClient.common_project_path(project)
     assert expected == actual
@@ -4543,8 +4585,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = ServiceUsageClient.common_project_path(**expected)
 
@@ -4555,7 +4596,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ServiceUsageClient.common_location_path(project, location)
     assert expected == actual
@@ -4563,9 +4603,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = ServiceUsageClient.common_location_path(**expected)
 

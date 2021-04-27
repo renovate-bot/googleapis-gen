@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import SecretManagerServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SecretManagerServiceGrpcAsyncIOTransport
 from .client import SecretManagerServiceClient
@@ -63,19 +60,14 @@ class SecretManagerServiceAsyncClient:
     parse_secret_version_path = staticmethod(SecretManagerServiceClient.parse_secret_version_path)
     topic_path = staticmethod(SecretManagerServiceClient.topic_path)
     parse_topic_path = staticmethod(SecretManagerServiceClient.parse_topic_path)
-
     common_billing_account_path = staticmethod(SecretManagerServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SecretManagerServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(SecretManagerServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(SecretManagerServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(SecretManagerServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(SecretManagerServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(SecretManagerServiceClient.common_project_path)
     parse_common_project_path = staticmethod(SecretManagerServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(SecretManagerServiceClient.common_location_path)
     parse_common_location_path = staticmethod(SecretManagerServiceClient.parse_common_location_path)
 
@@ -160,7 +152,6 @@ class SecretManagerServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = SecretManagerServiceClient(
             credentials=credentials,
             transport=transport,
@@ -181,7 +172,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.ListSecretsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.ListSecrets][google.cloud.secretmanager.v1.SecretManagerService.ListSecrets].
             parent (:class:`str`):
                 Required. The resource name of the project associated
@@ -192,7 +184,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -220,7 +211,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -276,7 +266,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.CreateSecretRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.CreateSecret][google.cloud.secretmanager.v1.SecretManagerService.CreateSecret].
             parent (:class:`str`):
                 Required. The resource name of the project to associate
@@ -305,7 +296,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``secret`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -335,7 +325,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if secret_id is not None:
@@ -386,7 +375,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.AddSecretVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -405,7 +395,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -430,7 +419,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if payload is not None:
@@ -476,7 +464,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.GetSecretRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.GetSecret][google.cloud.secretmanager.v1.SecretManagerService.GetSecret].
             name (:class:`str`):
                 Required. The resource name of the
@@ -486,7 +475,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -516,7 +504,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -561,7 +548,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.UpdateSecretRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.UpdateSecret][google.cloud.secretmanager.v1.SecretManagerService.UpdateSecret].
             secret (:class:`google.cloud.secretmanager_v1.types.Secret`):
                 Required. [Secret][google.cloud.secretmanager.v1.Secret]
@@ -577,7 +565,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -607,7 +594,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if secret is not None:
             request.secret = secret
         if update_mask is not None:
@@ -652,7 +638,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.DeleteSecretRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DeleteSecret][google.cloud.secretmanager.v1.SecretManagerService.DeleteSecret].
             name (:class:`str`):
                 Required. The resource name of the
@@ -662,7 +649,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -681,7 +667,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -723,7 +708,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.ListSecretVersionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.ListSecretVersions][google.cloud.secretmanager.v1.SecretManagerService.ListSecretVersions].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -735,7 +721,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -763,7 +748,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -820,7 +804,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.GetSecretVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.GetSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.GetSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -833,7 +818,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -858,7 +842,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -907,7 +890,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.AccessSecretVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -917,7 +901,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -942,7 +925,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -951,10 +933,7 @@ class SecretManagerServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.access_secret_version,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1002,7 +981,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.DisableSecretVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DisableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.DisableSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1013,7 +993,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1038,7 +1017,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1088,7 +1066,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.EnableSecretVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.EnableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.EnableSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1099,7 +1078,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1124,7 +1102,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1175,7 +1152,8 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1.types.DestroySecretVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DestroySecretVersion][google.cloud.secretmanager.v1.SecretManagerService.DestroySecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1186,7 +1164,6 @@ class SecretManagerServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1211,7 +1188,6 @@ class SecretManagerServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1259,9 +1235,9 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1328,8 +1304,7 @@ class SecretManagerServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1374,9 +1349,9 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1443,8 +1418,7 @@ class SecretManagerServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -1494,9 +1468,9 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1508,8 +1482,7 @@ class SecretManagerServiceAsyncClient:
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
@@ -1540,8 +1513,6 @@ class SecretManagerServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

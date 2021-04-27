@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -100,8 +99,7 @@ from google.cloud.vision_v1p3beta1.types.text_annotation import TextAnnotation
 from google.cloud.vision_v1p3beta1.types.text_annotation import Word
 from google.cloud.vision_v1p3beta1.types.web_detection import WebDetection
 
-__all__ = (
-    'AddProductToProductSetRequest',
+__all__ = ('AddProductToProductSetRequest',
     'AnnotateFileResponse',
     'AnnotateImageRequest',
     'AnnotateImageResponse',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -41,7 +39,6 @@ from google.cloud.dialogflow_v2.types import intent as gcd_intent
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
-
 from .transports.base import IntentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import IntentsGrpcTransport
 from .transports.grpc_asyncio import IntentsGrpcAsyncIOTransport
@@ -356,7 +353,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListIntentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.ListIntents][google.cloud.dialogflow.v2.Intents.ListIntents].
             parent (str):
                 Required. The agent to list all intents from. Format:
@@ -375,7 +373,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -405,10 +402,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.ListIntentsRequest):
             request = intent.ListIntentsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if language_code is not None:
@@ -459,7 +454,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
             name (str):
                 Required. The name of the intent. Format:
@@ -478,7 +474,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -514,10 +509,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.GetIntentRequest):
             request = intent.GetIntentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if language_code is not None:
@@ -560,7 +553,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
             parent (str):
                 Required. The agent to create a intent for. Format:
@@ -584,7 +578,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -620,10 +613,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_intent.CreateIntentRequest):
             request = gcd_intent.CreateIntentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if intent is not None:
@@ -668,7 +659,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent].
             intent (google.cloud.dialogflow_v2.types.Intent):
                 Required. The intent to update.
@@ -692,7 +684,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -728,10 +719,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_intent.UpdateIntentRequest):
             request = gcd_intent.UpdateIntentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if intent is not None:
                 request.intent = intent
             if language_code is not None:
@@ -775,7 +764,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
             name (str):
                 Required. The name of the intent to delete. If this
@@ -786,7 +776,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -807,10 +796,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.DeleteIntentRequest):
             request = intent.DeleteIntentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -852,6 +839,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         Args:
             request (google.cloud.dialogflow_v2.types.BatchUpdateIntentsRequest):
                 The request object.
+
             parent (str):
                 Required. The name of the agent to update or create
                 intents in. Format: ``projects/<Project ID>/agent``.
@@ -877,7 +865,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``intent_batch_inline`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -908,10 +895,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.BatchUpdateIntentsRequest):
             request = intent.BatchUpdateIntentsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if intent_batch_uri is not None:
@@ -966,7 +951,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchDeleteIntentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.BatchDeleteIntents][google.cloud.dialogflow.v2.Intents.BatchDeleteIntents].
             parent (str):
                 Required. The name of the agent to delete all entities
@@ -982,7 +968,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``intents`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1022,10 +1007,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.BatchDeleteIntentsRequest):
             request = intent.BatchDeleteIntentsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if intents is not None:
@@ -1061,8 +1044,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

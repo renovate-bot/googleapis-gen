@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -269,30 +267,21 @@ def test_get_account_link(transport: str = 'grpc', request_type=account_link_ser
         # Designate an appropriate return value for the call.
         call.return_value = account_link.AccountLink(
             resource_name='resource_name_value',
-
             status=account_link_status.AccountLinkStatusEnum.AccountLinkStatus.UNKNOWN,
-
             type_=linked_account_type.LinkedAccountTypeEnum.LinkedAccountType.UNKNOWN,
-
             third_party_app_analytics=account_link.ThirdPartyAppAnalyticsLinkIdentifier(app_analytics_provider_id=wrappers.Int64Value(value=541)),
         )
-
         response = client.get_account_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == account_link_service.GetAccountLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, account_link.AccountLink)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.status == account_link_status.AccountLinkStatusEnum.AccountLinkStatus.UNKNOWN
-
     assert response.type_ == linked_account_type.LinkedAccountTypeEnum.LinkedAccountType.UNKNOWN
 
 
@@ -308,6 +297,7 @@ def test_get_account_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = account_link_service.GetAccountLinkRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -315,7 +305,6 @@ def test_get_account_link_field_headers():
             type(client.transport.get_account_link),
             '__call__') as call:
         call.return_value = account_link.AccountLink()
-
         client.get_account_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -342,7 +331,6 @@ def test_get_account_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = account_link.AccountLink()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_account_link(
@@ -353,7 +341,6 @@ def test_get_account_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -388,21 +375,16 @@ def test_create_account_link(transport: str = 'grpc', request_type=account_link_
         # Designate an appropriate return value for the call.
         call.return_value = account_link_service.CreateAccountLinkResponse(
             resource_name='resource_name_value',
-
         )
-
         response = client.create_account_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == account_link_service.CreateAccountLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, account_link_service.CreateAccountLinkResponse)
-
     assert response.resource_name == 'resource_name_value'
 
 
@@ -418,6 +400,7 @@ def test_create_account_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = account_link_service.CreateAccountLinkRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -425,7 +408,6 @@ def test_create_account_link_field_headers():
             type(client.transport.create_account_link),
             '__call__') as call:
         call.return_value = account_link_service.CreateAccountLinkResponse()
-
         client.create_account_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -452,7 +434,6 @@ def test_create_account_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = account_link_service.CreateAccountLinkResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_account_link(
@@ -464,9 +445,7 @@ def test_create_account_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].account_link == gagr_account_link.AccountLink(resource_name='resource_name_value')
 
 
@@ -502,17 +481,14 @@ def test_mutate_account_link(transport: str = 'grpc', request_type=account_link_
         # Designate an appropriate return value for the call.
         call.return_value = account_link_service.MutateAccountLinkResponse(
         )
-
         response = client.mutate_account_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == account_link_service.MutateAccountLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, account_link_service.MutateAccountLinkResponse)
 
 
@@ -528,6 +504,7 @@ def test_mutate_account_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = account_link_service.MutateAccountLinkRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -535,7 +512,6 @@ def test_mutate_account_link_field_headers():
             type(client.transport.mutate_account_link),
             '__call__') as call:
         call.return_value = account_link_service.MutateAccountLinkResponse()
-
         client.mutate_account_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -562,7 +538,6 @@ def test_mutate_account_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = account_link_service.MutateAccountLinkResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_account_link(
@@ -574,9 +549,7 @@ def test_mutate_account_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operation == account_link_service.AccountLinkOperation(remove='remove_value')
 
 
@@ -660,7 +633,7 @@ def test_account_link_service_base_transport():
         'get_account_link',
         'create_account_link',
         'mutate_account_link',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -812,7 +785,6 @@ def test_account_link_service_transport_channel_mtls_with_adc(
 def test_account_link_path():
     customer = "squid"
     account_link = "clam"
-
     expected = "customers/{customer}/accountLinks/{account_link}".format(customer=customer, account_link=account_link, )
     actual = AccountLinkServiceClient.account_link_path(customer, account_link)
     assert expected == actual
@@ -820,9 +792,8 @@ def test_account_link_path():
 
 def test_parse_account_link_path():
     expected = {
-    "customer": "whelk",
-    "account_link": "octopus",
-
+        "customer": "whelk",
+        "account_link": "octopus",
     }
     path = AccountLinkServiceClient.account_link_path(**expected)
 
@@ -832,7 +803,6 @@ def test_parse_account_link_path():
 
 def test_customer_path():
     customer = "oyster"
-
     expected = "customers/{customer}".format(customer=customer, )
     actual = AccountLinkServiceClient.customer_path(customer)
     assert expected == actual
@@ -840,8 +810,7 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-    "customer": "nudibranch",
-
+        "customer": "nudibranch",
     }
     path = AccountLinkServiceClient.customer_path(**expected)
 
@@ -851,7 +820,6 @@ def test_parse_customer_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AccountLinkServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -859,8 +827,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = AccountLinkServiceClient.common_billing_account_path(**expected)
 
@@ -870,7 +837,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AccountLinkServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -878,8 +844,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = AccountLinkServiceClient.common_folder_path(**expected)
 
@@ -889,7 +854,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AccountLinkServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -897,8 +861,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = AccountLinkServiceClient.common_organization_path(**expected)
 
@@ -908,7 +871,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = AccountLinkServiceClient.common_project_path(project)
     assert expected == actual
@@ -916,8 +878,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = AccountLinkServiceClient.common_project_path(**expected)
 
@@ -928,7 +889,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AccountLinkServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -936,9 +896,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = AccountLinkServiceClient.common_location_path(**expected)
 

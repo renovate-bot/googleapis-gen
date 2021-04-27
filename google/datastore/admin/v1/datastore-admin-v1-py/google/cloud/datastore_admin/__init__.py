@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,8 +33,7 @@ from google.cloud.datastore_admin_v1.types.datastore_admin import OperationType
 from google.cloud.datastore_admin_v1.types.datastore_admin import Progress
 from google.cloud.datastore_admin_v1.types.index import Index
 
-__all__ = (
-    'CommonMetadata',
+__all__ = ('CommonMetadata',
     'CreateIndexRequest',
     'DatastoreAdminAsyncClient',
     'DatastoreAdminClient',

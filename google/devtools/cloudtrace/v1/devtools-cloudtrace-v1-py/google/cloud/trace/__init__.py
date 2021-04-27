@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,8 +24,7 @@ from google.cloud.trace_v1.types.trace import Trace
 from google.cloud.trace_v1.types.trace import TraceSpan
 from google.cloud.trace_v1.types.trace import Traces
 
-__all__ = (
-    'GetTraceRequest',
+__all__ = ('GetTraceRequest',
     'ListTracesRequest',
     'ListTracesResponse',
     'PatchTracesRequest',

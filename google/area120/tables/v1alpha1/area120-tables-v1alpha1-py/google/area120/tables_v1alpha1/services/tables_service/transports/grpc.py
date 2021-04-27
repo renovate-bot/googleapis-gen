@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.area120.tables_v1alpha1.types import tables
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import TablesServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -75,7 +72,8 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -214,13 +212,15 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -234,7 +234,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def get_table(self) -> Callable[
             [tables.GetTableRequest],
             tables.Table]:
-        r"""Return a callable for the get table method over gRPC.
+        r"""Return a callable for the
+        get table
+          method over gRPC.
 
         Gets a table. Returns NOT_FOUND if the table does not exist.
 
@@ -260,7 +262,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def list_tables(self) -> Callable[
             [tables.ListTablesRequest],
             tables.ListTablesResponse]:
-        r"""Return a callable for the list tables method over gRPC.
+        r"""Return a callable for the
+        list tables
+          method over gRPC.
 
         Lists tables for the user.
 
@@ -286,7 +290,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def get_workspace(self) -> Callable[
             [tables.GetWorkspaceRequest],
             tables.Workspace]:
-        r"""Return a callable for the get workspace method over gRPC.
+        r"""Return a callable for the
+        get workspace
+          method over gRPC.
 
         Gets a workspace. Returns NOT_FOUND if the workspace does not
         exist.
@@ -313,7 +319,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def list_workspaces(self) -> Callable[
             [tables.ListWorkspacesRequest],
             tables.ListWorkspacesResponse]:
-        r"""Return a callable for the list workspaces method over gRPC.
+        r"""Return a callable for the
+        list workspaces
+          method over gRPC.
 
         Lists workspaces for the user.
 
@@ -339,7 +347,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def get_row(self) -> Callable[
             [tables.GetRowRequest],
             tables.Row]:
-        r"""Return a callable for the get row method over gRPC.
+        r"""Return a callable for the
+        get row
+          method over gRPC.
 
         Gets a row. Returns NOT_FOUND if the row does not exist in the
         table.
@@ -366,7 +376,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def list_rows(self) -> Callable[
             [tables.ListRowsRequest],
             tables.ListRowsResponse]:
-        r"""Return a callable for the list rows method over gRPC.
+        r"""Return a callable for the
+        list rows
+          method over gRPC.
 
         Lists rows in a table. Returns NOT_FOUND if the table does not
         exist.
@@ -393,7 +405,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def create_row(self) -> Callable[
             [tables.CreateRowRequest],
             tables.Row]:
-        r"""Return a callable for the create row method over gRPC.
+        r"""Return a callable for the
+        create row
+          method over gRPC.
 
         Creates a row.
 
@@ -419,7 +433,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def batch_create_rows(self) -> Callable[
             [tables.BatchCreateRowsRequest],
             tables.BatchCreateRowsResponse]:
-        r"""Return a callable for the batch create rows method over gRPC.
+        r"""Return a callable for the
+        batch create rows
+          method over gRPC.
 
         Creates multiple rows.
 
@@ -445,7 +461,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def update_row(self) -> Callable[
             [tables.UpdateRowRequest],
             tables.Row]:
-        r"""Return a callable for the update row method over gRPC.
+        r"""Return a callable for the
+        update row
+          method over gRPC.
 
         Updates a row.
 
@@ -471,7 +489,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def batch_update_rows(self) -> Callable[
             [tables.BatchUpdateRowsRequest],
             tables.BatchUpdateRowsResponse]:
-        r"""Return a callable for the batch update rows method over gRPC.
+        r"""Return a callable for the
+        batch update rows
+          method over gRPC.
 
         Updates multiple rows.
 
@@ -497,7 +517,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def delete_row(self) -> Callable[
             [tables.DeleteRowRequest],
             empty.Empty]:
-        r"""Return a callable for the delete row method over gRPC.
+        r"""Return a callable for the
+        delete row
+          method over gRPC.
 
         Deletes a row.
 
@@ -523,7 +545,9 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
     def batch_delete_rows(self) -> Callable[
             [tables.BatchDeleteRowsRequest],
             empty.Empty]:
-        r"""Return a callable for the batch delete rows method over gRPC.
+        r"""Return a callable for the
+        batch delete rows
+          method over gRPC.
 
         Deletes multiple rows.
 

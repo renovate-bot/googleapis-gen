@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.resources.types import asset
 
@@ -44,7 +41,10 @@ class GetAssetRequest(proto.Message):
             fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateAssetsRequest(proto.Message):
@@ -60,8 +60,13 @@ class MutateAssetsRequest(proto.Message):
             on individual assets.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='AssetOperation',
     )
 
@@ -77,34 +82,40 @@ class AssetOperation(proto.Message):
             expected for the new asset.
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=asset.Asset,
     )
 
 
 class MutateAssetsResponse(proto.Message):
     r"""Response message for an asset mutate.
-
     Attributes:
         results (Sequence[google.ads.googleads.v4.services.types.MutateAssetResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateAssetResult',
     )
 
 
 class MutateAssetResult(proto.Message):
     r"""The result for the asset mutate.
-
     Attributes:
         resource_name (str):
             The resource name returned for successful
             operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

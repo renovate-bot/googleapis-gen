@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.cloud.recommendationengine_v1beta1.types import catalog_service
 from google.cloud.recommendationengine_v1beta1.types import common
 from google.cloud.recommendationengine_v1beta1.types import import_
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import CatalogServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CatalogServiceGrpcAsyncIOTransport
 from .client import CatalogServiceClient
@@ -56,19 +53,14 @@ class CatalogServiceAsyncClient:
     parse_catalog_path = staticmethod(CatalogServiceClient.parse_catalog_path)
     catalog_item_path_path = staticmethod(CatalogServiceClient.catalog_item_path_path)
     parse_catalog_item_path_path = staticmethod(CatalogServiceClient.parse_catalog_item_path_path)
-
     common_billing_account_path = staticmethod(CatalogServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CatalogServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(CatalogServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(CatalogServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(CatalogServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(CatalogServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(CatalogServiceClient.common_project_path)
     parse_common_project_path = staticmethod(CatalogServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(CatalogServiceClient.common_location_path)
     parse_common_location_path = staticmethod(CatalogServiceClient.parse_common_location_path)
 
@@ -153,7 +145,6 @@ class CatalogServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = CatalogServiceClient(
             credentials=credentials,
             transport=transport,
@@ -175,7 +166,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.CreateCatalogItemRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateCatalogItem method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
@@ -189,7 +181,6 @@ class CatalogServiceAsyncClient:
                 This corresponds to the ``catalog_item`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -214,7 +205,6 @@ class CatalogServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if catalog_item is not None:
@@ -225,10 +215,7 @@ class CatalogServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_catalog_item,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -269,7 +256,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.GetCatalogItemRequest`):
-                The request object. Request message for GetCatalogItem
+                The request object.
+                Request message for GetCatalogItem
                 method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
@@ -278,7 +266,6 @@ class CatalogServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -303,7 +290,6 @@ class CatalogServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -312,10 +298,7 @@ class CatalogServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_catalog_item,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -357,7 +340,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ListCatalogItemsRequest`):
-                The request object. Request message for ListCatalogItems
+                The request object.
+                Request message for ListCatalogItems
                 method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
@@ -373,7 +357,6 @@ class CatalogServiceAsyncClient:
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,7 +384,6 @@ class CatalogServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -412,10 +394,7 @@ class CatalogServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_catalog_items,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -468,7 +447,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.UpdateCatalogItemRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateCatalogItem method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
@@ -492,7 +472,6 @@ class CatalogServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -517,7 +496,6 @@ class CatalogServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if catalog_item is not None:
@@ -530,10 +508,7 @@ class CatalogServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_catalog_item,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -574,7 +549,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.DeleteCatalogItemRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteCatalogItem method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
@@ -583,7 +559,6 @@ class CatalogServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -602,7 +577,6 @@ class CatalogServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -611,10 +585,7 @@ class CatalogServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_catalog_item,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -661,7 +632,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ImportCatalogItemsRequest`):
-                The request object. Request message for Import methods.
+                The request object.
+                Request message for Import methods.
             parent (:class:`str`):
                 Required.
                 ``projects/1234/locations/global/catalogs/default_catalog``
@@ -696,7 +668,6 @@ class CatalogServiceAsyncClient:
                 This corresponds to the ``errors_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -725,7 +696,6 @@ class CatalogServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if request_id is not None:
@@ -740,10 +710,7 @@ class CatalogServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.import_catalog_items,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -779,8 +746,6 @@ class CatalogServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -24,6 +22,7 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -31,7 +30,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import application
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import ApplicationsTransport, DEFAULT_CLIENT_INFO
 from .grpc import ApplicationsGrpcTransport
 
@@ -81,13 +79,15 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +167,6 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -245,7 +245,9 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
     def get_application(self) -> Callable[
             [appengine.GetApplicationRequest],
             Awaitable[application.Application]]:
-        r"""Return a callable for the get application method over gRPC.
+        r"""Return a callable for the
+        get application
+          method over gRPC.
 
         Gets information about an application.
 
@@ -271,7 +273,9 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
     def create_application(self) -> Callable[
             [appengine.CreateApplicationRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create application method over gRPC.
+        r"""Return a callable for the
+        create application
+          method over gRPC.
 
         Creates an App Engine application for a Google Cloud Platform
         project. Required fields:
@@ -307,7 +311,9 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
     def update_application(self) -> Callable[
             [appengine.UpdateApplicationRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update application method over gRPC.
+        r"""Return a callable for the
+        update application
+          method over gRPC.
 
         Updates the specified Application resource. You can update the
         following fields:
@@ -339,7 +345,9 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
     def repair_application(self) -> Callable[
             [appengine.RepairApplicationRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the repair application method over gRPC.
+        r"""Return a callable for the
+        repair application
+          method over gRPC.
 
         Recreates the required App Engine features for the specified App
         Engine application, for example a Cloud Storage bucket or App

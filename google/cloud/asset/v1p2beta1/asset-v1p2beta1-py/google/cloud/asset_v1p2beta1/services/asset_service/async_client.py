@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -29,7 +27,6 @@ from google.auth import credentials                    # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.asset_v1p2beta1.types import asset_service
-
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
 from .client import AssetServiceClient
@@ -45,19 +42,14 @@ class AssetServiceAsyncClient:
 
     feed_path = staticmethod(AssetServiceClient.feed_path)
     parse_feed_path = staticmethod(AssetServiceClient.parse_feed_path)
-
     common_billing_account_path = staticmethod(AssetServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AssetServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AssetServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AssetServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AssetServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AssetServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AssetServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AssetServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(AssetServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AssetServiceClient.parse_common_location_path)
 
@@ -142,7 +134,6 @@ class AssetServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AssetServiceClient(
             credentials=credentials,
             transport=transport,
@@ -165,7 +156,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p2beta1.types.CreateFeedRequest`):
-                The request object. Create asset feed request.
+                The request object.
+                Create asset feed request.
             parent (:class:`str`):
                 Required. The name of the
                 project/folder/organization where this
@@ -180,7 +172,6 @@ class AssetServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -210,7 +201,6 @@ class AssetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -253,7 +243,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p2beta1.types.GetFeedRequest`):
-                The request object. Get asset feed request.
+                The request object.
+                Get asset feed request.
             name (:class:`str`):
                 Required. The name of the Feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -263,7 +254,6 @@ class AssetServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -293,7 +283,6 @@ class AssetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -302,10 +291,7 @@ class AssetServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_feed,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -347,7 +333,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p2beta1.types.ListFeedsRequest`):
-                The request object. List asset feeds request.
+                The request object.
+                List asset feeds request.
             parent (:class:`str`):
                 Required. The parent
                 project/folder/organization whose feeds
@@ -359,7 +346,6 @@ class AssetServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,7 +368,6 @@ class AssetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -391,10 +376,7 @@ class AssetServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_feeds,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -435,7 +417,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p2beta1.types.UpdateFeedRequest`):
-                The request object. Update asset feed request.
+                The request object.
+                Update asset feed request.
             feed (:class:`google.cloud.asset_v1p2beta1.types.Feed`):
                 Required. The new values of feed details. It must match
                 an existing feed and the field ``name`` must be in the
@@ -446,7 +429,6 @@ class AssetServiceAsyncClient:
                 This corresponds to the ``feed`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,7 +458,6 @@ class AssetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if feed is not None:
             request.feed = feed
 
@@ -520,6 +501,7 @@ class AssetServiceAsyncClient:
         Args:
             request (:class:`google.cloud.asset_v1p2beta1.types.DeleteFeedRequest`):
                 The request object.
+
             name (:class:`str`):
                 Required. The name of the feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -529,7 +511,6 @@ class AssetServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -548,7 +529,6 @@ class AssetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -557,10 +537,7 @@ class AssetServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_feed,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -585,8 +562,6 @@ class AssetServiceAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,7 @@
 from .services.data_catalog import DataCatalogClient
 from .services.policy_tag_manager import PolicyTagManagerClient
 from .services.policy_tag_manager_serialization import PolicyTagManagerSerializationClient
+
 from .types.common import IntegratedSystem
 from .types.data_source import DataSource
 from .types.datacatalog import CreateEntryGroupRequest
@@ -92,7 +92,6 @@ from .types.tags import TagField
 from .types.tags import TagTemplate
 from .types.tags import TagTemplateField
 from .types.timestamps import SystemTimestamps
-
 
 __all__ = (
     'BigQueryDateShardedSpec',

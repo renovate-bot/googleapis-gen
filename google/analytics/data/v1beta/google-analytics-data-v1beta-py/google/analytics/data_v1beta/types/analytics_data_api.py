@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.analytics.data_v1beta.types import data
 
@@ -53,20 +50,24 @@ class Metadata(proto.Message):
             The metric descriptions.
     """
 
-    name = proto.Field(proto.STRING, number=3)
-
-    dimensions = proto.RepeatedField(proto.MESSAGE, number=1,
+    name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    dimensions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=data.DimensionMetadata,
     )
-
-    metrics = proto.RepeatedField(proto.MESSAGE, number=2,
+    metrics = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.MetricMetadata,
     )
 
 
 class RunReportRequest(proto.Message):
     r"""The request to generate a report.
-
     Attributes:
         property (str):
             A Google Analytics GA4 property identifier whose events are
@@ -151,54 +152,74 @@ class RunReportRequest(proto.Message):
             `PropertyQuota <#PropertyQuota>`__.
     """
 
-    property = proto.Field(proto.STRING, number=1)
-
-    dimensions = proto.RepeatedField(proto.MESSAGE, number=2,
+    property = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    dimensions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.Dimension,
     )
-
-    metrics = proto.RepeatedField(proto.MESSAGE, number=3,
+    metrics = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=data.Metric,
     )
-
-    date_ranges = proto.RepeatedField(proto.MESSAGE, number=4,
+    date_ranges = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=data.DateRange,
     )
-
-    dimension_filter = proto.Field(proto.MESSAGE, number=5,
+    dimension_filter = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=data.FilterExpression,
     )
-
-    metric_filter = proto.Field(proto.MESSAGE, number=6,
+    metric_filter = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=data.FilterExpression,
     )
-
-    offset = proto.Field(proto.INT64, number=7)
-
-    limit = proto.Field(proto.INT64, number=8)
-
-    metric_aggregations = proto.RepeatedField(proto.ENUM, number=9,
+    offset = proto.Field(
+        proto.INT64,
+        number=7,
+    )
+    limit = proto.Field(
+        proto.INT64,
+        number=8,
+    )
+    metric_aggregations = proto.RepeatedField(
+        proto.ENUM,
+        number=9,
         enum=data.MetricAggregation,
     )
-
-    order_bys = proto.RepeatedField(proto.MESSAGE, number=10,
+    order_bys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=10,
         message=data.OrderBy,
     )
-
-    currency_code = proto.Field(proto.STRING, number=11)
-
-    cohort_spec = proto.Field(proto.MESSAGE, number=12,
+    currency_code = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    cohort_spec = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=data.CohortSpec,
     )
-
-    keep_empty_rows = proto.Field(proto.BOOL, number=13)
-
-    return_property_quota = proto.Field(proto.BOOL, number=14)
+    keep_empty_rows = proto.Field(
+        proto.BOOL,
+        number=13,
+    )
+    return_property_quota = proto.Field(
+        proto.BOOL,
+        number=14,
+    )
 
 
 class RunReportResponse(proto.Message):
     r"""The response report table corresponding to a request.
-
     Attributes:
         dimension_headers (Sequence[google.analytics.data_v1beta.types.DimensionHeader]):
             Describes dimension columns. The number of
@@ -241,46 +262,58 @@ class RunReportResponse(proto.Message):
             response types in JSON.
     """
 
-    dimension_headers = proto.RepeatedField(proto.MESSAGE, number=1,
+    dimension_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=data.DimensionHeader,
     )
-
-    metric_headers = proto.RepeatedField(proto.MESSAGE, number=2,
+    metric_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.MetricHeader,
     )
-
-    rows = proto.RepeatedField(proto.MESSAGE, number=3,
+    rows = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=data.Row,
     )
-
-    totals = proto.RepeatedField(proto.MESSAGE, number=4,
+    totals = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=data.Row,
     )
-
-    maximums = proto.RepeatedField(proto.MESSAGE, number=5,
+    maximums = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=data.Row,
     )
-
-    minimums = proto.RepeatedField(proto.MESSAGE, number=6,
+    minimums = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message=data.Row,
     )
-
-    row_count = proto.Field(proto.INT32, number=7)
-
-    metadata = proto.Field(proto.MESSAGE, number=8,
+    row_count = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=data.ResponseMetaData,
     )
-
-    property_quota = proto.Field(proto.MESSAGE, number=9,
+    property_quota = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=data.PropertyQuota,
     )
-
-    kind = proto.Field(proto.STRING, number=10)
+    kind = proto.Field(
+        proto.STRING,
+        number=10,
+    )
 
 
 class RunPivotReportRequest(proto.Message):
     r"""The request to generate a pivot report.
-
     Attributes:
         property (str):
             A Google Analytics GA4 property identifier whose events are
@@ -344,41 +377,57 @@ class RunPivotReportRequest(proto.Message):
             `PropertyQuota <#PropertyQuota>`__.
     """
 
-    property = proto.Field(proto.STRING, number=1)
-
-    dimensions = proto.RepeatedField(proto.MESSAGE, number=2,
+    property = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    dimensions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.Dimension,
     )
-
-    metrics = proto.RepeatedField(proto.MESSAGE, number=3,
+    metrics = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=data.Metric,
     )
-
-    date_ranges = proto.RepeatedField(proto.MESSAGE, number=4,
+    date_ranges = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=data.DateRange,
     )
-
-    pivots = proto.RepeatedField(proto.MESSAGE, number=5,
+    pivots = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=data.Pivot,
     )
-
-    dimension_filter = proto.Field(proto.MESSAGE, number=6,
+    dimension_filter = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=data.FilterExpression,
     )
-
-    metric_filter = proto.Field(proto.MESSAGE, number=7,
+    metric_filter = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=data.FilterExpression,
     )
-
-    currency_code = proto.Field(proto.STRING, number=8)
-
-    cohort_spec = proto.Field(proto.MESSAGE, number=9,
+    currency_code = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    cohort_spec = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=data.CohortSpec,
     )
-
-    keep_empty_rows = proto.Field(proto.BOOL, number=10)
-
-    return_property_quota = proto.Field(proto.BOOL, number=11)
+    keep_empty_rows = proto.Field(
+        proto.BOOL,
+        number=10,
+    )
+    return_property_quota = proto.Field(
+        proto.BOOL,
+        number=11,
+    )
 
 
 class RunPivotReportResponse(proto.Message):
@@ -457,40 +506,49 @@ class RunPivotReportResponse(proto.Message):
             between response types in JSON.
     """
 
-    pivot_headers = proto.RepeatedField(proto.MESSAGE, number=1,
+    pivot_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=data.PivotHeader,
     )
-
-    dimension_headers = proto.RepeatedField(proto.MESSAGE, number=2,
+    dimension_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.DimensionHeader,
     )
-
-    metric_headers = proto.RepeatedField(proto.MESSAGE, number=3,
+    metric_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=data.MetricHeader,
     )
-
-    rows = proto.RepeatedField(proto.MESSAGE, number=4,
+    rows = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=data.Row,
     )
-
-    aggregates = proto.RepeatedField(proto.MESSAGE, number=5,
+    aggregates = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=data.Row,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=6,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=data.ResponseMetaData,
     )
-
-    property_quota = proto.Field(proto.MESSAGE, number=7,
+    property_quota = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=data.PropertyQuota,
     )
-
-    kind = proto.Field(proto.STRING, number=8)
+    kind = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class BatchRunReportsRequest(proto.Message):
     r"""The batch request containing multiple report requests.
-
     Attributes:
         property (str):
             A Google Analytics GA4 property identifier whose events are
@@ -508,16 +566,19 @@ class BatchRunReportsRequest(proto.Message):
             allowed up to 5 requests.
     """
 
-    property = proto.Field(proto.STRING, number=1)
-
-    requests = proto.RepeatedField(proto.MESSAGE, number=2,
+    property = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    requests = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='RunReportRequest',
     )
 
 
 class BatchRunReportsResponse(proto.Message):
     r"""The batch response containing multiple reports.
-
     Attributes:
         reports (Sequence[google.analytics.data_v1beta.types.RunReportResponse]):
             Individual responses. Each response has a
@@ -529,16 +590,19 @@ class BatchRunReportsResponse(proto.Message):
             between response types in JSON.
     """
 
-    reports = proto.RepeatedField(proto.MESSAGE, number=1,
+    reports = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='RunReportResponse',
     )
-
-    kind = proto.Field(proto.STRING, number=2)
+    kind = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BatchRunPivotReportsRequest(proto.Message):
     r"""The batch request containing multiple pivot report requests.
-
     Attributes:
         property (str):
             A Google Analytics GA4 property identifier whose events are
@@ -556,16 +620,19 @@ class BatchRunPivotReportsRequest(proto.Message):
             request is allowed up to 5 requests.
     """
 
-    property = proto.Field(proto.STRING, number=1)
-
-    requests = proto.RepeatedField(proto.MESSAGE, number=2,
+    property = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    requests = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='RunPivotReportRequest',
     )
 
 
 class BatchRunPivotReportsResponse(proto.Message):
     r"""The batch response containing multiple pivot reports.
-
     Attributes:
         pivot_reports (Sequence[google.analytics.data_v1beta.types.RunPivotReportResponse]):
             Individual responses. Each response has a
@@ -577,16 +644,19 @@ class BatchRunPivotReportsResponse(proto.Message):
             between response types in JSON.
     """
 
-    pivot_reports = proto.RepeatedField(proto.MESSAGE, number=1,
+    pivot_reports = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='RunPivotReportResponse',
     )
-
-    kind = proto.Field(proto.STRING, number=2)
+    kind = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetMetadataRequest(proto.Message):
     r"""Request for a property's dimension and metric metadata.
-
     Attributes:
         name (str):
             Required. The resource name of the metadata to retrieve.
@@ -603,12 +673,14 @@ class GetMetadataRequest(proto.Message):
             not return custom dimensions and metrics.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RunRealtimeReportRequest(proto.Message):
     r"""The request to generate a realtime report.
-
     Attributes:
         property (str):
             A Google Analytics GA4 property identifier whose events are
@@ -656,35 +728,48 @@ class RunRealtimeReportRequest(proto.Message):
             `PropertyQuota <#PropertyQuota>`__.
     """
 
-    property = proto.Field(proto.STRING, number=1)
-
-    dimensions = proto.RepeatedField(proto.MESSAGE, number=2,
+    property = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    dimensions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.Dimension,
     )
-
-    metrics = proto.RepeatedField(proto.MESSAGE, number=3,
+    metrics = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=data.Metric,
     )
-
-    dimension_filter = proto.Field(proto.MESSAGE, number=4,
+    dimension_filter = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=data.FilterExpression,
     )
-
-    metric_filter = proto.Field(proto.MESSAGE, number=5,
+    metric_filter = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=data.FilterExpression,
     )
-
-    limit = proto.Field(proto.INT64, number=6)
-
-    metric_aggregations = proto.RepeatedField(proto.ENUM, number=7,
+    limit = proto.Field(
+        proto.INT64,
+        number=6,
+    )
+    metric_aggregations = proto.RepeatedField(
+        proto.ENUM,
+        number=7,
         enum=data.MetricAggregation,
     )
-
-    order_bys = proto.RepeatedField(proto.MESSAGE, number=8,
+    order_bys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=8,
         message=data.OrderBy,
     )
-
-    return_property_quota = proto.Field(proto.BOOL, number=9)
+    return_property_quota = proto.Field(
+        proto.BOOL,
+        number=9,
+    )
 
 
 class RunRealtimeReportResponse(proto.Message):
@@ -727,37 +812,49 @@ class RunRealtimeReportResponse(proto.Message):
             between response types in JSON.
     """
 
-    dimension_headers = proto.RepeatedField(proto.MESSAGE, number=1,
+    dimension_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=data.DimensionHeader,
     )
-
-    metric_headers = proto.RepeatedField(proto.MESSAGE, number=2,
+    metric_headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=data.MetricHeader,
     )
-
-    rows = proto.RepeatedField(proto.MESSAGE, number=3,
+    rows = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=data.Row,
     )
-
-    totals = proto.RepeatedField(proto.MESSAGE, number=4,
+    totals = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=data.Row,
     )
-
-    maximums = proto.RepeatedField(proto.MESSAGE, number=5,
+    maximums = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=data.Row,
     )
-
-    minimums = proto.RepeatedField(proto.MESSAGE, number=6,
+    minimums = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message=data.Row,
     )
-
-    row_count = proto.Field(proto.INT32, number=7)
-
-    property_quota = proto.Field(proto.MESSAGE, number=8,
+    row_count = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    property_quota = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=data.PropertyQuota,
     )
-
-    kind = proto.Field(proto.STRING, number=9)
+    kind = proto.Field(
+        proto.STRING,
+        number=9,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

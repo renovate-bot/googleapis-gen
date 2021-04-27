@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,11 +36,35 @@ from google.cloud.speech_v1p1beta1.services.adaptation import AdaptationAsyncCli
 from google.cloud.speech_v1p1beta1.services.adaptation import AdaptationClient
 from google.cloud.speech_v1p1beta1.services.adaptation import pagers
 from google.cloud.speech_v1p1beta1.services.adaptation import transports
+from google.cloud.speech_v1p1beta1.services.adaptation.transports.base import _API_CORE_VERSION
+from google.cloud.speech_v1p1beta1.services.adaptation.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.speech_v1p1beta1.types import cloud_speech_adaptation
 from google.cloud.speech_v1p1beta1.types import resource
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -208,12 +232,10 @@ def test_adaptation_client_client_options(client_class, transport_class, transpo
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (AdaptationClient, transports.AdaptationGrpcTransport, "grpc", "true"),
     (AdaptationAsyncClient, transports.AdaptationGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (AdaptationClient, transports.AdaptationGrpcTransport, "grpc", "false"),
     (AdaptationAsyncClient, transports.AdaptationGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(AdaptationClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AdaptationClient))
 @mock.patch.object(AdaptationAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AdaptationAsyncClient))
@@ -368,25 +390,18 @@ def test_create_phrase_set(transport: str = 'grpc', request_type=cloud_speech_ad
         # Designate an appropriate return value for the call.
         call.return_value = resource.PhraseSet(
             name='name_value',
-
             boost=0.551,
-
         )
-
         response = client.create_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.CreatePhraseSetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resource.PhraseSet)
-
     assert response.name == 'name_value'
-
     assert math.isclose(response.boost, 0.551, rel_tol=1e-6)
 
 
@@ -409,8 +424,8 @@ def test_create_phrase_set_empty_call():
         client.create_phrase_set()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.CreatePhraseSetRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.CreatePhraseSetRequest):
@@ -428,24 +443,20 @@ async def test_create_phrase_set_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.create_phrase_set),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet(
             name='name_value',
             boost=0.551,
         ))
-
         response = await client.create_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.CreatePhraseSetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource.PhraseSet)
-
     assert response.name == 'name_value'
-
     assert math.isclose(response.boost, 0.551, rel_tol=1e-6)
 
 
@@ -462,6 +473,7 @@ def test_create_phrase_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.CreatePhraseSetRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -469,7 +481,6 @@ def test_create_phrase_set_field_headers():
             type(client.transport.create_phrase_set),
             '__call__') as call:
         call.return_value = resource.PhraseSet()
-
         client.create_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -494,6 +505,7 @@ async def test_create_phrase_set_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.CreatePhraseSetRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -501,7 +513,6 @@ async def test_create_phrase_set_field_headers_async():
             type(client.transport.create_phrase_set),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet())
-
         await client.create_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -528,7 +539,6 @@ def test_create_phrase_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource.PhraseSet()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_phrase_set(
@@ -541,11 +551,8 @@ def test_create_phrase_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].phrase_set == resource.PhraseSet(name='name_value')
-
         assert args[0].phrase_set_id == 'phrase_set_id_value'
 
 
@@ -591,11 +598,8 @@ async def test_create_phrase_set_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].phrase_set == resource.PhraseSet(name='name_value')
-
         assert args[0].phrase_set_id == 'phrase_set_id_value'
 
 
@@ -633,25 +637,18 @@ def test_get_phrase_set(transport: str = 'grpc', request_type=cloud_speech_adapt
         # Designate an appropriate return value for the call.
         call.return_value = resource.PhraseSet(
             name='name_value',
-
             boost=0.551,
-
         )
-
         response = client.get_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.GetPhraseSetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resource.PhraseSet)
-
     assert response.name == 'name_value'
-
     assert math.isclose(response.boost, 0.551, rel_tol=1e-6)
 
 
@@ -674,8 +671,8 @@ def test_get_phrase_set_empty_call():
         client.get_phrase_set()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.GetPhraseSetRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.GetPhraseSetRequest):
@@ -693,24 +690,20 @@ async def test_get_phrase_set_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_phrase_set),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet(
             name='name_value',
             boost=0.551,
         ))
-
         response = await client.get_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.GetPhraseSetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource.PhraseSet)
-
     assert response.name == 'name_value'
-
     assert math.isclose(response.boost, 0.551, rel_tol=1e-6)
 
 
@@ -727,6 +720,7 @@ def test_get_phrase_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.GetPhraseSetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -734,7 +728,6 @@ def test_get_phrase_set_field_headers():
             type(client.transport.get_phrase_set),
             '__call__') as call:
         call.return_value = resource.PhraseSet()
-
         client.get_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -759,6 +752,7 @@ async def test_get_phrase_set_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.GetPhraseSetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -766,7 +760,6 @@ async def test_get_phrase_set_field_headers_async():
             type(client.transport.get_phrase_set),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet())
-
         await client.get_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -793,7 +786,6 @@ def test_get_phrase_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource.PhraseSet()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_phrase_set(
@@ -804,7 +796,6 @@ def test_get_phrase_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -846,7 +837,6 @@ async def test_get_phrase_set_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -882,21 +872,16 @@ def test_list_phrase_set(transport: str = 'grpc', request_type=cloud_speech_adap
         # Designate an appropriate return value for the call.
         call.return_value = cloud_speech_adaptation.ListPhraseSetResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.ListPhraseSetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListPhraseSetPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -919,8 +904,8 @@ def test_list_phrase_set_empty_call():
         client.list_phrase_set()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.ListPhraseSetRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.ListPhraseSetRequest):
@@ -938,21 +923,18 @@ async def test_list_phrase_set_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_phrase_set),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_speech_adaptation.ListPhraseSetResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_speech_adaptation.ListPhraseSetResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.ListPhraseSetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPhraseSetAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -969,6 +951,7 @@ def test_list_phrase_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.ListPhraseSetRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -976,7 +959,6 @@ def test_list_phrase_set_field_headers():
             type(client.transport.list_phrase_set),
             '__call__') as call:
         call.return_value = cloud_speech_adaptation.ListPhraseSetResponse()
-
         client.list_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1001,6 +983,7 @@ async def test_list_phrase_set_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.ListPhraseSetRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1008,7 +991,6 @@ async def test_list_phrase_set_field_headers_async():
             type(client.transport.list_phrase_set),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_speech_adaptation.ListPhraseSetResponse())
-
         await client.list_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1035,7 +1017,6 @@ def test_list_phrase_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_speech_adaptation.ListPhraseSetResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_phrase_set(
@@ -1046,7 +1027,6 @@ def test_list_phrase_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1088,7 +1068,6 @@ async def test_list_phrase_set_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1293,7 +1272,6 @@ async def test_list_phrase_set_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_phrase_set(transport: str = 'grpc', request_type=cloud_speech_adaptation.UpdatePhraseSetRequest):
     client = AdaptationClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1311,25 +1289,18 @@ def test_update_phrase_set(transport: str = 'grpc', request_type=cloud_speech_ad
         # Designate an appropriate return value for the call.
         call.return_value = resource.PhraseSet(
             name='name_value',
-
             boost=0.551,
-
         )
-
         response = client.update_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.UpdatePhraseSetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resource.PhraseSet)
-
     assert response.name == 'name_value'
-
     assert math.isclose(response.boost, 0.551, rel_tol=1e-6)
 
 
@@ -1352,8 +1323,8 @@ def test_update_phrase_set_empty_call():
         client.update_phrase_set()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.UpdatePhraseSetRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.UpdatePhraseSetRequest):
@@ -1371,24 +1342,20 @@ async def test_update_phrase_set_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.update_phrase_set),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet(
             name='name_value',
             boost=0.551,
         ))
-
         response = await client.update_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.UpdatePhraseSetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource.PhraseSet)
-
     assert response.name == 'name_value'
-
     assert math.isclose(response.boost, 0.551, rel_tol=1e-6)
 
 
@@ -1405,6 +1372,7 @@ def test_update_phrase_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.UpdatePhraseSetRequest()
+
     request.phrase_set.name = 'phrase_set.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1412,7 +1380,6 @@ def test_update_phrase_set_field_headers():
             type(client.transport.update_phrase_set),
             '__call__') as call:
         call.return_value = resource.PhraseSet()
-
         client.update_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1437,6 +1404,7 @@ async def test_update_phrase_set_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.UpdatePhraseSetRequest()
+
     request.phrase_set.name = 'phrase_set.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1444,7 +1412,6 @@ async def test_update_phrase_set_field_headers_async():
             type(client.transport.update_phrase_set),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.PhraseSet())
-
         await client.update_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1471,7 +1438,6 @@ def test_update_phrase_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource.PhraseSet()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_phrase_set(
@@ -1483,9 +1449,7 @@ def test_update_phrase_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].phrase_set == resource.PhraseSet(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1529,9 +1493,7 @@ async def test_update_phrase_set_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].phrase_set == resource.PhraseSet(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1567,13 +1529,11 @@ def test_delete_phrase_set(transport: str = 'grpc', request_type=cloud_speech_ad
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.DeletePhraseSetRequest()
 
     # Establish that the response is the type that we expect.
@@ -1599,8 +1559,8 @@ def test_delete_phrase_set_empty_call():
         client.delete_phrase_set()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.DeletePhraseSetRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.DeletePhraseSetRequest):
@@ -1619,13 +1579,11 @@ async def test_delete_phrase_set_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.DeletePhraseSetRequest()
 
     # Establish that the response is the type that we expect.
@@ -1645,6 +1603,7 @@ def test_delete_phrase_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.DeletePhraseSetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1652,7 +1611,6 @@ def test_delete_phrase_set_field_headers():
             type(client.transport.delete_phrase_set),
             '__call__') as call:
         call.return_value = None
-
         client.delete_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1677,6 +1635,7 @@ async def test_delete_phrase_set_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.DeletePhraseSetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1684,7 +1643,6 @@ async def test_delete_phrase_set_field_headers_async():
             type(client.transport.delete_phrase_set),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_phrase_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1711,7 +1669,6 @@ def test_delete_phrase_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_phrase_set(
@@ -1722,7 +1679,6 @@ def test_delete_phrase_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1764,7 +1720,6 @@ async def test_delete_phrase_set_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1800,25 +1755,18 @@ def test_create_custom_class(transport: str = 'grpc', request_type=cloud_speech_
         # Designate an appropriate return value for the call.
         call.return_value = resource.CustomClass(
             name='name_value',
-
             custom_class_id='custom_class_id_value',
-
         )
-
         response = client.create_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.CreateCustomClassRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resource.CustomClass)
-
     assert response.name == 'name_value'
-
     assert response.custom_class_id == 'custom_class_id_value'
 
 
@@ -1841,8 +1789,8 @@ def test_create_custom_class_empty_call():
         client.create_custom_class()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.CreateCustomClassRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.CreateCustomClassRequest):
@@ -1860,24 +1808,20 @@ async def test_create_custom_class_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_custom_class),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass(
             name='name_value',
             custom_class_id='custom_class_id_value',
         ))
-
         response = await client.create_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.CreateCustomClassRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource.CustomClass)
-
     assert response.name == 'name_value'
-
     assert response.custom_class_id == 'custom_class_id_value'
 
 
@@ -1894,6 +1838,7 @@ def test_create_custom_class_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.CreateCustomClassRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1901,7 +1846,6 @@ def test_create_custom_class_field_headers():
             type(client.transport.create_custom_class),
             '__call__') as call:
         call.return_value = resource.CustomClass()
-
         client.create_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1926,6 +1870,7 @@ async def test_create_custom_class_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.CreateCustomClassRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1933,7 +1878,6 @@ async def test_create_custom_class_field_headers_async():
             type(client.transport.create_custom_class),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass())
-
         await client.create_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1960,7 +1904,6 @@ def test_create_custom_class_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource.CustomClass()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_custom_class(
@@ -1973,11 +1916,8 @@ def test_create_custom_class_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].custom_class == resource.CustomClass(name='name_value')
-
         assert args[0].custom_class_id == 'custom_class_id_value'
 
 
@@ -2023,11 +1963,8 @@ async def test_create_custom_class_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].custom_class == resource.CustomClass(name='name_value')
-
         assert args[0].custom_class_id == 'custom_class_id_value'
 
 
@@ -2065,25 +2002,18 @@ def test_get_custom_class(transport: str = 'grpc', request_type=cloud_speech_ada
         # Designate an appropriate return value for the call.
         call.return_value = resource.CustomClass(
             name='name_value',
-
             custom_class_id='custom_class_id_value',
-
         )
-
         response = client.get_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.GetCustomClassRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resource.CustomClass)
-
     assert response.name == 'name_value'
-
     assert response.custom_class_id == 'custom_class_id_value'
 
 
@@ -2106,8 +2036,8 @@ def test_get_custom_class_empty_call():
         client.get_custom_class()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.GetCustomClassRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.GetCustomClassRequest):
@@ -2125,24 +2055,20 @@ async def test_get_custom_class_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_custom_class),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass(
             name='name_value',
             custom_class_id='custom_class_id_value',
         ))
-
         response = await client.get_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.GetCustomClassRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource.CustomClass)
-
     assert response.name == 'name_value'
-
     assert response.custom_class_id == 'custom_class_id_value'
 
 
@@ -2159,6 +2085,7 @@ def test_get_custom_class_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.GetCustomClassRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2166,7 +2093,6 @@ def test_get_custom_class_field_headers():
             type(client.transport.get_custom_class),
             '__call__') as call:
         call.return_value = resource.CustomClass()
-
         client.get_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2191,6 +2117,7 @@ async def test_get_custom_class_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.GetCustomClassRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2198,7 +2125,6 @@ async def test_get_custom_class_field_headers_async():
             type(client.transport.get_custom_class),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass())
-
         await client.get_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2225,7 +2151,6 @@ def test_get_custom_class_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource.CustomClass()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_custom_class(
@@ -2236,7 +2161,6 @@ def test_get_custom_class_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2278,7 +2202,6 @@ async def test_get_custom_class_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2314,21 +2237,16 @@ def test_list_custom_classes(transport: str = 'grpc', request_type=cloud_speech_
         # Designate an appropriate return value for the call.
         call.return_value = cloud_speech_adaptation.ListCustomClassesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_custom_classes(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.ListCustomClassesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListCustomClassesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2351,8 +2269,8 @@ def test_list_custom_classes_empty_call():
         client.list_custom_classes()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.ListCustomClassesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_custom_classes_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.ListCustomClassesRequest):
@@ -2370,21 +2288,18 @@ async def test_list_custom_classes_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.list_custom_classes),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_speech_adaptation.ListCustomClassesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_speech_adaptation.ListCustomClassesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_custom_classes(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.ListCustomClassesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCustomClassesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2401,6 +2316,7 @@ def test_list_custom_classes_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.ListCustomClassesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2408,7 +2324,6 @@ def test_list_custom_classes_field_headers():
             type(client.transport.list_custom_classes),
             '__call__') as call:
         call.return_value = cloud_speech_adaptation.ListCustomClassesResponse()
-
         client.list_custom_classes(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2433,6 +2348,7 @@ async def test_list_custom_classes_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.ListCustomClassesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2440,7 +2356,6 @@ async def test_list_custom_classes_field_headers_async():
             type(client.transport.list_custom_classes),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_speech_adaptation.ListCustomClassesResponse())
-
         await client.list_custom_classes(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2467,7 +2382,6 @@ def test_list_custom_classes_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_speech_adaptation.ListCustomClassesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_custom_classes(
@@ -2478,7 +2392,6 @@ def test_list_custom_classes_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2520,7 +2433,6 @@ async def test_list_custom_classes_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2725,7 +2637,6 @@ async def test_list_custom_classes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_custom_class(transport: str = 'grpc', request_type=cloud_speech_adaptation.UpdateCustomClassRequest):
     client = AdaptationClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2743,25 +2654,18 @@ def test_update_custom_class(transport: str = 'grpc', request_type=cloud_speech_
         # Designate an appropriate return value for the call.
         call.return_value = resource.CustomClass(
             name='name_value',
-
             custom_class_id='custom_class_id_value',
-
         )
-
         response = client.update_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.UpdateCustomClassRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resource.CustomClass)
-
     assert response.name == 'name_value'
-
     assert response.custom_class_id == 'custom_class_id_value'
 
 
@@ -2784,8 +2688,8 @@ def test_update_custom_class_empty_call():
         client.update_custom_class()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.UpdateCustomClassRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.UpdateCustomClassRequest):
@@ -2803,24 +2707,20 @@ async def test_update_custom_class_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.update_custom_class),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass(
             name='name_value',
             custom_class_id='custom_class_id_value',
         ))
-
         response = await client.update_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.UpdateCustomClassRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource.CustomClass)
-
     assert response.name == 'name_value'
-
     assert response.custom_class_id == 'custom_class_id_value'
 
 
@@ -2837,6 +2737,7 @@ def test_update_custom_class_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.UpdateCustomClassRequest()
+
     request.custom_class.name = 'custom_class.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2844,7 +2745,6 @@ def test_update_custom_class_field_headers():
             type(client.transport.update_custom_class),
             '__call__') as call:
         call.return_value = resource.CustomClass()
-
         client.update_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2869,6 +2769,7 @@ async def test_update_custom_class_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.UpdateCustomClassRequest()
+
     request.custom_class.name = 'custom_class.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2876,7 +2777,6 @@ async def test_update_custom_class_field_headers_async():
             type(client.transport.update_custom_class),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.CustomClass())
-
         await client.update_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2903,7 +2803,6 @@ def test_update_custom_class_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource.CustomClass()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_custom_class(
@@ -2915,9 +2814,7 @@ def test_update_custom_class_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].custom_class == resource.CustomClass(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2961,9 +2858,7 @@ async def test_update_custom_class_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].custom_class == resource.CustomClass(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2999,13 +2894,11 @@ def test_delete_custom_class(transport: str = 'grpc', request_type=cloud_speech_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.DeleteCustomClassRequest()
 
     # Establish that the response is the type that we expect.
@@ -3031,8 +2924,8 @@ def test_delete_custom_class_empty_call():
         client.delete_custom_class()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.DeleteCustomClassRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.DeleteCustomClassRequest):
@@ -3051,13 +2944,11 @@ async def test_delete_custom_class_async(transport: str = 'grpc_asyncio', reques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_speech_adaptation.DeleteCustomClassRequest()
 
     # Establish that the response is the type that we expect.
@@ -3077,6 +2968,7 @@ def test_delete_custom_class_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.DeleteCustomClassRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3084,7 +2976,6 @@ def test_delete_custom_class_field_headers():
             type(client.transport.delete_custom_class),
             '__call__') as call:
         call.return_value = None
-
         client.delete_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3109,6 +3000,7 @@ async def test_delete_custom_class_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_speech_adaptation.DeleteCustomClassRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3116,7 +3008,6 @@ async def test_delete_custom_class_field_headers_async():
             type(client.transport.delete_custom_class),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_custom_class(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3143,7 +3034,6 @@ def test_delete_custom_class_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_custom_class(
@@ -3154,7 +3044,6 @@ def test_delete_custom_class_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3196,7 +3085,6 @@ async def test_delete_custom_class_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3255,7 +3143,6 @@ def test_transport_instance():
     client = AdaptationClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AdaptationGrpcTransport(
@@ -3270,7 +3157,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.AdaptationGrpcTransport,
     transports.AdaptationGrpcAsyncIOTransport,
@@ -3282,7 +3168,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AdaptationClient(
@@ -3292,7 +3177,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.AdaptationGrpcTransport,
     )
-
 
 def test_adaptation_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3324,15 +3208,33 @@ def test_adaptation_base_transport():
         'list_custom_classes',
         'update_custom_class',
         'delete_custom_class',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_adaptation_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.speech_v1p1beta1.services.adaptation.transports.AdaptationTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.speech_v1p1beta1.services.adaptation.transports.AdaptationTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.AdaptationTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_adaptation_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.speech_v1p1beta1.services.adaptation.transports.AdaptationTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AdaptationTransport(
@@ -3348,33 +3250,182 @@ def test_adaptation_base_transport_with_credentials_file():
 
 def test_adaptation_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.speech_v1p1beta1.services.adaptation.transports.AdaptationTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.speech_v1p1beta1.services.adaptation.transports.AdaptationTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AdaptationTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_adaptation_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         AdaptationClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_adaptation_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_adaptation_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        AdaptationClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.AdaptationGrpcTransport,
+        transports.AdaptationGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_adaptation_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.AdaptationGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.AdaptationGrpcTransport,
+        transports.AdaptationGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_adaptation_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AdaptationGrpcTransport, grpc_helpers),
+        (transports.AdaptationGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_adaptation_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "speech.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="speech.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AdaptationGrpcTransport, grpc_helpers),
+        (transports.AdaptationGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_adaptation_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "speech.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AdaptationGrpcTransport, grpc_helpers),
+        (transports.AdaptationGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_adaptation_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "speech.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -3436,7 +3487,6 @@ def test_adaptation_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='speech.googleapis.com:8000'),
     )
     assert client.transport._host == 'speech.googleapis.com:8000'
-
 
 def test_adaptation_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3556,7 +3606,6 @@ def test_custom_class_path():
     project = "squid"
     location = "clam"
     custom_class = "whelk"
-
     expected = "projects/{project}/locations/{location}/customClasses/{custom_class}".format(project=project, location=location, custom_class=custom_class, )
     actual = AdaptationClient.custom_class_path(project, location, custom_class)
     assert expected == actual
@@ -3564,10 +3613,9 @@ def test_custom_class_path():
 
 def test_parse_custom_class_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "custom_class": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "custom_class": "nudibranch",
     }
     path = AdaptationClient.custom_class_path(**expected)
 
@@ -3579,7 +3627,6 @@ def test_phrase_set_path():
     project = "cuttlefish"
     location = "mussel"
     phrase_set = "winkle"
-
     expected = "projects/{project}/locations/{location}/phraseSets/{phrase_set}".format(project=project, location=location, phrase_set=phrase_set, )
     actual = AdaptationClient.phrase_set_path(project, location, phrase_set)
     assert expected == actual
@@ -3587,10 +3634,9 @@ def test_phrase_set_path():
 
 def test_parse_phrase_set_path():
     expected = {
-    "project": "nautilus",
-    "location": "scallop",
-    "phrase_set": "abalone",
-
+        "project": "nautilus",
+        "location": "scallop",
+        "phrase_set": "abalone",
     }
     path = AdaptationClient.phrase_set_path(**expected)
 
@@ -3600,7 +3646,6 @@ def test_parse_phrase_set_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdaptationClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3608,8 +3653,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = AdaptationClient.common_billing_account_path(**expected)
 
@@ -3619,7 +3663,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdaptationClient.common_folder_path(folder)
     assert expected == actual
@@ -3627,8 +3670,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = AdaptationClient.common_folder_path(**expected)
 
@@ -3638,7 +3680,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdaptationClient.common_organization_path(organization)
     assert expected == actual
@@ -3646,8 +3687,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = AdaptationClient.common_organization_path(**expected)
 
@@ -3657,7 +3697,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = AdaptationClient.common_project_path(project)
     assert expected == actual
@@ -3665,8 +3704,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = AdaptationClient.common_project_path(**expected)
 
@@ -3677,7 +3715,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdaptationClient.common_location_path(project, location)
     assert expected == actual
@@ -3685,9 +3722,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = AdaptationClient.common_location_path(**expected)
 

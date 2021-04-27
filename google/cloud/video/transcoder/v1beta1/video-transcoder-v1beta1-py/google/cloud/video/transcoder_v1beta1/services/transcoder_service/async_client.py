@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -32,7 +30,6 @@ from google.cloud.video.transcoder_v1beta1.services.transcoder_service import pa
 from google.cloud.video.transcoder_v1beta1.types import resources
 from google.cloud.video.transcoder_v1beta1.types import services
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import TranscoderServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TranscoderServiceGrpcAsyncIOTransport
 from .client import TranscoderServiceClient
@@ -57,19 +54,14 @@ class TranscoderServiceAsyncClient:
     parse_job_path = staticmethod(TranscoderServiceClient.parse_job_path)
     job_template_path = staticmethod(TranscoderServiceClient.job_template_path)
     parse_job_template_path = staticmethod(TranscoderServiceClient.parse_job_template_path)
-
     common_billing_account_path = staticmethod(TranscoderServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TranscoderServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(TranscoderServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(TranscoderServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(TranscoderServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(TranscoderServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(TranscoderServiceClient.common_project_path)
     parse_common_project_path = staticmethod(TranscoderServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(TranscoderServiceClient.common_location_path)
     parse_common_location_path = staticmethod(TranscoderServiceClient.parse_common_location_path)
 
@@ -154,7 +146,6 @@ class TranscoderServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = TranscoderServiceClient(
             credentials=credentials,
             transport=transport,
@@ -176,7 +167,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.CreateJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.CreateJob`.
             parent (:class:`str`):
                 Required. The parent location to create and process this
@@ -192,7 +184,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,7 +206,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if job is not None:
@@ -260,7 +250,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.ListJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.ListJobs`. The parent location from
                 which to retrieve the collection of jobs.
             parent (:class:`str`):
@@ -270,7 +261,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,7 +287,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -349,7 +338,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.GetJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.GetJob`.
             name (:class:`str`):
                 Required. The name of the job to retrieve. Format:
@@ -358,7 +348,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -381,7 +370,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -424,7 +412,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.DeleteJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.DeleteJob`.
             name (:class:`str`):
                 Required. The name of the job to delete. Format:
@@ -433,7 +422,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -452,7 +440,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -494,7 +481,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.CreateJobTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.CreateJobTemplate`.
             parent (:class:`str`):
                 Required. The parent location to create this job
@@ -523,7 +511,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``job_template_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -546,7 +533,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if job_template is not None:
@@ -593,7 +579,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.ListJobTemplatesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.ListJobTemplates`.
             parent (:class:`str`):
                 Required. The parent location from which to retrieve the
@@ -603,7 +590,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -630,7 +616,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -682,7 +667,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.GetJobTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.GetJobTemplate`.
             name (:class:`str`):
                 Required. The name of the job template to retrieve.
@@ -692,7 +678,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -715,7 +700,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -758,7 +742,8 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.DeleteJobTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TranscoderService.DeleteJobTemplate`.
             name (:class:`str`):
                 Required. The name of the job template to delete.
@@ -767,7 +752,6 @@ class TranscoderServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -786,7 +770,6 @@ class TranscoderServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -813,8 +796,6 @@ class TranscoderServiceAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-
-import importlib
+ import importlib
 import sys
 
 
@@ -1130,9 +1127,7 @@ _lazy_type_to_package_map = {
     'UrlSeed': 'google.ads.googleads.v5.services.types.keyword_plan_idea_service',
     'UserDataOperation': 'google.ads.googleads.v5.services.types.user_data_service',
     'UserListOperation': 'google.ads.googleads.v5.services.types.user_list_service',
-
     # Enum types
-
     # Client classes and transports
     'AccountBudgetProposalServiceClient': 'google.ads.googleads.v5.services.services.account_budget_proposal_service',
     'AccountBudgetProposalServiceTransport': 'google.ads.googleads.v5.services.services.account_budget_proposal_service.transports',
@@ -1484,7 +1479,6 @@ def __getattr__(name):  # Requires Python >= 3.7
     elif name in _lazy_type_to_package_map:
         module = importlib.import_module(f'{_lazy_type_to_package_map[name]}')
         klass = getattr(module, name)
-
         globals()[name] = klass
         return klass
     else:

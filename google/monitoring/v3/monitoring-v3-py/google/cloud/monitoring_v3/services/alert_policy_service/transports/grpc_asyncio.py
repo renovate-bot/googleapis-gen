@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.monitoring_v3.types import alert
 from google.cloud.monitoring_v3.types import alert_service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AlertPolicyServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import AlertPolicyServiceGrpcTransport
 
@@ -88,13 +86,15 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -114,7 +114,8 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -172,7 +173,6 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -235,7 +235,9 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
     def list_alert_policies(self) -> Callable[
             [alert_service.ListAlertPoliciesRequest],
             Awaitable[alert_service.ListAlertPoliciesResponse]]:
-        r"""Return a callable for the list alert policies method over gRPC.
+        r"""Return a callable for the
+        list alert policies
+          method over gRPC.
 
         Lists the existing alerting policies for the
         workspace.
@@ -262,7 +264,9 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
     def get_alert_policy(self) -> Callable[
             [alert_service.GetAlertPolicyRequest],
             Awaitable[alert.AlertPolicy]]:
-        r"""Return a callable for the get alert policy method over gRPC.
+        r"""Return a callable for the
+        get alert policy
+          method over gRPC.
 
         Gets a single alerting policy.
 
@@ -288,7 +292,9 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
     def create_alert_policy(self) -> Callable[
             [alert_service.CreateAlertPolicyRequest],
             Awaitable[alert.AlertPolicy]]:
-        r"""Return a callable for the create alert policy method over gRPC.
+        r"""Return a callable for the
+        create alert policy
+          method over gRPC.
 
         Creates a new alerting policy.
 
@@ -314,7 +320,9 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
     def delete_alert_policy(self) -> Callable[
             [alert_service.DeleteAlertPolicyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete alert policy method over gRPC.
+        r"""Return a callable for the
+        delete alert policy
+          method over gRPC.
 
         Deletes an alerting policy.
 
@@ -340,7 +348,9 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
     def update_alert_policy(self) -> Callable[
             [alert_service.UpdateAlertPolicyRequest],
             Awaitable[alert.AlertPolicy]]:
-        r"""Return a callable for the update alert policy method over gRPC.
+        r"""Return a callable for the
+        update alert policy
+          method over gRPC.
 
         Updates an alerting policy. You can either replace the entire
         policy with a new one or replace only certain fields in the

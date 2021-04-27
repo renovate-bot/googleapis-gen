@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-
-import importlib
+ import importlib
 import sys
 
 
@@ -1484,7 +1481,6 @@ def __getattr__(name):  # Requires Python >= 3.7
     elif name in _lazy_type_to_package_map:
         module = importlib.import_module(f'{_lazy_type_to_package_map[name]}')
         klass = getattr(module, name)
-
         globals()[name] = klass
         return klass
     else:

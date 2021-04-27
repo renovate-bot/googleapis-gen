@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -78,14 +75,18 @@ class TranslateTextGlossaryConfig(proto.Message):
             nsensitive. Default value is false if missing.
     """
 
-    glossary = proto.Field(proto.STRING, number=1)
-
-    ignore_case = proto.Field(proto.BOOL, number=2)
+    glossary = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ignore_case = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class TranslateTextRequest(proto.Message):
     r"""The request message for synchronous translation.
-
     Attributes:
         contents (Sequence[str]):
             Required. The content of the input in string
@@ -163,28 +164,44 @@ class TranslateTextRequest(proto.Message):
             for more information.
     """
 
-    contents = proto.RepeatedField(proto.STRING, number=1)
-
-    mime_type = proto.Field(proto.STRING, number=3)
-
-    source_language_code = proto.Field(proto.STRING, number=4)
-
-    target_language_code = proto.Field(proto.STRING, number=5)
-
-    parent = proto.Field(proto.STRING, number=8)
-
-    model = proto.Field(proto.STRING, number=6)
-
-    glossary_config = proto.Field(proto.MESSAGE, number=7,
+    contents = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    source_language_code = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    target_language_code = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    model = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    glossary_config = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='TranslateTextGlossaryConfig',
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=10)
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=10
+    )
 
 
 class TranslateTextResponse(proto.Message):
     r"""
-
     Attributes:
         translations (Sequence[google.cloud.translate_v3beta1.types.Translation]):
             Text translation responses with no glossary applied. This
@@ -198,18 +215,20 @@ class TranslateTextResponse(proto.Message):
             [``contents``][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
     """
 
-    translations = proto.RepeatedField(proto.MESSAGE, number=1,
+    translations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Translation',
     )
-
-    glossary_translations = proto.RepeatedField(proto.MESSAGE, number=3,
+    glossary_translations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='Translation',
     )
 
 
 class Translation(proto.Message):
     r"""A single translation response.
-
     Attributes:
         translated_text (str):
             Text translated into the target language.
@@ -233,20 +252,27 @@ class Translation(proto.Message):
             The ``glossary_config`` used for this translation.
     """
 
-    translated_text = proto.Field(proto.STRING, number=1)
-
-    model = proto.Field(proto.STRING, number=2)
-
-    detected_language_code = proto.Field(proto.STRING, number=4)
-
-    glossary_config = proto.Field(proto.MESSAGE, number=3,
+    translated_text = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    model = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    detected_language_code = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    glossary_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='TranslateTextGlossaryConfig',
     )
 
 
 class DetectLanguageRequest(proto.Message):
     r"""The request message for language detection.
-
     Attributes:
         parent (str):
             Required. Project or location to make a call. Must refer to
@@ -293,20 +319,32 @@ class DetectLanguageRequest(proto.Message):
             for more information.
     """
 
-    parent = proto.Field(proto.STRING, number=5)
-
-    model = proto.Field(proto.STRING, number=4)
-
-    content = proto.Field(proto.STRING, number=1, oneof='source')
-
-    mime_type = proto.Field(proto.STRING, number=3)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=6)
+    parent = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    model = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    content = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='source',
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6
+    )
 
 
 class DetectedLanguage(proto.Message):
     r"""The response message for language detection.
-
     Attributes:
         language_code (str):
             The BCP-47 language code of source content in
@@ -316,14 +354,18 @@ class DetectedLanguage(proto.Message):
             this language.
     """
 
-    language_code = proto.Field(proto.STRING, number=1)
-
-    confidence = proto.Field(proto.FLOAT, number=2)
+    language_code = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    confidence = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
 
 
 class DetectLanguageResponse(proto.Message):
     r"""The response message for language detection.
-
     Attributes:
         languages (Sequence[google.cloud.translate_v3beta1.types.DetectedLanguage]):
             A list of detected languages sorted by
@@ -331,14 +373,15 @@ class DetectLanguageResponse(proto.Message):
             most probable language first.
     """
 
-    languages = proto.RepeatedField(proto.MESSAGE, number=1,
+    languages = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='DetectedLanguage',
     )
 
 
 class GetSupportedLanguagesRequest(proto.Message):
     r"""The request message for discovering supported languages.
-
     Attributes:
         parent (str):
             Required. Project or location to make a call. Must refer to
@@ -378,16 +421,22 @@ class GetSupportedLanguagesRequest(proto.Message):
             (PBMT) model.
     """
 
-    parent = proto.Field(proto.STRING, number=3)
-
-    display_language_code = proto.Field(proto.STRING, number=1)
-
-    model = proto.Field(proto.STRING, number=2)
+    parent = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    display_language_code = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    model = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SupportedLanguages(proto.Message):
     r"""The response message for discovering supported languages.
-
     Attributes:
         languages (Sequence[google.cloud.translate_v3beta1.types.SupportedLanguage]):
             A list of supported language responses. This
@@ -395,7 +444,9 @@ class SupportedLanguages(proto.Message):
             Translation API supports.
     """
 
-    languages = proto.RepeatedField(proto.MESSAGE, number=1,
+    languages = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='SupportedLanguage',
     )
 
@@ -421,30 +472,40 @@ class SupportedLanguage(proto.Message):
             Can be used as target language.
     """
 
-    language_code = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    support_source = proto.Field(proto.BOOL, number=3)
-
-    support_target = proto.Field(proto.BOOL, number=4)
+    language_code = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    support_source = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    support_target = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class GcsSource(proto.Message):
     r"""The Google Cloud Storage location for the input content.
-
     Attributes:
         input_uri (str):
             Required. Source data URI. For example,
             ``gs://my_bucket/my_object``.
     """
 
-    input_uri = proto.Field(proto.STRING, number=1)
+    input_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class InputConfig(proto.Message):
     r"""Input configuration for BatchTranslateText request.
-
     Attributes:
         mime_type (str):
             Optional. Can be "text/plain" or "text/html". For ``.tsv``,
@@ -473,16 +534,20 @@ class InputConfig(proto.Message):
             ``.html``, which is treated as a single large chunk of text.
     """
 
-    mime_type = proto.Field(proto.STRING, number=1)
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    mime_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsSource',
     )
 
 
 class GcsDestination(proto.Message):
     r"""The Google Cloud Storage location for the output content.
-
     Attributes:
         output_uri_prefix (str):
             Required. There must be no files under 'output_uri_prefix'.
@@ -491,12 +556,14 @@ class GcsDestination(proto.Message):
             returned.
     """
 
-    output_uri_prefix = proto.Field(proto.STRING, number=1)
+    output_uri_prefix = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class OutputConfig(proto.Message):
     r"""Output configuration for BatchTranslateText request.
-
     Attributes:
         gcs_destination (google.cloud.translate_v3beta1.types.GcsDestination):
             Google Cloud Storage destination for output content. For
@@ -577,14 +644,16 @@ class OutputConfig(proto.Message):
             gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
 
 
 class DocumentInputConfig(proto.Message):
     r"""A document translation request input config.
-
     Attributes:
         content (bytes):
             Document's content represented as a stream of
@@ -606,18 +675,25 @@ class DocumentInputConfig(proto.Message):
             -  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
     """
 
-    content = proto.Field(proto.BYTES, number=1, oneof='source')
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    content = proto.Field(
+        proto.BYTES,
+        number=1,
+        oneof='source',
+    )
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsSource',
     )
-
-    mime_type = proto.Field(proto.STRING, number=4)
+    mime_type = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class DocumentOutputConfig(proto.Message):
     r"""A document translation request output config.
-
     Attributes:
         gcs_destination (google.cloud.translate_v3beta1.types.GcsDestination):
             Optional. Google Cloud Storage destination for the
@@ -681,16 +757,20 @@ class DocumentOutputConfig(proto.Message):
             -  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
-
-    mime_type = proto.Field(proto.STRING, number=3)
+    mime_type = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class TranslateDocumentRequest(proto.Message):
     r"""A document translation request.
-
     Attributes:
         parent (str):
             Required. Location to make a regional call.
@@ -765,32 +845,46 @@ class TranslateDocumentRequest(proto.Message):
             for more information.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    source_language_code = proto.Field(proto.STRING, number=2)
-
-    target_language_code = proto.Field(proto.STRING, number=3)
-
-    document_input_config = proto.Field(proto.MESSAGE, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    source_language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    target_language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    document_input_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='DocumentInputConfig',
     )
-
-    document_output_config = proto.Field(proto.MESSAGE, number=5,
+    document_output_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='DocumentOutputConfig',
     )
-
-    model = proto.Field(proto.STRING, number=6)
-
-    glossary_config = proto.Field(proto.MESSAGE, number=7,
+    model = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    glossary_config = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='TranslateTextGlossaryConfig',
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=8)
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=8
+    )
 
 
 class DocumentTranslation(proto.Message):
     r"""A translated document message.
-
     Attributes:
         byte_stream_outputs (Sequence[bytes]):
             The array of translated documents. It is
@@ -809,16 +903,22 @@ class DocumentTranslation(proto.Message):
             empty.
     """
 
-    byte_stream_outputs = proto.RepeatedField(proto.BYTES, number=1)
-
-    mime_type = proto.Field(proto.STRING, number=2)
-
-    detected_language_code = proto.Field(proto.STRING, number=3)
+    byte_stream_outputs = proto.RepeatedField(
+        proto.BYTES,
+        number=1,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    detected_language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class TranslateDocumentResponse(proto.Message):
     r"""A translated document response message.
-
     Attributes:
         document_translation (google.cloud.translate_v3beta1.types.DocumentTranslation):
             Translated document.
@@ -840,24 +940,29 @@ class TranslateDocumentResponse(proto.Message):
             The ``glossary_config`` used for this translation.
     """
 
-    document_translation = proto.Field(proto.MESSAGE, number=1,
+    document_translation = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='DocumentTranslation',
     )
-
-    glossary_document_translation = proto.Field(proto.MESSAGE, number=2,
+    glossary_document_translation = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='DocumentTranslation',
     )
-
-    model = proto.Field(proto.STRING, number=3)
-
-    glossary_config = proto.Field(proto.MESSAGE, number=4,
+    model = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    glossary_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='TranslateTextGlossaryConfig',
     )
 
 
 class BatchTranslateTextRequest(proto.Message):
     r"""The batch translation request.
-
     Attributes:
         parent (str):
             Required. Location to make a call. Must refer to a caller's
@@ -922,32 +1027,48 @@ class BatchTranslateTextRequest(proto.Message):
             for more information.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    source_language_code = proto.Field(proto.STRING, number=2)
-
-    target_language_codes = proto.RepeatedField(proto.STRING, number=3)
-
-    models = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    input_configs = proto.RepeatedField(proto.MESSAGE, number=5,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    source_language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    target_language_codes = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    models = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4
+    )
+    input_configs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message='InputConfig',
     )
-
-    output_config = proto.Field(proto.MESSAGE, number=6,
+    output_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='OutputConfig',
     )
-
-    glossaries = proto.MapField(proto.STRING, proto.MESSAGE, number=7,
+    glossaries = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=7
         message='TranslateTextGlossaryConfig',
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=9)
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=9
+    )
 
 
 class BatchTranslateMetadata(proto.Message):
     r"""State metadata for the batch translation operation.
-
     Attributes:
         state (google.cloud.translate_v3beta1.types.BatchTranslateMetadata.State):
             The state of the operation.
@@ -975,17 +1096,26 @@ class BatchTranslateMetadata(proto.Message):
         CANCELLING = 4
         CANCELLED = 5
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    translated_characters = proto.Field(proto.INT64, number=2)
-
-    failed_characters = proto.Field(proto.INT64, number=3)
-
-    total_characters = proto.Field(proto.INT64, number=4)
-
-    submit_time = proto.Field(proto.MESSAGE, number=5,
+    translated_characters = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    failed_characters = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    total_characters = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=timestamp.Timestamp,
     )
 
@@ -1014,24 +1144,32 @@ class BatchTranslateResponse(proto.Message):
             is set to true.
     """
 
-    total_characters = proto.Field(proto.INT64, number=1)
-
-    translated_characters = proto.Field(proto.INT64, number=2)
-
-    failed_characters = proto.Field(proto.INT64, number=3)
-
-    submit_time = proto.Field(proto.MESSAGE, number=4,
+    total_characters = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    translated_characters = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    failed_characters = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=5,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=timestamp.Timestamp,
     )
 
 
 class GlossaryInputConfig(proto.Message):
     r"""Input configuration for glossaries.
-
     Attributes:
         gcs_source (google.cloud.translate_v3beta1.types.GcsSource):
             Required. Google Cloud Storage location of glossary data.
@@ -1061,14 +1199,16 @@ class GlossaryInputConfig(proto.Message):
                glossary <https://support.google.com/translatortoolkit/answer/6306379?hl=en>`__.
     """
 
-    gcs_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='GcsSource',
     )
 
 
 class Glossary(proto.Message):
     r"""Represents a glossary built from user provided data.
-
     Attributes:
         name (str):
             Required. The resource name of the glossary. Glossary names
@@ -1091,9 +1231,9 @@ class Glossary(proto.Message):
             Output only. When the glossary creation was
             finished.
     """
+
     class LanguageCodePair(proto.Message):
         r"""Used with unidirectional glossaries.
-
         Attributes:
             source_language_code (str):
                 Required. The BCP-47 language code of the input text, for
@@ -1105,13 +1245,17 @@ class Glossary(proto.Message):
                 GlossaryTerm.language_code.
         """
 
-        source_language_code = proto.Field(proto.STRING, number=1)
-
-        target_language_code = proto.Field(proto.STRING, number=2)
+        source_language_code = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        target_language_code = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
     class LanguageCodesSet(proto.Message):
         r"""Used with equivalent term set glossaries.
-
         Attributes:
             language_codes (Sequence[str]):
                 The BCP-47 language code(s) for terms defined in the
@@ -1120,36 +1264,50 @@ class Glossary(proto.Message):
                 GlossaryTerm.language_code.
         """
 
-        language_codes = proto.RepeatedField(proto.STRING, number=1)
+        language_codes = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    language_pair = proto.Field(proto.MESSAGE, number=3, oneof='languages',
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_pair = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='languages',
         message=LanguageCodePair,
     )
-
-    language_codes_set = proto.Field(proto.MESSAGE, number=4, oneof='languages',
+    language_codes_set = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='languages',
         message=LanguageCodesSet,
     )
-
-    input_config = proto.Field(proto.MESSAGE, number=5,
+    input_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='GlossaryInputConfig',
     )
-
-    entry_count = proto.Field(proto.INT32, number=6)
-
-    submit_time = proto.Field(proto.MESSAGE, number=7,
+    entry_count = proto.Field(
+        proto.INT32,
+        number=6,
+    )
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=8,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=timestamp.Timestamp,
     )
 
 
 class CreateGlossaryRequest(proto.Message):
     r"""Request message for CreateGlossary.
-
     Attributes:
         parent (str):
             Required. The project name.
@@ -1157,39 +1315,46 @@ class CreateGlossaryRequest(proto.Message):
             Required. The glossary to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    glossary = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    glossary = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Glossary',
     )
 
 
 class GetGlossaryRequest(proto.Message):
     r"""Request message for GetGlossary.
-
     Attributes:
         name (str):
             Required. The name of the glossary to
             retrieve.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteGlossaryRequest(proto.Message):
     r"""Request message for DeleteGlossary.
-
     Attributes:
         name (str):
             Required. The name of the glossary to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListGlossariesRequest(proto.Message):
     r"""Request message for ListGlossaries.
-
     Attributes:
         parent (str):
             Required. The name of the project from which
@@ -1232,18 +1397,26 @@ class ListGlossariesRequest(proto.Message):
             performed.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListGlossariesResponse(proto.Message):
     r"""Response message for ListGlossaries.
-
     Attributes:
         glossaries (Sequence[google.cloud.translate_v3beta1.types.Glossary]):
             The list of glossaries for a project.
@@ -1258,11 +1431,15 @@ class ListGlossariesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    glossaries = proto.RepeatedField(proto.MESSAGE, number=1,
+    glossaries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Glossary',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateGlossaryMetadata(proto.Message):
@@ -1292,13 +1469,18 @@ class CreateGlossaryMetadata(proto.Message):
         CANCELLING = 4
         CANCELLED = 5
 
-    name = proto.Field(proto.STRING, number=1)
-
-    state = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=State,
     )
-
-    submit_time = proto.Field(proto.MESSAGE, number=3,
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
 
@@ -1330,13 +1512,18 @@ class DeleteGlossaryMetadata(proto.Message):
         CANCELLING = 4
         CANCELLED = 5
 
-    name = proto.Field(proto.STRING, number=1)
-
-    state = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=State,
     )
-
-    submit_time = proto.Field(proto.MESSAGE, number=3,
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
 
@@ -1358,20 +1545,24 @@ class DeleteGlossaryResponse(proto.Message):
             is set to true.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    submit_time = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=3,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=timestamp.Timestamp,
     )
 
 
 class BatchTranslateDocumentRequest(proto.Message):
     r"""The BatchTranslateDocument request.
-
     Attributes:
         parent (str):
             Required. Location to make a regional call.
@@ -1428,30 +1619,43 @@ class BatchTranslateDocumentRequest(proto.Message):
             keyed by target language code.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    source_language_code = proto.Field(proto.STRING, number=2)
-
-    target_language_codes = proto.RepeatedField(proto.STRING, number=3)
-
-    input_configs = proto.RepeatedField(proto.MESSAGE, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    source_language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    target_language_codes = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    input_configs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='BatchDocumentInputConfig',
     )
-
-    output_config = proto.Field(proto.MESSAGE, number=5,
+    output_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='BatchDocumentOutputConfig',
     )
-
-    models = proto.MapField(proto.STRING, proto.STRING, number=6)
-
-    glossaries = proto.MapField(proto.STRING, proto.MESSAGE, number=7,
+    models = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6
+    )
+    glossaries = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=7
         message='TranslateTextGlossaryConfig',
     )
 
 
 class BatchDocumentInputConfig(proto.Message):
     r"""Input configuration for BatchTranslateDocument request.
-
     Attributes:
         gcs_source (google.cloud.translate_v3beta1.types.GcsSource):
             Google Cloud Storage location for the source input. This can
@@ -1476,14 +1680,16 @@ class BatchDocumentInputConfig(proto.Message):
             size supported for all input documents is 1GB.
     """
 
-    gcs_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='GcsSource',
     )
 
 
 class BatchDocumentOutputConfig(proto.Message):
     r"""Output configuration for BatchTranslateDocument request.
-
     Attributes:
         gcs_destination (google.cloud.translate_v3beta1.types.GcsDestination):
             Google Cloud Storage destination for output content. For
@@ -1540,7 +1746,10 @@ class BatchDocumentOutputConfig(proto.Message):
             The error output is a txt file containing error details.
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
 
@@ -1588,34 +1797,52 @@ class BatchTranslateDocumentResponse(proto.Message):
             is set to true.
     """
 
-    total_pages = proto.Field(proto.INT64, number=1)
-
-    translated_pages = proto.Field(proto.INT64, number=2)
-
-    failed_pages = proto.Field(proto.INT64, number=3)
-
-    total_billable_pages = proto.Field(proto.INT64, number=4)
-
-    total_characters = proto.Field(proto.INT64, number=5)
-
-    translated_characters = proto.Field(proto.INT64, number=6)
-
-    failed_characters = proto.Field(proto.INT64, number=7)
-
-    total_billable_characters = proto.Field(proto.INT64, number=8)
-
-    submit_time = proto.Field(proto.MESSAGE, number=9,
+    total_pages = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    translated_pages = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    failed_pages = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    total_billable_pages = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    total_characters = proto.Field(
+        proto.INT64,
+        number=5,
+    )
+    translated_characters = proto.Field(
+        proto.INT64,
+        number=6,
+    )
+    failed_characters = proto.Field(
+        proto.INT64,
+        number=7,
+    )
+    total_billable_characters = proto.Field(
+        proto.INT64,
+        number=8,
+    )
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=10,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=timestamp.Timestamp,
     )
 
 
 class BatchTranslateDocumentMetadata(proto.Message):
     r"""State metadata for the batch translation operation.
-
     Attributes:
         state (google.cloud.translate_v3beta1.types.BatchTranslateDocumentMetadata.State):
             The state of the operation.
@@ -1661,27 +1888,46 @@ class BatchTranslateDocumentMetadata(proto.Message):
         CANCELLING = 4
         CANCELLED = 5
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    total_pages = proto.Field(proto.INT64, number=2)
-
-    translated_pages = proto.Field(proto.INT64, number=3)
-
-    failed_pages = proto.Field(proto.INT64, number=4)
-
-    total_billable_pages = proto.Field(proto.INT64, number=5)
-
-    total_characters = proto.Field(proto.INT64, number=6)
-
-    translated_characters = proto.Field(proto.INT64, number=7)
-
-    failed_characters = proto.Field(proto.INT64, number=8)
-
-    total_billable_characters = proto.Field(proto.INT64, number=9)
-
-    submit_time = proto.Field(proto.MESSAGE, number=10,
+    total_pages = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    translated_pages = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    failed_pages = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    total_billable_pages = proto.Field(
+        proto.INT64,
+        number=5,
+    )
+    total_characters = proto.Field(
+        proto.INT64,
+        number=6,
+    )
+    translated_characters = proto.Field(
+        proto.INT64,
+        number=7,
+    )
+    failed_characters = proto.Field(
+        proto.INT64,
+        number=8,
+    )
+    total_billable_characters = proto.Field(
+        proto.INT64,
+        number=9,
+    )
+    submit_time = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=timestamp.Timestamp,
     )
 

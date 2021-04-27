@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import DataTransferServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DataTransferServiceGrpcAsyncIOTransport
 from .client import DataTransferServiceClient
@@ -60,19 +57,14 @@ class DataTransferServiceAsyncClient:
     parse_run_path = staticmethod(DataTransferServiceClient.parse_run_path)
     transfer_config_path = staticmethod(DataTransferServiceClient.transfer_config_path)
     parse_transfer_config_path = staticmethod(DataTransferServiceClient.parse_transfer_config_path)
-
     common_billing_account_path = staticmethod(DataTransferServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DataTransferServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(DataTransferServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DataTransferServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(DataTransferServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DataTransferServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(DataTransferServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DataTransferServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(DataTransferServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DataTransferServiceClient.parse_common_location_path)
 
@@ -157,7 +149,6 @@ class DataTransferServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = DataTransferServiceClient(
             credentials=credentials,
             transport=transport,
@@ -179,7 +170,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.GetDataSourceRequest`):
-                The request object. A request to get data source info.
+                The request object.
+                A request to get data source info.
             name (:class:`str`):
                 Required. The field will contain name of the resource
                 requested, for example:
@@ -190,7 +182,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -216,7 +207,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -225,10 +215,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_data_source,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -270,7 +257,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListDataSourcesRequest`):
-                The request object. Request to list supported data
+                The request object.
+                Request to list supported data
                 sources and their data transfer settings.
             parent (:class:`str`):
                 Required. The BigQuery project id for which data sources
@@ -281,7 +269,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -309,7 +296,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -318,10 +304,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_data_sources,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -372,7 +355,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.CreateTransferConfigRequest`):
-                The request object. A request to create a data transfer
+                The request object.
+                A request to create a data transfer
                 configuration. If new credentials are needed for this
                 transfer configuration, an authorization code must be
                 provided. If an authorization code is provided, the
@@ -398,7 +382,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``transfer_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -429,7 +412,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if transfer_config is not None:
@@ -476,7 +458,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.UpdateTransferConfigRequest`):
-                The request object. A request to update a transfer
+                The request object.
+                A request to update a transfer
                 configuration. To update the user id of the transfer
                 configuration, an authorization code needs to be
                 provided.
@@ -494,7 +477,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -525,7 +507,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if transfer_config is not None:
             request.transfer_config = transfer_config
         if update_mask is not None:
@@ -571,7 +552,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.DeleteTransferConfigRequest`):
-                The request object. A request to delete data transfer
+                The request object.
+                A request to delete data transfer
                 information. All associated transfer runs and log
                 messages will be deleted as well.
             name (:class:`str`):
@@ -583,7 +565,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -602,7 +583,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -611,10 +591,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_transfer_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -652,7 +629,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.GetTransferConfigRequest`):
-                The request object. A request to get data transfer
+                The request object.
+                A request to get data transfer
                 information.
             name (:class:`str`):
                 Required. The field will contain name of the resource
@@ -663,7 +641,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -694,7 +671,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -703,10 +679,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_transfer_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -748,7 +721,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListTransferConfigsRequest`):
-                The request object. A request to list data transfers
+                The request object.
+                A request to list data transfers
                 configured for a BigQuery project.
             parent (:class:`str`):
                 Required. The BigQuery project id for which data sources
@@ -758,7 +732,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -786,7 +759,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -795,10 +767,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_transfer_configs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -854,7 +823,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ScheduleTransferRunsRequest`):
-                The request object. A request to schedule transfer runs
+                The request object.
+                A request to schedule transfer runs
                 for a time range.
             parent (:class:`str`):
                 Required. Transfer configuration name in the form:
@@ -878,7 +848,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``end_time`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -903,7 +872,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if start_time is not None:
@@ -952,9 +920,9 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.StartManualTransferRunsRequest`):
-                The request object. A request to start manual transfer
+                The request object.
+                A request to start manual transfer
                 runs.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -968,7 +936,6 @@ class DataTransferServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = datatransfer.StartManualTransferRunsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1011,7 +978,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.GetTransferRunRequest`):
-                The request object. A request to get data transfer run
+                The request object.
+                A request to get data transfer run
                 information.
             name (:class:`str`):
                 Required. The field will contain name of the resource
@@ -1023,7 +991,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1046,7 +1013,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1055,10 +1021,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_transfer_run,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1099,7 +1062,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.DeleteTransferRunRequest`):
-                The request object. A request to delete data transfer
+                The request object.
+                A request to delete data transfer
                 run information.
             name (:class:`str`):
                 Required. The field will contain name of the resource
@@ -1111,7 +1075,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1130,7 +1093,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1139,10 +1101,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_transfer_run,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1180,7 +1139,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListTransferRunsRequest`):
-                The request object. A request to list data transfer
+                The request object.
+                A request to list data transfer
                 runs. UI can use this method to show/filter specific
                 data transfer runs. The data source can use this method
                 to request all scheduled transfer runs.
@@ -1194,7 +1154,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1222,7 +1181,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1231,10 +1189,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_transfer_runs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1285,7 +1240,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListTransferLogsRequest`):
-                The request object. A request to get user facing log
+                The request object.
+                A request to get user facing log
                 messages associated with data transfer run.
             parent (:class:`str`):
                 Required. Transfer run name in the form:
@@ -1296,7 +1252,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1324,7 +1279,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1333,10 +1287,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_transfer_logs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1392,7 +1343,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.CheckValidCredsRequest`):
-                The request object. A request to determine whether the
+                The request object.
+                A request to determine whether the
                 user has valid credentials. This method is used to limit
                 the number of OAuth popups in the user interface. The
                 user id is inferred from the API call context.
@@ -1409,7 +1361,6 @@ class DataTransferServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1434,7 +1385,6 @@ class DataTransferServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1443,10 +1393,7 @@ class DataTransferServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.check_valid_creds,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1474,8 +1421,6 @@ class DataTransferServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

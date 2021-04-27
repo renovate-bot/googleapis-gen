@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,8 +48,7 @@ from google.cloud.servicemanagement_v1.types.servicemanager import SubmitConfigS
 from google.cloud.servicemanagement_v1.types.servicemanager import UndeleteServiceRequest
 from google.cloud.servicemanagement_v1.types.servicemanager import UndeleteServiceResponse
 
-__all__ = (
-    'ChangeReport',
+__all__ = ('ChangeReport',
     'ConfigFile',
     'ConfigRef',
     'ConfigSource',

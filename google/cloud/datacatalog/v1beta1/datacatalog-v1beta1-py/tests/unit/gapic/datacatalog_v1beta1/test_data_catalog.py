@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,6 +36,8 @@ from google.cloud.datacatalog_v1beta1.services.data_catalog import DataCatalogAs
 from google.cloud.datacatalog_v1beta1.services.data_catalog import DataCatalogClient
 from google.cloud.datacatalog_v1beta1.services.data_catalog import pagers
 from google.cloud.datacatalog_v1beta1.services.data_catalog import transports
+from google.cloud.datacatalog_v1beta1.services.data_catalog.transports.base import _API_CORE_VERSION
+from google.cloud.datacatalog_v1beta1.services.data_catalog.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.datacatalog_v1beta1.types import common
 from google.cloud.datacatalog_v1beta1.types import datacatalog
 from google.cloud.datacatalog_v1beta1.types import gcs_fileset_spec
@@ -52,6 +54,28 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.type import expr_pb2 as expr  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -219,12 +243,10 @@ def test_data_catalog_client_client_options(client_class, transport_class, trans
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (DataCatalogClient, transports.DataCatalogGrpcTransport, "grpc", "true"),
     (DataCatalogAsyncClient, transports.DataCatalogGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (DataCatalogClient, transports.DataCatalogGrpcTransport, "grpc", "false"),
     (DataCatalogAsyncClient, transports.DataCatalogGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(DataCatalogClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DataCatalogClient))
 @mock.patch.object(DataCatalogAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DataCatalogAsyncClient))
@@ -379,21 +401,16 @@ def test_search_catalog(transport: str = 'grpc', request_type=datacatalog.Search
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.SearchCatalogResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.search_catalog(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.SearchCatalogRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.SearchCatalogPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -416,8 +433,8 @@ def test_search_catalog_empty_call():
         client.search_catalog()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.SearchCatalogRequest()
+
 
 @pytest.mark.asyncio
 async def test_search_catalog_async(transport: str = 'grpc_asyncio', request_type=datacatalog.SearchCatalogRequest):
@@ -435,21 +452,18 @@ async def test_search_catalog_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.search_catalog),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.SearchCatalogResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.SearchCatalogResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.search_catalog(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.SearchCatalogRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchCatalogAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -469,7 +483,6 @@ def test_search_catalog_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.SearchCatalogResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.search_catalog(
@@ -481,9 +494,7 @@ def test_search_catalog_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].scope == datacatalog.SearchCatalogRequest.Scope(include_org_ids=['include_org_ids_value'])
-
         assert args[0].query == 'query_value'
 
 
@@ -527,9 +538,7 @@ async def test_search_catalog_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].scope == datacatalog.SearchCatalogRequest.Scope(include_org_ids=['include_org_ids_value'])
-
         assert args[0].query == 'query_value'
 
 
@@ -730,7 +739,6 @@ async def test_search_catalog_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_entry_group(transport: str = 'grpc', request_type=datacatalog.CreateEntryGroupRequest):
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -748,29 +756,20 @@ def test_create_entry_group(transport: str = 'grpc', request_type=datacatalog.Cr
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.EntryGroup(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
         )
-
         response = client.create_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.EntryGroup)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -793,8 +792,8 @@ def test_create_entry_group_empty_call():
         client.create_entry_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateEntryGroupRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_entry_group_async(transport: str = 'grpc_asyncio', request_type=datacatalog.CreateEntryGroupRequest):
@@ -812,27 +811,22 @@ async def test_create_entry_group_async(transport: str = 'grpc_asyncio', request
             type(client.transport.create_entry_group),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.create_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.EntryGroup)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -849,6 +843,7 @@ def test_create_entry_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateEntryGroupRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -856,7 +851,6 @@ def test_create_entry_group_field_headers():
             type(client.transport.create_entry_group),
             '__call__') as call:
         call.return_value = datacatalog.EntryGroup()
-
         client.create_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -881,6 +875,7 @@ async def test_create_entry_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateEntryGroupRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -888,7 +883,6 @@ async def test_create_entry_group_field_headers_async():
             type(client.transport.create_entry_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup())
-
         await client.create_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -915,7 +909,6 @@ def test_create_entry_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.EntryGroup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_entry_group(
@@ -928,11 +921,8 @@ def test_create_entry_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].entry_group_id == 'entry_group_id_value'
-
         assert args[0].entry_group == datacatalog.EntryGroup(name='name_value')
 
 
@@ -978,11 +968,8 @@ async def test_create_entry_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].entry_group_id == 'entry_group_id_value'
-
         assert args[0].entry_group == datacatalog.EntryGroup(name='name_value')
 
 
@@ -1020,29 +1007,20 @@ def test_update_entry_group(transport: str = 'grpc', request_type=datacatalog.Up
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.EntryGroup(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
         )
-
         response = client.update_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.EntryGroup)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1065,8 +1043,8 @@ def test_update_entry_group_empty_call():
         client.update_entry_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateEntryGroupRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_entry_group_async(transport: str = 'grpc_asyncio', request_type=datacatalog.UpdateEntryGroupRequest):
@@ -1084,27 +1062,22 @@ async def test_update_entry_group_async(transport: str = 'grpc_asyncio', request
             type(client.transport.update_entry_group),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.update_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.EntryGroup)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1121,6 +1094,7 @@ def test_update_entry_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateEntryGroupRequest()
+
     request.entry_group.name = 'entry_group.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1128,7 +1102,6 @@ def test_update_entry_group_field_headers():
             type(client.transport.update_entry_group),
             '__call__') as call:
         call.return_value = datacatalog.EntryGroup()
-
         client.update_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1153,6 +1126,7 @@ async def test_update_entry_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateEntryGroupRequest()
+
     request.entry_group.name = 'entry_group.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1160,7 +1134,6 @@ async def test_update_entry_group_field_headers_async():
             type(client.transport.update_entry_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup())
-
         await client.update_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1187,7 +1160,6 @@ def test_update_entry_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.EntryGroup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_entry_group(
@@ -1199,9 +1171,7 @@ def test_update_entry_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entry_group == datacatalog.EntryGroup(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1245,9 +1215,7 @@ async def test_update_entry_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entry_group == datacatalog.EntryGroup(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1284,29 +1252,20 @@ def test_get_entry_group(transport: str = 'grpc', request_type=datacatalog.GetEn
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.EntryGroup(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
         )
-
         response = client.get_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.EntryGroup)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1329,8 +1288,8 @@ def test_get_entry_group_empty_call():
         client.get_entry_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetEntryGroupRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_entry_group_async(transport: str = 'grpc_asyncio', request_type=datacatalog.GetEntryGroupRequest):
@@ -1348,27 +1307,22 @@ async def test_get_entry_group_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_entry_group),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.get_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.EntryGroup)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1385,6 +1339,7 @@ def test_get_entry_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.GetEntryGroupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1392,7 +1347,6 @@ def test_get_entry_group_field_headers():
             type(client.transport.get_entry_group),
             '__call__') as call:
         call.return_value = datacatalog.EntryGroup()
-
         client.get_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1417,6 +1371,7 @@ async def test_get_entry_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.GetEntryGroupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1424,7 +1379,6 @@ async def test_get_entry_group_field_headers_async():
             type(client.transport.get_entry_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.EntryGroup())
-
         await client.get_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1451,7 +1405,6 @@ def test_get_entry_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.EntryGroup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_entry_group(
@@ -1463,9 +1416,7 @@ def test_get_entry_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].read_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1509,9 +1460,7 @@ async def test_get_entry_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].read_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1547,13 +1496,11 @@ def test_delete_entry_group(transport: str = 'grpc', request_type=datacatalog.De
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
@@ -1579,8 +1526,8 @@ def test_delete_entry_group_empty_call():
         client.delete_entry_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteEntryGroupRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_entry_group_async(transport: str = 'grpc_asyncio', request_type=datacatalog.DeleteEntryGroupRequest):
@@ -1599,13 +1546,11 @@ async def test_delete_entry_group_async(transport: str = 'grpc_asyncio', request
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteEntryGroupRequest()
 
     # Establish that the response is the type that we expect.
@@ -1625,6 +1570,7 @@ def test_delete_entry_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteEntryGroupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1632,7 +1578,6 @@ def test_delete_entry_group_field_headers():
             type(client.transport.delete_entry_group),
             '__call__') as call:
         call.return_value = None
-
         client.delete_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1657,6 +1602,7 @@ async def test_delete_entry_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteEntryGroupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1664,7 +1610,6 @@ async def test_delete_entry_group_field_headers_async():
             type(client.transport.delete_entry_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_entry_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1691,7 +1636,6 @@ def test_delete_entry_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_entry_group(
@@ -1702,7 +1646,6 @@ def test_delete_entry_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1744,7 +1687,6 @@ async def test_delete_entry_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1780,21 +1722,16 @@ def test_list_entry_groups(transport: str = 'grpc', request_type=datacatalog.Lis
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.ListEntryGroupsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_entry_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListEntryGroupsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListEntryGroupsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1817,8 +1754,8 @@ def test_list_entry_groups_empty_call():
         client.list_entry_groups()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListEntryGroupsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_entry_groups_async(transport: str = 'grpc_asyncio', request_type=datacatalog.ListEntryGroupsRequest):
@@ -1836,21 +1773,18 @@ async def test_list_entry_groups_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_entry_groups),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListEntryGroupsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListEntryGroupsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_entry_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListEntryGroupsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEntryGroupsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1867,6 +1801,7 @@ def test_list_entry_groups_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.ListEntryGroupsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1874,7 +1809,6 @@ def test_list_entry_groups_field_headers():
             type(client.transport.list_entry_groups),
             '__call__') as call:
         call.return_value = datacatalog.ListEntryGroupsResponse()
-
         client.list_entry_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1899,6 +1833,7 @@ async def test_list_entry_groups_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.ListEntryGroupsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1906,7 +1841,6 @@ async def test_list_entry_groups_field_headers_async():
             type(client.transport.list_entry_groups),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListEntryGroupsResponse())
-
         await client.list_entry_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1933,7 +1867,6 @@ def test_list_entry_groups_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.ListEntryGroupsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_entry_groups(
@@ -1944,7 +1877,6 @@ def test_list_entry_groups_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1986,7 +1918,6 @@ async def test_list_entry_groups_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2191,7 +2122,6 @@ async def test_list_entry_groups_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_entry(transport: str = 'grpc', request_type=datacatalog.CreateEntryRequest):
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2209,38 +2139,25 @@ def test_create_entry(transport: str = 'grpc', request_type=datacatalog.CreateEn
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry(
             name='name_value',
-
             linked_resource='linked_resource_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             type_=datacatalog.EntryType.TABLE,
-
             integrated_system=common.IntegratedSystem.BIGQUERY,
-
             gcs_fileset_spec=gcs_fileset_spec.GcsFilesetSpec(file_patterns=['file_patterns_value']),
         )
-
         response = client.create_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateEntryRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -2263,8 +2180,8 @@ def test_create_entry_empty_call():
         client.create_entry()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateEntryRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_entry_async(transport: str = 'grpc_asyncio', request_type=datacatalog.CreateEntryRequest):
@@ -2282,30 +2199,24 @@ async def test_create_entry_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.create_entry),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
             name='name_value',
             linked_resource='linked_resource_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.create_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateEntryRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -2322,6 +2233,7 @@ def test_create_entry_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateEntryRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2329,7 +2241,6 @@ def test_create_entry_field_headers():
             type(client.transport.create_entry),
             '__call__') as call:
         call.return_value = datacatalog.Entry()
-
         client.create_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2354,6 +2265,7 @@ async def test_create_entry_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateEntryRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2361,7 +2273,6 @@ async def test_create_entry_field_headers_async():
             type(client.transport.create_entry),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry())
-
         await client.create_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2388,7 +2299,6 @@ def test_create_entry_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_entry(
@@ -2401,11 +2311,8 @@ def test_create_entry_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].entry_id == 'entry_id_value'
-
         assert args[0].entry == datacatalog.Entry(name='name_value')
 
 
@@ -2451,11 +2358,8 @@ async def test_create_entry_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].entry_id == 'entry_id_value'
-
         assert args[0].entry == datacatalog.Entry(name='name_value')
 
 
@@ -2493,38 +2397,25 @@ def test_update_entry(transport: str = 'grpc', request_type=datacatalog.UpdateEn
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry(
             name='name_value',
-
             linked_resource='linked_resource_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             type_=datacatalog.EntryType.TABLE,
-
             integrated_system=common.IntegratedSystem.BIGQUERY,
-
             gcs_fileset_spec=gcs_fileset_spec.GcsFilesetSpec(file_patterns=['file_patterns_value']),
         )
-
         response = client.update_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateEntryRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -2547,8 +2438,8 @@ def test_update_entry_empty_call():
         client.update_entry()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateEntryRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_entry_async(transport: str = 'grpc_asyncio', request_type=datacatalog.UpdateEntryRequest):
@@ -2566,30 +2457,24 @@ async def test_update_entry_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.update_entry),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
             name='name_value',
             linked_resource='linked_resource_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.update_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateEntryRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -2606,6 +2491,7 @@ def test_update_entry_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateEntryRequest()
+
     request.entry.name = 'entry.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2613,7 +2499,6 @@ def test_update_entry_field_headers():
             type(client.transport.update_entry),
             '__call__') as call:
         call.return_value = datacatalog.Entry()
-
         client.update_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2638,6 +2523,7 @@ async def test_update_entry_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateEntryRequest()
+
     request.entry.name = 'entry.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2645,7 +2531,6 @@ async def test_update_entry_field_headers_async():
             type(client.transport.update_entry),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry())
-
         await client.update_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2672,7 +2557,6 @@ def test_update_entry_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_entry(
@@ -2684,9 +2568,7 @@ def test_update_entry_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entry == datacatalog.Entry(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2730,9 +2612,7 @@ async def test_update_entry_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entry == datacatalog.Entry(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2768,13 +2648,11 @@ def test_delete_entry(transport: str = 'grpc', request_type=datacatalog.DeleteEn
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteEntryRequest()
 
     # Establish that the response is the type that we expect.
@@ -2800,8 +2678,8 @@ def test_delete_entry_empty_call():
         client.delete_entry()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteEntryRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_entry_async(transport: str = 'grpc_asyncio', request_type=datacatalog.DeleteEntryRequest):
@@ -2820,13 +2698,11 @@ async def test_delete_entry_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteEntryRequest()
 
     # Establish that the response is the type that we expect.
@@ -2846,6 +2722,7 @@ def test_delete_entry_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteEntryRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2853,7 +2730,6 @@ def test_delete_entry_field_headers():
             type(client.transport.delete_entry),
             '__call__') as call:
         call.return_value = None
-
         client.delete_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2878,6 +2754,7 @@ async def test_delete_entry_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteEntryRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2885,7 +2762,6 @@ async def test_delete_entry_field_headers_async():
             type(client.transport.delete_entry),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2912,7 +2788,6 @@ def test_delete_entry_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_entry(
@@ -2923,7 +2798,6 @@ def test_delete_entry_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2965,7 +2839,6 @@ async def test_delete_entry_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3001,38 +2874,25 @@ def test_get_entry(transport: str = 'grpc', request_type=datacatalog.GetEntryReq
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry(
             name='name_value',
-
             linked_resource='linked_resource_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             type_=datacatalog.EntryType.TABLE,
-
             integrated_system=common.IntegratedSystem.BIGQUERY,
-
             gcs_fileset_spec=gcs_fileset_spec.GcsFilesetSpec(file_patterns=['file_patterns_value']),
         )
-
         response = client.get_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetEntryRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -3055,8 +2915,8 @@ def test_get_entry_empty_call():
         client.get_entry()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetEntryRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_entry_async(transport: str = 'grpc_asyncio', request_type=datacatalog.GetEntryRequest):
@@ -3074,30 +2934,24 @@ async def test_get_entry_async(transport: str = 'grpc_asyncio', request_type=dat
             type(client.transport.get_entry),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
             name='name_value',
             linked_resource='linked_resource_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.get_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetEntryRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -3114,6 +2968,7 @@ def test_get_entry_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.GetEntryRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3121,7 +2976,6 @@ def test_get_entry_field_headers():
             type(client.transport.get_entry),
             '__call__') as call:
         call.return_value = datacatalog.Entry()
-
         client.get_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3146,6 +3000,7 @@ async def test_get_entry_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.GetEntryRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3153,7 +3008,6 @@ async def test_get_entry_field_headers_async():
             type(client.transport.get_entry),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry())
-
         await client.get_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3180,7 +3034,6 @@ def test_get_entry_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_entry(
@@ -3191,7 +3044,6 @@ def test_get_entry_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3233,7 +3085,6 @@ async def test_get_entry_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3269,38 +3120,25 @@ def test_lookup_entry(transport: str = 'grpc', request_type=datacatalog.LookupEn
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.Entry(
             name='name_value',
-
             linked_resource='linked_resource_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             type_=datacatalog.EntryType.TABLE,
-
             integrated_system=common.IntegratedSystem.BIGQUERY,
-
             gcs_fileset_spec=gcs_fileset_spec.GcsFilesetSpec(file_patterns=['file_patterns_value']),
         )
-
         response = client.lookup_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.LookupEntryRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -3323,8 +3161,8 @@ def test_lookup_entry_empty_call():
         client.lookup_entry()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.LookupEntryRequest()
+
 
 @pytest.mark.asyncio
 async def test_lookup_entry_async(transport: str = 'grpc_asyncio', request_type=datacatalog.LookupEntryRequest):
@@ -3342,30 +3180,24 @@ async def test_lookup_entry_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.lookup_entry),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.Entry(
             name='name_value',
             linked_resource='linked_resource_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.lookup_entry(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.LookupEntryRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datacatalog.Entry)
-
     assert response.name == 'name_value'
-
     assert response.linked_resource == 'linked_resource_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -3391,21 +3223,16 @@ def test_list_entries(transport: str = 'grpc', request_type=datacatalog.ListEntr
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.ListEntriesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_entries(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListEntriesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListEntriesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3428,8 +3255,8 @@ def test_list_entries_empty_call():
         client.list_entries()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListEntriesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_entries_async(transport: str = 'grpc_asyncio', request_type=datacatalog.ListEntriesRequest):
@@ -3447,21 +3274,18 @@ async def test_list_entries_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_entries),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListEntriesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListEntriesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_entries(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListEntriesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEntriesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3478,6 +3302,7 @@ def test_list_entries_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.ListEntriesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3485,7 +3310,6 @@ def test_list_entries_field_headers():
             type(client.transport.list_entries),
             '__call__') as call:
         call.return_value = datacatalog.ListEntriesResponse()
-
         client.list_entries(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3510,6 +3334,7 @@ async def test_list_entries_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.ListEntriesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3517,7 +3342,6 @@ async def test_list_entries_field_headers_async():
             type(client.transport.list_entries),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListEntriesResponse())
-
         await client.list_entries(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3544,7 +3368,6 @@ def test_list_entries_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.ListEntriesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_entries(
@@ -3555,7 +3378,6 @@ def test_list_entries_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -3597,7 +3419,6 @@ async def test_list_entries_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -3802,7 +3623,6 @@ async def test_list_entries_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_tag_template(transport: str = 'grpc', request_type=datacatalog.CreateTagTemplateRequest):
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3820,25 +3640,18 @@ def test_create_tag_template(transport: str = 'grpc', request_type=datacatalog.C
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplate(
             name='name_value',
-
             display_name='display_name_value',
-
         )
-
         response = client.create_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.TagTemplate)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -3861,8 +3674,8 @@ def test_create_tag_template_empty_call():
         client.create_tag_template()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagTemplateRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_tag_template_async(transport: str = 'grpc_asyncio', request_type=datacatalog.CreateTagTemplateRequest):
@@ -3880,24 +3693,20 @@ async def test_create_tag_template_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_tag_template),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.create_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.TagTemplate)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -3914,6 +3723,7 @@ def test_create_tag_template_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateTagTemplateRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3921,7 +3731,6 @@ def test_create_tag_template_field_headers():
             type(client.transport.create_tag_template),
             '__call__') as call:
         call.return_value = tags.TagTemplate()
-
         client.create_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3946,6 +3755,7 @@ async def test_create_tag_template_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateTagTemplateRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3953,7 +3763,6 @@ async def test_create_tag_template_field_headers_async():
             type(client.transport.create_tag_template),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate())
-
         await client.create_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3980,7 +3789,6 @@ def test_create_tag_template_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplate()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_tag_template(
@@ -3993,11 +3801,8 @@ def test_create_tag_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].tag_template_id == 'tag_template_id_value'
-
         assert args[0].tag_template == tags.TagTemplate(name='name_value')
 
 
@@ -4043,11 +3848,8 @@ async def test_create_tag_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].tag_template_id == 'tag_template_id_value'
-
         assert args[0].tag_template == tags.TagTemplate(name='name_value')
 
 
@@ -4085,25 +3887,18 @@ def test_get_tag_template(transport: str = 'grpc', request_type=datacatalog.GetT
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplate(
             name='name_value',
-
             display_name='display_name_value',
-
         )
-
         response = client.get_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.TagTemplate)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -4126,8 +3921,8 @@ def test_get_tag_template_empty_call():
         client.get_tag_template()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetTagTemplateRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_tag_template_async(transport: str = 'grpc_asyncio', request_type=datacatalog.GetTagTemplateRequest):
@@ -4145,24 +3940,20 @@ async def test_get_tag_template_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_tag_template),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.get_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.GetTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.TagTemplate)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -4179,6 +3970,7 @@ def test_get_tag_template_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.GetTagTemplateRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4186,7 +3978,6 @@ def test_get_tag_template_field_headers():
             type(client.transport.get_tag_template),
             '__call__') as call:
         call.return_value = tags.TagTemplate()
-
         client.get_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4211,6 +4002,7 @@ async def test_get_tag_template_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.GetTagTemplateRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4218,7 +4010,6 @@ async def test_get_tag_template_field_headers_async():
             type(client.transport.get_tag_template),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate())
-
         await client.get_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4245,7 +4036,6 @@ def test_get_tag_template_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplate()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_tag_template(
@@ -4256,7 +4046,6 @@ def test_get_tag_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -4298,7 +4087,6 @@ async def test_get_tag_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -4334,25 +4122,18 @@ def test_update_tag_template(transport: str = 'grpc', request_type=datacatalog.U
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplate(
             name='name_value',
-
             display_name='display_name_value',
-
         )
-
         response = client.update_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.TagTemplate)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -4375,8 +4156,8 @@ def test_update_tag_template_empty_call():
         client.update_tag_template()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagTemplateRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_tag_template_async(transport: str = 'grpc_asyncio', request_type=datacatalog.UpdateTagTemplateRequest):
@@ -4394,24 +4175,20 @@ async def test_update_tag_template_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.update_tag_template),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.update_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.TagTemplate)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -4428,6 +4205,7 @@ def test_update_tag_template_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateTagTemplateRequest()
+
     request.tag_template.name = 'tag_template.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4435,7 +4213,6 @@ def test_update_tag_template_field_headers():
             type(client.transport.update_tag_template),
             '__call__') as call:
         call.return_value = tags.TagTemplate()
-
         client.update_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4460,6 +4237,7 @@ async def test_update_tag_template_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateTagTemplateRequest()
+
     request.tag_template.name = 'tag_template.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4467,7 +4245,6 @@ async def test_update_tag_template_field_headers_async():
             type(client.transport.update_tag_template),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate())
-
         await client.update_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4494,7 +4271,6 @@ def test_update_tag_template_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplate()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_tag_template(
@@ -4506,9 +4282,7 @@ def test_update_tag_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].tag_template == tags.TagTemplate(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -4552,9 +4326,7 @@ async def test_update_tag_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].tag_template == tags.TagTemplate(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -4590,13 +4362,11 @@ def test_delete_tag_template(transport: str = 'grpc', request_type=datacatalog.D
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
@@ -4622,8 +4392,8 @@ def test_delete_tag_template_empty_call():
         client.delete_tag_template()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagTemplateRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_tag_template_async(transport: str = 'grpc_asyncio', request_type=datacatalog.DeleteTagTemplateRequest):
@@ -4642,13 +4412,11 @@ async def test_delete_tag_template_async(transport: str = 'grpc_asyncio', reques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagTemplateRequest()
 
     # Establish that the response is the type that we expect.
@@ -4668,6 +4436,7 @@ def test_delete_tag_template_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteTagTemplateRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4675,7 +4444,6 @@ def test_delete_tag_template_field_headers():
             type(client.transport.delete_tag_template),
             '__call__') as call:
         call.return_value = None
-
         client.delete_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4700,6 +4468,7 @@ async def test_delete_tag_template_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteTagTemplateRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4707,7 +4476,6 @@ async def test_delete_tag_template_field_headers_async():
             type(client.transport.delete_tag_template),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_tag_template(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4734,7 +4502,6 @@ def test_delete_tag_template_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_tag_template(
@@ -4746,9 +4513,7 @@ def test_delete_tag_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].force == True
 
 
@@ -4792,9 +4557,7 @@ async def test_delete_tag_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].force == True
 
 
@@ -4831,33 +4594,22 @@ def test_create_tag_template_field(transport: str = 'grpc', request_type=datacat
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplateField(
             name='name_value',
-
             display_name='display_name_value',
-
             is_required=True,
-
             order=540,
-
         )
-
         response = client.create_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.TagTemplateField)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.is_required is True
-
     assert response.order == 540
 
 
@@ -4880,8 +4632,8 @@ def test_create_tag_template_field_empty_call():
         client.create_tag_template_field()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagTemplateFieldRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_tag_template_field_async(transport: str = 'grpc_asyncio', request_type=datacatalog.CreateTagTemplateFieldRequest):
@@ -4899,30 +4651,24 @@ async def test_create_tag_template_field_async(transport: str = 'grpc_asyncio', 
             type(client.transport.create_tag_template_field),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField(
             name='name_value',
             display_name='display_name_value',
             is_required=True,
             order=540,
         ))
-
         response = await client.create_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.TagTemplateField)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.is_required is True
-
     assert response.order == 540
 
 
@@ -4939,6 +4685,7 @@ def test_create_tag_template_field_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateTagTemplateFieldRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4946,7 +4693,6 @@ def test_create_tag_template_field_field_headers():
             type(client.transport.create_tag_template_field),
             '__call__') as call:
         call.return_value = tags.TagTemplateField()
-
         client.create_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4971,6 +4717,7 @@ async def test_create_tag_template_field_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateTagTemplateFieldRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4978,7 +4725,6 @@ async def test_create_tag_template_field_field_headers_async():
             type(client.transport.create_tag_template_field),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField())
-
         await client.create_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5005,7 +4751,6 @@ def test_create_tag_template_field_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplateField()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_tag_template_field(
@@ -5018,11 +4763,8 @@ def test_create_tag_template_field_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].tag_template_field_id == 'tag_template_field_id_value'
-
         assert args[0].tag_template_field == tags.TagTemplateField(name='name_value')
 
 
@@ -5068,11 +4810,8 @@ async def test_create_tag_template_field_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].tag_template_field_id == 'tag_template_field_id_value'
-
         assert args[0].tag_template_field == tags.TagTemplateField(name='name_value')
 
 
@@ -5110,33 +4849,22 @@ def test_update_tag_template_field(transport: str = 'grpc', request_type=datacat
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplateField(
             name='name_value',
-
             display_name='display_name_value',
-
             is_required=True,
-
             order=540,
-
         )
-
         response = client.update_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.TagTemplateField)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.is_required is True
-
     assert response.order == 540
 
 
@@ -5159,8 +4887,8 @@ def test_update_tag_template_field_empty_call():
         client.update_tag_template_field()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagTemplateFieldRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_tag_template_field_async(transport: str = 'grpc_asyncio', request_type=datacatalog.UpdateTagTemplateFieldRequest):
@@ -5178,30 +4906,24 @@ async def test_update_tag_template_field_async(transport: str = 'grpc_asyncio', 
             type(client.transport.update_tag_template_field),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField(
             name='name_value',
             display_name='display_name_value',
             is_required=True,
             order=540,
         ))
-
         response = await client.update_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.TagTemplateField)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.is_required is True
-
     assert response.order == 540
 
 
@@ -5218,6 +4940,7 @@ def test_update_tag_template_field_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateTagTemplateFieldRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5225,7 +4948,6 @@ def test_update_tag_template_field_field_headers():
             type(client.transport.update_tag_template_field),
             '__call__') as call:
         call.return_value = tags.TagTemplateField()
-
         client.update_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5250,6 +4972,7 @@ async def test_update_tag_template_field_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateTagTemplateFieldRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5257,7 +4980,6 @@ async def test_update_tag_template_field_field_headers_async():
             type(client.transport.update_tag_template_field),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField())
-
         await client.update_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5284,7 +5006,6 @@ def test_update_tag_template_field_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplateField()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_tag_template_field(
@@ -5297,11 +5018,8 @@ def test_update_tag_template_field_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].tag_template_field == tags.TagTemplateField(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -5347,11 +5065,8 @@ async def test_update_tag_template_field_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].tag_template_field == tags.TagTemplateField(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -5389,33 +5104,22 @@ def test_rename_tag_template_field(transport: str = 'grpc', request_type=datacat
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplateField(
             name='name_value',
-
             display_name='display_name_value',
-
             is_required=True,
-
             order=540,
-
         )
-
         response = client.rename_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.RenameTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.TagTemplateField)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.is_required is True
-
     assert response.order == 540
 
 
@@ -5438,8 +5142,8 @@ def test_rename_tag_template_field_empty_call():
         client.rename_tag_template_field()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.RenameTagTemplateFieldRequest()
+
 
 @pytest.mark.asyncio
 async def test_rename_tag_template_field_async(transport: str = 'grpc_asyncio', request_type=datacatalog.RenameTagTemplateFieldRequest):
@@ -5457,30 +5161,24 @@ async def test_rename_tag_template_field_async(transport: str = 'grpc_asyncio', 
             type(client.transport.rename_tag_template_field),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField(
             name='name_value',
             display_name='display_name_value',
             is_required=True,
             order=540,
         ))
-
         response = await client.rename_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.RenameTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.TagTemplateField)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.is_required is True
-
     assert response.order == 540
 
 
@@ -5497,6 +5195,7 @@ def test_rename_tag_template_field_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.RenameTagTemplateFieldRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5504,7 +5203,6 @@ def test_rename_tag_template_field_field_headers():
             type(client.transport.rename_tag_template_field),
             '__call__') as call:
         call.return_value = tags.TagTemplateField()
-
         client.rename_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5529,6 +5227,7 @@ async def test_rename_tag_template_field_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.RenameTagTemplateFieldRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5536,7 +5235,6 @@ async def test_rename_tag_template_field_field_headers_async():
             type(client.transport.rename_tag_template_field),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplateField())
-
         await client.rename_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5563,7 +5261,6 @@ def test_rename_tag_template_field_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.TagTemplateField()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.rename_tag_template_field(
@@ -5575,9 +5272,7 @@ def test_rename_tag_template_field_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].new_tag_template_field_id == 'new_tag_template_field_id_value'
 
 
@@ -5621,9 +5316,7 @@ async def test_rename_tag_template_field_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].new_tag_template_field_id == 'new_tag_template_field_id_value'
 
 
@@ -5659,13 +5352,11 @@ def test_delete_tag_template_field(transport: str = 'grpc', request_type=datacat
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
@@ -5691,8 +5382,8 @@ def test_delete_tag_template_field_empty_call():
         client.delete_tag_template_field()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagTemplateFieldRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_tag_template_field_async(transport: str = 'grpc_asyncio', request_type=datacatalog.DeleteTagTemplateFieldRequest):
@@ -5711,13 +5402,11 @@ async def test_delete_tag_template_field_async(transport: str = 'grpc_asyncio', 
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagTemplateFieldRequest()
 
     # Establish that the response is the type that we expect.
@@ -5737,6 +5426,7 @@ def test_delete_tag_template_field_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteTagTemplateFieldRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5744,7 +5434,6 @@ def test_delete_tag_template_field_field_headers():
             type(client.transport.delete_tag_template_field),
             '__call__') as call:
         call.return_value = None
-
         client.delete_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5769,6 +5458,7 @@ async def test_delete_tag_template_field_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteTagTemplateFieldRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5776,7 +5466,6 @@ async def test_delete_tag_template_field_field_headers_async():
             type(client.transport.delete_tag_template_field),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_tag_template_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5803,7 +5492,6 @@ def test_delete_tag_template_field_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_tag_template_field(
@@ -5815,9 +5503,7 @@ def test_delete_tag_template_field_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].force == True
 
 
@@ -5861,9 +5547,7 @@ async def test_delete_tag_template_field_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].force == True
 
 
@@ -5900,30 +5584,21 @@ def test_create_tag(transport: str = 'grpc', request_type=datacatalog.CreateTagR
         # Designate an appropriate return value for the call.
         call.return_value = tags.Tag(
             name='name_value',
-
             template='template_value',
-
             template_display_name='template_display_name_value',
-
             column='column_value',
         )
-
         response = client.create_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.Tag)
-
     assert response.name == 'name_value'
-
     assert response.template == 'template_value'
-
     assert response.template_display_name == 'template_display_name_value'
 
 
@@ -5946,8 +5621,8 @@ def test_create_tag_empty_call():
         client.create_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_tag_async(transport: str = 'grpc_asyncio', request_type=datacatalog.CreateTagRequest):
@@ -5965,27 +5640,22 @@ async def test_create_tag_async(transport: str = 'grpc_asyncio', request_type=da
             type(client.transport.create_tag),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.Tag(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.Tag(
             name='name_value',
             template='template_value',
             template_display_name='template_display_name_value',
         ))
-
         response = await client.create_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.CreateTagRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.Tag)
-
     assert response.name == 'name_value'
-
     assert response.template == 'template_value'
-
     assert response.template_display_name == 'template_display_name_value'
 
 
@@ -6002,6 +5672,7 @@ def test_create_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateTagRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6009,7 +5680,6 @@ def test_create_tag_field_headers():
             type(client.transport.create_tag),
             '__call__') as call:
         call.return_value = tags.Tag()
-
         client.create_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6034,6 +5704,7 @@ async def test_create_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.CreateTagRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6041,7 +5712,6 @@ async def test_create_tag_field_headers_async():
             type(client.transport.create_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.Tag())
-
         await client.create_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6068,7 +5738,6 @@ def test_create_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.Tag()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_tag(
@@ -6080,9 +5749,7 @@ def test_create_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].tag == tags.Tag(name='name_value')
 
 
@@ -6126,9 +5793,7 @@ async def test_create_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].tag == tags.Tag(name='name_value')
 
 
@@ -6165,30 +5830,21 @@ def test_update_tag(transport: str = 'grpc', request_type=datacatalog.UpdateTagR
         # Designate an appropriate return value for the call.
         call.return_value = tags.Tag(
             name='name_value',
-
             template='template_value',
-
             template_display_name='template_display_name_value',
-
             column='column_value',
         )
-
         response = client.update_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tags.Tag)
-
     assert response.name == 'name_value'
-
     assert response.template == 'template_value'
-
     assert response.template_display_name == 'template_display_name_value'
 
 
@@ -6211,8 +5867,8 @@ def test_update_tag_empty_call():
         client.update_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_tag_async(transport: str = 'grpc_asyncio', request_type=datacatalog.UpdateTagRequest):
@@ -6230,27 +5886,22 @@ async def test_update_tag_async(transport: str = 'grpc_asyncio', request_type=da
             type(client.transport.update_tag),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.Tag(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.Tag(
             name='name_value',
             template='template_value',
             template_display_name='template_display_name_value',
         ))
-
         response = await client.update_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.UpdateTagRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tags.Tag)
-
     assert response.name == 'name_value'
-
     assert response.template == 'template_value'
-
     assert response.template_display_name == 'template_display_name_value'
 
 
@@ -6267,6 +5918,7 @@ def test_update_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateTagRequest()
+
     request.tag.name = 'tag.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6274,7 +5926,6 @@ def test_update_tag_field_headers():
             type(client.transport.update_tag),
             '__call__') as call:
         call.return_value = tags.Tag()
-
         client.update_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6299,6 +5950,7 @@ async def test_update_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.UpdateTagRequest()
+
     request.tag.name = 'tag.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6306,7 +5958,6 @@ async def test_update_tag_field_headers_async():
             type(client.transport.update_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tags.Tag())
-
         await client.update_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6333,7 +5984,6 @@ def test_update_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tags.Tag()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_tag(
@@ -6345,9 +5995,7 @@ def test_update_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].tag == tags.Tag(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -6391,9 +6039,7 @@ async def test_update_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].tag == tags.Tag(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -6429,13 +6075,11 @@ def test_delete_tag(transport: str = 'grpc', request_type=datacatalog.DeleteTagR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagRequest()
 
     # Establish that the response is the type that we expect.
@@ -6461,8 +6105,8 @@ def test_delete_tag_empty_call():
         client.delete_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_tag_async(transport: str = 'grpc_asyncio', request_type=datacatalog.DeleteTagRequest):
@@ -6481,13 +6125,11 @@ async def test_delete_tag_async(transport: str = 'grpc_asyncio', request_type=da
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.DeleteTagRequest()
 
     # Establish that the response is the type that we expect.
@@ -6507,6 +6149,7 @@ def test_delete_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteTagRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6514,7 +6157,6 @@ def test_delete_tag_field_headers():
             type(client.transport.delete_tag),
             '__call__') as call:
         call.return_value = None
-
         client.delete_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6539,6 +6181,7 @@ async def test_delete_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.DeleteTagRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6546,7 +6189,6 @@ async def test_delete_tag_field_headers_async():
             type(client.transport.delete_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6573,7 +6215,6 @@ def test_delete_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_tag(
@@ -6584,7 +6225,6 @@ def test_delete_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -6626,7 +6266,6 @@ async def test_delete_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -6662,21 +6301,16 @@ def test_list_tags(transport: str = 'grpc', request_type=datacatalog.ListTagsReq
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.ListTagsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListTagsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListTagsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6699,8 +6333,8 @@ def test_list_tags_empty_call():
         client.list_tags()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListTagsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_tags_async(transport: str = 'grpc_asyncio', request_type=datacatalog.ListTagsRequest):
@@ -6718,21 +6352,18 @@ async def test_list_tags_async(transport: str = 'grpc_asyncio', request_type=dat
             type(client.transport.list_tags),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListTagsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListTagsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == datacatalog.ListTagsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTagsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6749,6 +6380,7 @@ def test_list_tags_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.ListTagsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6756,7 +6388,6 @@ def test_list_tags_field_headers():
             type(client.transport.list_tags),
             '__call__') as call:
         call.return_value = datacatalog.ListTagsResponse()
-
         client.list_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6781,6 +6412,7 @@ async def test_list_tags_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datacatalog.ListTagsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6788,7 +6420,6 @@ async def test_list_tags_field_headers_async():
             type(client.transport.list_tags),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datacatalog.ListTagsResponse())
-
         await client.list_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6815,7 +6446,6 @@ def test_list_tags_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datacatalog.ListTagsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_tags(
@@ -6826,7 +6456,6 @@ def test_list_tags_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -6868,7 +6497,6 @@ async def test_list_tags_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -7073,7 +6701,6 @@ async def test_list_tags_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamPolicyRequest):
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -7091,25 +6718,18 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
         # Designate an appropriate return value for the call.
         call.return_value = giv_policy.Policy(
             version=774,
-
             etag=b'etag_blob',
-
         )
-
         response = client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, giv_policy.Policy)
-
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -7132,8 +6752,8 @@ def test_set_iam_policy_empty_call():
         client.set_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.SetIamPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
@@ -7151,24 +6771,20 @@ async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
-
         response = await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, giv_policy.Policy)
-
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -7185,6 +6801,7 @@ def test_set_iam_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.SetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7192,7 +6809,6 @@ def test_set_iam_policy_field_headers():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         call.return_value = giv_policy.Policy()
-
         client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7217,6 +6833,7 @@ async def test_set_iam_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.SetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7224,7 +6841,6 @@ async def test_set_iam_policy_field_headers_async():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy())
-
         await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7239,7 +6855,6 @@ async def test_set_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_set_iam_policy_from_dict_foreign():
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -7250,7 +6865,6 @@ def test_set_iam_policy_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = giv_policy.Policy()
-
         response = client.set_iam_policy(request={
             'resource': 'resource_value',
             'policy_': giv_policy.Policy(version=774),
@@ -7270,7 +6884,6 @@ def test_set_iam_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = giv_policy.Policy()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_iam_policy(
@@ -7281,7 +6894,6 @@ def test_set_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
@@ -7323,7 +6935,6 @@ async def test_set_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
@@ -7359,25 +6970,18 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
         # Designate an appropriate return value for the call.
         call.return_value = giv_policy.Policy(
             version=774,
-
             etag=b'etag_blob',
-
         )
-
         response = client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, giv_policy.Policy)
-
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -7400,8 +7004,8 @@ def test_get_iam_policy_empty_call():
         client.get_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.GetIamPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
@@ -7419,24 +7023,20 @@ async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
-
         response = await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, giv_policy.Policy)
-
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -7453,6 +7053,7 @@ def test_get_iam_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.GetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7460,7 +7061,6 @@ def test_get_iam_policy_field_headers():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         call.return_value = giv_policy.Policy()
-
         client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7485,6 +7085,7 @@ async def test_get_iam_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.GetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7492,7 +7093,6 @@ async def test_get_iam_policy_field_headers_async():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy())
-
         await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7507,7 +7107,6 @@ async def test_get_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_get_iam_policy_from_dict_foreign():
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -7518,7 +7117,6 @@ def test_get_iam_policy_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = giv_policy.Policy()
-
         response = client.get_iam_policy(request={
             'resource': 'resource_value',
             'options_': giv_options.GetPolicyOptions(requested_policy_version=2598),
@@ -7538,7 +7136,6 @@ def test_get_iam_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = giv_policy.Policy()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_iam_policy(
@@ -7549,7 +7146,6 @@ def test_get_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
@@ -7591,7 +7187,6 @@ async def test_get_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
@@ -7627,21 +7222,16 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
-
         )
-
         response = client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
-
     assert response.permissions == ['permissions_value']
 
 
@@ -7664,8 +7254,8 @@ def test_test_iam_permissions_empty_call():
         client.test_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.TestIamPermissionsRequest()
+
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
@@ -7683,21 +7273,18 @@ async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
-
         response = await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == iam_policy.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
-
     assert response.permissions == ['permissions_value']
 
 
@@ -7714,6 +7301,7 @@ def test_test_iam_permissions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.TestIamPermissionsRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7721,7 +7309,6 @@ def test_test_iam_permissions_field_headers():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         call.return_value = iam_policy.TestIamPermissionsResponse()
-
         client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7746,6 +7333,7 @@ async def test_test_iam_permissions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.TestIamPermissionsRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7753,7 +7341,6 @@ async def test_test_iam_permissions_field_headers_async():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
-
         await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7768,7 +7355,6 @@ async def test_test_iam_permissions_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_test_iam_permissions_from_dict_foreign():
     client = DataCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -7779,7 +7365,6 @@ def test_test_iam_permissions_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse()
-
         response = client.test_iam_permissions(request={
             'resource': 'resource_value',
             'permissions': ['permissions_value'],
@@ -7828,7 +7413,6 @@ def test_transport_instance():
     client = DataCatalogClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DataCatalogGrpcTransport(
@@ -7843,7 +7427,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.DataCatalogGrpcTransport,
     transports.DataCatalogGrpcAsyncIOTransport,
@@ -7855,7 +7438,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = DataCatalogClient(
@@ -7865,7 +7447,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.DataCatalogGrpcTransport,
     )
-
 
 def test_data_catalog_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -7914,15 +7495,33 @@ def test_data_catalog_base_transport():
         'set_iam_policy',
         'get_iam_policy',
         'test_iam_permissions',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_data_catalog_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.datacatalog_v1beta1.services.data_catalog.transports.DataCatalogTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.datacatalog_v1beta1.services.data_catalog.transports.DataCatalogTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.DataCatalogTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_data_catalog_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.datacatalog_v1beta1.services.data_catalog.transports.DataCatalogTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DataCatalogTransport(
@@ -7938,33 +7537,182 @@ def test_data_catalog_base_transport_with_credentials_file():
 
 def test_data_catalog_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.datacatalog_v1beta1.services.data_catalog.transports.DataCatalogTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.datacatalog_v1beta1.services.data_catalog.transports.DataCatalogTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DataCatalogTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_data_catalog_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         DataCatalogClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_data_catalog_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_data_catalog_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        DataCatalogClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.DataCatalogGrpcTransport,
+        transports.DataCatalogGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_data_catalog_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.DataCatalogGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.DataCatalogGrpcTransport,
+        transports.DataCatalogGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_data_catalog_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DataCatalogGrpcTransport, grpc_helpers),
+        (transports.DataCatalogGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_data_catalog_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "datacatalog.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="datacatalog.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DataCatalogGrpcTransport, grpc_helpers),
+        (transports.DataCatalogGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_data_catalog_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "datacatalog.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DataCatalogGrpcTransport, grpc_helpers),
+        (transports.DataCatalogGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_data_catalog_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "datacatalog.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -8026,7 +7774,6 @@ def test_data_catalog_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='datacatalog.googleapis.com:8000'),
     )
     assert client.transport._host == 'datacatalog.googleapis.com:8000'
-
 
 def test_data_catalog_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -8147,7 +7894,6 @@ def test_entry_path():
     location = "clam"
     entry_group = "whelk"
     entry = "octopus"
-
     expected = "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}".format(project=project, location=location, entry_group=entry_group, entry=entry, )
     actual = DataCatalogClient.entry_path(project, location, entry_group, entry)
     assert expected == actual
@@ -8155,11 +7901,10 @@ def test_entry_path():
 
 def test_parse_entry_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "entry_group": "cuttlefish",
-    "entry": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "entry_group": "cuttlefish",
+        "entry": "mussel",
     }
     path = DataCatalogClient.entry_path(**expected)
 
@@ -8171,7 +7916,6 @@ def test_entry_group_path():
     project = "winkle"
     location = "nautilus"
     entry_group = "scallop"
-
     expected = "projects/{project}/locations/{location}/entryGroups/{entry_group}".format(project=project, location=location, entry_group=entry_group, )
     actual = DataCatalogClient.entry_group_path(project, location, entry_group)
     assert expected == actual
@@ -8179,10 +7923,9 @@ def test_entry_group_path():
 
 def test_parse_entry_group_path():
     expected = {
-    "project": "abalone",
-    "location": "squid",
-    "entry_group": "clam",
-
+        "project": "abalone",
+        "location": "squid",
+        "entry_group": "clam",
     }
     path = DataCatalogClient.entry_group_path(**expected)
 
@@ -8196,7 +7939,6 @@ def test_tag_path():
     entry_group = "oyster"
     entry = "nudibranch"
     tag = "cuttlefish"
-
     expected = "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}/tags/{tag}".format(project=project, location=location, entry_group=entry_group, entry=entry, tag=tag, )
     actual = DataCatalogClient.tag_path(project, location, entry_group, entry, tag)
     assert expected == actual
@@ -8204,12 +7946,11 @@ def test_tag_path():
 
 def test_parse_tag_path():
     expected = {
-    "project": "mussel",
-    "location": "winkle",
-    "entry_group": "nautilus",
-    "entry": "scallop",
-    "tag": "abalone",
-
+        "project": "mussel",
+        "location": "winkle",
+        "entry_group": "nautilus",
+        "entry": "scallop",
+        "tag": "abalone",
     }
     path = DataCatalogClient.tag_path(**expected)
 
@@ -8221,7 +7962,6 @@ def test_tag_template_path():
     project = "squid"
     location = "clam"
     tag_template = "whelk"
-
     expected = "projects/{project}/locations/{location}/tagTemplates/{tag_template}".format(project=project, location=location, tag_template=tag_template, )
     actual = DataCatalogClient.tag_template_path(project, location, tag_template)
     assert expected == actual
@@ -8229,10 +7969,9 @@ def test_tag_template_path():
 
 def test_parse_tag_template_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "tag_template": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "tag_template": "nudibranch",
     }
     path = DataCatalogClient.tag_template_path(**expected)
 
@@ -8245,7 +7984,6 @@ def test_tag_template_field_path():
     location = "mussel"
     tag_template = "winkle"
     field = "nautilus"
-
     expected = "projects/{project}/locations/{location}/tagTemplates/{tag_template}/fields/{field}".format(project=project, location=location, tag_template=tag_template, field=field, )
     actual = DataCatalogClient.tag_template_field_path(project, location, tag_template, field)
     assert expected == actual
@@ -8253,11 +7991,10 @@ def test_tag_template_field_path():
 
 def test_parse_tag_template_field_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-    "tag_template": "squid",
-    "field": "clam",
-
+        "project": "scallop",
+        "location": "abalone",
+        "tag_template": "squid",
+        "field": "clam",
     }
     path = DataCatalogClient.tag_template_field_path(**expected)
 
@@ -8267,7 +8004,6 @@ def test_parse_tag_template_field_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DataCatalogClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -8275,8 +8011,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = DataCatalogClient.common_billing_account_path(**expected)
 
@@ -8286,7 +8021,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = DataCatalogClient.common_folder_path(folder)
     assert expected == actual
@@ -8294,8 +8028,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = DataCatalogClient.common_folder_path(**expected)
 
@@ -8305,7 +8038,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DataCatalogClient.common_organization_path(organization)
     assert expected == actual
@@ -8313,8 +8045,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = DataCatalogClient.common_organization_path(**expected)
 
@@ -8324,7 +8055,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = DataCatalogClient.common_project_path(project)
     assert expected == actual
@@ -8332,8 +8062,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = DataCatalogClient.common_project_path(**expected)
 
@@ -8344,7 +8073,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DataCatalogClient.common_location_path(project, location)
     assert expected == actual
@@ -8352,9 +8080,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = DataCatalogClient.common_location_path(**expected)
 

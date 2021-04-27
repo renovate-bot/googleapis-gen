@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -31,7 +29,6 @@ __protobuf__ = proto.module(
 
 class Layer(proto.Message):
     r"""Layer holds metadata specific to a layer of a Docker image.
-
     Attributes:
         directive (str):
             Required. The recovered Dockerfile directive
@@ -43,9 +40,14 @@ class Layer(proto.Message):
             directive.
     """
 
-    directive = proto.Field(proto.STRING, number=1)
-
-    arguments = proto.Field(proto.STRING, number=2)
+    directive = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    arguments = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Fingerprint(proto.Message):
@@ -65,11 +67,18 @@ class Fingerprint(proto.Message):
             v2_name[N+1]) Only the name of the final blob is kept.
     """
 
-    v1_name = proto.Field(proto.STRING, number=1)
-
-    v2_blob = proto.RepeatedField(proto.STRING, number=2)
-
-    v2_name = proto.Field(proto.STRING, number=3)
+    v1_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    v2_blob = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    v2_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ImageNote(proto.Message):
@@ -87,9 +96,13 @@ class ImageNote(proto.Message):
             base image.
     """
 
-    resource_url = proto.Field(proto.STRING, number=1)
-
-    fingerprint = proto.Field(proto.MESSAGE, number=2,
+    resource_url = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    fingerprint = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Fingerprint',
     )
 
@@ -117,17 +130,24 @@ class ImageOccurrence(proto.Message):
             for the derived image occurrence.
     """
 
-    fingerprint = proto.Field(proto.MESSAGE, number=1,
+    fingerprint = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Fingerprint',
     )
-
-    distance = proto.Field(proto.INT32, number=2)
-
-    layer_info = proto.RepeatedField(proto.MESSAGE, number=3,
+    distance = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    layer_info = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='Layer',
     )
-
-    base_resource_url = proto.Field(proto.STRING, number=4)
+    base_resource_url = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

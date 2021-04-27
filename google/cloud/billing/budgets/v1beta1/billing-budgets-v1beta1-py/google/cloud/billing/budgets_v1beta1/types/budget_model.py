@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.type import date_pb2 as date  # type: ignore
@@ -89,32 +86,42 @@ class Budget(proto.Message):
             other changes.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    budget_filter = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    budget_filter = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Filter',
     )
-
-    amount = proto.Field(proto.MESSAGE, number=4,
+    amount = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='BudgetAmount',
     )
-
-    threshold_rules = proto.RepeatedField(proto.MESSAGE, number=5,
+    threshold_rules = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message='ThresholdRule',
     )
-
-    all_updates_rule = proto.Field(proto.MESSAGE, number=6,
+    all_updates_rule = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='AllUpdatesRule',
     )
-
-    etag = proto.Field(proto.STRING, number=7)
+    etag = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class BudgetAmount(proto.Message):
     r"""The budgeted amount for each usage period.
-
     Attributes:
         specified_amount (google.type.money_pb2.Money):
             A specified amount to use as the budget. ``currency_code``
@@ -132,11 +139,16 @@ class BudgetAmount(proto.Message):
             [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
     """
 
-    specified_amount = proto.Field(proto.MESSAGE, number=1, oneof='budget_amount',
+    specified_amount = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='budget_amount',
         message=money.Money,
     )
-
-    last_period_amount = proto.Field(proto.MESSAGE, number=2, oneof='budget_amount',
+    last_period_amount = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='budget_amount',
         message='LastPeriodAmount',
     )
 
@@ -150,7 +162,7 @@ class LastPeriodAmount(proto.Message):
     configuring a percentage of last period's spend). LastPeriodAmount
     cannot be set for a budget configured with a
     [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
-    """
+        """
 
 
 class ThresholdRule(proto.Message):
@@ -180,9 +192,13 @@ class ThresholdRule(proto.Message):
         CURRENT_SPEND = 1
         FORECASTED_SPEND = 2
 
-    threshold_percent = proto.Field(proto.DOUBLE, number=1)
-
-    spend_basis = proto.Field(proto.ENUM, number=2,
+    threshold_percent = proto.Field(
+        proto.DOUBLE,
+        number=1,
+    )
+    spend_basis = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Basis,
     )
 
@@ -231,13 +247,22 @@ class AllUpdatesRule(proto.Message):
             Account User IAM roles for the target account.
     """
 
-    pubsub_topic = proto.Field(proto.STRING, number=1)
-
-    schema_version = proto.Field(proto.STRING, number=2)
-
-    monitoring_notification_channels = proto.RepeatedField(proto.STRING, number=3)
-
-    disable_default_iam_recipients = proto.Field(proto.BOOL, number=4)
+    pubsub_topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    schema_version = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    monitoring_notification_channels = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    disable_default_iam_recipients = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class Filter(proto.Message):
@@ -318,27 +343,43 @@ class Filter(proto.Message):
         EXCLUDE_ALL_CREDITS = 2
         INCLUDE_SPECIFIED_CREDITS = 3
 
-    projects = proto.RepeatedField(proto.STRING, number=1)
-
-    credit_types = proto.RepeatedField(proto.STRING, number=7)
-
-    credit_types_treatment = proto.Field(proto.ENUM, number=4,
+    projects = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    credit_types = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
+    credit_types_treatment = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=CreditTypesTreatment,
     )
-
-    services = proto.RepeatedField(proto.STRING, number=3)
-
-    subaccounts = proto.RepeatedField(proto.STRING, number=5)
-
-    labels = proto.MapField(proto.STRING, proto.MESSAGE, number=6,
+    services = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    subaccounts = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=6
         message=struct.ListValue,
     )
-
-    calendar_period = proto.Field(proto.ENUM, number=8, oneof='usage_period',
+    calendar_period = proto.Field(
+        proto.ENUM,
+        number=8,
+        oneof='usage_period',
         enum='CalendarPeriod',
     )
-
-    custom_period = proto.Field(proto.MESSAGE, number=9, oneof='usage_period',
+    custom_period = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='usage_period',
         message='CustomPeriod',
     )
 
@@ -357,11 +398,14 @@ class CustomPeriod(proto.Message):
             track all usage incurred since the start_date.
     """
 
-    start_date = proto.Field(proto.MESSAGE, number=1,
+    start_date = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=date.Date,
     )
-
-    end_date = proto.Field(proto.MESSAGE, number=2,
+    end_date = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=date.Date,
     )
 

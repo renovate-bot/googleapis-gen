@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,8 +37,7 @@ from google.home.graph_v1.types.homegraph import SyncRequest
 from google.home.graph_v1.types.homegraph import SyncResponse
 from google.home.graph_v1.types.homegraph import SyncResponsePayload
 
-__all__ = (
-    'AgentDeviceId',
+__all__ = ('AgentDeviceId',
     'AgentOtherDeviceId',
     'DeleteAgentUserRequest',
     'Device',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -27,7 +25,6 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.ads.googleads.v5.services.types import google_ads_service
-
 from .base import GoogleAdsServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -58,7 +55,8 @@ class GoogleAdsServiceGrpcTransport(GoogleAdsServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,7 +200,9 @@ class GoogleAdsServiceGrpcTransport(GoogleAdsServiceTransport):
     def search(self) -> Callable[
             [google_ads_service.SearchGoogleAdsRequest],
             google_ads_service.SearchGoogleAdsResponse]:
-        r"""Return a callable for the search method over gRPC.
+        r"""Return a callable for the
+        search
+          method over gRPC.
 
         Returns all rows that match the search query.
 
@@ -228,7 +228,9 @@ class GoogleAdsServiceGrpcTransport(GoogleAdsServiceTransport):
     def search_stream(self) -> Callable[
             [google_ads_service.SearchGoogleAdsStreamRequest],
             google_ads_service.SearchGoogleAdsStreamResponse]:
-        r"""Return a callable for the search stream method over gRPC.
+        r"""Return a callable for the
+        search stream
+          method over gRPC.
 
         Returns all rows that match the search stream query.
 
@@ -254,7 +256,9 @@ class GoogleAdsServiceGrpcTransport(GoogleAdsServiceTransport):
     def mutate(self) -> Callable[
             [google_ads_service.MutateGoogleAdsRequest],
             google_ads_service.MutateGoogleAdsResponse]:
-        r"""Return a callable for the mutate method over gRPC.
+        r"""Return a callable for the
+        mutate
+          method over gRPC.
 
         Creates, updates, or removes resources. This method supports
         atomic transactions with multiple types of resources. For

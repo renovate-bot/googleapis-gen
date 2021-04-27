@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -267,37 +265,24 @@ def test_get_change_status(transport: str = 'grpc', request_type=change_status_s
         # Designate an appropriate return value for the call.
         call.return_value = change_status.ChangeStatus(
             resource_name='resource_name_value',
-
             resource_type=change_status_resource_type.ChangeStatusResourceTypeEnum.ChangeStatusResourceType.UNKNOWN,
-
             campaign='campaign_value',
-
             ad_group='ad_group_value',
-
             resource_status=change_status_operation.ChangeStatusOperationEnum.ChangeStatusOperation.UNKNOWN,
-
         )
-
         response = client.get_change_status(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == change_status_service.GetChangeStatusRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, change_status.ChangeStatus)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.resource_type == change_status_resource_type.ChangeStatusResourceTypeEnum.ChangeStatusResourceType.UNKNOWN
-
     assert response.campaign == 'campaign_value'
-
     assert response.ad_group == 'ad_group_value'
-
     assert response.resource_status == change_status_operation.ChangeStatusOperationEnum.ChangeStatusOperation.UNKNOWN
 
 
@@ -313,6 +298,7 @@ def test_get_change_status_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = change_status_service.GetChangeStatusRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -320,7 +306,6 @@ def test_get_change_status_field_headers():
             type(client.transport.get_change_status),
             '__call__') as call:
         call.return_value = change_status.ChangeStatus()
-
         client.get_change_status(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -347,7 +332,6 @@ def test_get_change_status_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = change_status.ChangeStatus()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_change_status(
@@ -358,7 +342,6 @@ def test_get_change_status_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -439,7 +422,7 @@ def test_change_status_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_change_status',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -591,7 +574,6 @@ def test_change_status_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer = "squid"
     ad_group = "clam"
-
     expected = "customers/{customer}/adGroups/{ad_group}".format(customer=customer, ad_group=ad_group, )
     actual = ChangeStatusServiceClient.ad_group_path(customer, ad_group)
     assert expected == actual
@@ -599,9 +581,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer": "whelk",
-    "ad_group": "octopus",
-
+        "customer": "whelk",
+        "ad_group": "octopus",
     }
     path = ChangeStatusServiceClient.ad_group_path(**expected)
 
@@ -612,7 +593,6 @@ def test_parse_ad_group_path():
 def test_ad_group_ad_path():
     customer = "oyster"
     ad_group_ad = "nudibranch"
-
     expected = "customers/{customer}/adGroupAds/{ad_group_ad}".format(customer=customer, ad_group_ad=ad_group_ad, )
     actual = ChangeStatusServiceClient.ad_group_ad_path(customer, ad_group_ad)
     assert expected == actual
@@ -620,9 +600,8 @@ def test_ad_group_ad_path():
 
 def test_parse_ad_group_ad_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_group_ad": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_group_ad": "mussel",
     }
     path = ChangeStatusServiceClient.ad_group_ad_path(**expected)
 
@@ -633,7 +612,6 @@ def test_parse_ad_group_ad_path():
 def test_ad_group_bid_modifier_path():
     customer = "winkle"
     ad_group_bid_modifier = "nautilus"
-
     expected = "customers/{customer}/adGroupBidModifiers/{ad_group_bid_modifier}".format(customer=customer, ad_group_bid_modifier=ad_group_bid_modifier, )
     actual = ChangeStatusServiceClient.ad_group_bid_modifier_path(customer, ad_group_bid_modifier)
     assert expected == actual
@@ -641,9 +619,8 @@ def test_ad_group_bid_modifier_path():
 
 def test_parse_ad_group_bid_modifier_path():
     expected = {
-    "customer": "scallop",
-    "ad_group_bid_modifier": "abalone",
-
+        "customer": "scallop",
+        "ad_group_bid_modifier": "abalone",
     }
     path = ChangeStatusServiceClient.ad_group_bid_modifier_path(**expected)
 
@@ -654,7 +631,6 @@ def test_parse_ad_group_bid_modifier_path():
 def test_ad_group_criterion_path():
     customer = "squid"
     ad_group_criterion = "clam"
-
     expected = "customers/{customer}/adGroupCriteria/{ad_group_criterion}".format(customer=customer, ad_group_criterion=ad_group_criterion, )
     actual = ChangeStatusServiceClient.ad_group_criterion_path(customer, ad_group_criterion)
     assert expected == actual
@@ -662,9 +638,8 @@ def test_ad_group_criterion_path():
 
 def test_parse_ad_group_criterion_path():
     expected = {
-    "customer": "whelk",
-    "ad_group_criterion": "octopus",
-
+        "customer": "whelk",
+        "ad_group_criterion": "octopus",
     }
     path = ChangeStatusServiceClient.ad_group_criterion_path(**expected)
 
@@ -675,7 +650,6 @@ def test_parse_ad_group_criterion_path():
 def test_ad_group_feed_path():
     customer = "oyster"
     ad_group_feed = "nudibranch"
-
     expected = "customers/{customer}/adGroupFeeds/{ad_group_feed}".format(customer=customer, ad_group_feed=ad_group_feed, )
     actual = ChangeStatusServiceClient.ad_group_feed_path(customer, ad_group_feed)
     assert expected == actual
@@ -683,9 +657,8 @@ def test_ad_group_feed_path():
 
 def test_parse_ad_group_feed_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_group_feed": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_group_feed": "mussel",
     }
     path = ChangeStatusServiceClient.ad_group_feed_path(**expected)
 
@@ -696,7 +669,6 @@ def test_parse_ad_group_feed_path():
 def test_campaign_path():
     customer = "winkle"
     campaign = "nautilus"
-
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = ChangeStatusServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -704,9 +676,8 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-    "customer": "scallop",
-    "campaign": "abalone",
-
+        "customer": "scallop",
+        "campaign": "abalone",
     }
     path = ChangeStatusServiceClient.campaign_path(**expected)
 
@@ -717,7 +688,6 @@ def test_parse_campaign_path():
 def test_campaign_criterion_path():
     customer = "squid"
     campaign_criterion = "clam"
-
     expected = "customers/{customer}/campaignCriteria/{campaign_criterion}".format(customer=customer, campaign_criterion=campaign_criterion, )
     actual = ChangeStatusServiceClient.campaign_criterion_path(customer, campaign_criterion)
     assert expected == actual
@@ -725,9 +695,8 @@ def test_campaign_criterion_path():
 
 def test_parse_campaign_criterion_path():
     expected = {
-    "customer": "whelk",
-    "campaign_criterion": "octopus",
-
+        "customer": "whelk",
+        "campaign_criterion": "octopus",
     }
     path = ChangeStatusServiceClient.campaign_criterion_path(**expected)
 
@@ -738,7 +707,6 @@ def test_parse_campaign_criterion_path():
 def test_campaign_feed_path():
     customer = "oyster"
     campaign_feed = "nudibranch"
-
     expected = "customers/{customer}/campaignFeeds/{campaign_feed}".format(customer=customer, campaign_feed=campaign_feed, )
     actual = ChangeStatusServiceClient.campaign_feed_path(customer, campaign_feed)
     assert expected == actual
@@ -746,9 +714,8 @@ def test_campaign_feed_path():
 
 def test_parse_campaign_feed_path():
     expected = {
-    "customer": "cuttlefish",
-    "campaign_feed": "mussel",
-
+        "customer": "cuttlefish",
+        "campaign_feed": "mussel",
     }
     path = ChangeStatusServiceClient.campaign_feed_path(**expected)
 
@@ -759,7 +726,6 @@ def test_parse_campaign_feed_path():
 def test_change_status_path():
     customer = "winkle"
     change_status = "nautilus"
-
     expected = "customers/{customer}/changeStatus/{change_status}".format(customer=customer, change_status=change_status, )
     actual = ChangeStatusServiceClient.change_status_path(customer, change_status)
     assert expected == actual
@@ -767,9 +733,8 @@ def test_change_status_path():
 
 def test_parse_change_status_path():
     expected = {
-    "customer": "scallop",
-    "change_status": "abalone",
-
+        "customer": "scallop",
+        "change_status": "abalone",
     }
     path = ChangeStatusServiceClient.change_status_path(**expected)
 
@@ -780,7 +745,6 @@ def test_parse_change_status_path():
 def test_feed_path():
     customer = "squid"
     feed = "clam"
-
     expected = "customers/{customer}/feeds/{feed}".format(customer=customer, feed=feed, )
     actual = ChangeStatusServiceClient.feed_path(customer, feed)
     assert expected == actual
@@ -788,9 +752,8 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-    "customer": "whelk",
-    "feed": "octopus",
-
+        "customer": "whelk",
+        "feed": "octopus",
     }
     path = ChangeStatusServiceClient.feed_path(**expected)
 
@@ -801,7 +764,6 @@ def test_parse_feed_path():
 def test_feed_item_path():
     customer = "oyster"
     feed_item = "nudibranch"
-
     expected = "customers/{customer}/feedItems/{feed_item}".format(customer=customer, feed_item=feed_item, )
     actual = ChangeStatusServiceClient.feed_item_path(customer, feed_item)
     assert expected == actual
@@ -809,9 +771,8 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-    "customer": "cuttlefish",
-    "feed_item": "mussel",
-
+        "customer": "cuttlefish",
+        "feed_item": "mussel",
     }
     path = ChangeStatusServiceClient.feed_item_path(**expected)
 
@@ -821,7 +782,6 @@ def test_parse_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ChangeStatusServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -829,8 +789,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = ChangeStatusServiceClient.common_billing_account_path(**expected)
 
@@ -840,7 +799,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ChangeStatusServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -848,8 +806,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = ChangeStatusServiceClient.common_folder_path(**expected)
 
@@ -859,7 +816,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ChangeStatusServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -867,8 +823,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = ChangeStatusServiceClient.common_organization_path(**expected)
 
@@ -878,7 +833,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = ChangeStatusServiceClient.common_project_path(project)
     assert expected == actual
@@ -886,8 +840,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = ChangeStatusServiceClient.common_project_path(**expected)
 
@@ -898,7 +851,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ChangeStatusServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -906,9 +858,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = ChangeStatusServiceClient.common_location_path(**expected)
 

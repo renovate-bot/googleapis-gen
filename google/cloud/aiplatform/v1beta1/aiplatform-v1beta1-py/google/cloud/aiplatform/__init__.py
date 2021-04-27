@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -227,8 +226,7 @@ from google.cloud.aiplatform_v1beta1.types.vizier_service import SuggestTrialsMe
 from google.cloud.aiplatform_v1beta1.types.vizier_service import SuggestTrialsRequest
 from google.cloud.aiplatform_v1beta1.types.vizier_service import SuggestTrialsResponse
 
-__all__ = (
-    'AcceleratorType',
+__all__ = ('AcceleratorType',
     'ActiveLearningConfig',
     'AddTrialMeasurementRequest',
     'Annotation',

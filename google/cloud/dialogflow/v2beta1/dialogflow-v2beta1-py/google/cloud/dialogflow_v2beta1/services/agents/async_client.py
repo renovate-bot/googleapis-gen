@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.cloud.dialogflow_v2beta1.types import agent as gcd_agent
 from google.cloud.dialogflow_v2beta1.types import validation_result
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
-
 from .transports.base import AgentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AgentsGrpcAsyncIOTransport
 from .client import AgentsClient
@@ -54,19 +51,14 @@ class AgentsAsyncClient:
 
     agent_path = staticmethod(AgentsClient.agent_path)
     parse_agent_path = staticmethod(AgentsClient.parse_agent_path)
-
     common_billing_account_path = staticmethod(AgentsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AgentsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AgentsClient.common_folder_path)
     parse_common_folder_path = staticmethod(AgentsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AgentsClient.common_organization_path)
     parse_common_organization_path = staticmethod(AgentsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AgentsClient.common_project_path)
     parse_common_project_path = staticmethod(AgentsClient.parse_common_project_path)
-
     common_location_path = staticmethod(AgentsClient.common_location_path)
     parse_common_location_path = staticmethod(AgentsClient.parse_common_location_path)
 
@@ -151,7 +143,6 @@ class AgentsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AgentsClient(
             credentials=credentials,
             transport=transport,
@@ -172,7 +163,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.GetAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgent][google.cloud.dialogflow.v2beta1.Agents.GetAgent].
             parent (:class:`str`):
                 Required. The project that the agent to fetch is
@@ -182,7 +174,6 @@ class AgentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -216,7 +207,6 @@ class AgentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -259,14 +249,14 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.SetAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.SetAgent][google.cloud.dialogflow.v2beta1.Agents.SetAgent].
             agent (:class:`google.cloud.dialogflow_v2beta1.types.Agent`):
                 Required. The agent to update.
                 This corresponds to the ``agent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -300,7 +290,6 @@ class AgentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if agent is not None:
             request.agent = agent
 
@@ -343,7 +332,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.DeleteAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.DeleteAgent][google.cloud.dialogflow.v2beta1.Agents.DeleteAgent].
             parent (:class:`str`):
                 Required. The project that the agent to delete is
@@ -353,7 +343,6 @@ class AgentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -372,7 +361,6 @@ class AgentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -417,7 +405,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.SearchAgentsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.SearchAgents][google.cloud.dialogflow.v2beta1.Agents.SearchAgents].
             parent (:class:`str`):
                 Required. The project to list agents from. Format:
@@ -427,7 +416,6 @@ class AgentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -455,7 +443,6 @@ class AgentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -510,7 +497,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.TrainAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent].
             parent (:class:`str`):
                 Required. The project that the agent to train is
@@ -520,7 +508,6 @@ class AgentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -558,7 +545,6 @@ class AgentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -612,7 +598,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ExportAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent].
             parent (:class:`str`):
                 Required. The project that the agent to export is
@@ -622,7 +609,6 @@ class AgentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -651,7 +637,6 @@ class AgentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -718,9 +703,9 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ImportAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -747,7 +732,6 @@ class AgentsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = agent.ImportAgentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -811,9 +795,9 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.RestoreAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.RestoreAgent][google.cloud.dialogflow.v2beta1.Agents.RestoreAgent].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -840,7 +824,6 @@ class AgentsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = agent.RestoreAgentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -891,9 +874,9 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.GetValidationResultRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -907,7 +890,6 @@ class AgentsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = agent.GetValidationResultRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -936,8 +918,6 @@ class AgentsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

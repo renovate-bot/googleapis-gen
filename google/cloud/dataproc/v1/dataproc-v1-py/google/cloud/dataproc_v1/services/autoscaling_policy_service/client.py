@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.dataproc_v1.services.autoscaling_policy_service import pagers
 from google.cloud.dataproc_v1.types import autoscaling_policies
-
 from .transports.base import AutoscalingPolicyServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AutoscalingPolicyServiceGrpcTransport
 from .transports.grpc_asyncio import AutoscalingPolicyServiceGrpcAsyncIOTransport
@@ -339,7 +336,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.CreateAutoscalingPolicyRequest):
-                The request object. A request to create an autoscaling
+                The request object.
+                A request to create an autoscaling
                 policy.
             parent (str):
                 Required. The "resource name" of the region or location,
@@ -366,7 +364,6 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -393,10 +390,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.CreateAutoscalingPolicyRequest):
             request = autoscaling_policies.CreateAutoscalingPolicyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if policy_ is not None:
@@ -440,7 +435,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.UpdateAutoscalingPolicyRequest):
-                The request object. A request to update an autoscaling
+                The request object.
+                A request to update an autoscaling
                 policy.
             policy_ (google.cloud.dataproc_v1.types.AutoscalingPolicy):
                 Required. The updated autoscaling
@@ -449,7 +445,6 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,10 +471,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.UpdateAutoscalingPolicyRequest):
             request = autoscaling_policies.UpdateAutoscalingPolicyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if policy_ is not None:
                 request.policy_ = policy_
 
@@ -518,7 +511,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.GetAutoscalingPolicyRequest):
-                The request object. A request to fetch an autoscaling
+                The request object.
+                A request to fetch an autoscaling
                 policy.
             name (str):
                 Required. The "resource name" of the autoscaling policy,
@@ -537,7 +531,6 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -564,10 +557,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.GetAutoscalingPolicyRequest):
             request = autoscaling_policies.GetAutoscalingPolicyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -606,7 +597,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.ListAutoscalingPoliciesRequest):
-                The request object. A request to list autoscaling
+                The request object.
+                A request to list autoscaling
                 policies in a project.
             parent (str):
                 Required. The "resource name" of the region or location,
@@ -625,7 +617,6 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -655,10 +646,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.ListAutoscalingPoliciesRequest):
             request = autoscaling_policies.ListAutoscalingPoliciesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -708,7 +697,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.DeleteAutoscalingPolicyRequest):
-                The request object. A request to delete an autoscaling
+                The request object.
+                A request to delete an autoscaling
                 policy.
                 Autoscaling policies in use by one or more clusters will
                 not be deleted.
@@ -731,7 +721,6 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -752,10 +741,8 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.DeleteAutoscalingPolicyRequest):
             request = autoscaling_policies.DeleteAutoscalingPolicyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -778,8 +765,6 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,6 +36,8 @@ from google.cloud.kms_v1.services.key_management_service import KeyManagementSer
 from google.cloud.kms_v1.services.key_management_service import KeyManagementServiceClient
 from google.cloud.kms_v1.services.key_management_service import pagers
 from google.cloud.kms_v1.services.key_management_service import transports
+from google.cloud.kms_v1.services.key_management_service.transports.base import _API_CORE_VERSION
+from google.cloud.kms_v1.services.key_management_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.kms_v1.types import resources
 from google.cloud.kms_v1.types import service
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
@@ -47,6 +49,28 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -214,12 +238,10 @@ def test_key_management_service_client_client_options(client_class, transport_cl
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (KeyManagementServiceClient, transports.KeyManagementServiceGrpcTransport, "grpc", "true"),
     (KeyManagementServiceAsyncClient, transports.KeyManagementServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (KeyManagementServiceClient, transports.KeyManagementServiceGrpcTransport, "grpc", "false"),
     (KeyManagementServiceAsyncClient, transports.KeyManagementServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(KeyManagementServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(KeyManagementServiceClient))
 @mock.patch.object(KeyManagementServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(KeyManagementServiceAsyncClient))
@@ -374,25 +396,18 @@ def test_list_key_rings(transport: str = 'grpc', request_type=service.ListKeyRin
         # Designate an appropriate return value for the call.
         call.return_value = service.ListKeyRingsResponse(
             next_page_token='next_page_token_value',
-
             total_size=1086,
-
         )
-
         response = client.list_key_rings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListKeyRingsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListKeyRingsPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -415,8 +430,8 @@ def test_list_key_rings_empty_call():
         client.list_key_rings()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListKeyRingsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_key_rings_async(transport: str = 'grpc_asyncio', request_type=service.ListKeyRingsRequest):
@@ -434,24 +449,20 @@ async def test_list_key_rings_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.list_key_rings),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListKeyRingsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListKeyRingsResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
-
         response = await client.list_key_rings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListKeyRingsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListKeyRingsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -468,6 +479,7 @@ def test_list_key_rings_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListKeyRingsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -475,7 +487,6 @@ def test_list_key_rings_field_headers():
             type(client.transport.list_key_rings),
             '__call__') as call:
         call.return_value = service.ListKeyRingsResponse()
-
         client.list_key_rings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -500,6 +511,7 @@ async def test_list_key_rings_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListKeyRingsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -507,7 +519,6 @@ async def test_list_key_rings_field_headers_async():
             type(client.transport.list_key_rings),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListKeyRingsResponse())
-
         await client.list_key_rings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -534,7 +545,6 @@ def test_list_key_rings_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListKeyRingsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_key_rings(
@@ -545,7 +555,6 @@ def test_list_key_rings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -587,7 +596,6 @@ async def test_list_key_rings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -792,7 +800,6 @@ async def test_list_key_rings_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_crypto_keys(transport: str = 'grpc', request_type=service.ListCryptoKeysRequest):
     client = KeyManagementServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -810,25 +817,18 @@ def test_list_crypto_keys(transport: str = 'grpc', request_type=service.ListCryp
         # Designate an appropriate return value for the call.
         call.return_value = service.ListCryptoKeysResponse(
             next_page_token='next_page_token_value',
-
             total_size=1086,
-
         )
-
         response = client.list_crypto_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCryptoKeysRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListCryptoKeysPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -851,8 +851,8 @@ def test_list_crypto_keys_empty_call():
         client.list_crypto_keys()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCryptoKeysRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_crypto_keys_async(transport: str = 'grpc_asyncio', request_type=service.ListCryptoKeysRequest):
@@ -870,24 +870,20 @@ async def test_list_crypto_keys_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_crypto_keys),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListCryptoKeysResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListCryptoKeysResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
-
         response = await client.list_crypto_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCryptoKeysRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCryptoKeysAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -904,6 +900,7 @@ def test_list_crypto_keys_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListCryptoKeysRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -911,7 +908,6 @@ def test_list_crypto_keys_field_headers():
             type(client.transport.list_crypto_keys),
             '__call__') as call:
         call.return_value = service.ListCryptoKeysResponse()
-
         client.list_crypto_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -936,6 +932,7 @@ async def test_list_crypto_keys_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListCryptoKeysRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -943,7 +940,6 @@ async def test_list_crypto_keys_field_headers_async():
             type(client.transport.list_crypto_keys),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListCryptoKeysResponse())
-
         await client.list_crypto_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -970,7 +966,6 @@ def test_list_crypto_keys_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListCryptoKeysResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_crypto_keys(
@@ -981,7 +976,6 @@ def test_list_crypto_keys_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1023,7 +1017,6 @@ async def test_list_crypto_keys_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1228,7 +1221,6 @@ async def test_list_crypto_keys_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_crypto_key_versions(transport: str = 'grpc', request_type=service.ListCryptoKeyVersionsRequest):
     client = KeyManagementServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1246,25 +1238,18 @@ def test_list_crypto_key_versions(transport: str = 'grpc', request_type=service.
         # Designate an appropriate return value for the call.
         call.return_value = service.ListCryptoKeyVersionsResponse(
             next_page_token='next_page_token_value',
-
             total_size=1086,
-
         )
-
         response = client.list_crypto_key_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCryptoKeyVersionsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListCryptoKeyVersionsPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -1287,8 +1272,8 @@ def test_list_crypto_key_versions_empty_call():
         client.list_crypto_key_versions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCryptoKeyVersionsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_crypto_key_versions_async(transport: str = 'grpc_asyncio', request_type=service.ListCryptoKeyVersionsRequest):
@@ -1306,24 +1291,20 @@ async def test_list_crypto_key_versions_async(transport: str = 'grpc_asyncio', r
             type(client.transport.list_crypto_key_versions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListCryptoKeyVersionsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListCryptoKeyVersionsResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
-
         response = await client.list_crypto_key_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCryptoKeyVersionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCryptoKeyVersionsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -1340,6 +1321,7 @@ def test_list_crypto_key_versions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListCryptoKeyVersionsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1347,7 +1329,6 @@ def test_list_crypto_key_versions_field_headers():
             type(client.transport.list_crypto_key_versions),
             '__call__') as call:
         call.return_value = service.ListCryptoKeyVersionsResponse()
-
         client.list_crypto_key_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1372,6 +1353,7 @@ async def test_list_crypto_key_versions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListCryptoKeyVersionsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1379,7 +1361,6 @@ async def test_list_crypto_key_versions_field_headers_async():
             type(client.transport.list_crypto_key_versions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListCryptoKeyVersionsResponse())
-
         await client.list_crypto_key_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1406,7 +1387,6 @@ def test_list_crypto_key_versions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListCryptoKeyVersionsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_crypto_key_versions(
@@ -1417,7 +1397,6 @@ def test_list_crypto_key_versions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1459,7 +1438,6 @@ async def test_list_crypto_key_versions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1664,7 +1642,6 @@ async def test_list_crypto_key_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_import_jobs(transport: str = 'grpc', request_type=service.ListImportJobsRequest):
     client = KeyManagementServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1682,25 +1659,18 @@ def test_list_import_jobs(transport: str = 'grpc', request_type=service.ListImpo
         # Designate an appropriate return value for the call.
         call.return_value = service.ListImportJobsResponse(
             next_page_token='next_page_token_value',
-
             total_size=1086,
-
         )
-
         response = client.list_import_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListImportJobsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListImportJobsPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -1723,8 +1693,8 @@ def test_list_import_jobs_empty_call():
         client.list_import_jobs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListImportJobsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_import_jobs_async(transport: str = 'grpc_asyncio', request_type=service.ListImportJobsRequest):
@@ -1742,24 +1712,20 @@ async def test_list_import_jobs_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_import_jobs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListImportJobsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListImportJobsResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
-
         response = await client.list_import_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListImportJobsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListImportJobsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_size == 1086
 
 
@@ -1776,6 +1742,7 @@ def test_list_import_jobs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListImportJobsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1783,7 +1750,6 @@ def test_list_import_jobs_field_headers():
             type(client.transport.list_import_jobs),
             '__call__') as call:
         call.return_value = service.ListImportJobsResponse()
-
         client.list_import_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1808,6 +1774,7 @@ async def test_list_import_jobs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListImportJobsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1815,7 +1782,6 @@ async def test_list_import_jobs_field_headers_async():
             type(client.transport.list_import_jobs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListImportJobsResponse())
-
         await client.list_import_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1842,7 +1808,6 @@ def test_list_import_jobs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListImportJobsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_import_jobs(
@@ -1853,7 +1818,6 @@ def test_list_import_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1895,7 +1859,6 @@ async def test_list_import_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2100,7 +2063,6 @@ async def test_list_import_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_key_ring(transport: str = 'grpc', request_type=service.GetKeyRingRequest):
     client = KeyManagementServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2118,21 +2080,16 @@ def test_get_key_ring(transport: str = 'grpc', request_type=service.GetKeyRingRe
         # Designate an appropriate return value for the call.
         call.return_value = resources.KeyRing(
             name='name_value',
-
         )
-
         response = client.get_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetKeyRingRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.KeyRing)
-
     assert response.name == 'name_value'
 
 
@@ -2155,8 +2112,8 @@ def test_get_key_ring_empty_call():
         client.get_key_ring()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetKeyRingRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_key_ring_async(transport: str = 'grpc_asyncio', request_type=service.GetKeyRingRequest):
@@ -2174,21 +2131,18 @@ async def test_get_key_ring_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_key_ring),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.KeyRing(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.KeyRing(
             name='name_value',
         ))
-
         response = await client.get_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetKeyRingRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.KeyRing)
-
     assert response.name == 'name_value'
 
 
@@ -2205,6 +2159,7 @@ def test_get_key_ring_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetKeyRingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2212,7 +2167,6 @@ def test_get_key_ring_field_headers():
             type(client.transport.get_key_ring),
             '__call__') as call:
         call.return_value = resources.KeyRing()
-
         client.get_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2237,6 +2191,7 @@ async def test_get_key_ring_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetKeyRingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2244,7 +2199,6 @@ async def test_get_key_ring_field_headers_async():
             type(client.transport.get_key_ring),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.KeyRing())
-
         await client.get_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2271,7 +2225,6 @@ def test_get_key_ring_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.KeyRing()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_key_ring(
@@ -2282,7 +2235,6 @@ def test_get_key_ring_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2324,7 +2276,6 @@ async def test_get_key_ring_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2360,26 +2311,19 @@ def test_get_crypto_key(transport: str = 'grpc', request_type=service.GetCryptoK
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey(
             name='name_value',
-
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
-
             rotation_period=duration.Duration(seconds=751),
         )
-
         response = client.get_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCryptoKeyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -2402,8 +2346,8 @@ def test_get_crypto_key_empty_call():
         client.get_crypto_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCryptoKeyRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_crypto_key_async(transport: str = 'grpc_asyncio', request_type=service.GetCryptoKeyRequest):
@@ -2421,24 +2365,20 @@ async def test_get_crypto_key_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_crypto_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
             name='name_value',
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
         ))
-
         response = await client.get_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCryptoKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -2455,6 +2395,7 @@ def test_get_crypto_key_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetCryptoKeyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2462,7 +2403,6 @@ def test_get_crypto_key_field_headers():
             type(client.transport.get_crypto_key),
             '__call__') as call:
         call.return_value = resources.CryptoKey()
-
         client.get_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2487,6 +2427,7 @@ async def test_get_crypto_key_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetCryptoKeyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2494,7 +2435,6 @@ async def test_get_crypto_key_field_headers_async():
             type(client.transport.get_crypto_key),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey())
-
         await client.get_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2521,7 +2461,6 @@ def test_get_crypto_key_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_crypto_key(
@@ -2532,7 +2471,6 @@ def test_get_crypto_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2574,7 +2512,6 @@ async def test_get_crypto_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2610,41 +2547,26 @@ def test_get_crypto_key_version(transport: str = 'grpc', request_type=service.Ge
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion(
             name='name_value',
-
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             import_job='import_job_value',
-
             import_failure_reason='import_failure_reason_value',
-
         )
-
         response = client.get_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -2667,8 +2589,8 @@ def test_get_crypto_key_version_empty_call():
         client.get_crypto_key_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCryptoKeyVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.GetCryptoKeyVersionRequest):
@@ -2686,7 +2608,7 @@ async def test_get_crypto_key_version_async(transport: str = 'grpc_asyncio', req
             type(client.transport.get_crypto_key_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
             name='name_value',
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
             protection_level=resources.ProtectionLevel.SOFTWARE,
@@ -2694,28 +2616,20 @@ async def test_get_crypto_key_version_async(transport: str = 'grpc_asyncio', req
             import_job='import_job_value',
             import_failure_reason='import_failure_reason_value',
         ))
-
         response = await client.get_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -2732,6 +2646,7 @@ def test_get_crypto_key_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetCryptoKeyVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2739,7 +2654,6 @@ def test_get_crypto_key_version_field_headers():
             type(client.transport.get_crypto_key_version),
             '__call__') as call:
         call.return_value = resources.CryptoKeyVersion()
-
         client.get_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2764,6 +2678,7 @@ async def test_get_crypto_key_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetCryptoKeyVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2771,7 +2686,6 @@ async def test_get_crypto_key_version_field_headers_async():
             type(client.transport.get_crypto_key_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion())
-
         await client.get_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2798,7 +2712,6 @@ def test_get_crypto_key_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_crypto_key_version(
@@ -2809,7 +2722,6 @@ def test_get_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2851,7 +2763,6 @@ async def test_get_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2887,29 +2798,20 @@ def test_get_public_key(transport: str = 'grpc', request_type=service.GetPublicK
         # Designate an appropriate return value for the call.
         call.return_value = resources.PublicKey(
             pem='pem_value',
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             name='name_value',
-
         )
-
         response = client.get_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.PublicKey)
-
     assert response.pem == 'pem_value'
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.name == 'name_value'
 
 
@@ -2932,8 +2834,8 @@ def test_get_public_key_empty_call():
         client.get_public_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetPublicKeyRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_public_key_async(transport: str = 'grpc_asyncio', request_type=service.GetPublicKeyRequest):
@@ -2951,27 +2853,22 @@ async def test_get_public_key_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_public_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.PublicKey(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.PublicKey(
             pem='pem_value',
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
             name='name_value',
         ))
-
         response = await client.get_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.PublicKey)
-
     assert response.pem == 'pem_value'
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.name == 'name_value'
 
 
@@ -2988,6 +2885,7 @@ def test_get_public_key_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetPublicKeyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2995,7 +2893,6 @@ def test_get_public_key_field_headers():
             type(client.transport.get_public_key),
             '__call__') as call:
         call.return_value = resources.PublicKey()
-
         client.get_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3020,6 +2917,7 @@ async def test_get_public_key_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetPublicKeyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3027,7 +2925,6 @@ async def test_get_public_key_field_headers_async():
             type(client.transport.get_public_key),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.PublicKey())
-
         await client.get_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3054,7 +2951,6 @@ def test_get_public_key_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.PublicKey()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_public_key(
@@ -3065,7 +2961,6 @@ def test_get_public_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3107,7 +3002,6 @@ async def test_get_public_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3143,33 +3037,22 @@ def test_get_import_job(transport: str = 'grpc', request_type=service.GetImportJ
         # Designate an appropriate return value for the call.
         call.return_value = resources.ImportJob(
             name='name_value',
-
             import_method=resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             state=resources.ImportJob.ImportJobState.PENDING_GENERATION,
-
         )
-
         response = client.get_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetImportJobRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.ImportJob)
-
     assert response.name == 'name_value'
-
     assert response.import_method == resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.state == resources.ImportJob.ImportJobState.PENDING_GENERATION
 
 
@@ -3192,8 +3075,8 @@ def test_get_import_job_empty_call():
         client.get_import_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetImportJobRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_import_job_async(transport: str = 'grpc_asyncio', request_type=service.GetImportJobRequest):
@@ -3211,30 +3094,24 @@ async def test_get_import_job_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_import_job),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ImportJob(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.ImportJob(
             name='name_value',
             import_method=resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256,
             protection_level=resources.ProtectionLevel.SOFTWARE,
             state=resources.ImportJob.ImportJobState.PENDING_GENERATION,
         ))
-
         response = await client.get_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetImportJobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.ImportJob)
-
     assert response.name == 'name_value'
-
     assert response.import_method == resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.state == resources.ImportJob.ImportJobState.PENDING_GENERATION
 
 
@@ -3251,6 +3128,7 @@ def test_get_import_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetImportJobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3258,7 +3136,6 @@ def test_get_import_job_field_headers():
             type(client.transport.get_import_job),
             '__call__') as call:
         call.return_value = resources.ImportJob()
-
         client.get_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3283,6 +3160,7 @@ async def test_get_import_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetImportJobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3290,7 +3168,6 @@ async def test_get_import_job_field_headers_async():
             type(client.transport.get_import_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ImportJob())
-
         await client.get_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3317,7 +3194,6 @@ def test_get_import_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.ImportJob()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_import_job(
@@ -3328,7 +3204,6 @@ def test_get_import_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3370,7 +3245,6 @@ async def test_get_import_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3406,21 +3280,16 @@ def test_create_key_ring(transport: str = 'grpc', request_type=service.CreateKey
         # Designate an appropriate return value for the call.
         call.return_value = resources.KeyRing(
             name='name_value',
-
         )
-
         response = client.create_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateKeyRingRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.KeyRing)
-
     assert response.name == 'name_value'
 
 
@@ -3443,8 +3312,8 @@ def test_create_key_ring_empty_call():
         client.create_key_ring()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateKeyRingRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_key_ring_async(transport: str = 'grpc_asyncio', request_type=service.CreateKeyRingRequest):
@@ -3462,21 +3331,18 @@ async def test_create_key_ring_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.create_key_ring),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.KeyRing(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.KeyRing(
             name='name_value',
         ))
-
         response = await client.create_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateKeyRingRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.KeyRing)
-
     assert response.name == 'name_value'
 
 
@@ -3493,6 +3359,7 @@ def test_create_key_ring_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateKeyRingRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3500,7 +3367,6 @@ def test_create_key_ring_field_headers():
             type(client.transport.create_key_ring),
             '__call__') as call:
         call.return_value = resources.KeyRing()
-
         client.create_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3525,6 +3391,7 @@ async def test_create_key_ring_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateKeyRingRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3532,7 +3399,6 @@ async def test_create_key_ring_field_headers_async():
             type(client.transport.create_key_ring),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.KeyRing())
-
         await client.create_key_ring(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3559,7 +3425,6 @@ def test_create_key_ring_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.KeyRing()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_key_ring(
@@ -3572,11 +3437,8 @@ def test_create_key_ring_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].key_ring_id == 'key_ring_id_value'
-
         assert args[0].key_ring == resources.KeyRing(name='name_value')
 
 
@@ -3622,11 +3484,8 @@ async def test_create_key_ring_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].key_ring_id == 'key_ring_id_value'
-
         assert args[0].key_ring == resources.KeyRing(name='name_value')
 
 
@@ -3664,26 +3523,19 @@ def test_create_crypto_key(transport: str = 'grpc', request_type=service.CreateC
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey(
             name='name_value',
-
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
-
             rotation_period=duration.Duration(seconds=751),
         )
-
         response = client.create_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCryptoKeyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -3706,8 +3558,8 @@ def test_create_crypto_key_empty_call():
         client.create_crypto_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCryptoKeyRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_crypto_key_async(transport: str = 'grpc_asyncio', request_type=service.CreateCryptoKeyRequest):
@@ -3725,24 +3577,20 @@ async def test_create_crypto_key_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.create_crypto_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
             name='name_value',
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
         ))
-
         response = await client.create_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCryptoKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -3759,6 +3607,7 @@ def test_create_crypto_key_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateCryptoKeyRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3766,7 +3615,6 @@ def test_create_crypto_key_field_headers():
             type(client.transport.create_crypto_key),
             '__call__') as call:
         call.return_value = resources.CryptoKey()
-
         client.create_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3791,6 +3639,7 @@ async def test_create_crypto_key_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateCryptoKeyRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3798,7 +3647,6 @@ async def test_create_crypto_key_field_headers_async():
             type(client.transport.create_crypto_key),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey())
-
         await client.create_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3825,7 +3673,6 @@ def test_create_crypto_key_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_crypto_key(
@@ -3838,11 +3685,8 @@ def test_create_crypto_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].crypto_key_id == 'crypto_key_id_value'
-
         assert args[0].crypto_key == resources.CryptoKey(name='name_value')
 
 
@@ -3888,11 +3732,8 @@ async def test_create_crypto_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].crypto_key_id == 'crypto_key_id_value'
-
         assert args[0].crypto_key == resources.CryptoKey(name='name_value')
 
 
@@ -3930,41 +3771,26 @@ def test_create_crypto_key_version(transport: str = 'grpc', request_type=service
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion(
             name='name_value',
-
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             import_job='import_job_value',
-
             import_failure_reason='import_failure_reason_value',
-
         )
-
         response = client.create_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -3987,8 +3813,8 @@ def test_create_crypto_key_version_empty_call():
         client.create_crypto_key_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCryptoKeyVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.CreateCryptoKeyVersionRequest):
@@ -4006,7 +3832,7 @@ async def test_create_crypto_key_version_async(transport: str = 'grpc_asyncio', 
             type(client.transport.create_crypto_key_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
             name='name_value',
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
             protection_level=resources.ProtectionLevel.SOFTWARE,
@@ -4014,28 +3840,20 @@ async def test_create_crypto_key_version_async(transport: str = 'grpc_asyncio', 
             import_job='import_job_value',
             import_failure_reason='import_failure_reason_value',
         ))
-
         response = await client.create_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -4052,6 +3870,7 @@ def test_create_crypto_key_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateCryptoKeyVersionRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4059,7 +3878,6 @@ def test_create_crypto_key_version_field_headers():
             type(client.transport.create_crypto_key_version),
             '__call__') as call:
         call.return_value = resources.CryptoKeyVersion()
-
         client.create_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4084,6 +3902,7 @@ async def test_create_crypto_key_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateCryptoKeyVersionRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4091,7 +3910,6 @@ async def test_create_crypto_key_version_field_headers_async():
             type(client.transport.create_crypto_key_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion())
-
         await client.create_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4118,7 +3936,6 @@ def test_create_crypto_key_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_crypto_key_version(
@@ -4130,9 +3947,7 @@ def test_create_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
 
 
@@ -4176,9 +3991,7 @@ async def test_create_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
 
 
@@ -4215,41 +4028,26 @@ def test_import_crypto_key_version(transport: str = 'grpc', request_type=service
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion(
             name='name_value',
-
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             import_job='import_job_value',
-
             import_failure_reason='import_failure_reason_value',
-
         )
-
         response = client.import_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ImportCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -4272,8 +4070,8 @@ def test_import_crypto_key_version_empty_call():
         client.import_crypto_key_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ImportCryptoKeyVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_import_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.ImportCryptoKeyVersionRequest):
@@ -4291,7 +4089,7 @@ async def test_import_crypto_key_version_async(transport: str = 'grpc_asyncio', 
             type(client.transport.import_crypto_key_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
             name='name_value',
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
             protection_level=resources.ProtectionLevel.SOFTWARE,
@@ -4299,28 +4097,20 @@ async def test_import_crypto_key_version_async(transport: str = 'grpc_asyncio', 
             import_job='import_job_value',
             import_failure_reason='import_failure_reason_value',
         ))
-
         response = await client.import_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ImportCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -4337,6 +4127,7 @@ def test_import_crypto_key_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ImportCryptoKeyVersionRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4344,7 +4135,6 @@ def test_import_crypto_key_version_field_headers():
             type(client.transport.import_crypto_key_version),
             '__call__') as call:
         call.return_value = resources.CryptoKeyVersion()
-
         client.import_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4369,6 +4159,7 @@ async def test_import_crypto_key_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ImportCryptoKeyVersionRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4376,7 +4167,6 @@ async def test_import_crypto_key_version_field_headers_async():
             type(client.transport.import_crypto_key_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion())
-
         await client.import_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4409,33 +4199,22 @@ def test_create_import_job(transport: str = 'grpc', request_type=service.CreateI
         # Designate an appropriate return value for the call.
         call.return_value = resources.ImportJob(
             name='name_value',
-
             import_method=resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             state=resources.ImportJob.ImportJobState.PENDING_GENERATION,
-
         )
-
         response = client.create_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateImportJobRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.ImportJob)
-
     assert response.name == 'name_value'
-
     assert response.import_method == resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.state == resources.ImportJob.ImportJobState.PENDING_GENERATION
 
 
@@ -4458,8 +4237,8 @@ def test_create_import_job_empty_call():
         client.create_import_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateImportJobRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_import_job_async(transport: str = 'grpc_asyncio', request_type=service.CreateImportJobRequest):
@@ -4477,30 +4256,24 @@ async def test_create_import_job_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.create_import_job),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ImportJob(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.ImportJob(
             name='name_value',
             import_method=resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256,
             protection_level=resources.ProtectionLevel.SOFTWARE,
             state=resources.ImportJob.ImportJobState.PENDING_GENERATION,
         ))
-
         response = await client.create_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateImportJobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.ImportJob)
-
     assert response.name == 'name_value'
-
     assert response.import_method == resources.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.state == resources.ImportJob.ImportJobState.PENDING_GENERATION
 
 
@@ -4517,6 +4290,7 @@ def test_create_import_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateImportJobRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4524,7 +4298,6 @@ def test_create_import_job_field_headers():
             type(client.transport.create_import_job),
             '__call__') as call:
         call.return_value = resources.ImportJob()
-
         client.create_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4549,6 +4322,7 @@ async def test_create_import_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateImportJobRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4556,7 +4330,6 @@ async def test_create_import_job_field_headers_async():
             type(client.transport.create_import_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ImportJob())
-
         await client.create_import_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4583,7 +4356,6 @@ def test_create_import_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.ImportJob()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_import_job(
@@ -4596,11 +4368,8 @@ def test_create_import_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].import_job_id == 'import_job_id_value'
-
         assert args[0].import_job == resources.ImportJob(name='name_value')
 
 
@@ -4646,11 +4415,8 @@ async def test_create_import_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].import_job_id == 'import_job_id_value'
-
         assert args[0].import_job == resources.ImportJob(name='name_value')
 
 
@@ -4688,26 +4454,19 @@ def test_update_crypto_key(transport: str = 'grpc', request_type=service.UpdateC
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey(
             name='name_value',
-
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
-
             rotation_period=duration.Duration(seconds=751),
         )
-
         response = client.update_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -4730,8 +4489,8 @@ def test_update_crypto_key_empty_call():
         client.update_crypto_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_crypto_key_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCryptoKeyRequest):
@@ -4749,24 +4508,20 @@ async def test_update_crypto_key_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.update_crypto_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
             name='name_value',
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
         ))
-
         response = await client.update_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -4783,6 +4538,7 @@ def test_update_crypto_key_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCryptoKeyRequest()
+
     request.crypto_key.name = 'crypto_key.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4790,7 +4546,6 @@ def test_update_crypto_key_field_headers():
             type(client.transport.update_crypto_key),
             '__call__') as call:
         call.return_value = resources.CryptoKey()
-
         client.update_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4815,6 +4570,7 @@ async def test_update_crypto_key_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCryptoKeyRequest()
+
     request.crypto_key.name = 'crypto_key.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4822,7 +4578,6 @@ async def test_update_crypto_key_field_headers_async():
             type(client.transport.update_crypto_key),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey())
-
         await client.update_crypto_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4849,7 +4604,6 @@ def test_update_crypto_key_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_crypto_key(
@@ -4861,9 +4615,7 @@ def test_update_crypto_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].crypto_key == resources.CryptoKey(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -4907,9 +4659,7 @@ async def test_update_crypto_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].crypto_key == resources.CryptoKey(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -4946,41 +4696,26 @@ def test_update_crypto_key_version(transport: str = 'grpc', request_type=service
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion(
             name='name_value',
-
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             import_job='import_job_value',
-
             import_failure_reason='import_failure_reason_value',
-
         )
-
         response = client.update_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -5003,8 +4738,8 @@ def test_update_crypto_key_version_empty_call():
         client.update_crypto_key_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCryptoKeyVersionRequest):
@@ -5022,7 +4757,7 @@ async def test_update_crypto_key_version_async(transport: str = 'grpc_asyncio', 
             type(client.transport.update_crypto_key_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
             name='name_value',
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
             protection_level=resources.ProtectionLevel.SOFTWARE,
@@ -5030,28 +4765,20 @@ async def test_update_crypto_key_version_async(transport: str = 'grpc_asyncio', 
             import_job='import_job_value',
             import_failure_reason='import_failure_reason_value',
         ))
-
         response = await client.update_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -5068,6 +4795,7 @@ def test_update_crypto_key_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCryptoKeyVersionRequest()
+
     request.crypto_key_version.name = 'crypto_key_version.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5075,7 +4803,6 @@ def test_update_crypto_key_version_field_headers():
             type(client.transport.update_crypto_key_version),
             '__call__') as call:
         call.return_value = resources.CryptoKeyVersion()
-
         client.update_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5100,6 +4827,7 @@ async def test_update_crypto_key_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCryptoKeyVersionRequest()
+
     request.crypto_key_version.name = 'crypto_key_version.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5107,7 +4835,6 @@ async def test_update_crypto_key_version_field_headers_async():
             type(client.transport.update_crypto_key_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion())
-
         await client.update_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5134,7 +4861,6 @@ def test_update_crypto_key_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_crypto_key_version(
@@ -5146,9 +4872,7 @@ def test_update_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -5192,9 +4916,7 @@ async def test_update_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -5231,33 +4953,22 @@ def test_encrypt(transport: str = 'grpc', request_type=service.EncryptRequest):
         # Designate an appropriate return value for the call.
         call.return_value = service.EncryptResponse(
             name='name_value',
-
             ciphertext=b'ciphertext_blob',
-
             verified_plaintext_crc32c=True,
-
             verified_additional_authenticated_data_crc32c=True,
-
         )
-
         response = client.encrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.EncryptRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.EncryptResponse)
-
     assert response.name == 'name_value'
-
     assert response.ciphertext == b'ciphertext_blob'
-
     assert response.verified_plaintext_crc32c is True
-
     assert response.verified_additional_authenticated_data_crc32c is True
 
 
@@ -5280,8 +4991,8 @@ def test_encrypt_empty_call():
         client.encrypt()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.EncryptRequest()
+
 
 @pytest.mark.asyncio
 async def test_encrypt_async(transport: str = 'grpc_asyncio', request_type=service.EncryptRequest):
@@ -5299,30 +5010,24 @@ async def test_encrypt_async(transport: str = 'grpc_asyncio', request_type=servi
             type(client.transport.encrypt),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.EncryptResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.EncryptResponse(
             name='name_value',
             ciphertext=b'ciphertext_blob',
             verified_plaintext_crc32c=True,
             verified_additional_authenticated_data_crc32c=True,
         ))
-
         response = await client.encrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.EncryptRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.EncryptResponse)
-
     assert response.name == 'name_value'
-
     assert response.ciphertext == b'ciphertext_blob'
-
     assert response.verified_plaintext_crc32c is True
-
     assert response.verified_additional_authenticated_data_crc32c is True
 
 
@@ -5339,6 +5044,7 @@ def test_encrypt_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.EncryptRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5346,7 +5052,6 @@ def test_encrypt_field_headers():
             type(client.transport.encrypt),
             '__call__') as call:
         call.return_value = service.EncryptResponse()
-
         client.encrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5371,6 +5076,7 @@ async def test_encrypt_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.EncryptRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5378,7 +5084,6 @@ async def test_encrypt_field_headers_async():
             type(client.transport.encrypt),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.EncryptResponse())
-
         await client.encrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5405,7 +5110,6 @@ def test_encrypt_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.EncryptResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.encrypt(
@@ -5417,9 +5121,7 @@ def test_encrypt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].plaintext == b'plaintext_blob'
 
 
@@ -5463,9 +5165,7 @@ async def test_encrypt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].plaintext == b'plaintext_blob'
 
 
@@ -5502,21 +5202,16 @@ def test_decrypt(transport: str = 'grpc', request_type=service.DecryptRequest):
         # Designate an appropriate return value for the call.
         call.return_value = service.DecryptResponse(
             plaintext=b'plaintext_blob',
-
         )
-
         response = client.decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DecryptRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.DecryptResponse)
-
     assert response.plaintext == b'plaintext_blob'
 
 
@@ -5539,8 +5234,8 @@ def test_decrypt_empty_call():
         client.decrypt()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DecryptRequest()
+
 
 @pytest.mark.asyncio
 async def test_decrypt_async(transport: str = 'grpc_asyncio', request_type=service.DecryptRequest):
@@ -5558,21 +5253,18 @@ async def test_decrypt_async(transport: str = 'grpc_asyncio', request_type=servi
             type(client.transport.decrypt),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.DecryptResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.DecryptResponse(
             plaintext=b'plaintext_blob',
         ))
-
         response = await client.decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DecryptRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.DecryptResponse)
-
     assert response.plaintext == b'plaintext_blob'
 
 
@@ -5589,6 +5281,7 @@ def test_decrypt_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DecryptRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5596,7 +5289,6 @@ def test_decrypt_field_headers():
             type(client.transport.decrypt),
             '__call__') as call:
         call.return_value = service.DecryptResponse()
-
         client.decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5621,6 +5313,7 @@ async def test_decrypt_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DecryptRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5628,7 +5321,6 @@ async def test_decrypt_field_headers_async():
             type(client.transport.decrypt),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.DecryptResponse())
-
         await client.decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5655,7 +5347,6 @@ def test_decrypt_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.DecryptResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.decrypt(
@@ -5667,9 +5358,7 @@ def test_decrypt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].ciphertext == b'ciphertext_blob'
 
 
@@ -5713,9 +5402,7 @@ async def test_decrypt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].ciphertext == b'ciphertext_blob'
 
 
@@ -5752,29 +5439,20 @@ def test_asymmetric_sign(transport: str = 'grpc', request_type=service.Asymmetri
         # Designate an appropriate return value for the call.
         call.return_value = service.AsymmetricSignResponse(
             signature=b'signature_blob',
-
             verified_digest_crc32c=True,
-
             name='name_value',
-
         )
-
         response = client.asymmetric_sign(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.AsymmetricSignRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.AsymmetricSignResponse)
-
     assert response.signature == b'signature_blob'
-
     assert response.verified_digest_crc32c is True
-
     assert response.name == 'name_value'
 
 
@@ -5797,8 +5475,8 @@ def test_asymmetric_sign_empty_call():
         client.asymmetric_sign()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.AsymmetricSignRequest()
+
 
 @pytest.mark.asyncio
 async def test_asymmetric_sign_async(transport: str = 'grpc_asyncio', request_type=service.AsymmetricSignRequest):
@@ -5816,27 +5494,22 @@ async def test_asymmetric_sign_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.asymmetric_sign),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.AsymmetricSignResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.AsymmetricSignResponse(
             signature=b'signature_blob',
             verified_digest_crc32c=True,
             name='name_value',
         ))
-
         response = await client.asymmetric_sign(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.AsymmetricSignRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.AsymmetricSignResponse)
-
     assert response.signature == b'signature_blob'
-
     assert response.verified_digest_crc32c is True
-
     assert response.name == 'name_value'
 
 
@@ -5853,6 +5526,7 @@ def test_asymmetric_sign_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AsymmetricSignRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5860,7 +5534,6 @@ def test_asymmetric_sign_field_headers():
             type(client.transport.asymmetric_sign),
             '__call__') as call:
         call.return_value = service.AsymmetricSignResponse()
-
         client.asymmetric_sign(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5885,6 +5558,7 @@ async def test_asymmetric_sign_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AsymmetricSignRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5892,7 +5566,6 @@ async def test_asymmetric_sign_field_headers_async():
             type(client.transport.asymmetric_sign),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.AsymmetricSignResponse())
-
         await client.asymmetric_sign(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5919,7 +5592,6 @@ def test_asymmetric_sign_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.AsymmetricSignResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.asymmetric_sign(
@@ -5931,9 +5603,7 @@ def test_asymmetric_sign_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].digest == service.Digest(sha256=b'sha256_blob')
 
 
@@ -5977,9 +5647,7 @@ async def test_asymmetric_sign_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].digest == service.Digest(sha256=b'sha256_blob')
 
 
@@ -6016,25 +5684,18 @@ def test_asymmetric_decrypt(transport: str = 'grpc', request_type=service.Asymme
         # Designate an appropriate return value for the call.
         call.return_value = service.AsymmetricDecryptResponse(
             plaintext=b'plaintext_blob',
-
             verified_ciphertext_crc32c=True,
-
         )
-
         response = client.asymmetric_decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.AsymmetricDecryptRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.AsymmetricDecryptResponse)
-
     assert response.plaintext == b'plaintext_blob'
-
     assert response.verified_ciphertext_crc32c is True
 
 
@@ -6057,8 +5718,8 @@ def test_asymmetric_decrypt_empty_call():
         client.asymmetric_decrypt()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.AsymmetricDecryptRequest()
+
 
 @pytest.mark.asyncio
 async def test_asymmetric_decrypt_async(transport: str = 'grpc_asyncio', request_type=service.AsymmetricDecryptRequest):
@@ -6076,24 +5737,20 @@ async def test_asymmetric_decrypt_async(transport: str = 'grpc_asyncio', request
             type(client.transport.asymmetric_decrypt),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.AsymmetricDecryptResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.AsymmetricDecryptResponse(
             plaintext=b'plaintext_blob',
             verified_ciphertext_crc32c=True,
         ))
-
         response = await client.asymmetric_decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.AsymmetricDecryptRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.AsymmetricDecryptResponse)
-
     assert response.plaintext == b'plaintext_blob'
-
     assert response.verified_ciphertext_crc32c is True
 
 
@@ -6110,6 +5767,7 @@ def test_asymmetric_decrypt_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AsymmetricDecryptRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6117,7 +5775,6 @@ def test_asymmetric_decrypt_field_headers():
             type(client.transport.asymmetric_decrypt),
             '__call__') as call:
         call.return_value = service.AsymmetricDecryptResponse()
-
         client.asymmetric_decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6142,6 +5799,7 @@ async def test_asymmetric_decrypt_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AsymmetricDecryptRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6149,7 +5807,6 @@ async def test_asymmetric_decrypt_field_headers_async():
             type(client.transport.asymmetric_decrypt),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.AsymmetricDecryptResponse())
-
         await client.asymmetric_decrypt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6176,7 +5833,6 @@ def test_asymmetric_decrypt_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.AsymmetricDecryptResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.asymmetric_decrypt(
@@ -6188,9 +5844,7 @@ def test_asymmetric_decrypt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].ciphertext == b'ciphertext_blob'
 
 
@@ -6234,9 +5888,7 @@ async def test_asymmetric_decrypt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].ciphertext == b'ciphertext_blob'
 
 
@@ -6273,26 +5925,19 @@ def test_update_crypto_key_primary_version(transport: str = 'grpc', request_type
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey(
             name='name_value',
-
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
-
             rotation_period=duration.Duration(seconds=751),
         )
-
         response = client.update_crypto_key_primary_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyPrimaryVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -6315,8 +5960,8 @@ def test_update_crypto_key_primary_version_empty_call():
         client.update_crypto_key_primary_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyPrimaryVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_crypto_key_primary_version_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCryptoKeyPrimaryVersionRequest):
@@ -6334,24 +5979,20 @@ async def test_update_crypto_key_primary_version_async(transport: str = 'grpc_as
             type(client.transport.update_crypto_key_primary_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey(
             name='name_value',
             purpose=resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT,
         ))
-
         response = await client.update_crypto_key_primary_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCryptoKeyPrimaryVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKey)
-
     assert response.name == 'name_value'
-
     assert response.purpose == resources.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT
 
 
@@ -6368,6 +6009,7 @@ def test_update_crypto_key_primary_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCryptoKeyPrimaryVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6375,7 +6017,6 @@ def test_update_crypto_key_primary_version_field_headers():
             type(client.transport.update_crypto_key_primary_version),
             '__call__') as call:
         call.return_value = resources.CryptoKey()
-
         client.update_crypto_key_primary_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6400,6 +6041,7 @@ async def test_update_crypto_key_primary_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCryptoKeyPrimaryVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6407,7 +6049,6 @@ async def test_update_crypto_key_primary_version_field_headers_async():
             type(client.transport.update_crypto_key_primary_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKey())
-
         await client.update_crypto_key_primary_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6434,7 +6075,6 @@ def test_update_crypto_key_primary_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKey()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_crypto_key_primary_version(
@@ -6446,9 +6086,7 @@ def test_update_crypto_key_primary_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].crypto_key_version_id == 'crypto_key_version_id_value'
 
 
@@ -6492,9 +6130,7 @@ async def test_update_crypto_key_primary_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].crypto_key_version_id == 'crypto_key_version_id_value'
 
 
@@ -6531,41 +6167,26 @@ def test_destroy_crypto_key_version(transport: str = 'grpc', request_type=servic
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion(
             name='name_value',
-
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             import_job='import_job_value',
-
             import_failure_reason='import_failure_reason_value',
-
         )
-
         response = client.destroy_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DestroyCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -6588,8 +6209,8 @@ def test_destroy_crypto_key_version_empty_call():
         client.destroy_crypto_key_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DestroyCryptoKeyVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_destroy_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.DestroyCryptoKeyVersionRequest):
@@ -6607,7 +6228,7 @@ async def test_destroy_crypto_key_version_async(transport: str = 'grpc_asyncio',
             type(client.transport.destroy_crypto_key_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
             name='name_value',
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
             protection_level=resources.ProtectionLevel.SOFTWARE,
@@ -6615,28 +6236,20 @@ async def test_destroy_crypto_key_version_async(transport: str = 'grpc_asyncio',
             import_job='import_job_value',
             import_failure_reason='import_failure_reason_value',
         ))
-
         response = await client.destroy_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DestroyCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -6653,6 +6266,7 @@ def test_destroy_crypto_key_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DestroyCryptoKeyVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6660,7 +6274,6 @@ def test_destroy_crypto_key_version_field_headers():
             type(client.transport.destroy_crypto_key_version),
             '__call__') as call:
         call.return_value = resources.CryptoKeyVersion()
-
         client.destroy_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6685,6 +6298,7 @@ async def test_destroy_crypto_key_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DestroyCryptoKeyVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6692,7 +6306,6 @@ async def test_destroy_crypto_key_version_field_headers_async():
             type(client.transport.destroy_crypto_key_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion())
-
         await client.destroy_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6719,7 +6332,6 @@ def test_destroy_crypto_key_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.destroy_crypto_key_version(
@@ -6730,7 +6342,6 @@ def test_destroy_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -6772,7 +6383,6 @@ async def test_destroy_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -6808,41 +6418,26 @@ def test_restore_crypto_key_version(transport: str = 'grpc', request_type=servic
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion(
             name='name_value',
-
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
-
             protection_level=resources.ProtectionLevel.SOFTWARE,
-
             algorithm=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION,
-
             import_job='import_job_value',
-
             import_failure_reason='import_failure_reason_value',
-
         )
-
         response = client.restore_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.RestoreCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -6865,8 +6460,8 @@ def test_restore_crypto_key_version_empty_call():
         client.restore_crypto_key_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.RestoreCryptoKeyVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_restore_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.RestoreCryptoKeyVersionRequest):
@@ -6884,7 +6479,7 @@ async def test_restore_crypto_key_version_async(transport: str = 'grpc_asyncio',
             type(client.transport.restore_crypto_key_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion(
             name='name_value',
             state=resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION,
             protection_level=resources.ProtectionLevel.SOFTWARE,
@@ -6892,28 +6487,20 @@ async def test_restore_crypto_key_version_async(transport: str = 'grpc_asyncio',
             import_job='import_job_value',
             import_failure_reason='import_failure_reason_value',
         ))
-
         response = await client.restore_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.RestoreCryptoKeyVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.CryptoKeyVersion)
-
     assert response.name == 'name_value'
-
     assert response.state == resources.CryptoKeyVersion.CryptoKeyVersionState.PENDING_GENERATION
-
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
-
     assert response.algorithm == resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION
-
     assert response.import_job == 'import_job_value'
-
     assert response.import_failure_reason == 'import_failure_reason_value'
 
 
@@ -6930,6 +6517,7 @@ def test_restore_crypto_key_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.RestoreCryptoKeyVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6937,7 +6525,6 @@ def test_restore_crypto_key_version_field_headers():
             type(client.transport.restore_crypto_key_version),
             '__call__') as call:
         call.return_value = resources.CryptoKeyVersion()
-
         client.restore_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6962,6 +6549,7 @@ async def test_restore_crypto_key_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.RestoreCryptoKeyVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6969,7 +6557,6 @@ async def test_restore_crypto_key_version_field_headers_async():
             type(client.transport.restore_crypto_key_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.CryptoKeyVersion())
-
         await client.restore_crypto_key_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6996,7 +6583,6 @@ def test_restore_crypto_key_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.CryptoKeyVersion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.restore_crypto_key_version(
@@ -7007,7 +6593,6 @@ def test_restore_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -7049,7 +6634,6 @@ async def test_restore_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -7108,7 +6692,6 @@ def test_transport_instance():
     client = KeyManagementServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.KeyManagementServiceGrpcTransport(
@@ -7123,7 +6706,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.KeyManagementServiceGrpcTransport,
     transports.KeyManagementServiceGrpcAsyncIOTransport,
@@ -7135,7 +6717,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = KeyManagementServiceClient(
@@ -7145,7 +6726,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.KeyManagementServiceGrpcTransport,
     )
-
 
 def test_key_management_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -7193,15 +6773,33 @@ def test_key_management_service_base_transport():
         'set_iam_policy',
         'get_iam_policy',
         'test_iam_permissions',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_key_management_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.kms_v1.services.key_management_service.transports.KeyManagementServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.kms_v1.services.key_management_service.transports.KeyManagementServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.KeyManagementServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloudkms',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_key_management_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.kms_v1.services.key_management_service.transports.KeyManagementServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.KeyManagementServiceTransport(
@@ -7218,35 +6816,184 @@ def test_key_management_service_base_transport_with_credentials_file():
 
 def test_key_management_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.kms_v1.services.key_management_service.transports.KeyManagementServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.kms_v1.services.key_management_service.transports.KeyManagementServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.KeyManagementServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_key_management_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         KeyManagementServiceClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloudkms',),
+            'https://www.googleapis.com/auth/cloudkms',
+),
+
             quota_project_id=None,
         )
 
 
-def test_key_management_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_key_management_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        KeyManagementServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloudkms',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.KeyManagementServiceGrpcTransport,
+        transports.KeyManagementServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_key_management_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.KeyManagementServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloudkms',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.KeyManagementServiceGrpcTransport,
+        transports.KeyManagementServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_key_management_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloudkms',),
+            'https://www.googleapis.com/auth/cloudkms',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.KeyManagementServiceGrpcTransport, grpc_helpers),
+        (transports.KeyManagementServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_key_management_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "cloudkms.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloudkms',),
+            scopes=["1", "2"],
+            default_host="cloudkms.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.KeyManagementServiceGrpcTransport, grpc_helpers),
+        (transports.KeyManagementServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_key_management_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "cloudkms.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloudkms',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.KeyManagementServiceGrpcTransport, grpc_helpers),
+        (transports.KeyManagementServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_key_management_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "cloudkms.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -7309,7 +7056,6 @@ def test_key_management_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='cloudkms.googleapis.com:8000'),
     )
     assert client.transport._host == 'cloudkms.googleapis.com:8000'
-
 
 def test_key_management_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -7432,7 +7178,6 @@ def test_crypto_key_path():
     location = "clam"
     key_ring = "whelk"
     crypto_key = "octopus"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, )
     actual = KeyManagementServiceClient.crypto_key_path(project, location, key_ring, crypto_key)
     assert expected == actual
@@ -7440,11 +7185,10 @@ def test_crypto_key_path():
 
 def test_parse_crypto_key_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "key_ring": "cuttlefish",
-    "crypto_key": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "key_ring": "cuttlefish",
+        "crypto_key": "mussel",
     }
     path = KeyManagementServiceClient.crypto_key_path(**expected)
 
@@ -7458,7 +7202,6 @@ def test_crypto_key_version_path():
     key_ring = "scallop"
     crypto_key = "abalone"
     crypto_key_version = "squid"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, crypto_key_version=crypto_key_version, )
     actual = KeyManagementServiceClient.crypto_key_version_path(project, location, key_ring, crypto_key, crypto_key_version)
     assert expected == actual
@@ -7466,12 +7209,11 @@ def test_crypto_key_version_path():
 
 def test_parse_crypto_key_version_path():
     expected = {
-    "project": "clam",
-    "location": "whelk",
-    "key_ring": "octopus",
-    "crypto_key": "oyster",
-    "crypto_key_version": "nudibranch",
-
+        "project": "clam",
+        "location": "whelk",
+        "key_ring": "octopus",
+        "crypto_key": "oyster",
+        "crypto_key_version": "nudibranch",
     }
     path = KeyManagementServiceClient.crypto_key_version_path(**expected)
 
@@ -7484,7 +7226,6 @@ def test_import_job_path():
     location = "mussel"
     key_ring = "winkle"
     import_job = "nautilus"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/importJobs/{import_job}".format(project=project, location=location, key_ring=key_ring, import_job=import_job, )
     actual = KeyManagementServiceClient.import_job_path(project, location, key_ring, import_job)
     assert expected == actual
@@ -7492,11 +7233,10 @@ def test_import_job_path():
 
 def test_parse_import_job_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-    "key_ring": "squid",
-    "import_job": "clam",
-
+        "project": "scallop",
+        "location": "abalone",
+        "key_ring": "squid",
+        "import_job": "clam",
     }
     path = KeyManagementServiceClient.import_job_path(**expected)
 
@@ -7508,7 +7248,6 @@ def test_key_ring_path():
     project = "whelk"
     location = "octopus"
     key_ring = "oyster"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}".format(project=project, location=location, key_ring=key_ring, )
     actual = KeyManagementServiceClient.key_ring_path(project, location, key_ring)
     assert expected == actual
@@ -7516,10 +7255,9 @@ def test_key_ring_path():
 
 def test_parse_key_ring_path():
     expected = {
-    "project": "nudibranch",
-    "location": "cuttlefish",
-    "key_ring": "mussel",
-
+        "project": "nudibranch",
+        "location": "cuttlefish",
+        "key_ring": "mussel",
     }
     path = KeyManagementServiceClient.key_ring_path(**expected)
 
@@ -7533,7 +7271,6 @@ def test_public_key_path():
     key_ring = "scallop"
     crypto_key = "abalone"
     crypto_key_version = "squid"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}/publicKey".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, crypto_key_version=crypto_key_version, )
     actual = KeyManagementServiceClient.public_key_path(project, location, key_ring, crypto_key, crypto_key_version)
     assert expected == actual
@@ -7541,12 +7278,11 @@ def test_public_key_path():
 
 def test_parse_public_key_path():
     expected = {
-    "project": "clam",
-    "location": "whelk",
-    "key_ring": "octopus",
-    "crypto_key": "oyster",
-    "crypto_key_version": "nudibranch",
-
+        "project": "clam",
+        "location": "whelk",
+        "key_ring": "octopus",
+        "crypto_key": "oyster",
+        "crypto_key_version": "nudibranch",
     }
     path = KeyManagementServiceClient.public_key_path(**expected)
 
@@ -7556,7 +7292,6 @@ def test_parse_public_key_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = KeyManagementServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -7564,8 +7299,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = KeyManagementServiceClient.common_billing_account_path(**expected)
 
@@ -7575,7 +7309,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = KeyManagementServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -7583,8 +7316,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = KeyManagementServiceClient.common_folder_path(**expected)
 
@@ -7594,7 +7326,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = KeyManagementServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -7602,8 +7333,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = KeyManagementServiceClient.common_organization_path(**expected)
 
@@ -7613,7 +7343,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = KeyManagementServiceClient.common_project_path(project)
     assert expected == actual
@@ -7621,8 +7350,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = KeyManagementServiceClient.common_project_path(**expected)
 
@@ -7633,7 +7361,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = KeyManagementServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -7641,9 +7368,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = KeyManagementServiceClient.common_location_path(**expected)
 

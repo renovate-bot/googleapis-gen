@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -35,7 +33,6 @@ from google.cloud.metastore_v1.types import metastore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import DataprocMetastoreTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DataprocMetastoreGrpcAsyncIOTransport
 from .client import DataprocMetastoreClient
@@ -78,19 +75,14 @@ class DataprocMetastoreAsyncClient:
     parse_network_path = staticmethod(DataprocMetastoreClient.parse_network_path)
     service_path = staticmethod(DataprocMetastoreClient.service_path)
     parse_service_path = staticmethod(DataprocMetastoreClient.parse_service_path)
-
     common_billing_account_path = staticmethod(DataprocMetastoreClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DataprocMetastoreClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(DataprocMetastoreClient.common_folder_path)
     parse_common_folder_path = staticmethod(DataprocMetastoreClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(DataprocMetastoreClient.common_organization_path)
     parse_common_organization_path = staticmethod(DataprocMetastoreClient.parse_common_organization_path)
-
     common_project_path = staticmethod(DataprocMetastoreClient.common_project_path)
     parse_common_project_path = staticmethod(DataprocMetastoreClient.parse_common_project_path)
-
     common_location_path = staticmethod(DataprocMetastoreClient.common_location_path)
     parse_common_location_path = staticmethod(DataprocMetastoreClient.parse_common_location_path)
 
@@ -175,7 +167,6 @@ class DataprocMetastoreAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = DataprocMetastoreClient(
             credentials=credentials,
             transport=transport,
@@ -196,7 +187,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.ListServicesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.ListServices][google.cloud.metastore.v1.DataprocMetastore.ListServices].
             parent (:class:`str`):
                 Required. The relative resource name of the location of
@@ -207,7 +199,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -235,7 +226,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -287,7 +277,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.GetServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.GetService][google.cloud.metastore.v1.DataprocMetastore.GetService].
             name (:class:`str`):
                 Required. The relative resource name of the metastore
@@ -298,7 +289,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -323,7 +313,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -369,7 +358,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.CreateServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.CreateService][google.cloud.metastore.v1.DataprocMetastore.CreateService].
             parent (:class:`str`):
                 Required. The relative resource name of the location in
@@ -404,7 +394,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``service_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -432,7 +421,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if service is not None:
@@ -488,7 +476,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.UpdateServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.UpdateService][google.cloud.metastore.v1.DataprocMetastore.UpdateService].
             service (:class:`google.cloud.metastore_v1.types.Service`):
                 Required. The metastore service to update. The server
@@ -511,7 +500,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,7 +527,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if service is not None:
             request.service = service
         if update_mask is not None:
@@ -592,7 +579,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.DeleteServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.DeleteService][google.cloud.metastore.v1.DataprocMetastore.DeleteService].
             name (:class:`str`):
                 Required. The relative resource name of the metastore
@@ -603,7 +591,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -641,7 +628,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -692,7 +678,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.ListMetadataImportsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
             parent (:class:`str`):
                 Required. The relative resource name of the service
@@ -703,7 +690,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -731,7 +717,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -783,7 +768,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.GetMetadataImportRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1.DataprocMetastore.GetMetadataImport].
             name (:class:`str`):
                 Required. The relative resource name of the metadata
@@ -794,7 +780,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -819,7 +804,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -865,7 +849,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.CreateMetadataImportRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1.DataprocMetastore.CreateMetadataImport].
             parent (:class:`str`):
                 Required. The relative resource name of the service in
@@ -899,7 +884,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``metadata_import_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -927,7 +911,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if metadata_import is not None:
@@ -985,7 +968,8 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.UpdateMetadataImportRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.UpdateMetadataImport][google.cloud.metastore.v1.DataprocMetastore.UpdateMetadataImport].
             metadata_import (:class:`google.cloud.metastore_v1.types.MetadataImport`):
                 Required. The metadata import to update. The server only
@@ -1008,7 +992,6 @@ class DataprocMetastoreAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1036,7 +1019,6 @@ class DataprocMetastoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if metadata_import is not None:
             request.metadata_import = metadata_import
         if update_mask is not None:
@@ -1088,9 +1070,9 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1.types.ExportMetadataRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.ExportMetadata][google.cloud.metastore.v1.DataprocMetastore.ExportMetadata].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1107,7 +1089,6 @@ class DataprocMetastoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = metastore.ExportMetadataRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1144,8 +1125,6 @@ class DataprocMetastoreAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

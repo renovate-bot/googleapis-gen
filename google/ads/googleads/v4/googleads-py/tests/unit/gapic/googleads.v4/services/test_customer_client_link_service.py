@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -267,25 +265,18 @@ def test_get_customer_client_link(transport: str = 'grpc', request_type=customer
         # Designate an appropriate return value for the call.
         call.return_value = customer_client_link.CustomerClientLink(
             resource_name='resource_name_value',
-
             status=manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus.UNKNOWN,
-
         )
-
         response = client.get_customer_client_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_client_link_service.GetCustomerClientLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_client_link.CustomerClientLink)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.status == manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus.UNKNOWN
 
 
@@ -301,6 +292,7 @@ def test_get_customer_client_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_client_link_service.GetCustomerClientLinkRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -308,7 +300,6 @@ def test_get_customer_client_link_field_headers():
             type(client.transport.get_customer_client_link),
             '__call__') as call:
         call.return_value = customer_client_link.CustomerClientLink()
-
         client.get_customer_client_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -335,7 +326,6 @@ def test_get_customer_client_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_client_link.CustomerClientLink()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_client_link(
@@ -346,7 +336,6 @@ def test_get_customer_client_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -381,17 +370,14 @@ def test_mutate_customer_client_link(transport: str = 'grpc', request_type=custo
         # Designate an appropriate return value for the call.
         call.return_value = customer_client_link_service.MutateCustomerClientLinkResponse(
         )
-
         response = client.mutate_customer_client_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_client_link_service.MutateCustomerClientLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_client_link_service.MutateCustomerClientLinkResponse)
 
 
@@ -407,6 +393,7 @@ def test_mutate_customer_client_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_client_link_service.MutateCustomerClientLinkRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -414,7 +401,6 @@ def test_mutate_customer_client_link_field_headers():
             type(client.transport.mutate_customer_client_link),
             '__call__') as call:
         call.return_value = customer_client_link_service.MutateCustomerClientLinkResponse()
-
         client.mutate_customer_client_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -441,7 +427,6 @@ def test_mutate_customer_client_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_client_link_service.MutateCustomerClientLinkResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_customer_client_link(
@@ -453,9 +438,7 @@ def test_mutate_customer_client_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operation == customer_client_link_service.CustomerClientLinkOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))
 
 
@@ -538,7 +521,7 @@ def test_customer_client_link_service_base_transport():
     methods = (
         'get_customer_client_link',
         'mutate_customer_client_link',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -689,7 +672,6 @@ def test_customer_client_link_service_transport_channel_mtls_with_adc(
 
 def test_customer_path():
     customer = "squid"
-
     expected = "customers/{customer}".format(customer=customer, )
     actual = CustomerClientLinkServiceClient.customer_path(customer)
     assert expected == actual
@@ -697,8 +679,7 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-    "customer": "clam",
-
+        "customer": "clam",
     }
     path = CustomerClientLinkServiceClient.customer_path(**expected)
 
@@ -709,7 +690,6 @@ def test_parse_customer_path():
 def test_customer_client_link_path():
     customer = "whelk"
     customer_client_link = "octopus"
-
     expected = "customers/{customer}/customerClientLinks/{customer_client_link}".format(customer=customer, customer_client_link=customer_client_link, )
     actual = CustomerClientLinkServiceClient.customer_client_link_path(customer, customer_client_link)
     assert expected == actual
@@ -717,9 +697,8 @@ def test_customer_client_link_path():
 
 def test_parse_customer_client_link_path():
     expected = {
-    "customer": "oyster",
-    "customer_client_link": "nudibranch",
-
+        "customer": "oyster",
+        "customer_client_link": "nudibranch",
     }
     path = CustomerClientLinkServiceClient.customer_client_link_path(**expected)
 
@@ -729,7 +708,6 @@ def test_parse_customer_client_link_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerClientLinkServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -737,8 +715,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = CustomerClientLinkServiceClient.common_billing_account_path(**expected)
 
@@ -748,7 +725,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerClientLinkServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -756,8 +732,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = CustomerClientLinkServiceClient.common_folder_path(**expected)
 
@@ -767,7 +742,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerClientLinkServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -775,8 +749,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = CustomerClientLinkServiceClient.common_organization_path(**expected)
 
@@ -786,7 +759,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = CustomerClientLinkServiceClient.common_project_path(project)
     assert expected == actual
@@ -794,8 +766,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = CustomerClientLinkServiceClient.common_project_path(**expected)
 
@@ -806,7 +777,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerClientLinkServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -814,9 +784,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = CustomerClientLinkServiceClient.common_location_path(**expected)
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -32,7 +31,6 @@ from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
-
 from .base import StorageTransport, DEFAULT_CLIENT_INFO
 from .grpc import StorageGrpcTransport
 
@@ -82,13 +80,15 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -108,7 +108,8 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +167,6 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -229,7 +229,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_bucket_access_control(self) -> Callable[
             [storage.DeleteBucketAccessControlRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete bucket access control method over gRPC.
+        r"""Return a callable for the
+        delete bucket access control
+          method over gRPC.
 
         Permanently deletes the ACL entry for the specified
         entity on the specified bucket.
@@ -256,7 +258,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_bucket_access_control(self) -> Callable[
             [storage.GetBucketAccessControlRequest],
             Awaitable[storage_resources.BucketAccessControl]]:
-        r"""Return a callable for the get bucket access control method over gRPC.
+        r"""Return a callable for the
+        get bucket access control
+          method over gRPC.
 
         Returns the ACL entry for the specified entity on the
         specified bucket.
@@ -283,7 +287,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def insert_bucket_access_control(self) -> Callable[
             [storage.InsertBucketAccessControlRequest],
             Awaitable[storage_resources.BucketAccessControl]]:
-        r"""Return a callable for the insert bucket access control method over gRPC.
+        r"""Return a callable for the
+        insert bucket access control
+          method over gRPC.
 
         Creates a new ACL entry on the specified bucket.
 
@@ -309,7 +315,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_bucket_access_controls(self) -> Callable[
             [storage.ListBucketAccessControlsRequest],
             Awaitable[storage_resources.ListBucketAccessControlsResponse]]:
-        r"""Return a callable for the list bucket access controls method over gRPC.
+        r"""Return a callable for the
+        list bucket access controls
+          method over gRPC.
 
         Retrieves ACL entries on the specified bucket.
 
@@ -335,7 +343,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def update_bucket_access_control(self) -> Callable[
             [storage.UpdateBucketAccessControlRequest],
             Awaitable[storage_resources.BucketAccessControl]]:
-        r"""Return a callable for the update bucket access control method over gRPC.
+        r"""Return a callable for the
+        update bucket access control
+          method over gRPC.
 
         Updates an ACL entry on the specified bucket.
         Equivalent to PatchBucketAccessControl, but all
@@ -364,7 +374,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def patch_bucket_access_control(self) -> Callable[
             [storage.PatchBucketAccessControlRequest],
             Awaitable[storage_resources.BucketAccessControl]]:
-        r"""Return a callable for the patch bucket access control method over gRPC.
+        r"""Return a callable for the
+        patch bucket access control
+          method over gRPC.
 
         Updates an ACL entry on the specified bucket.
 
@@ -390,7 +402,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_bucket(self) -> Callable[
             [storage.DeleteBucketRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete bucket method over gRPC.
+        r"""Return a callable for the
+        delete bucket
+          method over gRPC.
 
         Permanently deletes an empty bucket.
 
@@ -416,7 +430,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_bucket(self) -> Callable[
             [storage.GetBucketRequest],
             Awaitable[storage_resources.Bucket]]:
-        r"""Return a callable for the get bucket method over gRPC.
+        r"""Return a callable for the
+        get bucket
+          method over gRPC.
 
         Returns metadata for the specified bucket.
 
@@ -442,7 +458,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def insert_bucket(self) -> Callable[
             [storage.InsertBucketRequest],
             Awaitable[storage_resources.Bucket]]:
-        r"""Return a callable for the insert bucket method over gRPC.
+        r"""Return a callable for the
+        insert bucket
+          method over gRPC.
 
         Creates a new bucket.
 
@@ -468,7 +486,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_channels(self) -> Callable[
             [storage.ListChannelsRequest],
             Awaitable[storage_resources.ListChannelsResponse]]:
-        r"""Return a callable for the list channels method over gRPC.
+        r"""Return a callable for the
+        list channels
+          method over gRPC.
 
         List active object change notification channels for
         this bucket.
@@ -495,7 +515,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_buckets(self) -> Callable[
             [storage.ListBucketsRequest],
             Awaitable[storage_resources.ListBucketsResponse]]:
-        r"""Return a callable for the list buckets method over gRPC.
+        r"""Return a callable for the
+        list buckets
+          method over gRPC.
 
         Retrieves a list of buckets for a given project.
 
@@ -521,7 +543,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def lock_bucket_retention_policy(self) -> Callable[
             [storage.LockRetentionPolicyRequest],
             Awaitable[storage_resources.Bucket]]:
-        r"""Return a callable for the lock bucket retention policy method over gRPC.
+        r"""Return a callable for the
+        lock bucket retention policy
+          method over gRPC.
 
         Locks retention policy on a bucket.
 
@@ -547,7 +571,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_bucket_iam_policy(self) -> Callable[
             [storage.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the get bucket iam policy method over gRPC.
+        r"""Return a callable for the
+        get bucket iam policy
+          method over gRPC.
 
         Gets the IAM policy for the specified bucket.
 
@@ -573,7 +599,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def set_bucket_iam_policy(self) -> Callable[
             [storage.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the set bucket iam policy method over gRPC.
+        r"""Return a callable for the
+        set bucket iam policy
+          method over gRPC.
 
         Updates an IAM policy for the specified bucket.
 
@@ -599,7 +627,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def test_bucket_iam_permissions(self) -> Callable[
             [storage.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test bucket iam permissions method over gRPC.
+        r"""Return a callable for the
+        test bucket iam permissions
+          method over gRPC.
 
         Tests a set of permissions on the given bucket to see
         which, if any, are held by the caller.
@@ -626,7 +656,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def patch_bucket(self) -> Callable[
             [storage.PatchBucketRequest],
             Awaitable[storage_resources.Bucket]]:
-        r"""Return a callable for the patch bucket method over gRPC.
+        r"""Return a callable for the
+        patch bucket
+          method over gRPC.
 
         Updates a bucket. Changes to the bucket will be
         readable immediately after writing, but configuration
@@ -654,7 +686,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def update_bucket(self) -> Callable[
             [storage.UpdateBucketRequest],
             Awaitable[storage_resources.Bucket]]:
-        r"""Return a callable for the update bucket method over gRPC.
+        r"""Return a callable for the
+        update bucket
+          method over gRPC.
 
         Updates a bucket. Equivalent to PatchBucket, but
         always replaces all mutatable fields of the bucket with
@@ -686,7 +720,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def stop_channel(self) -> Callable[
             [storage.StopChannelRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the stop channel method over gRPC.
+        r"""Return a callable for the
+        stop channel
+          method over gRPC.
 
         Halts "Object Change Notification" push messagages.
         See https://cloud.google.com/storage/docs/object-change-
@@ -716,8 +752,10 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_default_object_access_control(self) -> Callable[
             [storage.DeleteDefaultObjectAccessControlRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete default object access
-        control method over gRPC.
+        r"""Return a callable for the
+        delete default object access
+        control
+          method over gRPC.
 
         Permanently deletes the default object ACL entry for
         the specified entity on the specified bucket.
@@ -744,8 +782,10 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_default_object_access_control(self) -> Callable[
             [storage.GetDefaultObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the get default object access
-        control method over gRPC.
+        r"""Return a callable for the
+        get default object access
+        control
+          method over gRPC.
 
         Returns the default object ACL entry for the
         specified entity on the specified bucket.
@@ -772,8 +812,10 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def insert_default_object_access_control(self) -> Callable[
             [storage.InsertDefaultObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the insert default object access
-        control method over gRPC.
+        r"""Return a callable for the
+        insert default object access
+        control
+          method over gRPC.
 
         Creates a new default object ACL entry on the
         specified bucket.
@@ -800,8 +842,10 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_default_object_access_controls(self) -> Callable[
             [storage.ListDefaultObjectAccessControlsRequest],
             Awaitable[storage_resources.ListObjectAccessControlsResponse]]:
-        r"""Return a callable for the list default object access
-        controls method over gRPC.
+        r"""Return a callable for the
+        list default object access
+        controls
+          method over gRPC.
 
         Retrieves default object ACL entries on the specified
         bucket.
@@ -828,8 +872,10 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def patch_default_object_access_control(self) -> Callable[
             [storage.PatchDefaultObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the patch default object access
-        control method over gRPC.
+        r"""Return a callable for the
+        patch default object access
+        control
+          method over gRPC.
 
         Updates a default object ACL entry on the specified
         bucket.
@@ -856,8 +902,10 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def update_default_object_access_control(self) -> Callable[
             [storage.UpdateDefaultObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the update default object access
-        control method over gRPC.
+        r"""Return a callable for the
+        update default object access
+        control
+          method over gRPC.
 
         Updates a default object ACL entry on the specified
         bucket. Equivalent to PatchDefaultObjectAccessControl,
@@ -886,7 +934,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_notification(self) -> Callable[
             [storage.DeleteNotificationRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete notification method over gRPC.
+        r"""Return a callable for the
+        delete notification
+          method over gRPC.
 
         Permanently deletes a notification subscription.
         Note: Older, "Object Change Notification" push
@@ -915,7 +965,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_notification(self) -> Callable[
             [storage.GetNotificationRequest],
             Awaitable[storage_resources.Notification]]:
-        r"""Return a callable for the get notification method over gRPC.
+        r"""Return a callable for the
+        get notification
+          method over gRPC.
 
         View a notification configuration.
 
@@ -941,7 +993,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def insert_notification(self) -> Callable[
             [storage.InsertNotificationRequest],
             Awaitable[storage_resources.Notification]]:
-        r"""Return a callable for the insert notification method over gRPC.
+        r"""Return a callable for the
+        insert notification
+          method over gRPC.
 
         Creates a notification subscription for a given
         bucket. These notifications, when triggered, publish
@@ -971,7 +1025,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_notifications(self) -> Callable[
             [storage.ListNotificationsRequest],
             Awaitable[storage_resources.ListNotificationsResponse]]:
-        r"""Return a callable for the list notifications method over gRPC.
+        r"""Return a callable for the
+        list notifications
+          method over gRPC.
 
         Retrieves a list of notification subscriptions for a
         given bucket.
@@ -998,7 +1054,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_object_access_control(self) -> Callable[
             [storage.DeleteObjectAccessControlRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete object access control method over gRPC.
+        r"""Return a callable for the
+        delete object access control
+          method over gRPC.
 
         Permanently deletes the ACL entry for the specified
         entity on the specified object.
@@ -1025,7 +1083,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_object_access_control(self) -> Callable[
             [storage.GetObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the get object access control method over gRPC.
+        r"""Return a callable for the
+        get object access control
+          method over gRPC.
 
         Returns the ACL entry for the specified entity on the
         specified object.
@@ -1052,7 +1112,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def insert_object_access_control(self) -> Callable[
             [storage.InsertObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the insert object access control method over gRPC.
+        r"""Return a callable for the
+        insert object access control
+          method over gRPC.
 
         Creates a new ACL entry on the specified object.
 
@@ -1078,7 +1140,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_object_access_controls(self) -> Callable[
             [storage.ListObjectAccessControlsRequest],
             Awaitable[storage_resources.ListObjectAccessControlsResponse]]:
-        r"""Return a callable for the list object access controls method over gRPC.
+        r"""Return a callable for the
+        list object access controls
+          method over gRPC.
 
         Retrieves ACL entries on the specified object.
 
@@ -1104,7 +1168,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def patch_object_access_control(self) -> Callable[
             [storage.PatchObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the patch object access control method over gRPC.
+        r"""Return a callable for the
+        patch object access control
+          method over gRPC.
 
         Patches an ACL entry on the specified object. Patch is similar
         to update, but only applies or appends the specified fields in
@@ -1132,7 +1198,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def update_object_access_control(self) -> Callable[
             [storage.UpdateObjectAccessControlRequest],
             Awaitable[storage_resources.ObjectAccessControl]]:
-        r"""Return a callable for the update object access control method over gRPC.
+        r"""Return a callable for the
+        update object access control
+          method over gRPC.
 
         Updates an ACL entry on the specified object.
 
@@ -1158,7 +1226,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def compose_object(self) -> Callable[
             [storage.ComposeObjectRequest],
             Awaitable[storage_resources.Object]]:
-        r"""Return a callable for the compose object method over gRPC.
+        r"""Return a callable for the
+        compose object
+          method over gRPC.
 
         Concatenates a list of existing objects into a new
         object in the same bucket.
@@ -1185,7 +1255,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def copy_object(self) -> Callable[
             [storage.CopyObjectRequest],
             Awaitable[storage_resources.Object]]:
-        r"""Return a callable for the copy object method over gRPC.
+        r"""Return a callable for the
+        copy object
+          method over gRPC.
 
         Copies a source object to a destination object.
         Optionally overrides metadata.
@@ -1212,7 +1284,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_object(self) -> Callable[
             [storage.DeleteObjectRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete object method over gRPC.
+        r"""Return a callable for the
+        delete object
+          method over gRPC.
 
         Deletes an object and its metadata. Deletions are permanent if
         versioning is not enabled for the bucket, or if the
@@ -1240,7 +1314,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_object(self) -> Callable[
             [storage.GetObjectRequest],
             Awaitable[storage_resources.Object]]:
-        r"""Return a callable for the get object method over gRPC.
+        r"""Return a callable for the
+        get object
+          method over gRPC.
 
         Retrieves an object's metadata.
 
@@ -1266,7 +1342,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_object_media(self) -> Callable[
             [storage.GetObjectMediaRequest],
             Awaitable[storage.GetObjectMediaResponse]]:
-        r"""Return a callable for the get object media method over gRPC.
+        r"""Return a callable for the
+        get object media
+          method over gRPC.
 
         Reads an object's data.
 
@@ -1292,7 +1370,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def insert_object(self) -> Callable[
             [storage.InsertObjectRequest],
             Awaitable[storage_resources.Object]]:
-        r"""Return a callable for the insert object method over gRPC.
+        r"""Return a callable for the
+        insert object
+          method over gRPC.
 
         Stores a new object and metadata.
 
@@ -1343,7 +1423,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_objects(self) -> Callable[
             [storage.ListObjectsRequest],
             Awaitable[storage_resources.ListObjectsResponse]]:
-        r"""Return a callable for the list objects method over gRPC.
+        r"""Return a callable for the
+        list objects
+          method over gRPC.
 
         Retrieves a list of objects matching the criteria.
 
@@ -1369,7 +1451,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def rewrite_object(self) -> Callable[
             [storage.RewriteObjectRequest],
             Awaitable[storage.RewriteResponse]]:
-        r"""Return a callable for the rewrite object method over gRPC.
+        r"""Return a callable for the
+        rewrite object
+          method over gRPC.
 
         Rewrites a source object to a destination object.
         Optionally overrides metadata.
@@ -1396,7 +1480,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def start_resumable_write(self) -> Callable[
             [storage.StartResumableWriteRequest],
             Awaitable[storage.StartResumableWriteResponse]]:
-        r"""Return a callable for the start resumable write method over gRPC.
+        r"""Return a callable for the
+        start resumable write
+          method over gRPC.
 
         Starts a resumable write. How long the write
         operation remains valid, and what happens when the write
@@ -1424,7 +1510,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def query_write_status(self) -> Callable[
             [storage.QueryWriteStatusRequest],
             Awaitable[storage.QueryWriteStatusResponse]]:
-        r"""Return a callable for the query write status method over gRPC.
+        r"""Return a callable for the
+        query write status
+          method over gRPC.
 
         Determines the ``committed_size`` for an object that is being
         written, which can then be used as the ``write_offset`` for the
@@ -1464,7 +1552,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def patch_object(self) -> Callable[
             [storage.PatchObjectRequest],
             Awaitable[storage_resources.Object]]:
-        r"""Return a callable for the patch object method over gRPC.
+        r"""Return a callable for the
+        patch object
+          method over gRPC.
 
         Updates an object's metadata.
 
@@ -1490,7 +1580,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def update_object(self) -> Callable[
             [storage.UpdateObjectRequest],
             Awaitable[storage_resources.Object]]:
-        r"""Return a callable for the update object method over gRPC.
+        r"""Return a callable for the
+        update object
+          method over gRPC.
 
         Updates an object's metadata. Equivalent to
         PatchObject, but always replaces all mutatable fields of
@@ -1519,7 +1611,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_object_iam_policy(self) -> Callable[
             [storage.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the get object iam policy method over gRPC.
+        r"""Return a callable for the
+        get object iam policy
+          method over gRPC.
 
         Gets the IAM policy for the specified object.
 
@@ -1545,7 +1639,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def set_object_iam_policy(self) -> Callable[
             [storage.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the set object iam policy method over gRPC.
+        r"""Return a callable for the
+        set object iam policy
+          method over gRPC.
 
         Updates an IAM policy for the specified object.
 
@@ -1571,7 +1667,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def test_object_iam_permissions(self) -> Callable[
             [storage.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test object iam permissions method over gRPC.
+        r"""Return a callable for the
+        test object iam permissions
+          method over gRPC.
 
         Tests a set of permissions on the given object to see
         which, if any, are held by the caller.
@@ -1598,7 +1696,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def watch_all_objects(self) -> Callable[
             [storage.WatchAllObjectsRequest],
             Awaitable[storage_resources.Channel]]:
-        r"""Return a callable for the watch all objects method over gRPC.
+        r"""Return a callable for the
+        watch all objects
+          method over gRPC.
 
         Watch for changes on all objects in a bucket.
 
@@ -1624,7 +1724,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_service_account(self) -> Callable[
             [storage.GetProjectServiceAccountRequest],
             Awaitable[storage_resources.ServiceAccount]]:
-        r"""Return a callable for the get service account method over gRPC.
+        r"""Return a callable for the
+        get service account
+          method over gRPC.
 
         Retrieves the name of a project's Google Cloud
         Storage service account.
@@ -1651,7 +1753,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def create_hmac_key(self) -> Callable[
             [storage.CreateHmacKeyRequest],
             Awaitable[storage.CreateHmacKeyResponse]]:
-        r"""Return a callable for the create hmac key method over gRPC.
+        r"""Return a callable for the
+        create hmac key
+          method over gRPC.
 
         Creates a new HMAC key for the given service account.
 
@@ -1677,7 +1781,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def delete_hmac_key(self) -> Callable[
             [storage.DeleteHmacKeyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete hmac key method over gRPC.
+        r"""Return a callable for the
+        delete hmac key
+          method over gRPC.
 
         Deletes a given HMAC key.  Key must be in an INACTIVE
         state.
@@ -1704,7 +1810,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def get_hmac_key(self) -> Callable[
             [storage.GetHmacKeyRequest],
             Awaitable[storage_resources.HmacKeyMetadata]]:
-        r"""Return a callable for the get hmac key method over gRPC.
+        r"""Return a callable for the
+        get hmac key
+          method over gRPC.
 
         Gets an existing HMAC key metadata for the given id.
 
@@ -1730,7 +1838,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def list_hmac_keys(self) -> Callable[
             [storage.ListHmacKeysRequest],
             Awaitable[storage.ListHmacKeysResponse]]:
-        r"""Return a callable for the list hmac keys method over gRPC.
+        r"""Return a callable for the
+        list hmac keys
+          method over gRPC.
 
         Lists HMAC keys under a given project with the
         additional filters provided.
@@ -1757,7 +1867,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
     def update_hmac_key(self) -> Callable[
             [storage.UpdateHmacKeyRequest],
             Awaitable[storage_resources.HmacKeyMetadata]]:
-        r"""Return a callable for the update hmac key method over gRPC.
+        r"""Return a callable for the
+        update hmac key
+          method over gRPC.
 
         Updates a given HMAC key state between ACTIVE and
         INACTIVE.

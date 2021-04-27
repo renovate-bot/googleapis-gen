@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.cloud.appengine_admin_v1.types import network_settings
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.cloud.appengine_admin_v1.types import service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .transports.base import ServicesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ServicesGrpcTransport
 from .transports.grpc_asyncio import ServicesGrpcAsyncIOTransport
@@ -330,9 +327,9 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListServicesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.ListServices`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -348,7 +345,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -400,9 +396,9 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.GetService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +422,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -468,9 +463,9 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.UpdateService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -493,7 +488,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.UpdateServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -544,9 +538,9 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.DeleteService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -573,7 +567,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DeleteServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -611,8 +604,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

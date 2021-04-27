@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.datalabeling_v1beta1.types import annotation
 from google.cloud.datalabeling_v1beta1.types import data_payloads
@@ -87,23 +84,36 @@ class Dataset(proto.Message):
             dataset.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    create_time = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamp.Timestamp,
     )
-
-    input_configs = proto.RepeatedField(proto.MESSAGE, number=5,
+    input_configs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message='InputConfig',
     )
-
-    blocking_resources = proto.RepeatedField(proto.STRING, number=6)
-
-    data_item_count = proto.Field(proto.INT64, number=7)
+    blocking_resources = proto.RepeatedField(
+        proto.STRING,
+        number=6,
+    )
+    data_item_count = proto.Field(
+        proto.INT64,
+        number=7,
+    )
 
 
 class InputConfig(proto.Message):
@@ -135,34 +145,43 @@ class InputConfig(proto.Message):
             for a model version that performs classification.
     """
 
-    text_metadata = proto.Field(proto.MESSAGE, number=6, oneof='data_type_metadata',
+    text_metadata = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='data_type_metadata',
         message='TextMetadata',
     )
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsSource',
     )
-
-    bigquery_source = proto.Field(proto.MESSAGE, number=5, oneof='source',
+    bigquery_source = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='source',
         message='BigQuerySource',
     )
-
-    data_type = proto.Field(proto.ENUM, number=1,
+    data_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='DataType',
     )
-
-    annotation_type = proto.Field(proto.ENUM, number=3,
+    annotation_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=annotation.AnnotationType,
     )
-
-    classification_metadata = proto.Field(proto.MESSAGE, number=4,
+    classification_metadata = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ClassificationMetadata',
     )
 
 
 class TextMetadata(proto.Message):
     r"""Metadata for the text.
-
     Attributes:
         language_code (str):
             The language of this text, as a
@@ -170,24 +189,28 @@ class TextMetadata(proto.Message):
             Default value is en-US.
     """
 
-    language_code = proto.Field(proto.STRING, number=1)
+    language_code = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ClassificationMetadata(proto.Message):
     r"""Metadata for classification annotations.
-
     Attributes:
         is_multi_label (bool):
             Whether the classification task is multi-
             abel or not.
     """
 
-    is_multi_label = proto.Field(proto.BOOL, number=1)
+    is_multi_label = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class GcsSource(proto.Message):
     r"""Source of the Cloud Storage file to be imported.
-
     Attributes:
         input_uri (str):
             Required. The input URI of source file. This must be a Cloud
@@ -197,9 +220,14 @@ class GcsSource(proto.Message):
             "text/csv" is supported.
     """
 
-    input_uri = proto.Field(proto.STRING, number=1)
-
-    mime_type = proto.Field(proto.STRING, number=2)
+    input_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BigQuerySource(proto.Message):
@@ -227,12 +255,14 @@ class BigQuerySource(proto.Message):
             more </ml-engine/docs/continuous-evaluation/create-job#table-schema>`__.
     """
 
-    input_uri = proto.Field(proto.STRING, number=1)
+    input_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class OutputConfig(proto.Message):
     r"""The configuration of output data.
-
     Attributes:
         gcs_destination (google.cloud.datalabeling_v1beta1.types.GcsDestination):
             Output to a file in Cloud Storage. Should be
@@ -243,11 +273,16 @@ class OutputConfig(proto.Message):
             be used for image segmentation labeling output.
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
-
-    gcs_folder_destination = proto.Field(proto.MESSAGE, number=2, oneof='destination',
+    gcs_folder_destination = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='destination',
         message='GcsFolderDestination',
     )
 
@@ -265,21 +300,28 @@ class GcsDestination(proto.Message):
             are supported.
     """
 
-    output_uri = proto.Field(proto.STRING, number=1)
-
-    mime_type = proto.Field(proto.STRING, number=2)
+    output_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GcsFolderDestination(proto.Message):
     r"""Export folder destination of the data.
-
     Attributes:
         output_folder_uri (str):
             Required. Cloud Storage directory to export
             data to.
     """
 
-    output_folder_uri = proto.Field(proto.STRING, number=1)
+    output_folder_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DataItem(proto.Message):
@@ -301,19 +343,28 @@ class DataItem(proto.Message):
             projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
     """
 
-    image_payload = proto.Field(proto.MESSAGE, number=2, oneof='payload',
+    image_payload = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='payload',
         message=data_payloads.ImagePayload,
     )
-
-    text_payload = proto.Field(proto.MESSAGE, number=3, oneof='payload',
+    text_payload = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='payload',
         message=data_payloads.TextPayload,
     )
-
-    video_payload = proto.Field(proto.MESSAGE, number=4, oneof='payload',
+    video_payload = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='payload',
         message=data_payloads.VideoPayload,
     )
-
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class AnnotatedDataset(proto.Message):
@@ -361,42 +412,59 @@ class AnnotatedDataset(proto.Message):
             annotated dataset.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=9)
-
-    annotation_source = proto.Field(proto.ENUM, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    annotation_source = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=annotation.AnnotationSource,
     )
-
-    annotation_type = proto.Field(proto.ENUM, number=8,
+    annotation_type = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=annotation.AnnotationType,
     )
-
-    example_count = proto.Field(proto.INT64, number=4)
-
-    completed_example_count = proto.Field(proto.INT64, number=5)
-
-    label_stats = proto.Field(proto.MESSAGE, number=6,
+    example_count = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    completed_example_count = proto.Field(
+        proto.INT64,
+        number=5,
+    )
+    label_stats = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='LabelStats',
     )
-
-    create_time = proto.Field(proto.MESSAGE, number=7,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamp.Timestamp,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=10,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='AnnotatedDatasetMetadata',
     )
-
-    blocking_resources = proto.RepeatedField(proto.STRING, number=11)
+    blocking_resources = proto.RepeatedField(
+        proto.STRING,
+        number=11,
+    )
 
 
 class LabelStats(proto.Message):
     r"""Statistics about annotation specs.
-
     Attributes:
         example_count (Sequence[google.cloud.datalabeling_v1beta1.types.LabelStats.ExampleCountEntry]):
             Map of each annotation spec's example count.
@@ -408,12 +476,15 @@ class LabelStats(proto.Message):
             annotations.
     """
 
-    example_count = proto.MapField(proto.STRING, proto.INT64, number=1)
+    example_count = proto.MapField(
+        proto.STRING,
+        proto.INT64,
+        number=1
+    )
 
 
 class AnnotatedDatasetMetadata(proto.Message):
     r"""Metadata on AnnotatedDataset.
-
     Attributes:
         image_classification_config (google.cloud.datalabeling_v1beta1.types.ImageClassificationConfig):
             Configuration for image classification task.
@@ -444,47 +515,69 @@ class AnnotatedDatasetMetadata(proto.Message):
             AnnotatedDataset.
     """
 
-    image_classification_config = proto.Field(proto.MESSAGE, number=2, oneof='annotation_request_config',
+    image_classification_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.ImageClassificationConfig,
     )
-
-    bounding_poly_config = proto.Field(proto.MESSAGE, number=3, oneof='annotation_request_config',
+    bounding_poly_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.BoundingPolyConfig,
     )
-
-    polyline_config = proto.Field(proto.MESSAGE, number=4, oneof='annotation_request_config',
+    polyline_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.PolylineConfig,
     )
-
-    segmentation_config = proto.Field(proto.MESSAGE, number=5, oneof='annotation_request_config',
+    segmentation_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.SegmentationConfig,
     )
-
-    video_classification_config = proto.Field(proto.MESSAGE, number=6, oneof='annotation_request_config',
+    video_classification_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.VideoClassificationConfig,
     )
-
-    object_detection_config = proto.Field(proto.MESSAGE, number=7, oneof='annotation_request_config',
+    object_detection_config = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.ObjectDetectionConfig,
     )
-
-    object_tracking_config = proto.Field(proto.MESSAGE, number=8, oneof='annotation_request_config',
+    object_tracking_config = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.ObjectTrackingConfig,
     )
-
-    event_config = proto.Field(proto.MESSAGE, number=9, oneof='annotation_request_config',
+    event_config = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.EventConfig,
     )
-
-    text_classification_config = proto.Field(proto.MESSAGE, number=10, oneof='annotation_request_config',
+    text_classification_config = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.TextClassificationConfig,
     )
-
-    text_entity_extraction_config = proto.Field(proto.MESSAGE, number=11, oneof='annotation_request_config',
+    text_entity_extraction_config = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='annotation_request_config',
         message=gcd_human_annotation_config.TextEntityExtractionConfig,
     )
-
-    human_annotation_config = proto.Field(proto.MESSAGE, number=1,
+    human_annotation_config = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcd_human_annotation_config.HumanAnnotationConfig,
     )
 
@@ -513,21 +606,31 @@ class Example(proto.Message):
             multiple annotations.
     """
 
-    image_payload = proto.Field(proto.MESSAGE, number=2, oneof='payload',
+    image_payload = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='payload',
         message=data_payloads.ImagePayload,
     )
-
-    text_payload = proto.Field(proto.MESSAGE, number=6, oneof='payload',
+    text_payload = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='payload',
         message=data_payloads.TextPayload,
     )
-
-    video_payload = proto.Field(proto.MESSAGE, number=7, oneof='payload',
+    video_payload = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='payload',
         message=data_payloads.VideoPayload,
     )
-
-    name = proto.Field(proto.STRING, number=1)
-
-    annotations = proto.RepeatedField(proto.MESSAGE, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    annotations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=annotation.Annotation,
     )
 

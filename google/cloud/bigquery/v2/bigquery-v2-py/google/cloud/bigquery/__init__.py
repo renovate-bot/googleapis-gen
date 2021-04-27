@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,8 +29,7 @@ from google.cloud.bigquery_v2.types.standard_sql import StandardSqlField
 from google.cloud.bigquery_v2.types.standard_sql import StandardSqlStructType
 from google.cloud.bigquery_v2.types.table_reference import TableReference
 
-__all__ = (
-    'DeleteModelRequest',
+__all__ = ('DeleteModelRequest',
     'EncryptionConfiguration',
     'GetModelRequest',
     'ListModelsRequest',

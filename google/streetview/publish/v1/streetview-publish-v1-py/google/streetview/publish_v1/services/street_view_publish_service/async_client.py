@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -35,7 +33,6 @@ from google.rpc import status_pb2 as status  # type: ignore
 from google.streetview.publish_v1.services.street_view_publish_service import pagers
 from google.streetview.publish_v1.types import resources
 from google.streetview.publish_v1.types import rpcmessages
-
 from .transports.base import StreetViewPublishServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import StreetViewPublishServiceGrpcAsyncIOTransport
 from .client import StreetViewPublishServiceClient
@@ -53,16 +50,12 @@ class StreetViewPublishServiceAsyncClient:
 
     common_billing_account_path = staticmethod(StreetViewPublishServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(StreetViewPublishServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(StreetViewPublishServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(StreetViewPublishServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(StreetViewPublishServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(StreetViewPublishServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(StreetViewPublishServiceClient.common_project_path)
     parse_common_project_path = staticmethod(StreetViewPublishServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(StreetViewPublishServiceClient.common_location_path)
     parse_common_location_path = staticmethod(StreetViewPublishServiceClient.parse_common_location_path)
 
@@ -147,7 +140,6 @@ class StreetViewPublishServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = StreetViewPublishServiceClient(
             credentials=credentials,
             transport=transport,
@@ -189,7 +181,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.protobuf.empty_pb2.Empty`):
-                The request object. A generic empty message that you can
+                The request object.
+                A generic empty message that you can
                 re-use to avoid defining duplicated empty messages in
                 your APIs. A typical example is to use it as the request
                 or the response type of an API method. For instance:
@@ -200,7 +193,6 @@ class StreetViewPublishServiceAsyncClient:
 
                 The JSON representation for `Empty` is empty JSON object
                 `{}`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -212,8 +204,7 @@ class StreetViewPublishServiceAsyncClient:
                 Upload reference for media files.
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = empty.Empty(**request)
@@ -223,10 +214,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.start_upload,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -279,14 +267,14 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.CreatePhotoRequest`):
-                The request object. Request to create a
+                The request object.
+                Request to create a
                 [Photo][google.streetview.publish.v1.Photo].
             photo (:class:`google.streetview.publish_v1.types.Photo`):
                 Required. Photo to create.
                 This corresponds to the ``photo`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -311,7 +299,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if photo is not None:
             request.photo = photo
 
@@ -320,10 +307,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_photo,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -368,7 +352,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.GetPhotoRequest`):
-                The request object. Request to get a
+                The request object.
+                Request to get a
                 [Photo][google.streetview.publish.v1.Photo].
                 By default
 
@@ -392,7 +377,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -417,7 +401,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if photo_id is not None:
             request.photo_id = photo_id
         if view is not None:
@@ -428,10 +411,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_photo,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -480,7 +460,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.BatchGetPhotosRequest`):
-                The request object. Request to get one or more
+                The request object.
+                Request to get one or more
                 [Photos][google.streetview.publish.v1.Photo]. By default
                 * does not return the download URL for the photo bytes.
                 Parameters:
@@ -504,7 +485,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -529,10 +509,8 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if view is not None:
             request.view = view
-
         if photo_ids:
             request.photo_ids.extend(photo_ids)
 
@@ -541,10 +519,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_get_photos,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -584,7 +559,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.ListPhotosRequest`):
-                The request object. Request to list all photos that
+                The request object.
+                Request to list all photos that
                 belong to the user sending the request.
                 By default
 
@@ -616,7 +592,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -644,7 +619,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if view is not None:
             request.view = view
         if filter is not None:
@@ -655,10 +629,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_photos,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -721,7 +692,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.UpdatePhotoRequest`):
-                The request object. Request to update the metadata of a
+                The request object.
+                Request to update the metadata of a
                 [Photo][google.streetview.publish.v1.Photo]. Updating
                 the pixels of a photo is not supported.
             photo (:class:`google.streetview.publish_v1.types.Photo`):
@@ -765,7 +737,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -790,7 +761,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if photo is not None:
             request.photo = photo
         if update_mask is not None:
@@ -801,10 +771,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_photo,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -872,7 +839,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.BatchUpdatePhotosRequest`):
-                The request object. Request to update the metadata of
+                The request object.
+                Request to update the metadata of
                 photos. Updating the pixels of photos is not supported.
             update_photo_requests (:class:`Sequence[google.streetview.publish_v1.types.UpdatePhotoRequest]`):
                 Required. List of
@@ -881,7 +849,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``update_photo_requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -906,7 +873,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if update_photo_requests:
             request.update_photo_requests.extend(update_photo_requests)
 
@@ -915,10 +881,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_update_photos,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -957,7 +920,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.DeletePhotoRequest`):
-                The request object. Request to delete a
+                The request object.
+                Request to delete a
                 [Photo][google.streetview.publish.v1.Photo].
             photo_id (:class:`str`):
                 Required. ID of the
@@ -966,7 +930,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``photo_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -985,7 +948,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if photo_id is not None:
             request.photo_id = photo_id
 
@@ -994,10 +956,7 @@ class StreetViewPublishServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_photo,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1042,7 +1001,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.streetview.publish_v1.types.BatchDeletePhotosRequest`):
-                The request object. Request to delete multiple
+                The request object.
+                Request to delete multiple
                 [Photos][google.streetview.publish.v1.Photo].
             photo_ids (:class:`Sequence[str]`):
                 Required. IDs of the
@@ -1053,7 +1013,6 @@ class StreetViewPublishServiceAsyncClient:
                 This corresponds to the ``photo_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1078,7 +1037,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if photo_ids:
             request.photo_ids.extend(photo_ids)
 
@@ -1100,8 +1058,6 @@ class StreetViewPublishServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

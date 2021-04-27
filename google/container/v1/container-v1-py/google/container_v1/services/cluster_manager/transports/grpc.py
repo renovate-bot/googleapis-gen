@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.container_v1.types import cluster_service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ClusterManagerTransport, DEFAULT_CLIENT_INFO
 
 
@@ -62,7 +59,8 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,13 +199,15 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -221,7 +221,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def list_clusters(self) -> Callable[
             [cluster_service.ListClustersRequest],
             cluster_service.ListClustersResponse]:
-        r"""Return a callable for the list clusters method over gRPC.
+        r"""Return a callable for the
+        list clusters
+          method over gRPC.
 
         Lists all clusters owned by a project in either the
         specified zone or all zones.
@@ -248,7 +250,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def get_cluster(self) -> Callable[
             [cluster_service.GetClusterRequest],
             cluster_service.Cluster]:
-        r"""Return a callable for the get cluster method over gRPC.
+        r"""Return a callable for the
+        get cluster
+          method over gRPC.
 
         Gets the details of a specific cluster.
 
@@ -274,7 +278,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def create_cluster(self) -> Callable[
             [cluster_service.CreateClusterRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the create cluster method over gRPC.
+        r"""Return a callable for the
+        create cluster
+          method over gRPC.
 
         Creates a cluster, consisting of the specified number and type
         of Google Compute Engine instances.
@@ -312,7 +318,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def update_cluster(self) -> Callable[
             [cluster_service.UpdateClusterRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the update cluster method over gRPC.
+        r"""Return a callable for the
+        update cluster
+          method over gRPC.
 
         Updates the settings of a specific cluster.
 
@@ -338,7 +346,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def update_node_pool(self) -> Callable[
             [cluster_service.UpdateNodePoolRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the update node pool method over gRPC.
+        r"""Return a callable for the
+        update node pool
+          method over gRPC.
 
         Updates the version and/or image type for the
         specified node pool.
@@ -365,7 +375,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_node_pool_autoscaling(self) -> Callable[
             [cluster_service.SetNodePoolAutoscalingRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set node pool autoscaling method over gRPC.
+        r"""Return a callable for the
+        set node pool autoscaling
+          method over gRPC.
 
         Sets the autoscaling settings for the specified node
         pool.
@@ -392,7 +404,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_logging_service(self) -> Callable[
             [cluster_service.SetLoggingServiceRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set logging service method over gRPC.
+        r"""Return a callable for the
+        set logging service
+          method over gRPC.
 
         Sets the logging service for a specific cluster.
 
@@ -418,7 +432,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_monitoring_service(self) -> Callable[
             [cluster_service.SetMonitoringServiceRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set monitoring service method over gRPC.
+        r"""Return a callable for the
+        set monitoring service
+          method over gRPC.
 
         Sets the monitoring service for a specific cluster.
 
@@ -444,7 +460,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_addons_config(self) -> Callable[
             [cluster_service.SetAddonsConfigRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set addons config method over gRPC.
+        r"""Return a callable for the
+        set addons config
+          method over gRPC.
 
         Sets the addons for a specific cluster.
 
@@ -470,7 +488,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_locations(self) -> Callable[
             [cluster_service.SetLocationsRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set locations method over gRPC.
+        r"""Return a callable for the
+        set locations
+          method over gRPC.
 
         Sets the locations for a specific cluster. Deprecated. Use
         `projects.locations.clusters.update <https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update>`__
@@ -498,7 +518,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def update_master(self) -> Callable[
             [cluster_service.UpdateMasterRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the update master method over gRPC.
+        r"""Return a callable for the
+        update master
+          method over gRPC.
 
         Updates the master for a specific cluster.
 
@@ -524,7 +546,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_master_auth(self) -> Callable[
             [cluster_service.SetMasterAuthRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set master auth method over gRPC.
+        r"""Return a callable for the
+        set master auth
+          method over gRPC.
 
         Sets master auth materials. Currently supports
         changing the admin password or a specific cluster,
@@ -553,7 +577,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def delete_cluster(self) -> Callable[
             [cluster_service.DeleteClusterRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the delete cluster method over gRPC.
+        r"""Return a callable for the
+        delete cluster
+          method over gRPC.
 
         Deletes the cluster, including the Kubernetes
         endpoint and all worker nodes.
@@ -588,7 +614,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def list_operations(self) -> Callable[
             [cluster_service.ListOperationsRequest],
             cluster_service.ListOperationsResponse]:
-        r"""Return a callable for the list operations method over gRPC.
+        r"""Return a callable for the
+        list operations
+          method over gRPC.
 
         Lists all operations in a project in a specific zone
         or all zones.
@@ -615,7 +643,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def get_operation(self) -> Callable[
             [cluster_service.GetOperationRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the get operation method over gRPC.
+        r"""Return a callable for the
+        get operation
+          method over gRPC.
 
         Gets the specified operation.
 
@@ -641,7 +671,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def cancel_operation(self) -> Callable[
             [cluster_service.CancelOperationRequest],
             empty.Empty]:
-        r"""Return a callable for the cancel operation method over gRPC.
+        r"""Return a callable for the
+        cancel operation
+          method over gRPC.
 
         Cancels the specified operation.
 
@@ -667,7 +699,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def get_server_config(self) -> Callable[
             [cluster_service.GetServerConfigRequest],
             cluster_service.ServerConfig]:
-        r"""Return a callable for the get server config method over gRPC.
+        r"""Return a callable for the
+        get server config
+          method over gRPC.
 
         Returns configuration info about the Google
         Kubernetes Engine service.
@@ -694,7 +728,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def get_json_web_keys(self) -> Callable[
             [cluster_service.GetJSONWebKeysRequest],
             cluster_service.GetJSONWebKeysResponse]:
-        r"""Return a callable for the get json web keys method over gRPC.
+        r"""Return a callable for the
+        get json web keys
+          method over gRPC.
 
         Gets the public component of the cluster signing keys
         in JSON Web Key format.
@@ -723,7 +759,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def list_node_pools(self) -> Callable[
             [cluster_service.ListNodePoolsRequest],
             cluster_service.ListNodePoolsResponse]:
-        r"""Return a callable for the list node pools method over gRPC.
+        r"""Return a callable for the
+        list node pools
+          method over gRPC.
 
         Lists the node pools for a cluster.
 
@@ -749,7 +787,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def get_node_pool(self) -> Callable[
             [cluster_service.GetNodePoolRequest],
             cluster_service.NodePool]:
-        r"""Return a callable for the get node pool method over gRPC.
+        r"""Return a callable for the
+        get node pool
+          method over gRPC.
 
         Retrieves the requested node pool.
 
@@ -775,7 +815,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def create_node_pool(self) -> Callable[
             [cluster_service.CreateNodePoolRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the create node pool method over gRPC.
+        r"""Return a callable for the
+        create node pool
+          method over gRPC.
 
         Creates a node pool for a cluster.
 
@@ -801,7 +843,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def delete_node_pool(self) -> Callable[
             [cluster_service.DeleteNodePoolRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the delete node pool method over gRPC.
+        r"""Return a callable for the
+        delete node pool
+          method over gRPC.
 
         Deletes a node pool from a cluster.
 
@@ -827,7 +871,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def rollback_node_pool_upgrade(self) -> Callable[
             [cluster_service.RollbackNodePoolUpgradeRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the rollback node pool upgrade method over gRPC.
+        r"""Return a callable for the
+        rollback node pool upgrade
+          method over gRPC.
 
         Rolls back a previously Aborted or Failed NodePool
         upgrade. This makes no changes if the last upgrade
@@ -855,7 +901,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_node_pool_management(self) -> Callable[
             [cluster_service.SetNodePoolManagementRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set node pool management method over gRPC.
+        r"""Return a callable for the
+        set node pool management
+          method over gRPC.
 
         Sets the NodeManagement options for a node pool.
 
@@ -881,7 +929,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_labels(self) -> Callable[
             [cluster_service.SetLabelsRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set labels method over gRPC.
+        r"""Return a callable for the
+        set labels
+          method over gRPC.
 
         Sets labels on a cluster.
 
@@ -907,7 +957,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_legacy_abac(self) -> Callable[
             [cluster_service.SetLegacyAbacRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set legacy abac method over gRPC.
+        r"""Return a callable for the
+        set legacy abac
+          method over gRPC.
 
         Enables or disables the ABAC authorization mechanism
         on a cluster.
@@ -934,7 +986,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def start_ip_rotation(self) -> Callable[
             [cluster_service.StartIPRotationRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the start ip rotation method over gRPC.
+        r"""Return a callable for the
+        start ip rotation
+          method over gRPC.
 
         Starts master IP rotation.
 
@@ -960,7 +1014,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def complete_ip_rotation(self) -> Callable[
             [cluster_service.CompleteIPRotationRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the complete ip rotation method over gRPC.
+        r"""Return a callable for the
+        complete ip rotation
+          method over gRPC.
 
         Completes master IP rotation.
 
@@ -986,7 +1042,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_node_pool_size(self) -> Callable[
             [cluster_service.SetNodePoolSizeRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set node pool size method over gRPC.
+        r"""Return a callable for the
+        set node pool size
+          method over gRPC.
 
         Sets the size for a specific node pool.
 
@@ -1012,7 +1070,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_network_policy(self) -> Callable[
             [cluster_service.SetNetworkPolicyRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set network policy method over gRPC.
+        r"""Return a callable for the
+        set network policy
+          method over gRPC.
 
         Enables or disables Network Policy for a cluster.
 
@@ -1038,7 +1098,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def set_maintenance_policy(self) -> Callable[
             [cluster_service.SetMaintenancePolicyRequest],
             cluster_service.Operation]:
-        r"""Return a callable for the set maintenance policy method over gRPC.
+        r"""Return a callable for the
+        set maintenance policy
+          method over gRPC.
 
         Sets the maintenance policy for a cluster.
 
@@ -1064,7 +1126,9 @@ class ClusterManagerGrpcTransport(ClusterManagerTransport):
     def list_usable_subnetworks(self) -> Callable[
             [cluster_service.ListUsableSubnetworksRequest],
             cluster_service.ListUsableSubnetworksResponse]:
-        r"""Return a callable for the list usable subnetworks method over gRPC.
+        r"""Return a callable for the
+        list usable subnetworks
+          method over gRPC.
 
         Lists subnetworks that are usable for creating
         clusters in a project.

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -42,7 +40,6 @@ from google.cloud.talent_v4.types import job as gct_job
 from google.cloud.talent_v4.types import job_service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import JobServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import JobServiceGrpcTransport
 from .transports.grpc_asyncio import JobServiceGrpcAsyncIOTransport
@@ -371,7 +368,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.CreateJobRequest):
-                The request object. Create job request.
+                The request object.
+                Create job request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -388,7 +386,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -417,10 +414,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CreateJobRequest):
             request = job_service.CreateJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if job is not None:
@@ -462,7 +457,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.BatchCreateJobsRequest):
-                The request object. Request to create a batch of jobs.
+                The request object.
+                Request to create a batch of jobs.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -482,7 +478,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``jobs`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -513,10 +508,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.BatchCreateJobsRequest):
             request = job_service.BatchCreateJobsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if jobs is not None:
@@ -566,7 +559,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.GetJobRequest):
-                The request object. Get job request.
+                The request object.
+                Get job request.
             name (str):
                 Required. The resource name of the job to retrieve.
 
@@ -577,7 +571,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -606,10 +599,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.GetJobRequest):
             request = job_service.GetJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -652,7 +643,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.UpdateJobRequest):
-                The request object. Update job request.
+                The request object.
+                Update job request.
             job (google.cloud.talent_v4.types.Job):
                 Required. The Job to be updated.
                 This corresponds to the ``job`` field
@@ -674,7 +666,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -703,10 +694,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.UpdateJobRequest):
             request = job_service.UpdateJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if job is not None:
                 request.job = job
             if update_mask is not None:
@@ -748,7 +737,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.BatchUpdateJobsRequest):
-                The request object. Request to update a batch of jobs.
+                The request object.
+                Request to update a batch of jobs.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -768,7 +758,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``jobs`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -799,10 +788,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.BatchUpdateJobsRequest):
             request = job_service.BatchUpdateJobsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if jobs is not None:
@@ -853,7 +840,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.DeleteJobRequest):
-                The request object. Delete job request.
+                The request object.
+                Delete job request.
             name (str):
                 Required. The resource name of the job to be deleted.
 
@@ -864,7 +852,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -885,10 +872,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.DeleteJobRequest):
             request = job_service.DeleteJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -925,7 +910,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.BatchDeleteJobsRequest):
-                The request object. Request to delete a batch of jobs.
+                The request object.
+                Request to delete a batch of jobs.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -952,7 +938,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``names`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -983,10 +968,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.BatchDeleteJobsRequest):
             request = job_service.BatchDeleteJobsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if names is not None:
@@ -1036,7 +1019,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.ListJobsRequest):
-                The request object. List jobs request.
+                The request object.
+                List jobs request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -1075,7 +1059,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1104,10 +1087,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.ListJobsRequest):
             request = job_service.ListJobsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1162,9 +1143,9 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.SearchJobsRequest):
-                The request object. The Request body of the `SearchJobs`
+                The request object.
+                The Request body of the `SearchJobs`
                 call.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1176,7 +1157,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 Response for SearchJob method.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a job_service.SearchJobsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1230,9 +1210,9 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.SearchJobsRequest):
-                The request object. The Request body of the `SearchJobs`
+                The request object.
+                The Request body of the `SearchJobs`
                 call.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1244,7 +1224,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
                 Response for SearchJob method.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a job_service.SearchJobsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1274,8 +1253,6 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import shared_set
 from google.ads.googleads.v5.services.types import shared_set_service
-
 from .base import SharedSetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class SharedSetServiceGrpcTransport(SharedSetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class SharedSetServiceGrpcTransport(SharedSetServiceTransport):
     def get_shared_set(self) -> Callable[
             [shared_set_service.GetSharedSetRequest],
             shared_set.SharedSet]:
-        r"""Return a callable for the get shared set method over gRPC.
+        r"""Return a callable for the
+        get shared set
+          method over gRPC.
 
         Returns the requested shared set in full detail.
 
@@ -229,7 +229,9 @@ class SharedSetServiceGrpcTransport(SharedSetServiceTransport):
     def mutate_shared_sets(self) -> Callable[
             [shared_set_service.MutateSharedSetsRequest],
             shared_set_service.MutateSharedSetsResponse]:
-        r"""Return a callable for the mutate shared sets method over gRPC.
+        r"""Return a callable for the
+        mutate shared sets
+          method over gRPC.
 
         Creates, updates, or removes shared sets. Operation
         statuses are returned.

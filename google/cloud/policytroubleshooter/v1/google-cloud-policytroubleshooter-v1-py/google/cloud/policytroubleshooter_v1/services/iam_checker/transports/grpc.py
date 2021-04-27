@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -27,7 +25,6 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.cloud.policytroubleshooter_v1.types import checker
-
 from .base import IamCheckerTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,7 +60,8 @@ class IamCheckerGrpcTransport(IamCheckerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,13 +200,15 @@ class IamCheckerGrpcTransport(IamCheckerTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,7 +222,9 @@ class IamCheckerGrpcTransport(IamCheckerTransport):
     def troubleshoot_iam_policy(self) -> Callable[
             [checker.TroubleshootIamPolicyRequest],
             checker.TroubleshootIamPolicyResponse]:
-        r"""Return a callable for the troubleshoot iam policy method over gRPC.
+        r"""Return a callable for the
+        troubleshoot iam policy
+          method over gRPC.
 
         Checks whether a member has a specific permission for
         a specific resource, and explains why the member does or

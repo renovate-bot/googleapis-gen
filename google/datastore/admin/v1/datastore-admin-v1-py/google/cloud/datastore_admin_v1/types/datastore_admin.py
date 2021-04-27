@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.datastore_admin_v1.types import index as gda_index
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -55,7 +52,6 @@ class OperationType(proto.Enum):
 
 class CommonMetadata(proto.Message):
     r"""Metadata common to all Datastore Admin operations.
-
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             The time that work began on the operation.
@@ -83,28 +79,35 @@ class CommonMetadata(proto.Message):
         FAILED = 6
         CANCELLED = 7
 
-    start_time = proto.Field(proto.MESSAGE, number=1,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    operation_type = proto.Field(proto.ENUM, number=3,
+    operation_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum='OperationType',
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    state = proto.Field(proto.ENUM, number=5,
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=State,
     )
 
 
 class Progress(proto.Message):
     r"""Measures the progress of a particular metric.
-
     Attributes:
         work_completed (int):
             The amount of work that has been completed. Note that this
@@ -115,9 +118,14 @@ class Progress(proto.Message):
             unavailable.
     """
 
-    work_completed = proto.Field(proto.INT64, number=1)
-
-    work_estimated = proto.Field(proto.INT64, number=2)
+    work_completed = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    work_estimated = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 class ExportEntitiesRequest(proto.Message):
@@ -158,15 +166,24 @@ class ExportEntitiesRequest(proto.Message):
             without conflict.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=2)
-
-    entity_filter = proto.Field(proto.MESSAGE, number=3,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=2
+    )
+    entity_filter = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='EntityFilter',
     )
-
-    output_url_prefix = proto.Field(proto.STRING, number=4)
+    output_url_prefix = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ImportEntitiesRequest(proto.Message):
@@ -203,13 +220,22 @@ class ImportEntitiesRequest(proto.Message):
             specified then all entities from the export are imported.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=2)
-
-    input_url = proto.Field(proto.STRING, number=3)
-
-    entity_filter = proto.Field(proto.MESSAGE, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=2
+    )
+    input_url = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    entity_filter = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='EntityFilter',
     )
 
@@ -227,12 +253,14 @@ class ExportEntitiesResponse(proto.Message):
             Only present if the operation completed successfully.
     """
 
-    output_url = proto.Field(proto.STRING, number=1)
+    output_url = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ExportEntitiesMetadata(proto.Message):
     r"""Metadata for ExportEntities operations.
-
     Attributes:
         common (google.cloud.datastore_admin_v1.types.CommonMetadata):
             Metadata common to all Datastore Admin
@@ -253,28 +281,34 @@ class ExportEntitiesMetadata(proto.Message):
             [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
     """
 
-    common = proto.Field(proto.MESSAGE, number=1,
+    common = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='CommonMetadata',
     )
-
-    progress_entities = proto.Field(proto.MESSAGE, number=2,
+    progress_entities = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Progress',
     )
-
-    progress_bytes = proto.Field(proto.MESSAGE, number=3,
+    progress_bytes = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Progress',
     )
-
-    entity_filter = proto.Field(proto.MESSAGE, number=4,
+    entity_filter = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='EntityFilter',
     )
-
-    output_url_prefix = proto.Field(proto.STRING, number=5)
+    output_url_prefix = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ImportEntitiesMetadata(proto.Message):
     r"""Metadata for ImportEntities operations.
-
     Attributes:
         common (google.cloud.datastore_admin_v1.types.CommonMetadata):
             Metadata common to all Datastore Admin
@@ -294,23 +328,30 @@ class ImportEntitiesMetadata(proto.Message):
             field.
     """
 
-    common = proto.Field(proto.MESSAGE, number=1,
+    common = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='CommonMetadata',
     )
-
-    progress_entities = proto.Field(proto.MESSAGE, number=2,
+    progress_entities = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Progress',
     )
-
-    progress_bytes = proto.Field(proto.MESSAGE, number=3,
+    progress_bytes = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Progress',
     )
-
-    entity_filter = proto.Field(proto.MESSAGE, number=4,
+    entity_filter = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='EntityFilter',
     )
-
-    input_url = proto.Field(proto.STRING, number=5)
+    input_url = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class EntityFilter(proto.Message):
@@ -345,9 +386,14 @@ class EntityFilter(proto.Message):
             Each namespace in this list must be unique.
     """
 
-    kinds = proto.RepeatedField(proto.STRING, number=1)
-
-    namespace_ids = proto.RepeatedField(proto.STRING, number=2)
+    kinds = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    namespace_ids = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateIndexRequest(proto.Message):
@@ -364,9 +410,13 @@ class CreateIndexRequest(proto.Message):
             deleted.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    index = proto.Field(proto.MESSAGE, number=3,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    index = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gda_index.Index,
     )
 
@@ -382,9 +432,14 @@ class DeleteIndexRequest(proto.Message):
             The resource ID of the index to delete.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    index_id = proto.Field(proto.STRING, number=3)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    index_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetIndexRequest(proto.Message):
@@ -398,9 +453,14 @@ class GetIndexRequest(proto.Message):
             The resource ID of the index to get.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    index_id = proto.Field(proto.STRING, number=3)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    index_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListIndexesRequest(proto.Message):
@@ -420,13 +480,22 @@ class ListIndexesRequest(proto.Message):
             request, if any.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    filter = proto.Field(proto.STRING, number=3)
-
-    page_size = proto.Field(proto.INT32, number=4)
-
-    page_token = proto.Field(proto.STRING, number=5)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListIndexesResponse(proto.Message):
@@ -444,16 +513,19 @@ class ListIndexesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    indexes = proto.RepeatedField(proto.MESSAGE, number=1,
+    indexes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gda_index.Index,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class IndexOperationMetadata(proto.Message):
     r"""Metadata for Index operations.
-
     Attributes:
         common (google.cloud.datastore_admin_v1.types.CommonMetadata):
             Metadata common to all Datastore Admin
@@ -466,15 +538,20 @@ class IndexOperationMetadata(proto.Message):
             acting on.
     """
 
-    common = proto.Field(proto.MESSAGE, number=1,
+    common = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='CommonMetadata',
     )
-
-    progress_entities = proto.Field(proto.MESSAGE, number=2,
+    progress_entities = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Progress',
     )
-
-    index_id = proto.Field(proto.STRING, number=3)
+    index_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

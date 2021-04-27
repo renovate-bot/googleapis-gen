@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.speech_v1p1beta1.types import cloud_speech_adaptation
 from google.cloud.speech_v1p1beta1.types import resource
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AdaptationTransport, DEFAULT_CLIENT_INFO
 from .grpc import AdaptationGrpcTransport
 
@@ -80,13 +78,15 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,7 +106,8 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -164,7 +165,6 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -227,7 +227,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def create_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.CreatePhraseSetRequest],
             Awaitable[resource.PhraseSet]]:
-        r"""Return a callable for the create phrase set method over gRPC.
+        r"""Return a callable for the
+        create phrase set
+          method over gRPC.
 
         Create a set of phrase hints. Each item in the set
         can be a single word or a multi-word phrase. The items
@@ -256,7 +258,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def get_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.GetPhraseSetRequest],
             Awaitable[resource.PhraseSet]]:
-        r"""Return a callable for the get phrase set method over gRPC.
+        r"""Return a callable for the
+        get phrase set
+          method over gRPC.
 
         Get a phrase set.
 
@@ -282,7 +286,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def list_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.ListPhraseSetRequest],
             Awaitable[cloud_speech_adaptation.ListPhraseSetResponse]]:
-        r"""Return a callable for the list phrase set method over gRPC.
+        r"""Return a callable for the
+        list phrase set
+          method over gRPC.
 
         List phrase sets.
 
@@ -308,7 +314,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def update_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.UpdatePhraseSetRequest],
             Awaitable[resource.PhraseSet]]:
-        r"""Return a callable for the update phrase set method over gRPC.
+        r"""Return a callable for the
+        update phrase set
+          method over gRPC.
 
         Update a phrase set.
 
@@ -334,7 +342,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def delete_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.DeletePhraseSetRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete phrase set method over gRPC.
+        r"""Return a callable for the
+        delete phrase set
+          method over gRPC.
 
         Delete a phrase set.
 
@@ -360,7 +370,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def create_custom_class(self) -> Callable[
             [cloud_speech_adaptation.CreateCustomClassRequest],
             Awaitable[resource.CustomClass]]:
-        r"""Return a callable for the create custom class method over gRPC.
+        r"""Return a callable for the
+        create custom class
+          method over gRPC.
 
         Create a custom class.
 
@@ -386,7 +398,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def get_custom_class(self) -> Callable[
             [cloud_speech_adaptation.GetCustomClassRequest],
             Awaitable[resource.CustomClass]]:
-        r"""Return a callable for the get custom class method over gRPC.
+        r"""Return a callable for the
+        get custom class
+          method over gRPC.
 
         Get a custom class.
 
@@ -412,7 +426,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def list_custom_classes(self) -> Callable[
             [cloud_speech_adaptation.ListCustomClassesRequest],
             Awaitable[cloud_speech_adaptation.ListCustomClassesResponse]]:
-        r"""Return a callable for the list custom classes method over gRPC.
+        r"""Return a callable for the
+        list custom classes
+          method over gRPC.
 
         List custom classes.
 
@@ -438,7 +454,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def update_custom_class(self) -> Callable[
             [cloud_speech_adaptation.UpdateCustomClassRequest],
             Awaitable[resource.CustomClass]]:
-        r"""Return a callable for the update custom class method over gRPC.
+        r"""Return a callable for the
+        update custom class
+          method over gRPC.
 
         Update a custom class.
 
@@ -464,7 +482,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
     def delete_custom_class(self) -> Callable[
             [cloud_speech_adaptation.DeleteCustomClassRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete custom class method over gRPC.
+        r"""Return a callable for the
+        delete custom class
+          method over gRPC.
 
         Delete a custom class.
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,6 +39,8 @@ from google.cloud.networkconnectivity_v1alpha1.services.hub_service import HubSe
 from google.cloud.networkconnectivity_v1alpha1.services.hub_service import HubServiceClient
 from google.cloud.networkconnectivity_v1alpha1.services.hub_service import pagers
 from google.cloud.networkconnectivity_v1alpha1.services.hub_service import transports
+from google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.base import _API_CORE_VERSION
+from google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.networkconnectivity_v1alpha1.types import common
 from google.cloud.networkconnectivity_v1alpha1.types import hub
 from google.cloud.networkconnectivity_v1alpha1.types import hub as gcn_hub
@@ -47,6 +49,28 @@ from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -214,12 +238,10 @@ def test_hub_service_client_client_options(client_class, transport_class, transp
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (HubServiceClient, transports.HubServiceGrpcTransport, "grpc", "true"),
     (HubServiceAsyncClient, transports.HubServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (HubServiceClient, transports.HubServiceGrpcTransport, "grpc", "false"),
     (HubServiceAsyncClient, transports.HubServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(HubServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(HubServiceClient))
 @mock.patch.object(HubServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(HubServiceAsyncClient))
@@ -374,25 +396,18 @@ def test_list_hubs(transport: str = 'grpc', request_type=hub.ListHubsRequest):
         # Designate an appropriate return value for the call.
         call.return_value = hub.ListHubsResponse(
             next_page_token='next_page_token_value',
-
             unreachable=['unreachable_value'],
-
         )
-
         response = client.list_hubs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.ListHubsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListHubsPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -415,8 +430,8 @@ def test_list_hubs_empty_call():
         client.list_hubs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.ListHubsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_hubs_async(transport: str = 'grpc_asyncio', request_type=hub.ListHubsRequest):
@@ -434,24 +449,20 @@ async def test_list_hubs_async(transport: str = 'grpc_asyncio', request_type=hub
             type(client.transport.list_hubs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.ListHubsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(hub.ListHubsResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
-
         response = await client.list_hubs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.ListHubsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListHubsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -468,6 +479,7 @@ def test_list_hubs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.ListHubsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -475,7 +487,6 @@ def test_list_hubs_field_headers():
             type(client.transport.list_hubs),
             '__call__') as call:
         call.return_value = hub.ListHubsResponse()
-
         client.list_hubs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -500,6 +511,7 @@ async def test_list_hubs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.ListHubsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -507,7 +519,6 @@ async def test_list_hubs_field_headers_async():
             type(client.transport.list_hubs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.ListHubsResponse())
-
         await client.list_hubs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -534,7 +545,6 @@ def test_list_hubs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = hub.ListHubsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_hubs(
@@ -545,7 +555,6 @@ def test_list_hubs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -587,7 +596,6 @@ async def test_list_hubs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -792,7 +800,6 @@ async def test_list_hubs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_hub(transport: str = 'grpc', request_type=hub.GetHubRequest):
     client = HubServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -810,37 +817,24 @@ def test_get_hub(transport: str = 'grpc', request_type=hub.GetHubRequest):
         # Designate an appropriate return value for the call.
         call.return_value = hub.Hub(
             name='name_value',
-
             description='description_value',
-
             spokes=['spokes_value'],
-
             unique_id='unique_id_value',
-
             state=hub.State.CREATING,
-
         )
-
         response = client.get_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.GetHubRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, hub.Hub)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.spokes == ['spokes_value']
-
     assert response.unique_id == 'unique_id_value'
-
     assert response.state == hub.State.CREATING
 
 
@@ -863,8 +857,8 @@ def test_get_hub_empty_call():
         client.get_hub()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.GetHubRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_hub_async(transport: str = 'grpc_asyncio', request_type=hub.GetHubRequest):
@@ -882,33 +876,26 @@ async def test_get_hub_async(transport: str = 'grpc_asyncio', request_type=hub.G
             type(client.transport.get_hub),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.Hub(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(hub.Hub(
             name='name_value',
             description='description_value',
             spokes=['spokes_value'],
             unique_id='unique_id_value',
             state=hub.State.CREATING,
         ))
-
         response = await client.get_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.GetHubRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, hub.Hub)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.spokes == ['spokes_value']
-
     assert response.unique_id == 'unique_id_value'
-
     assert response.state == hub.State.CREATING
 
 
@@ -925,6 +912,7 @@ def test_get_hub_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.GetHubRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -932,7 +920,6 @@ def test_get_hub_field_headers():
             type(client.transport.get_hub),
             '__call__') as call:
         call.return_value = hub.Hub()
-
         client.get_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -957,6 +944,7 @@ async def test_get_hub_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.GetHubRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -964,7 +952,6 @@ async def test_get_hub_field_headers_async():
             type(client.transport.get_hub),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.Hub())
-
         await client.get_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -991,7 +978,6 @@ def test_get_hub_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = hub.Hub()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_hub(
@@ -1002,7 +988,6 @@ def test_get_hub_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1044,7 +1029,6 @@ async def test_get_hub_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1079,13 +1063,11 @@ def test_create_hub(transport: str = 'grpc', request_type=gcn_hub.CreateHubReque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcn_hub.CreateHubRequest()
 
     # Establish that the response is the type that we expect.
@@ -1111,8 +1093,8 @@ def test_create_hub_empty_call():
         client.create_hub()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcn_hub.CreateHubRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_hub_async(transport: str = 'grpc_asyncio', request_type=gcn_hub.CreateHubRequest):
@@ -1133,13 +1115,11 @@ async def test_create_hub_async(transport: str = 'grpc_asyncio', request_type=gc
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcn_hub.CreateHubRequest()
 
     # Establish that the response is the type that we expect.
@@ -1159,6 +1139,7 @@ def test_create_hub_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcn_hub.CreateHubRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1166,7 +1147,6 @@ def test_create_hub_field_headers():
             type(client.transport.create_hub),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1191,6 +1171,7 @@ async def test_create_hub_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcn_hub.CreateHubRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1198,7 +1179,6 @@ async def test_create_hub_field_headers_async():
             type(client.transport.create_hub),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1225,7 +1205,6 @@ def test_create_hub_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_hub(
@@ -1238,11 +1217,8 @@ def test_create_hub_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].hub == gcn_hub.Hub(name='name_value')
-
         assert args[0].hub_id == 'hub_id_value'
 
 
@@ -1290,11 +1266,8 @@ async def test_create_hub_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].hub == gcn_hub.Hub(name='name_value')
-
         assert args[0].hub_id == 'hub_id_value'
 
 
@@ -1331,13 +1304,11 @@ def test_update_hub(transport: str = 'grpc', request_type=gcn_hub.UpdateHubReque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcn_hub.UpdateHubRequest()
 
     # Establish that the response is the type that we expect.
@@ -1363,8 +1334,8 @@ def test_update_hub_empty_call():
         client.update_hub()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcn_hub.UpdateHubRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_hub_async(transport: str = 'grpc_asyncio', request_type=gcn_hub.UpdateHubRequest):
@@ -1385,13 +1356,11 @@ async def test_update_hub_async(transport: str = 'grpc_asyncio', request_type=gc
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcn_hub.UpdateHubRequest()
 
     # Establish that the response is the type that we expect.
@@ -1411,6 +1380,7 @@ def test_update_hub_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcn_hub.UpdateHubRequest()
+
     request.hub.name = 'hub.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1418,7 +1388,6 @@ def test_update_hub_field_headers():
             type(client.transport.update_hub),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1443,6 +1412,7 @@ async def test_update_hub_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcn_hub.UpdateHubRequest()
+
     request.hub.name = 'hub.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1450,7 +1420,6 @@ async def test_update_hub_field_headers_async():
             type(client.transport.update_hub),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1477,7 +1446,6 @@ def test_update_hub_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_hub(
@@ -1489,9 +1457,7 @@ def test_update_hub_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].hub == gcn_hub.Hub(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1537,9 +1503,7 @@ async def test_update_hub_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].hub == gcn_hub.Hub(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1575,13 +1539,11 @@ def test_delete_hub(transport: str = 'grpc', request_type=hub.DeleteHubRequest):
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.DeleteHubRequest()
 
     # Establish that the response is the type that we expect.
@@ -1607,8 +1569,8 @@ def test_delete_hub_empty_call():
         client.delete_hub()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.DeleteHubRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_hub_async(transport: str = 'grpc_asyncio', request_type=hub.DeleteHubRequest):
@@ -1629,13 +1591,11 @@ async def test_delete_hub_async(transport: str = 'grpc_asyncio', request_type=hu
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.DeleteHubRequest()
 
     # Establish that the response is the type that we expect.
@@ -1655,6 +1615,7 @@ def test_delete_hub_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.DeleteHubRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1662,7 +1623,6 @@ def test_delete_hub_field_headers():
             type(client.transport.delete_hub),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1687,6 +1647,7 @@ async def test_delete_hub_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.DeleteHubRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1694,7 +1655,6 @@ async def test_delete_hub_field_headers_async():
             type(client.transport.delete_hub),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_hub(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1721,7 +1681,6 @@ def test_delete_hub_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_hub(
@@ -1732,7 +1691,6 @@ def test_delete_hub_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1776,7 +1734,6 @@ async def test_delete_hub_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1812,25 +1769,18 @@ def test_list_spokes(transport: str = 'grpc', request_type=hub.ListSpokesRequest
         # Designate an appropriate return value for the call.
         call.return_value = hub.ListSpokesResponse(
             next_page_token='next_page_token_value',
-
             unreachable=['unreachable_value'],
-
         )
-
         response = client.list_spokes(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.ListSpokesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListSpokesPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -1853,8 +1803,8 @@ def test_list_spokes_empty_call():
         client.list_spokes()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.ListSpokesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_spokes_async(transport: str = 'grpc_asyncio', request_type=hub.ListSpokesRequest):
@@ -1872,24 +1822,20 @@ async def test_list_spokes_async(transport: str = 'grpc_asyncio', request_type=h
             type(client.transport.list_spokes),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.ListSpokesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(hub.ListSpokesResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
-
         response = await client.list_spokes(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.ListSpokesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSpokesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -1906,6 +1852,7 @@ def test_list_spokes_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.ListSpokesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1913,7 +1860,6 @@ def test_list_spokes_field_headers():
             type(client.transport.list_spokes),
             '__call__') as call:
         call.return_value = hub.ListSpokesResponse()
-
         client.list_spokes(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1938,6 +1884,7 @@ async def test_list_spokes_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.ListSpokesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1945,7 +1892,6 @@ async def test_list_spokes_field_headers_async():
             type(client.transport.list_spokes),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.ListSpokesResponse())
-
         await client.list_spokes(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1972,7 +1918,6 @@ def test_list_spokes_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = hub.ListSpokesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_spokes(
@@ -1983,7 +1928,6 @@ def test_list_spokes_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2025,7 +1969,6 @@ async def test_list_spokes_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2230,7 +2173,6 @@ async def test_list_spokes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_spoke(transport: str = 'grpc', request_type=hub.GetSpokeRequest):
     client = HubServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2248,45 +2190,28 @@ def test_get_spoke(transport: str = 'grpc', request_type=hub.GetSpokeRequest):
         # Designate an appropriate return value for the call.
         call.return_value = hub.Spoke(
             name='name_value',
-
             description='description_value',
-
             hub='hub_value',
-
             linked_vpn_tunnels=['linked_vpn_tunnels_value'],
-
             linked_interconnect_attachments=['linked_interconnect_attachments_value'],
-
             unique_id='unique_id_value',
-
             state=hub.State.CREATING,
-
         )
-
         response = client.get_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.GetSpokeRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, hub.Spoke)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.hub == 'hub_value'
-
     assert response.linked_vpn_tunnels == ['linked_vpn_tunnels_value']
-
     assert response.linked_interconnect_attachments == ['linked_interconnect_attachments_value']
-
     assert response.unique_id == 'unique_id_value'
-
     assert response.state == hub.State.CREATING
 
 
@@ -2309,8 +2234,8 @@ def test_get_spoke_empty_call():
         client.get_spoke()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.GetSpokeRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.GetSpokeRequest):
@@ -2328,7 +2253,7 @@ async def test_get_spoke_async(transport: str = 'grpc_asyncio', request_type=hub
             type(client.transport.get_spoke),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.Spoke(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(hub.Spoke(
             name='name_value',
             description='description_value',
             hub='hub_value',
@@ -2337,30 +2262,21 @@ async def test_get_spoke_async(transport: str = 'grpc_asyncio', request_type=hub
             unique_id='unique_id_value',
             state=hub.State.CREATING,
         ))
-
         response = await client.get_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.GetSpokeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, hub.Spoke)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.hub == 'hub_value'
-
     assert response.linked_vpn_tunnels == ['linked_vpn_tunnels_value']
-
     assert response.linked_interconnect_attachments == ['linked_interconnect_attachments_value']
-
     assert response.unique_id == 'unique_id_value'
-
     assert response.state == hub.State.CREATING
 
 
@@ -2377,6 +2293,7 @@ def test_get_spoke_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.GetSpokeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2384,7 +2301,6 @@ def test_get_spoke_field_headers():
             type(client.transport.get_spoke),
             '__call__') as call:
         call.return_value = hub.Spoke()
-
         client.get_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2409,6 +2325,7 @@ async def test_get_spoke_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.GetSpokeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2416,7 +2333,6 @@ async def test_get_spoke_field_headers_async():
             type(client.transport.get_spoke),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(hub.Spoke())
-
         await client.get_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2443,7 +2359,6 @@ def test_get_spoke_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = hub.Spoke()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_spoke(
@@ -2454,7 +2369,6 @@ def test_get_spoke_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2496,7 +2410,6 @@ async def test_get_spoke_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2531,13 +2444,11 @@ def test_create_spoke(transport: str = 'grpc', request_type=hub.CreateSpokeReque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.CreateSpokeRequest()
 
     # Establish that the response is the type that we expect.
@@ -2563,8 +2474,8 @@ def test_create_spoke_empty_call():
         client.create_spoke()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.CreateSpokeRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.CreateSpokeRequest):
@@ -2585,13 +2496,11 @@ async def test_create_spoke_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.CreateSpokeRequest()
 
     # Establish that the response is the type that we expect.
@@ -2611,6 +2520,7 @@ def test_create_spoke_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.CreateSpokeRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2618,7 +2528,6 @@ def test_create_spoke_field_headers():
             type(client.transport.create_spoke),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2643,6 +2552,7 @@ async def test_create_spoke_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.CreateSpokeRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2650,7 +2560,6 @@ async def test_create_spoke_field_headers_async():
             type(client.transport.create_spoke),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2677,7 +2586,6 @@ def test_create_spoke_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_spoke(
@@ -2690,11 +2598,8 @@ def test_create_spoke_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].spoke == hub.Spoke(name='name_value')
-
         assert args[0].spoke_id == 'spoke_id_value'
 
 
@@ -2742,11 +2647,8 @@ async def test_create_spoke_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].spoke == hub.Spoke(name='name_value')
-
         assert args[0].spoke_id == 'spoke_id_value'
 
 
@@ -2783,13 +2685,11 @@ def test_update_spoke(transport: str = 'grpc', request_type=hub.UpdateSpokeReque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.UpdateSpokeRequest()
 
     # Establish that the response is the type that we expect.
@@ -2815,8 +2715,8 @@ def test_update_spoke_empty_call():
         client.update_spoke()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.UpdateSpokeRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.UpdateSpokeRequest):
@@ -2837,13 +2737,11 @@ async def test_update_spoke_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.UpdateSpokeRequest()
 
     # Establish that the response is the type that we expect.
@@ -2863,6 +2761,7 @@ def test_update_spoke_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.UpdateSpokeRequest()
+
     request.spoke.name = 'spoke.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2870,7 +2769,6 @@ def test_update_spoke_field_headers():
             type(client.transport.update_spoke),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2895,6 +2793,7 @@ async def test_update_spoke_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.UpdateSpokeRequest()
+
     request.spoke.name = 'spoke.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2902,7 +2801,6 @@ async def test_update_spoke_field_headers_async():
             type(client.transport.update_spoke),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2929,7 +2827,6 @@ def test_update_spoke_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_spoke(
@@ -2941,9 +2838,7 @@ def test_update_spoke_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].spoke == hub.Spoke(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2989,9 +2884,7 @@ async def test_update_spoke_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].spoke == hub.Spoke(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -3027,13 +2920,11 @@ def test_delete_spoke(transport: str = 'grpc', request_type=hub.DeleteSpokeReque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.DeleteSpokeRequest()
 
     # Establish that the response is the type that we expect.
@@ -3059,8 +2950,8 @@ def test_delete_spoke_empty_call():
         client.delete_spoke()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.DeleteSpokeRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.DeleteSpokeRequest):
@@ -3081,13 +2972,11 @@ async def test_delete_spoke_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == hub.DeleteSpokeRequest()
 
     # Establish that the response is the type that we expect.
@@ -3107,6 +2996,7 @@ def test_delete_spoke_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.DeleteSpokeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3114,7 +3004,6 @@ def test_delete_spoke_field_headers():
             type(client.transport.delete_spoke),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3139,6 +3028,7 @@ async def test_delete_spoke_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = hub.DeleteSpokeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3146,7 +3036,6 @@ async def test_delete_spoke_field_headers_async():
             type(client.transport.delete_spoke),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_spoke(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3173,7 +3062,6 @@ def test_delete_spoke_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_spoke(
@@ -3184,7 +3072,6 @@ def test_delete_spoke_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3228,7 +3115,6 @@ async def test_delete_spoke_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3287,7 +3173,6 @@ def test_transport_instance():
     client = HubServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.HubServiceGrpcTransport(
@@ -3302,7 +3187,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.HubServiceGrpcTransport,
     transports.HubServiceGrpcAsyncIOTransport,
@@ -3314,7 +3198,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = HubServiceClient(
@@ -3324,7 +3207,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.HubServiceGrpcTransport,
     )
-
 
 def test_hub_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3356,7 +3238,7 @@ def test_hub_service_base_transport():
         'create_spoke',
         'update_spoke',
         'delete_spoke',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -3367,9 +3249,27 @@ def test_hub_service_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_hub_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.HubServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.HubServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.HubServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_hub_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.HubServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.HubServiceTransport(
@@ -3385,33 +3285,182 @@ def test_hub_service_base_transport_with_credentials_file():
 
 def test_hub_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.HubServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.networkconnectivity_v1alpha1.services.hub_service.transports.HubServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.HubServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_hub_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         HubServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_hub_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_hub_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        HubServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.HubServiceGrpcTransport,
+        transports.HubServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_hub_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.HubServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.HubServiceGrpcTransport,
+        transports.HubServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_hub_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.HubServiceGrpcTransport, grpc_helpers),
+        (transports.HubServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_hub_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "networkconnectivity.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="networkconnectivity.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.HubServiceGrpcTransport, grpc_helpers),
+        (transports.HubServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_hub_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "networkconnectivity.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.HubServiceGrpcTransport, grpc_helpers),
+        (transports.HubServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_hub_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "networkconnectivity.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -3473,7 +3522,6 @@ def test_hub_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='networkconnectivity.googleapis.com:8000'),
     )
     assert client.transport._host == 'networkconnectivity.googleapis.com:8000'
-
 
 def test_hub_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3626,7 +3674,6 @@ def test_hub_service_grpc_lro_async_client():
 def test_hub_path():
     project = "squid"
     hub = "clam"
-
     expected = "projects/{project}/locations/global/hubs/{hub}".format(project=project, hub=hub, )
     actual = HubServiceClient.hub_path(project, hub)
     assert expected == actual
@@ -3634,9 +3681,8 @@ def test_hub_path():
 
 def test_parse_hub_path():
     expected = {
-    "project": "whelk",
-    "hub": "octopus",
-
+        "project": "whelk",
+        "hub": "octopus",
     }
     path = HubServiceClient.hub_path(**expected)
 
@@ -3648,7 +3694,6 @@ def test_instance_path():
     project = "oyster"
     zone = "nudibranch"
     instance = "cuttlefish"
-
     expected = "projects/{project}/zones/{zone}/instances/{instance}".format(project=project, zone=zone, instance=instance, )
     actual = HubServiceClient.instance_path(project, zone, instance)
     assert expected == actual
@@ -3656,10 +3701,9 @@ def test_instance_path():
 
 def test_parse_instance_path():
     expected = {
-    "project": "mussel",
-    "zone": "winkle",
-    "instance": "nautilus",
-
+        "project": "mussel",
+        "zone": "winkle",
+        "instance": "nautilus",
     }
     path = HubServiceClient.instance_path(**expected)
 
@@ -3671,7 +3715,6 @@ def test_interconnect_attachment_path():
     project = "scallop"
     region = "abalone"
     resource_id = "squid"
-
     expected = "projects/{project}/regions/{region}/interconnectAttachments/{resource_id}".format(project=project, region=region, resource_id=resource_id, )
     actual = HubServiceClient.interconnect_attachment_path(project, region, resource_id)
     assert expected == actual
@@ -3679,10 +3722,9 @@ def test_interconnect_attachment_path():
 
 def test_parse_interconnect_attachment_path():
     expected = {
-    "project": "clam",
-    "region": "whelk",
-    "resource_id": "octopus",
-
+        "project": "clam",
+        "region": "whelk",
+        "resource_id": "octopus",
     }
     path = HubServiceClient.interconnect_attachment_path(**expected)
 
@@ -3694,7 +3736,6 @@ def test_spoke_path():
     project = "oyster"
     location = "nudibranch"
     spoke = "cuttlefish"
-
     expected = "projects/{project}/locations/{location}/spokes/{spoke}".format(project=project, location=location, spoke=spoke, )
     actual = HubServiceClient.spoke_path(project, location, spoke)
     assert expected == actual
@@ -3702,10 +3743,9 @@ def test_spoke_path():
 
 def test_parse_spoke_path():
     expected = {
-    "project": "mussel",
-    "location": "winkle",
-    "spoke": "nautilus",
-
+        "project": "mussel",
+        "location": "winkle",
+        "spoke": "nautilus",
     }
     path = HubServiceClient.spoke_path(**expected)
 
@@ -3717,7 +3757,6 @@ def test_vpn_tunnel_path():
     project = "scallop"
     region = "abalone"
     resource_id = "squid"
-
     expected = "projects/{project}/regions/{region}/vpnTunnels/{resource_id}".format(project=project, region=region, resource_id=resource_id, )
     actual = HubServiceClient.vpn_tunnel_path(project, region, resource_id)
     assert expected == actual
@@ -3725,10 +3764,9 @@ def test_vpn_tunnel_path():
 
 def test_parse_vpn_tunnel_path():
     expected = {
-    "project": "clam",
-    "region": "whelk",
-    "resource_id": "octopus",
-
+        "project": "clam",
+        "region": "whelk",
+        "resource_id": "octopus",
     }
     path = HubServiceClient.vpn_tunnel_path(**expected)
 
@@ -3738,7 +3776,6 @@ def test_parse_vpn_tunnel_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = HubServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3746,8 +3783,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = HubServiceClient.common_billing_account_path(**expected)
 
@@ -3757,7 +3793,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = HubServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3765,8 +3800,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = HubServiceClient.common_folder_path(**expected)
 
@@ -3776,7 +3810,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = HubServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3784,8 +3817,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = HubServiceClient.common_organization_path(**expected)
 
@@ -3795,7 +3827,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = HubServiceClient.common_project_path(project)
     assert expected == actual
@@ -3803,8 +3834,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = HubServiceClient.common_project_path(**expected)
 
@@ -3815,7 +3845,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = HubServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3823,9 +3852,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = HubServiceClient.common_location_path(**expected)
 

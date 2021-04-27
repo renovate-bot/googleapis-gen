@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,8 +28,7 @@ from ccc.hosted.marketplace_v2.types.services import CustomerLicenseGetRequest
 from ccc.hosted.marketplace_v2.types.services import LicenseNotificationListRequest
 from ccc.hosted.marketplace_v2.types.services import UserLicenseGetRequest
 
-__all__ = (
-    'CustomerLicense',
+__all__ = ('CustomerLicense',
     'CustomerLicenseGetRequest',
     'CustomerLicenseServiceAsyncClient',
     'CustomerLicenseServiceClient',

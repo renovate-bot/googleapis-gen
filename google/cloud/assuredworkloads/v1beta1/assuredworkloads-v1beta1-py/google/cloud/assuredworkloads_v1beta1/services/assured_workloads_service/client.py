@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,7 +36,6 @@ from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service im
 from google.cloud.assuredworkloads_v1beta1.types import assuredworkloads_v1beta1
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import AssuredWorkloadsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AssuredWorkloadsServiceGrpcTransport
 from .transports.grpc_asyncio import AssuredWorkloadsServiceGrpcAsyncIOTransport
@@ -341,7 +338,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.CreateWorkloadRequest):
-                The request object. Request for creating a workload.
+                The request object.
+                Request for creating a workload.
             parent (str):
                 Required. The resource name of the new Workload's
                 parent. Must be of the form
@@ -355,7 +353,6 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
                 This corresponds to the ``workload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -384,10 +381,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.CreateWorkloadRequest):
             request = assuredworkloads_v1beta1.CreateWorkloadRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if workload is not None:
@@ -440,7 +435,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.UpdateWorkloadRequest):
-                The request object. Request for Updating a workload.
+                The request object.
+                Request for Updating a workload.
             workload (google.cloud.assuredworkloads_v1beta1.types.Workload):
                 Required. The workload to update. The workload’s
                 ``name`` field is used to identify the workload to be
@@ -457,7 +453,6 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -485,10 +480,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.UpdateWorkloadRequest):
             request = assuredworkloads_v1beta1.UpdateWorkloadRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if workload is not None:
                 request.workload = workload
             if update_mask is not None:
@@ -531,7 +524,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.DeleteWorkloadRequest):
-                The request object. Request for deleting a Workload.
+                The request object.
+                Request for deleting a Workload.
             name (str):
                 Required. The ``name`` field is used to identify the
                 workload. Format:
@@ -540,7 +534,6 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -561,10 +554,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.DeleteWorkloadRequest):
             request = assuredworkloads_v1beta1.DeleteWorkloadRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -600,7 +591,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.GetWorkloadRequest):
-                The request object. Request for fetching a workload.
+                The request object.
+                Request for fetching a workload.
             name (str):
                 Required. The resource name of the Workload to fetch.
                 This is the workloads's relative path in the API,
@@ -612,7 +604,6 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -640,10 +631,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.GetWorkloadRequest):
             request = assuredworkloads_v1beta1.GetWorkloadRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -682,7 +671,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.ListWorkloadsRequest):
-                The request object. Request for fetching workloads in an
+                The request object.
+                Request for fetching workloads in an
                 organization.
             parent (str):
                 Required. Parent Resource to list workloads from. Must
@@ -692,7 +682,6 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -721,10 +710,8 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.ListWorkloadsRequest):
             request = assuredworkloads_v1beta1.ListWorkloadsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -759,8 +746,6 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         # Done; return the response.
         return response
-
-
 
 
 

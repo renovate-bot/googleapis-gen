@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.cloud_shell_service import CloudShellServiceClient
+
 from .types.cloudshell import AddPublicKeyMetadata
 from .types.cloudshell import AddPublicKeyRequest
 from .types.cloudshell import AddPublicKeyResponse
@@ -33,7 +33,6 @@ from .types.cloudshell import RemovePublicKeyResponse
 from .types.cloudshell import StartEnvironmentMetadata
 from .types.cloudshell import StartEnvironmentRequest
 from .types.cloudshell import StartEnvironmentResponse
-
 
 __all__ = (
     'AddPublicKeyMetadata',

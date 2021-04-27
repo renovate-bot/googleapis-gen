@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,8 +38,7 @@ from google.streetview.publish_v1.types.rpcmessages import PhotoResponse
 from google.streetview.publish_v1.types.rpcmessages import PhotoView
 from google.streetview.publish_v1.types.rpcmessages import UpdatePhotoRequest
 
-__all__ = (
-    'BatchDeletePhotosRequest',
+__all__ = ('BatchDeletePhotosRequest',
     'BatchDeletePhotosResponse',
     'BatchGetPhotosRequest',
     'BatchGetPhotosResponse',

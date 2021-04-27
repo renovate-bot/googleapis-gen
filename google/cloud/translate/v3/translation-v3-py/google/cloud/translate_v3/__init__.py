@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.translation_service import TranslationServiceClient
+
 from .types.translation_service import BatchTranslateMetadata
 from .types.translation_service import BatchTranslateResponse
 from .types.translation_service import BatchTranslateTextRequest
@@ -43,7 +43,6 @@ from .types.translation_service import TranslateTextGlossaryConfig
 from .types.translation_service import TranslateTextRequest
 from .types.translation_service import TranslateTextResponse
 from .types.translation_service import Translation
-
 
 __all__ = (
     'BatchTranslateMetadata',

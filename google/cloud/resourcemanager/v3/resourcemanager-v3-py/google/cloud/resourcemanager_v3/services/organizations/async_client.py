@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -33,7 +31,6 @@ from google.cloud.resourcemanager_v3.types import organizations
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import OrganizationsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import OrganizationsGrpcAsyncIOTransport
 from .client import OrganizationsClient
@@ -49,19 +46,14 @@ class OrganizationsAsyncClient:
 
     organization_path = staticmethod(OrganizationsClient.organization_path)
     parse_organization_path = staticmethod(OrganizationsClient.parse_organization_path)
-
     common_billing_account_path = staticmethod(OrganizationsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(OrganizationsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(OrganizationsClient.common_folder_path)
     parse_common_folder_path = staticmethod(OrganizationsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(OrganizationsClient.common_organization_path)
     parse_common_organization_path = staticmethod(OrganizationsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(OrganizationsClient.common_project_path)
     parse_common_project_path = staticmethod(OrganizationsClient.parse_common_project_path)
-
     common_location_path = staticmethod(OrganizationsClient.common_location_path)
     parse_common_location_path = staticmethod(OrganizationsClient.parse_common_location_path)
 
@@ -146,7 +138,6 @@ class OrganizationsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = OrganizationsClient(
             credentials=credentials,
             transport=transport,
@@ -168,7 +159,8 @@ class OrganizationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetOrganizationRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 `GetOrganization` method. The `name` field is required.
                 `organization_id` is no longer accepted.
             name (:class:`str`):
@@ -180,7 +172,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,7 +198,6 @@ class OrganizationsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -216,10 +206,7 @@ class OrganizationsAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_organization,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -266,7 +253,8 @@ class OrganizationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.SearchOrganizationsRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 `SearchOrganizations` method.
             query (:class:`str`):
                 Optional. An optional query string used to filter the
@@ -293,7 +281,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -321,7 +308,6 @@ class OrganizationsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if query is not None:
             request.query = query
 
@@ -372,7 +358,8 @@ class OrganizationsAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -383,7 +370,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -457,11 +443,10 @@ class OrganizationsAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -470,10 +455,7 @@ class OrganizationsAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -520,7 +502,8 @@ class OrganizationsAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -531,7 +514,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -605,11 +587,10 @@ class OrganizationsAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -657,7 +638,8 @@ class OrganizationsAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -677,7 +659,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -696,11 +677,10 @@ class OrganizationsAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
-
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -730,8 +710,6 @@ class OrganizationsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

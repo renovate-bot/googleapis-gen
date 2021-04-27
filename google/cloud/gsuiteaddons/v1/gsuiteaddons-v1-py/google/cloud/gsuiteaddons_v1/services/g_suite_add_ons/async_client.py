@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -31,7 +29,6 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.gsuiteaddons_v1.services.g_suite_add_ons import pagers
 from google.cloud.gsuiteaddons_v1.types import gsuiteaddons
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-
 from .transports.base import GSuiteAddOnsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GSuiteAddOnsGrpcAsyncIOTransport
 from .client import GSuiteAddOnsClient
@@ -80,19 +77,14 @@ class GSuiteAddOnsAsyncClient:
     parse_deployment_path = staticmethod(GSuiteAddOnsClient.parse_deployment_path)
     install_status_path = staticmethod(GSuiteAddOnsClient.install_status_path)
     parse_install_status_path = staticmethod(GSuiteAddOnsClient.parse_install_status_path)
-
     common_billing_account_path = staticmethod(GSuiteAddOnsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GSuiteAddOnsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(GSuiteAddOnsClient.common_folder_path)
     parse_common_folder_path = staticmethod(GSuiteAddOnsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(GSuiteAddOnsClient.common_organization_path)
     parse_common_organization_path = staticmethod(GSuiteAddOnsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(GSuiteAddOnsClient.common_project_path)
     parse_common_project_path = staticmethod(GSuiteAddOnsClient.parse_common_project_path)
-
     common_location_path = staticmethod(GSuiteAddOnsClient.common_location_path)
     parse_common_location_path = staticmethod(GSuiteAddOnsClient.parse_common_location_path)
 
@@ -177,7 +169,6 @@ class GSuiteAddOnsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = GSuiteAddOnsClient(
             credentials=credentials,
             transport=transport,
@@ -199,7 +190,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.GetAuthorizationRequest`):
-                The request object. Request message to get Google
+                The request object.
+                Request message to get Google
                 Workspace Add-ons authorization information.
             name (:class:`str`):
                 Required. Name of the project for which to get the
@@ -210,7 +202,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -235,7 +226,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -281,7 +271,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.CreateDeploymentRequest`):
-                The request object. Request message to create a
+                The request object.
+                Request message to create a
                 deployment.
             parent (:class:`str`):
                 Required. Name of the project in which to create the
@@ -307,7 +298,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``deployment_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -330,7 +320,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if deployment is not None:
@@ -378,7 +367,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.ReplaceDeploymentRequest`):
-                The request object. Request message to create or replace
+                The request object.
+                Request message to create or replace
                 a deployment.
             deployment (:class:`google.cloud.gsuiteaddons_v1.types.Deployment`):
                 Required. The deployment to create or
@@ -387,7 +377,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``deployment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -410,7 +399,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if deployment is not None:
             request.deployment = deployment
 
@@ -453,7 +441,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.GetDeploymentRequest`):
-                The request object. Request message to get a deployment.
+                The request object.
+                Request message to get a deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
                 get.
@@ -464,7 +453,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -487,7 +475,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -530,7 +517,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.ListDeploymentsRequest`):
-                The request object. Request message to list deployments
+                The request object.
+                Request message to list deployments
                 for a project.
             parent (:class:`str`):
                 Required. Name of the project in which to create the
@@ -541,7 +529,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -568,7 +555,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -620,7 +606,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.DeleteDeploymentRequest`):
-                The request object. Request message to delete a
+                The request object.
+                Request message to delete a
                 deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -632,7 +619,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -651,7 +637,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -694,7 +679,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.InstallDeploymentRequest`):
-                The request object. Request message to install a
+                The request object.
+                Request message to install a
                 developer mode deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -706,7 +692,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -725,7 +710,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -768,7 +752,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.UninstallDeploymentRequest`):
-                The request object. Request message to uninstall a
+                The request object.
+                Request message to uninstall a
                 developer mode deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -780,7 +765,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -799,7 +783,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -840,7 +823,8 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.GetInstallStatusRequest`):
-                The request object. Request message to get the install
+                The request object.
+                Request message to get the install
                 status of a developer mode deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment.
@@ -851,7 +835,6 @@ class GSuiteAddOnsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -876,7 +859,6 @@ class GSuiteAddOnsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -906,8 +888,6 @@ class GSuiteAddOnsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

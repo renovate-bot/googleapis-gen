@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -35,7 +33,6 @@ from google.cloud.memcache_v1beta2.types import cloud_memcache
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import CloudMemcacheTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CloudMemcacheGrpcAsyncIOTransport
 from .client import CloudMemcacheClient
@@ -70,19 +67,14 @@ class CloudMemcacheAsyncClient:
 
     instance_path = staticmethod(CloudMemcacheClient.instance_path)
     parse_instance_path = staticmethod(CloudMemcacheClient.parse_instance_path)
-
     common_billing_account_path = staticmethod(CloudMemcacheClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudMemcacheClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(CloudMemcacheClient.common_folder_path)
     parse_common_folder_path = staticmethod(CloudMemcacheClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(CloudMemcacheClient.common_organization_path)
     parse_common_organization_path = staticmethod(CloudMemcacheClient.parse_common_organization_path)
-
     common_project_path = staticmethod(CloudMemcacheClient.common_project_path)
     parse_common_project_path = staticmethod(CloudMemcacheClient.parse_common_project_path)
-
     common_location_path = staticmethod(CloudMemcacheClient.common_location_path)
     parse_common_location_path = staticmethod(CloudMemcacheClient.parse_common_location_path)
 
@@ -167,7 +159,6 @@ class CloudMemcacheAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = CloudMemcacheClient(
             credentials=credentials,
             transport=transport,
@@ -188,7 +179,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.ListInstancesRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ListInstances][google.cloud.memcache.v1beta2.CloudMemcache.ListInstances].
             parent (:class:`str`):
                 Required. The resource name of the instance location
@@ -199,7 +191,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -227,7 +218,6 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -279,7 +269,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.GetInstanceRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [GetInstance][google.cloud.memcache.v1beta2.CloudMemcache.GetInstance].
             name (:class:`str`):
                 Required. Memcached instance resource name in the
@@ -290,7 +281,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -313,7 +303,6 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -358,7 +347,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.CreateInstanceRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [CreateInstance][google.cloud.memcache.v1beta2.CloudMemcache.CreateInstance].
             parent (:class:`str`):
                 Required. The resource name of the instance location
@@ -391,7 +381,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -419,7 +408,6 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if instance_id is not None:
@@ -476,7 +464,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.UpdateInstanceRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [UpdateInstance][google.cloud.memcache.v1beta2.CloudMemcache.UpdateInstance].
             update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
                 Required. Mask of fields to update.
@@ -493,7 +482,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -521,7 +509,6 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if update_mask is not None:
             request.update_mask = update_mask
         if resource is not None:
@@ -579,7 +566,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.UpdateParametersRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [UpdateParameters][google.cloud.memcache.v1beta2.CloudMemcache.UpdateParameters].
             name (:class:`str`):
                 Required. Resource name of the
@@ -601,7 +589,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``parameters`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -629,7 +616,6 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if update_mask is not None:
@@ -684,7 +670,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.DeleteInstanceRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [DeleteInstance][google.cloud.memcache.v1beta2.CloudMemcache.DeleteInstance].
             name (:class:`str`):
                 Required. Memcached instance resource name in the
@@ -695,7 +682,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -733,7 +719,6 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -788,7 +773,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.ApplyParametersRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ApplyParameters][google.cloud.memcache.v1beta2.CloudMemcache.ApplyParameters].
             name (:class:`str`):
                 Required. Resource name of the
@@ -814,7 +800,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``apply_all`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -842,12 +827,10 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if apply_all is not None:
             request.apply_all = apply_all
-
         if node_ids:
             request.node_ids.extend(node_ids)
 
@@ -901,7 +884,8 @@ class CloudMemcacheAsyncClient:
 
         Args:
             request (:class:`google.cloud.memcache_v1beta2.types.ApplySoftwareUpdateRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ApplySoftwareUpdate][google.cloud.memcache.v1beta2.CloudMemcache.ApplySoftwareUpdate].
             instance (:class:`str`):
                 Required. Resource name of the
@@ -930,7 +914,6 @@ class CloudMemcacheAsyncClient:
                 This corresponds to the ``apply_all`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -958,12 +941,10 @@ class CloudMemcacheAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance is not None:
             request.instance = instance
         if apply_all is not None:
             request.apply_all = apply_all
-
         if node_ids:
             request.node_ids.extend(node_ids)
 
@@ -1001,8 +982,6 @@ class CloudMemcacheAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

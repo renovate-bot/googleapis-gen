@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -35,6 +35,8 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.dataqna_v1alpha.services.question_service import QuestionServiceAsyncClient
 from google.cloud.dataqna_v1alpha.services.question_service import QuestionServiceClient
 from google.cloud.dataqna_v1alpha.services.question_service import transports
+from google.cloud.dataqna_v1alpha.services.question_service.transports.base import _API_CORE_VERSION
+from google.cloud.dataqna_v1alpha.services.question_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dataqna_v1alpha.types import annotated_string
 from google.cloud.dataqna_v1alpha.types import question
 from google.cloud.dataqna_v1alpha.types import question as gcd_question
@@ -47,6 +49,28 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -214,12 +238,10 @@ def test_question_service_client_client_options(client_class, transport_class, t
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (QuestionServiceClient, transports.QuestionServiceGrpcTransport, "grpc", "true"),
     (QuestionServiceAsyncClient, transports.QuestionServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (QuestionServiceClient, transports.QuestionServiceGrpcTransport, "grpc", "false"),
     (QuestionServiceAsyncClient, transports.QuestionServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(QuestionServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(QuestionServiceClient))
 @mock.patch.object(QuestionServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(QuestionServiceAsyncClient))
@@ -374,37 +396,24 @@ def test_get_question(transport: str = 'grpc', request_type=question_service.Get
         # Designate an appropriate return value for the call.
         call.return_value = question.Question(
             name='name_value',
-
             scopes=['scopes_value'],
-
             query='query_value',
-
             data_source_annotations=['data_source_annotations_value'],
-
             user_email='user_email_value',
-
         )
-
         response = client.get_question(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.GetQuestionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, question.Question)
-
     assert response.name == 'name_value'
-
     assert response.scopes == ['scopes_value']
-
     assert response.query == 'query_value'
-
     assert response.data_source_annotations == ['data_source_annotations_value']
-
     assert response.user_email == 'user_email_value'
 
 
@@ -427,8 +436,8 @@ def test_get_question_empty_call():
         client.get_question()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.GetQuestionRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_question_async(transport: str = 'grpc_asyncio', request_type=question_service.GetQuestionRequest):
@@ -446,33 +455,26 @@ async def test_get_question_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_question),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(question.Question(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(question.Question(
             name='name_value',
             scopes=['scopes_value'],
             query='query_value',
             data_source_annotations=['data_source_annotations_value'],
             user_email='user_email_value',
         ))
-
         response = await client.get_question(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.GetQuestionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, question.Question)
-
     assert response.name == 'name_value'
-
     assert response.scopes == ['scopes_value']
-
     assert response.query == 'query_value'
-
     assert response.data_source_annotations == ['data_source_annotations_value']
-
     assert response.user_email == 'user_email_value'
 
 
@@ -489,6 +491,7 @@ def test_get_question_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.GetQuestionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -496,7 +499,6 @@ def test_get_question_field_headers():
             type(client.transport.get_question),
             '__call__') as call:
         call.return_value = question.Question()
-
         client.get_question(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -521,6 +523,7 @@ async def test_get_question_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.GetQuestionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -528,7 +531,6 @@ async def test_get_question_field_headers_async():
             type(client.transport.get_question),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(question.Question())
-
         await client.get_question(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -555,7 +557,6 @@ def test_get_question_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = question.Question()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_question(
@@ -566,7 +567,6 @@ def test_get_question_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -608,7 +608,6 @@ async def test_get_question_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -644,37 +643,24 @@ def test_create_question(transport: str = 'grpc', request_type=question_service.
         # Designate an appropriate return value for the call.
         call.return_value = gcd_question.Question(
             name='name_value',
-
             scopes=['scopes_value'],
-
             query='query_value',
-
             data_source_annotations=['data_source_annotations_value'],
-
             user_email='user_email_value',
-
         )
-
         response = client.create_question(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.CreateQuestionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gcd_question.Question)
-
     assert response.name == 'name_value'
-
     assert response.scopes == ['scopes_value']
-
     assert response.query == 'query_value'
-
     assert response.data_source_annotations == ['data_source_annotations_value']
-
     assert response.user_email == 'user_email_value'
 
 
@@ -697,8 +683,8 @@ def test_create_question_empty_call():
         client.create_question()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.CreateQuestionRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_question_async(transport: str = 'grpc_asyncio', request_type=question_service.CreateQuestionRequest):
@@ -716,33 +702,26 @@ async def test_create_question_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.create_question),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_question.Question(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcd_question.Question(
             name='name_value',
             scopes=['scopes_value'],
             query='query_value',
             data_source_annotations=['data_source_annotations_value'],
             user_email='user_email_value',
         ))
-
         response = await client.create_question(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.CreateQuestionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcd_question.Question)
-
     assert response.name == 'name_value'
-
     assert response.scopes == ['scopes_value']
-
     assert response.query == 'query_value'
-
     assert response.data_source_annotations == ['data_source_annotations_value']
-
     assert response.user_email == 'user_email_value'
 
 
@@ -759,6 +738,7 @@ def test_create_question_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.CreateQuestionRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -766,7 +746,6 @@ def test_create_question_field_headers():
             type(client.transport.create_question),
             '__call__') as call:
         call.return_value = gcd_question.Question()
-
         client.create_question(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -791,6 +770,7 @@ async def test_create_question_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.CreateQuestionRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -798,7 +778,6 @@ async def test_create_question_field_headers_async():
             type(client.transport.create_question),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_question.Question())
-
         await client.create_question(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -825,7 +804,6 @@ def test_create_question_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcd_question.Question()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_question(
@@ -837,9 +815,7 @@ def test_create_question_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].question == gcd_question.Question(name='name_value')
 
 
@@ -883,9 +859,7 @@ async def test_create_question_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].question == gcd_question.Question(name='name_value')
 
 
@@ -922,37 +896,24 @@ def test_execute_question(transport: str = 'grpc', request_type=question_service
         # Designate an appropriate return value for the call.
         call.return_value = question.Question(
             name='name_value',
-
             scopes=['scopes_value'],
-
             query='query_value',
-
             data_source_annotations=['data_source_annotations_value'],
-
             user_email='user_email_value',
-
         )
-
         response = client.execute_question(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.ExecuteQuestionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, question.Question)
-
     assert response.name == 'name_value'
-
     assert response.scopes == ['scopes_value']
-
     assert response.query == 'query_value'
-
     assert response.data_source_annotations == ['data_source_annotations_value']
-
     assert response.user_email == 'user_email_value'
 
 
@@ -975,8 +936,8 @@ def test_execute_question_empty_call():
         client.execute_question()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.ExecuteQuestionRequest()
+
 
 @pytest.mark.asyncio
 async def test_execute_question_async(transport: str = 'grpc_asyncio', request_type=question_service.ExecuteQuestionRequest):
@@ -994,33 +955,26 @@ async def test_execute_question_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.execute_question),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(question.Question(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(question.Question(
             name='name_value',
             scopes=['scopes_value'],
             query='query_value',
             data_source_annotations=['data_source_annotations_value'],
             user_email='user_email_value',
         ))
-
         response = await client.execute_question(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.ExecuteQuestionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, question.Question)
-
     assert response.name == 'name_value'
-
     assert response.scopes == ['scopes_value']
-
     assert response.query == 'query_value'
-
     assert response.data_source_annotations == ['data_source_annotations_value']
-
     assert response.user_email == 'user_email_value'
 
 
@@ -1037,6 +991,7 @@ def test_execute_question_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.ExecuteQuestionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1044,7 +999,6 @@ def test_execute_question_field_headers():
             type(client.transport.execute_question),
             '__call__') as call:
         call.return_value = question.Question()
-
         client.execute_question(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1069,6 +1023,7 @@ async def test_execute_question_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.ExecuteQuestionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1076,7 +1031,6 @@ async def test_execute_question_field_headers_async():
             type(client.transport.execute_question),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(question.Question())
-
         await client.execute_question(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1103,7 +1057,6 @@ def test_execute_question_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = question.Question()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.execute_question(
@@ -1115,9 +1068,7 @@ def test_execute_question_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].interpretation_index == 2159
 
 
@@ -1161,9 +1112,7 @@ async def test_execute_question_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].interpretation_index == 2159
 
 
@@ -1200,29 +1149,20 @@ def test_get_user_feedback(transport: str = 'grpc', request_type=question_servic
         # Designate an appropriate return value for the call.
         call.return_value = user_feedback.UserFeedback(
             name='name_value',
-
             free_form_feedback='free_form_feedback_value',
-
             rating=user_feedback.UserFeedback.UserFeedbackRating.POSITIVE,
-
         )
-
         response = client.get_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.GetUserFeedbackRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, user_feedback.UserFeedback)
-
     assert response.name == 'name_value'
-
     assert response.free_form_feedback == 'free_form_feedback_value'
-
     assert response.rating == user_feedback.UserFeedback.UserFeedbackRating.POSITIVE
 
 
@@ -1245,8 +1185,8 @@ def test_get_user_feedback_empty_call():
         client.get_user_feedback()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.GetUserFeedbackRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_user_feedback_async(transport: str = 'grpc_asyncio', request_type=question_service.GetUserFeedbackRequest):
@@ -1264,27 +1204,22 @@ async def test_get_user_feedback_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.get_user_feedback),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(user_feedback.UserFeedback(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(user_feedback.UserFeedback(
             name='name_value',
             free_form_feedback='free_form_feedback_value',
             rating=user_feedback.UserFeedback.UserFeedbackRating.POSITIVE,
         ))
-
         response = await client.get_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.GetUserFeedbackRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, user_feedback.UserFeedback)
-
     assert response.name == 'name_value'
-
     assert response.free_form_feedback == 'free_form_feedback_value'
-
     assert response.rating == user_feedback.UserFeedback.UserFeedbackRating.POSITIVE
 
 
@@ -1301,6 +1236,7 @@ def test_get_user_feedback_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.GetUserFeedbackRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1308,7 +1244,6 @@ def test_get_user_feedback_field_headers():
             type(client.transport.get_user_feedback),
             '__call__') as call:
         call.return_value = user_feedback.UserFeedback()
-
         client.get_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1333,6 +1268,7 @@ async def test_get_user_feedback_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.GetUserFeedbackRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1340,7 +1276,6 @@ async def test_get_user_feedback_field_headers_async():
             type(client.transport.get_user_feedback),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(user_feedback.UserFeedback())
-
         await client.get_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1367,7 +1302,6 @@ def test_get_user_feedback_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = user_feedback.UserFeedback()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_user_feedback(
@@ -1378,7 +1312,6 @@ def test_get_user_feedback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1420,7 +1353,6 @@ async def test_get_user_feedback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1456,29 +1388,20 @@ def test_update_user_feedback(transport: str = 'grpc', request_type=question_ser
         # Designate an appropriate return value for the call.
         call.return_value = gcd_user_feedback.UserFeedback(
             name='name_value',
-
             free_form_feedback='free_form_feedback_value',
-
             rating=gcd_user_feedback.UserFeedback.UserFeedbackRating.POSITIVE,
-
         )
-
         response = client.update_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.UpdateUserFeedbackRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gcd_user_feedback.UserFeedback)
-
     assert response.name == 'name_value'
-
     assert response.free_form_feedback == 'free_form_feedback_value'
-
     assert response.rating == gcd_user_feedback.UserFeedback.UserFeedbackRating.POSITIVE
 
 
@@ -1501,8 +1424,8 @@ def test_update_user_feedback_empty_call():
         client.update_user_feedback()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.UpdateUserFeedbackRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_user_feedback_async(transport: str = 'grpc_asyncio', request_type=question_service.UpdateUserFeedbackRequest):
@@ -1520,27 +1443,22 @@ async def test_update_user_feedback_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.update_user_feedback),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_user_feedback.UserFeedback(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcd_user_feedback.UserFeedback(
             name='name_value',
             free_form_feedback='free_form_feedback_value',
             rating=gcd_user_feedback.UserFeedback.UserFeedbackRating.POSITIVE,
         ))
-
         response = await client.update_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == question_service.UpdateUserFeedbackRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcd_user_feedback.UserFeedback)
-
     assert response.name == 'name_value'
-
     assert response.free_form_feedback == 'free_form_feedback_value'
-
     assert response.rating == gcd_user_feedback.UserFeedback.UserFeedbackRating.POSITIVE
 
 
@@ -1557,6 +1475,7 @@ def test_update_user_feedback_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.UpdateUserFeedbackRequest()
+
     request.user_feedback.name = 'user_feedback.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1564,7 +1483,6 @@ def test_update_user_feedback_field_headers():
             type(client.transport.update_user_feedback),
             '__call__') as call:
         call.return_value = gcd_user_feedback.UserFeedback()
-
         client.update_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1589,6 +1507,7 @@ async def test_update_user_feedback_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = question_service.UpdateUserFeedbackRequest()
+
     request.user_feedback.name = 'user_feedback.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1596,7 +1515,6 @@ async def test_update_user_feedback_field_headers_async():
             type(client.transport.update_user_feedback),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_user_feedback.UserFeedback())
-
         await client.update_user_feedback(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1623,7 +1541,6 @@ def test_update_user_feedback_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcd_user_feedback.UserFeedback()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_user_feedback(
@@ -1635,9 +1552,7 @@ def test_update_user_feedback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].user_feedback == gcd_user_feedback.UserFeedback(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1681,9 +1596,7 @@ async def test_update_user_feedback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].user_feedback == gcd_user_feedback.UserFeedback(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1743,7 +1656,6 @@ def test_transport_instance():
     client = QuestionServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.QuestionServiceGrpcTransport(
@@ -1758,7 +1670,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.QuestionServiceGrpcTransport,
     transports.QuestionServiceGrpcAsyncIOTransport,
@@ -1770,7 +1681,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = QuestionServiceClient(
@@ -1780,7 +1690,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.QuestionServiceGrpcTransport,
     )
-
 
 def test_question_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1807,15 +1716,33 @@ def test_question_service_base_transport():
         'execute_question',
         'get_user_feedback',
         'update_user_feedback',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_question_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dataqna_v1alpha.services.question_service.transports.QuestionServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dataqna_v1alpha.services.question_service.transports.QuestionServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.QuestionServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_question_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dataqna_v1alpha.services.question_service.transports.QuestionServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.QuestionServiceTransport(
@@ -1831,33 +1758,182 @@ def test_question_service_base_transport_with_credentials_file():
 
 def test_question_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dataqna_v1alpha.services.question_service.transports.QuestionServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dataqna_v1alpha.services.question_service.transports.QuestionServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.QuestionServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_question_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         QuestionServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_question_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_question_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        QuestionServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.QuestionServiceGrpcTransport,
+        transports.QuestionServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_question_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.QuestionServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.QuestionServiceGrpcTransport,
+        transports.QuestionServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_question_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.QuestionServiceGrpcTransport, grpc_helpers),
+        (transports.QuestionServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_question_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "dataqna.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="dataqna.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.QuestionServiceGrpcTransport, grpc_helpers),
+        (transports.QuestionServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_question_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "dataqna.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.QuestionServiceGrpcTransport, grpc_helpers),
+        (transports.QuestionServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_question_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "dataqna.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1919,7 +1995,6 @@ def test_question_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dataqna.googleapis.com:8000'),
     )
     assert client.transport._host == 'dataqna.googleapis.com:8000'
-
 
 def test_question_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2039,7 +2114,6 @@ def test_question_path():
     project = "squid"
     location = "clam"
     question = "whelk"
-
     expected = "projects/{project}/locations/{location}/questions/{question}".format(project=project, location=location, question=question, )
     actual = QuestionServiceClient.question_path(project, location, question)
     assert expected == actual
@@ -2047,10 +2121,9 @@ def test_question_path():
 
 def test_parse_question_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "question": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "question": "nudibranch",
     }
     path = QuestionServiceClient.question_path(**expected)
 
@@ -2062,7 +2135,6 @@ def test_user_feedback_path():
     project = "cuttlefish"
     location = "mussel"
     question = "winkle"
-
     expected = "projects/{project}/locations/{location}/questions/{question}/userFeedback".format(project=project, location=location, question=question, )
     actual = QuestionServiceClient.user_feedback_path(project, location, question)
     assert expected == actual
@@ -2070,10 +2142,9 @@ def test_user_feedback_path():
 
 def test_parse_user_feedback_path():
     expected = {
-    "project": "nautilus",
-    "location": "scallop",
-    "question": "abalone",
-
+        "project": "nautilus",
+        "location": "scallop",
+        "question": "abalone",
     }
     path = QuestionServiceClient.user_feedback_path(**expected)
 
@@ -2083,7 +2154,6 @@ def test_parse_user_feedback_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = QuestionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2091,8 +2161,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = QuestionServiceClient.common_billing_account_path(**expected)
 
@@ -2102,7 +2171,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = QuestionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2110,8 +2178,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = QuestionServiceClient.common_folder_path(**expected)
 
@@ -2121,7 +2188,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = QuestionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2129,8 +2195,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = QuestionServiceClient.common_organization_path(**expected)
 
@@ -2140,7 +2205,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = QuestionServiceClient.common_project_path(project)
     assert expected == actual
@@ -2148,8 +2212,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = QuestionServiceClient.common_project_path(**expected)
 
@@ -2160,7 +2223,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = QuestionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2168,9 +2230,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = QuestionServiceClient.common_location_path(**expected)
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import group_placement_view
 from google.ads.googleads.v4.services.types import group_placement_view_service
-
 from .base import GroupPlacementViewServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class GroupPlacementViewServiceGrpcTransport(GroupPlacementViewServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class GroupPlacementViewServiceGrpcTransport(GroupPlacementViewServiceTransport)
     def get_group_placement_view(self) -> Callable[
             [group_placement_view_service.GetGroupPlacementViewRequest],
             group_placement_view.GroupPlacementView]:
-        r"""Return a callable for the get group placement view method over gRPC.
+        r"""Return a callable for the
+        get group placement view
+          method over gRPC.
 
         Returns the requested Group Placement view in full
         detail.

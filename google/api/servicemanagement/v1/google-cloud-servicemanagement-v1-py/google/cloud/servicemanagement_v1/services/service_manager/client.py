@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -61,7 +59,6 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import type_pb2 as gp_type  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-
 from .transports.base import ServiceManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ServiceManagerGrpcTransport
 from .transports.grpc_asyncio import ServiceManagerGrpcAsyncIOTransport
@@ -363,7 +360,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.ListServicesRequest):
-                The request object. Request message for `ListServices`
+                The request object.
+                Request message for `ListServices`
                 method.
             producer_project_id (str):
                 Include services produced by the
@@ -383,7 +381,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``consumer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -412,10 +409,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.ListServicesRequest):
             request = servicemanager.ListServicesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if producer_project_id is not None:
                 request.producer_project_id = producer_project_id
             if consumer_id is not None:
@@ -458,7 +453,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GetServiceRequest):
-                The request object. Request message for `GetService`
+                The request object.
+                Request message for `GetService`
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -468,7 +464,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -496,10 +491,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GetServiceRequest):
             request = servicemanager.GetServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
 
@@ -533,7 +526,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.CreateServiceRequest):
-                The request object. Request message for CreateService
+                The request object.
+                Request message for CreateService
                 method.
             service (google.cloud.servicemanagement_v1.types.ManagedService):
                 Required. Initial values for the
@@ -542,7 +536,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``service`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -571,10 +564,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.CreateServiceRequest):
             request = servicemanager.CreateServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service is not None:
                 request.service = service
 
@@ -620,7 +611,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.DeleteServiceRequest):
-                The request object. Request message for DeleteService
+                The request object.
+                Request message for DeleteService
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -631,7 +623,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -671,10 +662,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.DeleteServiceRequest):
             request = servicemanager.DeleteServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
 
@@ -719,7 +708,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.UndeleteServiceRequest):
-                The request object. Request message for UndeleteService
+                The request object.
+                Request message for UndeleteService
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -730,7 +720,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -760,10 +749,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.UndeleteServiceRequest):
             request = servicemanager.UndeleteServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
 
@@ -803,7 +790,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.ListServiceConfigsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListServiceConfigs method.
             service_name (str):
                 Required. The name of the service. See the
@@ -814,7 +802,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -844,10 +831,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.ListServiceConfigsRequest):
             request = servicemanager.ListServiceConfigsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
 
@@ -890,7 +875,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GetServiceConfigRequest):
-                The request object. Request message for GetServiceConfig
+                The request object.
+                Request message for GetServiceConfig
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -918,7 +904,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -962,10 +947,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GetServiceConfigRequest):
             request = servicemanager.GetServiceConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if config_id is not None:
@@ -1009,7 +992,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.CreateServiceConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateServiceConfig method.
             service_name (str):
                 Required. The name of the service. See the
@@ -1027,7 +1011,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``service_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1071,10 +1054,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.CreateServiceConfigRequest):
             request = servicemanager.CreateServiceConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if service_config is not None:
@@ -1121,7 +1102,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.SubmitConfigSourceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SubmitConfigSource method.
             service_name (str):
                 Required. The name of the service. See the
@@ -1148,7 +1130,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``validate_only`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1178,10 +1159,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.SubmitConfigSourceRequest):
             request = servicemanager.SubmitConfigSourceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if config_source is not None:
@@ -1227,7 +1206,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.ListServiceRolloutsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 'ListServiceRollouts'
             service_name (str):
                 Required. The name of the service. See the
@@ -1252,7 +1232,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1282,10 +1261,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.ListServiceRolloutsRequest):
             request = servicemanager.ListServiceRolloutsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if filter is not None:
@@ -1329,7 +1306,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GetServiceRolloutRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetServiceRollout method.
             service_name (str):
                 Required. The name of the service. See the
@@ -1347,7 +1325,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``rollout_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1378,10 +1355,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GetServiceRolloutRequest):
             request = servicemanager.GetServiceRolloutRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if rollout_id is not None:
@@ -1431,7 +1406,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.CreateServiceRolloutRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 'CreateServiceRollout'
             service_name (str):
                 Required. The name of the service. See the
@@ -1449,7 +1425,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``rollout`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1480,10 +1455,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.CreateServiceRolloutRequest):
             request = servicemanager.CreateServiceRolloutRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if rollout is not None:
@@ -1536,7 +1509,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GenerateConfigReportRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GenerateConfigReport method.
             new_config (google.protobuf.any_pb2.Any):
                 Required. Service configuration for which we want to
@@ -1560,7 +1534,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``old_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1587,10 +1560,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GenerateConfigReportRequest):
             request = servicemanager.GenerateConfigReportRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if new_config is not None:
                 request.new_config = new_config
             if old_config is not None:
@@ -1630,7 +1601,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.EnableServiceRequest):
-                The request object. Request message for EnableService
+                The request object.
+                Request message for EnableService
                 method.
             service_name (str):
                 Required. Name of the service to
@@ -1655,7 +1627,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``consumer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1685,10 +1656,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.EnableServiceRequest):
             request = servicemanager.EnableServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if consumer_id is not None:
@@ -1736,7 +1705,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.DisableServiceRequest):
-                The request object. Request message for DisableService
+                The request object.
+                Request message for DisableService
                 method.
             service_name (str):
                 Required. Name of the service to
@@ -1761,7 +1731,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
                 This corresponds to the ``consumer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1791,10 +1760,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.DisableServiceRequest):
             request = servicemanager.DisableServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service_name is not None:
                 request.service_name = service_name
             if consumer_id is not None:
@@ -1822,8 +1789,6 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

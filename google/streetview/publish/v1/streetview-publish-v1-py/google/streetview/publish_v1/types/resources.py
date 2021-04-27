@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.type import latlng_pb2 as latlng  # type: ignore
@@ -38,7 +35,6 @@ __protobuf__ = proto.module(
 
 class UploadRef(proto.Message):
     r"""Upload reference for media files.
-
     Attributes:
         upload_url (str):
             Required. An upload reference should be unique for each
@@ -46,18 +42,23 @@ class UploadRef(proto.Message):
             "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}".
     """
 
-    upload_url = proto.Field(proto.STRING, number=1)
+    upload_url = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class PhotoId(proto.Message):
     r"""Identifier for a [Photo][google.streetview.publish.v1.Photo].
-
     Attributes:
         id (str):
             Required. A unique identifier for a photo.
     """
 
-    id = proto.Field(proto.STRING, number=1)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class Level(proto.Message):
@@ -77,14 +78,18 @@ class Level(proto.Message):
             if there was an elevator.
     """
 
-    number = proto.Field(proto.DOUBLE, number=1)
-
-    name = proto.Field(proto.STRING, number=2)
+    number = proto.Field(
+        proto.DOUBLE,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Pose(proto.Message):
     r"""Raw pose measurement for an entity.
-
     Attributes:
         lat_lng_pair (google.type.latlng_pb2.LatLng):
             Latitude and longitude pair of the pose, as explained here:
@@ -125,28 +130,40 @@ class Pose(proto.Message):
             obtaining similar accuracy estimations.
     """
 
-    lat_lng_pair = proto.Field(proto.MESSAGE, number=1,
+    lat_lng_pair = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=latlng.LatLng,
     )
-
-    altitude = proto.Field(proto.DOUBLE, number=2)
-
-    heading = proto.Field(proto.DOUBLE, number=3)
-
-    pitch = proto.Field(proto.DOUBLE, number=4)
-
-    roll = proto.Field(proto.DOUBLE, number=5)
-
-    level = proto.Field(proto.MESSAGE, number=7,
+    altitude = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    heading = proto.Field(
+        proto.DOUBLE,
+        number=3,
+    )
+    pitch = proto.Field(
+        proto.DOUBLE,
+        number=4,
+    )
+    roll = proto.Field(
+        proto.DOUBLE,
+        number=5,
+    )
+    level = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='Level',
     )
-
-    accuracy_meters = proto.Field(proto.FLOAT, number=9)
+    accuracy_meters = proto.Field(
+        proto.FLOAT,
+        number=9,
+    )
 
 
 class Place(proto.Message):
     r"""Place metadata for an entity.
-
     Attributes:
         place_id (str):
             Place identifier, as described in
@@ -160,11 +177,18 @@ class Place(proto.Message):
             request, but may be a fallback.
     """
 
-    place_id = proto.Field(proto.STRING, number=1)
-
-    name = proto.Field(proto.STRING, number=2)
-
-    language_code = proto.Field(proto.STRING, number=3)
+    place_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class Connection(proto.Message):
@@ -177,14 +201,15 @@ class Connection(proto.Message):
             from the containing photo to another photo.
     """
 
-    target = proto.Field(proto.MESSAGE, number=1,
+    target = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='PhotoId',
     )
 
 
 class Photo(proto.Message):
     r"""Photo is used to store 360 photos along with photo metadata.
-
     Attributes:
         photo_id (google.streetview.publish_v1.types.PhotoId):
             Required when updating a photo. Output only
@@ -243,43 +268,60 @@ class Photo(proto.Message):
         PUBLISHED = 1
         REJECTED_UNKNOWN = 2
 
-    photo_id = proto.Field(proto.MESSAGE, number=1,
+    photo_id = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='PhotoId',
     )
-
-    upload_reference = proto.Field(proto.MESSAGE, number=2,
+    upload_reference = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='UploadRef',
     )
-
-    download_url = proto.Field(proto.STRING, number=3)
-
-    thumbnail_url = proto.Field(proto.STRING, number=9)
-
-    share_link = proto.Field(proto.STRING, number=11)
-
-    pose = proto.Field(proto.MESSAGE, number=4,
+    download_url = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    thumbnail_url = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    share_link = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    pose = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='Pose',
     )
-
-    connections = proto.RepeatedField(proto.MESSAGE, number=5,
+    connections = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message='Connection',
     )
-
-    capture_time = proto.Field(proto.MESSAGE, number=6,
+    capture_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=timestamp.Timestamp,
     )
-
-    places = proto.RepeatedField(proto.MESSAGE, number=7,
+    places = proto.RepeatedField(
+        proto.MESSAGE,
+        number=7,
         message='Place',
     )
-
-    view_count = proto.Field(proto.INT64, number=10)
-
-    transfer_status = proto.Field(proto.ENUM, number=12,
+    view_count = proto.Field(
+        proto.INT64,
+        number=10,
+    )
+    transfer_status = proto.Field(
+        proto.ENUM,
+        number=12,
         enum=TransferStatus,
     )
-
-    maps_publish_status = proto.Field(proto.ENUM, number=13,
+    maps_publish_status = proto.Field(
+        proto.ENUM,
+        number=13,
         enum=MapsPublishStatus,
     )
 

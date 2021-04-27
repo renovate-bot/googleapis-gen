@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,8 +35,7 @@ from google.cloud.scheduler_v1beta1.types.target import OAuthToken
 from google.cloud.scheduler_v1beta1.types.target import OidcToken
 from google.cloud.scheduler_v1beta1.types.target import PubsubTarget
 
-__all__ = (
-    'AppEngineHttpTarget',
+__all__ = ('AppEngineHttpTarget',
     'AppEngineRouting',
     'CloudSchedulerAsyncClient',
     'CloudSchedulerClient',

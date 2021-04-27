@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.ai_streams import AIStreamsClient
+
 from .types.aistreams import Cluster
 from .types.aistreams import CreateClusterRequest
 from .types.aistreams import CreateStreamRequest
@@ -31,7 +31,6 @@ from .types.aistreams import OperationMetadata
 from .types.aistreams import Stream
 from .types.aistreams import UpdateClusterRequest
 from .types.aistreams import UpdateStreamRequest
-
 
 __all__ = (
     'Cluster',

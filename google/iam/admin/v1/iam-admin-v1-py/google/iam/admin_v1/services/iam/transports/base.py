@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
+import packaging.version
 import pkg_resources
 
 from google import auth  # type: ignore
+import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -30,7 +30,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
-
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -40,6 +39,18 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
+try:
+    # google.auth.__version__ was added in 1.26.0
+    _GOOGLE_AUTH_VERSION = auth.__version__
+except AttributeError:
+    try:  # try pkg_resources if it is available
+        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
+    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
+        _GOOGLE_AUTH_VERSION = None
+
+_API_CORE_VERSION = google.api_core.__version__
+
+
 class IAMTransport(abc.ABC):
     """Abstract transport class for IAM."""
 
@@ -47,20 +58,22 @@ class IAMTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
+    DEFAULT_HOST: str = 'iam.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'iam.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: credentials.Credentials = None,
-            credentials_file: typing.Optional[str] = None,
-            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
-            quota_project_id: typing.Optional[str] = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -69,7 +82,7 @@ class IAMTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scope (Optional[Sequence[str]]): A list of scopes.
+            scopes (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -83,6 +96,8 @@ class IAMTransport(abc.ABC):
             host += ':443'
         self._host = host
 
+        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
+
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -94,15 +109,56 @@ class IAMTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                scopes=self._scopes,
+                                **scopes_kwargs,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
+
+    # TODO(busunkim): These two class methods are in the base transport
+    # to avoid duplicating code across the transport classes. These functions
+    # should be deleted once the minimum required versions of google-api-core
+    # and google-auth are increased.
+
+    # TODO: Remove this function once google-auth >= 1.25.0 is required
+    @classmethod
+    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
+        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
+
+        scopes_kwargs = {}
+
+        if _GOOGLE_AUTH_VERSION and (
+            packaging.version.parse(_GOOGLE_AUTH_VERSION)
+            >= packaging.version.parse("1.25.0")
+        ):
+            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
+        else:
+            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
+
+        return scopes_kwargs
+
+    # TODO: Remove this function once google-api-core >= 1.26.0 is required
+    @classmethod
+    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
+        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
+
+        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
+
+        if _API_CORE_VERSION and (
+            packaging.version.parse(_API_CORE_VERSION)
+            >= packaging.version.parse("1.26.0")
+        ):
+            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
+            self_signed_jwt_kwargs["scopes"] = scopes
+            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
+        else:
+            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
+
+        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -110,10 +166,7 @@ class IAMTransport(abc.ABC):
             self.list_service_accounts: gapic_v1.method.wrap_method(
                 self.list_service_accounts,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -125,10 +178,7 @@ class IAMTransport(abc.ABC):
             self.get_service_account: gapic_v1.method.wrap_method(
                 self.get_service_account,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -145,10 +195,7 @@ class IAMTransport(abc.ABC):
             self.update_service_account: gapic_v1.method.wrap_method(
                 self.update_service_account,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -165,10 +212,7 @@ class IAMTransport(abc.ABC):
             self.delete_service_account: gapic_v1.method.wrap_method(
                 self.delete_service_account,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -195,10 +239,7 @@ class IAMTransport(abc.ABC):
             self.list_service_account_keys: gapic_v1.method.wrap_method(
                 self.list_service_account_keys,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -210,10 +251,7 @@ class IAMTransport(abc.ABC):
             self.get_service_account_key: gapic_v1.method.wrap_method(
                 self.get_service_account_key,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -235,10 +273,7 @@ class IAMTransport(abc.ABC):
             self.delete_service_account_key: gapic_v1.method.wrap_method(
                 self.delete_service_account_key,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -322,267 +357,266 @@ class IAMTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
-    def list_service_accounts(self) -> typing.Callable[
+    def list_service_accounts(self) -> Callable[
             [iam.ListServiceAccountsRequest],
-            typing.Union[
+            Union[
                 iam.ListServiceAccountsResponse,
-                typing.Awaitable[iam.ListServiceAccountsResponse]
+                Awaitable[iam.ListServiceAccountsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_service_account(self) -> typing.Callable[
+    def get_service_account(self) -> Callable[
             [iam.GetServiceAccountRequest],
-            typing.Union[
+            Union[
                 iam.ServiceAccount,
-                typing.Awaitable[iam.ServiceAccount]
+                Awaitable[iam.ServiceAccount]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_service_account(self) -> typing.Callable[
+    def create_service_account(self) -> Callable[
             [iam.CreateServiceAccountRequest],
-            typing.Union[
+            Union[
                 iam.ServiceAccount,
-                typing.Awaitable[iam.ServiceAccount]
+                Awaitable[iam.ServiceAccount]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_service_account(self) -> typing.Callable[
+    def update_service_account(self) -> Callable[
             [iam.ServiceAccount],
-            typing.Union[
+            Union[
                 iam.ServiceAccount,
-                typing.Awaitable[iam.ServiceAccount]
+                Awaitable[iam.ServiceAccount]
             ]]:
         raise NotImplementedError()
 
     @property
-    def patch_service_account(self) -> typing.Callable[
+    def patch_service_account(self) -> Callable[
             [iam.PatchServiceAccountRequest],
-            typing.Union[
+            Union[
                 iam.ServiceAccount,
-                typing.Awaitable[iam.ServiceAccount]
+                Awaitable[iam.ServiceAccount]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_service_account(self) -> typing.Callable[
+    def delete_service_account(self) -> Callable[
             [iam.DeleteServiceAccountRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def undelete_service_account(self) -> typing.Callable[
+    def undelete_service_account(self) -> Callable[
             [iam.UndeleteServiceAccountRequest],
-            typing.Union[
+            Union[
                 iam.UndeleteServiceAccountResponse,
-                typing.Awaitable[iam.UndeleteServiceAccountResponse]
+                Awaitable[iam.UndeleteServiceAccountResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def enable_service_account(self) -> typing.Callable[
+    def enable_service_account(self) -> Callable[
             [iam.EnableServiceAccountRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def disable_service_account(self) -> typing.Callable[
+    def disable_service_account(self) -> Callable[
             [iam.DisableServiceAccountRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_service_account_keys(self) -> typing.Callable[
+    def list_service_account_keys(self) -> Callable[
             [iam.ListServiceAccountKeysRequest],
-            typing.Union[
+            Union[
                 iam.ListServiceAccountKeysResponse,
-                typing.Awaitable[iam.ListServiceAccountKeysResponse]
+                Awaitable[iam.ListServiceAccountKeysResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_service_account_key(self) -> typing.Callable[
+    def get_service_account_key(self) -> Callable[
             [iam.GetServiceAccountKeyRequest],
-            typing.Union[
+            Union[
                 iam.ServiceAccountKey,
-                typing.Awaitable[iam.ServiceAccountKey]
+                Awaitable[iam.ServiceAccountKey]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_service_account_key(self) -> typing.Callable[
+    def create_service_account_key(self) -> Callable[
             [iam.CreateServiceAccountKeyRequest],
-            typing.Union[
+            Union[
                 iam.ServiceAccountKey,
-                typing.Awaitable[iam.ServiceAccountKey]
+                Awaitable[iam.ServiceAccountKey]
             ]]:
         raise NotImplementedError()
 
     @property
-    def upload_service_account_key(self) -> typing.Callable[
+    def upload_service_account_key(self) -> Callable[
             [iam.UploadServiceAccountKeyRequest],
-            typing.Union[
+            Union[
                 iam.ServiceAccountKey,
-                typing.Awaitable[iam.ServiceAccountKey]
+                Awaitable[iam.ServiceAccountKey]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_service_account_key(self) -> typing.Callable[
+    def delete_service_account_key(self) -> Callable[
             [iam.DeleteServiceAccountKeyRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def sign_blob(self) -> typing.Callable[
+    def sign_blob(self) -> Callable[
             [iam.SignBlobRequest],
-            typing.Union[
+            Union[
                 iam.SignBlobResponse,
-                typing.Awaitable[iam.SignBlobResponse]
+                Awaitable[iam.SignBlobResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def sign_jwt(self) -> typing.Callable[
+    def sign_jwt(self) -> Callable[
             [iam.SignJwtRequest],
-            typing.Union[
+            Union[
                 iam.SignJwtResponse,
-                typing.Awaitable[iam.SignJwtResponse]
+                Awaitable[iam.SignJwtResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_iam_policy(self) -> typing.Callable[
+    def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
-            typing.Union[
+            Union[
                 gi_policy.Policy,
-                typing.Awaitable[gi_policy.Policy]
+                Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def set_iam_policy(self) -> typing.Callable[
+    def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
-            typing.Union[
+            Union[
                 gi_policy.Policy,
-                typing.Awaitable[gi_policy.Policy]
+                Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def test_iam_permissions(self) -> typing.Callable[
+    def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
-            typing.Union[
+            Union[
                 iam_policy.TestIamPermissionsResponse,
-                typing.Awaitable[iam_policy.TestIamPermissionsResponse]
+                Awaitable[iam_policy.TestIamPermissionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def query_grantable_roles(self) -> typing.Callable[
+    def query_grantable_roles(self) -> Callable[
             [iam.QueryGrantableRolesRequest],
-            typing.Union[
+            Union[
                 iam.QueryGrantableRolesResponse,
-                typing.Awaitable[iam.QueryGrantableRolesResponse]
+                Awaitable[iam.QueryGrantableRolesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_roles(self) -> typing.Callable[
+    def list_roles(self) -> Callable[
             [iam.ListRolesRequest],
-            typing.Union[
+            Union[
                 iam.ListRolesResponse,
-                typing.Awaitable[iam.ListRolesResponse]
+                Awaitable[iam.ListRolesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_role(self) -> typing.Callable[
+    def get_role(self) -> Callable[
             [iam.GetRoleRequest],
-            typing.Union[
+            Union[
                 iam.Role,
-                typing.Awaitable[iam.Role]
+                Awaitable[iam.Role]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_role(self) -> typing.Callable[
+    def create_role(self) -> Callable[
             [iam.CreateRoleRequest],
-            typing.Union[
+            Union[
                 iam.Role,
-                typing.Awaitable[iam.Role]
+                Awaitable[iam.Role]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_role(self) -> typing.Callable[
+    def update_role(self) -> Callable[
             [iam.UpdateRoleRequest],
-            typing.Union[
+            Union[
                 iam.Role,
-                typing.Awaitable[iam.Role]
+                Awaitable[iam.Role]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_role(self) -> typing.Callable[
+    def delete_role(self) -> Callable[
             [iam.DeleteRoleRequest],
-            typing.Union[
+            Union[
                 iam.Role,
-                typing.Awaitable[iam.Role]
+                Awaitable[iam.Role]
             ]]:
         raise NotImplementedError()
 
     @property
-    def undelete_role(self) -> typing.Callable[
+    def undelete_role(self) -> Callable[
             [iam.UndeleteRoleRequest],
-            typing.Union[
+            Union[
                 iam.Role,
-                typing.Awaitable[iam.Role]
+                Awaitable[iam.Role]
             ]]:
         raise NotImplementedError()
 
     @property
-    def query_testable_permissions(self) -> typing.Callable[
+    def query_testable_permissions(self) -> Callable[
             [iam.QueryTestablePermissionsRequest],
-            typing.Union[
+            Union[
                 iam.QueryTestablePermissionsResponse,
-                typing.Awaitable[iam.QueryTestablePermissionsResponse]
+                Awaitable[iam.QueryTestablePermissionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def query_auditable_services(self) -> typing.Callable[
+    def query_auditable_services(self) -> Callable[
             [iam.QueryAuditableServicesRequest],
-            typing.Union[
+            Union[
                 iam.QueryAuditableServicesResponse,
-                typing.Awaitable[iam.QueryAuditableServicesResponse]
+                Awaitable[iam.QueryAuditableServicesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def lint_policy(self) -> typing.Callable[
+    def lint_policy(self) -> Callable[
             [iam.LintPolicyRequest],
-            typing.Union[
+            Union[
                 iam.LintPolicyResponse,
-                typing.Awaitable[iam.LintPolicyResponse]
+                Awaitable[iam.LintPolicyResponse]
             ]]:
         raise NotImplementedError()
 

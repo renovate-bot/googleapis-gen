@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -39,7 +37,6 @@ from google.cloud.apigateway_v1.types import apigateway
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import ApiGatewayServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ApiGatewayServiceGrpcTransport
 from .transports.grpc_asyncio import ApiGatewayServiceGrpcAsyncIOTransport
@@ -398,7 +395,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListGatewaysRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.ListGateways
             parent (str):
                 Required. Parent resource of the Gateway, of the form:
@@ -407,7 +405,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -437,10 +434,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.ListGatewaysRequest):
             request = apigateway.ListGatewaysRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -488,7 +483,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.GetGateway
             name (str):
                 Required. Resource name of the form:
@@ -497,7 +493,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -528,10 +523,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.GetGatewayRequest):
             request = apigateway.GetGatewayRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -573,7 +566,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.CreateGateway
             parent (str):
                 Required. Parent resource of the Gateway, of the form:
@@ -595,7 +589,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``gateway_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -626,10 +619,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.CreateGatewayRequest):
             request = apigateway.CreateGatewayRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if gateway is not None:
@@ -681,7 +672,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.UpdateGateway
             gateway (google.cloud.apigateway_v1.types.Gateway):
                 Required. Gateway resource.
@@ -699,7 +691,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -730,10 +721,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.UpdateGatewayRequest):
             request = apigateway.UpdateGatewayRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if gateway is not None:
                 request.gateway = gateway
             if update_mask is not None:
@@ -782,7 +771,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteGatewayRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.DeleteGateway
             name (str):
                 Required. Resource name of the form:
@@ -791,7 +781,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -831,10 +820,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.DeleteGatewayRequest):
             request = apigateway.DeleteGatewayRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -881,7 +868,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListApisRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.ListApis
             parent (str):
                 Required. Parent resource of the API, of the form:
@@ -890,7 +878,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -920,10 +907,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.ListApisRequest):
             request = apigateway.ListApisRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -971,7 +956,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.GetApi
             name (str):
                 Required. Resource name of the form:
@@ -980,7 +966,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,10 +992,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.GetApiRequest):
             request = apigateway.GetApiRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1051,7 +1034,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.CreateApi
             parent (str):
                 Required. Parent resource of the API, of the form:
@@ -1073,7 +1057,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``api_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1103,10 +1086,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.CreateApiRequest):
             request = apigateway.CreateApiRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if api is not None:
@@ -1158,7 +1139,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.UpdateApi
             api (google.cloud.apigateway_v1.types.Api):
                 Required. API resource.
@@ -1176,7 +1158,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1206,10 +1187,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.UpdateApiRequest):
             request = apigateway.UpdateApiRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if api is not None:
                 request.api = api
             if update_mask is not None:
@@ -1258,7 +1237,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteApiRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.DeleteApi
             name (str):
                 Required. Resource name of the form:
@@ -1267,7 +1247,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1307,10 +1286,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.DeleteApiRequest):
             request = apigateway.DeleteApiRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1357,7 +1334,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListApiConfigsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.ListApiConfigs
             parent (str):
                 Required. Parent resource of the API Config, of the
@@ -1366,7 +1344,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1396,10 +1373,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.ListApiConfigsRequest):
             request = apigateway.ListApiConfigsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1447,7 +1422,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.GetApiConfig
             name (str):
                 Required. Resource name of the form:
@@ -1456,7 +1432,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1484,10 +1459,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.GetApiConfigRequest):
             request = apigateway.GetApiConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1529,7 +1502,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.CreateApiConfig
             parent (str):
                 Required. Parent resource of the API Config, of the
@@ -1551,7 +1525,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``api_config_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1580,10 +1553,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.CreateApiConfigRequest):
             request = apigateway.CreateApiConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if api_config is not None:
@@ -1635,7 +1606,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (google.cloud.apigateway_v1.types.ApiConfig):
                 Required. API Config resource.
@@ -1653,7 +1625,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1682,10 +1653,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.UpdateApiConfigRequest):
             request = apigateway.UpdateApiConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if api_config is not None:
                 request.api_config = api_config
             if update_mask is not None:
@@ -1734,7 +1703,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteApiConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ApiGatewayService.DeleteApiConfig
             name (str):
                 Required. Resource name of the form:
@@ -1743,7 +1713,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1783,10 +1752,8 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.DeleteApiConfigRequest):
             request = apigateway.DeleteApiConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1820,8 +1787,6 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

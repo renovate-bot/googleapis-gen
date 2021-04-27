@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import media_file
 from google.ads.googleads.v5.services.types import media_file_service
-
 from .base import MediaFileServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class MediaFileServiceGrpcTransport(MediaFileServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class MediaFileServiceGrpcTransport(MediaFileServiceTransport):
     def get_media_file(self) -> Callable[
             [media_file_service.GetMediaFileRequest],
             media_file.MediaFile]:
-        r"""Return a callable for the get media file method over gRPC.
+        r"""Return a callable for the
+        get media file
+          method over gRPC.
 
         Returns the requested media file in full detail.
 
@@ -229,7 +229,9 @@ class MediaFileServiceGrpcTransport(MediaFileServiceTransport):
     def mutate_media_files(self) -> Callable[
             [media_file_service.MutateMediaFilesRequest],
             media_file_service.MutateMediaFilesResponse]:
-        r"""Return a callable for the mutate media files method over gRPC.
+        r"""Return a callable for the
+        mutate media files
+          method over gRPC.
 
         Creates media files. Operation statuses are returned.
 

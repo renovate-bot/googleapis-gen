@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -34,6 +34,8 @@ from google.area120.tables_v1alpha1.services.tables_service import TablesService
 from google.area120.tables_v1alpha1.services.tables_service import TablesServiceClient
 from google.area120.tables_v1alpha1.services.tables_service import pagers
 from google.area120.tables_v1alpha1.services.tables_service import transports
+from google.area120.tables_v1alpha1.services.tables_service.transports.base import _API_CORE_VERSION
+from google.area120.tables_v1alpha1.services.tables_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.area120.tables_v1alpha1.types import tables
 from google.auth import credentials
 from google.auth.exceptions import MutualTLSChannelError
@@ -41,6 +43,28 @@ from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -208,12 +232,10 @@ def test_tables_service_client_client_options(client_class, transport_class, tra
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (TablesServiceClient, transports.TablesServiceGrpcTransport, "grpc", "true"),
     (TablesServiceAsyncClient, transports.TablesServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (TablesServiceClient, transports.TablesServiceGrpcTransport, "grpc", "false"),
     (TablesServiceAsyncClient, transports.TablesServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(TablesServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TablesServiceClient))
 @mock.patch.object(TablesServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TablesServiceAsyncClient))
@@ -368,25 +390,18 @@ def test_get_table(transport: str = 'grpc', request_type=tables.GetTableRequest)
         # Designate an appropriate return value for the call.
         call.return_value = tables.Table(
             name='name_value',
-
             display_name='display_name_value',
-
         )
-
         response = client.get_table(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetTableRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.Table)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -409,8 +424,8 @@ def test_get_table_empty_call():
         client.get_table()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetTableRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_table_async(transport: str = 'grpc_asyncio', request_type=tables.GetTableRequest):
@@ -428,24 +443,20 @@ async def test_get_table_async(transport: str = 'grpc_asyncio', request_type=tab
             type(client.transport.get_table),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Table(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.Table(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.get_table(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetTableRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Table)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -462,6 +473,7 @@ def test_get_table_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.GetTableRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -469,7 +481,6 @@ def test_get_table_field_headers():
             type(client.transport.get_table),
             '__call__') as call:
         call.return_value = tables.Table()
-
         client.get_table(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -494,6 +505,7 @@ async def test_get_table_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.GetTableRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -501,7 +513,6 @@ async def test_get_table_field_headers_async():
             type(client.transport.get_table),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Table())
-
         await client.get_table(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -528,7 +539,6 @@ def test_get_table_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tables.Table()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_table(
@@ -539,7 +549,6 @@ def test_get_table_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -581,7 +590,6 @@ async def test_get_table_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -617,21 +625,16 @@ def test_list_tables(transport: str = 'grpc', request_type=tables.ListTablesRequ
         # Designate an appropriate return value for the call.
         call.return_value = tables.ListTablesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_tables(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListTablesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListTablesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -654,8 +657,8 @@ def test_list_tables_empty_call():
         client.list_tables()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListTablesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_tables_async(transport: str = 'grpc_asyncio', request_type=tables.ListTablesRequest):
@@ -673,21 +676,18 @@ async def test_list_tables_async(transport: str = 'grpc_asyncio', request_type=t
             type(client.transport.list_tables),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.ListTablesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.ListTablesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_tables(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListTablesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTablesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -877,7 +877,6 @@ async def test_list_tables_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_workspace(transport: str = 'grpc', request_type=tables.GetWorkspaceRequest):
     client = TablesServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -895,25 +894,18 @@ def test_get_workspace(transport: str = 'grpc', request_type=tables.GetWorkspace
         # Designate an appropriate return value for the call.
         call.return_value = tables.Workspace(
             name='name_value',
-
             display_name='display_name_value',
-
         )
-
         response = client.get_workspace(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetWorkspaceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.Workspace)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -936,8 +928,8 @@ def test_get_workspace_empty_call():
         client.get_workspace()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetWorkspaceRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_workspace_async(transport: str = 'grpc_asyncio', request_type=tables.GetWorkspaceRequest):
@@ -955,24 +947,20 @@ async def test_get_workspace_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_workspace),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Workspace(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.Workspace(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.get_workspace(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetWorkspaceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Workspace)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -989,6 +977,7 @@ def test_get_workspace_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.GetWorkspaceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -996,7 +985,6 @@ def test_get_workspace_field_headers():
             type(client.transport.get_workspace),
             '__call__') as call:
         call.return_value = tables.Workspace()
-
         client.get_workspace(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1021,6 +1009,7 @@ async def test_get_workspace_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.GetWorkspaceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1028,7 +1017,6 @@ async def test_get_workspace_field_headers_async():
             type(client.transport.get_workspace),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Workspace())
-
         await client.get_workspace(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1055,7 +1043,6 @@ def test_get_workspace_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tables.Workspace()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_workspace(
@@ -1066,7 +1053,6 @@ def test_get_workspace_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1108,7 +1094,6 @@ async def test_get_workspace_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1144,21 +1129,16 @@ def test_list_workspaces(transport: str = 'grpc', request_type=tables.ListWorksp
         # Designate an appropriate return value for the call.
         call.return_value = tables.ListWorkspacesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_workspaces(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListWorkspacesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListWorkspacesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1181,8 +1161,8 @@ def test_list_workspaces_empty_call():
         client.list_workspaces()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListWorkspacesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_workspaces_async(transport: str = 'grpc_asyncio', request_type=tables.ListWorkspacesRequest):
@@ -1200,21 +1180,18 @@ async def test_list_workspaces_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_workspaces),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.ListWorkspacesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.ListWorkspacesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_workspaces(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListWorkspacesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListWorkspacesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1404,7 +1381,6 @@ async def test_list_workspaces_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_row(transport: str = 'grpc', request_type=tables.GetRowRequest):
     client = TablesServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1422,21 +1398,16 @@ def test_get_row(transport: str = 'grpc', request_type=tables.GetRowRequest):
         # Designate an appropriate return value for the call.
         call.return_value = tables.Row(
             name='name_value',
-
         )
-
         response = client.get_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetRowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.Row)
-
     assert response.name == 'name_value'
 
 
@@ -1459,8 +1430,8 @@ def test_get_row_empty_call():
         client.get_row()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetRowRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_row_async(transport: str = 'grpc_asyncio', request_type=tables.GetRowRequest):
@@ -1478,21 +1449,18 @@ async def test_get_row_async(transport: str = 'grpc_asyncio', request_type=table
             type(client.transport.get_row),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Row(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.Row(
             name='name_value',
         ))
-
         response = await client.get_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.GetRowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Row)
-
     assert response.name == 'name_value'
 
 
@@ -1509,6 +1477,7 @@ def test_get_row_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.GetRowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1516,7 +1485,6 @@ def test_get_row_field_headers():
             type(client.transport.get_row),
             '__call__') as call:
         call.return_value = tables.Row()
-
         client.get_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1541,6 +1509,7 @@ async def test_get_row_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.GetRowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1548,7 +1517,6 @@ async def test_get_row_field_headers_async():
             type(client.transport.get_row),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Row())
-
         await client.get_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1575,7 +1543,6 @@ def test_get_row_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tables.Row()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_row(
@@ -1586,7 +1553,6 @@ def test_get_row_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1628,7 +1594,6 @@ async def test_get_row_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1664,21 +1629,16 @@ def test_list_rows(transport: str = 'grpc', request_type=tables.ListRowsRequest)
         # Designate an appropriate return value for the call.
         call.return_value = tables.ListRowsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListRowsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListRowsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1701,8 +1661,8 @@ def test_list_rows_empty_call():
         client.list_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListRowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_rows_async(transport: str = 'grpc_asyncio', request_type=tables.ListRowsRequest):
@@ -1720,21 +1680,18 @@ async def test_list_rows_async(transport: str = 'grpc_asyncio', request_type=tab
             type(client.transport.list_rows),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.ListRowsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.ListRowsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.ListRowsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListRowsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1751,6 +1708,7 @@ def test_list_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.ListRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1758,7 +1716,6 @@ def test_list_rows_field_headers():
             type(client.transport.list_rows),
             '__call__') as call:
         call.return_value = tables.ListRowsResponse()
-
         client.list_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1783,6 +1740,7 @@ async def test_list_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.ListRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1790,7 +1748,6 @@ async def test_list_rows_field_headers_async():
             type(client.transport.list_rows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.ListRowsResponse())
-
         await client.list_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1817,7 +1774,6 @@ def test_list_rows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tables.ListRowsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_rows(
@@ -1828,7 +1784,6 @@ def test_list_rows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1870,7 +1825,6 @@ async def test_list_rows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2075,7 +2029,6 @@ async def test_list_rows_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_row(transport: str = 'grpc', request_type=tables.CreateRowRequest):
     client = TablesServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2093,21 +2046,16 @@ def test_create_row(transport: str = 'grpc', request_type=tables.CreateRowReques
         # Designate an appropriate return value for the call.
         call.return_value = tables.Row(
             name='name_value',
-
         )
-
         response = client.create_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.CreateRowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.Row)
-
     assert response.name == 'name_value'
 
 
@@ -2130,8 +2078,8 @@ def test_create_row_empty_call():
         client.create_row()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.CreateRowRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_row_async(transport: str = 'grpc_asyncio', request_type=tables.CreateRowRequest):
@@ -2149,21 +2097,18 @@ async def test_create_row_async(transport: str = 'grpc_asyncio', request_type=ta
             type(client.transport.create_row),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Row(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.Row(
             name='name_value',
         ))
-
         response = await client.create_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.CreateRowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Row)
-
     assert response.name == 'name_value'
 
 
@@ -2180,6 +2125,7 @@ def test_create_row_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.CreateRowRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2187,7 +2133,6 @@ def test_create_row_field_headers():
             type(client.transport.create_row),
             '__call__') as call:
         call.return_value = tables.Row()
-
         client.create_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2212,6 +2157,7 @@ async def test_create_row_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.CreateRowRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2219,7 +2165,6 @@ async def test_create_row_field_headers_async():
             type(client.transport.create_row),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Row())
-
         await client.create_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2246,7 +2191,6 @@ def test_create_row_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tables.Row()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_row(
@@ -2258,9 +2202,7 @@ def test_create_row_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].row == tables.Row(name='name_value')
 
 
@@ -2304,9 +2246,7 @@ async def test_create_row_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].row == tables.Row(name='name_value')
 
 
@@ -2343,17 +2283,14 @@ def test_batch_create_rows(transport: str = 'grpc', request_type=tables.BatchCre
         # Designate an appropriate return value for the call.
         call.return_value = tables.BatchCreateRowsResponse(
         )
-
         response = client.batch_create_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchCreateRowsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.BatchCreateRowsResponse)
 
 
@@ -2376,8 +2313,8 @@ def test_batch_create_rows_empty_call():
         client.batch_create_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchCreateRowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_create_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchCreateRowsRequest):
@@ -2395,15 +2332,13 @@ async def test_batch_create_rows_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.batch_create_rows),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.BatchCreateRowsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.BatchCreateRowsResponse(
         ))
-
         response = await client.batch_create_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchCreateRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -2423,6 +2358,7 @@ def test_batch_create_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.BatchCreateRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2430,7 +2366,6 @@ def test_batch_create_rows_field_headers():
             type(client.transport.batch_create_rows),
             '__call__') as call:
         call.return_value = tables.BatchCreateRowsResponse()
-
         client.batch_create_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2455,6 +2390,7 @@ async def test_batch_create_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.BatchCreateRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2462,7 +2398,6 @@ async def test_batch_create_rows_field_headers_async():
             type(client.transport.batch_create_rows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.BatchCreateRowsResponse())
-
         await client.batch_create_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2495,21 +2430,16 @@ def test_update_row(transport: str = 'grpc', request_type=tables.UpdateRowReques
         # Designate an appropriate return value for the call.
         call.return_value = tables.Row(
             name='name_value',
-
         )
-
         response = client.update_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.UpdateRowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.Row)
-
     assert response.name == 'name_value'
 
 
@@ -2532,8 +2462,8 @@ def test_update_row_empty_call():
         client.update_row()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.UpdateRowRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_row_async(transport: str = 'grpc_asyncio', request_type=tables.UpdateRowRequest):
@@ -2551,21 +2481,18 @@ async def test_update_row_async(transport: str = 'grpc_asyncio', request_type=ta
             type(client.transport.update_row),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Row(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.Row(
             name='name_value',
         ))
-
         response = await client.update_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.UpdateRowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Row)
-
     assert response.name == 'name_value'
 
 
@@ -2582,6 +2509,7 @@ def test_update_row_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.UpdateRowRequest()
+
     request.row.name = 'row.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2589,7 +2517,6 @@ def test_update_row_field_headers():
             type(client.transport.update_row),
             '__call__') as call:
         call.return_value = tables.Row()
-
         client.update_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2614,6 +2541,7 @@ async def test_update_row_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.UpdateRowRequest()
+
     request.row.name = 'row.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2621,7 +2549,6 @@ async def test_update_row_field_headers_async():
             type(client.transport.update_row),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Row())
-
         await client.update_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2648,7 +2575,6 @@ def test_update_row_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = tables.Row()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_row(
@@ -2660,9 +2586,7 @@ def test_update_row_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].row == tables.Row(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2706,9 +2630,7 @@ async def test_update_row_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].row == tables.Row(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2745,17 +2667,14 @@ def test_batch_update_rows(transport: str = 'grpc', request_type=tables.BatchUpd
         # Designate an appropriate return value for the call.
         call.return_value = tables.BatchUpdateRowsResponse(
         )
-
         response = client.batch_update_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchUpdateRowsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, tables.BatchUpdateRowsResponse)
 
 
@@ -2778,8 +2697,8 @@ def test_batch_update_rows_empty_call():
         client.batch_update_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchUpdateRowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_update_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchUpdateRowsRequest):
@@ -2797,15 +2716,13 @@ async def test_batch_update_rows_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.batch_update_rows),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.BatchUpdateRowsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tables.BatchUpdateRowsResponse(
         ))
-
         response = await client.batch_update_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchUpdateRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -2825,6 +2742,7 @@ def test_batch_update_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.BatchUpdateRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2832,7 +2750,6 @@ def test_batch_update_rows_field_headers():
             type(client.transport.batch_update_rows),
             '__call__') as call:
         call.return_value = tables.BatchUpdateRowsResponse()
-
         client.batch_update_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2857,6 +2774,7 @@ async def test_batch_update_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.BatchUpdateRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2864,7 +2782,6 @@ async def test_batch_update_rows_field_headers_async():
             type(client.transport.batch_update_rows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.BatchUpdateRowsResponse())
-
         await client.batch_update_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2896,13 +2813,11 @@ def test_delete_row(transport: str = 'grpc', request_type=tables.DeleteRowReques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.DeleteRowRequest()
 
     # Establish that the response is the type that we expect.
@@ -2928,8 +2843,8 @@ def test_delete_row_empty_call():
         client.delete_row()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.DeleteRowRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_row_async(transport: str = 'grpc_asyncio', request_type=tables.DeleteRowRequest):
@@ -2948,13 +2863,11 @@ async def test_delete_row_async(transport: str = 'grpc_asyncio', request_type=ta
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_row(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.DeleteRowRequest()
 
     # Establish that the response is the type that we expect.
@@ -2974,6 +2887,7 @@ def test_delete_row_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.DeleteRowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2981,7 +2895,6 @@ def test_delete_row_field_headers():
             type(client.transport.delete_row),
             '__call__') as call:
         call.return_value = None
-
         client.delete_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3006,6 +2919,7 @@ async def test_delete_row_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.DeleteRowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3013,7 +2927,6 @@ async def test_delete_row_field_headers_async():
             type(client.transport.delete_row),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_row(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3040,7 +2953,6 @@ def test_delete_row_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_row(
@@ -3051,7 +2963,6 @@ def test_delete_row_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3093,7 +3004,6 @@ async def test_delete_row_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3128,13 +3038,11 @@ def test_batch_delete_rows(transport: str = 'grpc', request_type=tables.BatchDel
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.batch_delete_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchDeleteRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -3160,8 +3068,8 @@ def test_batch_delete_rows_empty_call():
         client.batch_delete_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchDeleteRowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_delete_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchDeleteRowsRequest):
@@ -3180,13 +3088,11 @@ async def test_batch_delete_rows_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.batch_delete_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == tables.BatchDeleteRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -3206,6 +3112,7 @@ def test_batch_delete_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.BatchDeleteRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3213,7 +3120,6 @@ def test_batch_delete_rows_field_headers():
             type(client.transport.batch_delete_rows),
             '__call__') as call:
         call.return_value = None
-
         client.batch_delete_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3238,6 +3144,7 @@ async def test_batch_delete_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = tables.BatchDeleteRowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3245,7 +3152,6 @@ async def test_batch_delete_rows_field_headers_async():
             type(client.transport.batch_delete_rows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.batch_delete_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3301,7 +3207,6 @@ def test_transport_instance():
     client = TablesServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.TablesServiceGrpcTransport(
@@ -3316,7 +3221,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.TablesServiceGrpcTransport,
     transports.TablesServiceGrpcAsyncIOTransport,
@@ -3328,7 +3232,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = TablesServiceClient(
@@ -3338,7 +3241,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.TablesServiceGrpcTransport,
     )
-
 
 def test_tables_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3372,15 +3274,33 @@ def test_tables_service_base_transport():
         'batch_update_rows',
         'delete_row',
         'batch_delete_rows',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_tables_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.area120.tables_v1alpha1.services.tables_service.transports.TablesServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.area120.tables_v1alpha1.services.tables_service.transports.TablesServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.TablesServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/drive',            'https://www.googleapis.com/auth/drive.file',            'https://www.googleapis.com/auth/drive.readonly',            'https://www.googleapis.com/auth/spreadsheets',            'https://www.googleapis.com/auth/spreadsheets.readonly',            'https://www.googleapis.com/auth/tables',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_tables_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.area120.tables_v1alpha1.services.tables_service.transports.TablesServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TablesServiceTransport(
@@ -3401,43 +3321,192 @@ def test_tables_service_base_transport_with_credentials_file():
 
 def test_tables_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.area120.tables_v1alpha1.services.tables_service.transports.TablesServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.area120.tables_v1alpha1.services.tables_service.transports.TablesServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TablesServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_tables_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         TablesServiceClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/drive',
             'https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive.readonly',
             'https://www.googleapis.com/auth/spreadsheets',
             'https://www.googleapis.com/auth/spreadsheets.readonly',
-            'https://www.googleapis.com/auth/tables',),
+            'https://www.googleapis.com/auth/tables',
+),
+
             quota_project_id=None,
         )
 
 
-def test_tables_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_tables_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        TablesServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/drive',                'https://www.googleapis.com/auth/drive.file',                'https://www.googleapis.com/auth/drive.readonly',                'https://www.googleapis.com/auth/spreadsheets',                'https://www.googleapis.com/auth/spreadsheets.readonly',                'https://www.googleapis.com/auth/tables',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.TablesServiceGrpcTransport,
+        transports.TablesServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_tables_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.TablesServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/drive',                'https://www.googleapis.com/auth/drive.file',                'https://www.googleapis.com/auth/drive.readonly',                'https://www.googleapis.com/auth/spreadsheets',                'https://www.googleapis.com/auth/spreadsheets.readonly',                'https://www.googleapis.com/auth/tables',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.TablesServiceGrpcTransport,
+        transports.TablesServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_tables_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/drive',
             'https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive.readonly',
             'https://www.googleapis.com/auth/spreadsheets',
             'https://www.googleapis.com/auth/spreadsheets.readonly',
-            'https://www.googleapis.com/auth/tables',),
+            'https://www.googleapis.com/auth/tables',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.TablesServiceGrpcTransport, grpc_helpers),
+        (transports.TablesServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_tables_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "area120tables.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/drive',                'https://www.googleapis.com/auth/drive.file',                'https://www.googleapis.com/auth/drive.readonly',                'https://www.googleapis.com/auth/spreadsheets',                'https://www.googleapis.com/auth/spreadsheets.readonly',                'https://www.googleapis.com/auth/tables',),
+            scopes=["1", "2"],
+            default_host="area120tables.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.TablesServiceGrpcTransport, grpc_helpers),
+        (transports.TablesServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_tables_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "area120tables.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/drive',                'https://www.googleapis.com/auth/drive.file',                'https://www.googleapis.com/auth/drive.readonly',                'https://www.googleapis.com/auth/spreadsheets',                'https://www.googleapis.com/auth/spreadsheets.readonly',                'https://www.googleapis.com/auth/tables',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.TablesServiceGrpcTransport, grpc_helpers),
+        (transports.TablesServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_tables_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "area120tables.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -3504,7 +3573,6 @@ def test_tables_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='area120tables.googleapis.com:8000'),
     )
     assert client.transport._host == 'area120tables.googleapis.com:8000'
-
 
 def test_tables_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3633,7 +3701,6 @@ def test_tables_service_transport_channel_mtls_with_adc(
 def test_row_path():
     table = "squid"
     row = "clam"
-
     expected = "tables/{table}/rows/{row}".format(table=table, row=row, )
     actual = TablesServiceClient.row_path(table, row)
     assert expected == actual
@@ -3641,9 +3708,8 @@ def test_row_path():
 
 def test_parse_row_path():
     expected = {
-    "table": "whelk",
-    "row": "octopus",
-
+        "table": "whelk",
+        "row": "octopus",
     }
     path = TablesServiceClient.row_path(**expected)
 
@@ -3653,7 +3719,6 @@ def test_parse_row_path():
 
 def test_table_path():
     table = "oyster"
-
     expected = "tables/{table}".format(table=table, )
     actual = TablesServiceClient.table_path(table)
     assert expected == actual
@@ -3661,8 +3726,7 @@ def test_table_path():
 
 def test_parse_table_path():
     expected = {
-    "table": "nudibranch",
-
+        "table": "nudibranch",
     }
     path = TablesServiceClient.table_path(**expected)
 
@@ -3672,7 +3736,6 @@ def test_parse_table_path():
 
 def test_workspace_path():
     workspace = "cuttlefish"
-
     expected = "workspaces/{workspace}".format(workspace=workspace, )
     actual = TablesServiceClient.workspace_path(workspace)
     assert expected == actual
@@ -3680,8 +3743,7 @@ def test_workspace_path():
 
 def test_parse_workspace_path():
     expected = {
-    "workspace": "mussel",
-
+        "workspace": "mussel",
     }
     path = TablesServiceClient.workspace_path(**expected)
 
@@ -3691,7 +3753,6 @@ def test_parse_workspace_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = TablesServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3699,8 +3760,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = TablesServiceClient.common_billing_account_path(**expected)
 
@@ -3710,7 +3770,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = TablesServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3718,8 +3777,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = TablesServiceClient.common_folder_path(**expected)
 
@@ -3729,7 +3787,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = TablesServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3737,8 +3794,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = TablesServiceClient.common_organization_path(**expected)
 
@@ -3748,7 +3804,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = TablesServiceClient.common_project_path(project)
     assert expected == actual
@@ -3756,8 +3811,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = TablesServiceClient.common_project_path(**expected)
 
@@ -3768,7 +3822,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = TablesServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3776,9 +3829,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = TablesServiceClient.common_location_path(**expected)
 

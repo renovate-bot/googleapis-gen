@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -35,7 +33,6 @@ from google.cloud.gaming_v1.types import common
 from google.cloud.gaming_v1.types import game_server_configs
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import GameServerConfigsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GameServerConfigsServiceGrpcAsyncIOTransport
 from .client import GameServerConfigsServiceClient
@@ -53,19 +50,14 @@ class GameServerConfigsServiceAsyncClient:
 
     game_server_config_path = staticmethod(GameServerConfigsServiceClient.game_server_config_path)
     parse_game_server_config_path = staticmethod(GameServerConfigsServiceClient.parse_game_server_config_path)
-
     common_billing_account_path = staticmethod(GameServerConfigsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GameServerConfigsServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(GameServerConfigsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(GameServerConfigsServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(GameServerConfigsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(GameServerConfigsServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(GameServerConfigsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(GameServerConfigsServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(GameServerConfigsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(GameServerConfigsServiceClient.parse_common_location_path)
 
@@ -150,7 +142,6 @@ class GameServerConfigsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = GameServerConfigsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -172,7 +163,8 @@ class GameServerConfigsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.ListGameServerConfigsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.ListGameServerConfigs.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -182,7 +174,6 @@ class GameServerConfigsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -210,7 +201,6 @@ class GameServerConfigsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -219,10 +209,7 @@ class GameServerConfigsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_game_server_configs,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -271,7 +258,8 @@ class GameServerConfigsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.GetGameServerConfigRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.GetGameServerConfig.
             name (:class:`str`):
                 Required. The name of the game server config to
@@ -282,7 +270,6 @@ class GameServerConfigsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -305,7 +292,6 @@ class GameServerConfigsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -314,10 +300,7 @@ class GameServerConfigsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_game_server_config,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -362,7 +345,8 @@ class GameServerConfigsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.CreateGameServerConfigRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.CreateGameServerConfig.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -379,7 +363,6 @@ class GameServerConfigsServiceAsyncClient:
                 This corresponds to the ``game_server_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -407,7 +390,6 @@ class GameServerConfigsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if game_server_config is not None:
@@ -462,7 +444,8 @@ class GameServerConfigsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.DeleteGameServerConfigRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.DeleteGameServerConfig.
             name (:class:`str`):
                 Required. The name of the game server config to delete.
@@ -473,7 +456,6 @@ class GameServerConfigsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -511,7 +493,6 @@ class GameServerConfigsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -549,8 +530,6 @@ class GameServerConfigsServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

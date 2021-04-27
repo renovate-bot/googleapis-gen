@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -266,17 +264,14 @@ def test_list_merchant_center_links(transport: str = 'grpc', request_type=mercha
         # Designate an appropriate return value for the call.
         call.return_value = merchant_center_link_service.ListMerchantCenterLinksResponse(
         )
-
         response = client.list_merchant_center_links(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == merchant_center_link_service.ListMerchantCenterLinksRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, merchant_center_link_service.ListMerchantCenterLinksResponse)
 
 
@@ -292,6 +287,7 @@ def test_list_merchant_center_links_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = merchant_center_link_service.ListMerchantCenterLinksRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -299,7 +295,6 @@ def test_list_merchant_center_links_field_headers():
             type(client.transport.list_merchant_center_links),
             '__call__') as call:
         call.return_value = merchant_center_link_service.ListMerchantCenterLinksResponse()
-
         client.list_merchant_center_links(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -326,7 +321,6 @@ def test_list_merchant_center_links_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = merchant_center_link_service.ListMerchantCenterLinksResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_merchant_center_links(
@@ -337,7 +331,6 @@ def test_list_merchant_center_links_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
 
 
@@ -372,33 +365,22 @@ def test_get_merchant_center_link(transport: str = 'grpc', request_type=merchant
         # Designate an appropriate return value for the call.
         call.return_value = merchant_center_link.MerchantCenterLink(
             resource_name='resource_name_value',
-
             id=205,
-
             merchant_center_account_name='merchant_center_account_name_value',
-
             status=merchant_center_link_status.MerchantCenterLinkStatusEnum.MerchantCenterLinkStatus.UNKNOWN,
-
         )
-
         response = client.get_merchant_center_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == merchant_center_link_service.GetMerchantCenterLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, merchant_center_link.MerchantCenterLink)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.merchant_center_account_name == 'merchant_center_account_name_value'
-
     assert response.status == merchant_center_link_status.MerchantCenterLinkStatusEnum.MerchantCenterLinkStatus.UNKNOWN
 
 
@@ -414,6 +396,7 @@ def test_get_merchant_center_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = merchant_center_link_service.GetMerchantCenterLinkRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -421,7 +404,6 @@ def test_get_merchant_center_link_field_headers():
             type(client.transport.get_merchant_center_link),
             '__call__') as call:
         call.return_value = merchant_center_link.MerchantCenterLink()
-
         client.get_merchant_center_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -448,7 +430,6 @@ def test_get_merchant_center_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = merchant_center_link.MerchantCenterLink()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_merchant_center_link(
@@ -459,7 +440,6 @@ def test_get_merchant_center_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -494,17 +474,14 @@ def test_mutate_merchant_center_link(transport: str = 'grpc', request_type=merch
         # Designate an appropriate return value for the call.
         call.return_value = merchant_center_link_service.MutateMerchantCenterLinkResponse(
         )
-
         response = client.mutate_merchant_center_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == merchant_center_link_service.MutateMerchantCenterLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, merchant_center_link_service.MutateMerchantCenterLinkResponse)
 
 
@@ -520,6 +497,7 @@ def test_mutate_merchant_center_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = merchant_center_link_service.MutateMerchantCenterLinkRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -527,7 +505,6 @@ def test_mutate_merchant_center_link_field_headers():
             type(client.transport.mutate_merchant_center_link),
             '__call__') as call:
         call.return_value = merchant_center_link_service.MutateMerchantCenterLinkResponse()
-
         client.mutate_merchant_center_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -554,7 +531,6 @@ def test_mutate_merchant_center_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = merchant_center_link_service.MutateMerchantCenterLinkResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_merchant_center_link(
@@ -566,9 +542,7 @@ def test_mutate_merchant_center_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operation == merchant_center_link_service.MerchantCenterLinkOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))
 
 
@@ -652,7 +626,7 @@ def test_merchant_center_link_service_base_transport():
         'list_merchant_center_links',
         'get_merchant_center_link',
         'mutate_merchant_center_link',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -804,7 +778,6 @@ def test_merchant_center_link_service_transport_channel_mtls_with_adc(
 def test_merchant_center_link_path():
     customer = "squid"
     merchant_center_link = "clam"
-
     expected = "customers/{customer}/merchantCenterLinks/{merchant_center_link}".format(customer=customer, merchant_center_link=merchant_center_link, )
     actual = MerchantCenterLinkServiceClient.merchant_center_link_path(customer, merchant_center_link)
     assert expected == actual
@@ -812,9 +785,8 @@ def test_merchant_center_link_path():
 
 def test_parse_merchant_center_link_path():
     expected = {
-    "customer": "whelk",
-    "merchant_center_link": "octopus",
-
+        "customer": "whelk",
+        "merchant_center_link": "octopus",
     }
     path = MerchantCenterLinkServiceClient.merchant_center_link_path(**expected)
 
@@ -824,7 +796,6 @@ def test_parse_merchant_center_link_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = MerchantCenterLinkServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -832,8 +803,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = MerchantCenterLinkServiceClient.common_billing_account_path(**expected)
 
@@ -843,7 +813,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = MerchantCenterLinkServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -851,8 +820,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = MerchantCenterLinkServiceClient.common_folder_path(**expected)
 
@@ -862,7 +830,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = MerchantCenterLinkServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -870,8 +837,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = MerchantCenterLinkServiceClient.common_organization_path(**expected)
 
@@ -881,7 +847,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = MerchantCenterLinkServiceClient.common_project_path(project)
     assert expected == actual
@@ -889,8 +854,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = MerchantCenterLinkServiceClient.common_project_path(**expected)
 
@@ -901,7 +865,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = MerchantCenterLinkServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -909,9 +872,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = MerchantCenterLinkServiceClient.common_location_path(**expected)
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,8 +34,7 @@ from google.cloud.recaptchaenterprise_v1.types.recaptchaenterprise import TokenP
 from google.cloud.recaptchaenterprise_v1.types.recaptchaenterprise import UpdateKeyRequest
 from google.cloud.recaptchaenterprise_v1.types.recaptchaenterprise import WebKeySettings
 
-__all__ = (
-    'AndroidKeySettings',
+__all__ = ('AndroidKeySettings',
     'AnnotateAssessmentRequest',
     'AnnotateAssessmentResponse',
     'Assessment',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -24,6 +22,7 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -33,7 +32,6 @@ from google.cloud.dialogflow_v2beta1.types import agent as gcd_agent
 from google.cloud.dialogflow_v2beta1.types import validation_result
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AgentsTransport, DEFAULT_CLIENT_INFO
 from .grpc import AgentsGrpcTransport
 
@@ -84,13 +82,15 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -110,7 +110,8 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -169,7 +170,6 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -248,7 +248,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def get_agent(self) -> Callable[
             [agent.GetAgentRequest],
             Awaitable[agent.Agent]]:
-        r"""Return a callable for the get agent method over gRPC.
+        r"""Return a callable for the
+        get agent
+          method over gRPC.
 
         Retrieves the specified agent.
 
@@ -274,7 +276,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def set_agent(self) -> Callable[
             [gcd_agent.SetAgentRequest],
             Awaitable[gcd_agent.Agent]]:
-        r"""Return a callable for the set agent method over gRPC.
+        r"""Return a callable for the
+        set agent
+          method over gRPC.
 
         Creates/updates the specified agent.
 
@@ -300,7 +304,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def delete_agent(self) -> Callable[
             [agent.DeleteAgentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete agent method over gRPC.
+        r"""Return a callable for the
+        delete agent
+          method over gRPC.
 
         Deletes the specified agent.
 
@@ -326,7 +332,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def search_agents(self) -> Callable[
             [agent.SearchAgentsRequest],
             Awaitable[agent.SearchAgentsResponse]]:
-        r"""Return a callable for the search agents method over gRPC.
+        r"""Return a callable for the
+        search agents
+          method over gRPC.
 
         Returns the list of agents. Since there is at most one
         conversational agent per project, this method is useful
@@ -357,7 +365,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def train_agent(self) -> Callable[
             [agent.TrainAgentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the train agent method over gRPC.
+        r"""Return a callable for the
+        train agent
+          method over gRPC.
 
         Trains the specified agent.
 
@@ -386,7 +396,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def export_agent(self) -> Callable[
             [agent.ExportAgentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export agent method over gRPC.
+        r"""Return a callable for the
+        export agent
+          method over gRPC.
 
         Exports the specified agent to a ZIP file.
 
@@ -415,7 +427,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def import_agent(self) -> Callable[
             [agent.ImportAgentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the import agent method over gRPC.
+        r"""Return a callable for the
+        import agent
+          method over gRPC.
 
         Imports the specified agent from a ZIP file.
 
@@ -458,7 +472,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def restore_agent(self) -> Callable[
             [agent.RestoreAgentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the restore agent method over gRPC.
+        r"""Return a callable for the
+        restore agent
+          method over gRPC.
 
         Restores the specified agent from a ZIP file.
 
@@ -499,7 +515,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
     def get_validation_result(self) -> Callable[
             [agent.GetValidationResultRequest],
             Awaitable[validation_result.ValidationResult]]:
-        r"""Return a callable for the get validation result method over gRPC.
+        r"""Return a callable for the
+        get validation result
+          method over gRPC.
 
         Gets agent validation result. Agent validation is
         performed during training time and is updated

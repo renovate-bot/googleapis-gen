@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.cloud.gsuiteaddons_v1.types import gsuiteaddons
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import GSuiteAddOnsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -90,7 +87,8 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -229,13 +227,15 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -249,7 +249,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def get_authorization(self) -> Callable[
             [gsuiteaddons.GetAuthorizationRequest],
             gsuiteaddons.Authorization]:
-        r"""Return a callable for the get authorization method over gRPC.
+        r"""Return a callable for the
+        get authorization
+          method over gRPC.
 
         Gets the authorization information for deployments in
         a given project.
@@ -276,7 +278,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def create_deployment(self) -> Callable[
             [gsuiteaddons.CreateDeploymentRequest],
             gsuiteaddons.Deployment]:
-        r"""Return a callable for the create deployment method over gRPC.
+        r"""Return a callable for the
+        create deployment
+          method over gRPC.
 
         Creates a deployment with the specified name and
         configuration.
@@ -303,7 +307,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def replace_deployment(self) -> Callable[
             [gsuiteaddons.ReplaceDeploymentRequest],
             gsuiteaddons.Deployment]:
-        r"""Return a callable for the replace deployment method over gRPC.
+        r"""Return a callable for the
+        replace deployment
+          method over gRPC.
 
         Creates or replaces a deployment with the specified
         name.
@@ -330,7 +336,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def get_deployment(self) -> Callable[
             [gsuiteaddons.GetDeploymentRequest],
             gsuiteaddons.Deployment]:
-        r"""Return a callable for the get deployment method over gRPC.
+        r"""Return a callable for the
+        get deployment
+          method over gRPC.
 
         Gets the deployment with the specified name.
 
@@ -356,7 +364,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def list_deployments(self) -> Callable[
             [gsuiteaddons.ListDeploymentsRequest],
             gsuiteaddons.ListDeploymentsResponse]:
-        r"""Return a callable for the list deployments method over gRPC.
+        r"""Return a callable for the
+        list deployments
+          method over gRPC.
 
         Lists all deployments in a particular project.
 
@@ -382,7 +392,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def delete_deployment(self) -> Callable[
             [gsuiteaddons.DeleteDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete deployment method over gRPC.
+        r"""Return a callable for the
+        delete deployment
+          method over gRPC.
 
         Deletes the deployment with the given name.
 
@@ -408,7 +420,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def install_deployment(self) -> Callable[
             [gsuiteaddons.InstallDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the install deployment method over gRPC.
+        r"""Return a callable for the
+        install deployment
+          method over gRPC.
 
         Installs a deployment in developer mode.
         See:
@@ -437,7 +451,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def uninstall_deployment(self) -> Callable[
             [gsuiteaddons.UninstallDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the uninstall deployment method over gRPC.
+        r"""Return a callable for the
+        uninstall deployment
+          method over gRPC.
 
         Uninstalls a developer mode deployment.
         See:
@@ -466,7 +482,9 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def get_install_status(self) -> Callable[
             [gsuiteaddons.GetInstallStatusRequest],
             gsuiteaddons.InstallStatus]:
-        r"""Return a callable for the get install status method over gRPC.
+        r"""Return a callable for the
+        get install status
+          method over gRPC.
 
         Fetches the install status of a developer mode
         deployment.

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,8 +58,7 @@ from google.analytics.data_v1alpha.types.data import QuotaStatus
 from google.analytics.data_v1alpha.types.data import ResponseMetaData
 from google.analytics.data_v1alpha.types.data import Row
 
-__all__ = (
-    'AlphaAnalyticsDataAsyncClient',
+__all__ = ('AlphaAnalyticsDataAsyncClient',
     'AlphaAnalyticsDataClient',
     'BatchRunPivotReportsRequest',
     'BatchRunPivotReportsResponse',

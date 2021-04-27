@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.service_usage import ServiceUsageClient
+
 from .types.resources import AdminQuotaPolicy
 from .types.resources import ConsumerQuotaLimit
 from .types.resources import ConsumerQuotaMetric
@@ -65,7 +65,6 @@ from .types.serviceusage import ListServicesResponse
 from .types.serviceusage import UpdateAdminOverrideRequest
 from .types.serviceusage import UpdateAdminQuotaPolicyMetadata
 from .types.serviceusage import UpdateConsumerOverrideRequest
-
 
 __all__ = (
     'AdminQuotaPolicy',

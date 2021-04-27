@@ -2,7 +2,6 @@
 branch = True
 
 [report]
-fail_under = 100
 show_missing = True
 omit =
     google/cloud/spanner_admin_database/__init__.py

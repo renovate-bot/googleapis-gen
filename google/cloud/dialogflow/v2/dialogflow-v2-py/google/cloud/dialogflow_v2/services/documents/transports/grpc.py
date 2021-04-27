@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -30,7 +28,6 @@ import grpc  # type: ignore
 from google.cloud.dialogflow_v2.types import document
 from google.cloud.dialogflow_v2.types import document as gcd_document
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import DocumentsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,7 +62,8 @@ class DocumentsGrpcTransport(DocumentsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,13 +203,15 @@ class DocumentsGrpcTransport(DocumentsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -241,7 +241,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
     def list_documents(self) -> Callable[
             [document.ListDocumentsRequest],
             document.ListDocumentsResponse]:
-        r"""Return a callable for the list documents method over gRPC.
+        r"""Return a callable for the
+        list documents
+          method over gRPC.
 
         Returns the list of all documents of the knowledge
         base.
@@ -268,7 +270,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
     def get_document(self) -> Callable[
             [document.GetDocumentRequest],
             document.Document]:
-        r"""Return a callable for the get document method over gRPC.
+        r"""Return a callable for the
+        get document
+          method over gRPC.
 
         Retrieves the specified document.
 
@@ -294,7 +298,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
     def create_document(self) -> Callable[
             [gcd_document.CreateDocumentRequest],
             operations.Operation]:
-        r"""Return a callable for the create document method over gRPC.
+        r"""Return a callable for the
+        create document
+          method over gRPC.
 
         Creates a new document.
 
@@ -324,7 +330,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
     def delete_document(self) -> Callable[
             [document.DeleteDocumentRequest],
             operations.Operation]:
-        r"""Return a callable for the delete document method over gRPC.
+        r"""Return a callable for the
+        delete document
+          method over gRPC.
 
         Deletes the specified document.
 
@@ -354,7 +362,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
     def update_document(self) -> Callable[
             [gcd_document.UpdateDocumentRequest],
             operations.Operation]:
-        r"""Return a callable for the update document method over gRPC.
+        r"""Return a callable for the
+        update document
+          method over gRPC.
 
         Updates the specified document.
 
@@ -384,7 +394,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
     def reload_document(self) -> Callable[
             [document.ReloadDocumentRequest],
             operations.Operation]:
-        r"""Return a callable for the reload document method over gRPC.
+        r"""Return a callable for the
+        reload document
+          method over gRPC.
 
         Reloads the specified document from its specified source,
         content_uri or content. The previously loaded content of the

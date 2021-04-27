@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import placement_type as gage_placement_type
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class GroupPlacementView(proto.Message):
     r"""A group placement view.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the group placement view.
@@ -56,17 +52,28 @@ class GroupPlacementView(proto.Message):
             Website, YouTube Channel, Mobile Application.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    placement = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    placement = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    display_name = proto.Field(proto.MESSAGE, number=3,
+    display_name = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.StringValue,
     )
-    target_url = proto.Field(proto.MESSAGE, number=4,
+    target_url = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    placement_type = proto.Field(proto.ENUM, number=5,
+    placement_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=gage_placement_type.PlacementTypeEnum.PlacementType,
     )
 

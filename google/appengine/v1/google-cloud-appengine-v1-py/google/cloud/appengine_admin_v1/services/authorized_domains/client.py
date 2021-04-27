@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.appengine_admin_v1.services.authorized_domains import pagers
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain
-
 from .transports.base import AuthorizedDomainsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AuthorizedDomainsGrpcTransport
 from .transports.grpc_asyncio import AuthorizedDomainsGrpcAsyncIOTransport
@@ -329,9 +326,9 @@ class AuthorizedDomainsClient(metaclass=AuthorizedDomainsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListAuthorizedDomainsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedDomains.ListAuthorizedDomains`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -348,7 +345,6 @@ class AuthorizedDomainsClient(metaclass=AuthorizedDomainsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListAuthorizedDomainsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -387,8 +383,6 @@ class AuthorizedDomainsClient(metaclass=AuthorizedDomainsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -37,7 +35,6 @@ from google.cloud.spanner_v1.types import transaction
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import SpannerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SpannerGrpcAsyncIOTransport
 from .client import SpannerClient
@@ -58,19 +55,14 @@ class SpannerAsyncClient:
     parse_database_path = staticmethod(SpannerClient.parse_database_path)
     session_path = staticmethod(SpannerClient.session_path)
     parse_session_path = staticmethod(SpannerClient.parse_session_path)
-
     common_billing_account_path = staticmethod(SpannerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SpannerClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(SpannerClient.common_folder_path)
     parse_common_folder_path = staticmethod(SpannerClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(SpannerClient.common_organization_path)
     parse_common_organization_path = staticmethod(SpannerClient.parse_common_organization_path)
-
     common_project_path = staticmethod(SpannerClient.common_project_path)
     parse_common_project_path = staticmethod(SpannerClient.parse_common_project_path)
-
     common_location_path = staticmethod(SpannerClient.common_location_path)
     parse_common_location_path = staticmethod(SpannerClient.parse_common_location_path)
 
@@ -155,7 +147,6 @@ class SpannerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = SpannerClient(
             credentials=credentials,
             transport=transport,
@@ -194,7 +185,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.CreateSessionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateSession][google.spanner.v1.Spanner.CreateSession].
             database (:class:`str`):
                 Required. The database in which the
@@ -203,7 +195,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``database`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -226,7 +217,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if database is not None:
             request.database = database
 
@@ -235,10 +225,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_session,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -282,7 +269,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.BatchCreateSessionsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [BatchCreateSessions][google.spanner.v1.Spanner.BatchCreateSessions].
             database (:class:`str`):
                 Required. The database in which the
@@ -303,7 +291,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``session_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -328,7 +315,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if database is not None:
             request.database = database
         if session_count is not None:
@@ -339,10 +325,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_create_sessions,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -384,7 +367,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.GetSessionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetSession][google.spanner.v1.Spanner.GetSession].
             name (:class:`str`):
                 Required. The name of the session to
@@ -393,7 +377,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -416,7 +399,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -425,10 +407,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_session,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -468,7 +447,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ListSessionsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListSessions][google.spanner.v1.Spanner.ListSessions].
             database (:class:`str`):
                 Required. The database in which to
@@ -477,7 +457,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``database`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -505,7 +484,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if database is not None:
             request.database = database
 
@@ -514,10 +492,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_sessions,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
@@ -568,7 +543,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.DeleteSessionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteSession][google.spanner.v1.Spanner.DeleteSession].
             name (:class:`str`):
                 Required. The name of the session to
@@ -577,7 +553,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -596,7 +571,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -605,10 +579,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_session,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -657,10 +628,10 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ExecuteSqlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -674,7 +645,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.ExecuteSqlRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -682,10 +652,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.execute_sql,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -729,10 +696,10 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ExecuteSqlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -749,7 +716,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.ExecuteSqlRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -803,9 +769,9 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ExecuteBatchDmlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -856,7 +822,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.ExecuteBatchDmlRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -864,10 +829,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.execute_batch_dml,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -920,10 +882,10 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ReadRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -937,7 +899,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.ReadRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -945,10 +906,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.read,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -992,10 +950,10 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ReadRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1012,7 +970,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.ReadRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1059,7 +1016,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.BeginTransactionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
             session (:class:`str`):
                 Required. The session in which the
@@ -1075,7 +1033,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``options_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1098,7 +1055,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if session is not None:
             request.session = session
         if options_ is not None:
@@ -1109,10 +1065,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.begin_transaction,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1170,7 +1123,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.CommitRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Commit][google.spanner.v1.Spanner.Commit].
             session (:class:`str`):
                 Required. The session in which the
@@ -1210,7 +1164,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``single_use_transaction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1235,14 +1188,12 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if session is not None:
             request.session = session
         if transaction_id is not None:
             request.transaction_id = transaction_id
         if single_use_transaction is not None:
             request.single_use_transaction = single_use_transaction
-
         if mutations:
             request.mutations.extend(mutations)
 
@@ -1251,10 +1202,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.commit,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
@@ -1304,7 +1252,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.RollbackRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Rollback][google.spanner.v1.Spanner.Rollback].
             session (:class:`str`):
                 Required. The session in which the
@@ -1320,7 +1269,6 @@ class SpannerAsyncClient:
                 This corresponds to the ``transaction_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1339,7 +1287,6 @@ class SpannerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if session is not None:
             request.session = session
         if transaction_id is not None:
@@ -1350,10 +1297,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.rollback,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1402,9 +1346,9 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.PartitionQueryRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1419,7 +1363,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.PartitionQueryRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1427,10 +1370,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.partition_query,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1485,9 +1425,9 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.PartitionReadRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionRead][google.spanner.v1.Spanner.PartitionRead]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1502,7 +1442,6 @@ class SpannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = spanner.PartitionReadRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1510,10 +1449,7 @@ class SpannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.partition_read,
             default_retry=retries.Retry(
-                initial=0.25,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1540,8 +1476,6 @@ class SpannerAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

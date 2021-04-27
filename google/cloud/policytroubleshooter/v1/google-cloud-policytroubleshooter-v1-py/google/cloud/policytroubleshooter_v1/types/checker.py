@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.policytroubleshooter_v1.types import explanations
 
@@ -40,7 +37,9 @@ class TroubleshootIamPolicyRequest(proto.Message):
             member has a permission for a resource.
     """
 
-    access_tuple = proto.Field(proto.MESSAGE, number=1,
+    access_tuple = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=explanations.AccessTuple,
     )
 
@@ -71,11 +70,14 @@ class TroubleshootIamPolicyResponse(proto.Message):
             hierarchy.
     """
 
-    access = proto.Field(proto.ENUM, number=1,
+    access = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=explanations.AccessState,
     )
-
-    explained_policies = proto.RepeatedField(proto.MESSAGE, number=2,
+    explained_policies = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=explanations.ExplainedPolicy,
     )
 

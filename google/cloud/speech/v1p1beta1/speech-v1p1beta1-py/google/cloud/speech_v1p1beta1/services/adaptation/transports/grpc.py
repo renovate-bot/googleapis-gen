@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 from google.cloud.speech_v1p1beta1.types import cloud_speech_adaptation
 from google.cloud.speech_v1p1beta1.types import resource
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AdaptationTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,7 +60,8 @@ class AdaptationGrpcTransport(AdaptationTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,13 +200,15 @@ class AdaptationGrpcTransport(AdaptationTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,7 +222,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def create_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.CreatePhraseSetRequest],
             resource.PhraseSet]:
-        r"""Return a callable for the create phrase set method over gRPC.
+        r"""Return a callable for the
+        create phrase set
+          method over gRPC.
 
         Create a set of phrase hints. Each item in the set
         can be a single word or a multi-word phrase. The items
@@ -251,7 +253,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def get_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.GetPhraseSetRequest],
             resource.PhraseSet]:
-        r"""Return a callable for the get phrase set method over gRPC.
+        r"""Return a callable for the
+        get phrase set
+          method over gRPC.
 
         Get a phrase set.
 
@@ -277,7 +281,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def list_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.ListPhraseSetRequest],
             cloud_speech_adaptation.ListPhraseSetResponse]:
-        r"""Return a callable for the list phrase set method over gRPC.
+        r"""Return a callable for the
+        list phrase set
+          method over gRPC.
 
         List phrase sets.
 
@@ -303,7 +309,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def update_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.UpdatePhraseSetRequest],
             resource.PhraseSet]:
-        r"""Return a callable for the update phrase set method over gRPC.
+        r"""Return a callable for the
+        update phrase set
+          method over gRPC.
 
         Update a phrase set.
 
@@ -329,7 +337,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def delete_phrase_set(self) -> Callable[
             [cloud_speech_adaptation.DeletePhraseSetRequest],
             empty.Empty]:
-        r"""Return a callable for the delete phrase set method over gRPC.
+        r"""Return a callable for the
+        delete phrase set
+          method over gRPC.
 
         Delete a phrase set.
 
@@ -355,7 +365,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def create_custom_class(self) -> Callable[
             [cloud_speech_adaptation.CreateCustomClassRequest],
             resource.CustomClass]:
-        r"""Return a callable for the create custom class method over gRPC.
+        r"""Return a callable for the
+        create custom class
+          method over gRPC.
 
         Create a custom class.
 
@@ -381,7 +393,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def get_custom_class(self) -> Callable[
             [cloud_speech_adaptation.GetCustomClassRequest],
             resource.CustomClass]:
-        r"""Return a callable for the get custom class method over gRPC.
+        r"""Return a callable for the
+        get custom class
+          method over gRPC.
 
         Get a custom class.
 
@@ -407,7 +421,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def list_custom_classes(self) -> Callable[
             [cloud_speech_adaptation.ListCustomClassesRequest],
             cloud_speech_adaptation.ListCustomClassesResponse]:
-        r"""Return a callable for the list custom classes method over gRPC.
+        r"""Return a callable for the
+        list custom classes
+          method over gRPC.
 
         List custom classes.
 
@@ -433,7 +449,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def update_custom_class(self) -> Callable[
             [cloud_speech_adaptation.UpdateCustomClassRequest],
             resource.CustomClass]:
-        r"""Return a callable for the update custom class method over gRPC.
+        r"""Return a callable for the
+        update custom class
+          method over gRPC.
 
         Update a custom class.
 
@@ -459,7 +477,9 @@ class AdaptationGrpcTransport(AdaptationTransport):
     def delete_custom_class(self) -> Callable[
             [cloud_speech_adaptation.DeleteCustomClassRequest],
             empty.Empty]:
-        r"""Return a callable for the delete custom class method over gRPC.
+        r"""Return a callable for the
+        delete custom class
+          method over gRPC.
 
         Delete a custom class.
 

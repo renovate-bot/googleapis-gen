@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import DeviceManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DeviceManagerGrpcAsyncIOTransport
 from .client import DeviceManagerClient
@@ -56,19 +53,14 @@ class DeviceManagerAsyncClient:
     parse_device_path = staticmethod(DeviceManagerClient.parse_device_path)
     registry_path = staticmethod(DeviceManagerClient.registry_path)
     parse_registry_path = staticmethod(DeviceManagerClient.parse_registry_path)
-
     common_billing_account_path = staticmethod(DeviceManagerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DeviceManagerClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(DeviceManagerClient.common_folder_path)
     parse_common_folder_path = staticmethod(DeviceManagerClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(DeviceManagerClient.common_organization_path)
     parse_common_organization_path = staticmethod(DeviceManagerClient.parse_common_organization_path)
-
     common_project_path = staticmethod(DeviceManagerClient.common_project_path)
     parse_common_project_path = staticmethod(DeviceManagerClient.parse_common_project_path)
-
     common_location_path = staticmethod(DeviceManagerClient.common_location_path)
     parse_common_location_path = staticmethod(DeviceManagerClient.parse_common_location_path)
 
@@ -153,7 +145,6 @@ class DeviceManagerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = DeviceManagerClient(
             credentials=credentials,
             transport=transport,
@@ -175,7 +166,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.CreateDeviceRegistryRequest`):
-                The request object. Request for `CreateDeviceRegistry`.
+                The request object.
+                Request for `CreateDeviceRegistry`.
             parent (:class:`str`):
                 Required. The project and cloud region where this device
                 registry must be created. For example,
@@ -193,7 +185,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``device_registry`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -216,7 +207,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if device_registry is not None:
@@ -261,7 +251,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.GetDeviceRegistryRequest`):
-                The request object. Request for `GetDeviceRegistry`.
+                The request object.
+                Request for `GetDeviceRegistry`.
             name (:class:`str`):
                 Required. The name of the device registry. For example,
                 ``projects/example-project/locations/us-central1/registries/my-registry``.
@@ -269,7 +260,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -292,7 +282,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -301,10 +290,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_device_registry,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -346,7 +332,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.UpdateDeviceRegistryRequest`):
-                The request object. Request for `UpdateDeviceRegistry`.
+                The request object.
+                Request for `UpdateDeviceRegistry`.
             device_registry (:class:`google.cloud.iot_v1.types.DeviceRegistry`):
                 Required. The new values for the device registry. The
                 ``id`` field must be empty, and the ``name`` field must
@@ -367,7 +354,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -390,7 +376,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if device_registry is not None:
             request.device_registry = device_registry
         if update_mask is not None:
@@ -435,7 +420,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.DeleteDeviceRegistryRequest`):
-                The request object. Request for `DeleteDeviceRegistry`.
+                The request object.
+                Request for `DeleteDeviceRegistry`.
             name (:class:`str`):
                 Required. The name of the device registry. For example,
                 ``projects/example-project/locations/us-central1/registries/my-registry``.
@@ -443,7 +429,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -462,7 +447,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -471,10 +455,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_device_registry,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -512,7 +493,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDeviceRegistriesRequest`):
-                The request object. Request for `ListDeviceRegistries`.
+                The request object.
+                Request for `ListDeviceRegistries`.
             parent (:class:`str`):
                 Required. The project and cloud region path. For
                 example,
@@ -521,7 +503,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -548,7 +529,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -557,10 +537,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_device_registries,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -611,7 +588,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.CreateDeviceRequest`):
-                The request object. Request for `CreateDevice`.
+                The request object.
+                Request for `CreateDevice`.
             parent (:class:`str`):
                 Required. The name of the device registry where this
                 device should be created. For example,
@@ -629,7 +607,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``device`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -652,7 +629,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if device is not None:
@@ -697,7 +673,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.GetDeviceRequest`):
-                The request object. Request for `GetDevice`.
+                The request object.
+                Request for `GetDevice`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -707,7 +684,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -730,7 +706,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -739,10 +714,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_device,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -784,7 +756,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.UpdateDeviceRequest`):
-                The request object. Request for `UpdateDevice`.
+                The request object.
+                Request for `UpdateDevice`.
             device (:class:`google.cloud.iot_v1.types.Device`):
                 Required. The new values for the device. The ``id`` and
                 ``num_id`` fields must be empty, and the field ``name``
@@ -805,7 +778,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -828,7 +800,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if device is not None:
             request.device = device
         if update_mask is not None:
@@ -873,7 +844,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.DeleteDeviceRequest`):
-                The request object. Request for `DeleteDevice`.
+                The request object.
+                Request for `DeleteDevice`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -883,7 +855,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -902,7 +873,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -911,10 +881,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_device,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -952,7 +919,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDevicesRequest`):
-                The request object. Request for `ListDevices`.
+                The request object.
+                Request for `ListDevices`.
             parent (:class:`str`):
                 Required. The device registry path. Required. For
                 example,
@@ -961,7 +929,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -988,7 +955,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -997,10 +963,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_devices,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1053,7 +1016,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ModifyCloudToDeviceConfigRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 `ModifyCloudToDeviceConfig`.
             name (:class:`str`):
                 Required. The name of the device. For example,
@@ -1071,7 +1035,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``binary_data`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1096,7 +1059,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if binary_data is not None:
@@ -1107,10 +1069,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.modify_cloud_to_device_config,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ResourceExhausted,
                     exceptions.ServiceUnavailable,
@@ -1153,7 +1112,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDeviceConfigVersionsRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 `ListDeviceConfigVersions`.
             name (:class:`str`):
                 Required. The name of the device. For example,
@@ -1164,7 +1124,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1187,7 +1146,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1196,10 +1154,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_device_config_versions,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1241,7 +1196,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDeviceStatesRequest`):
-                The request object. Request for `ListDeviceStates`.
+                The request object.
+                Request for `ListDeviceStates`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -1251,7 +1207,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1274,7 +1229,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1283,10 +1237,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_device_states,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1328,7 +1279,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1339,7 +1291,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1413,11 +1364,10 @@ class DeviceManagerAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -1462,7 +1412,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1473,7 +1424,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1547,11 +1497,10 @@ class DeviceManagerAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -1597,7 +1546,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1617,7 +1567,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1636,11 +1585,10 @@ class DeviceManagerAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
-
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -1701,7 +1649,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.SendCommandToDeviceRequest`):
-                The request object. Request for `SendCommandToDevice`.
+                The request object.
+                Request for `SendCommandToDevice`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -1733,7 +1682,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``subfolder`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1756,7 +1704,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if binary_data is not None:
@@ -1769,10 +1716,7 @@ class DeviceManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.send_command_to_device,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ResourceExhausted,
                     exceptions.ServiceUnavailable,
@@ -1816,7 +1760,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.BindDeviceToGatewayRequest`):
-                The request object. Request for `BindDeviceToGateway`.
+                The request object.
+                Request for `BindDeviceToGateway`.
             parent (:class:`str`):
                 Required. The name of the registry. For example,
                 ``projects/example-project/locations/us-central1/registries/my-registry``.
@@ -1839,7 +1784,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``device_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1862,7 +1806,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if gateway_id is not None:
@@ -1912,7 +1855,8 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.UnbindDeviceFromGatewayRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 `UnbindDeviceFromGateway`.
             parent (:class:`str`):
                 Required. The name of the registry. For example,
@@ -1936,7 +1880,6 @@ class DeviceManagerAsyncClient:
                 This corresponds to the ``device_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1959,7 +1902,6 @@ class DeviceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if gateway_id is not None:
@@ -1993,8 +1935,6 @@ class DeviceManagerAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

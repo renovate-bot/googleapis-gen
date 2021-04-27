@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,8 +36,7 @@ from google.cloud.secretmanager_v1beta1.types.service import ListSecretsRequest
 from google.cloud.secretmanager_v1beta1.types.service import ListSecretsResponse
 from google.cloud.secretmanager_v1beta1.types.service import UpdateSecretRequest
 
-__all__ = (
-    'AccessSecretVersionRequest',
+__all__ = ('AccessSecretVersionRequest',
     'AccessSecretVersionResponse',
     'AddSecretVersionRequest',
     'CreateSecretRequest',

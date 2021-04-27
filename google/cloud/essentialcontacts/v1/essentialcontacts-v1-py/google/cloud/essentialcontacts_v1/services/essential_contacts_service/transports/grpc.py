@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.cloud.essentialcontacts_v1.types import service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import EssentialContactsServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -62,7 +59,8 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,13 +199,15 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -221,7 +221,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def create_contact(self) -> Callable[
             [service.CreateContactRequest],
             service.Contact]:
-        r"""Return a callable for the create contact method over gRPC.
+        r"""Return a callable for the
+        create contact
+          method over gRPC.
 
         Adds a new contact for a resource.
 
@@ -247,7 +249,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def update_contact(self) -> Callable[
             [service.UpdateContactRequest],
             service.Contact]:
-        r"""Return a callable for the update contact method over gRPC.
+        r"""Return a callable for the
+        update contact
+          method over gRPC.
 
         Updates a contact.
         Note: A contact's email address cannot be changed.
@@ -274,7 +278,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def list_contacts(self) -> Callable[
             [service.ListContactsRequest],
             service.ListContactsResponse]:
-        r"""Return a callable for the list contacts method over gRPC.
+        r"""Return a callable for the
+        list contacts
+          method over gRPC.
 
         Lists the contacts that have been set on a resource.
 
@@ -300,7 +306,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def get_contact(self) -> Callable[
             [service.GetContactRequest],
             service.Contact]:
-        r"""Return a callable for the get contact method over gRPC.
+        r"""Return a callable for the
+        get contact
+          method over gRPC.
 
         Gets a single contact.
 
@@ -326,7 +334,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def delete_contact(self) -> Callable[
             [service.DeleteContactRequest],
             empty.Empty]:
-        r"""Return a callable for the delete contact method over gRPC.
+        r"""Return a callable for the
+        delete contact
+          method over gRPC.
 
         Deletes a contact.
 
@@ -352,7 +362,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def compute_contacts(self) -> Callable[
             [service.ComputeContactsRequest],
             service.ComputeContactsResponse]:
-        r"""Return a callable for the compute contacts method over gRPC.
+        r"""Return a callable for the
+        compute contacts
+          method over gRPC.
 
         Lists all contacts for the resource that are
         subscribed to the specified notification categories,
@@ -380,7 +392,9 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def send_test_message(self) -> Callable[
             [service.SendTestMessageRequest],
             empty.Empty]:
-        r"""Return a callable for the send test message method over gRPC.
+        r"""Return a callable for the
+        send test message
+          method over gRPC.
 
         Allows a contact admin to send a test message to
         contact to verify that it has been configured correctly.

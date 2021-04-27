@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,8 +40,7 @@ from google.cloud.bigquery.storage_v1beta1.types.storage import ThrottleStatus
 from google.cloud.bigquery.storage_v1beta1.types.table_reference import TableModifiers
 from google.cloud.bigquery.storage_v1beta1.types.table_reference import TableReference
 
-__all__ = (
-    'ArrowRecordBatch',
+__all__ = ('ArrowRecordBatch',
     'ArrowSchema',
     'AvroRows',
     'AvroSchema',

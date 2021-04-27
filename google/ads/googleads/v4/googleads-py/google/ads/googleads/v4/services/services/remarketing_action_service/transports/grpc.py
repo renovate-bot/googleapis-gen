@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import remarketing_action
 from google.ads.googleads.v4.services.types import remarketing_action_service
-
 from .base import RemarketingActionServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class RemarketingActionServiceGrpcTransport(RemarketingActionServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class RemarketingActionServiceGrpcTransport(RemarketingActionServiceTransport):
     def get_remarketing_action(self) -> Callable[
             [remarketing_action_service.GetRemarketingActionRequest],
             remarketing_action.RemarketingAction]:
-        r"""Return a callable for the get remarketing action method over gRPC.
+        r"""Return a callable for the
+        get remarketing action
+          method over gRPC.
 
         Returns the requested remarketing action in full
         detail.
@@ -230,7 +230,9 @@ class RemarketingActionServiceGrpcTransport(RemarketingActionServiceTransport):
     def mutate_remarketing_actions(self) -> Callable[
             [remarketing_action_service.MutateRemarketingActionsRequest],
             remarketing_action_service.MutateRemarketingActionsResponse]:
-        r"""Return a callable for the mutate remarketing actions method over gRPC.
+        r"""Return a callable for the
+        mutate remarketing actions
+          method over gRPC.
 
         Creates or updates remarketing actions. Operation
         statuses are returned.

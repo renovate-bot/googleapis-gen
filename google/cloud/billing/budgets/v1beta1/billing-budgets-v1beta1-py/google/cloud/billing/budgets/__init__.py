@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,8 +31,7 @@ from google.cloud.billing.budgets_v1beta1.types.budget_service import ListBudget
 from google.cloud.billing.budgets_v1beta1.types.budget_service import ListBudgetsResponse
 from google.cloud.billing.budgets_v1beta1.types.budget_service import UpdateBudgetRequest
 
-__all__ = (
-    'AllUpdatesRule',
+__all__ = ('AllUpdatesRule',
     'Budget',
     'BudgetAmount',
     'BudgetServiceAsyncClient',

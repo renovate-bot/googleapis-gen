@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -32,7 +30,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import InstanceAdminTransport, DEFAULT_CLIENT_INFO
 
 
@@ -86,7 +83,8 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -226,13 +224,15 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -262,7 +262,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def list_instance_configs(self) -> Callable[
             [spanner_instance_admin.ListInstanceConfigsRequest],
             spanner_instance_admin.ListInstanceConfigsResponse]:
-        r"""Return a callable for the list instance configs method over gRPC.
+        r"""Return a callable for the
+        list instance configs
+          method over gRPC.
 
         Lists the supported instance configurations for a
         given project.
@@ -289,7 +291,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def get_instance_config(self) -> Callable[
             [spanner_instance_admin.GetInstanceConfigRequest],
             spanner_instance_admin.InstanceConfig]:
-        r"""Return a callable for the get instance config method over gRPC.
+        r"""Return a callable for the
+        get instance config
+          method over gRPC.
 
         Gets information about a particular instance
         configuration.
@@ -316,7 +320,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def list_instances(self) -> Callable[
             [spanner_instance_admin.ListInstancesRequest],
             spanner_instance_admin.ListInstancesResponse]:
-        r"""Return a callable for the list instances method over gRPC.
+        r"""Return a callable for the
+        list instances
+          method over gRPC.
 
         Lists all instances in the given project.
 
@@ -342,7 +348,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def get_instance(self) -> Callable[
             [spanner_instance_admin.GetInstanceRequest],
             spanner_instance_admin.Instance]:
-        r"""Return a callable for the get instance method over gRPC.
+        r"""Return a callable for the
+        get instance
+          method over gRPC.
 
         Gets information about a particular instance.
 
@@ -368,7 +376,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def create_instance(self) -> Callable[
             [spanner_instance_admin.CreateInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the create instance method over gRPC.
+        r"""Return a callable for the
+        create instance
+          method over gRPC.
 
         Creates an instance and begins preparing it to begin serving.
         The returned [long-running
@@ -431,7 +441,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def update_instance(self) -> Callable[
             [spanner_instance_admin.UpdateInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the update instance method over gRPC.
+        r"""Return a callable for the
+        update instance
+          method over gRPC.
 
         Updates an instance, and begins allocating or releasing
         resources as requested. The returned [long-running
@@ -501,7 +513,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def delete_instance(self) -> Callable[
             [spanner_instance_admin.DeleteInstanceRequest],
             empty.Empty]:
-        r"""Return a callable for the delete instance method over gRPC.
+        r"""Return a callable for the
+        delete instance
+          method over gRPC.
 
         Deletes an instance.
 
@@ -537,7 +551,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on an instance resource. Replaces
         any existing policy.
@@ -567,7 +583,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for an instance resource. Returns
         an empty policy if an instance exists but does not have a policy
@@ -598,7 +616,9 @@ class InstanceAdminGrpcTransport(InstanceAdminTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that the caller has on the specified
         instance resource.

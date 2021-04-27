@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class TimeRange(proto.Message):
     r"""Information about time ranges.
-
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             The start of the time range.
@@ -41,18 +37,20 @@ class TimeRange(proto.Message):
             The end of the time range.
     """
 
-    start_time = proto.Field(proto.MESSAGE, number=1,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
 
 
 class Group(proto.Message):
     r"""Information about a group.
-
     Attributes:
         email (str):
             The email address of the group.
@@ -60,14 +58,18 @@ class Group(proto.Message):
             The title of the group.
     """
 
-    email = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
+    email = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Domain(proto.Message):
     r"""Information about a domain.
-
     Attributes:
         name (str):
             The name of the domain, e.g. ``google.com``.
@@ -76,9 +78,14 @@ class Domain(proto.Message):
             domain.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    legacy_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    legacy_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

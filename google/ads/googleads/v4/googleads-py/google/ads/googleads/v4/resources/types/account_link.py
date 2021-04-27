@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import account_link_status
 from google.ads.googleads.v4.enums.types import linked_account_type
@@ -54,24 +51,35 @@ class AccountLink(proto.Message):
             Immutable. A third party app analytics link.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    account_link_id = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    account_link_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-    status = proto.Field(proto.ENUM, number=3,
+    status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=account_link_status.AccountLinkStatusEnum.AccountLinkStatus,
     )
-    type_ = proto.Field(proto.ENUM, number=4,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=linked_account_type.LinkedAccountTypeEnum.LinkedAccountType,
     )
-    third_party_app_analytics = proto.Field(proto.MESSAGE, number=5, oneof='linked_account',
+    third_party_app_analytics = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='linked_account',
         message='ThirdPartyAppAnalyticsLinkIdentifier',
     )
 
 
 class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
     r"""The identifiers of a Third Party App Analytics Link.
-
     Attributes:
         app_analytics_provider_id (google.protobuf.wrappers_pb2.Int64Value):
             Immutable. The ID of the app analytics
@@ -102,13 +110,19 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
             to be modified after the creation of the link.
     """
 
-    app_analytics_provider_id = proto.Field(proto.MESSAGE, number=1,
+    app_analytics_provider_id = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int64Value,
     )
-    app_id = proto.Field(proto.MESSAGE, number=2,
+    app_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    app_vendor = proto.Field(proto.ENUM, number=3,
+    app_vendor = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=mobile_app_vendor.MobileAppVendorEnum.MobileAppVendor,
     )
 

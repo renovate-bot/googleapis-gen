@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.datacatalog_v1.types import common
 from google.cloud.datacatalog_v1.types import data_source as gcd_data_source
@@ -130,6 +127,7 @@ class SearchCatalogRequest(proto.Message):
 
             If not specified, defaults to ``relevance`` descending.
     """
+
     class Scope(proto.Message):
         r"""The criteria that select the subspace used for query
         matching.
@@ -166,25 +164,44 @@ class SearchCatalogRequest(proto.Message):
                    additional information on the error.
         """
 
-        include_org_ids = proto.RepeatedField(proto.STRING, number=2)
+        include_org_ids = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
+        include_project_ids = proto.RepeatedField(
+            proto.STRING,
+            number=3,
+        )
+        include_gcp_public_datasets = proto.Field(
+            proto.BOOL,
+            number=7,
+        )
+        restricted_locations = proto.RepeatedField(
+            proto.STRING,
+            number=16,
+        )
 
-        include_project_ids = proto.RepeatedField(proto.STRING, number=3)
-
-        include_gcp_public_datasets = proto.Field(proto.BOOL, number=7)
-
-        restricted_locations = proto.RepeatedField(proto.STRING, number=16)
-
-    scope = proto.Field(proto.MESSAGE, number=6,
+    scope = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=Scope,
     )
-
-    query = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    query = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class SearchCatalogResponse(proto.Message):
@@ -209,13 +226,19 @@ class SearchCatalogResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=search.SearchCatalogResult,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=3)
-
-    unreachable = proto.RepeatedField(proto.STRING, number=6)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    unreachable = proto.RepeatedField(
+        proto.STRING,
+        number=6,
+    )
 
 
 class CreateEntryGroupRequest(proto.Message):
@@ -242,11 +265,17 @@ class CreateEntryGroupRequest(proto.Message):
             empty entry group.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    entry_group_id = proto.Field(proto.STRING, number=3)
-
-    entry_group = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entry_group_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    entry_group = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='EntryGroup',
     )
 
@@ -268,11 +297,14 @@ class UpdateEntryGroupRequest(proto.Message):
             request body, their values are emptied.
     """
 
-    entry_group = proto.Field(proto.MESSAGE, number=1,
+    entry_group = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='EntryGroup',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -290,9 +322,13 @@ class GetEntryGroupRequest(proto.Message):
             all fields are returned.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    read_mask = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    read_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -310,9 +346,14 @@ class DeleteEntryGroupRequest(proto.Message):
             entry group.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    force = proto.Field(proto.BOOL, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    force = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class ListEntryGroupsRequest(proto.Message):
@@ -334,11 +375,18 @@ class ListEntryGroupsRequest(proto.Message):
             requested. If empty, the first page is returned.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListEntryGroupsResponse(proto.Message):
@@ -358,11 +406,15 @@ class ListEntryGroupsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    entry_groups = proto.RepeatedField(proto.MESSAGE, number=1,
+    entry_groups = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='EntryGroup',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateEntryRequest(proto.Message):
@@ -388,11 +440,17 @@ class CreateEntryRequest(proto.Message):
             Required. The entry to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    entry_id = proto.Field(proto.STRING, number=3)
-
-    entry = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entry_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    entry = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Entry',
     )
 
@@ -437,11 +495,14 @@ class UpdateEntryRequest(proto.Message):
                -  ``source_system_timestamps``
     """
 
-    entry = proto.Field(proto.MESSAGE, number=1,
+    entry = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Entry',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -457,7 +518,10 @@ class DeleteEntryRequest(proto.Message):
             -  projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetEntryRequest(proto.Message):
@@ -471,7 +535,10 @@ class GetEntryRequest(proto.Message):
             -  projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class LookupEntryRequest(proto.Message):
@@ -521,11 +588,21 @@ class LookupEntryRequest(proto.Message):
             ``dataproc_metastore:project_id.location_id.instance_id.database_id.table_id``
     """
 
-    linked_resource = proto.Field(proto.STRING, number=1, oneof='target_name')
-
-    sql_resource = proto.Field(proto.STRING, number=3, oneof='target_name')
-
-    fully_qualified_name = proto.Field(proto.STRING, number=5, oneof='target_name')
+    linked_resource = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='target_name',
+    )
+    sql_resource = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='target_name',
+    )
+    fully_qualified_name = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='target_name',
+    )
 
 
 class Entry(proto.Message):
@@ -661,53 +738,85 @@ class Entry(proto.Message):
             Output only. Physical location of the entry.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    linked_resource = proto.Field(proto.STRING, number=9)
-
-    fully_qualified_name = proto.Field(proto.STRING, number=29)
-
-    type_ = proto.Field(proto.ENUM, number=2, oneof='entry_type',
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    linked_resource = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    fully_qualified_name = proto.Field(
+        proto.STRING,
+        number=29,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=2,
+        oneof='entry_type',
         enum='EntryType',
     )
-
-    user_specified_type = proto.Field(proto.STRING, number=16, oneof='entry_type')
-
-    integrated_system = proto.Field(proto.ENUM, number=17, oneof='system',
+    user_specified_type = proto.Field(
+        proto.STRING,
+        number=16,
+        oneof='entry_type',
+    )
+    integrated_system = proto.Field(
+        proto.ENUM,
+        number=17,
+        oneof='system',
         enum=common.IntegratedSystem,
     )
-
-    user_specified_system = proto.Field(proto.STRING, number=18, oneof='system')
-
-    gcs_fileset_spec = proto.Field(proto.MESSAGE, number=6, oneof='type_spec',
+    user_specified_system = proto.Field(
+        proto.STRING,
+        number=18,
+        oneof='system',
+    )
+    gcs_fileset_spec = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='type_spec',
         message=gcd_gcs_fileset_spec.GcsFilesetSpec,
     )
-
-    bigquery_table_spec = proto.Field(proto.MESSAGE, number=12, oneof='type_spec',
+    bigquery_table_spec = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        oneof='type_spec',
         message=table_spec.BigQueryTableSpec,
     )
-
-    bigquery_date_sharded_spec = proto.Field(proto.MESSAGE, number=15, oneof='type_spec',
+    bigquery_date_sharded_spec = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        oneof='type_spec',
         message=table_spec.BigQueryDateShardedSpec,
     )
-
-    database_table_spec = proto.Field(proto.MESSAGE, number=24, oneof='spec',
+    database_table_spec = proto.Field(
+        proto.MESSAGE,
+        number=24,
+        oneof='spec',
         message='DatabaseTableSpec',
     )
-
-    display_name = proto.Field(proto.STRING, number=3)
-
-    description = proto.Field(proto.STRING, number=4)
-
-    schema = proto.Field(proto.MESSAGE, number=5,
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    schema = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=gcd_schema.Schema,
     )
-
-    source_system_timestamps = proto.Field(proto.MESSAGE, number=7,
+    source_system_timestamps = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamps.SystemTimestamps,
     )
-
-    data_source = proto.Field(proto.MESSAGE, number=20,
+    data_source = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message=gcd_data_source.DataSource,
     )
 
@@ -726,7 +835,9 @@ class DatabaseTableSpec(proto.Message):
         NATIVE = 1
         EXTERNAL = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=TableType,
     )
 
@@ -758,13 +869,21 @@ class EntryGroup(proto.Message):
             EntryGroup. Default value is empty timestamps.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    data_catalog_timestamps = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    data_catalog_timestamps = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamps.SystemTimestamps,
     )
 
@@ -792,11 +911,17 @@ class CreateTagTemplateRequest(proto.Message):
             Required. The tag template to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    tag_template_id = proto.Field(proto.STRING, number=3)
-
-    tag_template = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    tag_template_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    tag_template = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcd_tags.TagTemplate,
     )
 
@@ -812,7 +937,10 @@ class GetTagTemplateRequest(proto.Message):
             -  projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateTagTemplateRequest(proto.Message):
@@ -833,11 +961,14 @@ class UpdateTagTemplateRequest(proto.Message):
             are emptied.
     """
 
-    tag_template = proto.Field(proto.MESSAGE, number=1,
+    tag_template = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcd_tags.TagTemplate,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -858,9 +989,14 @@ class DeleteTagTemplateRequest(proto.Message):
             the future.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    force = proto.Field(proto.BOOL, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    force = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class CreateTagRequest(proto.Message):
@@ -881,9 +1017,13 @@ class CreateTagRequest(proto.Message):
             Required. The tag to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    tag = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    tag = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcd_tags.Tag,
     )
 
@@ -907,11 +1047,14 @@ class UpdateTagRequest(proto.Message):
             are emptied.
     """
 
-    tag = proto.Field(proto.MESSAGE, number=1,
+    tag = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcd_tags.Tag,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -927,7 +1070,10 @@ class DeleteTagRequest(proto.Message):
             -  projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateTagTemplateFieldRequest(proto.Message):
@@ -957,11 +1103,17 @@ class CreateTagTemplateFieldRequest(proto.Message):
             Required. The tag template field to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    tag_template_field_id = proto.Field(proto.STRING, number=2)
-
-    tag_template_field = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    tag_template_field_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    tag_template_field = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gcd_tags.TagTemplateField,
     )
 
@@ -998,13 +1150,18 @@ class UpdateTagTemplateFieldRequest(proto.Message):
             required is *not* allowed.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    tag_template_field = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    tag_template_field = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcd_tags.TagTemplateField,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=field_mask.FieldMask,
     )
 
@@ -1023,9 +1180,14 @@ class RenameTagTemplateFieldRequest(proto.Message):
             example, ``my_new_field``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    new_tag_template_field_id = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    new_tag_template_field_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class RenameTagTemplateFieldEnumValueRequest(proto.Message):
@@ -1042,9 +1204,14 @@ class RenameTagTemplateFieldEnumValueRequest(proto.Message):
             example, ``my_new_enum_value``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    new_enum_value_display_name = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    new_enum_value_display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DeleteTagTemplateFieldRequest(proto.Message):
@@ -1064,9 +1231,14 @@ class DeleteTagTemplateFieldRequest(proto.Message):
             in the future.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    force = proto.Field(proto.BOOL, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    force = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class ListTagsRequest(proto.Message):
@@ -1092,11 +1264,18 @@ class ListTagsRequest(proto.Message):
             If empty, the first page is returned.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListTagsResponse(proto.Message):
@@ -1116,11 +1295,15 @@ class ListTagsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    tags = proto.RepeatedField(proto.MESSAGE, number=1,
+    tags = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcd_tags.Tag,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListEntriesRequest(proto.Message):
@@ -1147,13 +1330,21 @@ class ListEntriesRequest(proto.Message):
             return a list of Entries with only "name" field.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    read_mask = proto.Field(proto.MESSAGE, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    read_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=field_mask.FieldMask,
     )
 
@@ -1175,11 +1366,15 @@ class ListEntriesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    entries = proto.RepeatedField(proto.MESSAGE, number=1,
+    entries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Entry',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

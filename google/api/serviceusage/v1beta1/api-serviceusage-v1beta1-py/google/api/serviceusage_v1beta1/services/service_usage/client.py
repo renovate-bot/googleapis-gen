@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,7 +36,6 @@ from google.api.serviceusage_v1beta1.types import serviceusage
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .transports.base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ServiceUsageGrpcTransport
 from .transports.grpc_asyncio import ServiceUsageGrpcAsyncIOTransport
@@ -330,9 +327,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.EnableServiceRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `EnableService` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -359,7 +356,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.EnableServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -418,9 +414,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.DisableServiceRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DisableService` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -447,7 +443,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.DisableServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -498,9 +493,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GetServiceRequest):
-                The request object. Request message for the `GetService`
+                The request object.
+                Request message for the `GetService`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -514,7 +509,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.GetServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -563,9 +557,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListServicesRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -581,7 +575,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ListServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -636,9 +629,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.BatchEnableServicesRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `BatchEnableServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -665,7 +658,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.BatchEnableServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -721,9 +713,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListConsumerQuotaMetricsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListConsumerQuotaMetrics
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -740,7 +732,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ListConsumerQuotaMetricsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -792,9 +783,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GetConsumerQuotaMetricRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetConsumerQuotaMetric
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -808,7 +799,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.GetConsumerQuotaMetricRequest.
         # There's no risk of modifying the input as we've already verified
@@ -851,9 +841,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GetConsumerQuotaLimitRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetConsumerQuotaLimit
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -867,7 +857,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.GetConsumerQuotaLimitRequest.
         # There's no risk of modifying the input as we've already verified
@@ -915,9 +904,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.CreateAdminOverrideRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateAdminOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -934,7 +923,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.CreateAdminOverrideRequest.
         # There's no risk of modifying the input as we've already verified
@@ -984,9 +972,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.UpdateAdminOverrideRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateAdminOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1003,7 +991,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.UpdateAdminOverrideRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1053,9 +1040,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.DeleteAdminOverrideRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteAdminOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1082,7 +1069,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.DeleteAdminOverrideRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1132,9 +1118,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListAdminOverridesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListAdminOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1151,7 +1137,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ListAdminOverridesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1205,9 +1190,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ImportAdminOverridesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ImportAdminOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1224,7 +1209,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ImportAdminOverridesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1279,9 +1263,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.CreateConsumerOverrideRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateConsumerOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1298,7 +1282,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.CreateConsumerOverrideRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1348,9 +1331,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.UpdateConsumerOverrideRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateConsumerOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1367,7 +1350,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.UpdateConsumerOverrideRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1417,9 +1399,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.DeleteConsumerOverrideRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteConsumerOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1446,7 +1428,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.DeleteConsumerOverrideRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1496,9 +1477,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListConsumerOverridesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListConsumerOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1515,7 +1496,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ListConsumerOverridesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1569,9 +1549,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ImportConsumerOverridesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ImportConsumerOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1588,7 +1568,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ImportConsumerOverridesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1638,9 +1617,9 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GenerateServiceIdentityRequest):
-                The request object. Request message for generating
+                The request object.
+                Request message for generating
                 service identity.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1656,7 +1635,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.GenerateServiceIdentityRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1694,8 +1672,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

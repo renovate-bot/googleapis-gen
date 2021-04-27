@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,8 +77,7 @@ from google.pubsub_v1.types.schema import ValidateMessageResponse
 from google.pubsub_v1.types.schema import ValidateSchemaRequest
 from google.pubsub_v1.types.schema import ValidateSchemaResponse
 
-__all__ = (
-    'AcknowledgeRequest',
+__all__ = ('AcknowledgeRequest',
     'CreateSchemaRequest',
     'CreateSnapshotRequest',
     'DeadLetterPolicy',

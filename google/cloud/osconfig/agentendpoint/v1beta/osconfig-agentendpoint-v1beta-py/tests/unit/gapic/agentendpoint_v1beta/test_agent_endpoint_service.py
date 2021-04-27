@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -35,11 +35,35 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service import AgentEndpointServiceAsyncClient
 from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service import AgentEndpointServiceClient
 from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service import transports
+from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.base import _API_CORE_VERSION
+from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.osconfig.agentendpoint_v1beta.types import agentendpoint
 from google.cloud.osconfig.agentendpoint_v1beta.types import guest_policies
 from google.cloud.osconfig.agentendpoint_v1beta.types import tasks
 from google.oauth2 import service_account
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -207,12 +231,10 @@ def test_agent_endpoint_service_client_client_options(client_class, transport_cl
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (AgentEndpointServiceClient, transports.AgentEndpointServiceGrpcTransport, "grpc", "true"),
     (AgentEndpointServiceAsyncClient, transports.AgentEndpointServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (AgentEndpointServiceClient, transports.AgentEndpointServiceGrpcTransport, "grpc", "false"),
     (AgentEndpointServiceAsyncClient, transports.AgentEndpointServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(AgentEndpointServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AgentEndpointServiceClient))
 @mock.patch.object(AgentEndpointServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AgentEndpointServiceAsyncClient))
@@ -366,13 +388,11 @@ def test_receive_task_notification(transport: str = 'grpc', request_type=agenten
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([agentendpoint.ReceiveTaskNotificationResponse()])
-
         response = client.receive_task_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReceiveTaskNotificationRequest()
 
     # Establish that the response is the type that we expect.
@@ -399,8 +419,8 @@ def test_receive_task_notification_empty_call():
         client.receive_task_notification()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReceiveTaskNotificationRequest()
+
 
 @pytest.mark.asyncio
 async def test_receive_task_notification_async(transport: str = 'grpc_asyncio', request_type=agentendpoint.ReceiveTaskNotificationRequest):
@@ -420,13 +440,11 @@ async def test_receive_task_notification_async(transport: str = 'grpc_asyncio', 
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[agentendpoint.ReceiveTaskNotificationResponse()])
-
         response = await client.receive_task_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReceiveTaskNotificationRequest()
 
     # Establish that the response is the type that we expect.
@@ -450,7 +468,6 @@ def test_receive_task_notification_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([agentendpoint.ReceiveTaskNotificationResponse()])
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.receive_task_notification(
@@ -462,9 +479,7 @@ def test_receive_task_notification_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].agent_version == 'agent_version_value'
 
 
@@ -508,9 +523,7 @@ async def test_receive_task_notification_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].agent_version == 'agent_version_value'
 
 
@@ -547,17 +560,14 @@ def test_start_next_task(transport: str = 'grpc', request_type=agentendpoint.Sta
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.StartNextTaskResponse(
         )
-
         response = client.start_next_task(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.StartNextTaskRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, agentendpoint.StartNextTaskResponse)
 
 
@@ -580,8 +590,8 @@ def test_start_next_task_empty_call():
         client.start_next_task()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.StartNextTaskRequest()
+
 
 @pytest.mark.asyncio
 async def test_start_next_task_async(transport: str = 'grpc_asyncio', request_type=agentendpoint.StartNextTaskRequest):
@@ -599,15 +609,13 @@ async def test_start_next_task_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.start_next_task),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.StartNextTaskResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.StartNextTaskResponse(
         ))
-
         response = await client.start_next_task(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.StartNextTaskRequest()
 
     # Establish that the response is the type that we expect.
@@ -630,7 +638,6 @@ def test_start_next_task_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.StartNextTaskResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.start_next_task(
@@ -641,7 +648,6 @@ def test_start_next_task_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
 
 
@@ -683,7 +689,6 @@ async def test_start_next_task_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
 
 
@@ -719,21 +724,16 @@ def test_report_task_progress(transport: str = 'grpc', request_type=agentendpoin
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.ReportTaskProgressResponse(
             task_directive=tasks.TaskDirective.CONTINUE,
-
         )
-
         response = client.report_task_progress(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReportTaskProgressRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, agentendpoint.ReportTaskProgressResponse)
-
     assert response.task_directive == tasks.TaskDirective.CONTINUE
 
 
@@ -756,8 +756,8 @@ def test_report_task_progress_empty_call():
         client.report_task_progress()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReportTaskProgressRequest()
+
 
 @pytest.mark.asyncio
 async def test_report_task_progress_async(transport: str = 'grpc_asyncio', request_type=agentendpoint.ReportTaskProgressRequest):
@@ -775,21 +775,18 @@ async def test_report_task_progress_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.report_task_progress),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.ReportTaskProgressResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.ReportTaskProgressResponse(
             task_directive=tasks.TaskDirective.CONTINUE,
         ))
-
         response = await client.report_task_progress(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReportTaskProgressRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, agentendpoint.ReportTaskProgressResponse)
-
     assert response.task_directive == tasks.TaskDirective.CONTINUE
 
 
@@ -809,7 +806,6 @@ def test_report_task_progress_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.ReportTaskProgressResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.report_task_progress(
@@ -822,11 +818,8 @@ def test_report_task_progress_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].task_id == 'task_id_value'
-
         assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
 
 
@@ -872,11 +865,8 @@ async def test_report_task_progress_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].task_id == 'task_id_value'
-
         assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
 
 
@@ -914,17 +904,14 @@ def test_report_task_complete(transport: str = 'grpc', request_type=agentendpoin
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.ReportTaskCompleteResponse(
         )
-
         response = client.report_task_complete(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReportTaskCompleteRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, agentendpoint.ReportTaskCompleteResponse)
 
 
@@ -947,8 +934,8 @@ def test_report_task_complete_empty_call():
         client.report_task_complete()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReportTaskCompleteRequest()
+
 
 @pytest.mark.asyncio
 async def test_report_task_complete_async(transport: str = 'grpc_asyncio', request_type=agentendpoint.ReportTaskCompleteRequest):
@@ -966,15 +953,13 @@ async def test_report_task_complete_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.report_task_complete),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.ReportTaskCompleteResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.ReportTaskCompleteResponse(
         ))
-
         response = await client.report_task_complete(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.ReportTaskCompleteRequest()
 
     # Establish that the response is the type that we expect.
@@ -997,7 +982,6 @@ def test_report_task_complete_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.ReportTaskCompleteResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.report_task_complete(
@@ -1011,13 +995,9 @@ def test_report_task_complete_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].task_id == 'task_id_value'
-
         assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
-
         assert args[0].error_message == 'error_message_value'
 
 
@@ -1065,13 +1045,9 @@ async def test_report_task_complete_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].task_id == 'task_id_value'
-
         assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
-
         assert args[0].error_message == 'error_message_value'
 
 
@@ -1110,17 +1086,14 @@ def test_lookup_effective_guest_policy(transport: str = 'grpc', request_type=gue
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.EffectiveGuestPolicy(
         )
-
         response = client.lookup_effective_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.LookupEffectiveGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, guest_policies.EffectiveGuestPolicy)
 
 
@@ -1143,8 +1116,8 @@ def test_lookup_effective_guest_policy_empty_call():
         client.lookup_effective_guest_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.LookupEffectiveGuestPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_lookup_effective_guest_policy_async(transport: str = 'grpc_asyncio', request_type=guest_policies.LookupEffectiveGuestPolicyRequest):
@@ -1162,15 +1135,13 @@ async def test_lookup_effective_guest_policy_async(transport: str = 'grpc_asynci
             type(client.transport.lookup_effective_guest_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.EffectiveGuestPolicy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.EffectiveGuestPolicy(
         ))
-
         response = await client.lookup_effective_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.LookupEffectiveGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
@@ -1193,7 +1164,6 @@ def test_lookup_effective_guest_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.EffectiveGuestPolicy()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.lookup_effective_guest_policy(
@@ -1207,13 +1177,9 @@ def test_lookup_effective_guest_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].os_short_name == 'os_short_name_value'
-
         assert args[0].os_version == 'os_version_value'
-
         assert args[0].os_architecture == 'os_architecture_value'
 
 
@@ -1261,13 +1227,9 @@ async def test_lookup_effective_guest_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].os_short_name == 'os_short_name_value'
-
         assert args[0].os_version == 'os_version_value'
-
         assert args[0].os_architecture == 'os_architecture_value'
 
 
@@ -1306,17 +1268,14 @@ def test_register_agent(transport: str = 'grpc', request_type=agentendpoint.Regi
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.RegisterAgentResponse(
         )
-
         response = client.register_agent(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.RegisterAgentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, agentendpoint.RegisterAgentResponse)
 
 
@@ -1339,8 +1298,8 @@ def test_register_agent_empty_call():
         client.register_agent()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.RegisterAgentRequest()
+
 
 @pytest.mark.asyncio
 async def test_register_agent_async(transport: str = 'grpc_asyncio', request_type=agentendpoint.RegisterAgentRequest):
@@ -1358,15 +1317,13 @@ async def test_register_agent_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.register_agent),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.RegisterAgentResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(agentendpoint.RegisterAgentResponse(
         ))
-
         response = await client.register_agent(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == agentendpoint.RegisterAgentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1389,7 +1346,6 @@ def test_register_agent_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = agentendpoint.RegisterAgentResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.register_agent(
@@ -1402,11 +1358,8 @@ def test_register_agent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].agent_version == 'agent_version_value'
-
         assert args[0].supported_capabilities == ['supported_capabilities_value']
 
 
@@ -1452,11 +1405,8 @@ async def test_register_agent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].instance_id_token == 'instance_id_token_value'
-
         assert args[0].agent_version == 'agent_version_value'
-
         assert args[0].supported_capabilities == ['supported_capabilities_value']
 
 
@@ -1517,7 +1467,6 @@ def test_transport_instance():
     client = AgentEndpointServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AgentEndpointServiceGrpcTransport(
@@ -1532,7 +1481,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.AgentEndpointServiceGrpcTransport,
     transports.AgentEndpointServiceGrpcAsyncIOTransport,
@@ -1544,7 +1492,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AgentEndpointServiceClient(
@@ -1554,7 +1501,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.AgentEndpointServiceGrpcTransport,
     )
-
 
 def test_agent_endpoint_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1582,15 +1528,33 @@ def test_agent_endpoint_service_base_transport():
         'report_task_complete',
         'lookup_effective_guest_policy',
         'register_agent',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_agent_endpoint_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.AgentEndpointServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.AgentEndpointServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.AgentEndpointServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_agent_endpoint_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.AgentEndpointServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AgentEndpointServiceTransport(
@@ -1605,31 +1569,180 @@ def test_agent_endpoint_service_base_transport_with_credentials_file():
 
 def test_agent_endpoint_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.AgentEndpointServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.transports.AgentEndpointServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AgentEndpointServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_agent_endpoint_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         AgentEndpointServiceClient()
-        adc.assert_called_once_with(scopes=(),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+),
+
             quota_project_id=None,
         )
 
 
-def test_agent_endpoint_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_agent_endpoint_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        AgentEndpointServiceClient()
+        adc.assert_called_once_with(
+            scopes=(),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.AgentEndpointServiceGrpcTransport,
+        transports.AgentEndpointServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_agent_endpoint_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.AgentEndpointServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.AgentEndpointServiceGrpcTransport,
+        transports.AgentEndpointServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_agent_endpoint_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AgentEndpointServiceGrpcTransport, grpc_helpers),
+        (transports.AgentEndpointServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_agent_endpoint_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "osconfig.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(),
+            scopes=["1", "2"],
+            default_host="osconfig.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AgentEndpointServiceGrpcTransport, grpc_helpers),
+        (transports.AgentEndpointServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_agent_endpoint_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "osconfig.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AgentEndpointServiceGrpcTransport, grpc_helpers),
+        (transports.AgentEndpointServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_agent_endpoint_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "osconfig.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1690,7 +1803,6 @@ def test_agent_endpoint_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='osconfig.googleapis.com:8000'),
     )
     assert client.transport._host == 'osconfig.googleapis.com:8000'
-
 
 def test_agent_endpoint_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1806,7 +1918,6 @@ def test_agent_endpoint_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AgentEndpointServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1814,8 +1925,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = AgentEndpointServiceClient.common_billing_account_path(**expected)
 
@@ -1825,7 +1935,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AgentEndpointServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1833,8 +1942,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = AgentEndpointServiceClient.common_folder_path(**expected)
 
@@ -1844,7 +1952,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AgentEndpointServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1852,8 +1959,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = AgentEndpointServiceClient.common_organization_path(**expected)
 
@@ -1863,7 +1969,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = AgentEndpointServiceClient.common_project_path(project)
     assert expected == actual
@@ -1871,8 +1976,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = AgentEndpointServiceClient.common_project_path(**expected)
 
@@ -1883,7 +1987,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AgentEndpointServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1891,9 +1994,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = AgentEndpointServiceClient.common_location_path(**expected)
 

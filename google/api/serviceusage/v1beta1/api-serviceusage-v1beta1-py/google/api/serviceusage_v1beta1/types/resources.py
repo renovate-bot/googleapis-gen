@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.api import auth_pb2 as ga_auth  # type: ignore
 from google.api import documentation_pb2 as ga_documentation  # type: ignore
@@ -75,7 +72,6 @@ class QuotaSafetyCheck(proto.Enum):
 
 class Service(proto.Message):
     r"""A service that is available for use by the consumer.
-
     Attributes:
         name (str):
             The resource name of the consumer and service.
@@ -99,22 +95,28 @@ class Service(proto.Message):
             for use by the consumer.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    parent = proto.Field(proto.STRING, number=5)
-
-    config = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ServiceConfig',
     )
-
-    state = proto.Field(proto.ENUM, number=4,
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='State',
     )
 
 
 class ServiceConfig(proto.Message):
     r"""The configuration of the service.
-
     Attributes:
         name (str):
             The DNS address at which this service is available.
@@ -152,39 +154,52 @@ class ServiceConfig(proto.Message):
             'producer_destinations' field.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    apis = proto.RepeatedField(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    apis = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=api.Api,
     )
-
-    documentation = proto.Field(proto.MESSAGE, number=6,
+    documentation = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=ga_documentation.Documentation,
     )
-
-    quota = proto.Field(proto.MESSAGE, number=10,
+    quota = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=ga_quota.Quota,
     )
-
-    authentication = proto.Field(proto.MESSAGE, number=11,
+    authentication = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=ga_auth.Authentication,
     )
-
-    usage = proto.Field(proto.MESSAGE, number=15,
+    usage = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message=ga_usage.Usage,
     )
-
-    endpoints = proto.RepeatedField(proto.MESSAGE, number=18,
+    endpoints = proto.RepeatedField(
+        proto.MESSAGE,
+        number=18,
         message=endpoint.Endpoint,
     )
-
-    monitored_resources = proto.RepeatedField(proto.MESSAGE, number=25,
+    monitored_resources = proto.RepeatedField(
+        proto.MESSAGE,
+        number=25,
         message=monitored_resource.MonitoredResourceDescriptor,
     )
-
-    monitoring = proto.Field(proto.MESSAGE, number=28,
+    monitoring = proto.Field(
+        proto.MESSAGE,
+        number=28,
         message=ga_monitoring.Monitoring,
     )
 
@@ -199,12 +214,14 @@ class OperationMetadata(proto.Message):
             operation is directly associated with.
     """
 
-    resource_names = proto.RepeatedField(proto.STRING, number=2)
+    resource_names = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ConsumerQuotaMetric(proto.Message):
     r"""Consumer quota settings for a quota metric.
-
     Attributes:
         name (str):
             The resource name of the quota settings on this metric for
@@ -243,26 +260,36 @@ class ConsumerQuotaMetric(proto.Message):
             reported.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    metric = proto.Field(proto.STRING, number=4)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    consumer_quota_limits = proto.RepeatedField(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    metric = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    consumer_quota_limits = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='ConsumerQuotaLimit',
     )
-
-    descendant_consumer_quota_limits = proto.RepeatedField(proto.MESSAGE, number=6,
+    descendant_consumer_quota_limits = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message='ConsumerQuotaLimit',
     )
-
-    unit = proto.Field(proto.STRING, number=5)
+    unit = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ConsumerQuotaLimit(proto.Message):
     r"""Consumer quota settings for a quota limit.
-
     Attributes:
         name (str):
             The resource name of the quota limit.
@@ -297,17 +324,29 @@ class ConsumerQuotaLimit(proto.Message):
             will always appear first).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    metric = proto.Field(proto.STRING, number=8)
-
-    unit = proto.Field(proto.STRING, number=2)
-
-    is_precise = proto.Field(proto.BOOL, number=3)
-
-    allows_admin_overrides = proto.Field(proto.BOOL, number=7)
-
-    quota_buckets = proto.RepeatedField(proto.MESSAGE, number=9,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    metric = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    unit = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    is_precise = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    allows_admin_overrides = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
+    quota_buckets = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
         message='QuotaBucket',
     )
 
@@ -346,28 +385,38 @@ class QuotaBucket(proto.Message):
             only in that region.
     """
 
-    effective_limit = proto.Field(proto.INT64, number=1)
-
-    default_limit = proto.Field(proto.INT64, number=2)
-
-    producer_override = proto.Field(proto.MESSAGE, number=3,
+    effective_limit = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    default_limit = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    producer_override = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='QuotaOverride',
     )
-
-    consumer_override = proto.Field(proto.MESSAGE, number=4,
+    consumer_override = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='QuotaOverride',
     )
-
-    admin_override = proto.Field(proto.MESSAGE, number=5,
+    admin_override = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='QuotaOverride',
     )
-
-    dimensions = proto.MapField(proto.STRING, proto.STRING, number=6)
+    dimensions = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6
+    )
 
 
 class QuotaOverride(proto.Message):
     r"""A quota override
-
     Attributes:
         name (str):
             The resource name of the override. This name is generated by
@@ -427,22 +476,35 @@ class QuotaOverride(proto.Message):
             ``folders/67890``. Used by admin overrides only.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    override_value = proto.Field(proto.INT64, number=2)
-
-    dimensions = proto.MapField(proto.STRING, proto.STRING, number=3)
-
-    metric = proto.Field(proto.STRING, number=4)
-
-    unit = proto.Field(proto.STRING, number=5)
-
-    admin_override_ancestor = proto.Field(proto.STRING, number=6)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    override_value = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    dimensions = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3
+    )
+    metric = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    unit = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    admin_override_ancestor = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class OverrideInlineSource(proto.Message):
     r"""Import data embedded in the request message
-
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             The overrides to create.
@@ -453,14 +515,15 @@ class OverrideInlineSource(proto.Message):
             it is ignored.
     """
 
-    overrides = proto.RepeatedField(proto.MESSAGE, number=1,
+    overrides = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='QuotaOverride',
     )
 
 
 class AdminQuotaPolicy(proto.Message):
     r"""Quota policy created by quota administrator.
-
     Attributes:
         name (str):
             The resource name of the policy. This name is generated by
@@ -505,17 +568,31 @@ class AdminQuotaPolicy(proto.Message):
             ``{container_type}/{container_number}``
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    policy_value = proto.Field(proto.INT64, number=2)
-
-    dimensions = proto.MapField(proto.STRING, proto.STRING, number=3)
-
-    metric = proto.Field(proto.STRING, number=4)
-
-    unit = proto.Field(proto.STRING, number=5)
-
-    container = proto.Field(proto.STRING, number=6)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    policy_value = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    dimensions = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3
+    )
+    metric = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    unit = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    container = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ServiceIdentity(proto.Message):
@@ -533,9 +610,14 @@ class ServiceIdentity(proto.Message):
             https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts#ServiceAccount
     """
 
-    email = proto.Field(proto.STRING, number=1)
-
-    unique_id = proto.Field(proto.STRING, number=2)
+    email = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    unique_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

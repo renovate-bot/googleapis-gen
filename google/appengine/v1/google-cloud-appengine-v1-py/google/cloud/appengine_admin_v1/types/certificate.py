@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -117,34 +114,49 @@ class AuthorizedCertificate(proto.Message):
             @OutputOnly
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    id = proto.Field(proto.STRING, number=2)
-
-    display_name = proto.Field(proto.STRING, number=3)
-
-    domain_names = proto.RepeatedField(proto.STRING, number=4)
-
-    expire_time = proto.Field(proto.MESSAGE, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    domain_names = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    expire_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=timestamp.Timestamp,
     )
-
-    certificate_raw_data = proto.Field(proto.MESSAGE, number=6,
+    certificate_raw_data = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CertificateRawData',
     )
-
-    managed_certificate = proto.Field(proto.MESSAGE, number=7,
+    managed_certificate = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='ManagedCertificate',
     )
-
-    visible_domain_mappings = proto.RepeatedField(proto.STRING, number=8)
-
-    domain_mappings_count = proto.Field(proto.INT32, number=9)
+    visible_domain_mappings = proto.RepeatedField(
+        proto.STRING,
+        number=8,
+    )
+    domain_mappings_count = proto.Field(
+        proto.INT32,
+        number=9,
+    )
 
 
 class CertificateRawData(proto.Message):
     r"""An SSL certificate obtained from a certificate authority.
-
     Attributes:
         public_certificate (str):
             PEM encoded x.509 public key certificate. This field is set
@@ -175,14 +187,18 @@ class CertificateRawData(proto.Message):
             @InputOnly
     """
 
-    public_certificate = proto.Field(proto.STRING, number=1)
-
-    private_key = proto.Field(proto.STRING, number=2)
+    public_certificate = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    private_key = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ManagedCertificate(proto.Message):
     r"""A certificate managed by App Engine.
-
     Attributes:
         last_renewal_time (google.protobuf.timestamp_pb2.Timestamp):
             Time at which the certificate was last renewed. The renewal
@@ -198,11 +214,14 @@ class ManagedCertificate(proto.Message):
             @OutputOnly
     """
 
-    last_renewal_time = proto.Field(proto.MESSAGE, number=1,
+    last_renewal_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    status = proto.Field(proto.ENUM, number=2,
+    status = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='ManagementStatus',
     )
 

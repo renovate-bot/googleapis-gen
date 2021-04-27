@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.bigquery_connection_v1.types import connection as gcbc_connect
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ConnectionServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,7 +62,8 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,13 +202,15 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -224,7 +224,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def create_connection(self) -> Callable[
             [gcbc_connection.CreateConnectionRequest],
             gcbc_connection.Connection]:
-        r"""Return a callable for the create connection method over gRPC.
+        r"""Return a callable for the
+        create connection
+          method over gRPC.
 
         Creates a new connection.
 
@@ -250,7 +252,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def get_connection(self) -> Callable[
             [connection.GetConnectionRequest],
             connection.Connection]:
-        r"""Return a callable for the get connection method over gRPC.
+        r"""Return a callable for the
+        get connection
+          method over gRPC.
 
         Returns specified connection.
 
@@ -276,7 +280,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def list_connections(self) -> Callable[
             [connection.ListConnectionsRequest],
             connection.ListConnectionsResponse]:
-        r"""Return a callable for the list connections method over gRPC.
+        r"""Return a callable for the
+        list connections
+          method over gRPC.
 
         Returns a list of connections in the given project.
 
@@ -302,7 +308,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def update_connection(self) -> Callable[
             [gcbc_connection.UpdateConnectionRequest],
             gcbc_connection.Connection]:
-        r"""Return a callable for the update connection method over gRPC.
+        r"""Return a callable for the
+        update connection
+          method over gRPC.
 
         Updates the specified connection. For security
         reasons, also resets credential if connection properties
@@ -330,7 +338,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def delete_connection(self) -> Callable[
             [connection.DeleteConnectionRequest],
             empty.Empty]:
-        r"""Return a callable for the delete connection method over gRPC.
+        r"""Return a callable for the
+        delete connection
+          method over gRPC.
 
         Deletes connection and associated credential.
 
@@ -356,7 +366,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a resource.
         Returns an empty policy if the resource exists and does
@@ -384,7 +396,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on the specified resource.
         Replaces any existing policy.
@@ -414,7 +428,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on the specified resource.
         If the resource does not exist, this will return an empty set of

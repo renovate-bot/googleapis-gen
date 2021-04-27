@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.resourcemanager_v3.types import tag_keys
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import TagKeysTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,7 +62,8 @@ class TagKeysGrpcTransport(TagKeysTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,13 +203,15 @@ class TagKeysGrpcTransport(TagKeysTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -241,7 +241,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def list_tag_keys(self) -> Callable[
             [tag_keys.ListTagKeysRequest],
             tag_keys.ListTagKeysResponse]:
-        r"""Return a callable for the list tag keys method over gRPC.
+        r"""Return a callable for the
+        list tag keys
+          method over gRPC.
 
         Lists all TagKeys for a parent resource.
 
@@ -267,7 +269,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def get_tag_key(self) -> Callable[
             [tag_keys.GetTagKeyRequest],
             tag_keys.TagKey]:
-        r"""Return a callable for the get tag key method over gRPC.
+        r"""Return a callable for the
+        get tag key
+          method over gRPC.
 
         Retrieves a TagKey. This method will return
         ``PERMISSION_DENIED`` if the key does not exist or the user does
@@ -295,7 +299,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def create_tag_key(self) -> Callable[
             [tag_keys.CreateTagKeyRequest],
             operations.Operation]:
-        r"""Return a callable for the create tag key method over gRPC.
+        r"""Return a callable for the
+        create tag key
+          method over gRPC.
 
         Creates a new TagKey. If another request with the
         same parameters is sent while the original request is in
@@ -325,7 +331,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def update_tag_key(self) -> Callable[
             [tag_keys.UpdateTagKeyRequest],
             operations.Operation]:
-        r"""Return a callable for the update tag key method over gRPC.
+        r"""Return a callable for the
+        update tag key
+          method over gRPC.
 
         Updates the attributes of the TagKey resource.
 
@@ -351,7 +359,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def delete_tag_key(self) -> Callable[
             [tag_keys.DeleteTagKeyRequest],
             operations.Operation]:
-        r"""Return a callable for the delete tag key method over gRPC.
+        r"""Return a callable for the
+        delete tag key
+          method over gRPC.
 
         Deletes a TagKey. The TagKey cannot be deleted if it
         has any child TagValues.
@@ -378,7 +388,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a TagKey. The returned policy
         may be empty if no such policy or resource exists. The
@@ -409,7 +421,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on a TagKey, replacing any
         existing policy. The ``resource`` field should be the TagKey's
@@ -439,7 +453,9 @@ class TagKeysGrpcTransport(TagKeysTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on the specified TagKey.
         The ``resource`` field should be the TagKey's resource name. For

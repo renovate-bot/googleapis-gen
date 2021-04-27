@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import keyword_plan_network as gage_keyword_plan_network
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -69,40 +66,58 @@ class KeywordPlanCampaign(proto.Message):
             Max number allowed: 20.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    keyword_plan = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    keyword_plan = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    id = proto.Field(proto.MESSAGE, number=3,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    language_constants = proto.RepeatedField(proto.MESSAGE, number=5,
+    language_constants = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.StringValue,
     )
-    keyword_plan_network = proto.Field(proto.ENUM, number=6,
+    keyword_plan_network = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=gage_keyword_plan_network.KeywordPlanNetworkEnum.KeywordPlanNetwork,
     )
-    cpc_bid_micros = proto.Field(proto.MESSAGE, number=7,
+    cpc_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-    geo_targets = proto.RepeatedField(proto.MESSAGE, number=8,
+    geo_targets = proto.RepeatedField(
+        proto.MESSAGE,
+        number=8,
         message='KeywordPlanGeoTarget',
     )
 
 
 class KeywordPlanGeoTarget(proto.Message):
     r"""A geo target.
-
     Attributes:
         geo_target_constant (google.protobuf.wrappers_pb2.StringValue):
             Required. The resource name of the geo
             target.
     """
 
-    geo_target_constant = proto.Field(proto.MESSAGE, number=1,
+    geo_target_constant = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.StringValue,
     )
 

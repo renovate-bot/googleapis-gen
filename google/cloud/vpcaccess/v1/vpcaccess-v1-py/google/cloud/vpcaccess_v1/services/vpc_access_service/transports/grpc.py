@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 
 from google.cloud.vpcaccess_v1.types import vpc_access
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import VpcAccessServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,7 +62,8 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,13 +203,15 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -241,7 +241,9 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
     def create_connector(self) -> Callable[
             [vpc_access.CreateConnectorRequest],
             operations.Operation]:
-        r"""Return a callable for the create connector method over gRPC.
+        r"""Return a callable for the
+        create connector
+          method over gRPC.
 
         Creates a Serverless VPC Access connector, returns an
         operation.
@@ -268,7 +270,9 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
     def get_connector(self) -> Callable[
             [vpc_access.GetConnectorRequest],
             vpc_access.Connector]:
-        r"""Return a callable for the get connector method over gRPC.
+        r"""Return a callable for the
+        get connector
+          method over gRPC.
 
         Gets a Serverless VPC Access connector. Returns NOT_FOUND if the
         resource does not exist.
@@ -295,7 +299,9 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
     def list_connectors(self) -> Callable[
             [vpc_access.ListConnectorsRequest],
             vpc_access.ListConnectorsResponse]:
-        r"""Return a callable for the list connectors method over gRPC.
+        r"""Return a callable for the
+        list connectors
+          method over gRPC.
 
         Lists Serverless VPC Access connectors.
 
@@ -321,7 +327,9 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
     def delete_connector(self) -> Callable[
             [vpc_access.DeleteConnectorRequest],
             operations.Operation]:
-        r"""Return a callable for the delete connector method over gRPC.
+        r"""Return a callable for the
+        delete connector
+          method over gRPC.
 
         Deletes a Serverless VPC Access connector. Returns NOT_FOUND if
         the resource does not exist.

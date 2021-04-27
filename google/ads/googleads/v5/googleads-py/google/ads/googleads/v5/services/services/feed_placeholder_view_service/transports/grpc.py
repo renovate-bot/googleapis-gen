@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import feed_placeholder_view
 from google.ads.googleads.v5.services.types import feed_placeholder_view_service
-
 from .base import FeedPlaceholderViewServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class FeedPlaceholderViewServiceGrpcTransport(FeedPlaceholderViewServiceTranspor
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class FeedPlaceholderViewServiceGrpcTransport(FeedPlaceholderViewServiceTranspor
     def get_feed_placeholder_view(self) -> Callable[
             [feed_placeholder_view_service.GetFeedPlaceholderViewRequest],
             feed_placeholder_view.FeedPlaceholderView]:
-        r"""Return a callable for the get feed placeholder view method over gRPC.
+        r"""Return a callable for the
+        get feed placeholder view
+          method over gRPC.
 
         Returns the requested feed placeholder view in full
         detail.

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from grafeas.v1 import vulnerability_pb2 as vulnerability  # type: ignore
 
@@ -42,9 +39,14 @@ class GetVulnerabilityOccurrencesSummaryRequest(proto.Message):
             The filter expression.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    filter = proto.Field(proto.STRING, number=2)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class VulnerabilityOccurrencesSummary(proto.Message):
@@ -56,6 +58,7 @@ class VulnerabilityOccurrencesSummary(proto.Message):
             A listing by resource of the number of
             fixable and total vulnerabilities.
     """
+
     class FixableTotalByDigest(proto.Message):
         r"""Per resource and severity counts of fixable and total
         vulnerabilities.
@@ -74,17 +77,27 @@ class VulnerabilityOccurrencesSummary(proto.Message):
                 associated with this resource.
         """
 
-        resource_uri = proto.Field(proto.STRING, number=1)
-
-        severity = proto.Field(proto.ENUM, number=2,
+        resource_uri = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        severity = proto.Field(
+            proto.ENUM,
+            number=2,
             enum=vulnerability.Severity,
         )
+        fixable_count = proto.Field(
+            proto.INT64,
+            number=3,
+        )
+        total_count = proto.Field(
+            proto.INT64,
+            number=4,
+        )
 
-        fixable_count = proto.Field(proto.INT64, number=3)
-
-        total_count = proto.Field(proto.INT64, number=4)
-
-    counts = proto.RepeatedField(proto.MESSAGE, number=1,
+    counts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=FixableTotalByDigest,
     )
 

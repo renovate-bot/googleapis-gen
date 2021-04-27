@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.kms_v1.types import resources
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -95,15 +92,26 @@ class ListKeyRingsRequest(proto.Message):
             results <https://cloud.google.com/kms/docs/sorting-and-filtering>`__.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListCryptoKeysRequest(proto.Message):
@@ -142,19 +150,31 @@ class ListCryptoKeysRequest(proto.Message):
             results <https://cloud.google.com/kms/docs/sorting-and-filtering>`__.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    version_view = proto.Field(proto.ENUM, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    version_view = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=resources.CryptoKeyVersion.CryptoKeyVersionView,
     )
-
-    filter = proto.Field(proto.STRING, number=5)
-
-    order_by = proto.Field(proto.STRING, number=6)
+    filter = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListCryptoKeyVersionsRequest(proto.Message):
@@ -192,19 +212,31 @@ class ListCryptoKeyVersionsRequest(proto.Message):
             results <https://cloud.google.com/kms/docs/sorting-and-filtering>`__.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    view = proto.Field(proto.ENUM, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=resources.CryptoKeyVersion.CryptoKeyVersionView,
     )
-
-    filter = proto.Field(proto.STRING, number=5)
-
-    order_by = proto.Field(proto.STRING, number=6)
+    filter = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListImportJobsRequest(proto.Message):
@@ -240,15 +272,26 @@ class ListImportJobsRequest(proto.Message):
             results <https://cloud.google.com/kms/docs/sorting-and-filtering>`__.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListKeyRingsResponse(proto.Message):
@@ -271,13 +314,19 @@ class ListKeyRingsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    key_rings = proto.RepeatedField(proto.MESSAGE, number=1,
+    key_rings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.KeyRing,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    total_size = proto.Field(proto.INT32, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ListCryptoKeysResponse(proto.Message):
@@ -301,13 +350,19 @@ class ListCryptoKeysResponse(proto.Message):
     def raw_page(self):
         return self
 
-    crypto_keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    crypto_keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.CryptoKey,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    total_size = proto.Field(proto.INT32, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ListCryptoKeyVersionsResponse(proto.Message):
@@ -332,13 +387,19 @@ class ListCryptoKeyVersionsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    crypto_key_versions = proto.RepeatedField(proto.MESSAGE, number=1,
+    crypto_key_versions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.CryptoKeyVersion,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    total_size = proto.Field(proto.INT32, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ListImportJobsResponse(proto.Message):
@@ -362,13 +423,19 @@ class ListImportJobsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    import_jobs = proto.RepeatedField(proto.MESSAGE, number=1,
+    import_jobs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.ImportJob,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    total_size = proto.Field(proto.INT32, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class GetKeyRingRequest(proto.Message):
@@ -381,7 +448,10 @@ class GetKeyRingRequest(proto.Message):
             the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetCryptoKeyRequest(proto.Message):
@@ -394,7 +464,10 @@ class GetCryptoKeyRequest(proto.Message):
             the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetCryptoKeyVersionRequest(proto.Message):
@@ -409,7 +482,10 @@ class GetCryptoKeyVersionRequest(proto.Message):
             get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetPublicKeyRequest(proto.Message):
@@ -424,7 +500,10 @@ class GetPublicKeyRequest(proto.Message):
             public key to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetImportJobRequest(proto.Message):
@@ -437,7 +516,10 @@ class GetImportJobRequest(proto.Message):
             the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateKeyRingRequest(proto.Message):
@@ -457,11 +539,17 @@ class CreateKeyRingRequest(proto.Message):
             initial field values.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    key_ring_id = proto.Field(proto.STRING, number=2)
-
-    key_ring = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    key_ring_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    key_ring = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=resources.KeyRing,
     )
 
@@ -493,15 +581,23 @@ class CreateCryptoKeyRequest(proto.Message):
             [CryptoKey][google.cloud.kms.v1.CryptoKey].
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    crypto_key_id = proto.Field(proto.STRING, number=2)
-
-    crypto_key = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    crypto_key_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    crypto_key = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=resources.CryptoKey,
     )
-
-    skip_initial_version_creation = proto.Field(proto.BOOL, number=5)
+    skip_initial_version_creation = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class CreateCryptoKeyVersionRequest(proto.Message):
@@ -520,9 +616,13 @@ class CreateCryptoKeyVersionRequest(proto.Message):
             with initial field values.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    crypto_key_version = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    crypto_key_version = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=resources.CryptoKeyVersion,
     )
 
@@ -577,15 +677,24 @@ class ImportCryptoKeyVersionRequest(proto.Message):
             mechanism CKM_RSA_AES_KEY_WRAP.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    algorithm = proto.Field(proto.ENUM, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    algorithm = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=resources.CryptoKeyVersion.CryptoKeyVersionAlgorithm,
     )
-
-    import_job = proto.Field(proto.STRING, number=4)
-
-    rsa_aes_wrapped_key = proto.Field(proto.BYTES, number=5, oneof='wrapped_key_material')
+    import_job = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    rsa_aes_wrapped_key = proto.Field(
+        proto.BYTES,
+        number=5,
+        oneof='wrapped_key_material',
+    )
 
 
 class CreateImportJobRequest(proto.Message):
@@ -605,11 +714,17 @@ class CreateImportJobRequest(proto.Message):
             initial field values.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    import_job_id = proto.Field(proto.STRING, number=2)
-
-    import_job = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    import_job_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    import_job = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=resources.ImportJob,
     )
 
@@ -627,11 +742,14 @@ class UpdateCryptoKeyRequest(proto.Message):
             this request.
     """
 
-    crypto_key = proto.Field(proto.MESSAGE, number=1,
+    crypto_key = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=resources.CryptoKey,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -650,11 +768,14 @@ class UpdateCryptoKeyVersionRequest(proto.Message):
             this request.
     """
 
-    crypto_key_version = proto.Field(proto.MESSAGE, number=1,
+    crypto_key_version = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=resources.CryptoKeyVersion,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -745,17 +866,26 @@ class EncryptRequest(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    plaintext = proto.Field(proto.BYTES, number=2)
-
-    additional_authenticated_data = proto.Field(proto.BYTES, number=3)
-
-    plaintext_crc32c = proto.Field(proto.MESSAGE, number=7,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    plaintext = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    additional_authenticated_data = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
+    plaintext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    additional_authenticated_data_crc32c = proto.Field(proto.MESSAGE, number=8,
+    additional_authenticated_data_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.Int64Value,
     )
 
@@ -824,17 +954,26 @@ class DecryptRequest(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    ciphertext = proto.Field(proto.BYTES, number=2)
-
-    additional_authenticated_data = proto.Field(proto.BYTES, number=3)
-
-    ciphertext_crc32c = proto.Field(proto.MESSAGE, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ciphertext = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    additional_authenticated_data = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
+    ciphertext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    additional_authenticated_data_crc32c = proto.Field(proto.MESSAGE, number=6,
+    additional_authenticated_data_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
 
@@ -878,13 +1017,18 @@ class AsymmetricSignRequest(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    digest = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    digest = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Digest',
     )
-
-    digest_crc32c = proto.Field(proto.MESSAGE, number=4,
+    digest_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
 
@@ -927,11 +1071,17 @@ class AsymmetricDecryptRequest(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    ciphertext = proto.Field(proto.BYTES, number=3)
-
-    ciphertext_crc32c = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ciphertext = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
+    ciphertext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
 
@@ -970,9 +1120,13 @@ class DecryptResponse(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    plaintext = proto.Field(proto.BYTES, number=1)
-
-    plaintext_crc32c = proto.Field(proto.MESSAGE, number=2,
+    plaintext = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
+    plaintext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
 
@@ -1044,17 +1198,27 @@ class EncryptResponse(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    ciphertext = proto.Field(proto.BYTES, number=2)
-
-    ciphertext_crc32c = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ciphertext = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    ciphertext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    verified_plaintext_crc32c = proto.Field(proto.BOOL, number=5)
-
-    verified_additional_authenticated_data_crc32c = proto.Field(proto.BOOL, number=6)
+    verified_plaintext_crc32c = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    verified_additional_authenticated_data_crc32c = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
 
 
 class AsymmetricSignResponse(proto.Message):
@@ -1109,15 +1273,23 @@ class AsymmetricSignResponse(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    signature = proto.Field(proto.BYTES, number=1)
-
-    signature_crc32c = proto.Field(proto.MESSAGE, number=2,
+    signature = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
+    signature_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    verified_digest_crc32c = proto.Field(proto.BOOL, number=3)
-
-    name = proto.Field(proto.STRING, number=4)
+    verified_digest_crc32c = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class AsymmetricDecryptResponse(proto.Message):
@@ -1166,13 +1338,19 @@ class AsymmetricDecryptResponse(proto.Message):
             NOTE: This field is in Beta.
     """
 
-    plaintext = proto.Field(proto.BYTES, number=1)
-
-    plaintext_crc32c = proto.Field(proto.MESSAGE, number=2,
+    plaintext = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
+    plaintext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    verified_ciphertext_crc32c = proto.Field(proto.BOOL, number=3)
+    verified_ciphertext_crc32c = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class UpdateCryptoKeyPrimaryVersionRequest(proto.Message):
@@ -1189,9 +1367,14 @@ class UpdateCryptoKeyPrimaryVersionRequest(proto.Message):
             use as primary.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    crypto_key_version_id = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    crypto_key_version_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DestroyCryptoKeyVersionRequest(proto.Message):
@@ -1205,7 +1388,10 @@ class DestroyCryptoKeyVersionRequest(proto.Message):
             destroy.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RestoreCryptoKeyVersionRequest(proto.Message):
@@ -1219,7 +1405,10 @@ class RestoreCryptoKeyVersionRequest(proto.Message):
             restore.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class Digest(proto.Message):
@@ -1238,11 +1427,21 @@ class Digest(proto.Message):
             algorithm.
     """
 
-    sha256 = proto.Field(proto.BYTES, number=1, oneof='digest')
-
-    sha384 = proto.Field(proto.BYTES, number=2, oneof='digest')
-
-    sha512 = proto.Field(proto.BYTES, number=3, oneof='digest')
+    sha256 = proto.Field(
+        proto.BYTES,
+        number=1,
+        oneof='digest',
+    )
+    sha384 = proto.Field(
+        proto.BYTES,
+        number=2,
+        oneof='digest',
+    )
+    sha512 = proto.Field(
+        proto.BYTES,
+        number=3,
+        oneof='digest',
+    )
 
 
 class LocationMetadata(proto.Message):
@@ -1264,9 +1463,14 @@ class LocationMetadata(proto.Message):
             be created in this location.
     """
 
-    hsm_available = proto.Field(proto.BOOL, number=1)
-
-    ekm_available = proto.Field(proto.BOOL, number=2)
+    hsm_available = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    ekm_available = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +15,13 @@
 #
 
 from .services.trace_service import TraceServiceClient
+
 from .types.trace import AttributeValue
 from .types.trace import Module
 from .types.trace import Span
 from .types.trace import StackTrace
 from .types.trace import TruncatableString
 from .types.tracing import BatchWriteSpansRequest
-
 
 __all__ = (
     'AttributeValue',

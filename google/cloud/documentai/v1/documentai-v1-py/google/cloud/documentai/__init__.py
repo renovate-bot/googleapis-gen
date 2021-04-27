@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,8 +37,7 @@ from google.cloud.documentai_v1.types.geometry import BoundingPoly
 from google.cloud.documentai_v1.types.geometry import NormalizedVertex
 from google.cloud.documentai_v1.types.geometry import Vertex
 
-__all__ = (
-    'BatchDocumentsInputConfig',
+__all__ = ('BatchDocumentsInputConfig',
     'BatchProcessMetadata',
     'BatchProcessRequest',
     'BatchProcessResponse',

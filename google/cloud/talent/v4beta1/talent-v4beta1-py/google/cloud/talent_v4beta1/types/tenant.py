@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -71,15 +69,23 @@ class Tenant(proto.Message):
         AGGREGATED = 1
         ISOLATED = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    external_id = proto.Field(proto.STRING, number=2)
-
-    usage_type = proto.Field(proto.ENUM, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    external_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    usage_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=DataUsageType,
     )
-
-    keyword_searchable_profile_custom_attributes = proto.RepeatedField(proto.STRING, number=4)
+    keyword_searchable_profile_custom_attributes = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

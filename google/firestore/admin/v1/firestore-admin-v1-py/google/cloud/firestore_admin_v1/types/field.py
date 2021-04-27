@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.firestore_admin_v1.types import index
 
@@ -67,9 +64,9 @@ class Field(proto.Message):
             this field, specify an index config with an empty list of
             indexes.
     """
+
     class IndexConfig(proto.Message):
         r"""The index configuration for this field.
-
         Attributes:
             indexes (Sequence[google.cloud.firestore_admin_v1.types.Index]):
                 The indexes supported for this field.
@@ -93,19 +90,31 @@ class Field(proto.Message):
                 will be ``false``.
         """
 
-        indexes = proto.RepeatedField(proto.MESSAGE, number=1,
+        indexes = proto.RepeatedField(
+            proto.MESSAGE,
+            number=1,
             message=index.Index,
         )
+        uses_ancestor_config = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
+        ancestor_field = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        reverting = proto.Field(
+            proto.BOOL,
+            number=4,
+        )
 
-        uses_ancestor_config = proto.Field(proto.BOOL, number=2)
-
-        ancestor_field = proto.Field(proto.STRING, number=3)
-
-        reverting = proto.Field(proto.BOOL, number=4)
-
-    name = proto.Field(proto.STRING, number=1)
-
-    index_config = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    index_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=IndexConfig,
     )
 

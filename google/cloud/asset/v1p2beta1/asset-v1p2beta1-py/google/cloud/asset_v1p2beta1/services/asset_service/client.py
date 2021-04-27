@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,7 +31,6 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.asset_v1p2beta1.types import asset_service
-
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AssetServiceGrpcTransport
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
@@ -337,7 +334,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.CreateFeedRequest):
-                The request object. Create asset feed request.
+                The request object.
+                Create asset feed request.
             parent (str):
                 Required. The name of the
                 project/folder/organization where this
@@ -352,7 +350,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -384,10 +381,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.CreateFeedRequest):
             request = asset_service.CreateFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -426,7 +421,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.GetFeedRequest):
-                The request object. Get asset feed request.
+                The request object.
+                Get asset feed request.
             name (str):
                 Required. The name of the Feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -436,7 +432,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -468,10 +463,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.GetFeedRequest):
             request = asset_service.GetFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -511,7 +504,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.ListFeedsRequest):
-                The request object. List asset feeds request.
+                The request object.
+                List asset feeds request.
             parent (str):
                 Required. The parent
                 project/folder/organization whose feeds
@@ -523,7 +517,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -548,10 +541,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.ListFeedsRequest):
             request = asset_service.ListFeedsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -590,7 +581,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.UpdateFeedRequest):
-                The request object. Update asset feed request.
+                The request object.
+                Update asset feed request.
             feed (google.cloud.asset_v1p2beta1.types.Feed):
                 Required. The new values of feed details. It must match
                 an existing feed and the field ``name`` must be in the
@@ -601,7 +593,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``feed`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -633,10 +624,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.UpdateFeedRequest):
             request = asset_service.UpdateFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if feed is not None:
                 request.feed = feed
 
@@ -676,6 +665,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         Args:
             request (google.cloud.asset_v1p2beta1.types.DeleteFeedRequest):
                 The request object.
+
             name (str):
                 Required. The name of the feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -685,7 +675,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -706,10 +695,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.DeleteFeedRequest):
             request = asset_service.DeleteFeedRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -732,8 +719,6 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

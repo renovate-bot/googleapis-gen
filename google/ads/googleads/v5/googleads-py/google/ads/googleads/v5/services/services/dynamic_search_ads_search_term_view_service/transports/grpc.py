@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import dynamic_search_ads_search_term_view
 from google.ads.googleads.v5.services.types import dynamic_search_ads_search_term_view_service
-
 from .base import DynamicSearchAdsSearchTermViewServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class DynamicSearchAdsSearchTermViewServiceGrpcTransport(DynamicSearchAdsSearchT
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,8 +201,10 @@ class DynamicSearchAdsSearchTermViewServiceGrpcTransport(DynamicSearchAdsSearchT
     def get_dynamic_search_ads_search_term_view(self) -> Callable[
             [dynamic_search_ads_search_term_view_service.GetDynamicSearchAdsSearchTermViewRequest],
             dynamic_search_ads_search_term_view.DynamicSearchAdsSearchTermView]:
-        r"""Return a callable for the get dynamic search ads search
-        term view method over gRPC.
+        r"""Return a callable for the
+        get dynamic search ads search
+        term view
+          method over gRPC.
 
         Returns the requested dynamic search ads search term
         view in full detail.

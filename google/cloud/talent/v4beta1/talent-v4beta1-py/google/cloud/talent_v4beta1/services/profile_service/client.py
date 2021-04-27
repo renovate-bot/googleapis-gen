@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.cloud.talent_v4beta1.types import profile as gct_profile
 from google.cloud.talent_v4beta1.types import profile_service
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-
 from .transports.base import ProfileServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ProfileServiceGrpcTransport
 from .transports.grpc_asyncio import ProfileServiceGrpcAsyncIOTransport
@@ -355,7 +352,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.ListProfilesRequest):
-                The request object. List profiles request.
+                The request object.
+                List profiles request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the profile is created.
@@ -367,7 +365,6 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -396,10 +393,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.ListProfilesRequest):
             request = profile_service.ListProfilesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -448,7 +443,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.CreateProfileRequest):
-                The request object. Create profile request.
+                The request object.
+                Create profile request.
             parent (str):
                 Required. The name of the tenant this profile belongs
                 to.
@@ -465,7 +461,6 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
                 This corresponds to the ``profile`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -494,10 +489,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.CreateProfileRequest):
             request = profile_service.CreateProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if profile is not None:
@@ -538,7 +531,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.GetProfileRequest):
-                The request object. Get profile request.
+                The request object.
+                Get profile request.
             name (str):
                 Required. Resource name of the profile to get.
 
@@ -549,7 +543,6 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -578,10 +571,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.GetProfileRequest):
             request = profile_service.GetProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -621,13 +612,13 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.UpdateProfileRequest):
-                The request object. Update profile request
+                The request object.
+                Update profile request
             profile (google.cloud.talent_v4beta1.types.Profile):
                 Required. Profile to be updated.
                 This corresponds to the ``profile`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -656,10 +647,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.UpdateProfileRequest):
             request = profile_service.UpdateProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if profile is not None:
                 request.profile = profile
 
@@ -700,7 +689,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.DeleteProfileRequest):
-                The request object. Delete profile request.
+                The request object.
+                Delete profile request.
             name (str):
                 Required. Resource name of the profile to be deleted.
 
@@ -711,7 +701,6 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -732,10 +721,8 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.DeleteProfileRequest):
             request = profile_service.DeleteProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -778,9 +765,9 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.SearchProfilesRequest):
-                The request object. The request body of the
+                The request object.
+                The request body of the
                 `SearchProfiles` call.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -796,7 +783,6 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a profile_service.SearchProfilesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -835,8 +821,6 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

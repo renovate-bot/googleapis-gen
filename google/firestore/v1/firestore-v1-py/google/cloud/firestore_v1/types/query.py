@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.firestore_v1.types import document
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class StructuredQuery(proto.Message):
     r"""A Firestore query.
-
     Attributes:
         select (google.cloud.firestore_v1.types.StructuredQuery.Projection):
             The projection to return.
@@ -84,7 +80,6 @@ class StructuredQuery(proto.Message):
 
     class CollectionSelector(proto.Message):
         r"""A selection of a collection, such as ``messages as m1``.
-
         Attributes:
             collection_id (str):
                 The collection ID.
@@ -96,13 +91,17 @@ class StructuredQuery(proto.Message):
                 collections.
         """
 
-        collection_id = proto.Field(proto.STRING, number=2)
-
-        all_descendants = proto.Field(proto.BOOL, number=3)
+        collection_id = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        all_descendants = proto.Field(
+            proto.BOOL,
+            number=3,
+        )
 
     class Filter(proto.Message):
         r"""A filter.
-
         Attributes:
             composite_filter (google.cloud.firestore_v1.types.StructuredQuery.CompositeFilter):
                 A composite filter.
@@ -112,15 +111,22 @@ class StructuredQuery(proto.Message):
                 A filter that takes exactly one argument.
         """
 
-        composite_filter = proto.Field(proto.MESSAGE, number=1, oneof='filter_type',
+        composite_filter = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            oneof='filter_type',
             message='StructuredQuery.CompositeFilter',
         )
-
-        field_filter = proto.Field(proto.MESSAGE, number=2, oneof='filter_type',
+        field_filter = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='filter_type',
             message='StructuredQuery.FieldFilter',
         )
-
-        unary_filter = proto.Field(proto.MESSAGE, number=3, oneof='filter_type',
+        unary_filter = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            oneof='filter_type',
             message='StructuredQuery.UnaryFilter',
         )
 
@@ -140,17 +146,19 @@ class StructuredQuery(proto.Message):
             OPERATOR_UNSPECIFIED = 0
             AND = 1
 
-        op = proto.Field(proto.ENUM, number=1,
+        op = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='StructuredQuery.CompositeFilter.Operator',
         )
-
-        filters = proto.RepeatedField(proto.MESSAGE, number=2,
+        filters = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='StructuredQuery.Filter',
         )
 
     class FieldFilter(proto.Message):
         r"""A filter on a specific field.
-
         Attributes:
             field (google.cloud.firestore_v1.types.StructuredQuery.FieldReference):
                 The field to filter by.
@@ -173,21 +181,24 @@ class StructuredQuery(proto.Message):
             ARRAY_CONTAINS_ANY = 9
             NOT_IN = 10
 
-        field = proto.Field(proto.MESSAGE, number=1,
+        field = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='StructuredQuery.FieldReference',
         )
-
-        op = proto.Field(proto.ENUM, number=2,
+        op = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='StructuredQuery.FieldFilter.Operator',
         )
-
-        value = proto.Field(proto.MESSAGE, number=3,
+        value = proto.Field(
+            proto.MESSAGE,
+            number=3,
             message=document.Value,
         )
 
     class UnaryFilter(proto.Message):
         r"""A filter with a single operand.
-
         Attributes:
             op (google.cloud.firestore_v1.types.StructuredQuery.UnaryFilter.Operator):
                 The unary operator to apply.
@@ -202,17 +213,20 @@ class StructuredQuery(proto.Message):
             IS_NOT_NAN = 4
             IS_NOT_NULL = 5
 
-        op = proto.Field(proto.ENUM, number=1,
+        op = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='StructuredQuery.UnaryFilter.Operator',
         )
-
-        field = proto.Field(proto.MESSAGE, number=2, oneof='operand_type',
+        field = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='operand_type',
             message='StructuredQuery.FieldReference',
         )
 
     class Order(proto.Message):
         r"""An order on a field.
-
         Attributes:
             field (google.cloud.firestore_v1.types.StructuredQuery.FieldReference):
                 The field to order by.
@@ -220,27 +234,31 @@ class StructuredQuery(proto.Message):
                 The direction to order by. Defaults to ``ASCENDING``.
         """
 
-        field = proto.Field(proto.MESSAGE, number=1,
+        field = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='StructuredQuery.FieldReference',
         )
-
-        direction = proto.Field(proto.ENUM, number=2,
+        direction = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='StructuredQuery.Direction',
         )
 
     class FieldReference(proto.Message):
         r"""A reference to a field, such as ``max(messages.time) as max_time``.
-
         Attributes:
             field_path (str):
 
         """
 
-        field_path = proto.Field(proto.STRING, number=2)
+        field_path = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
     class Projection(proto.Message):
         r"""The projection of document's fields to return.
-
         Attributes:
             fields (Sequence[google.cloud.firestore_v1.types.StructuredQuery.FieldReference]):
                 The fields to return.
@@ -249,44 +267,55 @@ class StructuredQuery(proto.Message):
                 of the document, use ``['__name__']``.
         """
 
-        fields = proto.RepeatedField(proto.MESSAGE, number=2,
+        fields = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='StructuredQuery.FieldReference',
         )
 
-    select = proto.Field(proto.MESSAGE, number=1,
+    select = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=Projection,
     )
-
-    from_ = proto.RepeatedField(proto.MESSAGE, number=2,
+    from_ = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=CollectionSelector,
     )
-
-    where = proto.Field(proto.MESSAGE, number=3,
+    where = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=Filter,
     )
-
-    order_by = proto.RepeatedField(proto.MESSAGE, number=4,
+    order_by = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=Order,
     )
-
-    start_at = proto.Field(proto.MESSAGE, number=7,
+    start_at = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='Cursor',
     )
-
-    end_at = proto.Field(proto.MESSAGE, number=8,
+    end_at = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='Cursor',
     )
-
-    offset = proto.Field(proto.INT32, number=6)
-
-    limit = proto.Field(proto.MESSAGE, number=5,
+    offset = proto.Field(
+        proto.INT32,
+        number=6,
+    )
+    limit = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int32Value,
     )
 
 
 class Cursor(proto.Message):
     r"""A position in a query result set.
-
     Attributes:
         values (Sequence[google.cloud.firestore_v1.types.Value]):
             The values that represent a position, in the
@@ -300,11 +329,15 @@ class Cursor(proto.Message):
             defined by the query.
     """
 
-    values = proto.RepeatedField(proto.MESSAGE, number=1,
+    values = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=document.Value,
     )
-
-    before = proto.Field(proto.BOOL, number=2)
+    before = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

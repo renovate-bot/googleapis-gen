@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.streetview.publish_v1.types import resources
 from google.streetview.publish_v1.types import rpcmessages
-
 from .base import StreetViewPublishServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,7 +61,8 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,13 +201,15 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -223,7 +223,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def start_upload(self) -> Callable[
             [empty.Empty],
             resources.UploadRef]:
-        r"""Return a callable for the start upload method over gRPC.
+        r"""Return a callable for the
+        start upload
+          method over gRPC.
 
         Creates an upload session to start uploading photo bytes. The
         method uses the upload URL of the returned
@@ -271,7 +273,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def create_photo(self) -> Callable[
             [rpcmessages.CreatePhotoRequest],
             resources.Photo]:
-        r"""Return a callable for the create photo method over gRPC.
+        r"""Return a callable for the
+        create photo
+          method over gRPC.
 
         After the client finishes uploading the photo with the returned
         [UploadRef][google.streetview.publish.v1.UploadRef],
@@ -319,7 +323,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def get_photo(self) -> Callable[
             [rpcmessages.GetPhotoRequest],
             resources.Photo]:
-        r"""Return a callable for the get photo method over gRPC.
+        r"""Return a callable for the
+        get photo
+          method over gRPC.
 
         Gets the metadata of the specified
         [Photo][google.streetview.publish.v1.Photo].
@@ -358,7 +364,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def batch_get_photos(self) -> Callable[
             [rpcmessages.BatchGetPhotosRequest],
             rpcmessages.BatchGetPhotosResponse]:
-        r"""Return a callable for the batch get photos method over gRPC.
+        r"""Return a callable for the
+        batch get photos
+          method over gRPC.
 
         Gets the metadata of the specified
         [Photo][google.streetview.publish.v1.Photo] batch.
@@ -399,7 +407,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def list_photos(self) -> Callable[
             [rpcmessages.ListPhotosRequest],
             rpcmessages.ListPhotosResponse]:
-        r"""Return a callable for the list photos method over gRPC.
+        r"""Return a callable for the
+        list photos
+          method over gRPC.
 
         Lists all the [Photos][google.streetview.publish.v1.Photo] that
         belong to the user.
@@ -431,7 +441,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def update_photo(self) -> Callable[
             [rpcmessages.UpdatePhotoRequest],
             resources.Photo]:
-        r"""Return a callable for the update photo method over gRPC.
+        r"""Return a callable for the
+        update photo
+          method over gRPC.
 
         Updates the metadata of a
         [Photo][google.streetview.publish.v1.Photo], such as pose, place
@@ -477,7 +489,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def batch_update_photos(self) -> Callable[
             [rpcmessages.BatchUpdatePhotosRequest],
             rpcmessages.BatchUpdatePhotosResponse]:
-        r"""Return a callable for the batch update photos method over gRPC.
+        r"""Return a callable for the
+        batch update photos
+          method over gRPC.
 
         Updates the metadata of
         [Photos][google.streetview.publish.v1.Photo], such as pose,
@@ -538,7 +552,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def delete_photo(self) -> Callable[
             [rpcmessages.DeletePhotoRequest],
             empty.Empty]:
-        r"""Return a callable for the delete photo method over gRPC.
+        r"""Return a callable for the
+        delete photo
+          method over gRPC.
 
         Deletes a [Photo][google.streetview.publish.v1.Photo] and its
         metadata.
@@ -572,7 +588,9 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
     def batch_delete_photos(self) -> Callable[
             [rpcmessages.BatchDeletePhotosRequest],
             rpcmessages.BatchDeletePhotosResponse]:
-        r"""Return a callable for the batch delete photos method over gRPC.
+        r"""Return a callable for the
+        batch delete photos
+          method over gRPC.
 
         Deletes a list of [Photos][google.streetview.publish.v1.Photo]
         and their metadata.

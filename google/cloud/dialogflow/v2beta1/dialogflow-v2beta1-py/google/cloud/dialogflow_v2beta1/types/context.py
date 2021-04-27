@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
@@ -108,11 +105,17 @@ class Context(proto.Message):
             Else: parameter value
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    lifespan_count = proto.Field(proto.INT32, number=2)
-
-    parameters = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    lifespan_count = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    parameters = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=struct.Struct,
     )
 
@@ -144,11 +147,18 @@ class ListContextsRequest(proto.Message):
             list request.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListContextsResponse(proto.Message):
@@ -169,11 +179,15 @@ class ListContextsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    contexts = proto.RepeatedField(proto.MESSAGE, number=1,
+    contexts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Context',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetContextRequest(proto.Message):
@@ -195,7 +209,10 @@ class GetContextRequest(proto.Message):
             specified, we assume default '-' user.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateContextRequest(proto.Message):
@@ -220,9 +237,13 @@ class CreateContextRequest(proto.Message):
             Required. The context to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    context = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    context = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Context',
     )
 
@@ -239,11 +260,14 @@ class UpdateContextRequest(proto.Message):
             get updated.
     """
 
-    context = proto.Field(proto.MESSAGE, number=1,
+    context = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Context',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -268,7 +292,10 @@ class DeleteContextRequest(proto.Message):
             specified, we assume default '-' user.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteAllContextsRequest(proto.Message):
@@ -291,7 +318,10 @@ class DeleteAllContextsRequest(proto.Message):
             specified, we assume default '-' user.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

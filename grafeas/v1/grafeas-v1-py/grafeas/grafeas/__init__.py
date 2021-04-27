@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -81,8 +80,7 @@ from grafeas.grafeas_v1.types.vulnerability import Severity
 from grafeas.grafeas_v1.types.vulnerability import VulnerabilityNote
 from grafeas.grafeas_v1.types.vulnerability import VulnerabilityOccurrence
 
-__all__ = (
-    'AliasContext',
+__all__ = ('AliasContext',
     'Architecture',
     'Artifact',
     'AttestationNote',

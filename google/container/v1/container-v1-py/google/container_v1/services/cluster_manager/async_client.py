@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -30,7 +28,6 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.container_v1.services.cluster_manager import pagers
 from google.container_v1.types import cluster_service
-
 from .transports.base import ClusterManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ClusterManagerGrpcAsyncIOTransport
 from .client import ClusterManagerClient
@@ -46,16 +43,12 @@ class ClusterManagerAsyncClient:
 
     common_billing_account_path = staticmethod(ClusterManagerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ClusterManagerClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ClusterManagerClient.common_folder_path)
     parse_common_folder_path = staticmethod(ClusterManagerClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ClusterManagerClient.common_organization_path)
     parse_common_organization_path = staticmethod(ClusterManagerClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ClusterManagerClient.common_project_path)
     parse_common_project_path = staticmethod(ClusterManagerClient.parse_common_project_path)
-
     common_location_path = staticmethod(ClusterManagerClient.common_location_path)
     parse_common_location_path = staticmethod(ClusterManagerClient.parse_common_location_path)
 
@@ -140,7 +133,6 @@ class ClusterManagerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ClusterManagerClient(
             credentials=credentials,
             transport=transport,
@@ -164,7 +156,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.ListClustersRequest`):
-                The request object. ListClustersRequest lists clusters.
+                The request object.
+                ListClustersRequest lists clusters.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
                 project
@@ -194,7 +187,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -219,7 +211,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -232,10 +223,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_clusters,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -279,7 +267,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.GetClusterRequest`):
-                The request object. GetClusterRequest gets the settings
+                The request object.
+                GetClusterRequest gets the settings
                 of a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -317,7 +306,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -340,7 +328,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -355,10 +342,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_cluster,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -414,7 +398,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.CreateClusterRequest`):
-                The request object. CreateClusterRequest creates a
+                The request object.
+                CreateClusterRequest creates a
                 cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -450,7 +435,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -477,7 +461,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -530,7 +513,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.UpdateClusterRequest`):
-                The request object. UpdateClusterRequest updates the
+                The request object.
+                UpdateClusterRequest updates the
                 settings of a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -575,7 +559,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -602,7 +585,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -653,9 +635,9 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.UpdateNodePoolRequest`):
-                The request object. UpdateNodePoolRequests update a node
+                The request object.
+                UpdateNodePoolRequests update a node
                 pool's image and/or version.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -671,7 +653,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.UpdateNodePoolRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -713,9 +694,9 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetNodePoolAutoscalingRequest`):
-                The request object. SetNodePoolAutoscalingRequest sets
+                The request object.
+                SetNodePoolAutoscalingRequest sets
                 the autoscaler settings of a node pool.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -731,7 +712,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.SetNodePoolAutoscalingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -777,7 +757,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetLoggingServiceRequest`):
-                The request object. SetLoggingServiceRequest sets the
+                The request object.
+                SetLoggingServiceRequest sets the
                 logging service of a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -834,7 +815,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -861,7 +841,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -916,7 +895,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetMonitoringServiceRequest`):
-                The request object. SetMonitoringServiceRequest sets the
+                The request object.
+                SetMonitoringServiceRequest sets the
                 monitoring service of a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -975,7 +955,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1002,7 +981,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1057,7 +1035,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetAddonsConfigRequest`):
-                The request object. SetAddonsConfigRequest sets the
+                The request object.
+                SetAddonsConfigRequest sets the
                 addons associated with the cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1103,7 +1082,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1130,7 +1108,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1187,7 +1164,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetLocationsRequest`):
-                The request object. SetLocationsRequest sets the
+                The request object.
+                SetLocationsRequest sets the
                 locations of the cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1239,7 +1217,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1266,7 +1243,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1275,7 +1251,6 @@ class ClusterManagerAsyncClient:
             request.cluster_id = cluster_id
         if name is not None:
             request.name = name
-
         if locations:
             request.locations.extend(locations)
 
@@ -1322,7 +1297,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.UpdateMasterRequest`):
-                The request object. UpdateMasterRequest updates the
+                The request object.
+                UpdateMasterRequest updates the
                 master of the cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1379,7 +1355,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1406,7 +1381,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1459,9 +1433,9 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetMasterAuthRequest`):
-                The request object. SetMasterAuthRequest updates the
+                The request object.
+                SetMasterAuthRequest updates the
                 admin password of a cluster.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1477,7 +1451,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.SetMasterAuthRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1531,7 +1504,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.DeleteClusterRequest`):
-                The request object. DeleteClusterRequest deletes a
+                The request object.
+                DeleteClusterRequest deletes a
                 cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1569,7 +1543,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1596,7 +1569,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1611,10 +1583,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_cluster,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1657,7 +1626,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.ListOperationsRequest`):
-                The request object. ListOperationsRequest lists
+                The request object.
+                ListOperationsRequest lists
                 operations.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1679,7 +1649,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``zone`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1704,7 +1673,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1715,10 +1683,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_operations,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1762,7 +1727,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.GetOperationRequest`):
-                The request object. GetOperationRequest gets a single
+                The request object.
+                GetOperationRequest gets a single
                 operation.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1799,7 +1765,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1826,7 +1791,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1841,10 +1805,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_operation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1888,7 +1849,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.CancelOperationRequest`):
-                The request object. CancelOperationRequest cancels a
+                The request object.
+                CancelOperationRequest cancels a
                 single operation.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -1925,7 +1887,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1944,7 +1905,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -1993,7 +1953,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.GetServerConfigRequest`):
-                The request object. Gets the current Kubernetes Engine
+                The request object.
+                Gets the current Kubernetes Engine
                 service configuration.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -2021,7 +1982,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2046,7 +2006,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -2059,10 +2018,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_server_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2105,12 +2061,12 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.GetJSONWebKeysRequest`):
-                The request object. GetJSONWebKeysRequest gets the
+                The request object.
+                GetJSONWebKeysRequest gets the
                 public component of the keys used by the cluster to sign
                 token requests. This will be the jwks_uri for the
                 discover document returned by getOpenIDConfig. See the
                 OpenID Connect Discovery 1.0 specification for details.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2125,7 +2081,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.GetJSONWebKeysRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2170,7 +2125,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.ListNodePoolsRequest`):
-                The request object. ListNodePoolsRequest lists the node
+                The request object.
+                ListNodePoolsRequest lists the node
                 pool(s) for a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -2207,7 +2163,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2232,7 +2187,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -2247,10 +2201,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_node_pools,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2295,7 +2246,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.GetNodePoolRequest`):
-                The request object. GetNodePoolRequest retrieves a node
+                The request object.
+                GetNodePoolRequest retrieves a node
                 pool for a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -2340,7 +2292,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2373,7 +2324,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -2390,10 +2340,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_node_pool,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2438,7 +2385,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.CreateNodePoolRequest`):
-                The request object. CreateNodePoolRequest creates a node
+                The request object.
+                CreateNodePoolRequest creates a node
                 pool for a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -2480,7 +2428,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2507,7 +2454,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -2562,7 +2508,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.DeleteNodePoolRequest`):
-                The request object. DeleteNodePoolRequest deletes a node
+                The request object.
+                DeleteNodePoolRequest deletes a node
                 pool for a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -2608,7 +2555,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2635,7 +2581,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -2652,10 +2597,7 @@ class ClusterManagerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_node_pool,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2702,7 +2644,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.RollbackNodePoolUpgradeRequest`):
-                The request object. RollbackNodePoolUpgradeRequest
+                The request object.
+                RollbackNodePoolUpgradeRequest
                 rollbacks the previously Aborted or Failed NodePool
                 upgrade. This will be an no-op if the last upgrade
                 successfully completed.
@@ -2752,7 +2695,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2779,7 +2721,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -2829,9 +2770,9 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetNodePoolManagementRequest`):
-                The request object. SetNodePoolManagementRequest sets
+                The request object.
+                SetNodePoolManagementRequest sets
                 the node management properties of a node pool.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2847,7 +2788,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.SetNodePoolManagementRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2888,11 +2828,11 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetLabelsRequest`):
-                The request object. SetLabelsRequest sets the Google
+                The request object.
+                SetLabelsRequest sets the Google
                 Cloud Platform labels on a Google Container Engine
                 cluster, which will in turn set them for Google Compute
                 Engine resources used by that cluster
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2908,7 +2848,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.SetLabelsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2955,7 +2894,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetLegacyAbacRequest`):
-                The request object. SetLegacyAbacRequest enables or
+                The request object.
+                SetLegacyAbacRequest enables or
                 disables the ABAC authorization mechanism for a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -3000,7 +2940,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3027,7 +2966,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -3081,7 +3019,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.StartIPRotationRequest`):
-                The request object. StartIPRotationRequest creates a new
+                The request object.
+                StartIPRotationRequest creates a new
                 IP for the cluster and then performs a node upgrade on
                 each node pool to point to the new IP.
             project_id (:class:`str`):
@@ -3119,7 +3058,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3146,7 +3084,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -3198,7 +3135,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.CompleteIPRotationRequest`):
-                The request object. CompleteIPRotationRequest moves the
+                The request object.
+                CompleteIPRotationRequest moves the
                 cluster master back into single-IP mode.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -3235,7 +3173,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3262,7 +3199,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -3310,9 +3246,9 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetNodePoolSizeRequest`):
-                The request object. SetNodePoolSizeRequest sets the size
+                The request object.
+                SetNodePoolSizeRequest sets the size
                 a node pool.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3328,7 +3264,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.SetNodePoolSizeRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -3374,7 +3309,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetNetworkPolicyRequest`):
-                The request object. SetNetworkPolicyRequest
+                The request object.
+                SetNetworkPolicyRequest
                 enables/disables network policy for a cluster.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -3418,7 +3354,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3445,7 +3380,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -3500,7 +3434,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.SetMaintenancePolicyRequest`):
-                The request object. SetMaintenancePolicyRequest sets the
+                The request object.
+                SetMaintenancePolicyRequest sets the
                 maintenance policy for a cluster.
             project_id (:class:`str`):
                 Required. The Google Developers Console `project ID or
@@ -3541,7 +3476,6 @@ class ClusterManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3568,7 +3502,6 @@ class ClusterManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project_id is not None:
             request.project_id = project_id
         if zone is not None:
@@ -3619,10 +3552,10 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1.types.ListUsableSubnetworksRequest`):
-                The request object. ListUsableSubnetworksRequest
+                The request object.
+                ListUsableSubnetworksRequest
                 requests the list of usable subnetworks available to a
                 user for creating clusters.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3641,7 +3574,6 @@ class ClusterManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = cluster_service.ListUsableSubnetworksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -3679,8 +3611,6 @@ class ClusterManagerAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

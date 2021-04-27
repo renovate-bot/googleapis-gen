@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.example.library_v1.types import library
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import LibraryServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import LibraryServiceGrpcTransport
 
@@ -89,13 +87,15 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -115,7 +115,8 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -173,7 +174,6 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -236,7 +236,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def create_shelf(self) -> Callable[
             [library.CreateShelfRequest],
             Awaitable[library.Shelf]]:
-        r"""Return a callable for the create shelf method over gRPC.
+        r"""Return a callable for the
+        create shelf
+          method over gRPC.
 
         Creates a shelf, and returns the new Shelf.
 
@@ -262,7 +264,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def get_shelf(self) -> Callable[
             [library.GetShelfRequest],
             Awaitable[library.Shelf]]:
-        r"""Return a callable for the get shelf method over gRPC.
+        r"""Return a callable for the
+        get shelf
+          method over gRPC.
 
         Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
 
@@ -288,7 +292,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def list_shelves(self) -> Callable[
             [library.ListShelvesRequest],
             Awaitable[library.ListShelvesResponse]]:
-        r"""Return a callable for the list shelves method over gRPC.
+        r"""Return a callable for the
+        list shelves
+          method over gRPC.
 
         Lists shelves. The order is unspecified but
         deterministic. Newly created shelves will not
@@ -316,7 +322,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def delete_shelf(self) -> Callable[
             [library.DeleteShelfRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete shelf method over gRPC.
+        r"""Return a callable for the
+        delete shelf
+          method over gRPC.
 
         Deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
 
@@ -342,7 +350,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def merge_shelves(self) -> Callable[
             [library.MergeShelvesRequest],
             Awaitable[library.Shelf]]:
-        r"""Return a callable for the merge shelves method over gRPC.
+        r"""Return a callable for the
+        merge shelves
+          method over gRPC.
 
         Merges two shelves by adding all books from the shelf named
         ``other_shelf_name`` to shelf ``name``, and deletes
@@ -374,7 +384,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def create_book(self) -> Callable[
             [library.CreateBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the create book method over gRPC.
+        r"""Return a callable for the
+        create book
+          method over gRPC.
 
         Creates a book, and returns the new Book.
 
@@ -400,7 +412,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def get_book(self) -> Callable[
             [library.GetBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the get book method over gRPC.
+        r"""Return a callable for the
+        get book
+          method over gRPC.
 
         Gets a book. Returns NOT_FOUND if the book does not exist.
 
@@ -426,7 +440,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def list_books(self) -> Callable[
             [library.ListBooksRequest],
             Awaitable[library.ListBooksResponse]]:
-        r"""Return a callable for the list books method over gRPC.
+        r"""Return a callable for the
+        list books
+          method over gRPC.
 
         Lists books in a shelf. The order is unspecified but
         deterministic. Newly created books will not necessarily be added
@@ -455,7 +471,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def delete_book(self) -> Callable[
             [library.DeleteBookRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete book method over gRPC.
+        r"""Return a callable for the
+        delete book
+          method over gRPC.
 
         Deletes a book. Returns NOT_FOUND if the book does not exist.
 
@@ -481,7 +499,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def update_book(self) -> Callable[
             [library.UpdateBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the update book method over gRPC.
+        r"""Return a callable for the
+        update book
+          method over gRPC.
 
         Updates a book. Returns INVALID_ARGUMENT if the name of the book
         is non-empty and does not equal the existing name.
@@ -508,7 +528,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def move_book(self) -> Callable[
             [library.MoveBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the move book method over gRPC.
+        r"""Return a callable for the
+        move book
+          method over gRPC.
 
         Moves a book to another shelf, and returns the new
         book. The book id of the new book may not be the same as

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.rpc import error_details_pb2 as gr_error_details  # type: ignore
 
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class ResourceErrorDetail(proto.Message):
     r"""Provides details for errors and the corresponding resources.
-
     Attributes:
         resource_info (google.rpc.error_details_pb2.ResourceInfo):
             Required. Information about the resource
@@ -47,15 +43,20 @@ class ResourceErrorDetail(proto.Message):
             ``error_details``.
     """
 
-    resource_info = proto.Field(proto.MESSAGE, number=1,
+    resource_info = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gr_error_details.ResourceInfo,
     )
-
-    error_details = proto.RepeatedField(proto.MESSAGE, number=2,
+    error_details = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='ErrorDetail',
     )
-
-    error_count = proto.Field(proto.INT32, number=3)
+    error_count = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ErrorDetail(proto.Message):
@@ -71,18 +72,20 @@ class ErrorDetail(proto.Message):
             with structured detail.
     """
 
-    location = proto.Field(proto.MESSAGE, number=1,
+    location = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ErrorLocation',
     )
-
-    error_info = proto.Field(proto.MESSAGE, number=2,
+    error_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gr_error_details.ErrorInfo,
     )
 
 
 class ErrorLocation(proto.Message):
     r"""Holds information about where the error is located.
-
     Attributes:
         line (int):
             Optional. If applicable, denotes the line
@@ -94,9 +97,14 @@ class ErrorLocation(proto.Message):
             that there is no columns information.
     """
 
-    line = proto.Field(proto.INT32, number=1)
-
-    column = proto.Field(proto.INT32, number=2)
+    line = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    column = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

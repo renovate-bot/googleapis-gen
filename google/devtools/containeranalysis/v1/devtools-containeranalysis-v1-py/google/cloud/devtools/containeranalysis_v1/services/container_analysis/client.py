@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.devtools.containeranalysis_v1.types import containeranalysis
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-
 from .transports.base import ContainerAnalysisTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ContainerAnalysisGrpcTransport
 from .transports.grpc_asyncio import ContainerAnalysisGrpcAsyncIOTransport
@@ -349,7 +346,8 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -360,7 +358,6 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -434,15 +431,14 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-
-            if resource is not None:
+             if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -488,7 +484,8 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -499,7 +496,6 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -573,15 +569,14 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-
-            if resource is not None:
+             if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -627,7 +622,8 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -647,7 +643,6 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -666,17 +661,15 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-
-            if resource is not None:
+             if resource is not None:
                 request.resource = resource
-
             if permissions:
                 request.permissions.extend(permissions)
 
@@ -717,7 +710,8 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
 
         Args:
             request (google.cloud.devtools.containeranalysis_v1.types.GetVulnerabilityOccurrencesSummaryRequest):
-                The request object. Request to get a vulnerability
+                The request object.
+                Request to get a vulnerability
                 summary for some set of occurrences.
             parent (str):
                 The name of the project to get a vulnerability summary
@@ -731,7 +725,6 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -759,10 +752,8 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, containeranalysis.GetVulnerabilityOccurrencesSummaryRequest):
             request = containeranalysis.GetVulnerabilityOccurrencesSummaryRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -790,8 +781,6 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

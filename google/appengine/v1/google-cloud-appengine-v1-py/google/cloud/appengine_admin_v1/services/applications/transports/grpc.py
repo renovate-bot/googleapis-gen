@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -30,7 +28,6 @@ import grpc  # type: ignore
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import application
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import ApplicationsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,7 +61,8 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,13 +202,15 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,7 +240,9 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def get_application(self) -> Callable[
             [appengine.GetApplicationRequest],
             application.Application]:
-        r"""Return a callable for the get application method over gRPC.
+        r"""Return a callable for the
+        get application
+          method over gRPC.
 
         Gets information about an application.
 
@@ -266,7 +268,9 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def create_application(self) -> Callable[
             [appengine.CreateApplicationRequest],
             operations.Operation]:
-        r"""Return a callable for the create application method over gRPC.
+        r"""Return a callable for the
+        create application
+          method over gRPC.
 
         Creates an App Engine application for a Google Cloud Platform
         project. Required fields:
@@ -302,7 +306,9 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def update_application(self) -> Callable[
             [appengine.UpdateApplicationRequest],
             operations.Operation]:
-        r"""Return a callable for the update application method over gRPC.
+        r"""Return a callable for the
+        update application
+          method over gRPC.
 
         Updates the specified Application resource. You can update the
         following fields:
@@ -334,7 +340,9 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def repair_application(self) -> Callable[
             [appengine.RepairApplicationRequest],
             operations.Operation]:
-        r"""Return a callable for the repair application method over gRPC.
+        r"""Return a callable for the
+        repair application
+          method over gRPC.
 
         Recreates the required App Engine features for the specified App
         Engine application, for example a Cloud Storage bucket or App

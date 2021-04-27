@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.database_admin import DatabaseAdminClient
+
 from .types.backup import Backup
 from .types.backup import BackupInfo
 from .types.backup import CreateBackupEncryptionConfig
@@ -50,7 +50,6 @@ from .types.spanner_database_admin import RestoreInfo
 from .types.spanner_database_admin import RestoreSourceType
 from .types.spanner_database_admin import UpdateDatabaseDdlMetadata
 from .types.spanner_database_admin import UpdateDatabaseDdlRequest
-
 
 __all__ = (
     'Backup',

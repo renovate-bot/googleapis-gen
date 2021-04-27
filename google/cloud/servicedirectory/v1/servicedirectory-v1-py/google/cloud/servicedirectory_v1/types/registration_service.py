@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.servicedirectory_v1.types import endpoint as gcs_endpoint
 from google.cloud.servicedirectory_v1.types import namespace as gcs_namespace
@@ -70,11 +67,17 @@ class CreateNamespaceRequest(proto.Message):
             set.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    namespace_id = proto.Field(proto.STRING, number=2)
-
-    namespace = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    namespace_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    namespace = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gcs_namespace.Namespace,
     )
 
@@ -128,15 +131,26 @@ class ListNamespacesRequest(proto.Message):
             name in ascending order.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListNamespacesResponse(proto.Message):
@@ -156,11 +170,15 @@ class ListNamespacesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    namespaces = proto.RepeatedField(proto.MESSAGE, number=1,
+    namespaces = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcs_namespace.Namespace,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetNamespaceRequest(proto.Message):
@@ -173,7 +191,10 @@ class GetNamespaceRequest(proto.Message):
             retrieve.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateNamespaceRequest(proto.Message):
@@ -188,11 +209,14 @@ class UpdateNamespaceRequest(proto.Message):
             this request.
     """
 
-    namespace = proto.Field(proto.MESSAGE, number=1,
+    namespace = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcs_namespace.Namespace,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -207,7 +231,10 @@ class DeleteNamespaceRequest(proto.Message):
             delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateServiceRequest(proto.Message):
@@ -230,11 +257,17 @@ class CreateServiceRequest(proto.Message):
             Required. A service  with initial fields set.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    service_id = proto.Field(proto.STRING, number=2)
-
-    service = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    service = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gcs_service.Service,
     )
 
@@ -282,15 +315,26 @@ class ListServicesRequest(proto.Message):
             Optional. The order to list result by.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListServicesResponse(proto.Message):
@@ -310,11 +354,15 @@ class ListServicesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    services = proto.RepeatedField(proto.MESSAGE, number=1,
+    services = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcs_service.Service,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetServiceRequest(proto.Message):
@@ -329,7 +377,10 @@ class GetServiceRequest(proto.Message):
             Required. The name of the service to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateServiceRequest(proto.Message):
@@ -344,11 +395,14 @@ class UpdateServiceRequest(proto.Message):
             this request.
     """
 
-    service = proto.Field(proto.MESSAGE, number=1,
+    service = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcs_service.Service,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -362,7 +416,10 @@ class DeleteServiceRequest(proto.Message):
             Required. The name of the service to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateEndpointRequest(proto.Message):
@@ -385,11 +442,17 @@ class CreateEndpointRequest(proto.Message):
             Required. A endpoint with initial fields set.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    endpoint_id = proto.Field(proto.STRING, number=2)
-
-    endpoint = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    endpoint_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    endpoint = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gcs_endpoint.Endpoint,
     )
 
@@ -442,15 +505,26 @@ class ListEndpointsRequest(proto.Message):
             Optional. The order to list result by.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListEndpointsResponse(proto.Message):
@@ -470,11 +544,15 @@ class ListEndpointsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    endpoints = proto.RepeatedField(proto.MESSAGE, number=1,
+    endpoints = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcs_endpoint.Endpoint,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetEndpointRequest(proto.Message):
@@ -488,7 +566,10 @@ class GetEndpointRequest(proto.Message):
             Required. The name of the endpoint to get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateEndpointRequest(proto.Message):
@@ -503,11 +584,14 @@ class UpdateEndpointRequest(proto.Message):
             this request.
     """
 
-    endpoint = proto.Field(proto.MESSAGE, number=1,
+    endpoint = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcs_endpoint.Endpoint,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -521,7 +605,10 @@ class DeleteEndpointRequest(proto.Message):
             Required. The name of the endpoint to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

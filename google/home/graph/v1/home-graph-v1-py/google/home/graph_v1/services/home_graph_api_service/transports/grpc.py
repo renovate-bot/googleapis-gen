@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.home.graph_v1.types import homegraph
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import HomeGraphApiServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -68,7 +65,8 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -207,13 +205,15 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -227,7 +227,9 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
     def request_sync_devices(self) -> Callable[
             [homegraph.RequestSyncDevicesRequest],
             homegraph.RequestSyncDevicesResponse]:
-        r"""Return a callable for the request sync devices method over gRPC.
+        r"""Return a callable for the
+        request sync devices
+          method over gRPC.
 
         Requests Google to send an ``action.devices.SYNC``
         `intent <https://developers.google.com/assistant/smarthome/reference/intent/sync>`__
@@ -262,7 +264,9 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
     def report_state_and_notification(self) -> Callable[
             [homegraph.ReportStateAndNotificationRequest],
             homegraph.ReportStateAndNotificationResponse]:
-        r"""Return a callable for the report state and notification method over gRPC.
+        r"""Return a callable for the
+        report state and notification
+          method over gRPC.
 
         Reports device state and optionally sends device notifications.
         Called by your smart home Action when the state of a third-party
@@ -304,7 +308,9 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
     def delete_agent_user(self) -> Callable[
             [homegraph.DeleteAgentUserRequest],
             empty.Empty]:
-        r"""Return a callable for the delete agent user method over gRPC.
+        r"""Return a callable for the
+        delete agent user
+          method over gRPC.
 
         Unlinks the given third-party user from your smart home Action.
         All data related to this user will be deleted.
@@ -341,7 +347,9 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
     def query(self) -> Callable[
             [homegraph.QueryRequest],
             homegraph.QueryResponse]:
-        r"""Return a callable for the query method over gRPC.
+        r"""Return a callable for the
+        query
+          method over gRPC.
 
         Gets the current states in Home Graph for the given set of the
         third-party user's devices.
@@ -374,7 +382,9 @@ class HomeGraphApiServiceGrpcTransport(HomeGraphApiServiceTransport):
     def sync(self) -> Callable[
             [homegraph.SyncRequest],
             homegraph.SyncResponse]:
-        r"""Return a callable for the sync method over gRPC.
+        r"""Return a callable for the
+        sync
+          method over gRPC.
 
         Gets all the devices associated with the given third-party user.
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.ads.googleads.v4.resources.types import user_location_view
 from google.ads.googleads.v4.services.types import user_location_view_service
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-
 from .transports.base import UserLocationViewServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import UserLocationViewServiceGrpcTransport
 
@@ -164,7 +161,6 @@ class UserLocationViewServiceClient(metaclass=UserLocationViewServiceClientMeta)
         """Parse a user_location_view path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)/userLocationViews/(?P<user_location_view>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -338,7 +334,8 @@ class UserLocationViewServiceClient(metaclass=UserLocationViewServiceClientMeta)
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.GetUserLocationViewRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UserLocationViewService.GetUserLocationView][google.ads.googleads.v4.services.UserLocationViewService.GetUserLocationView].
             resource_name (:class:`str`):
                 Required. The resource name of the
@@ -347,7 +344,6 @@ class UserLocationViewServiceClient(metaclass=UserLocationViewServiceClientMeta)
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -373,16 +369,14 @@ class UserLocationViewServiceClient(metaclass=UserLocationViewServiceClientMeta)
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a user_location_view_service.GetUserLocationViewRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, user_location_view_service.GetUserLocationViewRequest):
             request = user_location_view_service.GetUserLocationViewRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -401,7 +395,7 @@ class UserLocationViewServiceClient(metaclass=UserLocationViewServiceClientMeta)
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

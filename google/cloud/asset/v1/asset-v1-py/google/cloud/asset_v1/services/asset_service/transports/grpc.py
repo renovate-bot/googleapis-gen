@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -30,7 +28,6 @@ import grpc  # type: ignore
 from google.cloud.asset_v1.types import asset_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,7 +61,8 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,13 +202,15 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,7 +240,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def export_assets(self) -> Callable[
             [asset_service.ExportAssetsRequest],
             operations.Operation]:
-        r"""Return a callable for the export assets method over gRPC.
+        r"""Return a callable for the
+        export assets
+          method over gRPC.
 
         Exports assets with time and resource types to a given Cloud
         Storage location/BigQuery table. For Cloud Storage location
@@ -278,7 +280,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def batch_get_assets_history(self) -> Callable[
             [asset_service.BatchGetAssetsHistoryRequest],
             asset_service.BatchGetAssetsHistoryResponse]:
-        r"""Return a callable for the batch get assets history method over gRPC.
+        r"""Return a callable for the
+        batch get assets history
+          method over gRPC.
 
         Batch gets the update history of assets that overlap a time
         window. For IAM_POLICY content, this API outputs history when
@@ -310,7 +314,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def create_feed(self) -> Callable[
             [asset_service.CreateFeedRequest],
             asset_service.Feed]:
-        r"""Return a callable for the create feed method over gRPC.
+        r"""Return a callable for the
+        create feed
+          method over gRPC.
 
         Creates a feed in a parent
         project/folder/organization to listen to its asset
@@ -338,7 +344,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def get_feed(self) -> Callable[
             [asset_service.GetFeedRequest],
             asset_service.Feed]:
-        r"""Return a callable for the get feed method over gRPC.
+        r"""Return a callable for the
+        get feed
+          method over gRPC.
 
         Gets details about an asset feed.
 
@@ -364,7 +372,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def list_feeds(self) -> Callable[
             [asset_service.ListFeedsRequest],
             asset_service.ListFeedsResponse]:
-        r"""Return a callable for the list feeds method over gRPC.
+        r"""Return a callable for the
+        list feeds
+          method over gRPC.
 
         Lists all asset feeds in a parent
         project/folder/organization.
@@ -391,7 +401,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def update_feed(self) -> Callable[
             [asset_service.UpdateFeedRequest],
             asset_service.Feed]:
-        r"""Return a callable for the update feed method over gRPC.
+        r"""Return a callable for the
+        update feed
+          method over gRPC.
 
         Updates an asset feed configuration.
 
@@ -417,7 +429,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def delete_feed(self) -> Callable[
             [asset_service.DeleteFeedRequest],
             empty.Empty]:
-        r"""Return a callable for the delete feed method over gRPC.
+        r"""Return a callable for the
+        delete feed
+          method over gRPC.
 
         Deletes an asset feed.
 
@@ -443,7 +457,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def search_all_resources(self) -> Callable[
             [asset_service.SearchAllResourcesRequest],
             asset_service.SearchAllResourcesResponse]:
-        r"""Return a callable for the search all resources method over gRPC.
+        r"""Return a callable for the
+        search all resources
+          method over gRPC.
 
         Searches all Cloud resources within the specified scope, such as
         a project, folder, or organization. The caller must be granted
@@ -472,7 +488,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def search_all_iam_policies(self) -> Callable[
             [asset_service.SearchAllIamPoliciesRequest],
             asset_service.SearchAllIamPoliciesResponse]:
-        r"""Return a callable for the search all iam policies method over gRPC.
+        r"""Return a callable for the
+        search all iam policies
+          method over gRPC.
 
         Searches all IAM policies within the specified scope, such as a
         project, folder, or organization. The caller must be granted the
@@ -501,7 +519,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def analyze_iam_policy(self) -> Callable[
             [asset_service.AnalyzeIamPolicyRequest],
             asset_service.AnalyzeIamPolicyResponse]:
-        r"""Return a callable for the analyze iam policy method over gRPC.
+        r"""Return a callable for the
+        analyze iam policy
+          method over gRPC.
 
         Analyzes IAM policies to answer which identities have
         what accesses on which resources.
@@ -528,7 +548,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def analyze_iam_policy_longrunning(self) -> Callable[
             [asset_service.AnalyzeIamPolicyLongrunningRequest],
             operations.Operation]:
-        r"""Return a callable for the analyze iam policy longrunning method over gRPC.
+        r"""Return a callable for the
+        analyze iam policy longrunning
+          method over gRPC.
 
         Analyzes IAM policies asynchronously to answer which identities
         have what accesses on which resources, and writes the analysis

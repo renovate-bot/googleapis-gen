@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -64,23 +61,38 @@ class PaymentsAccount(proto.Message):
             account.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    payments_account_id = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    payments_account_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.StringValue,
     )
-    currency_code = proto.Field(proto.MESSAGE, number=4,
+    currency_code = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    payments_profile_id = proto.Field(proto.MESSAGE, number=5,
+    payments_profile_id = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.StringValue,
     )
-    secondary_payments_profile_id = proto.Field(proto.MESSAGE, number=6,
+    secondary_payments_profile_id = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.StringValue,
     )
-    paying_manager_customer = proto.Field(proto.MESSAGE, number=7,
+    paying_manager_customer = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.StringValue,
     )
 

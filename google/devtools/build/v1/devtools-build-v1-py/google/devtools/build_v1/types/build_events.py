@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.devtools.build_v1.types import build_status
 from google.protobuf import any_pb2 as gp_any  # type: ignore
@@ -74,6 +71,7 @@ class BuildEvent(proto.Message):
             An event that contains supplemental tool-
             pecific information about source fetching.
     """
+
     class InvocationAttemptStarted(proto.Message):
         r"""Notification that the build system has attempted to run the
         build tool.
@@ -90,15 +88,18 @@ class BuildEvent(proto.Message):
                 attempt.
         """
 
-        attempt_number = proto.Field(proto.INT64, number=1)
-
-        details = proto.Field(proto.MESSAGE, number=2,
+        attempt_number = proto.Field(
+            proto.INT64,
+            number=1,
+        )
+        details = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=gp_any.Any,
         )
 
     class InvocationAttemptFinished(proto.Message):
         r"""Notification that an invocation attempt has finished.
-
         Attributes:
             invocation_status (google.devtools.build_v1.types.BuildStatus):
                 Final status of the invocation.
@@ -107,23 +108,27 @@ class BuildEvent(proto.Message):
                 attempt.
         """
 
-        invocation_status = proto.Field(proto.MESSAGE, number=3,
+        invocation_status = proto.Field(
+            proto.MESSAGE,
+            number=3,
             message=build_status.BuildStatus,
         )
-
-        details = proto.Field(proto.MESSAGE, number=4,
+        details = proto.Field(
+            proto.MESSAGE,
+            number=4,
             message=gp_any.Any,
         )
 
     class BuildEnqueued(proto.Message):
         r"""Notification that the build request is enqueued.
-
         Attributes:
             details (google.protobuf.any_pb2.Any):
                 Additional details about the Build.
         """
 
-        details = proto.Field(proto.MESSAGE, number=1,
+        details = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=gp_any.Any,
         )
 
@@ -140,17 +145,19 @@ class BuildEvent(proto.Message):
                 Additional details about the Build.
         """
 
-        status = proto.Field(proto.MESSAGE, number=1,
+        status = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=build_status.BuildStatus,
         )
-
-        details = proto.Field(proto.MESSAGE, number=2,
+        details = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=gp_any.Any,
         )
 
     class ConsoleOutput(proto.Message):
         r"""Textual output written to standard output or standard error.
-
         Attributes:
             type_ (google.devtools.build_v1.types.ConsoleOutputStream):
                 The output stream type.
@@ -161,13 +168,21 @@ class BuildEvent(proto.Message):
                 example, a binary proto).
         """
 
-        type_ = proto.Field(proto.ENUM, number=1,
+        type_ = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='ConsoleOutputStream',
         )
-
-        text_output = proto.Field(proto.STRING, number=2, oneof='output')
-
-        binary_output = proto.Field(proto.BYTES, number=3, oneof='output')
+        text_output = proto.Field(
+            proto.STRING,
+            number=2,
+            oneof='output',
+        )
+        binary_output = proto.Field(
+            proto.BYTES,
+            number=3,
+            oneof='output',
+        )
 
     class BuildComponentStreamFinished(proto.Message):
         r"""Notification of the end of a build event stream published by
@@ -184,54 +199,75 @@ class BuildEvent(proto.Message):
             FINISHED = 1
             EXPIRED = 2
 
-        type_ = proto.Field(proto.ENUM, number=1,
+        type_ = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='BuildEvent.BuildComponentStreamFinished.FinishType',
         )
 
-    event_time = proto.Field(proto.MESSAGE, number=1,
+    event_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
-
-    invocation_attempt_started = proto.Field(proto.MESSAGE, number=51, oneof='event',
+    invocation_attempt_started = proto.Field(
+        proto.MESSAGE,
+        number=51,
+        oneof='event',
         message=InvocationAttemptStarted,
     )
-
-    invocation_attempt_finished = proto.Field(proto.MESSAGE, number=52, oneof='event',
+    invocation_attempt_finished = proto.Field(
+        proto.MESSAGE,
+        number=52,
+        oneof='event',
         message=InvocationAttemptFinished,
     )
-
-    build_enqueued = proto.Field(proto.MESSAGE, number=53, oneof='event',
+    build_enqueued = proto.Field(
+        proto.MESSAGE,
+        number=53,
+        oneof='event',
         message=BuildEnqueued,
     )
-
-    build_finished = proto.Field(proto.MESSAGE, number=55, oneof='event',
+    build_finished = proto.Field(
+        proto.MESSAGE,
+        number=55,
+        oneof='event',
         message=BuildFinished,
     )
-
-    console_output = proto.Field(proto.MESSAGE, number=56, oneof='event',
+    console_output = proto.Field(
+        proto.MESSAGE,
+        number=56,
+        oneof='event',
         message=ConsoleOutput,
     )
-
-    component_stream_finished = proto.Field(proto.MESSAGE, number=59, oneof='event',
+    component_stream_finished = proto.Field(
+        proto.MESSAGE,
+        number=59,
+        oneof='event',
         message=BuildComponentStreamFinished,
     )
-
-    bazel_event = proto.Field(proto.MESSAGE, number=60, oneof='event',
+    bazel_event = proto.Field(
+        proto.MESSAGE,
+        number=60,
+        oneof='event',
         message=gp_any.Any,
     )
-
-    build_execution_event = proto.Field(proto.MESSAGE, number=61, oneof='event',
+    build_execution_event = proto.Field(
+        proto.MESSAGE,
+        number=61,
+        oneof='event',
         message=gp_any.Any,
     )
-
-    source_fetch_event = proto.Field(proto.MESSAGE, number=62, oneof='event',
+    source_fetch_event = proto.Field(
+        proto.MESSAGE,
+        number=62,
+        oneof='event',
         message=gp_any.Any,
     )
 
 
 class StreamId(proto.Message):
     r"""Unique identifier for a build event stream.
-
     Attributes:
         build_id (str):
             The id of a Build message.
@@ -251,11 +287,17 @@ class StreamId(proto.Message):
         WORKER = 2
         TOOL = 3
 
-    build_id = proto.Field(proto.STRING, number=1)
-
-    invocation_id = proto.Field(proto.STRING, number=6)
-
-    component = proto.Field(proto.ENUM, number=3,
+    build_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    invocation_id = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    component = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=BuildComponent,
     )
 

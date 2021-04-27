@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,12 +36,36 @@ from google.cloud.essentialcontacts_v1.services.essential_contacts_service impor
 from google.cloud.essentialcontacts_v1.services.essential_contacts_service import EssentialContactsServiceClient
 from google.cloud.essentialcontacts_v1.services.essential_contacts_service import pagers
 from google.cloud.essentialcontacts_v1.services.essential_contacts_service import transports
+from google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.base import _API_CORE_VERSION
+from google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.essentialcontacts_v1.types import enums
 from google.cloud.essentialcontacts_v1.types import service
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -209,12 +233,10 @@ def test_essential_contacts_service_client_client_options(client_class, transpor
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (EssentialContactsServiceClient, transports.EssentialContactsServiceGrpcTransport, "grpc", "true"),
     (EssentialContactsServiceAsyncClient, transports.EssentialContactsServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (EssentialContactsServiceClient, transports.EssentialContactsServiceGrpcTransport, "grpc", "false"),
     (EssentialContactsServiceAsyncClient, transports.EssentialContactsServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(EssentialContactsServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(EssentialContactsServiceClient))
 @mock.patch.object(EssentialContactsServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(EssentialContactsServiceAsyncClient))
@@ -369,37 +391,24 @@ def test_create_contact(transport: str = 'grpc', request_type=service.CreateCont
         # Designate an appropriate return value for the call.
         call.return_value = service.Contact(
             name='name_value',
-
             email='email_value',
-
             notification_category_subscriptions=[enums.NotificationCategory.ALL],
-
             language_tag='language_tag_value',
-
             validation_state=enums.ValidationState.VALID,
-
         )
-
         response = client.create_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateContactRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.Contact)
-
     assert response.name == 'name_value'
-
     assert response.email == 'email_value'
-
     assert response.notification_category_subscriptions == [enums.NotificationCategory.ALL]
-
     assert response.language_tag == 'language_tag_value'
-
     assert response.validation_state == enums.ValidationState.VALID
 
 
@@ -422,8 +431,8 @@ def test_create_contact_empty_call():
         client.create_contact()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateContactRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_contact_async(transport: str = 'grpc_asyncio', request_type=service.CreateContactRequest):
@@ -441,33 +450,26 @@ async def test_create_contact_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.create_contact),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Contact(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.Contact(
             name='name_value',
             email='email_value',
             notification_category_subscriptions=[enums.NotificationCategory.ALL],
             language_tag='language_tag_value',
             validation_state=enums.ValidationState.VALID,
         ))
-
         response = await client.create_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateContactRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.Contact)
-
     assert response.name == 'name_value'
-
     assert response.email == 'email_value'
-
     assert response.notification_category_subscriptions == [enums.NotificationCategory.ALL]
-
     assert response.language_tag == 'language_tag_value'
-
     assert response.validation_state == enums.ValidationState.VALID
 
 
@@ -484,6 +486,7 @@ def test_create_contact_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateContactRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -491,7 +494,6 @@ def test_create_contact_field_headers():
             type(client.transport.create_contact),
             '__call__') as call:
         call.return_value = service.Contact()
-
         client.create_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -516,6 +518,7 @@ async def test_create_contact_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateContactRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -523,7 +526,6 @@ async def test_create_contact_field_headers_async():
             type(client.transport.create_contact),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Contact())
-
         await client.create_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -550,7 +552,6 @@ def test_create_contact_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.Contact()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_contact(
@@ -562,9 +563,7 @@ def test_create_contact_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].contact == service.Contact(name='name_value')
 
 
@@ -608,9 +607,7 @@ async def test_create_contact_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].contact == service.Contact(name='name_value')
 
 
@@ -647,37 +644,24 @@ def test_update_contact(transport: str = 'grpc', request_type=service.UpdateCont
         # Designate an appropriate return value for the call.
         call.return_value = service.Contact(
             name='name_value',
-
             email='email_value',
-
             notification_category_subscriptions=[enums.NotificationCategory.ALL],
-
             language_tag='language_tag_value',
-
             validation_state=enums.ValidationState.VALID,
-
         )
-
         response = client.update_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateContactRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.Contact)
-
     assert response.name == 'name_value'
-
     assert response.email == 'email_value'
-
     assert response.notification_category_subscriptions == [enums.NotificationCategory.ALL]
-
     assert response.language_tag == 'language_tag_value'
-
     assert response.validation_state == enums.ValidationState.VALID
 
 
@@ -700,8 +684,8 @@ def test_update_contact_empty_call():
         client.update_contact()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateContactRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_contact_async(transport: str = 'grpc_asyncio', request_type=service.UpdateContactRequest):
@@ -719,33 +703,26 @@ async def test_update_contact_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_contact),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Contact(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.Contact(
             name='name_value',
             email='email_value',
             notification_category_subscriptions=[enums.NotificationCategory.ALL],
             language_tag='language_tag_value',
             validation_state=enums.ValidationState.VALID,
         ))
-
         response = await client.update_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateContactRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.Contact)
-
     assert response.name == 'name_value'
-
     assert response.email == 'email_value'
-
     assert response.notification_category_subscriptions == [enums.NotificationCategory.ALL]
-
     assert response.language_tag == 'language_tag_value'
-
     assert response.validation_state == enums.ValidationState.VALID
 
 
@@ -762,6 +739,7 @@ def test_update_contact_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateContactRequest()
+
     request.contact.name = 'contact.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -769,7 +747,6 @@ def test_update_contact_field_headers():
             type(client.transport.update_contact),
             '__call__') as call:
         call.return_value = service.Contact()
-
         client.update_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -794,6 +771,7 @@ async def test_update_contact_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateContactRequest()
+
     request.contact.name = 'contact.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -801,7 +779,6 @@ async def test_update_contact_field_headers_async():
             type(client.transport.update_contact),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Contact())
-
         await client.update_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -828,7 +805,6 @@ def test_update_contact_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.Contact()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_contact(
@@ -840,9 +816,7 @@ def test_update_contact_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].contact == service.Contact(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -886,9 +860,7 @@ async def test_update_contact_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].contact == service.Contact(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -925,21 +897,16 @@ def test_list_contacts(transport: str = 'grpc', request_type=service.ListContact
         # Designate an appropriate return value for the call.
         call.return_value = service.ListContactsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListContactsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListContactsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -962,8 +929,8 @@ def test_list_contacts_empty_call():
         client.list_contacts()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListContactsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_contacts_async(transport: str = 'grpc_asyncio', request_type=service.ListContactsRequest):
@@ -981,21 +948,18 @@ async def test_list_contacts_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_contacts),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListContactsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListContactsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListContactsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListContactsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1012,6 +976,7 @@ def test_list_contacts_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListContactsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1019,7 +984,6 @@ def test_list_contacts_field_headers():
             type(client.transport.list_contacts),
             '__call__') as call:
         call.return_value = service.ListContactsResponse()
-
         client.list_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1044,6 +1008,7 @@ async def test_list_contacts_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListContactsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1051,7 +1016,6 @@ async def test_list_contacts_field_headers_async():
             type(client.transport.list_contacts),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListContactsResponse())
-
         await client.list_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1078,7 +1042,6 @@ def test_list_contacts_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListContactsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_contacts(
@@ -1089,7 +1052,6 @@ def test_list_contacts_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1131,7 +1093,6 @@ async def test_list_contacts_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1336,7 +1297,6 @@ async def test_list_contacts_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_contact(transport: str = 'grpc', request_type=service.GetContactRequest):
     client = EssentialContactsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1354,37 +1314,24 @@ def test_get_contact(transport: str = 'grpc', request_type=service.GetContactReq
         # Designate an appropriate return value for the call.
         call.return_value = service.Contact(
             name='name_value',
-
             email='email_value',
-
             notification_category_subscriptions=[enums.NotificationCategory.ALL],
-
             language_tag='language_tag_value',
-
             validation_state=enums.ValidationState.VALID,
-
         )
-
         response = client.get_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetContactRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.Contact)
-
     assert response.name == 'name_value'
-
     assert response.email == 'email_value'
-
     assert response.notification_category_subscriptions == [enums.NotificationCategory.ALL]
-
     assert response.language_tag == 'language_tag_value'
-
     assert response.validation_state == enums.ValidationState.VALID
 
 
@@ -1407,8 +1354,8 @@ def test_get_contact_empty_call():
         client.get_contact()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetContactRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_contact_async(transport: str = 'grpc_asyncio', request_type=service.GetContactRequest):
@@ -1426,33 +1373,26 @@ async def test_get_contact_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.get_contact),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Contact(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.Contact(
             name='name_value',
             email='email_value',
             notification_category_subscriptions=[enums.NotificationCategory.ALL],
             language_tag='language_tag_value',
             validation_state=enums.ValidationState.VALID,
         ))
-
         response = await client.get_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetContactRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.Contact)
-
     assert response.name == 'name_value'
-
     assert response.email == 'email_value'
-
     assert response.notification_category_subscriptions == [enums.NotificationCategory.ALL]
-
     assert response.language_tag == 'language_tag_value'
-
     assert response.validation_state == enums.ValidationState.VALID
 
 
@@ -1469,6 +1409,7 @@ def test_get_contact_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetContactRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1476,7 +1417,6 @@ def test_get_contact_field_headers():
             type(client.transport.get_contact),
             '__call__') as call:
         call.return_value = service.Contact()
-
         client.get_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1501,6 +1441,7 @@ async def test_get_contact_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetContactRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1508,7 +1449,6 @@ async def test_get_contact_field_headers_async():
             type(client.transport.get_contact),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Contact())
-
         await client.get_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1535,7 +1475,6 @@ def test_get_contact_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.Contact()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_contact(
@@ -1546,7 +1485,6 @@ def test_get_contact_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1588,7 +1526,6 @@ async def test_get_contact_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1623,13 +1560,11 @@ def test_delete_contact(transport: str = 'grpc', request_type=service.DeleteCont
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteContactRequest()
 
     # Establish that the response is the type that we expect.
@@ -1655,8 +1590,8 @@ def test_delete_contact_empty_call():
         client.delete_contact()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteContactRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_contact_async(transport: str = 'grpc_asyncio', request_type=service.DeleteContactRequest):
@@ -1675,13 +1610,11 @@ async def test_delete_contact_async(transport: str = 'grpc_asyncio', request_typ
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteContactRequest()
 
     # Establish that the response is the type that we expect.
@@ -1701,6 +1634,7 @@ def test_delete_contact_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteContactRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1708,7 +1642,6 @@ def test_delete_contact_field_headers():
             type(client.transport.delete_contact),
             '__call__') as call:
         call.return_value = None
-
         client.delete_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1733,6 +1666,7 @@ async def test_delete_contact_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteContactRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1740,7 +1674,6 @@ async def test_delete_contact_field_headers_async():
             type(client.transport.delete_contact),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_contact(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1767,7 +1700,6 @@ def test_delete_contact_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_contact(
@@ -1778,7 +1710,6 @@ def test_delete_contact_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1820,7 +1751,6 @@ async def test_delete_contact_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1856,21 +1786,16 @@ def test_compute_contacts(transport: str = 'grpc', request_type=service.ComputeC
         # Designate an appropriate return value for the call.
         call.return_value = service.ComputeContactsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.compute_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ComputeContactsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ComputeContactsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1893,8 +1818,8 @@ def test_compute_contacts_empty_call():
         client.compute_contacts()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ComputeContactsRequest()
+
 
 @pytest.mark.asyncio
 async def test_compute_contacts_async(transport: str = 'grpc_asyncio', request_type=service.ComputeContactsRequest):
@@ -1912,21 +1837,18 @@ async def test_compute_contacts_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.compute_contacts),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ComputeContactsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ComputeContactsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.compute_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ComputeContactsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ComputeContactsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1943,6 +1865,7 @@ def test_compute_contacts_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ComputeContactsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1950,7 +1873,6 @@ def test_compute_contacts_field_headers():
             type(client.transport.compute_contacts),
             '__call__') as call:
         call.return_value = service.ComputeContactsResponse()
-
         client.compute_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1975,6 +1897,7 @@ async def test_compute_contacts_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ComputeContactsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1982,7 +1905,6 @@ async def test_compute_contacts_field_headers_async():
             type(client.transport.compute_contacts),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ComputeContactsResponse())
-
         await client.compute_contacts(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2184,7 +2106,6 @@ async def test_compute_contacts_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_send_test_message(transport: str = 'grpc', request_type=service.SendTestMessageRequest):
     client = EssentialContactsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2201,13 +2122,11 @@ def test_send_test_message(transport: str = 'grpc', request_type=service.SendTes
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.send_test_message(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.SendTestMessageRequest()
 
     # Establish that the response is the type that we expect.
@@ -2233,8 +2152,8 @@ def test_send_test_message_empty_call():
         client.send_test_message()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.SendTestMessageRequest()
+
 
 @pytest.mark.asyncio
 async def test_send_test_message_async(transport: str = 'grpc_asyncio', request_type=service.SendTestMessageRequest):
@@ -2253,13 +2172,11 @@ async def test_send_test_message_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.send_test_message(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.SendTestMessageRequest()
 
     # Establish that the response is the type that we expect.
@@ -2279,6 +2196,7 @@ def test_send_test_message_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.SendTestMessageRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2286,7 +2204,6 @@ def test_send_test_message_field_headers():
             type(client.transport.send_test_message),
             '__call__') as call:
         call.return_value = None
-
         client.send_test_message(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2311,6 +2228,7 @@ async def test_send_test_message_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.SendTestMessageRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2318,7 +2236,6 @@ async def test_send_test_message_field_headers_async():
             type(client.transport.send_test_message),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.send_test_message(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2374,7 +2291,6 @@ def test_transport_instance():
     client = EssentialContactsServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.EssentialContactsServiceGrpcTransport(
@@ -2389,7 +2305,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.EssentialContactsServiceGrpcTransport,
     transports.EssentialContactsServiceGrpcAsyncIOTransport,
@@ -2401,7 +2316,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = EssentialContactsServiceClient(
@@ -2411,7 +2325,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.EssentialContactsServiceGrpcTransport,
     )
-
 
 def test_essential_contacts_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2440,15 +2353,33 @@ def test_essential_contacts_service_base_transport():
         'delete_contact',
         'compute_contacts',
         'send_test_message',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_essential_contacts_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.EssentialContactsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.EssentialContactsServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.EssentialContactsServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_essential_contacts_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.EssentialContactsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.EssentialContactsServiceTransport(
@@ -2464,33 +2395,182 @@ def test_essential_contacts_service_base_transport_with_credentials_file():
 
 def test_essential_contacts_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.EssentialContactsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.essentialcontacts_v1.services.essential_contacts_service.transports.EssentialContactsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.EssentialContactsServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_essential_contacts_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         EssentialContactsServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_essential_contacts_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_essential_contacts_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        EssentialContactsServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.EssentialContactsServiceGrpcTransport,
+        transports.EssentialContactsServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_essential_contacts_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.EssentialContactsServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.EssentialContactsServiceGrpcTransport,
+        transports.EssentialContactsServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_essential_contacts_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.EssentialContactsServiceGrpcTransport, grpc_helpers),
+        (transports.EssentialContactsServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_essential_contacts_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "essentialcontacts.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="essentialcontacts.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.EssentialContactsServiceGrpcTransport, grpc_helpers),
+        (transports.EssentialContactsServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_essential_contacts_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "essentialcontacts.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.EssentialContactsServiceGrpcTransport, grpc_helpers),
+        (transports.EssentialContactsServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_essential_contacts_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "essentialcontacts.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -2552,7 +2632,6 @@ def test_essential_contacts_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='essentialcontacts.googleapis.com:8000'),
     )
     assert client.transport._host == 'essentialcontacts.googleapis.com:8000'
-
 
 def test_essential_contacts_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2671,7 +2750,6 @@ def test_essential_contacts_service_transport_channel_mtls_with_adc(
 def test_contact_path():
     project = "squid"
     contact = "clam"
-
     expected = "projects/{project}/contacts/{contact}".format(project=project, contact=contact, )
     actual = EssentialContactsServiceClient.contact_path(project, contact)
     assert expected == actual
@@ -2679,9 +2757,8 @@ def test_contact_path():
 
 def test_parse_contact_path():
     expected = {
-    "project": "whelk",
-    "contact": "octopus",
-
+        "project": "whelk",
+        "contact": "octopus",
     }
     path = EssentialContactsServiceClient.contact_path(**expected)
 
@@ -2691,7 +2768,6 @@ def test_parse_contact_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = EssentialContactsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2699,8 +2775,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = EssentialContactsServiceClient.common_billing_account_path(**expected)
 
@@ -2710,7 +2785,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = EssentialContactsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2718,8 +2792,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = EssentialContactsServiceClient.common_folder_path(**expected)
 
@@ -2729,7 +2802,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = EssentialContactsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2737,8 +2809,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = EssentialContactsServiceClient.common_organization_path(**expected)
 
@@ -2748,7 +2819,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = EssentialContactsServiceClient.common_project_path(project)
     assert expected == actual
@@ -2756,8 +2826,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = EssentialContactsServiceClient.common_project_path(**expected)
 
@@ -2768,7 +2837,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = EssentialContactsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2776,9 +2844,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = EssentialContactsServiceClient.common_location_path(**expected)
 

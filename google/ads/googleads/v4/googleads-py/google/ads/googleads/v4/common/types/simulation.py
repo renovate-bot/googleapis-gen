@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -49,35 +46,39 @@ class BidModifierSimulationPointList(proto.Message):
             modifier amounts.
     """
 
-    points = proto.RepeatedField(proto.MESSAGE, number=1,
+    points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='BidModifierSimulationPoint',
     )
 
 
 class CpcBidSimulationPointList(proto.Message):
     r"""A container for simulation points for simulations of type CPC_BID.
-
     Attributes:
         points (Sequence[google.ads.googleads.v4.common.types.CpcBidSimulationPoint]):
             Projected metrics for a series of CPC bid
             amounts.
     """
 
-    points = proto.RepeatedField(proto.MESSAGE, number=1,
+    points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='CpcBidSimulationPoint',
     )
 
 
 class CpvBidSimulationPointList(proto.Message):
     r"""A container for simulation points for simulations of type CPV_BID.
-
     Attributes:
         points (Sequence[google.ads.googleads.v4.common.types.CpvBidSimulationPoint]):
             Projected metrics for a series of CPV bid
             amounts.
     """
 
-    points = proto.RepeatedField(proto.MESSAGE, number=1,
+    points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='CpvBidSimulationPoint',
     )
 
@@ -92,7 +93,9 @@ class TargetCpaSimulationPointList(proto.Message):
             amounts.
     """
 
-    points = proto.RepeatedField(proto.MESSAGE, number=1,
+    points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='TargetCpaSimulationPoint',
     )
 
@@ -107,14 +110,15 @@ class TargetRoasSimulationPointList(proto.Message):
             amounts.
     """
 
-    points = proto.RepeatedField(proto.MESSAGE, number=1,
+    points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='TargetRoasSimulationPoint',
     )
 
 
 class BidModifierSimulationPoint(proto.Message):
     r"""Projected metrics for a specific bid modifier amount.
-
     Attributes:
         bid_modifier (google.protobuf.wrappers_pb2.DoubleValue):
             The simulated bid modifier upon which
@@ -164,53 +168,80 @@ class BidModifierSimulationPoint(proto.Message):
             simulation.
     """
 
-    bid_modifier = proto.Field(proto.MESSAGE, number=1,
+    bid_modifier = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.DoubleValue,
     )
-    biddable_conversions = proto.Field(proto.MESSAGE, number=2,
+    biddable_conversions = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.DoubleValue,
     )
-    biddable_conversions_value = proto.Field(proto.MESSAGE, number=3,
+    biddable_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.DoubleValue,
     )
-    clicks = proto.Field(proto.MESSAGE, number=4,
+    clicks = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-    cost_micros = proto.Field(proto.MESSAGE, number=5,
+    cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-    impressions = proto.Field(proto.MESSAGE, number=6,
+    impressions = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-    top_slot_impressions = proto.Field(proto.MESSAGE, number=7,
+    top_slot_impressions = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-    parent_biddable_conversions = proto.Field(proto.MESSAGE, number=8,
+    parent_biddable_conversions = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.DoubleValue,
     )
-    parent_biddable_conversions_value = proto.Field(proto.MESSAGE, number=9,
+    parent_biddable_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.DoubleValue,
     )
-    parent_clicks = proto.Field(proto.MESSAGE, number=10,
+    parent_clicks = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=wrappers.Int64Value,
     )
-    parent_cost_micros = proto.Field(proto.MESSAGE, number=11,
+    parent_cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=wrappers.Int64Value,
     )
-    parent_impressions = proto.Field(proto.MESSAGE, number=12,
+    parent_impressions = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=wrappers.Int64Value,
     )
-    parent_top_slot_impressions = proto.Field(proto.MESSAGE, number=13,
+    parent_top_slot_impressions = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message=wrappers.Int64Value,
     )
-    parent_required_budget_micros = proto.Field(proto.MESSAGE, number=14,
+    parent_required_budget_micros = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message=wrappers.Int64Value,
     )
 
 
 class CpcBidSimulationPoint(proto.Message):
     r"""Projected metrics for a specific CPC bid amount.
-
     Attributes:
         cpc_bid_micros (google.protobuf.wrappers_pb2.Int64Value):
             The simulated CPC bid upon which projected
@@ -232,32 +263,45 @@ class CpcBidSimulationPoint(proto.Message):
             this field.
     """
 
-    cpc_bid_micros = proto.Field(proto.MESSAGE, number=1,
+    cpc_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int64Value,
     )
-    biddable_conversions = proto.Field(proto.MESSAGE, number=2,
+    biddable_conversions = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.DoubleValue,
     )
-    biddable_conversions_value = proto.Field(proto.MESSAGE, number=3,
+    biddable_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.DoubleValue,
     )
-    clicks = proto.Field(proto.MESSAGE, number=4,
+    clicks = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-    cost_micros = proto.Field(proto.MESSAGE, number=5,
+    cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-    impressions = proto.Field(proto.MESSAGE, number=6,
+    impressions = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-    top_slot_impressions = proto.Field(proto.MESSAGE, number=7,
+    top_slot_impressions = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
 
 
 class CpvBidSimulationPoint(proto.Message):
     r"""Projected metrics for a specific CPV bid amount.
-
     Attributes:
         cpv_bid_micros (google.protobuf.wrappers_pb2.Int64Value):
             The simulated CPV bid upon which projected
@@ -270,23 +314,30 @@ class CpvBidSimulationPoint(proto.Message):
             Projected number of views.
     """
 
-    cpv_bid_micros = proto.Field(proto.MESSAGE, number=1,
+    cpv_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int64Value,
     )
-    cost_micros = proto.Field(proto.MESSAGE, number=2,
+    cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-    impressions = proto.Field(proto.MESSAGE, number=3,
+    impressions = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-    views = proto.Field(proto.MESSAGE, number=4,
+    views = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
 
 
 class TargetCpaSimulationPoint(proto.Message):
     r"""Projected metrics for a specific target CPA amount.
-
     Attributes:
         target_cpa_micros (google.protobuf.wrappers_pb2.Int64Value):
             The simulated target CPA upon which projected
@@ -308,32 +359,45 @@ class TargetCpaSimulationPoint(proto.Message):
             this field.
     """
 
-    target_cpa_micros = proto.Field(proto.MESSAGE, number=1,
+    target_cpa_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int64Value,
     )
-    biddable_conversions = proto.Field(proto.MESSAGE, number=2,
+    biddable_conversions = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.DoubleValue,
     )
-    biddable_conversions_value = proto.Field(proto.MESSAGE, number=3,
+    biddable_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.DoubleValue,
     )
-    clicks = proto.Field(proto.MESSAGE, number=4,
+    clicks = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-    cost_micros = proto.Field(proto.MESSAGE, number=5,
+    cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-    impressions = proto.Field(proto.MESSAGE, number=6,
+    impressions = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-    top_slot_impressions = proto.Field(proto.MESSAGE, number=7,
+    top_slot_impressions = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
 
 
 class TargetRoasSimulationPoint(proto.Message):
     r"""Projected metrics for a specific target ROAS amount.
-
     Attributes:
         target_roas (google.protobuf.wrappers_pb2.DoubleValue):
             The simulated target ROAS upon which
@@ -355,25 +419,39 @@ class TargetRoasSimulationPoint(proto.Message):
             this field.
     """
 
-    target_roas = proto.Field(proto.MESSAGE, number=1,
+    target_roas = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.DoubleValue,
     )
-    biddable_conversions = proto.Field(proto.MESSAGE, number=2,
+    biddable_conversions = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.DoubleValue,
     )
-    biddable_conversions_value = proto.Field(proto.MESSAGE, number=3,
+    biddable_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.DoubleValue,
     )
-    clicks = proto.Field(proto.MESSAGE, number=4,
+    clicks = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-    cost_micros = proto.Field(proto.MESSAGE, number=5,
+    cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-    impressions = proto.Field(proto.MESSAGE, number=6,
+    impressions = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-    top_slot_impressions = proto.Field(proto.MESSAGE, number=7,
+    top_slot_impressions = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
 

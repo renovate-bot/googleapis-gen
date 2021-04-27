@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import argparse
 import os
 import libcst as cst
@@ -41,12 +39,11 @@ def partition(
 class shellCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'add_public_key': ('environment', 'key', ),
-    'authorize_environment': ('name', 'access_token', 'id_token', 'expire_time', ),
-    'get_environment': ('name', ),
-    'remove_public_key': ('environment', 'key', ),
-    'start_environment': ('name', 'access_token', 'public_keys', ),
-
+          'add_public_key': ('environment', 'key', ),
+          'authorize_environment': ('name', 'access_token', 'id_token', 'expire_time', ),
+          'get_environment': ('name', ),
+          'remove_public_key': ('environment', 'key', ),
+          'start_environment': ('name', 'access_token', 'public_keys', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -77,7 +74,7 @@ class shellCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-                    cst.Element(value=arg.value)
+cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -55,8 +54,7 @@ from google.apps.drive.activity_v2.types.target import TargetReference
 from google.apps.drive.activity_v2.types.target import TeamDrive
 from google.apps.drive.activity_v2.types.target import TeamDriveReference
 
-__all__ = (
-    'Action',
+__all__ = ('Action',
     'ActionDetail',
     'Actor',
     'Administrator',

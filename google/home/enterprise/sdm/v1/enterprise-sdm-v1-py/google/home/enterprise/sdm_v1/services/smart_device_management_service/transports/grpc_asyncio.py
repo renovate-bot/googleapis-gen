@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
 from google.home.enterprise.sdm_v1.types import smart_device_management_service
-
 from .base import SmartDeviceManagementServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import SmartDeviceManagementServiceGrpcTransport
 
@@ -81,13 +79,15 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,7 +166,6 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -228,7 +228,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def get_device(self) -> Callable[
             [smart_device_management_service.GetDeviceRequest],
             Awaitable[device.Device]]:
-        r"""Return a callable for the get device method over gRPC.
+        r"""Return a callable for the
+        get device
+          method over gRPC.
 
         Gets a device managed by the enterprise.
 
@@ -254,7 +256,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def list_devices(self) -> Callable[
             [smart_device_management_service.ListDevicesRequest],
             Awaitable[smart_device_management_service.ListDevicesResponse]]:
-        r"""Return a callable for the list devices method over gRPC.
+        r"""Return a callable for the
+        list devices
+          method over gRPC.
 
         Lists devices managed by the enterprise.
 
@@ -280,7 +284,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def execute_device_command(self) -> Callable[
             [smart_device_management_service.ExecuteDeviceCommandRequest],
             Awaitable[smart_device_management_service.ExecuteDeviceCommandResponse]]:
-        r"""Return a callable for the execute device command method over gRPC.
+        r"""Return a callable for the
+        execute device command
+          method over gRPC.
 
         Executes a command to device managed by the
         enterprise.
@@ -307,7 +313,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def get_structure(self) -> Callable[
             [smart_device_management_service.GetStructureRequest],
             Awaitable[site.Structure]]:
-        r"""Return a callable for the get structure method over gRPC.
+        r"""Return a callable for the
+        get structure
+          method over gRPC.
 
         Gets a structure managed by the enterprise.
 
@@ -333,7 +341,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def list_structures(self) -> Callable[
             [smart_device_management_service.ListStructuresRequest],
             Awaitable[smart_device_management_service.ListStructuresResponse]]:
-        r"""Return a callable for the list structures method over gRPC.
+        r"""Return a callable for the
+        list structures
+          method over gRPC.
 
         Lists structures managed by the enterprise.
 
@@ -359,7 +369,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def get_room(self) -> Callable[
             [smart_device_management_service.GetRoomRequest],
             Awaitable[site.Room]]:
-        r"""Return a callable for the get room method over gRPC.
+        r"""Return a callable for the
+        get room
+          method over gRPC.
 
         Gets a room managed by the enterprise.
 
@@ -385,7 +397,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def list_rooms(self) -> Callable[
             [smart_device_management_service.ListRoomsRequest],
             Awaitable[smart_device_management_service.ListRoomsResponse]]:
-        r"""Return a callable for the list rooms method over gRPC.
+        r"""Return a callable for the
+        list rooms
+          method over gRPC.
 
         Lists rooms managed by the enterprise.
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.apps.script.type import script_manifest_pb2 as script_manifest  # type: ignore
 from google.apps.script.type.calendar import calendar_addon_manifest_pb2 as calendar_addon_manifest  # type: ignore
@@ -61,7 +58,10 @@ class GetAuthorizationRequest(proto.Message):
             Example: ``projects/my_project/authorization``.
     """
 
-    name = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Authorization(proto.Message):
@@ -81,16 +81,22 @@ class Authorization(proto.Message):
             access tokens for a user on the add-on's behalf.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    service_account_email = proto.Field(proto.STRING, number=2)
-
-    oauth_client_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_account_email = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    oauth_client_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class CreateDeploymentRequest(proto.Message):
     r"""Request message to create a deployment.
-
     Attributes:
         parent (str):
             Required. Name of the project in which to create the
@@ -106,32 +112,38 @@ class CreateDeploymentRequest(proto.Message):
             (deployment.name cannot be set).
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    deployment_id = proto.Field(proto.STRING, number=2)
-
-    deployment = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    deployment_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    deployment = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Deployment',
     )
 
 
 class ReplaceDeploymentRequest(proto.Message):
     r"""Request message to create or replace a deployment.
-
     Attributes:
         deployment (google.cloud.gsuiteaddons_v1.types.Deployment):
             Required. The deployment to create or
             replace.
     """
 
-    deployment = proto.Field(proto.MESSAGE, number=2,
+    deployment = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Deployment',
     )
 
 
 class GetDeploymentRequest(proto.Message):
     r"""Request message to get a deployment.
-
     Attributes:
         name (str):
             Required. The full resource name of the deployment to get.
@@ -139,12 +151,14 @@ class GetDeploymentRequest(proto.Message):
             Example: ``projects/my_project/deployments/my_deployment``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListDeploymentsRequest(proto.Message):
     r"""Request message to list deployments for a project.
-
     Attributes:
         parent (str):
             Required. Name of the project in which to create the
@@ -166,16 +180,22 @@ class ListDeploymentsRequest(proto.Message):
             page token.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListDeploymentsResponse(proto.Message):
     r"""Response message to list deployments.
-
     Attributes:
         deployments (Sequence[google.cloud.gsuiteaddons_v1.types.Deployment]):
             The list of deployments for the given
@@ -190,16 +210,19 @@ class ListDeploymentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    deployments = proto.RepeatedField(proto.MESSAGE, number=1,
+    deployments = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Deployment',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DeleteDeploymentRequest(proto.Message):
     r"""Request message to delete a deployment.
-
     Attributes:
         name (str):
             Required. The full resource name of the deployment to
@@ -212,14 +235,18 @@ class DeleteDeploymentRequest(proto.Message):
             etag.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class InstallDeploymentRequest(proto.Message):
     r"""Request message to install a developer mode deployment.
-
     Attributes:
         name (str):
             Required. The full resource name of the deployment to
@@ -228,12 +255,14 @@ class InstallDeploymentRequest(proto.Message):
             Example: ``projects/my_project/deployments/my_deployment``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UninstallDeploymentRequest(proto.Message):
     r"""Request message to uninstall a developer mode deployment.
-
     Attributes:
         name (str):
             Required. The full resource name of the deployment to
@@ -242,7 +271,10 @@ class UninstallDeploymentRequest(proto.Message):
             Example: ``projects/my_project/deployments/my_deployment``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetInstallStatusRequest(proto.Message):
@@ -257,12 +289,14 @@ class GetInstallStatusRequest(proto.Message):
             ``projects/my_project/deployments/my_deployment/installStatus``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class InstallStatus(proto.Message):
     r"""Developer mode install status of a deployment
-
     Attributes:
         name (str):
             The canonical full resource name of the deployment install
@@ -275,16 +309,19 @@ class InstallStatus(proto.Message):
             user
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    installed = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    installed = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.BoolValue,
     )
 
 
 class Deployment(proto.Message):
     r"""A Google Workspace Add-on deployment
-
     Attributes:
         name (str):
             The deployment resource name. Example:
@@ -303,20 +340,27 @@ class Deployment(proto.Message):
             proceeding.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    oauth_scopes = proto.RepeatedField(proto.STRING, number=2)
-
-    add_ons = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    oauth_scopes = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    add_ons = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='AddOns',
     )
-
-    etag = proto.Field(proto.STRING, number=5)
+    etag = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class AddOns(proto.Message):
     r"""A Google Workspace Add-on configuration.
-
     Attributes:
         common (google.apps.script.type.script_manifest_pb2.CommonAddOnManifest):
             Configuration that is common across all
@@ -338,35 +382,44 @@ class AddOns(proto.Message):
             endpoints
     """
 
-    common = proto.Field(proto.MESSAGE, number=1,
+    common = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=script_manifest.CommonAddOnManifest,
     )
-
-    gmail = proto.Field(proto.MESSAGE, number=2,
+    gmail = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gmail_addon_manifest.GmailAddOnManifest,
     )
-
-    drive = proto.Field(proto.MESSAGE, number=5,
+    drive = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=drive_addon_manifest.DriveAddOnManifest,
     )
-
-    calendar = proto.Field(proto.MESSAGE, number=6,
+    calendar = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=calendar_addon_manifest.CalendarAddOnManifest,
     )
-
-    docs = proto.Field(proto.MESSAGE, number=7,
+    docs = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=docs_addon_manifest.DocsAddOnManifest,
     )
-
-    sheets = proto.Field(proto.MESSAGE, number=8,
+    sheets = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=sheets_addon_manifest.SheetsAddOnManifest,
     )
-
-    slides = proto.Field(proto.MESSAGE, number=10,
+    slides = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=slides_addon_manifest.SlidesAddOnManifest,
     )
-
-    http_options = proto.Field(proto.MESSAGE, number=15,
+    http_options = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message=script_manifest.HttpOptions,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import customer_label
 from google.ads.googleads.v4.services.types import customer_label_service
-
 from .base import CustomerLabelServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CustomerLabelServiceGrpcTransport(CustomerLabelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CustomerLabelServiceGrpcTransport(CustomerLabelServiceTransport):
     def get_customer_label(self) -> Callable[
             [customer_label_service.GetCustomerLabelRequest],
             customer_label.CustomerLabel]:
-        r"""Return a callable for the get customer label method over gRPC.
+        r"""Return a callable for the
+        get customer label
+          method over gRPC.
 
         Returns the requested customer-label relationship in
         full detail.
@@ -230,7 +230,9 @@ class CustomerLabelServiceGrpcTransport(CustomerLabelServiceTransport):
     def mutate_customer_labels(self) -> Callable[
             [customer_label_service.MutateCustomerLabelsRequest],
             customer_label_service.MutateCustomerLabelsResponse]:
-        r"""Return a callable for the mutate customer labels method over gRPC.
+        r"""Return a callable for the
+        mutate customer labels
+          method over gRPC.
 
         Creates and removes customer-label relationships.
         Operation statuses are returned.

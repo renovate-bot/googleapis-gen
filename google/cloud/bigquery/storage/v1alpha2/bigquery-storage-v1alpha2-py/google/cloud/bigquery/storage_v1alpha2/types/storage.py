@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.bigquery.storage_v1alpha2.types import protobuf
 from google.cloud.bigquery.storage_v1alpha2.types import stream
@@ -45,7 +42,6 @@ __protobuf__ = proto.module(
 
 class CreateWriteStreamRequest(proto.Message):
     r"""Request message for ``CreateWriteStream``.
-
     Attributes:
         parent (str):
             Required. Reference to the table to which the stream
@@ -55,16 +51,19 @@ class CreateWriteStreamRequest(proto.Message):
             Required. Stream to be created.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    write_stream = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    write_stream = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=stream.WriteStream,
     )
 
 
 class AppendRowsRequest(proto.Message):
     r"""Request message for ``AppendRows``.
-
     Attributes:
         write_stream (str):
             Required. The stream that is the target of the append
@@ -88,9 +87,9 @@ class AppendRowsRequest(proto.Message):
             extra fields will cause append to fail. Default
             value is false.
     """
+
     class ProtoData(proto.Message):
         r"""
-
         Attributes:
             writer_schema (google.cloud.bigquery.storage_v1alpha2.types.ProtoSchema):
                 Proto schema used to serialize the data.
@@ -99,30 +98,40 @@ class AppendRowsRequest(proto.Message):
                 format.
         """
 
-        writer_schema = proto.Field(proto.MESSAGE, number=1,
+        writer_schema = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=protobuf.ProtoSchema,
         )
-
-        rows = proto.Field(proto.MESSAGE, number=2,
+        rows = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=protobuf.ProtoRows,
         )
 
-    write_stream = proto.Field(proto.STRING, number=1)
-
-    offset = proto.Field(proto.MESSAGE, number=2,
+    write_stream = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    offset = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    proto_rows = proto.Field(proto.MESSAGE, number=4, oneof='rows',
+    proto_rows = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='rows',
         message=ProtoData,
     )
-
-    ignore_unknown_fields = proto.Field(proto.BOOL, number=5)
+    ignore_unknown_fields = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class AppendRowsResponse(proto.Message):
     r"""Response message for ``AppendRows``.
-
     Attributes:
         offset (int):
             The row offset at which the last append
@@ -148,32 +157,40 @@ class AppendRowsResponse(proto.Message):
             no schema updates.
     """
 
-    offset = proto.Field(proto.INT64, number=1, oneof='response')
-
-    error = proto.Field(proto.MESSAGE, number=2, oneof='response',
+    offset = proto.Field(
+        proto.INT64,
+        number=1,
+        oneof='response',
+    )
+    error = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='response',
         message=status.Status,
     )
-
-    updated_schema = proto.Field(proto.MESSAGE, number=3,
+    updated_schema = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=table.TableSchema,
     )
 
 
 class GetWriteStreamRequest(proto.Message):
     r"""Request message for ``GetWriteStreamRequest``.
-
     Attributes:
         name (str):
             Required. Name of the stream to get, in the form of
             ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class BatchCommitWriteStreamsRequest(proto.Message):
     r"""Request message for ``BatchCommitWriteStreams``.
-
     Attributes:
         parent (str):
             Required. Parent table that all the streams should belong
@@ -184,51 +201,60 @@ class BatchCommitWriteStreamsRequest(proto.Message):
             committed atomically.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    write_streams = proto.RepeatedField(proto.STRING, number=2)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    write_streams = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BatchCommitWriteStreamsResponse(proto.Message):
     r"""Response message for ``BatchCommitWriteStreams``.
-
     Attributes:
         commit_time (google.protobuf.timestamp_pb2.Timestamp):
             The time at which streams were committed in
             microseconds granularity.
     """
 
-    commit_time = proto.Field(proto.MESSAGE, number=1,
+    commit_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=timestamp.Timestamp,
     )
 
 
 class FinalizeWriteStreamRequest(proto.Message):
     r"""Request message for invoking ``FinalizeWriteStream``.
-
     Attributes:
         name (str):
             Required. Name of the stream to finalize, in the form of
             ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class FinalizeWriteStreamResponse(proto.Message):
     r"""Response message for ``FinalizeWriteStream``.
-
     Attributes:
         row_count (int):
             Number of rows in the finalized stream.
     """
 
-    row_count = proto.Field(proto.INT64, number=1)
+    row_count = proto.Field(
+        proto.INT64,
+        number=1,
+    )
 
 
 class FlushRowsRequest(proto.Message):
     r"""Request message for ``FlushRows``.
-
     Attributes:
         write_stream (str):
             Required. The stream that is the target of
@@ -239,21 +265,28 @@ class FlushRowsRequest(proto.Message):
             be flushed.
     """
 
-    write_stream = proto.Field(proto.STRING, number=1)
-
-    offset = proto.Field(proto.INT64, number=2)
+    write_stream = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    offset = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 class FlushRowsResponse(proto.Message):
     r"""Respond message for ``FlushRows``.
-
     Attributes:
         offset (int):
             The rows before this offset (including this
             offset) are flushed.
     """
 
-    offset = proto.Field(proto.INT64, number=1)
+    offset = proto.Field(
+        proto.INT64,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

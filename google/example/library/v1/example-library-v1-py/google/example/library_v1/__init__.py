@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.library_service import LibraryServiceClient
+
 from .types.library import Book
 from .types.library import CreateBookRequest
 from .types.library import CreateShelfRequest
@@ -31,7 +31,6 @@ from .types.library import MergeShelvesRequest
 from .types.library import MoveBookRequest
 from .types.library import Shelf
 from .types.library import UpdateBookRequest
-
 
 __all__ = (
     'Book',

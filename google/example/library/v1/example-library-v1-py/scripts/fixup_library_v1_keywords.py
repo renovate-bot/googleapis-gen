@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import argparse
 import os
 import libcst as cst
@@ -41,18 +39,17 @@ def partition(
 class libraryCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'create_book': ('parent', 'book', ),
-    'create_shelf': ('shelf', ),
-    'delete_book': ('name', ),
-    'delete_shelf': ('name', ),
-    'get_book': ('name', ),
-    'get_shelf': ('name', ),
-    'list_books': ('parent', 'page_size', 'page_token', ),
-    'list_shelves': ('page_size', 'page_token', ),
-    'merge_shelves': ('name', 'other_shelf', ),
-    'move_book': ('name', 'other_shelf_name', ),
-    'update_book': ('book', 'update_mask', ),
-
+          'create_book': ('parent', 'book', ),
+          'create_shelf': ('shelf', ),
+          'delete_book': ('name', ),
+          'delete_shelf': ('name', ),
+          'get_book': ('name', ),
+          'get_shelf': ('name', ),
+          'list_books': ('parent', 'page_size', 'page_token', ),
+          'list_shelves': ('page_size', 'page_token', ),
+          'merge_shelves': ('name', 'other_shelf', ),
+          'move_book': ('name', 'other_shelf_name', ),
+          'update_book': ('book', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -83,7 +80,7 @@ class libraryCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-                    cst.Element(value=arg.value)
+cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

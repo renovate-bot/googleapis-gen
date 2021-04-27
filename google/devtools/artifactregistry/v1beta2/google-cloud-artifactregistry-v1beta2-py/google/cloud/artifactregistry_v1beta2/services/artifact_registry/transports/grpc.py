@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -38,7 +36,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ArtifactRegistryTransport, DEFAULT_CLIENT_INFO
 
 
@@ -84,7 +81,8 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -224,13 +222,15 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -260,7 +260,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def list_repositories(self) -> Callable[
             [repository.ListRepositoriesRequest],
             repository.ListRepositoriesResponse]:
-        r"""Return a callable for the list repositories method over gRPC.
+        r"""Return a callable for the
+        list repositories
+          method over gRPC.
 
         Lists repositories.
 
@@ -286,7 +288,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def get_repository(self) -> Callable[
             [repository.GetRepositoryRequest],
             repository.Repository]:
-        r"""Return a callable for the get repository method over gRPC.
+        r"""Return a callable for the
+        get repository
+          method over gRPC.
 
         Gets a repository.
 
@@ -312,7 +316,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def create_repository(self) -> Callable[
             [gda_repository.CreateRepositoryRequest],
             operations.Operation]:
-        r"""Return a callable for the create repository method over gRPC.
+        r"""Return a callable for the
+        create repository
+          method over gRPC.
 
         Creates a repository. The returned Operation will
         finish once the repository has been created. Its
@@ -340,7 +346,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def update_repository(self) -> Callable[
             [gda_repository.UpdateRepositoryRequest],
             gda_repository.Repository]:
-        r"""Return a callable for the update repository method over gRPC.
+        r"""Return a callable for the
+        update repository
+          method over gRPC.
 
         Updates a repository.
 
@@ -366,7 +374,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def delete_repository(self) -> Callable[
             [repository.DeleteRepositoryRequest],
             operations.Operation]:
-        r"""Return a callable for the delete repository method over gRPC.
+        r"""Return a callable for the
+        delete repository
+          method over gRPC.
 
         Deletes a repository and all of its contents. The
         returned Operation will finish once the repository has
@@ -395,7 +405,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def list_packages(self) -> Callable[
             [package.ListPackagesRequest],
             package.ListPackagesResponse]:
-        r"""Return a callable for the list packages method over gRPC.
+        r"""Return a callable for the
+        list packages
+          method over gRPC.
 
         Lists packages.
 
@@ -421,7 +433,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def get_package(self) -> Callable[
             [package.GetPackageRequest],
             package.Package]:
-        r"""Return a callable for the get package method over gRPC.
+        r"""Return a callable for the
+        get package
+          method over gRPC.
 
         Gets a package.
 
@@ -447,7 +461,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def delete_package(self) -> Callable[
             [package.DeletePackageRequest],
             operations.Operation]:
-        r"""Return a callable for the delete package method over gRPC.
+        r"""Return a callable for the
+        delete package
+          method over gRPC.
 
         Deletes a package and all of its versions and tags.
         The returned operation will complete once the package
@@ -475,7 +491,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def list_versions(self) -> Callable[
             [version.ListVersionsRequest],
             version.ListVersionsResponse]:
-        r"""Return a callable for the list versions method over gRPC.
+        r"""Return a callable for the
+        list versions
+          method over gRPC.
 
         Lists versions.
 
@@ -501,7 +519,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def get_version(self) -> Callable[
             [version.GetVersionRequest],
             version.Version]:
-        r"""Return a callable for the get version method over gRPC.
+        r"""Return a callable for the
+        get version
+          method over gRPC.
 
         Gets a version
 
@@ -527,7 +547,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def delete_version(self) -> Callable[
             [version.DeleteVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the delete version method over gRPC.
+        r"""Return a callable for the
+        delete version
+          method over gRPC.
 
         Deletes a version and all of its content. The
         returned operation will complete once the version has
@@ -555,7 +577,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def list_files(self) -> Callable[
             [file.ListFilesRequest],
             file.ListFilesResponse]:
-        r"""Return a callable for the list files method over gRPC.
+        r"""Return a callable for the
+        list files
+          method over gRPC.
 
         Lists files.
 
@@ -581,7 +605,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def get_file(self) -> Callable[
             [file.GetFileRequest],
             file.File]:
-        r"""Return a callable for the get file method over gRPC.
+        r"""Return a callable for the
+        get file
+          method over gRPC.
 
         Gets a file.
 
@@ -607,7 +633,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def list_tags(self) -> Callable[
             [tag.ListTagsRequest],
             tag.ListTagsResponse]:
-        r"""Return a callable for the list tags method over gRPC.
+        r"""Return a callable for the
+        list tags
+          method over gRPC.
 
         Lists tags.
 
@@ -633,7 +661,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def get_tag(self) -> Callable[
             [tag.GetTagRequest],
             tag.Tag]:
-        r"""Return a callable for the get tag method over gRPC.
+        r"""Return a callable for the
+        get tag
+          method over gRPC.
 
         Gets a tag.
 
@@ -659,7 +689,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def create_tag(self) -> Callable[
             [gda_tag.CreateTagRequest],
             gda_tag.Tag]:
-        r"""Return a callable for the create tag method over gRPC.
+        r"""Return a callable for the
+        create tag
+          method over gRPC.
 
         Creates a tag.
 
@@ -685,7 +717,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def update_tag(self) -> Callable[
             [gda_tag.UpdateTagRequest],
             gda_tag.Tag]:
-        r"""Return a callable for the update tag method over gRPC.
+        r"""Return a callable for the
+        update tag
+          method over gRPC.
 
         Updates a tag.
 
@@ -711,7 +745,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def delete_tag(self) -> Callable[
             [tag.DeleteTagRequest],
             empty.Empty]:
-        r"""Return a callable for the delete tag method over gRPC.
+        r"""Return a callable for the
+        delete tag
+          method over gRPC.
 
         Deletes a tag.
 
@@ -737,7 +773,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Updates the IAM policy for a given resource.
 
@@ -763,7 +801,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the IAM policy for a given resource.
 
@@ -789,7 +829,9 @@ class ArtifactRegistryGrpcTransport(ArtifactRegistryTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Tests if the caller has a list of permissions on a
         resource.

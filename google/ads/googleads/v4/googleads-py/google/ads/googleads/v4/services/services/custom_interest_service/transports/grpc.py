@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import custom_interest
 from google.ads.googleads.v4.services.types import custom_interest_service
-
 from .base import CustomInterestServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CustomInterestServiceGrpcTransport(CustomInterestServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CustomInterestServiceGrpcTransport(CustomInterestServiceTransport):
     def get_custom_interest(self) -> Callable[
             [custom_interest_service.GetCustomInterestRequest],
             custom_interest.CustomInterest]:
-        r"""Return a callable for the get custom interest method over gRPC.
+        r"""Return a callable for the
+        get custom interest
+          method over gRPC.
 
         Returns the requested custom interest in full detail.
 
@@ -229,7 +229,9 @@ class CustomInterestServiceGrpcTransport(CustomInterestServiceTransport):
     def mutate_custom_interests(self) -> Callable[
             [custom_interest_service.MutateCustomInterestsRequest],
             custom_interest_service.MutateCustomInterestsResponse]:
-        r"""Return a callable for the mutate custom interests method over gRPC.
+        r"""Return a callable for the
+        mutate custom interests
+          method over gRPC.
 
         Creates or updates custom interests. Operation
         statuses are returned.

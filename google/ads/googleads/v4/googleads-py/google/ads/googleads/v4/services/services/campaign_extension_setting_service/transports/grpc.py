@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import campaign_extension_setting
 from google.ads.googleads.v4.services.types import campaign_extension_setting_service
-
 from .base import CampaignExtensionSettingServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CampaignExtensionSettingServiceGrpcTransport(CampaignExtensionSettingServi
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CampaignExtensionSettingServiceGrpcTransport(CampaignExtensionSettingServi
     def get_campaign_extension_setting(self) -> Callable[
             [campaign_extension_setting_service.GetCampaignExtensionSettingRequest],
             campaign_extension_setting.CampaignExtensionSetting]:
-        r"""Return a callable for the get campaign extension setting method over gRPC.
+        r"""Return a callable for the
+        get campaign extension setting
+          method over gRPC.
 
         Returns the requested campaign extension setting in
         full detail.
@@ -230,8 +230,10 @@ class CampaignExtensionSettingServiceGrpcTransport(CampaignExtensionSettingServi
     def mutate_campaign_extension_settings(self) -> Callable[
             [campaign_extension_setting_service.MutateCampaignExtensionSettingsRequest],
             campaign_extension_setting_service.MutateCampaignExtensionSettingsResponse]:
-        r"""Return a callable for the mutate campaign extension
-        settings method over gRPC.
+        r"""Return a callable for the
+        mutate campaign extension
+        settings
+          method over gRPC.
 
         Creates, updates, or removes campaign extension
         settings. Operation statuses are returned.

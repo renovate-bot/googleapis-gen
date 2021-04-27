@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -24,13 +22,13 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.tpu_v1.types import cloud_tpu
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import TpuTransport, DEFAULT_CLIENT_INFO
 from .grpc import TpuGrpcTransport
 
@@ -81,13 +79,15 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +167,6 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -245,7 +245,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def list_nodes(self) -> Callable[
             [cloud_tpu.ListNodesRequest],
             Awaitable[cloud_tpu.ListNodesResponse]]:
-        r"""Return a callable for the list nodes method over gRPC.
+        r"""Return a callable for the
+        list nodes
+          method over gRPC.
 
         Lists nodes.
 
@@ -271,7 +273,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def get_node(self) -> Callable[
             [cloud_tpu.GetNodeRequest],
             Awaitable[cloud_tpu.Node]]:
-        r"""Return a callable for the get node method over gRPC.
+        r"""Return a callable for the
+        get node
+          method over gRPC.
 
         Gets the details of a node.
 
@@ -297,7 +301,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def create_node(self) -> Callable[
             [cloud_tpu.CreateNodeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create node method over gRPC.
+        r"""Return a callable for the
+        create node
+          method over gRPC.
 
         Creates a node.
 
@@ -323,7 +329,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def delete_node(self) -> Callable[
             [cloud_tpu.DeleteNodeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete node method over gRPC.
+        r"""Return a callable for the
+        delete node
+          method over gRPC.
 
         Deletes a node.
 
@@ -349,7 +357,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def reimage_node(self) -> Callable[
             [cloud_tpu.ReimageNodeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the reimage node method over gRPC.
+        r"""Return a callable for the
+        reimage node
+          method over gRPC.
 
         Reimages a node's OS.
 
@@ -375,7 +385,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def stop_node(self) -> Callable[
             [cloud_tpu.StopNodeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the stop node method over gRPC.
+        r"""Return a callable for the
+        stop node
+          method over gRPC.
 
         Stops a node.
 
@@ -401,7 +413,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def start_node(self) -> Callable[
             [cloud_tpu.StartNodeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the start node method over gRPC.
+        r"""Return a callable for the
+        start node
+          method over gRPC.
 
         Starts a node.
 
@@ -427,7 +441,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def list_tensor_flow_versions(self) -> Callable[
             [cloud_tpu.ListTensorFlowVersionsRequest],
             Awaitable[cloud_tpu.ListTensorFlowVersionsResponse]]:
-        r"""Return a callable for the list tensor flow versions method over gRPC.
+        r"""Return a callable for the
+        list tensor flow versions
+          method over gRPC.
 
         List TensorFlow versions supported by this API.
 
@@ -453,7 +469,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def get_tensor_flow_version(self) -> Callable[
             [cloud_tpu.GetTensorFlowVersionRequest],
             Awaitable[cloud_tpu.TensorFlowVersion]]:
-        r"""Return a callable for the get tensor flow version method over gRPC.
+        r"""Return a callable for the
+        get tensor flow version
+          method over gRPC.
 
         Gets TensorFlow Version.
 
@@ -479,7 +497,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def list_accelerator_types(self) -> Callable[
             [cloud_tpu.ListAcceleratorTypesRequest],
             Awaitable[cloud_tpu.ListAcceleratorTypesResponse]]:
-        r"""Return a callable for the list accelerator types method over gRPC.
+        r"""Return a callable for the
+        list accelerator types
+          method over gRPC.
 
         Lists accelerator types supported by this API.
 
@@ -505,7 +525,9 @@ class TpuGrpcAsyncIOTransport(TpuTransport):
     def get_accelerator_type(self) -> Callable[
             [cloud_tpu.GetAcceleratorTypeRequest],
             Awaitable[cloud_tpu.AcceleratorType]]:
-        r"""Return a callable for the get accelerator type method over gRPC.
+        r"""Return a callable for the
+        get accelerator type
+          method over gRPC.
 
         Gets AcceleratorType.
 

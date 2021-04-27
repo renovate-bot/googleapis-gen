@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -30,7 +28,6 @@ from google.iam.admin_v1.types import iam
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import IAMTransport, DEFAULT_CLIENT_INFO
 
 
@@ -83,7 +80,8 @@ class IAMGrpcTransport(IAMTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -222,13 +220,15 @@ class IAMGrpcTransport(IAMTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -242,7 +242,9 @@ class IAMGrpcTransport(IAMTransport):
     def list_service_accounts(self) -> Callable[
             [iam.ListServiceAccountsRequest],
             iam.ListServiceAccountsResponse]:
-        r"""Return a callable for the list service accounts method over gRPC.
+        r"""Return a callable for the
+        list service accounts
+          method over gRPC.
 
         Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount]
         that belongs to a specific project.
@@ -269,7 +271,9 @@ class IAMGrpcTransport(IAMTransport):
     def get_service_account(self) -> Callable[
             [iam.GetServiceAccountRequest],
             iam.ServiceAccount]:
-        r"""Return a callable for the get service account method over gRPC.
+        r"""Return a callable for the
+        get service account
+          method over gRPC.
 
         Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
@@ -295,7 +299,9 @@ class IAMGrpcTransport(IAMTransport):
     def create_service_account(self) -> Callable[
             [iam.CreateServiceAccountRequest],
             iam.ServiceAccount]:
-        r"""Return a callable for the create service account method over gRPC.
+        r"""Return a callable for the
+        create service account
+          method over gRPC.
 
         Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
@@ -321,7 +327,9 @@ class IAMGrpcTransport(IAMTransport):
     def update_service_account(self) -> Callable[
             [iam.ServiceAccount],
             iam.ServiceAccount]:
-        r"""Return a callable for the update service account method over gRPC.
+        r"""Return a callable for the
+        update service account
+          method over gRPC.
 
         **Note:** We are in the process of deprecating this method. Use
         [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount]
@@ -354,7 +362,9 @@ class IAMGrpcTransport(IAMTransport):
     def patch_service_account(self) -> Callable[
             [iam.PatchServiceAccountRequest],
             iam.ServiceAccount]:
-        r"""Return a callable for the patch service account method over gRPC.
+        r"""Return a callable for the
+        patch service account
+          method over gRPC.
 
         Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
@@ -380,7 +390,9 @@ class IAMGrpcTransport(IAMTransport):
     def delete_service_account(self) -> Callable[
             [iam.DeleteServiceAccountRequest],
             empty.Empty]:
-        r"""Return a callable for the delete service account method over gRPC.
+        r"""Return a callable for the
+        delete service account
+          method over gRPC.
 
         Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
@@ -424,7 +436,9 @@ class IAMGrpcTransport(IAMTransport):
     def undelete_service_account(self) -> Callable[
             [iam.UndeleteServiceAccountRequest],
             iam.UndeleteServiceAccountResponse]:
-        r"""Return a callable for the undelete service account method over gRPC.
+        r"""Return a callable for the
+        undelete service account
+          method over gRPC.
 
         Restores a deleted
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
@@ -458,7 +472,9 @@ class IAMGrpcTransport(IAMTransport):
     def enable_service_account(self) -> Callable[
             [iam.EnableServiceAccountRequest],
             empty.Empty]:
-        r"""Return a callable for the enable service account method over gRPC.
+        r"""Return a callable for the
+        enable service account
+          method over gRPC.
 
         Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
         that was disabled by
@@ -494,7 +510,9 @@ class IAMGrpcTransport(IAMTransport):
     def disable_service_account(self) -> Callable[
             [iam.DisableServiceAccountRequest],
             empty.Empty]:
-        r"""Return a callable for the disable service account method over gRPC.
+        r"""Return a callable for the
+        disable service account
+          method over gRPC.
 
         Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
         immediately.
@@ -538,7 +556,9 @@ class IAMGrpcTransport(IAMTransport):
     def list_service_account_keys(self) -> Callable[
             [iam.ListServiceAccountKeysRequest],
             iam.ListServiceAccountKeysResponse]:
-        r"""Return a callable for the list service account keys method over gRPC.
+        r"""Return a callable for the
+        list service account keys
+          method over gRPC.
 
         Lists every
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a
@@ -566,7 +586,9 @@ class IAMGrpcTransport(IAMTransport):
     def get_service_account_key(self) -> Callable[
             [iam.GetServiceAccountKeyRequest],
             iam.ServiceAccountKey]:
-        r"""Return a callable for the get service account key method over gRPC.
+        r"""Return a callable for the
+        get service account key
+          method over gRPC.
 
         Gets a
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
@@ -593,7 +615,9 @@ class IAMGrpcTransport(IAMTransport):
     def create_service_account_key(self) -> Callable[
             [iam.CreateServiceAccountKeyRequest],
             iam.ServiceAccountKey]:
-        r"""Return a callable for the create service account key method over gRPC.
+        r"""Return a callable for the
+        create service account key
+          method over gRPC.
 
         Creates a
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
@@ -620,7 +644,9 @@ class IAMGrpcTransport(IAMTransport):
     def upload_service_account_key(self) -> Callable[
             [iam.UploadServiceAccountKeyRequest],
             iam.ServiceAccountKey]:
-        r"""Return a callable for the upload service account key method over gRPC.
+        r"""Return a callable for the
+        upload service account key
+          method over gRPC.
 
         Creates a
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey],
@@ -648,7 +674,9 @@ class IAMGrpcTransport(IAMTransport):
     def delete_service_account_key(self) -> Callable[
             [iam.DeleteServiceAccountKeyRequest],
             empty.Empty]:
-        r"""Return a callable for the delete service account key method over gRPC.
+        r"""Return a callable for the
+        delete service account key
+          method over gRPC.
 
         Deletes a
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
@@ -678,7 +706,9 @@ class IAMGrpcTransport(IAMTransport):
     def sign_blob(self) -> Callable[
             [iam.SignBlobRequest],
             iam.SignBlobResponse]:
-        r"""Return a callable for the sign blob method over gRPC.
+        r"""Return a callable for the
+        sign blob
+          method over gRPC.
 
         **Note:** This method is deprecated. Use the
         ```signBlob`` <https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob>`__
@@ -712,7 +742,9 @@ class IAMGrpcTransport(IAMTransport):
     def sign_jwt(self) -> Callable[
             [iam.SignJwtRequest],
             iam.SignJwtResponse]:
-        r"""Return a callable for the sign jwt method over gRPC.
+        r"""Return a callable for the
+        sign jwt
+          method over gRPC.
 
         **Note:** This method is deprecated. Use the
         ```signJwt`` <https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt>`__
@@ -746,7 +778,9 @@ class IAMGrpcTransport(IAMTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
@@ -783,7 +817,9 @@ class IAMGrpcTransport(IAMTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
@@ -829,7 +865,9 @@ class IAMGrpcTransport(IAMTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Tests whether the caller has the specified permissions on a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
@@ -856,7 +894,9 @@ class IAMGrpcTransport(IAMTransport):
     def query_grantable_roles(self) -> Callable[
             [iam.QueryGrantableRolesRequest],
             iam.QueryGrantableRolesResponse]:
-        r"""Return a callable for the query grantable roles method over gRPC.
+        r"""Return a callable for the
+        query grantable roles
+          method over gRPC.
 
         Lists roles that can be granted on a Google Cloud
         resource. A role is grantable if the IAM policy for the
@@ -884,7 +924,9 @@ class IAMGrpcTransport(IAMTransport):
     def list_roles(self) -> Callable[
             [iam.ListRolesRequest],
             iam.ListRolesResponse]:
-        r"""Return a callable for the list roles method over gRPC.
+        r"""Return a callable for the
+        list roles
+          method over gRPC.
 
         Lists every predefined [Role][google.iam.admin.v1.Role] that IAM
         supports, or every custom role that is defined for an
@@ -912,7 +954,9 @@ class IAMGrpcTransport(IAMTransport):
     def get_role(self) -> Callable[
             [iam.GetRoleRequest],
             iam.Role]:
-        r"""Return a callable for the get role method over gRPC.
+        r"""Return a callable for the
+        get role
+          method over gRPC.
 
         Gets the definition of a [Role][google.iam.admin.v1.Role].
 
@@ -938,7 +982,9 @@ class IAMGrpcTransport(IAMTransport):
     def create_role(self) -> Callable[
             [iam.CreateRoleRequest],
             iam.Role]:
-        r"""Return a callable for the create role method over gRPC.
+        r"""Return a callable for the
+        create role
+          method over gRPC.
 
         Creates a new custom [Role][google.iam.admin.v1.Role].
 
@@ -964,7 +1010,9 @@ class IAMGrpcTransport(IAMTransport):
     def update_role(self) -> Callable[
             [iam.UpdateRoleRequest],
             iam.Role]:
-        r"""Return a callable for the update role method over gRPC.
+        r"""Return a callable for the
+        update role
+          method over gRPC.
 
         Updates the definition of a custom
         [Role][google.iam.admin.v1.Role].
@@ -991,7 +1039,9 @@ class IAMGrpcTransport(IAMTransport):
     def delete_role(self) -> Callable[
             [iam.DeleteRoleRequest],
             iam.Role]:
-        r"""Return a callable for the delete role method over gRPC.
+        r"""Return a callable for the
+        delete role
+          method over gRPC.
 
         Deletes a custom [Role][google.iam.admin.v1.Role].
 
@@ -1036,7 +1086,9 @@ class IAMGrpcTransport(IAMTransport):
     def undelete_role(self) -> Callable[
             [iam.UndeleteRoleRequest],
             iam.Role]:
-        r"""Return a callable for the undelete role method over gRPC.
+        r"""Return a callable for the
+        undelete role
+          method over gRPC.
 
         Undeletes a custom [Role][google.iam.admin.v1.Role].
 
@@ -1062,7 +1114,9 @@ class IAMGrpcTransport(IAMTransport):
     def query_testable_permissions(self) -> Callable[
             [iam.QueryTestablePermissionsRequest],
             iam.QueryTestablePermissionsResponse]:
-        r"""Return a callable for the query testable permissions method over gRPC.
+        r"""Return a callable for the
+        query testable permissions
+          method over gRPC.
 
         Lists every permission that you can test on a
         resource. A permission is testable if you can check
@@ -1090,7 +1144,9 @@ class IAMGrpcTransport(IAMTransport):
     def query_auditable_services(self) -> Callable[
             [iam.QueryAuditableServicesRequest],
             iam.QueryAuditableServicesResponse]:
-        r"""Return a callable for the query auditable services method over gRPC.
+        r"""Return a callable for the
+        query auditable services
+          method over gRPC.
 
         Returns a list of services that allow you to opt into audit logs
         that are not generated by default.
@@ -1120,7 +1176,9 @@ class IAMGrpcTransport(IAMTransport):
     def lint_policy(self) -> Callable[
             [iam.LintPolicyRequest],
             iam.LintPolicyResponse]:
-        r"""Return a callable for the lint policy method over gRPC.
+        r"""Return a callable for the
+        lint policy
+          method over gRPC.
 
         Lints, or validates, an IAM policy. Currently checks the
         [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition]

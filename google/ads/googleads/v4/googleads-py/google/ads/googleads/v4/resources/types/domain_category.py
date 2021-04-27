@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -80,29 +77,48 @@ class DomainCategory(proto.Message):
             for the category.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    category = proto.Field(proto.MESSAGE, number=3,
+    category = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.StringValue,
     )
-    language_code = proto.Field(proto.MESSAGE, number=4,
+    language_code = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    domain = proto.Field(proto.MESSAGE, number=5,
+    domain = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.StringValue,
     )
-    coverage_fraction = proto.Field(proto.MESSAGE, number=6,
+    coverage_fraction = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.DoubleValue,
     )
-    category_rank = proto.Field(proto.MESSAGE, number=7,
+    category_rank = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-    has_children = proto.Field(proto.MESSAGE, number=8,
+    has_children = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.BoolValue,
     )
-    recommended_cpc_bid_micros = proto.Field(proto.MESSAGE, number=9,
+    recommended_cpc_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.Int64Value,
     )
 

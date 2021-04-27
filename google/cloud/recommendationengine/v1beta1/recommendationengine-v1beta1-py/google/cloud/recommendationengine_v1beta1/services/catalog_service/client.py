@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.cloud.recommendationengine_v1beta1.types import catalog_service
 from google.cloud.recommendationengine_v1beta1.types import common
 from google.cloud.recommendationengine_v1beta1.types import import_
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import CatalogServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CatalogServiceGrpcTransport
 from .transports.grpc_asyncio import CatalogServiceGrpcAsyncIOTransport
@@ -356,7 +353,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.CreateCatalogItemRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateCatalogItem method.
             parent (str):
                 Required. The parent catalog resource name, such as
@@ -370,7 +368,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
                 This corresponds to the ``catalog_item`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -397,10 +394,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.CreateCatalogItemRequest):
             request = catalog_service.CreateCatalogItemRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if catalog_item is not None:
@@ -441,7 +436,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.GetCatalogItemRequest):
-                The request object. Request message for GetCatalogItem
+                The request object.
+                Request message for GetCatalogItem
                 method.
             name (str):
                 Required. Full resource name of catalog item, such as
@@ -450,7 +446,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -477,10 +472,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.GetCatalogItemRequest):
             request = catalog_service.GetCatalogItemRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -520,7 +513,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ListCatalogItemsRequest):
-                The request object. Request message for ListCatalogItems
+                The request object.
+                Request message for ListCatalogItems
                 method.
             parent (str):
                 Required. The parent catalog resource name, such as
@@ -536,7 +530,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -566,10 +559,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.ListCatalogItemsRequest):
             request = catalog_service.ListCatalogItemsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -622,7 +613,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.UpdateCatalogItemRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateCatalogItem method.
             name (str):
                 Required. Full resource name of catalog item, such as
@@ -646,7 +638,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -673,10 +664,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.UpdateCatalogItemRequest):
             request = catalog_service.UpdateCatalogItemRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if catalog_item is not None:
@@ -719,7 +708,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.DeleteCatalogItemRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteCatalogItem method.
             name (str):
                 Required. Full resource name of catalog item, such as
@@ -728,7 +718,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -749,10 +738,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.DeleteCatalogItemRequest):
             request = catalog_service.DeleteCatalogItemRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -797,7 +784,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ImportCatalogItemsRequest):
-                The request object. Request message for Import methods.
+                The request object.
+                Request message for Import methods.
             parent (str):
                 Required.
                 ``projects/1234/locations/global/catalogs/default_catalog``
@@ -832,7 +820,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
                 This corresponds to the ``errors_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -863,10 +850,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, import_.ImportCatalogItemsRequest):
             request = import_.ImportCatalogItemsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if request_id is not None:
@@ -906,8 +891,6 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

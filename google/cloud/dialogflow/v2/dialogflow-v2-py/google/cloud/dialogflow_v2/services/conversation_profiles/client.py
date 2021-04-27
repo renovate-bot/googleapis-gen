@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,7 +36,6 @@ from google.cloud.dialogflow_v2.types import conversation_profile
 from google.cloud.dialogflow_v2.types import conversation_profile as gcd_conversation_profile
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import ConversationProfilesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ConversationProfilesGrpcTransport
 from .transports.grpc_asyncio import ConversationProfilesGrpcAsyncIOTransport
@@ -376,7 +373,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListConversationProfilesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2.ConversationProfiles.ListConversationProfiles].
             parent (str):
                 Required. The project to list all conversation profiles
@@ -386,7 +384,6 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -416,10 +413,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation_profile.ListConversationProfilesRequest):
             request = conversation_profile.ListConversationProfilesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -467,7 +462,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetConversationProfileRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile].
             name (str):
                 Required. The resource name of the conversation profile.
@@ -477,7 +473,6 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -504,10 +499,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation_profile.GetConversationProfileRequest):
             request = conversation_profile.GetConversationProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -553,7 +546,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateConversationProfileRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [ConversationProfiles.CreateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.CreateConversationProfile].
             parent (str):
                 Required. The project to create a conversation profile
@@ -570,7 +564,6 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
                 This corresponds to the ``conversation_profile`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -597,10 +590,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_conversation_profile.CreateConversationProfileRequest):
             request = gcd_conversation_profile.CreateConversationProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if conversation_profile is not None:
@@ -648,7 +639,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateConversationProfileRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.UpdateConversationProfile].
             conversation_profile (google.cloud.dialogflow_v2.types.ConversationProfile):
                 Required. The conversation profile to
@@ -664,7 +656,6 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -691,10 +682,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_conversation_profile.UpdateConversationProfileRequest):
             request = gcd_conversation_profile.UpdateConversationProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if conversation_profile is not None:
                 request.conversation_profile = conversation_profile
             if update_mask is not None:
@@ -735,7 +724,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteConversationProfileRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.DeleteConversationProfile].
                 This operation fails if the conversation profile is
                 still referenced from a phone number.
@@ -747,7 +737,6 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -768,10 +757,8 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation_profile.DeleteConversationProfileRequest):
             request = conversation_profile.DeleteConversationProfileRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -794,8 +781,6 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

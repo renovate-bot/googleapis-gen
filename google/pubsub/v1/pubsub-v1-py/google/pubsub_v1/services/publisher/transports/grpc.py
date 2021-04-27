@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -30,7 +28,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.pubsub_v1.types import pubsub
-
 from .base import PublisherTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,7 +62,8 @@ class PublisherGrpcTransport(PublisherTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,13 +202,15 @@ class PublisherGrpcTransport(PublisherTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -224,7 +224,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def create_topic(self) -> Callable[
             [pubsub.Topic],
             pubsub.Topic]:
-        r"""Return a callable for the create topic method over gRPC.
+        r"""Return a callable for the
+        create topic
+          method over gRPC.
 
         Creates the given topic with the given name. See the [resource
         name rules]
@@ -252,7 +254,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def update_topic(self) -> Callable[
             [pubsub.UpdateTopicRequest],
             pubsub.Topic]:
-        r"""Return a callable for the update topic method over gRPC.
+        r"""Return a callable for the
+        update topic
+          method over gRPC.
 
         Updates an existing topic. Note that certain
         properties of a topic are not modifiable.
@@ -279,7 +283,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def publish(self) -> Callable[
             [pubsub.PublishRequest],
             pubsub.PublishResponse]:
-        r"""Return a callable for the publish method over gRPC.
+        r"""Return a callable for the
+        publish
+          method over gRPC.
 
         Adds one or more messages to the topic. Returns ``NOT_FOUND`` if
         the topic does not exist.
@@ -306,7 +312,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def get_topic(self) -> Callable[
             [pubsub.GetTopicRequest],
             pubsub.Topic]:
-        r"""Return a callable for the get topic method over gRPC.
+        r"""Return a callable for the
+        get topic
+          method over gRPC.
 
         Gets the configuration of a topic.
 
@@ -332,7 +340,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def list_topics(self) -> Callable[
             [pubsub.ListTopicsRequest],
             pubsub.ListTopicsResponse]:
-        r"""Return a callable for the list topics method over gRPC.
+        r"""Return a callable for the
+        list topics
+          method over gRPC.
 
         Lists matching topics.
 
@@ -358,7 +368,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def list_topic_subscriptions(self) -> Callable[
             [pubsub.ListTopicSubscriptionsRequest],
             pubsub.ListTopicSubscriptionsResponse]:
-        r"""Return a callable for the list topic subscriptions method over gRPC.
+        r"""Return a callable for the
+        list topic subscriptions
+          method over gRPC.
 
         Lists the names of the attached subscriptions on this
         topic.
@@ -385,7 +397,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def list_topic_snapshots(self) -> Callable[
             [pubsub.ListTopicSnapshotsRequest],
             pubsub.ListTopicSnapshotsResponse]:
-        r"""Return a callable for the list topic snapshots method over gRPC.
+        r"""Return a callable for the
+        list topic snapshots
+          method over gRPC.
 
         Lists the names of the snapshots on this topic. Snapshots are
         used in
@@ -416,7 +430,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def delete_topic(self) -> Callable[
             [pubsub.DeleteTopicRequest],
             empty.Empty]:
-        r"""Return a callable for the delete topic method over gRPC.
+        r"""Return a callable for the
+        delete topic
+          method over gRPC.
 
         Deletes the topic with the given name. Returns ``NOT_FOUND`` if
         the topic does not exist. After a topic is deleted, a new topic
@@ -447,7 +463,9 @@ class PublisherGrpcTransport(PublisherTransport):
     def detach_subscription(self) -> Callable[
             [pubsub.DetachSubscriptionRequest],
             pubsub.DetachSubscriptionResponse]:
-        r"""Return a callable for the detach subscription method over gRPC.
+        r"""Return a callable for the
+        detach subscription
+          method over gRPC.
 
         Detaches a subscription from this topic. All messages retained
         in the subscription are dropped. Subsequent ``Pull`` and
@@ -551,7 +569,6 @@ class PublisherGrpcTransport(PublisherTransport):
                 response_deserializer=iam_policy.TestIamPermissionsResponse.FromString,
             )
         return self._stubs["test_iam_permissions"]
-
 
 __all__ = (
     'PublisherGrpcTransport',

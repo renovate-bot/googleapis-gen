@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -32,7 +29,6 @@ __protobuf__ = proto.module(
 
 class DynamicSearchAdsSearchTermView(proto.Message):
     r"""A dynamic search ads search term view.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the dynamic search ads
@@ -69,26 +65,43 @@ class DynamicSearchAdsSearchTermView(proto.Message):
             This field is read-only.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    search_term = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    search_term = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.StringValue,
     )
-    headline = proto.Field(proto.MESSAGE, number=3,
+    headline = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.StringValue,
     )
-    landing_page = proto.Field(proto.MESSAGE, number=4,
+    landing_page = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    page_url = proto.Field(proto.MESSAGE, number=5,
+    page_url = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.StringValue,
     )
-    has_negative_keyword = proto.Field(proto.MESSAGE, number=6,
+    has_negative_keyword = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.BoolValue,
     )
-    has_matching_keyword = proto.Field(proto.MESSAGE, number=7,
+    has_matching_keyword = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.BoolValue,
     )
-    has_negative_url = proto.Field(proto.MESSAGE, number=8,
+    has_negative_url = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.BoolValue,
     )
 

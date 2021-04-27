@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,8 +32,7 @@ from google.cloud.binaryauthorization_v1beta1.types.service import ListAttestors
 from google.cloud.binaryauthorization_v1beta1.types.service import UpdateAttestorRequest
 from google.cloud.binaryauthorization_v1beta1.types.service import UpdatePolicyRequest
 
-__all__ = (
-    'AdmissionRule',
+__all__ = ('AdmissionRule',
     'AdmissionWhitelistPattern',
     'Attestor',
     'AttestorPublicKey',

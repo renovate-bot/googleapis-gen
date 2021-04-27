@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -33,7 +31,6 @@ from google.api_core import operation_async  # type: ignore
 from google.chromeos.moblab_v1beta1.services.build_service import pagers
 from google.chromeos.moblab_v1beta1.types import build_service
 from google.chromeos.moblab_v1beta1.types import resources
-
 from .transports.base import BuildServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import BuildServiceGrpcAsyncIOTransport
 from .client import BuildServiceClient
@@ -55,19 +52,14 @@ class BuildServiceAsyncClient:
     parse_milestone_path = staticmethod(BuildServiceClient.parse_milestone_path)
     model_path = staticmethod(BuildServiceClient.model_path)
     parse_model_path = staticmethod(BuildServiceClient.parse_model_path)
-
     common_billing_account_path = staticmethod(BuildServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(BuildServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(BuildServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(BuildServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(BuildServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(BuildServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(BuildServiceClient.common_project_path)
     parse_common_project_path = staticmethod(BuildServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(BuildServiceClient.common_location_path)
     parse_common_location_path = staticmethod(BuildServiceClient.parse_common_location_path)
 
@@ -152,7 +144,6 @@ class BuildServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = BuildServiceClient(
             credentials=credentials,
             transport=transport,
@@ -175,7 +166,8 @@ class BuildServiceAsyncClient:
 
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.ListBuildsRequest`):
-                The request object. Request message for listing builds.
+                The request object.
+                Request message for listing builds.
                 NEXT_TAG: 7
             parent (:class:`str`):
                 Required. The full resource name of
@@ -187,7 +179,6 @@ class BuildServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,7 +206,6 @@ class BuildServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -224,10 +214,7 @@ class BuildServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_builds,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -277,7 +264,8 @@ class BuildServiceAsyncClient:
 
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest`):
-                The request object. Request message for checking if the
+                The request object.
+                Request message for checking if the
                 build artifact is staged.
             name (:class:`str`):
                 Required. The full resource name of
@@ -288,7 +276,6 @@ class BuildServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -313,7 +300,6 @@ class BuildServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -322,10 +308,7 @@ class BuildServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.check_build_stage_status,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -371,7 +354,8 @@ class BuildServiceAsyncClient:
 
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.StageBuildRequest`):
-                The request object. Request message for staging a build
+                The request object.
+                Request message for staging a build
                 artifact.
             name (:class:`str`):
                 Required. The full resource name of
@@ -382,7 +366,6 @@ class BuildServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -410,7 +393,6 @@ class BuildServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -448,8 +430,6 @@ class BuildServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

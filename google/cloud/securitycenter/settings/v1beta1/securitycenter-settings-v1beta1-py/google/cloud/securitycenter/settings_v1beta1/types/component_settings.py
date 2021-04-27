@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -44,7 +41,6 @@ class ComponentEnablementState(proto.Enum):
 
 class ComponentSettings(proto.Message):
     r"""Component Settings for Security Command Center
-
     Attributes:
         name (str):
             The relative resource name of the component settings.
@@ -92,9 +88,9 @@ class ComponentSettings(proto.Message):
             Web Security Scanner specific settings For component, expect
             WEB_SECURITY_SCANNER
     """
+
     class DetectorSettings(proto.Message):
         r"""Settings for each detector.
-
         Attributes:
             state (google.cloud.securitycenter.settings_v1beta1.types.ComponentEnablementState):
                 ENABLE to enable component, DISABLE to
@@ -102,69 +98,89 @@ class ComponentSettings(proto.Message):
                 ancestors.
         """
 
-        state = proto.Field(proto.ENUM, number=1,
+        state = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='ComponentEnablementState',
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    state = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='ComponentEnablementState',
     )
-
-    project_service_account = proto.Field(proto.STRING, number=3)
-
-    detector_settings = proto.MapField(proto.STRING, proto.MESSAGE, number=4,
+    project_service_account = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    detector_settings = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=4
         message=DetectorSettings,
     )
-
-    etag = proto.Field(proto.STRING, number=5)
-
-    update_time = proto.Field(proto.MESSAGE, number=6,
+    etag = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=timestamp.Timestamp,
     )
-
-    container_threat_detection_settings = proto.Field(proto.MESSAGE, number=41, oneof='specific_settings',
+    container_threat_detection_settings = proto.Field(
+        proto.MESSAGE,
+        number=41,
+        oneof='specific_settings',
         message='ContainerThreatDetectionSettings',
     )
-
-    event_threat_detection_settings = proto.Field(proto.MESSAGE, number=42, oneof='specific_settings',
+    event_threat_detection_settings = proto.Field(
+        proto.MESSAGE,
+        number=42,
+        oneof='specific_settings',
         message='EventThreatDetectionSettings',
     )
-
-    security_health_analytics_settings = proto.Field(proto.MESSAGE, number=44, oneof='specific_settings',
+    security_health_analytics_settings = proto.Field(
+        proto.MESSAGE,
+        number=44,
+        oneof='specific_settings',
         message='SecurityHealthAnalyticsSettings',
     )
-
-    web_security_scanner_settings = proto.Field(proto.MESSAGE, number=40, oneof='specific_settings',
+    web_security_scanner_settings = proto.Field(
+        proto.MESSAGE,
+        number=40,
+        oneof='specific_settings',
         message='WebSecurityScanner',
     )
 
 
 class WebSecurityScanner(proto.Message):
-    r"""User specified settings for Web Security Scanner"""
+    r"""User specified settings for Web Security Scanner    """
 
 
 class ContainerThreatDetectionSettings(proto.Message):
-    r"""User specified settings for KTD"""
+    r"""User specified settings for KTD    """
 
 
 class EventThreatDetectionSettings(proto.Message):
-    r"""User specified settings for ETD"""
+    r"""User specified settings for ETD    """
 
 
 class SecurityHealthAnalyticsSettings(proto.Message):
     r"""User specified settings for Security Health Analytics
-
     Attributes:
         non_org_iam_member_settings (google.cloud.securitycenter.settings_v1beta1.types.SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings):
             Settings for "NON_ORG_IAM_MEMBER" scanner.
         admin_service_account_settings (google.cloud.securitycenter.settings_v1beta1.types.SecurityHealthAnalyticsSettings.AdminServiceAccountSettings):
             Settings for "ADMIN_SERVICE_ACCOUNT" scanner.
     """
+
     class NonOrgIamMemberSettings(proto.Message):
         r"""Settings for "NON_ORG_IAM_MEMBER" scanner.
-
         Attributes:
             approved_identities (Sequence[str]):
                 User emails ending in the provided identities are allowed to
@@ -181,11 +197,13 @@ class SecurityHealthAnalyticsSettings(proto.Message):
                    non-approved.
         """
 
-        approved_identities = proto.RepeatedField(proto.STRING, number=1)
+        approved_identities = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
 
     class AdminServiceAccountSettings(proto.Message):
         r"""Settings for "ADMIN_SERVICE_ACCOUNT" scanner.
-
         Attributes:
             approved_identities (Sequence[str]):
                 User-created service accounts ending in the provided
@@ -203,13 +221,19 @@ class SecurityHealthAnalyticsSettings(proto.Message):
                    Google-created service accounts are all approved.
         """
 
-        approved_identities = proto.RepeatedField(proto.STRING, number=1)
+        approved_identities = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
 
-    non_org_iam_member_settings = proto.Field(proto.MESSAGE, number=1,
+    non_org_iam_member_settings = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=NonOrgIamMemberSettings,
     )
-
-    admin_service_account_settings = proto.Field(proto.MESSAGE, number=2,
+    admin_service_account_settings = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=AdminServiceAccountSettings,
     )
 

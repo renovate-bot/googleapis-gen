@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.datastore_v1.types import entity
 from google.cloud.datastore_v1.types import query as gd_query
@@ -61,13 +58,18 @@ class LookupRequest(proto.Message):
             Required. Keys of entities to look up.
     """
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    read_options = proto.Field(proto.MESSAGE, number=1,
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    read_options = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ReadOptions',
     )
-
-    keys = proto.RepeatedField(proto.MESSAGE, number=3,
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=entity.Key,
     )
 
@@ -92,15 +94,19 @@ class LookupResponse(proto.Message):
             the order of the keys in the input.
     """
 
-    found = proto.RepeatedField(proto.MESSAGE, number=1,
+    found = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gd_query.EntityResult,
     )
-
-    missing = proto.RepeatedField(proto.MESSAGE, number=2,
+    missing = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gd_query.EntityResult,
     )
-
-    deferred = proto.RepeatedField(proto.MESSAGE, number=3,
+    deferred = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=entity.Key,
     )
 
@@ -127,21 +133,30 @@ class RunQueryRequest(proto.Message):
             The GQL query to run.
     """
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    partition_id = proto.Field(proto.MESSAGE, number=2,
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    partition_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=entity.PartitionId,
     )
-
-    read_options = proto.Field(proto.MESSAGE, number=1,
+    read_options = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ReadOptions',
     )
-
-    query = proto.Field(proto.MESSAGE, number=3, oneof='query_type',
+    query = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='query_type',
         message=gd_query.Query,
     )
-
-    gql_query = proto.Field(proto.MESSAGE, number=7, oneof='query_type',
+    gql_query = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='query_type',
         message=gd_query.GqlQuery,
     )
 
@@ -158,11 +173,14 @@ class RunQueryResponse(proto.Message):
             was set.
     """
 
-    batch = proto.Field(proto.MESSAGE, number=1,
+    batch = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gd_query.QueryResultBatch,
     )
-
-    query = proto.Field(proto.MESSAGE, number=2,
+    query = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gd_query.Query,
     )
 
@@ -179,9 +197,13 @@ class BeginTransactionRequest(proto.Message):
             Options for a new transaction.
     """
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    transaction_options = proto.Field(proto.MESSAGE, number=10,
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    transaction_options = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='TransactionOptions',
     )
 
@@ -195,7 +217,10 @@ class BeginTransactionResponse(proto.Message):
             The transaction identifier (always present).
     """
 
-    transaction = proto.Field(proto.BYTES, number=1)
+    transaction = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
 
 
 class RollbackRequest(proto.Message):
@@ -211,16 +236,21 @@ class RollbackRequest(proto.Message):
             [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
     """
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    transaction = proto.Field(proto.BYTES, number=1)
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    transaction = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
 
 
 class RollbackResponse(proto.Message):
     r"""The response for
     [Datastore.Rollback][google.datastore.v1.Datastore.Rollback]. (an
     empty message).
-    """
+        """
 
 
 class CommitRequest(proto.Message):
@@ -260,15 +290,23 @@ class CommitRequest(proto.Message):
         TRANSACTIONAL = 1
         NON_TRANSACTIONAL = 2
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    mode = proto.Field(proto.ENUM, number=5,
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    mode = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=Mode,
     )
-
-    transaction = proto.Field(proto.BYTES, number=1, oneof='transaction_selector')
-
-    mutations = proto.RepeatedField(proto.MESSAGE, number=6,
+    transaction = proto.Field(
+        proto.BYTES,
+        number=1,
+        oneof='transaction_selector',
+    )
+    mutations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message='Mutation',
     )
 
@@ -287,11 +325,15 @@ class CommitResponse(proto.Message):
             the commit, or zero if none were updated.
     """
 
-    mutation_results = proto.RepeatedField(proto.MESSAGE, number=3,
+    mutation_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='MutationResult',
     )
-
-    index_updates = proto.Field(proto.INT32, number=4)
+    index_updates = proto.Field(
+        proto.INT32,
+        number=4,
+    )
 
 
 class AllocateIdsRequest(proto.Message):
@@ -308,9 +350,13 @@ class AllocateIdsRequest(proto.Message):
             reserved/read-only.
     """
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=entity.Key,
     )
 
@@ -326,7 +372,9 @@ class AllocateIdsResponse(proto.Message):
             with a newly allocated ID.
     """
 
-    keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=entity.Key,
     )
 
@@ -348,11 +396,17 @@ class ReserveIdsRequest(proto.Message):
             allocated.
     """
 
-    project_id = proto.Field(proto.STRING, number=8)
-
-    database_id = proto.Field(proto.STRING, number=9)
-
-    keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    project_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    database_id = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=entity.Key,
     )
 
@@ -360,12 +414,11 @@ class ReserveIdsRequest(proto.Message):
 class ReserveIdsResponse(proto.Message):
     r"""The response for
     [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
-    """
+        """
 
 
 class Mutation(proto.Message):
     r"""A mutation to apply to an entity.
-
     Attributes:
         insert (google.cloud.datastore_v1.types.Entity):
             The entity to insert. The entity must not
@@ -390,28 +443,39 @@ class Mutation(proto.Message):
             conflicts.
     """
 
-    insert = proto.Field(proto.MESSAGE, number=4, oneof='operation',
+    insert = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='operation',
         message=entity.Entity,
     )
-
-    update = proto.Field(proto.MESSAGE, number=5, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='operation',
         message=entity.Entity,
     )
-
-    upsert = proto.Field(proto.MESSAGE, number=6, oneof='operation',
+    upsert = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='operation',
         message=entity.Entity,
     )
-
-    delete = proto.Field(proto.MESSAGE, number=7, oneof='operation',
+    delete = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='operation',
         message=entity.Key,
     )
-
-    base_version = proto.Field(proto.INT64, number=8, oneof='conflict_detection_strategy')
+    base_version = proto.Field(
+        proto.INT64,
+        number=8,
+        oneof='conflict_detection_strategy',
+    )
 
 
 class MutationResult(proto.Message):
     r"""The result of applying a mutation.
-
     Attributes:
         key (google.cloud.datastore_v1.types.Key):
             The automatically allocated key.
@@ -431,18 +495,23 @@ class MutationResult(proto.Message):
             strategy field is not set in the mutation.
     """
 
-    key = proto.Field(proto.MESSAGE, number=3,
+    key = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=entity.Key,
     )
-
-    version = proto.Field(proto.INT64, number=4)
-
-    conflict_detected = proto.Field(proto.BOOL, number=5)
+    version = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    conflict_detected = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class ReadOptions(proto.Message):
     r"""The options shared by read requests.
-
     Attributes:
         read_consistency (google.cloud.datastore_v1.types.ReadOptions.ReadConsistency):
             The non-transactional read consistency to use. Cannot be set
@@ -458,11 +527,17 @@ class ReadOptions(proto.Message):
         STRONG = 1
         EVENTUAL = 2
 
-    read_consistency = proto.Field(proto.ENUM, number=1, oneof='consistency_type',
+    read_consistency = proto.Field(
+        proto.ENUM,
+        number=1,
+        oneof='consistency_type',
         enum=ReadConsistency,
     )
-
-    transaction = proto.Field(proto.BYTES, number=2, oneof='consistency_type')
+    transaction = proto.Field(
+        proto.BYTES,
+        number=2,
+        oneof='consistency_type',
+    )
 
 
 class TransactionOptions(proto.Message):
@@ -481,25 +556,33 @@ class TransactionOptions(proto.Message):
         read_only (google.cloud.datastore_v1.types.TransactionOptions.ReadOnly):
             The transaction should only allow reads.
     """
+
     class ReadWrite(proto.Message):
         r"""Options specific to read / write transactions.
-
         Attributes:
             previous_transaction (bytes):
                 The transaction identifier of the transaction
                 being retried.
         """
 
-        previous_transaction = proto.Field(proto.BYTES, number=1)
+        previous_transaction = proto.Field(
+            proto.BYTES,
+            number=1,
+        )
 
     class ReadOnly(proto.Message):
-        r"""Options specific to read-only transactions."""
+        r"""Options specific to read-only transactions.    """
 
-    read_write = proto.Field(proto.MESSAGE, number=1, oneof='mode',
+    read_write = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='mode',
         message=ReadWrite,
     )
-
-    read_only = proto.Field(proto.MESSAGE, number=2, oneof='mode',
+    read_only = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='mode',
         message=ReadOnly,
     )
 

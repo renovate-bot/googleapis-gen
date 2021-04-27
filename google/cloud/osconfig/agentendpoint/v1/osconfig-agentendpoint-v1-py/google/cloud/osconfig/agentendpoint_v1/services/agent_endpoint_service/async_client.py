@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -31,7 +29,6 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.osconfig.agentendpoint_v1.types import agentendpoint
 from google.cloud.osconfig.agentendpoint_v1.types import inventory as gcoa_inventory
 from google.cloud.osconfig.agentendpoint_v1.types import tasks
-
 from .transports.base import AgentEndpointServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AgentEndpointServiceGrpcAsyncIOTransport
 from .client import AgentEndpointServiceClient
@@ -47,19 +44,14 @@ class AgentEndpointServiceAsyncClient:
 
     os_policy_assignment_path = staticmethod(AgentEndpointServiceClient.os_policy_assignment_path)
     parse_os_policy_assignment_path = staticmethod(AgentEndpointServiceClient.parse_os_policy_assignment_path)
-
     common_billing_account_path = staticmethod(AgentEndpointServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AgentEndpointServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AgentEndpointServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AgentEndpointServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AgentEndpointServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AgentEndpointServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AgentEndpointServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AgentEndpointServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(AgentEndpointServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AgentEndpointServiceClient.parse_common_location_path)
 
@@ -144,7 +136,6 @@ class AgentEndpointServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AgentEndpointServiceClient(
             credentials=credentials,
             transport=transport,
@@ -167,7 +158,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReceiveTaskNotificationRequest`):
-                The request object. A request message to receive task
+                The request object.
+                A request message to receive task
                 notifications.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -187,7 +179,6 @@ class AgentEndpointServiceAsyncClient:
                 This corresponds to the ``agent_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -213,7 +204,6 @@ class AgentEndpointServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance_id_token is not None:
             request.instance_id_token = instance_id_token
         if agent_version is not None:
@@ -224,10 +214,7 @@ class AgentEndpointServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.receive_task_notification,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.Aborted,
                     exceptions.Cancelled,
                     exceptions.DeadlineExceeded,
@@ -264,7 +251,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1.types.StartNextTaskRequest`):
-                The request object. A request message for signaling the
+                The request object.
+                A request message for signaling the
                 start of a task execution.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -277,7 +265,6 @@ class AgentEndpointServiceAsyncClient:
                 This corresponds to the ``instance_id_token`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -302,7 +289,6 @@ class AgentEndpointServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance_id_token is not None:
             request.instance_id_token = instance_id_token
 
@@ -340,7 +326,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReportTaskProgressRequest`):
-                The request object. A request message for reporting the
+                The request object.
+                A request message for reporting the
                 progress of current task.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -371,7 +358,6 @@ class AgentEndpointServiceAsyncClient:
                 This corresponds to the ``task_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -396,7 +382,6 @@ class AgentEndpointServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance_id_token is not None:
             request.instance_id_token = instance_id_token
         if task_id is not None:
@@ -439,7 +424,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReportTaskCompleteRequest`):
-                The request object. A request message for signaling the
+                The request object.
+                A request message for signaling the
                 completion of a task execution.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -476,7 +462,6 @@ class AgentEndpointServiceAsyncClient:
                 This corresponds to the ``error_message`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -501,7 +486,6 @@ class AgentEndpointServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance_id_token is not None:
             request.instance_id_token = instance_id_token
         if task_id is not None:
@@ -544,7 +528,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1.types.RegisterAgentRequest`):
-                The request object. The request message for registering
+                The request object.
+                The request message for registering
                 the agent.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -569,7 +554,6 @@ class AgentEndpointServiceAsyncClient:
                 This corresponds to the ``supported_capabilities`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -594,12 +578,10 @@ class AgentEndpointServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance_id_token is not None:
             request.instance_id_token = instance_id_token
         if agent_version is not None:
             request.agent_version = agent_version
-
         if supported_capabilities:
             request.supported_capabilities.extend(supported_capabilities)
 
@@ -636,7 +618,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReportInventoryRequest`):
-                The request object. The request message for having the
+                The request object.
+                The request message for having the
                 agent report inventory.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -670,7 +653,6 @@ class AgentEndpointServiceAsyncClient:
                 This corresponds to the ``inventory`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -695,7 +677,6 @@ class AgentEndpointServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance_id_token is not None:
             request.instance_id_token = instance_id_token
         if inventory_checksum is not None:
@@ -721,8 +702,6 @@ class AgentEndpointServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

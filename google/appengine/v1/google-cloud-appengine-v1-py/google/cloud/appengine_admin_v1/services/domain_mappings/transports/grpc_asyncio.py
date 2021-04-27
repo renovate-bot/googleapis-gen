@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -24,6 +22,7 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -31,7 +30,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain_mapping
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import DomainMappingsTransport, DEFAULT_CLIENT_INFO
 from .grpc import DomainMappingsGrpcTransport
 
@@ -81,13 +79,15 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +167,6 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -245,7 +245,9 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def list_domain_mappings(self) -> Callable[
             [appengine.ListDomainMappingsRequest],
             Awaitable[appengine.ListDomainMappingsResponse]]:
-        r"""Return a callable for the list domain mappings method over gRPC.
+        r"""Return a callable for the
+        list domain mappings
+          method over gRPC.
 
         Lists the domain mappings on an application.
 
@@ -271,7 +273,9 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def get_domain_mapping(self) -> Callable[
             [appengine.GetDomainMappingRequest],
             Awaitable[domain_mapping.DomainMapping]]:
-        r"""Return a callable for the get domain mapping method over gRPC.
+        r"""Return a callable for the
+        get domain mapping
+          method over gRPC.
 
         Gets the specified domain mapping.
 
@@ -297,7 +301,9 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def create_domain_mapping(self) -> Callable[
             [appengine.CreateDomainMappingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create domain mapping method over gRPC.
+        r"""Return a callable for the
+        create domain mapping
+          method over gRPC.
 
         Maps a domain to an application. A user must be authorized to
         administer a domain in order to map it to an application. For a
@@ -326,7 +332,9 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def update_domain_mapping(self) -> Callable[
             [appengine.UpdateDomainMappingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update domain mapping method over gRPC.
+        r"""Return a callable for the
+        update domain mapping
+          method over gRPC.
 
         Updates the specified domain mapping. To map an SSL certificate
         to a domain mapping, update ``certificate_id`` to point to an
@@ -356,7 +364,9 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def delete_domain_mapping(self) -> Callable[
             [appengine.DeleteDomainMappingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete domain mapping method over gRPC.
+        r"""Return a callable for the
+        delete domain mapping
+          method over gRPC.
 
         Deletes the specified domain mapping. A user must be authorized
         to administer the associated domain in order to delete a

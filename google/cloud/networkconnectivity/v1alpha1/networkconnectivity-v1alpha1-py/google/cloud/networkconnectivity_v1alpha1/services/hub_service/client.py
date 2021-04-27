@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -41,7 +39,6 @@ from google.cloud.networkconnectivity_v1alpha1.types import hub as gcn_hub
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import HubServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import HubServiceGrpcTransport
 from .transports.grpc_asyncio import HubServiceGrpcAsyncIOTransport
@@ -391,7 +388,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.ListHubsRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.ListHubs][google.cloud.networkconnectivity.v1alpha1.HubService.ListHubs]
                 method.
             parent (str):
@@ -399,7 +397,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -430,10 +427,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.ListHubsRequest):
             request = hub.ListHubsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -481,7 +476,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.GetHubRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.GetHub][google.cloud.networkconnectivity.v1alpha1.HubService.GetHub]
                 method.
             name (str):
@@ -491,7 +487,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -523,10 +518,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.GetHubRequest):
             request = hub.GetHubRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -567,7 +560,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.CreateHubRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.CreateHub][google.cloud.networkconnectivity.v1alpha1.HubService.CreateHub]
                 method.
             parent (str):
@@ -591,7 +585,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``hub_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -623,10 +616,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcn_hub.CreateHubRequest):
             request = gcn_hub.CreateHubRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if hub is not None:
@@ -678,7 +669,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.UpdateHubRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.UpdateHub][google.cloud.networkconnectivity.v1alpha1.HubService.UpdateHub]
                 method.
             hub (google.cloud.networkconnectivity_v1alpha1.types.Hub):
@@ -699,7 +691,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -731,10 +722,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcn_hub.UpdateHubRequest):
             request = gcn_hub.UpdateHubRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if hub is not None:
                 request.hub = hub
             if update_mask is not None:
@@ -783,7 +772,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.DeleteHubRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.DeleteHub][google.cloud.networkconnectivity.v1alpha1.HubService.DeleteHub].
             name (str):
                 Required. The name of the Hub to
@@ -792,7 +782,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -832,10 +821,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.DeleteHubRequest):
             request = hub.DeleteHubRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -882,14 +869,14 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.ListSpokesRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.ListSpokes][google.cloud.networkconnectivity.v1alpha1.HubService.ListSpokes].
             parent (str):
                 Required. The parent's resource name.
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -919,10 +906,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.ListSpokesRequest):
             request = hub.ListSpokesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -970,14 +955,14 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.GetSpokeRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.GetSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.GetSpoke].
             name (str):
                 Required. The name of Spoke resource.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,10 +992,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.GetSpokeRequest):
             request = hub.GetSpokeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1051,7 +1034,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.CreateSpokeRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.CreateSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.CreateSpoke].
             parent (str):
                 Required. The parent's resource name
@@ -1074,7 +1058,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``spoke_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1105,10 +1088,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.CreateSpokeRequest):
             request = hub.CreateSpokeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if spoke is not None:
@@ -1160,7 +1141,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.UpdateSpokeRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.UpdateSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.UpdateSpoke]
                 method.
             spoke (google.cloud.networkconnectivity_v1alpha1.types.Spoke):
@@ -1181,7 +1163,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1212,10 +1193,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.UpdateSpokeRequest):
             request = hub.UpdateSpokeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if spoke is not None:
                 request.spoke = spoke
             if update_mask is not None:
@@ -1264,7 +1243,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         Args:
             request (google.cloud.networkconnectivity_v1alpha1.types.DeleteSpokeRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.DeleteSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.DeleteSpoke].
             name (str):
                 Required. The name of the Spoke to
@@ -1273,7 +1253,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1313,10 +1292,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, hub.DeleteSpokeRequest):
             request = hub.DeleteSpokeRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1350,8 +1327,6 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

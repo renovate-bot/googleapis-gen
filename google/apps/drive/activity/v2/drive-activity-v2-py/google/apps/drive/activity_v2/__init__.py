@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.drive_activity_service import DriveActivityServiceClient
+
 from .types.action import Action
 from .types.action import ActionDetail
 from .types.action import ApplicationReference
@@ -53,7 +53,6 @@ from .types.target import Target
 from .types.target import TargetReference
 from .types.target import TeamDrive
 from .types.target import TeamDriveReference
-
 
 __all__ = (
     'Action',

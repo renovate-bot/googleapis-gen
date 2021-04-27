@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.devtools.cloudprofiler_v2.types import profiler
 from google.protobuf import duration_pb2 as duration  # type: ignore
-
 from .transports.base import ProfilerServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ProfilerServiceGrpcTransport
 from .transports.grpc_asyncio import ProfilerServiceGrpcAsyncIOTransport
@@ -348,13 +345,13 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         Args:
             request (google.devtools.cloudprofiler_v2.types.CreateProfileRequest):
-                The request object. CreateProfileRequest describes a
+                The request object.
+                CreateProfileRequest describes a
                 profile resource online creation request. The deployment
                 field must be populated. The profile_type specifies the
                 list of profile types supported by the agent. The
                 creation call will hang until a profile of one of these
                 types needs to be collected.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -366,7 +363,6 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
                 Profile resource.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a profiler.CreateProfileRequest.
         # There's no risk of modifying the input as we've already verified
@@ -411,10 +407,10 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         Args:
             request (google.devtools.cloudprofiler_v2.types.CreateOfflineProfileRequest):
-                The request object. CreateOfflineProfileRequest
+                The request object.
+                CreateOfflineProfileRequest
                 describes a profile resource offline creation request.
                 Profile field must be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +422,6 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
                 Profile resource.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a profiler.CreateOfflineProfileRequest.
         # There's no risk of modifying the input as we've already verified
@@ -472,9 +467,9 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         Args:
             request (google.devtools.cloudprofiler_v2.types.UpdateProfileRequest):
-                The request object. UpdateProfileRequest contains the
+                The request object.
+                UpdateProfileRequest contains the
                 profile to update.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -486,7 +481,6 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
                 Profile resource.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a profiler.UpdateProfileRequest.
         # There's no risk of modifying the input as we've already verified
@@ -516,8 +510,6 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

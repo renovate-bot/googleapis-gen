@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.dialogflow_v2.services.environments import pagers
 from google.cloud.dialogflow_v2.types import environment
-
 from .transports.base import EnvironmentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EnvironmentsGrpcTransport
 from .transports.grpc_asyncio import EnvironmentsGrpcAsyncIOTransport
@@ -338,9 +335,9 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListEnvironmentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2.Environments.ListEnvironments].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -357,7 +354,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a environment.ListEnvironmentsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -396,8 +392,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,8 +35,7 @@ from google.ads.admob_v1.types.admob_resources import ReportWarning
 from google.ads.admob_v1.types.admob_resources import SortOrder
 from google.ads.admob_v1.types.admob_resources import StringList
 
-__all__ = (
-    'AdMobApiAsyncClient',
+__all__ = ('AdMobApiAsyncClient',
     'AdMobApiClient',
     'DateRange',
     'GenerateMediationReportRequest',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +25,7 @@ from google.cloud.assuredworkloads_v1beta1.types.assuredworkloads_v1beta1 import
 from google.cloud.assuredworkloads_v1beta1.types.assuredworkloads_v1beta1 import UpdateWorkloadRequest
 from google.cloud.assuredworkloads_v1beta1.types.assuredworkloads_v1beta1 import Workload
 
-__all__ = (
-    'AssuredWorkloadsServiceAsyncClient',
+__all__ = ('AssuredWorkloadsServiceAsyncClient',
     'AssuredWorkloadsServiceClient',
     'CreateWorkloadOperationMetadata',
     'CreateWorkloadRequest',

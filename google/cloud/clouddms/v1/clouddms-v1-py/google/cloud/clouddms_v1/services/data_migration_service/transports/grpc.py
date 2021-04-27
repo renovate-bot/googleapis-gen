@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -30,7 +28,6 @@ import grpc  # type: ignore
 from google.cloud.clouddms_v1.types import clouddms
 from google.cloud.clouddms_v1.types import clouddms_resources
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import DataMigrationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,7 +61,8 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,13 +202,15 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,7 +240,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def list_migration_jobs(self) -> Callable[
             [clouddms.ListMigrationJobsRequest],
             clouddms.ListMigrationJobsResponse]:
-        r"""Return a callable for the list migration jobs method over gRPC.
+        r"""Return a callable for the
+        list migration jobs
+          method over gRPC.
 
         Lists migration jobs in a given project and location.
 
@@ -266,7 +268,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def get_migration_job(self) -> Callable[
             [clouddms.GetMigrationJobRequest],
             clouddms_resources.MigrationJob]:
-        r"""Return a callable for the get migration job method over gRPC.
+        r"""Return a callable for the
+        get migration job
+          method over gRPC.
 
         Gets details of a single migration job.
 
@@ -292,7 +296,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def create_migration_job(self) -> Callable[
             [clouddms.CreateMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the create migration job method over gRPC.
+        r"""Return a callable for the
+        create migration job
+          method over gRPC.
 
         Creates a new migration job in a given project and
         location.
@@ -319,7 +325,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def update_migration_job(self) -> Callable[
             [clouddms.UpdateMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the update migration job method over gRPC.
+        r"""Return a callable for the
+        update migration job
+          method over gRPC.
 
         Updates the parameters of a single migration job.
 
@@ -345,7 +353,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def delete_migration_job(self) -> Callable[
             [clouddms.DeleteMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the delete migration job method over gRPC.
+        r"""Return a callable for the
+        delete migration job
+          method over gRPC.
 
         Deletes a single migration job.
 
@@ -371,7 +381,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def start_migration_job(self) -> Callable[
             [clouddms.StartMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the start migration job method over gRPC.
+        r"""Return a callable for the
+        start migration job
+          method over gRPC.
 
         Start an already created migration job.
 
@@ -397,7 +409,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def stop_migration_job(self) -> Callable[
             [clouddms.StopMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the stop migration job method over gRPC.
+        r"""Return a callable for the
+        stop migration job
+          method over gRPC.
 
         Stops a running migration job.
 
@@ -423,7 +437,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def resume_migration_job(self) -> Callable[
             [clouddms.ResumeMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the resume migration job method over gRPC.
+        r"""Return a callable for the
+        resume migration job
+          method over gRPC.
 
         Resume a migration job that is currently stopped and
         is resumable (was stopped during CDC phase).
@@ -450,7 +466,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def promote_migration_job(self) -> Callable[
             [clouddms.PromoteMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the promote migration job method over gRPC.
+        r"""Return a callable for the
+        promote migration job
+          method over gRPC.
 
         Promote a migration job, stopping replication to the
         destination and promoting the destination to be a
@@ -478,7 +496,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def verify_migration_job(self) -> Callable[
             [clouddms.VerifyMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the verify migration job method over gRPC.
+        r"""Return a callable for the
+        verify migration job
+          method over gRPC.
 
         Verify a migration job, making sure the destination
         can reach the source and that all configuration and
@@ -506,7 +526,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def restart_migration_job(self) -> Callable[
             [clouddms.RestartMigrationJobRequest],
             operations.Operation]:
-        r"""Return a callable for the restart migration job method over gRPC.
+        r"""Return a callable for the
+        restart migration job
+          method over gRPC.
 
         Restart a stopped or failed migration job, resetting
         the destination instance to its original state and
@@ -534,7 +556,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def generate_ssh_script(self) -> Callable[
             [clouddms.GenerateSshScriptRequest],
             clouddms.SshScript]:
-        r"""Return a callable for the generate ssh script method over gRPC.
+        r"""Return a callable for the
+        generate ssh script
+          method over gRPC.
 
         Generate a SSH configuration script to configure the
         reverse SSH connectivity.
@@ -561,7 +585,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def list_connection_profiles(self) -> Callable[
             [clouddms.ListConnectionProfilesRequest],
             clouddms.ListConnectionProfilesResponse]:
-        r"""Return a callable for the list connection profiles method over gRPC.
+        r"""Return a callable for the
+        list connection profiles
+          method over gRPC.
 
         Retrieve a list of all connection profiles in a given
         project and location.
@@ -588,7 +614,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def get_connection_profile(self) -> Callable[
             [clouddms.GetConnectionProfileRequest],
             clouddms_resources.ConnectionProfile]:
-        r"""Return a callable for the get connection profile method over gRPC.
+        r"""Return a callable for the
+        get connection profile
+          method over gRPC.
 
         Gets details of a single connection profile.
 
@@ -614,7 +642,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def create_connection_profile(self) -> Callable[
             [clouddms.CreateConnectionProfileRequest],
             operations.Operation]:
-        r"""Return a callable for the create connection profile method over gRPC.
+        r"""Return a callable for the
+        create connection profile
+          method over gRPC.
 
         Creates a new connection profile in a given project
         and location.
@@ -641,7 +671,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def update_connection_profile(self) -> Callable[
             [clouddms.UpdateConnectionProfileRequest],
             operations.Operation]:
-        r"""Return a callable for the update connection profile method over gRPC.
+        r"""Return a callable for the
+        update connection profile
+          method over gRPC.
 
         Update the configuration of a single connection
         profile.
@@ -668,7 +700,9 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     def delete_connection_profile(self) -> Callable[
             [clouddms.DeleteConnectionProfileRequest],
             operations.Operation]:
-        r"""Return a callable for the delete connection profile method over gRPC.
+        r"""Return a callable for the
+        delete connection profile
+          method over gRPC.
 
         Deletes a single Database Migration Service
         connection profile. A connection profile can only be

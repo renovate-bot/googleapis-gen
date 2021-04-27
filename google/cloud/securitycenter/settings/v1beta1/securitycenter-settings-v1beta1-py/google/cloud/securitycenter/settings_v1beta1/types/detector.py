@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.securitycenter.settings_v1beta1.types import billing_settings
 
@@ -60,15 +57,23 @@ class Detector(proto.Message):
             that help with PCI compliance.
     """
 
-    detector = proto.Field(proto.STRING, number=1)
-
-    component = proto.Field(proto.STRING, number=2)
-
-    billing_tier = proto.Field(proto.ENUM, number=3,
+    detector = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    component = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    billing_tier = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=billing_settings.BillingTier,
     )
-
-    detector_labels = proto.RepeatedField(proto.STRING, number=4)
+    detector_labels = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

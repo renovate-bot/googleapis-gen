@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -37,13 +34,15 @@ __protobuf__ = proto.module(
 
 class AttributeValues(proto.Message):
     r"""The values associated with a key of an attribute.
-
     Attributes:
         values (Sequence[bytes]):
             The list of values associated with a key.
     """
 
-    values = proto.RepeatedField(proto.BYTES, number=1)
+    values = proto.RepeatedField(
+        proto.BYTES,
+        number=1,
+    )
 
 
 class PubSubMessage(proto.Message):
@@ -65,15 +64,23 @@ class PubSubMessage(proto.Message):
             An optional, user-specified event time.
     """
 
-    key = proto.Field(proto.BYTES, number=1)
-
-    data = proto.Field(proto.BYTES, number=2)
-
-    attributes = proto.MapField(proto.STRING, proto.MESSAGE, number=3,
+    key = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
+    data = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    attributes = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=3
         message='AttributeValues',
     )
-
-    event_time = proto.Field(proto.MESSAGE, number=4,
+    event_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamp.Timestamp,
     )
 
@@ -88,7 +95,10 @@ class Cursor(proto.Message):
             partition. Must be greater than or equal 0.
     """
 
-    offset = proto.Field(proto.INT64, number=1)
+    offset = proto.Field(
+        proto.INT64,
+        number=1,
+    )
 
 
 class SequencedMessage(proto.Message):
@@ -109,24 +119,29 @@ class SequencedMessage(proto.Message):
             control and quota purposes.
     """
 
-    cursor = proto.Field(proto.MESSAGE, number=1,
+    cursor = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Cursor',
     )
-
-    publish_time = proto.Field(proto.MESSAGE, number=2,
+    publish_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=timestamp.Timestamp,
     )
-
-    message = proto.Field(proto.MESSAGE, number=3,
+    message = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='PubSubMessage',
     )
-
-    size_bytes = proto.Field(proto.INT64, number=4)
+    size_bytes = proto.Field(
+        proto.INT64,
+        number=4,
+    )
 
 
 class Topic(proto.Message):
     r"""Metadata about a topic resource.
-
     Attributes:
         name (str):
             The name of the topic. Structured like:
@@ -137,9 +152,9 @@ class Topic(proto.Message):
             The settings for this topic's message
             retention.
     """
+
     class PartitionConfig(proto.Message):
         r"""The settings for a topic's partitions.
-
         Attributes:
             count (int):
                 The number of partitions in the topic. Must be at least 1.
@@ -161,9 +176,9 @@ class Topic(proto.Message):
             capacity (google.cloud.pubsublite_v1.types.Topic.PartitionConfig.Capacity):
                 The capacity configuration.
         """
+
         class Capacity(proto.Message):
             r"""The throughput capacity configuration for each partition.
-
             Attributes:
                 publish_mib_per_sec (int):
                     Publish throughput capacity per partition in
@@ -173,21 +188,33 @@ class Topic(proto.Message):
                     in MiB/s. Must be >= 4 and <= 32.
             """
 
-            publish_mib_per_sec = proto.Field(proto.INT32, number=1)
+            publish_mib_per_sec = proto.Field(
+                proto.INT32,
+                number=1,
+            )
+            subscribe_mib_per_sec = proto.Field(
+                proto.INT32,
+                number=2,
+            )
 
-            subscribe_mib_per_sec = proto.Field(proto.INT32, number=2)
-
-        count = proto.Field(proto.INT64, number=1)
-
-        scale = proto.Field(proto.INT32, number=2, oneof='dimension')
-
-        capacity = proto.Field(proto.MESSAGE, number=3, oneof='dimension',
+        count = proto.Field(
+            proto.INT64,
+            number=1,
+        )
+        scale = proto.Field(
+            proto.INT32,
+            number=2,
+            oneof='dimension',
+        )
+        capacity = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            oneof='dimension',
             message='Topic.PartitionConfig.Capacity',
         )
 
     class RetentionConfig(proto.Message):
         r"""The settings for a topic's message retention.
-
         Attributes:
             per_partition_bytes (int):
                 The provisioned storage, in bytes, per partition. If the
@@ -201,26 +228,34 @@ class Topic(proto.Message):
                 partition is below ``per_partition_bytes``.
         """
 
-        per_partition_bytes = proto.Field(proto.INT64, number=1)
-
-        period = proto.Field(proto.MESSAGE, number=2,
+        per_partition_bytes = proto.Field(
+            proto.INT64,
+            number=1,
+        )
+        period = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=duration.Duration,
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    partition_config = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    partition_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=PartitionConfig,
     )
-
-    retention_config = proto.Field(proto.MESSAGE, number=3,
+    retention_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=RetentionConfig,
     )
 
 
 class Subscription(proto.Message):
     r"""Metadata about a subscription resource.
-
     Attributes:
         name (str):
             The name of the subscription. Structured like:
@@ -233,9 +268,9 @@ class Subscription(proto.Message):
             The settings for this subscription's message
             delivery.
     """
+
     class DeliveryConfig(proto.Message):
         r"""The settings for a subscription's message delivery.
-
         Attributes:
             delivery_requirement (google.cloud.pubsublite_v1.types.Subscription.DeliveryConfig.DeliveryRequirement):
                 The DeliveryRequirement for this
@@ -250,15 +285,23 @@ class Subscription(proto.Message):
             DELIVER_IMMEDIATELY = 1
             DELIVER_AFTER_STORED = 2
 
-        delivery_requirement = proto.Field(proto.ENUM, number=3,
+        delivery_requirement = proto.Field(
+            proto.ENUM,
+            number=3,
             enum='Subscription.DeliveryConfig.DeliveryRequirement',
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    topic = proto.Field(proto.STRING, number=2)
-
-    delivery_config = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    topic = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    delivery_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=DeliveryConfig,
     )
 

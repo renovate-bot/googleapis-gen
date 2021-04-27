@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -30,7 +28,6 @@ from google.firestore_v1beta1.types import document
 from google.firestore_v1beta1.types import document as gf_document
 from google.firestore_v1beta1.types import firestore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import FirestoreTransport, DEFAULT_CLIENT_INFO
 
 
@@ -71,7 +68,8 @@ class FirestoreGrpcTransport(FirestoreTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -210,13 +208,15 @@ class FirestoreGrpcTransport(FirestoreTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -230,7 +230,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def get_document(self) -> Callable[
             [firestore.GetDocumentRequest],
             document.Document]:
-        r"""Return a callable for the get document method over gRPC.
+        r"""Return a callable for the
+        get document
+          method over gRPC.
 
         Gets a single document.
 
@@ -256,7 +258,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def list_documents(self) -> Callable[
             [firestore.ListDocumentsRequest],
             firestore.ListDocumentsResponse]:
-        r"""Return a callable for the list documents method over gRPC.
+        r"""Return a callable for the
+        list documents
+          method over gRPC.
 
         Lists documents.
 
@@ -282,7 +286,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def update_document(self) -> Callable[
             [firestore.UpdateDocumentRequest],
             gf_document.Document]:
-        r"""Return a callable for the update document method over gRPC.
+        r"""Return a callable for the
+        update document
+          method over gRPC.
 
         Updates or inserts a document.
 
@@ -308,7 +314,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def delete_document(self) -> Callable[
             [firestore.DeleteDocumentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete document method over gRPC.
+        r"""Return a callable for the
+        delete document
+          method over gRPC.
 
         Deletes a document.
 
@@ -334,7 +342,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def batch_get_documents(self) -> Callable[
             [firestore.BatchGetDocumentsRequest],
             firestore.BatchGetDocumentsResponse]:
-        r"""Return a callable for the batch get documents method over gRPC.
+        r"""Return a callable for the
+        batch get documents
+          method over gRPC.
 
         Gets multiple documents.
         Documents returned by this method are not guaranteed to
@@ -362,7 +372,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def begin_transaction(self) -> Callable[
             [firestore.BeginTransactionRequest],
             firestore.BeginTransactionResponse]:
-        r"""Return a callable for the begin transaction method over gRPC.
+        r"""Return a callable for the
+        begin transaction
+          method over gRPC.
 
         Starts a new transaction.
 
@@ -388,7 +400,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def commit(self) -> Callable[
             [firestore.CommitRequest],
             firestore.CommitResponse]:
-        r"""Return a callable for the commit method over gRPC.
+        r"""Return a callable for the
+        commit
+          method over gRPC.
 
         Commits a transaction, while optionally updating
         documents.
@@ -415,7 +429,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def rollback(self) -> Callable[
             [firestore.RollbackRequest],
             empty.Empty]:
-        r"""Return a callable for the rollback method over gRPC.
+        r"""Return a callable for the
+        rollback
+          method over gRPC.
 
         Rolls back a transaction.
 
@@ -441,7 +457,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def run_query(self) -> Callable[
             [firestore.RunQueryRequest],
             firestore.RunQueryResponse]:
-        r"""Return a callable for the run query method over gRPC.
+        r"""Return a callable for the
+        run query
+          method over gRPC.
 
         Runs a query.
 
@@ -467,7 +485,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def partition_query(self) -> Callable[
             [firestore.PartitionQueryRequest],
             firestore.PartitionQueryResponse]:
-        r"""Return a callable for the partition query method over gRPC.
+        r"""Return a callable for the
+        partition query
+          method over gRPC.
 
         Partitions a query by returning partition cursors
         that can be used to run the query in parallel. The
@@ -497,7 +517,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def write(self) -> Callable[
             [firestore.WriteRequest],
             firestore.WriteResponse]:
-        r"""Return a callable for the write method over gRPC.
+        r"""Return a callable for the
+        write
+          method over gRPC.
 
         Streams batches of document updates and deletes, in
         order.
@@ -524,7 +546,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def listen(self) -> Callable[
             [firestore.ListenRequest],
             firestore.ListenResponse]:
-        r"""Return a callable for the listen method over gRPC.
+        r"""Return a callable for the
+        listen
+          method over gRPC.
 
         Listens to changes.
 
@@ -550,7 +574,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def list_collection_ids(self) -> Callable[
             [firestore.ListCollectionIdsRequest],
             firestore.ListCollectionIdsResponse]:
-        r"""Return a callable for the list collection ids method over gRPC.
+        r"""Return a callable for the
+        list collection ids
+          method over gRPC.
 
         Lists all the collection IDs underneath a document.
 
@@ -576,7 +602,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def batch_write(self) -> Callable[
             [firestore.BatchWriteRequest],
             firestore.BatchWriteResponse]:
-        r"""Return a callable for the batch write method over gRPC.
+        r"""Return a callable for the
+        batch write
+          method over gRPC.
 
         Applies a batch of write operations.
 
@@ -612,7 +640,9 @@ class FirestoreGrpcTransport(FirestoreTransport):
     def create_document(self) -> Callable[
             [firestore.CreateDocumentRequest],
             document.Document]:
-        r"""Return a callable for the create document method over gRPC.
+        r"""Return a callable for the
+        create document
+          method over gRPC.
 
         Creates a new document.
 

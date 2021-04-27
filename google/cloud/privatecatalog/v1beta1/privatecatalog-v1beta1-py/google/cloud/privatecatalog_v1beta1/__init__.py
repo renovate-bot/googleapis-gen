@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.private_catalog import PrivateCatalogClient
+
 from .types.private_catalog import AssetReference
 from .types.private_catalog import Catalog
 from .types.private_catalog import GcsSource
@@ -29,7 +29,6 @@ from .types.private_catalog import SearchProductsResponse
 from .types.private_catalog import SearchVersionsRequest
 from .types.private_catalog import SearchVersionsResponse
 from .types.private_catalog import Version
-
 
 __all__ = (
     'AssetReference',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,8 +28,7 @@ from google.cloud.bigquery.connection_v1beta1.types.connection import ListConnec
 from google.cloud.bigquery.connection_v1beta1.types.connection import UpdateConnectionCredentialRequest
 from google.cloud.bigquery.connection_v1beta1.types.connection import UpdateConnectionRequest
 
-__all__ = (
-    'CloudSqlCredential',
+__all__ = ('CloudSqlCredential',
     'CloudSqlProperties',
     'Connection',
     'ConnectionCredential',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -32,7 +30,6 @@ from google.cloud.dialogflow_v2beta1.types import agent as gcd_agent
 from google.cloud.dialogflow_v2beta1.types import validation_result
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AgentsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -67,7 +64,8 @@ class AgentsGrpcTransport(AgentsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -207,13 +205,15 @@ class AgentsGrpcTransport(AgentsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -243,7 +243,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def get_agent(self) -> Callable[
             [agent.GetAgentRequest],
             agent.Agent]:
-        r"""Return a callable for the get agent method over gRPC.
+        r"""Return a callable for the
+        get agent
+          method over gRPC.
 
         Retrieves the specified agent.
 
@@ -269,7 +271,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def set_agent(self) -> Callable[
             [gcd_agent.SetAgentRequest],
             gcd_agent.Agent]:
-        r"""Return a callable for the set agent method over gRPC.
+        r"""Return a callable for the
+        set agent
+          method over gRPC.
 
         Creates/updates the specified agent.
 
@@ -295,7 +299,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def delete_agent(self) -> Callable[
             [agent.DeleteAgentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete agent method over gRPC.
+        r"""Return a callable for the
+        delete agent
+          method over gRPC.
 
         Deletes the specified agent.
 
@@ -321,7 +327,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def search_agents(self) -> Callable[
             [agent.SearchAgentsRequest],
             agent.SearchAgentsResponse]:
-        r"""Return a callable for the search agents method over gRPC.
+        r"""Return a callable for the
+        search agents
+          method over gRPC.
 
         Returns the list of agents. Since there is at most one
         conversational agent per project, this method is useful
@@ -352,7 +360,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def train_agent(self) -> Callable[
             [agent.TrainAgentRequest],
             operations.Operation]:
-        r"""Return a callable for the train agent method over gRPC.
+        r"""Return a callable for the
+        train agent
+          method over gRPC.
 
         Trains the specified agent.
 
@@ -381,7 +391,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def export_agent(self) -> Callable[
             [agent.ExportAgentRequest],
             operations.Operation]:
-        r"""Return a callable for the export agent method over gRPC.
+        r"""Return a callable for the
+        export agent
+          method over gRPC.
 
         Exports the specified agent to a ZIP file.
 
@@ -410,7 +422,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def import_agent(self) -> Callable[
             [agent.ImportAgentRequest],
             operations.Operation]:
-        r"""Return a callable for the import agent method over gRPC.
+        r"""Return a callable for the
+        import agent
+          method over gRPC.
 
         Imports the specified agent from a ZIP file.
 
@@ -453,7 +467,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def restore_agent(self) -> Callable[
             [agent.RestoreAgentRequest],
             operations.Operation]:
-        r"""Return a callable for the restore agent method over gRPC.
+        r"""Return a callable for the
+        restore agent
+          method over gRPC.
 
         Restores the specified agent from a ZIP file.
 
@@ -494,7 +510,9 @@ class AgentsGrpcTransport(AgentsTransport):
     def get_validation_result(self) -> Callable[
             [agent.GetValidationResultRequest],
             validation_result.ValidationResult]:
-        r"""Return a callable for the get validation result method over gRPC.
+        r"""Return a callable for the
+        get validation result
+          method over gRPC.
 
         Gets agent validation result. Agent validation is
         performed during training time and is updated

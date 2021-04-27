@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import customer_negative_criterion
 from google.ads.googleads.v5.services.types import customer_negative_criterion_service
-
 from .base import CustomerNegativeCriterionServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CustomerNegativeCriterionServiceGrpcTransport(CustomerNegativeCriterionSer
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,8 +201,10 @@ class CustomerNegativeCriterionServiceGrpcTransport(CustomerNegativeCriterionSer
     def get_customer_negative_criterion(self) -> Callable[
             [customer_negative_criterion_service.GetCustomerNegativeCriterionRequest],
             customer_negative_criterion.CustomerNegativeCriterion]:
-        r"""Return a callable for the get customer negative
-        criterion method over gRPC.
+        r"""Return a callable for the
+        get customer negative
+        criterion
+          method over gRPC.
 
         Returns the requested criterion in full detail.
 
@@ -230,8 +230,10 @@ class CustomerNegativeCriterionServiceGrpcTransport(CustomerNegativeCriterionSer
     def mutate_customer_negative_criteria(self) -> Callable[
             [customer_negative_criterion_service.MutateCustomerNegativeCriteriaRequest],
             customer_negative_criterion_service.MutateCustomerNegativeCriteriaResponse]:
-        r"""Return a callable for the mutate customer negative
-        criteria method over gRPC.
+        r"""Return a callable for the
+        mutate customer negative
+        criteria
+          method over gRPC.
 
         Creates or removes criteria. Operation statuses are
         returned.

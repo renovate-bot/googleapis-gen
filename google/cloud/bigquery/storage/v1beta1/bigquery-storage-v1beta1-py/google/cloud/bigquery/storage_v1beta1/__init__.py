@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.big_query_storage import BigQueryStorageClient
+
 from .types.arrow import ArrowRecordBatch
 from .types.arrow import ArrowSchema
 from .types.avro import AvroRows
@@ -39,7 +39,6 @@ from .types.storage import StreamStatus
 from .types.storage import ThrottleStatus
 from .types.table_reference import TableModifiers
 from .types.table_reference import TableReference
-
 
 __all__ = (
     'ArrowRecordBatch',

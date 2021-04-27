@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.dialogflow_v2beta1.services.environments import pagers
 from google.cloud.dialogflow_v2beta1.types import environment
-
 from .transports.base import EnvironmentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EnvironmentsGrpcTransport
 from .transports.grpc_asyncio import EnvironmentsGrpcAsyncIOTransport
@@ -339,7 +336,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListEnvironmentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2beta1.Environments.ListEnvironments].
             parent (str):
                 Required. The agent to list all environments from.
@@ -351,7 +349,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -381,10 +378,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.ListEnvironmentsRequest):
             request = environment.ListEnvironmentsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -419,8 +414,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

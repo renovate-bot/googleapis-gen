@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -39,7 +37,6 @@ from google.cloud.appengine_admin_v1.types import version
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import VersionsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import VersionsGrpcAsyncIOTransport
 from .client import VersionsClient
@@ -55,16 +52,12 @@ class VersionsAsyncClient:
 
     common_billing_account_path = staticmethod(VersionsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(VersionsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(VersionsClient.common_folder_path)
     parse_common_folder_path = staticmethod(VersionsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(VersionsClient.common_organization_path)
     parse_common_organization_path = staticmethod(VersionsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(VersionsClient.common_project_path)
     parse_common_project_path = staticmethod(VersionsClient.parse_common_project_path)
-
     common_location_path = staticmethod(VersionsClient.common_location_path)
     parse_common_location_path = staticmethod(VersionsClient.parse_common_location_path)
 
@@ -149,7 +142,6 @@ class VersionsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = VersionsClient(
             credentials=credentials,
             transport=transport,
@@ -169,9 +161,9 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListVersionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.ListVersions`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -187,7 +179,6 @@ class VersionsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.ListVersionsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -239,9 +230,9 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.GetVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -256,7 +247,6 @@ class VersionsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.GetVersionRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -297,9 +287,9 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.CreateVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.CreateVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -315,7 +305,6 @@ class VersionsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.CreateVersionRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -399,9 +388,9 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.UpdateVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -417,7 +406,6 @@ class VersionsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.UpdateVersionRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -466,9 +454,9 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.DeleteVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -495,7 +483,6 @@ class VersionsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.DeleteVersionRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -532,8 +519,6 @@ class VersionsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

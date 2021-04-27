@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -41,7 +39,6 @@ from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import CertificateAuthorityServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CertificateAuthorityServiceGrpcTransport
 from .transports.grpc_asyncio import CertificateAuthorityServiceGrpcAsyncIOTransport
@@ -395,7 +392,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.CreateCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificate].
             parent (str):
                 Required. The resource name of the
@@ -426,7 +424,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``certificate_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -453,10 +450,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateRequest):
             request = service.CreateCertificateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if certificate is not None:
@@ -500,7 +495,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.GetCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificate].
             name (str):
                 Required. The
@@ -512,7 +508,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,10 +534,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateRequest):
             request = service.GetCertificateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -582,7 +575,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.ListCertificatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
             parent (str):
                 Required. The resource name of the location associated
@@ -593,7 +587,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -623,10 +616,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificatesRequest):
             request = service.ListCertificatesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -675,7 +666,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.RevokeCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.RevokeCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.RevokeCertificate].
             name (str):
                 Required. The resource name for this
@@ -686,7 +678,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -713,10 +704,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.RevokeCertificateRequest):
             request = service.RevokeCertificateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -760,7 +749,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.UpdateCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificate].
             certificate (google.cloud.security.privateca_v1.types.Certificate):
                 Required.
@@ -777,7 +767,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -804,10 +793,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateRequest):
             request = service.UpdateCertificateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate is not None:
                 request.certificate = certificate
             if update_mask is not None:
@@ -857,7 +844,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.ActivateCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -868,7 +856,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -900,10 +887,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ActivateCertificateAuthorityRequest):
             request = service.ActivateCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -954,7 +939,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.CreateCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificateAuthority].
             parent (str):
                 Required. The resource name of the
@@ -981,7 +967,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``certificate_authority_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1013,10 +998,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateAuthorityRequest):
             request = service.CreateCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if certificate_authority is not None:
@@ -1068,7 +1051,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.DisableCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DisableCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.DisableCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1079,7 +1063,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1111,10 +1094,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DisableCertificateAuthorityRequest):
             request = service.DisableCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1162,7 +1143,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.EnableCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.EnableCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.EnableCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1173,7 +1155,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1205,10 +1186,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.EnableCertificateAuthorityRequest):
             request = service.EnableCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1265,7 +1244,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.FetchCertificateAuthorityCsrRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr].
             name (str):
                 Required. The resource name for this
@@ -1276,7 +1256,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1303,10 +1282,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.FetchCertificateAuthorityCsrRequest):
             request = service.FetchCertificateAuthorityCsrRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1346,7 +1323,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.GetCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
             name (str):
                 Required. The
@@ -1358,7 +1336,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1388,10 +1365,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateAuthorityRequest):
             request = service.GetCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1431,7 +1406,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.ListCertificateAuthoritiesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateAuthorities].
             parent (str):
                 Required. The resource name of the
@@ -1443,7 +1419,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1473,10 +1448,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateAuthoritiesRequest):
             request = service.ListCertificateAuthoritiesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1526,7 +1499,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.UndeleteCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1537,7 +1511,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1569,10 +1542,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UndeleteCertificateAuthorityRequest):
             request = service.UndeleteCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1620,7 +1591,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.DeleteCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1631,7 +1603,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1663,10 +1634,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCertificateAuthorityRequest):
             request = service.DeleteCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1715,7 +1684,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.UpdateCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateAuthority].
             certificate_authority (google.cloud.security.privateca_v1.types.CertificateAuthority):
                 Required.
@@ -1732,7 +1702,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1764,10 +1733,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateAuthorityRequest):
             request = service.UpdateCertificateAuthorityRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate_authority is not None:
                 request.certificate_authority = certificate_authority
             if update_mask is not None:
@@ -1818,7 +1785,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.CreateCaPoolRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCaPool].
             parent (str):
                 Required. The resource name of the location associated
@@ -1844,7 +1812,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``ca_pool_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1880,10 +1847,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCaPoolRequest):
             request = service.CreateCaPoolRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if ca_pool is not None:
@@ -1935,7 +1900,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.UpdateCaPoolRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCaPool].
             ca_pool (google.cloud.security.privateca_v1.types.CaPool):
                 Required.
@@ -1952,7 +1918,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1988,10 +1953,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCaPoolRequest):
             request = service.UpdateCaPoolRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if ca_pool is not None:
                 request.ca_pool = ca_pool
             if update_mask is not None:
@@ -2040,7 +2003,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.GetCaPoolRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
             name (str):
                 Required. The
@@ -2052,7 +2016,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2086,10 +2049,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCaPoolRequest):
             request = service.GetCaPoolRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2128,7 +2089,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.ListCaPoolsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCaPools][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCaPools].
             parent (str):
                 Required. The resource name of the location associated
@@ -2139,7 +2101,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2169,10 +2130,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCaPoolsRequest):
             request = service.ListCaPoolsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2220,7 +2179,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.DeleteCaPoolRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DeleteCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCaPool].
             name (str):
                 Required. The resource name for this
@@ -2230,7 +2190,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2266,10 +2225,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCaPoolRequest):
             request = service.DeleteCaPoolRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2321,7 +2278,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.FetchCaCertsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.FetchCaCerts][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCaCerts].
             ca_pool (str):
                 Required. The resource name for the
@@ -2331,7 +2289,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``ca_pool`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2358,10 +2315,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.FetchCaCertsRequest):
             request = service.FetchCaCertsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if ca_pool is not None:
                 request.ca_pool = ca_pool
 
@@ -2401,7 +2356,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.GetCertificateRevocationListRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateRevocationList][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateRevocationList].
             name (str):
                 Required. The
@@ -2413,7 +2369,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2442,10 +2397,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateRevocationListRequest):
             request = service.GetCertificateRevocationListRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2485,7 +2438,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.ListCertificateRevocationListsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateRevocationLists][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateRevocationLists].
             parent (str):
                 Required. The resource name of the location associated
@@ -2497,7 +2451,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2527,10 +2480,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateRevocationListsRequest):
             request = service.ListCertificateRevocationListsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2580,7 +2531,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.UpdateCertificateRevocationListRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateRevocationList][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateRevocationList].
             certificate_revocation_list (google.cloud.security.privateca_v1.types.CertificateRevocationList):
                 Required.
@@ -2597,7 +2549,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2628,10 +2579,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateRevocationListRequest):
             request = service.UpdateCertificateRevocationListRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate_revocation_list is not None:
                 request.certificate_revocation_list = certificate_revocation_list
             if update_mask is not None:
@@ -2684,7 +2633,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.CreateCertificateTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificateTemplate].
             parent (str):
                 Required. The resource name of the location associated
@@ -2710,7 +2660,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``certificate_template_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2739,10 +2688,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateTemplateRequest):
             request = service.CreateCertificateTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if certificate_template is not None:
@@ -2794,7 +2741,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.DeleteCertificateTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DeleteCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCertificateTemplate].
             name (str):
                 Required. The resource name for this
@@ -2805,7 +2753,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2845,10 +2792,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCertificateTemplateRequest):
             request = service.DeleteCertificateTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2896,7 +2841,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.GetCertificateTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateTemplate].
             name (str):
                 Required. The
@@ -2908,7 +2854,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2935,10 +2880,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateTemplateRequest):
             request = service.GetCertificateTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2978,7 +2921,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.ListCertificateTemplatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateTemplates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateTemplates].
             parent (str):
                 Required. The resource name of the location associated
@@ -2989,7 +2933,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3019,10 +2962,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateTemplatesRequest):
             request = service.ListCertificateTemplatesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -3072,7 +3013,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1.types.UpdateCertificateTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateTemplate].
             certificate_template (google.cloud.security.privateca_v1.types.CertificateTemplate):
                 Required.
@@ -3089,7 +3031,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3118,10 +3059,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateTemplateRequest):
             request = service.UpdateCertificateTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate_template is not None:
                 request.certificate_template = certificate_template
             if update_mask is not None:
@@ -3157,8 +3096,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         # Done; return the response.
         return response
-
-
 
 
 

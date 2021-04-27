@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -33,7 +31,6 @@ from google.cloud.monitoring_v3.services.group_service import pagers
 from google.cloud.monitoring_v3.types import group
 from google.cloud.monitoring_v3.types import group as gm_group
 from google.cloud.monitoring_v3.types import group_service
-
 from .transports.base import GroupServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GroupServiceGrpcAsyncIOTransport
 from .client import GroupServiceClient
@@ -61,19 +58,14 @@ class GroupServiceAsyncClient:
 
     group_path = staticmethod(GroupServiceClient.group_path)
     parse_group_path = staticmethod(GroupServiceClient.parse_group_path)
-
     common_billing_account_path = staticmethod(GroupServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GroupServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(GroupServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(GroupServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(GroupServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(GroupServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(GroupServiceClient.common_project_path)
     parse_common_project_path = staticmethod(GroupServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(GroupServiceClient.common_location_path)
     parse_common_location_path = staticmethod(GroupServiceClient.parse_common_location_path)
 
@@ -158,7 +150,6 @@ class GroupServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = GroupServiceClient(
             credentials=credentials,
             transport=transport,
@@ -179,7 +170,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListGroupsRequest`):
-                The request object. The `ListGroup` request.
+                The request object.
+                The `ListGroup` request.
             name (:class:`str`):
                 Required. The project whose groups are to be listed. The
                 format is:
@@ -191,7 +183,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,7 +209,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -227,10 +217,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_groups,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -280,7 +267,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetGroupRequest`):
-                The request object. The `GetGroup` request.
+                The request object.
+                The `GetGroup` request.
             name (:class:`str`):
                 Required. The group to retrieve. The format is:
 
@@ -291,7 +279,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -347,7 +334,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -356,10 +342,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_group,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -401,7 +384,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateGroupRequest`):
-                The request object. The `CreateGroup` request.
+                The request object.
+                The `CreateGroup` request.
             name (:class:`str`):
                 Required. The project in which to create the group. The
                 format is:
@@ -420,7 +404,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,7 +459,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if group is not None:
@@ -522,7 +504,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateGroupRequest`):
-                The request object. The `UpdateGroup` request.
+                The request object.
+                The `UpdateGroup` request.
             group (:class:`google.cloud.monitoring_v3.types.Group`):
                 Required. The new definition of the group. All fields of
                 the existing group, excepting ``name``, are replaced
@@ -531,7 +514,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -587,7 +569,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if group is not None:
             request.group = group
 
@@ -596,10 +577,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_group,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -640,7 +618,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteGroupRequest`):
-                The request object. The `DeleteGroup` request. The
+                The request object.
+                The `DeleteGroup` request. The
                 default behavior is to be able to delete a single group
                 without any descendants.
             name (:class:`str`):
@@ -653,7 +632,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -672,7 +650,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -681,10 +658,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_group,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -723,7 +697,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListGroupMembersRequest`):
-                The request object. The `ListGroupMembers` request.
+                The request object.
+                The `ListGroupMembers` request.
             name (:class:`str`):
                 Required. The group whose members are listed. The format
                 is:
@@ -735,7 +710,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -762,7 +736,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -771,10 +744,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_group_members,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -811,8 +781,6 @@ class GroupServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -45,7 +43,6 @@ from google.cloud.websecurityscanner_v1beta.types import scan_run_warning_trace
 from google.cloud.websecurityscanner_v1beta.types import web_security_scanner
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import WebSecurityScannerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import WebSecurityScannerGrpcTransport
 from .transports.grpc_asyncio import WebSecurityScannerGrpcAsyncIOTransport
@@ -374,7 +371,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.CreateScanConfigRequest):
-                The request object. Request for the `CreateScanConfig`
+                The request object.
+                Request for the `CreateScanConfig`
                 method.
             parent (str):
                 Required. The parent resource name
@@ -392,7 +390,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``scan_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -419,10 +416,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.CreateScanConfigRequest):
             request = web_security_scanner.CreateScanConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if scan_config is not None:
@@ -464,7 +459,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.DeleteScanConfigRequest):
-                The request object. Request for the `DeleteScanConfig`
+                The request object.
+                Request for the `DeleteScanConfig`
                 method.
             name (str):
                 Required. The resource name of the
@@ -475,7 +471,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -496,10 +491,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.DeleteScanConfigRequest):
             request = web_security_scanner.DeleteScanConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -535,7 +528,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.GetScanConfigRequest):
-                The request object. Request for the `GetScanConfig`
+                The request object.
+                Request for the `GetScanConfig`
                 method.
             name (str):
                 Required. The resource name of the
@@ -546,7 +540,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -573,10 +566,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.GetScanConfigRequest):
             request = web_security_scanner.GetScanConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -615,7 +606,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListScanConfigsRequest):
-                The request object. Request for the `ListScanConfigs`
+                The request object.
+                Request for the `ListScanConfigs`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -625,7 +617,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -654,10 +645,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListScanConfigsRequest):
             request = web_security_scanner.ListScanConfigsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -707,7 +696,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.UpdateScanConfigRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `UpdateScanConfigRequest` method.
             scan_config (google.cloud.websecurityscanner_v1beta.types.ScanConfig):
                 Required. The ScanConfig to be
@@ -727,7 +717,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -754,10 +743,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.UpdateScanConfigRequest):
             request = web_security_scanner.UpdateScanConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if scan_config is not None:
                 request.scan_config = scan_config
             if update_mask is not None:
@@ -798,7 +785,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.StartScanRunRequest):
-                The request object. Request for the `StartScanRun`
+                The request object.
+                Request for the `StartScanRun`
                 method.
             name (str):
                 Required. The resource name of the
@@ -809,7 +797,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -837,10 +824,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.StartScanRunRequest):
             request = web_security_scanner.StartScanRunRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -879,7 +864,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.GetScanRunRequest):
-                The request object. Request for the `GetScanRun` method.
+                The request object.
+                Request for the `GetScanRun` method.
             name (str):
                 Required. The resource name of the
                 ScanRun to be returned. The name follows
@@ -889,7 +875,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -917,10 +902,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.GetScanRunRequest):
             request = web_security_scanner.GetScanRunRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -960,7 +943,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListScanRunsRequest):
-                The request object. Request for the `ListScanRuns`
+                The request object.
+                Request for the `ListScanRuns`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -971,7 +955,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1000,10 +983,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListScanRunsRequest):
             request = web_security_scanner.ListScanRunsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1051,7 +1032,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.StopScanRunRequest):
-                The request object. Request for the `StopScanRun`
+                The request object.
+                Request for the `StopScanRun`
                 method.
             name (str):
                 Required. The resource name of the
@@ -1062,7 +1044,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1090,10 +1071,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.StopScanRunRequest):
             request = web_security_scanner.StopScanRunRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1132,7 +1111,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListCrawledUrlsRequest):
-                The request object. Request for the `ListCrawledUrls`
+                The request object.
+                Request for the `ListCrawledUrls`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -1143,7 +1123,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1172,10 +1151,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListCrawledUrlsRequest):
             request = web_security_scanner.ListCrawledUrlsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1223,7 +1200,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.GetFindingRequest):
-                The request object. Request for the `GetFinding` method.
+                The request object.
+                Request for the `GetFinding` method.
             name (str):
                 Required. The resource name of the
                 Finding to be returned. The name follows
@@ -1233,7 +1211,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1261,10 +1238,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.GetFindingRequest):
             request = web_security_scanner.GetFindingRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1304,7 +1279,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListFindingsRequest):
-                The request object. Request for the `ListFindings`
+                The request object.
+                Request for the `ListFindings`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -1323,7 +1299,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1352,10 +1327,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListFindingsRequest):
             request = web_security_scanner.ListFindingsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1405,7 +1378,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListFindingTypeStatsRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ListFindingTypeStats` method.
             parent (str):
                 Required. The parent resource name,
@@ -1416,7 +1390,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1441,10 +1414,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListFindingTypeStatsRequest):
             request = web_security_scanner.ListFindingTypeStatsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1470,8 +1441,6 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

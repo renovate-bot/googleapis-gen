@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -126,8 +125,7 @@ from google.cloud.monitoring_v3.types.uptime_service import ListUptimeCheckIpsRe
 from google.cloud.monitoring_v3.types.uptime_service import ListUptimeCheckIpsResponse
 from google.cloud.monitoring_v3.types.uptime_service import UpdateUptimeCheckConfigRequest
 
-__all__ = (
-    'Aggregation',
+__all__ = ('Aggregation',
     'AlertPolicy',
     'AlertPolicyServiceAsyncClient',
     'AlertPolicyServiceClient',

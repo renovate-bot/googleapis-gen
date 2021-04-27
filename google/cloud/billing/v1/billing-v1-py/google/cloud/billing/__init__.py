@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,8 +40,7 @@ from google.cloud.billing_v1.types.cloud_catalog import PricingInfo
 from google.cloud.billing_v1.types.cloud_catalog import Service
 from google.cloud.billing_v1.types.cloud_catalog import Sku
 
-__all__ = (
-    'AggregationInfo',
+__all__ = ('AggregationInfo',
     'BillingAccount',
     'Category',
     'CloudBillingAsyncClient',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -267,21 +265,16 @@ def test_get_keyword_plan_ad_group(transport: str = 'grpc', request_type=keyword
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_ad_group.KeywordPlanAdGroup(
             resource_name='resource_name_value',
-
         )
-
         response = client.get_keyword_plan_ad_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_ad_group_service.GetKeywordPlanAdGroupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan_ad_group.KeywordPlanAdGroup)
-
     assert response.resource_name == 'resource_name_value'
 
 
@@ -297,6 +290,7 @@ def test_get_keyword_plan_ad_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_ad_group_service.GetKeywordPlanAdGroupRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -304,7 +298,6 @@ def test_get_keyword_plan_ad_group_field_headers():
             type(client.transport.get_keyword_plan_ad_group),
             '__call__') as call:
         call.return_value = keyword_plan_ad_group.KeywordPlanAdGroup()
-
         client.get_keyword_plan_ad_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -331,7 +324,6 @@ def test_get_keyword_plan_ad_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_ad_group.KeywordPlanAdGroup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_keyword_plan_ad_group(
@@ -342,7 +334,6 @@ def test_get_keyword_plan_ad_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -377,17 +368,14 @@ def test_mutate_keyword_plan_ad_groups(transport: str = 'grpc', request_type=key
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsResponse(
         )
-
         response = client.mutate_keyword_plan_ad_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsResponse)
 
 
@@ -403,6 +391,7 @@ def test_mutate_keyword_plan_ad_groups_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -410,7 +399,6 @@ def test_mutate_keyword_plan_ad_groups_field_headers():
             type(client.transport.mutate_keyword_plan_ad_groups),
             '__call__') as call:
         call.return_value = keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsResponse()
-
         client.mutate_keyword_plan_ad_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -437,7 +425,6 @@ def test_mutate_keyword_plan_ad_groups_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_keyword_plan_ad_groups(
@@ -449,9 +436,7 @@ def test_mutate_keyword_plan_ad_groups_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [keyword_plan_ad_group_service.KeywordPlanAdGroupOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -534,7 +519,7 @@ def test_keyword_plan_ad_group_service_base_transport():
     methods = (
         'get_keyword_plan_ad_group',
         'mutate_keyword_plan_ad_groups',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -686,7 +671,6 @@ def test_keyword_plan_ad_group_service_transport_channel_mtls_with_adc(
 def test_keyword_plan_ad_group_path():
     customer = "squid"
     keyword_plan_ad_group = "clam"
-
     expected = "customers/{customer}/keywordPlanAdGroups/{keyword_plan_ad_group}".format(customer=customer, keyword_plan_ad_group=keyword_plan_ad_group, )
     actual = KeywordPlanAdGroupServiceClient.keyword_plan_ad_group_path(customer, keyword_plan_ad_group)
     assert expected == actual
@@ -694,9 +678,8 @@ def test_keyword_plan_ad_group_path():
 
 def test_parse_keyword_plan_ad_group_path():
     expected = {
-    "customer": "whelk",
-    "keyword_plan_ad_group": "octopus",
-
+        "customer": "whelk",
+        "keyword_plan_ad_group": "octopus",
     }
     path = KeywordPlanAdGroupServiceClient.keyword_plan_ad_group_path(**expected)
 
@@ -707,7 +690,6 @@ def test_parse_keyword_plan_ad_group_path():
 def test_keyword_plan_campaign_path():
     customer = "oyster"
     keyword_plan_campaign = "nudibranch"
-
     expected = "customers/{customer}/keywordPlanCampaigns/{keyword_plan_campaign}".format(customer=customer, keyword_plan_campaign=keyword_plan_campaign, )
     actual = KeywordPlanAdGroupServiceClient.keyword_plan_campaign_path(customer, keyword_plan_campaign)
     assert expected == actual
@@ -715,9 +697,8 @@ def test_keyword_plan_campaign_path():
 
 def test_parse_keyword_plan_campaign_path():
     expected = {
-    "customer": "cuttlefish",
-    "keyword_plan_campaign": "mussel",
-
+        "customer": "cuttlefish",
+        "keyword_plan_campaign": "mussel",
     }
     path = KeywordPlanAdGroupServiceClient.keyword_plan_campaign_path(**expected)
 
@@ -727,7 +708,6 @@ def test_parse_keyword_plan_campaign_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = KeywordPlanAdGroupServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -735,8 +715,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = KeywordPlanAdGroupServiceClient.common_billing_account_path(**expected)
 
@@ -746,7 +725,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = KeywordPlanAdGroupServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -754,8 +732,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = KeywordPlanAdGroupServiceClient.common_folder_path(**expected)
 
@@ -765,7 +742,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = KeywordPlanAdGroupServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -773,8 +749,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = KeywordPlanAdGroupServiceClient.common_organization_path(**expected)
 
@@ -784,7 +759,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = KeywordPlanAdGroupServiceClient.common_project_path(project)
     assert expected == actual
@@ -792,8 +766,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = KeywordPlanAdGroupServiceClient.common_project_path(**expected)
 
@@ -804,7 +777,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = KeywordPlanAdGroupServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -812,9 +784,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = KeywordPlanAdGroupServiceClient.common_location_path(**expected)
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -267,73 +265,42 @@ def test_get_google_ads_field(transport: str = 'grpc', request_type=google_ads_f
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_field.GoogleAdsField(
             resource_name='resource_name_value',
-
             name='name_value',
-
             category=google_ads_field_category.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory.UNKNOWN,
-
             selectable=True,
-
             filterable=True,
-
             sortable=True,
-
             selectable_with=['selectable_with_value'],
-
             attribute_resources=['attribute_resources_value'],
-
             metrics=['metrics_value'],
-
             segments=['segments_value'],
-
             enum_values=['enum_values_value'],
-
             data_type=google_ads_field_data_type.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType.UNKNOWN,
-
             type_url='type_url_value',
-
             is_repeated=True,
-
         )
-
         response = client.get_google_ads_field(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == google_ads_field_service.GetGoogleAdsFieldRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, google_ads_field.GoogleAdsField)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.name == 'name_value'
-
     assert response.category == google_ads_field_category.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory.UNKNOWN
-
     assert response.selectable is True
-
     assert response.filterable is True
-
     assert response.sortable is True
-
     assert response.selectable_with == ['selectable_with_value']
-
     assert response.attribute_resources == ['attribute_resources_value']
-
     assert response.metrics == ['metrics_value']
-
     assert response.segments == ['segments_value']
-
     assert response.enum_values == ['enum_values_value']
-
     assert response.data_type == google_ads_field_data_type.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType.UNKNOWN
-
     assert response.type_url == 'type_url_value'
-
     assert response.is_repeated is True
 
 
@@ -349,6 +316,7 @@ def test_get_google_ads_field_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = google_ads_field_service.GetGoogleAdsFieldRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -356,7 +324,6 @@ def test_get_google_ads_field_field_headers():
             type(client.transport.get_google_ads_field),
             '__call__') as call:
         call.return_value = google_ads_field.GoogleAdsField()
-
         client.get_google_ads_field(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -383,7 +350,6 @@ def test_get_google_ads_field_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_field.GoogleAdsField()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_google_ads_field(
@@ -394,7 +360,6 @@ def test_get_google_ads_field_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -429,25 +394,18 @@ def test_search_google_ads_fields(transport: str = 'grpc', request_type=google_a
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_field_service.SearchGoogleAdsFieldsResponse(
             next_page_token='next_page_token_value',
-
             total_results_count=2077,
-
         )
-
         response = client.search_google_ads_fields(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == google_ads_field_service.SearchGoogleAdsFieldsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.SearchGoogleAdsFieldsPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.total_results_count == 2077
 
 
@@ -466,7 +424,6 @@ def test_search_google_ads_fields_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_field_service.SearchGoogleAdsFieldsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.search_google_ads_fields(
@@ -477,7 +434,6 @@ def test_search_google_ads_fields_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].query == 'query_value'
 
 
@@ -649,7 +605,7 @@ def test_google_ads_field_service_base_transport():
     methods = (
         'get_google_ads_field',
         'search_google_ads_fields',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -800,7 +756,6 @@ def test_google_ads_field_service_transport_channel_mtls_with_adc(
 
 def test_google_ads_field_path():
     google_ads_field = "squid"
-
     expected = "googleAdsFields/{google_ads_field}".format(google_ads_field=google_ads_field, )
     actual = GoogleAdsFieldServiceClient.google_ads_field_path(google_ads_field)
     assert expected == actual
@@ -808,8 +763,7 @@ def test_google_ads_field_path():
 
 def test_parse_google_ads_field_path():
     expected = {
-    "google_ads_field": "clam",
-
+        "google_ads_field": "clam",
     }
     path = GoogleAdsFieldServiceClient.google_ads_field_path(**expected)
 
@@ -819,7 +773,6 @@ def test_parse_google_ads_field_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GoogleAdsFieldServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -827,8 +780,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = GoogleAdsFieldServiceClient.common_billing_account_path(**expected)
 
@@ -838,7 +790,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = GoogleAdsFieldServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -846,8 +797,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = GoogleAdsFieldServiceClient.common_folder_path(**expected)
 
@@ -857,7 +807,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GoogleAdsFieldServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -865,8 +814,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = GoogleAdsFieldServiceClient.common_organization_path(**expected)
 
@@ -876,7 +824,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = GoogleAdsFieldServiceClient.common_project_path(project)
     assert expected == actual
@@ -884,8 +831,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = GoogleAdsFieldServiceClient.common_project_path(**expected)
 
@@ -896,7 +842,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GoogleAdsFieldServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -904,9 +849,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = GoogleAdsFieldServiceClient.common_location_path(**expected)
 

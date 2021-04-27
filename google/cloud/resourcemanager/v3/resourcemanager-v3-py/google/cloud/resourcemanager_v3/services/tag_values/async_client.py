@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import TagValuesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TagValuesGrpcAsyncIOTransport
 from .client import TagValuesClient
@@ -52,19 +49,14 @@ class TagValuesAsyncClient:
 
     tag_value_path = staticmethod(TagValuesClient.tag_value_path)
     parse_tag_value_path = staticmethod(TagValuesClient.parse_tag_value_path)
-
     common_billing_account_path = staticmethod(TagValuesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TagValuesClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(TagValuesClient.common_folder_path)
     parse_common_folder_path = staticmethod(TagValuesClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(TagValuesClient.common_organization_path)
     parse_common_organization_path = staticmethod(TagValuesClient.parse_common_organization_path)
-
     common_project_path = staticmethod(TagValuesClient.common_project_path)
     parse_common_project_path = staticmethod(TagValuesClient.parse_common_project_path)
-
     common_location_path = staticmethod(TagValuesClient.common_location_path)
     parse_common_location_path = staticmethod(TagValuesClient.parse_common_location_path)
 
@@ -149,7 +141,6 @@ class TagValuesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = TagValuesClient(
             credentials=credentials,
             transport=transport,
@@ -170,7 +161,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListTagValuesRequest`):
-                The request object. The request message for listing
+                The request object.
+                The request message for listing
                 TagValues for the specified TagKey.
             parent (:class:`str`):
                 Required. Resource name for TagKey, parent of the
@@ -179,7 +171,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -206,7 +197,6 @@ class TagValuesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -215,10 +205,7 @@ class TagValuesAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_tag_values,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -261,7 +248,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetTagValueRequest`):
-                The request object. The request message for getting a
+                The request object.
+                The request message for getting a
                 TagValue.
             name (:class:`str`):
                 Required. Resource name for TagValue to be fetched in
@@ -270,7 +258,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,7 +284,6 @@ class TagValuesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -306,10 +292,7 @@ class TagValuesAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_tag_value,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -353,7 +336,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateTagValueRequest`):
-                The request object. The request message for creating a
+                The request object.
+                The request message for creating a
                 TagValue.
             tag_value (:class:`google.cloud.resourcemanager_v3.types.TagValue`):
                 Required. The TagValue to be created. Only fields
@@ -363,7 +347,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``tag_value`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -391,7 +374,6 @@ class TagValuesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if tag_value is not None:
             request.tag_value = tag_value
 
@@ -435,7 +417,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UpdateTagValueRequest`):
-                The request object. The request message for updating a
+                The request object.
+                The request message for updating a
                 TagValue.
             tag_value (:class:`google.cloud.resourcemanager_v3.types.TagValue`):
                 Required. The new definition of the TagValue. Only
@@ -453,7 +436,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -481,7 +463,6 @@ class TagValuesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if tag_value is not None:
             request.tag_value = tag_value
         if update_mask is not None:
@@ -535,7 +516,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteTagValueRequest`):
-                The request object. The request message for deleting a
+                The request object.
+                The request message for deleting a
                 TagValue.
             name (:class:`str`):
                 Required. Resource name for TagValue
@@ -545,7 +527,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -573,7 +554,6 @@ class TagValuesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -630,7 +610,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -641,7 +622,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -715,11 +695,10 @@ class TagValuesAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -728,10 +707,7 @@ class TagValuesAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -775,7 +751,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -786,7 +763,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -860,11 +836,10 @@ class TagValuesAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -912,7 +887,8 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -932,7 +908,6 @@ class TagValuesAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -951,11 +926,10 @@ class TagValuesAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
-
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -985,8 +959,6 @@ class TagValuesAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

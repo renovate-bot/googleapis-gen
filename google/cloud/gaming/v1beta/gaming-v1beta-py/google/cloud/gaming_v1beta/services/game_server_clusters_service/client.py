@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.cloud.gaming_v1beta.types import game_server_clusters
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import GameServerClustersServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import GameServerClustersServiceGrpcTransport
 from .transports.grpc_asyncio import GameServerClustersServiceGrpcAsyncIOTransport
@@ -345,7 +342,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.ListGameServerClustersRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.ListGameServerClusters.
             parent (str):
                 Required. The parent resource name.
@@ -355,7 +353,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -385,10 +382,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.ListGameServerClustersRequest):
             request = game_server_clusters.ListGameServerClustersRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -436,7 +431,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.GetGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.GetGameServerCluster.
             name (str):
                 Required. The name of the game server cluster to
@@ -447,7 +443,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,10 +467,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.GetGameServerClusterRequest):
             request = game_server_clusters.GetGameServerClusterRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -517,7 +510,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.CreateGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.CreateGameServerCluster.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -540,7 +534,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
                 This corresponds to the ``game_server_cluster_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -570,10 +563,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.CreateGameServerClusterRequest):
             request = game_server_clusters.CreateGameServerClusterRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if game_server_cluster is not None:
@@ -624,9 +615,9 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.PreviewCreateGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.PreviewCreateGameServerCluster.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -640,7 +631,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a game_server_clusters.PreviewCreateGameServerClusterRequest.
         # There's no risk of modifying the input as we've already verified
@@ -683,7 +673,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.DeleteGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.DeleteGameServerCluster.
             name (str):
                 Required. The name of the game server cluster to delete.
@@ -693,7 +684,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -733,10 +723,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.DeleteGameServerClusterRequest):
             request = game_server_clusters.DeleteGameServerClusterRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -782,9 +770,9 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.PreviewDeleteGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.PreviewDeleteGameServerCluster.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -798,7 +786,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a game_server_clusters.PreviewDeleteGameServerClusterRequest.
         # There's no risk of modifying the input as we've already verified
@@ -842,7 +829,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.UpdateGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.UpdateGameServerCluster.
             game_server_cluster (google.cloud.gaming_v1beta.types.GameServerCluster):
                 Required. The game server cluster to be updated. Only
@@ -862,7 +850,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -892,10 +879,8 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.UpdateGameServerClusterRequest):
             request = game_server_clusters.UpdateGameServerClusterRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if game_server_cluster is not None:
                 request.game_server_cluster = game_server_cluster
             if update_mask is not None:
@@ -943,9 +928,9 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1beta.types.PreviewUpdateGameServerClusterRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.UpdateGameServerCluster.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -959,7 +944,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a game_server_clusters.PreviewUpdateGameServerClusterRequest.
         # There's no risk of modifying the input as we've already verified
@@ -989,8 +973,6 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         # Done; return the response.
         return response
-
-
 
 
 

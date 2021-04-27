@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.common.types import criteria
 from google.ads.googleads.v5.enums.types import criterion_type
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class CustomerNegativeCriterion(proto.Message):
     r"""A negative criterion for exclusions at the customer level.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer negative
@@ -59,27 +55,54 @@ class CustomerNegativeCriterion(proto.Message):
             Immutable. YouTube Channel.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.INT64, number=10, optional=True)
-    type_ = proto.Field(proto.ENUM, number=3,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.INT64,
+        number=10,
+        optional=True,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=criterion_type.CriterionTypeEnum.CriterionType,
     )
-    content_label = proto.Field(proto.MESSAGE, number=4, oneof='criterion',
+    content_label = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='criterion',
         message=criteria.ContentLabelInfo,
     )
-    mobile_application = proto.Field(proto.MESSAGE, number=5, oneof='criterion',
+    mobile_application = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='criterion',
         message=criteria.MobileApplicationInfo,
     )
-    mobile_app_category = proto.Field(proto.MESSAGE, number=6, oneof='criterion',
+    mobile_app_category = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='criterion',
         message=criteria.MobileAppCategoryInfo,
     )
-    placement = proto.Field(proto.MESSAGE, number=7, oneof='criterion',
+    placement = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='criterion',
         message=criteria.PlacementInfo,
     )
-    youtube_video = proto.Field(proto.MESSAGE, number=8, oneof='criterion',
+    youtube_video = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='criterion',
         message=criteria.YouTubeVideoInfo,
     )
-    youtube_channel = proto.Field(proto.MESSAGE, number=9, oneof='criterion',
+    youtube_channel = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='criterion',
         message=criteria.YouTubeChannelInfo,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.device_manager import DeviceManagerClient
+
 from .types.device_manager import BindDeviceToGatewayRequest
 from .types.device_manager import BindDeviceToGatewayResponse
 from .types.device_manager import CreateDeviceRegistryRequest
@@ -61,7 +61,6 @@ from .types.resources import PublicKeyFormat
 from .types.resources import RegistryCredential
 from .types.resources import StateNotificationConfig
 from .types.resources import X509CertificateDetails
-
 
 __all__ = (
     'BindDeviceToGatewayRequest',

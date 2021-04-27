@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
+import packaging.version
 import pkg_resources
 
 from google import auth  # type: ignore
+import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -38,7 +38,6 @@ from google.cloud.datalabeling_v1beta1.types import instruction
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
-
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -48,6 +47,18 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
+try:
+    # google.auth.__version__ was added in 1.26.0
+    _GOOGLE_AUTH_VERSION = auth.__version__
+except AttributeError:
+    try:  # try pkg_resources if it is available
+        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
+    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
+        _GOOGLE_AUTH_VERSION = None
+
+_API_CORE_VERSION = google.api_core.__version__
+
+
 class DataLabelingServiceTransport(abc.ABC):
     """Abstract transport class for DataLabelingService."""
 
@@ -55,20 +66,22 @@ class DataLabelingServiceTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
+    DEFAULT_HOST: str = 'datalabeling.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'datalabeling.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: credentials.Credentials = None,
-            credentials_file: typing.Optional[str] = None,
-            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
-            quota_project_id: typing.Optional[str] = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -77,7 +90,7 @@ class DataLabelingServiceTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scope (Optional[Sequence[str]]): A list of scopes.
+            scopes (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -91,6 +104,8 @@ class DataLabelingServiceTransport(abc.ABC):
             host += ':443'
         self._host = host
 
+        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
+
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -102,15 +117,56 @@ class DataLabelingServiceTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                scopes=self._scopes,
+                                **scopes_kwargs,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
+
+    # TODO(busunkim): These two class methods are in the base transport
+    # to avoid duplicating code across the transport classes. These functions
+    # should be deleted once the minimum required versions of google-api-core
+    # and google-auth are increased.
+
+    # TODO: Remove this function once google-auth >= 1.25.0 is required
+    @classmethod
+    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
+        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
+
+        scopes_kwargs = {}
+
+        if _GOOGLE_AUTH_VERSION and (
+            packaging.version.parse(_GOOGLE_AUTH_VERSION)
+            >= packaging.version.parse("1.25.0")
+        ):
+            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
+        else:
+            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
+
+        return scopes_kwargs
+
+    # TODO: Remove this function once google-api-core >= 1.26.0 is required
+    @classmethod
+    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
+        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
+
+        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
+
+        if _API_CORE_VERSION and (
+            packaging.version.parse(_API_CORE_VERSION)
+            >= packaging.version.parse("1.26.0")
+        ):
+            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
+            self_signed_jwt_kwargs["scopes"] = scopes
+            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
+        else:
+            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
+
+        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -123,10 +179,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_dataset: gapic_v1.method.wrap_method(
                 self.get_dataset,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -138,10 +191,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_datasets: gapic_v1.method.wrap_method(
                 self.list_datasets,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -153,10 +203,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.delete_dataset: gapic_v1.method.wrap_method(
                 self.delete_dataset,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -173,10 +220,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.export_data: gapic_v1.method.wrap_method(
                 self.export_data,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -188,10 +232,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_data_item: gapic_v1.method.wrap_method(
                 self.get_data_item,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -203,10 +244,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_data_items: gapic_v1.method.wrap_method(
                 self.list_data_items,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -218,10 +256,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_annotated_dataset: gapic_v1.method.wrap_method(
                 self.get_annotated_dataset,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -233,10 +268,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_annotated_datasets: gapic_v1.method.wrap_method(
                 self.list_annotated_datasets,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -268,10 +300,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_example: gapic_v1.method.wrap_method(
                 self.get_example,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -283,10 +312,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_examples: gapic_v1.method.wrap_method(
                 self.list_examples,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -303,10 +329,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_annotation_spec_set: gapic_v1.method.wrap_method(
                 self.get_annotation_spec_set,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -318,10 +341,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_annotation_spec_sets: gapic_v1.method.wrap_method(
                 self.list_annotation_spec_sets,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -333,10 +353,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.delete_annotation_spec_set: gapic_v1.method.wrap_method(
                 self.delete_annotation_spec_set,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -353,10 +370,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_instruction: gapic_v1.method.wrap_method(
                 self.get_instruction,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -368,10 +382,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_instructions: gapic_v1.method.wrap_method(
                 self.list_instructions,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -383,10 +394,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.delete_instruction: gapic_v1.method.wrap_method(
                 self.delete_instruction,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -398,10 +406,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_evaluation: gapic_v1.method.wrap_method(
                 self.get_evaluation,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -413,10 +418,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.search_evaluations: gapic_v1.method.wrap_method(
                 self.search_evaluations,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -443,10 +445,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.get_evaluation_job: gapic_v1.method.wrap_method(
                 self.get_evaluation_job,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -468,10 +467,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.delete_evaluation_job: gapic_v1.method.wrap_method(
                 self.delete_evaluation_job,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -483,10 +479,7 @@ class DataLabelingServiceTransport(abc.ABC):
             self.list_evaluation_jobs: gapic_v1.method.wrap_method(
                 self.list_evaluation_jobs,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=30.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -495,8 +488,7 @@ class DataLabelingServiceTransport(abc.ABC):
                 default_timeout=30.0,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
     def operations_client(self) -> operations_v1.OperationsClient:
@@ -504,308 +496,308 @@ class DataLabelingServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
-    def create_dataset(self) -> typing.Callable[
+    def create_dataset(self) -> Callable[
             [data_labeling_service.CreateDatasetRequest],
-            typing.Union[
+            Union[
                 gcd_dataset.Dataset,
-                typing.Awaitable[gcd_dataset.Dataset]
+                Awaitable[gcd_dataset.Dataset]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_dataset(self) -> typing.Callable[
+    def get_dataset(self) -> Callable[
             [data_labeling_service.GetDatasetRequest],
-            typing.Union[
+            Union[
                 dataset.Dataset,
-                typing.Awaitable[dataset.Dataset]
+                Awaitable[dataset.Dataset]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_datasets(self) -> typing.Callable[
+    def list_datasets(self) -> Callable[
             [data_labeling_service.ListDatasetsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListDatasetsResponse,
-                typing.Awaitable[data_labeling_service.ListDatasetsResponse]
+                Awaitable[data_labeling_service.ListDatasetsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_dataset(self) -> typing.Callable[
+    def delete_dataset(self) -> Callable[
             [data_labeling_service.DeleteDatasetRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def import_data(self) -> typing.Callable[
+    def import_data(self) -> Callable[
             [data_labeling_service.ImportDataRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def export_data(self) -> typing.Callable[
+    def export_data(self) -> Callable[
             [data_labeling_service.ExportDataRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_data_item(self) -> typing.Callable[
+    def get_data_item(self) -> Callable[
             [data_labeling_service.GetDataItemRequest],
-            typing.Union[
+            Union[
                 dataset.DataItem,
-                typing.Awaitable[dataset.DataItem]
+                Awaitable[dataset.DataItem]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_data_items(self) -> typing.Callable[
+    def list_data_items(self) -> Callable[
             [data_labeling_service.ListDataItemsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListDataItemsResponse,
-                typing.Awaitable[data_labeling_service.ListDataItemsResponse]
+                Awaitable[data_labeling_service.ListDataItemsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_annotated_dataset(self) -> typing.Callable[
+    def get_annotated_dataset(self) -> Callable[
             [data_labeling_service.GetAnnotatedDatasetRequest],
-            typing.Union[
+            Union[
                 dataset.AnnotatedDataset,
-                typing.Awaitable[dataset.AnnotatedDataset]
+                Awaitable[dataset.AnnotatedDataset]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_annotated_datasets(self) -> typing.Callable[
+    def list_annotated_datasets(self) -> Callable[
             [data_labeling_service.ListAnnotatedDatasetsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListAnnotatedDatasetsResponse,
-                typing.Awaitable[data_labeling_service.ListAnnotatedDatasetsResponse]
+                Awaitable[data_labeling_service.ListAnnotatedDatasetsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_annotated_dataset(self) -> typing.Callable[
+    def delete_annotated_dataset(self) -> Callable[
             [data_labeling_service.DeleteAnnotatedDatasetRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def label_image(self) -> typing.Callable[
+    def label_image(self) -> Callable[
             [data_labeling_service.LabelImageRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def label_video(self) -> typing.Callable[
+    def label_video(self) -> Callable[
             [data_labeling_service.LabelVideoRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def label_text(self) -> typing.Callable[
+    def label_text(self) -> Callable[
             [data_labeling_service.LabelTextRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_example(self) -> typing.Callable[
+    def get_example(self) -> Callable[
             [data_labeling_service.GetExampleRequest],
-            typing.Union[
+            Union[
                 dataset.Example,
-                typing.Awaitable[dataset.Example]
+                Awaitable[dataset.Example]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_examples(self) -> typing.Callable[
+    def list_examples(self) -> Callable[
             [data_labeling_service.ListExamplesRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListExamplesResponse,
-                typing.Awaitable[data_labeling_service.ListExamplesResponse]
+                Awaitable[data_labeling_service.ListExamplesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_annotation_spec_set(self) -> typing.Callable[
+    def create_annotation_spec_set(self) -> Callable[
             [data_labeling_service.CreateAnnotationSpecSetRequest],
-            typing.Union[
+            Union[
                 gcd_annotation_spec_set.AnnotationSpecSet,
-                typing.Awaitable[gcd_annotation_spec_set.AnnotationSpecSet]
+                Awaitable[gcd_annotation_spec_set.AnnotationSpecSet]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_annotation_spec_set(self) -> typing.Callable[
+    def get_annotation_spec_set(self) -> Callable[
             [data_labeling_service.GetAnnotationSpecSetRequest],
-            typing.Union[
+            Union[
                 annotation_spec_set.AnnotationSpecSet,
-                typing.Awaitable[annotation_spec_set.AnnotationSpecSet]
+                Awaitable[annotation_spec_set.AnnotationSpecSet]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_annotation_spec_sets(self) -> typing.Callable[
+    def list_annotation_spec_sets(self) -> Callable[
             [data_labeling_service.ListAnnotationSpecSetsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListAnnotationSpecSetsResponse,
-                typing.Awaitable[data_labeling_service.ListAnnotationSpecSetsResponse]
+                Awaitable[data_labeling_service.ListAnnotationSpecSetsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_annotation_spec_set(self) -> typing.Callable[
+    def delete_annotation_spec_set(self) -> Callable[
             [data_labeling_service.DeleteAnnotationSpecSetRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_instruction(self) -> typing.Callable[
+    def create_instruction(self) -> Callable[
             [data_labeling_service.CreateInstructionRequest],
-            typing.Union[
+            Union[
                 operations.Operation,
-                typing.Awaitable[operations.Operation]
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_instruction(self) -> typing.Callable[
+    def get_instruction(self) -> Callable[
             [data_labeling_service.GetInstructionRequest],
-            typing.Union[
+            Union[
                 instruction.Instruction,
-                typing.Awaitable[instruction.Instruction]
+                Awaitable[instruction.Instruction]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_instructions(self) -> typing.Callable[
+    def list_instructions(self) -> Callable[
             [data_labeling_service.ListInstructionsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListInstructionsResponse,
-                typing.Awaitable[data_labeling_service.ListInstructionsResponse]
+                Awaitable[data_labeling_service.ListInstructionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_instruction(self) -> typing.Callable[
+    def delete_instruction(self) -> Callable[
             [data_labeling_service.DeleteInstructionRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_evaluation(self) -> typing.Callable[
+    def get_evaluation(self) -> Callable[
             [data_labeling_service.GetEvaluationRequest],
-            typing.Union[
+            Union[
                 evaluation.Evaluation,
-                typing.Awaitable[evaluation.Evaluation]
+                Awaitable[evaluation.Evaluation]
             ]]:
         raise NotImplementedError()
 
     @property
-    def search_evaluations(self) -> typing.Callable[
+    def search_evaluations(self) -> Callable[
             [data_labeling_service.SearchEvaluationsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.SearchEvaluationsResponse,
-                typing.Awaitable[data_labeling_service.SearchEvaluationsResponse]
+                Awaitable[data_labeling_service.SearchEvaluationsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def search_example_comparisons(self) -> typing.Callable[
+    def search_example_comparisons(self) -> Callable[
             [data_labeling_service.SearchExampleComparisonsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.SearchExampleComparisonsResponse,
-                typing.Awaitable[data_labeling_service.SearchExampleComparisonsResponse]
+                Awaitable[data_labeling_service.SearchExampleComparisonsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_evaluation_job(self) -> typing.Callable[
+    def create_evaluation_job(self) -> Callable[
             [data_labeling_service.CreateEvaluationJobRequest],
-            typing.Union[
+            Union[
                 evaluation_job.EvaluationJob,
-                typing.Awaitable[evaluation_job.EvaluationJob]
+                Awaitable[evaluation_job.EvaluationJob]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_evaluation_job(self) -> typing.Callable[
+    def update_evaluation_job(self) -> Callable[
             [data_labeling_service.UpdateEvaluationJobRequest],
-            typing.Union[
+            Union[
                 gcd_evaluation_job.EvaluationJob,
-                typing.Awaitable[gcd_evaluation_job.EvaluationJob]
+                Awaitable[gcd_evaluation_job.EvaluationJob]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_evaluation_job(self) -> typing.Callable[
+    def get_evaluation_job(self) -> Callable[
             [data_labeling_service.GetEvaluationJobRequest],
-            typing.Union[
+            Union[
                 evaluation_job.EvaluationJob,
-                typing.Awaitable[evaluation_job.EvaluationJob]
+                Awaitable[evaluation_job.EvaluationJob]
             ]]:
         raise NotImplementedError()
 
     @property
-    def pause_evaluation_job(self) -> typing.Callable[
+    def pause_evaluation_job(self) -> Callable[
             [data_labeling_service.PauseEvaluationJobRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def resume_evaluation_job(self) -> typing.Callable[
+    def resume_evaluation_job(self) -> Callable[
             [data_labeling_service.ResumeEvaluationJobRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_evaluation_job(self) -> typing.Callable[
+    def delete_evaluation_job(self) -> Callable[
             [data_labeling_service.DeleteEvaluationJobRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_evaluation_jobs(self) -> typing.Callable[
+    def list_evaluation_jobs(self) -> Callable[
             [data_labeling_service.ListEvaluationJobsRequest],
-            typing.Union[
+            Union[
                 data_labeling_service.ListEvaluationJobsResponse,
-                typing.Awaitable[data_labeling_service.ListEvaluationJobsResponse]
+                Awaitable[data_labeling_service.ListEvaluationJobsResponse]
             ]]:
         raise NotImplementedError()
 

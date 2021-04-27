@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.websecurityscanner_v1beta.types import scan_run
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -107,13 +104,13 @@ class ScanConfig(proto.Message):
 
     class Authentication(proto.Message):
         r"""Scan authentication configuration.
-
         Attributes:
             google_account (google.cloud.websecurityscanner_v1beta.types.ScanConfig.Authentication.GoogleAccount):
                 Authentication using a Google account.
             custom_account (google.cloud.websecurityscanner_v1beta.types.ScanConfig.Authentication.CustomAccount):
                 Authentication using a custom account.
         """
+
         class GoogleAccount(proto.Message):
             r"""Describes authentication configuration that uses a Google
             account.
@@ -129,9 +126,14 @@ class ScanConfig(proto.Message):
                     included in audit logs.
             """
 
-            username = proto.Field(proto.STRING, number=1)
-
-            password = proto.Field(proto.STRING, number=2)
+            username = proto.Field(
+                proto.STRING,
+                number=1,
+            )
+            password = proto.Field(
+                proto.STRING,
+                number=2,
+            )
 
         class CustomAccount(proto.Message):
             r"""Describes authentication configuration that uses a custom
@@ -150,23 +152,34 @@ class ScanConfig(proto.Message):
                     Required. The login form URL of the website.
             """
 
-            username = proto.Field(proto.STRING, number=1)
+            username = proto.Field(
+                proto.STRING,
+                number=1,
+            )
+            password = proto.Field(
+                proto.STRING,
+                number=2,
+            )
+            login_url = proto.Field(
+                proto.STRING,
+                number=3,
+            )
 
-            password = proto.Field(proto.STRING, number=2)
-
-            login_url = proto.Field(proto.STRING, number=3)
-
-        google_account = proto.Field(proto.MESSAGE, number=1, oneof='authentication',
+        google_account = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            oneof='authentication',
             message='ScanConfig.Authentication.GoogleAccount',
         )
-
-        custom_account = proto.Field(proto.MESSAGE, number=2, oneof='authentication',
+        custom_account = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='authentication',
             message='ScanConfig.Authentication.CustomAccount',
         )
 
     class Schedule(proto.Message):
         r"""Scan schedule configuration.
-
         Attributes:
             schedule_time (google.protobuf.timestamp_pb2.Timestamp):
                 A timestamp indicates when the next run will
@@ -179,47 +192,69 @@ class ScanConfig(proto.Message):
                 executions in days.
         """
 
-        schedule_time = proto.Field(proto.MESSAGE, number=1,
+        schedule_time = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=timestamp.Timestamp,
         )
+        interval_duration_days = proto.Field(
+            proto.INT32,
+            number=2,
+        )
 
-        interval_duration_days = proto.Field(proto.INT32, number=2)
-
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    max_qps = proto.Field(proto.INT32, number=3)
-
-    starting_urls = proto.RepeatedField(proto.STRING, number=4)
-
-    authentication = proto.Field(proto.MESSAGE, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    max_qps = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    starting_urls = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    authentication = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=Authentication,
     )
-
-    user_agent = proto.Field(proto.ENUM, number=6,
+    user_agent = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=UserAgent,
     )
-
-    blacklist_patterns = proto.RepeatedField(proto.STRING, number=7)
-
-    schedule = proto.Field(proto.MESSAGE, number=8,
+    blacklist_patterns = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
+    schedule = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=Schedule,
     )
-
-    target_platforms = proto.RepeatedField(proto.ENUM, number=9,
+    target_platforms = proto.RepeatedField(
+        proto.ENUM,
+        number=9,
         enum=TargetPlatform,
     )
-
-    export_to_security_command_center = proto.Field(proto.ENUM, number=10,
+    export_to_security_command_center = proto.Field(
+        proto.ENUM,
+        number=10,
         enum=ExportToSecurityCommandCenter,
     )
-
-    latest_run = proto.Field(proto.MESSAGE, number=11,
+    latest_run = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=scan_run.ScanRun,
     )
-
-    risk_level = proto.Field(proto.ENUM, number=12,
+    risk_level = proto.Field(
+        proto.ENUM,
+        number=12,
         enum=RiskLevel,
     )
 

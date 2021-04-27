@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import mobile_device_type
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class MobileDeviceConstant(proto.Message):
     r"""A mobile device constant.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the mobile device
@@ -56,20 +52,33 @@ class MobileDeviceConstant(proto.Message):
             Output only. The type of mobile device.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.StringValue,
     )
-    manufacturer_name = proto.Field(proto.MESSAGE, number=4,
+    manufacturer_name = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    operating_system_name = proto.Field(proto.MESSAGE, number=5,
+    operating_system_name = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.StringValue,
     )
-    type_ = proto.Field(proto.ENUM, number=6,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=mobile_device_type.MobileDeviceTypeEnum.MobileDeviceType,
     )
 

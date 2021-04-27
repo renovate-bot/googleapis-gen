@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.iot_v1.types import resources
 from google.protobuf import field_mask_pb2 as gp_field_mask  # type: ignore
@@ -55,7 +52,6 @@ __protobuf__ = proto.module(
 
 class CreateDeviceRegistryRequest(proto.Message):
     r"""Request for ``CreateDeviceRegistry``.
-
     Attributes:
         parent (str):
             Required. The project and cloud region where this device
@@ -67,40 +63,47 @@ class CreateDeviceRegistryRequest(proto.Message):
             registry ``id`` provided and the ``parent`` field.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    device_registry = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    device_registry = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=resources.DeviceRegistry,
     )
 
 
 class GetDeviceRegistryRequest(proto.Message):
     r"""Request for ``GetDeviceRegistry``.
-
     Attributes:
         name (str):
             Required. The name of the device registry. For example,
             ``projects/example-project/locations/us-central1/registries/my-registry``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteDeviceRegistryRequest(proto.Message):
     r"""Request for ``DeleteDeviceRegistry``.
-
     Attributes:
         name (str):
             Required. The name of the device registry. For example,
             ``projects/example-project/locations/us-central1/registries/my-registry``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateDeviceRegistryRequest(proto.Message):
     r"""Request for ``UpdateDeviceRegistry``.
-
     Attributes:
         device_registry (google.cloud.iot_v1.types.DeviceRegistry):
             Required. The new values for the device registry. The ``id``
@@ -116,18 +119,20 @@ class UpdateDeviceRegistryRequest(proto.Message):
             ``mqtt_config``, and ``state_notification_config``.
     """
 
-    device_registry = proto.Field(proto.MESSAGE, number=1,
+    device_registry = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=resources.DeviceRegistry,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gp_field_mask.FieldMask,
     )
 
 
 class ListDeviceRegistriesRequest(proto.Message):
     r"""Request for ``ListDeviceRegistries``.
-
     Attributes:
         parent (str):
             Required. The project and cloud region path. For example,
@@ -145,16 +150,22 @@ class ListDeviceRegistriesRequest(proto.Message):
             the system should return the next page of data.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListDeviceRegistriesResponse(proto.Message):
     r"""Response for ``ListDeviceRegistries``.
-
     Attributes:
         device_registries (Sequence[google.cloud.iot_v1.types.DeviceRegistry]):
             The registries that matched the query.
@@ -168,16 +179,19 @@ class ListDeviceRegistriesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    device_registries = proto.RepeatedField(proto.MESSAGE, number=1,
+    device_registries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.DeviceRegistry,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateDeviceRequest(proto.Message):
     r"""Request for ``CreateDevice``.
-
     Attributes:
         parent (str):
             Required. The name of the device registry where this device
@@ -189,16 +203,19 @@ class CreateDeviceRequest(proto.Message):
             the device registry ``id`` and the ``parent`` field.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    device = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    device = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=resources.Device,
     )
 
 
 class GetDeviceRequest(proto.Message):
     r"""Request for ``GetDevice``.
-
     Attributes:
         name (str):
             Required. The name of the device. For example,
@@ -212,16 +229,19 @@ class GetDeviceRequest(proto.Message):
             format, for example: ``last_heartbeat_time``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    field_mask = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    field_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gp_field_mask.FieldMask,
     )
 
 
 class UpdateDeviceRequest(proto.Message):
     r"""Request for ``UpdateDevice``.
-
     Attributes:
         device (google.cloud.iot_v1.types.Device):
             Required. The new values for the device. The ``id`` and
@@ -237,18 +257,20 @@ class UpdateDeviceRequest(proto.Message):
             ``metadata``
     """
 
-    device = proto.Field(proto.MESSAGE, number=2,
+    device = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=resources.Device,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gp_field_mask.FieldMask,
     )
 
 
 class DeleteDeviceRequest(proto.Message):
     r"""Request for ``DeleteDevice``.
-
     Attributes:
         name (str):
             Required. The name of the device. For example,
@@ -257,12 +279,14 @@ class DeleteDeviceRequest(proto.Message):
             ``projects/p0/locations/us-central1/registries/registry0/devices/{num_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListDevicesRequest(proto.Message):
     r"""Request for ``ListDevices``.
-
     Attributes:
         parent (str):
             Required. The device registry path. Required. For example,
@@ -294,23 +318,36 @@ class ListDevicesRequest(proto.Message):
             page of data.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    device_num_ids = proto.RepeatedField(proto.UINT64, number=2)
-
-    device_ids = proto.RepeatedField(proto.STRING, number=3)
-
-    field_mask = proto.Field(proto.MESSAGE, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    device_num_ids = proto.RepeatedField(
+        proto.UINT64,
+        number=2,
+    )
+    device_ids = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    field_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gp_field_mask.FieldMask,
     )
-
-    gateway_list_options = proto.Field(proto.MESSAGE, number=6,
+    gateway_list_options = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='GatewayListOptions',
     )
-
-    page_size = proto.Field(proto.INT32, number=100)
-
-    page_token = proto.Field(proto.STRING, number=101)
+    page_size = proto.Field(
+        proto.INT32,
+        number=100,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=101,
+    )
 
 
 class GatewayListOptions(proto.Message):
@@ -337,18 +374,26 @@ class GatewayListOptions(proto.Message):
             to which the device with ``num_id`` 456 is bound.
     """
 
-    gateway_type = proto.Field(proto.ENUM, number=1, oneof='filter',
+    gateway_type = proto.Field(
+        proto.ENUM,
+        number=1,
+        oneof='filter',
         enum=resources.GatewayType,
     )
-
-    associations_gateway_id = proto.Field(proto.STRING, number=2, oneof='filter')
-
-    associations_device_id = proto.Field(proto.STRING, number=3, oneof='filter')
+    associations_gateway_id = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='filter',
+    )
+    associations_device_id = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='filter',
+    )
 
 
 class ListDevicesResponse(proto.Message):
     r"""Response for ``ListDevices``.
-
     Attributes:
         devices (Sequence[google.cloud.iot_v1.types.Device]):
             The devices that match the request.
@@ -362,16 +407,19 @@ class ListDevicesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    devices = proto.RepeatedField(proto.MESSAGE, number=1,
+    devices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.Device,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ModifyCloudToDeviceConfigRequest(proto.Message):
     r"""Request for ``ModifyCloudToDeviceConfig``.
-
     Attributes:
         name (str):
             Required. The name of the device. For example,
@@ -392,16 +440,22 @@ class ModifyCloudToDeviceConfigRequest(proto.Message):
             device.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    version_to_update = proto.Field(proto.INT64, number=2)
-
-    binary_data = proto.Field(proto.BYTES, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    version_to_update = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    binary_data = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
 
 
 class ListDeviceConfigVersionsRequest(proto.Message):
     r"""Request for ``ListDeviceConfigVersions``.
-
     Attributes:
         name (str):
             Required. The name of the device. For example,
@@ -416,14 +470,18 @@ class ListDeviceConfigVersionsRequest(proto.Message):
             the versions available.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    num_versions = proto.Field(proto.INT32, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    num_versions = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class ListDeviceConfigVersionsResponse(proto.Message):
     r"""Response for ``ListDeviceConfigVersions``.
-
     Attributes:
         device_configs (Sequence[google.cloud.iot_v1.types.DeviceConfig]):
             The device configuration for the last few
@@ -431,14 +489,15 @@ class ListDeviceConfigVersionsResponse(proto.Message):
             order, starting from the most recent one.
     """
 
-    device_configs = proto.RepeatedField(proto.MESSAGE, number=1,
+    device_configs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.DeviceConfig,
     )
 
 
 class ListDeviceStatesRequest(proto.Message):
     r"""Request for ``ListDeviceStates``.
-
     Attributes:
         name (str):
             Required. The name of the device. For example,
@@ -453,14 +512,18 @@ class ListDeviceStatesRequest(proto.Message):
             available.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    num_states = proto.Field(proto.INT32, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    num_states = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class ListDeviceStatesResponse(proto.Message):
     r"""Response for ``ListDeviceStates``.
-
     Attributes:
         device_states (Sequence[google.cloud.iot_v1.types.DeviceState]):
             The last few device states. States are listed
@@ -468,14 +531,15 @@ class ListDeviceStatesResponse(proto.Message):
             starting from the most recent one.
     """
 
-    device_states = proto.RepeatedField(proto.MESSAGE, number=1,
+    device_states = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.DeviceState,
     )
 
 
 class SendCommandToDeviceRequest(proto.Message):
     r"""Request for ``SendCommandToDevice``.
-
     Attributes:
         name (str):
             Required. The name of the device. For example,
@@ -497,20 +561,26 @@ class SendCommandToDeviceRequest(proto.Message):
             characters.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    binary_data = proto.Field(proto.BYTES, number=2)
-
-    subfolder = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    binary_data = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    subfolder = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class SendCommandToDeviceResponse(proto.Message):
-    r"""Response for ``SendCommandToDevice``."""
+    r"""Response for ``SendCommandToDevice``.    """
 
 
 class BindDeviceToGatewayRequest(proto.Message):
     r"""Request for ``BindDeviceToGateway``.
-
     Attributes:
         parent (str):
             Required. The name of the registry. For example,
@@ -524,20 +594,26 @@ class BindDeviceToGatewayRequest(proto.Message):
             numeric ID or the user-defined device identifier.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    gateway_id = proto.Field(proto.STRING, number=2)
-
-    device_id = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    gateway_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    device_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class BindDeviceToGatewayResponse(proto.Message):
-    r"""Response for ``BindDeviceToGateway``."""
+    r"""Response for ``BindDeviceToGateway``.    """
 
 
 class UnbindDeviceFromGatewayRequest(proto.Message):
     r"""Request for ``UnbindDeviceFromGateway``.
-
     Attributes:
         parent (str):
             Required. The name of the registry. For example,
@@ -551,15 +627,22 @@ class UnbindDeviceFromGatewayRequest(proto.Message):
             numeric ID or the user-defined device identifier.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    gateway_id = proto.Field(proto.STRING, number=2)
-
-    device_id = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    gateway_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    device_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class UnbindDeviceFromGatewayResponse(proto.Message):
-    r"""Response for ``UnbindDeviceFromGateway``."""
+    r"""Response for ``UnbindDeviceFromGateway``.    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

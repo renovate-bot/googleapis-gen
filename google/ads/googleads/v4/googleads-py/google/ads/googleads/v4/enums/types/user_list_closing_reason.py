@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class UserListClosingReasonEnum(proto.Message):
     r"""Indicates the reason why the userlist was closed.
     This enum is only used when a list is auto-closed by the system.
-    """
+        """
     class UserListClosingReason(proto.Enum):
         r"""Enum describing possible user list closing reasons."""
         UNSPECIFIED = 0

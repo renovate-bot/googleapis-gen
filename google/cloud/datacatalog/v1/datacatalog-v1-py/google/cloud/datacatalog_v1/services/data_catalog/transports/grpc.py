@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.datacatalog_v1.types import tags
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import DataCatalogTransport, DEFAULT_CLIENT_INFO
 
 
@@ -66,7 +63,8 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,13 +203,15 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -225,7 +225,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def search_catalog(self) -> Callable[
             [datacatalog.SearchCatalogRequest],
             datacatalog.SearchCatalogResponse]:
-        r"""Return a callable for the search catalog method over gRPC.
+        r"""Return a callable for the
+        search catalog
+          method over gRPC.
 
         Searches Data Catalog for multiple resources like entries, tags
         that match a query.
@@ -267,7 +269,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def create_entry_group(self) -> Callable[
             [datacatalog.CreateEntryGroupRequest],
             datacatalog.EntryGroup]:
-        r"""Return a callable for the create entry group method over gRPC.
+        r"""Return a callable for the
+        create entry group
+          method over gRPC.
 
         Creates an EntryGroup.
 
@@ -313,7 +317,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def get_entry_group(self) -> Callable[
             [datacatalog.GetEntryGroupRequest],
             datacatalog.EntryGroup]:
-        r"""Return a callable for the get entry group method over gRPC.
+        r"""Return a callable for the
+        get entry group
+          method over gRPC.
 
         Gets an EntryGroup.
 
@@ -339,7 +345,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def update_entry_group(self) -> Callable[
             [datacatalog.UpdateEntryGroupRequest],
             datacatalog.EntryGroup]:
-        r"""Return a callable for the update entry group method over gRPC.
+        r"""Return a callable for the
+        update entry group
+          method over gRPC.
 
         Updates an EntryGroup. The user should enable the Data Catalog
         API in the project identified by the ``entry_group.name``
@@ -369,7 +377,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def delete_entry_group(self) -> Callable[
             [datacatalog.DeleteEntryGroupRequest],
             empty.Empty]:
-        r"""Return a callable for the delete entry group method over gRPC.
+        r"""Return a callable for the
+        delete entry group
+          method over gRPC.
 
         Deletes an EntryGroup. Only entry groups that do not contain
         entries can be deleted. Users should enable the Data Catalog API
@@ -400,7 +410,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def list_entry_groups(self) -> Callable[
             [datacatalog.ListEntryGroupsRequest],
             datacatalog.ListEntryGroupsResponse]:
-        r"""Return a callable for the list entry groups method over gRPC.
+        r"""Return a callable for the
+        list entry groups
+          method over gRPC.
 
         Lists entry groups.
 
@@ -426,7 +438,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def create_entry(self) -> Callable[
             [datacatalog.CreateEntryRequest],
             datacatalog.Entry]:
-        r"""Return a callable for the create entry method over gRPC.
+        r"""Return a callable for the
+        create entry
+          method over gRPC.
 
         Creates an entry. Only entries of types 'FILESET', 'CLUSTER',
         'DATA_STREAM' or with a user-specified type can be created.
@@ -461,7 +475,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def update_entry(self) -> Callable[
             [datacatalog.UpdateEntryRequest],
             datacatalog.Entry]:
-        r"""Return a callable for the update entry method over gRPC.
+        r"""Return a callable for the
+        update entry
+          method over gRPC.
 
         Updates an existing entry. Users should enable the Data Catalog
         API in the project identified by the ``entry.name`` parameter
@@ -491,7 +507,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def delete_entry(self) -> Callable[
             [datacatalog.DeleteEntryRequest],
             empty.Empty]:
-        r"""Return a callable for the delete entry method over gRPC.
+        r"""Return a callable for the
+        delete entry
+          method over gRPC.
 
         Deletes an existing entry. Only entries created through
         [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
@@ -523,7 +541,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def get_entry(self) -> Callable[
             [datacatalog.GetEntryRequest],
             datacatalog.Entry]:
-        r"""Return a callable for the get entry method over gRPC.
+        r"""Return a callable for the
+        get entry
+          method over gRPC.
 
         Gets an entry.
 
@@ -549,7 +569,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def lookup_entry(self) -> Callable[
             [datacatalog.LookupEntryRequest],
             datacatalog.Entry]:
-        r"""Return a callable for the lookup entry method over gRPC.
+        r"""Return a callable for the
+        lookup entry
+          method over gRPC.
 
         Get an entry by target resource name. This method
         allows clients to use the resource name from the source
@@ -578,7 +600,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def list_entries(self) -> Callable[
             [datacatalog.ListEntriesRequest],
             datacatalog.ListEntriesResponse]:
-        r"""Return a callable for the list entries method over gRPC.
+        r"""Return a callable for the
+        list entries
+          method over gRPC.
 
         Lists entries.
 
@@ -604,7 +628,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def create_tag_template(self) -> Callable[
             [datacatalog.CreateTagTemplateRequest],
             tags.TagTemplate]:
-        r"""Return a callable for the create tag template method over gRPC.
+        r"""Return a callable for the
+        create tag template
+          method over gRPC.
 
         Creates a tag template. The user should enable the Data Catalog
         API in the project identified by the ``parent`` parameter (see
@@ -634,7 +660,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def get_tag_template(self) -> Callable[
             [datacatalog.GetTagTemplateRequest],
             tags.TagTemplate]:
-        r"""Return a callable for the get tag template method over gRPC.
+        r"""Return a callable for the
+        get tag template
+          method over gRPC.
 
         Gets a tag template.
 
@@ -660,7 +688,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def update_tag_template(self) -> Callable[
             [datacatalog.UpdateTagTemplateRequest],
             tags.TagTemplate]:
-        r"""Return a callable for the update tag template method over gRPC.
+        r"""Return a callable for the
+        update tag template
+          method over gRPC.
 
         Updates a tag template. This method cannot be used to update the
         fields of a template. The tag template fields are represented as
@@ -694,7 +724,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def delete_tag_template(self) -> Callable[
             [datacatalog.DeleteTagTemplateRequest],
             empty.Empty]:
-        r"""Return a callable for the delete tag template method over gRPC.
+        r"""Return a callable for the
+        delete tag template
+          method over gRPC.
 
         Deletes a tag template and all tags using the template. Users
         should enable the Data Catalog API in the project identified by
@@ -724,7 +756,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def create_tag_template_field(self) -> Callable[
             [datacatalog.CreateTagTemplateFieldRequest],
             tags.TagTemplateField]:
-        r"""Return a callable for the create tag template field method over gRPC.
+        r"""Return a callable for the
+        create tag template field
+          method over gRPC.
 
         Creates a field in a tag template. The user should enable the
         Data Catalog API in the project identified by the ``parent``
@@ -754,7 +788,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def update_tag_template_field(self) -> Callable[
             [datacatalog.UpdateTagTemplateFieldRequest],
             tags.TagTemplateField]:
-        r"""Return a callable for the update tag template field method over gRPC.
+        r"""Return a callable for the
+        update tag template field
+          method over gRPC.
 
         Updates a field in a tag template. This method cannot be used to
         update the field type. Users should enable the Data Catalog API
@@ -785,7 +821,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def rename_tag_template_field(self) -> Callable[
             [datacatalog.RenameTagTemplateFieldRequest],
             tags.TagTemplateField]:
-        r"""Return a callable for the rename tag template field method over gRPC.
+        r"""Return a callable for the
+        rename tag template field
+          method over gRPC.
 
         Renames a field in a tag template. The user should enable the
         Data Catalog API in the project identified by the ``name``
@@ -815,8 +853,10 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def rename_tag_template_field_enum_value(self) -> Callable[
             [datacatalog.RenameTagTemplateFieldEnumValueRequest],
             tags.TagTemplateField]:
-        r"""Return a callable for the rename tag template field enum
-        value method over gRPC.
+        r"""Return a callable for the
+        rename tag template field enum
+        value
+          method over gRPC.
 
         Renames an enum value in a tag template. The enum
         values have to be unique within one enum field.
@@ -843,7 +883,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def delete_tag_template_field(self) -> Callable[
             [datacatalog.DeleteTagTemplateFieldRequest],
             empty.Empty]:
-        r"""Return a callable for the delete tag template field method over gRPC.
+        r"""Return a callable for the
+        delete tag template field
+          method over gRPC.
 
         Deletes a field in a tag template and all uses of that field.
         Users should enable the Data Catalog API in the project
@@ -874,7 +916,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def create_tag(self) -> Callable[
             [datacatalog.CreateTagRequest],
             tags.Tag]:
-        r"""Return a callable for the create tag method over gRPC.
+        r"""Return a callable for the
+        create tag
+          method over gRPC.
 
         Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
         Note: The project identified by the ``parent`` parameter for the
@@ -905,7 +949,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def update_tag(self) -> Callable[
             [datacatalog.UpdateTagRequest],
             tags.Tag]:
-        r"""Return a callable for the update tag method over gRPC.
+        r"""Return a callable for the
+        update tag
+          method over gRPC.
 
         Updates an existing tag.
 
@@ -931,7 +977,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def delete_tag(self) -> Callable[
             [datacatalog.DeleteTagRequest],
             empty.Empty]:
-        r"""Return a callable for the delete tag method over gRPC.
+        r"""Return a callable for the
+        delete tag
+          method over gRPC.
 
         Deletes a tag.
 
@@ -957,7 +1005,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def list_tags(self) -> Callable[
             [datacatalog.ListTagsRequest],
             datacatalog.ListTagsResponse]:
-        r"""Return a callable for the list tags method over gRPC.
+        r"""Return a callable for the
+        list tags
+          method over gRPC.
 
         Lists the tags on an [Entry][google.cloud.datacatalog.v1.Entry].
 
@@ -983,7 +1033,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy for a resource. Replaces any
         existing policy. Supported resources are:
@@ -1025,7 +1077,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a resource. A ``NOT_FOUND``
         error is returned if the resource does not exist. An empty
@@ -1071,7 +1125,9 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns the caller's permissions on a resource. If the resource
         does not exist, an empty set of permissions is returned (We

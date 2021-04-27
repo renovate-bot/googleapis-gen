@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -29,7 +27,6 @@ from google.auth import credentials                    # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.maps.roads_v1.types import roads
-
 from .transports.base import RoadsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import RoadsServiceGrpcAsyncIOTransport
 from .client import RoadsServiceClient
@@ -45,16 +42,12 @@ class RoadsServiceAsyncClient:
 
     common_billing_account_path = staticmethod(RoadsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(RoadsServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(RoadsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(RoadsServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(RoadsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(RoadsServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(RoadsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(RoadsServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(RoadsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(RoadsServiceClient.parse_common_location_path)
 
@@ -139,7 +132,6 @@ class RoadsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = RoadsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -164,7 +156,8 @@ class RoadsServiceAsyncClient:
 
         Args:
             request (:class:`google.maps.roads_v1.types.SnapToRoadsRequest`):
-                The request object. A request to the SnapToRoads method,
+                The request object.
+                A request to the SnapToRoads method,
                 requesting that a sequence of points be snapped to road
                 segments.
             path (:class:`str`):
@@ -174,7 +167,6 @@ class RoadsServiceAsyncClient:
                 This corresponds to the ``path`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -200,7 +192,6 @@ class RoadsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if path is not None:
             request.path = path
 
@@ -237,7 +228,8 @@ class RoadsServiceAsyncClient:
 
         Args:
             request (:class:`google.maps.roads_v1.types.ListNearestRoadsRequest`):
-                The request object. A request to the ListNearestRoads
+                The request object.
+                A request to the ListNearestRoads
                 method, requesting that a sequence of points be snapped
                 individually to the road segment that each is closest
                 to.
@@ -248,7 +240,6 @@ class RoadsServiceAsyncClient:
                 This corresponds to the ``points`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -274,7 +265,6 @@ class RoadsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if points is not None:
             request.points = points
 
@@ -296,8 +286,6 @@ class RoadsServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -40,9 +38,14 @@ class Vertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(proto.INT32, number=1)
-
-    y = proto.Field(proto.INT32, number=2)
+    x = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    y = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class NormalizedVertex(proto.Message):
@@ -57,14 +60,18 @@ class NormalizedVertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(proto.FLOAT, number=1)
-
-    y = proto.Field(proto.FLOAT, number=2)
+    x = proto.Field(
+        proto.FLOAT,
+        number=1,
+    )
+    y = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
 
 
 class BoundingPoly(proto.Message):
     r"""A bounding polygon for the detected image annotation.
-
     Attributes:
         vertices (Sequence[google.cloud.documentai_v1beta2.types.Vertex]):
             The bounding polygon vertices.
@@ -72,11 +79,14 @@ class BoundingPoly(proto.Message):
             The bounding polygon normalized vertices.
     """
 
-    vertices = proto.RepeatedField(proto.MESSAGE, number=1,
+    vertices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Vertex',
     )
-
-    normalized_vertices = proto.RepeatedField(proto.MESSAGE, number=2,
+    normalized_vertices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='NormalizedVertex',
     )
 

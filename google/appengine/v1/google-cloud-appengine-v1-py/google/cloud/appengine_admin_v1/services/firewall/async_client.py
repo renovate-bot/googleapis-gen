@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -31,7 +29,6 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.appengine_admin_v1.services.firewall import pagers
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import firewall
-
 from .transports.base import FirewallTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import FirewallGrpcAsyncIOTransport
 from .client import FirewallClient
@@ -58,16 +55,12 @@ class FirewallAsyncClient:
 
     common_billing_account_path = staticmethod(FirewallClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(FirewallClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(FirewallClient.common_folder_path)
     parse_common_folder_path = staticmethod(FirewallClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(FirewallClient.common_organization_path)
     parse_common_organization_path = staticmethod(FirewallClient.parse_common_organization_path)
-
     common_project_path = staticmethod(FirewallClient.common_project_path)
     parse_common_project_path = staticmethod(FirewallClient.parse_common_project_path)
-
     common_location_path = staticmethod(FirewallClient.common_location_path)
     parse_common_location_path = staticmethod(FirewallClient.parse_common_location_path)
 
@@ -152,7 +145,6 @@ class FirewallAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = FirewallClient(
             credentials=credentials,
             transport=transport,
@@ -172,9 +164,9 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListIngressRulesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Firewall.ListIngressRules`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -190,7 +182,6 @@ class FirewallAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.ListIngressRulesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -246,9 +237,9 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.BatchUpdateIngressRulesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Firewall.BatchUpdateIngressRules`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -260,7 +251,6 @@ class FirewallAsyncClient:
                 Response message for Firewall.UpdateAllIngressRules.
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.BatchUpdateIngressRulesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -301,9 +291,9 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.CreateIngressRuleRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Firewall.CreateIngressRule`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -319,7 +309,6 @@ class FirewallAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.CreateIngressRuleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -360,9 +349,9 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetIngressRuleRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Firewall.GetIngressRule`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -378,7 +367,6 @@ class FirewallAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.GetIngressRuleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -419,9 +407,9 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateIngressRuleRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Firewall.UpdateIngressRule`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -437,7 +425,6 @@ class FirewallAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.UpdateIngressRuleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -478,9 +465,9 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteIngressRuleRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Firewall.DeleteIngressRule`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,7 +475,6 @@ class FirewallAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.DeleteIngressRuleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -514,8 +500,6 @@ class FirewallAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

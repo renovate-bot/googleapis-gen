@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -35,11 +35,35 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.iam.credentials_v1.services.iam_credentials import IAMCredentialsAsyncClient
 from google.iam.credentials_v1.services.iam_credentials import IAMCredentialsClient
 from google.iam.credentials_v1.services.iam_credentials import transports
+from google.iam.credentials_v1.services.iam_credentials.transports.base import _API_CORE_VERSION
+from google.iam.credentials_v1.services.iam_credentials.transports.base import _GOOGLE_AUTH_VERSION
 from google.iam.credentials_v1.types import common
 from google.oauth2 import service_account
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -207,12 +231,10 @@ def test_iam_credentials_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (IAMCredentialsClient, transports.IAMCredentialsGrpcTransport, "grpc", "true"),
     (IAMCredentialsAsyncClient, transports.IAMCredentialsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (IAMCredentialsClient, transports.IAMCredentialsGrpcTransport, "grpc", "false"),
     (IAMCredentialsAsyncClient, transports.IAMCredentialsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(IAMCredentialsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(IAMCredentialsClient))
 @mock.patch.object(IAMCredentialsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(IAMCredentialsAsyncClient))
@@ -367,21 +389,16 @@ def test_generate_access_token(transport: str = 'grpc', request_type=common.Gene
         # Designate an appropriate return value for the call.
         call.return_value = common.GenerateAccessTokenResponse(
             access_token='access_token_value',
-
         )
-
         response = client.generate_access_token(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.GenerateAccessTokenRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, common.GenerateAccessTokenResponse)
-
     assert response.access_token == 'access_token_value'
 
 
@@ -404,8 +421,8 @@ def test_generate_access_token_empty_call():
         client.generate_access_token()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.GenerateAccessTokenRequest()
+
 
 @pytest.mark.asyncio
 async def test_generate_access_token_async(transport: str = 'grpc_asyncio', request_type=common.GenerateAccessTokenRequest):
@@ -423,21 +440,18 @@ async def test_generate_access_token_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.generate_access_token),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.GenerateAccessTokenResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.GenerateAccessTokenResponse(
             access_token='access_token_value',
         ))
-
         response = await client.generate_access_token(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.GenerateAccessTokenRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.GenerateAccessTokenResponse)
-
     assert response.access_token == 'access_token_value'
 
 
@@ -454,6 +468,7 @@ def test_generate_access_token_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.GenerateAccessTokenRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -461,7 +476,6 @@ def test_generate_access_token_field_headers():
             type(client.transport.generate_access_token),
             '__call__') as call:
         call.return_value = common.GenerateAccessTokenResponse()
-
         client.generate_access_token(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -486,6 +500,7 @@ async def test_generate_access_token_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.GenerateAccessTokenRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -493,7 +508,6 @@ async def test_generate_access_token_field_headers_async():
             type(client.transport.generate_access_token),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.GenerateAccessTokenResponse())
-
         await client.generate_access_token(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -520,7 +534,6 @@ def test_generate_access_token_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.GenerateAccessTokenResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_access_token(
@@ -534,13 +547,9 @@ def test_generate_access_token_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].scope == ['scope_value']
-
         assert DurationRule().to_proto(args[0].lifetime) == duration.Duration(seconds=751)
 
 
@@ -588,13 +597,9 @@ async def test_generate_access_token_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].scope == ['scope_value']
-
         assert DurationRule().to_proto(args[0].lifetime) == duration.Duration(seconds=751)
 
 
@@ -633,21 +638,16 @@ def test_generate_id_token(transport: str = 'grpc', request_type=common.Generate
         # Designate an appropriate return value for the call.
         call.return_value = common.GenerateIdTokenResponse(
             token='token_value',
-
         )
-
         response = client.generate_id_token(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.GenerateIdTokenRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, common.GenerateIdTokenResponse)
-
     assert response.token == 'token_value'
 
 
@@ -670,8 +670,8 @@ def test_generate_id_token_empty_call():
         client.generate_id_token()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.GenerateIdTokenRequest()
+
 
 @pytest.mark.asyncio
 async def test_generate_id_token_async(transport: str = 'grpc_asyncio', request_type=common.GenerateIdTokenRequest):
@@ -689,21 +689,18 @@ async def test_generate_id_token_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.generate_id_token),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.GenerateIdTokenResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.GenerateIdTokenResponse(
             token='token_value',
         ))
-
         response = await client.generate_id_token(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.GenerateIdTokenRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.GenerateIdTokenResponse)
-
     assert response.token == 'token_value'
 
 
@@ -720,6 +717,7 @@ def test_generate_id_token_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.GenerateIdTokenRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -727,7 +725,6 @@ def test_generate_id_token_field_headers():
             type(client.transport.generate_id_token),
             '__call__') as call:
         call.return_value = common.GenerateIdTokenResponse()
-
         client.generate_id_token(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -752,6 +749,7 @@ async def test_generate_id_token_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.GenerateIdTokenRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -759,7 +757,6 @@ async def test_generate_id_token_field_headers_async():
             type(client.transport.generate_id_token),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.GenerateIdTokenResponse())
-
         await client.generate_id_token(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -786,7 +783,6 @@ def test_generate_id_token_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.GenerateIdTokenResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_id_token(
@@ -800,13 +796,9 @@ def test_generate_id_token_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].audience == 'audience_value'
-
         assert args[0].include_email == True
 
 
@@ -854,13 +846,9 @@ async def test_generate_id_token_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].audience == 'audience_value'
-
         assert args[0].include_email == True
 
 
@@ -899,25 +887,18 @@ def test_sign_blob(transport: str = 'grpc', request_type=common.SignBlobRequest)
         # Designate an appropriate return value for the call.
         call.return_value = common.SignBlobResponse(
             key_id='key_id_value',
-
             signed_blob=b'signed_blob_blob',
-
         )
-
         response = client.sign_blob(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.SignBlobRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, common.SignBlobResponse)
-
     assert response.key_id == 'key_id_value'
-
     assert response.signed_blob == b'signed_blob_blob'
 
 
@@ -940,8 +921,8 @@ def test_sign_blob_empty_call():
         client.sign_blob()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.SignBlobRequest()
+
 
 @pytest.mark.asyncio
 async def test_sign_blob_async(transport: str = 'grpc_asyncio', request_type=common.SignBlobRequest):
@@ -959,24 +940,20 @@ async def test_sign_blob_async(transport: str = 'grpc_asyncio', request_type=com
             type(client.transport.sign_blob),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SignBlobResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.SignBlobResponse(
             key_id='key_id_value',
             signed_blob=b'signed_blob_blob',
         ))
-
         response = await client.sign_blob(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.SignBlobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.SignBlobResponse)
-
     assert response.key_id == 'key_id_value'
-
     assert response.signed_blob == b'signed_blob_blob'
 
 
@@ -993,6 +970,7 @@ def test_sign_blob_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.SignBlobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1000,7 +978,6 @@ def test_sign_blob_field_headers():
             type(client.transport.sign_blob),
             '__call__') as call:
         call.return_value = common.SignBlobResponse()
-
         client.sign_blob(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1025,6 +1002,7 @@ async def test_sign_blob_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.SignBlobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1032,7 +1010,6 @@ async def test_sign_blob_field_headers_async():
             type(client.transport.sign_blob),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SignBlobResponse())
-
         await client.sign_blob(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1059,7 +1036,6 @@ def test_sign_blob_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.SignBlobResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.sign_blob(
@@ -1072,11 +1048,8 @@ def test_sign_blob_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].payload == b'payload_blob'
 
 
@@ -1122,11 +1095,8 @@ async def test_sign_blob_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].payload == b'payload_blob'
 
 
@@ -1164,25 +1134,18 @@ def test_sign_jwt(transport: str = 'grpc', request_type=common.SignJwtRequest):
         # Designate an appropriate return value for the call.
         call.return_value = common.SignJwtResponse(
             key_id='key_id_value',
-
             signed_jwt='signed_jwt_value',
-
         )
-
         response = client.sign_jwt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.SignJwtRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, common.SignJwtResponse)
-
     assert response.key_id == 'key_id_value'
-
     assert response.signed_jwt == 'signed_jwt_value'
 
 
@@ -1205,8 +1168,8 @@ def test_sign_jwt_empty_call():
         client.sign_jwt()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.SignJwtRequest()
+
 
 @pytest.mark.asyncio
 async def test_sign_jwt_async(transport: str = 'grpc_asyncio', request_type=common.SignJwtRequest):
@@ -1224,24 +1187,20 @@ async def test_sign_jwt_async(transport: str = 'grpc_asyncio', request_type=comm
             type(client.transport.sign_jwt),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SignJwtResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.SignJwtResponse(
             key_id='key_id_value',
             signed_jwt='signed_jwt_value',
         ))
-
         response = await client.sign_jwt(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == common.SignJwtRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.SignJwtResponse)
-
     assert response.key_id == 'key_id_value'
-
     assert response.signed_jwt == 'signed_jwt_value'
 
 
@@ -1258,6 +1217,7 @@ def test_sign_jwt_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.SignJwtRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1265,7 +1225,6 @@ def test_sign_jwt_field_headers():
             type(client.transport.sign_jwt),
             '__call__') as call:
         call.return_value = common.SignJwtResponse()
-
         client.sign_jwt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1290,6 +1249,7 @@ async def test_sign_jwt_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = common.SignJwtRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1297,7 +1257,6 @@ async def test_sign_jwt_field_headers_async():
             type(client.transport.sign_jwt),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SignJwtResponse())
-
         await client.sign_jwt(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1324,7 +1283,6 @@ def test_sign_jwt_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.SignJwtResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.sign_jwt(
@@ -1337,11 +1295,8 @@ def test_sign_jwt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].payload == 'payload_value'
 
 
@@ -1387,11 +1342,8 @@ async def test_sign_jwt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].delegates == ['delegates_value']
-
         assert args[0].payload == 'payload_value'
 
 
@@ -1452,7 +1404,6 @@ def test_transport_instance():
     client = IAMCredentialsClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.IAMCredentialsGrpcTransport(
@@ -1467,7 +1418,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.IAMCredentialsGrpcTransport,
     transports.IAMCredentialsGrpcAsyncIOTransport,
@@ -1479,7 +1429,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = IAMCredentialsClient(
@@ -1489,7 +1438,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.IAMCredentialsGrpcTransport,
     )
-
 
 def test_iam_credentials_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1515,15 +1463,33 @@ def test_iam_credentials_base_transport():
         'generate_id_token',
         'sign_blob',
         'sign_jwt',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_iam_credentials_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.iam.credentials_v1.services.iam_credentials.transports.IAMCredentialsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.iam.credentials_v1.services.iam_credentials.transports.IAMCredentialsTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.IAMCredentialsTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_iam_credentials_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.iam.credentials_v1.services.iam_credentials.transports.IAMCredentialsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.IAMCredentialsTransport(
@@ -1539,33 +1505,182 @@ def test_iam_credentials_base_transport_with_credentials_file():
 
 def test_iam_credentials_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.iam.credentials_v1.services.iam_credentials.transports.IAMCredentialsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.iam.credentials_v1.services.iam_credentials.transports.IAMCredentialsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.IAMCredentialsTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_iam_credentials_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         IAMCredentialsClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_iam_credentials_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_iam_credentials_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        IAMCredentialsClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.IAMCredentialsGrpcTransport,
+        transports.IAMCredentialsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_iam_credentials_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.IAMCredentialsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.IAMCredentialsGrpcTransport,
+        transports.IAMCredentialsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_iam_credentials_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.IAMCredentialsGrpcTransport, grpc_helpers),
+        (transports.IAMCredentialsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_iam_credentials_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "iamcredentials.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="iamcredentials.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.IAMCredentialsGrpcTransport, grpc_helpers),
+        (transports.IAMCredentialsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_iam_credentials_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "iamcredentials.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.IAMCredentialsGrpcTransport, grpc_helpers),
+        (transports.IAMCredentialsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_iam_credentials_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "iamcredentials.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1627,7 +1742,6 @@ def test_iam_credentials_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='iamcredentials.googleapis.com:8000'),
     )
     assert client.transport._host == 'iamcredentials.googleapis.com:8000'
-
 
 def test_iam_credentials_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1746,7 +1860,6 @@ def test_iam_credentials_transport_channel_mtls_with_adc(
 def test_service_account_path():
     project = "squid"
     service_account = "clam"
-
     expected = "projects/{project}/serviceAccounts/{service_account}".format(project=project, service_account=service_account, )
     actual = IAMCredentialsClient.service_account_path(project, service_account)
     assert expected == actual
@@ -1754,9 +1867,8 @@ def test_service_account_path():
 
 def test_parse_service_account_path():
     expected = {
-    "project": "whelk",
-    "service_account": "octopus",
-
+        "project": "whelk",
+        "service_account": "octopus",
     }
     path = IAMCredentialsClient.service_account_path(**expected)
 
@@ -1766,7 +1878,6 @@ def test_parse_service_account_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = IAMCredentialsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1774,8 +1885,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = IAMCredentialsClient.common_billing_account_path(**expected)
 
@@ -1785,7 +1895,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = IAMCredentialsClient.common_folder_path(folder)
     assert expected == actual
@@ -1793,8 +1902,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = IAMCredentialsClient.common_folder_path(**expected)
 
@@ -1804,7 +1912,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = IAMCredentialsClient.common_organization_path(organization)
     assert expected == actual
@@ -1812,8 +1919,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = IAMCredentialsClient.common_organization_path(**expected)
 
@@ -1823,7 +1929,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = IAMCredentialsClient.common_project_path(project)
     assert expected == actual
@@ -1831,8 +1936,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = IAMCredentialsClient.common_project_path(**expected)
 
@@ -1843,7 +1947,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = IAMCredentialsClient.common_location_path(project, location)
     assert expected == actual
@@ -1851,9 +1954,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = IAMCredentialsClient.common_location_path(**expected)
 

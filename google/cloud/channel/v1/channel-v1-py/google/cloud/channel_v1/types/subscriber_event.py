@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -45,9 +43,13 @@ class CustomerEvent(proto.Message):
         PRIMARY_DOMAIN_CHANGED = 1
         PRIMARY_DOMAIN_VERIFIED = 2
 
-    customer = proto.Field(proto.STRING, number=1)
-
-    event_type = proto.Field(proto.ENUM, number=2,
+    customer = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    event_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Type,
     )
 
@@ -79,9 +81,13 @@ class EntitlementEvent(proto.Message):
         PAID_SERVICE_STARTED = 11
         LICENSE_ASSIGNMENT_CHANGED = 12
 
-    entitlement = proto.Field(proto.STRING, number=1)
-
-    event_type = proto.Field(proto.ENUM, number=2,
+    entitlement = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    event_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Type,
     )
 
@@ -99,11 +105,16 @@ class SubscriberEvent(proto.Message):
             event to partners.
     """
 
-    customer_event = proto.Field(proto.MESSAGE, number=1, oneof='event',
+    customer_event = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='event',
         message='CustomerEvent',
     )
-
-    entitlement_event = proto.Field(proto.MESSAGE, number=2, oneof='event',
+    entitlement_event = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='event',
         message='EntitlementEvent',
     )
 

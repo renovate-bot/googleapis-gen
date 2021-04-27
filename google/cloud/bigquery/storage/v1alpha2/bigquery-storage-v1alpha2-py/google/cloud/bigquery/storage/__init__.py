@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,8 +32,7 @@ from google.cloud.bigquery.storage_v1alpha2.types.stream import WriteStream
 from google.cloud.bigquery.storage_v1alpha2.types.table import TableFieldSchema
 from google.cloud.bigquery.storage_v1alpha2.types.table import TableSchema
 
-__all__ = (
-    'AppendRowsRequest',
+__all__ = ('AppendRowsRequest',
     'AppendRowsResponse',
     'BatchCommitWriteStreamsRequest',
     'BatchCommitWriteStreamsResponse',

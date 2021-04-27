@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -94,46 +91,60 @@ class Folder(proto.Message):
         ACTIVE = 1
         DELETE_REQUESTED = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    parent = proto.Field(proto.STRING, number=2)
-
-    display_name = proto.Field(proto.STRING, number=3)
-
-    state = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=State,
     )
-
-    create_time = proto.Field(proto.MESSAGE, number=5,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=timestamp.Timestamp,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=6,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=timestamp.Timestamp,
     )
-
-    delete_time = proto.Field(proto.MESSAGE, number=7,
+    delete_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamp.Timestamp,
     )
-
-    etag = proto.Field(proto.STRING, number=8)
+    etag = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class GetFolderRequest(proto.Message):
     r"""The GetFolder request message.
-
     Attributes:
         name (str):
             Required. The resource name of the folder to retrieve. Must
             be of the form ``folders/{folder_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListFoldersRequest(proto.Message):
     r"""The ListFolders request message.
-
     Attributes:
         parent (str):
             Required. The resource name of the organization or folder
@@ -156,18 +167,26 @@ class ListFoldersRequest(proto.Message):
             state should be returned. Defaults to false.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    show_deleted = proto.Field(proto.BOOL, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    show_deleted = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ListFoldersResponse(proto.Message):
     r"""The ListFolders response message.
-
     Attributes:
         folders (Sequence[google.cloud.resourcemanager_v3.types.Folder]):
             A possibly paginated list of folders that are
@@ -183,16 +202,19 @@ class ListFoldersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    folders = proto.RepeatedField(proto.MESSAGE, number=1,
+    folders = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Folder',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SearchFoldersRequest(proto.Message):
     r"""The request message for searching folders.
-
     Attributes:
         page_size (int):
             Optional. The maximum number of folders to
@@ -238,16 +260,22 @@ class SearchFoldersRequest(proto.Message):
                "String".
     """
 
-    page_size = proto.Field(proto.INT32, number=1)
-
-    page_token = proto.Field(proto.STRING, number=2)
-
-    query = proto.Field(proto.STRING, number=3)
+    page_size = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    query = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class SearchFoldersResponse(proto.Message):
     r"""The response message for searching folders.
-
     Attributes:
         folders (Sequence[google.cloud.resourcemanager_v3.types.Folder]):
             A possibly paginated folder search results.
@@ -262,16 +290,19 @@ class SearchFoldersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    folders = proto.RepeatedField(proto.MESSAGE, number=1,
+    folders = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Folder',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateFolderRequest(proto.Message):
     r"""The CreateFolder request message.
-
     Attributes:
         folder (google.cloud.resourcemanager_v3.types.Folder):
             Required. The folder being created, only the
@@ -279,14 +310,15 @@ class CreateFolderRequest(proto.Message):
             other fields will be ignored.
     """
 
-    folder = proto.Field(proto.MESSAGE, number=2,
+    folder = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Folder',
     )
 
 
 class CreateFolderMetadata(proto.Message):
     r"""Metadata pertaining to the Folder creation process.
-
     Attributes:
         display_name (str):
             The display name of the folder.
@@ -295,9 +327,14 @@ class CreateFolderMetadata(proto.Message):
             organization we are creating the folder under.
     """
 
-    display_name = proto.Field(proto.STRING, number=1)
-
-    parent = proto.Field(proto.STRING, number=2)
+    display_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class UpdateFolderRequest(proto.Message):
@@ -319,11 +356,14 @@ class UpdateFolderRequest(proto.Message):
             can be updated.
     """
 
-    folder = proto.Field(proto.MESSAGE, number=1,
+    folder = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Folder',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
@@ -331,12 +371,11 @@ class UpdateFolderRequest(proto.Message):
 class UpdateFolderMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     Operation returned by UpdateFolder.
-    """
+        """
 
 
 class MoveFolderRequest(proto.Message):
     r"""The MoveFolder request message.
-
     Attributes:
         name (str):
             Required. The resource name of the Folder to move. Must be
@@ -347,14 +386,18 @@ class MoveFolderRequest(proto.Message):
             ``folders/{folder_id}`` or ``organizations/{org_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    destination_parent = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    destination_parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class MoveFolderMetadata(proto.Message):
     r"""Metadata pertaining to the folder move process.
-
     Attributes:
         display_name (str):
             The display name of the folder.
@@ -365,47 +408,58 @@ class MoveFolderMetadata(proto.Message):
             organization to move the folder to.
     """
 
-    display_name = proto.Field(proto.STRING, number=1)
-
-    source_parent = proto.Field(proto.STRING, number=2)
-
-    destination_parent = proto.Field(proto.STRING, number=3)
+    display_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    source_parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    destination_parent = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DeleteFolderRequest(proto.Message):
     r"""The DeleteFolder request message.
-
     Attributes:
         name (str):
             Required. The resource name of the folder to be deleted.
             Must be of the form ``folders/{folder_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteFolderMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     ``Operation`` returned by ``DeleteFolder``.
-    """
+        """
 
 
 class UndeleteFolderRequest(proto.Message):
     r"""The UndeleteFolder request message.
-
     Attributes:
         name (str):
             Required. The resource name of the folder to undelete. Must
             be of the form ``folders/{folder_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UndeleteFolderMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     ``Operation`` returned by ``UndeleteFolder``.
-    """
+        """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

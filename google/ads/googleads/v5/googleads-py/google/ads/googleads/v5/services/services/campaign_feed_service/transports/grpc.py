@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import campaign_feed
 from google.ads.googleads.v5.services.types import campaign_feed_service
-
 from .base import CampaignFeedServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CampaignFeedServiceGrpcTransport(CampaignFeedServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CampaignFeedServiceGrpcTransport(CampaignFeedServiceTransport):
     def get_campaign_feed(self) -> Callable[
             [campaign_feed_service.GetCampaignFeedRequest],
             campaign_feed.CampaignFeed]:
-        r"""Return a callable for the get campaign feed method over gRPC.
+        r"""Return a callable for the
+        get campaign feed
+          method over gRPC.
 
         Returns the requested campaign feed in full detail.
 
@@ -229,7 +229,9 @@ class CampaignFeedServiceGrpcTransport(CampaignFeedServiceTransport):
     def mutate_campaign_feeds(self) -> Callable[
             [campaign_feed_service.MutateCampaignFeedsRequest],
             campaign_feed_service.MutateCampaignFeedsResponse]:
-        r"""Return a callable for the mutate campaign feeds method over gRPC.
+        r"""Return a callable for the
+        mutate campaign feeds
+          method over gRPC.
 
         Creates, updates, or removes campaign feeds.
         Operation statuses are returned.

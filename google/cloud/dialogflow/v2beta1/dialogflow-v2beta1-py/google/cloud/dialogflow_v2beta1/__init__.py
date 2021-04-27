@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,6 +27,7 @@ from .services.knowledge_bases import KnowledgeBasesClient
 from .services.participants import ParticipantsClient
 from .services.session_entity_types import SessionEntityTypesClient
 from .services.sessions import SessionsClient
+
 from .types.agent import Agent
 from .types.agent import DeleteAgentRequest
 from .types.agent import ExportAgentRequest
@@ -203,7 +203,6 @@ from .types.validation_result import ValidationResult
 from .types.webhook import OriginalDetectIntentRequest
 from .types.webhook import WebhookRequest
 from .types.webhook import WebhookResponse
-
 
 __all__ = (
     'Agent',

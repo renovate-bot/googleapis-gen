@@ -1,0 +1,43 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.devtools.build_v1",
+  "protoPackage": "google.devtools.build.v1",
+  "schema": "1.0",
+  "services": {
+    "PublishBuildEvent": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PublishBuildEventClient",
+          "rpcs": {
+            "PublishBuildToolEventStream": {
+              "methods": [
+                "publish_build_tool_event_stream"
+              ]
+            },
+            "PublishLifecycleEvent": {
+              "methods": [
+                "publish_lifecycle_event"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "PublishBuildEventAsyncClient",
+          "rpcs": {
+            "PublishBuildToolEventStream": {
+              "methods": [
+                "publish_build_tool_event_stream"
+              ]
+            },
+            "PublishLifecycleEvent": {
+              "methods": [
+                "publish_lifecycle_event"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

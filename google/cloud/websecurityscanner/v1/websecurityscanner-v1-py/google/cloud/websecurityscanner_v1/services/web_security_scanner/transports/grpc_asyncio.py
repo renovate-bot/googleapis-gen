@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -32,7 +31,6 @@ from google.cloud.websecurityscanner_v1.types import scan_config
 from google.cloud.websecurityscanner_v1.types import scan_run
 from google.cloud.websecurityscanner_v1.types import web_security_scanner
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import WebSecurityScannerTransport, DEFAULT_CLIENT_INFO
 from .grpc import WebSecurityScannerGrpcTransport
 
@@ -85,13 +83,15 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -111,7 +111,8 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -169,7 +170,6 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -232,7 +232,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def create_scan_config(self) -> Callable[
             [web_security_scanner.CreateScanConfigRequest],
             Awaitable[scan_config.ScanConfig]]:
-        r"""Return a callable for the create scan config method over gRPC.
+        r"""Return a callable for the
+        create scan config
+          method over gRPC.
 
         Creates a new ScanConfig.
 
@@ -258,7 +260,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def delete_scan_config(self) -> Callable[
             [web_security_scanner.DeleteScanConfigRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete scan config method over gRPC.
+        r"""Return a callable for the
+        delete scan config
+          method over gRPC.
 
         Deletes an existing ScanConfig and its child
         resources.
@@ -285,7 +289,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def get_scan_config(self) -> Callable[
             [web_security_scanner.GetScanConfigRequest],
             Awaitable[scan_config.ScanConfig]]:
-        r"""Return a callable for the get scan config method over gRPC.
+        r"""Return a callable for the
+        get scan config
+          method over gRPC.
 
         Gets a ScanConfig.
 
@@ -311,7 +317,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def list_scan_configs(self) -> Callable[
             [web_security_scanner.ListScanConfigsRequest],
             Awaitable[web_security_scanner.ListScanConfigsResponse]]:
-        r"""Return a callable for the list scan configs method over gRPC.
+        r"""Return a callable for the
+        list scan configs
+          method over gRPC.
 
         Lists ScanConfigs under a given project.
 
@@ -337,7 +345,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def update_scan_config(self) -> Callable[
             [web_security_scanner.UpdateScanConfigRequest],
             Awaitable[scan_config.ScanConfig]]:
-        r"""Return a callable for the update scan config method over gRPC.
+        r"""Return a callable for the
+        update scan config
+          method over gRPC.
 
         Updates a ScanConfig. This method support partial
         update of a ScanConfig.
@@ -364,7 +374,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def start_scan_run(self) -> Callable[
             [web_security_scanner.StartScanRunRequest],
             Awaitable[scan_run.ScanRun]]:
-        r"""Return a callable for the start scan run method over gRPC.
+        r"""Return a callable for the
+        start scan run
+          method over gRPC.
 
         Start a ScanRun according to the given ScanConfig.
 
@@ -390,7 +402,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def get_scan_run(self) -> Callable[
             [web_security_scanner.GetScanRunRequest],
             Awaitable[scan_run.ScanRun]]:
-        r"""Return a callable for the get scan run method over gRPC.
+        r"""Return a callable for the
+        get scan run
+          method over gRPC.
 
         Gets a ScanRun.
 
@@ -416,7 +430,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def list_scan_runs(self) -> Callable[
             [web_security_scanner.ListScanRunsRequest],
             Awaitable[web_security_scanner.ListScanRunsResponse]]:
-        r"""Return a callable for the list scan runs method over gRPC.
+        r"""Return a callable for the
+        list scan runs
+          method over gRPC.
 
         Lists ScanRuns under a given ScanConfig, in
         descending order of ScanRun stop time.
@@ -443,7 +459,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def stop_scan_run(self) -> Callable[
             [web_security_scanner.StopScanRunRequest],
             Awaitable[scan_run.ScanRun]]:
-        r"""Return a callable for the stop scan run method over gRPC.
+        r"""Return a callable for the
+        stop scan run
+          method over gRPC.
 
         Stops a ScanRun. The stopped ScanRun is returned.
 
@@ -469,7 +487,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def list_crawled_urls(self) -> Callable[
             [web_security_scanner.ListCrawledUrlsRequest],
             Awaitable[web_security_scanner.ListCrawledUrlsResponse]]:
-        r"""Return a callable for the list crawled urls method over gRPC.
+        r"""Return a callable for the
+        list crawled urls
+          method over gRPC.
 
         List CrawledUrls under a given ScanRun.
 
@@ -495,7 +515,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def get_finding(self) -> Callable[
             [web_security_scanner.GetFindingRequest],
             Awaitable[finding.Finding]]:
-        r"""Return a callable for the get finding method over gRPC.
+        r"""Return a callable for the
+        get finding
+          method over gRPC.
 
         Gets a Finding.
 
@@ -521,7 +543,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def list_findings(self) -> Callable[
             [web_security_scanner.ListFindingsRequest],
             Awaitable[web_security_scanner.ListFindingsResponse]]:
-        r"""Return a callable for the list findings method over gRPC.
+        r"""Return a callable for the
+        list findings
+          method over gRPC.
 
         List Findings under a given ScanRun.
 
@@ -547,7 +571,9 @@ class WebSecurityScannerGrpcAsyncIOTransport(WebSecurityScannerTransport):
     def list_finding_type_stats(self) -> Callable[
             [web_security_scanner.ListFindingTypeStatsRequest],
             Awaitable[web_security_scanner.ListFindingTypeStatsResponse]]:
-        r"""Return a callable for the list finding type stats method over gRPC.
+        r"""Return a callable for the
+        list finding type stats
+          method over gRPC.
 
         List all FindingTypeStats under a given ScanRun.
 

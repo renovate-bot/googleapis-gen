@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -269,45 +267,28 @@ def test_get_shared_set(transport: str = 'grpc', request_type=shared_set_service
         # Designate an appropriate return value for the call.
         call.return_value = shared_set.SharedSet(
             resource_name='resource_name_value',
-
             id=205,
-
             type_=shared_set_type.SharedSetTypeEnum.SharedSetType.UNKNOWN,
-
             name='name_value',
-
             status=shared_set_status.SharedSetStatusEnum.SharedSetStatus.UNKNOWN,
-
             member_count=1280,
-
             reference_count=1591,
-
         )
-
         response = client.get_shared_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == shared_set_service.GetSharedSetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, shared_set.SharedSet)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.type_ == shared_set_type.SharedSetTypeEnum.SharedSetType.UNKNOWN
-
     assert response.name == 'name_value'
-
     assert response.status == shared_set_status.SharedSetStatusEnum.SharedSetStatus.UNKNOWN
-
     assert response.member_count == 1280
-
     assert response.reference_count == 1591
 
 
@@ -323,6 +304,7 @@ def test_get_shared_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shared_set_service.GetSharedSetRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -330,7 +312,6 @@ def test_get_shared_set_field_headers():
             type(client.transport.get_shared_set),
             '__call__') as call:
         call.return_value = shared_set.SharedSet()
-
         client.get_shared_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -357,7 +338,6 @@ def test_get_shared_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shared_set.SharedSet()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_shared_set(
@@ -368,7 +348,6 @@ def test_get_shared_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -403,17 +382,14 @@ def test_mutate_shared_sets(transport: str = 'grpc', request_type=shared_set_ser
         # Designate an appropriate return value for the call.
         call.return_value = shared_set_service.MutateSharedSetsResponse(
         )
-
         response = client.mutate_shared_sets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == shared_set_service.MutateSharedSetsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, shared_set_service.MutateSharedSetsResponse)
 
 
@@ -429,6 +405,7 @@ def test_mutate_shared_sets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shared_set_service.MutateSharedSetsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -436,7 +413,6 @@ def test_mutate_shared_sets_field_headers():
             type(client.transport.mutate_shared_sets),
             '__call__') as call:
         call.return_value = shared_set_service.MutateSharedSetsResponse()
-
         client.mutate_shared_sets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -463,7 +439,6 @@ def test_mutate_shared_sets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shared_set_service.MutateSharedSetsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_shared_sets(
@@ -475,9 +450,7 @@ def test_mutate_shared_sets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [shared_set_service.SharedSetOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -560,7 +533,7 @@ def test_shared_set_service_base_transport():
     methods = (
         'get_shared_set',
         'mutate_shared_sets',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -712,7 +685,6 @@ def test_shared_set_service_transport_channel_mtls_with_adc(
 def test_shared_set_path():
     customer = "squid"
     shared_set = "clam"
-
     expected = "customers/{customer}/sharedSets/{shared_set}".format(customer=customer, shared_set=shared_set, )
     actual = SharedSetServiceClient.shared_set_path(customer, shared_set)
     assert expected == actual
@@ -720,9 +692,8 @@ def test_shared_set_path():
 
 def test_parse_shared_set_path():
     expected = {
-    "customer": "whelk",
-    "shared_set": "octopus",
-
+        "customer": "whelk",
+        "shared_set": "octopus",
     }
     path = SharedSetServiceClient.shared_set_path(**expected)
 
@@ -732,7 +703,6 @@ def test_parse_shared_set_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = SharedSetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -740,8 +710,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = SharedSetServiceClient.common_billing_account_path(**expected)
 
@@ -751,7 +720,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = SharedSetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -759,8 +727,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = SharedSetServiceClient.common_folder_path(**expected)
 
@@ -770,7 +737,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = SharedSetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -778,8 +744,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = SharedSetServiceClient.common_organization_path(**expected)
 
@@ -789,7 +754,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = SharedSetServiceClient.common_project_path(project)
     assert expected == actual
@@ -797,8 +761,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = SharedSetServiceClient.common_project_path(**expected)
 
@@ -809,7 +772,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = SharedSetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -817,9 +779,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = SharedSetServiceClient.common_location_path(**expected)
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.policytroubleshooter_v1.types import checker
 from google.cloud.policytroubleshooter_v1.types import explanations
-
 from .transports.base import IamCheckerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import IamCheckerGrpcTransport
 from .transports.grpc_asyncio import IamCheckerGrpcAsyncIOTransport
@@ -329,9 +326,9 @@ class IamCheckerClient(metaclass=IamCheckerClientMeta):
 
         Args:
             request (google.cloud.policytroubleshooter_v1.types.TroubleshootIamPolicyRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -345,7 +342,6 @@ class IamCheckerClient(metaclass=IamCheckerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a checker.TroubleshootIamPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -367,8 +363,6 @@ class IamCheckerClient(metaclass=IamCheckerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

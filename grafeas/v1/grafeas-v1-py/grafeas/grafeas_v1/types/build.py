@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from grafeas.grafeas_v1.types import provenance as g_provenance
 
@@ -41,12 +38,14 @@ class BuildNote(proto.Message):
             which produced this build.
     """
 
-    builder_version = proto.Field(proto.STRING, number=1)
+    builder_version = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class BuildOccurrence(proto.Message):
     r"""Details of a build occurrence.
-
     Attributes:
         provenance (grafeas.grafeas_v1.types.BuildProvenance):
             Required. The actual provenance for the
@@ -66,11 +65,15 @@ class BuildOccurrence(proto.Message):
             incompatibilities with future changes.
     """
 
-    provenance = proto.Field(proto.MESSAGE, number=1,
+    provenance = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=g_provenance.BuildProvenance,
     )
-
-    provenance_bytes = proto.Field(proto.STRING, number=2)
+    provenance_bytes = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

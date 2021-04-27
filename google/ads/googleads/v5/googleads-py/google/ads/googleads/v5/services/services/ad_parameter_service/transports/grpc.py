@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import ad_parameter
 from google.ads.googleads.v5.services.types import ad_parameter_service
-
 from .base import AdParameterServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class AdParameterServiceGrpcTransport(AdParameterServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class AdParameterServiceGrpcTransport(AdParameterServiceTransport):
     def get_ad_parameter(self) -> Callable[
             [ad_parameter_service.GetAdParameterRequest],
             ad_parameter.AdParameter]:
-        r"""Return a callable for the get ad parameter method over gRPC.
+        r"""Return a callable for the
+        get ad parameter
+          method over gRPC.
 
         Returns the requested ad parameter in full detail.
 
@@ -229,7 +229,9 @@ class AdParameterServiceGrpcTransport(AdParameterServiceTransport):
     def mutate_ad_parameters(self) -> Callable[
             [ad_parameter_service.MutateAdParametersRequest],
             ad_parameter_service.MutateAdParametersResponse]:
-        r"""Return a callable for the mutate ad parameters method over gRPC.
+        r"""Return a callable for the
+        mutate ad parameters
+          method over gRPC.
 
         Creates, updates, or removes ad parameters. Operation
         statuses are returned.

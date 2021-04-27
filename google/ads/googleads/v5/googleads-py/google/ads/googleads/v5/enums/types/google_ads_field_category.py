@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -31,7 +29,7 @@ class GoogleAdsFieldCategoryEnum(proto.Message):
     r"""Container for enum that determines if the described artifact
     is a resource or a field, and if it is a field, when it segments
     search queries.
-    """
+        """
     class GoogleAdsFieldCategory(proto.Enum):
         r"""The category of the artifact."""
         UNSPECIFIED = 0

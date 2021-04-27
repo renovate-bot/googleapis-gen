@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -37,7 +35,6 @@ from google.cloud.firestore_v1.types import query
 from google.cloud.firestore_v1.types import write as gf_write
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import FirestoreTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import FirestoreGrpcAsyncIOTransport
 from .client import FirestoreClient
@@ -61,16 +58,12 @@ class FirestoreAsyncClient:
 
     common_billing_account_path = staticmethod(FirestoreClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(FirestoreClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(FirestoreClient.common_folder_path)
     parse_common_folder_path = staticmethod(FirestoreClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(FirestoreClient.common_organization_path)
     parse_common_organization_path = staticmethod(FirestoreClient.parse_common_organization_path)
-
     common_project_path = staticmethod(FirestoreClient.common_project_path)
     parse_common_project_path = staticmethod(FirestoreClient.parse_common_project_path)
-
     common_location_path = staticmethod(FirestoreClient.common_location_path)
     parse_common_location_path = staticmethod(FirestoreClient.parse_common_location_path)
 
@@ -155,7 +148,6 @@ class FirestoreAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = FirestoreClient(
             credentials=credentials,
             transport=transport,
@@ -175,9 +167,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.GetDocumentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -191,7 +183,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.GetDocumentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -199,10 +190,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_document,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -244,9 +232,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.ListDocumentsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -263,7 +251,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.ListDocumentsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -271,10 +258,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_documents,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -327,7 +311,8 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.UpdateDocumentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.UpdateDocument][google.firestore.v1.Firestore.UpdateDocument].
             document (:class:`google.cloud.firestore_v1.types.Document`):
                 Required. The updated document.
@@ -351,7 +336,6 @@ class FirestoreAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -376,7 +360,6 @@ class FirestoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if document is not None:
             request.document = document
         if update_mask is not None:
@@ -387,10 +370,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_document,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ResourceExhausted,
                     exceptions.ServiceUnavailable,
                 ),
@@ -431,7 +411,8 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.DeleteDocumentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.DeleteDocument][google.firestore.v1.Firestore.DeleteDocument].
             name (:class:`str`):
                 Required. The resource name of the Document to delete.
@@ -441,7 +422,6 @@ class FirestoreAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -460,7 +440,6 @@ class FirestoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -469,10 +448,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_document,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -513,9 +489,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.BatchGetDocumentsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -529,7 +505,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.BatchGetDocumentsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -537,10 +512,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_get_documents,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -583,7 +555,8 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.BeginTransactionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.BeginTransaction][google.firestore.v1.Firestore.BeginTransaction].
             database (:class:`str`):
                 Required. The database name. In the format:
@@ -592,7 +565,6 @@ class FirestoreAsyncClient:
                 This corresponds to the ``database`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -617,7 +589,6 @@ class FirestoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if database is not None:
             request.database = database
 
@@ -626,10 +597,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.begin_transaction,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -674,7 +642,8 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.CommitRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.Commit][google.firestore.v1.Firestore.Commit].
             database (:class:`str`):
                 Required. The database name. In the format:
@@ -690,7 +659,6 @@ class FirestoreAsyncClient:
                 This corresponds to the ``writes`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -715,10 +683,8 @@ class FirestoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if database is not None:
             request.database = database
-
         if writes:
             request.writes.extend(writes)
 
@@ -727,10 +693,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.commit,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ResourceExhausted,
                     exceptions.ServiceUnavailable,
                 ),
@@ -772,7 +735,8 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.RollbackRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.Rollback][google.firestore.v1.Firestore.Rollback].
             database (:class:`str`):
                 Required. The database name. In the format:
@@ -788,7 +752,6 @@ class FirestoreAsyncClient:
                 This corresponds to the ``transaction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -807,7 +770,6 @@ class FirestoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if database is not None:
             request.database = database
         if transaction is not None:
@@ -818,10 +780,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.rollback,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -860,9 +819,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.RunQueryRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.RunQuery][google.firestore.v1.Firestore.RunQuery].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -876,7 +835,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.RunQueryRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -884,10 +842,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.run_query,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -933,9 +888,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.PartitionQueryRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.PartitionQuery][google.firestore.v1.Firestore.PartitionQuery].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -952,7 +907,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.PartitionQueryRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -960,10 +914,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.partition_query,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -1015,7 +966,8 @@ class FirestoreAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.firestore_v1.types.WriteRequest`]):
-                The request object AsyncIterator. The request for
+                The request object AsyncIterator.
+                The request for
                 [Firestore.Write][google.firestore.v1.Firestore.Write].
                 The first request creates a stream, or resumes an
                 existing one from a token.
@@ -1077,7 +1029,8 @@ class FirestoreAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.firestore_v1.types.ListenRequest`]):
-                The request object AsyncIterator. A request for
+                The request object AsyncIterator.
+                A request for
                 [Firestore.Listen][google.firestore.v1.Firestore.Listen]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1097,10 +1050,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.listen,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -1142,7 +1092,8 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.ListCollectionIdsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.ListCollectionIds][google.firestore.v1.Firestore.ListCollectionIds].
             parent (:class:`str`):
                 Required. The parent document. In the format:
@@ -1153,7 +1104,6 @@ class FirestoreAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1181,7 +1131,6 @@ class FirestoreAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1190,10 +1139,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_collection_ids,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ResourceExhausted,
@@ -1254,9 +1200,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.BatchWriteRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.BatchWrite][google.firestore.v1.Firestore.BatchWrite].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1270,7 +1216,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.BatchWriteRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1278,10 +1223,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_write,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.Aborted,
                     exceptions.ResourceExhausted,
                     exceptions.ServiceUnavailable,
@@ -1322,9 +1264,9 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.CreateDocumentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Firestore.CreateDocument][google.firestore.v1.Firestore.CreateDocument].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1338,7 +1280,6 @@ class FirestoreAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = firestore.CreateDocumentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1346,10 +1287,7 @@ class FirestoreAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_document,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ResourceExhausted,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1377,8 +1315,6 @@ class FirestoreAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -24,6 +22,7 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -31,7 +30,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.dataproc_v1.types import jobs
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import JobControllerTransport, DEFAULT_CLIENT_INFO
 from .grpc import JobControllerGrpcTransport
 
@@ -81,13 +79,15 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +167,6 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -245,7 +245,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def submit_job(self) -> Callable[
             [jobs.SubmitJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the submit job method over gRPC.
+        r"""Return a callable for the
+        submit job
+          method over gRPC.
 
         Submits a job to a cluster.
 
@@ -271,7 +273,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def submit_job_as_operation(self) -> Callable[
             [jobs.SubmitJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the submit job as operation method over gRPC.
+        r"""Return a callable for the
+        submit job as operation
+          method over gRPC.
 
         Submits job to a cluster.
 
@@ -297,7 +301,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def get_job(self) -> Callable[
             [jobs.GetJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the get job method over gRPC.
+        r"""Return a callable for the
+        get job
+          method over gRPC.
 
         Gets the resource representation for a job in a
         project.
@@ -324,7 +330,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def list_jobs(self) -> Callable[
             [jobs.ListJobsRequest],
             Awaitable[jobs.ListJobsResponse]]:
-        r"""Return a callable for the list jobs method over gRPC.
+        r"""Return a callable for the
+        list jobs
+          method over gRPC.
 
         Lists regions/{region}/jobs in a project.
 
@@ -350,7 +358,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def update_job(self) -> Callable[
             [jobs.UpdateJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the update job method over gRPC.
+        r"""Return a callable for the
+        update job
+          method over gRPC.
 
         Updates a job in a project.
 
@@ -376,7 +386,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def cancel_job(self) -> Callable[
             [jobs.CancelJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the cancel job method over gRPC.
+        r"""Return a callable for the
+        cancel job
+          method over gRPC.
 
         Starts a job cancellation request. To access the job resource
         after cancellation, call
@@ -406,7 +418,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def delete_job(self) -> Callable[
             [jobs.DeleteJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete job method over gRPC.
+        r"""Return a callable for the
+        delete job
+          method over gRPC.
 
         Deletes the job from the project. If the job is active, the
         delete fails, and the response returns ``FAILED_PRECONDITION``.

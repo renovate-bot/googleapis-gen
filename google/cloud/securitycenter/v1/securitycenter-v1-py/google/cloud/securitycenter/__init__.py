@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,8 +53,7 @@ from google.cloud.securitycenter_v1.types.securitycenter_service import UpdateSe
 from google.cloud.securitycenter_v1.types.securitycenter_service import UpdateSourceRequest
 from google.cloud.securitycenter_v1.types.source import Source
 
-__all__ = (
-    'Asset',
+__all__ = ('Asset',
     'CreateFindingRequest',
     'CreateNotificationConfigRequest',
     'CreateSourceRequest',

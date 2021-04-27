@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -44,7 +42,6 @@ from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import ArtifactRegistryTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ArtifactRegistryGrpcAsyncIOTransport
 from .client import ArtifactRegistryClient
@@ -75,19 +72,14 @@ class ArtifactRegistryAsyncClient:
     parse_file_path = staticmethod(ArtifactRegistryClient.parse_file_path)
     repository_path = staticmethod(ArtifactRegistryClient.repository_path)
     parse_repository_path = staticmethod(ArtifactRegistryClient.parse_repository_path)
-
     common_billing_account_path = staticmethod(ArtifactRegistryClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ArtifactRegistryClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ArtifactRegistryClient.common_folder_path)
     parse_common_folder_path = staticmethod(ArtifactRegistryClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ArtifactRegistryClient.common_organization_path)
     parse_common_organization_path = staticmethod(ArtifactRegistryClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ArtifactRegistryClient.common_project_path)
     parse_common_project_path = staticmethod(ArtifactRegistryClient.parse_common_project_path)
-
     common_location_path = staticmethod(ArtifactRegistryClient.common_location_path)
     parse_common_location_path = staticmethod(ArtifactRegistryClient.parse_common_location_path)
 
@@ -172,7 +164,6 @@ class ArtifactRegistryAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ArtifactRegistryClient(
             credentials=credentials,
             transport=transport,
@@ -193,7 +184,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListRepositoriesRequest`):
-                The request object. The request to list repositories.
+                The request object.
+                The request to list repositories.
             parent (:class:`str`):
                 The name of the parent resource whose
                 repositories will be listed.
@@ -201,7 +193,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -229,7 +220,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -238,10 +228,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_repositories,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -290,7 +277,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetRepositoryRequest`):
-                The request object. The request to retrieve a
+                The request object.
+                The request to retrieve a
                 repository.
             name (:class:`str`):
                 The name of the repository to
@@ -299,7 +287,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -324,7 +311,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -333,10 +319,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_repository,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -380,7 +363,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.CreateRepositoryRequest`):
-                The request object. The request to create a new
+                The request object.
+                The request to create a new
                 repository.
             parent (:class:`str`):
                 The name of the parent resource where
@@ -401,7 +385,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``repository_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -430,7 +413,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if repository is not None:
@@ -486,7 +468,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.UpdateRepositoryRequest`):
-                The request object. The request to update a repository.
+                The request object.
+                The request to update a repository.
             repository (:class:`google.cloud.artifactregistry_v1beta2.types.Repository`):
                 The repository that replaces the
                 resource on the server.
@@ -502,7 +485,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -527,7 +509,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if repository is not None:
             request.repository = repository
         if update_mask is not None:
@@ -575,13 +556,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeleteRepositoryRequest`):
-                The request object. The request to delete a repository.
+                The request object.
+                The request to delete a repository.
             name (:class:`str`):
                 The name of the repository to delete.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -619,7 +600,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -628,10 +608,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_repository,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -679,7 +656,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListPackagesRequest`):
-                The request object. The request to list packages.
+                The request object.
+                The request to list packages.
             parent (:class:`str`):
                 The name of the parent resource whose
                 packages will be listed.
@@ -687,7 +665,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -714,7 +691,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -723,10 +699,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_packages,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -775,13 +748,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetPackageRequest`):
-                The request object. The request to retrieve a package.
+                The request object.
+                The request to retrieve a package.
             name (:class:`str`):
                 The name of the package to retrieve.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -806,7 +779,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -815,10 +787,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_package,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -860,13 +829,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeletePackageRequest`):
-                The request object. The request to delete a package.
+                The request object.
+                The request to delete a package.
             name (:class:`str`):
                 The name of the package to delete.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -904,7 +873,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -913,10 +881,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_package,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -964,7 +929,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListVersionsRequest`):
-                The request object. The request to list versions.
+                The request object.
+                The request to list versions.
             parent (:class:`str`):
                 The name of the parent resource whose
                 versions will be listed.
@@ -972,7 +938,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -999,7 +964,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1008,10 +972,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_versions,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1060,13 +1021,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetVersionRequest`):
-                The request object. The request to retrieve a version.
+                The request object.
+                The request to retrieve a version.
             name (:class:`str`):
                 The name of the version to retrieve.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1094,7 +1055,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1103,10 +1063,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_version,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1148,13 +1105,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeleteVersionRequest`):
-                The request object. The request to delete a version.
+                The request object.
+                The request to delete a version.
             name (:class:`str`):
                 The name of the version to delete.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1192,7 +1149,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1201,10 +1157,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_version,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1252,7 +1205,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListFilesRequest`):
-                The request object. The request to list files.
+                The request object.
+                The request to list files.
             parent (:class:`str`):
                 The name of the parent resource whose
                 files will be listed.
@@ -1260,7 +1214,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1287,7 +1240,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1296,10 +1248,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_files,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1348,13 +1297,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetFileRequest`):
-                The request object. The request to retrieve a file.
+                The request object.
+                The request to retrieve a file.
             name (:class:`str`):
                 The name of the file to retrieve.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1380,7 +1329,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1389,10 +1337,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_file,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1432,7 +1377,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListTagsRequest`):
-                The request object. The request to list tags.
+                The request object.
+                The request to list tags.
             parent (:class:`str`):
                 The name of the parent resource whose
                 tags will be listed.
@@ -1440,7 +1386,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1467,7 +1412,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1476,10 +1420,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_tags,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1528,13 +1469,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetTagRequest`):
-                The request object. The request to retrieve a tag.
+                The request object.
+                The request to retrieve a tag.
             name (:class:`str`):
                 The name of the tag to retrieve.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1560,7 +1501,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1569,10 +1509,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_tag,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1614,7 +1551,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.CreateTagRequest`):
-                The request object. The request to create a new tag.
+                The request object.
+                The request to create a new tag.
             parent (:class:`str`):
                 The name of the parent resource where
                 the tag will be created.
@@ -1634,7 +1572,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``tag_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1660,7 +1597,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if tag is not None:
@@ -1708,7 +1644,8 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.UpdateTagRequest`):
-                The request object. The request to create or update a
+                The request object.
+                The request to create or update a
                 tag.
             tag (:class:`google.cloud.artifactregistry_v1beta2.types.Tag`):
                 The tag that replaces the resource on
@@ -1725,7 +1662,6 @@ class ArtifactRegistryAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1751,7 +1687,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if tag is not None:
             request.tag = tag
         if update_mask is not None:
@@ -1796,13 +1731,13 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeleteTagRequest`):
-                The request object. The request to delete a tag.
+                The request object.
+                The request to delete a tag.
             name (:class:`str`):
                 The name of the tag to delete.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1821,7 +1756,6 @@ class ArtifactRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1830,10 +1764,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_tag,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1869,9 +1800,9 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1938,8 +1869,7 @@ class ArtifactRegistryAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1982,9 +1912,9 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2051,8 +1981,7 @@ class ArtifactRegistryAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -2062,10 +1991,7 @@ class ArtifactRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -2105,9 +2031,9 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2119,8 +2045,7 @@ class ArtifactRegistryAsyncClient:
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
@@ -2151,8 +2076,6 @@ class ArtifactRegistryAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import struct_pb2 as struct  # type: ignore
 
@@ -160,19 +157,28 @@ class KeyRange(proto.Message):
             ``len(end_open)`` key columns exactly match ``end_open``.
     """
 
-    start_closed = proto.Field(proto.MESSAGE, number=1, oneof='start_key_type',
+    start_closed = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='start_key_type',
         message=struct.ListValue,
     )
-
-    start_open = proto.Field(proto.MESSAGE, number=2, oneof='start_key_type',
+    start_open = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='start_key_type',
         message=struct.ListValue,
     )
-
-    end_closed = proto.Field(proto.MESSAGE, number=3, oneof='end_key_type',
+    end_closed = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='end_key_type',
         message=struct.ListValue,
     )
-
-    end_open = proto.Field(proto.MESSAGE, number=4, oneof='end_key_type',
+    end_open = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='end_key_type',
         message=struct.ListValue,
     )
 
@@ -204,15 +210,20 @@ class KeySet(proto.Message):
             only yielded once.
     """
 
-    keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=struct.ListValue,
     )
-
-    ranges = proto.RepeatedField(proto.MESSAGE, number=2,
+    ranges = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='KeyRange',
     )
-
-    all_ = proto.Field(proto.BOOL, number=3)
+    all_ = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.monitoring.dashboard_v1.types import common
 
@@ -62,17 +59,27 @@ class TimeSeriesQuery(proto.Message):
             field in ``MetricDescriptor``.
     """
 
-    time_series_filter = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    time_series_filter = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='TimeSeriesFilter',
     )
-
-    time_series_filter_ratio = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    time_series_filter_ratio = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='TimeSeriesFilterRatio',
     )
-
-    time_series_query_language = proto.Field(proto.STRING, number=3, oneof='source')
-
-    unit_override = proto.Field(proto.STRING, number=5)
+    time_series_query_language = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='source',
+    )
+    unit_override = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class TimeSeriesFilter(proto.Message):
@@ -101,21 +108,30 @@ class TimeSeriesFilter(proto.Message):
             ignored by the API.
     """
 
-    filter = proto.Field(proto.STRING, number=1)
-
-    aggregation = proto.Field(proto.MESSAGE, number=2,
+    filter = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    aggregation = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.Aggregation,
     )
-
-    secondary_aggregation = proto.Field(proto.MESSAGE, number=3,
+    secondary_aggregation = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.Aggregation,
     )
-
-    pick_time_series_filter = proto.Field(proto.MESSAGE, number=4, oneof='output_filter',
+    pick_time_series_filter = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='output_filter',
         message=common.PickTimeSeriesFilter,
     )
-
-    statistical_time_series_filter = proto.Field(proto.MESSAGE, number=5, oneof='output_filter',
+    statistical_time_series_filter = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='output_filter',
         message=common.StatisticalTimeSeriesFilter,
     )
 
@@ -141,6 +157,7 @@ class TimeSeriesFilterRatio(proto.Message):
             Note: This field is deprecated and completely
             ignored by the API.
     """
+
     class RatioPart(proto.Message):
         r"""Describes a query to build the numerator or denominator of a
         TimeSeriesFilterRatio.
@@ -157,36 +174,47 @@ class TimeSeriesFilterRatio(proto.Message):
                 time series for different views of the data.
         """
 
-        filter = proto.Field(proto.STRING, number=1)
-
-        aggregation = proto.Field(proto.MESSAGE, number=2,
+        filter = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        aggregation = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=common.Aggregation,
         )
 
-    numerator = proto.Field(proto.MESSAGE, number=1,
+    numerator = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=RatioPart,
     )
-
-    denominator = proto.Field(proto.MESSAGE, number=2,
+    denominator = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=RatioPart,
     )
-
-    secondary_aggregation = proto.Field(proto.MESSAGE, number=3,
+    secondary_aggregation = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.Aggregation,
     )
-
-    pick_time_series_filter = proto.Field(proto.MESSAGE, number=4, oneof='output_filter',
+    pick_time_series_filter = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='output_filter',
         message=common.PickTimeSeriesFilter,
     )
-
-    statistical_time_series_filter = proto.Field(proto.MESSAGE, number=5, oneof='output_filter',
+    statistical_time_series_filter = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='output_filter',
         message=common.StatisticalTimeSeriesFilter,
     )
 
 
 class Threshold(proto.Message):
     r"""Defines a threshold for categorizing time series values.
-
     Attributes:
         label (str):
             A label for the threshold.
@@ -218,15 +246,22 @@ class Threshold(proto.Message):
         ABOVE = 1
         BELOW = 2
 
-    label = proto.Field(proto.STRING, number=1)
-
-    value = proto.Field(proto.DOUBLE, number=2)
-
-    color = proto.Field(proto.ENUM, number=3,
+    label = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    value = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    color = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=Color,
     )
-
-    direction = proto.Field(proto.ENUM, number=4,
+    direction = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=Direction,
     )
 

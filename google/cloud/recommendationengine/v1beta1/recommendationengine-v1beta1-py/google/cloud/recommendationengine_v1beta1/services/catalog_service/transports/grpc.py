@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -32,7 +30,6 @@ from google.cloud.recommendationengine_v1beta1.types import catalog_service
 from google.cloud.recommendationengine_v1beta1.types import import_
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import CatalogServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -67,7 +64,8 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -207,13 +205,15 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -243,7 +243,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def create_catalog_item(self) -> Callable[
             [catalog_service.CreateCatalogItemRequest],
             catalog.CatalogItem]:
-        r"""Return a callable for the create catalog item method over gRPC.
+        r"""Return a callable for the
+        create catalog item
+          method over gRPC.
 
         Creates a catalog item.
 
@@ -269,7 +271,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def get_catalog_item(self) -> Callable[
             [catalog_service.GetCatalogItemRequest],
             catalog.CatalogItem]:
-        r"""Return a callable for the get catalog item method over gRPC.
+        r"""Return a callable for the
+        get catalog item
+          method over gRPC.
 
         Gets a specific catalog item.
 
@@ -295,7 +299,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def list_catalog_items(self) -> Callable[
             [catalog_service.ListCatalogItemsRequest],
             catalog_service.ListCatalogItemsResponse]:
-        r"""Return a callable for the list catalog items method over gRPC.
+        r"""Return a callable for the
+        list catalog items
+          method over gRPC.
 
         Gets a list of catalog items.
 
@@ -321,7 +327,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def update_catalog_item(self) -> Callable[
             [catalog_service.UpdateCatalogItemRequest],
             catalog.CatalogItem]:
-        r"""Return a callable for the update catalog item method over gRPC.
+        r"""Return a callable for the
+        update catalog item
+          method over gRPC.
 
         Updates a catalog item. Partial updating is
         supported. Non-existing items will be created.
@@ -348,7 +356,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def delete_catalog_item(self) -> Callable[
             [catalog_service.DeleteCatalogItemRequest],
             empty.Empty]:
-        r"""Return a callable for the delete catalog item method over gRPC.
+        r"""Return a callable for the
+        delete catalog item
+          method over gRPC.
 
         Deletes a catalog item.
 
@@ -374,7 +384,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def import_catalog_items(self) -> Callable[
             [import_.ImportCatalogItemsRequest],
             operations.Operation]:
-        r"""Return a callable for the import catalog items method over gRPC.
+        r"""Return a callable for the
+        import catalog items
+          method over gRPC.
 
         Bulk import of multiple catalog items. Request
         processing may be synchronous. No partial updating

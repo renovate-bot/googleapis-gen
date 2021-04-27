@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.resources.types import conversion_action
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -46,7 +43,10 @@ class GetConversionActionRequest(proto.Message):
             action to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateConversionActionsRequest(proto.Message):
@@ -71,12 +71,23 @@ class MutateConversionActionsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='ConversionActionOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ConversionActionOperation(proto.Message):
@@ -100,16 +111,28 @@ class ConversionActionOperation(proto.Message):
             ``customers/{customer_id}/conversionActions/{conversion_action_id}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=4,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=conversion_action.ConversionAction,
     )
-    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=conversion_action.ConversionAction,
     )
-    remove = proto.Field(proto.STRING, number=3, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='operation',
+    )
 
 
 class MutateConversionActionsResponse(proto.Message):
@@ -127,23 +150,29 @@ class MutateConversionActionsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateConversionActionResult',
     )
 
 
 class MutateConversionActionResult(proto.Message):
     r"""The result for the conversion action mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

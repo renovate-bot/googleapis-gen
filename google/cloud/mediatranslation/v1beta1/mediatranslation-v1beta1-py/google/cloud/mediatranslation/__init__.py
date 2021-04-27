@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,8 +22,7 @@ from google.cloud.mediatranslation_v1beta1.types.media_translation import Stream
 from google.cloud.mediatranslation_v1beta1.types.media_translation import StreamingTranslateSpeechResult
 from google.cloud.mediatranslation_v1beta1.types.media_translation import TranslateSpeechConfig
 
-__all__ = (
-    'SpeechTranslationServiceAsyncClient',
+__all__ = ('SpeechTranslationServiceAsyncClient',
     'SpeechTranslationServiceClient',
     'StreamingTranslateSpeechConfig',
     'StreamingTranslateSpeechRequest',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.securitycenter.settings_v1beta1.types import billing_settings as gcss_billing_settings
 from google.cloud.securitycenter.settings_v1beta1.types import component_settings as gcss_component_settings
@@ -34,7 +31,6 @@ __protobuf__ = proto.module(
 
 class Settings(proto.Message):
     r"""Common configuration settings for all of Security Center.
-
     Attributes:
         name (str):
             The relative resource name of the settings resource.
@@ -98,37 +94,54 @@ class Settings(proto.Message):
                 or not.
         """
 
-        state = proto.Field(proto.ENUM, number=1,
+        state = proto.Field(
+            proto.ENUM,
+            number=1,
             enum=gcss_component_settings.ComponentEnablementState,
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    billing_settings = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    billing_settings = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcss_billing_settings.BillingSettings,
     )
-
-    state = proto.Field(proto.ENUM, number=3,
+    state = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=OnboardingState,
     )
-
-    org_service_account = proto.Field(proto.STRING, number=5)
-
-    sink_settings = proto.Field(proto.MESSAGE, number=6,
+    org_service_account = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    sink_settings = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=gcss_sink_settings.SinkSettings,
     )
-
-    component_settings = proto.MapField(proto.STRING, proto.MESSAGE, number=7,
+    component_settings = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=7
         message=gcss_component_settings.ComponentSettings,
     )
-
-    detector_group_settings = proto.MapField(proto.STRING, proto.MESSAGE, number=8,
+    detector_group_settings = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=8
         message=DetectorGroupSettings,
     )
-
-    etag = proto.Field(proto.STRING, number=9)
-
-    update_time = proto.Field(proto.MESSAGE, number=10,
+    etag = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=timestamp.Timestamp,
     )
 

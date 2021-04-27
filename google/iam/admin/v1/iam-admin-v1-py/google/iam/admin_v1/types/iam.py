@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -177,28 +174,46 @@ class ServiceAccount(proto.Message):
             disabled.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    project_id = proto.Field(proto.STRING, number=2)
-
-    unique_id = proto.Field(proto.STRING, number=4)
-
-    email = proto.Field(proto.STRING, number=5)
-
-    display_name = proto.Field(proto.STRING, number=6)
-
-    etag = proto.Field(proto.BYTES, number=7)
-
-    description = proto.Field(proto.STRING, number=8)
-
-    oauth2_client_id = proto.Field(proto.STRING, number=9)
-
-    disabled = proto.Field(proto.BOOL, number=11)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    unique_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    email = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    etag = proto.Field(
+        proto.BYTES,
+        number=7,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    oauth2_client_id = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    disabled = proto.Field(
+        proto.BOOL,
+        number=11,
+    )
 
 
 class CreateServiceAccountRequest(proto.Message):
     r"""The service account create request.
-
     Attributes:
         name (str):
             Required. The resource name of the project associated with
@@ -215,18 +230,23 @@ class CreateServiceAccountRequest(proto.Message):
             user assignable: ``display_name`` and ``description``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    account_id = proto.Field(proto.STRING, number=2)
-
-    service_account = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    account_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    service_account = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='ServiceAccount',
     )
 
 
 class ListServiceAccountsRequest(proto.Message):
     r"""The service account list request.
-
     Attributes:
         name (str):
             Required. The resource name of the project associated with
@@ -244,16 +264,22 @@ class ListServiceAccountsRequest(proto.Message):
             [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token].
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListServiceAccountsResponse(proto.Message):
     r"""The service account list response.
-
     Attributes:
         accounts (Sequence[google.iam.admin_v1.types.ServiceAccount]):
             The list of matching service accounts.
@@ -267,16 +293,19 @@ class ListServiceAccountsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    accounts = proto.RepeatedField(proto.MESSAGE, number=1,
+    accounts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='ServiceAccount',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetServiceAccountRequest(proto.Message):
     r"""The service account get request.
-
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -288,12 +317,14 @@ class GetServiceAccountRequest(proto.Message):
             account.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteServiceAccountRequest(proto.Message):
     r"""The service account delete request.
-
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -305,7 +336,10 @@ class DeleteServiceAccountRequest(proto.Message):
             account.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class PatchServiceAccountRequest(proto.Message):
@@ -326,18 +360,20 @@ class PatchServiceAccountRequest(proto.Message):
 
     """
 
-    service_account = proto.Field(proto.MESSAGE, number=1,
+    service_account = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ServiceAccount',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
 
 class UndeleteServiceAccountRequest(proto.Message):
     r"""The service account undelete request.
-
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -347,25 +383,28 @@ class UndeleteServiceAccountRequest(proto.Message):
             the project from the account.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UndeleteServiceAccountResponse(proto.Message):
     r"""
-
     Attributes:
         restored_account (google.iam.admin_v1.types.ServiceAccount):
             Metadata for the restored service account.
     """
 
-    restored_account = proto.Field(proto.MESSAGE, number=1,
+    restored_account = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ServiceAccount',
     )
 
 
 class EnableServiceAccountRequest(proto.Message):
     r"""The service account enable request.
-
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -376,12 +415,14 @@ class EnableServiceAccountRequest(proto.Message):
             account.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DisableServiceAccountRequest(proto.Message):
     r"""The service account disable request.
-
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -392,12 +433,14 @@ class DisableServiceAccountRequest(proto.Message):
             account.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListServiceAccountKeysRequest(proto.Message):
     r"""The service account keys list request.
-
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -422,29 +465,33 @@ class ListServiceAccountKeysRequest(proto.Message):
         USER_MANAGED = 1
         SYSTEM_MANAGED = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    key_types = proto.RepeatedField(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    key_types = proto.RepeatedField(
+        proto.ENUM,
+        number=2,
         enum=KeyType,
     )
 
 
 class ListServiceAccountKeysResponse(proto.Message):
     r"""The service account keys list response.
-
     Attributes:
         keys (Sequence[google.iam.admin_v1.types.ServiceAccountKey]):
             The public keys for the service account.
     """
 
-    keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='ServiceAccountKey',
     )
 
 
 class GetServiceAccountKeyRequest(proto.Message):
     r"""The service account key get by id request.
-
     Attributes:
         name (str):
             Required. The resource name of the service account key in
@@ -460,9 +507,13 @@ class GetServiceAccountKeyRequest(proto.Message):
             the default output format.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    public_key_type = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    public_key_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='ServiceAccountPublicKeyType',
     )
 
@@ -536,40 +587,52 @@ class ServiceAccountKey(proto.Message):
             The key type.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    private_key_type = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    private_key_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='ServiceAccountPrivateKeyType',
     )
-
-    key_algorithm = proto.Field(proto.ENUM, number=8,
+    key_algorithm = proto.Field(
+        proto.ENUM,
+        number=8,
         enum='ServiceAccountKeyAlgorithm',
     )
-
-    private_key_data = proto.Field(proto.BYTES, number=3)
-
-    public_key_data = proto.Field(proto.BYTES, number=7)
-
-    valid_after_time = proto.Field(proto.MESSAGE, number=4,
+    private_key_data = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
+    public_key_data = proto.Field(
+        proto.BYTES,
+        number=7,
+    )
+    valid_after_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamp.Timestamp,
     )
-
-    valid_before_time = proto.Field(proto.MESSAGE, number=5,
+    valid_before_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=timestamp.Timestamp,
     )
-
-    key_origin = proto.Field(proto.ENUM, number=9,
+    key_origin = proto.Field(
+        proto.ENUM,
+        number=9,
         enum='ServiceAccountKeyOrigin',
     )
-
-    key_type = proto.Field(proto.ENUM, number=10,
+    key_type = proto.Field(
+        proto.ENUM,
+        number=10,
         enum='ListServiceAccountKeysRequest.KeyType',
     )
 
 
 class CreateServiceAccountKeyRequest(proto.Message):
     r"""The service account key create request.
-
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -589,20 +652,24 @@ class CreateServiceAccountKeyRequest(proto.Message):
             However this may change in the future.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    private_key_type = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    private_key_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='ServiceAccountPrivateKeyType',
     )
-
-    key_algorithm = proto.Field(proto.ENUM, number=3,
+    key_algorithm = proto.Field(
+        proto.ENUM,
+        number=3,
         enum='ServiceAccountKeyAlgorithm',
     )
 
 
 class UploadServiceAccountKeyRequest(proto.Message):
     r"""The service account key upload request.
-
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -618,14 +685,18 @@ class UploadServiceAccountKeyRequest(proto.Message):
             format for this field is X509_PEM.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    public_key_data = proto.Field(proto.BYTES, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    public_key_data = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class DeleteServiceAccountKeyRequest(proto.Message):
     r"""The service account key delete request.
-
     Attributes:
         name (str):
             Required. The resource name of the service account key in
@@ -637,7 +708,10 @@ class DeleteServiceAccountKeyRequest(proto.Message):
             account.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class SignBlobRequest(proto.Message):
@@ -666,9 +740,14 @@ class SignBlobRequest(proto.Message):
             The bytes to sign.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    bytes_to_sign = proto.Field(proto.BYTES, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    bytes_to_sign = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class SignBlobResponse(proto.Message):
@@ -690,9 +769,14 @@ class SignBlobResponse(proto.Message):
             The signed blob.
     """
 
-    key_id = proto.Field(proto.STRING, number=1)
-
-    signature = proto.Field(proto.BYTES, number=2)
+    key_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    signature = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class SignJwtRequest(proto.Message):
@@ -731,9 +815,14 @@ class SignJwtRequest(proto.Message):
             timestamp that is 1 hour in the future.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    payload = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    payload = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SignJwtResponse(proto.Message):
@@ -755,14 +844,18 @@ class SignJwtResponse(proto.Message):
             The signed JWT.
     """
 
-    key_id = proto.Field(proto.STRING, number=1)
-
-    signed_jwt = proto.Field(proto.STRING, number=2)
+    key_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    signed_jwt = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Role(proto.Message):
     r"""A role in the Identity and Access Management API.
-
     Attributes:
         name (str):
             The name of the role.
@@ -807,26 +900,39 @@ class Role(proto.Message):
         DISABLED = 5
         EAP = 6
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    included_permissions = proto.RepeatedField(proto.STRING, number=7)
-
-    stage = proto.Field(proto.ENUM, number=8,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    included_permissions = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
+    stage = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=RoleLaunchStage,
     )
-
-    etag = proto.Field(proto.BYTES, number=9)
-
-    deleted = proto.Field(proto.BOOL, number=11)
+    etag = proto.Field(
+        proto.BYTES,
+        number=9,
+    )
+    deleted = proto.Field(
+        proto.BOOL,
+        number=11,
+    )
 
 
 class QueryGrantableRolesRequest(proto.Message):
     r"""The grantable role query request.
-
     Attributes:
         full_resource_name (str):
             Required. The full resource name to query from the list of
@@ -847,20 +953,27 @@ class QueryGrantableRolesRequest(proto.Message):
             earlier QueryGrantableRolesResponse.
     """
 
-    full_resource_name = proto.Field(proto.STRING, number=1)
-
-    view = proto.Field(proto.ENUM, number=2,
+    full_resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='RoleView',
     )
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class QueryGrantableRolesResponse(proto.Message):
     r"""The grantable role query response.
-
     Attributes:
         roles (Sequence[google.iam.admin_v1.types.Role]):
             The list of matching roles.
@@ -873,16 +986,19 @@ class QueryGrantableRolesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    roles = proto.RepeatedField(proto.MESSAGE, number=1,
+    roles = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Role',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListRolesRequest(proto.Message):
     r"""The request to get all roles defined under a resource.
-
     Attributes:
         parent (str):
             The ``parent`` parameter's value depends on the target
@@ -933,22 +1049,31 @@ class ListRolesRequest(proto.Message):
             Include Roles that have been deleted.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    view = proto.Field(proto.ENUM, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='RoleView',
     )
-
-    show_deleted = proto.Field(proto.BOOL, number=6)
+    show_deleted = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
 
 
 class ListRolesResponse(proto.Message):
     r"""The response containing the roles defined under a resource.
-
     Attributes:
         roles (Sequence[google.iam.admin_v1.types.Role]):
             The Roles defined on this resource.
@@ -961,16 +1086,19 @@ class ListRolesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    roles = proto.RepeatedField(proto.MESSAGE, number=1,
+    roles = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Role',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetRoleRequest(proto.Message):
     r"""The request to get the definition of an existing role.
-
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1007,12 +1135,14 @@ class GetRoleRequest(proto.Message):
             complete project ID or organization ID.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateRoleRequest(proto.Message):
     r"""The request to create a new role.
-
     Attributes:
         parent (str):
             The ``parent`` parameter's value depends on the target
@@ -1048,18 +1178,23 @@ class CreateRoleRequest(proto.Message):
             The Role resource to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    role_id = proto.Field(proto.STRING, number=2)
-
-    role = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    role_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    role = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Role',
     )
 
 
 class UpdateRoleRequest(proto.Message):
     r"""The request to update a role.
-
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1093,20 +1228,24 @@ class UpdateRoleRequest(proto.Message):
             have changed.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    role = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    role = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Role',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=field_mask.FieldMask,
     )
 
 
 class DeleteRoleRequest(proto.Message):
     r"""The request to delete an existing role.
-
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1138,14 +1277,18 @@ class DeleteRoleRequest(proto.Message):
             rite.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.BYTES, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class UndeleteRoleRequest(proto.Message):
     r"""The request to undelete an existing role.
-
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1177,14 +1320,18 @@ class UndeleteRoleRequest(proto.Message):
             rite.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.BYTES, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class Permission(proto.Message):
     r"""A permission which can be included by a role.
-
     Attributes:
         name (str):
             The name of this Permission.
@@ -1221,25 +1368,40 @@ class Permission(proto.Message):
         TESTING = 1
         NOT_SUPPORTED = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    only_in_predefined_roles = proto.Field(proto.BOOL, number=4)
-
-    stage = proto.Field(proto.ENUM, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    only_in_predefined_roles = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    stage = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=PermissionLaunchStage,
     )
-
-    custom_roles_support_level = proto.Field(proto.ENUM, number=6,
+    custom_roles_support_level = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=CustomRolesSupportLevel,
     )
-
-    api_disabled = proto.Field(proto.BOOL, number=7)
-
-    primary_permission = proto.Field(proto.STRING, number=8)
+    api_disabled = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
+    primary_permission = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class QueryTestablePermissionsRequest(proto.Message):
@@ -1264,11 +1426,18 @@ class QueryTestablePermissionsRequest(proto.Message):
             earlier QueryTestablePermissionsRequest.
     """
 
-    full_resource_name = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    full_resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class QueryTestablePermissionsResponse(proto.Message):
@@ -1288,11 +1457,15 @@ class QueryTestablePermissionsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    permissions = proto.RepeatedField(proto.MESSAGE, number=1,
+    permissions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Permission',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class QueryAuditableServicesRequest(proto.Message):
@@ -1310,7 +1483,10 @@ class QueryAuditableServicesRequest(proto.Message):
             ``//cloudresourcemanager.googleapis.com/projects/my-project``.
     """
 
-    full_resource_name = proto.Field(proto.STRING, number=1)
+    full_resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class QueryAuditableServicesResponse(proto.Message):
@@ -1321,9 +1497,9 @@ class QueryAuditableServicesResponse(proto.Message):
         services (Sequence[google.iam.admin_v1.types.QueryAuditableServicesResponse.AuditableService]):
             The auditable services for a resource.
     """
+
     class AuditableService(proto.Message):
         r"""Contains information about an auditable service.
-
         Attributes:
             name (str):
                 Public name of the service.
@@ -1331,16 +1507,20 @@ class QueryAuditableServicesResponse(proto.Message):
                 'iam.googleapis.com'.
         """
 
-        name = proto.Field(proto.STRING, number=1)
+        name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
-    services = proto.RepeatedField(proto.MESSAGE, number=1,
+    services = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=AuditableService,
     )
 
 
 class LintPolicyRequest(proto.Message):
     r"""The request to lint a Cloud IAM policy object.
-
     Attributes:
         full_resource_name (str):
             The full resource name of the policy this lint request is
@@ -1359,16 +1539,20 @@ class LintPolicyRequest(proto.Message):
             [google.iam.v1.Binding.condition] object to be linted.
     """
 
-    full_resource_name = proto.Field(proto.STRING, number=1)
-
-    condition = proto.Field(proto.MESSAGE, number=5, oneof='lint_object',
+    full_resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    condition = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='lint_object',
         message=expr.Expr,
     )
 
 
 class LintResult(proto.Message):
     r"""Structured response of a single validation unit.
-
     Attributes:
         level (google.iam.admin_v1.types.LintResult.Level):
             The validation unit level.
@@ -1410,21 +1594,32 @@ class LintResult(proto.Message):
         INFO = 4
         DEPRECATED = 5
 
-    level = proto.Field(proto.ENUM, number=1,
+    level = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Level,
     )
-
-    validation_unit_name = proto.Field(proto.STRING, number=2)
-
-    severity = proto.Field(proto.ENUM, number=3,
+    validation_unit_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    severity = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=Severity,
     )
-
-    field_name = proto.Field(proto.STRING, number=5)
-
-    location_offset = proto.Field(proto.INT32, number=6)
-
-    debug_message = proto.Field(proto.STRING, number=7)
+    field_name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    location_offset = proto.Field(
+        proto.INT32,
+        number=6,
+    )
+    debug_message = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class LintPolicyResponse(proto.Message):
@@ -1438,7 +1633,9 @@ class LintPolicyResponse(proto.Message):
             order.
     """
 
-    lint_results = proto.RepeatedField(proto.MESSAGE, number=1,
+    lint_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='LintResult',
     )
 

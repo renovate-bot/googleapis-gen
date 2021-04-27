@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.area120.tables_v1alpha1.types import tables
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import TablesServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import TablesServiceGrpcTransport
 
@@ -92,13 +90,15 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -118,7 +118,8 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -176,7 +177,6 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -239,7 +239,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def get_table(self) -> Callable[
             [tables.GetTableRequest],
             Awaitable[tables.Table]]:
-        r"""Return a callable for the get table method over gRPC.
+        r"""Return a callable for the
+        get table
+          method over gRPC.
 
         Gets a table. Returns NOT_FOUND if the table does not exist.
 
@@ -265,7 +267,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def list_tables(self) -> Callable[
             [tables.ListTablesRequest],
             Awaitable[tables.ListTablesResponse]]:
-        r"""Return a callable for the list tables method over gRPC.
+        r"""Return a callable for the
+        list tables
+          method over gRPC.
 
         Lists tables for the user.
 
@@ -291,7 +295,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def get_workspace(self) -> Callable[
             [tables.GetWorkspaceRequest],
             Awaitable[tables.Workspace]]:
-        r"""Return a callable for the get workspace method over gRPC.
+        r"""Return a callable for the
+        get workspace
+          method over gRPC.
 
         Gets a workspace. Returns NOT_FOUND if the workspace does not
         exist.
@@ -318,7 +324,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def list_workspaces(self) -> Callable[
             [tables.ListWorkspacesRequest],
             Awaitable[tables.ListWorkspacesResponse]]:
-        r"""Return a callable for the list workspaces method over gRPC.
+        r"""Return a callable for the
+        list workspaces
+          method over gRPC.
 
         Lists workspaces for the user.
 
@@ -344,7 +352,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def get_row(self) -> Callable[
             [tables.GetRowRequest],
             Awaitable[tables.Row]]:
-        r"""Return a callable for the get row method over gRPC.
+        r"""Return a callable for the
+        get row
+          method over gRPC.
 
         Gets a row. Returns NOT_FOUND if the row does not exist in the
         table.
@@ -371,7 +381,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def list_rows(self) -> Callable[
             [tables.ListRowsRequest],
             Awaitable[tables.ListRowsResponse]]:
-        r"""Return a callable for the list rows method over gRPC.
+        r"""Return a callable for the
+        list rows
+          method over gRPC.
 
         Lists rows in a table. Returns NOT_FOUND if the table does not
         exist.
@@ -398,7 +410,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def create_row(self) -> Callable[
             [tables.CreateRowRequest],
             Awaitable[tables.Row]]:
-        r"""Return a callable for the create row method over gRPC.
+        r"""Return a callable for the
+        create row
+          method over gRPC.
 
         Creates a row.
 
@@ -424,7 +438,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def batch_create_rows(self) -> Callable[
             [tables.BatchCreateRowsRequest],
             Awaitable[tables.BatchCreateRowsResponse]]:
-        r"""Return a callable for the batch create rows method over gRPC.
+        r"""Return a callable for the
+        batch create rows
+          method over gRPC.
 
         Creates multiple rows.
 
@@ -450,7 +466,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def update_row(self) -> Callable[
             [tables.UpdateRowRequest],
             Awaitable[tables.Row]]:
-        r"""Return a callable for the update row method over gRPC.
+        r"""Return a callable for the
+        update row
+          method over gRPC.
 
         Updates a row.
 
@@ -476,7 +494,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def batch_update_rows(self) -> Callable[
             [tables.BatchUpdateRowsRequest],
             Awaitable[tables.BatchUpdateRowsResponse]]:
-        r"""Return a callable for the batch update rows method over gRPC.
+        r"""Return a callable for the
+        batch update rows
+          method over gRPC.
 
         Updates multiple rows.
 
@@ -502,7 +522,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def delete_row(self) -> Callable[
             [tables.DeleteRowRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete row method over gRPC.
+        r"""Return a callable for the
+        delete row
+          method over gRPC.
 
         Deletes a row.
 
@@ -528,7 +550,9 @@ class TablesServiceGrpcAsyncIOTransport(TablesServiceTransport):
     def batch_delete_rows(self) -> Callable[
             [tables.BatchDeleteRowsRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the batch delete rows method over gRPC.
+        r"""Return a callable for the
+        batch delete rows
+          method over gRPC.
 
         Deletes multiple rows.
 

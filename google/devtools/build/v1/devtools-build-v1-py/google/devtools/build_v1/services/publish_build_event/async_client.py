@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -30,7 +28,6 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.devtools.build_v1.types import build_events
 from google.devtools.build_v1.types import publish_build_event
-
 from .transports.base import PublishBuildEventTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import PublishBuildEventGrpcAsyncIOTransport
 from .client import PublishBuildEventClient
@@ -63,16 +60,12 @@ class PublishBuildEventAsyncClient:
 
     common_billing_account_path = staticmethod(PublishBuildEventClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(PublishBuildEventClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(PublishBuildEventClient.common_folder_path)
     parse_common_folder_path = staticmethod(PublishBuildEventClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(PublishBuildEventClient.common_organization_path)
     parse_common_organization_path = staticmethod(PublishBuildEventClient.parse_common_organization_path)
-
     common_project_path = staticmethod(PublishBuildEventClient.common_project_path)
     parse_common_project_path = staticmethod(PublishBuildEventClient.parse_common_project_path)
-
     common_location_path = staticmethod(PublishBuildEventClient.common_location_path)
     parse_common_location_path = staticmethod(PublishBuildEventClient.parse_common_location_path)
 
@@ -157,7 +150,6 @@ class PublishBuildEventAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = PublishBuildEventClient(
             credentials=credentials,
             transport=transport,
@@ -186,14 +178,14 @@ class PublishBuildEventAsyncClient:
 
         Args:
             request (:class:`google.devtools.build_v1.types.PublishLifecycleEventRequest`):
-                The request object. Publishes 'lifecycle events' that
+                The request object.
+                Publishes 'lifecycle events' that
                 update the high-level state of a build: - BuildEnqueued:
                 When a build is scheduled. - InvocationAttemptStarted:
                 When work for a build starts; there can be     multiple
                 invocations for a build (e.g. retries).
                 - InvocationAttemptCompleted: When work for a build
                 finishes. - BuildFinished: When a build is finished.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -201,7 +193,6 @@ class PublishBuildEventAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = publish_build_event.PublishLifecycleEventRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -240,7 +231,8 @@ class PublishBuildEventAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.devtools.build_v1.types.PublishBuildToolEventStreamRequest`]):
-                The request object AsyncIterator. Streaming request message for
+                The request object AsyncIterator.
+                Streaming request message for
                 PublishBuildToolEventStream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -282,8 +274,6 @@ class PublishBuildEventAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

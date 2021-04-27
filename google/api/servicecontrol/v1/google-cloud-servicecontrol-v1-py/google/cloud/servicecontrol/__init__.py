@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,8 +36,7 @@ from google.cloud.servicecontrol_v1.types.service_controller import CheckRespons
 from google.cloud.servicecontrol_v1.types.service_controller import ReportRequest
 from google.cloud.servicecontrol_v1.types.service_controller import ReportResponse
 
-__all__ = (
-    'AllocateQuotaRequest',
+__all__ = ('AllocateQuotaRequest',
     'AllocateQuotaResponse',
     'CheckError',
     'CheckRequest',

@@ -3,4 +3,4 @@ Services for Google Container v1 API
 .. toctree::
     :maxdepth: 2
 
-    cluster_manager
+cluster_manager

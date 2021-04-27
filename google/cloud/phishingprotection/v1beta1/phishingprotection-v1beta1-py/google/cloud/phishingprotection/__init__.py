@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +19,7 @@ from google.cloud.phishingprotection_v1beta1.services.phishing_protection_servic
 from google.cloud.phishingprotection_v1beta1.types.phishingprotection import ReportPhishingRequest
 from google.cloud.phishingprotection_v1beta1.types.phishingprotection import ReportPhishingResponse
 
-__all__ = (
-    'PhishingProtectionServiceV1Beta1AsyncClient',
+__all__ = ('PhishingProtectionServiceV1Beta1AsyncClient',
     'PhishingProtectionServiceV1Beta1Client',
     'ReportPhishingRequest',
     'ReportPhishingResponse',

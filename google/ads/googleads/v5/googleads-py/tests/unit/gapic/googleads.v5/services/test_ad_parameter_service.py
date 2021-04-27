@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -266,33 +264,22 @@ def test_get_ad_parameter(transport: str = 'grpc', request_type=ad_parameter_ser
         # Designate an appropriate return value for the call.
         call.return_value = ad_parameter.AdParameter(
             resource_name='resource_name_value',
-
             ad_group_criterion='ad_group_criterion_value',
-
             parameter_index=1592,
-
             insertion_text='insertion_text_value',
-
         )
-
         response = client.get_ad_parameter(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_parameter_service.GetAdParameterRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_parameter.AdParameter)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.ad_group_criterion == 'ad_group_criterion_value'
-
     assert response.parameter_index == 1592
-
     assert response.insertion_text == 'insertion_text_value'
 
 
@@ -308,6 +295,7 @@ def test_get_ad_parameter_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_parameter_service.GetAdParameterRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -315,7 +303,6 @@ def test_get_ad_parameter_field_headers():
             type(client.transport.get_ad_parameter),
             '__call__') as call:
         call.return_value = ad_parameter.AdParameter()
-
         client.get_ad_parameter(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -342,7 +329,6 @@ def test_get_ad_parameter_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_parameter.AdParameter()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_parameter(
@@ -353,7 +339,6 @@ def test_get_ad_parameter_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -388,17 +373,14 @@ def test_mutate_ad_parameters(transport: str = 'grpc', request_type=ad_parameter
         # Designate an appropriate return value for the call.
         call.return_value = ad_parameter_service.MutateAdParametersResponse(
         )
-
         response = client.mutate_ad_parameters(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_parameter_service.MutateAdParametersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_parameter_service.MutateAdParametersResponse)
 
 
@@ -414,6 +396,7 @@ def test_mutate_ad_parameters_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_parameter_service.MutateAdParametersRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -421,7 +404,6 @@ def test_mutate_ad_parameters_field_headers():
             type(client.transport.mutate_ad_parameters),
             '__call__') as call:
         call.return_value = ad_parameter_service.MutateAdParametersResponse()
-
         client.mutate_ad_parameters(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -448,7 +430,6 @@ def test_mutate_ad_parameters_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_parameter_service.MutateAdParametersResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_parameters(
@@ -460,9 +441,7 @@ def test_mutate_ad_parameters_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [ad_parameter_service.AdParameterOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -545,7 +524,7 @@ def test_ad_parameter_service_base_transport():
     methods = (
         'get_ad_parameter',
         'mutate_ad_parameters',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -697,7 +676,6 @@ def test_ad_parameter_service_transport_channel_mtls_with_adc(
 def test_ad_group_criterion_path():
     customer = "squid"
     ad_group_criterion = "clam"
-
     expected = "customers/{customer}/adGroupCriteria/{ad_group_criterion}".format(customer=customer, ad_group_criterion=ad_group_criterion, )
     actual = AdParameterServiceClient.ad_group_criterion_path(customer, ad_group_criterion)
     assert expected == actual
@@ -705,9 +683,8 @@ def test_ad_group_criterion_path():
 
 def test_parse_ad_group_criterion_path():
     expected = {
-    "customer": "whelk",
-    "ad_group_criterion": "octopus",
-
+        "customer": "whelk",
+        "ad_group_criterion": "octopus",
     }
     path = AdParameterServiceClient.ad_group_criterion_path(**expected)
 
@@ -718,7 +695,6 @@ def test_parse_ad_group_criterion_path():
 def test_ad_parameter_path():
     customer = "oyster"
     ad_parameter = "nudibranch"
-
     expected = "customers/{customer}/adParameters/{ad_parameter}".format(customer=customer, ad_parameter=ad_parameter, )
     actual = AdParameterServiceClient.ad_parameter_path(customer, ad_parameter)
     assert expected == actual
@@ -726,9 +702,8 @@ def test_ad_parameter_path():
 
 def test_parse_ad_parameter_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_parameter": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_parameter": "mussel",
     }
     path = AdParameterServiceClient.ad_parameter_path(**expected)
 
@@ -738,7 +713,6 @@ def test_parse_ad_parameter_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdParameterServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -746,8 +720,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = AdParameterServiceClient.common_billing_account_path(**expected)
 
@@ -757,7 +730,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdParameterServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -765,8 +737,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = AdParameterServiceClient.common_folder_path(**expected)
 
@@ -776,7 +747,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdParameterServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -784,8 +754,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = AdParameterServiceClient.common_organization_path(**expected)
 
@@ -795,7 +764,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = AdParameterServiceClient.common_project_path(project)
     assert expected == actual
@@ -803,8 +771,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = AdParameterServiceClient.common_project_path(**expected)
 
@@ -815,7 +782,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdParameterServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -823,9 +789,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = AdParameterServiceClient.common_location_path(**expected)
 

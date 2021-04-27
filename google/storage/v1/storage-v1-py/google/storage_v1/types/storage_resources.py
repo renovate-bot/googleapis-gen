@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -51,7 +48,6 @@ __protobuf__ = proto.module(
 
 class Bucket(proto.Message):
     r"""A bucket.
-
     Attributes:
         acl (Sequence[google.storage_v1.types.BucketAccessControl]):
             Access controls on the bucket.
@@ -178,16 +174,19 @@ class Bucket(proto.Message):
             update this field after bucket is created will
             result in an error.
     """
+
     class Billing(proto.Message):
         r"""Billing properties of a bucket.
-
         Attributes:
             requester_pays (bool):
                 When set to true, Requester Pays is enabled
                 for this bucket.
         """
 
-        requester_pays = proto.Field(proto.BOOL, number=1)
+        requester_pays = proto.Field(
+            proto.BOOL,
+            number=1,
+        )
 
     class Cors(proto.Message):
         r"""Cross-Origin Response sharing (CORS) properties for a bucket.
@@ -216,17 +215,25 @@ class Bucket(proto.Message):
                 header] used in preflight responses.
         """
 
-        origin = proto.RepeatedField(proto.STRING, number=1)
-
-        method = proto.RepeatedField(proto.STRING, number=2)
-
-        response_header = proto.RepeatedField(proto.STRING, number=3)
-
-        max_age_seconds = proto.Field(proto.INT32, number=4)
+        origin = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        method = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
+        response_header = proto.RepeatedField(
+            proto.STRING,
+            number=3,
+        )
+        max_age_seconds = proto.Field(
+            proto.INT32,
+            number=4,
+        )
 
     class Encryption(proto.Message):
         r"""Encryption properties of a bucket.
-
         Attributes:
             default_kms_key_name (str):
                 A Cloud KMS key that will be used to encrypt
@@ -234,18 +241,20 @@ class Bucket(proto.Message):
                 encryption method is specified.
         """
 
-        default_kms_key_name = proto.Field(proto.STRING, number=1)
+        default_kms_key_name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class IamConfiguration(proto.Message):
         r"""Bucket restriction options currently enforced on the bucket.
-
         Attributes:
             uniform_bucket_level_access (google.storage_v1.types.Bucket.IamConfiguration.UniformBucketLevelAccess):
 
         """
+
         class UniformBucketLevelAccess(proto.Message):
             r"""
-
             Attributes:
                 enabled (bool):
                     If set, access checks only use bucket-level
@@ -257,13 +266,19 @@ class Bucket(proto.Message):
                     After the deadline is passed the field is immutable.
             """
 
-            enabled = proto.Field(proto.BOOL, number=1)
-
-            locked_time = proto.Field(proto.MESSAGE, number=2,
+            enabled = proto.Field(
+                proto.BOOL,
+                number=1,
+            )
+            locked_time = proto.Field(
+                proto.MESSAGE,
+                number=2,
                 message=timestamp.Timestamp,
             )
 
-        uniform_bucket_level_access = proto.Field(proto.MESSAGE, number=1,
+        uniform_bucket_level_access = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='Bucket.IamConfiguration.UniformBucketLevelAccess',
         )
 
@@ -278,6 +293,7 @@ class Bucket(proto.Message):
                 an action to take and the condition(s) under
                 which the action will be taken.
         """
+
         class Rule(proto.Message):
             r"""A lifecycle Rule, combining an action to take on an object
             and a condition which will trigger that action.
@@ -289,9 +305,9 @@ class Bucket(proto.Message):
                     The condition(s) under which the action will
                     be taken.
             """
+
             class Action(proto.Message):
                 r"""An action to take on an object.
-
                 Attributes:
                     type_ (str):
                         Type of the action. Currently, only ``Delete`` and
@@ -301,13 +317,17 @@ class Bucket(proto.Message):
                         of the action is SetStorageClass.
                 """
 
-                type_ = proto.Field(proto.STRING, number=1)
-
-                storage_class = proto.Field(proto.STRING, number=2)
+                type_ = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
+                storage_class = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
 
             class Condition(proto.Message):
                 r"""A condition of an object which triggers some action.
-
                 Attributes:
                     age (int):
                         Age of an object (in days). This condition is
@@ -346,37 +366,52 @@ class Bucket(proto.Message):
                         released.
                 """
 
-                age = proto.Field(proto.INT32, number=1)
-
-                created_before = proto.Field(proto.MESSAGE, number=2,
+                age = proto.Field(
+                    proto.INT32,
+                    number=1,
+                )
+                created_before = proto.Field(
+                    proto.MESSAGE,
+                    number=2,
                     message=timestamp.Timestamp,
                 )
-
-                is_live = proto.Field(proto.MESSAGE, number=3,
+                is_live = proto.Field(
+                    proto.MESSAGE,
+                    number=3,
                     message=wrappers.BoolValue,
                 )
+                num_newer_versions = proto.Field(
+                    proto.INT32,
+                    number=4,
+                )
+                matches_storage_class = proto.RepeatedField(
+                    proto.STRING,
+                    number=5,
+                )
+                matches_pattern = proto.Field(
+                    proto.STRING,
+                    number=6,
+                )
 
-                num_newer_versions = proto.Field(proto.INT32, number=4)
-
-                matches_storage_class = proto.RepeatedField(proto.STRING, number=5)
-
-                matches_pattern = proto.Field(proto.STRING, number=6)
-
-            action = proto.Field(proto.MESSAGE, number=1,
+            action = proto.Field(
+                proto.MESSAGE,
+                number=1,
                 message='Bucket.Lifecycle.Rule.Action',
             )
-
-            condition = proto.Field(proto.MESSAGE, number=2,
+            condition = proto.Field(
+                proto.MESSAGE,
+                number=2,
                 message='Bucket.Lifecycle.Rule.Condition',
             )
 
-        rule = proto.RepeatedField(proto.MESSAGE, number=1,
+        rule = proto.RepeatedField(
+            proto.MESSAGE,
+            number=1,
             message='Bucket.Lifecycle.Rule',
         )
 
     class Logging(proto.Message):
         r"""Logging-related properties of a bucket.
-
         Attributes:
             log_bucket (str):
                 The destination bucket where the current
@@ -385,13 +420,17 @@ class Bucket(proto.Message):
                 A prefix for log object names.
         """
 
-        log_bucket = proto.Field(proto.STRING, number=1)
-
-        log_object_prefix = proto.Field(proto.STRING, number=2)
+        log_bucket = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        log_object_prefix = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
     class RetentionPolicy(proto.Message):
         r"""Retention policy properties of a bucket.
-
         Attributes:
             effective_time (google.protobuf.timestamp_pb2.Timestamp):
                 Server-determined value that indicates the time from which
@@ -409,13 +448,19 @@ class Bucket(proto.Message):
                 used for testing purposes.
         """
 
-        effective_time = proto.Field(proto.MESSAGE, number=1,
+        effective_time = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=timestamp.Timestamp,
         )
-
-        is_locked = proto.Field(proto.BOOL, number=2)
-
-        retention_period = proto.Field(proto.INT64, number=3)
+        is_locked = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
+        retention_period = proto.Field(
+            proto.INT64,
+            number=3,
+        )
 
     class Versioning(proto.Message):
         r"""Properties of a bucket related to versioning.
@@ -428,7 +473,10 @@ class Bucket(proto.Message):
                 enabled for this bucket.
         """
 
-        enabled = proto.Field(proto.BOOL, number=1)
+        enabled = proto.Field(
+            proto.BOOL,
+            number=1,
+        )
 
     class Website(proto.Message):
         r"""Properties of a bucket related to accessing the contents as a
@@ -452,92 +500,134 @@ class Bucket(proto.Message):
                 Found] result.
         """
 
-        main_page_suffix = proto.Field(proto.STRING, number=1)
+        main_page_suffix = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        not_found_page = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        not_found_page = proto.Field(proto.STRING, number=2)
-
-    acl = proto.RepeatedField(proto.MESSAGE, number=1,
+    acl = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='BucketAccessControl',
     )
-
-    default_object_acl = proto.RepeatedField(proto.MESSAGE, number=2,
+    default_object_acl = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='ObjectAccessControl',
     )
-
-    lifecycle = proto.Field(proto.MESSAGE, number=3,
+    lifecycle = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=Lifecycle,
     )
-
-    time_created = proto.Field(proto.MESSAGE, number=4,
+    time_created = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=timestamp.Timestamp,
     )
-
-    id = proto.Field(proto.STRING, number=5)
-
-    name = proto.Field(proto.STRING, number=6)
-
-    project_number = proto.Field(proto.INT64, number=7)
-
-    metageneration = proto.Field(proto.INT64, number=8)
-
-    cors = proto.RepeatedField(proto.MESSAGE, number=9,
+    id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    project_number = proto.Field(
+        proto.INT64,
+        number=7,
+    )
+    metageneration = proto.Field(
+        proto.INT64,
+        number=8,
+    )
+    cors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
         message=Cors,
     )
-
-    location = proto.Field(proto.STRING, number=10)
-
-    storage_class = proto.Field(proto.STRING, number=11)
-
-    etag = proto.Field(proto.STRING, number=12)
-
-    updated = proto.Field(proto.MESSAGE, number=13,
+    location = proto.Field(
+        proto.STRING,
+        number=10,
+    )
+    storage_class = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    updated = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message=timestamp.Timestamp,
     )
-
-    default_event_based_hold = proto.Field(proto.BOOL, number=14)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=15)
-
-    website = proto.Field(proto.MESSAGE, number=16,
+    default_event_based_hold = proto.Field(
+        proto.BOOL,
+        number=14,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=15
+    )
+    website = proto.Field(
+        proto.MESSAGE,
+        number=16,
         message=Website,
     )
-
-    versioning = proto.Field(proto.MESSAGE, number=17,
+    versioning = proto.Field(
+        proto.MESSAGE,
+        number=17,
         message=Versioning,
     )
-
-    logging = proto.Field(proto.MESSAGE, number=18,
+    logging = proto.Field(
+        proto.MESSAGE,
+        number=18,
         message=Logging,
     )
-
-    owner = proto.Field(proto.MESSAGE, number=19,
+    owner = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message='Owner',
     )
-
-    encryption = proto.Field(proto.MESSAGE, number=20,
+    encryption = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message=Encryption,
     )
-
-    billing = proto.Field(proto.MESSAGE, number=21,
+    billing = proto.Field(
+        proto.MESSAGE,
+        number=21,
         message=Billing,
     )
-
-    retention_policy = proto.Field(proto.MESSAGE, number=22,
+    retention_policy = proto.Field(
+        proto.MESSAGE,
+        number=22,
         message=RetentionPolicy,
     )
-
-    location_type = proto.Field(proto.STRING, number=23)
-
-    iam_configuration = proto.Field(proto.MESSAGE, number=24,
+    location_type = proto.Field(
+        proto.STRING,
+        number=23,
+    )
+    iam_configuration = proto.Field(
+        proto.MESSAGE,
+        number=24,
         message=IamConfiguration,
     )
-
-    zone_affinity = proto.RepeatedField(proto.STRING, number=25)
+    zone_affinity = proto.RepeatedField(
+        proto.STRING,
+        number=25,
+    )
 
 
 class BucketAccessControl(proto.Message):
     r"""An access-control entry.
-
     Attributes:
         role (str):
             The access permission for the entity.
@@ -580,23 +670,41 @@ class BucketAccessControl(proto.Message):
             if any.
     """
 
-    role = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.STRING, number=2)
-
-    id = proto.Field(proto.STRING, number=3)
-
-    bucket = proto.Field(proto.STRING, number=4)
-
-    entity = proto.Field(proto.STRING, number=6)
-
-    entity_id = proto.Field(proto.STRING, number=7)
-
-    email = proto.Field(proto.STRING, number=8)
-
-    domain = proto.Field(proto.STRING, number=9)
-
-    project_team = proto.Field(proto.MESSAGE, number=10,
+    role = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    bucket = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    entity_id = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    email = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    domain = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    project_team = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='ProjectTeam',
     )
 
@@ -610,14 +718,15 @@ class ListBucketAccessControlsResponse(proto.Message):
             The list of items.
     """
 
-    items = proto.RepeatedField(proto.MESSAGE, number=1,
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='BucketAccessControl',
     )
 
 
 class ListBucketsResponse(proto.Message):
     r"""The result of a call to Buckets.ListBuckets
-
     Attributes:
         items (Sequence[google.storage_v1.types.Bucket]):
             The list of items.
@@ -632,16 +741,19 @@ class ListBucketsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    items = proto.RepeatedField(proto.MESSAGE, number=1,
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Bucket',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Channel(proto.Message):
     r"""An notification channel used to watch for resource changes.
-
     Attributes:
         id (str):
             A UUID or similar unique string that
@@ -674,38 +786,56 @@ class Channel(proto.Message):
             is wanted. Optional.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    resource_id = proto.Field(proto.STRING, number=2)
-
-    resource_uri = proto.Field(proto.STRING, number=3)
-
-    token = proto.Field(proto.STRING, number=4)
-
-    expiration = proto.Field(proto.MESSAGE, number=5,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    resource_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    resource_uri = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    expiration = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=timestamp.Timestamp,
     )
-
-    type_ = proto.Field(proto.STRING, number=6)
-
-    address = proto.Field(proto.STRING, number=7)
-
-    params = proto.MapField(proto.STRING, proto.STRING, number=8)
-
-    payload = proto.Field(proto.BOOL, number=9)
+    type_ = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    address = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    params = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=8
+    )
+    payload = proto.Field(
+        proto.BOOL,
+        number=9,
+    )
 
 
 class ListChannelsResponse(proto.Message):
     r"""The result of a call to Channels.ListChannels
-
     Attributes:
         items (Sequence[google.storage_v1.types.ListChannelsResponse.Items]):
             The list of notification channels for a
             bucket.
     """
+
     class Items(proto.Message):
         r"""
-
         Attributes:
             channel_id (str):
                 User-specified name for a channel. Needed to
@@ -722,19 +852,31 @@ class ListChannelsResponse(proto.Message):
                 Time when the channel was created.
         """
 
-        channel_id = proto.Field(proto.STRING, number=1)
-
-        resource_id = proto.Field(proto.STRING, number=2)
-
-        push_url = proto.Field(proto.STRING, number=3)
-
-        subscriber_email = proto.Field(proto.STRING, number=4)
-
-        creation_time = proto.Field(proto.MESSAGE, number=5,
+        channel_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        resource_id = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        push_url = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        subscriber_email = proto.Field(
+            proto.STRING,
+            number=4,
+        )
+        creation_time = proto.Field(
+            proto.MESSAGE,
+            number=5,
             message=timestamp.Timestamp,
         )
 
-    items = proto.RepeatedField(proto.MESSAGE, number=1,
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=Items,
     )
 
@@ -750,9 +892,13 @@ class ChecksummedData(proto.Message):
             CRC32C digest of the contents.
     """
 
-    content = proto.Field(proto.BYTES, number=1)
-
-    crc32c = proto.Field(proto.MESSAGE, number=2,
+    content = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
+    crc32c = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.UInt32Value,
     )
 
@@ -774,17 +920,21 @@ class ObjectChecksums(proto.Message):
             provided and validated is service-dependent.
     """
 
-    crc32c = proto.Field(proto.MESSAGE, number=1,
+    crc32c = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.UInt32Value,
     )
-
-    md5_hash = proto.Field(proto.STRING, number=2)
+    md5_hash = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CommonEnums(proto.Message):
     r"""A collection of enums used in multiple places throughout the
     API.
-    """
+        """
     class Projection(proto.Enum):
         r"""A set of properties to return in a response."""
         PROJECTION_UNSPECIFIED = 0
@@ -817,7 +967,6 @@ class CommonEnums(proto.Message):
 
 class ContentRange(proto.Message):
     r"""Specifies a requested range of bytes to download.
-
     Attributes:
         start (int):
             The starting offset of the object data.
@@ -827,11 +976,18 @@ class ContentRange(proto.Message):
             The complete length of the object data.
     """
 
-    start = proto.Field(proto.INT64, number=1)
-
-    end = proto.Field(proto.INT64, number=2)
-
-    complete_length = proto.Field(proto.INT64, number=3)
+    start = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    end = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    complete_length = proto.Field(
+        proto.INT64,
+        number=3,
+    )
 
 
 class HmacKeyMetadata(proto.Message):
@@ -863,30 +1019,44 @@ class HmacKeyMetadata(proto.Message):
             Tag updated with each key update.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    access_id = proto.Field(proto.STRING, number=2)
-
-    project_id = proto.Field(proto.STRING, number=3)
-
-    service_account_email = proto.Field(proto.STRING, number=4)
-
-    state = proto.Field(proto.STRING, number=5)
-
-    time_created = proto.Field(proto.MESSAGE, number=6,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    access_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    service_account_email = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    state = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    time_created = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=timestamp.Timestamp,
     )
-
-    updated = proto.Field(proto.MESSAGE, number=7,
+    updated = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamp.Timestamp,
     )
-
-    etag = proto.Field(proto.STRING, number=8)
+    etag = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class Notification(proto.Message):
     r"""A subscription to receive Google PubSub notifications.
-
     Attributes:
         topic (str):
             The Cloud PubSub topic to which this
@@ -915,37 +1085,53 @@ class Notification(proto.Message):
             The ID of the notification.
     """
 
-    topic = proto.Field(proto.STRING, number=1)
-
-    event_types = proto.RepeatedField(proto.STRING, number=2)
-
-    custom_attributes = proto.MapField(proto.STRING, proto.STRING, number=3)
-
-    etag = proto.Field(proto.STRING, number=4)
-
-    object_name_prefix = proto.Field(proto.STRING, number=5)
-
-    payload_format = proto.Field(proto.STRING, number=6)
-
-    id = proto.Field(proto.STRING, number=7)
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    event_types = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    custom_attributes = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    object_name_prefix = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    payload_format = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class ListNotificationsResponse(proto.Message):
     r"""The result of a call to Notifications.ListNotifications
-
     Attributes:
         items (Sequence[google.storage_v1.types.Notification]):
             The list of items.
     """
 
-    items = proto.RepeatedField(proto.MESSAGE, number=1,
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Notification',
     )
 
 
 class Object(proto.Message):
     r"""An object.
-
     Attributes:
         content_encoding (str):
             Content-Encoding of the object data, matching
@@ -1101,6 +1287,7 @@ class Object(proto.Message):
             Metadata of customer-supplied encryption key,
             if the object is encrypted by such a key.
     """
+
     class CustomerEncryption(proto.Message):
         r"""Describes the customer-specified mechanism used to store the
         data at rest.
@@ -1112,90 +1299,142 @@ class Object(proto.Message):
                 SHA256 hash value of the encryption key.
         """
 
-        encryption_algorithm = proto.Field(proto.STRING, number=1)
+        encryption_algorithm = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        key_sha256 = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        key_sha256 = proto.Field(proto.STRING, number=2)
-
-    content_encoding = proto.Field(proto.STRING, number=1)
-
-    content_disposition = proto.Field(proto.STRING, number=2)
-
-    cache_control = proto.Field(proto.STRING, number=3)
-
-    acl = proto.RepeatedField(proto.MESSAGE, number=4,
+    content_encoding = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    content_disposition = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cache_control = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    acl = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='ObjectAccessControl',
     )
-
-    content_language = proto.Field(proto.STRING, number=5)
-
-    metageneration = proto.Field(proto.INT64, number=6)
-
-    time_deleted = proto.Field(proto.MESSAGE, number=7,
+    content_language = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    metageneration = proto.Field(
+        proto.INT64,
+        number=6,
+    )
+    time_deleted = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamp.Timestamp,
     )
-
-    content_type = proto.Field(proto.STRING, number=8)
-
-    size = proto.Field(proto.INT64, number=9)
-
-    time_created = proto.Field(proto.MESSAGE, number=10,
+    content_type = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    size = proto.Field(
+        proto.INT64,
+        number=9,
+    )
+    time_created = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=timestamp.Timestamp,
     )
-
-    crc32c = proto.Field(proto.MESSAGE, number=11,
+    crc32c = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=wrappers.UInt32Value,
     )
-
-    component_count = proto.Field(proto.INT32, number=12)
-
-    md5_hash = proto.Field(proto.STRING, number=13)
-
-    etag = proto.Field(proto.STRING, number=14)
-
-    updated = proto.Field(proto.MESSAGE, number=15,
+    component_count = proto.Field(
+        proto.INT32,
+        number=12,
+    )
+    md5_hash = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    updated = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message=timestamp.Timestamp,
     )
-
-    storage_class = proto.Field(proto.STRING, number=16)
-
-    kms_key_name = proto.Field(proto.STRING, number=17)
-
-    time_storage_class_updated = proto.Field(proto.MESSAGE, number=18,
+    storage_class = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+    kms_key_name = proto.Field(
+        proto.STRING,
+        number=17,
+    )
+    time_storage_class_updated = proto.Field(
+        proto.MESSAGE,
+        number=18,
         message=timestamp.Timestamp,
     )
-
-    temporary_hold = proto.Field(proto.BOOL, number=19)
-
-    retention_expiration_time = proto.Field(proto.MESSAGE, number=20,
+    temporary_hold = proto.Field(
+        proto.BOOL,
+        number=19,
+    )
+    retention_expiration_time = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message=timestamp.Timestamp,
     )
-
-    metadata = proto.MapField(proto.STRING, proto.STRING, number=21)
-
-    event_based_hold = proto.Field(proto.MESSAGE, number=29,
+    metadata = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=21
+    )
+    event_based_hold = proto.Field(
+        proto.MESSAGE,
+        number=29,
         message=wrappers.BoolValue,
     )
-
-    name = proto.Field(proto.STRING, number=23)
-
-    id = proto.Field(proto.STRING, number=24)
-
-    bucket = proto.Field(proto.STRING, number=25)
-
-    generation = proto.Field(proto.INT64, number=26)
-
-    owner = proto.Field(proto.MESSAGE, number=27,
+    name = proto.Field(
+        proto.STRING,
+        number=23,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=24,
+    )
+    bucket = proto.Field(
+        proto.STRING,
+        number=25,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=26,
+    )
+    owner = proto.Field(
+        proto.MESSAGE,
+        number=27,
         message='Owner',
     )
-
-    customer_encryption = proto.Field(proto.MESSAGE, number=28,
+    customer_encryption = proto.Field(
+        proto.MESSAGE,
+        number=28,
         message=CustomerEncryption,
     )
 
 
 class ObjectAccessControl(proto.Message):
     r"""An access-control entry.
-
     Attributes:
         role (str):
             The access permission for the entity.
@@ -1244,27 +1483,49 @@ class ObjectAccessControl(proto.Message):
             if any.
     """
 
-    role = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.STRING, number=2)
-
-    id = proto.Field(proto.STRING, number=3)
-
-    bucket = proto.Field(proto.STRING, number=4)
-
-    object_ = proto.Field(proto.STRING, number=5)
-
-    generation = proto.Field(proto.INT64, number=6)
-
-    entity = proto.Field(proto.STRING, number=7)
-
-    entity_id = proto.Field(proto.STRING, number=8)
-
-    email = proto.Field(proto.STRING, number=9)
-
-    domain = proto.Field(proto.STRING, number=10)
-
-    project_team = proto.Field(proto.MESSAGE, number=11,
+    role = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    bucket = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=6,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    entity_id = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    email = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    domain = proto.Field(
+        proto.STRING,
+        number=10,
+    )
+    project_team = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='ProjectTeam',
     )
 
@@ -1278,14 +1539,15 @@ class ListObjectAccessControlsResponse(proto.Message):
             The list of items.
     """
 
-    items = proto.RepeatedField(proto.MESSAGE, number=1,
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='ObjectAccessControl',
     )
 
 
 class ListObjectsResponse(proto.Message):
     r"""The result of a call to Objects.ListObjects
-
     Attributes:
         prefixes (Sequence[str]):
             The list of prefixes of objects matching-but-
@@ -1304,13 +1566,19 @@ class ListObjectsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    prefixes = proto.RepeatedField(proto.STRING, number=1)
-
-    items = proto.RepeatedField(proto.MESSAGE, number=2,
+    prefixes = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='Object',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ProjectTeam(proto.Message):
@@ -1324,25 +1592,31 @@ class ProjectTeam(proto.Message):
             The team.
     """
 
-    project_number = proto.Field(proto.STRING, number=1)
-
-    team = proto.Field(proto.STRING, number=2)
+    project_number = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    team = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ServiceAccount(proto.Message):
     r"""A subscription to receive Google PubSub notifications.
-
     Attributes:
         email_address (str):
             The ID of the notification.
     """
 
-    email_address = proto.Field(proto.STRING, number=1)
+    email_address = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class Owner(proto.Message):
     r"""The owner of a specific resource.
-
     Attributes:
         entity (str):
             The entity, in the form ``user-``\ *userId*.
@@ -1350,9 +1624,14 @@ class Owner(proto.Message):
             The ID for the entity.
     """
 
-    entity = proto.Field(proto.STRING, number=1)
-
-    entity_id = proto.Field(proto.STRING, number=2)
+    entity = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

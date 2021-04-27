@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import argparse
 import os
 import libcst as cst
@@ -41,27 +39,26 @@ def partition(
 class pubsubliteCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'assign_partitions': ('initial', 'ack', ),
-    'commit_cursor': ('subscription', 'partition', 'cursor', ),
-    'compute_head_cursor': ('topic', 'partition', ),
-    'compute_message_stats': ('topic', 'partition', 'start_cursor', 'end_cursor', ),
-    'create_subscription': ('parent', 'subscription', 'subscription_id', 'skip_backlog', ),
-    'create_topic': ('parent', 'topic', 'topic_id', ),
-    'delete_subscription': ('name', ),
-    'delete_topic': ('name', ),
-    'get_subscription': ('name', ),
-    'get_topic': ('name', ),
-    'get_topic_partitions': ('name', ),
-    'list_partition_cursors': ('parent', 'page_size', 'page_token', ),
-    'list_subscriptions': ('parent', 'page_size', 'page_token', ),
-    'list_topics': ('parent', 'page_size', 'page_token', ),
-    'list_topic_subscriptions': ('name', 'page_size', 'page_token', ),
-    'publish': ('initial_request', 'message_publish_request', ),
-    'streaming_commit_cursor': ('initial', 'commit', ),
-    'subscribe': ('initial', 'seek', 'flow_control', ),
-    'update_subscription': ('subscription', 'update_mask', ),
-    'update_topic': ('topic', 'update_mask', ),
-
+          'assign_partitions': ('initial', 'ack', ),
+          'commit_cursor': ('subscription', 'partition', 'cursor', ),
+          'compute_head_cursor': ('topic', 'partition', ),
+          'compute_message_stats': ('topic', 'partition', 'start_cursor', 'end_cursor', ),
+          'create_subscription': ('parent', 'subscription', 'subscription_id', 'skip_backlog', ),
+          'create_topic': ('parent', 'topic', 'topic_id', ),
+          'delete_subscription': ('name', ),
+          'delete_topic': ('name', ),
+          'get_subscription': ('name', ),
+          'get_topic': ('name', ),
+          'get_topic_partitions': ('name', ),
+          'list_partition_cursors': ('parent', 'page_size', 'page_token', ),
+          'list_subscriptions': ('parent', 'page_size', 'page_token', ),
+          'list_topics': ('parent', 'page_size', 'page_token', ),
+          'list_topic_subscriptions': ('name', 'page_size', 'page_token', ),
+          'publish': ('initial_request', 'message_publish_request', ),
+          'streaming_commit_cursor': ('initial', 'commit', ),
+          'subscribe': ('initial', 'seek', 'flow_control', ),
+          'update_subscription': ('subscription', 'update_mask', ),
+          'update_topic': ('topic', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -92,7 +89,7 @@ class pubsubliteCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-                    cst.Element(value=arg.value)
+cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

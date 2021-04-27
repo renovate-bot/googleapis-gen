@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -39,7 +37,6 @@ from google.cloud.metastore_v1.types import metastore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import DataprocMetastoreTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DataprocMetastoreGrpcTransport
 from .transports.grpc_asyncio import DataprocMetastoreGrpcAsyncIOTransport
@@ -386,7 +383,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.ListServicesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.ListServices][google.cloud.metastore.v1.DataprocMetastore.ListServices].
             parent (str):
                 Required. The relative resource name of the location of
@@ -397,7 +395,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -427,10 +424,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.ListServicesRequest):
             request = metastore.ListServicesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -478,7 +473,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.GetServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.GetService][google.cloud.metastore.v1.DataprocMetastore.GetService].
             name (str):
                 Required. The relative resource name of the metastore
@@ -489,7 +485,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -516,10 +511,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.GetServiceRequest):
             request = metastore.GetServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -561,7 +554,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.CreateServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.CreateService][google.cloud.metastore.v1.DataprocMetastore.CreateService].
             parent (str):
                 Required. The relative resource name of the location in
@@ -596,7 +590,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``service_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -626,10 +619,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.CreateServiceRequest):
             request = metastore.CreateServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if service is not None:
@@ -681,7 +672,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.UpdateServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.UpdateService][google.cloud.metastore.v1.DataprocMetastore.UpdateService].
             service (google.cloud.metastore_v1.types.Service):
                 Required. The metastore service to update. The server
@@ -704,7 +696,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -734,10 +725,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.UpdateServiceRequest):
             request = metastore.UpdateServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if service is not None:
                 request.service = service
             if update_mask is not None:
@@ -786,7 +775,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.DeleteServiceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.DeleteService][google.cloud.metastore.v1.DataprocMetastore.DeleteService].
             name (str):
                 Required. The relative resource name of the metastore
@@ -797,7 +787,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -837,10 +826,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.DeleteServiceRequest):
             request = metastore.DeleteServiceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -887,7 +874,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.ListMetadataImportsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
             parent (str):
                 Required. The relative resource name of the service
@@ -898,7 +886,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -928,10 +915,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.ListMetadataImportsRequest):
             request = metastore.ListMetadataImportsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -979,7 +964,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.GetMetadataImportRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1.DataprocMetastore.GetMetadataImport].
             name (str):
                 Required. The relative resource name of the metadata
@@ -990,7 +976,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1017,10 +1002,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.GetMetadataImportRequest):
             request = metastore.GetMetadataImportRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1062,7 +1045,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.CreateMetadataImportRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1.DataprocMetastore.CreateMetadataImport].
             parent (str):
                 Required. The relative resource name of the service in
@@ -1096,7 +1080,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``metadata_import_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1126,10 +1109,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.CreateMetadataImportRequest):
             request = metastore.CreateMetadataImportRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if metadata_import is not None:
@@ -1183,7 +1164,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.UpdateMetadataImportRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.UpdateMetadataImport][google.cloud.metastore.v1.DataprocMetastore.UpdateMetadataImport].
             metadata_import (google.cloud.metastore_v1.types.MetadataImport):
                 Required. The metadata import to update. The server only
@@ -1206,7 +1188,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1236,10 +1217,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.UpdateMetadataImportRequest):
             request = metastore.UpdateMetadataImportRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if metadata_import is not None:
                 request.metadata_import = metadata_import
             if update_mask is not None:
@@ -1287,9 +1266,9 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.ExportMetadataRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataprocMetastore.ExportMetadata][google.cloud.metastore.v1.DataprocMetastore.ExportMetadata].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1306,7 +1285,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a metastore.ExportMetadataRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1344,8 +1322,6 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

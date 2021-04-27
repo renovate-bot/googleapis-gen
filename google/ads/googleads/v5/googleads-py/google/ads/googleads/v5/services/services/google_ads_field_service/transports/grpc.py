@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import google_ads_field
 from google.ads.googleads.v5.services.types import google_ads_field_service
-
 from .base import GoogleAdsFieldServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class GoogleAdsFieldServiceGrpcTransport(GoogleAdsFieldServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class GoogleAdsFieldServiceGrpcTransport(GoogleAdsFieldServiceTransport):
     def get_google_ads_field(self) -> Callable[
             [google_ads_field_service.GetGoogleAdsFieldRequest],
             google_ads_field.GoogleAdsField]:
-        r"""Return a callable for the get google ads field method over gRPC.
+        r"""Return a callable for the
+        get google ads field
+          method over gRPC.
 
         Returns just the requested field.
 
@@ -229,7 +229,9 @@ class GoogleAdsFieldServiceGrpcTransport(GoogleAdsFieldServiceTransport):
     def search_google_ads_fields(self) -> Callable[
             [google_ads_field_service.SearchGoogleAdsFieldsRequest],
             google_ads_field_service.SearchGoogleAdsFieldsResponse]:
-        r"""Return a callable for the search google ads fields method over gRPC.
+        r"""Return a callable for the
+        search google ads fields
+          method over gRPC.
 
         Returns all fields that match the search query.
 

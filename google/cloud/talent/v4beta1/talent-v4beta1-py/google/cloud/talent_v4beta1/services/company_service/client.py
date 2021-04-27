@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,7 +35,6 @@ from google.cloud.talent_v4beta1.types import common
 from google.cloud.talent_v4beta1.types import company
 from google.cloud.talent_v4beta1.types import company as gct_company
 from google.cloud.talent_v4beta1.types import company_service
-
 from .transports.base import CompanyServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CompanyServiceGrpcTransport
 from .transports.grpc_asyncio import CompanyServiceGrpcAsyncIOTransport
@@ -342,7 +339,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.CreateCompanyRequest):
-                The request object. The Request of the CreateCompany
+                The request object.
+                The Request of the CreateCompany
                 method.
             parent (str):
                 Required. Resource name of the tenant under which the
@@ -362,7 +360,6 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
                 This corresponds to the ``company`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -393,10 +390,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.CreateCompanyRequest):
             request = company_service.CreateCompanyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if company is not None:
@@ -437,7 +432,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.GetCompanyRequest):
-                The request object. Request for getting a company by
+                The request object.
+                Request for getting a company by
                 name.
             name (str):
                 Required. The resource name of the company to be
@@ -454,7 +450,6 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -485,10 +480,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.GetCompanyRequest):
             request = company_service.GetCompanyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -527,7 +520,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.UpdateCompanyRequest):
-                The request object. Request for updating a specified
+                The request object.
+                Request for updating a specified
                 company.
             company (google.cloud.talent_v4beta1.types.Company):
                 Required. The company resource to
@@ -537,7 +531,6 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
                 This corresponds to the ``company`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -568,10 +561,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.UpdateCompanyRequest):
             request = company_service.UpdateCompanyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if company is not None:
                 request.company = company
 
@@ -612,7 +603,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.DeleteCompanyRequest):
-                The request object. Request to delete a company.
+                The request object.
+                Request to delete a company.
             name (str):
                 Required. The resource name of the company to be
                 deleted.
@@ -627,7 +619,6 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -648,10 +639,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.DeleteCompanyRequest):
             request = company_service.DeleteCompanyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -687,7 +676,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.ListCompaniesRequest):
-                The request object. List companies for which the client
+                The request object.
+                List companies for which the client
                 has ACL visibility.
             parent (str):
                 Required. Resource name of the tenant under which the
@@ -703,7 +693,6 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -732,10 +721,8 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.ListCompaniesRequest):
             request = company_service.ListCompaniesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -770,8 +757,6 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

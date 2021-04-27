@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -61,18 +59,20 @@ class OSPolicyResourceConfigStep(proto.Message):
         SUCCEEDED = 1
         FAILED = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
-
-    outcome = proto.Field(proto.ENUM, number=2,
+    outcome = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Outcome,
     )
 
 
 class OSPolicyResourceCompliance(proto.Message):
     r"""Compliance data for an OS policy resource.
-
     Attributes:
         os_policy_resource_id (str):
             The id of the OS policy resource.
@@ -83,13 +83,18 @@ class OSPolicyResourceCompliance(proto.Message):
             Compliance state of the OS policy resource.
     """
 
-    os_policy_resource_id = proto.Field(proto.STRING, number=1)
-
-    config_steps = proto.RepeatedField(proto.MESSAGE, number=2,
+    os_policy_resource_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    config_steps = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='OSPolicyResourceConfigStep',
     )
-
-    state = proto.Field(proto.ENUM, number=3,
+    state = proto.Field(
+        proto.ENUM,
+        number=3,
         enum='OSPolicyComplianceState',
     )
 

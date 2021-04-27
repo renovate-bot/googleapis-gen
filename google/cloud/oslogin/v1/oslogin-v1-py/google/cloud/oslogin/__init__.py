@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +25,7 @@ from google.cloud.oslogin_v1.types.oslogin import ImportSshPublicKeyResponse
 from google.cloud.oslogin_v1.types.oslogin import LoginProfile
 from google.cloud.oslogin_v1.types.oslogin import UpdateSshPublicKeyRequest
 
-__all__ = (
-    'DeletePosixAccountRequest',
+__all__ = ('DeletePosixAccountRequest',
     'DeleteSshPublicKeyRequest',
     'GetLoginProfileRequest',
     'GetSshPublicKeyRequest',

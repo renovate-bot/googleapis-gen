@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,8 +59,7 @@ from google.cloud.security.privateca_v1beta1.types.service import UpdateCertific
 from google.cloud.security.privateca_v1beta1.types.service import UpdateCertificateRequest
 from google.cloud.security.privateca_v1beta1.types.service import UpdateCertificateRevocationListRequest
 
-__all__ = (
-    'ActivateCertificateAuthorityRequest',
+__all__ = ('ActivateCertificateAuthorityRequest',
     'Certificate',
     'CertificateAuthority',
     'CertificateAuthorityServiceAsyncClient',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import DataTransferServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DataTransferServiceGrpcTransport
 from .transports.grpc_asyncio import DataTransferServiceGrpcAsyncIOTransport
@@ -369,7 +366,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.GetDataSourceRequest):
-                The request object. A request to get data source info.
+                The request object.
+                A request to get data source info.
             name (str):
                 Required. The field will contain name of the resource
                 requested, for example:
@@ -380,7 +378,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -408,10 +405,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.GetDataSourceRequest):
             request = datatransfer.GetDataSourceRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -451,7 +446,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.ListDataSourcesRequest):
-                The request object. Request to list supported data
+                The request object.
+                Request to list supported data
                 sources and their data transfer settings.
             parent (str):
                 Required. The BigQuery project id for which data sources
@@ -462,7 +458,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -492,10 +487,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.ListDataSourcesRequest):
             request = datatransfer.ListDataSourcesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -544,7 +537,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.CreateTransferConfigRequest):
-                The request object. A request to create a data transfer
+                The request object.
+                A request to create a data transfer
                 configuration. If new credentials are needed for this
                 transfer configuration, an authorization code must be
                 provided. If an authorization code is provided, the
@@ -570,7 +564,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``transfer_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -603,10 +596,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.CreateTransferConfigRequest):
             request = datatransfer.CreateTransferConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if transfer_config is not None:
@@ -649,7 +640,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.UpdateTransferConfigRequest):
-                The request object. A request to update a transfer
+                The request object.
+                A request to update a transfer
                 configuration. To update the user id of the transfer
                 configuration, an authorization code needs to be
                 provided.
@@ -667,7 +659,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -700,10 +691,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.UpdateTransferConfigRequest):
             request = datatransfer.UpdateTransferConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if transfer_config is not None:
                 request.transfer_config = transfer_config
             if update_mask is not None:
@@ -745,7 +734,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.DeleteTransferConfigRequest):
-                The request object. A request to delete data transfer
+                The request object.
+                A request to delete data transfer
                 information. All associated transfer runs and log
                 messages will be deleted as well.
             name (str):
@@ -757,7 +747,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -778,10 +767,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.DeleteTransferConfigRequest):
             request = datatransfer.DeleteTransferConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -817,7 +804,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.GetTransferConfigRequest):
-                The request object. A request to get data transfer
+                The request object.
+                A request to get data transfer
                 information.
             name (str):
                 Required. The field will contain name of the resource
@@ -828,7 +816,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -861,10 +848,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.GetTransferConfigRequest):
             request = datatransfer.GetTransferConfigRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -904,7 +889,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.ListTransferConfigsRequest):
-                The request object. A request to list data transfers
+                The request object.
+                A request to list data transfers
                 configured for a BigQuery project.
             parent (str):
                 Required. The BigQuery project id for which data sources
@@ -914,7 +900,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -944,10 +929,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.ListTransferConfigsRequest):
             request = datatransfer.ListTransferConfigsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1001,7 +984,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.ScheduleTransferRunsRequest):
-                The request object. A request to schedule transfer runs
+                The request object.
+                A request to schedule transfer runs
                 for a time range.
             parent (str):
                 Required. Transfer configuration name in the form:
@@ -1025,7 +1009,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``end_time`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1052,10 +1035,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.ScheduleTransferRunsRequest):
             request = datatransfer.ScheduleTransferRunsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if start_time is not None:
@@ -1100,9 +1081,9 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.StartManualTransferRunsRequest):
-                The request object. A request to start manual transfer
+                The request object.
+                A request to start manual transfer
                 runs.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1116,7 +1097,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a datatransfer.StartManualTransferRunsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1160,7 +1140,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.GetTransferRunRequest):
-                The request object. A request to get data transfer run
+                The request object.
+                A request to get data transfer run
                 information.
             name (str):
                 Required. The field will contain name of the resource
@@ -1172,7 +1153,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1197,10 +1177,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.GetTransferRunRequest):
             request = datatransfer.GetTransferRunRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1239,7 +1217,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.DeleteTransferRunRequest):
-                The request object. A request to delete data transfer
+                The request object.
+                A request to delete data transfer
                 run information.
             name (str):
                 Required. The field will contain name of the resource
@@ -1251,7 +1230,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1272,10 +1250,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.DeleteTransferRunRequest):
             request = datatransfer.DeleteTransferRunRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1311,7 +1287,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.ListTransferRunsRequest):
-                The request object. A request to list data transfer
+                The request object.
+                A request to list data transfer
                 runs. UI can use this method to show/filter specific
                 data transfer runs. The data source can use this method
                 to request all scheduled transfer runs.
@@ -1325,7 +1302,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1355,10 +1331,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.ListTransferRunsRequest):
             request = datatransfer.ListTransferRunsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1407,7 +1381,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.ListTransferLogsRequest):
-                The request object. A request to get user facing log
+                The request object.
+                A request to get user facing log
                 messages associated with data transfer run.
             parent (str):
                 Required. Transfer run name in the form:
@@ -1418,7 +1393,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1448,10 +1422,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.ListTransferLogsRequest):
             request = datatransfer.ListTransferLogsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1505,7 +1477,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery_datatransfer_v1.types.CheckValidCredsRequest):
-                The request object. A request to determine whether the
+                The request object.
+                A request to determine whether the
                 user has valid credentials. This method is used to limit
                 the number of OAuth popups in the user interface. The
                 user id is inferred from the API call context.
@@ -1522,7 +1495,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1549,10 +1521,8 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datatransfer.CheckValidCredsRequest):
             request = datatransfer.CheckValidCredsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1578,8 +1548,6 @@ class DataTransferServiceClient(metaclass=DataTransferServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

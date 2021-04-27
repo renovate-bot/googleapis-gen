@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -34,7 +32,6 @@ from google.api.serviceusage_v1beta1.types import serviceusage
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .transports.base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ServiceUsageGrpcAsyncIOTransport
 from .client import ServiceUsageClient
@@ -50,16 +47,12 @@ class ServiceUsageAsyncClient:
 
     common_billing_account_path = staticmethod(ServiceUsageClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ServiceUsageClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ServiceUsageClient.common_folder_path)
     parse_common_folder_path = staticmethod(ServiceUsageClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ServiceUsageClient.common_organization_path)
     parse_common_organization_path = staticmethod(ServiceUsageClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ServiceUsageClient.common_project_path)
     parse_common_project_path = staticmethod(ServiceUsageClient.parse_common_project_path)
-
     common_location_path = staticmethod(ServiceUsageClient.common_location_path)
     parse_common_location_path = staticmethod(ServiceUsageClient.parse_common_location_path)
 
@@ -144,7 +137,6 @@ class ServiceUsageAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ServiceUsageClient(
             credentials=credentials,
             transport=transport,
@@ -166,9 +158,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.EnableServiceRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `EnableService` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -195,7 +187,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.EnableServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -253,9 +244,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.DisableServiceRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DisableService` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -282,7 +273,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.DisableServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -332,9 +322,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.GetServiceRequest`):
-                The request object. Request message for the `GetService`
+                The request object.
+                Request message for the `GetService`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -348,7 +338,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.GetServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -396,9 +385,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.ListServicesRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -414,7 +403,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.ListServicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -468,9 +456,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.BatchEnableServicesRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `BatchEnableServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -497,7 +485,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.BatchEnableServicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -552,9 +539,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.ListConsumerQuotaMetricsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListConsumerQuotaMetrics
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -571,7 +558,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.ListConsumerQuotaMetricsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -622,9 +608,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.GetConsumerQuotaMetricRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetConsumerQuotaMetric
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -638,7 +624,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.GetConsumerQuotaMetricRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -680,9 +665,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.GetConsumerQuotaLimitRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetConsumerQuotaLimit
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -696,7 +681,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.GetConsumerQuotaLimitRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -743,9 +727,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.CreateAdminOverrideRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateAdminOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -762,7 +746,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.CreateAdminOverrideRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -811,9 +794,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.UpdateAdminOverrideRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateAdminOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -830,7 +813,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.UpdateAdminOverrideRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -879,9 +861,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.DeleteAdminOverrideRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteAdminOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -908,7 +890,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.DeleteAdminOverrideRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -957,9 +938,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.ListAdminOverridesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListAdminOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -976,7 +957,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.ListAdminOverridesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1029,9 +1009,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.ImportAdminOverridesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ImportAdminOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1048,7 +1028,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.ImportAdminOverridesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1102,9 +1081,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.CreateConsumerOverrideRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateConsumerOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1121,7 +1100,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.CreateConsumerOverrideRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1170,9 +1148,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.UpdateConsumerOverrideRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateConsumerOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1189,7 +1167,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.UpdateConsumerOverrideRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1238,9 +1215,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.DeleteConsumerOverrideRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteConsumerOverride.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1267,7 +1244,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.DeleteConsumerOverrideRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1316,9 +1292,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.ListConsumerOverridesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListConsumerOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1335,7 +1311,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.ListConsumerOverridesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1388,9 +1363,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.ImportConsumerOverridesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ImportConsumerOverrides
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1407,7 +1382,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.ImportConsumerOverridesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1456,9 +1430,9 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1beta1.types.GenerateServiceIdentityRequest`):
-                The request object. Request message for generating
+                The request object.
+                Request message for generating
                 service identity.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1474,7 +1448,6 @@ class ServiceUsageAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = serviceusage.GenerateServiceIdentityRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1511,8 +1484,6 @@ class ServiceUsageAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

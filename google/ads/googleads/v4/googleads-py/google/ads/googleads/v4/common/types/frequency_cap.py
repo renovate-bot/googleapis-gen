@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import frequency_cap_event_type
 from google.ads.googleads.v4.enums.types import frequency_cap_level
@@ -49,10 +46,14 @@ class FrequencyCapEntry(proto.Message):
             time range by this cap.
     """
 
-    key = proto.Field(proto.MESSAGE, number=1,
+    key = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='FrequencyCapKey',
     )
-    cap = proto.Field(proto.MESSAGE, number=2,
+    cap = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int32Value,
     )
 
@@ -76,16 +77,24 @@ class FrequencyCapKey(proto.Message):
             Number of time units the cap lasts.
     """
 
-    level = proto.Field(proto.ENUM, number=1,
+    level = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=frequency_cap_level.FrequencyCapLevelEnum.FrequencyCapLevel,
     )
-    event_type = proto.Field(proto.ENUM, number=3,
+    event_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=frequency_cap_event_type.FrequencyCapEventTypeEnum.FrequencyCapEventType,
     )
-    time_unit = proto.Field(proto.ENUM, number=2,
+    time_unit = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=frequency_cap_time_unit.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit,
     )
-    time_length = proto.Field(proto.MESSAGE, number=4,
+    time_length = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int32Value,
     )
 

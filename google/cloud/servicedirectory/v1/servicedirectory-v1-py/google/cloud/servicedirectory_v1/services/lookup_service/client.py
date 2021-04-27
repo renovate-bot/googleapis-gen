@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.servicedirectory_v1.types import lookup_service
 from google.cloud.servicedirectory_v1.types import service
-
 from .transports.base import LookupServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import LookupServiceGrpcTransport
 from .transports.grpc_asyncio import LookupServiceGrpcAsyncIOTransport
@@ -348,11 +345,11 @@ class LookupServiceClient(metaclass=LookupServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.ResolveServiceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [LookupService.ResolveService][google.cloud.servicedirectory.v1.LookupService.ResolveService].
                 Looks up a service by its name, returns the service and
                 its endpoints.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -366,7 +363,6 @@ class LookupServiceClient(metaclass=LookupServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a lookup_service.ResolveServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -396,8 +392,6 @@ class LookupServiceClient(metaclass=LookupServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

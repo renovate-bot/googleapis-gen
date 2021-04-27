@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,8 +41,7 @@ from google.cloud.bigtable_v2.types.data import RowSet
 from google.cloud.bigtable_v2.types.data import TimestampRange
 from google.cloud.bigtable_v2.types.data import ValueRange
 
-__all__ = (
-    'BigtableAsyncClient',
+__all__ = ('BigtableAsyncClient',
     'BigtableClient',
     'Cell',
     'CheckAndMutateRowRequest',

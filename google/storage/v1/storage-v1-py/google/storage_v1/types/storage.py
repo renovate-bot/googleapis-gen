@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -96,7 +93,6 @@ __protobuf__ = proto.module(
 
 class DeleteBucketAccessControlRequest(proto.Message):
     r"""Request message for DeleteBucketAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -114,18 +110,23 @@ class DeleteBucketAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class GetBucketAccessControlRequest(proto.Message):
     r"""Request message for GetBucketAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -143,18 +144,23 @@ class GetBucketAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class InsertBucketAccessControlRequest(proto.Message):
     r"""Request message for InsertBucketAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -166,20 +172,24 @@ class InsertBucketAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    bucket_access_control = proto.Field(proto.MESSAGE, number=3,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    bucket_access_control = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=storage_resources.BucketAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class ListBucketAccessControlsRequest(proto.Message):
     r"""Request message for ListBucketAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -188,16 +198,19 @@ class ListBucketAccessControlsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class PatchBucketAccessControlRequest(proto.Message):
     r"""Request for PatchBucketAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -226,26 +239,33 @@ class PatchBucketAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    bucket_access_control = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    bucket_access_control = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=storage_resources.BucketAccessControl,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=5,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=field_mask.FieldMask,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class UpdateBucketAccessControlRequest(proto.Message):
     r"""Request for UpdateBucketAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -265,22 +285,28 @@ class UpdateBucketAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    bucket_access_control = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    bucket_access_control = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=storage_resources.BucketAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=5,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonRequestParams',
     )
 
 
 class DeleteBucketRequest(proto.Message):
     r"""Request message for DeleteBucket.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -295,24 +321,29 @@ class DeleteBucketRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=2,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=3,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=5,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonRequestParams',
     )
 
 
 class GetBucketRequest(proto.Message):
     r"""Request message for GetBucket.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -331,28 +362,34 @@ class GetBucketRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=2,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=3,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-
-    projection = proto.Field(proto.ENUM, number=4,
+    projection = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class InsertBucketRequest(proto.Message):
     r"""Request message for InsertBucket.
-
     Attributes:
         predefined_acl (google.storage_v1.types.CommonEnums.PredefinedBucketAcl):
             Apply a predefined set of access controls to
@@ -375,32 +412,39 @@ class InsertBucketRequest(proto.Message):
             requests.
     """
 
-    predefined_acl = proto.Field(proto.ENUM, number=1,
+    predefined_acl = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=storage_resources.CommonEnums.PredefinedBucketAcl,
     )
-
-    predefined_default_object_acl = proto.Field(proto.ENUM, number=2,
+    predefined_default_object_acl = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    project = proto.Field(proto.STRING, number=3)
-
-    projection = proto.Field(proto.ENUM, number=4,
+    project = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    projection = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    bucket = proto.Field(proto.MESSAGE, number=6,
+    bucket = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=storage_resources.Bucket,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=7,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='CommonRequestParams',
     )
 
 
 class ListChannelsRequest(proto.Message):
     r"""Request message for ListChannels.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -409,16 +453,19 @@ class ListChannelsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class ListBucketsRequest(proto.Message):
     r"""Request message for ListBuckets.
-
     Attributes:
         max_results (int):
             Maximum number of buckets to return in a
@@ -439,26 +486,36 @@ class ListBucketsRequest(proto.Message):
             requests.
     """
 
-    max_results = proto.Field(proto.INT32, number=1)
-
-    page_token = proto.Field(proto.STRING, number=2)
-
-    prefix = proto.Field(proto.STRING, number=3)
-
-    project = proto.Field(proto.STRING, number=4)
-
-    projection = proto.Field(proto.ENUM, number=5,
+    max_results = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    prefix = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    projection = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=7,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='CommonRequestParams',
     )
 
 
 class LockRetentionPolicyRequest(proto.Message):
     r"""Request message for LockRetentionPolicy.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -471,18 +528,23 @@ class LockRetentionPolicyRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    if_metageneration_match = proto.Field(proto.INT64, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    if_metageneration_match = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class PatchBucketRequest(proto.Message):
     r"""Request for PatchBucket method.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -521,44 +583,54 @@ class PatchBucketRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=2,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=3,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-
-    predefined_acl = proto.Field(proto.ENUM, number=4,
+    predefined_acl = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=storage_resources.CommonEnums.PredefinedBucketAcl,
     )
-
-    predefined_default_object_acl = proto.Field(proto.ENUM, number=5,
+    predefined_default_object_acl = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    projection = proto.Field(proto.ENUM, number=6,
+    projection = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=8,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=storage_resources.Bucket,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=9,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=field_mask.FieldMask,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=10,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='CommonRequestParams',
     )
 
 
 class UpdateBucketRequest(proto.Message):
     r"""Request for UpdateBucket method.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -585,40 +657,49 @@ class UpdateBucketRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=2,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=3,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-
-    predefined_acl = proto.Field(proto.ENUM, number=4,
+    predefined_acl = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=storage_resources.CommonEnums.PredefinedBucketAcl,
     )
-
-    predefined_default_object_acl = proto.Field(proto.ENUM, number=5,
+    predefined_default_object_acl = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    projection = proto.Field(proto.ENUM, number=6,
+    projection = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=8,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=storage_resources.Bucket,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=9,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message='CommonRequestParams',
     )
 
 
 class StopChannelRequest(proto.Message):
     r"""Request message for StopChannel.
-
     Attributes:
         channel (google.storage_v1.types.Channel):
             The channel to be stopped.
@@ -627,18 +708,20 @@ class StopChannelRequest(proto.Message):
             requests.
     """
 
-    channel = proto.Field(proto.MESSAGE, number=1,
+    channel = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=storage_resources.Channel,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=2,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CommonRequestParams',
     )
 
 
 class DeleteDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for DeleteDefaultObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -656,18 +739,23 @@ class DeleteDefaultObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class GetDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for GetDefaultObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -685,18 +773,23 @@ class GetDefaultObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class InsertDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for InsertDefaultObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -708,20 +801,24 @@ class InsertDefaultObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_access_control = proto.Field(proto.MESSAGE, number=3,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_access_control = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=storage_resources.ObjectAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class ListDefaultObjectAccessControlsRequest(proto.Message):
     r"""Request message for ListDefaultObjectAccessControls.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -738,24 +835,29 @@ class ListDefaultObjectAccessControlsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=2,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=3,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=5,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonRequestParams',
     )
 
 
 class PatchDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for PatchDefaultObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -787,26 +889,33 @@ class PatchDefaultObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    object_access_control = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    object_access_control = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=storage_resources.ObjectAccessControl,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=5,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=field_mask.FieldMask,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class UpdateDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for UpdateDefaultObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -826,22 +935,28 @@ class UpdateDefaultObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    object_access_control = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    object_access_control = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=storage_resources.ObjectAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=5,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonRequestParams',
     )
 
 
 class DeleteNotificationRequest(proto.Message):
     r"""Request message for DeleteNotification.
-
     Attributes:
         bucket (str):
             Required. The parent bucket of the
@@ -853,18 +968,23 @@ class DeleteNotificationRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    notification = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    notification = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class GetNotificationRequest(proto.Message):
     r"""Request message for GetNotification.
-
     Attributes:
         bucket (str):
             Required. The parent bucket of the
@@ -877,18 +997,23 @@ class GetNotificationRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    notification = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    notification = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class InsertNotificationRequest(proto.Message):
     r"""Request message for InsertNotification.
-
     Attributes:
         bucket (str):
             Required. The parent bucket of the
@@ -901,20 +1026,24 @@ class InsertNotificationRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    notification = proto.Field(proto.MESSAGE, number=3,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    notification = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=storage_resources.Notification,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class ListNotificationsRequest(proto.Message):
     r"""Request message for ListNotifications.
-
     Attributes:
         bucket (str):
             Required. Name of a Google Cloud Storage
@@ -924,16 +1053,19 @@ class ListNotificationsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class DeleteObjectAccessControlRequest(proto.Message):
     r"""Request message for DeleteObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -957,22 +1089,31 @@ class DeleteObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    object_ = proto.Field(proto.STRING, number=3)
-
-    generation = proto.Field(proto.INT64, number=4)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class GetObjectAccessControlRequest(proto.Message):
     r"""Request message for GetObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -996,22 +1137,31 @@ class GetObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    object_ = proto.Field(proto.STRING, number=3)
-
-    generation = proto.Field(proto.INT64, number=4)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class InsertObjectAccessControlRequest(proto.Message):
     r"""Request message for InsertObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1029,24 +1179,32 @@ class InsertObjectAccessControlRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    generation = proto.Field(proto.INT64, number=3)
-
-    object_access_control = proto.Field(proto.MESSAGE, number=5,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    object_access_control = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=storage_resources.ObjectAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class ListObjectAccessControlsRequest(proto.Message):
     r"""Request message for ListObjectAccessControls.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1061,20 +1219,27 @@ class ListObjectAccessControlsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    generation = proto.Field(proto.INT64, number=3)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=5,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonRequestParams',
     )
 
 
 class PatchObjectAccessControlRequest(proto.Message):
     r"""Request message for PatchObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1113,30 +1278,41 @@ class PatchObjectAccessControlRequest(proto.Message):
             error.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    object_ = proto.Field(proto.STRING, number=3)
-
-    generation = proto.Field(proto.INT64, number=4)
-
-    object_access_control = proto.Field(proto.MESSAGE, number=5,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    object_access_control = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=storage_resources.ObjectAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=7,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=field_mask.FieldMask,
     )
 
 
 class UpdateObjectAccessControlRequest(proto.Message):
     r"""Request message for UpdateObjectAccessControl.
-
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1175,30 +1351,41 @@ class UpdateObjectAccessControlRequest(proto.Message):
             error.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    entity = proto.Field(proto.STRING, number=2)
-
-    object_ = proto.Field(proto.STRING, number=3)
-
-    generation = proto.Field(proto.INT64, number=4)
-
-    object_access_control = proto.Field(proto.MESSAGE, number=6,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entity = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    object_access_control = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=storage_resources.ObjectAccessControl,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=7,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='CommonRequestParams',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=8,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=field_mask.FieldMask,
     )
 
 
 class ComposeObjectRequest(proto.Message):
     r"""Request message for ComposeObject.
-
     Attributes:
         destination_bucket (str):
             Required. Name of the bucket containing the
@@ -1236,9 +1423,9 @@ class ComposeObjectRequest(proto.Message):
             A set of parameters common to all Storage API
             requests.
     """
+
     class SourceObjects(proto.Message):
         r"""Description of a source object for a composition request.
-
         Attributes:
             name (str):
                 The source object's name. All source objects
@@ -1250,9 +1437,9 @@ class ComposeObjectRequest(proto.Message):
                 Conditions that must be met for this
                 operation to execute.
         """
+
         class ObjectPreconditions(proto.Message):
             r"""Preconditions for a source object of a composition request.
-
             Attributes:
                 if_generation_match (google.protobuf.wrappers_pb2.Int64Value):
                     Only perform the composition if the
@@ -1262,56 +1449,77 @@ class ComposeObjectRequest(proto.Message):
                     same value or the call will fail.
             """
 
-            if_generation_match = proto.Field(proto.MESSAGE, number=1,
+            if_generation_match = proto.Field(
+                proto.MESSAGE,
+                number=1,
                 message=wrappers.Int64Value,
             )
 
-        name = proto.Field(proto.STRING, number=1)
-
-        generation = proto.Field(proto.INT64, number=2)
-
-        object_preconditions = proto.Field(proto.MESSAGE, number=3,
+        name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        generation = proto.Field(
+            proto.INT64,
+            number=2,
+        )
+        object_preconditions = proto.Field(
+            proto.MESSAGE,
+            number=3,
             message='ComposeObjectRequest.SourceObjects.ObjectPreconditions',
         )
 
-    destination_bucket = proto.Field(proto.STRING, number=1)
-
-    destination_object = proto.Field(proto.STRING, number=2)
-
-    destination_predefined_acl = proto.Field(proto.ENUM, number=3,
+    destination_bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    destination_object = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    destination_predefined_acl = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    destination = proto.Field(proto.MESSAGE, number=11,
+    destination = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=storage_resources.Object,
     )
-
-    source_objects = proto.RepeatedField(proto.MESSAGE, number=12,
+    source_objects = proto.RepeatedField(
+        proto.MESSAGE,
+        number=12,
         message=SourceObjects,
     )
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=4,
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=5,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    kms_key_name = proto.Field(proto.STRING, number=6)
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=9,
+    kms_key_name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=10,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='CommonRequestParams',
     )
 
 
 class CopyObjectRequest(proto.Message):
     r"""Request message for CopyObject.
-
     Attributes:
         destination_bucket (str):
             Required. Name of the bucket in which to store the new
@@ -1390,67 +1598,93 @@ class CopyObjectRequest(proto.Message):
             requests.
     """
 
-    destination_bucket = proto.Field(proto.STRING, number=1)
-
-    destination_object = proto.Field(proto.STRING, number=2)
-
-    destination_predefined_acl = proto.Field(proto.ENUM, number=3,
+    destination_bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    destination_object = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    destination_predefined_acl = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=4,
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=5,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=6,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=7,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    if_source_generation_match = proto.Field(proto.MESSAGE, number=8,
+    if_source_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.Int64Value,
     )
-
-    if_source_generation_not_match = proto.Field(proto.MESSAGE, number=9,
+    if_source_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.Int64Value,
     )
-
-    if_source_metageneration_match = proto.Field(proto.MESSAGE, number=10,
+    if_source_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=wrappers.Int64Value,
     )
-
-    if_source_metageneration_not_match = proto.Field(proto.MESSAGE, number=11,
+    if_source_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=wrappers.Int64Value,
     )
-
-    projection = proto.Field(proto.ENUM, number=12,
+    projection = proto.Field(
+        proto.ENUM,
+        number=12,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    source_bucket = proto.Field(proto.STRING, number=13)
-
-    source_object = proto.Field(proto.STRING, number=14)
-
-    source_generation = proto.Field(proto.INT64, number=15)
-
-    destination = proto.Field(proto.MESSAGE, number=17,
+    source_bucket = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    source_object = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    source_generation = proto.Field(
+        proto.INT64,
+        number=15,
+    )
+    destination = proto.Field(
+        proto.MESSAGE,
+        number=17,
         message=storage_resources.Object,
     )
-
-    destination_kms_key_name = proto.Field(proto.STRING, number=20)
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=18,
+    destination_kms_key_name = proto.Field(
+        proto.STRING,
+        number=20,
+    )
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=18,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=19,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message='CommonRequestParams',
     )
 
@@ -1503,42 +1737,56 @@ class DeleteObjectRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    upload_id = proto.Field(proto.STRING, number=3)
-
-    generation = proto.Field(proto.INT64, number=4)
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=5,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    upload_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=6,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=7,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=8,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.Int64Value,
     )
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=10,
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=11,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='CommonRequestParams',
     )
 
 
 class GetObjectMediaRequest(proto.Message):
     r"""Request message for GetObjectMedia.
-
     Attributes:
         bucket (str):
             The name of the bucket containing the object
@@ -1598,44 +1846,60 @@ class GetObjectMediaRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    generation = proto.Field(proto.INT64, number=3)
-
-    read_offset = proto.Field(proto.INT64, number=4)
-
-    read_limit = proto.Field(proto.INT64, number=5)
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=6,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    read_offset = proto.Field(
+        proto.INT64,
+        number=4,
+    )
+    read_limit = proto.Field(
+        proto.INT64,
+        number=5,
+    )
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=7,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=8,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=9,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.Int64Value,
     )
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=11,
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=12,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message='CommonRequestParams',
     )
 
 
 class GetObjectRequest(proto.Message):
     r"""Request message for GetObject.
-
     Attributes:
         bucket (str):
             Required. Name of the bucket in which the
@@ -1677,44 +1941,57 @@ class GetObjectRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    generation = proto.Field(proto.INT64, number=3)
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=5,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=6,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=7,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    projection = proto.Field(proto.ENUM, number=8,
+    projection = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=10,
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=11,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='CommonRequestParams',
     )
 
 
 class GetObjectMediaResponse(proto.Message):
     r"""Response message for GetObject.
-
     Attributes:
         checksummed_data (google.storage_v1.types.ChecksummedData):
             A portion of the data for the object. The service **may**
@@ -1737,19 +2014,24 @@ class GetObjectMediaResponse(proto.Message):
             in the stream.
     """
 
-    checksummed_data = proto.Field(proto.MESSAGE, number=1,
+    checksummed_data = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=storage_resources.ChecksummedData,
     )
-
-    object_checksums = proto.Field(proto.MESSAGE, number=2,
+    object_checksums = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=storage_resources.ObjectChecksums,
     )
-
-    content_range = proto.Field(proto.MESSAGE, number=3,
+    content_range = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=storage_resources.ContentRange,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=4,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=storage_resources.Object,
     )
 
@@ -1792,38 +2074,45 @@ class InsertObjectSpec(proto.Message):
             defaults to ``full``.
     """
 
-    resource = proto.Field(proto.MESSAGE, number=1,
+    resource = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=storage_resources.Object,
     )
-
-    predefined_acl = proto.Field(proto.ENUM, number=2,
+    predefined_acl = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=3,
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=4,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=5,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=6,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    projection = proto.Field(proto.ENUM, number=7,
+    projection = proto.Field(
+        proto.ENUM,
+        number=7,
         enum=storage_resources.CommonEnums.Projection,
     )
 
 
 class InsertObjectRequest(proto.Message):
     r"""Message for writing an object.
-
     Attributes:
         upload_id (str):
             For resumable uploads. This should be the ``upload_id``
@@ -1888,40 +2177,56 @@ class InsertObjectRequest(proto.Message):
             requests.
     """
 
-    upload_id = proto.Field(proto.STRING, number=1, oneof='first_message')
-
-    insert_object_spec = proto.Field(proto.MESSAGE, number=2, oneof='first_message',
+    upload_id = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='first_message',
+    )
+    insert_object_spec = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='first_message',
         message='InsertObjectSpec',
     )
-
-    write_offset = proto.Field(proto.INT64, number=3)
-
-    checksummed_data = proto.Field(proto.MESSAGE, number=4, oneof='data',
+    write_offset = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    checksummed_data = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='data',
         message=storage_resources.ChecksummedData,
     )
-
-    reference = proto.Field(proto.MESSAGE, number=5, oneof='data',
+    reference = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='data',
         message='GetObjectMediaRequest',
     )
-
-    object_checksums = proto.Field(proto.MESSAGE, number=6,
+    object_checksums = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=storage_resources.ObjectChecksums,
     )
-
-    finish_write = proto.Field(proto.BOOL, number=7)
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=8,
+    finish_write = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=9,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message='CommonRequestParams',
     )
 
 
 class ListObjectsRequest(proto.Message):
     r"""Request message for ListObjects.
-
     Attributes:
         bucket (str):
             Required. Name of the bucket in which to look
@@ -1961,32 +2266,48 @@ class ListObjectsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    delimiter = proto.Field(proto.STRING, number=2)
-
-    include_trailing_delimiter = proto.Field(proto.BOOL, number=3)
-
-    max_results = proto.Field(proto.INT32, number=4)
-
-    page_token = proto.Field(proto.STRING, number=5)
-
-    prefix = proto.Field(proto.STRING, number=6)
-
-    projection = proto.Field(proto.ENUM, number=7,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    delimiter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    include_trailing_delimiter = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    max_results = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    prefix = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    projection = proto.Field(
+        proto.ENUM,
+        number=7,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    versions = proto.Field(proto.BOOL, number=9)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=10,
+    versions = proto.Field(
+        proto.BOOL,
+        number=9,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='CommonRequestParams',
     )
 
 
 class QueryWriteStatusRequest(proto.Message):
     r"""Request object for ``ByteStream.QueryWriteStatus``.
-
     Attributes:
         upload_id (str):
             Required. The name of the resume token for
@@ -2000,20 +2321,24 @@ class QueryWriteStatusRequest(proto.Message):
             requests.
     """
 
-    upload_id = proto.Field(proto.STRING, number=1)
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=2,
+    upload_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class QueryWriteStatusResponse(proto.Message):
     r"""Response object for ``ByteStream.QueryWriteStatus``.
-
     Attributes:
         committed_size (int):
             The number of bytes that have been processed
@@ -2024,14 +2349,18 @@ class QueryWriteStatusResponse(proto.Message):
             and the server has processed that request.
     """
 
-    committed_size = proto.Field(proto.INT64, number=1)
-
-    complete = proto.Field(proto.BOOL, number=2)
+    committed_size = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    complete = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class RewriteObjectRequest(proto.Message):
     r"""Request message for RewriteObject.
-
     Attributes:
         destination_bucket (str):
             Required. Name of the bucket in which to store the new
@@ -2137,84 +2466,119 @@ class RewriteObjectRequest(proto.Message):
             requests.
     """
 
-    destination_bucket = proto.Field(proto.STRING, number=1)
-
-    destination_object = proto.Field(proto.STRING, number=2)
-
-    destination_kms_key_name = proto.Field(proto.STRING, number=3)
-
-    destination_predefined_acl = proto.Field(proto.ENUM, number=4,
+    destination_bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    destination_object = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    destination_kms_key_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    destination_predefined_acl = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=5,
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=6,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=7,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=8,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.Int64Value,
     )
-
-    if_source_generation_match = proto.Field(proto.MESSAGE, number=9,
+    if_source_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.Int64Value,
     )
-
-    if_source_generation_not_match = proto.Field(proto.MESSAGE, number=10,
+    if_source_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=wrappers.Int64Value,
     )
-
-    if_source_metageneration_match = proto.Field(proto.MESSAGE, number=11,
+    if_source_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=wrappers.Int64Value,
     )
-
-    if_source_metageneration_not_match = proto.Field(proto.MESSAGE, number=12,
+    if_source_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=wrappers.Int64Value,
     )
-
-    max_bytes_rewritten_per_call = proto.Field(proto.INT64, number=13)
-
-    projection = proto.Field(proto.ENUM, number=14,
+    max_bytes_rewritten_per_call = proto.Field(
+        proto.INT64,
+        number=13,
+    )
+    projection = proto.Field(
+        proto.ENUM,
+        number=14,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    rewrite_token = proto.Field(proto.STRING, number=15)
-
-    source_bucket = proto.Field(proto.STRING, number=16)
-
-    source_object = proto.Field(proto.STRING, number=17)
-
-    source_generation = proto.Field(proto.INT64, number=18)
-
-    object_ = proto.Field(proto.MESSAGE, number=20,
+    rewrite_token = proto.Field(
+        proto.STRING,
+        number=15,
+    )
+    source_bucket = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+    source_object = proto.Field(
+        proto.STRING,
+        number=17,
+    )
+    source_generation = proto.Field(
+        proto.INT64,
+        number=18,
+    )
+    object_ = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message=storage_resources.Object,
     )
-
-    copy_source_encryption_algorithm = proto.Field(proto.STRING, number=21)
-
-    copy_source_encryption_key = proto.Field(proto.STRING, number=22)
-
-    copy_source_encryption_key_sha256 = proto.Field(proto.STRING, number=23)
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=24,
+    copy_source_encryption_algorithm = proto.Field(
+        proto.STRING,
+        number=21,
+    )
+    copy_source_encryption_key = proto.Field(
+        proto.STRING,
+        number=22,
+    )
+    copy_source_encryption_key_sha256 = proto.Field(
+        proto.STRING,
+        number=23,
+    )
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=24,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=25,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=25,
         message='CommonRequestParams',
     )
 
 
 class RewriteResponse(proto.Message):
     r"""A rewrite response.
-
     Attributes:
         total_bytes_rewritten (int):
             The total bytes written so far, which can be
@@ -2240,22 +2604,31 @@ class RewriteResponse(proto.Message):
             the response only when copying completes.
     """
 
-    total_bytes_rewritten = proto.Field(proto.INT64, number=1)
-
-    object_size = proto.Field(proto.INT64, number=2)
-
-    done = proto.Field(proto.BOOL, number=3)
-
-    rewrite_token = proto.Field(proto.STRING, number=4)
-
-    resource = proto.Field(proto.MESSAGE, number=5,
+    total_bytes_rewritten = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    object_size = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    done = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    rewrite_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    resource = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=storage_resources.Object,
     )
 
 
 class StartResumableWriteRequest(proto.Message):
     r"""Request message StartResumableWrite.
-
     Attributes:
         insert_object_spec (google.storage_v1.types.InsertObjectSpec):
             The destination bucket, object, and metadata,
@@ -2268,22 +2641,25 @@ class StartResumableWriteRequest(proto.Message):
             requests.
     """
 
-    insert_object_spec = proto.Field(proto.MESSAGE, number=1,
+    insert_object_spec = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='InsertObjectSpec',
     )
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=3,
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=4,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CommonRequestParams',
     )
 
 
 class StartResumableWriteResponse(proto.Message):
     r"""Response object for ByteStream.StartResumableWrite.
-
     Attributes:
         upload_id (str):
             The upload_id of the newly started resumable write
@@ -2291,12 +2667,14 @@ class StartResumableWriteResponse(proto.Message):
             ``InsertObjectRequest.upload_id`` field.
     """
 
-    upload_id = proto.Field(proto.STRING, number=1)
+    upload_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class PatchObjectRequest(proto.Message):
     r"""Request message for PatchObject.
-
     Attributes:
         bucket (str):
             Required. Name of the bucket in which the
@@ -2355,56 +2733,72 @@ class PatchObjectRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    generation = proto.Field(proto.INT64, number=3)
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=5,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=6,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=7,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    predefined_acl = proto.Field(proto.ENUM, number=8,
+    predefined_acl = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    projection = proto.Field(proto.ENUM, number=9,
+    projection = proto.Field(
+        proto.ENUM,
+        number=9,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=11,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=storage_resources.Object,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=12,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=field_mask.FieldMask,
     )
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=13,
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=14,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message='CommonRequestParams',
     )
 
 
 class UpdateObjectRequest(proto.Message):
     r"""Request message for UpdateObject.
-
     Attributes:
         bucket (str):
             Required. Name of the bucket in which the
@@ -2451,52 +2845,67 @@ class UpdateObjectRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    object_ = proto.Field(proto.STRING, number=2)
-
-    generation = proto.Field(proto.INT64, number=3)
-
-    if_generation_match = proto.Field(proto.MESSAGE, number=4,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    object_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    generation = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    if_generation_match = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.Int64Value,
     )
-
-    if_generation_not_match = proto.Field(proto.MESSAGE, number=5,
+    if_generation_not_match = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_match = proto.Field(proto.MESSAGE, number=6,
+    if_metageneration_match = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.Int64Value,
     )
-
-    if_metageneration_not_match = proto.Field(proto.MESSAGE, number=7,
+    if_metageneration_not_match = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.Int64Value,
     )
-
-    predefined_acl = proto.Field(proto.ENUM, number=8,
+    predefined_acl = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=storage_resources.CommonEnums.PredefinedObjectAcl,
     )
-
-    projection = proto.Field(proto.ENUM, number=9,
+    projection = proto.Field(
+        proto.ENUM,
+        number=9,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    metadata = proto.Field(proto.MESSAGE, number=11,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=storage_resources.Object,
     )
-
-    common_object_request_params = proto.Field(proto.MESSAGE, number=12,
+    common_object_request_params = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message='CommonObjectRequestParams',
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=13,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message='CommonRequestParams',
     )
 
 
 class WatchAllObjectsRequest(proto.Message):
     r"""Request message for WatchAllObjects.
-
     Attributes:
         bucket (str):
             Name of the bucket in which to look for
@@ -2538,36 +2947,53 @@ class WatchAllObjectsRequest(proto.Message):
             requests.
     """
 
-    bucket = proto.Field(proto.STRING, number=1)
-
-    versions = proto.Field(proto.BOOL, number=2)
-
-    delimiter = proto.Field(proto.STRING, number=3)
-
-    max_results = proto.Field(proto.INT32, number=4)
-
-    prefix = proto.Field(proto.STRING, number=5)
-
-    include_trailing_delimiter = proto.Field(proto.BOOL, number=6)
-
-    page_token = proto.Field(proto.STRING, number=7)
-
-    projection = proto.Field(proto.ENUM, number=8,
+    bucket = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    versions = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    delimiter = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    max_results = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    prefix = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    include_trailing_delimiter = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    projection = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=storage_resources.CommonEnums.Projection,
     )
-
-    channel = proto.Field(proto.MESSAGE, number=10,
+    channel = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message=storage_resources.Channel,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=11,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='CommonRequestParams',
     )
 
 
 class GetProjectServiceAccountRequest(proto.Message):
     r"""Request message for GetProjectServiceAccount.
-
     Attributes:
         project_id (str):
             Required. Project ID.
@@ -2576,16 +3002,19 @@ class GetProjectServiceAccountRequest(proto.Message):
             requests.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class CreateHmacKeyRequest(proto.Message):
     r"""
-
     Attributes:
         project_id (str):
             Required. The project that the HMAC-owning
@@ -2598,11 +3027,17 @@ class CreateHmacKeyRequest(proto.Message):
             requests.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    service_account_email = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_account_email = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
@@ -2618,16 +3053,19 @@ class CreateHmacKeyResponse(proto.Message):
             HMAC key secret material.
     """
 
-    metadata = proto.Field(proto.MESSAGE, number=1,
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=storage_resources.HmacKeyMetadata,
     )
-
-    secret = proto.Field(proto.STRING, number=2)
+    secret = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DeleteHmacKeyRequest(proto.Message):
     r"""Request object to delete a given HMAC key.
-
     Attributes:
         access_id (str):
             Required. The identifying key for the HMAC to
@@ -2640,18 +3078,23 @@ class DeleteHmacKeyRequest(proto.Message):
             requests.
     """
 
-    access_id = proto.Field(proto.STRING, number=1)
-
-    project_id = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    access_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class GetHmacKeyRequest(proto.Message):
     r"""Request object to get metadata on a given HMAC key.
-
     Attributes:
         access_id (str):
             Required. The identifying key for the HMAC to
@@ -2664,18 +3107,23 @@ class GetHmacKeyRequest(proto.Message):
             requests.
     """
 
-    access_id = proto.Field(proto.STRING, number=1)
-
-    project_id = proto.Field(proto.STRING, number=2)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=3,
+    access_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='CommonRequestParams',
     )
 
 
 class ListHmacKeysRequest(proto.Message):
     r"""Request to fetch a list of HMAC keys under a given project.
-
     Attributes:
         project_id (str):
             Required. The project id to list HMAC keys
@@ -2696,24 +3144,35 @@ class ListHmacKeysRequest(proto.Message):
             requests.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    service_account_email = proto.Field(proto.STRING, number=2)
-
-    show_deleted_keys = proto.Field(proto.BOOL, number=3)
-
-    max_results = proto.Field(proto.INT32, number=4)
-
-    page_token = proto.Field(proto.STRING, number=5)
-
-    common_request_params = proto.Field(proto.MESSAGE, number=6,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_account_email = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    show_deleted_keys = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    max_results = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='CommonRequestParams',
     )
 
 
 class ListHmacKeysResponse(proto.Message):
     r"""Hmac key list response with next page information.
-
     Attributes:
         next_page_token (str):
             The continuation token, used to page through
@@ -2728,16 +3187,19 @@ class ListHmacKeysResponse(proto.Message):
     def raw_page(self):
         return self
 
-    next_page_token = proto.Field(proto.STRING, number=1)
-
-    items = proto.RepeatedField(proto.MESSAGE, number=2,
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=storage_resources.HmacKeyMetadata,
     )
 
 
 class UpdateHmacKeyRequest(proto.Message):
     r"""Request object to update an HMAC key state.
-
     Attributes:
         access_id (str):
             Required. The id of the HMAC key.
@@ -2752,15 +3214,22 @@ class UpdateHmacKeyRequest(proto.Message):
             requests.
     """
 
-    access_id = proto.Field(proto.STRING, number=1)
-
-    project_id = proto.Field(proto.STRING, number=2)
-
-    metadata = proto.Field(proto.MESSAGE, number=3,
+    access_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=storage_resources.HmacKeyMetadata,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=5,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonRequestParams',
     )
 
@@ -2777,11 +3246,14 @@ class GetIamPolicyRequest(proto.Message):
             requests.
     """
 
-    iam_request = proto.Field(proto.MESSAGE, number=1,
+    iam_request = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=iam_policy.GetIamPolicyRequest,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=2,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CommonRequestParams',
     )
 
@@ -2798,11 +3270,14 @@ class SetIamPolicyRequest(proto.Message):
             requests.
     """
 
-    iam_request = proto.Field(proto.MESSAGE, number=1,
+    iam_request = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=iam_policy.SetIamPolicyRequest,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=2,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CommonRequestParams',
     )
 
@@ -2819,18 +3294,20 @@ class TestIamPermissionsRequest(proto.Message):
             requests.
     """
 
-    iam_request = proto.Field(proto.MESSAGE, number=1,
+    iam_request = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=iam_policy.TestIamPermissionsRequest,
     )
-
-    common_request_params = proto.Field(proto.MESSAGE, number=2,
+    common_request_params = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CommonRequestParams',
     )
 
 
 class CommonObjectRequestParams(proto.Message):
     r"""Parameters that can be passed to any object request.
-
     Attributes:
         encryption_algorithm (str):
             Encryption algorithm used with Customer-
@@ -2843,16 +3320,22 @@ class CommonObjectRequestParams(proto.Message):
             Customer-Supplied Encryption Keys feature.
     """
 
-    encryption_algorithm = proto.Field(proto.STRING, number=1)
-
-    encryption_key = proto.Field(proto.STRING, number=2)
-
-    encryption_key_sha256 = proto.Field(proto.STRING, number=3)
+    encryption_algorithm = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    encryption_key = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    encryption_key_sha256 = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class CommonRequestParams(proto.Message):
     r"""Parameters that can be passed to any request.
-
     Attributes:
         user_project (str):
             Required. Required when using buckets with
@@ -2869,22 +3352,28 @@ class CommonRequestParams(proto.Message):
             Subset of fields to include in the response.
     """
 
-    user_project = proto.Field(proto.STRING, number=1)
-
-    quota_user = proto.Field(proto.STRING, number=2)
-
-    fields = proto.Field(proto.MESSAGE, number=4,
+    user_project = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    quota_user = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    fields = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=field_mask.FieldMask,
     )
 
 
 class ServiceConstants(proto.Message):
-    r"""Shared constants."""
+    r"""Shared constants.    """
     class Values(proto.Enum):
         r"""A collection of constant values meaningful to the Storage
         API.
         """
-        _pb_options = {'allow_alias': True}
+         _pb_options = {'allow_alias': True}
         VALUES_UNSPECIFIED = 0
         MAX_READ_CHUNK_BYTES = 2097152
         MAX_WRITE_CHUNK_BYTES = 2097152

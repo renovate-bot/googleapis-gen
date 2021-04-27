@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.home.graph_v1.types import device
 from google.protobuf import struct_pb2 as struct  # type: ignore
@@ -60,9 +57,14 @@ class RequestSyncDevicesRequest(proto.Message):
             caller will not receive any error responses.
     """
 
-    agent_user_id = proto.Field(proto.STRING, number=1)
-
-    async_ = proto.Field(proto.BOOL, number=2)
+    agent_user_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    async_ = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class RequestSyncDevicesResponse(proto.Message):
@@ -72,7 +74,7 @@ class RequestSyncDevicesResponse(proto.Message):
 
     Intentionally empty upon success. An HTTP response code is returned
     with more details upon failure.
-    """
+        """
 
 
 class ReportStateAndNotificationRequest(proto.Message):
@@ -126,15 +128,25 @@ class ReportStateAndNotificationRequest(proto.Message):
             notification metadata for devices.
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
-
-    event_id = proto.Field(proto.STRING, number=4)
-
-    agent_user_id = proto.Field(proto.STRING, number=2)
-
-    follow_up_token = proto.Field(proto.STRING, number=5)
-
-    payload = proto.Field(proto.MESSAGE, number=3,
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    event_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    agent_user_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    follow_up_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    payload = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='StateAndNotificationPayload',
     )
 
@@ -150,7 +162,10 @@ class ReportStateAndNotificationResponse(proto.Message):
             [ReportStateAndNotificationRequest][google.home.graph.v1.ReportStateAndNotificationRequest].
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class StateAndNotificationPayload(proto.Message):
@@ -163,14 +178,15 @@ class StateAndNotificationPayload(proto.Message):
             notifications.
     """
 
-    devices = proto.Field(proto.MESSAGE, number=1,
+    devices = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ReportStateAndNotificationDevice',
     )
 
 
 class ReportStateAndNotificationDevice(proto.Message):
     r"""The states and notifications specific to a device.
-
     Attributes:
         states (google.protobuf.struct_pb2.Struct):
             States of devices to update. See the **Device STATES**
@@ -182,11 +198,14 @@ class ReportStateAndNotificationDevice(proto.Message):
             guides <https://developers.google.com/assistant/smarthome/traits>`__.
     """
 
-    states = proto.Field(proto.MESSAGE, number=1,
+    states = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=struct.Struct,
     )
-
-    notifications = proto.Field(proto.MESSAGE, number=2,
+    notifications = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=struct.Struct,
     )
 
@@ -203,9 +222,14 @@ class DeleteAgentUserRequest(proto.Message):
             Required. Third-party user ID.
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
-
-    agent_user_id = proto.Field(proto.STRING, number=2)
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    agent_user_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class QueryRequest(proto.Message):
@@ -223,11 +247,17 @@ class QueryRequest(proto.Message):
             device IDs for which to get the device states.
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
-
-    agent_user_id = proto.Field(proto.STRING, number=2)
-
-    inputs = proto.RepeatedField(proto.MESSAGE, number=3,
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    agent_user_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    inputs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='QueryRequestInput',
     )
 
@@ -241,34 +271,39 @@ class QueryRequestInput(proto.Message):
             Payload containing third-party device IDs.
     """
 
-    payload = proto.Field(proto.MESSAGE, number=1,
+    payload = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='QueryRequestPayload',
     )
 
 
 class QueryRequestPayload(proto.Message):
     r"""Payload containing device IDs.
-
     Attributes:
         devices (Sequence[google.home.graph_v1.types.AgentDeviceId]):
             Third-party device IDs for which to get the
             device states.
     """
 
-    devices = proto.RepeatedField(proto.MESSAGE, number=1,
+    devices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='AgentDeviceId',
     )
 
 
 class AgentDeviceId(proto.Message):
     r"""Third-party device ID for one device.
-
     Attributes:
         id (str):
             Third-party device ID.
     """
 
-    id = proto.Field(proto.STRING, number=1)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class QueryResponse(proto.Message):
@@ -313,23 +348,29 @@ class QueryResponse(proto.Message):
             request.
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
-
-    payload = proto.Field(proto.MESSAGE, number=2,
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    payload = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='QueryResponsePayload',
     )
 
 
 class QueryResponsePayload(proto.Message):
     r"""Payload containing device states information.
-
     Attributes:
         devices (Sequence[google.home.graph_v1.types.QueryResponsePayload.DevicesEntry]):
             States of the devices. Map of third-party
             device ID to struct of device states.
     """
 
-    devices = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
+    devices = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=1
         message=struct.Struct,
     )
 
@@ -345,9 +386,14 @@ class SyncRequest(proto.Message):
             Required. Third-party user ID.
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
-
-    agent_user_id = proto.Field(proto.STRING, number=2)
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    agent_user_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SyncResponse(proto.Message):
@@ -401,16 +447,19 @@ class SyncResponse(proto.Message):
             Devices associated with the third-party user.
     """
 
-    request_id = proto.Field(proto.STRING, number=1)
-
-    payload = proto.Field(proto.MESSAGE, number=2,
+    request_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    payload = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='SyncResponsePayload',
     )
 
 
 class SyncResponsePayload(proto.Message):
     r"""Payload containing device information.
-
     Attributes:
         agent_user_id (str):
             Third-party user ID
@@ -418,9 +467,13 @@ class SyncResponsePayload(proto.Message):
             Devices associated with the third-party user.
     """
 
-    agent_user_id = proto.Field(proto.STRING, number=1)
-
-    devices = proto.RepeatedField(proto.MESSAGE, number=2,
+    agent_user_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    devices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=device.Device,
     )
 

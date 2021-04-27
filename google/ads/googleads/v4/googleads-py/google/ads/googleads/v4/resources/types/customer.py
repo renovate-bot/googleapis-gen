@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import customer_pay_per_conversion_eligibility_failure_reason
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -36,7 +33,6 @@ __protobuf__ = proto.module(
 
 class Customer(proto.Message):
     r"""A customer.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer. Customer
@@ -103,57 +99,89 @@ class Customer(proto.Message):
             This field is read-only.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=3,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.Int64Value,
     )
-    descriptive_name = proto.Field(proto.MESSAGE, number=4,
+    descriptive_name = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=wrappers.StringValue,
     )
-    currency_code = proto.Field(proto.MESSAGE, number=5,
+    currency_code = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=wrappers.StringValue,
     )
-    time_zone = proto.Field(proto.MESSAGE, number=6,
+    time_zone = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=wrappers.StringValue,
     )
-    tracking_url_template = proto.Field(proto.MESSAGE, number=7,
+    tracking_url_template = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=wrappers.StringValue,
     )
-    final_url_suffix = proto.Field(proto.MESSAGE, number=11,
+    final_url_suffix = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message=wrappers.StringValue,
     )
-    auto_tagging_enabled = proto.Field(proto.MESSAGE, number=8,
+    auto_tagging_enabled = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=wrappers.BoolValue,
     )
-    has_partners_badge = proto.Field(proto.MESSAGE, number=9,
+    has_partners_badge = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.BoolValue,
     )
-    manager = proto.Field(proto.MESSAGE, number=12,
+    manager = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=wrappers.BoolValue,
     )
-    test_account = proto.Field(proto.MESSAGE, number=13,
+    test_account = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message=wrappers.BoolValue,
     )
-    call_reporting_setting = proto.Field(proto.MESSAGE, number=10,
+    call_reporting_setting = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='CallReportingSetting',
     )
-    conversion_tracking_setting = proto.Field(proto.MESSAGE, number=14,
+    conversion_tracking_setting = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message='ConversionTrackingSetting',
     )
-    remarketing_setting = proto.Field(proto.MESSAGE, number=15,
+    remarketing_setting = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message='RemarketingSetting',
     )
-    pay_per_conversion_eligibility_failure_reasons = proto.RepeatedField(proto.ENUM, number=16,
+    pay_per_conversion_eligibility_failure_reasons = proto.RepeatedField(
+        proto.ENUM,
+        number=16,
         enum=customer_pay_per_conversion_eligibility_failure_reason.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason,
     )
-    optimization_score = proto.Field(proto.MESSAGE, number=17,
+    optimization_score = proto.Field(
+        proto.MESSAGE,
+        number=17,
         message=wrappers.DoubleValue,
     )
 
 
 class CallReportingSetting(proto.Message):
     r"""Call reporting setting for a customer.
-
     Attributes:
         call_reporting_enabled (google.protobuf.wrappers_pb2.BoolValue):
             Enable reporting of phone call events by
@@ -167,13 +195,19 @@ class CallReportingSetting(proto.Message):
             is set to true.
     """
 
-    call_reporting_enabled = proto.Field(proto.MESSAGE, number=1,
+    call_reporting_enabled = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.BoolValue,
     )
-    call_conversion_reporting_enabled = proto.Field(proto.MESSAGE, number=2,
+    call_conversion_reporting_enabled = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.BoolValue,
     )
-    call_conversion_action = proto.Field(proto.MESSAGE, number=9,
+    call_conversion_action = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=wrappers.StringValue,
     )
 
@@ -197,23 +231,28 @@ class ConversionTrackingSetting(proto.Message):
             through the Google Ads UI. This field is read-only.
     """
 
-    conversion_tracking_id = proto.Field(proto.MESSAGE, number=1,
+    conversion_tracking_id = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.Int64Value,
     )
-    cross_account_conversion_tracking_id = proto.Field(proto.MESSAGE, number=2,
+    cross_account_conversion_tracking_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
 
 
 class RemarketingSetting(proto.Message):
     r"""Remarketing setting for a customer.
-
     Attributes:
         google_global_site_tag (google.protobuf.wrappers_pb2.StringValue):
             Output only. The Google global site tag.
     """
 
-    google_global_site_tag = proto.Field(proto.MESSAGE, number=1,
+    google_global_site_tag = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=wrappers.StringValue,
     )
 

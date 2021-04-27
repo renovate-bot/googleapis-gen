@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import argparse
 import os
 import libcst as cst
@@ -41,26 +39,25 @@ def partition(
 class servicedirectoryCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'create_endpoint': ('parent', 'endpoint_id', 'endpoint', ),
-    'create_namespace': ('parent', 'namespace_id', 'namespace', ),
-    'create_service': ('parent', 'service_id', 'service', ),
-    'delete_endpoint': ('name', ),
-    'delete_namespace': ('name', ),
-    'delete_service': ('name', ),
-    'get_endpoint': ('name', ),
-    'get_iam_policy': ('resource', 'options_', ),
-    'get_namespace': ('name', ),
-    'get_service': ('name', ),
-    'list_endpoints': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-    'list_namespaces': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-    'list_services': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-    'resolve_service': ('name', 'max_endpoints', 'endpoint_filter', ),
-    'set_iam_policy': ('resource', 'policy_', ),
-    'test_iam_permissions': ('resource', 'permissions', ),
-    'update_endpoint': ('endpoint', 'update_mask', ),
-    'update_namespace': ('namespace', 'update_mask', ),
-    'update_service': ('service', 'update_mask', ),
-
+          'create_endpoint': ('parent', 'endpoint_id', 'endpoint', ),
+          'create_namespace': ('parent', 'namespace_id', 'namespace', ),
+          'create_service': ('parent', 'service_id', 'service', ),
+          'delete_endpoint': ('name', ),
+          'delete_namespace': ('name', ),
+          'delete_service': ('name', ),
+          'get_endpoint': ('name', ),
+          'get_iam_policy': ('resource', 'options_', ),
+          'get_namespace': ('name', ),
+          'get_service': ('name', ),
+          'list_endpoints': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+          'list_namespaces': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+          'list_services': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+          'resolve_service': ('name', 'max_endpoints', 'endpoint_filter', ),
+          'set_iam_policy': ('resource', 'policy_', ),
+          'test_iam_permissions': ('resource', 'permissions', ),
+          'update_endpoint': ('endpoint', 'update_mask', ),
+          'update_namespace': ('namespace', 'update_mask', ),
+          'update_service': ('service', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -91,7 +88,7 @@ class servicedirectoryCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-                    cst.Element(value=arg.value)
+cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

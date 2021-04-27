@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -33,7 +31,6 @@ from google.cloud.retail_v2alpha.types import purge_config
 from google.cloud.retail_v2alpha.types import user_event
 from google.cloud.retail_v2alpha.types import user_event_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import UserEventServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -68,7 +65,8 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -208,13 +206,15 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -244,7 +244,9 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def write_user_event(self) -> Callable[
             [user_event_service.WriteUserEventRequest],
             user_event.UserEvent]:
-        r"""Return a callable for the write user event method over gRPC.
+        r"""Return a callable for the
+        write user event
+          method over gRPC.
 
         Writes a single user event.
 
@@ -270,7 +272,9 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def collect_user_event(self) -> Callable[
             [user_event_service.CollectUserEventRequest],
             httpbody.HttpBody]:
-        r"""Return a callable for the collect user event method over gRPC.
+        r"""Return a callable for the
+        collect user event
+          method over gRPC.
 
         Writes a single user event from the browser. This
         uses a GET request to due to browser restriction of
@@ -301,7 +305,9 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def purge_user_events(self) -> Callable[
             [purge_config.PurgeUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the purge user events method over gRPC.
+        r"""Return a callable for the
+        purge user events
+          method over gRPC.
 
         Deletes permanently all user events specified by the
         filter provided. Depending on the number of events
@@ -331,7 +337,9 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def import_user_events(self) -> Callable[
             [import_config.ImportUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the import user events method over gRPC.
+        r"""Return a callable for the
+        import user events
+          method over gRPC.
 
         Bulk import of User events. Request processing might
         be synchronous. Events that already exist are skipped.
@@ -363,7 +371,9 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def rejoin_user_events(self) -> Callable[
             [user_event_service.RejoinUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the rejoin user events method over gRPC.
+        r"""Return a callable for the
+        rejoin user events
+          method over gRPC.
 
         Triggers a user event rejoin operation with latest
         product catalog. Events will not be annotated with

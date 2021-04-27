@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,7 +35,6 @@ from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
 from google.home.enterprise.sdm_v1.types import smart_device_management_service
 from google.protobuf import struct_pb2 as struct  # type: ignore
-
 from .transports.base import SmartDeviceManagementServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SmartDeviceManagementServiceGrpcTransport
 from .transports.grpc_asyncio import SmartDeviceManagementServiceGrpcAsyncIOTransport
@@ -362,9 +359,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.GetDeviceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.GetDevice
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -379,7 +376,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.GetDeviceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -421,9 +417,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.ListDevicesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ListDevices
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -440,7 +436,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.ListDevicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -492,9 +487,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ExecuteDeviceCommand
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -508,7 +503,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.ExecuteDeviceCommandRequest.
         # There's no risk of modifying the input as we've already verified
@@ -550,9 +544,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.GetStructureRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.GetStructure
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -567,7 +561,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.GetStructureRequest.
         # There's no risk of modifying the input as we've already verified
@@ -609,9 +602,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.ListStructuresRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ListStructures
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,7 +621,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.ListStructuresRequest.
         # There's no risk of modifying the input as we've already verified
@@ -679,9 +671,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.GetRoomRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.GetRoom
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -697,7 +689,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.GetRoomRequest.
         # There's no risk of modifying the input as we've already verified
@@ -739,9 +730,9 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         Args:
             request (google.home.enterprise.sdm_v1.types.ListRoomsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ListRooms
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -758,7 +749,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a smart_device_management_service.ListRoomsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -797,8 +787,6 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
 
         # Done; return the response.
         return response
-
-
 
 
 

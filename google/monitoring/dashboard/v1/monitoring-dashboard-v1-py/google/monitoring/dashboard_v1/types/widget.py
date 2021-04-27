@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.monitoring.dashboard_v1.types import scorecard as gmd_scorecard
 from google.monitoring.dashboard_v1.types import text as gmd_text
@@ -50,21 +47,32 @@ class Widget(proto.Message):
             A blank space.
     """
 
-    title = proto.Field(proto.STRING, number=1)
-
-    xy_chart = proto.Field(proto.MESSAGE, number=2, oneof='content',
+    title = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    xy_chart = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='content',
         message=xychart.XyChart,
     )
-
-    scorecard = proto.Field(proto.MESSAGE, number=3, oneof='content',
+    scorecard = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='content',
         message=gmd_scorecard.Scorecard,
     )
-
-    text = proto.Field(proto.MESSAGE, number=4, oneof='content',
+    text = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='content',
         message=gmd_text.Text,
     )
-
-    blank = proto.Field(proto.MESSAGE, number=5, oneof='content',
+    blank = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='content',
         message=empty.Empty,
     )
 

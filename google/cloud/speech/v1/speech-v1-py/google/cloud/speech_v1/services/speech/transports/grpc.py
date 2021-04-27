@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 
 from google.cloud.speech_v1.types import cloud_speech
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import SpeechTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,7 +60,8 @@ class SpeechGrpcTransport(SpeechTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,13 +201,15 @@ class SpeechGrpcTransport(SpeechTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -239,7 +239,9 @@ class SpeechGrpcTransport(SpeechTransport):
     def recognize(self) -> Callable[
             [cloud_speech.RecognizeRequest],
             cloud_speech.RecognizeResponse]:
-        r"""Return a callable for the recognize method over gRPC.
+        r"""Return a callable for the
+        recognize
+          method over gRPC.
 
         Performs synchronous speech recognition: receive
         results after all audio has been sent and processed.
@@ -266,7 +268,9 @@ class SpeechGrpcTransport(SpeechTransport):
     def long_running_recognize(self) -> Callable[
             [cloud_speech.LongRunningRecognizeRequest],
             operations.Operation]:
-        r"""Return a callable for the long running recognize method over gRPC.
+        r"""Return a callable for the
+        long running recognize
+          method over gRPC.
 
         Performs asynchronous speech recognition: receive results via
         the google.longrunning.Operations interface. Returns either an
@@ -297,7 +301,9 @@ class SpeechGrpcTransport(SpeechTransport):
     def streaming_recognize(self) -> Callable[
             [cloud_speech.StreamingRecognizeRequest],
             cloud_speech.StreamingRecognizeResponse]:
-        r"""Return a callable for the streaming recognize method over gRPC.
+        r"""Return a callable for the
+        streaming recognize
+          method over gRPC.
 
         Performs bidirectional streaming speech recognition:
         receive results while sending audio. This method is only

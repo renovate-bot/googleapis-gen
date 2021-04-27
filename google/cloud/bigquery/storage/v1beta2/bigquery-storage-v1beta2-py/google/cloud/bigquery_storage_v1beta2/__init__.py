@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +16,7 @@
 
 from .services.big_query_read import BigQueryReadClient
 from .services.big_query_write import BigQueryWriteClient
+
 from .types.arrow import ArrowRecordBatch
 from .types.arrow import ArrowSchema
 from .types.arrow import ArrowSerializationOptions
@@ -48,7 +48,6 @@ from .types.stream import ReadStream
 from .types.stream import WriteStream
 from .types.table import TableFieldSchema
 from .types.table import TableSchema
-
 
 __all__ = (
     'AppendRowsRequest',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.service_usage import ServiceUsageClient
+
 from .types.resources import OperationMetadata
 from .types.resources import Service
 from .types.resources import ServiceConfig
@@ -31,7 +31,6 @@ from .types.serviceusage import EnableServiceResponse
 from .types.serviceusage import GetServiceRequest
 from .types.serviceusage import ListServicesRequest
 from .types.serviceusage import ListServicesResponse
-
 
 __all__ = (
     'BatchEnableServicesRequest',

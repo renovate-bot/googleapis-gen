@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -29,7 +27,6 @@ __protobuf__ = proto.module(
 
 class TopicView(proto.Message):
     r"""A topic view.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the topic view. Topic view
@@ -38,7 +35,10 @@ class TopicView(proto.Message):
             ``customers/{customer_id}/topicViews/{ad_group_id}~{criterion_id}``
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

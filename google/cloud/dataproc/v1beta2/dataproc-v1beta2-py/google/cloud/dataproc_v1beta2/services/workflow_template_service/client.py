@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -39,7 +37,6 @@ from google.cloud.dataproc_v1beta2.types import workflow_templates
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import WorkflowTemplateServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import WorkflowTemplateServiceGrpcTransport
 from .transports.grpc_asyncio import WorkflowTemplateServiceGrpcAsyncIOTransport
@@ -355,7 +352,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.CreateWorkflowTemplateRequest):
-                The request object. A request to create a workflow
+                The request object.
+                A request to create a workflow
                 template.
             parent (str):
                 Required. The resource name of the region or location,
@@ -381,7 +379,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -408,10 +405,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.CreateWorkflowTemplateRequest):
             request = workflow_templates.CreateWorkflowTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if template is not None:
@@ -454,7 +449,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.GetWorkflowTemplateRequest):
-                The request object. A request to fetch a workflow
+                The request object.
+                A request to fetch a workflow
                 template.
             name (str):
                 Required. The resource name of the workflow template, as
@@ -474,7 +470,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -501,10 +496,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.GetWorkflowTemplateRequest):
             request = workflow_templates.GetWorkflowTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -564,7 +557,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.InstantiateWorkflowTemplateRequest):
-                The request object. A request to instantiate a workflow
+                The request object.
+                A request to instantiate a workflow
                 template.
             name (str):
                 Required. The resource name of the workflow template, as
@@ -595,7 +589,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``parameters`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -635,10 +628,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.InstantiateWorkflowTemplateRequest):
             request = workflow_templates.InstantiateWorkflowTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if parameters is not None:
@@ -713,7 +704,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.InstantiateInlineWorkflowTemplateRequest):
-                The request object. A request to instantiate an inline
+                The request object.
+                A request to instantiate an inline
                 workflow template.
             parent (str):
                 Required. The resource name of the region or location,
@@ -741,7 +733,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -781,10 +772,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.InstantiateInlineWorkflowTemplateRequest):
             request = workflow_templates.InstantiateInlineWorkflowTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if template is not None:
@@ -835,7 +824,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.UpdateWorkflowTemplateRequest):
-                The request object. A request to update a workflow
+                The request object.
+                A request to update a workflow
                 template.
             template (google.cloud.dataproc_v1beta2.types.WorkflowTemplate):
                 Required. The updated workflow template.
@@ -846,7 +836,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -873,10 +862,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.UpdateWorkflowTemplateRequest):
             request = workflow_templates.UpdateWorkflowTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if template is not None:
                 request.template = template
 
@@ -916,7 +903,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.ListWorkflowTemplatesRequest):
-                The request object. A request to list workflow templates
+                The request object.
+                A request to list workflow templates
                 in a project.
             parent (str):
                 Required. The resource name of the region or location,
@@ -935,7 +923,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -965,10 +952,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.ListWorkflowTemplatesRequest):
             request = workflow_templates.ListWorkflowTemplatesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1017,7 +1002,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.DeleteWorkflowTemplateRequest):
-                The request object. A request to delete a workflow
+                The request object.
+                A request to delete a workflow
                 template.
                 Currently started workflows will remain running.
             name (str):
@@ -1039,7 +1025,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1060,10 +1045,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, workflow_templates.DeleteWorkflowTemplateRequest):
             request = workflow_templates.DeleteWorkflowTemplateRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1086,8 +1069,6 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

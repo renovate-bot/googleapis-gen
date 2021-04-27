@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.devtools.build_v1.types import build_events
 from google.protobuf import duration_pb2 as duration  # type: ignore
@@ -76,21 +73,29 @@ class PublishLifecycleEventRequest(proto.Message):
         NONINTERACTIVE = 0
         INTERACTIVE = 1
 
-    service_level = proto.Field(proto.ENUM, number=1,
+    service_level = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=ServiceLevel,
     )
-
-    build_event = proto.Field(proto.MESSAGE, number=2,
+    build_event = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='OrderedBuildEvent',
     )
-
-    stream_timeout = proto.Field(proto.MESSAGE, number=3,
+    stream_timeout = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=duration.Duration,
     )
-
-    notification_keywords = proto.RepeatedField(proto.STRING, number=4)
-
-    project_id = proto.Field(proto.STRING, number=6)
+    notification_keywords = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class PublishBuildToolEventStreamResponse(proto.Message):
@@ -105,11 +110,15 @@ class PublishBuildToolEventStreamResponse(proto.Message):
             been committed.
     """
 
-    stream_id = proto.Field(proto.MESSAGE, number=1,
+    stream_id = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=build_events.StreamId,
     )
-
-    sequence_number = proto.Field(proto.INT64, number=2)
+    sequence_number = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 class OrderedBuildEvent(proto.Message):
@@ -129,20 +138,24 @@ class OrderedBuildEvent(proto.Message):
             The actual event.
     """
 
-    stream_id = proto.Field(proto.MESSAGE, number=1,
+    stream_id = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=build_events.StreamId,
     )
-
-    sequence_number = proto.Field(proto.INT64, number=2)
-
-    event = proto.Field(proto.MESSAGE, number=3,
+    sequence_number = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    event = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=build_events.BuildEvent,
     )
 
 
 class PublishBuildToolEventStreamRequest(proto.Message):
     r"""Streaming request message for PublishBuildToolEventStream.
-
     Attributes:
         ordered_build_event (google.devtools.build_v1.types.OrderedBuildEvent):
             Required. The build event with position info.
@@ -163,13 +176,19 @@ class PublishBuildToolEventStreamRequest(proto.Message):
             BuildEnqueued message).
     """
 
-    ordered_build_event = proto.Field(proto.MESSAGE, number=4,
+    ordered_build_event = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='OrderedBuildEvent',
     )
-
-    notification_keywords = proto.RepeatedField(proto.STRING, number=5)
-
-    project_id = proto.Field(proto.STRING, number=6)
+    notification_keywords = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

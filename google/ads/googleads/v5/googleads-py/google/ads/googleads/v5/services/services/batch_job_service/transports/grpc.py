@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -30,7 +28,6 @@ import grpc  # type: ignore
 from google.ads.googleads.v5.resources.types import batch_job
 from google.ads.googleads.v5.services.types import batch_job_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
-
 from .base import BatchJobServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,7 +58,8 @@ class BatchJobServiceGrpcTransport(BatchJobServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -221,7 +219,9 @@ class BatchJobServiceGrpcTransport(BatchJobServiceTransport):
     def mutate_batch_job(self) -> Callable[
             [batch_job_service.MutateBatchJobRequest],
             batch_job_service.MutateBatchJobResponse]:
-        r"""Return a callable for the mutate batch job method over gRPC.
+        r"""Return a callable for the
+        mutate batch job
+          method over gRPC.
 
         Mutates a batch job.
 
@@ -247,7 +247,9 @@ class BatchJobServiceGrpcTransport(BatchJobServiceTransport):
     def get_batch_job(self) -> Callable[
             [batch_job_service.GetBatchJobRequest],
             batch_job.BatchJob]:
-        r"""Return a callable for the get batch job method over gRPC.
+        r"""Return a callable for the
+        get batch job
+          method over gRPC.
 
         Returns the batch job.
 
@@ -273,7 +275,9 @@ class BatchJobServiceGrpcTransport(BatchJobServiceTransport):
     def list_batch_job_results(self) -> Callable[
             [batch_job_service.ListBatchJobResultsRequest],
             batch_job_service.ListBatchJobResultsResponse]:
-        r"""Return a callable for the list batch job results method over gRPC.
+        r"""Return a callable for the
+        list batch job results
+          method over gRPC.
 
         Returns the results of the batch job. The job must be
         done. Supports standard list paging.
@@ -300,7 +304,9 @@ class BatchJobServiceGrpcTransport(BatchJobServiceTransport):
     def run_batch_job(self) -> Callable[
             [batch_job_service.RunBatchJobRequest],
             operations.Operation]:
-        r"""Return a callable for the run batch job method over gRPC.
+        r"""Return a callable for the
+        run batch job
+          method over gRPC.
 
         Runs the batch job.
         The Operation.metadata field type is BatchJobMetadata.
@@ -330,7 +336,9 @@ class BatchJobServiceGrpcTransport(BatchJobServiceTransport):
     def add_batch_job_operations(self) -> Callable[
             [batch_job_service.AddBatchJobOperationsRequest],
             batch_job_service.AddBatchJobOperationsResponse]:
-        r"""Return a callable for the add batch job operations method over gRPC.
+        r"""Return a callable for the
+        add batch job operations
+          method over gRPC.
 
         Add operations to the batch job.
 

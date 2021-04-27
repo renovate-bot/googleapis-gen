@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.cloud.dialogflow_v2.types import agent as gcd_agent
 from google.cloud.dialogflow_v2.types import validation_result
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
-
 from .transports.base import AgentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AgentsGrpcTransport
 from .transports.grpc_asyncio import AgentsGrpcAsyncIOTransport
@@ -342,7 +339,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgent][google.cloud.dialogflow.v2.Agents.GetAgent].
             parent (str):
                 Required. The project that the agent to fetch is
@@ -351,7 +349,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -387,10 +384,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.GetAgentRequest):
             request = agent.GetAgentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -429,14 +424,14 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.SetAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.SetAgent][google.cloud.dialogflow.v2.Agents.SetAgent].
             agent (google.cloud.dialogflow_v2.types.Agent):
                 Required. The agent to update.
                 This corresponds to the ``agent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,10 +467,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_agent.SetAgentRequest):
             request = gcd_agent.SetAgentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if agent is not None:
                 request.agent = agent
 
@@ -514,7 +507,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.DeleteAgent][google.cloud.dialogflow.v2.Agents.DeleteAgent].
             parent (str):
                 Required. The project that the agent to delete is
@@ -523,7 +517,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -544,10 +537,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.DeleteAgentRequest):
             request = agent.DeleteAgentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -589,7 +580,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.SearchAgentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
             parent (str):
                 Required. The project to list agents from. Format:
@@ -598,7 +590,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,10 +619,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.SearchAgentsRequest):
             request = agent.SearchAgentsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -682,7 +671,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.TrainAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent].
             parent (str):
                 Required. The project that the agent to train is
@@ -691,7 +681,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -731,10 +720,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.TrainAgentRequest):
             request = agent.TrainAgentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -784,7 +771,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ExportAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent].
             parent (str):
                 Required. The project that the agent to export is
@@ -793,7 +781,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -824,10 +811,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.ExportAgentRequest):
             request = agent.ExportAgentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -889,9 +874,9 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ImportAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -918,7 +903,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a agent.ImportAgentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -982,9 +966,9 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.RestoreAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.RestoreAgent][google.cloud.dialogflow.v2.Agents.RestoreAgent].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1011,7 +995,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a agent.RestoreAgentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1063,9 +1046,9 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetValidationResultRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetValidationResult][google.cloud.dialogflow.v2.Agents.GetValidationResult].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1079,7 +1062,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a agent.GetValidationResultRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1109,8 +1091,6 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

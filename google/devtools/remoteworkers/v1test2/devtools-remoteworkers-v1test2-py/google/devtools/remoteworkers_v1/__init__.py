@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.bots import BotsClient
+
 from .types.bots import AdminTemp
 from .types.bots import BotSession
 from .types.bots import BotStatus
@@ -34,7 +34,6 @@ from .types.command import DirectoryMetadata
 from .types.command import FileMetadata
 from .types.worker import Device
 from .types.worker import Worker
-
 
 __all__ = (
     'AdminTemp',

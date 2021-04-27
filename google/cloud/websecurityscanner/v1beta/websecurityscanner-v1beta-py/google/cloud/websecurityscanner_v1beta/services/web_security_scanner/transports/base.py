@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
+import packaging.version
 import pkg_resources
 
 from google import auth  # type: ignore
+import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -32,7 +32,6 @@ from google.cloud.websecurityscanner_v1beta.types import scan_run
 from google.cloud.websecurityscanner_v1beta.types import web_security_scanner
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
-
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -42,6 +41,18 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
+try:
+    # google.auth.__version__ was added in 1.26.0
+    _GOOGLE_AUTH_VERSION = auth.__version__
+except AttributeError:
+    try:  # try pkg_resources if it is available
+        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
+    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
+        _GOOGLE_AUTH_VERSION = None
+
+_API_CORE_VERSION = google.api_core.__version__
+
+
 class WebSecurityScannerTransport(abc.ABC):
     """Abstract transport class for WebSecurityScanner."""
 
@@ -49,20 +60,22 @@ class WebSecurityScannerTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
+    DEFAULT_HOST: str = 'websecurityscanner.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'websecurityscanner.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: credentials.Credentials = None,
-            credentials_file: typing.Optional[str] = None,
-            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
-            quota_project_id: typing.Optional[str] = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -71,7 +84,7 @@ class WebSecurityScannerTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scope (Optional[Sequence[str]]): A list of scopes.
+            scopes (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -85,6 +98,8 @@ class WebSecurityScannerTransport(abc.ABC):
             host += ':443'
         self._host = host
 
+        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
+
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -96,15 +111,56 @@ class WebSecurityScannerTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                scopes=self._scopes,
+                                **scopes_kwargs,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
+
+    # TODO(busunkim): These two class methods are in the base transport
+    # to avoid duplicating code across the transport classes. These functions
+    # should be deleted once the minimum required versions of google-api-core
+    # and google-auth are increased.
+
+    # TODO: Remove this function once google-auth >= 1.25.0 is required
+    @classmethod
+    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
+        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
+
+        scopes_kwargs = {}
+
+        if _GOOGLE_AUTH_VERSION and (
+            packaging.version.parse(_GOOGLE_AUTH_VERSION)
+            >= packaging.version.parse("1.25.0")
+        ):
+            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
+        else:
+            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
+
+        return scopes_kwargs
+
+    # TODO: Remove this function once google-api-core >= 1.26.0 is required
+    @classmethod
+    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
+        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
+
+        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
+
+        if _API_CORE_VERSION and (
+            packaging.version.parse(_API_CORE_VERSION)
+            >= packaging.version.parse("1.26.0")
+        ):
+            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
+            self_signed_jwt_kwargs["scopes"] = scopes
+            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
+        else:
+            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
+
+        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -117,10 +173,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.delete_scan_config: gapic_v1.method.wrap_method(
                 self.delete_scan_config,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -132,10 +185,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.get_scan_config: gapic_v1.method.wrap_method(
                 self.get_scan_config,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -147,10 +197,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.list_scan_configs: gapic_v1.method.wrap_method(
                 self.list_scan_configs,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -172,10 +219,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.get_scan_run: gapic_v1.method.wrap_method(
                 self.get_scan_run,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -187,10 +231,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.list_scan_runs: gapic_v1.method.wrap_method(
                 self.list_scan_runs,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -207,10 +248,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.list_crawled_urls: gapic_v1.method.wrap_method(
                 self.list_crawled_urls,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -222,10 +260,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.get_finding: gapic_v1.method.wrap_method(
                 self.get_finding,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -237,10 +272,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.list_findings: gapic_v1.method.wrap_method(
                 self.list_findings,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -252,10 +284,7 @@ class WebSecurityScannerTransport(abc.ABC):
             self.list_finding_type_stats: gapic_v1.method.wrap_method(
                 self.list_finding_type_stats,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -264,123 +293,122 @@ class WebSecurityScannerTransport(abc.ABC):
                 default_timeout=600.0,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
-    def create_scan_config(self) -> typing.Callable[
+    def create_scan_config(self) -> Callable[
             [web_security_scanner.CreateScanConfigRequest],
-            typing.Union[
+            Union[
                 gcw_scan_config.ScanConfig,
-                typing.Awaitable[gcw_scan_config.ScanConfig]
+                Awaitable[gcw_scan_config.ScanConfig]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_scan_config(self) -> typing.Callable[
+    def delete_scan_config(self) -> Callable[
             [web_security_scanner.DeleteScanConfigRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_scan_config(self) -> typing.Callable[
+    def get_scan_config(self) -> Callable[
             [web_security_scanner.GetScanConfigRequest],
-            typing.Union[
+            Union[
                 scan_config.ScanConfig,
-                typing.Awaitable[scan_config.ScanConfig]
+                Awaitable[scan_config.ScanConfig]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_scan_configs(self) -> typing.Callable[
+    def list_scan_configs(self) -> Callable[
             [web_security_scanner.ListScanConfigsRequest],
-            typing.Union[
+            Union[
                 web_security_scanner.ListScanConfigsResponse,
-                typing.Awaitable[web_security_scanner.ListScanConfigsResponse]
+                Awaitable[web_security_scanner.ListScanConfigsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_scan_config(self) -> typing.Callable[
+    def update_scan_config(self) -> Callable[
             [web_security_scanner.UpdateScanConfigRequest],
-            typing.Union[
+            Union[
                 gcw_scan_config.ScanConfig,
-                typing.Awaitable[gcw_scan_config.ScanConfig]
+                Awaitable[gcw_scan_config.ScanConfig]
             ]]:
         raise NotImplementedError()
 
     @property
-    def start_scan_run(self) -> typing.Callable[
+    def start_scan_run(self) -> Callable[
             [web_security_scanner.StartScanRunRequest],
-            typing.Union[
+            Union[
                 scan_run.ScanRun,
-                typing.Awaitable[scan_run.ScanRun]
+                Awaitable[scan_run.ScanRun]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_scan_run(self) -> typing.Callable[
+    def get_scan_run(self) -> Callable[
             [web_security_scanner.GetScanRunRequest],
-            typing.Union[
+            Union[
                 scan_run.ScanRun,
-                typing.Awaitable[scan_run.ScanRun]
+                Awaitable[scan_run.ScanRun]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_scan_runs(self) -> typing.Callable[
+    def list_scan_runs(self) -> Callable[
             [web_security_scanner.ListScanRunsRequest],
-            typing.Union[
+            Union[
                 web_security_scanner.ListScanRunsResponse,
-                typing.Awaitable[web_security_scanner.ListScanRunsResponse]
+                Awaitable[web_security_scanner.ListScanRunsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def stop_scan_run(self) -> typing.Callable[
+    def stop_scan_run(self) -> Callable[
             [web_security_scanner.StopScanRunRequest],
-            typing.Union[
+            Union[
                 scan_run.ScanRun,
-                typing.Awaitable[scan_run.ScanRun]
+                Awaitable[scan_run.ScanRun]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_crawled_urls(self) -> typing.Callable[
+    def list_crawled_urls(self) -> Callable[
             [web_security_scanner.ListCrawledUrlsRequest],
-            typing.Union[
+            Union[
                 web_security_scanner.ListCrawledUrlsResponse,
-                typing.Awaitable[web_security_scanner.ListCrawledUrlsResponse]
+                Awaitable[web_security_scanner.ListCrawledUrlsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_finding(self) -> typing.Callable[
+    def get_finding(self) -> Callable[
             [web_security_scanner.GetFindingRequest],
-            typing.Union[
+            Union[
                 finding.Finding,
-                typing.Awaitable[finding.Finding]
+                Awaitable[finding.Finding]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_findings(self) -> typing.Callable[
+    def list_findings(self) -> Callable[
             [web_security_scanner.ListFindingsRequest],
-            typing.Union[
+            Union[
                 web_security_scanner.ListFindingsResponse,
-                typing.Awaitable[web_security_scanner.ListFindingsResponse]
+                Awaitable[web_security_scanner.ListFindingsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_finding_type_stats(self) -> typing.Callable[
+    def list_finding_type_stats(self) -> Callable[
             [web_security_scanner.ListFindingTypeStatsRequest],
-            typing.Union[
+            Union[
                 web_security_scanner.ListFindingTypeStatsResponse,
-                typing.Awaitable[web_security_scanner.ListFindingTypeStatsResponse]
+                Awaitable[web_security_scanner.ListFindingTypeStatsResponse]
             ]]:
         raise NotImplementedError()
 

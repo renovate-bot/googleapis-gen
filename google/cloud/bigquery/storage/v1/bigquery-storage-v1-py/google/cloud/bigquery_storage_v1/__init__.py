@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.big_query_read import BigQueryReadClient
+
 from .types.arrow import ArrowRecordBatch
 from .types.arrow import ArrowSchema
 from .types.arrow import ArrowSerializationOptions
@@ -31,7 +31,6 @@ from .types.storage import ThrottleState
 from .types.stream import DataFormat
 from .types.stream import ReadSession
 from .types.stream import ReadStream
-
 
 __all__ = (
     'ArrowRecordBatch',

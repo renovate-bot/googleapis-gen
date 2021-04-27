@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +15,13 @@
 #
 
 from .services.profiler_service import ProfilerServiceClient
+
 from .types.profiler import CreateOfflineProfileRequest
 from .types.profiler import CreateProfileRequest
 from .types.profiler import Deployment
 from .types.profiler import Profile
 from .types.profiler import ProfileType
 from .types.profiler import UpdateProfileRequest
-
 
 __all__ = (
     'CreateOfflineProfileRequest',

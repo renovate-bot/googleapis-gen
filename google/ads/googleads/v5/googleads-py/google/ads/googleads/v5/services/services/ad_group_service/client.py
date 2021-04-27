@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -43,7 +41,6 @@ from google.ads.googleads.v5.enums.types import targeting_dimension
 from google.ads.googleads.v5.resources.types import ad_group
 from google.ads.googleads.v5.services.types import ad_group_service
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import AdGroupServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AdGroupServiceGrpcTransport
 
@@ -192,7 +189,6 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
         """Parse a campaign path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)/campaigns/(?P<campaign>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -365,7 +361,8 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.GetAdGroupRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AdGroupService.GetAdGroup][google.ads.googleads.v5.services.AdGroupService.GetAdGroup].
             resource_name (:class:`str`):
                 Required. The resource name of the ad
@@ -374,7 +371,6 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -392,16 +388,14 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a ad_group_service.GetAdGroupRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, ad_group_service.GetAdGroupRequest):
             request = ad_group_service.GetAdGroupRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -420,7 +414,7 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -442,7 +436,8 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.MutateAdGroupsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AdGroupService.MutateAdGroups][google.ads.googleads.v5.services.AdGroupService.MutateAdGroups].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -458,7 +453,6 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -478,16 +472,14 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a ad_group_service.MutateAdGroupsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, ad_group_service.MutateAdGroupsRequest):
             request = ad_group_service.MutateAdGroupsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -508,7 +500,7 @@ class AdGroupServiceClient(metaclass=AdGroupServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

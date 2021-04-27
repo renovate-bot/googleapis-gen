@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -30,7 +28,6 @@ from google.oauth2 import service_account              # type: ignore
 
 from ccc.hosted.marketplace_v2.types import resources
 from ccc.hosted.marketplace_v2.types import services
-
 from .transports.base import UserLicenseServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import UserLicenseServiceGrpcAsyncIOTransport
 from .client import UserLicenseServiceClient
@@ -46,16 +43,12 @@ class UserLicenseServiceAsyncClient:
 
     common_billing_account_path = staticmethod(UserLicenseServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(UserLicenseServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(UserLicenseServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(UserLicenseServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(UserLicenseServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(UserLicenseServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(UserLicenseServiceClient.common_project_path)
     parse_common_project_path = staticmethod(UserLicenseServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(UserLicenseServiceClient.common_location_path)
     parse_common_location_path = staticmethod(UserLicenseServiceClient.parse_common_location_path)
 
@@ -140,7 +133,6 @@ class UserLicenseServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = UserLicenseServiceClient(
             credentials=credentials,
             transport=transport,
@@ -174,7 +166,6 @@ class UserLicenseServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = services.UserLicenseGetRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -182,10 +173,7 @@ class UserLicenseServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -205,8 +193,6 @@ class UserLicenseServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

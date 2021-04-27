@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,7 +35,6 @@ from google.cloud.dialogflow_v2beta1.types import participant
 from google.cloud.dialogflow_v2beta1.types import participant as gcd_participant
 from google.cloud.dialogflow_v2beta1.types import session
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
 from .transports.base import ParticipantsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ParticipantsGrpcTransport
 from .transports.grpc_asyncio import ParticipantsGrpcAsyncIOTransport
@@ -397,7 +394,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.CreateParticipantRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
             parent (str):
                 Required. Resource identifier of the conversation adding
@@ -412,7 +410,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``participant`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -439,10 +436,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_participant.CreateParticipantRequest):
             request = gcd_participant.CreateParticipantRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if participant is not None:
@@ -483,7 +478,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetParticipantRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.GetParticipant][google.cloud.dialogflow.v2beta1.Participants.GetParticipant].
             name (str):
                 Required. The name of the participant. Format:
@@ -492,7 +488,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -519,10 +514,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.GetParticipantRequest):
             request = participant.GetParticipantRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -562,7 +555,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListParticipantsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
             parent (str):
                 Required. The conversation to list all participants
@@ -572,7 +566,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -602,10 +595,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.ListParticipantsRequest):
             request = participant.ListParticipantsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -654,7 +645,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateParticipantRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.UpdateParticipant][google.cloud.dialogflow.v2beta1.Participants.UpdateParticipant].
             participant (google.cloud.dialogflow_v2beta1.types.Participant):
                 Required. The participant to update.
@@ -668,7 +660,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -695,10 +686,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_participant.UpdateParticipantRequest):
             request = gcd_participant.UpdateParticipantRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if participant is not None:
                 request.participant = participant
             if update_mask is not None:
@@ -746,7 +735,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.AnalyzeContentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
             participant (str):
                 Required. The name of the participant this text comes
@@ -768,7 +758,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``event_input`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -795,10 +784,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_participant.AnalyzeContentRequest):
             request = gcd_participant.AnalyzeContentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if participant is not None:
                 request.participant = participant
             if text_input is not None:
@@ -849,7 +836,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.SuggestArticlesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
             parent (str):
                 Required. The name of the participant to fetch
@@ -859,7 +847,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -886,10 +873,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.SuggestArticlesRequest):
             request = participant.SuggestArticlesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -929,7 +914,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.SuggestFaqAnswersRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
             parent (str):
                 Required. The name of the participant to fetch
@@ -939,7 +925,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -966,10 +951,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.SuggestFaqAnswersRequest):
             request = participant.SuggestFaqAnswersRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1009,7 +992,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.SuggestSmartRepliesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
             parent (str):
                 Required. The name of the participant to fetch
@@ -1019,7 +1003,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1046,10 +1029,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.SuggestSmartRepliesRequest):
             request = participant.SuggestSmartRepliesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1106,9 +1087,9 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListSuggestionsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1125,7 +1106,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a participant.ListSuggestionsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1190,9 +1170,9 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.CompileSuggestionRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1206,7 +1186,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a participant.CompileSuggestionRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1236,8 +1215,6 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

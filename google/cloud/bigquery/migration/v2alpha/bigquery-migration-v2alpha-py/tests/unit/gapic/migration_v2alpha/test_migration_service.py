@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,6 +36,8 @@ from google.cloud.bigquery.migration_v2alpha.services.migration_service import M
 from google.cloud.bigquery.migration_v2alpha.services.migration_service import MigrationServiceClient
 from google.cloud.bigquery.migration_v2alpha.services.migration_service import pagers
 from google.cloud.bigquery.migration_v2alpha.services.migration_service import transports
+from google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.base import _API_CORE_VERSION
+from google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.bigquery.migration_v2alpha.types import migration_entities
 from google.cloud.bigquery.migration_v2alpha.types import migration_error_details
 from google.cloud.bigquery.migration_v2alpha.types import migration_metrics
@@ -46,6 +48,28 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import error_details_pb2 as error_details  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -213,12 +237,10 @@ def test_migration_service_client_client_options(client_class, transport_class, 
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (MigrationServiceClient, transports.MigrationServiceGrpcTransport, "grpc", "true"),
     (MigrationServiceAsyncClient, transports.MigrationServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (MigrationServiceClient, transports.MigrationServiceGrpcTransport, "grpc", "false"),
     (MigrationServiceAsyncClient, transports.MigrationServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(MigrationServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(MigrationServiceClient))
 @mock.patch.object(MigrationServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(MigrationServiceAsyncClient))
@@ -373,29 +395,20 @@ def test_create_migration_workflow(transport: str = 'grpc', request_type=migrati
         # Designate an appropriate return value for the call.
         call.return_value = migration_entities.MigrationWorkflow(
             name='name_value',
-
             display_name='display_name_value',
-
             state=migration_entities.MigrationWorkflow.State.DRAFT,
-
         )
-
         response = client.create_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.CreateMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, migration_entities.MigrationWorkflow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.state == migration_entities.MigrationWorkflow.State.DRAFT
 
 
@@ -418,8 +431,8 @@ def test_create_migration_workflow_empty_call():
         client.create_migration_workflow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.CreateMigrationWorkflowRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_migration_workflow_async(transport: str = 'grpc_asyncio', request_type=migration_service.CreateMigrationWorkflowRequest):
@@ -437,27 +450,22 @@ async def test_create_migration_workflow_async(transport: str = 'grpc_asyncio', 
             type(client.transport.create_migration_workflow),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationWorkflow(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationWorkflow(
             name='name_value',
             display_name='display_name_value',
             state=migration_entities.MigrationWorkflow.State.DRAFT,
         ))
-
         response = await client.create_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.CreateMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, migration_entities.MigrationWorkflow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.state == migration_entities.MigrationWorkflow.State.DRAFT
 
 
@@ -474,6 +482,7 @@ def test_create_migration_workflow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.CreateMigrationWorkflowRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -481,7 +490,6 @@ def test_create_migration_workflow_field_headers():
             type(client.transport.create_migration_workflow),
             '__call__') as call:
         call.return_value = migration_entities.MigrationWorkflow()
-
         client.create_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -506,6 +514,7 @@ async def test_create_migration_workflow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.CreateMigrationWorkflowRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -513,7 +522,6 @@ async def test_create_migration_workflow_field_headers_async():
             type(client.transport.create_migration_workflow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationWorkflow())
-
         await client.create_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -540,7 +548,6 @@ def test_create_migration_workflow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = migration_entities.MigrationWorkflow()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_migration_workflow(
@@ -552,9 +559,7 @@ def test_create_migration_workflow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].migration_workflow == migration_entities.MigrationWorkflow(name='name_value')
 
 
@@ -598,9 +603,7 @@ async def test_create_migration_workflow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].migration_workflow == migration_entities.MigrationWorkflow(name='name_value')
 
 
@@ -637,29 +640,20 @@ def test_get_migration_workflow(transport: str = 'grpc', request_type=migration_
         # Designate an appropriate return value for the call.
         call.return_value = migration_entities.MigrationWorkflow(
             name='name_value',
-
             display_name='display_name_value',
-
             state=migration_entities.MigrationWorkflow.State.DRAFT,
-
         )
-
         response = client.get_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.GetMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, migration_entities.MigrationWorkflow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.state == migration_entities.MigrationWorkflow.State.DRAFT
 
 
@@ -682,8 +676,8 @@ def test_get_migration_workflow_empty_call():
         client.get_migration_workflow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.GetMigrationWorkflowRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_migration_workflow_async(transport: str = 'grpc_asyncio', request_type=migration_service.GetMigrationWorkflowRequest):
@@ -701,27 +695,22 @@ async def test_get_migration_workflow_async(transport: str = 'grpc_asyncio', req
             type(client.transport.get_migration_workflow),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationWorkflow(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationWorkflow(
             name='name_value',
             display_name='display_name_value',
             state=migration_entities.MigrationWorkflow.State.DRAFT,
         ))
-
         response = await client.get_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.GetMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, migration_entities.MigrationWorkflow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.state == migration_entities.MigrationWorkflow.State.DRAFT
 
 
@@ -738,6 +727,7 @@ def test_get_migration_workflow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.GetMigrationWorkflowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -745,7 +735,6 @@ def test_get_migration_workflow_field_headers():
             type(client.transport.get_migration_workflow),
             '__call__') as call:
         call.return_value = migration_entities.MigrationWorkflow()
-
         client.get_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -770,6 +759,7 @@ async def test_get_migration_workflow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.GetMigrationWorkflowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -777,7 +767,6 @@ async def test_get_migration_workflow_field_headers_async():
             type(client.transport.get_migration_workflow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationWorkflow())
-
         await client.get_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -804,7 +793,6 @@ def test_get_migration_workflow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = migration_entities.MigrationWorkflow()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_migration_workflow(
@@ -815,7 +803,6 @@ def test_get_migration_workflow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -857,7 +844,6 @@ async def test_get_migration_workflow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -893,21 +879,16 @@ def test_list_migration_workflows(transport: str = 'grpc', request_type=migratio
         # Designate an appropriate return value for the call.
         call.return_value = migration_service.ListMigrationWorkflowsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_migration_workflows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.ListMigrationWorkflowsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListMigrationWorkflowsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -930,8 +911,8 @@ def test_list_migration_workflows_empty_call():
         client.list_migration_workflows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.ListMigrationWorkflowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_migration_workflows_async(transport: str = 'grpc_asyncio', request_type=migration_service.ListMigrationWorkflowsRequest):
@@ -949,21 +930,18 @@ async def test_list_migration_workflows_async(transport: str = 'grpc_asyncio', r
             type(client.transport.list_migration_workflows),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_service.ListMigrationWorkflowsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(migration_service.ListMigrationWorkflowsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_migration_workflows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.ListMigrationWorkflowsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListMigrationWorkflowsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -980,6 +958,7 @@ def test_list_migration_workflows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.ListMigrationWorkflowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -987,7 +966,6 @@ def test_list_migration_workflows_field_headers():
             type(client.transport.list_migration_workflows),
             '__call__') as call:
         call.return_value = migration_service.ListMigrationWorkflowsResponse()
-
         client.list_migration_workflows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1012,6 +990,7 @@ async def test_list_migration_workflows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.ListMigrationWorkflowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1019,7 +998,6 @@ async def test_list_migration_workflows_field_headers_async():
             type(client.transport.list_migration_workflows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_service.ListMigrationWorkflowsResponse())
-
         await client.list_migration_workflows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1046,7 +1024,6 @@ def test_list_migration_workflows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = migration_service.ListMigrationWorkflowsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_migration_workflows(
@@ -1057,7 +1034,6 @@ def test_list_migration_workflows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1099,7 +1075,6 @@ async def test_list_migration_workflows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1304,7 +1279,6 @@ async def test_list_migration_workflows_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_delete_migration_workflow(transport: str = 'grpc', request_type=migration_service.DeleteMigrationWorkflowRequest):
     client = MigrationServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1321,13 +1295,11 @@ def test_delete_migration_workflow(transport: str = 'grpc', request_type=migrati
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.DeleteMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
@@ -1353,8 +1325,8 @@ def test_delete_migration_workflow_empty_call():
         client.delete_migration_workflow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.DeleteMigrationWorkflowRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_migration_workflow_async(transport: str = 'grpc_asyncio', request_type=migration_service.DeleteMigrationWorkflowRequest):
@@ -1373,13 +1345,11 @@ async def test_delete_migration_workflow_async(transport: str = 'grpc_asyncio', 
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.DeleteMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
@@ -1399,6 +1369,7 @@ def test_delete_migration_workflow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.DeleteMigrationWorkflowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1406,7 +1377,6 @@ def test_delete_migration_workflow_field_headers():
             type(client.transport.delete_migration_workflow),
             '__call__') as call:
         call.return_value = None
-
         client.delete_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1431,6 +1401,7 @@ async def test_delete_migration_workflow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.DeleteMigrationWorkflowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1438,7 +1409,6 @@ async def test_delete_migration_workflow_field_headers_async():
             type(client.transport.delete_migration_workflow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1465,7 +1435,6 @@ def test_delete_migration_workflow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_migration_workflow(
@@ -1476,7 +1445,6 @@ def test_delete_migration_workflow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1518,7 +1486,6 @@ async def test_delete_migration_workflow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1553,13 +1520,11 @@ def test_start_migration_workflow(transport: str = 'grpc', request_type=migratio
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.start_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.StartMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
@@ -1585,8 +1550,8 @@ def test_start_migration_workflow_empty_call():
         client.start_migration_workflow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.StartMigrationWorkflowRequest()
+
 
 @pytest.mark.asyncio
 async def test_start_migration_workflow_async(transport: str = 'grpc_asyncio', request_type=migration_service.StartMigrationWorkflowRequest):
@@ -1605,13 +1570,11 @@ async def test_start_migration_workflow_async(transport: str = 'grpc_asyncio', r
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.start_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.StartMigrationWorkflowRequest()
 
     # Establish that the response is the type that we expect.
@@ -1631,6 +1594,7 @@ def test_start_migration_workflow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.StartMigrationWorkflowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1638,7 +1602,6 @@ def test_start_migration_workflow_field_headers():
             type(client.transport.start_migration_workflow),
             '__call__') as call:
         call.return_value = None
-
         client.start_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1663,6 +1626,7 @@ async def test_start_migration_workflow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.StartMigrationWorkflowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1670,7 +1634,6 @@ async def test_start_migration_workflow_field_headers_async():
             type(client.transport.start_migration_workflow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.start_migration_workflow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1697,7 +1660,6 @@ def test_start_migration_workflow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.start_migration_workflow(
@@ -1708,7 +1670,6 @@ def test_start_migration_workflow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1750,7 +1711,6 @@ async def test_start_migration_workflow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1786,37 +1746,24 @@ def test_get_migration_subtask(transport: str = 'grpc', request_type=migration_s
         # Designate an appropriate return value for the call.
         call.return_value = migration_entities.MigrationSubtask(
             name='name_value',
-
             task_id='task_id_value',
-
             type_='type__value',
-
             state=migration_entities.MigrationSubtask.State.ACTIVE,
-
             resource_error_count=2169,
-
         )
-
         response = client.get_migration_subtask(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.GetMigrationSubtaskRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, migration_entities.MigrationSubtask)
-
     assert response.name == 'name_value'
-
     assert response.task_id == 'task_id_value'
-
     assert response.type_ == 'type__value'
-
     assert response.state == migration_entities.MigrationSubtask.State.ACTIVE
-
     assert response.resource_error_count == 2169
 
 
@@ -1839,8 +1786,8 @@ def test_get_migration_subtask_empty_call():
         client.get_migration_subtask()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.GetMigrationSubtaskRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_migration_subtask_async(transport: str = 'grpc_asyncio', request_type=migration_service.GetMigrationSubtaskRequest):
@@ -1858,33 +1805,26 @@ async def test_get_migration_subtask_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.get_migration_subtask),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationSubtask(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationSubtask(
             name='name_value',
             task_id='task_id_value',
             type_='type__value',
             state=migration_entities.MigrationSubtask.State.ACTIVE,
             resource_error_count=2169,
         ))
-
         response = await client.get_migration_subtask(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.GetMigrationSubtaskRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, migration_entities.MigrationSubtask)
-
     assert response.name == 'name_value'
-
     assert response.task_id == 'task_id_value'
-
     assert response.type_ == 'type__value'
-
     assert response.state == migration_entities.MigrationSubtask.State.ACTIVE
-
     assert response.resource_error_count == 2169
 
 
@@ -1901,6 +1841,7 @@ def test_get_migration_subtask_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.GetMigrationSubtaskRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1908,7 +1849,6 @@ def test_get_migration_subtask_field_headers():
             type(client.transport.get_migration_subtask),
             '__call__') as call:
         call.return_value = migration_entities.MigrationSubtask()
-
         client.get_migration_subtask(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1933,6 +1873,7 @@ async def test_get_migration_subtask_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.GetMigrationSubtaskRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1940,7 +1881,6 @@ async def test_get_migration_subtask_field_headers_async():
             type(client.transport.get_migration_subtask),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_entities.MigrationSubtask())
-
         await client.get_migration_subtask(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1967,7 +1907,6 @@ def test_get_migration_subtask_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = migration_entities.MigrationSubtask()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_migration_subtask(
@@ -1978,7 +1917,6 @@ def test_get_migration_subtask_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2020,7 +1958,6 @@ async def test_get_migration_subtask_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2056,21 +1993,16 @@ def test_list_migration_subtasks(transport: str = 'grpc', request_type=migration
         # Designate an appropriate return value for the call.
         call.return_value = migration_service.ListMigrationSubtasksResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_migration_subtasks(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.ListMigrationSubtasksRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListMigrationSubtasksPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2093,8 +2025,8 @@ def test_list_migration_subtasks_empty_call():
         client.list_migration_subtasks()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.ListMigrationSubtasksRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_migration_subtasks_async(transport: str = 'grpc_asyncio', request_type=migration_service.ListMigrationSubtasksRequest):
@@ -2112,21 +2044,18 @@ async def test_list_migration_subtasks_async(transport: str = 'grpc_asyncio', re
             type(client.transport.list_migration_subtasks),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_service.ListMigrationSubtasksResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(migration_service.ListMigrationSubtasksResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_migration_subtasks(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == migration_service.ListMigrationSubtasksRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListMigrationSubtasksAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2143,6 +2072,7 @@ def test_list_migration_subtasks_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.ListMigrationSubtasksRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2150,7 +2080,6 @@ def test_list_migration_subtasks_field_headers():
             type(client.transport.list_migration_subtasks),
             '__call__') as call:
         call.return_value = migration_service.ListMigrationSubtasksResponse()
-
         client.list_migration_subtasks(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2175,6 +2104,7 @@ async def test_list_migration_subtasks_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = migration_service.ListMigrationSubtasksRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2182,7 +2112,6 @@ async def test_list_migration_subtasks_field_headers_async():
             type(client.transport.list_migration_subtasks),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(migration_service.ListMigrationSubtasksResponse())
-
         await client.list_migration_subtasks(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2209,7 +2138,6 @@ def test_list_migration_subtasks_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = migration_service.ListMigrationSubtasksResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_migration_subtasks(
@@ -2220,7 +2148,6 @@ def test_list_migration_subtasks_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2262,7 +2189,6 @@ async def test_list_migration_subtasks_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2508,7 +2434,6 @@ def test_transport_instance():
     client = MigrationServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.MigrationServiceGrpcTransport(
@@ -2523,7 +2448,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.MigrationServiceGrpcTransport,
     transports.MigrationServiceGrpcAsyncIOTransport,
@@ -2535,7 +2459,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = MigrationServiceClient(
@@ -2545,7 +2468,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.MigrationServiceGrpcTransport,
     )
-
 
 def test_migration_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2574,15 +2496,33 @@ def test_migration_service_base_transport():
         'start_migration_workflow',
         'get_migration_subtask',
         'list_migration_subtasks',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_migration_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.MigrationServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.MigrationServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.MigrationServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_migration_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.MigrationServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.MigrationServiceTransport(
@@ -2598,33 +2538,182 @@ def test_migration_service_base_transport_with_credentials_file():
 
 def test_migration_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.MigrationServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.bigquery.migration_v2alpha.services.migration_service.transports.MigrationServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.MigrationServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_migration_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         MigrationServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_migration_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_migration_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        MigrationServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.MigrationServiceGrpcTransport,
+        transports.MigrationServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_migration_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.MigrationServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.MigrationServiceGrpcTransport,
+        transports.MigrationServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_migration_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.MigrationServiceGrpcTransport, grpc_helpers),
+        (transports.MigrationServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_migration_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "bigquerymigration.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="bigquerymigration.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.MigrationServiceGrpcTransport, grpc_helpers),
+        (transports.MigrationServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_migration_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "bigquerymigration.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.MigrationServiceGrpcTransport, grpc_helpers),
+        (transports.MigrationServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_migration_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "bigquerymigration.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -2686,7 +2775,6 @@ def test_migration_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='bigquerymigration.googleapis.com:8000'),
     )
     assert client.transport._host == 'bigquerymigration.googleapis.com:8000'
-
 
 def test_migration_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2807,7 +2895,6 @@ def test_migration_subtask_path():
     location = "clam"
     workflow = "whelk"
     subtask = "octopus"
-
     expected = "projects/{project}/locations/{location}/workflows/{workflow}/subtasks/{subtask}".format(project=project, location=location, workflow=workflow, subtask=subtask, )
     actual = MigrationServiceClient.migration_subtask_path(project, location, workflow, subtask)
     assert expected == actual
@@ -2815,11 +2902,10 @@ def test_migration_subtask_path():
 
 def test_parse_migration_subtask_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "workflow": "cuttlefish",
-    "subtask": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "workflow": "cuttlefish",
+        "subtask": "mussel",
     }
     path = MigrationServiceClient.migration_subtask_path(**expected)
 
@@ -2831,7 +2917,6 @@ def test_migration_workflow_path():
     project = "winkle"
     location = "nautilus"
     workflow = "scallop"
-
     expected = "projects/{project}/locations/{location}/workflows/{workflow}".format(project=project, location=location, workflow=workflow, )
     actual = MigrationServiceClient.migration_workflow_path(project, location, workflow)
     assert expected == actual
@@ -2839,10 +2924,9 @@ def test_migration_workflow_path():
 
 def test_parse_migration_workflow_path():
     expected = {
-    "project": "abalone",
-    "location": "squid",
-    "workflow": "clam",
-
+        "project": "abalone",
+        "location": "squid",
+        "workflow": "clam",
     }
     path = MigrationServiceClient.migration_workflow_path(**expected)
 
@@ -2852,7 +2936,6 @@ def test_parse_migration_workflow_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = MigrationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2860,8 +2943,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = MigrationServiceClient.common_billing_account_path(**expected)
 
@@ -2871,7 +2953,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = MigrationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2879,8 +2960,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = MigrationServiceClient.common_folder_path(**expected)
 
@@ -2890,7 +2970,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = MigrationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2898,8 +2977,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = MigrationServiceClient.common_organization_path(**expected)
 
@@ -2909,7 +2987,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = MigrationServiceClient.common_project_path(project)
     assert expected == actual
@@ -2917,8 +2994,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = MigrationServiceClient.common_project_path(**expected)
 
@@ -2929,7 +3005,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = MigrationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2937,9 +3012,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = MigrationServiceClient.common_location_path(**expected)
 

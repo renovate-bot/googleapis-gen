@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -133,8 +132,7 @@ from google.cloud.appengine_admin_v1.types.version import Version
 from google.cloud.appengine_admin_v1.types.version import Volume
 from google.cloud.appengine_admin_v1.types.version import VpcAccessConnector
 
-__all__ = (
-    'ApiConfigHandler',
+__all__ = ('ApiConfigHandler',
     'ApiEndpointHandler',
     'Application',
     'ApplicationsAsyncClient',

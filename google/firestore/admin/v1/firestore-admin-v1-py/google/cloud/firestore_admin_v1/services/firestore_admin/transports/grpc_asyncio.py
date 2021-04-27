@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -24,6 +22,7 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -33,7 +32,6 @@ from google.cloud.firestore_admin_v1.types import firestore_admin
 from google.cloud.firestore_admin_v1.types import index
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import FirestoreAdminTransport, DEFAULT_CLIENT_INFO
 from .grpc import FirestoreAdminGrpcTransport
 
@@ -84,13 +82,15 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -110,7 +110,8 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -169,7 +170,6 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -248,7 +248,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def create_index(self) -> Callable[
             [firestore_admin.CreateIndexRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create index method over gRPC.
+        r"""Return a callable for the
+        create index
+          method over gRPC.
 
         Creates a composite index. This returns a
         [google.longrunning.Operation][google.longrunning.Operation]
@@ -278,7 +280,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def list_indexes(self) -> Callable[
             [firestore_admin.ListIndexesRequest],
             Awaitable[firestore_admin.ListIndexesResponse]]:
-        r"""Return a callable for the list indexes method over gRPC.
+        r"""Return a callable for the
+        list indexes
+          method over gRPC.
 
         Lists composite indexes.
 
@@ -304,7 +308,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def get_index(self) -> Callable[
             [firestore_admin.GetIndexRequest],
             Awaitable[index.Index]]:
-        r"""Return a callable for the get index method over gRPC.
+        r"""Return a callable for the
+        get index
+          method over gRPC.
 
         Gets a composite index.
 
@@ -330,7 +336,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def delete_index(self) -> Callable[
             [firestore_admin.DeleteIndexRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete index method over gRPC.
+        r"""Return a callable for the
+        delete index
+          method over gRPC.
 
         Deletes a composite index.
 
@@ -356,7 +364,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def get_field(self) -> Callable[
             [firestore_admin.GetFieldRequest],
             Awaitable[field.Field]]:
-        r"""Return a callable for the get field method over gRPC.
+        r"""Return a callable for the
+        get field
+          method over gRPC.
 
         Gets the metadata and configuration for a Field.
 
@@ -382,7 +392,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def update_field(self) -> Callable[
             [firestore_admin.UpdateFieldRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update field method over gRPC.
+        r"""Return a callable for the
+        update field
+          method over gRPC.
 
         Updates a field configuration. Currently, field updates apply
         only to single field index configuration. However, calls to
@@ -423,7 +435,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def list_fields(self) -> Callable[
             [firestore_admin.ListFieldsRequest],
             Awaitable[firestore_admin.ListFieldsResponse]]:
-        r"""Return a callable for the list fields method over gRPC.
+        r"""Return a callable for the
+        list fields
+          method over gRPC.
 
         Lists the field configuration and metadata for this database.
 
@@ -456,7 +470,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def export_documents(self) -> Callable[
             [firestore_admin.ExportDocumentsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export documents method over gRPC.
+        r"""Return a callable for the
+        export documents
+          method over gRPC.
 
         Exports a copy of all or a subset of documents from
         Google Cloud Firestore to another storage system, such
@@ -491,7 +507,9 @@ class FirestoreAdminGrpcAsyncIOTransport(FirestoreAdminTransport):
     def import_documents(self) -> Callable[
             [firestore_admin.ImportDocumentsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the import documents method over gRPC.
+        r"""Return a callable for the
+        import documents
+          method over gRPC.
 
         Imports documents into Google Cloud Firestore.
         Existing documents with the same name are overwritten.

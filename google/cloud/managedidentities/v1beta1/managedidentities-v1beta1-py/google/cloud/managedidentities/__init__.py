@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,8 +32,7 @@ from google.cloud.managedidentities_v1beta1.types.managed_identities_service imp
 from google.cloud.managedidentities_v1beta1.types.resource import Domain
 from google.cloud.managedidentities_v1beta1.types.resource import Trust
 
-__all__ = (
-    'AttachTrustRequest',
+__all__ = ('AttachTrustRequest',
     'CreateMicrosoftAdDomainRequest',
     'DeleteDomainRequest',
     'DetachTrustRequest',

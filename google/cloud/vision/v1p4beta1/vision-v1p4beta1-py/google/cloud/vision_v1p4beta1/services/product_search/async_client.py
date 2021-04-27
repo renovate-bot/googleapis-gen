@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -37,7 +35,6 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import ProductSearchTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ProductSearchGrpcAsyncIOTransport
 from .client import ProductSearchClient
@@ -77,19 +74,14 @@ class ProductSearchAsyncClient:
     parse_product_set_path = staticmethod(ProductSearchClient.parse_product_set_path)
     reference_image_path = staticmethod(ProductSearchClient.reference_image_path)
     parse_reference_image_path = staticmethod(ProductSearchClient.parse_reference_image_path)
-
     common_billing_account_path = staticmethod(ProductSearchClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ProductSearchClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ProductSearchClient.common_folder_path)
     parse_common_folder_path = staticmethod(ProductSearchClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ProductSearchClient.common_organization_path)
     parse_common_organization_path = staticmethod(ProductSearchClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ProductSearchClient.common_project_path)
     parse_common_project_path = staticmethod(ProductSearchClient.parse_common_project_path)
-
     common_location_path = staticmethod(ProductSearchClient.common_location_path)
     parse_common_location_path = staticmethod(ProductSearchClient.parse_common_location_path)
 
@@ -174,7 +166,6 @@ class ProductSearchAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ProductSearchClient(
             credentials=credentials,
             transport=transport,
@@ -202,7 +193,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.CreateProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreateProductSet` method.
             parent (:class:`str`):
                 Required. The project in which the ProductSet should be
@@ -228,7 +220,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``product_set_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -256,7 +247,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if product_set is not None:
@@ -269,10 +259,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -316,7 +303,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.ListProductSetsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListProductSets` method.
             parent (:class:`str`):
                 Required. The project from which ProductSets should be
@@ -327,7 +315,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -354,7 +341,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -363,10 +349,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_product_sets,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -420,7 +403,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.GetProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `GetProductSet` method.
             name (:class:`str`):
                 Required. Resource name of the ProductSet to get.
@@ -431,7 +415,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -459,7 +442,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -468,10 +450,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -521,7 +500,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.UpdateProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `UpdateProductSet` method.
             product_set (:class:`google.cloud.vision_v1p4beta1.types.ProductSet`):
                 Required. The ProductSet resource
@@ -539,7 +519,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -567,7 +546,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if product_set is not None:
             request.product_set = product_set
         if update_mask is not None:
@@ -578,10 +556,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -623,7 +598,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.DeleteProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DeleteProductSet` method.
             name (:class:`str`):
                 Required. Resource name of the ProductSet to delete.
@@ -634,7 +610,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -653,7 +628,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -662,10 +636,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -714,7 +685,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.CreateProductRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreateProduct` method.
             parent (:class:`str`):
                 Required. The project in which the Product should be
@@ -740,7 +712,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``product_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -763,7 +734,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if product is not None:
@@ -776,10 +746,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_product,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -823,7 +790,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.ListProductsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListProducts` method.
             parent (:class:`str`):
                 Required. The project OR ProductSet from which Products
@@ -834,7 +802,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -861,7 +828,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -870,10 +836,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_products,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -927,7 +890,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.GetProductRequest`):
-                The request object. Request message for the `GetProduct`
+                The request object.
+                Request message for the `GetProduct`
                 method.
             name (:class:`str`):
                 Required. Resource name of the Product to get.
@@ -938,7 +902,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -961,7 +924,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -970,10 +932,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_product,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1030,7 +989,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.UpdateProductRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `UpdateProduct` method.
             product (:class:`google.cloud.vision_v1p4beta1.types.Product`):
                 Required. The Product resource which
@@ -1050,7 +1010,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1073,7 +1032,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if product is not None:
             request.product = product
         if update_mask is not None:
@@ -1084,10 +1042,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_product,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -1131,7 +1086,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.DeleteProductRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DeleteProduct` method.
             name (:class:`str`):
                 Required. Resource name of product to delete.
@@ -1142,7 +1098,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1161,7 +1116,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1170,10 +1124,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_product,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1234,7 +1185,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.CreateReferenceImageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreateReferenceImage` method.
             parent (:class:`str`):
                 Required. Resource name of the product in which to
@@ -1264,7 +1216,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``reference_image_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1289,7 +1240,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if reference_image is not None:
@@ -1302,10 +1252,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_reference_image,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -1350,7 +1297,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.DeleteReferenceImageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DeleteReferenceImage` method.
             name (:class:`str`):
                 Required. The resource name of the reference image to
@@ -1363,7 +1311,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1382,7 +1329,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1391,10 +1337,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_reference_image,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1438,7 +1381,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.ListReferenceImagesRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListReferenceImages` method.
             parent (:class:`str`):
                 Required. Resource name of the product containing the
@@ -1450,7 +1394,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1477,7 +1420,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1486,10 +1428,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_reference_images,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1543,7 +1482,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.GetReferenceImageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `GetReferenceImage` method.
             name (:class:`str`):
                 Required. The resource name of the ReferenceImage to
@@ -1556,7 +1496,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1581,7 +1520,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1590,10 +1528,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_reference_image,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1643,7 +1578,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.AddProductToProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `AddProductToProductSet` method.
             name (:class:`str`):
                 Required. The resource name for the ProductSet to
@@ -1665,7 +1601,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1684,7 +1619,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if product is not None:
@@ -1695,10 +1629,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.add_product_to_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -1735,7 +1666,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.RemoveProductFromProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `RemoveProductFromProductSet` method.
             name (:class:`str`):
                 Required. The resource name for the ProductSet to
@@ -1757,7 +1689,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1776,7 +1707,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if product is not None:
@@ -1787,10 +1717,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.remove_product_from_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -1833,7 +1760,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.ListProductsInProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListProductsInProductSet` method.
             name (:class:`str`):
                 Required. The ProductSet resource for which to retrieve
@@ -1845,7 +1773,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1873,7 +1800,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1882,10 +1808,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_products_in_product_set,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1947,7 +1870,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.ImportProductSetsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ImportProductSets` method.
             parent (:class:`str`):
                 Required. The project in which the ProductSets should be
@@ -1965,7 +1889,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1999,7 +1922,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if input_config is not None:
@@ -2010,10 +1932,7 @@ class ProductSearchAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.import_product_sets,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                 ),
                 deadline=600.0,
             ),
@@ -2086,7 +2005,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p4beta1.types.PurgeProductsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `PurgeProducts` method.
             parent (:class:`str`):
                 Required. The project and location in which the Products
@@ -2097,7 +2017,6 @@ class ProductSearchAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2135,7 +2054,6 @@ class ProductSearchAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -2173,8 +2091,6 @@ class ProductSearchAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.cloud.appengine_admin_v1.types import network_settings
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.cloud.appengine_admin_v1.types import service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .transports.base import ServicesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ServicesGrpcAsyncIOTransport
 from .client import ServicesClient
@@ -52,16 +49,12 @@ class ServicesAsyncClient:
 
     common_billing_account_path = staticmethod(ServicesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ServicesClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ServicesClient.common_folder_path)
     parse_common_folder_path = staticmethod(ServicesClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ServicesClient.common_organization_path)
     parse_common_organization_path = staticmethod(ServicesClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ServicesClient.common_project_path)
     parse_common_project_path = staticmethod(ServicesClient.parse_common_project_path)
-
     common_location_path = staticmethod(ServicesClient.common_location_path)
     parse_common_location_path = staticmethod(ServicesClient.parse_common_location_path)
 
@@ -146,7 +139,6 @@ class ServicesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ServicesClient(
             credentials=credentials,
             transport=transport,
@@ -166,9 +158,9 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListServicesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.ListServices`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -184,7 +176,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.ListServicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -235,9 +226,9 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.GetService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -261,7 +252,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.GetServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -302,9 +292,9 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.UpdateService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -327,7 +317,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.UpdateServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -377,9 +366,9 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.DeleteService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -406,7 +395,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.DeleteServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -443,8 +431,6 @@ class ServicesAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

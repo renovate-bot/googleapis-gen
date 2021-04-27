@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.cloud_tasks import CloudTasksClient
+
 from .types.cloudtasks import AcknowledgeTaskRequest
 from .types.cloudtasks import CancelLeaseRequest
 from .types.cloudtasks import CreateQueueRequest
@@ -49,7 +49,6 @@ from .types.target import PullTarget
 from .types.task import AttemptStatus
 from .types.task import Task
 from .types.task import TaskStatus
-
 
 __all__ = (
     'AcknowledgeTaskRequest',

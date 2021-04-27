@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,8 +31,7 @@ from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import 
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import UpdateInstanceMetadata
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import UpdateInstanceRequest
 
-__all__ = (
-    'CreateInstanceMetadata',
+__all__ = ('CreateInstanceMetadata',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
     'GetInstanceConfigRequest',

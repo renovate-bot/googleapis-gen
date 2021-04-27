@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -33,7 +31,6 @@ from google.cloud.monitoring_v3.services.uptime_check_service import pagers
 from google.cloud.monitoring_v3.types import uptime
 from google.cloud.monitoring_v3.types import uptime_service
 from google.protobuf import duration_pb2 as duration  # type: ignore
-
 from .transports.base import UptimeCheckServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import UptimeCheckServiceGrpcAsyncIOTransport
 from .client import UptimeCheckServiceClient
@@ -57,19 +54,14 @@ class UptimeCheckServiceAsyncClient:
 
     uptime_check_config_path = staticmethod(UptimeCheckServiceClient.uptime_check_config_path)
     parse_uptime_check_config_path = staticmethod(UptimeCheckServiceClient.parse_uptime_check_config_path)
-
     common_billing_account_path = staticmethod(UptimeCheckServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(UptimeCheckServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(UptimeCheckServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(UptimeCheckServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(UptimeCheckServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(UptimeCheckServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(UptimeCheckServiceClient.common_project_path)
     parse_common_project_path = staticmethod(UptimeCheckServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(UptimeCheckServiceClient.common_location_path)
     parse_common_location_path = staticmethod(UptimeCheckServiceClient.parse_common_location_path)
 
@@ -154,7 +146,6 @@ class UptimeCheckServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = UptimeCheckServiceClient(
             credentials=credentials,
             transport=transport,
@@ -177,7 +168,8 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListUptimeCheckConfigsRequest`):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `ListUptimeCheckConfigs` request.
             parent (:class:`str`):
                 Required. The project whose Uptime check configurations
@@ -190,7 +182,6 @@ class UptimeCheckServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -217,7 +208,6 @@ class UptimeCheckServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -226,10 +216,7 @@ class UptimeCheckServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_uptime_check_configs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -279,7 +266,8 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetUptimeCheckConfigRequest`):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `GetUptimeCheckConfig` request.
             name (:class:`str`):
                 Required. The Uptime check configuration to retrieve.
@@ -292,7 +280,6 @@ class UptimeCheckServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -318,7 +305,6 @@ class UptimeCheckServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -327,10 +313,7 @@ class UptimeCheckServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_uptime_check_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -372,7 +355,8 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateUptimeCheckConfigRequest`):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `CreateUptimeCheckConfig` request.
             parent (:class:`str`):
                 Required. The project in which to create the Uptime
@@ -392,7 +376,6 @@ class UptimeCheckServiceAsyncClient:
                 This corresponds to the ``uptime_check_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -418,7 +401,6 @@ class UptimeCheckServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if uptime_check_config is not None:
@@ -467,7 +449,8 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateUptimeCheckConfigRequest`):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `UpdateUptimeCheckConfig` request.
             uptime_check_config (:class:`google.cloud.monitoring_v3.types.UptimeCheckConfig`):
                 Required. If an ``updateMask`` has been specified, this
@@ -487,7 +470,6 @@ class UptimeCheckServiceAsyncClient:
                 This corresponds to the ``uptime_check_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -513,7 +495,6 @@ class UptimeCheckServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if uptime_check_config is not None:
             request.uptime_check_config = uptime_check_config
 
@@ -559,7 +540,8 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteUptimeCheckConfigRequest`):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `DeleteUptimeCheckConfig` request.
             name (:class:`str`):
                 Required. The Uptime check configuration to delete. The
@@ -572,7 +554,6 @@ class UptimeCheckServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -591,7 +572,6 @@ class UptimeCheckServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -600,10 +580,7 @@ class UptimeCheckServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_uptime_check_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -641,9 +618,9 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListUptimeCheckIpsRequest`):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `ListUptimeCheckIps` request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -659,7 +636,6 @@ class UptimeCheckServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = uptime_service.ListUptimeCheckIpsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -667,10 +643,7 @@ class UptimeCheckServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_uptime_check_ips,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -699,8 +672,6 @@ class UptimeCheckServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

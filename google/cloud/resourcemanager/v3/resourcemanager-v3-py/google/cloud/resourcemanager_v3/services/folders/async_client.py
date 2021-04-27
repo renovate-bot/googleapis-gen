@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import FoldersTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import FoldersGrpcAsyncIOTransport
 from .client import FoldersClient
@@ -56,19 +53,14 @@ class FoldersAsyncClient:
 
     folder_path = staticmethod(FoldersClient.folder_path)
     parse_folder_path = staticmethod(FoldersClient.parse_folder_path)
-
     common_billing_account_path = staticmethod(FoldersClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(FoldersClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(FoldersClient.common_folder_path)
     parse_common_folder_path = staticmethod(FoldersClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(FoldersClient.common_organization_path)
     parse_common_organization_path = staticmethod(FoldersClient.parse_common_organization_path)
-
     common_project_path = staticmethod(FoldersClient.common_project_path)
     parse_common_project_path = staticmethod(FoldersClient.parse_common_project_path)
-
     common_location_path = staticmethod(FoldersClient.common_location_path)
     parse_common_location_path = staticmethod(FoldersClient.parse_common_location_path)
 
@@ -153,7 +145,6 @@ class FoldersAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = FoldersClient(
             credentials=credentials,
             transport=transport,
@@ -178,7 +169,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetFolderRequest`):
-                The request object. The GetFolder request message.
+                The request object.
+                The GetFolder request message.
             name (:class:`str`):
                 Required. The resource name of the folder to retrieve.
                 Must be of the form ``folders/{folder_id}``.
@@ -186,7 +178,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -212,7 +203,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -221,10 +211,7 @@ class FoldersAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_folder,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -270,7 +257,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListFoldersRequest`):
-                The request object. The ListFolders request message.
+                The request object.
+                The ListFolders request message.
             parent (:class:`str`):
                 Required. The resource name of the organization or
                 folder whose folders are being listed. Must be of the
@@ -283,7 +271,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -310,7 +297,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -319,10 +305,7 @@ class FoldersAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_folders,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -369,7 +352,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.SearchFoldersRequest`):
-                The request object. The request message for searching
+                The request object.
+                The request message for searching
                 folders.
             query (:class:`str`):
                 Optional. Search criteria used to select the folders to
@@ -409,7 +393,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -437,7 +420,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if query is not None:
             request.query = query
 
@@ -509,7 +491,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateFolderRequest`):
-                The request object. The CreateFolder request message.
+                The request object.
+                The CreateFolder request message.
             folder (:class:`google.cloud.resourcemanager_v3.types.Folder`):
                 Required. The folder being created,
                 only the display name and parent will be
@@ -519,7 +502,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``folder`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -546,7 +528,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if folder is not None:
             request.folder = folder
 
@@ -607,7 +588,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UpdateFolderRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [UpdateFolder][google.cloud.resourcemanager.v3.Folder.UpdateFolder]
                 method.
 
@@ -629,7 +611,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -656,7 +637,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if folder is not None:
             request.folder = folder
         if update_mask is not None:
@@ -727,7 +707,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.MoveFolderRequest`):
-                The request object. The MoveFolder request message.
+                The request object.
+                The MoveFolder request message.
             name (:class:`str`):
                 Required. The resource name of the Folder to move. Must
                 be of the form folders/{folder_id}
@@ -744,7 +725,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``destination_parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -771,7 +751,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if destination_parent is not None:
@@ -835,7 +814,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteFolderRequest`):
-                The request object. The DeleteFolder request message.
+                The request object.
+                The DeleteFolder request message.
             name (:class:`str`):
                 Required. The resource name of the folder to be deleted.
                 Must be of the form ``folders/{folder_id}``.
@@ -843,7 +823,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -870,7 +849,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -933,7 +911,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UndeleteFolderRequest`):
-                The request object. The UndeleteFolder request message.
+                The request object.
+                The UndeleteFolder request message.
             name (:class:`str`):
                 Required. The resource name of the folder to undelete.
                 Must be of the form ``folders/{folder_id}``.
@@ -941,7 +920,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -968,7 +946,6 @@ class FoldersAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1024,7 +1001,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1035,7 +1013,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1109,11 +1086,10 @@ class FoldersAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -1122,10 +1098,7 @@ class FoldersAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -1169,7 +1142,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1180,7 +1154,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1254,11 +1227,10 @@ class FoldersAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
-
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -1306,7 +1278,8 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1326,7 +1299,6 @@ class FoldersAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1345,11 +1317,10 @@ class FoldersAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
-
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -1379,8 +1350,6 @@ class FoldersAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

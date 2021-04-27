@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,7 @@
 from .services.config_service_v2 import ConfigServiceV2Client
 from .services.logging_service_v2 import LoggingServiceV2Client
 from .services.metrics_service_v2 import MetricsServiceV2Client
+
 from .types.log_entry import LogEntry
 from .types.log_entry import LogEntryOperation
 from .types.log_entry import LogEntrySourceLocation
@@ -74,7 +74,6 @@ from .types.logging_metrics import ListLogMetricsRequest
 from .types.logging_metrics import ListLogMetricsResponse
 from .types.logging_metrics import LogMetric
 from .types.logging_metrics import UpdateLogMetricRequest
-
 
 __all__ = (
     'BigQueryOptions',

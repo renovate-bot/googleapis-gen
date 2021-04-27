@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
+import packaging.version
 import pkg_resources
 
 from google import auth  # type: ignore
+import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -31,7 +31,6 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
-
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -41,6 +40,18 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
+try:
+    # google.auth.__version__ was added in 1.26.0
+    _GOOGLE_AUTH_VERSION = auth.__version__
+except AttributeError:
+    try:  # try pkg_resources if it is available
+        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
+    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
+        _GOOGLE_AUTH_VERSION = None
+
+_API_CORE_VERSION = google.api_core.__version__
+
+
 class DataCatalogTransport(abc.ABC):
     """Abstract transport class for DataCatalog."""
 
@@ -48,20 +59,22 @@ class DataCatalogTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
+    DEFAULT_HOST: str = 'datacatalog.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'datacatalog.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: credentials.Credentials = None,
-            credentials_file: typing.Optional[str] = None,
-            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
-            quota_project_id: typing.Optional[str] = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -70,7 +83,7 @@ class DataCatalogTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scope (Optional[Sequence[str]]): A list of scopes.
+            scopes (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -84,6 +97,8 @@ class DataCatalogTransport(abc.ABC):
             host += ':443'
         self._host = host
 
+        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
+
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -95,15 +110,56 @@ class DataCatalogTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                scopes=self._scopes,
+                                **scopes_kwargs,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
+
+    # TODO(busunkim): These two class methods are in the base transport
+    # to avoid duplicating code across the transport classes. These functions
+    # should be deleted once the minimum required versions of google-api-core
+    # and google-auth are increased.
+
+    # TODO: Remove this function once google-auth >= 1.25.0 is required
+    @classmethod
+    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
+        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
+
+        scopes_kwargs = {}
+
+        if _GOOGLE_AUTH_VERSION and (
+            packaging.version.parse(_GOOGLE_AUTH_VERSION)
+            >= packaging.version.parse("1.25.0")
+        ):
+            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
+        else:
+            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
+
+        return scopes_kwargs
+
+    # TODO: Remove this function once google-api-core >= 1.26.0 is required
+    @classmethod
+    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
+        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
+
+        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
+
+        if _API_CORE_VERSION and (
+            packaging.version.parse(_API_CORE_VERSION)
+            >= packaging.version.parse("1.26.0")
+        ):
+            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
+            self_signed_jwt_kwargs["scopes"] = scopes
+            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
+        else:
+            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
+
+        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -126,10 +182,7 @@ class DataCatalogTransport(abc.ABC):
             self.get_entry_group: gapic_v1.method.wrap_method(
                 self.get_entry_group,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -141,10 +194,7 @@ class DataCatalogTransport(abc.ABC):
             self.delete_entry_group: gapic_v1.method.wrap_method(
                 self.delete_entry_group,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -171,10 +221,7 @@ class DataCatalogTransport(abc.ABC):
             self.delete_entry: gapic_v1.method.wrap_method(
                 self.delete_entry,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -186,10 +233,7 @@ class DataCatalogTransport(abc.ABC):
             self.get_entry: gapic_v1.method.wrap_method(
                 self.get_entry,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -201,10 +245,7 @@ class DataCatalogTransport(abc.ABC):
             self.lookup_entry: gapic_v1.method.wrap_method(
                 self.lookup_entry,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -226,10 +267,7 @@ class DataCatalogTransport(abc.ABC):
             self.get_tag_template: gapic_v1.method.wrap_method(
                 self.get_tag_template,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -246,10 +284,7 @@ class DataCatalogTransport(abc.ABC):
             self.delete_tag_template: gapic_v1.method.wrap_method(
                 self.delete_tag_template,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -276,10 +311,7 @@ class DataCatalogTransport(abc.ABC):
             self.delete_tag_template_field: gapic_v1.method.wrap_method(
                 self.delete_tag_template_field,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -301,10 +333,7 @@ class DataCatalogTransport(abc.ABC):
             self.delete_tag: gapic_v1.method.wrap_method(
                 self.delete_tag,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -316,10 +345,7 @@ class DataCatalogTransport(abc.ABC):
             self.list_tags: gapic_v1.method.wrap_method(
                 self.list_tags,
                 default_retry=retries.Retry(
-                    initial=0.1,
-                    maximum=60.0,
-                    multiplier=1.3,
-                    predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -343,249 +369,248 @@ class DataCatalogTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
-    def search_catalog(self) -> typing.Callable[
+    def search_catalog(self) -> Callable[
             [datacatalog.SearchCatalogRequest],
-            typing.Union[
+            Union[
                 datacatalog.SearchCatalogResponse,
-                typing.Awaitable[datacatalog.SearchCatalogResponse]
+                Awaitable[datacatalog.SearchCatalogResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_entry_group(self) -> typing.Callable[
+    def create_entry_group(self) -> Callable[
             [datacatalog.CreateEntryGroupRequest],
-            typing.Union[
+            Union[
                 datacatalog.EntryGroup,
-                typing.Awaitable[datacatalog.EntryGroup]
+                Awaitable[datacatalog.EntryGroup]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_entry_group(self) -> typing.Callable[
+    def update_entry_group(self) -> Callable[
             [datacatalog.UpdateEntryGroupRequest],
-            typing.Union[
+            Union[
                 datacatalog.EntryGroup,
-                typing.Awaitable[datacatalog.EntryGroup]
+                Awaitable[datacatalog.EntryGroup]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_entry_group(self) -> typing.Callable[
+    def get_entry_group(self) -> Callable[
             [datacatalog.GetEntryGroupRequest],
-            typing.Union[
+            Union[
                 datacatalog.EntryGroup,
-                typing.Awaitable[datacatalog.EntryGroup]
+                Awaitable[datacatalog.EntryGroup]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_entry_group(self) -> typing.Callable[
+    def delete_entry_group(self) -> Callable[
             [datacatalog.DeleteEntryGroupRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_entry_groups(self) -> typing.Callable[
+    def list_entry_groups(self) -> Callable[
             [datacatalog.ListEntryGroupsRequest],
-            typing.Union[
+            Union[
                 datacatalog.ListEntryGroupsResponse,
-                typing.Awaitable[datacatalog.ListEntryGroupsResponse]
+                Awaitable[datacatalog.ListEntryGroupsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_entry(self) -> typing.Callable[
+    def create_entry(self) -> Callable[
             [datacatalog.CreateEntryRequest],
-            typing.Union[
+            Union[
                 datacatalog.Entry,
-                typing.Awaitable[datacatalog.Entry]
+                Awaitable[datacatalog.Entry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_entry(self) -> typing.Callable[
+    def update_entry(self) -> Callable[
             [datacatalog.UpdateEntryRequest],
-            typing.Union[
+            Union[
                 datacatalog.Entry,
-                typing.Awaitable[datacatalog.Entry]
+                Awaitable[datacatalog.Entry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_entry(self) -> typing.Callable[
+    def delete_entry(self) -> Callable[
             [datacatalog.DeleteEntryRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_entry(self) -> typing.Callable[
+    def get_entry(self) -> Callable[
             [datacatalog.GetEntryRequest],
-            typing.Union[
+            Union[
                 datacatalog.Entry,
-                typing.Awaitable[datacatalog.Entry]
+                Awaitable[datacatalog.Entry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def lookup_entry(self) -> typing.Callable[
+    def lookup_entry(self) -> Callable[
             [datacatalog.LookupEntryRequest],
-            typing.Union[
+            Union[
                 datacatalog.Entry,
-                typing.Awaitable[datacatalog.Entry]
+                Awaitable[datacatalog.Entry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_entries(self) -> typing.Callable[
+    def list_entries(self) -> Callable[
             [datacatalog.ListEntriesRequest],
-            typing.Union[
+            Union[
                 datacatalog.ListEntriesResponse,
-                typing.Awaitable[datacatalog.ListEntriesResponse]
+                Awaitable[datacatalog.ListEntriesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_tag_template(self) -> typing.Callable[
+    def create_tag_template(self) -> Callable[
             [datacatalog.CreateTagTemplateRequest],
-            typing.Union[
+            Union[
                 tags.TagTemplate,
-                typing.Awaitable[tags.TagTemplate]
+                Awaitable[tags.TagTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_tag_template(self) -> typing.Callable[
+    def get_tag_template(self) -> Callable[
             [datacatalog.GetTagTemplateRequest],
-            typing.Union[
+            Union[
                 tags.TagTemplate,
-                typing.Awaitable[tags.TagTemplate]
+                Awaitable[tags.TagTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_tag_template(self) -> typing.Callable[
+    def update_tag_template(self) -> Callable[
             [datacatalog.UpdateTagTemplateRequest],
-            typing.Union[
+            Union[
                 tags.TagTemplate,
-                typing.Awaitable[tags.TagTemplate]
+                Awaitable[tags.TagTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_tag_template(self) -> typing.Callable[
+    def delete_tag_template(self) -> Callable[
             [datacatalog.DeleteTagTemplateRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_tag_template_field(self) -> typing.Callable[
+    def create_tag_template_field(self) -> Callable[
             [datacatalog.CreateTagTemplateFieldRequest],
-            typing.Union[
+            Union[
                 tags.TagTemplateField,
-                typing.Awaitable[tags.TagTemplateField]
+                Awaitable[tags.TagTemplateField]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_tag_template_field(self) -> typing.Callable[
+    def update_tag_template_field(self) -> Callable[
             [datacatalog.UpdateTagTemplateFieldRequest],
-            typing.Union[
+            Union[
                 tags.TagTemplateField,
-                typing.Awaitable[tags.TagTemplateField]
+                Awaitable[tags.TagTemplateField]
             ]]:
         raise NotImplementedError()
 
     @property
-    def rename_tag_template_field(self) -> typing.Callable[
+    def rename_tag_template_field(self) -> Callable[
             [datacatalog.RenameTagTemplateFieldRequest],
-            typing.Union[
+            Union[
                 tags.TagTemplateField,
-                typing.Awaitable[tags.TagTemplateField]
+                Awaitable[tags.TagTemplateField]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_tag_template_field(self) -> typing.Callable[
+    def delete_tag_template_field(self) -> Callable[
             [datacatalog.DeleteTagTemplateFieldRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_tag(self) -> typing.Callable[
+    def create_tag(self) -> Callable[
             [datacatalog.CreateTagRequest],
-            typing.Union[
+            Union[
                 tags.Tag,
-                typing.Awaitable[tags.Tag]
+                Awaitable[tags.Tag]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_tag(self) -> typing.Callable[
+    def update_tag(self) -> Callable[
             [datacatalog.UpdateTagRequest],
-            typing.Union[
+            Union[
                 tags.Tag,
-                typing.Awaitable[tags.Tag]
+                Awaitable[tags.Tag]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_tag(self) -> typing.Callable[
+    def delete_tag(self) -> Callable[
             [datacatalog.DeleteTagRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_tags(self) -> typing.Callable[
+    def list_tags(self) -> Callable[
             [datacatalog.ListTagsRequest],
-            typing.Union[
+            Union[
                 datacatalog.ListTagsResponse,
-                typing.Awaitable[datacatalog.ListTagsResponse]
+                Awaitable[datacatalog.ListTagsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def set_iam_policy(self) -> typing.Callable[
+    def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
-            typing.Union[
+            Union[
                 giv_policy.Policy,
-                typing.Awaitable[giv_policy.Policy]
+                Awaitable[giv_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_iam_policy(self) -> typing.Callable[
+    def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
-            typing.Union[
+            Union[
                 giv_policy.Policy,
-                typing.Awaitable[giv_policy.Policy]
+                Awaitable[giv_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def test_iam_permissions(self) -> typing.Callable[
+    def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
-            typing.Union[
+            Union[
                 iam_policy.TestIamPermissionsResponse,
-                typing.Awaitable[iam_policy.TestIamPermissionsResponse]
+                Awaitable[iam_policy.TestIamPermissionsResponse]
             ]]:
         raise NotImplementedError()
 

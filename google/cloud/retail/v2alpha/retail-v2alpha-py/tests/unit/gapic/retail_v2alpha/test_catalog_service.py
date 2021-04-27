@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,12 +36,36 @@ from google.cloud.retail_v2alpha.services.catalog_service import CatalogServiceA
 from google.cloud.retail_v2alpha.services.catalog_service import CatalogServiceClient
 from google.cloud.retail_v2alpha.services.catalog_service import pagers
 from google.cloud.retail_v2alpha.services.catalog_service import transports
+from google.cloud.retail_v2alpha.services.catalog_service.transports.base import _API_CORE_VERSION
+from google.cloud.retail_v2alpha.services.catalog_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.retail_v2alpha.types import catalog
 from google.cloud.retail_v2alpha.types import catalog as gcr_catalog
 from google.cloud.retail_v2alpha.types import catalog_service
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -209,12 +233,10 @@ def test_catalog_service_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (CatalogServiceClient, transports.CatalogServiceGrpcTransport, "grpc", "true"),
     (CatalogServiceAsyncClient, transports.CatalogServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (CatalogServiceClient, transports.CatalogServiceGrpcTransport, "grpc", "false"),
     (CatalogServiceAsyncClient, transports.CatalogServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(CatalogServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(CatalogServiceClient))
 @mock.patch.object(CatalogServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(CatalogServiceAsyncClient))
@@ -369,21 +391,16 @@ def test_list_catalogs(transport: str = 'grpc', request_type=catalog_service.Lis
         # Designate an appropriate return value for the call.
         call.return_value = catalog_service.ListCatalogsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == catalog_service.ListCatalogsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListCatalogsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -406,8 +423,8 @@ def test_list_catalogs_empty_call():
         client.list_catalogs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == catalog_service.ListCatalogsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_catalogs_async(transport: str = 'grpc_asyncio', request_type=catalog_service.ListCatalogsRequest):
@@ -425,21 +442,18 @@ async def test_list_catalogs_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_catalogs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(catalog_service.ListCatalogsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(catalog_service.ListCatalogsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == catalog_service.ListCatalogsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCatalogsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -456,6 +470,7 @@ def test_list_catalogs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = catalog_service.ListCatalogsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -463,7 +478,6 @@ def test_list_catalogs_field_headers():
             type(client.transport.list_catalogs),
             '__call__') as call:
         call.return_value = catalog_service.ListCatalogsResponse()
-
         client.list_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -488,6 +502,7 @@ async def test_list_catalogs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = catalog_service.ListCatalogsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -495,7 +510,6 @@ async def test_list_catalogs_field_headers_async():
             type(client.transport.list_catalogs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(catalog_service.ListCatalogsResponse())
-
         await client.list_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -522,7 +536,6 @@ def test_list_catalogs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = catalog_service.ListCatalogsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_catalogs(
@@ -533,7 +546,6 @@ def test_list_catalogs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -575,7 +587,6 @@ async def test_list_catalogs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -780,7 +791,6 @@ async def test_list_catalogs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_catalog(transport: str = 'grpc', request_type=catalog_service.UpdateCatalogRequest):
     client = CatalogServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -798,25 +808,18 @@ def test_update_catalog(transport: str = 'grpc', request_type=catalog_service.Up
         # Designate an appropriate return value for the call.
         call.return_value = gcr_catalog.Catalog(
             name='name_value',
-
             display_name='display_name_value',
-
         )
-
         response = client.update_catalog(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == catalog_service.UpdateCatalogRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gcr_catalog.Catalog)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -839,8 +842,8 @@ def test_update_catalog_empty_call():
         client.update_catalog()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == catalog_service.UpdateCatalogRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_catalog_async(transport: str = 'grpc_asyncio', request_type=catalog_service.UpdateCatalogRequest):
@@ -858,24 +861,20 @@ async def test_update_catalog_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_catalog),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcr_catalog.Catalog(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcr_catalog.Catalog(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.update_catalog(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == catalog_service.UpdateCatalogRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcr_catalog.Catalog)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -892,6 +891,7 @@ def test_update_catalog_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = catalog_service.UpdateCatalogRequest()
+
     request.catalog.name = 'catalog.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -899,7 +899,6 @@ def test_update_catalog_field_headers():
             type(client.transport.update_catalog),
             '__call__') as call:
         call.return_value = gcr_catalog.Catalog()
-
         client.update_catalog(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -924,6 +923,7 @@ async def test_update_catalog_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = catalog_service.UpdateCatalogRequest()
+
     request.catalog.name = 'catalog.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -931,7 +931,6 @@ async def test_update_catalog_field_headers_async():
             type(client.transport.update_catalog),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcr_catalog.Catalog())
-
         await client.update_catalog(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -958,7 +957,6 @@ def test_update_catalog_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcr_catalog.Catalog()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_catalog(
@@ -970,9 +968,7 @@ def test_update_catalog_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].catalog == gcr_catalog.Catalog(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1016,9 +1012,7 @@ async def test_update_catalog_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].catalog == gcr_catalog.Catalog(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1078,7 +1072,6 @@ def test_transport_instance():
     client = CatalogServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CatalogServiceGrpcTransport(
@@ -1093,7 +1086,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.CatalogServiceGrpcTransport,
     transports.CatalogServiceGrpcAsyncIOTransport,
@@ -1105,7 +1097,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = CatalogServiceClient(
@@ -1115,7 +1106,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.CatalogServiceGrpcTransport,
     )
-
 
 def test_catalog_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1139,15 +1129,33 @@ def test_catalog_service_base_transport():
     methods = (
         'list_catalogs',
         'update_catalog',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_catalog_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.retail_v2alpha.services.catalog_service.transports.CatalogServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.retail_v2alpha.services.catalog_service.transports.CatalogServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.CatalogServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_catalog_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.retail_v2alpha.services.catalog_service.transports.CatalogServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.CatalogServiceTransport(
@@ -1163,33 +1171,182 @@ def test_catalog_service_base_transport_with_credentials_file():
 
 def test_catalog_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.retail_v2alpha.services.catalog_service.transports.CatalogServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.retail_v2alpha.services.catalog_service.transports.CatalogServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.CatalogServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_catalog_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         CatalogServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_catalog_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_catalog_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        CatalogServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.CatalogServiceGrpcTransport,
+        transports.CatalogServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_catalog_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.CatalogServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.CatalogServiceGrpcTransport,
+        transports.CatalogServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_catalog_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.CatalogServiceGrpcTransport, grpc_helpers),
+        (transports.CatalogServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_catalog_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "retail.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="retail.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.CatalogServiceGrpcTransport, grpc_helpers),
+        (transports.CatalogServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_catalog_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "retail.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.CatalogServiceGrpcTransport, grpc_helpers),
+        (transports.CatalogServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_catalog_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "retail.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1251,7 +1408,6 @@ def test_catalog_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='retail.googleapis.com:8000'),
     )
     assert client.transport._host == 'retail.googleapis.com:8000'
-
 
 def test_catalog_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1371,7 +1527,6 @@ def test_catalog_path():
     project = "squid"
     location = "clam"
     catalog = "whelk"
-
     expected = "projects/{project}/locations/{location}/catalogs/{catalog}".format(project=project, location=location, catalog=catalog, )
     actual = CatalogServiceClient.catalog_path(project, location, catalog)
     assert expected == actual
@@ -1379,10 +1534,9 @@ def test_catalog_path():
 
 def test_parse_catalog_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "catalog": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "catalog": "nudibranch",
     }
     path = CatalogServiceClient.catalog_path(**expected)
 
@@ -1392,7 +1546,6 @@ def test_parse_catalog_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CatalogServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1400,8 +1553,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = CatalogServiceClient.common_billing_account_path(**expected)
 
@@ -1411,7 +1563,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CatalogServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1419,8 +1570,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = CatalogServiceClient.common_folder_path(**expected)
 
@@ -1430,7 +1580,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CatalogServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1438,8 +1587,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = CatalogServiceClient.common_organization_path(**expected)
 
@@ -1449,7 +1597,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = CatalogServiceClient.common_project_path(project)
     assert expected == actual
@@ -1457,8 +1604,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = CatalogServiceClient.common_project_path(**expected)
 
@@ -1469,7 +1615,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CatalogServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1477,9 +1622,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = CatalogServiceClient.common_location_path(**expected)
 

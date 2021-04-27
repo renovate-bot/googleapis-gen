@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.recommendationengine_v1beta1.services.prediction_service import pagers
 from google.cloud.recommendationengine_v1beta1.types import prediction_service
 from google.cloud.recommendationengine_v1beta1.types import user_event as gcr_user_event
-
 from .transports.base import PredictionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import PredictionServiceGrpcTransport
 from .transports.grpc_asyncio import PredictionServiceGrpcAsyncIOTransport
@@ -342,7 +339,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.PredictRequest):
-                The request object. Request message for Predict method.
+                The request object.
+                Request message for Predict method.
             name (str):
                 Required. Full resource name of the format:
                 ``{name=projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/*}``
@@ -397,7 +395,6 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
                 This corresponds to the ``user_event`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,10 +423,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, prediction_service.PredictRequest):
             request = prediction_service.PredictRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if user_event is not None:
@@ -466,8 +461,6 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.common.types import dates
 from google.ads.googleads.v4.enums.types import keyword_plan_forecast_interval
@@ -55,21 +52,29 @@ class KeywordPlan(proto.Message):
             plan.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=wrappers.StringValue,
     )
-    forecast_period = proto.Field(proto.MESSAGE, number=4,
+    forecast_period = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='KeywordPlanForecastPeriod',
     )
 
 
 class KeywordPlanForecastPeriod(proto.Message):
     r"""The forecasting period associated with the keyword plan.
-
     Attributes:
         date_interval (google.ads.googleads.v4.enums.types.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval):
             A future date range relative to the current
@@ -82,10 +87,16 @@ class KeywordPlanForecastPeriod(proto.Message):
             end dates are inclusive.
     """
 
-    date_interval = proto.Field(proto.ENUM, number=1, oneof='interval',
+    date_interval = proto.Field(
+        proto.ENUM,
+        number=1,
+        oneof='interval',
         enum=keyword_plan_forecast_interval.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval,
     )
-    date_range = proto.Field(proto.MESSAGE, number=2, oneof='interval',
+    date_range = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='interval',
         message=dates.DateRange,
     )
 

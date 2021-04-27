@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import ad_group_ad
 from google.ads.googleads.v4.services.types import ad_group_ad_service
-
 from .base import AdGroupAdServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class AdGroupAdServiceGrpcTransport(AdGroupAdServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class AdGroupAdServiceGrpcTransport(AdGroupAdServiceTransport):
     def get_ad_group_ad(self) -> Callable[
             [ad_group_ad_service.GetAdGroupAdRequest],
             ad_group_ad.AdGroupAd]:
-        r"""Return a callable for the get ad group ad method over gRPC.
+        r"""Return a callable for the
+        get ad group ad
+          method over gRPC.
 
         Returns the requested ad in full detail.
 
@@ -229,7 +229,9 @@ class AdGroupAdServiceGrpcTransport(AdGroupAdServiceTransport):
     def mutate_ad_group_ads(self) -> Callable[
             [ad_group_ad_service.MutateAdGroupAdsRequest],
             ad_group_ad_service.MutateAdGroupAdsResponse]:
-        r"""Return a callable for the mutate ad group ads method over gRPC.
+        r"""Return a callable for the
+        mutate ad group ads
+          method over gRPC.
 
         Creates, updates, or removes ads. Operation statuses
         are returned.

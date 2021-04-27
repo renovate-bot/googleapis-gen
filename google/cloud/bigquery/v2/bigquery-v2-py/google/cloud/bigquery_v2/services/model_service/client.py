@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,7 +36,6 @@ from google.cloud.bigquery_v2.types import model as gcb_model
 from google.cloud.bigquery_v2.types import model_reference
 from google.cloud.bigquery_v2.types import standard_sql
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-
 from .transports.base import ModelServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ModelServiceGrpcTransport
 from .transports.grpc_asyncio import ModelServiceGrpcAsyncIOTransport
@@ -332,6 +329,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.GetModelRequest):
                 The request object.
+
             project_id (str):
                 Required. Project ID of the requested
                 model.
@@ -353,7 +351,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
                 This corresponds to the ``model_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -378,10 +375,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model.GetModelRequest):
             request = model.GetModelRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if dataset_id is not None:
@@ -420,6 +415,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.ListModelsRequest):
                 The request object.
+
             project_id (str):
                 Required. Project ID of the models to
                 list.
@@ -443,7 +439,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
                 This corresponds to the ``max_results`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -468,10 +463,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model.ListModelsRequest):
             request = model.ListModelsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if dataset_id is not None:
@@ -510,6 +503,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.PatchModelRequest):
                 The request object.
+
             project_id (str):
                 Required. Project ID of the model to
                 patch.
@@ -540,7 +534,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
                 This corresponds to the ``model`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -565,10 +558,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcb_model.PatchModelRequest):
             request = gcb_model.PatchModelRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if dataset_id is not None:
@@ -609,6 +600,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.DeleteModelRequest):
                 The request object.
+
             project_id (str):
                 Required. Project ID of the model to
                 delete.
@@ -630,7 +622,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
                 This corresponds to the ``model_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -651,10 +642,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model.DeleteModelRequest):
             request = model.DeleteModelRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if dataset_id is not None:
@@ -673,8 +662,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

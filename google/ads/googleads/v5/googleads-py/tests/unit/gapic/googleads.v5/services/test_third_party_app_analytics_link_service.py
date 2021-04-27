@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -265,21 +263,16 @@ def test_get_third_party_app_analytics_link(transport: str = 'grpc', request_typ
         # Designate an appropriate return value for the call.
         call.return_value = third_party_app_analytics_link.ThirdPartyAppAnalyticsLink(
             resource_name='resource_name_value',
-
         )
-
         response = client.get_third_party_app_analytics_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, third_party_app_analytics_link.ThirdPartyAppAnalyticsLink)
-
     assert response.resource_name == 'resource_name_value'
 
 
@@ -295,6 +288,7 @@ def test_get_third_party_app_analytics_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -302,7 +296,6 @@ def test_get_third_party_app_analytics_link_field_headers():
             type(client.transport.get_third_party_app_analytics_link),
             '__call__') as call:
         call.return_value = third_party_app_analytics_link.ThirdPartyAppAnalyticsLink()
-
         client.get_third_party_app_analytics_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -335,17 +328,14 @@ def test_regenerate_shareable_link_id(transport: str = 'grpc', request_type=thir
         # Designate an appropriate return value for the call.
         call.return_value = third_party_app_analytics_link_service.RegenerateShareableLinkIdResponse(
         )
-
         response = client.regenerate_shareable_link_id(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == third_party_app_analytics_link_service.RegenerateShareableLinkIdRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, third_party_app_analytics_link_service.RegenerateShareableLinkIdResponse)
 
 
@@ -361,6 +351,7 @@ def test_regenerate_shareable_link_id_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = third_party_app_analytics_link_service.RegenerateShareableLinkIdRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -368,7 +359,6 @@ def test_regenerate_shareable_link_id_field_headers():
             type(client.transport.regenerate_shareable_link_id),
             '__call__') as call:
         call.return_value = third_party_app_analytics_link_service.RegenerateShareableLinkIdResponse()
-
         client.regenerate_shareable_link_id(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -448,7 +438,7 @@ def test_third_party_app_analytics_link_service_base_transport():
     methods = (
         'get_third_party_app_analytics_link',
         'regenerate_shareable_link_id',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -600,7 +590,6 @@ def test_third_party_app_analytics_link_service_transport_channel_mtls_with_adc(
 def test_third_party_app_analytics_link_path():
     customer = "squid"
     third_party_app_analytics_link = "clam"
-
     expected = "customers/{customer}/thirdPartyAppAnalyticsLinks/{third_party_app_analytics_link}".format(customer=customer, third_party_app_analytics_link=third_party_app_analytics_link, )
     actual = ThirdPartyAppAnalyticsLinkServiceClient.third_party_app_analytics_link_path(customer, third_party_app_analytics_link)
     assert expected == actual
@@ -608,9 +597,8 @@ def test_third_party_app_analytics_link_path():
 
 def test_parse_third_party_app_analytics_link_path():
     expected = {
-    "customer": "whelk",
-    "third_party_app_analytics_link": "octopus",
-
+        "customer": "whelk",
+        "third_party_app_analytics_link": "octopus",
     }
     path = ThirdPartyAppAnalyticsLinkServiceClient.third_party_app_analytics_link_path(**expected)
 
@@ -620,7 +608,6 @@ def test_parse_third_party_app_analytics_link_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ThirdPartyAppAnalyticsLinkServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -628,8 +615,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = ThirdPartyAppAnalyticsLinkServiceClient.common_billing_account_path(**expected)
 
@@ -639,7 +625,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ThirdPartyAppAnalyticsLinkServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -647,8 +632,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = ThirdPartyAppAnalyticsLinkServiceClient.common_folder_path(**expected)
 
@@ -658,7 +642,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ThirdPartyAppAnalyticsLinkServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -666,8 +649,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = ThirdPartyAppAnalyticsLinkServiceClient.common_organization_path(**expected)
 
@@ -677,7 +659,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = ThirdPartyAppAnalyticsLinkServiceClient.common_project_path(project)
     assert expected == actual
@@ -685,8 +666,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = ThirdPartyAppAnalyticsLinkServiceClient.common_project_path(**expected)
 
@@ -697,7 +677,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ThirdPartyAppAnalyticsLinkServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -705,9 +684,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = ThirdPartyAppAnalyticsLinkServiceClient.common_location_path(**expected)
 

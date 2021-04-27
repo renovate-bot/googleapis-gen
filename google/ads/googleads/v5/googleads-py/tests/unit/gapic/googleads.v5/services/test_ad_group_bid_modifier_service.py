@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -273,42 +271,27 @@ def test_get_ad_group_bid_modifier(transport: str = 'grpc', request_type=ad_grou
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_bid_modifier.AdGroupBidModifier(
             resource_name='resource_name_value',
-
             ad_group='ad_group_value',
-
             criterion_id=1275,
-
             bid_modifier=0.1245,
-
             base_ad_group='base_ad_group_value',
-
             bid_modifier_source=bid_modifier_source.BidModifierSourceEnum.BidModifierSource.UNKNOWN,
-
             hotel_date_selection_type=criteria.HotelDateSelectionTypeInfo(type_=hotel_date_selection_type.HotelDateSelectionTypeEnum.HotelDateSelectionType.UNKNOWN),
         )
-
         response = client.get_ad_group_bid_modifier(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_bid_modifier_service.GetAdGroupBidModifierRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_bid_modifier.AdGroupBidModifier)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.ad_group == 'ad_group_value'
-
     assert response.criterion_id == 1275
-
     assert math.isclose(response.bid_modifier, 0.1245, rel_tol=1e-6)
-
     assert response.base_ad_group == 'base_ad_group_value'
-
     assert response.bid_modifier_source == bid_modifier_source.BidModifierSourceEnum.BidModifierSource.UNKNOWN
 
 
@@ -324,6 +307,7 @@ def test_get_ad_group_bid_modifier_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_bid_modifier_service.GetAdGroupBidModifierRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -331,7 +315,6 @@ def test_get_ad_group_bid_modifier_field_headers():
             type(client.transport.get_ad_group_bid_modifier),
             '__call__') as call:
         call.return_value = ad_group_bid_modifier.AdGroupBidModifier()
-
         client.get_ad_group_bid_modifier(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -358,7 +341,6 @@ def test_get_ad_group_bid_modifier_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_bid_modifier.AdGroupBidModifier()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_bid_modifier(
@@ -369,7 +351,6 @@ def test_get_ad_group_bid_modifier_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -404,17 +385,14 @@ def test_mutate_ad_group_bid_modifiers(transport: str = 'grpc', request_type=ad_
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_bid_modifier_service.MutateAdGroupBidModifiersResponse(
         )
-
         response = client.mutate_ad_group_bid_modifiers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_bid_modifier_service.MutateAdGroupBidModifiersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_bid_modifier_service.MutateAdGroupBidModifiersResponse)
 
 
@@ -430,6 +408,7 @@ def test_mutate_ad_group_bid_modifiers_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_bid_modifier_service.MutateAdGroupBidModifiersRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -437,7 +416,6 @@ def test_mutate_ad_group_bid_modifiers_field_headers():
             type(client.transport.mutate_ad_group_bid_modifiers),
             '__call__') as call:
         call.return_value = ad_group_bid_modifier_service.MutateAdGroupBidModifiersResponse()
-
         client.mutate_ad_group_bid_modifiers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -464,7 +442,6 @@ def test_mutate_ad_group_bid_modifiers_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_bid_modifier_service.MutateAdGroupBidModifiersResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_group_bid_modifiers(
@@ -476,9 +453,7 @@ def test_mutate_ad_group_bid_modifiers_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [ad_group_bid_modifier_service.AdGroupBidModifierOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -561,7 +536,7 @@ def test_ad_group_bid_modifier_service_base_transport():
     methods = (
         'get_ad_group_bid_modifier',
         'mutate_ad_group_bid_modifiers',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -713,7 +688,6 @@ def test_ad_group_bid_modifier_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer = "squid"
     ad_group = "clam"
-
     expected = "customers/{customer}/adGroups/{ad_group}".format(customer=customer, ad_group=ad_group, )
     actual = AdGroupBidModifierServiceClient.ad_group_path(customer, ad_group)
     assert expected == actual
@@ -721,9 +695,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer": "whelk",
-    "ad_group": "octopus",
-
+        "customer": "whelk",
+        "ad_group": "octopus",
     }
     path = AdGroupBidModifierServiceClient.ad_group_path(**expected)
 
@@ -734,7 +707,6 @@ def test_parse_ad_group_path():
 def test_ad_group_bid_modifier_path():
     customer = "oyster"
     ad_group_bid_modifier = "nudibranch"
-
     expected = "customers/{customer}/adGroupBidModifiers/{ad_group_bid_modifier}".format(customer=customer, ad_group_bid_modifier=ad_group_bid_modifier, )
     actual = AdGroupBidModifierServiceClient.ad_group_bid_modifier_path(customer, ad_group_bid_modifier)
     assert expected == actual
@@ -742,9 +714,8 @@ def test_ad_group_bid_modifier_path():
 
 def test_parse_ad_group_bid_modifier_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_group_bid_modifier": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_group_bid_modifier": "mussel",
     }
     path = AdGroupBidModifierServiceClient.ad_group_bid_modifier_path(**expected)
 
@@ -754,7 +725,6 @@ def test_parse_ad_group_bid_modifier_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupBidModifierServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -762,8 +732,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = AdGroupBidModifierServiceClient.common_billing_account_path(**expected)
 
@@ -773,7 +742,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupBidModifierServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -781,8 +749,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = AdGroupBidModifierServiceClient.common_folder_path(**expected)
 
@@ -792,7 +759,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupBidModifierServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -800,8 +766,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = AdGroupBidModifierServiceClient.common_organization_path(**expected)
 
@@ -811,7 +776,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupBidModifierServiceClient.common_project_path(project)
     assert expected == actual
@@ -819,8 +783,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = AdGroupBidModifierServiceClient.common_project_path(**expected)
 
@@ -831,7 +794,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupBidModifierServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -839,9 +801,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = AdGroupBidModifierServiceClient.common_location_path(**expected)
 

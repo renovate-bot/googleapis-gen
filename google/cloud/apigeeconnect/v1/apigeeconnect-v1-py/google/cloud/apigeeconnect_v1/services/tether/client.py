@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.apigeeconnect_v1.types import tether
 from google.protobuf import duration_pb2 as duration  # type: ignore
-
 from .transports.base import TetherTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TetherGrpcTransport
 from .transports.grpc_asyncio import TetherGrpcAsyncIOTransport
@@ -336,7 +333,8 @@ class TetherClient(metaclass=TetherClientMeta):
 
         Args:
             requests (Iterator[google.cloud.apigeeconnect_v1.types.EgressResponse]):
-                The request object iterator. gRPC response payload for tether.
+                The request object iterator.
+                gRPC response payload for tether.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -362,8 +360,6 @@ class TetherClient(metaclass=TetherClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

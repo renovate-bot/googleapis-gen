@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.resources.types import feed_mapping
 from google.rpc import status_pb2 as status  # type: ignore
@@ -45,7 +42,10 @@ class GetFeedMappingRequest(proto.Message):
             mapping to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateFeedMappingsRequest(proto.Message):
@@ -70,17 +70,27 @@ class MutateFeedMappingsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='FeedMappingOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class FeedMappingOperation(proto.Message):
     r"""A single operation (create, remove) on a feed mapping.
-
     Attributes:
         create (google.ads.googleads.v4.resources.types.FeedMapping):
             Create operation: No resource name is
@@ -92,15 +102,21 @@ class FeedMappingOperation(proto.Message):
             ``customers/{customer_id}/feedMappings/{feed_id}~{feed_mapping_id}``
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=feed_mapping.FeedMapping,
     )
-    remove = proto.Field(proto.STRING, number=3, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='operation',
+    )
 
 
 class MutateFeedMappingsResponse(proto.Message):
     r"""Response message for a feed mapping mutate.
-
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -112,23 +128,29 @@ class MutateFeedMappingsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateFeedMappingResult',
     )
 
 
 class MutateFeedMappingResult(proto.Message):
     r"""The result for the feed mapping mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

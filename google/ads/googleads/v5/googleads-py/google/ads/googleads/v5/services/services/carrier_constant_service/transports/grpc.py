@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,7 +26,6 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import carrier_constant
 from google.ads.googleads.v5.services.types import carrier_constant_service
-
 from .base import CarrierConstantServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,7 +56,8 @@ class CarrierConstantServiceGrpcTransport(CarrierConstantServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,7 +201,9 @@ class CarrierConstantServiceGrpcTransport(CarrierConstantServiceTransport):
     def get_carrier_constant(self) -> Callable[
             [carrier_constant_service.GetCarrierConstantRequest],
             carrier_constant.CarrierConstant]:
-        r"""Return a callable for the get carrier constant method over gRPC.
+        r"""Return a callable for the
+        get carrier constant
+          method over gRPC.
 
         Returns the requested carrier constant in full
         detail.

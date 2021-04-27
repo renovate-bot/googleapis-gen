@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -50,7 +48,6 @@ from google.cloud.automl_v1.types import translation
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import AutoMlTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AutoMlGrpcAsyncIOTransport
 from .client import AutoMlClient
@@ -87,19 +84,14 @@ class AutoMlAsyncClient:
     parse_model_path = staticmethod(AutoMlClient.parse_model_path)
     model_evaluation_path = staticmethod(AutoMlClient.model_evaluation_path)
     parse_model_evaluation_path = staticmethod(AutoMlClient.parse_model_evaluation_path)
-
     common_billing_account_path = staticmethod(AutoMlClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AutoMlClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AutoMlClient.common_folder_path)
     parse_common_folder_path = staticmethod(AutoMlClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AutoMlClient.common_organization_path)
     parse_common_organization_path = staticmethod(AutoMlClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AutoMlClient.common_project_path)
     parse_common_project_path = staticmethod(AutoMlClient.parse_common_project_path)
-
     common_location_path = staticmethod(AutoMlClient.common_location_path)
     parse_common_location_path = staticmethod(AutoMlClient.parse_common_location_path)
 
@@ -184,7 +176,6 @@ class AutoMlAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AutoMlClient(
             credentials=credentials,
             transport=transport,
@@ -206,7 +197,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.CreateDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.CreateDataset][google.cloud.automl.v1.AutoMl.CreateDataset].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -220,7 +212,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -247,7 +238,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if dataset is not None:
@@ -300,7 +290,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.GetDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.GetDataset][google.cloud.automl.v1.AutoMl.GetDataset].
             name (:class:`str`):
                 Required. The resource name of the
@@ -309,7 +300,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -336,7 +326,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -345,10 +334,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_dataset,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -389,7 +375,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.ListDatasetsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -398,7 +385,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +412,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -435,10 +420,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_datasets,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -489,7 +471,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.UpdateDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
             dataset (:class:`google.cloud.automl_v1.types.Dataset`):
                 Required. The dataset which replaces
@@ -505,7 +488,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -532,7 +514,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if dataset is not None:
             request.dataset = dataset
         if update_mask is not None:
@@ -581,7 +562,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.DeleteDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.DeleteDataset][google.cloud.automl.v1.AutoMl.DeleteDataset].
             name (:class:`str`):
                 Required. The resource name of the
@@ -590,7 +572,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,7 +609,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -637,10 +617,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_dataset,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -699,7 +676,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.ImportDataRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData].
             name (:class:`str`):
                 Required. Dataset name. Dataset must
@@ -717,7 +695,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -755,7 +732,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if input_config is not None:
@@ -812,7 +788,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.ExportDataRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.ExportData][google.cloud.automl.v1.AutoMl.ExportData].
             name (:class:`str`):
                 Required. The resource name of the
@@ -828,7 +805,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -866,7 +842,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if output_config is not None:
@@ -919,7 +894,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.GetAnnotationSpecRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.GetAnnotationSpec][google.cloud.automl.v1.AutoMl.GetAnnotationSpec].
             name (:class:`str`):
                 Required. The resource name of the
@@ -928,7 +904,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -951,7 +926,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -960,10 +934,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_annotation_spec,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1009,7 +980,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.CreateModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.CreateModel][google.cloud.automl.v1.AutoMl.CreateModel].
             parent (:class:`str`):
                 Required. Resource name of the parent
@@ -1024,7 +996,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``model`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1052,7 +1023,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if model is not None:
@@ -1105,14 +1075,14 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.GetModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.GetModel][google.cloud.automl.v1.AutoMl.GetModel].
             name (:class:`str`):
                 Required. Resource name of the model.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1137,7 +1107,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1146,10 +1115,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_model,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1190,7 +1156,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.ListModelsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
             parent (:class:`str`):
                 Required. Resource name of the
@@ -1199,7 +1166,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1227,7 +1193,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1236,10 +1201,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_models,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1292,7 +1254,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.DeleteModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.DeleteModel][google.cloud.automl.v1.AutoMl.DeleteModel].
             name (:class:`str`):
                 Required. Resource name of the model
@@ -1301,7 +1264,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1339,7 +1301,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1348,10 +1309,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_model,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1401,7 +1359,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.UpdateModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
             model (:class:`google.cloud.automl_v1.types.Model`):
                 Required. The model which replaces
@@ -1417,7 +1376,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1442,7 +1400,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if model is not None:
             request.model = model
         if update_mask is not None:
@@ -1501,7 +1458,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.DeployModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.DeployModel][google.cloud.automl.v1.AutoMl.DeployModel].
             name (:class:`str`):
                 Required. Resource name of the model
@@ -1510,7 +1468,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1548,7 +1505,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1607,7 +1563,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.UndeployModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.UndeployModel][google.cloud.automl.v1.AutoMl.UndeployModel].
             name (:class:`str`):
                 Required. Resource name of the model
@@ -1616,7 +1573,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1654,7 +1610,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1713,7 +1668,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.ExportModelRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.ExportModel][google.cloud.automl.v1.AutoMl.ExportModel].
                 Models need to be enabled for exporting, otherwise an
                 error code will be returned.
@@ -1731,7 +1687,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1769,7 +1724,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if output_config is not None:
@@ -1822,7 +1776,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.GetModelEvaluationRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.GetModelEvaluation][google.cloud.automl.v1.AutoMl.GetModelEvaluation].
             name (:class:`str`):
                 Required. Resource name for the model
@@ -1831,7 +1786,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1854,7 +1808,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1863,10 +1816,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_model_evaluation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1908,7 +1858,8 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.ListModelEvaluationsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations].
             parent (:class:`str`):
                 Required. Resource name of the model
@@ -1938,7 +1889,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1966,7 +1916,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -1977,10 +1926,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_model_evaluations,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2017,8 +1963,6 @@ class AutoMlAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

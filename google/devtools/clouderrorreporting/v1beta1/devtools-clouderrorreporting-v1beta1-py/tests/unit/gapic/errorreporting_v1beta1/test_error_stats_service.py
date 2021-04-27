@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -36,12 +36,36 @@ from google.cloud.errorreporting_v1beta1.services.error_stats_service import Err
 from google.cloud.errorreporting_v1beta1.services.error_stats_service import ErrorStatsServiceClient
 from google.cloud.errorreporting_v1beta1.services.error_stats_service import pagers
 from google.cloud.errorreporting_v1beta1.services.error_stats_service import transports
+from google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.base import _API_CORE_VERSION
+from google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.errorreporting_v1beta1.types import common
 from google.cloud.errorreporting_v1beta1.types import error_stats_service
 from google.oauth2 import service_account
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -209,12 +233,10 @@ def test_error_stats_service_client_client_options(client_class, transport_class
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (ErrorStatsServiceClient, transports.ErrorStatsServiceGrpcTransport, "grpc", "true"),
     (ErrorStatsServiceAsyncClient, transports.ErrorStatsServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ErrorStatsServiceClient, transports.ErrorStatsServiceGrpcTransport, "grpc", "false"),
     (ErrorStatsServiceAsyncClient, transports.ErrorStatsServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(ErrorStatsServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ErrorStatsServiceClient))
 @mock.patch.object(ErrorStatsServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ErrorStatsServiceAsyncClient))
@@ -369,21 +391,16 @@ def test_list_group_stats(transport: str = 'grpc', request_type=error_stats_serv
         # Designate an appropriate return value for the call.
         call.return_value = error_stats_service.ListGroupStatsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_group_stats(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.ListGroupStatsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListGroupStatsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -406,8 +423,8 @@ def test_list_group_stats_empty_call():
         client.list_group_stats()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.ListGroupStatsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_group_stats_async(transport: str = 'grpc_asyncio', request_type=error_stats_service.ListGroupStatsRequest):
@@ -425,21 +442,18 @@ async def test_list_group_stats_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_group_stats),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.ListGroupStatsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.ListGroupStatsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_group_stats(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.ListGroupStatsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGroupStatsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -456,6 +470,7 @@ def test_list_group_stats_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = error_stats_service.ListGroupStatsRequest()
+
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -463,7 +478,6 @@ def test_list_group_stats_field_headers():
             type(client.transport.list_group_stats),
             '__call__') as call:
         call.return_value = error_stats_service.ListGroupStatsResponse()
-
         client.list_group_stats(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -488,6 +502,7 @@ async def test_list_group_stats_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = error_stats_service.ListGroupStatsRequest()
+
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -495,7 +510,6 @@ async def test_list_group_stats_field_headers_async():
             type(client.transport.list_group_stats),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.ListGroupStatsResponse())
-
         await client.list_group_stats(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -522,7 +536,6 @@ def test_list_group_stats_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = error_stats_service.ListGroupStatsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_group_stats(
@@ -534,9 +547,7 @@ def test_list_group_stats_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].project_name == 'project_name_value'
-
         assert args[0].time_range == error_stats_service.QueryTimeRange(period=error_stats_service.QueryTimeRange.Period.PERIOD_1_HOUR)
 
 
@@ -580,9 +591,7 @@ async def test_list_group_stats_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].project_name == 'project_name_value'
-
         assert args[0].time_range == error_stats_service.QueryTimeRange(period=error_stats_service.QueryTimeRange.Period.PERIOD_1_HOUR)
 
 
@@ -788,7 +797,6 @@ async def test_list_group_stats_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_events(transport: str = 'grpc', request_type=error_stats_service.ListEventsRequest):
     client = ErrorStatsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -806,21 +814,16 @@ def test_list_events(transport: str = 'grpc', request_type=error_stats_service.L
         # Designate an appropriate return value for the call.
         call.return_value = error_stats_service.ListEventsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_events(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.ListEventsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListEventsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -843,8 +846,8 @@ def test_list_events_empty_call():
         client.list_events()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.ListEventsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_events_async(transport: str = 'grpc_asyncio', request_type=error_stats_service.ListEventsRequest):
@@ -862,21 +865,18 @@ async def test_list_events_async(transport: str = 'grpc_asyncio', request_type=e
             type(client.transport.list_events),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.ListEventsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.ListEventsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_events(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.ListEventsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEventsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -893,6 +893,7 @@ def test_list_events_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = error_stats_service.ListEventsRequest()
+
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -900,7 +901,6 @@ def test_list_events_field_headers():
             type(client.transport.list_events),
             '__call__') as call:
         call.return_value = error_stats_service.ListEventsResponse()
-
         client.list_events(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -925,6 +925,7 @@ async def test_list_events_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = error_stats_service.ListEventsRequest()
+
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -932,7 +933,6 @@ async def test_list_events_field_headers_async():
             type(client.transport.list_events),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.ListEventsResponse())
-
         await client.list_events(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -959,7 +959,6 @@ def test_list_events_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = error_stats_service.ListEventsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_events(
@@ -971,9 +970,7 @@ def test_list_events_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].project_name == 'project_name_value'
-
         assert args[0].group_id == 'group_id_value'
 
 
@@ -1017,9 +1014,7 @@ async def test_list_events_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].project_name == 'project_name_value'
-
         assert args[0].group_id == 'group_id_value'
 
 
@@ -1225,7 +1220,6 @@ async def test_list_events_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_delete_events(transport: str = 'grpc', request_type=error_stats_service.DeleteEventsRequest):
     client = ErrorStatsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1243,17 +1237,14 @@ def test_delete_events(transport: str = 'grpc', request_type=error_stats_service
         # Designate an appropriate return value for the call.
         call.return_value = error_stats_service.DeleteEventsResponse(
         )
-
         response = client.delete_events(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.DeleteEventsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, error_stats_service.DeleteEventsResponse)
 
 
@@ -1276,8 +1267,8 @@ def test_delete_events_empty_call():
         client.delete_events()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.DeleteEventsRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_events_async(transport: str = 'grpc_asyncio', request_type=error_stats_service.DeleteEventsRequest):
@@ -1295,15 +1286,13 @@ async def test_delete_events_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.delete_events),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.DeleteEventsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.DeleteEventsResponse(
         ))
-
         response = await client.delete_events(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == error_stats_service.DeleteEventsRequest()
 
     # Establish that the response is the type that we expect.
@@ -1323,6 +1312,7 @@ def test_delete_events_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = error_stats_service.DeleteEventsRequest()
+
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1330,7 +1320,6 @@ def test_delete_events_field_headers():
             type(client.transport.delete_events),
             '__call__') as call:
         call.return_value = error_stats_service.DeleteEventsResponse()
-
         client.delete_events(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1355,6 +1344,7 @@ async def test_delete_events_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = error_stats_service.DeleteEventsRequest()
+
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1362,7 +1352,6 @@ async def test_delete_events_field_headers_async():
             type(client.transport.delete_events),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(error_stats_service.DeleteEventsResponse())
-
         await client.delete_events(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1389,7 +1378,6 @@ def test_delete_events_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = error_stats_service.DeleteEventsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_events(
@@ -1400,7 +1388,6 @@ def test_delete_events_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].project_name == 'project_name_value'
 
 
@@ -1442,7 +1429,6 @@ async def test_delete_events_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].project_name == 'project_name_value'
 
 
@@ -1501,7 +1487,6 @@ def test_transport_instance():
     client = ErrorStatsServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ErrorStatsServiceGrpcTransport(
@@ -1516,7 +1501,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.ErrorStatsServiceGrpcTransport,
     transports.ErrorStatsServiceGrpcAsyncIOTransport,
@@ -1528,7 +1512,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ErrorStatsServiceClient(
@@ -1538,7 +1521,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.ErrorStatsServiceGrpcTransport,
     )
-
 
 def test_error_stats_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1563,15 +1545,33 @@ def test_error_stats_service_base_transport():
         'list_group_stats',
         'list_events',
         'delete_events',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_error_stats_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.ErrorStatsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.ErrorStatsServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.ErrorStatsServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_error_stats_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.ErrorStatsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ErrorStatsServiceTransport(
@@ -1587,33 +1587,182 @@ def test_error_stats_service_base_transport_with_credentials_file():
 
 def test_error_stats_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.ErrorStatsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.ErrorStatsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ErrorStatsServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_error_stats_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ErrorStatsServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_error_stats_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_error_stats_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        ErrorStatsServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.ErrorStatsServiceGrpcTransport,
+        transports.ErrorStatsServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_error_stats_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.ErrorStatsServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.ErrorStatsServiceGrpcTransport,
+        transports.ErrorStatsServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_error_stats_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ErrorStatsServiceGrpcTransport, grpc_helpers),
+        (transports.ErrorStatsServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_error_stats_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "clouderrorreporting.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="clouderrorreporting.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ErrorStatsServiceGrpcTransport, grpc_helpers),
+        (transports.ErrorStatsServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_error_stats_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "clouderrorreporting.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ErrorStatsServiceGrpcTransport, grpc_helpers),
+        (transports.ErrorStatsServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_error_stats_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "clouderrorreporting.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1675,7 +1824,6 @@ def test_error_stats_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='clouderrorreporting.googleapis.com:8000'),
     )
     assert client.transport._host == 'clouderrorreporting.googleapis.com:8000'
-
 
 def test_error_stats_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1794,7 +1942,6 @@ def test_error_stats_service_transport_channel_mtls_with_adc(
 def test_error_group_path():
     project = "squid"
     group = "clam"
-
     expected = "projects/{project}/groups/{group}".format(project=project, group=group, )
     actual = ErrorStatsServiceClient.error_group_path(project, group)
     assert expected == actual
@@ -1802,9 +1949,8 @@ def test_error_group_path():
 
 def test_parse_error_group_path():
     expected = {
-    "project": "whelk",
-    "group": "octopus",
-
+        "project": "whelk",
+        "group": "octopus",
     }
     path = ErrorStatsServiceClient.error_group_path(**expected)
 
@@ -1814,7 +1960,6 @@ def test_parse_error_group_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ErrorStatsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1822,8 +1967,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = ErrorStatsServiceClient.common_billing_account_path(**expected)
 
@@ -1833,7 +1977,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ErrorStatsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1841,8 +1984,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = ErrorStatsServiceClient.common_folder_path(**expected)
 
@@ -1852,7 +1994,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ErrorStatsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1860,8 +2001,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = ErrorStatsServiceClient.common_organization_path(**expected)
 
@@ -1871,7 +2011,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = ErrorStatsServiceClient.common_project_path(project)
     assert expected == actual
@@ -1879,8 +2018,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = ErrorStatsServiceClient.common_project_path(**expected)
 
@@ -1891,7 +2029,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ErrorStatsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1899,9 +2036,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = ErrorStatsServiceClient.common_location_path(**expected)
 

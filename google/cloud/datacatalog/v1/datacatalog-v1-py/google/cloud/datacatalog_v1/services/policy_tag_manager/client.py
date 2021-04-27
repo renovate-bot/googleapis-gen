@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,7 +35,6 @@ from google.cloud.datacatalog_v1.types import policytagmanager
 from google.cloud.datacatalog_v1.types import timestamps
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-
 from .transports.base import PolicyTagManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import PolicyTagManagerGrpcTransport
 from .transports.grpc_asyncio import PolicyTagManagerGrpcAsyncIOTransport
@@ -359,7 +356,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.CreateTaxonomyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.CreateTaxonomy].
             parent (str):
                 Required. Resource name of the
@@ -374,7 +372,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``taxonomy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -410,10 +407,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.CreateTaxonomyRequest):
             request = policytagmanager.CreateTaxonomyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if taxonomy is not None:
@@ -456,7 +451,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.DeleteTaxonomyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.DeleteTaxonomy].
             name (str):
                 Required. Resource name of the
@@ -466,7 +462,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -487,10 +482,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.DeleteTaxonomyRequest):
             request = policytagmanager.DeleteTaxonomyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -528,7 +521,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.UpdateTaxonomyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.UpdateTaxonomy].
             taxonomy (google.cloud.datacatalog_v1.types.Taxonomy):
                 The taxonomy to update. Only description, display_name,
@@ -537,7 +531,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``taxonomy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -573,10 +566,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.UpdateTaxonomyRequest):
             request = policytagmanager.UpdateTaxonomyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if taxonomy is not None:
                 request.taxonomy = taxonomy
 
@@ -616,7 +607,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.ListTaxonomiesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListTaxonomies][google.cloud.datacatalog.v1.PolicyTagManager.ListTaxonomies].
             parent (str):
                 Required. Resource name of the
@@ -625,7 +617,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -655,10 +646,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.ListTaxonomiesRequest):
             request = policytagmanager.ListTaxonomiesRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -706,7 +695,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.GetTaxonomyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.GetTaxonomy].
             name (str):
                 Required. Resource name of the
@@ -715,7 +705,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -751,10 +740,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.GetTaxonomyRequest):
             request = policytagmanager.GetTaxonomyRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -794,7 +781,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.CreatePolicyTagRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreatePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.CreatePolicyTag].
             parent (str):
                 Required. Resource name of the
@@ -809,7 +797,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``policy_tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -842,10 +829,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.CreatePolicyTagRequest):
             request = policytagmanager.CreatePolicyTagRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if policy_tag is not None:
@@ -892,7 +877,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.DeletePolicyTagRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeletePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.DeletePolicyTag].
             name (str):
                 Required. Resource name of the policy
@@ -902,7 +888,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -923,10 +908,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.DeletePolicyTagRequest):
             request = policytagmanager.DeletePolicyTagRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -964,7 +947,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.UpdatePolicyTagRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdatePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.UpdatePolicyTag].
             policy_tag (google.cloud.datacatalog_v1.types.PolicyTag):
                 The policy tag to update. Only the description,
@@ -974,7 +958,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``policy_tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,10 +990,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.UpdatePolicyTagRequest):
             request = policytagmanager.UpdatePolicyTagRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if policy_tag is not None:
                 request.policy_tag = policy_tag
 
@@ -1049,7 +1030,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.ListPolicyTagsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListPolicyTags][google.cloud.datacatalog.v1.PolicyTagManager.ListPolicyTags].
             parent (str):
                 Required. Resource name of the
@@ -1058,7 +1040,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1088,10 +1069,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.ListPolicyTagsRequest):
             request = policytagmanager.ListPolicyTagsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1139,7 +1118,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.cloud.datacatalog_v1.types.GetPolicyTagRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetPolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.GetPolicyTag].
             name (str):
                 Required. Resource name of the
@@ -1148,7 +1128,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1181,10 +1160,8 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, policytagmanager.GetPolicyTagRequest):
             request = policytagmanager.GetPolicyTagRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1222,9 +1199,9 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1291,8 +1268,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -1334,9 +1310,9 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1403,8 +1379,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1447,9 +1422,9 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1461,8 +1436,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
@@ -1492,8 +1466,6 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

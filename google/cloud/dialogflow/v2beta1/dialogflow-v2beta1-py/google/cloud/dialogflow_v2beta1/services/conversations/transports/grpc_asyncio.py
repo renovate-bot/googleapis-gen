@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.dialogflow_v2beta1.types import conversation
 from google.cloud.dialogflow_v2beta1.types import conversation as gcd_conversation
-
 from .base import ConversationsTransport, DEFAULT_CLIENT_INFO
 from .grpc import ConversationsGrpcTransport
 
@@ -80,13 +78,15 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,7 +106,8 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -164,7 +165,6 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -227,7 +227,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def create_conversation(self) -> Callable[
             [gcd_conversation.CreateConversationRequest],
             Awaitable[gcd_conversation.Conversation]]:
-        r"""Return a callable for the create conversation method over gRPC.
+        r"""Return a callable for the
+        create conversation
+          method over gRPC.
 
         Creates a new conversation. Conversations are auto-completed
         after 24 hours.
@@ -273,7 +275,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def list_conversations(self) -> Callable[
             [conversation.ListConversationsRequest],
             Awaitable[conversation.ListConversationsResponse]]:
-        r"""Return a callable for the list conversations method over gRPC.
+        r"""Return a callable for the
+        list conversations
+          method over gRPC.
 
         Returns the list of all conversations in the
         specified project.
@@ -300,7 +304,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def get_conversation(self) -> Callable[
             [conversation.GetConversationRequest],
             Awaitable[conversation.Conversation]]:
-        r"""Return a callable for the get conversation method over gRPC.
+        r"""Return a callable for the
+        get conversation
+          method over gRPC.
 
         Retrieves the specific conversation.
 
@@ -326,7 +332,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def complete_conversation(self) -> Callable[
             [conversation.CompleteConversationRequest],
             Awaitable[conversation.Conversation]]:
-        r"""Return a callable for the complete conversation method over gRPC.
+        r"""Return a callable for the
+        complete conversation
+          method over gRPC.
 
         Completes the specified conversation. Finished
         conversations are purged from the database after 30
@@ -354,7 +362,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def batch_create_messages(self) -> Callable[
             [conversation.BatchCreateMessagesRequest],
             Awaitable[conversation.BatchCreateMessagesResponse]]:
-        r"""Return a callable for the batch create messages method over gRPC.
+        r"""Return a callable for the
+        batch create messages
+          method over gRPC.
 
         Batch ingests messages to conversation. Customers can
         use this RPC to ingest historical messages to
@@ -382,7 +392,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def list_messages(self) -> Callable[
             [conversation.ListMessagesRequest],
             Awaitable[conversation.ListMessagesResponse]]:
-        r"""Return a callable for the list messages method over gRPC.
+        r"""Return a callable for the
+        list messages
+          method over gRPC.
 
         Lists messages that belong to a given conversation. ``messages``
         are ordered by ``create_time`` in descending order. To fetch

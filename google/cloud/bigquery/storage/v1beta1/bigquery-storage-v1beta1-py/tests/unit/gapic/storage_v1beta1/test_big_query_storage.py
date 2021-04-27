@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -35,6 +35,8 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.bigquery.storage_v1beta1.services.big_query_storage import BigQueryStorageAsyncClient
 from google.cloud.bigquery.storage_v1beta1.services.big_query_storage import BigQueryStorageClient
 from google.cloud.bigquery.storage_v1beta1.services.big_query_storage import transports
+from google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.base import _API_CORE_VERSION
+from google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.bigquery.storage_v1beta1.types import arrow
 from google.cloud.bigquery.storage_v1beta1.types import avro
 from google.cloud.bigquery.storage_v1beta1.types import read_options
@@ -44,6 +46,28 @@ from google.cloud.bigquery.storage_v1beta1.types import table_reference as gcbs_
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -211,12 +235,10 @@ def test_big_query_storage_client_client_options(client_class, transport_class, 
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (BigQueryStorageClient, transports.BigQueryStorageGrpcTransport, "grpc", "true"),
     (BigQueryStorageAsyncClient, transports.BigQueryStorageGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (BigQueryStorageClient, transports.BigQueryStorageGrpcTransport, "grpc", "false"),
     (BigQueryStorageAsyncClient, transports.BigQueryStorageGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(BigQueryStorageClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BigQueryStorageClient))
 @mock.patch.object(BigQueryStorageAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BigQueryStorageAsyncClient))
@@ -371,26 +393,19 @@ def test_create_read_session(transport: str = 'grpc', request_type=storage.Creat
         # Designate an appropriate return value for the call.
         call.return_value = storage.ReadSession(
             name='name_value',
-
             sharding_strategy=storage.ShardingStrategy.LIQUID,
-
             avro_schema=avro.AvroSchema(schema='schema_value'),
         )
-
         response = client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.CreateReadSessionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, storage.ReadSession)
-
     assert response.name == 'name_value'
-
     assert response.sharding_strategy == storage.ShardingStrategy.LIQUID
 
 
@@ -413,8 +428,8 @@ def test_create_read_session_empty_call():
         client.create_read_session()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.CreateReadSessionRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_read_session_async(transport: str = 'grpc_asyncio', request_type=storage.CreateReadSessionRequest):
@@ -432,24 +447,20 @@ async def test_create_read_session_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_read_session),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.ReadSession(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.ReadSession(
             name='name_value',
             sharding_strategy=storage.ShardingStrategy.LIQUID,
         ))
-
         response = await client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.CreateReadSessionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.ReadSession)
-
     assert response.name == 'name_value'
-
     assert response.sharding_strategy == storage.ShardingStrategy.LIQUID
 
 
@@ -466,6 +477,7 @@ def test_create_read_session_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.CreateReadSessionRequest()
+
     request.table_reference.project_id = 'table_reference.project_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -473,7 +485,6 @@ def test_create_read_session_field_headers():
             type(client.transport.create_read_session),
             '__call__') as call:
         call.return_value = storage.ReadSession()
-
         client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -498,6 +509,7 @@ async def test_create_read_session_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.CreateReadSessionRequest()
+
     request.table_reference.project_id = 'table_reference.project_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -505,7 +517,6 @@ async def test_create_read_session_field_headers_async():
             type(client.transport.create_read_session),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.ReadSession())
-
         await client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -532,7 +543,6 @@ def test_create_read_session_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.ReadSession()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_read_session(
@@ -545,11 +555,8 @@ def test_create_read_session_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].table_reference == gcbs_table_reference.TableReference(project_id='project_id_value')
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].requested_streams == 1840
 
 
@@ -595,11 +602,8 @@ async def test_create_read_session_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].table_reference == gcbs_table_reference.TableReference(project_id='project_id_value')
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].requested_streams == 1840
 
 
@@ -636,13 +640,11 @@ def test_read_rows(transport: str = 'grpc', request_type=storage.ReadRowsRequest
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.ReadRowsResponse()])
-
         response = client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.ReadRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -669,8 +671,8 @@ def test_read_rows_empty_call():
         client.read_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.ReadRowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_read_rows_async(transport: str = 'grpc_asyncio', request_type=storage.ReadRowsRequest):
@@ -690,13 +692,11 @@ async def test_read_rows_async(transport: str = 'grpc_asyncio', request_type=sto
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[storage.ReadRowsResponse()])
-
         response = await client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.ReadRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -717,6 +717,7 @@ def test_read_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.ReadRowsRequest()
+
     request.read_position.stream.name = 'read_position.stream.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -724,7 +725,6 @@ def test_read_rows_field_headers():
             type(client.transport.read_rows),
             '__call__') as call:
         call.return_value = iter([storage.ReadRowsResponse()])
-
         client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -749,6 +749,7 @@ async def test_read_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.ReadRowsRequest()
+
     request.read_position.stream.name = 'read_position.stream.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -757,7 +758,6 @@ async def test_read_rows_field_headers_async():
             '__call__') as call:
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[storage.ReadRowsResponse()])
-
         await client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -784,7 +784,6 @@ def test_read_rows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.ReadRowsResponse()])
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.read_rows(
@@ -795,7 +794,6 @@ def test_read_rows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].read_position == storage.StreamPosition(stream=storage.Stream(name='name_value'))
 
 
@@ -837,7 +835,6 @@ async def test_read_rows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].read_position == storage.StreamPosition(stream=storage.Stream(name='name_value'))
 
 
@@ -873,17 +870,14 @@ def test_batch_create_read_session_streams(transport: str = 'grpc', request_type
         # Designate an appropriate return value for the call.
         call.return_value = storage.BatchCreateReadSessionStreamsResponse(
         )
-
         response = client.batch_create_read_session_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.BatchCreateReadSessionStreamsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, storage.BatchCreateReadSessionStreamsResponse)
 
 
@@ -906,8 +900,8 @@ def test_batch_create_read_session_streams_empty_call():
         client.batch_create_read_session_streams()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.BatchCreateReadSessionStreamsRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_create_read_session_streams_async(transport: str = 'grpc_asyncio', request_type=storage.BatchCreateReadSessionStreamsRequest):
@@ -925,15 +919,13 @@ async def test_batch_create_read_session_streams_async(transport: str = 'grpc_as
             type(client.transport.batch_create_read_session_streams),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.BatchCreateReadSessionStreamsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.BatchCreateReadSessionStreamsResponse(
         ))
-
         response = await client.batch_create_read_session_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.BatchCreateReadSessionStreamsRequest()
 
     # Establish that the response is the type that we expect.
@@ -953,6 +945,7 @@ def test_batch_create_read_session_streams_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.BatchCreateReadSessionStreamsRequest()
+
     request.session.name = 'session.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -960,7 +953,6 @@ def test_batch_create_read_session_streams_field_headers():
             type(client.transport.batch_create_read_session_streams),
             '__call__') as call:
         call.return_value = storage.BatchCreateReadSessionStreamsResponse()
-
         client.batch_create_read_session_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -985,6 +977,7 @@ async def test_batch_create_read_session_streams_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.BatchCreateReadSessionStreamsRequest()
+
     request.session.name = 'session.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -992,7 +985,6 @@ async def test_batch_create_read_session_streams_field_headers_async():
             type(client.transport.batch_create_read_session_streams),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.BatchCreateReadSessionStreamsResponse())
-
         await client.batch_create_read_session_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1019,7 +1011,6 @@ def test_batch_create_read_session_streams_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.BatchCreateReadSessionStreamsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.batch_create_read_session_streams(
@@ -1031,9 +1022,7 @@ def test_batch_create_read_session_streams_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].session == storage.ReadSession(name='name_value')
-
         assert args[0].requested_streams == 1840
 
 
@@ -1077,9 +1066,7 @@ async def test_batch_create_read_session_streams_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].session == storage.ReadSession(name='name_value')
-
         assert args[0].requested_streams == 1840
 
 
@@ -1115,13 +1102,11 @@ def test_finalize_stream(transport: str = 'grpc', request_type=storage.FinalizeS
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.finalize_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.FinalizeStreamRequest()
 
     # Establish that the response is the type that we expect.
@@ -1147,8 +1132,8 @@ def test_finalize_stream_empty_call():
         client.finalize_stream()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.FinalizeStreamRequest()
+
 
 @pytest.mark.asyncio
 async def test_finalize_stream_async(transport: str = 'grpc_asyncio', request_type=storage.FinalizeStreamRequest):
@@ -1167,13 +1152,11 @@ async def test_finalize_stream_async(transport: str = 'grpc_asyncio', request_ty
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.finalize_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.FinalizeStreamRequest()
 
     # Establish that the response is the type that we expect.
@@ -1193,6 +1176,7 @@ def test_finalize_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.FinalizeStreamRequest()
+
     request.stream.name = 'stream.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1200,7 +1184,6 @@ def test_finalize_stream_field_headers():
             type(client.transport.finalize_stream),
             '__call__') as call:
         call.return_value = None
-
         client.finalize_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1225,6 +1208,7 @@ async def test_finalize_stream_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.FinalizeStreamRequest()
+
     request.stream.name = 'stream.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1232,7 +1216,6 @@ async def test_finalize_stream_field_headers_async():
             type(client.transport.finalize_stream),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.finalize_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1259,7 +1242,6 @@ def test_finalize_stream_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.finalize_stream(
@@ -1270,7 +1252,6 @@ def test_finalize_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].stream == storage.Stream(name='name_value')
 
 
@@ -1312,7 +1293,6 @@ async def test_finalize_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].stream == storage.Stream(name='name_value')
 
 
@@ -1348,17 +1328,14 @@ def test_split_read_stream(transport: str = 'grpc', request_type=storage.SplitRe
         # Designate an appropriate return value for the call.
         call.return_value = storage.SplitReadStreamResponse(
         )
-
         response = client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.SplitReadStreamRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, storage.SplitReadStreamResponse)
 
 
@@ -1381,8 +1358,8 @@ def test_split_read_stream_empty_call():
         client.split_read_stream()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.SplitReadStreamRequest()
+
 
 @pytest.mark.asyncio
 async def test_split_read_stream_async(transport: str = 'grpc_asyncio', request_type=storage.SplitReadStreamRequest):
@@ -1400,15 +1377,13 @@ async def test_split_read_stream_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.split_read_stream),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.SplitReadStreamResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.SplitReadStreamResponse(
         ))
-
         response = await client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == storage.SplitReadStreamRequest()
 
     # Establish that the response is the type that we expect.
@@ -1428,6 +1403,7 @@ def test_split_read_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.SplitReadStreamRequest()
+
     request.original_stream.name = 'original_stream.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1435,7 +1411,6 @@ def test_split_read_stream_field_headers():
             type(client.transport.split_read_stream),
             '__call__') as call:
         call.return_value = storage.SplitReadStreamResponse()
-
         client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1460,6 +1435,7 @@ async def test_split_read_stream_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.SplitReadStreamRequest()
+
     request.original_stream.name = 'original_stream.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1467,7 +1443,6 @@ async def test_split_read_stream_field_headers_async():
             type(client.transport.split_read_stream),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.SplitReadStreamResponse())
-
         await client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1494,7 +1469,6 @@ def test_split_read_stream_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.SplitReadStreamResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.split_read_stream(
@@ -1505,7 +1479,6 @@ def test_split_read_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].original_stream == storage.Stream(name='name_value')
 
 
@@ -1547,7 +1520,6 @@ async def test_split_read_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].original_stream == storage.Stream(name='name_value')
 
 
@@ -1606,7 +1578,6 @@ def test_transport_instance():
     client = BigQueryStorageClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.BigQueryStorageGrpcTransport(
@@ -1621,7 +1592,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.BigQueryStorageGrpcTransport,
     transports.BigQueryStorageGrpcAsyncIOTransport,
@@ -1633,7 +1603,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = BigQueryStorageClient(
@@ -1643,7 +1612,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.BigQueryStorageGrpcTransport,
     )
-
 
 def test_big_query_storage_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1670,15 +1638,33 @@ def test_big_query_storage_base_transport():
         'batch_create_read_session_streams',
         'finalize_stream',
         'split_read_stream',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_big_query_storage_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.BigQueryStorageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.BigQueryStorageTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.BigQueryStorageTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/bigquery',            'https://www.googleapis.com/auth/bigquery.readonly',            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_big_query_storage_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.BigQueryStorageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.BigQueryStorageTransport(
@@ -1696,37 +1682,186 @@ def test_big_query_storage_base_transport_with_credentials_file():
 
 def test_big_query_storage_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.BigQueryStorageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.BigQueryStorageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.BigQueryStorageTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_big_query_storage_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         BigQueryStorageClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/bigquery',
             'https://www.googleapis.com/auth/bigquery.readonly',
-            'https://www.googleapis.com/auth/cloud-platform',),
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_big_query_storage_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_big_query_storage_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        BigQueryStorageClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.BigQueryStorageGrpcTransport,
+        transports.BigQueryStorageGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_big_query_storage_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.BigQueryStorageGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.BigQueryStorageGrpcTransport,
+        transports.BigQueryStorageGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_big_query_storage_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/bigquery',
             'https://www.googleapis.com/auth/bigquery.readonly',
-            'https://www.googleapis.com/auth/cloud-platform',),
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.BigQueryStorageGrpcTransport, grpc_helpers),
+        (transports.BigQueryStorageGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_big_query_storage_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "bigquerystorage.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="bigquerystorage.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.BigQueryStorageGrpcTransport, grpc_helpers),
+        (transports.BigQueryStorageGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_big_query_storage_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "bigquerystorage.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.BigQueryStorageGrpcTransport, grpc_helpers),
+        (transports.BigQueryStorageGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_big_query_storage_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "bigquerystorage.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1790,7 +1925,6 @@ def test_big_query_storage_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='bigquerystorage.googleapis.com:8000'),
     )
     assert client.transport._host == 'bigquerystorage.googleapis.com:8000'
-
 
 def test_big_query_storage_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1914,7 +2048,6 @@ def test_read_session_path():
     project = "squid"
     location = "clam"
     session = "whelk"
-
     expected = "projects/{project}/locations/{location}/sessions/{session}".format(project=project, location=location, session=session, )
     actual = BigQueryStorageClient.read_session_path(project, location, session)
     assert expected == actual
@@ -1922,10 +2055,9 @@ def test_read_session_path():
 
 def test_parse_read_session_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "session": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "session": "nudibranch",
     }
     path = BigQueryStorageClient.read_session_path(**expected)
 
@@ -1937,7 +2069,6 @@ def test_stream_path():
     project = "cuttlefish"
     location = "mussel"
     stream = "winkle"
-
     expected = "projects/{project}/locations/{location}/streams/{stream}".format(project=project, location=location, stream=stream, )
     actual = BigQueryStorageClient.stream_path(project, location, stream)
     assert expected == actual
@@ -1945,10 +2076,9 @@ def test_stream_path():
 
 def test_parse_stream_path():
     expected = {
-    "project": "nautilus",
-    "location": "scallop",
-    "stream": "abalone",
-
+        "project": "nautilus",
+        "location": "scallop",
+        "stream": "abalone",
     }
     path = BigQueryStorageClient.stream_path(**expected)
 
@@ -1958,7 +2088,6 @@ def test_parse_stream_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BigQueryStorageClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1966,8 +2095,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = BigQueryStorageClient.common_billing_account_path(**expected)
 
@@ -1977,7 +2105,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = BigQueryStorageClient.common_folder_path(folder)
     assert expected == actual
@@ -1985,8 +2112,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = BigQueryStorageClient.common_folder_path(**expected)
 
@@ -1996,7 +2122,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BigQueryStorageClient.common_organization_path(organization)
     assert expected == actual
@@ -2004,8 +2129,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = BigQueryStorageClient.common_organization_path(**expected)
 
@@ -2015,7 +2139,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = BigQueryStorageClient.common_project_path(project)
     assert expected == actual
@@ -2023,8 +2146,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = BigQueryStorageClient.common_project_path(**expected)
 
@@ -2035,7 +2157,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BigQueryStorageClient.common_location_path(project, location)
     assert expected == actual
@@ -2043,9 +2164,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = BigQueryStorageClient.common_location_path(**expected)
 

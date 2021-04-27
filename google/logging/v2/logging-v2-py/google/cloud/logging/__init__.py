@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,8 +77,7 @@ from google.cloud.logging_v2.types.logging_metrics import ListLogMetricsResponse
 from google.cloud.logging_v2.types.logging_metrics import LogMetric
 from google.cloud.logging_v2.types.logging_metrics import UpdateLogMetricRequest
 
-__all__ = (
-    'BigQueryOptions',
+__all__ = ('BigQueryOptions',
     'CmekSettings',
     'ConfigServiceV2AsyncClient',
     'ConfigServiceV2Client',

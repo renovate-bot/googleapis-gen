@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 from google.cloud.bigquery_reservation_v1.types import reservation
 from google.cloud.bigquery_reservation_v1.types import reservation as gcbr_reservation
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ReservationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -79,7 +76,8 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -218,13 +216,15 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -238,7 +238,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def create_reservation(self) -> Callable[
             [gcbr_reservation.CreateReservationRequest],
             gcbr_reservation.Reservation]:
-        r"""Return a callable for the create reservation method over gRPC.
+        r"""Return a callable for the
+        create reservation
+          method over gRPC.
 
         Creates a new reservation resource.
 
@@ -264,7 +266,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def list_reservations(self) -> Callable[
             [reservation.ListReservationsRequest],
             reservation.ListReservationsResponse]:
-        r"""Return a callable for the list reservations method over gRPC.
+        r"""Return a callable for the
+        list reservations
+          method over gRPC.
 
         Lists all the reservations for the project in the
         specified location.
@@ -291,7 +295,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def get_reservation(self) -> Callable[
             [reservation.GetReservationRequest],
             reservation.Reservation]:
-        r"""Return a callable for the get reservation method over gRPC.
+        r"""Return a callable for the
+        get reservation
+          method over gRPC.
 
         Returns information about the reservation.
 
@@ -317,7 +323,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def delete_reservation(self) -> Callable[
             [reservation.DeleteReservationRequest],
             empty.Empty]:
-        r"""Return a callable for the delete reservation method over gRPC.
+        r"""Return a callable for the
+        delete reservation
+          method over gRPC.
 
         Deletes a reservation. Returns
         ``google.rpc.Code.FAILED_PRECONDITION`` when reservation has
@@ -345,7 +353,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def update_reservation(self) -> Callable[
             [gcbr_reservation.UpdateReservationRequest],
             gcbr_reservation.Reservation]:
-        r"""Return a callable for the update reservation method over gRPC.
+        r"""Return a callable for the
+        update reservation
+          method over gRPC.
 
         Updates an existing reservation resource.
 
@@ -371,7 +381,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def create_capacity_commitment(self) -> Callable[
             [reservation.CreateCapacityCommitmentRequest],
             reservation.CapacityCommitment]:
-        r"""Return a callable for the create capacity commitment method over gRPC.
+        r"""Return a callable for the
+        create capacity commitment
+          method over gRPC.
 
         Creates a new capacity commitment resource.
 
@@ -397,7 +409,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def list_capacity_commitments(self) -> Callable[
             [reservation.ListCapacityCommitmentsRequest],
             reservation.ListCapacityCommitmentsResponse]:
-        r"""Return a callable for the list capacity commitments method over gRPC.
+        r"""Return a callable for the
+        list capacity commitments
+          method over gRPC.
 
         Lists all the capacity commitments for the admin
         project.
@@ -424,7 +438,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def get_capacity_commitment(self) -> Callable[
             [reservation.GetCapacityCommitmentRequest],
             reservation.CapacityCommitment]:
-        r"""Return a callable for the get capacity commitment method over gRPC.
+        r"""Return a callable for the
+        get capacity commitment
+          method over gRPC.
 
         Returns information about the capacity commitment.
 
@@ -450,7 +466,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def delete_capacity_commitment(self) -> Callable[
             [reservation.DeleteCapacityCommitmentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete capacity commitment method over gRPC.
+        r"""Return a callable for the
+        delete capacity commitment
+          method over gRPC.
 
         Deletes a capacity commitment. Attempting to delete capacity
         commitment before its commitment_end_time will fail with the
@@ -478,7 +496,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def update_capacity_commitment(self) -> Callable[
             [reservation.UpdateCapacityCommitmentRequest],
             reservation.CapacityCommitment]:
-        r"""Return a callable for the update capacity commitment method over gRPC.
+        r"""Return a callable for the
+        update capacity commitment
+          method over gRPC.
 
         Updates an existing capacity commitment.
 
@@ -511,7 +531,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def split_capacity_commitment(self) -> Callable[
             [reservation.SplitCapacityCommitmentRequest],
             reservation.SplitCapacityCommitmentResponse]:
-        r"""Return a callable for the split capacity commitment method over gRPC.
+        r"""Return a callable for the
+        split capacity commitment
+          method over gRPC.
 
         Splits capacity commitment to two commitments of the same plan
         and ``commitment_end_time``.
@@ -545,7 +567,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def merge_capacity_commitments(self) -> Callable[
             [reservation.MergeCapacityCommitmentsRequest],
             reservation.CapacityCommitment]:
-        r"""Return a callable for the merge capacity commitments method over gRPC.
+        r"""Return a callable for the
+        merge capacity commitments
+          method over gRPC.
 
         Merges capacity commitments of the same plan into a single
         commitment.
@@ -580,7 +604,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def create_assignment(self) -> Callable[
             [reservation.CreateAssignmentRequest],
             reservation.Assignment]:
-        r"""Return a callable for the create assignment method over gRPC.
+        r"""Return a callable for the
+        create assignment
+          method over gRPC.
 
         Creates an assignment object which allows the given project to
         submit jobs of a certain type using slots from the specified
@@ -637,7 +663,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def list_assignments(self) -> Callable[
             [reservation.ListAssignmentsRequest],
             reservation.ListAssignmentsResponse]:
-        r"""Return a callable for the list assignments method over gRPC.
+        r"""Return a callable for the
+        list assignments
+          method over gRPC.
 
         Lists assignments.
 
@@ -684,7 +712,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def delete_assignment(self) -> Callable[
             [reservation.DeleteAssignmentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete assignment method over gRPC.
+        r"""Return a callable for the
+        delete assignment
+          method over gRPC.
 
         Deletes a assignment. No expansion will happen.
 
@@ -725,7 +755,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def search_assignments(self) -> Callable[
             [reservation.SearchAssignmentsRequest],
             reservation.SearchAssignmentsResponse]:
-        r"""Return a callable for the search assignments method over gRPC.
+        r"""Return a callable for the
+        search assignments
+          method over gRPC.
 
         Looks up assignments for a specified resource for a particular
         region. If the request is about a project:
@@ -775,7 +807,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def move_assignment(self) -> Callable[
             [reservation.MoveAssignmentRequest],
             reservation.Assignment]:
-        r"""Return a callable for the move assignment method over gRPC.
+        r"""Return a callable for the
+        move assignment
+          method over gRPC.
 
         Moves an assignment under a new reservation.
         This differs from removing an existing assignment and
@@ -805,7 +839,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def get_bi_reservation(self) -> Callable[
             [reservation.GetBiReservationRequest],
             reservation.BiReservation]:
-        r"""Return a callable for the get bi reservation method over gRPC.
+        r"""Return a callable for the
+        get bi reservation
+          method over gRPC.
 
         Retrieves a BI reservation.
 
@@ -831,7 +867,9 @@ class ReservationServiceGrpcTransport(ReservationServiceTransport):
     def update_bi_reservation(self) -> Callable[
             [reservation.UpdateBiReservationRequest],
             reservation.BiReservation]:
-        r"""Return a callable for the update bi reservation method over gRPC.
+        r"""Return a callable for the
+        update bi reservation
+          method over gRPC.
 
         Updates a BI reservation.
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.iam.credentials_v1.types import common
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import IAMCredentialsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import IAMCredentialsGrpcTransport
 from .transports.grpc_asyncio import IAMCredentialsGrpcAsyncIOTransport
@@ -352,6 +349,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.GenerateAccessTokenRequest):
                 The request object.
+
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -403,7 +401,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
                 This corresponds to the ``lifetime`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -428,10 +425,8 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.GenerateAccessTokenRequest):
             request = common.GenerateAccessTokenRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if delegates is not None:
@@ -481,6 +476,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.GenerateIdTokenRequest):
                 The request object.
+
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -526,7 +522,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
                 This corresponds to the ``include_email`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -551,10 +546,8 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.GenerateIdTokenRequest):
             request = common.GenerateIdTokenRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if delegates is not None:
@@ -603,6 +596,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.SignBlobRequest):
                 The request object.
+
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -637,7 +631,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -662,10 +655,8 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.SignBlobRequest):
             request = common.SignBlobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if delegates is not None:
@@ -712,6 +703,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.SignJwtRequest):
                 The request object.
+
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -749,7 +741,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -774,10 +765,8 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.SignJwtRequest):
             request = common.SignJwtRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if delegates is not None:
@@ -807,8 +796,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

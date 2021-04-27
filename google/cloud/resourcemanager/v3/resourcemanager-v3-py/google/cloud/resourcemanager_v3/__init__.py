@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,6 +20,7 @@ from .services.projects import ProjectsClient
 from .services.tag_bindings import TagBindingsClient
 from .services.tag_keys import TagKeysClient
 from .services.tag_values import TagValuesClient
+
 from .types.folders import CreateFolderMetadata
 from .types.folders import CreateFolderRequest
 from .types.folders import DeleteFolderMetadata
@@ -86,7 +86,6 @@ from .types.tag_values import ListTagValuesResponse
 from .types.tag_values import TagValue
 from .types.tag_values import UpdateTagValueMetadata
 from .types.tag_values import UpdateTagValueRequest
-
 
 __all__ = (
     'CreateFolderMetadata',

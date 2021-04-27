@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -186,8 +185,7 @@ from google.cloud.aiplatform_v1.types.training_pipeline import TimestampSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TrainingPipeline
 from google.cloud.aiplatform_v1.types.user_action_reference import UserActionReference
 
-__all__ = (
-    'AcceleratorType',
+__all__ = ('AcceleratorType',
     'ActiveLearningConfig',
     'Annotation',
     'AnnotationSpec',

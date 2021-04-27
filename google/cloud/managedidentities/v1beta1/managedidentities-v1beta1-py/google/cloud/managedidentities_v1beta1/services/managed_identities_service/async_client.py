@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -35,7 +33,6 @@ from google.cloud.managedidentities_v1beta1.types import managed_identities_serv
 from google.cloud.managedidentities_v1beta1.types import resource
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import ManagedIdentitiesServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ManagedIdentitiesServiceGrpcAsyncIOTransport
 from .client import ManagedIdentitiesServiceClient
@@ -51,16 +48,12 @@ class ManagedIdentitiesServiceAsyncClient:
 
     common_billing_account_path = staticmethod(ManagedIdentitiesServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ManagedIdentitiesServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ManagedIdentitiesServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ManagedIdentitiesServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ManagedIdentitiesServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_location_path)
 
@@ -145,7 +138,6 @@ class ManagedIdentitiesServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ManagedIdentitiesServiceClient(
             credentials=credentials,
             transport=transport,
@@ -165,9 +157,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.CreateMicrosoftAdDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -184,7 +176,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.CreateMicrosoftAdDomainRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -233,9 +224,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ResetAdminPasswordRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1beta1.ResetAdminPassword]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -249,7 +240,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.ResetAdminPasswordRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -290,9 +280,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ListDomainsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListDomains][google.cloud.managedidentities.v1beta1.ListDomains]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -309,7 +299,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.ListDomainsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -359,9 +348,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.GetDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetDomain][google.cloud.managedidentities.v1beta1.GetDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -375,7 +364,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.GetDomainRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -416,9 +404,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.UpdateDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1beta1.UpdateDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -435,7 +423,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.UpdateDomainRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -484,9 +471,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.DeleteDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1beta1.DeleteDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -513,7 +500,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.DeleteDomainRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -562,9 +548,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.AttachTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AttachTrust][google.cloud.managedidentities.v1beta1.AttachTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -581,7 +567,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.AttachTrustRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -630,9 +615,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ReconfigureTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1beta1.ReconfigureTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -649,7 +634,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.ReconfigureTrustRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -698,9 +682,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.DetachTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DetachTrust][google.cloud.managedidentities.v1beta1.DetachTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -717,7 +701,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.DetachTrustRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -768,9 +751,9 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ValidateTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1beta1.ValidateTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -787,7 +770,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = managed_identities_service.ValidateTrustRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -824,8 +806,6 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

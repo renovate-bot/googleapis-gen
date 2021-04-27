@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.securitycenter.settings_v1beta1.types import component_settings as gcss_component_settings
 from google.cloud.securitycenter.settings_v1beta1.types import detector
@@ -51,7 +48,6 @@ __protobuf__ = proto.module(
 
 class GetServiceAccountRequest(proto.Message):
     r"""Request message for GetServiceAccount.
-
     Attributes:
         name (str):
             Required. The relative resource name of the service account
@@ -60,7 +56,10 @@ class GetServiceAccountRequest(proto.Message):
             -  ``organizations/{organization}/serviceAccount``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ServiceAccount(proto.Message):
@@ -80,14 +79,18 @@ class ServiceAccount(proto.Message):
             field for the SCC, SHA, and Infra Automation components.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    service_account = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_account = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetSettingsRequest(proto.Message):
     r"""Request message for GetSettings.
-
     Attributes:
         name (str):
             Required. The name of the settings to retrieve. Formats:
@@ -100,12 +103,14 @@ class GetSettingsRequest(proto.Message):
             -  ``projects/{project}/zones/{zone}/clusters/{cluster}/settings``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateSettingsRequest(proto.Message):
     r"""Request message for UpdateSettings.
-
     Attributes:
         settings (google.cloud.securitycenter.settings_v1beta1.types.Settings):
             Required. The settings to update.
@@ -124,18 +129,20 @@ class UpdateSettingsRequest(proto.Message):
             settings.
     """
 
-    settings = proto.Field(proto.MESSAGE, number=1,
+    settings = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcss_settings.Settings,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
 
 class ResetSettingsRequest(proto.Message):
     r"""Request message for ResetSettings.
-
     Attributes:
         name (str):
             Required. The name of the settings to reset. Formats:
@@ -152,14 +159,18 @@ class ResetSettingsRequest(proto.Message):
             existing settings will be blindly overwritten.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BatchGetSettingsRequest(proto.Message):
     r"""Request message for BatchGetSettings.
-
     Attributes:
         parent (str):
             Required. The relative resource name of the organization
@@ -178,27 +189,32 @@ class BatchGetSettingsRequest(proto.Message):
             -  ``projects/{project}/zones/{zone}/clusters/{cluster}/settings``
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    names = proto.RepeatedField(proto.STRING, number=2)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    names = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BatchGetSettingsResponse(proto.Message):
     r"""Response message for BatchGetSettings.
-
     Attributes:
         settings (Sequence[google.cloud.securitycenter.settings_v1beta1.types.Settings]):
             Settings requested.
     """
 
-    settings = proto.RepeatedField(proto.MESSAGE, number=1,
+    settings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcss_settings.Settings,
     )
 
 
 class CalculateEffectiveSettingsRequest(proto.Message):
     r"""Request message for CalculateEffectiveSettings.
-
     Attributes:
         name (str):
             Required. The name of the effective settings to retrieve.
@@ -212,12 +228,14 @@ class CalculateEffectiveSettingsRequest(proto.Message):
             -  ``projects/{project}/zones/{zone}/clusters/{cluster}/effectiveSettings``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class BatchCalculateEffectiveSettingsRequest(proto.Message):
     r"""Request message for BatchGetEffectiveSettings.
-
     Attributes:
         parent (str):
             Required. The relative resource name of the organization
@@ -230,29 +248,33 @@ class BatchCalculateEffectiveSettingsRequest(proto.Message):
             effective settings can be retrieved in a batch.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    requests = proto.RepeatedField(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    requests = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CalculateEffectiveSettingsRequest',
     )
 
 
 class BatchCalculateEffectiveSettingsResponse(proto.Message):
     r"""Response message for BatchGetEffectiveSettings.
-
     Attributes:
         settings (Sequence[google.cloud.securitycenter.settings_v1beta1.types.Settings]):
             Settings requested.
     """
 
-    settings = proto.RepeatedField(proto.MESSAGE, number=1,
+    settings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcss_settings.Settings,
     )
 
 
 class GetComponentSettingsRequest(proto.Message):
     r"""Request message for GetComponentSettings.
-
     Attributes:
         name (str):
             Required. The component settings to retrieve.
@@ -267,12 +289,14 @@ class GetComponentSettingsRequest(proto.Message):
             -  ``projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateComponentSettingsRequest(proto.Message):
     r"""Request message for UpdateComponentSettings.
-
     Attributes:
         component_settings (google.cloud.securitycenter.settings_v1beta1.types.ComponentSettings):
             Required. The component settings to update.
@@ -291,18 +315,20 @@ class UpdateComponentSettingsRequest(proto.Message):
             component settings resource.
     """
 
-    component_settings = proto.Field(proto.MESSAGE, number=1,
+    component_settings = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcss_component_settings.ComponentSettings,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=field_mask.FieldMask,
     )
 
 
 class ResetComponentSettingsRequest(proto.Message):
     r"""Request message for ResetComponentSettings.
-
     Attributes:
         name (str):
             Required. The component settings to reset.
@@ -321,14 +347,18 @@ class ResetComponentSettingsRequest(proto.Message):
             existing settings will be blindly overwritten.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CalculateEffectiveComponentSettingsRequest(proto.Message):
     r"""Request message for CalculateEffectiveComponentSettings.
-
     Attributes:
         name (str):
             Required. The effective component settings to retrieve.
@@ -343,12 +373,14 @@ class CalculateEffectiveComponentSettingsRequest(proto.Message):
             -  ``projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListDetectorsRequest(proto.Message):
     r"""Request message for ListDetectors.
-
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of
@@ -384,18 +416,26 @@ class ListDetectorsRequest(proto.Message):
             token.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    filter = proto.Field(proto.STRING, number=2)
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListDetectorsResponse(proto.Message):
     r"""Response message for ListDetectors.
-
     Attributes:
         detectors (Sequence[google.cloud.securitycenter.settings_v1beta1.types.Detector]):
             The detectors from the specified
@@ -410,16 +450,19 @@ class ListDetectorsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    detectors = proto.RepeatedField(proto.MESSAGE, number=1,
+    detectors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=detector.Detector,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListComponentsRequest(proto.Message):
     r"""Request message for ListComponents.
-
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of
@@ -441,16 +484,22 @@ class ListComponentsRequest(proto.Message):
             page token.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListComponentsResponse(proto.Message):
     r"""Response message for ListComponents.
-
     Attributes:
         components (Sequence[str]):
             The components from the specified
@@ -465,9 +514,14 @@ class ListComponentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    components = proto.RepeatedField(proto.STRING, number=1)
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    components = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

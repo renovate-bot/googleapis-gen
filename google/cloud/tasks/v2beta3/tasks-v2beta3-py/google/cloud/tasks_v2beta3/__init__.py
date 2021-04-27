@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.cloud_tasks import CloudTasksClient
+
 from .types.cloudtasks import CreateQueueRequest
 from .types.cloudtasks import CreateTaskRequest
 from .types.cloudtasks import DeleteQueueRequest
@@ -46,7 +46,6 @@ from .types.target import OidcToken
 from .types.target import PullMessage
 from .types.task import Attempt
 from .types.task import Task
-
 
 __all__ = (
     'AppEngineHttpQueue',

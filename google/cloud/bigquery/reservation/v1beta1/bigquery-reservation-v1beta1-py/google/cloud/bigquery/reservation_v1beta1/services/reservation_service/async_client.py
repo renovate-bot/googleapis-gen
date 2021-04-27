@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -34,7 +32,6 @@ from google.cloud.bigquery.reservation_v1beta1.types import reservation as gcbr_
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
-
 from .transports.base import ReservationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ReservationServiceGrpcAsyncIOTransport
 from .client import ReservationServiceClient
@@ -73,19 +70,14 @@ class ReservationServiceAsyncClient:
     parse_capacity_commitment_path = staticmethod(ReservationServiceClient.parse_capacity_commitment_path)
     reservation_path = staticmethod(ReservationServiceClient.reservation_path)
     parse_reservation_path = staticmethod(ReservationServiceClient.parse_reservation_path)
-
     common_billing_account_path = staticmethod(ReservationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ReservationServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ReservationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ReservationServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ReservationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ReservationServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ReservationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ReservationServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ReservationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ReservationServiceClient.parse_common_location_path)
 
@@ -170,7 +162,6 @@ class ReservationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ReservationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -193,7 +184,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.CreateReservationRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateReservation].
             parent (:class:`str`):
                 Required. Project, location. E.g.,
@@ -218,7 +210,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``reservation_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -243,7 +234,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if reservation is not None:
@@ -291,7 +281,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.ListReservationsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListReservations].
             parent (:class:`str`):
                 Required. The parent resource name containing project
@@ -300,7 +291,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -328,7 +318,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -337,10 +326,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_reservations,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -390,7 +376,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.GetReservationRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetReservation].
             name (:class:`str`):
                 Required. Resource name of the reservation to retrieve.
@@ -400,7 +387,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -425,7 +411,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -434,10 +419,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_reservation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -480,7 +462,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.DeleteReservationRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteReservation].
             name (:class:`str`):
                 Required. Resource name of the reservation to retrieve.
@@ -490,7 +473,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -509,7 +491,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -518,10 +499,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_reservation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -560,7 +538,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.UpdateReservationRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateReservation].
             reservation (:class:`google.cloud.bigquery.reservation_v1beta1.types.Reservation`):
                 Content of the reservation to update.
@@ -574,7 +553,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -599,7 +577,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if reservation is not None:
             request.reservation = reservation
         if update_mask is not None:
@@ -645,7 +622,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.CreateCapacityCommitmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateCapacityCommitment].
             parent (:class:`str`):
                 Required. Resource name of the parent reservation. E.g.,
@@ -661,7 +639,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``capacity_commitment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -698,7 +675,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if capacity_commitment is not None:
@@ -743,9 +719,9 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.ListCapacityCommitmentsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.ListCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListCapacityCommitments].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -762,7 +738,6 @@ class ReservationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = reservation.ListCapacityCommitmentsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -770,10 +745,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_capacity_commitments,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -823,7 +795,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.GetCapacityCommitmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetCapacityCommitment].
             name (:class:`str`):
                 Required. Resource name of the capacity commitment to
@@ -833,7 +806,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -870,7 +842,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -879,10 +850,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_capacity_commitment,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -925,7 +893,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.DeleteCapacityCommitmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteCapacityCommitment].
             name (:class:`str`):
                 Required. Resource name of the capacity commitment to
@@ -935,7 +904,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -954,7 +922,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -963,10 +930,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_capacity_commitment,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1012,7 +976,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.UpdateCapacityCommitmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.UpdateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateCapacityCommitment].
             capacity_commitment (:class:`google.cloud.bigquery.reservation_v1beta1.types.CapacityCommitment`):
                 Content of the capacity commitment to
@@ -1028,7 +993,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1065,7 +1029,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if capacity_commitment is not None:
             request.capacity_commitment = capacity_commitment
         if update_mask is not None:
@@ -1119,7 +1082,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.SplitCapacityCommitmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.SplitCapacityCommitment].
             name (:class:`str`):
                 Required. The resource name e.g.,:
@@ -1135,7 +1099,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``slot_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1160,7 +1123,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if slot_count is not None:
@@ -1215,7 +1177,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.MergeCapacityCommitmentsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.MergeCapacityCommitments].
             parent (:class:`str`):
                 Parent resource that identifies admin project and
@@ -1233,7 +1196,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``capacity_commitment_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1270,10 +1232,8 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
-
         if capacity_commitment_ids:
             request.capacity_commitment_ids.extend(capacity_commitment_ids)
 
@@ -1348,7 +1308,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.CreateAssignmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateAssignment].
                 Note: "bigquery.reservationAssignments.create"
                 permission is required on the related assignee.
@@ -1365,7 +1326,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``assignment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1391,7 +1351,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if assignment is not None:
@@ -1457,7 +1416,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.ListAssignmentsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListAssignments].
             parent (:class:`str`):
                 Required. The parent resource name e.g.:
@@ -1471,7 +1431,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1499,7 +1458,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1508,10 +1466,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_assignments,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1576,7 +1531,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.DeleteAssignmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteAssignment].
                 Note: "bigquery.reservationAssignments.delete"
                 permission is required on the related assignee.
@@ -1587,7 +1543,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1606,7 +1561,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1615,10 +1569,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_assignment,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1681,7 +1632,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.SearchAssignmentsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.SearchAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.SearchAssignments].
                 Note: "bigquery.reservationAssignments.search"
                 permission is required on the related assignee.
@@ -1705,7 +1657,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1733,7 +1684,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if query is not None:
@@ -1744,10 +1694,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_assignments,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1802,7 +1749,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.MoveAssignmentRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.MoveAssignment].
                 **Note**: "bigquery.reservationAssignments.create"
                 permission is required on the destination_id.
@@ -1824,7 +1772,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``destination_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1850,7 +1797,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if destination_id is not None:
@@ -1895,7 +1841,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.GetBiReservationRequest`):
-                The request object. A request to get a singleton BI
+                The request object.
+                A request to get a singleton BI
                 reservation.
             name (:class:`str`):
                 Required. Name of the requested reservation, for
@@ -1905,7 +1852,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1928,7 +1874,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1937,10 +1882,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_bi_reservation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1989,7 +1931,8 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.UpdateBiReservationRequest`):
-                The request object. A request to update a BI
+                The request object.
+                A request to update a BI
                 reservation.
             reservation (:class:`google.cloud.bigquery.reservation_v1beta1.types.BiReservation`):
                 A reservation to update.
@@ -2003,7 +1946,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2026,7 +1968,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if reservation is not None:
             request.reservation = reservation
         if update_mask is not None:
@@ -2058,8 +1999,6 @@ class ReservationServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -31,7 +30,6 @@ from google.cloud.monitoring_v3.types import service
 from google.cloud.monitoring_v3.types import service as gm_service
 from google.cloud.monitoring_v3.types import service_service
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ServiceMonitoringServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import ServiceMonitoringServiceGrpcTransport
 
@@ -84,13 +82,15 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -110,7 +110,8 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -168,7 +169,6 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -231,7 +231,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def create_service(self) -> Callable[
             [service_service.CreateServiceRequest],
             Awaitable[gm_service.Service]]:
-        r"""Return a callable for the create service method over gRPC.
+        r"""Return a callable for the
+        create service
+          method over gRPC.
 
         Create a ``Service``.
 
@@ -257,7 +259,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def get_service(self) -> Callable[
             [service_service.GetServiceRequest],
             Awaitable[service.Service]]:
-        r"""Return a callable for the get service method over gRPC.
+        r"""Return a callable for the
+        get service
+          method over gRPC.
 
         Get the named ``Service``.
 
@@ -283,7 +287,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def list_services(self) -> Callable[
             [service_service.ListServicesRequest],
             Awaitable[service_service.ListServicesResponse]]:
-        r"""Return a callable for the list services method over gRPC.
+        r"""Return a callable for the
+        list services
+          method over gRPC.
 
         List ``Service``\ s for this workspace.
 
@@ -309,7 +315,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def update_service(self) -> Callable[
             [service_service.UpdateServiceRequest],
             Awaitable[gm_service.Service]]:
-        r"""Return a callable for the update service method over gRPC.
+        r"""Return a callable for the
+        update service
+          method over gRPC.
 
         Update this ``Service``.
 
@@ -335,7 +343,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def delete_service(self) -> Callable[
             [service_service.DeleteServiceRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete service method over gRPC.
+        r"""Return a callable for the
+        delete service
+          method over gRPC.
 
         Soft delete this ``Service``.
 
@@ -361,7 +371,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def create_service_level_objective(self) -> Callable[
             [service_service.CreateServiceLevelObjectiveRequest],
             Awaitable[service.ServiceLevelObjective]]:
-        r"""Return a callable for the create service level objective method over gRPC.
+        r"""Return a callable for the
+        create service level objective
+          method over gRPC.
 
         Create a ``ServiceLevelObjective`` for the given ``Service``.
 
@@ -387,7 +399,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def get_service_level_objective(self) -> Callable[
             [service_service.GetServiceLevelObjectiveRequest],
             Awaitable[service.ServiceLevelObjective]]:
-        r"""Return a callable for the get service level objective method over gRPC.
+        r"""Return a callable for the
+        get service level objective
+          method over gRPC.
 
         Get a ``ServiceLevelObjective`` by name.
 
@@ -413,7 +427,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def list_service_level_objectives(self) -> Callable[
             [service_service.ListServiceLevelObjectivesRequest],
             Awaitable[service_service.ListServiceLevelObjectivesResponse]]:
-        r"""Return a callable for the list service level objectives method over gRPC.
+        r"""Return a callable for the
+        list service level objectives
+          method over gRPC.
 
         List the ``ServiceLevelObjective``\ s for the given ``Service``.
 
@@ -439,7 +455,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def update_service_level_objective(self) -> Callable[
             [service_service.UpdateServiceLevelObjectiveRequest],
             Awaitable[service.ServiceLevelObjective]]:
-        r"""Return a callable for the update service level objective method over gRPC.
+        r"""Return a callable for the
+        update service level objective
+          method over gRPC.
 
         Update the given ``ServiceLevelObjective``.
 
@@ -465,7 +483,9 @@ class ServiceMonitoringServiceGrpcAsyncIOTransport(ServiceMonitoringServiceTrans
     def delete_service_level_objective(self) -> Callable[
             [service_service.DeleteServiceLevelObjectiveRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete service level objective method over gRPC.
+        r"""Return a callable for the
+        delete service level objective
+          method over gRPC.
 
         Delete the given ``ServiceLevelObjective``.
 

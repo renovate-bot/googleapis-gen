@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -83,8 +82,7 @@ from google.cloud.pubsublite_v1.types.topic_stats import ComputeHeadCursorRespon
 from google.cloud.pubsublite_v1.types.topic_stats import ComputeMessageStatsRequest
 from google.cloud.pubsublite_v1.types.topic_stats import ComputeMessageStatsResponse
 
-__all__ = (
-    'AdminServiceAsyncClient',
+__all__ = ('AdminServiceAsyncClient',
     'AdminServiceClient',
     'AttributeValues',
     'CommitCursorRequest',

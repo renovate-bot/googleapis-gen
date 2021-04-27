@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from ccc.hosted.marketplace_v2.types import resources
 from ccc.hosted.marketplace_v2.types import services
-
 from .transports.base import CustomerLicenseServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CustomerLicenseServiceGrpcTransport
 from .transports.grpc_asyncio import CustomerLicenseServiceGrpcAsyncIOTransport
@@ -338,7 +335,6 @@ class CustomerLicenseServiceClient(metaclass=CustomerLicenseServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a services.CustomerLicenseGetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -360,8 +356,6 @@ class CustomerLicenseServiceClient(metaclass=CustomerLicenseServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

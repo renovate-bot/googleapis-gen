@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -30,7 +28,6 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.resourcesettings_v1.services.resource_settings_service import pagers
 from google.cloud.resourcesettings_v1.types import resource_settings
-
 from .transports.base import ResourceSettingsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ResourceSettingsServiceGrpcAsyncIOTransport
 from .client import ResourceSettingsServiceClient
@@ -59,19 +56,14 @@ class ResourceSettingsServiceAsyncClient:
 
     setting_path = staticmethod(ResourceSettingsServiceClient.setting_path)
     parse_setting_path = staticmethod(ResourceSettingsServiceClient.parse_setting_path)
-
     common_billing_account_path = staticmethod(ResourceSettingsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ResourceSettingsServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ResourceSettingsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ResourceSettingsServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ResourceSettingsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ResourceSettingsServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ResourceSettingsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ResourceSettingsServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ResourceSettingsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ResourceSettingsServiceClient.parse_common_location_path)
 
@@ -156,7 +148,6 @@ class ResourceSettingsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ResourceSettingsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -178,7 +169,8 @@ class ResourceSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcesettings_v1.types.ListSettingsRequest`):
-                The request object. The request for ListSettings.
+                The request object.
+                The request for ListSettings.
             parent (:class:`str`):
                 Required. The Cloud resource that parents the setting.
                 Must be in one of the following forms:
@@ -191,7 +183,6 @@ class ResourceSettingsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,7 +209,6 @@ class ResourceSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -227,10 +217,7 @@ class ResourceSettingsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_settings,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -283,7 +270,8 @@ class ResourceSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcesettings_v1.types.GetSettingRequest`):
-                The request object. The request for GetSetting.
+                The request object.
+                The request for GetSetting.
             name (:class:`str`):
                 Required. The name of the setting to get. See
                 [Setting][google.cloud.resourcesettings.v1.Setting] for
@@ -292,7 +280,6 @@ class ResourceSettingsServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -315,7 +302,6 @@ class ResourceSettingsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -372,8 +358,8 @@ class ResourceSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcesettings_v1.types.UpdateSettingRequest`):
-                The request object. The request for UpdateSetting.
-
+                The request object.
+                The request for UpdateSetting.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -385,7 +371,6 @@ class ResourceSettingsServiceAsyncClient:
                 The schema for settings.
         """
         # Create or coerce a protobuf request object.
-
         request = resource_settings.UpdateSettingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -414,8 +399,6 @@ class ResourceSettingsServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

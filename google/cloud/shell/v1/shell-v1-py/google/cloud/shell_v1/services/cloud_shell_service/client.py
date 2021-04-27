@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.shell_v1.types import cloudshell
-
 from .transports.base import CloudShellServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudShellServiceGrpcTransport
 from .transports.grpc_asyncio import CloudShellServiceGrpcAsyncIOTransport
@@ -346,7 +343,8 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         Args:
             request (google.cloud.shell_v1.types.GetEnvironmentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetEnvironment][google.cloud.shell.v1.CloudShellService.GetEnvironment].
             name (str):
                 Required. Name of the requested resource, for example
@@ -356,7 +354,6 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -389,10 +386,8 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudshell.GetEnvironmentRequest):
             request = cloudshell.GetEnvironmentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -437,9 +432,9 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         Args:
             request (google.cloud.shell_v1.types.StartEnvironmentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [StartEnvironment][google.cloud.shell.v1.CloudShellService.StartEnvironment].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -456,7 +451,6 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cloudshell.StartEnvironmentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -510,9 +504,9 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         Args:
             request (google.cloud.shell_v1.types.AuthorizeEnvironmentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -528,7 +522,6 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cloudshell.AuthorizeEnvironmentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -581,9 +574,9 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         Args:
             request (google.cloud.shell_v1.types.AddPublicKeyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AddPublicKey][google.cloud.shell.v1.CloudShellService.AddPublicKey].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -599,7 +592,6 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cloudshell.AddPublicKeyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -652,9 +644,9 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         Args:
             request (google.cloud.shell_v1.types.RemovePublicKeyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -670,7 +662,6 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cloudshell.RemovePublicKeyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -708,8 +699,6 @@ class CloudShellServiceClient(metaclass=CloudShellServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.datacatalog_v1.types import common
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -92,27 +89,43 @@ class SearchCatalogResult(proto.Message):
             -  bigquery:table.project_id.dataset_id.table_id
     """
 
-    search_result_type = proto.Field(proto.ENUM, number=1,
+    search_result_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='SearchResultType',
     )
-
-    search_result_subtype = proto.Field(proto.STRING, number=2)
-
-    relative_resource_name = proto.Field(proto.STRING, number=3)
-
-    linked_resource = proto.Field(proto.STRING, number=4)
-
-    modify_time = proto.Field(proto.MESSAGE, number=7,
+    search_result_subtype = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    relative_resource_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    linked_resource = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    modify_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=timestamp.Timestamp,
     )
-
-    integrated_system = proto.Field(proto.ENUM, number=8, oneof='system',
+    integrated_system = proto.Field(
+        proto.ENUM,
+        number=8,
+        oneof='system',
         enum=common.IntegratedSystem,
     )
-
-    user_specified_system = proto.Field(proto.STRING, number=9, oneof='system')
-
-    fully_qualified_name = proto.Field(proto.STRING, number=10)
+    user_specified_system = proto.Field(
+        proto.STRING,
+        number=9,
+        oneof='system',
+    )
+    fully_qualified_name = proto.Field(
+        proto.STRING,
+        number=10,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -43,7 +41,6 @@ from google.cloud.appengine_admin_v1.types import version
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import VersionsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import VersionsGrpcTransport
 from .transports.grpc_asyncio import VersionsGrpcAsyncIOTransport
@@ -333,9 +330,9 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListVersionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.ListVersions`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -351,7 +348,6 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListVersionsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -404,9 +400,9 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.GetVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -421,7 +417,6 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetVersionRequest.
         # There's no risk of modifying the input as we've already verified
@@ -463,9 +458,9 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.CreateVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -481,7 +476,6 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.CreateVersionRequest.
         # There's no risk of modifying the input as we've already verified
@@ -566,9 +560,9 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.UpdateVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -584,7 +578,6 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.UpdateVersionRequest.
         # There's no risk of modifying the input as we've already verified
@@ -634,9 +627,9 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.DeleteVersion`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -663,7 +656,6 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DeleteVersionRequest.
         # There's no risk of modifying the input as we've already verified
@@ -701,8 +693,6 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

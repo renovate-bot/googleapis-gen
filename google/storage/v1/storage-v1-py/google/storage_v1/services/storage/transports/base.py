@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
+import packaging.version
 import pkg_resources
 
 from google import auth  # type: ignore
+import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -31,7 +31,6 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
 
-
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -40,6 +39,18 @@ try:
     )
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
+
+try:
+    # google.auth.__version__ was added in 1.26.0
+    _GOOGLE_AUTH_VERSION = auth.__version__
+except AttributeError:
+    try:  # try pkg_resources if it is available
+        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
+    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
+        _GOOGLE_AUTH_VERSION = None
+
+_API_CORE_VERSION = google.api_core.__version__
+
 
 class StorageTransport(abc.ABC):
     """Abstract transport class for Storage."""
@@ -52,20 +63,22 @@ class StorageTransport(abc.ABC):
         'https://www.googleapis.com/auth/devstorage.read_write',
     )
 
+    DEFAULT_HOST: str = 'storage.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'storage.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: credentials.Credentials = None,
-            credentials_file: typing.Optional[str] = None,
-            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
-            quota_project_id: typing.Optional[str] = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -74,7 +87,7 @@ class StorageTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scope (Optional[Sequence[str]]): A list of scopes.
+            scopes (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -88,6 +101,8 @@ class StorageTransport(abc.ABC):
             host += ':443'
         self._host = host
 
+        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
+
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -99,15 +114,56 @@ class StorageTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                scopes=self._scopes,
+                                **scopes_kwargs,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
+
+    # TODO(busunkim): These two class methods are in the base transport
+    # to avoid duplicating code across the transport classes. These functions
+    # should be deleted once the minimum required versions of google-api-core
+    # and google-auth are increased.
+
+    # TODO: Remove this function once google-auth >= 1.25.0 is required
+    @classmethod
+    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
+        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
+
+        scopes_kwargs = {}
+
+        if _GOOGLE_AUTH_VERSION and (
+            packaging.version.parse(_GOOGLE_AUTH_VERSION)
+            >= packaging.version.parse("1.25.0")
+        ):
+            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
+        else:
+            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
+
+        return scopes_kwargs
+
+    # TODO: Remove this function once google-api-core >= 1.26.0 is required
+    @classmethod
+    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
+        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
+
+        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
+
+        if _API_CORE_VERSION and (
+            packaging.version.parse(_API_CORE_VERSION)
+            >= packaging.version.parse("1.26.0")
+        ):
+            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
+            self_signed_jwt_kwargs["scopes"] = scopes
+            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
+        else:
+            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
+
+        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -392,510 +448,509 @@ class StorageTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
-    def delete_bucket_access_control(self) -> typing.Callable[
+    def delete_bucket_access_control(self) -> Callable[
             [storage.DeleteBucketAccessControlRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_bucket_access_control(self) -> typing.Callable[
+    def get_bucket_access_control(self) -> Callable[
             [storage.GetBucketAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.BucketAccessControl,
-                typing.Awaitable[storage_resources.BucketAccessControl]
+                Awaitable[storage_resources.BucketAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def insert_bucket_access_control(self) -> typing.Callable[
+    def insert_bucket_access_control(self) -> Callable[
             [storage.InsertBucketAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.BucketAccessControl,
-                typing.Awaitable[storage_resources.BucketAccessControl]
+                Awaitable[storage_resources.BucketAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_bucket_access_controls(self) -> typing.Callable[
+    def list_bucket_access_controls(self) -> Callable[
             [storage.ListBucketAccessControlsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListBucketAccessControlsResponse,
-                typing.Awaitable[storage_resources.ListBucketAccessControlsResponse]
+                Awaitable[storage_resources.ListBucketAccessControlsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_bucket_access_control(self) -> typing.Callable[
+    def update_bucket_access_control(self) -> Callable[
             [storage.UpdateBucketAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.BucketAccessControl,
-                typing.Awaitable[storage_resources.BucketAccessControl]
+                Awaitable[storage_resources.BucketAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def patch_bucket_access_control(self) -> typing.Callable[
+    def patch_bucket_access_control(self) -> Callable[
             [storage.PatchBucketAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.BucketAccessControl,
-                typing.Awaitable[storage_resources.BucketAccessControl]
+                Awaitable[storage_resources.BucketAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_bucket(self) -> typing.Callable[
+    def delete_bucket(self) -> Callable[
             [storage.DeleteBucketRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_bucket(self) -> typing.Callable[
+    def get_bucket(self) -> Callable[
             [storage.GetBucketRequest],
-            typing.Union[
+            Union[
                 storage_resources.Bucket,
-                typing.Awaitable[storage_resources.Bucket]
+                Awaitable[storage_resources.Bucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def insert_bucket(self) -> typing.Callable[
+    def insert_bucket(self) -> Callable[
             [storage.InsertBucketRequest],
-            typing.Union[
+            Union[
                 storage_resources.Bucket,
-                typing.Awaitable[storage_resources.Bucket]
+                Awaitable[storage_resources.Bucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_channels(self) -> typing.Callable[
+    def list_channels(self) -> Callable[
             [storage.ListChannelsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListChannelsResponse,
-                typing.Awaitable[storage_resources.ListChannelsResponse]
+                Awaitable[storage_resources.ListChannelsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_buckets(self) -> typing.Callable[
+    def list_buckets(self) -> Callable[
             [storage.ListBucketsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListBucketsResponse,
-                typing.Awaitable[storage_resources.ListBucketsResponse]
+                Awaitable[storage_resources.ListBucketsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def lock_bucket_retention_policy(self) -> typing.Callable[
+    def lock_bucket_retention_policy(self) -> Callable[
             [storage.LockRetentionPolicyRequest],
-            typing.Union[
+            Union[
                 storage_resources.Bucket,
-                typing.Awaitable[storage_resources.Bucket]
+                Awaitable[storage_resources.Bucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_bucket_iam_policy(self) -> typing.Callable[
+    def get_bucket_iam_policy(self) -> Callable[
             [storage.GetIamPolicyRequest],
-            typing.Union[
+            Union[
                 gi_policy.Policy,
-                typing.Awaitable[gi_policy.Policy]
+                Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def set_bucket_iam_policy(self) -> typing.Callable[
+    def set_bucket_iam_policy(self) -> Callable[
             [storage.SetIamPolicyRequest],
-            typing.Union[
+            Union[
                 gi_policy.Policy,
-                typing.Awaitable[gi_policy.Policy]
+                Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def test_bucket_iam_permissions(self) -> typing.Callable[
+    def test_bucket_iam_permissions(self) -> Callable[
             [storage.TestIamPermissionsRequest],
-            typing.Union[
+            Union[
                 iam_policy.TestIamPermissionsResponse,
-                typing.Awaitable[iam_policy.TestIamPermissionsResponse]
+                Awaitable[iam_policy.TestIamPermissionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def patch_bucket(self) -> typing.Callable[
+    def patch_bucket(self) -> Callable[
             [storage.PatchBucketRequest],
-            typing.Union[
+            Union[
                 storage_resources.Bucket,
-                typing.Awaitable[storage_resources.Bucket]
+                Awaitable[storage_resources.Bucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_bucket(self) -> typing.Callable[
+    def update_bucket(self) -> Callable[
             [storage.UpdateBucketRequest],
-            typing.Union[
+            Union[
                 storage_resources.Bucket,
-                typing.Awaitable[storage_resources.Bucket]
+                Awaitable[storage_resources.Bucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def stop_channel(self) -> typing.Callable[
+    def stop_channel(self) -> Callable[
             [storage.StopChannelRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_default_object_access_control(self) -> typing.Callable[
+    def delete_default_object_access_control(self) -> Callable[
             [storage.DeleteDefaultObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_default_object_access_control(self) -> typing.Callable[
+    def get_default_object_access_control(self) -> Callable[
             [storage.GetDefaultObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def insert_default_object_access_control(self) -> typing.Callable[
+    def insert_default_object_access_control(self) -> Callable[
             [storage.InsertDefaultObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_default_object_access_controls(self) -> typing.Callable[
+    def list_default_object_access_controls(self) -> Callable[
             [storage.ListDefaultObjectAccessControlsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListObjectAccessControlsResponse,
-                typing.Awaitable[storage_resources.ListObjectAccessControlsResponse]
+                Awaitable[storage_resources.ListObjectAccessControlsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def patch_default_object_access_control(self) -> typing.Callable[
+    def patch_default_object_access_control(self) -> Callable[
             [storage.PatchDefaultObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_default_object_access_control(self) -> typing.Callable[
+    def update_default_object_access_control(self) -> Callable[
             [storage.UpdateDefaultObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_notification(self) -> typing.Callable[
+    def delete_notification(self) -> Callable[
             [storage.DeleteNotificationRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_notification(self) -> typing.Callable[
+    def get_notification(self) -> Callable[
             [storage.GetNotificationRequest],
-            typing.Union[
+            Union[
                 storage_resources.Notification,
-                typing.Awaitable[storage_resources.Notification]
+                Awaitable[storage_resources.Notification]
             ]]:
         raise NotImplementedError()
 
     @property
-    def insert_notification(self) -> typing.Callable[
+    def insert_notification(self) -> Callable[
             [storage.InsertNotificationRequest],
-            typing.Union[
+            Union[
                 storage_resources.Notification,
-                typing.Awaitable[storage_resources.Notification]
+                Awaitable[storage_resources.Notification]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_notifications(self) -> typing.Callable[
+    def list_notifications(self) -> Callable[
             [storage.ListNotificationsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListNotificationsResponse,
-                typing.Awaitable[storage_resources.ListNotificationsResponse]
+                Awaitable[storage_resources.ListNotificationsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_object_access_control(self) -> typing.Callable[
+    def delete_object_access_control(self) -> Callable[
             [storage.DeleteObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_object_access_control(self) -> typing.Callable[
+    def get_object_access_control(self) -> Callable[
             [storage.GetObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def insert_object_access_control(self) -> typing.Callable[
+    def insert_object_access_control(self) -> Callable[
             [storage.InsertObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_object_access_controls(self) -> typing.Callable[
+    def list_object_access_controls(self) -> Callable[
             [storage.ListObjectAccessControlsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListObjectAccessControlsResponse,
-                typing.Awaitable[storage_resources.ListObjectAccessControlsResponse]
+                Awaitable[storage_resources.ListObjectAccessControlsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def patch_object_access_control(self) -> typing.Callable[
+    def patch_object_access_control(self) -> Callable[
             [storage.PatchObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_object_access_control(self) -> typing.Callable[
+    def update_object_access_control(self) -> Callable[
             [storage.UpdateObjectAccessControlRequest],
-            typing.Union[
+            Union[
                 storage_resources.ObjectAccessControl,
-                typing.Awaitable[storage_resources.ObjectAccessControl]
+                Awaitable[storage_resources.ObjectAccessControl]
             ]]:
         raise NotImplementedError()
 
     @property
-    def compose_object(self) -> typing.Callable[
+    def compose_object(self) -> Callable[
             [storage.ComposeObjectRequest],
-            typing.Union[
+            Union[
                 storage_resources.Object,
-                typing.Awaitable[storage_resources.Object]
+                Awaitable[storage_resources.Object]
             ]]:
         raise NotImplementedError()
 
     @property
-    def copy_object(self) -> typing.Callable[
+    def copy_object(self) -> Callable[
             [storage.CopyObjectRequest],
-            typing.Union[
+            Union[
                 storage_resources.Object,
-                typing.Awaitable[storage_resources.Object]
+                Awaitable[storage_resources.Object]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_object(self) -> typing.Callable[
+    def delete_object(self) -> Callable[
             [storage.DeleteObjectRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_object(self) -> typing.Callable[
+    def get_object(self) -> Callable[
             [storage.GetObjectRequest],
-            typing.Union[
+            Union[
                 storage_resources.Object,
-                typing.Awaitable[storage_resources.Object]
+                Awaitable[storage_resources.Object]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_object_media(self) -> typing.Callable[
+    def get_object_media(self) -> Callable[
             [storage.GetObjectMediaRequest],
-            typing.Union[
+            Union[
                 storage.GetObjectMediaResponse,
-                typing.Awaitable[storage.GetObjectMediaResponse]
+                Awaitable[storage.GetObjectMediaResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def insert_object(self) -> typing.Callable[
+    def insert_object(self) -> Callable[
             [storage.InsertObjectRequest],
-            typing.Union[
+            Union[
                 storage_resources.Object,
-                typing.Awaitable[storage_resources.Object]
+                Awaitable[storage_resources.Object]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_objects(self) -> typing.Callable[
+    def list_objects(self) -> Callable[
             [storage.ListObjectsRequest],
-            typing.Union[
+            Union[
                 storage_resources.ListObjectsResponse,
-                typing.Awaitable[storage_resources.ListObjectsResponse]
+                Awaitable[storage_resources.ListObjectsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def rewrite_object(self) -> typing.Callable[
+    def rewrite_object(self) -> Callable[
             [storage.RewriteObjectRequest],
-            typing.Union[
+            Union[
                 storage.RewriteResponse,
-                typing.Awaitable[storage.RewriteResponse]
+                Awaitable[storage.RewriteResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def start_resumable_write(self) -> typing.Callable[
+    def start_resumable_write(self) -> Callable[
             [storage.StartResumableWriteRequest],
-            typing.Union[
+            Union[
                 storage.StartResumableWriteResponse,
-                typing.Awaitable[storage.StartResumableWriteResponse]
+                Awaitable[storage.StartResumableWriteResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def query_write_status(self) -> typing.Callable[
+    def query_write_status(self) -> Callable[
             [storage.QueryWriteStatusRequest],
-            typing.Union[
+            Union[
                 storage.QueryWriteStatusResponse,
-                typing.Awaitable[storage.QueryWriteStatusResponse]
+                Awaitable[storage.QueryWriteStatusResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def patch_object(self) -> typing.Callable[
+    def patch_object(self) -> Callable[
             [storage.PatchObjectRequest],
-            typing.Union[
+            Union[
                 storage_resources.Object,
-                typing.Awaitable[storage_resources.Object]
+                Awaitable[storage_resources.Object]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_object(self) -> typing.Callable[
+    def update_object(self) -> Callable[
             [storage.UpdateObjectRequest],
-            typing.Union[
+            Union[
                 storage_resources.Object,
-                typing.Awaitable[storage_resources.Object]
+                Awaitable[storage_resources.Object]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_object_iam_policy(self) -> typing.Callable[
+    def get_object_iam_policy(self) -> Callable[
             [storage.GetIamPolicyRequest],
-            typing.Union[
+            Union[
                 gi_policy.Policy,
-                typing.Awaitable[gi_policy.Policy]
+                Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def set_object_iam_policy(self) -> typing.Callable[
+    def set_object_iam_policy(self) -> Callable[
             [storage.SetIamPolicyRequest],
-            typing.Union[
+            Union[
                 gi_policy.Policy,
-                typing.Awaitable[gi_policy.Policy]
+                Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def test_object_iam_permissions(self) -> typing.Callable[
+    def test_object_iam_permissions(self) -> Callable[
             [storage.TestIamPermissionsRequest],
-            typing.Union[
+            Union[
                 iam_policy.TestIamPermissionsResponse,
-                typing.Awaitable[iam_policy.TestIamPermissionsResponse]
+                Awaitable[iam_policy.TestIamPermissionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def watch_all_objects(self) -> typing.Callable[
+    def watch_all_objects(self) -> Callable[
             [storage.WatchAllObjectsRequest],
-            typing.Union[
+            Union[
                 storage_resources.Channel,
-                typing.Awaitable[storage_resources.Channel]
+                Awaitable[storage_resources.Channel]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_service_account(self) -> typing.Callable[
+    def get_service_account(self) -> Callable[
             [storage.GetProjectServiceAccountRequest],
-            typing.Union[
+            Union[
                 storage_resources.ServiceAccount,
-                typing.Awaitable[storage_resources.ServiceAccount]
+                Awaitable[storage_resources.ServiceAccount]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_hmac_key(self) -> typing.Callable[
+    def create_hmac_key(self) -> Callable[
             [storage.CreateHmacKeyRequest],
-            typing.Union[
+            Union[
                 storage.CreateHmacKeyResponse,
-                typing.Awaitable[storage.CreateHmacKeyResponse]
+                Awaitable[storage.CreateHmacKeyResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_hmac_key(self) -> typing.Callable[
+    def delete_hmac_key(self) -> Callable[
             [storage.DeleteHmacKeyRequest],
-            typing.Union[
+            Union[
                 empty.Empty,
-                typing.Awaitable[empty.Empty]
+                Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_hmac_key(self) -> typing.Callable[
+    def get_hmac_key(self) -> Callable[
             [storage.GetHmacKeyRequest],
-            typing.Union[
+            Union[
                 storage_resources.HmacKeyMetadata,
-                typing.Awaitable[storage_resources.HmacKeyMetadata]
+                Awaitable[storage_resources.HmacKeyMetadata]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_hmac_keys(self) -> typing.Callable[
+    def list_hmac_keys(self) -> Callable[
             [storage.ListHmacKeysRequest],
-            typing.Union[
+            Union[
                 storage.ListHmacKeysResponse,
-                typing.Awaitable[storage.ListHmacKeysResponse]
+                Awaitable[storage.ListHmacKeysResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_hmac_key(self) -> typing.Callable[
+    def update_hmac_key(self) -> Callable[
             [storage.UpdateHmacKeyRequest],
-            typing.Union[
+            Union[
                 storage_resources.HmacKeyMetadata,
-                typing.Awaitable[storage_resources.HmacKeyMetadata]
+                Awaitable[storage_resources.HmacKeyMetadata]
             ]]:
         raise NotImplementedError()
 

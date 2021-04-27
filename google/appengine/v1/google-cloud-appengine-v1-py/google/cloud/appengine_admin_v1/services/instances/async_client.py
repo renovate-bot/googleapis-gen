@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -36,7 +34,6 @@ from google.cloud.appengine_admin_v1.types import instance
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import InstancesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import InstancesGrpcAsyncIOTransport
 from .client import InstancesClient
@@ -52,19 +49,14 @@ class InstancesAsyncClient:
 
     instance_path = staticmethod(InstancesClient.instance_path)
     parse_instance_path = staticmethod(InstancesClient.parse_instance_path)
-
     common_billing_account_path = staticmethod(InstancesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(InstancesClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(InstancesClient.common_folder_path)
     parse_common_folder_path = staticmethod(InstancesClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(InstancesClient.common_organization_path)
     parse_common_organization_path = staticmethod(InstancesClient.parse_common_organization_path)
-
     common_project_path = staticmethod(InstancesClient.common_project_path)
     parse_common_project_path = staticmethod(InstancesClient.parse_common_project_path)
-
     common_location_path = staticmethod(InstancesClient.common_location_path)
     parse_common_location_path = staticmethod(InstancesClient.parse_common_location_path)
 
@@ -149,7 +141,6 @@ class InstancesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = InstancesClient(
             credentials=credentials,
             transport=transport,
@@ -173,9 +164,9 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListInstancesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Instances.ListInstances`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -191,7 +182,6 @@ class InstancesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.ListInstancesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -241,9 +231,9 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetInstanceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Instances.GetInstance`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -258,7 +248,6 @@ class InstancesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.GetInstanceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -313,9 +302,9 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteInstanceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Instances.DeleteInstance`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -342,7 +331,6 @@ class InstancesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.DeleteInstanceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -400,9 +388,9 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DebugInstanceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Instances.DebugInstance`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -418,7 +406,6 @@ class InstancesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.DebugInstanceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -455,8 +442,6 @@ class InstancesAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

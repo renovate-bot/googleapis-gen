@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,8 +36,7 @@ from google.cloud.bigquery.migration_v2alpha.types.migration_service import List
 from google.cloud.bigquery.migration_v2alpha.types.migration_service import ListMigrationWorkflowsResponse
 from google.cloud.bigquery.migration_v2alpha.types.migration_service import StartMigrationWorkflowRequest
 
-__all__ = (
-    'CreateMigrationWorkflowRequest',
+__all__ = ('CreateMigrationWorkflowRequest',
     'DeleteMigrationWorkflowRequest',
     'ErrorDetail',
     'ErrorLocation',

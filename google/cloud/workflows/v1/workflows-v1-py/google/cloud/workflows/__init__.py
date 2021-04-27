@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +25,7 @@ from google.cloud.workflows_v1.types.workflows import OperationMetadata
 from google.cloud.workflows_v1.types.workflows import UpdateWorkflowRequest
 from google.cloud.workflows_v1.types.workflows import Workflow
 
-__all__ = (
-    'CreateWorkflowRequest',
+__all__ = ('CreateWorkflowRequest',
     'DeleteWorkflowRequest',
     'GetWorkflowRequest',
     'ListWorkflowsRequest',

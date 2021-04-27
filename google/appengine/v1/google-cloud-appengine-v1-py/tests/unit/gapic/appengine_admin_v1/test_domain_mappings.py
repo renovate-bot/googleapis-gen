@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,6 +39,8 @@ from google.cloud.appengine_admin_v1.services.domain_mappings import DomainMappi
 from google.cloud.appengine_admin_v1.services.domain_mappings import DomainMappingsClient
 from google.cloud.appengine_admin_v1.services.domain_mappings import pagers
 from google.cloud.appengine_admin_v1.services.domain_mappings import transports
+from google.cloud.appengine_admin_v1.services.domain_mappings.transports.base import _API_CORE_VERSION
+from google.cloud.appengine_admin_v1.services.domain_mappings.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain_mapping
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
@@ -46,6 +48,28 @@ from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -213,12 +237,10 @@ def test_domain_mappings_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (DomainMappingsClient, transports.DomainMappingsGrpcTransport, "grpc", "true"),
     (DomainMappingsAsyncClient, transports.DomainMappingsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (DomainMappingsClient, transports.DomainMappingsGrpcTransport, "grpc", "false"),
     (DomainMappingsAsyncClient, transports.DomainMappingsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(DomainMappingsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DomainMappingsClient))
 @mock.patch.object(DomainMappingsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DomainMappingsAsyncClient))
@@ -373,21 +395,16 @@ def test_list_domain_mappings(transport: str = 'grpc', request_type=appengine.Li
         # Designate an appropriate return value for the call.
         call.return_value = appengine.ListDomainMappingsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_domain_mappings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.ListDomainMappingsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListDomainMappingsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -410,8 +427,8 @@ def test_list_domain_mappings_empty_call():
         client.list_domain_mappings()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.ListDomainMappingsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_domain_mappings_async(transport: str = 'grpc_asyncio', request_type=appengine.ListDomainMappingsRequest):
@@ -429,21 +446,18 @@ async def test_list_domain_mappings_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.list_domain_mappings),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(appengine.ListDomainMappingsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(appengine.ListDomainMappingsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_domain_mappings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.ListDomainMappingsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDomainMappingsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -460,6 +474,7 @@ def test_list_domain_mappings_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.ListDomainMappingsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -467,7 +482,6 @@ def test_list_domain_mappings_field_headers():
             type(client.transport.list_domain_mappings),
             '__call__') as call:
         call.return_value = appengine.ListDomainMappingsResponse()
-
         client.list_domain_mappings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -492,6 +506,7 @@ async def test_list_domain_mappings_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.ListDomainMappingsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -499,7 +514,6 @@ async def test_list_domain_mappings_field_headers_async():
             type(client.transport.list_domain_mappings),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(appengine.ListDomainMappingsResponse())
-
         await client.list_domain_mappings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -701,7 +715,6 @@ async def test_list_domain_mappings_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_domain_mapping(transport: str = 'grpc', request_type=appengine.GetDomainMappingRequest):
     client = DomainMappingsClient(
         credentials=credentials.AnonymousCredentials(),
@@ -719,25 +732,18 @@ def test_get_domain_mapping(transport: str = 'grpc', request_type=appengine.GetD
         # Designate an appropriate return value for the call.
         call.return_value = domain_mapping.DomainMapping(
             name='name_value',
-
             id='id_value',
-
         )
-
         response = client.get_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.GetDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, domain_mapping.DomainMapping)
-
     assert response.name == 'name_value'
-
     assert response.id == 'id_value'
 
 
@@ -760,8 +766,8 @@ def test_get_domain_mapping_empty_call():
         client.get_domain_mapping()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.GetDomainMappingRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_domain_mapping_async(transport: str = 'grpc_asyncio', request_type=appengine.GetDomainMappingRequest):
@@ -779,24 +785,20 @@ async def test_get_domain_mapping_async(transport: str = 'grpc_asyncio', request
             type(client.transport.get_domain_mapping),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(domain_mapping.DomainMapping(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(domain_mapping.DomainMapping(
             name='name_value',
             id='id_value',
         ))
-
         response = await client.get_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.GetDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, domain_mapping.DomainMapping)
-
     assert response.name == 'name_value'
-
     assert response.id == 'id_value'
 
 
@@ -813,6 +815,7 @@ def test_get_domain_mapping_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.GetDomainMappingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -820,7 +823,6 @@ def test_get_domain_mapping_field_headers():
             type(client.transport.get_domain_mapping),
             '__call__') as call:
         call.return_value = domain_mapping.DomainMapping()
-
         client.get_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -845,6 +847,7 @@ async def test_get_domain_mapping_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.GetDomainMappingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -852,7 +855,6 @@ async def test_get_domain_mapping_field_headers_async():
             type(client.transport.get_domain_mapping),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(domain_mapping.DomainMapping())
-
         await client.get_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -884,13 +886,11 @@ def test_create_domain_mapping(transport: str = 'grpc', request_type=appengine.C
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.CreateDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
@@ -916,8 +916,8 @@ def test_create_domain_mapping_empty_call():
         client.create_domain_mapping()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.CreateDomainMappingRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_domain_mapping_async(transport: str = 'grpc_asyncio', request_type=appengine.CreateDomainMappingRequest):
@@ -938,13 +938,11 @@ async def test_create_domain_mapping_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.CreateDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
@@ -964,6 +962,7 @@ def test_create_domain_mapping_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.CreateDomainMappingRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -971,7 +970,6 @@ def test_create_domain_mapping_field_headers():
             type(client.transport.create_domain_mapping),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -996,6 +994,7 @@ async def test_create_domain_mapping_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.CreateDomainMappingRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1003,7 +1002,6 @@ async def test_create_domain_mapping_field_headers_async():
             type(client.transport.create_domain_mapping),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1035,13 +1033,11 @@ def test_update_domain_mapping(transport: str = 'grpc', request_type=appengine.U
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.UpdateDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
@@ -1067,8 +1063,8 @@ def test_update_domain_mapping_empty_call():
         client.update_domain_mapping()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.UpdateDomainMappingRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_domain_mapping_async(transport: str = 'grpc_asyncio', request_type=appengine.UpdateDomainMappingRequest):
@@ -1089,13 +1085,11 @@ async def test_update_domain_mapping_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.UpdateDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
@@ -1115,6 +1109,7 @@ def test_update_domain_mapping_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.UpdateDomainMappingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1122,7 +1117,6 @@ def test_update_domain_mapping_field_headers():
             type(client.transport.update_domain_mapping),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1147,6 +1141,7 @@ async def test_update_domain_mapping_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.UpdateDomainMappingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1154,7 +1149,6 @@ async def test_update_domain_mapping_field_headers_async():
             type(client.transport.update_domain_mapping),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1186,13 +1180,11 @@ def test_delete_domain_mapping(transport: str = 'grpc', request_type=appengine.D
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DeleteDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
@@ -1218,8 +1210,8 @@ def test_delete_domain_mapping_empty_call():
         client.delete_domain_mapping()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DeleteDomainMappingRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_domain_mapping_async(transport: str = 'grpc_asyncio', request_type=appengine.DeleteDomainMappingRequest):
@@ -1240,13 +1232,11 @@ async def test_delete_domain_mapping_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == appengine.DeleteDomainMappingRequest()
 
     # Establish that the response is the type that we expect.
@@ -1266,6 +1256,7 @@ def test_delete_domain_mapping_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.DeleteDomainMappingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1273,7 +1264,6 @@ def test_delete_domain_mapping_field_headers():
             type(client.transport.delete_domain_mapping),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1298,6 +1288,7 @@ async def test_delete_domain_mapping_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = appengine.DeleteDomainMappingRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1305,7 +1296,6 @@ async def test_delete_domain_mapping_field_headers_async():
             type(client.transport.delete_domain_mapping),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_domain_mapping(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1361,7 +1351,6 @@ def test_transport_instance():
     client = DomainMappingsClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DomainMappingsGrpcTransport(
@@ -1376,7 +1365,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.DomainMappingsGrpcTransport,
     transports.DomainMappingsGrpcAsyncIOTransport,
@@ -1388,7 +1376,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = DomainMappingsClient(
@@ -1398,7 +1385,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.DomainMappingsGrpcTransport,
     )
-
 
 def test_domain_mappings_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1425,7 +1411,7 @@ def test_domain_mappings_base_transport():
         'create_domain_mapping',
         'update_domain_mapping',
         'delete_domain_mapping',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1436,9 +1422,27 @@ def test_domain_mappings_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_domain_mappings_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.appengine_admin_v1.services.domain_mappings.transports.DomainMappingsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.appengine_admin_v1.services.domain_mappings.transports.DomainMappingsTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.DomainMappingsTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/appengine.admin',            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloud-platform.read-only',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_domain_mappings_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.appengine_admin_v1.services.domain_mappings.transports.DomainMappingsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DomainMappingsTransport(
@@ -1456,37 +1460,186 @@ def test_domain_mappings_base_transport_with_credentials_file():
 
 def test_domain_mappings_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.appengine_admin_v1.services.domain_mappings.transports.DomainMappingsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.appengine_admin_v1.services.domain_mappings.transports.DomainMappingsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DomainMappingsTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_domain_mappings_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         DomainMappingsClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/appengine.admin',
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
+
             quota_project_id=None,
         )
 
 
-def test_domain_mappings_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_domain_mappings_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        DomainMappingsClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.DomainMappingsGrpcTransport,
+        transports.DomainMappingsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_domain_mappings_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.DomainMappingsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.DomainMappingsGrpcTransport,
+        transports.DomainMappingsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_domain_mappings_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/appengine.admin',
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DomainMappingsGrpcTransport, grpc_helpers),
+        (transports.DomainMappingsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_domain_mappings_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "appengine.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            scopes=["1", "2"],
+            default_host="appengine.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DomainMappingsGrpcTransport, grpc_helpers),
+        (transports.DomainMappingsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_domain_mappings_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "appengine.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/appengine.admin',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DomainMappingsGrpcTransport, grpc_helpers),
+        (transports.DomainMappingsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_domain_mappings_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "appengine.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1550,7 +1703,6 @@ def test_domain_mappings_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='appengine.googleapis.com:8000'),
     )
     assert client.transport._host == 'appengine.googleapis.com:8000'
-
 
 def test_domain_mappings_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1706,7 +1858,6 @@ def test_domain_mappings_grpc_lro_async_client():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DomainMappingsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1714,8 +1865,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = DomainMappingsClient.common_billing_account_path(**expected)
 
@@ -1725,7 +1875,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = DomainMappingsClient.common_folder_path(folder)
     assert expected == actual
@@ -1733,8 +1882,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = DomainMappingsClient.common_folder_path(**expected)
 
@@ -1744,7 +1892,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DomainMappingsClient.common_organization_path(organization)
     assert expected == actual
@@ -1752,8 +1899,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = DomainMappingsClient.common_organization_path(**expected)
 
@@ -1763,7 +1909,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = DomainMappingsClient.common_project_path(project)
     assert expected == actual
@@ -1771,8 +1916,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = DomainMappingsClient.common_project_path(**expected)
 
@@ -1783,7 +1927,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DomainMappingsClient.common_location_path(project, location)
     assert expected == actual
@@ -1791,9 +1934,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = DomainMappingsClient.common_location_path(**expected)
 

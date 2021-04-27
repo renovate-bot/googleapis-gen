@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,11 +39,35 @@ from google.cloud.tpu_v1.services.tpu import TpuAsyncClient
 from google.cloud.tpu_v1.services.tpu import TpuClient
 from google.cloud.tpu_v1.services.tpu import pagers
 from google.cloud.tpu_v1.services.tpu import transports
+from google.cloud.tpu_v1.services.tpu.transports.base import _API_CORE_VERSION
+from google.cloud.tpu_v1.services.tpu.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.tpu_v1.types import cloud_tpu
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -211,12 +235,10 @@ def test_tpu_client_client_options(client_class, transport_class, transport_name
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (TpuClient, transports.TpuGrpcTransport, "grpc", "true"),
     (TpuAsyncClient, transports.TpuGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (TpuClient, transports.TpuGrpcTransport, "grpc", "false"),
     (TpuAsyncClient, transports.TpuGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(TpuClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TpuClient))
 @mock.patch.object(TpuAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TpuAsyncClient))
@@ -371,25 +393,18 @@ def test_list_nodes(transport: str = 'grpc', request_type=cloud_tpu.ListNodesReq
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.ListNodesResponse(
             next_page_token='next_page_token_value',
-
             unreachable=['unreachable_value'],
-
         )
-
         response = client.list_nodes(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListNodesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListNodesPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -412,8 +427,8 @@ def test_list_nodes_empty_call():
         client.list_nodes()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListNodesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_nodes_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.ListNodesRequest):
@@ -431,24 +446,20 @@ async def test_list_nodes_async(transport: str = 'grpc_asyncio', request_type=cl
             type(client.transport.list_nodes),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListNodesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListNodesResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
-
         response = await client.list_nodes(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListNodesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListNodesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -465,6 +476,7 @@ def test_list_nodes_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ListNodesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -472,7 +484,6 @@ def test_list_nodes_field_headers():
             type(client.transport.list_nodes),
             '__call__') as call:
         call.return_value = cloud_tpu.ListNodesResponse()
-
         client.list_nodes(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -497,6 +508,7 @@ async def test_list_nodes_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ListNodesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -504,7 +516,6 @@ async def test_list_nodes_field_headers_async():
             type(client.transport.list_nodes),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListNodesResponse())
-
         await client.list_nodes(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -531,7 +542,6 @@ def test_list_nodes_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.ListNodesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_nodes(
@@ -542,7 +552,6 @@ def test_list_nodes_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -584,7 +593,6 @@ async def test_list_nodes_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -789,7 +797,6 @@ async def test_list_nodes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_node(transport: str = 'grpc', request_type=cloud_tpu.GetNodeRequest):
     client = TpuClient(
         credentials=credentials.AnonymousCredentials(),
@@ -807,73 +814,42 @@ def test_get_node(transport: str = 'grpc', request_type=cloud_tpu.GetNodeRequest
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.Node(
             name='name_value',
-
             description='description_value',
-
             accelerator_type='accelerator_type_value',
-
             ip_address='ip_address_value',
-
             port='port_value',
-
             state=cloud_tpu.Node.State.CREATING,
-
             health_description='health_description_value',
-
             tensorflow_version='tensorflow_version_value',
-
             network='network_value',
-
             cidr_block='cidr_block_value',
-
             service_account='service_account_value',
-
             health=cloud_tpu.Node.Health.HEALTHY,
-
             use_service_networking=True,
-
             api_version=cloud_tpu.Node.ApiVersion.V1_ALPHA1,
-
         )
-
         response = client.get_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetNodeRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, cloud_tpu.Node)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.accelerator_type == 'accelerator_type_value'
-
     assert response.ip_address == 'ip_address_value'
-
     assert response.port == 'port_value'
-
     assert response.state == cloud_tpu.Node.State.CREATING
-
     assert response.health_description == 'health_description_value'
-
     assert response.tensorflow_version == 'tensorflow_version_value'
-
     assert response.network == 'network_value'
-
     assert response.cidr_block == 'cidr_block_value'
-
     assert response.service_account == 'service_account_value'
-
     assert response.health == cloud_tpu.Node.Health.HEALTHY
-
     assert response.use_service_networking is True
-
     assert response.api_version == cloud_tpu.Node.ApiVersion.V1_ALPHA1
 
 
@@ -896,8 +872,8 @@ def test_get_node_empty_call():
         client.get_node()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetNodeRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_node_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.GetNodeRequest):
@@ -915,7 +891,7 @@ async def test_get_node_async(transport: str = 'grpc_asyncio', request_type=clou
             type(client.transport.get_node),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.Node(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.Node(
             name='name_value',
             description='description_value',
             accelerator_type='accelerator_type_value',
@@ -931,44 +907,28 @@ async def test_get_node_async(transport: str = 'grpc_asyncio', request_type=clou
             use_service_networking=True,
             api_version=cloud_tpu.Node.ApiVersion.V1_ALPHA1,
         ))
-
         response = await client.get_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetNodeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tpu.Node)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.accelerator_type == 'accelerator_type_value'
-
     assert response.ip_address == 'ip_address_value'
-
     assert response.port == 'port_value'
-
     assert response.state == cloud_tpu.Node.State.CREATING
-
     assert response.health_description == 'health_description_value'
-
     assert response.tensorflow_version == 'tensorflow_version_value'
-
     assert response.network == 'network_value'
-
     assert response.cidr_block == 'cidr_block_value'
-
     assert response.service_account == 'service_account_value'
-
     assert response.health == cloud_tpu.Node.Health.HEALTHY
-
     assert response.use_service_networking is True
-
     assert response.api_version == cloud_tpu.Node.ApiVersion.V1_ALPHA1
 
 
@@ -985,6 +945,7 @@ def test_get_node_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.GetNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -992,7 +953,6 @@ def test_get_node_field_headers():
             type(client.transport.get_node),
             '__call__') as call:
         call.return_value = cloud_tpu.Node()
-
         client.get_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1017,6 +977,7 @@ async def test_get_node_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.GetNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1024,7 +985,6 @@ async def test_get_node_field_headers_async():
             type(client.transport.get_node),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.Node())
-
         await client.get_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1051,7 +1011,6 @@ def test_get_node_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.Node()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_node(
@@ -1062,7 +1021,6 @@ def test_get_node_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1104,7 +1062,6 @@ async def test_get_node_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1139,13 +1096,11 @@ def test_create_node(transport: str = 'grpc', request_type=cloud_tpu.CreateNodeR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.CreateNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1171,8 +1126,8 @@ def test_create_node_empty_call():
         client.create_node()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.CreateNodeRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_node_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.CreateNodeRequest):
@@ -1193,13 +1148,11 @@ async def test_create_node_async(transport: str = 'grpc_asyncio', request_type=c
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.CreateNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1219,6 +1172,7 @@ def test_create_node_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.CreateNodeRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1226,7 +1180,6 @@ def test_create_node_field_headers():
             type(client.transport.create_node),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1251,6 +1204,7 @@ async def test_create_node_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.CreateNodeRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1258,7 +1212,6 @@ async def test_create_node_field_headers_async():
             type(client.transport.create_node),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1285,7 +1238,6 @@ def test_create_node_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_node(
@@ -1298,11 +1250,8 @@ def test_create_node_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].node == cloud_tpu.Node(name='name_value')
-
         assert args[0].node_id == 'node_id_value'
 
 
@@ -1350,11 +1299,8 @@ async def test_create_node_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].node == cloud_tpu.Node(name='name_value')
-
         assert args[0].node_id == 'node_id_value'
 
 
@@ -1391,13 +1337,11 @@ def test_delete_node(transport: str = 'grpc', request_type=cloud_tpu.DeleteNodeR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.DeleteNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1423,8 +1367,8 @@ def test_delete_node_empty_call():
         client.delete_node()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.DeleteNodeRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_node_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.DeleteNodeRequest):
@@ -1445,13 +1389,11 @@ async def test_delete_node_async(transport: str = 'grpc_asyncio', request_type=c
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.DeleteNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1471,6 +1413,7 @@ def test_delete_node_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.DeleteNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1478,7 +1421,6 @@ def test_delete_node_field_headers():
             type(client.transport.delete_node),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1503,6 +1445,7 @@ async def test_delete_node_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.DeleteNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1510,7 +1453,6 @@ async def test_delete_node_field_headers_async():
             type(client.transport.delete_node),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1537,7 +1479,6 @@ def test_delete_node_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_node(
@@ -1548,7 +1489,6 @@ def test_delete_node_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1592,7 +1532,6 @@ async def test_delete_node_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1627,13 +1566,11 @@ def test_reimage_node(transport: str = 'grpc', request_type=cloud_tpu.ReimageNod
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.reimage_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ReimageNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1659,8 +1596,8 @@ def test_reimage_node_empty_call():
         client.reimage_node()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ReimageNodeRequest()
+
 
 @pytest.mark.asyncio
 async def test_reimage_node_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.ReimageNodeRequest):
@@ -1681,13 +1618,11 @@ async def test_reimage_node_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.reimage_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ReimageNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1707,6 +1642,7 @@ def test_reimage_node_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ReimageNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1714,7 +1650,6 @@ def test_reimage_node_field_headers():
             type(client.transport.reimage_node),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.reimage_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1739,6 +1674,7 @@ async def test_reimage_node_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ReimageNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1746,7 +1682,6 @@ async def test_reimage_node_field_headers_async():
             type(client.transport.reimage_node),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.reimage_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1778,13 +1713,11 @@ def test_stop_node(transport: str = 'grpc', request_type=cloud_tpu.StopNodeReque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.stop_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.StopNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1810,8 +1743,8 @@ def test_stop_node_empty_call():
         client.stop_node()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.StopNodeRequest()
+
 
 @pytest.mark.asyncio
 async def test_stop_node_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.StopNodeRequest):
@@ -1832,13 +1765,11 @@ async def test_stop_node_async(transport: str = 'grpc_asyncio', request_type=clo
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.stop_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.StopNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1858,6 +1789,7 @@ def test_stop_node_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.StopNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1865,7 +1797,6 @@ def test_stop_node_field_headers():
             type(client.transport.stop_node),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.stop_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1890,6 +1821,7 @@ async def test_stop_node_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.StopNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1897,7 +1829,6 @@ async def test_stop_node_field_headers_async():
             type(client.transport.stop_node),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.stop_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1929,13 +1860,11 @@ def test_start_node(transport: str = 'grpc', request_type=cloud_tpu.StartNodeReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.start_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.StartNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1961,8 +1890,8 @@ def test_start_node_empty_call():
         client.start_node()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.StartNodeRequest()
+
 
 @pytest.mark.asyncio
 async def test_start_node_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.StartNodeRequest):
@@ -1983,13 +1912,11 @@ async def test_start_node_async(transport: str = 'grpc_asyncio', request_type=cl
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.start_node(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.StartNodeRequest()
 
     # Establish that the response is the type that we expect.
@@ -2009,6 +1936,7 @@ def test_start_node_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.StartNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2016,7 +1944,6 @@ def test_start_node_field_headers():
             type(client.transport.start_node),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.start_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2041,6 +1968,7 @@ async def test_start_node_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.StartNodeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2048,7 +1976,6 @@ async def test_start_node_field_headers_async():
             type(client.transport.start_node),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.start_node(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2081,25 +2008,18 @@ def test_list_tensor_flow_versions(transport: str = 'grpc', request_type=cloud_t
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.ListTensorFlowVersionsResponse(
             next_page_token='next_page_token_value',
-
             unreachable=['unreachable_value'],
-
         )
-
         response = client.list_tensor_flow_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListTensorFlowVersionsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListTensorFlowVersionsPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -2122,8 +2042,8 @@ def test_list_tensor_flow_versions_empty_call():
         client.list_tensor_flow_versions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListTensorFlowVersionsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_tensor_flow_versions_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.ListTensorFlowVersionsRequest):
@@ -2141,24 +2061,20 @@ async def test_list_tensor_flow_versions_async(transport: str = 'grpc_asyncio', 
             type(client.transport.list_tensor_flow_versions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListTensorFlowVersionsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListTensorFlowVersionsResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
-
         response = await client.list_tensor_flow_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListTensorFlowVersionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTensorFlowVersionsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -2175,6 +2091,7 @@ def test_list_tensor_flow_versions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ListTensorFlowVersionsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2182,7 +2099,6 @@ def test_list_tensor_flow_versions_field_headers():
             type(client.transport.list_tensor_flow_versions),
             '__call__') as call:
         call.return_value = cloud_tpu.ListTensorFlowVersionsResponse()
-
         client.list_tensor_flow_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2207,6 +2123,7 @@ async def test_list_tensor_flow_versions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ListTensorFlowVersionsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2214,7 +2131,6 @@ async def test_list_tensor_flow_versions_field_headers_async():
             type(client.transport.list_tensor_flow_versions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListTensorFlowVersionsResponse())
-
         await client.list_tensor_flow_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2241,7 +2157,6 @@ def test_list_tensor_flow_versions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.ListTensorFlowVersionsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_tensor_flow_versions(
@@ -2252,7 +2167,6 @@ def test_list_tensor_flow_versions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2294,7 +2208,6 @@ async def test_list_tensor_flow_versions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2499,7 +2412,6 @@ async def test_list_tensor_flow_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_tensor_flow_version(transport: str = 'grpc', request_type=cloud_tpu.GetTensorFlowVersionRequest):
     client = TpuClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2517,25 +2429,18 @@ def test_get_tensor_flow_version(transport: str = 'grpc', request_type=cloud_tpu
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.TensorFlowVersion(
             name='name_value',
-
             version='version_value',
-
         )
-
         response = client.get_tensor_flow_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetTensorFlowVersionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, cloud_tpu.TensorFlowVersion)
-
     assert response.name == 'name_value'
-
     assert response.version == 'version_value'
 
 
@@ -2558,8 +2463,8 @@ def test_get_tensor_flow_version_empty_call():
         client.get_tensor_flow_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetTensorFlowVersionRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_tensor_flow_version_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.GetTensorFlowVersionRequest):
@@ -2577,24 +2482,20 @@ async def test_get_tensor_flow_version_async(transport: str = 'grpc_asyncio', re
             type(client.transport.get_tensor_flow_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.TensorFlowVersion(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.TensorFlowVersion(
             name='name_value',
             version='version_value',
         ))
-
         response = await client.get_tensor_flow_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetTensorFlowVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tpu.TensorFlowVersion)
-
     assert response.name == 'name_value'
-
     assert response.version == 'version_value'
 
 
@@ -2611,6 +2512,7 @@ def test_get_tensor_flow_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.GetTensorFlowVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2618,7 +2520,6 @@ def test_get_tensor_flow_version_field_headers():
             type(client.transport.get_tensor_flow_version),
             '__call__') as call:
         call.return_value = cloud_tpu.TensorFlowVersion()
-
         client.get_tensor_flow_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2643,6 +2544,7 @@ async def test_get_tensor_flow_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.GetTensorFlowVersionRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2650,7 +2552,6 @@ async def test_get_tensor_flow_version_field_headers_async():
             type(client.transport.get_tensor_flow_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.TensorFlowVersion())
-
         await client.get_tensor_flow_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2677,7 +2578,6 @@ def test_get_tensor_flow_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.TensorFlowVersion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_tensor_flow_version(
@@ -2688,7 +2588,6 @@ def test_get_tensor_flow_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2730,7 +2629,6 @@ async def test_get_tensor_flow_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2766,25 +2664,18 @@ def test_list_accelerator_types(transport: str = 'grpc', request_type=cloud_tpu.
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.ListAcceleratorTypesResponse(
             next_page_token='next_page_token_value',
-
             unreachable=['unreachable_value'],
-
         )
-
         response = client.list_accelerator_types(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListAcceleratorTypesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListAcceleratorTypesPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -2807,8 +2698,8 @@ def test_list_accelerator_types_empty_call():
         client.list_accelerator_types()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListAcceleratorTypesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_accelerator_types_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.ListAcceleratorTypesRequest):
@@ -2826,24 +2717,20 @@ async def test_list_accelerator_types_async(transport: str = 'grpc_asyncio', req
             type(client.transport.list_accelerator_types),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListAcceleratorTypesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListAcceleratorTypesResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
-
         response = await client.list_accelerator_types(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.ListAcceleratorTypesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAcceleratorTypesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
-
     assert response.unreachable == ['unreachable_value']
 
 
@@ -2860,6 +2747,7 @@ def test_list_accelerator_types_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ListAcceleratorTypesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2867,7 +2755,6 @@ def test_list_accelerator_types_field_headers():
             type(client.transport.list_accelerator_types),
             '__call__') as call:
         call.return_value = cloud_tpu.ListAcceleratorTypesResponse()
-
         client.list_accelerator_types(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2892,6 +2779,7 @@ async def test_list_accelerator_types_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.ListAcceleratorTypesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2899,7 +2787,6 @@ async def test_list_accelerator_types_field_headers_async():
             type(client.transport.list_accelerator_types),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.ListAcceleratorTypesResponse())
-
         await client.list_accelerator_types(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2926,7 +2813,6 @@ def test_list_accelerator_types_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.ListAcceleratorTypesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_accelerator_types(
@@ -2937,7 +2823,6 @@ def test_list_accelerator_types_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -2979,7 +2864,6 @@ async def test_list_accelerator_types_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -3184,7 +3068,6 @@ async def test_list_accelerator_types_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_accelerator_type(transport: str = 'grpc', request_type=cloud_tpu.GetAcceleratorTypeRequest):
     client = TpuClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3202,25 +3085,18 @@ def test_get_accelerator_type(transport: str = 'grpc', request_type=cloud_tpu.Ge
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.AcceleratorType(
             name='name_value',
-
             type_='type__value',
-
         )
-
         response = client.get_accelerator_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetAcceleratorTypeRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, cloud_tpu.AcceleratorType)
-
     assert response.name == 'name_value'
-
     assert response.type_ == 'type__value'
 
 
@@ -3243,8 +3119,8 @@ def test_get_accelerator_type_empty_call():
         client.get_accelerator_type()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetAcceleratorTypeRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_accelerator_type_async(transport: str = 'grpc_asyncio', request_type=cloud_tpu.GetAcceleratorTypeRequest):
@@ -3262,24 +3138,20 @@ async def test_get_accelerator_type_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.get_accelerator_type),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.AcceleratorType(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.AcceleratorType(
             name='name_value',
             type_='type__value',
         ))
-
         response = await client.get_accelerator_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == cloud_tpu.GetAcceleratorTypeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tpu.AcceleratorType)
-
     assert response.name == 'name_value'
-
     assert response.type_ == 'type__value'
 
 
@@ -3296,6 +3168,7 @@ def test_get_accelerator_type_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.GetAcceleratorTypeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3303,7 +3176,6 @@ def test_get_accelerator_type_field_headers():
             type(client.transport.get_accelerator_type),
             '__call__') as call:
         call.return_value = cloud_tpu.AcceleratorType()
-
         client.get_accelerator_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3328,6 +3200,7 @@ async def test_get_accelerator_type_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloud_tpu.GetAcceleratorTypeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3335,7 +3208,6 @@ async def test_get_accelerator_type_field_headers_async():
             type(client.transport.get_accelerator_type),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloud_tpu.AcceleratorType())
-
         await client.get_accelerator_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3362,7 +3234,6 @@ def test_get_accelerator_type_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloud_tpu.AcceleratorType()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_accelerator_type(
@@ -3373,7 +3244,6 @@ def test_get_accelerator_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3415,7 +3285,6 @@ async def test_get_accelerator_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -3474,7 +3343,6 @@ def test_transport_instance():
     client = TpuClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.TpuGrpcTransport(
@@ -3489,7 +3357,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.TpuGrpcTransport,
     transports.TpuGrpcAsyncIOTransport,
@@ -3501,7 +3368,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = TpuClient(
@@ -3511,7 +3377,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.TpuGrpcTransport,
     )
-
 
 def test_tpu_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3544,7 +3409,7 @@ def test_tpu_base_transport():
         'get_tensor_flow_version',
         'list_accelerator_types',
         'get_accelerator_type',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -3555,9 +3420,27 @@ def test_tpu_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_tpu_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.tpu_v1.services.tpu.transports.TpuTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.tpu_v1.services.tpu.transports.TpuTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.TpuTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_tpu_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.tpu_v1.services.tpu.transports.TpuTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TpuTransport(
@@ -3573,33 +3456,182 @@ def test_tpu_base_transport_with_credentials_file():
 
 def test_tpu_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.tpu_v1.services.tpu.transports.TpuTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.tpu_v1.services.tpu.transports.TpuTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TpuTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_tpu_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         TpuClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_tpu_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_tpu_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        TpuClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.TpuGrpcTransport,
+        transports.TpuGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_tpu_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.TpuGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.TpuGrpcTransport,
+        transports.TpuGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_tpu_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.TpuGrpcTransport, grpc_helpers),
+        (transports.TpuGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_tpu_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "tpu.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="tpu.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.TpuGrpcTransport, grpc_helpers),
+        (transports.TpuGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_tpu_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "tpu.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.TpuGrpcTransport, grpc_helpers),
+        (transports.TpuGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_tpu_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "tpu.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -3661,7 +3693,6 @@ def test_tpu_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='tpu.googleapis.com:8000'),
     )
     assert client.transport._host == 'tpu.googleapis.com:8000'
-
 
 def test_tpu_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3815,7 +3846,6 @@ def test_accelerator_type_path():
     project = "squid"
     location = "clam"
     accelerator_type = "whelk"
-
     expected = "projects/{project}/locations/{location}/acceleratorTypes/{accelerator_type}".format(project=project, location=location, accelerator_type=accelerator_type, )
     actual = TpuClient.accelerator_type_path(project, location, accelerator_type)
     assert expected == actual
@@ -3823,10 +3853,9 @@ def test_accelerator_type_path():
 
 def test_parse_accelerator_type_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "accelerator_type": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "accelerator_type": "nudibranch",
     }
     path = TpuClient.accelerator_type_path(**expected)
 
@@ -3838,7 +3867,6 @@ def test_node_path():
     project = "cuttlefish"
     location = "mussel"
     node = "winkle"
-
     expected = "projects/{project}/locations/{location}/nodes/{node}".format(project=project, location=location, node=node, )
     actual = TpuClient.node_path(project, location, node)
     assert expected == actual
@@ -3846,10 +3874,9 @@ def test_node_path():
 
 def test_parse_node_path():
     expected = {
-    "project": "nautilus",
-    "location": "scallop",
-    "node": "abalone",
-
+        "project": "nautilus",
+        "location": "scallop",
+        "node": "abalone",
     }
     path = TpuClient.node_path(**expected)
 
@@ -3861,7 +3888,6 @@ def test_tensor_flow_version_path():
     project = "squid"
     location = "clam"
     tensor_flow_version = "whelk"
-
     expected = "projects/{project}/locations/{location}/tensorFlowVersions/{tensor_flow_version}".format(project=project, location=location, tensor_flow_version=tensor_flow_version, )
     actual = TpuClient.tensor_flow_version_path(project, location, tensor_flow_version)
     assert expected == actual
@@ -3869,10 +3895,9 @@ def test_tensor_flow_version_path():
 
 def test_parse_tensor_flow_version_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "tensor_flow_version": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "tensor_flow_version": "nudibranch",
     }
     path = TpuClient.tensor_flow_version_path(**expected)
 
@@ -3882,7 +3907,6 @@ def test_parse_tensor_flow_version_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = TpuClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3890,8 +3914,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = TpuClient.common_billing_account_path(**expected)
 
@@ -3901,7 +3924,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = TpuClient.common_folder_path(folder)
     assert expected == actual
@@ -3909,8 +3931,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = TpuClient.common_folder_path(**expected)
 
@@ -3920,7 +3941,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = TpuClient.common_organization_path(organization)
     assert expected == actual
@@ -3928,8 +3948,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = TpuClient.common_organization_path(**expected)
 
@@ -3939,7 +3958,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = TpuClient.common_project_path(project)
     assert expected == actual
@@ -3947,8 +3965,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = TpuClient.common_project_path(**expected)
 
@@ -3959,7 +3976,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = TpuClient.common_location_path(project, location)
     assert expected == actual
@@ -3967,9 +3983,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = TpuClient.common_location_path(**expected)
 

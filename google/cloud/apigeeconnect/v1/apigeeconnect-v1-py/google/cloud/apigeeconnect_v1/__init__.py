@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +16,7 @@
 
 from .services.connection_service import ConnectionServiceClient
 from .services.tether import TetherClient
+
 from .types.connection import Cluster
 from .types.connection import Connection
 from .types.connection import ListConnectionsRequest
@@ -32,7 +32,6 @@ from .types.tether import Scheme
 from .types.tether import StreamInfo
 from .types.tether import TetherEndpoint
 from .types.tether import Url
-
 
 __all__ = (
     'Action',

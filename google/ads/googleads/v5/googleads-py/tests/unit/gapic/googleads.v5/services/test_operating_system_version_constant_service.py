@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -265,41 +263,26 @@ def test_get_operating_system_version_constant(transport: str = 'grpc', request_
         # Designate an appropriate return value for the call.
         call.return_value = operating_system_version_constant.OperatingSystemVersionConstant(
             resource_name='resource_name_value',
-
             id=205,
-
             name='name_value',
-
             os_major_version=1727,
-
             os_minor_version=1739,
-
             operator_type=operating_system_version_operator_type.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType.UNKNOWN,
-
         )
-
         response = client.get_operating_system_version_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == operating_system_version_constant_service.GetOperatingSystemVersionConstantRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, operating_system_version_constant.OperatingSystemVersionConstant)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.name == 'name_value'
-
     assert response.os_major_version == 1727
-
     assert response.os_minor_version == 1739
-
     assert response.operator_type == operating_system_version_operator_type.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType.UNKNOWN
 
 
@@ -315,6 +298,7 @@ def test_get_operating_system_version_constant_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = operating_system_version_constant_service.GetOperatingSystemVersionConstantRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -322,7 +306,6 @@ def test_get_operating_system_version_constant_field_headers():
             type(client.transport.get_operating_system_version_constant),
             '__call__') as call:
         call.return_value = operating_system_version_constant.OperatingSystemVersionConstant()
-
         client.get_operating_system_version_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -349,7 +332,6 @@ def test_get_operating_system_version_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operating_system_version_constant.OperatingSystemVersionConstant()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_operating_system_version_constant(
@@ -360,7 +342,6 @@ def test_get_operating_system_version_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -441,7 +422,7 @@ def test_operating_system_version_constant_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_operating_system_version_constant',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -592,7 +573,6 @@ def test_operating_system_version_constant_service_transport_channel_mtls_with_a
 
 def test_operating_system_version_constant_path():
     operating_system_version_constant = "squid"
-
     expected = "operatingSystemVersionConstants/{operating_system_version_constant}".format(operating_system_version_constant=operating_system_version_constant, )
     actual = OperatingSystemVersionConstantServiceClient.operating_system_version_constant_path(operating_system_version_constant)
     assert expected == actual
@@ -600,8 +580,7 @@ def test_operating_system_version_constant_path():
 
 def test_parse_operating_system_version_constant_path():
     expected = {
-    "operating_system_version_constant": "clam",
-
+        "operating_system_version_constant": "clam",
     }
     path = OperatingSystemVersionConstantServiceClient.operating_system_version_constant_path(**expected)
 
@@ -611,7 +590,6 @@ def test_parse_operating_system_version_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = OperatingSystemVersionConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -619,8 +597,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = OperatingSystemVersionConstantServiceClient.common_billing_account_path(**expected)
 
@@ -630,7 +607,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = OperatingSystemVersionConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -638,8 +614,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = OperatingSystemVersionConstantServiceClient.common_folder_path(**expected)
 
@@ -649,7 +624,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = OperatingSystemVersionConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -657,8 +631,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = OperatingSystemVersionConstantServiceClient.common_organization_path(**expected)
 
@@ -668,7 +641,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = OperatingSystemVersionConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -676,8 +648,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = OperatingSystemVersionConstantServiceClient.common_project_path(**expected)
 
@@ -688,7 +659,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = OperatingSystemVersionConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -696,9 +666,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = OperatingSystemVersionConstantServiceClient.common_location_path(**expected)
 

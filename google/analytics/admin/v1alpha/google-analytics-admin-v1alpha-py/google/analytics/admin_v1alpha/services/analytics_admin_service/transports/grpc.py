@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 from google.analytics.admin_v1alpha.types import analytics_admin
 from google.analytics.admin_v1alpha.types import resources
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import AnalyticsAdminServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,7 +60,8 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,13 +200,15 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,7 +222,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_account(self) -> Callable[
             [analytics_admin.GetAccountRequest],
             resources.Account]:
-        r"""Return a callable for the get account method over gRPC.
+        r"""Return a callable for the
+        get account
+          method over gRPC.
 
         Lookup for a single Account.
 
@@ -248,7 +250,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_accounts(self) -> Callable[
             [analytics_admin.ListAccountsRequest],
             analytics_admin.ListAccountsResponse]:
-        r"""Return a callable for the list accounts method over gRPC.
+        r"""Return a callable for the
+        list accounts
+          method over gRPC.
 
         Returns all accounts accessible by the caller.
         Note that these accounts might not currently have GA4
@@ -278,7 +282,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_account(self) -> Callable[
             [analytics_admin.DeleteAccountRequest],
             empty.Empty]:
-        r"""Return a callable for the delete account method over gRPC.
+        r"""Return a callable for the
+        delete account
+          method over gRPC.
 
         Marks target Account as soft-deleted (ie: "trashed")
         and returns it.
@@ -314,7 +320,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_account(self) -> Callable[
             [analytics_admin.UpdateAccountRequest],
             resources.Account]:
-        r"""Return a callable for the update account method over gRPC.
+        r"""Return a callable for the
+        update account
+          method over gRPC.
 
         Updates an account.
 
@@ -340,7 +348,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def provision_account_ticket(self) -> Callable[
             [analytics_admin.ProvisionAccountTicketRequest],
             analytics_admin.ProvisionAccountTicketResponse]:
-        r"""Return a callable for the provision account ticket method over gRPC.
+        r"""Return a callable for the
+        provision account ticket
+          method over gRPC.
 
         Requests a ticket for creating an account.
 
@@ -366,7 +376,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_account_summaries(self) -> Callable[
             [analytics_admin.ListAccountSummariesRequest],
             analytics_admin.ListAccountSummariesResponse]:
-        r"""Return a callable for the list account summaries method over gRPC.
+        r"""Return a callable for the
+        list account summaries
+          method over gRPC.
 
         Returns summaries of all accounts accessible by the
         caller.
@@ -393,7 +405,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_property(self) -> Callable[
             [analytics_admin.GetPropertyRequest],
             resources.Property]:
-        r"""Return a callable for the get property method over gRPC.
+        r"""Return a callable for the
+        get property
+          method over gRPC.
 
         Lookup for a single "GA4" Property.
 
@@ -419,7 +433,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_properties(self) -> Callable[
             [analytics_admin.ListPropertiesRequest],
             analytics_admin.ListPropertiesResponse]:
-        r"""Return a callable for the list properties method over gRPC.
+        r"""Return a callable for the
+        list properties
+          method over gRPC.
 
         Returns child Properties under the specified parent
         Account.
@@ -451,7 +467,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_property(self) -> Callable[
             [analytics_admin.CreatePropertyRequest],
             resources.Property]:
-        r"""Return a callable for the create property method over gRPC.
+        r"""Return a callable for the
+        create property
+          method over gRPC.
 
         Creates an "GA4" property with the specified location
         and attributes.
@@ -478,7 +496,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_property(self) -> Callable[
             [analytics_admin.DeletePropertyRequest],
             empty.Empty]:
-        r"""Return a callable for the delete property method over gRPC.
+        r"""Return a callable for the
+        delete property
+          method over gRPC.
 
         Marks target Property as soft-deleted (ie: "trashed")
         and returns it.
@@ -515,7 +535,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_property(self) -> Callable[
             [analytics_admin.UpdatePropertyRequest],
             resources.Property]:
-        r"""Return a callable for the update property method over gRPC.
+        r"""Return a callable for the
+        update property
+          method over gRPC.
 
         Updates a property.
 
@@ -541,7 +563,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_user_link(self) -> Callable[
             [analytics_admin.GetUserLinkRequest],
             resources.UserLink]:
-        r"""Return a callable for the get user link method over gRPC.
+        r"""Return a callable for the
+        get user link
+          method over gRPC.
 
         Gets information about a user's link to an account or
         property.
@@ -568,7 +592,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def batch_get_user_links(self) -> Callable[
             [analytics_admin.BatchGetUserLinksRequest],
             analytics_admin.BatchGetUserLinksResponse]:
-        r"""Return a callable for the batch get user links method over gRPC.
+        r"""Return a callable for the
+        batch get user links
+          method over gRPC.
 
         Gets information about multiple users' links to an
         account or property.
@@ -595,7 +621,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_user_links(self) -> Callable[
             [analytics_admin.ListUserLinksRequest],
             analytics_admin.ListUserLinksResponse]:
-        r"""Return a callable for the list user links method over gRPC.
+        r"""Return a callable for the
+        list user links
+          method over gRPC.
 
         Lists all user links on an account or property.
 
@@ -621,7 +649,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def audit_user_links(self) -> Callable[
             [analytics_admin.AuditUserLinksRequest],
             analytics_admin.AuditUserLinksResponse]:
-        r"""Return a callable for the audit user links method over gRPC.
+        r"""Return a callable for the
+        audit user links
+          method over gRPC.
 
         Lists all user links on an account or property,
         including implicit ones that come from effective
@@ -657,7 +687,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_user_link(self) -> Callable[
             [analytics_admin.CreateUserLinkRequest],
             resources.UserLink]:
-        r"""Return a callable for the create user link method over gRPC.
+        r"""Return a callable for the
+        create user link
+          method over gRPC.
 
         Creates a user link on an account or property.
         If the user with the specified email already has
@@ -687,7 +719,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def batch_create_user_links(self) -> Callable[
             [analytics_admin.BatchCreateUserLinksRequest],
             analytics_admin.BatchCreateUserLinksResponse]:
-        r"""Return a callable for the batch create user links method over gRPC.
+        r"""Return a callable for the
+        batch create user links
+          method over gRPC.
 
         Creates information about multiple users' links to an
         account or property.
@@ -716,7 +750,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_user_link(self) -> Callable[
             [analytics_admin.UpdateUserLinkRequest],
             resources.UserLink]:
-        r"""Return a callable for the update user link method over gRPC.
+        r"""Return a callable for the
+        update user link
+          method over gRPC.
 
         Updates a user link on an account or property.
 
@@ -742,7 +778,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def batch_update_user_links(self) -> Callable[
             [analytics_admin.BatchUpdateUserLinksRequest],
             analytics_admin.BatchUpdateUserLinksResponse]:
-        r"""Return a callable for the batch update user links method over gRPC.
+        r"""Return a callable for the
+        batch update user links
+          method over gRPC.
 
         Updates information about multiple users' links to an
         account or property.
@@ -769,7 +807,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_user_link(self) -> Callable[
             [analytics_admin.DeleteUserLinkRequest],
             empty.Empty]:
-        r"""Return a callable for the delete user link method over gRPC.
+        r"""Return a callable for the
+        delete user link
+          method over gRPC.
 
         Deletes a user link on an account or property.
 
@@ -795,7 +835,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def batch_delete_user_links(self) -> Callable[
             [analytics_admin.BatchDeleteUserLinksRequest],
             empty.Empty]:
-        r"""Return a callable for the batch delete user links method over gRPC.
+        r"""Return a callable for the
+        batch delete user links
+          method over gRPC.
 
         Deletes information about multiple users' links to an
         account or property.
@@ -822,7 +864,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_web_data_stream(self) -> Callable[
             [analytics_admin.GetWebDataStreamRequest],
             resources.WebDataStream]:
-        r"""Return a callable for the get web data stream method over gRPC.
+        r"""Return a callable for the
+        get web data stream
+          method over gRPC.
 
         Lookup for a single WebDataStream
 
@@ -848,7 +892,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_web_data_stream(self) -> Callable[
             [analytics_admin.DeleteWebDataStreamRequest],
             empty.Empty]:
-        r"""Return a callable for the delete web data stream method over gRPC.
+        r"""Return a callable for the
+        delete web data stream
+          method over gRPC.
 
         Deletes a web stream on a property.
 
@@ -874,7 +920,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_web_data_stream(self) -> Callable[
             [analytics_admin.UpdateWebDataStreamRequest],
             resources.WebDataStream]:
-        r"""Return a callable for the update web data stream method over gRPC.
+        r"""Return a callable for the
+        update web data stream
+          method over gRPC.
 
         Updates a web stream on a property.
 
@@ -900,7 +948,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_web_data_stream(self) -> Callable[
             [analytics_admin.CreateWebDataStreamRequest],
             resources.WebDataStream]:
-        r"""Return a callable for the create web data stream method over gRPC.
+        r"""Return a callable for the
+        create web data stream
+          method over gRPC.
 
         Creates a web stream with the specified location and
         attributes.
@@ -927,7 +977,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_web_data_streams(self) -> Callable[
             [analytics_admin.ListWebDataStreamsRequest],
             analytics_admin.ListWebDataStreamsResponse]:
-        r"""Return a callable for the list web data streams method over gRPC.
+        r"""Return a callable for the
+        list web data streams
+          method over gRPC.
 
         Returns child web data streams under the specified
         parent property.
@@ -957,7 +1009,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_ios_app_data_stream(self) -> Callable[
             [analytics_admin.GetIosAppDataStreamRequest],
             resources.IosAppDataStream]:
-        r"""Return a callable for the get ios app data stream method over gRPC.
+        r"""Return a callable for the
+        get ios app data stream
+          method over gRPC.
 
         Lookup for a single IosAppDataStream
 
@@ -983,7 +1037,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_ios_app_data_stream(self) -> Callable[
             [analytics_admin.DeleteIosAppDataStreamRequest],
             empty.Empty]:
-        r"""Return a callable for the delete ios app data stream method over gRPC.
+        r"""Return a callable for the
+        delete ios app data stream
+          method over gRPC.
 
         Deletes an iOS app stream on a property.
 
@@ -1009,7 +1065,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_ios_app_data_stream(self) -> Callable[
             [analytics_admin.UpdateIosAppDataStreamRequest],
             resources.IosAppDataStream]:
-        r"""Return a callable for the update ios app data stream method over gRPC.
+        r"""Return a callable for the
+        update ios app data stream
+          method over gRPC.
 
         Updates an iOS app stream on a property.
 
@@ -1035,7 +1093,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_ios_app_data_stream(self) -> Callable[
             [analytics_admin.CreateIosAppDataStreamRequest],
             resources.IosAppDataStream]:
-        r"""Return a callable for the create ios app data stream method over gRPC.
+        r"""Return a callable for the
+        create ios app data stream
+          method over gRPC.
 
         Creates an iOS app stream with the specified location
         and attributes.
@@ -1070,7 +1130,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_ios_app_data_streams(self) -> Callable[
             [analytics_admin.ListIosAppDataStreamsRequest],
             analytics_admin.ListIosAppDataStreamsResponse]:
-        r"""Return a callable for the list ios app data streams method over gRPC.
+        r"""Return a callable for the
+        list ios app data streams
+          method over gRPC.
 
         Returns child iOS app data streams under the
         specified parent property.
@@ -1100,7 +1162,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_android_app_data_stream(self) -> Callable[
             [analytics_admin.GetAndroidAppDataStreamRequest],
             resources.AndroidAppDataStream]:
-        r"""Return a callable for the get android app data stream method over gRPC.
+        r"""Return a callable for the
+        get android app data stream
+          method over gRPC.
 
         Lookup for a single AndroidAppDataStream
 
@@ -1126,7 +1190,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_android_app_data_stream(self) -> Callable[
             [analytics_admin.DeleteAndroidAppDataStreamRequest],
             empty.Empty]:
-        r"""Return a callable for the delete android app data stream method over gRPC.
+        r"""Return a callable for the
+        delete android app data stream
+          method over gRPC.
 
         Deletes an android app stream on a property.
 
@@ -1152,7 +1218,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_android_app_data_stream(self) -> Callable[
             [analytics_admin.UpdateAndroidAppDataStreamRequest],
             resources.AndroidAppDataStream]:
-        r"""Return a callable for the update android app data stream method over gRPC.
+        r"""Return a callable for the
+        update android app data stream
+          method over gRPC.
 
         Updates an android app stream on a property.
 
@@ -1178,7 +1246,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_android_app_data_stream(self) -> Callable[
             [analytics_admin.CreateAndroidAppDataStreamRequest],
             resources.AndroidAppDataStream]:
-        r"""Return a callable for the create android app data stream method over gRPC.
+        r"""Return a callable for the
+        create android app data stream
+          method over gRPC.
 
         Creates an Android app stream with the specified
         location and attributes.
@@ -1213,7 +1283,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_android_app_data_streams(self) -> Callable[
             [analytics_admin.ListAndroidAppDataStreamsRequest],
             analytics_admin.ListAndroidAppDataStreamsResponse]:
-        r"""Return a callable for the list android app data streams method over gRPC.
+        r"""Return a callable for the
+        list android app data streams
+          method over gRPC.
 
         Returns child android app streams under the specified
         parent property.
@@ -1243,8 +1315,10 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_enhanced_measurement_settings(self) -> Callable[
             [analytics_admin.GetEnhancedMeasurementSettingsRequest],
             resources.EnhancedMeasurementSettings]:
-        r"""Return a callable for the get enhanced measurement
-        settings method over gRPC.
+        r"""Return a callable for the
+        get enhanced measurement
+        settings
+          method over gRPC.
 
         Returns the singleton enhanced measurement settings
         for this web stream. Note that the stream must enable
@@ -1272,8 +1346,10 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_enhanced_measurement_settings(self) -> Callable[
             [analytics_admin.UpdateEnhancedMeasurementSettingsRequest],
             resources.EnhancedMeasurementSettings]:
-        r"""Return a callable for the update enhanced measurement
-        settings method over gRPC.
+        r"""Return a callable for the
+        update enhanced measurement
+        settings
+          method over gRPC.
 
         Updates the singleton enhanced measurement settings
         for this web stream. Note that the stream must enable
@@ -1301,7 +1377,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_firebase_link(self) -> Callable[
             [analytics_admin.CreateFirebaseLinkRequest],
             resources.FirebaseLink]:
-        r"""Return a callable for the create firebase link method over gRPC.
+        r"""Return a callable for the
+        create firebase link
+          method over gRPC.
 
         Creates a FirebaseLink.
         Properties can have at most one FirebaseLink.
@@ -1328,7 +1406,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_firebase_link(self) -> Callable[
             [analytics_admin.UpdateFirebaseLinkRequest],
             resources.FirebaseLink]:
-        r"""Return a callable for the update firebase link method over gRPC.
+        r"""Return a callable for the
+        update firebase link
+          method over gRPC.
 
         Updates a FirebaseLink on a property
 
@@ -1354,7 +1434,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_firebase_link(self) -> Callable[
             [analytics_admin.DeleteFirebaseLinkRequest],
             empty.Empty]:
-        r"""Return a callable for the delete firebase link method over gRPC.
+        r"""Return a callable for the
+        delete firebase link
+          method over gRPC.
 
         Deletes a FirebaseLink on a property
 
@@ -1380,7 +1462,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_firebase_links(self) -> Callable[
             [analytics_admin.ListFirebaseLinksRequest],
             analytics_admin.ListFirebaseLinksResponse]:
-        r"""Return a callable for the list firebase links method over gRPC.
+        r"""Return a callable for the
+        list firebase links
+          method over gRPC.
 
         Lists FirebaseLinks on a property.
         Properties can have at most one FirebaseLink.
@@ -1407,7 +1491,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_global_site_tag(self) -> Callable[
             [analytics_admin.GetGlobalSiteTagRequest],
             resources.GlobalSiteTag]:
-        r"""Return a callable for the get global site tag method over gRPC.
+        r"""Return a callable for the
+        get global site tag
+          method over gRPC.
 
         Returns the Site Tag for the specified web stream.
         Site Tags are immutable singletons.
@@ -1434,7 +1520,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def create_google_ads_link(self) -> Callable[
             [analytics_admin.CreateGoogleAdsLinkRequest],
             resources.GoogleAdsLink]:
-        r"""Return a callable for the create google ads link method over gRPC.
+        r"""Return a callable for the
+        create google ads link
+          method over gRPC.
 
         Creates a GoogleAdsLink.
 
@@ -1460,7 +1548,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def update_google_ads_link(self) -> Callable[
             [analytics_admin.UpdateGoogleAdsLinkRequest],
             resources.GoogleAdsLink]:
-        r"""Return a callable for the update google ads link method over gRPC.
+        r"""Return a callable for the
+        update google ads link
+          method over gRPC.
 
         Updates a GoogleAdsLink on a property
 
@@ -1486,7 +1576,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def delete_google_ads_link(self) -> Callable[
             [analytics_admin.DeleteGoogleAdsLinkRequest],
             empty.Empty]:
-        r"""Return a callable for the delete google ads link method over gRPC.
+        r"""Return a callable for the
+        delete google ads link
+          method over gRPC.
 
         Deletes a GoogleAdsLink on a property
 
@@ -1512,7 +1604,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def list_google_ads_links(self) -> Callable[
             [analytics_admin.ListGoogleAdsLinksRequest],
             analytics_admin.ListGoogleAdsLinksResponse]:
-        r"""Return a callable for the list google ads links method over gRPC.
+        r"""Return a callable for the
+        list google ads links
+          method over gRPC.
 
         Lists GoogleAdsLinks on a property.
 
@@ -1538,7 +1632,9 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
     def get_data_sharing_settings(self) -> Callable[
             [analytics_admin.GetDataSharingSettingsRequest],
             resources.DataSharingSettings]:
-        r"""Return a callable for the get data sharing settings method over gRPC.
+        r"""Return a callable for the
+        get data sharing settings
+          method over gRPC.
 
         Get data sharing settings on an account.
         Data sharing settings are singletons.

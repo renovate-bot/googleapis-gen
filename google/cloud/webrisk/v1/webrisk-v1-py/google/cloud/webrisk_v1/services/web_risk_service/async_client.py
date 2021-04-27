@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -30,7 +28,6 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.webrisk_v1.types import webrisk
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import WebRiskServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import WebRiskServiceGrpcAsyncIOTransport
 from .client import WebRiskServiceClient
@@ -48,16 +45,12 @@ class WebRiskServiceAsyncClient:
 
     common_billing_account_path = staticmethod(WebRiskServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(WebRiskServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(WebRiskServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(WebRiskServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(WebRiskServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(WebRiskServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(WebRiskServiceClient.common_project_path)
     parse_common_project_path = staticmethod(WebRiskServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(WebRiskServiceClient.common_location_path)
     parse_common_location_path = staticmethod(WebRiskServiceClient.parse_common_location_path)
 
@@ -142,7 +135,6 @@ class WebRiskServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = WebRiskServiceClient(
             credentials=credentials,
             transport=transport,
@@ -172,7 +164,8 @@ class WebRiskServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest`):
-                The request object. Describes an API diff request.
+                The request object.
+                Describes an API diff request.
             threat_type (:class:`google.cloud.webrisk_v1.types.ThreatType`):
                 Required. The threat list to update.
                 Only a single ThreatType should be
@@ -202,7 +195,6 @@ class WebRiskServiceAsyncClient:
                 This corresponds to the ``constraints`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -225,7 +217,6 @@ class WebRiskServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if threat_type is not None:
             request.threat_type = threat_type
         if version_token is not None:
@@ -238,10 +229,7 @@ class WebRiskServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.compute_threat_list_diff,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -280,7 +268,8 @@ class WebRiskServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.SearchUrisRequest`):
-                The request object. Request to check URI entries against
+                The request object.
+                Request to check URI entries against
                 threatLists.
             uri (:class:`str`):
                 Required. The URI to be checked for
@@ -297,7 +286,6 @@ class WebRiskServiceAsyncClient:
                 This corresponds to the ``threat_types`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -320,10 +308,8 @@ class WebRiskServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if uri is not None:
             request.uri = uri
-
         if threat_types:
             request.threat_types.extend(threat_types)
 
@@ -332,10 +318,7 @@ class WebRiskServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_uris,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -374,7 +357,8 @@ class WebRiskServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.SearchHashesRequest`):
-                The request object. Request to return full hashes
+                The request object.
+                Request to return full hashes
                 matched by the provided hash prefixes.
             hash_prefix (:class:`bytes`):
                 A hash prefix, consisting of the most
@@ -393,7 +377,6 @@ class WebRiskServiceAsyncClient:
                 This corresponds to the ``threat_types`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -416,10 +399,8 @@ class WebRiskServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if hash_prefix is not None:
             request.hash_prefix = hash_prefix
-
         if threat_types:
             request.threat_types.extend(threat_types)
 
@@ -428,10 +409,7 @@ class WebRiskServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_hashes,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -472,7 +450,8 @@ class WebRiskServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.CreateSubmissionRequest`):
-                The request object. Request to send a potentially phishy
+                The request object.
+                Request to send a potentially phishy
                 URI to WebRisk.
             parent (:class:`str`):
                 Required. The name of the project that is making the
@@ -490,7 +469,6 @@ class WebRiskServiceAsyncClient:
                 This corresponds to the ``submission`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -515,7 +493,6 @@ class WebRiskServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if submission is not None:
@@ -547,8 +524,6 @@ class WebRiskServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

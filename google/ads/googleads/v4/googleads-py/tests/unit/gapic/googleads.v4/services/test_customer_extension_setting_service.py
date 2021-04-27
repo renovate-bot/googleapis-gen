@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -269,29 +267,20 @@ def test_get_customer_extension_setting(transport: str = 'grpc', request_type=cu
         # Designate an appropriate return value for the call.
         call.return_value = customer_extension_setting.CustomerExtensionSetting(
             resource_name='resource_name_value',
-
             extension_type=extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN,
-
             device=extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice.UNKNOWN,
-
         )
-
         response = client.get_customer_extension_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_extension_setting_service.GetCustomerExtensionSettingRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_extension_setting.CustomerExtensionSetting)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.extension_type == extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN
-
     assert response.device == extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice.UNKNOWN
 
 
@@ -307,6 +296,7 @@ def test_get_customer_extension_setting_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_extension_setting_service.GetCustomerExtensionSettingRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -314,7 +304,6 @@ def test_get_customer_extension_setting_field_headers():
             type(client.transport.get_customer_extension_setting),
             '__call__') as call:
         call.return_value = customer_extension_setting.CustomerExtensionSetting()
-
         client.get_customer_extension_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -341,7 +330,6 @@ def test_get_customer_extension_setting_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_extension_setting.CustomerExtensionSetting()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_extension_setting(
@@ -352,7 +340,6 @@ def test_get_customer_extension_setting_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -387,17 +374,14 @@ def test_mutate_customer_extension_settings(transport: str = 'grpc', request_typ
         # Designate an appropriate return value for the call.
         call.return_value = customer_extension_setting_service.MutateCustomerExtensionSettingsResponse(
         )
-
         response = client.mutate_customer_extension_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_extension_setting_service.MutateCustomerExtensionSettingsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_extension_setting_service.MutateCustomerExtensionSettingsResponse)
 
 
@@ -413,6 +397,7 @@ def test_mutate_customer_extension_settings_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_extension_setting_service.MutateCustomerExtensionSettingsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -420,7 +405,6 @@ def test_mutate_customer_extension_settings_field_headers():
             type(client.transport.mutate_customer_extension_settings),
             '__call__') as call:
         call.return_value = customer_extension_setting_service.MutateCustomerExtensionSettingsResponse()
-
         client.mutate_customer_extension_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -447,7 +431,6 @@ def test_mutate_customer_extension_settings_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_extension_setting_service.MutateCustomerExtensionSettingsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_customer_extension_settings(
@@ -459,9 +442,7 @@ def test_mutate_customer_extension_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [customer_extension_setting_service.CustomerExtensionSettingOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -544,7 +525,7 @@ def test_customer_extension_setting_service_base_transport():
     methods = (
         'get_customer_extension_setting',
         'mutate_customer_extension_settings',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -696,7 +677,6 @@ def test_customer_extension_setting_service_transport_channel_mtls_with_adc(
 def test_customer_extension_setting_path():
     customer = "squid"
     customer_extension_setting = "clam"
-
     expected = "customers/{customer}/customerExtensionSettings/{customer_extension_setting}".format(customer=customer, customer_extension_setting=customer_extension_setting, )
     actual = CustomerExtensionSettingServiceClient.customer_extension_setting_path(customer, customer_extension_setting)
     assert expected == actual
@@ -704,9 +684,8 @@ def test_customer_extension_setting_path():
 
 def test_parse_customer_extension_setting_path():
     expected = {
-    "customer": "whelk",
-    "customer_extension_setting": "octopus",
-
+        "customer": "whelk",
+        "customer_extension_setting": "octopus",
     }
     path = CustomerExtensionSettingServiceClient.customer_extension_setting_path(**expected)
 
@@ -717,7 +696,6 @@ def test_parse_customer_extension_setting_path():
 def test_extension_feed_item_path():
     customer = "oyster"
     extension_feed_item = "nudibranch"
-
     expected = "customers/{customer}/extensionFeedItems/{extension_feed_item}".format(customer=customer, extension_feed_item=extension_feed_item, )
     actual = CustomerExtensionSettingServiceClient.extension_feed_item_path(customer, extension_feed_item)
     assert expected == actual
@@ -725,9 +703,8 @@ def test_extension_feed_item_path():
 
 def test_parse_extension_feed_item_path():
     expected = {
-    "customer": "cuttlefish",
-    "extension_feed_item": "mussel",
-
+        "customer": "cuttlefish",
+        "extension_feed_item": "mussel",
     }
     path = CustomerExtensionSettingServiceClient.extension_feed_item_path(**expected)
 
@@ -737,7 +714,6 @@ def test_parse_extension_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerExtensionSettingServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -745,8 +721,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = CustomerExtensionSettingServiceClient.common_billing_account_path(**expected)
 
@@ -756,7 +731,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerExtensionSettingServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -764,8 +738,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = CustomerExtensionSettingServiceClient.common_folder_path(**expected)
 
@@ -775,7 +748,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerExtensionSettingServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -783,8 +755,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = CustomerExtensionSettingServiceClient.common_organization_path(**expected)
 
@@ -794,7 +765,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = CustomerExtensionSettingServiceClient.common_project_path(project)
     assert expected == actual
@@ -802,8 +772,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = CustomerExtensionSettingServiceClient.common_project_path(**expected)
 
@@ -814,7 +783,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerExtensionSettingServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -822,9 +790,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = CustomerExtensionSettingServiceClient.common_location_path(**expected)
 

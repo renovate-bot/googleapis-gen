@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -30,7 +28,6 @@ from google.cloud.osconfig_v1beta.types import guest_policies
 from google.cloud.osconfig_v1beta.types import patch_deployments
 from google.cloud.osconfig_v1beta.types import patch_jobs
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import OsConfigServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -67,7 +64,8 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -206,13 +204,15 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -226,7 +226,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def execute_patch_job(self) -> Callable[
             [patch_jobs.ExecutePatchJobRequest],
             patch_jobs.PatchJob]:
-        r"""Return a callable for the execute patch job method over gRPC.
+        r"""Return a callable for the
+        execute patch job
+          method over gRPC.
 
         Patch VM instances by creating and running a patch
         job.
@@ -253,7 +255,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def get_patch_job(self) -> Callable[
             [patch_jobs.GetPatchJobRequest],
             patch_jobs.PatchJob]:
-        r"""Return a callable for the get patch job method over gRPC.
+        r"""Return a callable for the
+        get patch job
+          method over gRPC.
 
         Get the patch job. This can be used to track the
         progress of an ongoing patch job or review the details
@@ -281,7 +285,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def cancel_patch_job(self) -> Callable[
             [patch_jobs.CancelPatchJobRequest],
             patch_jobs.PatchJob]:
-        r"""Return a callable for the cancel patch job method over gRPC.
+        r"""Return a callable for the
+        cancel patch job
+          method over gRPC.
 
         Cancel a patch job. The patch job must be active.
         Canceled patch jobs cannot be restarted.
@@ -308,7 +314,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def list_patch_jobs(self) -> Callable[
             [patch_jobs.ListPatchJobsRequest],
             patch_jobs.ListPatchJobsResponse]:
-        r"""Return a callable for the list patch jobs method over gRPC.
+        r"""Return a callable for the
+        list patch jobs
+          method over gRPC.
 
         Get a list of patch jobs.
 
@@ -334,8 +342,10 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def list_patch_job_instance_details(self) -> Callable[
             [patch_jobs.ListPatchJobInstanceDetailsRequest],
             patch_jobs.ListPatchJobInstanceDetailsResponse]:
-        r"""Return a callable for the list patch job instance
-        details method over gRPC.
+        r"""Return a callable for the
+        list patch job instance
+        details
+          method over gRPC.
 
         Get a list of instance details for a given patch job.
 
@@ -361,7 +371,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def create_patch_deployment(self) -> Callable[
             [patch_deployments.CreatePatchDeploymentRequest],
             patch_deployments.PatchDeployment]:
-        r"""Return a callable for the create patch deployment method over gRPC.
+        r"""Return a callable for the
+        create patch deployment
+          method over gRPC.
 
         Create an OS Config patch deployment.
 
@@ -387,7 +399,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def get_patch_deployment(self) -> Callable[
             [patch_deployments.GetPatchDeploymentRequest],
             patch_deployments.PatchDeployment]:
-        r"""Return a callable for the get patch deployment method over gRPC.
+        r"""Return a callable for the
+        get patch deployment
+          method over gRPC.
 
         Get an OS Config patch deployment.
 
@@ -413,7 +427,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def list_patch_deployments(self) -> Callable[
             [patch_deployments.ListPatchDeploymentsRequest],
             patch_deployments.ListPatchDeploymentsResponse]:
-        r"""Return a callable for the list patch deployments method over gRPC.
+        r"""Return a callable for the
+        list patch deployments
+          method over gRPC.
 
         Get a page of OS Config patch deployments.
 
@@ -439,7 +455,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def delete_patch_deployment(self) -> Callable[
             [patch_deployments.DeletePatchDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete patch deployment method over gRPC.
+        r"""Return a callable for the
+        delete patch deployment
+          method over gRPC.
 
         Delete an OS Config patch deployment.
 
@@ -465,7 +483,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def create_guest_policy(self) -> Callable[
             [guest_policies.CreateGuestPolicyRequest],
             guest_policies.GuestPolicy]:
-        r"""Return a callable for the create guest policy method over gRPC.
+        r"""Return a callable for the
+        create guest policy
+          method over gRPC.
 
         Create an OS Config guest policy.
 
@@ -491,7 +511,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def get_guest_policy(self) -> Callable[
             [guest_policies.GetGuestPolicyRequest],
             guest_policies.GuestPolicy]:
-        r"""Return a callable for the get guest policy method over gRPC.
+        r"""Return a callable for the
+        get guest policy
+          method over gRPC.
 
         Get an OS Config guest policy.
 
@@ -517,7 +539,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def list_guest_policies(self) -> Callable[
             [guest_policies.ListGuestPoliciesRequest],
             guest_policies.ListGuestPoliciesResponse]:
-        r"""Return a callable for the list guest policies method over gRPC.
+        r"""Return a callable for the
+        list guest policies
+          method over gRPC.
 
         Get a page of OS Config guest policies.
 
@@ -543,7 +567,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def update_guest_policy(self) -> Callable[
             [guest_policies.UpdateGuestPolicyRequest],
             guest_policies.GuestPolicy]:
-        r"""Return a callable for the update guest policy method over gRPC.
+        r"""Return a callable for the
+        update guest policy
+          method over gRPC.
 
         Update an OS Config guest policy.
 
@@ -569,7 +595,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def delete_guest_policy(self) -> Callable[
             [guest_policies.DeleteGuestPolicyRequest],
             empty.Empty]:
-        r"""Return a callable for the delete guest policy method over gRPC.
+        r"""Return a callable for the
+        delete guest policy
+          method over gRPC.
 
         Delete an OS Config guest policy.
 
@@ -595,7 +623,9 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
     def lookup_effective_guest_policy(self) -> Callable[
             [guest_policies.LookupEffectiveGuestPolicyRequest],
             guest_policies.EffectiveGuestPolicy]:
-        r"""Return a callable for the lookup effective guest policy method over gRPC.
+        r"""Return a callable for the
+        lookup effective guest policy
+          method over gRPC.
 
         Lookup the effective guest policy that applies to a
         VM instance. This lookup merges all policies that are

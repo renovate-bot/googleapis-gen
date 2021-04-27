@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -269,21 +267,16 @@ def test_get_keyword_plan(transport: str = 'grpc', request_type=keyword_plan_ser
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan.KeywordPlan(
             resource_name='resource_name_value',
-
         )
-
         response = client.get_keyword_plan(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_service.GetKeywordPlanRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan.KeywordPlan)
-
     assert response.resource_name == 'resource_name_value'
 
 
@@ -299,6 +292,7 @@ def test_get_keyword_plan_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_service.GetKeywordPlanRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -306,7 +300,6 @@ def test_get_keyword_plan_field_headers():
             type(client.transport.get_keyword_plan),
             '__call__') as call:
         call.return_value = keyword_plan.KeywordPlan()
-
         client.get_keyword_plan(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -333,7 +326,6 @@ def test_get_keyword_plan_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan.KeywordPlan()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_keyword_plan(
@@ -344,7 +336,6 @@ def test_get_keyword_plan_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -379,17 +370,14 @@ def test_mutate_keyword_plans(transport: str = 'grpc', request_type=keyword_plan
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.MutateKeywordPlansResponse(
         )
-
         response = client.mutate_keyword_plans(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_service.MutateKeywordPlansRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan_service.MutateKeywordPlansResponse)
 
 
@@ -405,6 +393,7 @@ def test_mutate_keyword_plans_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_service.MutateKeywordPlansRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -412,7 +401,6 @@ def test_mutate_keyword_plans_field_headers():
             type(client.transport.mutate_keyword_plans),
             '__call__') as call:
         call.return_value = keyword_plan_service.MutateKeywordPlansResponse()
-
         client.mutate_keyword_plans(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -439,7 +427,6 @@ def test_mutate_keyword_plans_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.MutateKeywordPlansResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_keyword_plans(
@@ -451,9 +438,7 @@ def test_mutate_keyword_plans_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [keyword_plan_service.KeywordPlanOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -489,17 +474,14 @@ def test_generate_forecast_curve(transport: str = 'grpc', request_type=keyword_p
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.GenerateForecastCurveResponse(
         )
-
         response = client.generate_forecast_curve(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_service.GenerateForecastCurveRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan_service.GenerateForecastCurveResponse)
 
 
@@ -515,6 +497,7 @@ def test_generate_forecast_curve_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_service.GenerateForecastCurveRequest()
+
     request.keyword_plan = 'keyword_plan/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -522,7 +505,6 @@ def test_generate_forecast_curve_field_headers():
             type(client.transport.generate_forecast_curve),
             '__call__') as call:
         call.return_value = keyword_plan_service.GenerateForecastCurveResponse()
-
         client.generate_forecast_curve(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -549,7 +531,6 @@ def test_generate_forecast_curve_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.GenerateForecastCurveResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_forecast_curve(
@@ -560,7 +541,6 @@ def test_generate_forecast_curve_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].keyword_plan == 'keyword_plan_value'
 
 
@@ -595,17 +575,14 @@ def test_generate_forecast_metrics(transport: str = 'grpc', request_type=keyword
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.GenerateForecastMetricsResponse(
         )
-
         response = client.generate_forecast_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_service.GenerateForecastMetricsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan_service.GenerateForecastMetricsResponse)
 
 
@@ -621,6 +598,7 @@ def test_generate_forecast_metrics_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_service.GenerateForecastMetricsRequest()
+
     request.keyword_plan = 'keyword_plan/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -628,7 +606,6 @@ def test_generate_forecast_metrics_field_headers():
             type(client.transport.generate_forecast_metrics),
             '__call__') as call:
         call.return_value = keyword_plan_service.GenerateForecastMetricsResponse()
-
         client.generate_forecast_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -655,7 +632,6 @@ def test_generate_forecast_metrics_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.GenerateForecastMetricsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_forecast_metrics(
@@ -666,7 +642,6 @@ def test_generate_forecast_metrics_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].keyword_plan == 'keyword_plan_value'
 
 
@@ -701,17 +676,14 @@ def test_generate_historical_metrics(transport: str = 'grpc', request_type=keywo
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.GenerateHistoricalMetricsResponse(
         )
-
         response = client.generate_historical_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == keyword_plan_service.GenerateHistoricalMetricsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, keyword_plan_service.GenerateHistoricalMetricsResponse)
 
 
@@ -727,6 +699,7 @@ def test_generate_historical_metrics_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = keyword_plan_service.GenerateHistoricalMetricsRequest()
+
     request.keyword_plan = 'keyword_plan/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -734,7 +707,6 @@ def test_generate_historical_metrics_field_headers():
             type(client.transport.generate_historical_metrics),
             '__call__') as call:
         call.return_value = keyword_plan_service.GenerateHistoricalMetricsResponse()
-
         client.generate_historical_metrics(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -761,7 +733,6 @@ def test_generate_historical_metrics_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = keyword_plan_service.GenerateHistoricalMetricsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_historical_metrics(
@@ -772,7 +743,6 @@ def test_generate_historical_metrics_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].keyword_plan == 'keyword_plan_value'
 
 
@@ -857,7 +827,7 @@ def test_keyword_plan_service_base_transport():
         'generate_forecast_curve',
         'generate_forecast_metrics',
         'generate_historical_metrics',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1009,7 +979,6 @@ def test_keyword_plan_service_transport_channel_mtls_with_adc(
 def test_keyword_plan_path():
     customer = "squid"
     keyword_plan = "clam"
-
     expected = "customers/{customer}/keywordPlans/{keyword_plan}".format(customer=customer, keyword_plan=keyword_plan, )
     actual = KeywordPlanServiceClient.keyword_plan_path(customer, keyword_plan)
     assert expected == actual
@@ -1017,9 +986,8 @@ def test_keyword_plan_path():
 
 def test_parse_keyword_plan_path():
     expected = {
-    "customer": "whelk",
-    "keyword_plan": "octopus",
-
+        "customer": "whelk",
+        "keyword_plan": "octopus",
     }
     path = KeywordPlanServiceClient.keyword_plan_path(**expected)
 
@@ -1029,7 +997,6 @@ def test_parse_keyword_plan_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = KeywordPlanServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1037,8 +1004,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = KeywordPlanServiceClient.common_billing_account_path(**expected)
 
@@ -1048,7 +1014,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = KeywordPlanServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1056,8 +1021,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = KeywordPlanServiceClient.common_folder_path(**expected)
 
@@ -1067,7 +1031,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = KeywordPlanServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1075,8 +1038,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = KeywordPlanServiceClient.common_organization_path(**expected)
 
@@ -1086,7 +1048,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = KeywordPlanServiceClient.common_project_path(project)
     assert expected == actual
@@ -1094,8 +1055,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = KeywordPlanServiceClient.common_project_path(**expected)
 
@@ -1106,7 +1066,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = KeywordPlanServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1114,9 +1073,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = KeywordPlanServiceClient.common_location_path(**expected)
 

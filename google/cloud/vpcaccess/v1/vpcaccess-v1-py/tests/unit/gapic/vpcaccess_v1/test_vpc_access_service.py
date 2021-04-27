@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,10 +39,34 @@ from google.cloud.vpcaccess_v1.services.vpc_access_service import VpcAccessServi
 from google.cloud.vpcaccess_v1.services.vpc_access_service import VpcAccessServiceClient
 from google.cloud.vpcaccess_v1.services.vpc_access_service import pagers
 from google.cloud.vpcaccess_v1.services.vpc_access_service import transports
+from google.cloud.vpcaccess_v1.services.vpc_access_service.transports.base import _API_CORE_VERSION
+from google.cloud.vpcaccess_v1.services.vpc_access_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.vpcaccess_v1.types import vpc_access
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -210,12 +234,10 @@ def test_vpc_access_service_client_client_options(client_class, transport_class,
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (VpcAccessServiceClient, transports.VpcAccessServiceGrpcTransport, "grpc", "true"),
     (VpcAccessServiceAsyncClient, transports.VpcAccessServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (VpcAccessServiceClient, transports.VpcAccessServiceGrpcTransport, "grpc", "false"),
     (VpcAccessServiceAsyncClient, transports.VpcAccessServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(VpcAccessServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(VpcAccessServiceClient))
 @mock.patch.object(VpcAccessServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(VpcAccessServiceAsyncClient))
@@ -369,13 +391,11 @@ def test_create_connector(transport: str = 'grpc', request_type=vpc_access.Creat
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.CreateConnectorRequest()
 
     # Establish that the response is the type that we expect.
@@ -401,8 +421,8 @@ def test_create_connector_empty_call():
         client.create_connector()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.CreateConnectorRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_connector_async(transport: str = 'grpc_asyncio', request_type=vpc_access.CreateConnectorRequest):
@@ -423,13 +443,11 @@ async def test_create_connector_async(transport: str = 'grpc_asyncio', request_t
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.CreateConnectorRequest()
 
     # Establish that the response is the type that we expect.
@@ -449,6 +467,7 @@ def test_create_connector_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.CreateConnectorRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -456,7 +475,6 @@ def test_create_connector_field_headers():
             type(client.transport.create_connector),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -481,6 +499,7 @@ async def test_create_connector_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.CreateConnectorRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -488,7 +507,6 @@ async def test_create_connector_field_headers_async():
             type(client.transport.create_connector),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -515,7 +533,6 @@ def test_create_connector_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_connector(
@@ -528,11 +545,8 @@ def test_create_connector_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].connector_id == 'connector_id_value'
-
         assert args[0].connector == vpc_access.Connector(name='name_value')
 
 
@@ -580,11 +594,8 @@ async def test_create_connector_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].connector_id == 'connector_id_value'
-
         assert args[0].connector == vpc_access.Connector(name='name_value')
 
 
@@ -622,45 +633,28 @@ def test_get_connector(transport: str = 'grpc', request_type=vpc_access.GetConne
         # Designate an appropriate return value for the call.
         call.return_value = vpc_access.Connector(
             name='name_value',
-
             network='network_value',
-
             ip_cidr_range='ip_cidr_range_value',
-
             state=vpc_access.Connector.State.READY,
-
             min_throughput=1533,
-
             max_throughput=1535,
-
             connected_projects=['connected_projects_value'],
-
         )
-
         response = client.get_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.GetConnectorRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, vpc_access.Connector)
-
     assert response.name == 'name_value'
-
     assert response.network == 'network_value'
-
     assert response.ip_cidr_range == 'ip_cidr_range_value'
-
     assert response.state == vpc_access.Connector.State.READY
-
     assert response.min_throughput == 1533
-
     assert response.max_throughput == 1535
-
     assert response.connected_projects == ['connected_projects_value']
 
 
@@ -683,8 +677,8 @@ def test_get_connector_empty_call():
         client.get_connector()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.GetConnectorRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_connector_async(transport: str = 'grpc_asyncio', request_type=vpc_access.GetConnectorRequest):
@@ -702,7 +696,7 @@ async def test_get_connector_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_connector),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(vpc_access.Connector(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(vpc_access.Connector(
             name='name_value',
             network='network_value',
             ip_cidr_range='ip_cidr_range_value',
@@ -711,30 +705,21 @@ async def test_get_connector_async(transport: str = 'grpc_asyncio', request_type
             max_throughput=1535,
             connected_projects=['connected_projects_value'],
         ))
-
         response = await client.get_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.GetConnectorRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, vpc_access.Connector)
-
     assert response.name == 'name_value'
-
     assert response.network == 'network_value'
-
     assert response.ip_cidr_range == 'ip_cidr_range_value'
-
     assert response.state == vpc_access.Connector.State.READY
-
     assert response.min_throughput == 1533
-
     assert response.max_throughput == 1535
-
     assert response.connected_projects == ['connected_projects_value']
 
 
@@ -751,6 +736,7 @@ def test_get_connector_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.GetConnectorRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -758,7 +744,6 @@ def test_get_connector_field_headers():
             type(client.transport.get_connector),
             '__call__') as call:
         call.return_value = vpc_access.Connector()
-
         client.get_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -783,6 +768,7 @@ async def test_get_connector_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.GetConnectorRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -790,7 +776,6 @@ async def test_get_connector_field_headers_async():
             type(client.transport.get_connector),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(vpc_access.Connector())
-
         await client.get_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -817,7 +802,6 @@ def test_get_connector_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = vpc_access.Connector()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_connector(
@@ -828,7 +812,6 @@ def test_get_connector_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -870,7 +853,6 @@ async def test_get_connector_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -906,21 +888,16 @@ def test_list_connectors(transport: str = 'grpc', request_type=vpc_access.ListCo
         # Designate an appropriate return value for the call.
         call.return_value = vpc_access.ListConnectorsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_connectors(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.ListConnectorsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListConnectorsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -943,8 +920,8 @@ def test_list_connectors_empty_call():
         client.list_connectors()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.ListConnectorsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_connectors_async(transport: str = 'grpc_asyncio', request_type=vpc_access.ListConnectorsRequest):
@@ -962,21 +939,18 @@ async def test_list_connectors_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_connectors),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(vpc_access.ListConnectorsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(vpc_access.ListConnectorsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_connectors(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.ListConnectorsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConnectorsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -993,6 +967,7 @@ def test_list_connectors_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.ListConnectorsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1000,7 +975,6 @@ def test_list_connectors_field_headers():
             type(client.transport.list_connectors),
             '__call__') as call:
         call.return_value = vpc_access.ListConnectorsResponse()
-
         client.list_connectors(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1025,6 +999,7 @@ async def test_list_connectors_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.ListConnectorsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1032,7 +1007,6 @@ async def test_list_connectors_field_headers_async():
             type(client.transport.list_connectors),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(vpc_access.ListConnectorsResponse())
-
         await client.list_connectors(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1059,7 +1033,6 @@ def test_list_connectors_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = vpc_access.ListConnectorsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_connectors(
@@ -1070,7 +1043,6 @@ def test_list_connectors_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1112,7 +1084,6 @@ async def test_list_connectors_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1317,7 +1288,6 @@ async def test_list_connectors_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_delete_connector(transport: str = 'grpc', request_type=vpc_access.DeleteConnectorRequest):
     client = VpcAccessServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1334,13 +1304,11 @@ def test_delete_connector(transport: str = 'grpc', request_type=vpc_access.Delet
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.DeleteConnectorRequest()
 
     # Establish that the response is the type that we expect.
@@ -1366,8 +1334,8 @@ def test_delete_connector_empty_call():
         client.delete_connector()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.DeleteConnectorRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_connector_async(transport: str = 'grpc_asyncio', request_type=vpc_access.DeleteConnectorRequest):
@@ -1388,13 +1356,11 @@ async def test_delete_connector_async(transport: str = 'grpc_asyncio', request_t
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == vpc_access.DeleteConnectorRequest()
 
     # Establish that the response is the type that we expect.
@@ -1414,6 +1380,7 @@ def test_delete_connector_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.DeleteConnectorRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1421,7 +1388,6 @@ def test_delete_connector_field_headers():
             type(client.transport.delete_connector),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1446,6 +1412,7 @@ async def test_delete_connector_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = vpc_access.DeleteConnectorRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1453,7 +1420,6 @@ async def test_delete_connector_field_headers_async():
             type(client.transport.delete_connector),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_connector(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1480,7 +1446,6 @@ def test_delete_connector_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_connector(
@@ -1491,7 +1456,6 @@ def test_delete_connector_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1535,7 +1499,6 @@ async def test_delete_connector_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1594,7 +1557,6 @@ def test_transport_instance():
     client = VpcAccessServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.VpcAccessServiceGrpcTransport(
@@ -1609,7 +1571,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.VpcAccessServiceGrpcTransport,
     transports.VpcAccessServiceGrpcAsyncIOTransport,
@@ -1621,7 +1582,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = VpcAccessServiceClient(
@@ -1631,7 +1591,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.VpcAccessServiceGrpcTransport,
     )
-
 
 def test_vpc_access_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1657,7 +1616,7 @@ def test_vpc_access_service_base_transport():
         'get_connector',
         'list_connectors',
         'delete_connector',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1668,9 +1627,27 @@ def test_vpc_access_service_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_vpc_access_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.vpcaccess_v1.services.vpc_access_service.transports.VpcAccessServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.vpcaccess_v1.services.vpc_access_service.transports.VpcAccessServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.VpcAccessServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_vpc_access_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.vpcaccess_v1.services.vpc_access_service.transports.VpcAccessServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.VpcAccessServiceTransport(
@@ -1686,33 +1663,182 @@ def test_vpc_access_service_base_transport_with_credentials_file():
 
 def test_vpc_access_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.vpcaccess_v1.services.vpc_access_service.transports.VpcAccessServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.vpcaccess_v1.services.vpc_access_service.transports.VpcAccessServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.VpcAccessServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_vpc_access_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         VpcAccessServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+
             quota_project_id=None,
         )
 
 
-def test_vpc_access_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_vpc_access_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        VpcAccessServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.VpcAccessServiceGrpcTransport,
+        transports.VpcAccessServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_vpc_access_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.VpcAccessServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.VpcAccessServiceGrpcTransport,
+        transports.VpcAccessServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_vpc_access_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.VpcAccessServiceGrpcTransport, grpc_helpers),
+        (transports.VpcAccessServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_vpc_access_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "vpcaccess.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=["1", "2"],
+            default_host="vpcaccess.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.VpcAccessServiceGrpcTransport, grpc_helpers),
+        (transports.VpcAccessServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_vpc_access_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "vpcaccess.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.VpcAccessServiceGrpcTransport, grpc_helpers),
+        (transports.VpcAccessServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_vpc_access_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "vpcaccess.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1774,7 +1900,6 @@ def test_vpc_access_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='vpcaccess.googleapis.com:8000'),
     )
     assert client.transport._host == 'vpcaccess.googleapis.com:8000'
-
 
 def test_vpc_access_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1928,7 +2053,6 @@ def test_connector_path():
     project = "squid"
     location = "clam"
     connector = "whelk"
-
     expected = "projects/{project}/locations/{location}/connectors/{connector}".format(project=project, location=location, connector=connector, )
     actual = VpcAccessServiceClient.connector_path(project, location, connector)
     assert expected == actual
@@ -1936,10 +2060,9 @@ def test_connector_path():
 
 def test_parse_connector_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "connector": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "connector": "nudibranch",
     }
     path = VpcAccessServiceClient.connector_path(**expected)
 
@@ -1949,7 +2072,6 @@ def test_parse_connector_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = VpcAccessServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1957,8 +2079,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = VpcAccessServiceClient.common_billing_account_path(**expected)
 
@@ -1968,7 +2089,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = VpcAccessServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1976,8 +2096,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = VpcAccessServiceClient.common_folder_path(**expected)
 
@@ -1987,7 +2106,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = VpcAccessServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1995,8 +2113,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = VpcAccessServiceClient.common_organization_path(**expected)
 
@@ -2006,7 +2123,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = VpcAccessServiceClient.common_project_path(project)
     assert expected == actual
@@ -2014,8 +2130,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = VpcAccessServiceClient.common_project_path(**expected)
 
@@ -2026,7 +2141,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = VpcAccessServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2034,9 +2148,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = VpcAccessServiceClient.common_location_path(**expected)
 

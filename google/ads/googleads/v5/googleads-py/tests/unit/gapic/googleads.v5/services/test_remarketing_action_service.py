@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -269,29 +267,20 @@ def test_get_remarketing_action(transport: str = 'grpc', request_type=remarketin
         # Designate an appropriate return value for the call.
         call.return_value = remarketing_action.RemarketingAction(
             resource_name='resource_name_value',
-
             id=205,
-
             name='name_value',
-
         )
-
         response = client.get_remarketing_action(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == remarketing_action_service.GetRemarketingActionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, remarketing_action.RemarketingAction)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.name == 'name_value'
 
 
@@ -307,6 +296,7 @@ def test_get_remarketing_action_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = remarketing_action_service.GetRemarketingActionRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -314,7 +304,6 @@ def test_get_remarketing_action_field_headers():
             type(client.transport.get_remarketing_action),
             '__call__') as call:
         call.return_value = remarketing_action.RemarketingAction()
-
         client.get_remarketing_action(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -341,7 +330,6 @@ def test_get_remarketing_action_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = remarketing_action.RemarketingAction()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_remarketing_action(
@@ -352,7 +340,6 @@ def test_get_remarketing_action_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -387,17 +374,14 @@ def test_mutate_remarketing_actions(transport: str = 'grpc', request_type=remark
         # Designate an appropriate return value for the call.
         call.return_value = remarketing_action_service.MutateRemarketingActionsResponse(
         )
-
         response = client.mutate_remarketing_actions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == remarketing_action_service.MutateRemarketingActionsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, remarketing_action_service.MutateRemarketingActionsResponse)
 
 
@@ -413,6 +397,7 @@ def test_mutate_remarketing_actions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = remarketing_action_service.MutateRemarketingActionsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -420,7 +405,6 @@ def test_mutate_remarketing_actions_field_headers():
             type(client.transport.mutate_remarketing_actions),
             '__call__') as call:
         call.return_value = remarketing_action_service.MutateRemarketingActionsResponse()
-
         client.mutate_remarketing_actions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -447,7 +431,6 @@ def test_mutate_remarketing_actions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = remarketing_action_service.MutateRemarketingActionsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_remarketing_actions(
@@ -459,9 +442,7 @@ def test_mutate_remarketing_actions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [remarketing_action_service.RemarketingActionOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -544,7 +525,7 @@ def test_remarketing_action_service_base_transport():
     methods = (
         'get_remarketing_action',
         'mutate_remarketing_actions',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -696,7 +677,6 @@ def test_remarketing_action_service_transport_channel_mtls_with_adc(
 def test_remarketing_action_path():
     customer = "squid"
     remarketing_action = "clam"
-
     expected = "customers/{customer}/remarketingActions/{remarketing_action}".format(customer=customer, remarketing_action=remarketing_action, )
     actual = RemarketingActionServiceClient.remarketing_action_path(customer, remarketing_action)
     assert expected == actual
@@ -704,9 +684,8 @@ def test_remarketing_action_path():
 
 def test_parse_remarketing_action_path():
     expected = {
-    "customer": "whelk",
-    "remarketing_action": "octopus",
-
+        "customer": "whelk",
+        "remarketing_action": "octopus",
     }
     path = RemarketingActionServiceClient.remarketing_action_path(**expected)
 
@@ -716,7 +695,6 @@ def test_parse_remarketing_action_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = RemarketingActionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -724,8 +702,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = RemarketingActionServiceClient.common_billing_account_path(**expected)
 
@@ -735,7 +712,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = RemarketingActionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -743,8 +719,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = RemarketingActionServiceClient.common_folder_path(**expected)
 
@@ -754,7 +729,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = RemarketingActionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -762,8 +736,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = RemarketingActionServiceClient.common_organization_path(**expected)
 
@@ -773,7 +746,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = RemarketingActionServiceClient.common_project_path(project)
     assert expected == actual
@@ -781,8 +753,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = RemarketingActionServiceClient.common_project_path(**expected)
 
@@ -793,7 +764,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = RemarketingActionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -801,9 +771,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = RemarketingActionServiceClient.common_location_path(**expected)
 

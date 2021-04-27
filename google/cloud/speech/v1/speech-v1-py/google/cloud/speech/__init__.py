@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,8 +34,7 @@ from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeRequest
 from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeResponse
 from google.cloud.speech_v1.types.cloud_speech import WordInfo
 
-__all__ = (
-    'LongRunningRecognizeMetadata',
+__all__ = ('LongRunningRecognizeMetadata',
     'LongRunningRecognizeRequest',
     'LongRunningRecognizeResponse',
     'RecognitionAudio',
