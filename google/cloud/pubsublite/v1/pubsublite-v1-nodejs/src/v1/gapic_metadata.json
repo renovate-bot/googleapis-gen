@@ -262,6 +262,11 @@
               "methods": [
                 "computeHeadCursor"
               ]
+            },
+            "ComputeTimeCursor": {
+              "methods": [
+                "computeTimeCursor"
+              ]
             }
           }
         },
@@ -276,6 +281,11 @@
             "ComputeHeadCursor": {
               "methods": [
                 "computeHeadCursor"
+              ]
+            },
+            "ComputeTimeCursor": {
+              "methods": [
+                "computeTimeCursor"
               ]
             }
           }

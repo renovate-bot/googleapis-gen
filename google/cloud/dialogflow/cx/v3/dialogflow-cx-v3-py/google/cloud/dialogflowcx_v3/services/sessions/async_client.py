@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -31,7 +29,6 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.dialogflowcx_v3.types import audio_config
 from google.cloud.dialogflowcx_v3.types import page
 from google.cloud.dialogflowcx_v3.types import session
-
 from .transports.base import SessionsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SessionsGrpcAsyncIOTransport
 from .client import SessionsClient
@@ -65,19 +62,14 @@ class SessionsAsyncClient:
     parse_transition_route_group_path = staticmethod(SessionsClient.parse_transition_route_group_path)
     webhook_path = staticmethod(SessionsClient.webhook_path)
     parse_webhook_path = staticmethod(SessionsClient.parse_webhook_path)
-
     common_billing_account_path = staticmethod(SessionsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SessionsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(SessionsClient.common_folder_path)
     parse_common_folder_path = staticmethod(SessionsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(SessionsClient.common_organization_path)
     parse_common_organization_path = staticmethod(SessionsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(SessionsClient.common_project_path)
     parse_common_project_path = staticmethod(SessionsClient.parse_common_project_path)
-
     common_location_path = staticmethod(SessionsClient.common_location_path)
     parse_common_location_path = staticmethod(SessionsClient.parse_common_location_path)
 
@@ -162,7 +154,6 @@ class SessionsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = SessionsClient(
             credentials=credentials,
             transport=transport,
@@ -189,8 +180,8 @@ class SessionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DetectIntentRequest`):
-                The request object. The request to detect user's intent.
-
+                The request object.
+                The request to detect user's intent.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -204,7 +195,6 @@ class SessionsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = session.DetectIntentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -212,10 +202,7 @@ class SessionsAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.detect_intent,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=220.0,
@@ -261,7 +248,8 @@ class SessionsAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.dialogflowcx_v3.types.StreamingDetectIntentRequest`]):
-                The request object AsyncIterator. The top-level message sent by the
+                The request object AsyncIterator.
+                The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
                 method.
@@ -348,8 +336,8 @@ class SessionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.MatchIntentRequest`):
-                The request object. Request of [MatchIntent][].
-
+                The request object.
+                Request of [MatchIntent][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -361,7 +349,6 @@ class SessionsAsyncClient:
                 Response of [MatchIntent][].
         """
         # Create or coerce a protobuf request object.
-
         request = session.MatchIntentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -408,8 +395,8 @@ class SessionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.FulfillIntentRequest`):
-                The request object. Request of [FulfillIntent][]
-
+                The request object.
+                Request of [FulfillIntent][]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -421,7 +408,6 @@ class SessionsAsyncClient:
                 Response of [FulfillIntent][]
         """
         # Create or coerce a protobuf request object.
-
         request = session.FulfillIntentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -450,8 +436,6 @@ class SessionsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

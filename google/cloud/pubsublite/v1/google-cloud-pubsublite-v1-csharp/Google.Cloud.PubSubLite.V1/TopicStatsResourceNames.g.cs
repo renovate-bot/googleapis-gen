@@ -35,4 +35,14 @@ namespace Google.Cloud.PubSubLite.V1
             set => Topic = value?.ToString() ?? "";
         }
     }
+
+    public partial class ComputeTimeCursorRequest
+    {
+        /// <summary><see cref="TopicName"/>-typed view over the <see cref="Topic"/> resource name property.</summary>
+        public TopicName TopicAsTopicName
+        {
+            get => string.IsNullOrEmpty(Topic) ? null : TopicName.Parse(Topic, allowUnparsed: true);
+            set => Topic = value?.ToString() ?? "";
+        }
+    }
 }

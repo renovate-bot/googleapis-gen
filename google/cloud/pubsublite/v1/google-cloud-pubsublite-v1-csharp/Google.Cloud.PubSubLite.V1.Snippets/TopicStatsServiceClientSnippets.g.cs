@@ -94,5 +94,42 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             ComputeHeadCursorResponse response = await topicStatsServiceClient.ComputeHeadCursorAsync(request);
             // End snippet
         }
+
+        /// <summary>Snippet for ComputeTimeCursor</summary>
+        public void ComputeTimeCursorRequestObject()
+        {
+            // Snippet: ComputeTimeCursor(ComputeTimeCursorRequest, CallSettings)
+            // Create client
+            TopicStatsServiceClient topicStatsServiceClient = TopicStatsServiceClient.Create();
+            // Initialize request argument(s)
+            ComputeTimeCursorRequest request = new ComputeTimeCursorRequest
+            {
+                TopicAsTopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
+                Partition = 0L,
+                Target = new TimeTarget(),
+            };
+            // Make the request
+            ComputeTimeCursorResponse response = topicStatsServiceClient.ComputeTimeCursor(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for ComputeTimeCursorAsync</summary>
+        public async Task ComputeTimeCursorRequestObjectAsync()
+        {
+            // Snippet: ComputeTimeCursorAsync(ComputeTimeCursorRequest, CallSettings)
+            // Additional: ComputeTimeCursorAsync(ComputeTimeCursorRequest, CancellationToken)
+            // Create client
+            TopicStatsServiceClient topicStatsServiceClient = await TopicStatsServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ComputeTimeCursorRequest request = new ComputeTimeCursorRequest
+            {
+                TopicAsTopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
+                Partition = 0L,
+                Target = new TimeTarget(),
+            };
+            // Make the request
+            ComputeTimeCursorResponse response = await topicStatsServiceClient.ComputeTimeCursorAsync(request);
+            // End snippet
+        }
     }
 }

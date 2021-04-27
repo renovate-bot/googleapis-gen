@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.dialogflowcx_v3.types import test_case
 from google.cloud.dialogflowcx_v3.types import test_case as gcdc_test_case
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import TestCasesTransport, DEFAULT_CLIENT_INFO
 
 
@@ -67,7 +64,8 @@ class TestCasesGrpcTransport(TestCasesTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -207,13 +205,15 @@ class TestCasesGrpcTransport(TestCasesTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -243,7 +243,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def list_test_cases(self) -> Callable[
             [test_case.ListTestCasesRequest],
             test_case.ListTestCasesResponse]:
-        r"""Return a callable for the list test cases method over gRPC.
+        r"""Return a callable for the
+        list test cases
+          method over gRPC.
 
         Fetches a list of test cases for a given agent.
 
@@ -269,7 +271,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def batch_delete_test_cases(self) -> Callable[
             [test_case.BatchDeleteTestCasesRequest],
             empty.Empty]:
-        r"""Return a callable for the batch delete test cases method over gRPC.
+        r"""Return a callable for the
+        batch delete test cases
+          method over gRPC.
 
         Batch deletes test cases.
 
@@ -295,7 +299,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def get_test_case(self) -> Callable[
             [test_case.GetTestCaseRequest],
             test_case.TestCase]:
-        r"""Return a callable for the get test case method over gRPC.
+        r"""Return a callable for the
+        get test case
+          method over gRPC.
 
         Gets a test case.
 
@@ -321,7 +327,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def create_test_case(self) -> Callable[
             [gcdc_test_case.CreateTestCaseRequest],
             gcdc_test_case.TestCase]:
-        r"""Return a callable for the create test case method over gRPC.
+        r"""Return a callable for the
+        create test case
+          method over gRPC.
 
         Creates a test case for the given agent.
 
@@ -347,7 +355,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def update_test_case(self) -> Callable[
             [gcdc_test_case.UpdateTestCaseRequest],
             gcdc_test_case.TestCase]:
-        r"""Return a callable for the update test case method over gRPC.
+        r"""Return a callable for the
+        update test case
+          method over gRPC.
 
         Updates the specified test case.
 
@@ -373,7 +383,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def run_test_case(self) -> Callable[
             [test_case.RunTestCaseRequest],
             operations.Operation]:
-        r"""Return a callable for the run test case method over gRPC.
+        r"""Return a callable for the
+        run test case
+          method over gRPC.
 
         Kicks off a test case run.
 
@@ -399,7 +411,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def batch_run_test_cases(self) -> Callable[
             [test_case.BatchRunTestCasesRequest],
             operations.Operation]:
-        r"""Return a callable for the batch run test cases method over gRPC.
+        r"""Return a callable for the
+        batch run test cases
+          method over gRPC.
 
         Kicks off a batch run of test cases.
 
@@ -425,7 +439,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def calculate_coverage(self) -> Callable[
             [test_case.CalculateCoverageRequest],
             test_case.CalculateCoverageResponse]:
-        r"""Return a callable for the calculate coverage method over gRPC.
+        r"""Return a callable for the
+        calculate coverage
+          method over gRPC.
 
         Calculates the test coverage for an agent.
 
@@ -451,7 +467,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def import_test_cases(self) -> Callable[
             [test_case.ImportTestCasesRequest],
             operations.Operation]:
-        r"""Return a callable for the import test cases method over gRPC.
+        r"""Return a callable for the
+        import test cases
+          method over gRPC.
 
         Imports the test cases from a Cloud Storage bucket or
         a local file. It always creates new test cases and won't
@@ -480,7 +498,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def export_test_cases(self) -> Callable[
             [test_case.ExportTestCasesRequest],
             operations.Operation]:
-        r"""Return a callable for the export test cases method over gRPC.
+        r"""Return a callable for the
+        export test cases
+          method over gRPC.
 
         Exports the test cases under the agent to a Cloud
         Storage bucket or a local file. Filter can be applied to
@@ -508,7 +528,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def list_test_case_results(self) -> Callable[
             [test_case.ListTestCaseResultsRequest],
             test_case.ListTestCaseResultsResponse]:
-        r"""Return a callable for the list test case results method over gRPC.
+        r"""Return a callable for the
+        list test case results
+          method over gRPC.
 
         Fetches a list of results for a given test case.
 
@@ -534,7 +556,9 @@ class TestCasesGrpcTransport(TestCasesTransport):
     def get_test_case_result(self) -> Callable[
             [test_case.GetTestCaseResultRequest],
             test_case.TestCaseResult]:
-        r"""Return a callable for the get test case result method over gRPC.
+        r"""Return a callable for the
+        get test case result
+          method over gRPC.
 
         Gets a test case result.
 

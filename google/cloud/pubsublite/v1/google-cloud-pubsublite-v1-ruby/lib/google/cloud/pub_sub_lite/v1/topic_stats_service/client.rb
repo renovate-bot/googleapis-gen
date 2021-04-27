@@ -65,12 +65,12 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
-                default_config.rpcs.compute_message_stats.timeout = 600.0
-                default_config.rpcs.compute_message_stats.retry_policy = {
+                default_config.timeout = 600.0
+                default_config.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14, 10, 13, 2]
+                max_delay: 60.0,
+                multiplier: 1.3,
+                retry_codes: [4, 14, 10, 13, 2]
                 }
 
                 default_config
@@ -307,6 +307,78 @@ module Google
             end
 
             ##
+            # Compute the corresponding cursor for a publish or event time in a topic
+            # partition.
+            #
+            # @overload compute_time_cursor(request, options = nil)
+            #   Pass arguments to `compute_time_cursor` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::ComputeTimeCursorRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::ComputeTimeCursorRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload compute_time_cursor(topic: nil, partition: nil, target: nil)
+            #   Pass arguments to `compute_time_cursor` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param topic [::String]
+            #     Required. The topic for which we should compute the cursor.
+            #   @param partition [::Integer]
+            #     Required. The partition for which we should compute the cursor.
+            #   @param target [::Google::Cloud::PubSubLite::V1::TimeTarget, ::Hash]
+            #     Required. The target publish or event time. Specifying a future time will return an
+            #     unset cursor.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::PubSubLite::V1::ComputeTimeCursorResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::PubSubLite::V1::ComputeTimeCursorResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def compute_time_cursor request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::ComputeTimeCursorRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.compute_time_cursor.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "topic" => request.topic
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.compute_time_cursor.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.compute_time_cursor.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @topic_stats_service_stub.call_rpc :compute_time_cursor, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Configuration class for the TopicStatsService API.
             #
             # This class represents the configuration for TopicStatsService,
@@ -452,6 +524,11 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :compute_head_cursor
+                ##
+                # RPC-specific configuration for `compute_time_cursor`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :compute_time_cursor
 
                 # @private
                 def initialize parent_rpcs = nil
@@ -459,6 +536,8 @@ module Google
                   @compute_message_stats = ::Gapic::Config::Method.new compute_message_stats_config
                   compute_head_cursor_config = parent_rpcs.compute_head_cursor if parent_rpcs.respond_to? :compute_head_cursor
                   @compute_head_cursor = ::Gapic::Config::Method.new compute_head_cursor_config
+                  compute_time_cursor_config = parent_rpcs.compute_time_cursor if parent_rpcs.respond_to? :compute_time_cursor
+                  @compute_time_cursor = ::Gapic::Config::Method.new compute_time_cursor_config
 
                   yield self if block_given?
                 end

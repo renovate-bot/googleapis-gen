@@ -59,6 +59,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :DELIVER_IMMEDIATELY, 1
       value :DELIVER_AFTER_STORED, 2
     end
+    add_message "google.cloud.pubsublite.v1.TimeTarget" do
+      oneof :time do
+        optional :publish_time, :message, 1, "google.protobuf.Timestamp"
+        optional :event_time, :message, 2, "google.protobuf.Timestamp"
+      end
+    end
   end
 end
 
@@ -77,6 +83,7 @@ module Google
         Subscription = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Subscription").msgclass
         Subscription::DeliveryConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Subscription.DeliveryConfig").msgclass
         Subscription::DeliveryConfig::DeliveryRequirement = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Subscription.DeliveryConfig.DeliveryRequirement").enummodule
+        TimeTarget = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.TimeTarget").msgclass
       end
     end
   end

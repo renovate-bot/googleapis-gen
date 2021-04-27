@@ -45,6 +45,7 @@ namespace Google.Cloud.PubSubLite.V1
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
             ComputeMessageStatsSettings = existing.ComputeMessageStatsSettings;
             ComputeHeadCursorSettings = existing.ComputeHeadCursorSettings;
+            ComputeTimeCursorSettings = existing.ComputeTimeCursorSettings;
             OnCopy(existing);
         }
 
@@ -72,11 +73,29 @@ namespace Google.Cloud.PubSubLite.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings ComputeHeadCursorSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings ComputeHeadCursorSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>TopicStatsServiceClient.ComputeTimeCursor</c> and <c>TopicStatsServiceClient.ComputeTimeCursorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings ComputeTimeCursorSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
 
         /// <summary>Creates a deep clone of this object, with all the same property values.</summary>
         /// <returns>A deep clone of this <see cref="TopicStatsServiceSettings"/> object.</returns>
@@ -292,6 +311,36 @@ namespace Google.Cloud.PubSubLite.V1
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<ComputeHeadCursorResponse> ComputeHeadCursorAsync(ComputeHeadCursorRequest request, st::CancellationToken cancellationToken) =>
             ComputeHeadCursorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Compute the corresponding cursor for a publish or event time in a topic
+        /// partition.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual ComputeTimeCursorResponse ComputeTimeCursor(ComputeTimeCursorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Compute the corresponding cursor for a publish or event time in a topic
+        /// partition.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<ComputeTimeCursorResponse> ComputeTimeCursorAsync(ComputeTimeCursorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Compute the corresponding cursor for a publish or event time in a topic
+        /// partition.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<ComputeTimeCursorResponse> ComputeTimeCursorAsync(ComputeTimeCursorRequest request, st::CancellationToken cancellationToken) =>
+            ComputeTimeCursorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
     }
 
     /// <summary>TopicStatsService client wrapper implementation, for convenient use.</summary>
@@ -303,6 +352,8 @@ namespace Google.Cloud.PubSubLite.V1
         private readonly gaxgrpc::ApiCall<ComputeMessageStatsRequest, ComputeMessageStatsResponse> _callComputeMessageStats;
 
         private readonly gaxgrpc::ApiCall<ComputeHeadCursorRequest, ComputeHeadCursorResponse> _callComputeHeadCursor;
+
+        private readonly gaxgrpc::ApiCall<ComputeTimeCursorRequest, ComputeTimeCursorResponse> _callComputeTimeCursor;
 
         /// <summary>
         /// Constructs a client wrapper for the TopicStatsService service, with the specified gRPC client and settings.
@@ -320,6 +371,9 @@ namespace Google.Cloud.PubSubLite.V1
             _callComputeHeadCursor = clientHelper.BuildApiCall<ComputeHeadCursorRequest, ComputeHeadCursorResponse>(grpcClient.ComputeHeadCursorAsync, grpcClient.ComputeHeadCursor, effectiveSettings.ComputeHeadCursorSettings).WithGoogleRequestParam("topic", request => request.Topic);
             Modify_ApiCall(ref _callComputeHeadCursor);
             Modify_ComputeHeadCursorApiCall(ref _callComputeHeadCursor);
+            _callComputeTimeCursor = clientHelper.BuildApiCall<ComputeTimeCursorRequest, ComputeTimeCursorResponse>(grpcClient.ComputeTimeCursorAsync, grpcClient.ComputeTimeCursor, effectiveSettings.ComputeTimeCursorSettings).WithGoogleRequestParam("topic", request => request.Topic);
+            Modify_ApiCall(ref _callComputeTimeCursor);
+            Modify_ComputeTimeCursorApiCall(ref _callComputeTimeCursor);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
         }
 
@@ -329,6 +383,8 @@ namespace Google.Cloud.PubSubLite.V1
 
         partial void Modify_ComputeHeadCursorApiCall(ref gaxgrpc::ApiCall<ComputeHeadCursorRequest, ComputeHeadCursorResponse> call);
 
+        partial void Modify_ComputeTimeCursorApiCall(ref gaxgrpc::ApiCall<ComputeTimeCursorRequest, ComputeTimeCursorResponse> call);
+
         partial void OnConstruction(TopicStatsService.TopicStatsServiceClient grpcClient, TopicStatsServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>The underlying gRPC TopicStatsService client</summary>
@@ -337,6 +393,8 @@ namespace Google.Cloud.PubSubLite.V1
         partial void Modify_ComputeMessageStatsRequest(ref ComputeMessageStatsRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_ComputeHeadCursorRequest(ref ComputeHeadCursorRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_ComputeTimeCursorRequest(ref ComputeTimeCursorRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Compute statistics about a range of messages in a given topic and
@@ -396,6 +454,32 @@ namespace Google.Cloud.PubSubLite.V1
         {
             Modify_ComputeHeadCursorRequest(ref request, ref callSettings);
             return _callComputeHeadCursor.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Compute the corresponding cursor for a publish or event time in a topic
+        /// partition.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override ComputeTimeCursorResponse ComputeTimeCursor(ComputeTimeCursorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ComputeTimeCursorRequest(ref request, ref callSettings);
+            return _callComputeTimeCursor.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Compute the corresponding cursor for a publish or event time in a topic
+        /// partition.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<ComputeTimeCursorResponse> ComputeTimeCursorAsync(ComputeTimeCursorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ComputeTimeCursorRequest(ref request, ref callSettings);
+            return _callComputeTimeCursor.Async(request, callSettings);
         }
     }
 }

@@ -120,5 +120,49 @@ namespace Google.Cloud.PubSubLite.V1.Tests
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }
+
+        [xunit::FactAttribute]
+        public void ComputeTimeCursorRequestObject()
+        {
+            moq::Mock<TopicStatsService.TopicStatsServiceClient> mockGrpcClient = new moq::Mock<TopicStatsService.TopicStatsServiceClient>(moq::MockBehavior.Strict);
+            ComputeTimeCursorRequest request = new ComputeTimeCursorRequest
+            {
+                TopicAsTopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
+                Partition = 6389717982397469552L,
+                Target = new TimeTarget(),
+            };
+            ComputeTimeCursorResponse expectedResponse = new ComputeTimeCursorResponse
+            {
+                Cursor = new Cursor(),
+            };
+            mockGrpcClient.Setup(x => x.ComputeTimeCursor(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            TopicStatsServiceClient client = new TopicStatsServiceClientImpl(mockGrpcClient.Object, null);
+            ComputeTimeCursorResponse response = client.ComputeTimeCursor(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task ComputeTimeCursorRequestObjectAsync()
+        {
+            moq::Mock<TopicStatsService.TopicStatsServiceClient> mockGrpcClient = new moq::Mock<TopicStatsService.TopicStatsServiceClient>(moq::MockBehavior.Strict);
+            ComputeTimeCursorRequest request = new ComputeTimeCursorRequest
+            {
+                TopicAsTopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
+                Partition = 6389717982397469552L,
+                Target = new TimeTarget(),
+            };
+            ComputeTimeCursorResponse expectedResponse = new ComputeTimeCursorResponse
+            {
+                Cursor = new Cursor(),
+            };
+            mockGrpcClient.Setup(x => x.ComputeTimeCursorAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<ComputeTimeCursorResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            TopicStatsServiceClient client = new TopicStatsServiceClientImpl(mockGrpcClient.Object, null);
+            ComputeTimeCursorResponse responseCallSettings = await client.ComputeTimeCursorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            ComputeTimeCursorResponse responseCancellationToken = await client.ComputeTimeCursorAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
     }
 }

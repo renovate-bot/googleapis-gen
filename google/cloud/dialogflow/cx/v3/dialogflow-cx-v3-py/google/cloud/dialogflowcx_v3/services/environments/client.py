@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,7 +38,6 @@ from google.cloud.dialogflowcx_v3.types import environment as gcdc_environment
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import EnvironmentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EnvironmentsGrpcTransport
 from .transports.grpc_asyncio import EnvironmentsGrpcAsyncIOTransport
@@ -356,7 +353,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListEnvironmentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.cx.v3.Environments.ListEnvironments].
             parent (str):
                 Required. The
@@ -367,7 +365,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -397,10 +394,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.ListEnvironmentsRequest):
             request = environment.ListEnvironmentsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -449,7 +444,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetEnvironmentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3.Environments.GetEnvironment].
             name (str):
                 Required. The name of the
@@ -460,7 +456,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -500,10 +495,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.GetEnvironmentRequest):
             request = environment.GetEnvironmentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -545,7 +538,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateEnvironmentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3.Environments.CreateEnvironment].
             parent (str):
                 Required. The
@@ -563,7 +557,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``environment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -601,10 +594,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_environment.CreateEnvironmentRequest):
             request = gcdc_environment.CreateEnvironmentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if environment is not None:
@@ -655,7 +646,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateEnvironmentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.UpdateEnvironment][google.cloud.dialogflow.cx.v3.Environments.UpdateEnvironment].
             environment (google.cloud.dialogflowcx_v3.types.Environment):
                 Required. The environment to update.
@@ -669,7 +661,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -707,10 +698,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_environment.UpdateEnvironmentRequest):
             request = gcdc_environment.UpdateEnvironmentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if environment is not None:
                 request.environment = environment
             if update_mask is not None:
@@ -760,7 +749,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteEnvironmentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.DeleteEnvironment][google.cloud.dialogflow.cx.v3.Environments.DeleteEnvironment].
             name (str):
                 Required. The name of the
@@ -771,7 +761,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -792,10 +781,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.DeleteEnvironmentRequest):
             request = environment.DeleteEnvironmentRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -832,7 +819,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.LookupEnvironmentHistoryRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3.Environments.LookupEnvironmentHistory].
             name (str):
                 Required. Resource name of the environment to look up
@@ -842,7 +830,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -872,10 +859,8 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.LookupEnvironmentHistoryRequest):
             request = environment.LookupEnvironmentHistoryRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -910,8 +895,6 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

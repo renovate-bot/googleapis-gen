@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,7 +33,6 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.dialogflowcx_v3.types import audio_config
 from google.cloud.dialogflowcx_v3.types import page
 from google.cloud.dialogflowcx_v3.types import session
-
 from .transports.base import SessionsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SessionsGrpcTransport
 from .transports.grpc_asyncio import SessionsGrpcAsyncIOTransport
@@ -424,8 +421,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DetectIntentRequest):
-                The request object. The request to detect user's intent.
-
+                The request object.
+                The request to detect user's intent.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -439,7 +436,6 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a session.DetectIntentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -488,7 +484,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             requests (Iterator[google.cloud.dialogflowcx_v3.types.StreamingDetectIntentRequest]):
-                The request object iterator. The top-level message sent by the
+                The request object iterator.
+                The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
                 method.
@@ -571,8 +568,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.MatchIntentRequest):
-                The request object. Request of [MatchIntent][].
-
+                The request object.
+                Request of [MatchIntent][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -584,7 +581,6 @@ class SessionsClient(metaclass=SessionsClientMeta):
                 Response of [MatchIntent][].
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a session.MatchIntentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -632,8 +628,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.FulfillIntentRequest):
-                The request object. Request of [FulfillIntent][]
-
+                The request object.
+                Request of [FulfillIntent][]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -645,7 +641,6 @@ class SessionsClient(metaclass=SessionsClientMeta):
                 Response of [FulfillIntent][]
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a session.FulfillIntentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -675,8 +670,6 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -79,6 +79,37 @@ public final class TopicStatsServiceGrpc {
     return getComputeHeadCursorMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest,
+      com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse> getComputeTimeCursorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ComputeTimeCursor",
+      requestType = com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest.class,
+      responseType = com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest,
+      com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse> getComputeTimeCursorMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest, com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse> getComputeTimeCursorMethod;
+    if ((getComputeTimeCursorMethod = TopicStatsServiceGrpc.getComputeTimeCursorMethod) == null) {
+      synchronized (TopicStatsServiceGrpc.class) {
+        if ((getComputeTimeCursorMethod = TopicStatsServiceGrpc.getComputeTimeCursorMethod) == null) {
+          TopicStatsServiceGrpc.getComputeTimeCursorMethod = getComputeTimeCursorMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest, com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ComputeTimeCursor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TopicStatsServiceMethodDescriptorSupplier("ComputeTimeCursor"))
+              .build();
+        }
+      }
+    }
+    return getComputeTimeCursorMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -156,6 +187,17 @@ public final class TopicStatsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComputeHeadCursorMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Compute the corresponding cursor for a publish or event time in a topic
+     * partition.
+     * </pre>
+     */
+    public void computeTimeCursor(com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComputeTimeCursorMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -172,6 +214,13 @@ public final class TopicStatsServiceGrpc {
                 com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest,
                 com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse>(
                   this, METHODID_COMPUTE_HEAD_CURSOR)))
+          .addMethod(
+            getComputeTimeCursorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest,
+                com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse>(
+                  this, METHODID_COMPUTE_TIME_CURSOR)))
           .build();
     }
   }
@@ -220,6 +269,18 @@ public final class TopicStatsServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getComputeHeadCursorMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Compute the corresponding cursor for a publish or event time in a topic
+     * partition.
+     * </pre>
+     */
+    public void computeTimeCursor(com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getComputeTimeCursorMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -263,6 +324,17 @@ public final class TopicStatsServiceGrpc {
     public com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse computeHeadCursor(com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getComputeHeadCursorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Compute the corresponding cursor for a publish or event time in a topic
+     * partition.
+     * </pre>
+     */
+    public com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse computeTimeCursor(com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getComputeTimeCursorMethod(), getCallOptions(), request);
     }
   }
 
@@ -310,10 +382,23 @@ public final class TopicStatsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getComputeHeadCursorMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Compute the corresponding cursor for a publish or event time in a topic
+     * partition.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse> computeTimeCursor(
+        com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getComputeTimeCursorMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_COMPUTE_MESSAGE_STATS = 0;
   private static final int METHODID_COMPUTE_HEAD_CURSOR = 1;
+  private static final int METHODID_COMPUTE_TIME_CURSOR = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -339,6 +424,10 @@ public final class TopicStatsServiceGrpc {
         case METHODID_COMPUTE_HEAD_CURSOR:
           serviceImpl.computeHeadCursor((com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse>) responseObserver);
+          break;
+        case METHODID_COMPUTE_TIME_CURSOR:
+          serviceImpl.computeTimeCursor((com.google.cloud.pubsublite.proto.ComputeTimeCursorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeTimeCursorResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -403,6 +492,7 @@ public final class TopicStatsServiceGrpc {
               .setSchemaDescriptor(new TopicStatsServiceFileDescriptorSupplier())
               .addMethod(getComputeMessageStatsMethod())
               .addMethod(getComputeHeadCursorMethod())
+              .addMethod(getComputeTimeCursorMethod())
               .build();
         }
       }

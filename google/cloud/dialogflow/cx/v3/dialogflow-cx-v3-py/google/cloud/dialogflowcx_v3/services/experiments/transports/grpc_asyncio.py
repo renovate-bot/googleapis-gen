@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,7 +29,6 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.dialogflowcx_v3.types import experiment
 from google.cloud.dialogflowcx_v3.types import experiment as gcdc_experiment
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import ExperimentsTransport, DEFAULT_CLIENT_INFO
 from .grpc import ExperimentsGrpcTransport
 
@@ -81,13 +79,15 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,7 +107,8 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,7 +166,6 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -228,7 +228,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def list_experiments(self) -> Callable[
             [experiment.ListExperimentsRequest],
             Awaitable[experiment.ListExperimentsResponse]]:
-        r"""Return a callable for the list experiments method over gRPC.
+        r"""Return a callable for the
+        list experiments
+          method over gRPC.
 
         Returns the list of all experiments in the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -255,7 +257,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def get_experiment(self) -> Callable[
             [experiment.GetExperimentRequest],
             Awaitable[experiment.Experiment]]:
-        r"""Return a callable for the get experiment method over gRPC.
+        r"""Return a callable for the
+        get experiment
+          method over gRPC.
 
         Retrieves the specified
         [Experiment][google.cloud.dialogflow.cx.v3.Experiment].
@@ -282,7 +286,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def create_experiment(self) -> Callable[
             [gcdc_experiment.CreateExperimentRequest],
             Awaitable[gcdc_experiment.Experiment]]:
-        r"""Return a callable for the create experiment method over gRPC.
+        r"""Return a callable for the
+        create experiment
+          method over gRPC.
 
         Creates an
         [Experiment][google.cloud.dialogflow.cx.v3.Experiment] in the
@@ -311,7 +317,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def update_experiment(self) -> Callable[
             [gcdc_experiment.UpdateExperimentRequest],
             Awaitable[gcdc_experiment.Experiment]]:
-        r"""Return a callable for the update experiment method over gRPC.
+        r"""Return a callable for the
+        update experiment
+          method over gRPC.
 
         Updates the specified
         [Experiment][google.cloud.dialogflow.cx.v3.Experiment].
@@ -338,7 +346,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def delete_experiment(self) -> Callable[
             [experiment.DeleteExperimentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete experiment method over gRPC.
+        r"""Return a callable for the
+        delete experiment
+          method over gRPC.
 
         Deletes the specified
         [Experiment][google.cloud.dialogflow.cx.v3.Experiment].
@@ -365,7 +375,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def start_experiment(self) -> Callable[
             [experiment.StartExperimentRequest],
             Awaitable[experiment.Experiment]]:
-        r"""Return a callable for the start experiment method over gRPC.
+        r"""Return a callable for the
+        start experiment
+          method over gRPC.
 
         Starts the specified
         [Experiment][google.cloud.dialogflow.cx.v3.Experiment]. This rpc
@@ -393,7 +405,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
     def stop_experiment(self) -> Callable[
             [experiment.StopExperimentRequest],
             Awaitable[experiment.Experiment]]:
-        r"""Return a callable for the stop experiment method over gRPC.
+        r"""Return a callable for the
+        stop experiment
+          method over gRPC.
 
         Stops the specified
         [Experiment][google.cloud.dialogflow.cx.v3.Experiment]. This rpc

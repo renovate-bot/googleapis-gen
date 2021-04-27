@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,6 +39,8 @@ from google.cloud.dialogflowcx_v3.services.flows import FlowsAsyncClient
 from google.cloud.dialogflowcx_v3.services.flows import FlowsClient
 from google.cloud.dialogflowcx_v3.services.flows import pagers
 from google.cloud.dialogflowcx_v3.services.flows import transports
+from google.cloud.dialogflowcx_v3.services.flows.transports.base import _API_CORE_VERSION
+from google.cloud.dialogflowcx_v3.services.flows.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dialogflowcx_v3.types import flow
 from google.cloud.dialogflowcx_v3.types import flow as gcdc_flow
 from google.cloud.dialogflowcx_v3.types import fulfillment
@@ -51,6 +53,28 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -218,12 +242,10 @@ def test_flows_client_client_options(client_class, transport_class, transport_na
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (FlowsClient, transports.FlowsGrpcTransport, "grpc", "true"),
     (FlowsAsyncClient, transports.FlowsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (FlowsClient, transports.FlowsGrpcTransport, "grpc", "false"),
     (FlowsAsyncClient, transports.FlowsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(FlowsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FlowsClient))
 @mock.patch.object(FlowsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FlowsAsyncClient))
@@ -378,33 +400,22 @@ def test_create_flow(transport: str = 'grpc', request_type=gcdc_flow.CreateFlowR
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_flow.Flow(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             transition_route_groups=['transition_route_groups_value'],
-
         )
-
         response = client.create_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_flow.CreateFlowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gcdc_flow.Flow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.transition_route_groups == ['transition_route_groups_value']
 
 
@@ -427,8 +438,8 @@ def test_create_flow_empty_call():
         client.create_flow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_flow.CreateFlowRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_flow_async(transport: str = 'grpc_asyncio', request_type=gcdc_flow.CreateFlowRequest):
@@ -446,30 +457,24 @@ async def test_create_flow_async(transport: str = 'grpc_asyncio', request_type=g
             type(client.transport.create_flow),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_flow.Flow(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcdc_flow.Flow(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             transition_route_groups=['transition_route_groups_value'],
         ))
-
         response = await client.create_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_flow.CreateFlowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcdc_flow.Flow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.transition_route_groups == ['transition_route_groups_value']
 
 
@@ -486,6 +491,7 @@ def test_create_flow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_flow.CreateFlowRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -493,7 +499,6 @@ def test_create_flow_field_headers():
             type(client.transport.create_flow),
             '__call__') as call:
         call.return_value = gcdc_flow.Flow()
-
         client.create_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -518,6 +523,7 @@ async def test_create_flow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_flow.CreateFlowRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -525,7 +531,6 @@ async def test_create_flow_field_headers_async():
             type(client.transport.create_flow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_flow.Flow())
-
         await client.create_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -552,7 +557,6 @@ def test_create_flow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_flow.Flow()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_flow(
@@ -564,9 +568,7 @@ def test_create_flow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].flow == gcdc_flow.Flow(name='name_value')
 
 
@@ -610,9 +612,7 @@ async def test_create_flow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].flow == gcdc_flow.Flow(name='name_value')
 
 
@@ -648,13 +648,11 @@ def test_delete_flow(transport: str = 'grpc', request_type=flow.DeleteFlowReques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.DeleteFlowRequest()
 
     # Establish that the response is the type that we expect.
@@ -680,8 +678,8 @@ def test_delete_flow_empty_call():
         client.delete_flow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.DeleteFlowRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_flow_async(transport: str = 'grpc_asyncio', request_type=flow.DeleteFlowRequest):
@@ -700,13 +698,11 @@ async def test_delete_flow_async(transport: str = 'grpc_asyncio', request_type=f
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.DeleteFlowRequest()
 
     # Establish that the response is the type that we expect.
@@ -726,6 +722,7 @@ def test_delete_flow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.DeleteFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -733,7 +730,6 @@ def test_delete_flow_field_headers():
             type(client.transport.delete_flow),
             '__call__') as call:
         call.return_value = None
-
         client.delete_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -758,6 +754,7 @@ async def test_delete_flow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.DeleteFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -765,7 +762,6 @@ async def test_delete_flow_field_headers_async():
             type(client.transport.delete_flow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -792,7 +788,6 @@ def test_delete_flow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_flow(
@@ -803,7 +798,6 @@ def test_delete_flow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -845,7 +839,6 @@ async def test_delete_flow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -881,21 +874,16 @@ def test_list_flows(transport: str = 'grpc', request_type=flow.ListFlowsRequest)
         # Designate an appropriate return value for the call.
         call.return_value = flow.ListFlowsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_flows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.ListFlowsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListFlowsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -918,8 +906,8 @@ def test_list_flows_empty_call():
         client.list_flows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.ListFlowsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_flows_async(transport: str = 'grpc_asyncio', request_type=flow.ListFlowsRequest):
@@ -937,21 +925,18 @@ async def test_list_flows_async(transport: str = 'grpc_asyncio', request_type=fl
             type(client.transport.list_flows),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.ListFlowsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(flow.ListFlowsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_flows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.ListFlowsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFlowsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -968,6 +953,7 @@ def test_list_flows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.ListFlowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -975,7 +961,6 @@ def test_list_flows_field_headers():
             type(client.transport.list_flows),
             '__call__') as call:
         call.return_value = flow.ListFlowsResponse()
-
         client.list_flows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1000,6 +985,7 @@ async def test_list_flows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.ListFlowsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1007,7 +993,6 @@ async def test_list_flows_field_headers_async():
             type(client.transport.list_flows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.ListFlowsResponse())
-
         await client.list_flows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1034,7 +1019,6 @@ def test_list_flows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = flow.ListFlowsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_flows(
@@ -1045,7 +1029,6 @@ def test_list_flows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1087,7 +1070,6 @@ async def test_list_flows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -1292,7 +1274,6 @@ async def test_list_flows_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_flow(transport: str = 'grpc', request_type=flow.GetFlowRequest):
     client = FlowsClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1310,33 +1291,22 @@ def test_get_flow(transport: str = 'grpc', request_type=flow.GetFlowRequest):
         # Designate an appropriate return value for the call.
         call.return_value = flow.Flow(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             transition_route_groups=['transition_route_groups_value'],
-
         )
-
         response = client.get_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.GetFlowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, flow.Flow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.transition_route_groups == ['transition_route_groups_value']
 
 
@@ -1359,8 +1329,8 @@ def test_get_flow_empty_call():
         client.get_flow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.GetFlowRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_flow_async(transport: str = 'grpc_asyncio', request_type=flow.GetFlowRequest):
@@ -1378,30 +1348,24 @@ async def test_get_flow_async(transport: str = 'grpc_asyncio', request_type=flow
             type(client.transport.get_flow),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.Flow(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(flow.Flow(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             transition_route_groups=['transition_route_groups_value'],
         ))
-
         response = await client.get_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.GetFlowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, flow.Flow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.transition_route_groups == ['transition_route_groups_value']
 
 
@@ -1418,6 +1382,7 @@ def test_get_flow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.GetFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1425,7 +1390,6 @@ def test_get_flow_field_headers():
             type(client.transport.get_flow),
             '__call__') as call:
         call.return_value = flow.Flow()
-
         client.get_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1450,6 +1414,7 @@ async def test_get_flow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.GetFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1457,7 +1422,6 @@ async def test_get_flow_field_headers_async():
             type(client.transport.get_flow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.Flow())
-
         await client.get_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1484,7 +1448,6 @@ def test_get_flow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = flow.Flow()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_flow(
@@ -1495,7 +1458,6 @@ def test_get_flow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1537,7 +1499,6 @@ async def test_get_flow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1573,33 +1534,22 @@ def test_update_flow(transport: str = 'grpc', request_type=gcdc_flow.UpdateFlowR
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_flow.Flow(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             transition_route_groups=['transition_route_groups_value'],
-
         )
-
         response = client.update_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_flow.UpdateFlowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gcdc_flow.Flow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.transition_route_groups == ['transition_route_groups_value']
 
 
@@ -1622,8 +1572,8 @@ def test_update_flow_empty_call():
         client.update_flow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_flow.UpdateFlowRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_flow_async(transport: str = 'grpc_asyncio', request_type=gcdc_flow.UpdateFlowRequest):
@@ -1641,30 +1591,24 @@ async def test_update_flow_async(transport: str = 'grpc_asyncio', request_type=g
             type(client.transport.update_flow),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_flow.Flow(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcdc_flow.Flow(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             transition_route_groups=['transition_route_groups_value'],
         ))
-
         response = await client.update_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_flow.UpdateFlowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcdc_flow.Flow)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.transition_route_groups == ['transition_route_groups_value']
 
 
@@ -1681,6 +1625,7 @@ def test_update_flow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_flow.UpdateFlowRequest()
+
     request.flow.name = 'flow.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1688,7 +1633,6 @@ def test_update_flow_field_headers():
             type(client.transport.update_flow),
             '__call__') as call:
         call.return_value = gcdc_flow.Flow()
-
         client.update_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1713,6 +1657,7 @@ async def test_update_flow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_flow.UpdateFlowRequest()
+
     request.flow.name = 'flow.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1720,7 +1665,6 @@ async def test_update_flow_field_headers_async():
             type(client.transport.update_flow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_flow.Flow())
-
         await client.update_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1747,7 +1691,6 @@ def test_update_flow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_flow.Flow()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_flow(
@@ -1759,9 +1702,7 @@ def test_update_flow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].flow == gcdc_flow.Flow(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1805,9 +1746,7 @@ async def test_update_flow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].flow == gcdc_flow.Flow(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1843,13 +1782,11 @@ def test_train_flow(transport: str = 'grpc', request_type=flow.TrainFlowRequest)
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.train_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.TrainFlowRequest()
 
     # Establish that the response is the type that we expect.
@@ -1875,8 +1812,8 @@ def test_train_flow_empty_call():
         client.train_flow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.TrainFlowRequest()
+
 
 @pytest.mark.asyncio
 async def test_train_flow_async(transport: str = 'grpc_asyncio', request_type=flow.TrainFlowRequest):
@@ -1897,13 +1834,11 @@ async def test_train_flow_async(transport: str = 'grpc_asyncio', request_type=fl
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.train_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.TrainFlowRequest()
 
     # Establish that the response is the type that we expect.
@@ -1923,6 +1858,7 @@ def test_train_flow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.TrainFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1930,7 +1866,6 @@ def test_train_flow_field_headers():
             type(client.transport.train_flow),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.train_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1955,6 +1890,7 @@ async def test_train_flow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.TrainFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1962,7 +1898,6 @@ async def test_train_flow_field_headers_async():
             type(client.transport.train_flow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.train_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1989,7 +1924,6 @@ def test_train_flow_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.train_flow(
@@ -2000,7 +1934,6 @@ def test_train_flow_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2044,7 +1977,6 @@ async def test_train_flow_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2080,21 +2012,16 @@ def test_validate_flow(transport: str = 'grpc', request_type=flow.ValidateFlowRe
         # Designate an appropriate return value for the call.
         call.return_value = flow.FlowValidationResult(
             name='name_value',
-
         )
-
         response = client.validate_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.ValidateFlowRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, flow.FlowValidationResult)
-
     assert response.name == 'name_value'
 
 
@@ -2117,8 +2044,8 @@ def test_validate_flow_empty_call():
         client.validate_flow()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.ValidateFlowRequest()
+
 
 @pytest.mark.asyncio
 async def test_validate_flow_async(transport: str = 'grpc_asyncio', request_type=flow.ValidateFlowRequest):
@@ -2136,21 +2063,18 @@ async def test_validate_flow_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.validate_flow),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.FlowValidationResult(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(flow.FlowValidationResult(
             name='name_value',
         ))
-
         response = await client.validate_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.ValidateFlowRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, flow.FlowValidationResult)
-
     assert response.name == 'name_value'
 
 
@@ -2167,6 +2091,7 @@ def test_validate_flow_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.ValidateFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2174,7 +2099,6 @@ def test_validate_flow_field_headers():
             type(client.transport.validate_flow),
             '__call__') as call:
         call.return_value = flow.FlowValidationResult()
-
         client.validate_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2199,6 +2123,7 @@ async def test_validate_flow_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.ValidateFlowRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2206,7 +2131,6 @@ async def test_validate_flow_field_headers_async():
             type(client.transport.validate_flow),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.FlowValidationResult())
-
         await client.validate_flow(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2239,21 +2163,16 @@ def test_get_flow_validation_result(transport: str = 'grpc', request_type=flow.G
         # Designate an appropriate return value for the call.
         call.return_value = flow.FlowValidationResult(
             name='name_value',
-
         )
-
         response = client.get_flow_validation_result(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.GetFlowValidationResultRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, flow.FlowValidationResult)
-
     assert response.name == 'name_value'
 
 
@@ -2276,8 +2195,8 @@ def test_get_flow_validation_result_empty_call():
         client.get_flow_validation_result()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.GetFlowValidationResultRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_flow_validation_result_async(transport: str = 'grpc_asyncio', request_type=flow.GetFlowValidationResultRequest):
@@ -2295,21 +2214,18 @@ async def test_get_flow_validation_result_async(transport: str = 'grpc_asyncio',
             type(client.transport.get_flow_validation_result),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.FlowValidationResult(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(flow.FlowValidationResult(
             name='name_value',
         ))
-
         response = await client.get_flow_validation_result(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == flow.GetFlowValidationResultRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, flow.FlowValidationResult)
-
     assert response.name == 'name_value'
 
 
@@ -2326,6 +2242,7 @@ def test_get_flow_validation_result_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.GetFlowValidationResultRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2333,7 +2250,6 @@ def test_get_flow_validation_result_field_headers():
             type(client.transport.get_flow_validation_result),
             '__call__') as call:
         call.return_value = flow.FlowValidationResult()
-
         client.get_flow_validation_result(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2358,6 +2274,7 @@ async def test_get_flow_validation_result_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = flow.GetFlowValidationResultRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2365,7 +2282,6 @@ async def test_get_flow_validation_result_field_headers_async():
             type(client.transport.get_flow_validation_result),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(flow.FlowValidationResult())
-
         await client.get_flow_validation_result(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2392,7 +2308,6 @@ def test_get_flow_validation_result_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = flow.FlowValidationResult()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_flow_validation_result(
@@ -2403,7 +2318,6 @@ def test_get_flow_validation_result_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2445,7 +2359,6 @@ async def test_get_flow_validation_result_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2504,7 +2417,6 @@ def test_transport_instance():
     client = FlowsClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FlowsGrpcTransport(
@@ -2519,7 +2431,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.FlowsGrpcTransport,
     transports.FlowsGrpcAsyncIOTransport,
@@ -2531,7 +2442,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = FlowsClient(
@@ -2541,7 +2451,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.FlowsGrpcTransport,
     )
-
 
 def test_flows_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2571,7 +2480,7 @@ def test_flows_base_transport():
         'train_flow',
         'validate_flow',
         'get_flow_validation_result',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -2582,9 +2491,27 @@ def test_flows_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_flows_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.flows.transports.FlowsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.flows.transports.FlowsTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.FlowsTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_flows_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.flows.transports.FlowsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.FlowsTransport(
@@ -2601,35 +2528,184 @@ def test_flows_base_transport_with_credentials_file():
 
 def test_flows_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dialogflowcx_v3.services.flows.transports.FlowsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dialogflowcx_v3.services.flows.transports.FlowsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.FlowsTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_flows_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         FlowsClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',),
+            'https://www.googleapis.com/auth/dialogflow',
+),
+
             quota_project_id=None,
         )
 
 
-def test_flows_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_flows_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        FlowsClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FlowsGrpcTransport,
+        transports.FlowsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_flows_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.FlowsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FlowsGrpcTransport,
+        transports.FlowsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_flows_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',),
+            'https://www.googleapis.com/auth/dialogflow',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FlowsGrpcTransport, grpc_helpers),
+        (transports.FlowsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_flows_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "dialogflow.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            scopes=["1", "2"],
+            default_host="dialogflow.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FlowsGrpcTransport, grpc_helpers),
+        (transports.FlowsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_flows_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "dialogflow.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FlowsGrpcTransport, grpc_helpers),
+        (transports.FlowsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_flows_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "dialogflow.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -2692,7 +2768,6 @@ def test_flows_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dialogflow.googleapis.com:8000'),
     )
     assert client.transport._host == 'dialogflow.googleapis.com:8000'
-
 
 def test_flows_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2849,7 +2924,6 @@ def test_flow_path():
     location = "clam"
     agent = "whelk"
     flow = "octopus"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}".format(project=project, location=location, agent=agent, flow=flow, )
     actual = FlowsClient.flow_path(project, location, agent, flow)
     assert expected == actual
@@ -2857,11 +2931,10 @@ def test_flow_path():
 
 def test_parse_flow_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "agent": "cuttlefish",
-    "flow": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "agent": "cuttlefish",
+        "flow": "mussel",
     }
     path = FlowsClient.flow_path(**expected)
 
@@ -2874,7 +2947,6 @@ def test_flow_validation_result_path():
     location = "nautilus"
     agent = "scallop"
     flow = "abalone"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/validationResult".format(project=project, location=location, agent=agent, flow=flow, )
     actual = FlowsClient.flow_validation_result_path(project, location, agent, flow)
     assert expected == actual
@@ -2882,11 +2954,10 @@ def test_flow_validation_result_path():
 
 def test_parse_flow_validation_result_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-    "agent": "whelk",
-    "flow": "octopus",
-
+        "project": "squid",
+        "location": "clam",
+        "agent": "whelk",
+        "flow": "octopus",
     }
     path = FlowsClient.flow_validation_result_path(**expected)
 
@@ -2899,7 +2970,6 @@ def test_intent_path():
     location = "nudibranch"
     agent = "cuttlefish"
     intent = "mussel"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/intents/{intent}".format(project=project, location=location, agent=agent, intent=intent, )
     actual = FlowsClient.intent_path(project, location, agent, intent)
     assert expected == actual
@@ -2907,11 +2977,10 @@ def test_intent_path():
 
 def test_parse_intent_path():
     expected = {
-    "project": "winkle",
-    "location": "nautilus",
-    "agent": "scallop",
-    "intent": "abalone",
-
+        "project": "winkle",
+        "location": "nautilus",
+        "agent": "scallop",
+        "intent": "abalone",
     }
     path = FlowsClient.intent_path(**expected)
 
@@ -2925,7 +2994,6 @@ def test_page_path():
     agent = "whelk"
     flow = "octopus"
     page = "oyster"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/pages/{page}".format(project=project, location=location, agent=agent, flow=flow, page=page, )
     actual = FlowsClient.page_path(project, location, agent, flow, page)
     assert expected == actual
@@ -2933,12 +3001,11 @@ def test_page_path():
 
 def test_parse_page_path():
     expected = {
-    "project": "nudibranch",
-    "location": "cuttlefish",
-    "agent": "mussel",
-    "flow": "winkle",
-    "page": "nautilus",
-
+        "project": "nudibranch",
+        "location": "cuttlefish",
+        "agent": "mussel",
+        "flow": "winkle",
+        "page": "nautilus",
     }
     path = FlowsClient.page_path(**expected)
 
@@ -2952,7 +3019,6 @@ def test_transition_route_group_path():
     agent = "squid"
     flow = "clam"
     transition_route_group = "whelk"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}".format(project=project, location=location, agent=agent, flow=flow, transition_route_group=transition_route_group, )
     actual = FlowsClient.transition_route_group_path(project, location, agent, flow, transition_route_group)
     assert expected == actual
@@ -2960,12 +3026,11 @@ def test_transition_route_group_path():
 
 def test_parse_transition_route_group_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "agent": "nudibranch",
-    "flow": "cuttlefish",
-    "transition_route_group": "mussel",
-
+        "project": "octopus",
+        "location": "oyster",
+        "agent": "nudibranch",
+        "flow": "cuttlefish",
+        "transition_route_group": "mussel",
     }
     path = FlowsClient.transition_route_group_path(**expected)
 
@@ -2978,7 +3043,6 @@ def test_webhook_path():
     location = "nautilus"
     agent = "scallop"
     webhook = "abalone"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}".format(project=project, location=location, agent=agent, webhook=webhook, )
     actual = FlowsClient.webhook_path(project, location, agent, webhook)
     assert expected == actual
@@ -2986,11 +3050,10 @@ def test_webhook_path():
 
 def test_parse_webhook_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-    "agent": "whelk",
-    "webhook": "octopus",
-
+        "project": "squid",
+        "location": "clam",
+        "agent": "whelk",
+        "webhook": "octopus",
     }
     path = FlowsClient.webhook_path(**expected)
 
@@ -3000,7 +3063,6 @@ def test_parse_webhook_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FlowsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3008,8 +3070,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = FlowsClient.common_billing_account_path(**expected)
 
@@ -3019,7 +3080,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FlowsClient.common_folder_path(folder)
     assert expected == actual
@@ -3027,8 +3087,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = FlowsClient.common_folder_path(**expected)
 
@@ -3038,7 +3097,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FlowsClient.common_organization_path(organization)
     assert expected == actual
@@ -3046,8 +3104,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = FlowsClient.common_organization_path(**expected)
 
@@ -3057,7 +3114,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = FlowsClient.common_project_path(project)
     assert expected == actual
@@ -3065,8 +3121,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = FlowsClient.common_project_path(**expected)
 
@@ -3077,7 +3132,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FlowsClient.common_location_path(project, location)
     assert expected == actual
@@ -3085,9 +3139,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = FlowsClient.common_location_path(**expected)
 

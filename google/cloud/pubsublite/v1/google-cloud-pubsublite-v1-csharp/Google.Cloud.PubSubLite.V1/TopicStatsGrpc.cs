@@ -64,6 +64,8 @@ namespace Google.Cloud.PubSubLite.V1 {
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse> __Marshaller_google_cloud_pubsublite_v1_ComputeMessageStatsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorRequest> __Marshaller_google_cloud_pubsublite_v1_ComputeHeadCursorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse> __Marshaller_google_cloud_pubsublite_v1_ComputeHeadCursorResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest> __Marshaller_google_cloud_pubsublite_v1_ComputeTimeCursorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse> __Marshaller_google_cloud_pubsublite_v1_ComputeTimeCursorResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse.Parser));
 
     static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsRequest, global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse> __Method_ComputeMessageStats = new grpc::Method<global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsRequest, global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse>(
         grpc::MethodType.Unary,
@@ -78,6 +80,13 @@ namespace Google.Cloud.PubSubLite.V1 {
         "ComputeHeadCursor",
         __Marshaller_google_cloud_pubsublite_v1_ComputeHeadCursorRequest,
         __Marshaller_google_cloud_pubsublite_v1_ComputeHeadCursorResponse);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest, global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse> __Method_ComputeTimeCursor = new grpc::Method<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest, global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ComputeTimeCursor",
+        __Marshaller_google_cloud_pubsublite_v1_ComputeTimeCursorRequest,
+        __Marshaller_google_cloud_pubsublite_v1_ComputeTimeCursorResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -113,6 +122,18 @@ namespace Google.Cloud.PubSubLite.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse> ComputeHeadCursor(global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Compute the corresponding cursor for a publish or event time in a topic
+      /// partition.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse> ComputeTimeCursor(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -254,6 +275,54 @@ namespace Google.Cloud.PubSubLite.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_ComputeHeadCursor, null, options, request);
       }
+      /// <summary>
+      /// Compute the corresponding cursor for a publish or event time in a topic
+      /// partition.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse ComputeTimeCursor(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ComputeTimeCursor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Compute the corresponding cursor for a publish or event time in a topic
+      /// partition.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse ComputeTimeCursor(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ComputeTimeCursor, null, options, request);
+      }
+      /// <summary>
+      /// Compute the corresponding cursor for a publish or event time in a topic
+      /// partition.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse> ComputeTimeCursorAsync(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ComputeTimeCursorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Compute the corresponding cursor for a publish or event time in a topic
+      /// partition.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse> ComputeTimeCursorAsync(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ComputeTimeCursor, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override TopicStatsServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -267,7 +336,8 @@ namespace Google.Cloud.PubSubLite.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_ComputeMessageStats, serviceImpl.ComputeMessageStats)
-          .AddMethod(__Method_ComputeHeadCursor, serviceImpl.ComputeHeadCursor).Build();
+          .AddMethod(__Method_ComputeHeadCursor, serviceImpl.ComputeHeadCursor)
+          .AddMethod(__Method_ComputeTimeCursor, serviceImpl.ComputeTimeCursor).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -278,6 +348,7 @@ namespace Google.Cloud.PubSubLite.V1 {
     {
       serviceBinder.AddMethod(__Method_ComputeMessageStats, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsRequest, global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse>(serviceImpl.ComputeMessageStats));
       serviceBinder.AddMethod(__Method_ComputeHeadCursor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorRequest, global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse>(serviceImpl.ComputeHeadCursor));
+      serviceBinder.AddMethod(__Method_ComputeTimeCursor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest, global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse>(serviceImpl.ComputeTimeCursor));
     }
 
   }

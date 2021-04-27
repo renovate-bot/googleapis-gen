@@ -154,6 +154,11 @@
               "methods": [
                 "compute_head_cursor"
               ]
+            },
+            "ComputeTimeCursor": {
+              "methods": [
+                "compute_time_cursor"
+              ]
             }
           }
         }

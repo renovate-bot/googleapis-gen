@@ -83,6 +83,35 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
+
+        # Compute the corresponding cursor for a publish or event time in a topic
+        # partition.
+        # @!attribute [rw] topic
+        #   @return [::String]
+        #     Required. The topic for which we should compute the cursor.
+        # @!attribute [rw] partition
+        #   @return [::Integer]
+        #     Required. The partition for which we should compute the cursor.
+        # @!attribute [rw] target
+        #   @return [::Google::Cloud::PubSubLite::V1::TimeTarget]
+        #     Required. The target publish or event time. Specifying a future time will return an
+        #     unset cursor.
+        class ComputeTimeCursorRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response containing the cursor corresponding to a publish or event time in a
+        # topic partition.
+        # @!attribute [rw] cursor
+        #   @return [::Google::Cloud::PubSubLite::V1::Cursor]
+        #     If present, the cursor references the first message with time greater than
+        #     or equal to the specified target time. If such a message cannot be found,
+        #     the cursor will be unset (i.e. `cursor` is not present).
+        class ComputeTimeCursorResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
       end
     end
   end

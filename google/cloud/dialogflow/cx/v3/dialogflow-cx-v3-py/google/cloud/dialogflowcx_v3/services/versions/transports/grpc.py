@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -31,7 +29,6 @@ from google.cloud.dialogflowcx_v3.types import version
 from google.cloud.dialogflowcx_v3.types import version as gcdc_version
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import VersionsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -66,7 +63,8 @@ class VersionsGrpcTransport(VersionsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -206,13 +204,15 @@ class VersionsGrpcTransport(VersionsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -242,7 +242,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def list_versions(self) -> Callable[
             [version.ListVersionsRequest],
             version.ListVersionsResponse]:
-        r"""Return a callable for the list versions method over gRPC.
+        r"""Return a callable for the
+        list versions
+          method over gRPC.
 
         Returns the list of all versions in the specified
         [Flow][google.cloud.dialogflow.cx.v3.Flow].
@@ -269,7 +271,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def get_version(self) -> Callable[
             [version.GetVersionRequest],
             version.Version]:
-        r"""Return a callable for the get version method over gRPC.
+        r"""Return a callable for the
+        get version
+          method over gRPC.
 
         Retrieves the specified
         [Version][google.cloud.dialogflow.cx.v3.Version].
@@ -296,7 +300,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def create_version(self) -> Callable[
             [gcdc_version.CreateVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the create version method over gRPC.
+        r"""Return a callable for the
+        create version
+          method over gRPC.
 
         Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in
         the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
@@ -323,7 +329,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def update_version(self) -> Callable[
             [gcdc_version.UpdateVersionRequest],
             gcdc_version.Version]:
-        r"""Return a callable for the update version method over gRPC.
+        r"""Return a callable for the
+        update version
+          method over gRPC.
 
         Updates the specified
         [Version][google.cloud.dialogflow.cx.v3.Version].
@@ -350,7 +358,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def delete_version(self) -> Callable[
             [version.DeleteVersionRequest],
             empty.Empty]:
-        r"""Return a callable for the delete version method over gRPC.
+        r"""Return a callable for the
+        delete version
+          method over gRPC.
 
         Deletes the specified
         [Version][google.cloud.dialogflow.cx.v3.Version].
@@ -377,7 +387,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def load_version(self) -> Callable[
             [version.LoadVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the load version method over gRPC.
+        r"""Return a callable for the
+        load version
+          method over gRPC.
 
         Loads a specified version to draft version.
 

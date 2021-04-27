@@ -207,6 +207,25 @@ module Google
             end
           end
         end
+
+        # A target publish or event time. Can be used for seeking to or retrieving the
+        # corresponding cursor.
+        # @!attribute [rw] publish_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Request the cursor of the first message with publish time greater than or
+        #     equal to `publish_time`. All messages thereafter are guaranteed to have
+        #     publish times >= `publish_time`.
+        # @!attribute [rw] event_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Request the cursor of the first message with event time greater than or
+        #     equal to `event_time`. If messages are missing an event time, the publish
+        #     time is used as a fallback. As event times are user supplied, subsequent
+        #     messages may have event times less than `event_time` and should be
+        #     filtered by the client, if necessary.
+        class TimeTarget
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
       end
     end
   end

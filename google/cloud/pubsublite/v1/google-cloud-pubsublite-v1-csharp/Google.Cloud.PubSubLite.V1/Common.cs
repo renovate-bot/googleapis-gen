@@ -63,12 +63,15 @@ namespace Google.Cloud.PubSubLite.V1 {
             "UEVDSUZJRUQQABIXChNERUxJVkVSX0lNTUVESUFURUxZEAESGAoUREVMSVZF",
             "Ul9BRlRFUl9TVE9SRUQQAjpx6kFuCiZwdWJzdWJsaXRlLmdvb2dsZWFwaXMu",
             "Y29tL1N1YnNjcmlwdGlvbhJEcHJvamVjdHMve3Byb2plY3R9L2xvY2F0aW9u",
-            "cy97bG9jYXRpb259L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbn1C1QEK",
-            "IWNvbS5nb29nbGUuY2xvdWQucHVic3VibGl0ZS5wcm90b0ILQ29tbW9uUHJv",
-            "dG9QAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9j",
-            "bG91ZC9wdWJzdWJsaXRlL3YxO3B1YnN1YmxpdGX4AQGqAhpHb29nbGUuQ2xv",
-            "dWQuUHViU3ViTGl0ZS5WMcoCGkdvb2dsZVxDbG91ZFxQdWJTdWJMaXRlXFYx",
-            "6gIdR29vZ2xlOjpDbG91ZDo6UHViU3ViTGl0ZTo6VjFiBnByb3RvMw=="));
+            "cy97bG9jYXRpb259L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbn0iegoK",
+            "VGltZVRhcmdldBIyCgxwdWJsaXNoX3RpbWUYASABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wSAASMAoKZXZlbnRfdGltZRgCIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBIAEIGCgR0aW1lQtUBCiFjb20uZ29vZ2xl",
+            "LmNsb3VkLnB1YnN1YmxpdGUucHJvdG9CC0NvbW1vblByb3RvUAFaRGdvb2ds",
+            "ZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvcHVic3Vi",
+            "bGl0ZS92MTtwdWJzdWJsaXRl+AEBqgIaR29vZ2xlLkNsb3VkLlB1YlN1Ykxp",
+            "dGUuVjHKAhpHb29nbGVcQ2xvdWRcUHViU3ViTGl0ZVxWMeoCHUdvb2dsZTo6",
+            "Q2xvdWQ6OlB1YlN1YkxpdGU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -78,7 +81,8 @@ namespace Google.Cloud.PubSubLite.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.SequencedMessage), global::Google.Cloud.PubSubLite.V1.SequencedMessage.Parser, new[]{ "Cursor", "PublishTime", "Message", "SizeBytes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic), global::Google.Cloud.PubSubLite.V1.Topic.Parser, new[]{ "Name", "PartitionConfig", "RetentionConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Parser, new[]{ "Count", "Scale", "Capacity" }, new[]{ "Dimension" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Types.Capacity), global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Types.Capacity.Parser, new[]{ "PublishMibPerSec", "SubscribeMibPerSec" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig.Parser, new[]{ "PerPartitionBytes", "Period" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Subscription), global::Google.Cloud.PubSubLite.V1.Subscription.Parser, new[]{ "Name", "Topic", "DeliveryConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig), global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig.Parser, new[]{ "DeliveryRequirement" }, null, new[]{ typeof(global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig.Types.DeliveryRequirement) }, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Subscription), global::Google.Cloud.PubSubLite.V1.Subscription.Parser, new[]{ "Name", "Topic", "DeliveryConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig), global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig.Parser, new[]{ "DeliveryRequirement" }, null, new[]{ typeof(global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig.Types.DeliveryRequirement) }, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.TimeTarget), global::Google.Cloud.PubSubLite.V1.TimeTarget.Parser, new[]{ "PublishTime", "EventTime" }, new[]{ "Time" }, null, null, null)
           }));
     }
     #endregion
@@ -2583,6 +2587,287 @@ namespace Google.Cloud.PubSubLite.V1 {
 
     }
     #endregion
+
+  }
+
+  /// <summary>
+  /// A target publish or event time. Can be used for seeking to or retrieving the
+  /// corresponding cursor.
+  /// </summary>
+  public sealed partial class TimeTarget : pb::IMessage<TimeTarget>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TimeTarget> _parser = new pb::MessageParser<TimeTarget>(() => new TimeTarget());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TimeTarget> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeTarget() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeTarget(TimeTarget other) : this() {
+      switch (other.TimeCase) {
+        case TimeOneofCase.PublishTime:
+          PublishTime = other.PublishTime.Clone();
+          break;
+        case TimeOneofCase.EventTime:
+          EventTime = other.EventTime.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeTarget Clone() {
+      return new TimeTarget(this);
+    }
+
+    /// <summary>Field number for the "publish_time" field.</summary>
+    public const int PublishTimeFieldNumber = 1;
+    /// <summary>
+    /// Request the cursor of the first message with publish time greater than or
+    /// equal to `publish_time`. All messages thereafter are guaranteed to have
+    /// publish times >= `publish_time`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp PublishTime {
+      get { return timeCase_ == TimeOneofCase.PublishTime ? (global::Google.Protobuf.WellKnownTypes.Timestamp) time_ : null; }
+      set {
+        time_ = value;
+        timeCase_ = value == null ? TimeOneofCase.None : TimeOneofCase.PublishTime;
+      }
+    }
+
+    /// <summary>Field number for the "event_time" field.</summary>
+    public const int EventTimeFieldNumber = 2;
+    /// <summary>
+    /// Request the cursor of the first message with event time greater than or
+    /// equal to `event_time`. If messages are missing an event time, the publish
+    /// time is used as a fallback. As event times are user supplied, subsequent
+    /// messages may have event times less than `event_time` and should be
+    /// filtered by the client, if necessary.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp EventTime {
+      get { return timeCase_ == TimeOneofCase.EventTime ? (global::Google.Protobuf.WellKnownTypes.Timestamp) time_ : null; }
+      set {
+        time_ = value;
+        timeCase_ = value == null ? TimeOneofCase.None : TimeOneofCase.EventTime;
+      }
+    }
+
+    private object time_;
+    /// <summary>Enum of possible cases for the "time" oneof.</summary>
+    public enum TimeOneofCase {
+      None = 0,
+      PublishTime = 1,
+      EventTime = 2,
+    }
+    private TimeOneofCase timeCase_ = TimeOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeOneofCase TimeCase {
+      get { return timeCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTime() {
+      timeCase_ = TimeOneofCase.None;
+      time_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TimeTarget);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TimeTarget other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(PublishTime, other.PublishTime)) return false;
+      if (!object.Equals(EventTime, other.EventTime)) return false;
+      if (TimeCase != other.TimeCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (timeCase_ == TimeOneofCase.PublishTime) hash ^= PublishTime.GetHashCode();
+      if (timeCase_ == TimeOneofCase.EventTime) hash ^= EventTime.GetHashCode();
+      hash ^= (int) timeCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (timeCase_ == TimeOneofCase.PublishTime) {
+        output.WriteRawTag(10);
+        output.WriteMessage(PublishTime);
+      }
+      if (timeCase_ == TimeOneofCase.EventTime) {
+        output.WriteRawTag(18);
+        output.WriteMessage(EventTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (timeCase_ == TimeOneofCase.PublishTime) {
+        output.WriteRawTag(10);
+        output.WriteMessage(PublishTime);
+      }
+      if (timeCase_ == TimeOneofCase.EventTime) {
+        output.WriteRawTag(18);
+        output.WriteMessage(EventTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (timeCase_ == TimeOneofCase.PublishTime) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PublishTime);
+      }
+      if (timeCase_ == TimeOneofCase.EventTime) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EventTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TimeTarget other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.TimeCase) {
+        case TimeOneofCase.PublishTime:
+          if (PublishTime == null) {
+            PublishTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          PublishTime.MergeFrom(other.PublishTime);
+          break;
+        case TimeOneofCase.EventTime:
+          if (EventTime == null) {
+            EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          EventTime.MergeFrom(other.EventTime);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (timeCase_ == TimeOneofCase.PublishTime) {
+              subBuilder.MergeFrom(PublishTime);
+            }
+            input.ReadMessage(subBuilder);
+            PublishTime = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (timeCase_ == TimeOneofCase.EventTime) {
+              subBuilder.MergeFrom(EventTime);
+            }
+            input.ReadMessage(subBuilder);
+            EventTime = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (timeCase_ == TimeOneofCase.PublishTime) {
+              subBuilder.MergeFrom(PublishTime);
+            }
+            input.ReadMessage(subBuilder);
+            PublishTime = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (timeCase_ == TimeOneofCase.EventTime) {
+              subBuilder.MergeFrom(EventTime);
+            }
+            input.ReadMessage(subBuilder);
+            EventTime = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

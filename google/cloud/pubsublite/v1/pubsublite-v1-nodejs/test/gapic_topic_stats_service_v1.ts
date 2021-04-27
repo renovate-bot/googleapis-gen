@@ -286,6 +286,90 @@ describe('v1.TopicStatsServiceClient', () => {
         });
     });
 
+    describe('computeTimeCursor', () => {
+        it('invokes computeTimeCursor without error', async () => {
+            const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorRequest());
+            request.topic = '';
+            const expectedHeaderRequestParams = "topic=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorResponse());
+            client.innerApiCalls.computeTimeCursor = stubSimpleCall(expectedResponse);
+            const [response] = await client.computeTimeCursor(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.computeTimeCursor as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes computeTimeCursor without error using callback', async () => {
+            const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorRequest());
+            request.topic = '';
+            const expectedHeaderRequestParams = "topic=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorResponse());
+            client.innerApiCalls.computeTimeCursor = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.computeTimeCursor(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.computeTimeCursor as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes computeTimeCursor with error', async () => {
+            const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorRequest());
+            request.topic = '';
+            const expectedHeaderRequestParams = "topic=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.computeTimeCursor = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.computeTimeCursor(request), expectedError);
+            assert((client.innerApiCalls.computeTimeCursor as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
     describe('Path templates', () => {
 
         describe('subscription', () => {

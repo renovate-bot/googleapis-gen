@@ -199,7 +199,7 @@ export class TopicStatsServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const topicStatsServiceStubMethods =
-        ['computeMessageStats', 'computeHeadCursor'];
+        ['computeMessageStats', 'computeHeadCursor', 'computeTimeCursor'];
     for (const methodName of topicStatsServiceStubMethods) {
       const callPromise = this.topicStatsServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -438,6 +438,83 @@ export class TopicStatsServiceClient {
     });
     this.initialize();
     return this.innerApiCalls.computeHeadCursor(request, options, callback);
+  }
+  computeTimeCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+        protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|undefined, {}|undefined
+      ]>;
+  computeTimeCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
+          {}|null|undefined>): void;
+  computeTimeCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Compute the corresponding cursor for a publish or event time in a topic
+ * partition.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.topic
+ *   Required. The topic for which we should compute the cursor.
+ * @param {number} request.partition
+ *   Required. The partition for which we should compute the cursor.
+ * @param {google.cloud.pubsublite.v1.TimeTarget} request.target
+ *   Required. The target publish or event time. Specifying a future time will return an
+ *   unset cursor.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ComputeTimeCursorResponse]{@link google.cloud.pubsublite.v1.ComputeTimeCursorResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.computeTimeCursor(request);
+ */
+  computeTimeCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+        protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'topic': request.topic || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.computeTimeCursor(request, options, callback);
   }
 
   // --------------------

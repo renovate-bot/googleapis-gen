@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google import auth
 from google.api_core import client_options
@@ -39,6 +39,8 @@ from google.cloud.dialogflowcx_v3.services.environments import EnvironmentsAsync
 from google.cloud.dialogflowcx_v3.services.environments import EnvironmentsClient
 from google.cloud.dialogflowcx_v3.services.environments import pagers
 from google.cloud.dialogflowcx_v3.services.environments import transports
+from google.cloud.dialogflowcx_v3.services.environments.transports.base import _API_CORE_VERSION
+from google.cloud.dialogflowcx_v3.services.environments.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dialogflowcx_v3.types import environment
 from google.cloud.dialogflowcx_v3.types import environment as gcdc_environment
 from google.longrunning import operations_pb2
@@ -47,6 +49,28 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -214,12 +238,10 @@ def test_environments_client_client_options(client_class, transport_class, trans
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (EnvironmentsClient, transports.EnvironmentsGrpcTransport, "grpc", "true"),
     (EnvironmentsAsyncClient, transports.EnvironmentsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (EnvironmentsClient, transports.EnvironmentsGrpcTransport, "grpc", "false"),
     (EnvironmentsAsyncClient, transports.EnvironmentsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(EnvironmentsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(EnvironmentsClient))
 @mock.patch.object(EnvironmentsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(EnvironmentsAsyncClient))
@@ -374,21 +396,16 @@ def test_list_environments(transport: str = 'grpc', request_type=environment.Lis
         # Designate an appropriate return value for the call.
         call.return_value = environment.ListEnvironmentsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_environments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.ListEnvironmentsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListEnvironmentsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -411,8 +428,8 @@ def test_list_environments_empty_call():
         client.list_environments()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.ListEnvironmentsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_environments_async(transport: str = 'grpc_asyncio', request_type=environment.ListEnvironmentsRequest):
@@ -430,21 +447,18 @@ async def test_list_environments_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_environments),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.ListEnvironmentsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.ListEnvironmentsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_environments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.ListEnvironmentsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEnvironmentsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -461,6 +475,7 @@ def test_list_environments_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.ListEnvironmentsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -468,7 +483,6 @@ def test_list_environments_field_headers():
             type(client.transport.list_environments),
             '__call__') as call:
         call.return_value = environment.ListEnvironmentsResponse()
-
         client.list_environments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -493,6 +507,7 @@ async def test_list_environments_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.ListEnvironmentsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -500,7 +515,6 @@ async def test_list_environments_field_headers_async():
             type(client.transport.list_environments),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.ListEnvironmentsResponse())
-
         await client.list_environments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -527,7 +541,6 @@ def test_list_environments_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = environment.ListEnvironmentsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_environments(
@@ -538,7 +551,6 @@ def test_list_environments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -580,7 +592,6 @@ async def test_list_environments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
@@ -785,7 +796,6 @@ async def test_list_environments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_environment(transport: str = 'grpc', request_type=environment.GetEnvironmentRequest):
     client = EnvironmentsClient(
         credentials=credentials.AnonymousCredentials(),
@@ -803,29 +813,20 @@ def test_get_environment(transport: str = 'grpc', request_type=environment.GetEn
         # Designate an appropriate return value for the call.
         call.return_value = environment.Environment(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
         )
-
         response = client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.GetEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, environment.Environment)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -848,8 +849,8 @@ def test_get_environment_empty_call():
         client.get_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.GetEnvironmentRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_environment_async(transport: str = 'grpc_asyncio', request_type=environment.GetEnvironmentRequest):
@@ -867,27 +868,22 @@ async def test_get_environment_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_environment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
         ))
-
         response = await client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.GetEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, environment.Environment)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
 
 
@@ -904,6 +900,7 @@ def test_get_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.GetEnvironmentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -911,7 +908,6 @@ def test_get_environment_field_headers():
             type(client.transport.get_environment),
             '__call__') as call:
         call.return_value = environment.Environment()
-
         client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -936,6 +932,7 @@ async def test_get_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.GetEnvironmentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -943,7 +940,6 @@ async def test_get_environment_field_headers_async():
             type(client.transport.get_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment())
-
         await client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -970,7 +966,6 @@ def test_get_environment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = environment.Environment()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_environment(
@@ -981,7 +976,6 @@ def test_get_environment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1023,7 +1017,6 @@ async def test_get_environment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1058,13 +1051,11 @@ def test_create_environment(transport: str = 'grpc', request_type=gcdc_environme
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_environment.CreateEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1090,8 +1081,8 @@ def test_create_environment_empty_call():
         client.create_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_environment.CreateEnvironmentRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_environment_async(transport: str = 'grpc_asyncio', request_type=gcdc_environment.CreateEnvironmentRequest):
@@ -1112,13 +1103,11 @@ async def test_create_environment_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_environment.CreateEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1138,6 +1127,7 @@ def test_create_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_environment.CreateEnvironmentRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1145,7 +1135,6 @@ def test_create_environment_field_headers():
             type(client.transport.create_environment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1170,6 +1159,7 @@ async def test_create_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_environment.CreateEnvironmentRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1177,7 +1167,6 @@ async def test_create_environment_field_headers_async():
             type(client.transport.create_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1204,7 +1193,6 @@ def test_create_environment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_environment(
@@ -1216,9 +1204,7 @@ def test_create_environment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].environment == gcdc_environment.Environment(name='name_value')
 
 
@@ -1264,9 +1250,7 @@ async def test_create_environment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].environment == gcdc_environment.Environment(name='name_value')
 
 
@@ -1302,13 +1286,11 @@ def test_update_environment(transport: str = 'grpc', request_type=gcdc_environme
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_environment.UpdateEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1334,8 +1316,8 @@ def test_update_environment_empty_call():
         client.update_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_environment.UpdateEnvironmentRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_environment_async(transport: str = 'grpc_asyncio', request_type=gcdc_environment.UpdateEnvironmentRequest):
@@ -1356,13 +1338,11 @@ async def test_update_environment_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gcdc_environment.UpdateEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1382,6 +1362,7 @@ def test_update_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_environment.UpdateEnvironmentRequest()
+
     request.environment.name = 'environment.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1389,7 +1370,6 @@ def test_update_environment_field_headers():
             type(client.transport.update_environment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1414,6 +1394,7 @@ async def test_update_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_environment.UpdateEnvironmentRequest()
+
     request.environment.name = 'environment.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1421,7 +1402,6 @@ async def test_update_environment_field_headers_async():
             type(client.transport.update_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1448,7 +1428,6 @@ def test_update_environment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_environment(
@@ -1460,9 +1439,7 @@ def test_update_environment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].environment == gcdc_environment.Environment(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1508,9 +1485,7 @@ async def test_update_environment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].environment == gcdc_environment.Environment(name='name_value')
-
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1546,13 +1521,11 @@ def test_delete_environment(transport: str = 'grpc', request_type=environment.De
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.DeleteEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1578,8 +1551,8 @@ def test_delete_environment_empty_call():
         client.delete_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.DeleteEnvironmentRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_environment_async(transport: str = 'grpc_asyncio', request_type=environment.DeleteEnvironmentRequest):
@@ -1598,13 +1571,11 @@ async def test_delete_environment_async(transport: str = 'grpc_asyncio', request
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.DeleteEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1624,6 +1595,7 @@ def test_delete_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.DeleteEnvironmentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1631,7 +1603,6 @@ def test_delete_environment_field_headers():
             type(client.transport.delete_environment),
             '__call__') as call:
         call.return_value = None
-
         client.delete_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1656,6 +1627,7 @@ async def test_delete_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.DeleteEnvironmentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1663,7 +1635,6 @@ async def test_delete_environment_field_headers_async():
             type(client.transport.delete_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1690,7 +1661,6 @@ def test_delete_environment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_environment(
@@ -1701,7 +1671,6 @@ def test_delete_environment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1743,7 +1712,6 @@ async def test_delete_environment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1779,21 +1747,16 @@ def test_lookup_environment_history(transport: str = 'grpc', request_type=enviro
         # Designate an appropriate return value for the call.
         call.return_value = environment.LookupEnvironmentHistoryResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.lookup_environment_history(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.LookupEnvironmentHistoryRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.LookupEnvironmentHistoryPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1816,8 +1779,8 @@ def test_lookup_environment_history_empty_call():
         client.lookup_environment_history()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.LookupEnvironmentHistoryRequest()
+
 
 @pytest.mark.asyncio
 async def test_lookup_environment_history_async(transport: str = 'grpc_asyncio', request_type=environment.LookupEnvironmentHistoryRequest):
@@ -1835,21 +1798,18 @@ async def test_lookup_environment_history_async(transport: str = 'grpc_asyncio',
             type(client.transport.lookup_environment_history),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.LookupEnvironmentHistoryResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.LookupEnvironmentHistoryResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.lookup_environment_history(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == environment.LookupEnvironmentHistoryRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.LookupEnvironmentHistoryAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1866,6 +1826,7 @@ def test_lookup_environment_history_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.LookupEnvironmentHistoryRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1873,7 +1834,6 @@ def test_lookup_environment_history_field_headers():
             type(client.transport.lookup_environment_history),
             '__call__') as call:
         call.return_value = environment.LookupEnvironmentHistoryResponse()
-
         client.lookup_environment_history(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1898,6 +1858,7 @@ async def test_lookup_environment_history_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = environment.LookupEnvironmentHistoryRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1905,7 +1866,6 @@ async def test_lookup_environment_history_field_headers_async():
             type(client.transport.lookup_environment_history),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.LookupEnvironmentHistoryResponse())
-
         await client.lookup_environment_history(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1932,7 +1892,6 @@ def test_lookup_environment_history_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = environment.LookupEnvironmentHistoryResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.lookup_environment_history(
@@ -1943,7 +1902,6 @@ def test_lookup_environment_history_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -1985,7 +1943,6 @@ async def test_lookup_environment_history_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
@@ -2231,7 +2188,6 @@ def test_transport_instance():
     client = EnvironmentsClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.EnvironmentsGrpcTransport(
@@ -2246,7 +2202,6 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
-
 @pytest.mark.parametrize("transport_class", [
     transports.EnvironmentsGrpcTransport,
     transports.EnvironmentsGrpcAsyncIOTransport,
@@ -2258,7 +2213,6 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
-
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = EnvironmentsClient(
@@ -2268,7 +2222,6 @@ def test_transport_grpc_default():
         client.transport,
         transports.EnvironmentsGrpcTransport,
     )
-
 
 def test_environments_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2296,7 +2249,7 @@ def test_environments_base_transport():
         'update_environment',
         'delete_environment',
         'lookup_environment_history',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -2307,9 +2260,27 @@ def test_environments_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_environments_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.environments.transports.EnvironmentsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.environments.transports.EnvironmentsTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        transport = transports.EnvironmentsTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_environments_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.environments.transports.EnvironmentsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.EnvironmentsTransport(
@@ -2326,35 +2297,184 @@ def test_environments_base_transport_with_credentials_file():
 
 def test_environments_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dialogflowcx_v3.services.environments.transports.EnvironmentsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dialogflowcx_v3.services.environments.transports.EnvironmentsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.EnvironmentsTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_environments_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         EnvironmentsClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',),
+            'https://www.googleapis.com/auth/dialogflow',
+),
+
             quota_project_id=None,
         )
 
 
-def test_environments_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_environments_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        EnvironmentsClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.EnvironmentsGrpcTransport,
+        transports.EnvironmentsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_environments_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
+    with mock.patch.object(auth, 'default', autospec=True) as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.EnvironmentsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.EnvironmentsGrpcTransport,
+        transports.EnvironmentsGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_environments_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',),
+            'https://www.googleapis.com/auth/dialogflow',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.EnvironmentsGrpcTransport, grpc_helpers),
+        (transports.EnvironmentsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_environments_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "dialogflow.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            scopes=["1", "2"],
+            default_host="dialogflow.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.EnvironmentsGrpcTransport, grpc_helpers),
+        (transports.EnvironmentsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_environments_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "dialogflow.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.EnvironmentsGrpcTransport, grpc_helpers),
+        (transports.EnvironmentsGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_environments_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "dialogflow.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -2417,7 +2537,6 @@ def test_environments_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dialogflow.googleapis.com:8000'),
     )
     assert client.transport._host == 'dialogflow.googleapis.com:8000'
-
 
 def test_environments_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2574,7 +2693,6 @@ def test_environment_path():
     location = "clam"
     agent = "whelk"
     environment = "octopus"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}".format(project=project, location=location, agent=agent, environment=environment, )
     actual = EnvironmentsClient.environment_path(project, location, agent, environment)
     assert expected == actual
@@ -2582,11 +2700,10 @@ def test_environment_path():
 
 def test_parse_environment_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "agent": "cuttlefish",
-    "environment": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "agent": "cuttlefish",
+        "environment": "mussel",
     }
     path = EnvironmentsClient.environment_path(**expected)
 
@@ -2600,7 +2717,6 @@ def test_version_path():
     agent = "scallop"
     flow = "abalone"
     version = "squid"
-
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}".format(project=project, location=location, agent=agent, flow=flow, version=version, )
     actual = EnvironmentsClient.version_path(project, location, agent, flow, version)
     assert expected == actual
@@ -2608,12 +2724,11 @@ def test_version_path():
 
 def test_parse_version_path():
     expected = {
-    "project": "clam",
-    "location": "whelk",
-    "agent": "octopus",
-    "flow": "oyster",
-    "version": "nudibranch",
-
+        "project": "clam",
+        "location": "whelk",
+        "agent": "octopus",
+        "flow": "oyster",
+        "version": "nudibranch",
     }
     path = EnvironmentsClient.version_path(**expected)
 
@@ -2623,7 +2738,6 @@ def test_parse_version_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = EnvironmentsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2631,8 +2745,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = EnvironmentsClient.common_billing_account_path(**expected)
 
@@ -2642,7 +2755,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = EnvironmentsClient.common_folder_path(folder)
     assert expected == actual
@@ -2650,8 +2762,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = EnvironmentsClient.common_folder_path(**expected)
 
@@ -2661,7 +2772,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = EnvironmentsClient.common_organization_path(organization)
     assert expected == actual
@@ -2669,8 +2779,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = EnvironmentsClient.common_organization_path(**expected)
 
@@ -2680,7 +2789,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = EnvironmentsClient.common_project_path(project)
     assert expected == actual
@@ -2688,8 +2796,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = EnvironmentsClient.common_project_path(**expected)
 
@@ -2700,7 +2807,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = EnvironmentsClient.common_location_path(project, location)
     assert expected == actual
@@ -2708,9 +2814,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = EnvironmentsClient.common_location_path(**expected)
 

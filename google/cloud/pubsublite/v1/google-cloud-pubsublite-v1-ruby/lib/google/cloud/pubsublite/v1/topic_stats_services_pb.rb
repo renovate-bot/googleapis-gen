@@ -43,6 +43,9 @@ module Google
             # been acknowledged. It is zero if there have never been messages in the
             # partition.
             rpc :ComputeHeadCursor, ::Google::Cloud::PubSubLite::V1::ComputeHeadCursorRequest, ::Google::Cloud::PubSubLite::V1::ComputeHeadCursorResponse
+            # Compute the corresponding cursor for a publish or event time in a topic
+            # partition.
+            rpc :ComputeTimeCursor, ::Google::Cloud::PubSubLite::V1::ComputeTimeCursorRequest, ::Google::Cloud::PubSubLite::V1::ComputeTimeCursorResponse
           end
 
           Stub = Service.rpc_stub_class

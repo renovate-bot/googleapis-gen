@@ -47,6 +47,7 @@ from google.cloud.pubsublite_v1.types.common import Cursor
 from google.cloud.pubsublite_v1.types.common import PubSubMessage
 from google.cloud.pubsublite_v1.types.common import SequencedMessage
 from google.cloud.pubsublite_v1.types.common import Subscription
+from google.cloud.pubsublite_v1.types.common import TimeTarget
 from google.cloud.pubsublite_v1.types.common import Topic
 from google.cloud.pubsublite_v1.types.cursor import CommitCursorRequest
 from google.cloud.pubsublite_v1.types.cursor import CommitCursorResponse
@@ -81,6 +82,8 @@ from google.cloud.pubsublite_v1.types.topic_stats import ComputeHeadCursorReques
 from google.cloud.pubsublite_v1.types.topic_stats import ComputeHeadCursorResponse
 from google.cloud.pubsublite_v1.types.topic_stats import ComputeMessageStatsRequest
 from google.cloud.pubsublite_v1.types.topic_stats import ComputeMessageStatsResponse
+from google.cloud.pubsublite_v1.types.topic_stats import ComputeTimeCursorRequest
+from google.cloud.pubsublite_v1.types.topic_stats import ComputeTimeCursorResponse
 
 __all__ = ('AdminServiceAsyncClient',
     'AdminServiceClient',
@@ -91,6 +94,8 @@ __all__ = ('AdminServiceAsyncClient',
     'ComputeHeadCursorResponse',
     'ComputeMessageStatsRequest',
     'ComputeMessageStatsResponse',
+    'ComputeTimeCursorRequest',
+    'ComputeTimeCursorResponse',
     'CreateSubscriptionRequest',
     'CreateTopicRequest',
     'Cursor',
@@ -143,6 +148,7 @@ __all__ = ('AdminServiceAsyncClient',
     'SubscriberServiceAsyncClient',
     'SubscriberServiceClient',
     'Subscription',
+    'TimeTarget',
     'Topic',
     'TopicPartitions',
     'TopicStatsServiceAsyncClient',

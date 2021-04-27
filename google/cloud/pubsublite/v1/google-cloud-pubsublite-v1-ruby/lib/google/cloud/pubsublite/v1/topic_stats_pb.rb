@@ -30,6 +30,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.pubsublite.v1.ComputeHeadCursorResponse" do
       optional :head_cursor, :message, 1, "google.cloud.pubsublite.v1.Cursor"
     end
+    add_message "google.cloud.pubsublite.v1.ComputeTimeCursorRequest" do
+      optional :topic, :string, 1
+      optional :partition, :int64, 2
+      optional :target, :message, 3, "google.cloud.pubsublite.v1.TimeTarget"
+    end
+    add_message "google.cloud.pubsublite.v1.ComputeTimeCursorResponse" do
+      optional :cursor, :message, 1, "google.cloud.pubsublite.v1.Cursor"
+    end
   end
 end
 
@@ -41,6 +49,8 @@ module Google
         ComputeMessageStatsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ComputeMessageStatsResponse").msgclass
         ComputeHeadCursorRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ComputeHeadCursorRequest").msgclass
         ComputeHeadCursorResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ComputeHeadCursorResponse").msgclass
+        ComputeTimeCursorRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ComputeTimeCursorRequest").msgclass
+        ComputeTimeCursorResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ComputeTimeCursorResponse").msgclass
       end
     end
   end

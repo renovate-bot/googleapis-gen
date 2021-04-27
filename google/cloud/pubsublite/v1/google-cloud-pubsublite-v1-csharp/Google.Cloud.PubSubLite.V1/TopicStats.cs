@@ -43,31 +43,43 @@ namespace Google.Cloud.PubSubLite.V1 {
             "ASgJQifgQQL6QSEKH3B1YnN1YmxpdGUuZ29vZ2xlYXBpcy5jb20vVG9waWMS",
             "FgoJcGFydGl0aW9uGAIgASgDQgPgQQIiVAoZQ29tcHV0ZUhlYWRDdXJzb3JS",
             "ZXNwb25zZRI3CgtoZWFkX2N1cnNvchgBIAEoCzIiLmdvb2dsZS5jbG91ZC5w",
-            "dWJzdWJsaXRlLnYxLkN1cnNvcjKaBAoRVG9waWNTdGF0c1NlcnZpY2US3QEK",
-            "E0NvbXB1dGVNZXNzYWdlU3RhdHMSNi5nb29nbGUuY2xvdWQucHVic3VibGl0",
-            "ZS52MS5Db21wdXRlTWVzc2FnZVN0YXRzUmVxdWVzdBo3Lmdvb2dsZS5jbG91",
-            "ZC5wdWJzdWJsaXRlLnYxLkNvbXB1dGVNZXNzYWdlU3RhdHNSZXNwb25zZSJV",
-            "gtPkkwJPIkovdjEvdG9waWNTdGF0cy97dG9waWM9cHJvamVjdHMvKi9sb2Nh",
-            "dGlvbnMvKi90b3BpY3MvKn06Y29tcHV0ZU1lc3NhZ2VTdGF0czoBKhLVAQoR",
-            "Q29tcHV0ZUhlYWRDdXJzb3ISNC5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52",
-            "MS5Db21wdXRlSGVhZEN1cnNvclJlcXVlc3QaNS5nb29nbGUuY2xvdWQucHVi",
-            "c3VibGl0ZS52MS5Db21wdXRlSGVhZEN1cnNvclJlc3BvbnNlIlOC0+STAk0i",
-            "SC92MS90b3BpY1N0YXRzL3t0b3BpYz1wcm9qZWN0cy8qL2xvY2F0aW9ucy8q",
-            "L3RvcGljcy8qfTpjb21wdXRlSGVhZEN1cnNvcjoBKhpNykEZcHVic3VibGl0",
-            "ZS5nb29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29t",
-            "L2F1dGgvY2xvdWQtcGxhdGZvcm1C1gEKIWNvbS5nb29nbGUuY2xvdWQucHVi",
-            "c3VibGl0ZS5wcm90b0IPVG9waWNTdGF0c1Byb3RvUAFaRGdvb2dsZS5nb2xh",
-            "bmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvcHVic3VibGl0ZS92",
-            "MTtwdWJzdWJsaXRlqgIaR29vZ2xlLkNsb3VkLlB1YlN1YkxpdGUuVjHKAhpH",
-            "b29nbGVcQ2xvdWRcUHViU3ViTGl0ZVxWMeoCHUdvb2dsZTo6Q2xvdWQ6OlB1",
-            "YlN1YkxpdGU6OlYxYgZwcm90bzM="));
+            "dWJzdWJsaXRlLnYxLkN1cnNvciKnAQoYQ29tcHV0ZVRpbWVDdXJzb3JSZXF1",
+            "ZXN0EjYKBXRvcGljGAEgASgJQifgQQL6QSEKH3B1YnN1YmxpdGUuZ29vZ2xl",
+            "YXBpcy5jb20vVG9waWMSFgoJcGFydGl0aW9uGAIgASgDQgPgQQISOwoGdGFy",
+            "Z2V0GAMgASgLMiYuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuVGltZVRh",
+            "cmdldEID4EECIk8KGUNvbXB1dGVUaW1lQ3Vyc29yUmVzcG9uc2USMgoGY3Vy",
+            "c29yGAEgASgLMiIuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuQ3Vyc29y",
+            "MvIFChFUb3BpY1N0YXRzU2VydmljZRLdAQoTQ29tcHV0ZU1lc3NhZ2VTdGF0",
+            "cxI2Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkNvbXB1dGVNZXNzYWdl",
+            "U3RhdHNSZXF1ZXN0GjcuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuQ29t",
+            "cHV0ZU1lc3NhZ2VTdGF0c1Jlc3BvbnNlIlWC0+STAk8iSi92MS90b3BpY1N0",
+            "YXRzL3t0b3BpYz1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3RvcGljcy8qfTpj",
+            "b21wdXRlTWVzc2FnZVN0YXRzOgEqEtUBChFDb21wdXRlSGVhZEN1cnNvchI0",
+            "Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkNvbXB1dGVIZWFkQ3Vyc29y",
+            "UmVxdWVzdBo1Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkNvbXB1dGVI",
+            "ZWFkQ3Vyc29yUmVzcG9uc2UiU4LT5JMCTSJIL3YxL3RvcGljU3RhdHMve3Rv",
+            "cGljPXByb2plY3RzLyovbG9jYXRpb25zLyovdG9waWNzLyp9OmNvbXB1dGVI",
+            "ZWFkQ3Vyc29yOgEqEtUBChFDb21wdXRlVGltZUN1cnNvchI0Lmdvb2dsZS5j",
+            "bG91ZC5wdWJzdWJsaXRlLnYxLkNvbXB1dGVUaW1lQ3Vyc29yUmVxdWVzdBo1",
+            "Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkNvbXB1dGVUaW1lQ3Vyc29y",
+            "UmVzcG9uc2UiU4LT5JMCTSJIL3YxL3RvcGljU3RhdHMve3RvcGljPXByb2pl",
+            "Y3RzLyovbG9jYXRpb25zLyovdG9waWNzLyp9OmNvbXB1dGVUaW1lQ3Vyc29y",
+            "OgEqGk3KQRlwdWJzdWJsaXRlLmdvb2dsZWFwaXMuY29t0kEuaHR0cHM6Ly93",
+            "d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybULWAQohY29t",
+            "Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnByb3RvQg9Ub3BpY1N0YXRzUHJv",
+            "dG9QAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9j",
+            "bG91ZC9wdWJzdWJsaXRlL3YxO3B1YnN1YmxpdGWqAhpHb29nbGUuQ2xvdWQu",
+            "UHViU3ViTGl0ZS5WMcoCGkdvb2dsZVxDbG91ZFxQdWJTdWJMaXRlXFYx6gId",
+            "R29vZ2xlOjpDbG91ZDo6UHViU3ViTGl0ZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsRequest), global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsRequest.Parser, new[]{ "Topic", "Partition", "StartCursor", "EndCursor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse), global::Google.Cloud.PubSubLite.V1.ComputeMessageStatsResponse.Parser, new[]{ "MessageCount", "MessageBytes", "MinimumPublishTime", "MinimumEventTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorRequest), global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorRequest.Parser, new[]{ "Topic", "Partition" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse), global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse.Parser, new[]{ "HeadCursor" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse), global::Google.Cloud.PubSubLite.V1.ComputeHeadCursorResponse.Parser, new[]{ "HeadCursor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest), global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorRequest.Parser, new[]{ "Topic", "Partition", "Target" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse), global::Google.Cloud.PubSubLite.V1.ComputeTimeCursorResponse.Parser, new[]{ "Cursor" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1101,6 +1113,463 @@ namespace Google.Cloud.PubSubLite.V1 {
               HeadCursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
             }
             input.ReadMessage(HeadCursor);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Compute the corresponding cursor for a publish or event time in a topic
+  /// partition.
+  /// </summary>
+  public sealed partial class ComputeTimeCursorRequest : pb::IMessage<ComputeTimeCursorRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ComputeTimeCursorRequest> _parser = new pb::MessageParser<ComputeTimeCursorRequest>(() => new ComputeTimeCursorRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ComputeTimeCursorRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.TopicStatsReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComputeTimeCursorRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComputeTimeCursorRequest(ComputeTimeCursorRequest other) : this() {
+      topic_ = other.topic_;
+      partition_ = other.partition_;
+      target_ = other.target_ != null ? other.target_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComputeTimeCursorRequest Clone() {
+      return new ComputeTimeCursorRequest(this);
+    }
+
+    /// <summary>Field number for the "topic" field.</summary>
+    public const int TopicFieldNumber = 1;
+    private string topic_ = "";
+    /// <summary>
+    /// Required. The topic for which we should compute the cursor.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Topic {
+      get { return topic_; }
+      set {
+        topic_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "partition" field.</summary>
+    public const int PartitionFieldNumber = 2;
+    private long partition_;
+    /// <summary>
+    /// Required. The partition for which we should compute the cursor.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Partition {
+      get { return partition_; }
+      set {
+        partition_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target" field.</summary>
+    public const int TargetFieldNumber = 3;
+    private global::Google.Cloud.PubSubLite.V1.TimeTarget target_;
+    /// <summary>
+    /// Required. The target publish or event time. Specifying a future time will return an
+    /// unset cursor.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.PubSubLite.V1.TimeTarget Target {
+      get { return target_; }
+      set {
+        target_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ComputeTimeCursorRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ComputeTimeCursorRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Topic != other.Topic) return false;
+      if (Partition != other.Partition) return false;
+      if (!object.Equals(Target, other.Target)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Topic.Length != 0) hash ^= Topic.GetHashCode();
+      if (Partition != 0L) hash ^= Partition.GetHashCode();
+      if (target_ != null) hash ^= Target.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Topic.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Topic);
+      }
+      if (Partition != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Partition);
+      }
+      if (target_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Target);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Topic.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Topic);
+      }
+      if (Partition != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Partition);
+      }
+      if (target_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Target);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Topic.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Topic);
+      }
+      if (Partition != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Partition);
+      }
+      if (target_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Target);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ComputeTimeCursorRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Topic.Length != 0) {
+        Topic = other.Topic;
+      }
+      if (other.Partition != 0L) {
+        Partition = other.Partition;
+      }
+      if (other.target_ != null) {
+        if (target_ == null) {
+          Target = new global::Google.Cloud.PubSubLite.V1.TimeTarget();
+        }
+        Target.MergeFrom(other.Target);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Topic = input.ReadString();
+            break;
+          }
+          case 16: {
+            Partition = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            if (target_ == null) {
+              Target = new global::Google.Cloud.PubSubLite.V1.TimeTarget();
+            }
+            input.ReadMessage(Target);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Topic = input.ReadString();
+            break;
+          }
+          case 16: {
+            Partition = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            if (target_ == null) {
+              Target = new global::Google.Cloud.PubSubLite.V1.TimeTarget();
+            }
+            input.ReadMessage(Target);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Response containing the cursor corresponding to a publish or event time in a
+  /// topic partition.
+  /// </summary>
+  public sealed partial class ComputeTimeCursorResponse : pb::IMessage<ComputeTimeCursorResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ComputeTimeCursorResponse> _parser = new pb::MessageParser<ComputeTimeCursorResponse>(() => new ComputeTimeCursorResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ComputeTimeCursorResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.TopicStatsReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComputeTimeCursorResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComputeTimeCursorResponse(ComputeTimeCursorResponse other) : this() {
+      cursor_ = other.cursor_ != null ? other.cursor_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComputeTimeCursorResponse Clone() {
+      return new ComputeTimeCursorResponse(this);
+    }
+
+    /// <summary>Field number for the "cursor" field.</summary>
+    public const int CursorFieldNumber = 1;
+    private global::Google.Cloud.PubSubLite.V1.Cursor cursor_;
+    /// <summary>
+    /// If present, the cursor references the first message with time greater than
+    /// or equal to the specified target time. If such a message cannot be found,
+    /// the cursor will be unset (i.e. `cursor` is not present).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.PubSubLite.V1.Cursor Cursor {
+      get { return cursor_; }
+      set {
+        cursor_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ComputeTimeCursorResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ComputeTimeCursorResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Cursor, other.Cursor)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (cursor_ != null) hash ^= Cursor.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (cursor_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Cursor);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (cursor_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Cursor);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (cursor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Cursor);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ComputeTimeCursorResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.cursor_ != null) {
+        if (cursor_ == null) {
+          Cursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
+        }
+        Cursor.MergeFrom(other.Cursor);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (cursor_ == null) {
+              Cursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
+            }
+            input.ReadMessage(Cursor);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (cursor_ == null) {
+              Cursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
+            }
+            input.ReadMessage(Cursor);
             break;
           }
         }
