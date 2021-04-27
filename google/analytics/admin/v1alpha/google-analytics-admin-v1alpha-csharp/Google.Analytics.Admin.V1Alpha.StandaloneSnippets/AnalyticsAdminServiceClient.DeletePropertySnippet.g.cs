@@ -27,7 +27,7 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             // Initialize request argument(s)
             string name = "properties/[PROPERTY]";
             // Make the request
-            analyticsAdminServiceClient.DeleteProperty(name);
+            Property response = analyticsAdminServiceClient.DeleteProperty(name);
             // End snippet
         }
     }

@@ -26,6 +26,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStubSettings;
 import com.google.api.core.ApiFunction;
@@ -137,7 +138,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   }
 
   /** Returns the object with the settings used for calls to deleteProperty. */
-  public UnaryCallSettings<DeletePropertyRequest, Empty> deletePropertySettings() {
+  public UnaryCallSettings<DeletePropertyRequest, Property> deletePropertySettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deletePropertySettings();
   }
 
@@ -248,12 +249,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateIosAppDataStreamSettings();
   }
 
-  /** Returns the object with the settings used for calls to createIosAppDataStream. */
-  public UnaryCallSettings<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createIosAppDataStreamSettings();
-  }
-
   /** Returns the object with the settings used for calls to listIosAppDataStreams. */
   public PagedCallSettings<
           ListIosAppDataStreamsRequest,
@@ -282,13 +277,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       updateAndroidAppDataStreamSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .updateAndroidAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createAndroidAppDataStream. */
-  public UnaryCallSettings<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .createAndroidAppDataStreamSettings();
   }
 
   /** Returns the object with the settings used for calls to listAndroidAppDataStreams. */
@@ -370,6 +358,16 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getDataSharingSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
+  public PagedCallSettings<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .searchChangeHistoryEventsSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -526,7 +524,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     }
 
     /** Returns the builder for the settings used for calls to deleteProperty. */
-    public UnaryCallSettings.Builder<DeletePropertyRequest, Empty> deletePropertySettings() {
+    public UnaryCallSettings.Builder<DeletePropertyRequest, Property> deletePropertySettings() {
       return getStubSettingsBuilder().deletePropertySettings();
     }
 
@@ -642,12 +640,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().updateIosAppDataStreamSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createIosAppDataStream. */
-    public UnaryCallSettings.Builder<CreateIosAppDataStreamRequest, IosAppDataStream>
-        createIosAppDataStreamSettings() {
-      return getStubSettingsBuilder().createIosAppDataStreamSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listIosAppDataStreams. */
     public PagedCallSettings.Builder<
             ListIosAppDataStreamsRequest,
@@ -673,12 +665,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
         updateAndroidAppDataStreamSettings() {
       return getStubSettingsBuilder().updateAndroidAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        createAndroidAppDataStreamSettings() {
-      return getStubSettingsBuilder().createAndroidAppDataStreamSettings();
     }
 
     /** Returns the builder for the settings used for calls to listAndroidAppDataStreams. */
@@ -764,6 +750,15 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsSettings() {
       return getStubSettingsBuilder().getDataSharingSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
+    public PagedCallSettings.Builder<
+            SearchChangeHistoryEventsRequest,
+            SearchChangeHistoryEventsResponse,
+            SearchChangeHistoryEventsPagedResponse>
+        searchChangeHistoryEventsSettings() {
+      return getStubSettingsBuilder().searchChangeHistoryEventsSettings();
     }
 
     @Override

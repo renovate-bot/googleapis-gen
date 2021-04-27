@@ -25,10 +25,8 @@ from google.analytics.admin_v1alpha.types.analytics_admin import BatchGetUserLin
 from google.analytics.admin_v1alpha.types.analytics_admin import BatchGetUserLinksResponse
 from google.analytics.admin_v1alpha.types.analytics_admin import BatchUpdateUserLinksRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import BatchUpdateUserLinksResponse
-from google.analytics.admin_v1alpha.types.analytics_admin import CreateAndroidAppDataStreamRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import CreateFirebaseLinkRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import CreateGoogleAdsLinkRequest
-from google.analytics.admin_v1alpha.types.analytics_admin import CreateIosAppDataStreamRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import CreatePropertyRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import CreateUserLinkRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import CreateWebDataStreamRequest
@@ -69,6 +67,8 @@ from google.analytics.admin_v1alpha.types.analytics_admin import ListWebDataStre
 from google.analytics.admin_v1alpha.types.analytics_admin import ListWebDataStreamsResponse
 from google.analytics.admin_v1alpha.types.analytics_admin import ProvisionAccountTicketRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import ProvisionAccountTicketResponse
+from google.analytics.admin_v1alpha.types.analytics_admin import SearchChangeHistoryEventsRequest
+from google.analytics.admin_v1alpha.types.analytics_admin import SearchChangeHistoryEventsResponse
 from google.analytics.admin_v1alpha.types.analytics_admin import UpdateAccountRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import UpdateAndroidAppDataStreamRequest
 from google.analytics.admin_v1alpha.types.analytics_admin import UpdateEnhancedMeasurementSettingsRequest
@@ -80,8 +80,13 @@ from google.analytics.admin_v1alpha.types.analytics_admin import UpdateUserLinkR
 from google.analytics.admin_v1alpha.types.analytics_admin import UpdateWebDataStreamRequest
 from google.analytics.admin_v1alpha.types.resources import Account
 from google.analytics.admin_v1alpha.types.resources import AccountSummary
+from google.analytics.admin_v1alpha.types.resources import ActionType
+from google.analytics.admin_v1alpha.types.resources import ActorType
 from google.analytics.admin_v1alpha.types.resources import AndroidAppDataStream
 from google.analytics.admin_v1alpha.types.resources import AuditUserLink
+from google.analytics.admin_v1alpha.types.resources import ChangeHistoryChange
+from google.analytics.admin_v1alpha.types.resources import ChangeHistoryEvent
+from google.analytics.admin_v1alpha.types.resources import ChangeHistoryResourceType
 from google.analytics.admin_v1alpha.types.resources import DataSharingSettings
 from google.analytics.admin_v1alpha.types.resources import EnhancedMeasurementSettings
 from google.analytics.admin_v1alpha.types.resources import FirebaseLink
@@ -97,6 +102,8 @@ from google.analytics.admin_v1alpha.types.resources import WebDataStream
 
 __all__ = ('Account',
     'AccountSummary',
+    'ActionType',
+    'ActorType',
     'AnalyticsAdminServiceAsyncClient',
     'AnalyticsAdminServiceClient',
     'AndroidAppDataStream',
@@ -110,10 +117,11 @@ __all__ = ('Account',
     'BatchGetUserLinksResponse',
     'BatchUpdateUserLinksRequest',
     'BatchUpdateUserLinksResponse',
-    'CreateAndroidAppDataStreamRequest',
+    'ChangeHistoryChange',
+    'ChangeHistoryEvent',
+    'ChangeHistoryResourceType',
     'CreateFirebaseLinkRequest',
     'CreateGoogleAdsLinkRequest',
-    'CreateIosAppDataStreamRequest',
     'CreatePropertyRequest',
     'CreateUserLinkRequest',
     'CreateWebDataStreamRequest',
@@ -164,6 +172,8 @@ __all__ = ('Account',
     'PropertySummary',
     'ProvisionAccountTicketRequest',
     'ProvisionAccountTicketResponse',
+    'SearchChangeHistoryEventsRequest',
+    'SearchChangeHistoryEventsResponse',
     'UpdateAccountRequest',
     'UpdateAndroidAppDataStreamRequest',
     'UpdateEnhancedMeasurementSettingsRequest',

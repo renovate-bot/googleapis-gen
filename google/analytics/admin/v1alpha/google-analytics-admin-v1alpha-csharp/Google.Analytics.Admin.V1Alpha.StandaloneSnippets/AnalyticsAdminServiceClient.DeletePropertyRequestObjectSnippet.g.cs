@@ -30,7 +30,7 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
                 PropertyName = PropertyName.FromProperty("[PROPERTY]"),
             };
             // Make the request
-            analyticsAdminServiceClient.DeleteProperty(request);
+            Property response = analyticsAdminServiceClient.DeleteProperty(request);
             // End snippet
         }
     }
