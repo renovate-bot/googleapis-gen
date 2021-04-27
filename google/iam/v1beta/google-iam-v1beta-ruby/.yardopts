@@ -1,9 +1,12 @@
 --no-private
---title=Identity and Access Management (IAM) API
+--title=Google IAM V1beta API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet
 
 ./lib/**/*.rb
+./proto_docs/**/*.rb
 -
 README.md
+LICENSE.md
+AUTHENTICATION.md
