@@ -1,0 +1,68 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.partner.aistreams.v1alpha1",
+  "libraryPackage": "::Google::Partner::Aistreams::V1alpha1",
+  "services": {
+    "AIStreams": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Partner::Aistreams::V1alpha1::AIStreams::Client",
+          "rpcs": {
+            "ListClusters": {
+              "methods": [
+                "list_clusters"
+              ]
+            },
+            "GetCluster": {
+              "methods": [
+                "get_cluster"
+              ]
+            },
+            "CreateCluster": {
+              "methods": [
+                "create_cluster"
+              ]
+            },
+            "UpdateCluster": {
+              "methods": [
+                "update_cluster"
+              ]
+            },
+            "DeleteCluster": {
+              "methods": [
+                "delete_cluster"
+              ]
+            },
+            "ListStreams": {
+              "methods": [
+                "list_streams"
+              ]
+            },
+            "GetStream": {
+              "methods": [
+                "get_stream"
+              ]
+            },
+            "CreateStream": {
+              "methods": [
+                "create_stream"
+              ]
+            },
+            "UpdateStream": {
+              "methods": [
+                "update_stream"
+              ]
+            },
+            "DeleteStream": {
+              "methods": [
+                "delete_stream"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

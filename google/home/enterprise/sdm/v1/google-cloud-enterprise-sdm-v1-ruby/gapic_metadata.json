@@ -1,0 +1,53 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.home.enterprise.sdm.v1",
+  "libraryPackage": "::Google::Home::Enterprise::Sdm::V1",
+  "services": {
+    "SmartDeviceManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client",
+          "rpcs": {
+            "GetDevice": {
+              "methods": [
+                "get_device"
+              ]
+            },
+            "ListDevices": {
+              "methods": [
+                "list_devices"
+              ]
+            },
+            "ExecuteDeviceCommand": {
+              "methods": [
+                "execute_device_command"
+              ]
+            },
+            "GetStructure": {
+              "methods": [
+                "get_structure"
+              ]
+            },
+            "ListStructures": {
+              "methods": [
+                "list_structures"
+              ]
+            },
+            "GetRoom": {
+              "methods": [
+                "get_room"
+              ]
+            },
+            "ListRooms": {
+              "methods": [
+                "list_rooms"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

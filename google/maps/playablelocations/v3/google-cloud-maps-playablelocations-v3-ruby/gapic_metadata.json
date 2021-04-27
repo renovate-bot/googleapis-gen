@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.maps.playablelocations.v3",
+  "libraryPackage": "::Google::Maps::Playablelocations::V3",
+  "services": {
+    "PlayableLocations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Maps::Playablelocations::V3::PlayableLocations::Client",
+          "rpcs": {
+            "SamplePlayableLocations": {
+              "methods": [
+                "sample_playable_locations"
+              ]
+            },
+            "LogPlayerReports": {
+              "methods": [
+                "log_player_reports"
+              ]
+            },
+            "LogImpressions": {
+              "methods": [
+                "log_impressions"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

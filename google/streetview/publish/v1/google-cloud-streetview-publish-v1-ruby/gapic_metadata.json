@@ -1,0 +1,63 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.streetview.publish.v1",
+  "libraryPackage": "::Google::Streetview::Publish::V1",
+  "services": {
+    "StreetViewPublishService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Streetview::Publish::V1::StreetViewPublishService::Client",
+          "rpcs": {
+            "StartUpload": {
+              "methods": [
+                "start_upload"
+              ]
+            },
+            "CreatePhoto": {
+              "methods": [
+                "create_photo"
+              ]
+            },
+            "GetPhoto": {
+              "methods": [
+                "get_photo"
+              ]
+            },
+            "BatchGetPhotos": {
+              "methods": [
+                "batch_get_photos"
+              ]
+            },
+            "ListPhotos": {
+              "methods": [
+                "list_photos"
+              ]
+            },
+            "UpdatePhoto": {
+              "methods": [
+                "update_photo"
+              ]
+            },
+            "BatchUpdatePhotos": {
+              "methods": [
+                "batch_update_photos"
+              ]
+            },
+            "DeletePhoto": {
+              "methods": [
+                "delete_photo"
+              ]
+            },
+            "BatchDeletePhotos": {
+              "methods": [
+                "batch_delete_photos"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,12 @@
 --no-private
---title=BigQuery Storage API
+--title=Google Cloud Storage V1beta1 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet
 
 ./lib/**/*.rb
+./proto_docs/**/*.rb
 -
 README.md
+LICENSE.md
+AUTHENTICATION.md

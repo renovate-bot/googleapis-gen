@@ -1,0 +1,381 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.aiplatform.v1",
+  "libraryPackage": "::Google::Cloud::Aiplatform::V1",
+  "services": {
+    "DatasetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::DatasetService::Client",
+          "rpcs": {
+            "CreateDataset": {
+              "methods": [
+                "create_dataset"
+              ]
+            },
+            "GetDataset": {
+              "methods": [
+                "get_dataset"
+              ]
+            },
+            "UpdateDataset": {
+              "methods": [
+                "update_dataset"
+              ]
+            },
+            "ListDatasets": {
+              "methods": [
+                "list_datasets"
+              ]
+            },
+            "DeleteDataset": {
+              "methods": [
+                "delete_dataset"
+              ]
+            },
+            "ImportData": {
+              "methods": [
+                "import_data"
+              ]
+            },
+            "ExportData": {
+              "methods": [
+                "export_data"
+              ]
+            },
+            "ListDataItems": {
+              "methods": [
+                "list_data_items"
+              ]
+            },
+            "GetAnnotationSpec": {
+              "methods": [
+                "get_annotation_spec"
+              ]
+            },
+            "ListAnnotations": {
+              "methods": [
+                "list_annotations"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "EndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::EndpointService::Client",
+          "rpcs": {
+            "CreateEndpoint": {
+              "methods": [
+                "create_endpoint"
+              ]
+            },
+            "GetEndpoint": {
+              "methods": [
+                "get_endpoint"
+              ]
+            },
+            "ListEndpoints": {
+              "methods": [
+                "list_endpoints"
+              ]
+            },
+            "UpdateEndpoint": {
+              "methods": [
+                "update_endpoint"
+              ]
+            },
+            "DeleteEndpoint": {
+              "methods": [
+                "delete_endpoint"
+              ]
+            },
+            "DeployModel": {
+              "methods": [
+                "deploy_model"
+              ]
+            },
+            "UndeployModel": {
+              "methods": [
+                "undeploy_model"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "JobService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::JobService::Client",
+          "rpcs": {
+            "CreateCustomJob": {
+              "methods": [
+                "create_custom_job"
+              ]
+            },
+            "GetCustomJob": {
+              "methods": [
+                "get_custom_job"
+              ]
+            },
+            "ListCustomJobs": {
+              "methods": [
+                "list_custom_jobs"
+              ]
+            },
+            "DeleteCustomJob": {
+              "methods": [
+                "delete_custom_job"
+              ]
+            },
+            "CancelCustomJob": {
+              "methods": [
+                "cancel_custom_job"
+              ]
+            },
+            "CreateDataLabelingJob": {
+              "methods": [
+                "create_data_labeling_job"
+              ]
+            },
+            "GetDataLabelingJob": {
+              "methods": [
+                "get_data_labeling_job"
+              ]
+            },
+            "ListDataLabelingJobs": {
+              "methods": [
+                "list_data_labeling_jobs"
+              ]
+            },
+            "DeleteDataLabelingJob": {
+              "methods": [
+                "delete_data_labeling_job"
+              ]
+            },
+            "CancelDataLabelingJob": {
+              "methods": [
+                "cancel_data_labeling_job"
+              ]
+            },
+            "CreateHyperparameterTuningJob": {
+              "methods": [
+                "create_hyperparameter_tuning_job"
+              ]
+            },
+            "GetHyperparameterTuningJob": {
+              "methods": [
+                "get_hyperparameter_tuning_job"
+              ]
+            },
+            "ListHyperparameterTuningJobs": {
+              "methods": [
+                "list_hyperparameter_tuning_jobs"
+              ]
+            },
+            "DeleteHyperparameterTuningJob": {
+              "methods": [
+                "delete_hyperparameter_tuning_job"
+              ]
+            },
+            "CancelHyperparameterTuningJob": {
+              "methods": [
+                "cancel_hyperparameter_tuning_job"
+              ]
+            },
+            "CreateBatchPredictionJob": {
+              "methods": [
+                "create_batch_prediction_job"
+              ]
+            },
+            "GetBatchPredictionJob": {
+              "methods": [
+                "get_batch_prediction_job"
+              ]
+            },
+            "ListBatchPredictionJobs": {
+              "methods": [
+                "list_batch_prediction_jobs"
+              ]
+            },
+            "DeleteBatchPredictionJob": {
+              "methods": [
+                "delete_batch_prediction_job"
+              ]
+            },
+            "CancelBatchPredictionJob": {
+              "methods": [
+                "cancel_batch_prediction_job"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MigrationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::MigrationService::Client",
+          "rpcs": {
+            "SearchMigratableResources": {
+              "methods": [
+                "search_migratable_resources"
+              ]
+            },
+            "BatchMigrateResources": {
+              "methods": [
+                "batch_migrate_resources"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ModelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::ModelService::Client",
+          "rpcs": {
+            "UploadModel": {
+              "methods": [
+                "upload_model"
+              ]
+            },
+            "GetModel": {
+              "methods": [
+                "get_model"
+              ]
+            },
+            "ListModels": {
+              "methods": [
+                "list_models"
+              ]
+            },
+            "UpdateModel": {
+              "methods": [
+                "update_model"
+              ]
+            },
+            "DeleteModel": {
+              "methods": [
+                "delete_model"
+              ]
+            },
+            "ExportModel": {
+              "methods": [
+                "export_model"
+              ]
+            },
+            "GetModelEvaluation": {
+              "methods": [
+                "get_model_evaluation"
+              ]
+            },
+            "ListModelEvaluations": {
+              "methods": [
+                "list_model_evaluations"
+              ]
+            },
+            "GetModelEvaluationSlice": {
+              "methods": [
+                "get_model_evaluation_slice"
+              ]
+            },
+            "ListModelEvaluationSlices": {
+              "methods": [
+                "list_model_evaluation_slices"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PipelineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::PipelineService::Client",
+          "rpcs": {
+            "CreateTrainingPipeline": {
+              "methods": [
+                "create_training_pipeline"
+              ]
+            },
+            "GetTrainingPipeline": {
+              "methods": [
+                "get_training_pipeline"
+              ]
+            },
+            "ListTrainingPipelines": {
+              "methods": [
+                "list_training_pipelines"
+              ]
+            },
+            "DeleteTrainingPipeline": {
+              "methods": [
+                "delete_training_pipeline"
+              ]
+            },
+            "CancelTrainingPipeline": {
+              "methods": [
+                "cancel_training_pipeline"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PredictionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::PredictionService::Client",
+          "rpcs": {
+            "Predict": {
+              "methods": [
+                "predict"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SpecialistPoolService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client",
+          "rpcs": {
+            "CreateSpecialistPool": {
+              "methods": [
+                "create_specialist_pool"
+              ]
+            },
+            "GetSpecialistPool": {
+              "methods": [
+                "get_specialist_pool"
+              ]
+            },
+            "ListSpecialistPools": {
+              "methods": [
+                "list_specialist_pools"
+              ]
+            },
+            "DeleteSpecialistPool": {
+              "methods": [
+                "delete_specialist_pool"
+              ]
+            },
+            "UpdateSpecialistPool": {
+              "methods": [
+                "update_specialist_pool"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.chromeos.moblab.v1beta1",
+  "libraryPackage": "::Google::Chromeos::Moblab::V1beta1",
+  "services": {
+    "BuildService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Chromeos::Moblab::V1beta1::BuildService::Client",
+          "rpcs": {
+            "ListBuilds": {
+              "methods": [
+                "list_builds"
+              ]
+            },
+            "CheckBuildStageStatus": {
+              "methods": [
+                "check_build_stage_status"
+              ]
+            },
+            "StageBuild": {
+              "methods": [
+                "stage_build"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

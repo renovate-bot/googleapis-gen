@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.osconfig.agentendpoint.v1beta",
+  "libraryPackage": "::Google::Cloud::Osconfig::Agentendpoint::V1beta",
+  "services": {
+    "AgentEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Client",
+          "rpcs": {
+            "ReceiveTaskNotification": {
+              "methods": [
+                "receive_task_notification"
+              ]
+            },
+            "StartNextTask": {
+              "methods": [
+                "start_next_task"
+              ]
+            },
+            "ReportTaskProgress": {
+              "methods": [
+                "report_task_progress"
+              ]
+            },
+            "ReportTaskComplete": {
+              "methods": [
+                "report_task_complete"
+              ]
+            },
+            "LookupEffectiveGuestPolicy": {
+              "methods": [
+                "lookup_effective_guest_policy"
+              ]
+            },
+            "RegisterAgent": {
+              "methods": [
+                "register_agent"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

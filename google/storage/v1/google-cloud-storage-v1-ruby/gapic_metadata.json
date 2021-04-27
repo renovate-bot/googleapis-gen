@@ -1,0 +1,298 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.storage.v1",
+  "libraryPackage": "::Google::Storage::V1",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Storage::V1::Storage::Client",
+          "rpcs": {
+            "DeleteBucketAccessControl": {
+              "methods": [
+                "delete_bucket_access_control"
+              ]
+            },
+            "GetBucketAccessControl": {
+              "methods": [
+                "get_bucket_access_control"
+              ]
+            },
+            "InsertBucketAccessControl": {
+              "methods": [
+                "insert_bucket_access_control"
+              ]
+            },
+            "ListBucketAccessControls": {
+              "methods": [
+                "list_bucket_access_controls"
+              ]
+            },
+            "UpdateBucketAccessControl": {
+              "methods": [
+                "update_bucket_access_control"
+              ]
+            },
+            "PatchBucketAccessControl": {
+              "methods": [
+                "patch_bucket_access_control"
+              ]
+            },
+            "DeleteBucket": {
+              "methods": [
+                "delete_bucket"
+              ]
+            },
+            "GetBucket": {
+              "methods": [
+                "get_bucket"
+              ]
+            },
+            "InsertBucket": {
+              "methods": [
+                "insert_bucket"
+              ]
+            },
+            "ListChannels": {
+              "methods": [
+                "list_channels"
+              ]
+            },
+            "ListBuckets": {
+              "methods": [
+                "list_buckets"
+              ]
+            },
+            "LockBucketRetentionPolicy": {
+              "methods": [
+                "lock_bucket_retention_policy"
+              ]
+            },
+            "GetBucketIamPolicy": {
+              "methods": [
+                "get_bucket_iam_policy"
+              ]
+            },
+            "SetBucketIamPolicy": {
+              "methods": [
+                "set_bucket_iam_policy"
+              ]
+            },
+            "TestBucketIamPermissions": {
+              "methods": [
+                "test_bucket_iam_permissions"
+              ]
+            },
+            "PatchBucket": {
+              "methods": [
+                "patch_bucket"
+              ]
+            },
+            "UpdateBucket": {
+              "methods": [
+                "update_bucket"
+              ]
+            },
+            "StopChannel": {
+              "methods": [
+                "stop_channel"
+              ]
+            },
+            "DeleteDefaultObjectAccessControl": {
+              "methods": [
+                "delete_default_object_access_control"
+              ]
+            },
+            "GetDefaultObjectAccessControl": {
+              "methods": [
+                "get_default_object_access_control"
+              ]
+            },
+            "InsertDefaultObjectAccessControl": {
+              "methods": [
+                "insert_default_object_access_control"
+              ]
+            },
+            "ListDefaultObjectAccessControls": {
+              "methods": [
+                "list_default_object_access_controls"
+              ]
+            },
+            "PatchDefaultObjectAccessControl": {
+              "methods": [
+                "patch_default_object_access_control"
+              ]
+            },
+            "UpdateDefaultObjectAccessControl": {
+              "methods": [
+                "update_default_object_access_control"
+              ]
+            },
+            "DeleteNotification": {
+              "methods": [
+                "delete_notification"
+              ]
+            },
+            "GetNotification": {
+              "methods": [
+                "get_notification"
+              ]
+            },
+            "InsertNotification": {
+              "methods": [
+                "insert_notification"
+              ]
+            },
+            "ListNotifications": {
+              "methods": [
+                "list_notifications"
+              ]
+            },
+            "DeleteObjectAccessControl": {
+              "methods": [
+                "delete_object_access_control"
+              ]
+            },
+            "GetObjectAccessControl": {
+              "methods": [
+                "get_object_access_control"
+              ]
+            },
+            "InsertObjectAccessControl": {
+              "methods": [
+                "insert_object_access_control"
+              ]
+            },
+            "ListObjectAccessControls": {
+              "methods": [
+                "list_object_access_controls"
+              ]
+            },
+            "PatchObjectAccessControl": {
+              "methods": [
+                "patch_object_access_control"
+              ]
+            },
+            "UpdateObjectAccessControl": {
+              "methods": [
+                "update_object_access_control"
+              ]
+            },
+            "ComposeObject": {
+              "methods": [
+                "compose_object"
+              ]
+            },
+            "CopyObject": {
+              "methods": [
+                "copy_object"
+              ]
+            },
+            "DeleteObject": {
+              "methods": [
+                "delete_object"
+              ]
+            },
+            "GetObject": {
+              "methods": [
+                "get_object"
+              ]
+            },
+            "GetObjectMedia": {
+              "methods": [
+                "get_object_media"
+              ]
+            },
+            "InsertObject": {
+              "methods": [
+                "insert_object"
+              ]
+            },
+            "ListObjects": {
+              "methods": [
+                "list_objects"
+              ]
+            },
+            "RewriteObject": {
+              "methods": [
+                "rewrite_object"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "start_resumable_write"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "query_write_status"
+              ]
+            },
+            "PatchObject": {
+              "methods": [
+                "patch_object"
+              ]
+            },
+            "UpdateObject": {
+              "methods": [
+                "update_object"
+              ]
+            },
+            "GetObjectIamPolicy": {
+              "methods": [
+                "get_object_iam_policy"
+              ]
+            },
+            "SetObjectIamPolicy": {
+              "methods": [
+                "set_object_iam_policy"
+              ]
+            },
+            "TestObjectIamPermissions": {
+              "methods": [
+                "test_object_iam_permissions"
+              ]
+            },
+            "WatchAllObjects": {
+              "methods": [
+                "watch_all_objects"
+              ]
+            },
+            "GetServiceAccount": {
+              "methods": [
+                "get_service_account"
+              ]
+            },
+            "CreateHmacKey": {
+              "methods": [
+                "create_hmac_key"
+              ]
+            },
+            "DeleteHmacKey": {
+              "methods": [
+                "delete_hmac_key"
+              ]
+            },
+            "GetHmacKey": {
+              "methods": [
+                "get_hmac_key"
+              ]
+            },
+            "ListHmacKeys": {
+              "methods": [
+                "list_hmac_keys"
+              ]
+            },
+            "UpdateHmacKey": {
+              "methods": [
+                "update_hmac_key"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

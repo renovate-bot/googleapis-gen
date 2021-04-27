@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.asset.v1p2beta1",
+  "libraryPackage": "::Google::Cloud::Asset::V1p2beta1",
+  "services": {
+    "AssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Asset::V1p2beta1::AssetService::Client",
+          "rpcs": {
+            "CreateFeed": {
+              "methods": [
+                "create_feed"
+              ]
+            },
+            "GetFeed": {
+              "methods": [
+                "get_feed"
+              ]
+            },
+            "ListFeeds": {
+              "methods": [
+                "list_feeds"
+              ]
+            },
+            "UpdateFeed": {
+              "methods": [
+                "update_feed"
+              ]
+            },
+            "DeleteFeed": {
+              "methods": [
+                "delete_feed"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

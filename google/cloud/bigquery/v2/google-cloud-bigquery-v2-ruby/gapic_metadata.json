@@ -1,0 +1,38 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.bigquery.v2",
+  "libraryPackage": "::Google::Cloud::Bigquery::V2",
+  "services": {
+    "ModelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Bigquery::V2::ModelService::Client",
+          "rpcs": {
+            "GetModel": {
+              "methods": [
+                "get_model"
+              ]
+            },
+            "ListModels": {
+              "methods": [
+                "list_models"
+              ]
+            },
+            "PatchModel": {
+              "methods": [
+                "patch_model"
+              ]
+            },
+            "DeleteModel": {
+              "methods": [
+                "delete_model"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

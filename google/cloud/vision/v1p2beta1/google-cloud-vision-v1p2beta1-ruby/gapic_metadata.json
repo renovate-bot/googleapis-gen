@@ -1,0 +1,28 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.vision.v1p2beta1",
+  "libraryPackage": "::Google::Cloud::Vision::V1p2beta1",
+  "services": {
+    "ImageAnnotator": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Vision::V1p2beta1::ImageAnnotator::Client",
+          "rpcs": {
+            "BatchAnnotateImages": {
+              "methods": [
+                "batch_annotate_images"
+              ]
+            },
+            "AsyncBatchAnnotateFiles": {
+              "methods": [
+                "async_batch_annotate_files"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

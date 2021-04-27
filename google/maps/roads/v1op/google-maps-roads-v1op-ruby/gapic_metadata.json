@@ -1,0 +1,28 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.maps.roads.v1op",
+  "libraryPackage": "::Google::Maps::Roads::V1op",
+  "services": {
+    "RoadsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Maps::Roads::V1op::RoadsService::Client",
+          "rpcs": {
+            "SnapToRoads": {
+              "methods": [
+                "snap_to_roads"
+              ]
+            },
+            "ListNearestRoads": {
+              "methods": [
+                "list_nearest_roads"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

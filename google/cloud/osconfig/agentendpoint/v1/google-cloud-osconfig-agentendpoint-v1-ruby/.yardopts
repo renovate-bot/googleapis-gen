@@ -1,9 +1,12 @@
 --no-private
---title=OS Config API
+--title=Google Cloud Agentendpoint V1 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet
 
 ./lib/**/*.rb
+./proto_docs/**/*.rb
 -
 README.md
+LICENSE.md
+AUTHENTICATION.md

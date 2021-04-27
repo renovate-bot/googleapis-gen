@@ -1,42 +1,50 @@
-# Ruby Client for Cloud OS Config API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
+# Ruby Client for the Google Cloud Osconfig V1beta API
 
-[Cloud OS Config API][Product Documentation]:
-OS management tools that can be used for patch management, patch
-compliance, and configuration management on VM instances.
-- [Client Library Documentation][]
-- [Product Documentation][]
+API Client library for the Google Cloud Osconfig V1beta API
 
-## Quick Start
-In order to use this library, you first need to go through the following
-steps:
+google-cloud-osconfig-v1beta is the official client library for the Google Cloud Osconfig V1beta API.
+
+https://github.com/googleapis/google-cloud-ruby
+
+This gem is a _versioned_ client. It provides basic client classes for a
+specific version of the Google Cloud Osconfig V1beta API. Most users should consider using
+the main client gem,
+[google-cloud-osconfig](https://rubygems.org/gems/google-cloud-osconfig).
+See the section below titled *Which client should I use?* for more information.
+
+## Installation
+
+```
+$ gem install google-cloud-osconfig-v1beta
+```
+
+## Before You Begin
+
+In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
-2. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
-3. [Enable the Cloud OS Config API.](https://console.cloud.google.com/apis/library/osconfig.googleapis.com)
-4. [Setup Authentication.](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud/master/guides/authentication)
+1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. {file:AUTHENTICATION.md Set up authentication.}
 
-### Installation
+## Quick Start
+
+```ruby
+require "google/cloud/osconfig/v1beta"
+
+client = ::Google::Cloud::Osconfig::V1beta::OsConfigService::Client.new
+request = my_create_request
+response = client.execute_patch_job request
 ```
-$ gem install google-cloud-os_config
-```
 
-### Next Steps
-- Read the [Client Library Documentation][] for Cloud OS Config API
-  to see other available methods on the client.
-- Read the [Cloud OS Config API Product documentation][Product Documentation]
-  to learn more about the product and see How-to Guides.
-- View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
-  to see the full list of Cloud APIs that we cover.
-
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-os_config/latest/google/cloud/osconfig/v1beta
-[Product Documentation]: https://cloud.google.com/osconfig
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-osconfig-v1beta/latest)
+for class and method documentation.
 
 ## Enabling Logging
 
 To enable logging for this library, set the logger for the underlying [gRPC](https://github.com/grpc/grpc/tree/master/src/ruby) library.
-The logger that you set may be a Ruby stdlib [`Logger`](https://ruby-doc.org/stdlib-2.5.0/libdoc/logger/rdoc/Logger.html) as shown below,
-or a [`Google::Cloud::Logging::Logger`](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-logging/latest/google/cloud/logging/logger)
-that will write logs to [Stackdriver Logging](https://cloud.google.com/logging/). See [grpc/logconfig.rb](https://github.com/grpc/grpc/blob/master/src/ruby/lib/grpc/logconfig.rb)
+The logger that you set may be a Ruby stdlib [`Logger`](https://ruby-doc.org/stdlib/libdoc/logger/rdoc/Logger.html) as shown below,
+or a [`Google::Cloud::Logging::Logger`](https://googleapis.dev/ruby/google-cloud-logging/latest)
+that will write logs to [Cloud Logging](https://cloud.google.com/logging/). See [grpc/logconfig.rb](https://github.com/grpc/grpc/blob/master/src/ruby/lib/grpc/logconfig.rb)
 and the gRPC [spec_helper.rb](https://github.com/grpc/grpc/blob/master/src/ruby/spec/spec_helper.rb) for additional information.
 
 Configuring a Ruby stdlib logger:
@@ -59,11 +67,69 @@ end
 
 ## Supported Ruby Versions
 
-This library is supported on Ruby 2.3+.
+This library is supported on Ruby 2.5+.
 
 Google provides official support for Ruby versions that are actively supported
 by Ruby Core—that is, Ruby versions that are either in normal maintenance or
-in security maintenance, and not end of life. Currently, this means Ruby 2.3
+in security maintenance, and not end of life. Currently, this means Ruby 2.5
 and later. Older versions of Ruby _may_ still work, but are unsupported and not
 recommended. See https://www.ruby-lang.org/en/downloads/branches/ for details
 about the Ruby support schedule.
+
+## Which client should I use?
+
+Most modern Ruby client libraries for Google APIs come in two flavors: the main
+client library with a name such as `google-cloud-osconfig`,
+and lower-level _versioned_ client libraries with names such as
+`google-cloud-osconfig-v1beta`.
+_In most cases, you should install the main client._
+
+### What's the difference between the main client and a versioned client?
+
+A _versioned client_ provides a basic set of data types and client classes for
+a _single version_ of a specific service. (That is, for a service with multiple
+versions, there might be a separate versioned client for each service version.)
+Most versioned clients are written and maintained by a code generator.
+
+The _main client_ is designed to provide you with the _recommended_ client
+interfaces for the service. There will be only one main client for any given
+service, even a service with multiple versions. The main client includes
+factory methods for constructing the client objects we recommend for most
+users. In some cases, those will be classes provided by an underlying versioned
+client; in other cases, they will be handwritten higher-level client objects
+with additional capabilities, convenience methods, or best practices built in.
+Generally, the main client will default to a recommended service version,
+although in some cases you can override this if you need to talk to a specific
+service version.
+
+### Why would I want to use the main client?
+
+We recommend that most users install the main client gem for a service. You can
+identify this gem as the one _without_ a version in its name, e.g.
+`google-cloud-osconfig`.
+The main client is recommended because it will embody the best practices for
+accessing the service, and may also provide more convenient interfaces or
+tighter integration into frameworks and third-party libraries. In addition, the
+documentation and samples published by Google will generally demonstrate use of
+the main client.
+
+### Why would I want to use a versioned client?
+
+You can use a versioned client if you are content with a possibly lower-level
+class interface, you explicitly want to avoid features provided by the main
+client, or you want to access a specific service version not be covered by the
+main client. You can identify versioned client gems because the service version
+is part of the name, e.g. `google-cloud-osconfig-v1beta`.
+
+### What about the google-apis-<name> clients?
+
+Client library gems with names that begin with `google-apis-` are based on an
+older code generation technology. They talk to a REST/JSON backend (whereas
+most modern clients talk to a [gRPC](https://grpc.io/) backend) and they may
+not offer the same performance, features, and ease of use provided by more
+modern clients.
+
+The `google-apis-` clients have wide coverage across Google services, so you
+might need to use one if there is no modern client available for the service.
+However, if a modern client is available, we generally recommend it over the
+older `google-apis-` clients.

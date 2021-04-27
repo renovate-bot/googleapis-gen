@@ -1,0 +1,108 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.securitycenter.v1beta1",
+  "libraryPackage": "::Google::Cloud::Securitycenter::V1beta1",
+  "services": {
+    "SecurityCenter": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Securitycenter::V1beta1::SecurityCenter::Client",
+          "rpcs": {
+            "CreateSource": {
+              "methods": [
+                "create_source"
+              ]
+            },
+            "CreateFinding": {
+              "methods": [
+                "create_finding"
+              ]
+            },
+            "GetIamPolicy": {
+              "methods": [
+                "get_iam_policy"
+              ]
+            },
+            "GetOrganizationSettings": {
+              "methods": [
+                "get_organization_settings"
+              ]
+            },
+            "GetSource": {
+              "methods": [
+                "get_source"
+              ]
+            },
+            "GroupAssets": {
+              "methods": [
+                "group_assets"
+              ]
+            },
+            "GroupFindings": {
+              "methods": [
+                "group_findings"
+              ]
+            },
+            "ListAssets": {
+              "methods": [
+                "list_assets"
+              ]
+            },
+            "ListFindings": {
+              "methods": [
+                "list_findings"
+              ]
+            },
+            "ListSources": {
+              "methods": [
+                "list_sources"
+              ]
+            },
+            "RunAssetDiscovery": {
+              "methods": [
+                "run_asset_discovery"
+              ]
+            },
+            "SetFindingState": {
+              "methods": [
+                "set_finding_state"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "set_iam_policy"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "test_iam_permissions"
+              ]
+            },
+            "UpdateFinding": {
+              "methods": [
+                "update_finding"
+              ]
+            },
+            "UpdateOrganizationSettings": {
+              "methods": [
+                "update_organization_settings"
+              ]
+            },
+            "UpdateSource": {
+              "methods": [
+                "update_source"
+              ]
+            },
+            "UpdateSecurityMarks": {
+              "methods": [
+                "update_security_marks"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

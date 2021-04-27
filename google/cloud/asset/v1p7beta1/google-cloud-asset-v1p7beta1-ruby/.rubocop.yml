@@ -1,15 +1,29 @@
+inherit_gem:
+  google-style: google-style.yml
+
 AllCops:
   Exclude:
-    - "google-cloud-asset.gemspec"
-    - "lib/google/**/*"
-    - "Rakefile"
+    - "google-cloud-asset-v1p7beta1.gemspec"
+    - "lib/**/*_pb.rb"
+    - "proto_docs/**/*"
     - "test/**/*"
     - "acceptance/**/*"
+    - "Rakefile"
 
-Documentation:
+Layout/LineLength:
   Enabled: false
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-Style/MethodDefParentheses:
-  EnforcedStyle: require_no_parentheses
+Metrics/AbcSize:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Naming/FileName:
+  Exclude:
+    - "lib/google-cloud-asset-v1p7beta1.rb"

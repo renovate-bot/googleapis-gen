@@ -1,0 +1,163 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.pubsublite.v1",
+  "libraryPackage": "::Google::Cloud::PubSubLite::V1",
+  "services": {
+    "AdminService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::PubSubLite::V1::AdminService::Client",
+          "rpcs": {
+            "CreateTopic": {
+              "methods": [
+                "create_topic"
+              ]
+            },
+            "GetTopic": {
+              "methods": [
+                "get_topic"
+              ]
+            },
+            "GetTopicPartitions": {
+              "methods": [
+                "get_topic_partitions"
+              ]
+            },
+            "ListTopics": {
+              "methods": [
+                "list_topics"
+              ]
+            },
+            "UpdateTopic": {
+              "methods": [
+                "update_topic"
+              ]
+            },
+            "DeleteTopic": {
+              "methods": [
+                "delete_topic"
+              ]
+            },
+            "ListTopicSubscriptions": {
+              "methods": [
+                "list_topic_subscriptions"
+              ]
+            },
+            "CreateSubscription": {
+              "methods": [
+                "create_subscription"
+              ]
+            },
+            "GetSubscription": {
+              "methods": [
+                "get_subscription"
+              ]
+            },
+            "ListSubscriptions": {
+              "methods": [
+                "list_subscriptions"
+              ]
+            },
+            "UpdateSubscription": {
+              "methods": [
+                "update_subscription"
+              ]
+            },
+            "DeleteSubscription": {
+              "methods": [
+                "delete_subscription"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CursorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::PubSubLite::V1::CursorService::Client",
+          "rpcs": {
+            "StreamingCommitCursor": {
+              "methods": [
+                "streaming_commit_cursor"
+              ]
+            },
+            "CommitCursor": {
+              "methods": [
+                "commit_cursor"
+              ]
+            },
+            "ListPartitionCursors": {
+              "methods": [
+                "list_partition_cursors"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PublisherService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::PubSubLite::V1::PublisherService::Client",
+          "rpcs": {
+            "Publish": {
+              "methods": [
+                "publish"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SubscriberService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::PubSubLite::V1::SubscriberService::Client",
+          "rpcs": {
+            "Subscribe": {
+              "methods": [
+                "subscribe"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PartitionAssignmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::PubSubLite::V1::PartitionAssignmentService::Client",
+          "rpcs": {
+            "AssignPartitions": {
+              "methods": [
+                "assign_partitions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TopicStatsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::PubSubLite::V1::TopicStatsService::Client",
+          "rpcs": {
+            "ComputeMessageStats": {
+              "methods": [
+                "compute_message_stats"
+              ]
+            },
+            "ComputeHeadCursor": {
+              "methods": [
+                "compute_head_cursor"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

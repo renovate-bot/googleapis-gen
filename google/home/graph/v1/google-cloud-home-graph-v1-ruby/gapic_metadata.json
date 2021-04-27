@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.home.graph.v1",
+  "libraryPackage": "::Google::Home::Graph::V1",
+  "services": {
+    "HomeGraphApiService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Home::Graph::V1::HomeGraphApiService::Client",
+          "rpcs": {
+            "RequestSyncDevices": {
+              "methods": [
+                "request_sync_devices"
+              ]
+            },
+            "ReportStateAndNotification": {
+              "methods": [
+                "report_state_and_notification"
+              ]
+            },
+            "DeleteAgentUser": {
+              "methods": [
+                "delete_agent_user"
+              ]
+            },
+            "Query": {
+              "methods": [
+                "query"
+              ]
+            },
+            "Sync": {
+              "methods": [
+                "sync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

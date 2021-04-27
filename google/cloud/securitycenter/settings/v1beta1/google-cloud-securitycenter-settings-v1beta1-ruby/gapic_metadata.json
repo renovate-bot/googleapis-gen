@@ -1,0 +1,83 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.securitycenter.settings.v1beta1",
+  "libraryPackage": "::Google::Cloud::SecurityCenter::Settings::V1beta1",
+  "services": {
+    "SecurityCenterSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client",
+          "rpcs": {
+            "GetServiceAccount": {
+              "methods": [
+                "get_service_account"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "get_settings"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "update_settings"
+              ]
+            },
+            "ResetSettings": {
+              "methods": [
+                "reset_settings"
+              ]
+            },
+            "BatchGetSettings": {
+              "methods": [
+                "batch_get_settings"
+              ]
+            },
+            "CalculateEffectiveSettings": {
+              "methods": [
+                "calculate_effective_settings"
+              ]
+            },
+            "BatchCalculateEffectiveSettings": {
+              "methods": [
+                "batch_calculate_effective_settings"
+              ]
+            },
+            "GetComponentSettings": {
+              "methods": [
+                "get_component_settings"
+              ]
+            },
+            "UpdateComponentSettings": {
+              "methods": [
+                "update_component_settings"
+              ]
+            },
+            "ResetComponentSettings": {
+              "methods": [
+                "reset_component_settings"
+              ]
+            },
+            "CalculateEffectiveComponentSettings": {
+              "methods": [
+                "calculate_effective_component_settings"
+              ]
+            },
+            "ListDetectors": {
+              "methods": [
+                "list_detectors"
+              ]
+            },
+            "ListComponents": {
+              "methods": [
+                "list_components"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

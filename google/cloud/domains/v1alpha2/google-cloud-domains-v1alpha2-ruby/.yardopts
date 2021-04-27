@@ -1,9 +1,12 @@
 --no-private
---title=Cloud Domains API
+--title=Google Cloud Domains V1alpha2 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet
 
 ./lib/**/*.rb
+./proto_docs/**/*.rb
 -
 README.md
+LICENSE.md
+AUTHENTICATION.md

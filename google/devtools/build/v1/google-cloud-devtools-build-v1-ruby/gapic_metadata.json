@@ -1,0 +1,28 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.devtools.build.v1",
+  "libraryPackage": "::Google::Devtools::Build::V1",
+  "services": {
+    "PublishBuildEvent": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Devtools::Build::V1::PublishBuildEvent::Client",
+          "rpcs": {
+            "PublishLifecycleEvent": {
+              "methods": [
+                "publish_lifecycle_event"
+              ]
+            },
+            "PublishBuildToolEventStream": {
+              "methods": [
+                "publish_build_tool_event_stream"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

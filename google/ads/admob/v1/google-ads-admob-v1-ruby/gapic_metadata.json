@@ -1,0 +1,38 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.ads.admob.v1",
+  "libraryPackage": "::Google::Ads::Admob::V1",
+  "services": {
+    "AdMobApi": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Ads::Admob::V1::AdMobApi::Client",
+          "rpcs": {
+            "GetPublisherAccount": {
+              "methods": [
+                "get_publisher_account"
+              ]
+            },
+            "ListPublisherAccounts": {
+              "methods": [
+                "list_publisher_accounts"
+              ]
+            },
+            "GenerateNetworkReport": {
+              "methods": [
+                "generate_network_report"
+              ]
+            },
+            "GenerateMediationReport": {
+              "methods": [
+                "generate_mediation_report"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

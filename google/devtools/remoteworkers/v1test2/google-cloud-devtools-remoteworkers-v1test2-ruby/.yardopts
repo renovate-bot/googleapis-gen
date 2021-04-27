@@ -1,9 +1,12 @@
 --no-private
---title=Remote Workers API
+--title=Google Cloud Remoteworkers V1test2 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet
 
 ./lib/**/*.rb
+./proto_docs/**/*.rb
 -
 README.md
+LICENSE.md
+AUTHENTICATION.md
