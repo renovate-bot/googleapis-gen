@@ -268,7 +268,7 @@ request_id (	BàA"€
 ListCertificateTemplatesC.google.cloud.security.privateca.v1.ListCertificateTemplatesRequestD.google.cloud.security.privateca.v1.ListCertificateTemplatesResponse"I‚Óä“:8/v1/{parent=projects/*/locations/*}/certificateTemplatesÚAparent¼
 UpdateCertificateTemplateD.google.cloud.security.privateca.v1.UpdateCertificateTemplateRequest.google.longrunning.Operation"¹‚Óä“e2M/v1/{certificate_template.name=projects/*/locations/*/certificateTemplates/*}:certificate_templateÚA certificate_template,update_maskÊA(
 CertificateTemplateOperationMetadataLÊAprivateca.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBý
-&com.google.cloud.security.privateca.v1BPrivateCaProtoPZKgoogle.golang.org/genproto/googleapis/cloud/security/privateca/v1;privatecaøª"Google.Cloud.Security.PrivateCA.V1Ê"Google\\Cloud\\Security\\PrivateCA\\v1ê&Google::Cloud::Security::PrivateCA::v1bproto3'
+&com.google.cloud.security.privateca.v1BPrivateCaProtoPZKgoogle.golang.org/genproto/googleapis/cloud/security/privateca/v1;privatecaøª"Google.Cloud.Security.PrivateCA.V1Ê"Google\\Cloud\\Security\\PrivateCA\\V1ê&Google::Cloud::Security::PrivateCA::v1bproto3'
         , true);
 
         static::$is_initialized = true;

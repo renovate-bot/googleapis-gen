@@ -27,65 +27,6 @@ return [
             ],
         ],
         'google.cloud.security.privateca.v1.CertificateAuthorityService' => [
-            'CreateCertificate' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificates',
-                'body' => 'certificate',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetCertificate' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificates/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListCertificates' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificates',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'RevokeCertificate' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificates/*}:revoke',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateCertificate' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{certificate.name=projects/*/locations/*/caPools/*/certificates/*}',
-                'body' => 'certificate',
-                'placeholders' => [
-                    'certificate.name' => [
-                        'getters' => [
-                            'getCertificate',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'ActivateCertificateAuthority' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*}:activate',
@@ -98,6 +39,30 @@ return [
                     ],
                 ],
             ],
+            'CreateCaPool' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/caPools',
+                'body' => 'ca_pool',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateCertificate' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificates',
+                'body' => 'certificate',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'CreateCertificateAuthority' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificateAuthorities',
@@ -106,6 +71,51 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateCertificateTemplate' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/certificateTemplates',
+                'body' => 'certificate_template',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteCaPool' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteCertificateAuthority' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteCertificateTemplate' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/certificateTemplates/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -134,9 +144,43 @@ return [
                     ],
                 ],
             ],
+            'FetchCaCerts' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{ca_pool=projects/*/locations/*/caPools/*}:fetchCaCerts',
+                'body' => '*',
+                'placeholders' => [
+                    'ca_pool' => [
+                        'getters' => [
+                            'getCaPool',
+                        ],
+                    ],
+                ],
+            ],
             'FetchCertificateAuthorityCsr' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*}:fetch',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetCaPool' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetCertificate' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificates/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -156,173 +200,9 @@ return [
                     ],
                 ],
             ],
-            'ListCertificateAuthorities' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificateAuthorities',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UndeleteCertificateAuthority' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*}:undelete',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteCertificateAuthority' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateCertificateAuthority' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{certificate_authority.name=projects/*/locations/*/caPools/*/certificateAuthorities/*}',
-                'body' => 'certificate_authority',
-                'placeholders' => [
-                    'certificate_authority.name' => [
-                        'getters' => [
-                            'getCertificateAuthority',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateCaPool' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/caPools',
-                'body' => 'ca_pool',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateCaPool' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{ca_pool.name=projects/*/locations/*/caPools/*}',
-                'body' => 'ca_pool',
-                'placeholders' => [
-                    'ca_pool.name' => [
-                        'getters' => [
-                            'getCaPool',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'GetCaPool' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListCaPools' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/caPools',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteCaPool' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'FetchCaCerts' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{ca_pool=projects/*/locations/*/caPools/*}:fetchCaCerts',
-                'body' => '*',
-                'placeholders' => [
-                    'ca_pool' => [
-                        'getters' => [
-                            'getCaPool',
-                        ],
-                    ],
-                ],
-            ],
             'GetCertificateRevocationList' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*/certificateRevocationLists/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListCertificateRevocationLists' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*/certificateAuthorities/*}/certificateRevocationLists',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateCertificateRevocationList' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{certificate_revocation_list.name=projects/*/locations/*/caPools/*/certificateAuthorities/*/certificateRevocationLists/*}',
-                'body' => 'certificate_revocation_list',
-                'placeholders' => [
-                    'certificate_revocation_list.name' => [
-                        'getters' => [
-                            'getCertificateRevocationList',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateCertificateTemplate' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/certificateTemplates',
-                'body' => 'certificate_template',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteCertificateTemplate' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/certificateTemplates/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -342,6 +222,39 @@ return [
                     ],
                 ],
             ],
+            'ListCaPools' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/caPools',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListCertificateAuthorities' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificateAuthorities',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListCertificateRevocationLists' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*/certificateAuthorities/*}/certificateRevocationLists',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'ListCertificateTemplates' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{parent=projects/*/locations/*}/certificateTemplates',
@@ -349,6 +262,93 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListCertificates' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/caPools/*}/certificates',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'RevokeCertificate' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificates/*}:revoke',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UndeleteCertificateAuthority' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/caPools/*/certificateAuthorities/*}:undelete',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateCaPool' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{ca_pool.name=projects/*/locations/*/caPools/*}',
+                'body' => 'ca_pool',
+                'placeholders' => [
+                    'ca_pool.name' => [
+                        'getters' => [
+                            'getCaPool',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateCertificate' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{certificate.name=projects/*/locations/*/caPools/*/certificates/*}',
+                'body' => 'certificate',
+                'placeholders' => [
+                    'certificate.name' => [
+                        'getters' => [
+                            'getCertificate',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateCertificateAuthority' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{certificate_authority.name=projects/*/locations/*/caPools/*/certificateAuthorities/*}',
+                'body' => 'certificate_authority',
+                'placeholders' => [
+                    'certificate_authority.name' => [
+                        'getters' => [
+                            'getCertificateAuthority',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateCertificateRevocationList' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{certificate_revocation_list.name=projects/*/locations/*/caPools/*/certificateAuthorities/*/certificateRevocationLists/*}',
+                'body' => 'certificate_revocation_list',
+                'placeholders' => [
+                    'certificate_revocation_list.name' => [
+                        'getters' => [
+                            'getCertificateRevocationList',
+                            'getName',
                         ],
                     ],
                 ],
