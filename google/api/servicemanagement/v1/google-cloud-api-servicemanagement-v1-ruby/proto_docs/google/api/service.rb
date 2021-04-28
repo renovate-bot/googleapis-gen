@@ -28,7 +28,6 @@ module Google
     # Example:
     #
     #     type: google.api.Service
-    #     config_version: 3
     #     name: calendar.googleapis.com
     #     title: Google Calendar API
     #     apis:
@@ -142,7 +141,10 @@ module Google
     #     Output only. The source information for this configuration if available.
     # @!attribute [rw] config_version
     #   @return [::Google::Protobuf::UInt32Value]
-    #     Deprecated. The service config compiler always sets this field to `3`.
+    #     Obsolete. Do not use.
+    #
+    #     This field has no semantic meaning. The service config compiler always
+    #     sets this field to `3`.
     class Service
       include ::Google::Protobuf::MessageExts
       extend ::Google::Protobuf::MessageExts::ClassMethods

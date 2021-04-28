@@ -753,7 +753,7 @@ class ServiceManagerAsyncClient:
 
                    Example:
 
-                      type: google.api.Service config_version: 3 name:
+                      type: google.api.Service name:
                       calendar.googleapis.com title: Google Calendar API
                       apis: - name: google.calendar.v3.Calendar
                       authentication: providers: - id:
@@ -860,7 +860,7 @@ class ServiceManagerAsyncClient:
 
                    Example:
 
-                      type: google.api.Service config_version: 3 name:
+                      type: google.api.Service name:
                       calendar.googleapis.com title: Google Calendar API
                       apis: - name: google.calendar.v3.Calendar
                       authentication: providers: - id:

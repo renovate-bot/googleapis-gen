@@ -40,6 +40,8 @@ module Google
     #     The canonical name of this endpoint.
     # @!attribute [rw] aliases
     #   @return [::Array<::String>]
+    #     Unimplemented. Dot not use.
+    #
     #     DEPRECATED: This field is no longer supported. Instead of using aliases,
     #     please specify multiple {::Google::Api::Endpoint google.api.Endpoint} for each of the intended
     #     aliases.

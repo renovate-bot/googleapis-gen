@@ -19,9 +19,10 @@
 
 module Google
   module Api
-    # `Authentication` defines the authentication configuration for an API.
+    # `Authentication` defines the authentication configuration for API methods
+    # provided by an API service.
     #
-    # Example for an API targeted for external use:
+    # Example:
     #
     #     name: calendar.googleapis.com
     #     authentication:
@@ -33,6 +34,9 @@ module Google
     #       - selector: "*"
     #         requirements:
     #           provider_id: google_calendar_auth
+    #       - selector: google.calendar.Delegate
+    #         oauth:
+    #           canonical_scopes: https://www.googleapis.com/auth/calendar.read
     # @!attribute [rw] rules
     #   @return [::Array<::Google::Api::AuthenticationRule>]
     #     A list of authentication rules that apply to individual API methods.
