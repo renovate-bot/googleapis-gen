@@ -24,8 +24,9 @@ class AudioInput extends \Google\Protobuf\Internal\Message
     /**
      * The natural language speech audio to be processed.
      * A single request can contain up to 1 minute of speech audio data.
-     * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     * bytes.
+     * The [transcribed
+     * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     * more than 256 bytes.
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -46,8 +47,9 @@ class AudioInput extends \Google\Protobuf\Internal\Message
      *     @type string $audio
      *           The natural language speech audio to be processed.
      *           A single request can contain up to 1 minute of speech audio data.
-     *           The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     *           bytes.
+     *           The [transcribed
+     *           text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     *           more than 256 bytes.
      *           For non-streaming audio detect intent, both `config` and `audio` must be
      *           provided.
      *           For streaming audio detect intent, `config` must be provided in
@@ -98,8 +100,9 @@ class AudioInput extends \Google\Protobuf\Internal\Message
     /**
      * The natural language speech audio to be processed.
      * A single request can contain up to 1 minute of speech audio data.
-     * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     * bytes.
+     * The [transcribed
+     * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     * more than 256 bytes.
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -116,8 +119,9 @@ class AudioInput extends \Google\Protobuf\Internal\Message
     /**
      * The natural language speech audio to be processed.
      * A single request can contain up to 1 minute of speech audio data.
-     * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     * bytes.
+     * The [transcribed
+     * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     * more than 256 bytes.
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in

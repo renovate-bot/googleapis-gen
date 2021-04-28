@@ -8,6 +8,7 @@ require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/dialogflow/cx/v3/flow_pb'
+require 'google/cloud/dialogflow/cx/v3/security_settings_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
@@ -20,6 +21,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :display_name, :string, 2
       optional :default_language_code, :string, 3
+      repeated :supported_language_codes, :string, 4
       optional :time_zone, :string, 5
       optional :description, :string, 6
       optional :avatar_uri, :string, 7
@@ -55,6 +57,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.dialogflow.cx.v3.ExportAgentRequest" do
       optional :name, :string, 1
       optional :agent_uri, :string, 2
+      optional :environment, :string, 5
     end
     add_message "google.cloud.dialogflow.cx.v3.ExportAgentResponse" do
       oneof :agent do

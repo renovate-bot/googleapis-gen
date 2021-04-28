@@ -205,6 +205,16 @@ class FlowsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.import_flow: gapic_v1.method.wrap_method(
+                self.import_flow,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.export_flow: gapic_v1.method.wrap_method(
+                self.export_flow,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     @property
@@ -281,6 +291,24 @@ class FlowsTransport(abc.ABC):
             Union[
                 flow.FlowValidationResult,
                 Awaitable[flow.FlowValidationResult]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def import_flow(self) -> Callable[
+            [flow.ImportFlowRequest],
+            Union[
+                operations.Operation,
+                Awaitable[operations.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def export_flow(self) -> Callable[
+            [flow.ExportFlowRequest],
+            Union[
+                operations.Operation,
+                Awaitable[operations.Operation]
             ]]:
         raise NotImplementedError()
 

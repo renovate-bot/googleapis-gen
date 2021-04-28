@@ -147,8 +147,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The natural language speech audio to be processed.
    * A single request can contain up to 1 minute of speech audio data.
-   * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-   * bytes.
+   * The [transcribed
+   * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+   * more than 256 bytes.
    * For non-streaming audio detect intent, both `config` and `audio` must be
    * provided.
    * For streaming audio detect intent, `config` must be provided in
@@ -659,8 +660,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The natural language speech audio to be processed.
      * A single request can contain up to 1 minute of speech audio data.
-     * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     * bytes.
+     * The [transcribed
+     * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     * more than 256 bytes.
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -678,8 +680,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The natural language speech audio to be processed.
      * A single request can contain up to 1 minute of speech audio data.
-     * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     * bytes.
+     * The [transcribed
+     * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     * more than 256 bytes.
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -703,8 +706,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The natural language speech audio to be processed.
      * A single request can contain up to 1 minute of speech audio data.
-     * The [transcribed text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain more than 256
-     * bytes.
+     * The [transcribed
+     * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
+     * more than 256 bytes.
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in

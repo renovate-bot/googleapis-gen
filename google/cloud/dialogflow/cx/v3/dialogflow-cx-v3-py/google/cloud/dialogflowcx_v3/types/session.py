@@ -249,7 +249,13 @@ class StreamingDetectIntentResponse(proto.Message):
        what the user said. The last ``recognition_result`` has
        ``is_final`` set to ``true``.
 
-    2. The last message contains ``detect_intent_response``.
+    2. If ``enable_partial_response`` is true, the following N messages
+       (currently 1 <= N <= 4) contain ``detect_intent_response``. The
+       first (N-1) ``detect_intent_response``\ s will have
+       ``response_type`` set to ``PARTIAL``. The last
+       ``detect_intent_response`` has ``response_type`` set to
+       ``FINAL``. If ``response_type`` is false, response stream only
+       contains the final ``detect_intent_response``.
 
     Attributes:
         recognition_result (google.cloud.dialogflowcx_v3.types.StreamingRecognitionResult):
@@ -405,9 +411,20 @@ class QueryParameters(proto.Message):
             synonyms apply to all languages and persist for
             the session of this query.
         payload (google.protobuf.struct_pb2.Struct):
-            This field can be used to pass custom data
-            into the webhook associated with the agent.
-            Arbitrary JSON objects are supported.
+            This field can be used to pass custom data into the webhook
+            associated with the agent. Arbitrary JSON objects are
+            supported. Some integrations that query a Dialogflow agent
+            may provide additional information in the payload. In
+            particular, for the Dialogflow Phone Gateway integration,
+            this field has the form:
+
+            ::
+
+               {
+                "telephony": {
+                  "caller_id": "+18558363987"
+                }
+               }
         parameters (google.protobuf.struct_pb2.Struct):
             Additional parameters to be put into [session
             parameters][SessionInfo.parameters]. To remove a parameter

@@ -44,7 +44,7 @@ module Google
               rpc :UpdateVersion, ::Google::Cloud::Dialogflow::Cx::V3::UpdateVersionRequest, ::Google::Cloud::Dialogflow::Cx::V3::Version
               # Deletes the specified [Version][google.cloud.dialogflow.cx.v3.Version].
               rpc :DeleteVersion, ::Google::Cloud::Dialogflow::Cx::V3::DeleteVersionRequest, ::Google::Protobuf::Empty
-              # Loads a specified version to draft version.
+              # Loads resources in the specified version to the draft flow.
               rpc :LoadVersion, ::Google::Cloud::Dialogflow::Cx::V3::LoadVersionRequest, ::Google::Longrunning::Operation
             end
 

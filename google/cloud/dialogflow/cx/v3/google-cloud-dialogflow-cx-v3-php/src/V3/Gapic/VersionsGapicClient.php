@@ -585,7 +585,7 @@ class VersionsGapicClient
     }
 
     /**
-     * Loads a specified version to draft version.
+     * Loads resources in the specified version to the draft flow.
      *
      * Sample code:
      * ```
@@ -621,17 +621,17 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft version.
+     * @param string $name         Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
      *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
      *     @type bool $allowOverrideAgentResources
-     *           This field is used to prevent accidental overwrite of other agent resources
-     *           in the draft version, which can potentially impact other flow's behavior.
-     *           If `allow_override_agent_resources` is false, conflicted agent-level
-     *           resources will not be overridden (i.e. intents, entities, webhooks).
+     *           This field is used to prevent accidental overwrite of other agent
+     *           resources, which can potentially impact other flow's behavior. If
+     *           `allow_override_agent_resources` is false, conflicted agent-level resources
+     *           will not be overridden (i.e. intents, entities, webhooks).
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

@@ -759,7 +759,8 @@ class VersionsClient(metaclass=VersionsClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
-        r"""Loads a specified version to draft version.
+        r"""Loads resources in the specified version to the draft
+        flow.
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.LoadVersionRequest):
@@ -769,7 +770,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
             name (str):
                 Required. The
                 [Version][google.cloud.dialogflow.cx.v3.Version] to be
-                loaded to draft version. Format:
+                loaded to draft flow. Format:
                 ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
 
                 This corresponds to the ``name`` field

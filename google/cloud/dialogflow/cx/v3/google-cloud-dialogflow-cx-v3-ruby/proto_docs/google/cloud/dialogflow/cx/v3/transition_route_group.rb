@@ -58,9 +58,13 @@ module Google
           #     The next_page_token value returned from a previous list request.
           # @!attribute [rw] language_code
           #   @return [::String]
-          #     The language to list transition route groups for. The field
-          #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-          #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+          #     The language to list transition route groups for. The following fields are
+          #     language dependent:
+          #
+          #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+          #     *
+          #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+          #
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -96,9 +100,12 @@ module Google
           #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
           # @!attribute [rw] language_code
           #   @return [::String]
-          #     The language to list transition route groups for. The field
-          #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-          #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+          #     The language to retrieve the transition route group for. The following
+          #     fields are language dependent:
+          #
+          #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+          #     *
+          #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -121,9 +128,11 @@ module Google
           #     Required. The transition route group to create.
           # @!attribute [rw] language_code
           #   @return [::String]
-          #     The language to list transition route groups for. The field
-          #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-          #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+          #     The language of the following fields in `TransitionRouteGroup`:
+          #
+          #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+          #     *
+          #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -144,9 +153,11 @@ module Google
           #     The mask to control which fields get updated.
           # @!attribute [rw] language_code
           #   @return [::String]
-          #     The language to list transition route groups for. The field
-          #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-          #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+          #     The language of the following fields in `TransitionRouteGroup`:
+          #
+          #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+          #     *
+          #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many

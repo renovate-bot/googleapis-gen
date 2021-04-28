@@ -85,11 +85,13 @@ class ListTransitionRouteGroupsRequest(proto.Message):
             The next_page_token value returned from a previous list
             request.
         language_code (str):
-            The language to list transition route groups for. The field
-            [``messages``][TransitionRoute.trigger_fulfillment.messages]
-            in
-            [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute]
-            is language dependent.
+            The language to list transition route groups for. The
+            following fields are language dependent:
+
+            -  ``TransitionRouteGroup.transition_routes.trigger_fulfillment.messages``
+            -
+
+            ``TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -159,11 +161,13 @@ class GetTransitionRouteGroupRequest(proto.Message):
             Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>``.
         language_code (str):
-            The language to list transition route groups for. The field
-            [``messages``][TransitionRoute.trigger_fulfillment.messages]
-            in
-            [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute]
-            is language dependent.
+            The language to retrieve the transition route group for. The
+            following fields are language dependent:
+
+            -  ``TransitionRouteGroup.transition_routes.trigger_fulfillment.messages``
+            -
+
+            ``TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -196,11 +200,13 @@ class CreateTransitionRouteGroupRequest(proto.Message):
             Required. The transition route group to
             create.
         language_code (str):
-            The language to list transition route groups for. The field
-            [``messages``][TransitionRoute.trigger_fulfillment.messages]
-            in
-            [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute]
-            is language dependent.
+            The language of the following fields in
+            ``TransitionRouteGroup``:
+
+            -  ``TransitionRouteGroup.transition_routes.trigger_fulfillment.messages``
+            -
+
+            ``TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -235,11 +241,13 @@ class UpdateTransitionRouteGroupRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             The mask to control which fields get updated.
         language_code (str):
-            The language to list transition route groups for. The field
-            [``messages``][TransitionRoute.trigger_fulfillment.messages]
-            in
-            [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute]
-            is language dependent.
+            The language of the following fields in
+            ``TransitionRouteGroup``:
+
+            -  ``TransitionRouteGroup.transition_routes.trigger_fulfillment.messages``
+            -
+
+            ``TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many

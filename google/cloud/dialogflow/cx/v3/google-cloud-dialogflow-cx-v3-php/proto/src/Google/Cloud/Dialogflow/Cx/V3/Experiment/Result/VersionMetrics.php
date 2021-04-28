@@ -17,7 +17,7 @@ class VersionMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format: `projects/<Project Number>/locations/<Location
+     * Format: `projects/<Project ID>/locations/<Location
      * ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
      *
      * Generated from protobuf field <code>string version = 1 [(.google.api.resource_reference) = {</code>
@@ -45,7 +45,7 @@ class VersionMetrics extends \Google\Protobuf\Internal\Message
      *
      *     @type string $version
      *           The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-     *           Format: `projects/<Project Number>/locations/<Location
+     *           Format: `projects/<Project ID>/locations/<Location
      *           ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Experiment\Result\Metric[]|\Google\Protobuf\Internal\RepeatedField $metrics
      *           The metrics and corresponding confidence intervals in the inference
@@ -61,7 +61,7 @@ class VersionMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format: `projects/<Project Number>/locations/<Location
+     * Format: `projects/<Project ID>/locations/<Location
      * ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
      *
      * Generated from protobuf field <code>string version = 1 [(.google.api.resource_reference) = {</code>
@@ -74,7 +74,7 @@ class VersionMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format: `projects/<Project Number>/locations/<Location
+     * Format: `projects/<Project ID>/locations/<Location
      * ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
      *
      * Generated from protobuf field <code>string version = 1 [(.google.api.resource_reference) = {</code>

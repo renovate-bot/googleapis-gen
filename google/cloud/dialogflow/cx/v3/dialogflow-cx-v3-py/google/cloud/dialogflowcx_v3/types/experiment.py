@@ -228,7 +228,7 @@ class Experiment(proto.Message):
                 version (str):
                     The name of the flow
                     [Version][google.cloud.dialogflow.cx.v3.Version]. Format:
-                    ``projects/<Project Number>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
+                    ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
                 metrics (Sequence[google.cloud.dialogflowcx_v3.types.Experiment.Result.Metric]):
                     The metrics and corresponding confidence
                     intervals in the inference result.

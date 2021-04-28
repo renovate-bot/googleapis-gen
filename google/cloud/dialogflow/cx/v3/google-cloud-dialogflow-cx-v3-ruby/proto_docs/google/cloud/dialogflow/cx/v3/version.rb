@@ -162,15 +162,15 @@ module Google
           # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Versions::Client#load_version Versions.LoadVersion}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3::Version Version} to be loaded to draft version.
+          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3::Version Version} to be loaded to draft flow.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/versions/<Version ID>`.
           # @!attribute [rw] allow_override_agent_resources
           #   @return [::Boolean]
-          #     This field is used to prevent accidental overwrite of other agent resources
-          #     in the draft version, which can potentially impact other flow's behavior.
-          #     If `allow_override_agent_resources` is false, conflicted agent-level
-          #     resources will not be overridden (i.e. intents, entities, webhooks).
+          #     This field is used to prevent accidental overwrite of other agent
+          #     resources, which can potentially impact other flow's behavior. If
+          #     `allow_override_agent_resources` is false, conflicted agent-level resources
+          #     will not be overridden (i.e. intents, entities, webhooks).
           class LoadVersionRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

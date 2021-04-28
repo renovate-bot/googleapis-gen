@@ -64,6 +64,27 @@ module Google
               end
 
               ##
+              # Create a fully-qualified Environment resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `projects/{project}/locations/{location}/agents/{agent}/environments/{environment}`
+              #
+              # @param project [String]
+              # @param location [String]
+              # @param agent [String]
+              # @param environment [String]
+              #
+              # @return [::String]
+              def environment_path project:, location:, agent:, environment:
+                raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+                raise ::ArgumentError, "agent cannot contain /" if agent.to_s.include? "/"
+
+                "projects/#{project}/locations/#{location}/agents/#{agent}/environments/#{environment}"
+              end
+
+              ##
               # Create a fully-qualified Flow resource string.
               #
               # The resource will be in the following format:

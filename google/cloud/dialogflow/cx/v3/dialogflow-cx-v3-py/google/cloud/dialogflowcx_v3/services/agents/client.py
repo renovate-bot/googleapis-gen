@@ -182,6 +182,17 @@ class AgentsClient(metaclass=AgentsClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def environment_path(project: str,location: str,agent: str,environment: str,) -> str:
+        """Return a fully-qualified environment string."""
+        return "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}".format(project=project, location=location, agent=agent, environment=environment, )
+
+    @staticmethod
+    def parse_environment_path(path: str) -> Dict[str,str]:
+        """Parse a environment path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/environments/(?P<environment>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def flow_path(project: str,location: str,agent: str,flow: str,) -> str:
         """Return a fully-qualified flow string."""
         return "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}".format(project=project, location=location, agent=agent, flow=flow, )

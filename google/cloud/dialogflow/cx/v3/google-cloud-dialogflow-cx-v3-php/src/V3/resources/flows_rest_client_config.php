@@ -26,6 +26,18 @@ return [
                     ],
                 ],
             ],
+            'ExportFlow' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}:export',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'GetFlow' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/flows/*}',
@@ -44,6 +56,18 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ImportFlow' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*}/flows:import',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],

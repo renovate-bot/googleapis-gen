@@ -52,6 +52,8 @@ class AgentsAsyncClient:
     parse_agent_path = staticmethod(AgentsClient.parse_agent_path)
     agent_validation_result_path = staticmethod(AgentsClient.agent_validation_result_path)
     parse_agent_validation_result_path = staticmethod(AgentsClient.parse_agent_validation_result_path)
+    environment_path = staticmethod(AgentsClient.environment_path)
+    parse_environment_path = staticmethod(AgentsClient.parse_environment_path)
     flow_path = staticmethod(AgentsClient.flow_path)
     parse_flow_path = staticmethod(AgentsClient.parse_flow_path)
     flow_validation_result_path = staticmethod(AgentsClient.flow_validation_result_path)

@@ -549,11 +549,17 @@ type ListPagesRequest struct {
 	// dependent:
 	//
 	// *  `Page.entry_fulfillment.messages`
+	// *  `Page.entry_fulfillment.conditional_cases`
+	// *  `Page.event_handlers.trigger_fulfillment.messages`
+	// *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
 	// *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-	// *  `Page.transition_routes.trigger_fulfillment.messages`
 	// *
-	// `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+	// `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+	// *
+	// `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+	// *  `Page.transition_routes.trigger_fulfillment.messages`
+	// *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
 	//
 	// If not specified, the agent's default language is used.
 	// [Many
@@ -702,11 +708,17 @@ type GetPageRequest struct {
 	// dependent:
 	//
 	// *  `Page.entry_fulfillment.messages`
+	// *  `Page.entry_fulfillment.conditional_cases`
+	// *  `Page.event_handlers.trigger_fulfillment.messages`
+	// *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
 	// *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-	// *  `Page.transition_routes.trigger_fulfillment.messages`
 	// *
-	// `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+	// `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+	// *
+	// `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+	// *  `Page.transition_routes.trigger_fulfillment.messages`
+	// *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
 	//
 	// If not specified, the agent's default language is used.
 	// [Many
@@ -777,11 +789,17 @@ type CreatePageRequest struct {
 	// The language of the following fields in `page`:
 	//
 	// *  `Page.entry_fulfillment.messages`
+	// *  `Page.entry_fulfillment.conditional_cases`
+	// *  `Page.event_handlers.trigger_fulfillment.messages`
+	// *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
 	// *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-	// *  `Page.transition_routes.trigger_fulfillment.messages`
 	// *
-	// `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+	// `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+	// *
+	// `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+	// *  `Page.transition_routes.trigger_fulfillment.messages`
+	// *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
 	//
 	// If not specified, the agent's default language is used.
 	// [Many
@@ -855,11 +873,17 @@ type UpdatePageRequest struct {
 	// The language of the following fields in `page`:
 	//
 	// *  `Page.entry_fulfillment.messages`
+	// *  `Page.entry_fulfillment.conditional_cases`
+	// *  `Page.event_handlers.trigger_fulfillment.messages`
+	// *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
 	// *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-	// *  `Page.transition_routes.trigger_fulfillment.messages`
 	// *
-	// `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+	// `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+	// *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+	// *
+	// `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+	// *  `Page.transition_routes.trigger_fulfillment.messages`
+	// *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
 	//
 	// If not specified, the agent's default language is used.
 	// [Many

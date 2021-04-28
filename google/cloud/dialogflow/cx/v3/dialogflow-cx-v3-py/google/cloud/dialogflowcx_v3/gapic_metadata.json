@@ -346,6 +346,11 @@
                 "delete_flow"
               ]
             },
+            "ExportFlow": {
+              "methods": [
+                "export_flow"
+              ]
+            },
             "GetFlow": {
               "methods": [
                 "get_flow"
@@ -354,6 +359,11 @@
             "GetFlowValidationResult": {
               "methods": [
                 "get_flow_validation_result"
+              ]
+            },
+            "ImportFlow": {
+              "methods": [
+                "import_flow"
               ]
             },
             "ListFlows": {
@@ -391,6 +401,11 @@
                 "delete_flow"
               ]
             },
+            "ExportFlow": {
+              "methods": [
+                "export_flow"
+              ]
+            },
             "GetFlow": {
               "methods": [
                 "get_flow"
@@ -399,6 +414,11 @@
             "GetFlowValidationResult": {
               "methods": [
                 "get_flow_validation_result"
+              ]
+            },
+            "ImportFlow": {
+              "methods": [
+                "import_flow"
               ]
             },
             "ListFlows": {

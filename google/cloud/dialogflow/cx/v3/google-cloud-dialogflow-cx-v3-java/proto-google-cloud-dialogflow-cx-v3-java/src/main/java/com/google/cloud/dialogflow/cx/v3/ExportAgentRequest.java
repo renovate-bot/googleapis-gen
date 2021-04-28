@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ExportAgentRequest() {
     name_ = "";
     agentUri_ = "";
+    environment_ = "";
   }
 
   @java.lang.Override
@@ -64,6 +65,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             agentUri_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            environment_ = s;
             break;
           }
           default: {
@@ -198,6 +205,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ENVIRONMENT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object environment_;
+  /**
+   * <pre>
+   * Optional. Environment name. If not set, draft environment is assumed.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * </pre>
+   *
+   * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The environment.
+   */
+  @java.lang.Override
+  public java.lang.String getEnvironment() {
+    java.lang.Object ref = environment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      environment_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Environment name. If not set, draft environment is assumed.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * </pre>
+   *
+   * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for environment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEnvironmentBytes() {
+    java.lang.Object ref = environment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      environment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -218,6 +275,9 @@ private static final long serialVersionUID = 0L;
     if (!getAgentUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentUri_);
     }
+    if (!getEnvironmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, environment_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -232,6 +292,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAgentUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentUri_);
+    }
+    if (!getEnvironmentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, environment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -252,6 +315,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getAgentUri()
         .equals(other.getAgentUri())) return false;
+    if (!getEnvironment()
+        .equals(other.getEnvironment())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +332,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + AGENT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAgentUri().hashCode();
+    hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getEnvironment().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -408,6 +475,8 @@ private static final long serialVersionUID = 0L;
 
       agentUri_ = "";
 
+      environment_ = "";
+
       return this;
     }
 
@@ -436,6 +505,7 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.dialogflow.cx.v3.ExportAgentRequest result = new com.google.cloud.dialogflow.cx.v3.ExportAgentRequest(this);
       result.name_ = name_;
       result.agentUri_ = agentUri_;
+      result.environment_ = environment_;
       onBuilt();
       return result;
     }
@@ -490,6 +560,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getAgentUri().isEmpty()) {
         agentUri_ = other.agentUri_;
+        onChanged();
+      }
+      if (!other.getEnvironment().isEmpty()) {
+        environment_ = other.environment_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -729,6 +803,112 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       agentUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object environment_ = "";
+    /**
+     * <pre>
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * </pre>
+     *
+     * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The environment.
+     */
+    public java.lang.String getEnvironment() {
+      java.lang.Object ref = environment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        environment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * </pre>
+     *
+     * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for environment.
+     */
+    public com.google.protobuf.ByteString
+        getEnvironmentBytes() {
+      java.lang.Object ref = environment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        environment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * </pre>
+     *
+     * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The environment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironment(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      environment_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * </pre>
+     *
+     * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvironment() {
+      
+      environment_ = getDefaultInstance().getEnvironment();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * </pre>
+     *
+     * <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for environment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      environment_ = value;
       onChanged();
       return this;
     }

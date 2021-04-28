@@ -471,6 +471,65 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
             )
         return self._stubs['get_flow_validation_result']
 
+    @property
+    def import_flow(self) -> Callable[
+            [flow.ImportFlowRequest],
+            Awaitable[operations.Operation]]:
+        r"""Return a callable for the
+        import flow
+          method over gRPC.
+
+        Imports the specified flow to the specified agent
+        from a binary file.
+
+        Returns:
+            Callable[[~.ImportFlowRequest],
+                    Awaitable[~.Operation]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'import_flow' not in self._stubs:
+            self._stubs['import_flow'] = self.grpc_channel.unary_unary(
+                '/google.cloud.dialogflow.cx.v3.Flows/ImportFlow',
+                request_serializer=flow.ImportFlowRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['import_flow']
+
+    @property
+    def export_flow(self) -> Callable[
+            [flow.ExportFlowRequest],
+            Awaitable[operations.Operation]]:
+        r"""Return a callable for the
+        export flow
+          method over gRPC.
+
+        Exports the specified flow to a binary file.
+        Note that resources (e.g. intents, entities, webhooks)
+        that the flow references will also be exported.
+
+        Returns:
+            Callable[[~.ExportFlowRequest],
+                    Awaitable[~.Operation]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'export_flow' not in self._stubs:
+            self._stubs['export_flow'] = self.grpc_channel.unary_unary(
+                '/google.cloud.dialogflow.cx.v3.Flows/ExportFlow',
+                request_serializer=flow.ExportFlowRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['export_flow']
+
 
 __all__ = (
     'FlowsGrpcAsyncIOTransport',

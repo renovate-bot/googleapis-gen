@@ -54,6 +54,13 @@ module Google
               # Gets the latest flow validation result. Flow validation is performed
               # when ValidateFlow is called.
               rpc :GetFlowValidationResult, ::Google::Cloud::Dialogflow::Cx::V3::GetFlowValidationResultRequest, ::Google::Cloud::Dialogflow::Cx::V3::FlowValidationResult
+              # Imports the specified flow to the specified agent from a binary file.
+              rpc :ImportFlow, ::Google::Cloud::Dialogflow::Cx::V3::ImportFlowRequest, ::Google::Longrunning::Operation
+              # Exports the specified flow to a binary file.
+              #
+              # Note that resources (e.g. intents, entities, webhooks) that the flow
+              # references will also be exported.
+              rpc :ExportFlow, ::Google::Cloud::Dialogflow::Cx::V3::ExportFlowRequest, ::Google::Longrunning::Operation
             end
 
             Stub = Service.rpc_stub_class

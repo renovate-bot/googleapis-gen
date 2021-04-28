@@ -391,7 +391,8 @@ class VersionsGrpcTransport(VersionsTransport):
         load version
           method over gRPC.
 
-        Loads a specified version to draft version.
+        Loads resources in the specified version to the draft
+        flow.
 
         Returns:
             Callable[[~.LoadVersionRequest],

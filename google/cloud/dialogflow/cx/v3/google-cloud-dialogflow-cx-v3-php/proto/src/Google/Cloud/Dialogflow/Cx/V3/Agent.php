@@ -47,6 +47,13 @@ class Agent extends \Google\Protobuf\Internal\Message
      */
     protected $default_language_code = '';
     /**
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     *
+     * Generated from protobuf field <code>repeated string supported_language_codes = 4;</code>
+     */
+    private $supported_language_codes;
+    /**
      * Required. The time zone of the agent from the [time zone
      * database](https://www.iana.org/time-zones), e.g., America/New_York,
      * Europe/Paris.
@@ -127,6 +134,9 @@ class Agent extends \Google\Protobuf\Internal\Message
      *           Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      *           for a list of the currently supported language codes.
      *           This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $supported_language_codes
+     *           The list of all languages supported by the agent (except for the
+     *           `default_language_code`).
      *     @type string $time_zone
      *           Required. The time zone of the agent from the [time zone
      *           database](https://www.iana.org/time-zones), e.g., America/New_York,
@@ -251,6 +261,34 @@ class Agent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->default_language_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     *
+     * Generated from protobuf field <code>repeated string supported_language_codes = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSupportedLanguageCodes()
+    {
+        return $this->supported_language_codes;
+    }
+
+    /**
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     *
+     * Generated from protobuf field <code>repeated string supported_language_codes = 4;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSupportedLanguageCodes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->supported_language_codes = $arr;
 
         return $this;
     }

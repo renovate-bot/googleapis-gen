@@ -187,9 +187,13 @@ module Google
               #   @param page_token [::String]
               #     The next_page_token value returned from a previous list request.
               #   @param language_code [::String]
-              #     The language to list transition route groups for. The field
-              #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-              #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+              #     The language to list transition route groups for. The following fields are
+              #     language dependent:
+              #
+              #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+              #     *
+              #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+              #
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -266,9 +270,12 @@ module Google
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
               #   @param language_code [::String]
-              #     The language to list transition route groups for. The field
-              #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-              #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+              #     The language to retrieve the transition route group for. The following
+              #     fields are language dependent:
+              #
+              #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+              #     *
+              #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -346,9 +353,11 @@ module Google
               #   @param transition_route_group [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup, ::Hash]
               #     Required. The transition route group to create.
               #   @param language_code [::String]
-              #     The language to list transition route groups for. The field
-              #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-              #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+              #     The language of the following fields in `TransitionRouteGroup`:
+              #
+              #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+              #     *
+              #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -424,9 +433,11 @@ module Google
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     The mask to control which fields get updated.
               #   @param language_code [::String]
-              #     The language to list transition route groups for. The field
-              #     [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-              #     {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute TransitionRoute} is language dependent.
+              #     The language of the following fields in `TransitionRouteGroup`:
+              #
+              #     *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+              #     *
+              #     `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many

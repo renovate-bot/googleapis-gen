@@ -54,6 +54,11 @@
                                 "deleteFlow"
                             ]
                         },
+                        "ExportFlow": {
+                            "methods": [
+                                "exportFlow"
+                            ]
+                        },
                         "GetFlow": {
                             "methods": [
                                 "getFlow"
@@ -62,6 +67,11 @@
                         "GetFlowValidationResult": {
                             "methods": [
                                 "getFlowValidationResult"
+                            ]
+                        },
+                        "ImportFlow": {
+                            "methods": [
+                                "importFlow"
                             ]
                         },
                         "ListFlows": {
@@ -82,6 +92,40 @@
                         "ValidateFlow": {
                             "methods": [
                                 "validateFlow"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SecuritySettingsService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SecuritySettingsServiceGapicClient",
+                    "rpcs": {
+                        "CreateSecuritySettings": {
+                            "methods": [
+                                "createSecuritySettings"
+                            ]
+                        },
+                        "DeleteSecuritySettings": {
+                            "methods": [
+                                "deleteSecuritySettings"
+                            ]
+                        },
+                        "GetSecuritySettings": {
+                            "methods": [
+                                "getSecuritySettings"
+                            ]
+                        },
+                        "ListSecuritySettings": {
+                            "methods": [
+                                "listSecuritySettings"
+                            ]
+                        },
+                        "UpdateSecuritySettings": {
+                            "methods": [
+                                "updateSecuritySettings"
                             ]
                         }
                     }
@@ -453,40 +497,6 @@
                         "UpdateExperiment": {
                             "methods": [
                                 "updateExperiment"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "SecuritySettingsService": {
-            "clients": {
-                "grpc": {
-                    "libraryClient": "SecuritySettingsServiceGapicClient",
-                    "rpcs": {
-                        "CreateSecuritySettings": {
-                            "methods": [
-                                "createSecuritySettings"
-                            ]
-                        },
-                        "DeleteSecuritySettings": {
-                            "methods": [
-                                "deleteSecuritySettings"
-                            ]
-                        },
-                        "GetSecuritySettings": {
-                            "methods": [
-                                "getSecuritySettings"
-                            ]
-                        },
-                        "ListSecuritySettings": {
-                            "methods": [
-                                "listSecuritySettings"
-                            ]
-                        },
-                        "UpdateSecuritySettings": {
-                            "methods": [
-                                "updateSecuritySettings"
                             ]
                         }
                     }

@@ -83,6 +83,50 @@
               "methods": [
                 "get_flow_validation_result"
               ]
+            },
+            "ImportFlow": {
+              "methods": [
+                "import_flow"
+              ]
+            },
+            "ExportFlow": {
+              "methods": [
+                "export_flow"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SecuritySettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client",
+          "rpcs": {
+            "CreateSecuritySettings": {
+              "methods": [
+                "create_security_settings"
+              ]
+            },
+            "GetSecuritySettings": {
+              "methods": [
+                "get_security_settings"
+              ]
+            },
+            "UpdateSecuritySettings": {
+              "methods": [
+                "update_security_settings"
+              ]
+            },
+            "ListSecuritySettings": {
+              "methods": [
+                "list_security_settings"
+              ]
+            },
+            "DeleteSecuritySettings": {
+              "methods": [
+                "delete_security_settings"
+              ]
             }
           }
         }
@@ -453,40 +497,6 @@
             "StopExperiment": {
               "methods": [
                 "stop_experiment"
-              ]
-            }
-          }
-        }
-      }
-    },
-    "SecuritySettingsService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client",
-          "rpcs": {
-            "CreateSecuritySettings": {
-              "methods": [
-                "create_security_settings"
-              ]
-            },
-            "GetSecuritySettings": {
-              "methods": [
-                "get_security_settings"
-              ]
-            },
-            "UpdateSecuritySettings": {
-              "methods": [
-                "update_security_settings"
-              ]
-            },
-            "ListSecuritySettings": {
-              "methods": [
-                "list_security_settings"
-              ]
-            },
-            "DeleteSecuritySettings": {
-              "methods": [
-                "delete_security_settings"
               ]
             }
           }

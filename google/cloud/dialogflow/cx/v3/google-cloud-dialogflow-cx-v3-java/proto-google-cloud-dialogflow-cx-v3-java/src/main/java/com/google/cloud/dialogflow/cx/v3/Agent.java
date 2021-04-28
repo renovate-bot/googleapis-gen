@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     defaultLanguageCode_ = "";
+    supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     timeZone_ = "";
     description_ = "";
     avatarUri_ = "";
@@ -56,6 +57,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,6 +84,15 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             defaultLanguageCode_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            supportedLanguageCodes_.add(s);
             break;
           }
           case 42: {
@@ -152,6 +163,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -319,6 +333,61 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SUPPORTED_LANGUAGE_CODES_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList supportedLanguageCodes_;
+  /**
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   * @return A list containing the supportedLanguageCodes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getSupportedLanguageCodesList() {
+    return supportedLanguageCodes_;
+  }
+  /**
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   * @return The count of supportedLanguageCodes.
+   */
+  public int getSupportedLanguageCodesCount() {
+    return supportedLanguageCodes_.size();
+  }
+  /**
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   * @param index The index of the element to return.
+   * @return The supportedLanguageCodes at the given index.
+   */
+  public java.lang.String getSupportedLanguageCodes(int index) {
+    return supportedLanguageCodes_.get(index);
+  }
+  /**
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedLanguageCodes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getSupportedLanguageCodesBytes(int index) {
+    return supportedLanguageCodes_.getByteString(index);
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 5;
@@ -667,6 +736,9 @@ private static final long serialVersionUID = 0L;
     if (!getDefaultLanguageCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultLanguageCode_);
     }
+    for (int i = 0; i < supportedLanguageCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, supportedLanguageCodes_.getRaw(i));
+    }
     if (!getTimeZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, timeZone_);
     }
@@ -708,6 +780,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDefaultLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultLanguageCode_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < supportedLanguageCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(supportedLanguageCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSupportedLanguageCodesList().size();
     }
     if (!getTimeZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, timeZone_);
@@ -757,6 +837,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getDefaultLanguageCode()
         .equals(other.getDefaultLanguageCode())) return false;
+    if (!getSupportedLanguageCodesList()
+        .equals(other.getSupportedLanguageCodesList())) return false;
     if (!getTimeZone()
         .equals(other.getTimeZone())) return false;
     if (!getDescription()
@@ -793,6 +875,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DEFAULT_LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultLanguageCode().hashCode();
+    if (getSupportedLanguageCodesCount() > 0) {
+      hash = (37 * hash) + SUPPORTED_LANGUAGE_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getSupportedLanguageCodesList().hashCode();
+    }
     hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getTimeZone().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -962,6 +1048,8 @@ private static final long serialVersionUID = 0L;
 
       defaultLanguageCode_ = "";
 
+      supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       timeZone_ = "";
 
       description_ = "";
@@ -1008,9 +1096,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3.Agent buildPartial() {
       com.google.cloud.dialogflow.cx.v3.Agent result = new com.google.cloud.dialogflow.cx.v3.Agent(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.defaultLanguageCode_ = defaultLanguageCode_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.supportedLanguageCodes_ = supportedLanguageCodes_;
       result.timeZone_ = timeZone_;
       result.description_ = description_;
       result.avatarUri_ = avatarUri_;
@@ -1083,6 +1177,16 @@ private static final long serialVersionUID = 0L;
         defaultLanguageCode_ = other.defaultLanguageCode_;
         onChanged();
       }
+      if (!other.supportedLanguageCodes_.isEmpty()) {
+        if (supportedLanguageCodes_.isEmpty()) {
+          supportedLanguageCodes_ = other.supportedLanguageCodes_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureSupportedLanguageCodesIsMutable();
+          supportedLanguageCodes_.addAll(other.supportedLanguageCodes_);
+        }
+        onChanged();
+      }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
         onChanged();
@@ -1140,6 +1244,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1460,6 +1565,161 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       defaultLanguageCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureSupportedLanguageCodesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @return A list containing the supportedLanguageCodes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSupportedLanguageCodesList() {
+      return supportedLanguageCodes_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @return The count of supportedLanguageCodes.
+     */
+    public int getSupportedLanguageCodesCount() {
+      return supportedLanguageCodes_.size();
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @param index The index of the element to return.
+     * @return The supportedLanguageCodes at the given index.
+     */
+    public java.lang.String getSupportedLanguageCodes(int index) {
+      return supportedLanguageCodes_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the supportedLanguageCodes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getSupportedLanguageCodesBytes(int index) {
+      return supportedLanguageCodes_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The supportedLanguageCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedLanguageCodes(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSupportedLanguageCodesIsMutable();
+      supportedLanguageCodes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @param value The supportedLanguageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedLanguageCodes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSupportedLanguageCodesIsMutable();
+      supportedLanguageCodes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @param values The supportedLanguageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedLanguageCodes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSupportedLanguageCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, supportedLanguageCodes_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportedLanguageCodes() {
+      supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of all languages supported by the agent (except for the
+     * `default_language_code`).
+     * </pre>
+     *
+     * <code>repeated string supported_language_codes = 4;</code>
+     * @param value The bytes of the supportedLanguageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedLanguageCodesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureSupportedLanguageCodesIsMutable();
+      supportedLanguageCodes_.add(value);
       onChanged();
       return this;
     }

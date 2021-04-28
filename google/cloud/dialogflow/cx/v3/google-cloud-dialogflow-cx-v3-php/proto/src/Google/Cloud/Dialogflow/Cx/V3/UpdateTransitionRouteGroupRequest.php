@@ -28,9 +28,10 @@ class UpdateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $update_mask = null;
     /**
-     * The language to list transition route groups for. The field
-     * [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     * [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     * The language of the following fields in `TransitionRouteGroup`:
+     * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+     * *
+     * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -52,9 +53,10 @@ class UpdateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           The mask to control which fields get updated.
      *     @type string $language_code
-     *           The language to list transition route groups for. The field
-     *           [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     *           [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     *           The language of the following fields in `TransitionRouteGroup`:
+     *           *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+     *           *
+     *           `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
      *           If not specified, the agent's default language is used.
      *           [Many
      *           languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -140,9 +142,10 @@ class UpdateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The language to list transition route groups for. The field
-     * [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     * [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     * The language of the following fields in `TransitionRouteGroup`:
+     * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+     * *
+     * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -158,9 +161,10 @@ class UpdateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The language to list transition route groups for. The field
-     * [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-     * [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
+     * The language of the following fields in `TransitionRouteGroup`:
+     * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+     * *
+     * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

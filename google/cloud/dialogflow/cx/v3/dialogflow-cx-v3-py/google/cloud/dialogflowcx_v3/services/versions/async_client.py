@@ -581,7 +581,8 @@ class VersionsAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
-        r"""Loads a specified version to draft version.
+        r"""Loads resources in the specified version to the draft
+        flow.
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.LoadVersionRequest`):
@@ -591,7 +592,7 @@ class VersionsAsyncClient:
             name (:class:`str`):
                 Required. The
                 [Version][google.cloud.dialogflow.cx.v3.Version] to be
-                loaded to draft version. Format:
+                loaded to draft flow. Format:
                 ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
 
                 This corresponds to the ``name`` field

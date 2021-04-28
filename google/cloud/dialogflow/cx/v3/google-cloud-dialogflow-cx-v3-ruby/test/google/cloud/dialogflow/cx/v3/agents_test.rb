@@ -360,12 +360,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Agents::ClientTest < Minitest::Test
     # Create request parameters for a unary method.
     name = "hello world"
     agent_uri = "hello world"
+    environment = "hello world"
 
     export_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :export_agent, name
       assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["agent_uri"]
+      assert_equal "hello world", request["environment"]
       refute_nil options
     end
 
@@ -376,35 +378,35 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Agents::ClientTest < Minitest::Test
       end
 
       # Use hash object
-      client.export_agent({ name: name, agent_uri: agent_uri }) do |response, operation|
+      client.export_agent({ name: name, agent_uri: agent_uri, environment: environment }) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.export_agent name: name, agent_uri: agent_uri do |response, operation|
+      client.export_agent name: name, agent_uri: agent_uri, environment: environment do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.export_agent ::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest.new(name: name, agent_uri: agent_uri) do |response, operation|
+      client.export_agent ::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest.new(name: name, agent_uri: agent_uri, environment: environment) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.export_agent({ name: name, agent_uri: agent_uri }, grpc_options) do |response, operation|
+      client.export_agent({ name: name, agent_uri: agent_uri, environment: environment }, grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.export_agent(::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest.new(name: name, agent_uri: agent_uri), grpc_options) do |response, operation|
+      client.export_agent(::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest.new(name: name, agent_uri: agent_uri, environment: environment), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

@@ -269,15 +269,14 @@ class LoadVersionRequest(proto.Message):
         name (str):
             Required. The
             [Version][google.cloud.dialogflow.cx.v3.Version] to be
-            loaded to draft version. Format:
+            loaded to draft flow. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
         allow_override_agent_resources (bool):
             This field is used to prevent accidental overwrite of other
-            agent resources in the draft version, which can potentially
-            impact other flow's behavior. If
-            ``allow_override_agent_resources`` is false, conflicted
-            agent-level resources will not be overridden (i.e. intents,
-            entities, webhooks).
+            agent resources, which can potentially impact other flow's
+            behavior. If ``allow_override_agent_resources`` is false,
+            conflicted agent-level resources will not be overridden
+            (i.e. intents, entities, webhooks).
     """
 
     name = proto.Field(

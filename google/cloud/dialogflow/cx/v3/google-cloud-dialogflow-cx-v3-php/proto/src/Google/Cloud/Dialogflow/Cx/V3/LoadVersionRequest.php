@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class LoadVersionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
      * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/flows/<Flow ID>/versions/<Version ID>`.
      *
@@ -24,10 +24,10 @@ class LoadVersionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * This field is used to prevent accidental overwrite of other agent resources
-     * in the draft version, which can potentially impact other flow's behavior.
-     * If `allow_override_agent_resources` is false, conflicted agent-level
-     * resources will not be overridden (i.e. intents, entities, webhooks).
+     * This field is used to prevent accidental overwrite of other agent
+     * resources, which can potentially impact other flow's behavior. If
+     * `allow_override_agent_resources` is false, conflicted agent-level resources
+     * will not be overridden (i.e. intents, entities, webhooks).
      *
      * Generated from protobuf field <code>bool allow_override_agent_resources = 2;</code>
      */
@@ -40,14 +40,14 @@ class LoadVersionRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft version.
+     *           Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
      *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *           ID>/flows/<Flow ID>/versions/<Version ID>`.
      *     @type bool $allow_override_agent_resources
-     *           This field is used to prevent accidental overwrite of other agent resources
-     *           in the draft version, which can potentially impact other flow's behavior.
-     *           If `allow_override_agent_resources` is false, conflicted agent-level
-     *           resources will not be overridden (i.e. intents, entities, webhooks).
+     *           This field is used to prevent accidental overwrite of other agent
+     *           resources, which can potentially impact other flow's behavior. If
+     *           `allow_override_agent_resources` is false, conflicted agent-level resources
+     *           will not be overridden (i.e. intents, entities, webhooks).
      * }
      */
     public function __construct($data = NULL) {
@@ -56,7 +56,7 @@ class LoadVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
      * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/flows/<Flow ID>/versions/<Version ID>`.
      *
@@ -69,7 +69,7 @@ class LoadVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
      * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/flows/<Flow ID>/versions/<Version ID>`.
      *
@@ -86,10 +86,10 @@ class LoadVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This field is used to prevent accidental overwrite of other agent resources
-     * in the draft version, which can potentially impact other flow's behavior.
-     * If `allow_override_agent_resources` is false, conflicted agent-level
-     * resources will not be overridden (i.e. intents, entities, webhooks).
+     * This field is used to prevent accidental overwrite of other agent
+     * resources, which can potentially impact other flow's behavior. If
+     * `allow_override_agent_resources` is false, conflicted agent-level resources
+     * will not be overridden (i.e. intents, entities, webhooks).
      *
      * Generated from protobuf field <code>bool allow_override_agent_resources = 2;</code>
      * @return bool
@@ -100,10 +100,10 @@ class LoadVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This field is used to prevent accidental overwrite of other agent resources
-     * in the draft version, which can potentially impact other flow's behavior.
-     * If `allow_override_agent_resources` is false, conflicted agent-level
-     * resources will not be overridden (i.e. intents, entities, webhooks).
+     * This field is used to prevent accidental overwrite of other agent
+     * resources, which can potentially impact other flow's behavior. If
+     * `allow_override_agent_resources` is false, conflicted agent-level resources
+     * will not be overridden (i.e. intents, entities, webhooks).
      *
      * Generated from protobuf field <code>bool allow_override_agent_resources = 2;</code>
      * @param bool $var

@@ -159,7 +159,9 @@ module Google
           #     The language of the following fields in `flow`:
           #
           #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+          #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
           #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+          #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -212,7 +214,9 @@ module Google
           #     dependent:
           #
           #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+          #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
           #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+          #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -250,7 +254,9 @@ module Google
           #     dependent:
           #
           #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+          #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
           #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+          #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -275,7 +281,9 @@ module Google
           #     The language of the following fields in `flow`:
           #
           #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+          #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
           #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+          #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
           #
           #     If not specified, the agent's default language is used.
           #     [Many
@@ -339,6 +347,87 @@ module Google
           #   @return [::Google::Protobuf::Timestamp]
           #     Last time the flow was validated.
           class FlowValidationResult
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Flows::Client#import_flow Flows.ImportFlow}.
+          # @!attribute [rw] parent
+          #   @return [::String]
+          #     Required. The agent to import the flow into.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+          # @!attribute [rw] flow_uri
+          #   @return [::String]
+          #     The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+          #     to import flow from. The format of this URI must be
+          #     `gs://<bucket-name>/<object-name>`.
+          # @!attribute [rw] flow_content
+          #   @return [::String]
+          #     Uncompressed raw byte content for flow.
+          # @!attribute [rw] import_option
+          #   @return [::Google::Cloud::Dialogflow::Cx::V3::ImportFlowRequest::ImportOption]
+          #     Flow import mode. If not specified, `KEEP` is assumed.
+          class ImportFlowRequest
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+
+            # Import option.
+            module ImportOption
+              # Unspecified. Treated as `KEEP`.
+              IMPORT_OPTION_UNSPECIFIED = 0
+
+              # Always respect settings in exported flow content. It may cause a
+              # import failure if some settings (e.g. custom NLU) are not supported in
+              # the agent to import into.
+              KEEP = 1
+
+              # Fallback to default settings if some settings are not supported in the
+              # agent to import into. E.g. Standard NLU will be used if custom NLU is
+              # not available.
+              FALLBACK = 2
+            end
+          end
+
+          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Flows::Client#import_flow Flows.ImportFlow}.
+          # @!attribute [rw] flow
+          #   @return [::String]
+          #     The unique identifier of the new flow.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/flows/<Flow ID>`.
+          class ImportFlowResponse
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Flows::Client#export_flow Flows.ExportFlow}.
+          # @!attribute [rw] name
+          #   @return [::String]
+          #     Required. The name of the flow to export.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/flows/<Flow ID>`.
+          # @!attribute [rw] flow_uri
+          #   @return [::String]
+          #     Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+          #     export the flow to. The format of this URI must be
+          #     `gs://<bucket-name>/<object-name>`.
+          #     If left unspecified, the serialized flow is returned inline.
+          # @!attribute [rw] include_referenced_flows
+          #   @return [::Boolean]
+          #     Optional. Whether to export flows referenced by the specified flow.
+          class ExportFlowRequest
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Flows::Client#export_flow Flows.ExportFlow}.
+          # @!attribute [rw] flow_uri
+          #   @return [::String]
+          #     The URI to a file containing the exported flow. This field is populated
+          #     only if `flow_uri` is specified in {::Google::Cloud::Dialogflow::Cx::V3::ExportFlowRequest ExportFlowRequest}.
+          # @!attribute [rw] flow_content
+          #   @return [::String]
+          #     Uncompressed raw byte content for flow.
+          class ExportFlowResponse
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end

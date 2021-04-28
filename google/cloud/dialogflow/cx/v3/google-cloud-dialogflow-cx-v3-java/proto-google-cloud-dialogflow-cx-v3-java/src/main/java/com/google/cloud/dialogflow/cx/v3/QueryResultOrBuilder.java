@@ -9,8 +9,8 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -19,8 +19,8 @@ public interface QueryResultOrBuilder extends
   boolean hasText();
   /**
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -29,8 +29,8 @@ public interface QueryResultOrBuilder extends
   java.lang.String getText();
   /**
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-   * will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+   * provided as input, this field will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -41,9 +41,9 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -53,9 +53,9 @@ public interface QueryResultOrBuilder extends
   boolean hasTriggerIntent();
   /**
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -65,9 +65,9 @@ public interface QueryResultOrBuilder extends
   java.lang.String getTriggerIntent();
   /**
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-   * contain a copy of the intent identifier.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+   * input, this field will contain a copy of the intent identifier. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -79,7 +79,8 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -89,7 +90,8 @@ public interface QueryResultOrBuilder extends
   boolean hasTranscript();
   /**
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -99,7 +101,8 @@ public interface QueryResultOrBuilder extends
   java.lang.String getTranscript();
   /**
    * <pre>
-   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech
+   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -111,8 +114,8 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-   * the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -121,8 +124,8 @@ public interface QueryResultOrBuilder extends
   boolean hasTriggerEvent();
   /**
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-   * the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -131,8 +134,8 @@ public interface QueryResultOrBuilder extends
   java.lang.String getTriggerEvent();
   /**
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-   * the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+   * input, this field will contain the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -169,7 +172,8 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * The collected [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   * The collected [session
+   * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -191,7 +195,8 @@ public interface QueryResultOrBuilder extends
   boolean hasParameters();
   /**
    * <pre>
-   * The collected [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   * The collected [session
+   * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -213,7 +218,8 @@ public interface QueryResultOrBuilder extends
   com.google.protobuf.Struct getParameters();
   /**
    * <pre>
-   * The collected [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   * The collected [session
+   * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -333,8 +339,9 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload], in
-   * the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in
+   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload],
+   * in the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -344,8 +351,9 @@ public interface QueryResultOrBuilder extends
       getWebhookPayloadsList();
   /**
    * <pre>
-   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload], in
-   * the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in
+   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload],
+   * in the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -354,8 +362,9 @@ public interface QueryResultOrBuilder extends
   com.google.protobuf.Struct getWebhookPayloads(int index);
   /**
    * <pre>
-   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload], in
-   * the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in
+   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload],
+   * in the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -364,8 +373,9 @@ public interface QueryResultOrBuilder extends
   int getWebhookPayloadsCount();
   /**
    * <pre>
-   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload], in
-   * the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in
+   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload],
+   * in the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -375,8 +385,9 @@ public interface QueryResultOrBuilder extends
       getWebhookPayloadsOrBuilderList();
   /**
    * <pre>
-   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload], in
-   * the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in
+   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3.WebhookResponse.payload],
+   * in the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -387,8 +398,9 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-   * including but not limited to `name` and `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 7;</code>
@@ -397,8 +409,9 @@ public interface QueryResultOrBuilder extends
   boolean hasCurrentPage();
   /**
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-   * including but not limited to `name` and `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 7;</code>
@@ -407,8 +420,9 @@ public interface QueryResultOrBuilder extends
   com.google.cloud.dialogflow.cx.v3.Page getCurrentPage();
   /**
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
-   * including but not limited to `name` and `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 7;</code>
@@ -417,10 +431,12 @@ public interface QueryResultOrBuilder extends
 
   /**
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the conversational query. Some, not all fields
-   * are filled in this message, including but not limited to: `name` and
-   * `display_name`.
-   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match] instead.
+   * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the
+   * conversational query. Some, not all fields are filled in this message,
+   * including but not limited to: `name` and `display_name`. This field is
+   * deprecated, please use
+   * [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match]
+   * instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
@@ -429,10 +445,12 @@ public interface QueryResultOrBuilder extends
   @java.lang.Deprecated boolean hasIntent();
   /**
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the conversational query. Some, not all fields
-   * are filled in this message, including but not limited to: `name` and
-   * `display_name`.
-   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match] instead.
+   * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the
+   * conversational query. Some, not all fields are filled in this message,
+   * including but not limited to: `name` and `display_name`. This field is
+   * deprecated, please use
+   * [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match]
+   * instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
@@ -441,10 +459,12 @@ public interface QueryResultOrBuilder extends
   @java.lang.Deprecated com.google.cloud.dialogflow.cx.v3.Intent getIntent();
   /**
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the conversational query. Some, not all fields
-   * are filled in this message, including but not limited to: `name` and
-   * `display_name`.
-   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match] instead.
+   * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the
+   * conversational query. Some, not all fields are filled in this message,
+   * including but not limited to: `name` and `display_name`. This field is
+   * deprecated, please use
+   * [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match]
+   * instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
@@ -459,7 +479,9 @@ public interface QueryResultOrBuilder extends
    * help match the best intent within the classification threshold.
    * This value may change for the same end-user expression at any time due to a
    * model retraining or change in implementation.
-   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match] instead.
+   * This field is deprecated, please use
+   * [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match]
+   * instead.
    * </pre>
    *
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
@@ -531,7 +553,8 @@ public interface QueryResultOrBuilder extends
    * <pre>
    * The sentiment analyss result, which depends on
    * [`analyze_query_text_sentiment`]
-   * [google.cloud.dialogflow.cx.v3.QueryParameters.analyze_query_text_sentiment], specified in the request.
+   * [google.cloud.dialogflow.cx.v3.QueryParameters.analyze_query_text_sentiment],
+   * specified in the request.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
@@ -542,7 +565,8 @@ public interface QueryResultOrBuilder extends
    * <pre>
    * The sentiment analyss result, which depends on
    * [`analyze_query_text_sentiment`]
-   * [google.cloud.dialogflow.cx.v3.QueryParameters.analyze_query_text_sentiment], specified in the request.
+   * [google.cloud.dialogflow.cx.v3.QueryParameters.analyze_query_text_sentiment],
+   * specified in the request.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
@@ -553,7 +577,8 @@ public interface QueryResultOrBuilder extends
    * <pre>
    * The sentiment analyss result, which depends on
    * [`analyze_query_text_sentiment`]
-   * [google.cloud.dialogflow.cx.v3.QueryParameters.analyze_query_text_sentiment], specified in the request.
+   * [google.cloud.dialogflow.cx.v3.QueryParameters.analyze_query_text_sentiment],
+   * specified in the request.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
