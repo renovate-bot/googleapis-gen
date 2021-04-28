@@ -1,0 +1,23 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.vision.v1p1beta1",
+    "libraryPackage": "Google\\Cloud\\Vision\\V1p1beta1",
+    "services": {
+        "ImageAnnotator": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ImageAnnotatorGapicClient",
+                    "rpcs": {
+                        "BatchAnnotateImages": {
+                            "methods": [
+                                "batchAnnotateImages"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

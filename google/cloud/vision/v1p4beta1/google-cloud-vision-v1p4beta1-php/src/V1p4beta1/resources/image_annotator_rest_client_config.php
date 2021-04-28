@@ -3,24 +3,24 @@
 return [
     'interfaces' => [
         'google.cloud.vision.v1p4beta1.ImageAnnotator' => [
-            'AsyncBatchAnnotateImages' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1p4beta1/images:asyncBatchAnnotate',
-                'body' => '*',
-            ],
             'AsyncBatchAnnotateFiles' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1p4beta1/files:asyncBatchAnnotate',
                 'body' => '*',
             ],
-            'BatchAnnotateImages' => [
+            'AsyncBatchAnnotateImages' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1p4beta1/images:annotate',
+                'uriTemplate' => '/v1p4beta1/images:asyncBatchAnnotate',
                 'body' => '*',
             ],
             'BatchAnnotateFiles' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1p4beta1/files:annotate',
+                'body' => '*',
+            ],
+            'BatchAnnotateImages' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1p4beta1/images:annotate',
                 'body' => '*',
             ],
         ],

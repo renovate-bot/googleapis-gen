@@ -3,14 +3,14 @@
 return [
     'interfaces' => [
         'google.cloud.vision.v1p3beta1.ImageAnnotator' => [
-            'BatchAnnotateImages' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1p3beta1/images:annotate',
-                'body' => '*',
-            ],
             'AsyncBatchAnnotateFiles' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1p3beta1/files:asyncBatchAnnotate',
+                'body' => '*',
+            ],
+            'BatchAnnotateImages' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1p3beta1/images:annotate',
                 'body' => '*',
             ],
         ],
